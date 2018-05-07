@@ -3,17 +3,10 @@
 const breakpoints = ['40em', '52em', '64em'];
 
 const colors = {
-<<<<<<< HEAD
   blue: '#747d8c',
-  black: '#111',
   white: '#f2f2f2',
-  gray: ['#6f7276', '#f5f5f5', '#d9d9d9', '#e0e0e0'],
-=======
-  text: '#6f7276',
-  blue: '#747d8c',
-  black: '#111',
-  gray: ['#6f7276', '#f5f5f5', '#d9d9d9'],
->>>>>>> Add Button
+  black: '#0c0d19',
+  gray: ['#6f7276', '#f5f5f5', '#d9d9d9', '#e0e0e0', '#5d5d5d'],
 };
 
 // space is used for margin and padding scales
@@ -41,7 +34,7 @@ const letterSpacings = {
 // border-radius
 const radii = [0, 2, 4, 8];
 
-const borders = [0, '1px solid', '2px solid'];
+const borders = [0, '1px solid', '2px solid', '4px solid'];
 
 const shadows = [`0 1px 2px 0 ${colors.text}`, `0 1px 4px 0 ${colors.text}`];
 

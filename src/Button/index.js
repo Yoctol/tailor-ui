@@ -72,7 +72,7 @@ Button.defaultProps = {
   fixed: false,
   fontSize: 1,
   size: 'm',
-  color: 'text',
+  color: 'gray.0',
   border: 1,
   borderColor: 'gray.2',
   borderRadius: 2,

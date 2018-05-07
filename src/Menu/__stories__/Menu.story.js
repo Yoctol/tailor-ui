@@ -8,7 +8,7 @@ const { MenuItem } = Menu;
 
 injectGlobalCss();
 
-storiesOf('Menu', module).add('default', () => (
+storiesOf('Menu', module).add('with active', () => (
   <div style={{ height: 600 }}>
     <Menu>
       <MenuItem>Menu 1</MenuItem>

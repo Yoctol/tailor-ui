@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components';
 import { Flex } from 'grid-styled';
-import { space, color, border, borderRadius } from 'styled-system';
+import { themeGet, space, color, border, borderRadius } from 'styled-system';
+import { ifProp } from 'styled-tools';
 
 import defaultTheme from '../theme';
 
@@ -44,8 +45,11 @@ const MenuItem = styled.button`
   ${getMenuItemStyle};
 
   :hover {
-    border-right: ${props => props.theme.borders[3]}
-      ${props => props.theme.colors.black};
+    background-color: ${ifProp(
+      'active',
+      themeGet('colors.gray.2'),
+      themeGet('colors.gray.4')
+    )};
   }
 
   :focus {
