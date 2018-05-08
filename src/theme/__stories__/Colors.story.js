@@ -47,6 +47,7 @@ storiesOf('Colors', module).add('colors', () => (
     <Flex flexWrap="wrap">
       {colors.gray.map((g, index) => (
         <Color
+          key={g}
           bg={g}
           title={`Gray-${index}`}
           color={index >= 7 ? '#0E0C1A' : '#fff'}

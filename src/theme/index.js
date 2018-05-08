@@ -39,6 +39,12 @@ const borders = {
   lg: `${borderLg} solid`,
 };
 
+const layouts = {
+  spacing: unit[2],
+  spacingSm: unit[1],
+  spacingLg: unit[4],
+};
+
 const size = unit[9];
 const sizeSm = unit[7];
 const sizeLg = unit[10];
@@ -57,6 +63,7 @@ const controls = {
 
 const space = {
   ...unit,
+  ...layouts,
   ...controls,
 };
 
