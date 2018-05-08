@@ -21,10 +21,13 @@
     "preversion": "npm test"
   },
   "dependencies": {
+    "prop-types": "^15.6.1",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
     "styled-components": "^3.2.6",
-    "styled-system": "^2.2.5"
+    "styled-normalize": "^4.0.0",
+    "styled-system": "^2.2.5",
+    "styled-tools": "^0.5.0"
   },
   "peerDependencies": {
     "react": "^16.3.2",
@@ -37,6 +40,7 @@
     "@babel/preset-react": "^7.0.0-beta.46",
     "@storybook/addon-actions": "^3.4.3",
     "@storybook/addon-backgrounds": "^3.4.3",
+    "@storybook/addon-centered": "^3.4.3",
     "@storybook/addons": "^3.4.3",
     "@storybook/react": "^3.4.3",
     "babel-core": "^7.0.0-0",
