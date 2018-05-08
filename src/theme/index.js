@@ -30,10 +30,13 @@ const fontSizes = {
 // border-radius
 const radii = [space[1]];
 
+const borderDefault = space.o;
+const borderLg = space.h;
+
 const borders = {
   none: '',
-  default: `${space.o} solid`,
-  lg: `${space.h} solid`,
+  default: `${borderDefault} solid`,
+  lg: `${borderLg} solid`,
 };
 
 const size = space[9];
@@ -47,9 +50,9 @@ const controls = {
   paddingX: space[2],
   paddingXSm: space[2] * 0.75,
   paddingXLg: space[2] * 1.5,
-  paddingY: (size - lineHeight) / 2 - borders.default,
-  paddingYSm: (sizeSm - lineHeight) / 2 - borders.default,
-  paddingYLg: (sizeLg - lineHeight) / 2 - borders.default,
+  paddingY: (size - lineHeight) / 2 - borderDefault,
+  paddingYSm: (sizeSm - lineHeight) / 2 - borderDefault,
+  paddingYLg: (sizeLg - lineHeight) / 2 - borderDefault,
 };
 
 const theme = {
