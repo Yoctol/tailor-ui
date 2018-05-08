@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import {
   themeGet,
   complexStyle,
@@ -10,7 +10,7 @@ import {
   border,
   borderRadius,
 } from 'styled-system';
-import { ifProp } from 'styled-tools';
+import { ifProp, switchProp } from 'styled-tools';
 
 import defaultTheme from '../theme';
 import { controlShadow } from '../utils/shadow';
@@ -39,45 +39,64 @@ const theme = {
 };
 
 const Button = styled.button`
-  width: ${ifProp('fixed', '100%')};
-  background-color: #fff;
+  display: inline-block;
+  width: ${ifProp('block', '100%')};
   cursor: pointer;
   transition: all 0.2s ease-in-out;
 
   :focus {
     outline: 0;
-    border: ${themeGet('borders.1')} ${themeGet('colors.black')};
-    ${props => controlShadow(themeGet('colors.black')(props))}
+    border: ${themeGet('borders.default')} ${themeGet('colors.primary')};
+    ${controlShadow(themeGet('colors.primary'))};
   }
 
   :hover {
-    background-color: ${themeGet('colors.gray.1')};
+    background-color: ${themeGet('colors.gray.7')};
   }
 
   :disabled {
-    color: rgba(0,0,0,.25);
-    background-color: ${themeGet('colors.gray.1')};
-    border-color: ${themeGet('colors.gray.2')};
-    cursor: not-allowed;
+    cursor: default;
+    opacity: .5;
+    pointer-events: none;
   }
+
+  ${switchProp('size', {
+    sm: css`
+      font-size: ${themeGet('fontSizes.sm')};
+      height: ${themeGet('controls.sizeSm')};
+      padding: ${themeGet('controls.paddingYSm')}
+        ${themeGet('controls.paddingXSm')};
+    `,
+    m: css`
+      font-size: ${themeGet('fontSizes.default')};
+      height: ${themeGet('controls.size')};
+      padding: ${themeGet('controls.paddingY')} ${themeGet('controls.paddingX')};
+    `,
+    lg: css`
+      font-size: ${themeGet('fontSizes.lg')};
+      height: ${themeGet('controls.sizeLg')};
+      padding: ${themeGet('controls.paddingYLg')}
+        ${themeGet('controls.paddingXLg')};
+    `,
+  })}
 
   ${color} ${fontSize} ${size} ${space} ${width} ${border} ${borderRadius};
 `;
 
 Button.propTypes = {
   fixed: PropTypes.bool,
-  size: PropTypes.oneOf(['s', 'm', 'l']),
+  size: PropTypes.oneOf(['sm', 'lg']),
 };
 
 Button.defaultProps = {
   theme,
-  fixed: false,
-  fontSize: 1,
+  bg: 'bgLight',
   size: 'm',
-  color: 'gray.0',
-  border: 1,
-  borderColor: 'gray.2',
-  borderRadius: 2,
+  block: false,
+  color: 'bodyFont',
+  border: 'default',
+  borderRadius: 0,
+  borderColor: 'primaryDark',
 };
 
 export default Button;

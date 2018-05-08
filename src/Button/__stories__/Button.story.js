@@ -24,21 +24,21 @@ storiesOf('Button', module)
   ))
   .add('with size', () => (
     <div>
-      <Button size="s" mr={2} onClick={action('clicked')}>
-        with size = s
+      <Button size="sm" mr={2} onClick={action('clicked')}>
+        with size = sm
       </Button>
-      <Button size="m" mr={2} onClick={action('clicked')}>
-        with size = m
+      <Button mr={2} onClick={action('clicked')}>
+        with size = default
       </Button>
-      <Button size="l" onClick={action('clicked')}>
-        with size = l
+      <Button size="lg" onClick={action('clicked')}>
+        with size = lg
       </Button>
     </div>
   ))
-  .add('with fixed', () => (
+  .add('with block', () => (
     <div style={{ width: 400 }}>
-      <Button fixed onClick={action('clicked')}>
-        Fixed Button
+      <Button size="lg" block onClick={action('clicked')}>
+        Fixed lg Button
       </Button>
     </div>
   ))
