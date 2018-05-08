@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 import { Flex } from 'grid-styled';
-import { themeGet, space, color, border, borderRadius } from 'styled-system';
+import { themeGet, space, color, borders, borderRadius } from 'styled-system';
 import { ifProp } from 'styled-tools';
 
 import defaultTheme from '../theme';
@@ -29,8 +29,8 @@ const MenuItem = styled.button`
   ${ifProp(
     'active',
     css`
-      color: ${themeGet('colors.bodyFont')}
-      background-color: ${themeGet('colors.light')};;
+      color: ${themeGet('colors.bodyFont')};
+      background-color: ${themeGet('colors.light')};
     `,
     css`
       color: ${themeGet('colors.light')};
@@ -50,7 +50,7 @@ const MenuItem = styled.button`
     outline: 0;
   }
 
-  ${space} ${border} ${borderRadius};
+  ${space} ${borders} ${borderRadius};
 `;
 
 MenuItem.defaultProps = {

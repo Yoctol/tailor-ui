@@ -7,6 +7,7 @@ const breakpoints = ['40em', '52em', '64em'];
 const unit = {
   o: '.05rem',
   h: '.1rem',
+  0: 0,
   1: '.2rem',
   2: '.4rem',
   3: '.6rem',
