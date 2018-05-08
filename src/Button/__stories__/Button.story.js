@@ -4,10 +4,7 @@ import { action } from '@storybook/addon-actions';
 import centered from '@storybook/addon-centered';
 import backgrounds from '@storybook/addon-backgrounds';
 
-import injectGlobalCss from '../../injectGlobalCss';
 import Button from '../';
-
-injectGlobalCss();
 
 storiesOf('Button', module)
   .addDecorator(centered)
