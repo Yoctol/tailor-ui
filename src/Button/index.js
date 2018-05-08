@@ -13,6 +13,7 @@ import {
 import { ifProp } from 'styled-tools';
 
 import defaultTheme from '../theme';
+import { controlShadow } from '../utils/shadow';
 
 const size = complexStyle({
   prop: 'size',
@@ -46,6 +47,7 @@ const Button = styled.button`
   :focus {
     outline: 0;
     border: ${themeGet('borders.1')} ${themeGet('colors.black')};
+    ${props => controlShadow(themeGet('colors.black')(props))}
   }
 
   :hover {
