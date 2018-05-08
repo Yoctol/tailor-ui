@@ -38,7 +38,7 @@ storiesOf('Button', module)
   .add('with block', () => (
     <div style={{ width: 400 }}>
       <Button size="lg" block onClick={action('clicked')}>
-        Fixed lg Button
+        Block lg Button
       </Button>
     </div>
   ))

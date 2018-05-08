@@ -2,7 +2,6 @@ import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
 import {
   themeGet,
-  complexStyle,
   color,
   fontSize,
   space,
@@ -12,31 +11,8 @@ import {
 } from 'styled-system';
 import { ifProp, switchProp } from 'styled-tools';
 
-import defaultTheme from '../theme';
+import theme from '../theme';
 import { controlShadow } from '../utils/shadow';
-
-const size = complexStyle({
-  prop: 'size',
-  key: 'sizes',
-});
-
-const theme = {
-  ...defaultTheme,
-  sizes: {
-    s: {
-      height: '24px',
-      padding: '0 7px',
-    },
-    m: {
-      height: '32px',
-      padding: '0 15px',
-    },
-    l: {
-      height: '40px',
-      padding: '0 15px',
-    },
-  },
-};
 
 const Button = styled.button`
   display: inline-block;
@@ -63,29 +39,27 @@ const Button = styled.button`
   ${switchProp('size', {
     sm: css`
       font-size: ${themeGet('fontSizes.sm')};
-      height: ${themeGet('controls.sizeSm')};
-      padding: ${themeGet('controls.paddingYSm')}
-        ${themeGet('controls.paddingXSm')};
+      height: ${themeGet('space.sizeSm')};
+      padding: ${themeGet('space.paddingYSm')} ${themeGet('space.paddingXSm')};
     `,
     m: css`
       font-size: ${themeGet('fontSizes.default')};
-      height: ${themeGet('controls.size')};
-      padding: ${themeGet('controls.paddingY')} ${themeGet('controls.paddingX')};
+      height: ${themeGet('space.size')};
+      padding: ${themeGet('space.paddingY')} ${themeGet('space.paddingX')};
     `,
     lg: css`
       font-size: ${themeGet('fontSizes.lg')};
-      height: ${themeGet('controls.sizeLg')};
-      padding: ${themeGet('controls.paddingYLg')}
-        ${themeGet('controls.paddingXLg')};
+      height: ${themeGet('space.sizeLg')};
+      padding: ${themeGet('space.paddingYLg')} ${themeGet('space.paddingXLg')};
     `,
   })}
 
-  ${color} ${fontSize} ${size} ${space} ${width} ${border} ${borderRadius};
+  ${color} ${fontSize} ${space} ${width} ${border} ${borderRadius};
 `;
 
 Button.propTypes = {
   fixed: PropTypes.bool,
-  size: PropTypes.oneOf(['sm', 'lg']),
+  size: PropTypes.oneOf(['sm', 'm', 'lg']),
 };
 
 Button.defaultProps = {
