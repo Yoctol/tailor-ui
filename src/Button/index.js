@@ -39,20 +39,18 @@ const Button = styled.button`
   ${switchProp('size', {
     sm: css`
       font-size: ${themeGet('fontSizes.sm')};
-      height: ${themeGet('controls.sizeSm')};
-      padding: ${themeGet('controls.paddingYSm')}
-        ${themeGet('controls.paddingXSm')};
+      height: ${themeGet('space.sizeSm')};
+      padding: ${themeGet('space.paddingYSm')} ${themeGet('space.paddingXSm')};
     `,
     m: css`
       font-size: ${themeGet('fontSizes.default')};
-      height: ${themeGet('controls.size')};
-      padding: ${themeGet('controls.paddingY')} ${themeGet('controls.paddingX')};
+      height: ${themeGet('space.size')};
+      padding: ${themeGet('space.paddingY')} ${themeGet('space.paddingX')};
     `,
     lg: css`
       font-size: ${themeGet('fontSizes.lg')};
-      height: ${themeGet('controls.sizeLg')};
-      padding: ${themeGet('controls.paddingYLg')}
-        ${themeGet('controls.paddingXLg')};
+      height: ${themeGet('space.sizeLg')};
+      padding: ${themeGet('space.paddingYLg')} ${themeGet('space.paddingXLg')};
     `,
   })}
 

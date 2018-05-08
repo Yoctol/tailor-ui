@@ -4,7 +4,7 @@ const lineHeight = '1rem';
 
 const breakpoints = ['40em', '52em', '64em'];
 
-const space = {
+const unit = {
   o: '.05rem',
   h: '.1rem',
   1: '.2rem',
@@ -28,10 +28,10 @@ const fontSizes = {
 };
 
 // border-radius
-const radii = [space[1]];
+const radii = [unit[1]];
 
-const borderDefault = space.o;
-const borderLg = space.h;
+const borderDefault = unit.o;
+const borderLg = unit.h;
 
 const borders = {
   none: '',
@@ -39,20 +39,25 @@ const borders = {
   lg: `${borderLg} solid`,
 };
 
-const size = space[9];
-const sizeSm = space[7];
-const sizeLg = space[10];
+const size = unit[9];
+const sizeSm = unit[7];
+const sizeLg = unit[10];
 
 const controls = {
   size,
   sizeSm,
   sizeLg,
-  paddingX: space[2],
-  paddingXSm: space[2] * 0.75,
-  paddingXLg: space[2] * 1.5,
+  paddingX: unit[2],
+  paddingXSm: unit[2] * 0.75,
+  paddingXLg: unit[2] * 1.5,
   paddingY: (size - lineHeight) / 2 - borderDefault,
   paddingYSm: (sizeSm - lineHeight) / 2 - borderDefault,
   paddingYLg: (sizeLg - lineHeight) / 2 - borderDefault,
+};
+
+const space = {
+  ...unit,
+  ...controls,
 };
 
 const theme = {
