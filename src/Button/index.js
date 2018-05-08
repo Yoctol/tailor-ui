@@ -10,6 +10,7 @@ import {
   border,
   borderRadius,
 } from 'styled-system';
+import { ifProp } from 'styled-tools';
 
 import defaultTheme from '../theme';
 
@@ -37,7 +38,7 @@ const theme = {
 };
 
 const Button = styled.button`
-  width: ${props => (props.fixed ? '100%' : 'auto')};
+  width: ${ifProp('fixed', '100%')};
   background-color: #fff;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
