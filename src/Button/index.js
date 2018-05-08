@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import {
+  themeGet,
   complexStyle,
   color,
   fontSize,
@@ -43,18 +44,17 @@ const Button = styled.button`
 
   :focus {
     outline: 0;
-    border: ${props => props.theme.borders[1]} ${props =>
-  props.theme.colors.black};
+    border: ${themeGet('borders.1')} ${themeGet('colors.black')};
   }
 
   :hover {
-    background-color: ${props => props.theme.colors.gray[1]};
+    background-color: ${themeGet('colors.gray.1')};
   }
 
   :disabled {
     color: rgba(0,0,0,.25);
-    background-color: ${props => props.theme.colors.gray[1]};
-    border-color: ${props => props.theme.colors.gray[2]};
+    background-color: ${themeGet('colors.gray.1')};
+    border-color: ${themeGet('colors.gray.2')};
     cursor: not-allowed;
   }
 
