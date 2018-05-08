@@ -24,7 +24,7 @@ const injectGlobalCss = () => injectGlobal`
     background: ${colors.bodyBg};
     color: ${colors.bodyFont};
     font-family: 'Helvetica Neue', Arial, sans-serif, 'PingFang TC', 'Microsoft JhengHei';
-    font-size: .7rem;
+    font-size: 0.7rem;
     overflow-x: hidden;
     text-rendering: optimizeLegibility;
   }

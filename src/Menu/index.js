@@ -8,11 +8,10 @@ import defaultTheme from '../theme';
 const Menu = styled(Flex)`
   width: 200px;
   height: 100%;
-  overflow-y: scroll;
   flex-direction: column;
   justify-content: start;
-
   ${color};
+  overflow-y: scroll;
 `;
 
 Menu.defaultProps = {
@@ -21,11 +20,10 @@ Menu.defaultProps = {
 };
 
 const MenuItem = styled.button`
-  flex-shrink: 0;
   padding: 15px 30px;
+  flex-shrink: 0;
   text-align: left;
   cursor: pointer;
-
   ${ifProp(
     'active',
     css`
@@ -36,9 +34,7 @@ const MenuItem = styled.button`
       color: ${themeGet('colors.light')};
       background-color: ${themeGet('colors.gray.4')};
     `
-  )}
-
-  :hover {
+  )} :hover {
     background-color: ${ifProp(
       'active',
       themeGet('colors.gray.7'),
@@ -50,7 +46,9 @@ const MenuItem = styled.button`
     outline: 0;
   }
 
-  ${space} ${borders} ${borderRadius};
+  ${space};
+  ${borders};
+  ${borderRadius};
 `;
 
 MenuItem.defaultProps = {

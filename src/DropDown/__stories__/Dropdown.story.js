@@ -10,8 +10,12 @@ storiesOf('Dropdown', module)
   .add('with visible', () => (
     <Dropdown visible style={{ position: 'relative' }}>
       <Dropdown.List>
-        <Dropdown.Item onClick={action('Item 1 Clicked')}>Item 1</Dropdown.Item>
-        <Dropdown.Item onClick={action('Item 2 Clicked')}>Item 2</Dropdown.Item>
+        <Dropdown.Item key="Item 1" onClick={action('Item 1 Clicked')}>
+          Item 1
+        </Dropdown.Item>
+        <Dropdown.Item key="Item 2" onClick={action('Item 2 Clicked')}>
+          Item 2
+        </Dropdown.Item>
       </Dropdown.List>
     </Dropdown>
   ))
@@ -20,6 +24,7 @@ storiesOf('Dropdown', module)
       <Dropdown.List>
         {['99b898', 'feceab', 'ff847c', 'e84a5f', '2a363b'].map(color => (
           <Dropdown.Item
+            key={color}
             p={3}
             bg={`#${color}`}
             color="#fff"

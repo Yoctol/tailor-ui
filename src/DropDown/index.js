@@ -21,8 +21,9 @@ const Dropdown = styled.div`
   z-index: 99;
   display: ${ifProp('visible', 'block', 'none')};
   box-shadow: 0 0.1rem 0.2rem 0 rgba(0, 0, 0, 0.2);
-
-  ${width} ${top} ${right}
+  ${width};
+  ${top};
+  ${right};
 `;
 
 Dropdown.propTypes = {
@@ -41,14 +42,16 @@ Dropdown.defaultProps = {
 };
 
 const List = styled.ul`
-  list-style: none;
   background-color: transparent;
+  list-style: none;
 
   :focus {
     outline: 0;
   }
 
-  ${space} ${borders} ${textAlign};
+  ${space};
+  ${borders};
+  ${textAlign};
 `;
 
 Dropdown.propTypes = {
@@ -70,18 +73,21 @@ const Item = styled.li`
   padding: ${themeGet('space.2')} ${themeGet('space.0')};
   border: ${themeGet('borders.default')} ${themeGet('colors.borderDark')};
   cursor: pointer;
-  transition: all 0.2s ease-in-out;
 
   :hover {
     background-color: ${props =>
-      darken(0.05, themeGet(`colors.${props.bg}`, props.bg)(props))}
+      darken(0.05, themeGet(`colors.${props.bg}`, props.bg)(props))};
   }
 
   :not(:first-child) {
     border-top: 0;
   }
 
-  ${color} ${space} ${borders} ${fontSize}
+  ${color};
+  ${space};
+  ${borders};
+  ${fontSize};
+  transition: all 0.2s ease-in-out;
 `;
 
 Dropdown.propTypes = {
