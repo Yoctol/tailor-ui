@@ -1,6 +1,9 @@
 import { injectGlobal } from 'styled-components';
 import styledNormalize from 'styled-normalize';
 
+import * as colors from '../theme/colors';
+import { controlShadow } from '../utils/shadow';
+
 const injectGlobalCss = () => injectGlobal`
   ${styledNormalize}
 
@@ -18,8 +21,8 @@ const injectGlobalCss = () => injectGlobal`
   }
 
   body {
-    background: #fff;
-    color: #000;
+    background: ${colors.bodyBg};
+    color: ${colors.bodyFont};
     font-family: 'Helvetica Neue', Arial, sans-serif, 'PingFang TC', 'Microsoft JhengHei';
     font-size: .7rem;
     overflow-x: hidden;
@@ -27,19 +30,19 @@ const injectGlobalCss = () => injectGlobal`
   }
 
   a {
-    color: $link-color;
+    color: ${colors.link};
     outline: none;
     text-decoration: none;
 
     &:focus {
-      @include control-shadow();
+      ${controlShadow(colors.link)};
     }
 
     &:focus,
     &:hover,
     &:active,
     &.active {
-      color: $link-color-dark;
+      color: ${colors.linkDark};
       text-decoration: underline;
     }
   }
