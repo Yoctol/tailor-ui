@@ -5,22 +5,6 @@ import { ifProp } from 'styled-tools';
 
 import defaultTheme from '../theme';
 
-const getMenuItemStyle = ({ active, theme }) => {
-  const { gray, white } = theme.colors;
-
-  const activeStyle = css`
-    color: ${gray[0]};
-    background-color: ${white};
-  `;
-
-  const defaultStyle = css`
-    color: ${white};
-    background-color: ${gray[0]};
-  `;
-
-  return active ? activeStyle : defaultStyle;
-};
-
 const Menu = styled(Flex)`
   width: 200px;
   height: 100%;
@@ -33,7 +17,7 @@ const Menu = styled(Flex)`
 
 Menu.defaultProps = {
   theme: defaultTheme,
-  bg: 'gray.0',
+  bg: 'gray.4',
 };
 
 const MenuItem = styled.button`
@@ -42,13 +26,23 @@ const MenuItem = styled.button`
   text-align: left;
   cursor: pointer;
 
-  ${getMenuItemStyle};
+  ${ifProp(
+    'active',
+    css`
+      color: ${themeGet('colors.bodyFont')}
+      background-color: ${themeGet('colors.light')};;
+    `,
+    css`
+      color: ${themeGet('colors.light')};
+      background-color: ${themeGet('colors.gray.4')};
+    `
+  )}
 
   :hover {
     background-color: ${ifProp(
       'active',
-      themeGet('colors.gray.2'),
-      themeGet('colors.gray.4')
+      themeGet('colors.gray.7'),
+      themeGet('colors.gray.3')
     )};
   }
 
@@ -62,7 +56,6 @@ const MenuItem = styled.button`
 MenuItem.defaultProps = {
   theme: defaultTheme,
   border: 0,
-  borderRadius: 0,
 };
 
 Menu.MenuItem = MenuItem;

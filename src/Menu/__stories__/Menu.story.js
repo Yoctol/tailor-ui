@@ -1,12 +1,9 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import injectGlobalCss from '../../injectGlobalCss';
 import Menu from '../';
 
 const { MenuItem } = Menu;
-
-injectGlobalCss();
 
 storiesOf('Menu', module).add('with active', () => (
   <div style={{ height: 600 }}>
