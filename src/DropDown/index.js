@@ -15,12 +15,13 @@ import { ifProp } from 'styled-tools';
 import { darken } from 'polished';
 
 import theme from '../theme';
+import { shadowVariant } from '../utils/shadow';
 
 const Dropdown = styled.div`
   position: absolute;
   z-index: 99;
   display: ${ifProp('visible', 'block', 'none')};
-  box-shadow: 0 0.1rem 0.2rem 0 rgba(0, 0, 0, 0.2);
+  ${shadowVariant(0.1)};
   ${width};
   ${top};
   ${right};
