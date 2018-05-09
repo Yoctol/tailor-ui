@@ -7,6 +7,7 @@ import {
   space,
   width,
   border,
+  borderColor,
   borderRadius,
 } from 'styled-system';
 import { ifProp, switchProp } from 'styled-tools';
@@ -20,13 +21,13 @@ const Button = styled.button`
   cursor: pointer;
 
   :focus {
-    border: ${themeGet('borders.default')} ${themeGet('colors.primary')};
+    border: ${themeGet('borders.default')} ${themeGet('colors.primaryDark')};
     ${controlShadow(themeGet('colors.primary'))};
     outline: 0;
   }
 
   :hover {
-    background-color: ${themeGet('colors.gray.7')};
+    background-color: ${themeGet('colors.gray.8')};
   }
 
   :disabled {
@@ -59,6 +60,7 @@ const Button = styled.button`
   ${space};
   ${width};
   ${border};
+  ${borderColor};
   ${borderRadius};
   transition: all 0.2s ease-in-out;
 `;
@@ -76,7 +78,7 @@ Button.defaultProps = {
   color: 'bodyFont',
   border: 'default',
   borderRadius: 1,
-  borderColor: 'primaryDark',
+  borderColor: 'primary',
 };
 
 export default Button;
