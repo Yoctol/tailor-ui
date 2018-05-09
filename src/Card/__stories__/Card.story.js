@@ -44,7 +44,7 @@ storiesOf('Card', module)
       </Card>
     </Wrapper>
   ))
-  .add('with Image', () => (
+  .add('with Image Top', () => (
     <Wrapper>
       <Card>
         <CardImage>
@@ -53,6 +53,17 @@ storiesOf('Card', module)
         <CardBlock>Title</CardBlock>
         <CardBlock>Content</CardBlock>
         <CardBlock>Footer</CardBlock>
+      </Card>
+    </Wrapper>
+  ))
+  .add('with Image Bottom', () => (
+    <Wrapper>
+      <Card>
+        <CardBlock>Title</CardBlock>
+        <CardBlock>Content</CardBlock>
+        <CardImage>
+          <img src="http://via.placeholder.com/400x300" alt="placeholder" />
+        </CardImage>
       </Card>
     </Wrapper>
   ));

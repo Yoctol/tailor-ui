@@ -36,9 +36,11 @@ CardBlock.defaultProps = {
 const CardImage = styled.div`
   overflow: hidden;
 
-  :first-child {
-    padding-top: 0;
+  img {
+    display: block;
+  }
 
+  :first-child {
     img {
       border-top-left-radius: ${themeGet('radii.0')};
       border-top-right-radius: ${themeGet('radii.0')};
@@ -57,7 +59,6 @@ const CardImage = styled.div`
 
 CardImage.defaultProps = {
   theme,
-  py: 4,
 };
 
 Card.CardBlock = CardBlock;
