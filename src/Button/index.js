@@ -75,7 +75,7 @@ Button.defaultProps = {
   block: false,
   color: 'bodyFont',
   border: 'default',
-  borderRadius: 0,
+  borderRadius: 1,
   borderColor: 'primaryDark',
 };
 
