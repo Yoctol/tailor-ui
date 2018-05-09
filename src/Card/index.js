@@ -4,11 +4,10 @@ import { themeGet, color, space, borderRadius } from 'styled-system';
 import theme from '../theme';
 
 const Card = styled.div`
-  border: ${themeGet('borders.default')} ${themeGet('colors.border')};
   display: flex;
   overflow: hidden;
+  border: ${themeGet('borders.default')} ${themeGet('colors.border')};
   flex-direction: column;
-
   ${color} ${borderRadius};
 `;
 
@@ -53,7 +52,7 @@ const CardImage = styled.div`
     }
   }
 
-  {space}
+  ${space};
 `;
 
 CardImage.defaultProps = {
