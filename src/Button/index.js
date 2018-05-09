@@ -7,6 +7,7 @@ import {
   space,
   width,
   border,
+  borderColor,
   borderRadius,
 } from 'styled-system';
 import { ifProp, switchProp } from 'styled-tools';
@@ -26,7 +27,7 @@ const Button = styled.button`
   }
 
   :hover {
-    background-color: ${themeGet('colors.gray.7')};
+    background-color: ${themeGet('colors.gray.8')};
   }
 
   :disabled {
@@ -59,6 +60,7 @@ const Button = styled.button`
   ${space};
   ${width};
   ${border};
+  ${borderColor};
   ${borderRadius};
   transition: all 0.2s ease-in-out;
 `;
