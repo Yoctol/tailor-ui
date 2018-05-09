@@ -50,10 +50,10 @@ ModalContent.defaultProps = {
   borderColor: 'border',
 };
 
-const Modal = ({ children, show, handleClose, ...other }) => (
+const Modal = ({ children, show, handleClose, ...otherProps }) => (
   <ModalToggle show={show}>
     <ModalOverlay onClick={handleClose} />
-    <ModalContent {...other}>{children}</ModalContent>
+    <ModalContent {...otherProps}>{children}</ModalContent>
   </ModalToggle>
 );
 
