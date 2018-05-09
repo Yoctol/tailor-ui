@@ -18,12 +18,11 @@ const Button = styled.button`
   display: inline-block;
   width: ${ifProp('block', '100%')};
   cursor: pointer;
-  transition: all 0.2s ease-in-out;
 
   :focus {
-    outline: 0;
     border: ${themeGet('borders.default')} ${themeGet('colors.primary')};
     ${controlShadow(themeGet('colors.primary'))};
+    outline: 0;
   }
 
   :hover {
@@ -32,29 +31,36 @@ const Button = styled.button`
 
   :disabled {
     cursor: default;
-    opacity: .5;
+    opacity: 0.5;
     pointer-events: none;
   }
 
   ${switchProp('size', {
     sm: css`
-      font-size: ${themeGet('fontSizes.sm')};
       height: ${themeGet('space.sizeSm')};
       padding: ${themeGet('space.paddingYSm')} ${themeGet('space.paddingXSm')};
+      font-size: ${themeGet('fontSizes.sm')};
     `,
+
     m: css`
-      font-size: ${themeGet('fontSizes.default')};
       height: ${themeGet('space.size')};
       padding: ${themeGet('space.paddingY')} ${themeGet('space.paddingX')};
+      font-size: ${themeGet('fontSizes.default')};
     `,
+
     lg: css`
-      font-size: ${themeGet('fontSizes.lg')};
       height: ${themeGet('space.sizeLg')};
       padding: ${themeGet('space.paddingYLg')} ${themeGet('space.paddingXLg')};
+      font-size: ${themeGet('fontSizes.lg')};
     `,
-  })}
-
-  ${color} ${fontSize} ${space} ${width} ${border} ${borderRadius};
+  })};
+  ${color};
+  ${fontSize};
+  ${space};
+  ${width};
+  ${border};
+  ${borderRadius};
+  transition: all 0.2s ease-in-out;
 `;
 
 Button.propTypes = {
