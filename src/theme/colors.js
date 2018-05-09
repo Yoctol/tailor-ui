@@ -24,6 +24,8 @@ export const bg = lighten(0.66, dark);
 export const bgDark = darken(0.03, bg);
 export const bgLight = light;
 
+export const code = '#e06870';
+export const highlight = '#ffe9b3';
 export const bodyBg = bgLight;
 export const bodyFont = lighten(0.05, dark);
 export const link = primary;

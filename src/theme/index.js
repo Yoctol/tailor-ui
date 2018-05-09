@@ -85,6 +85,7 @@ const theme = {
   borders,
   controls,
   borderColor: colors,
+  lineHeight: toRem(lineHeight),
 };
 
 export default theme;

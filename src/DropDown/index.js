@@ -71,6 +71,7 @@ List.defaultProps = {
 Dropdown.List = List;
 
 const Item = styled.li`
+  margin-top: 0;
   padding: ${themeGet('space.2')} ${themeGet('space.0')};
   border: ${themeGet('borders.default')} ${themeGet('colors.borderDark')};
   cursor: pointer;
