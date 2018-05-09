@@ -1,25 +1,30 @@
+import mapValues from 'lodash/mapValues';
+import round from 'lodash/round';
+
 import * as colors from './colors';
 
-const lineHeight = '1rem';
+const toRem = rem => `${rem}rem`;
+
+const lineHeight = 1;
 
 const breakpoints = ['40em', '52em', '64em'];
 
 const unit = {
-  o: '.05rem',
-  h: '.1rem',
+  o: 0.05,
+  h: 0.1,
   0: 0,
-  1: '.2rem',
-  2: '.4rem',
-  3: '.6rem',
-  4: '.8rem',
-  5: '1rem',
-  6: '1.2rem',
-  7: '1.4rem',
-  8: '1.6rem',
-  9: '1.8rem',
-  10: '2rem',
-  12: '2.4rem',
-  16: '3.2rem',
+  1: 0.2,
+  2: 0.4,
+  3: 0.6,
+  4: 0.8,
+  5: 1,
+  6: 1.2,
+  7: 1.4,
+  8: 1.6,
+  9: 1.8,
+  10: 2,
+  12: 2.4,
+  16: 3.2,
 };
 
 const fontSizes = {
@@ -29,15 +34,15 @@ const fontSizes = {
 };
 
 // border-radius
-const radii = [unit[1]];
+const radii = [0, toRem(unit[1]), toRem(unit[2])];
 
 const borderDefault = unit.o;
 const borderLg = unit.h;
 
 const borders = {
   none: '',
-  default: `${borderDefault} solid`,
-  lg: `${borderLg} solid`,
+  default: `${toRem(borderDefault)} solid`,
+  lg: `${toRem(borderLg)} solid`,
 };
 
 const layouts = {
@@ -62,11 +67,14 @@ const controls = {
   paddingYLg: (sizeLg - lineHeight) / 2 - borderDefault,
 };
 
-const space = {
-  ...unit,
-  ...layouts,
-  ...controls,
-};
+const space = mapValues(
+  {
+    ...unit,
+    ...layouts,
+    ...controls,
+  },
+  value => toRem(round(value, 2))
+);
 
 const theme = {
   breakpoints,
