@@ -21,7 +21,7 @@ const Button = styled.button`
   cursor: pointer;
 
   :focus {
-    border: ${themeGet('borders.default')} ${themeGet('colors.primary')};
+    border: ${themeGet('borders.default')} ${themeGet('colors.primaryDark')};
     ${controlShadow(themeGet('colors.primary'))};
     outline: 0;
   }
@@ -78,7 +78,7 @@ Button.defaultProps = {
   color: 'bodyFont',
   border: 'default',
   borderRadius: 1,
-  borderColor: 'primaryDark',
+  borderColor: 'primary',
 };
 
 export default Button;
