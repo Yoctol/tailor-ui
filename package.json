@@ -1,6 +1,6 @@
 {
   "name": "@yoctol/ui",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "files": ["lib"],
   "scripts": {
     "build":
