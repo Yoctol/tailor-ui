@@ -46,6 +46,7 @@ const TooltipToggle = styled.div`
 
 TooltipToggle.propTypes = {
   placement: PropTypes.string.isRequired,
+  visible: PropTypes.bool.isRequired,
 };
 
 const Content = styled.div`
