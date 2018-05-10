@@ -6,28 +6,46 @@ import { withState } from 'recompose';
 import Modal from '../';
 import Button from '../../Button';
 
-const withShow = withState('show', 'setShow', false);
+const showEnhancer = withState('show', 'setShow', false);
 
-const ToggleModal = withShow(({ show, setShow, children, ...props }) => (
+const WithShow = showEnhancer(({ show, setShow, children }) => (
   <div>
     <Button onClick={() => setShow(true)}>Open Modal</Button>
-    <Modal handleClose={() => setShow(false)} show={show} {...props}>
-      {children}
-    </Modal>
+    {children({ handleClose: () => setShow(false), show })}
   </div>
 ));
 
 storiesOf('Modal', module)
   .addDecorator(centered)
-  .add('with text', () => (
-    <ToggleModal>
-      <h1>Toggle Modal</h1>
-    </ToggleModal>
+  .add('default', () => (
+    <WithShow>
+      {({ handleClose, show }) => (
+        <Modal handleClose={handleClose} show={show}>
+          <h1>Modal</h1>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati
+            ducimus quas beatae commodi corrupti quidem aut a rem sapiente,
+            minus ipsum incidunt fugiat quibusdam cupiditate suscipit iste
+            pariatur consectetur autem?
+          </p>
+        </Modal>
+      )}
+    </WithShow>
   ))
-  .add('with width', () => (
-    <ToggleModal>
-      <div style={{ width: 600 }}>
-        <h1>Toggle Modal</h1>
-      </div>
-    </ToggleModal>
+  .add('with custom width', () => (
+    <WithShow>
+      {({ handleClose, show }) => (
+        <Modal handleClose={handleClose} show={show}>
+          <div style={{ width: 600 }}>
+            <h1>Modal</h1>
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+              Obcaecati ducimus quas beatae commodi corrupti quidem aut a rem
+              sapiente, minus ipsum incidunt fugiat quibusdam cupiditate
+              suscipit iste pariatur consectetur autem?
+            </p>
+          </div>
+        </Modal>
+      )}
+    </WithShow>
   ));
