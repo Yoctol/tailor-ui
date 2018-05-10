@@ -6,6 +6,7 @@ import { ifProp } from 'styled-tools';
 import { themeGet } from 'styled-system/dist/util';
 
 import theme from '../theme';
+import { shadowVariant } from '../utils/shadow';
 
 const ModalToggle = styled.div`
   display: ${ifProp('show', 'block', 'none')};
@@ -29,6 +30,7 @@ const ModalContent = styled.div`
   padding: ${themeGet('space.spacingLg')};
   flex-direction: column;
   background-color: #fff;
+  ${shadowVariant(0.2)}
   ${space}
   ${border}
   ${borderColor}
