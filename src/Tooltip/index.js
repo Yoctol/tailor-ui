@@ -1,16 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
-import { themeGet, space, color, borders, fontSize } from 'styled-system';
+import {
+  themeGet,
+  space,
+  color,
+  borders,
+  fontSize,
+  textAlign,
+} from 'styled-system';
 import { ifProp, switchProp } from 'styled-tools';
+import { withStateHandlers } from 'recompose';
 
 import theme from '../theme';
-
-const TooltipWrapper = styled.div`
-  position: relative;
-  z-index: 98;
-  display: inline-block;
-`;
 
 const TooltipToggle = styled.div`
   position: absolute;
@@ -51,37 +53,40 @@ TooltipToggle.propTypes = {
 
 const Content = styled.div`
   min-width: 132px;
-  padding: ${themeGet('space.2')};
   border: ${themeGet('borders.default')} ${themeGet('colors.gray.4')};
   border-radius: ${themeGet('radii.2')};
   ${ifProp(
-    'dark',
-    css`
-      background: ${themeGet('colors.gray.4')};
-      color: ${themeGet('colors.light')};
-    `,
+    'light',
     css`
       background: ${themeGet('colors.light')};
       color: ${themeGet('colors.bodyFont')};
+    `,
+    css`
+      background: ${themeGet('colors.gray.4')};
+      color: ${themeGet('colors.light')};
     `
   )};
   ${space};
   ${color};
   ${borders};
   ${fontSize};
+  ${textAlign};
 `;
 
 Content.propTypes = {
-  dark: PropTypes.bool.isRequired,
+  light: PropTypes.bool.isRequired,
   ...space.propTypes,
   ...color.propTypes,
   ...borders.propTypes,
   ...fontSize.propTypes,
+  ...textAlign.propTypes,
 };
 
 Content.defaultProps = {
   theme,
-  fontSize: 'default',
+  fontSize: 'sm',
+  p: 1,
+  textAlign: 'center',
 };
 
 const Arrow = styled.div`
@@ -121,7 +126,7 @@ const Arrow = styled.div`
     top: -11px;
     left: -5px;
     border-top: 10px solid
-      ${ifProp('dark', themeGet('colors.gray.4'), themeGet('colors.light'))};
+      ${ifProp('light', themeGet('colors.light'), themeGet('colors.gray.4'))};
     border-right: 5px solid transparent;
     border-left: 5px solid transparent;
     content: '';
@@ -129,7 +134,7 @@ const Arrow = styled.div`
 `;
 
 Arrow.propTypes = {
-  dark: PropTypes.bool.isRequired,
+  light: PropTypes.bool.isRequired,
   placement: PropTypes.string.isRequired,
 };
 
@@ -137,38 +142,74 @@ Arrow.defaultProps = {
   theme,
 };
 
-const Tooltip = ({
-  children,
-  visible,
-  content,
-  dark,
-  placement,
-  ...otherProps
-}) => (
-  <TooltipWrapper>
-    {children}
-    <TooltipToggle visible={visible} placement={placement}>
-      <Content dark={dark} {...otherProps}>
-        {content}
-      </Content>
-      <Arrow dark={dark} placement={placement} />
-    </TooltipToggle>
-  </TooltipWrapper>
+const TooltipWrapper = styled.div`
+  position: relative;
+  z-index: 98;
+  display: inline-block;
+
+  ${ifProp(
+    { trigger: 'hover' },
+    css`
+      :hover {
+        ${TooltipToggle} {
+          display: block;
+        }
+      }
+    `
+  )};
+`;
+
+TooltipWrapper.propTypes = {
+  trigger: PropTypes.string.isRequired,
+};
+
+const Tooltip = withStateHandlers(
+  ({ trigger, visible }) => ({ trigger, visible }),
+  {
+    toggleVisible: ({ visible, trigger }) => () => {
+      if (trigger === 'click') {
+        return { visible: !visible };
+      }
+    },
+  }
+)(
+  ({
+    toggleVisible,
+    trigger,
+    visible,
+    children,
+    content,
+    light,
+    placement,
+    ...otherProps
+  }) => (
+    <TooltipWrapper trigger={trigger} onClick={() => toggleVisible()}>
+      {children}
+      <TooltipToggle visible={visible} placement={placement}>
+        <Content light={light} {...otherProps}>
+          {content}
+        </Content>
+        <Arrow light={light} placement={placement} />
+      </TooltipToggle>
+    </TooltipWrapper>
+  )
 );
 
 Tooltip.propTypes = {
   children: PropTypes.node,
   content: PropTypes.node,
-  dark: PropTypes.bool,
+  light: PropTypes.bool,
   placement: PropTypes.string,
+  trigger: PropTypes.string,
   visible: PropTypes.bool,
 };
 
 Tooltip.defaultProps = {
   children: '',
   content: PropTypes.node,
-  dark: true,
+  light: false,
   placement: 'top',
+  trigger: 'hover',
   visible: false,
 };
 
