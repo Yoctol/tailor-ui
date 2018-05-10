@@ -36,6 +36,13 @@ const ModalContent = styled.div`
   transform: translate(-50%, -50%);
 `;
 
+ModalContent.propTypes = {
+  ...space.propTypes,
+  ...border.propTypes,
+  ...borderColor.propTypes,
+  ...borderRadius.propTypes,
+};
+
 ModalContent.defaultProps = {
   theme,
   border: 'default',

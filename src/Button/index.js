@@ -68,6 +68,13 @@ const Button = styled.button`
 Button.propTypes = {
   fixed: PropTypes.bool,
   size: PropTypes.oneOf(['sm', 'm', 'lg']),
+  ...color.propTypes,
+  ...fontSize.propTypes,
+  ...space.propTypes,
+  ...width.propTypes,
+  ...border.propTypes,
+  ...borderColor.propTypes,
+  ...borderRadius.propTypes,
 };
 
 Button.defaultProps = {

@@ -55,7 +55,7 @@ const List = styled.ul`
   ${textAlign};
 `;
 
-Dropdown.propTypes = {
+List.propTypes = {
   ...space.propTypes,
   ...borders.propTypes,
   ...textAlign.propTypes,
@@ -92,7 +92,7 @@ const Item = styled.li`
   transition: all 0.2s ease-in-out;
 `;
 
-Dropdown.propTypes = {
+Item.propTypes = {
   ...color.propTypes,
   ...space.propTypes,
   ...borders.propTypes,

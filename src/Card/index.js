@@ -11,6 +11,11 @@ const Card = styled.div`
   ${color} ${borderRadius};
 `;
 
+Card.propTypes = {
+  ...color.propTypes,
+  ...borderRadius.propTypes,
+};
+
 Card.defaultProps = {
   theme,
   bg: 'bgLight',
@@ -27,6 +32,10 @@ const CardBlock = styled.div`
 
   ${space};
 `;
+
+CardBlock.propTypes = {
+  ...space.propTypes,
+};
 
 CardBlock.defaultProps = {
   theme,
@@ -56,6 +65,10 @@ const CardImage = styled.div`
 
   ${space};
 `;
+
+CardImage.propTypes = {
+  ...space.propTypes,
+};
 
 CardImage.defaultProps = {
   theme,

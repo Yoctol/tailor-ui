@@ -14,6 +14,10 @@ const Menu = styled(Flex)`
   overflow-y: scroll;
 `;
 
+Menu.propTypes = {
+  ...color.propTypes,
+};
+
 Menu.defaultProps = {
   theme: defaultTheme,
   bg: 'gray.4',
@@ -50,6 +54,12 @@ const MenuItem = styled.button`
   ${borders};
   ${borderRadius};
 `;
+
+MenuItem.propTypes = {
+  ...space.propTypes,
+  ...borders.propTypes,
+  ...borderRadius.propTypes,
+};
 
 MenuItem.defaultProps = {
   theme: defaultTheme,
