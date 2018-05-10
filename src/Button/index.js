@@ -62,7 +62,11 @@ const Button = styled.button`
   ${border};
   ${borderColor};
   ${borderRadius};
+  text-decoration: none;
   transition: all 0.2s ease-in-out;
+  user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
 `;
 
 Button.propTypes = {
