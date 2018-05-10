@@ -5,7 +5,6 @@
   "scripts": {
     "build":
       "npm run clean && cross-env NODE_ENV=production babel src -d lib --ignore __tests__ --copy-files",
-    "check": "flow check",
     "clean": "rimraf lib",
     "precommit": "lint-staged",
     "deploy:storybook": "storybook-to-ghpages",
@@ -15,7 +14,7 @@
     "lint:staged": "lint-staged",
     "prepublish": "npm run build",
     "storybook": "start-storybook -p 9001 -c .storybook",
-    "test": "npm run lint:fix && npm run check && npm run testonly",
+    "test": "npm run lint:fix && npm run testonly",
     "testonly": "jest",
     "testonly:cov": "jest --coverage --runInBand --forceExit",
     "testonly:watch": "jest --watch",
