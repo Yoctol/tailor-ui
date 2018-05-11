@@ -94,6 +94,7 @@ export default css`
     }
   }
 
+  /* stylelint-disable no-descending-specificity */
   ul {
     list-style: disc inside;
 
@@ -109,6 +110,7 @@ export default css`
       list-style-type: lower-alpha;
     }
   }
+  /* stylelint-enable */
 
   dl {
     dt {

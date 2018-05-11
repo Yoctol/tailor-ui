@@ -37,12 +37,13 @@ const Tab = styled.a`
   cursor: pointer;
   background-color: ${ifProp('active', themeGet('colors.bgLight'))};
 
-  :hover {
+  &:hover {
     text-decoration: none;
   }
 
   ${ifProp('pills', PillsTab, DefaultTab)};
-  ${space} ${borderRadius};
+  ${space};
+  ${borderRadius};
   text-decoration: none;
 `;
 
@@ -64,9 +65,11 @@ const TabsWrapper = styled.nav`
     `
   )};
 
+  /* stylelint-disable no-duplicate-selectors */
   ${Tab} {
     flex-grow: ${ifProp('block', 1, 0)};
   }
+  /* stylelint-enable */
 
   ${space};
 `;

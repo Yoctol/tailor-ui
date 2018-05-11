@@ -29,13 +29,13 @@ const ModalContent = styled.div`
   max-height: 90vh;
   padding: ${themeGet('space.spacingLg')};
   flex-direction: column;
+  transform: translate(-50%, -50%);
   background-color: #fff;
   ${shadowVariant(0.2)}
   ${space}
   ${border}
   ${borderColor}
   ${borderRadius};
-  transform: translate(-50%, -50%);
 `;
 
 ModalContent.propTypes = {

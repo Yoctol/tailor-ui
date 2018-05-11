@@ -150,10 +150,12 @@ const TooltipWrapper = styled.div`
   ${ifProp(
     { trigger: 'hover' },
     css`
-      :hover {
+      &:hover {
+        /* stylelint-disable no-duplicate-selectors */
         ${TooltipToggle} {
           display: block;
         }
+        /* stylelint-enable */
       }
     `
   )};

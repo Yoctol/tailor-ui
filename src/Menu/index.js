@@ -6,12 +6,12 @@ import { ifProp } from 'styled-tools';
 import defaultTheme from '../theme';
 
 const Menu = styled(Flex)`
+  overflow-y: auto;
   width: 200px;
   height: 100%;
   flex-direction: column;
   justify-content: start;
   ${color};
-  overflow-y: auto;
 `;
 
 Menu.propTypes = {
@@ -38,7 +38,7 @@ const Item = styled.button`
       color: ${themeGet('colors.light')};
       background-color: ${themeGet('colors.gray.4')};
     `
-  )} :hover {
+  )} &:hover {
     background-color: ${ifProp(
       'active',
       themeGet('colors.gray.7'),
@@ -46,7 +46,7 @@ const Item = styled.button`
     )};
   }
 
-  :focus {
+  &:focus {
     outline: 0;
   }
 
