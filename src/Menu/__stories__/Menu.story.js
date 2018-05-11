@@ -3,15 +3,13 @@ import { storiesOf } from '@storybook/react';
 
 import Menu from '../';
 
-const { MenuItem } = Menu;
-
 storiesOf('Menu', module).add('with active', () => (
   <div style={{ height: 600 }}>
     <Menu>
-      <MenuItem>Menu 1</MenuItem>
-      <MenuItem active>Menu 2</MenuItem>
-      <MenuItem>Menu 3</MenuItem>
-      <MenuItem>Menu 4</MenuItem>
+      <Menu.Item>Menu 1</Menu.Item>
+      <Menu.Item active>Menu 2</Menu.Item>
+      <Menu.Item>Menu 3</Menu.Item>
+      <Menu.Item>Menu 4</Menu.Item>
     </Menu>
   </div>
 ));

@@ -10,9 +10,9 @@ import {
 } from 'styled-system';
 
 import theme from '../theme';
-import Button from '../Button';
+import _Button from '../Button';
 
-const CardButton = styled(Button)`
+const Button = styled(_Button)`
   border: 0;
   border-bottom: ${themeGet('borders.default')} ${themeGet('colors.border')};
   border-radius: 0;
@@ -30,11 +30,11 @@ const CardButton = styled(Button)`
   }
 `;
 
-CardButton.defaultProps = {
+Button.defaultProps = {
   theme,
 };
 
-const CardBlock = styled.div`
+const Block = styled.div`
   border-bottom: ${themeGet('borders.default')} ${themeGet('colors.border')};
 
   :last-child {
@@ -45,17 +45,17 @@ const CardBlock = styled.div`
   ${fontSize};
 `;
 
-CardBlock.propTypes = {
+Block.propTypes = {
   ...space.propTypes,
 };
 
-CardBlock.defaultProps = {
+Block.defaultProps = {
   theme,
   p: 4,
   fontSize: 'default',
 };
 
-const CardImage = styled.div`
+const Image = styled.div`
   overflow: hidden;
 
   img {
@@ -68,11 +68,11 @@ const CardImage = styled.div`
   ${space};
 `;
 
-CardImage.propTypes = {
+Image.propTypes = {
   ...space.propTypes,
 };
 
-CardImage.defaultProps = {
+Image.defaultProps = {
   theme,
 };
 
@@ -87,14 +87,14 @@ const Card = styled.div`
   ${color};
   ${borderRadius};
 
-  ${CardButton}:first-child {
+  ${Button}:first-child {
     border-top-left-radius: ${props =>
       themeGet(`radii.${props.borderRadius}`, 'radii.1')(props)};
     border-top-right-radius: ${props =>
       themeGet(`radii.${props.borderRadius}`, 'radii.1')(props)};
   }
 
-  ${CardButton}:last-child {
+  ${Button}:last-child {
     border-bottom-left-radius: ${props =>
       themeGet(`radii.${props.borderRadius}`, 'radii.1')(props)};
     border-bottom-right-radius: ${props =>
@@ -116,8 +116,8 @@ Card.defaultProps = {
   borderRadius: 1,
 };
 
-Card.CardButton = CardButton;
-Card.CardBlock = CardBlock;
-Card.CardImage = CardImage;
+Card.Button = Button;
+Card.Block = Block;
+Card.Image = Image;
 
 export default Card;
