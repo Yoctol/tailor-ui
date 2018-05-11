@@ -11,7 +11,7 @@ const Menu = styled(Flex)`
   flex-direction: column;
   justify-content: start;
   ${color};
-  overflow-y: scroll;
+  overflow-y: auto;
 `;
 
 Menu.propTypes = {
