@@ -23,7 +23,7 @@ Menu.defaultProps = {
   bg: 'gray.4',
 };
 
-const MenuItem = styled.button`
+const Item = styled.button`
   padding: 15px 30px;
   flex-shrink: 0;
   text-align: left;
@@ -55,17 +55,17 @@ const MenuItem = styled.button`
   ${borderRadius};
 `;
 
-MenuItem.propTypes = {
+Item.propTypes = {
   ...space.propTypes,
   ...borders.propTypes,
   ...borderRadius.propTypes,
 };
 
-MenuItem.defaultProps = {
+Item.defaultProps = {
   theme: defaultTheme,
   border: 0,
 };
 
-Menu.MenuItem = MenuItem;
+Menu.Item = Item;
 
 export default Menu;
