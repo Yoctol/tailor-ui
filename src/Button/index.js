@@ -18,19 +18,21 @@ import { controlShadow } from '../utils/shadow';
 const Button = styled.button`
   display: inline-block;
   width: ${ifProp('block', '100%')};
+  line-height: ${themeGet('lineHeight')};
   cursor: pointer;
 
-  :focus {
+  &:focus {
     border: ${themeGet('borders.default')} ${themeGet('colors.primaryDark')};
     ${controlShadow(themeGet('colors.primary'))};
     outline: 0;
   }
 
-  :hover {
+  &:hover {
     background-color: ${themeGet('colors.gray.8')};
   }
 
-  :disabled {
+  &:disabled,
+  &[disabled] {
     cursor: default;
     opacity: 0.5;
     pointer-events: none;
