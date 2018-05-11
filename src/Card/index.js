@@ -9,6 +9,7 @@ import {
 } from 'styled-system';
 
 import theme from '../theme';
+import Button from '../Button';
 
 const Card = styled.div`
   display: flex;
@@ -40,8 +41,20 @@ const CardBlock = styled.div`
     border-bottom: 0;
   }
 
+  ${Button} {
+    border: 0;
+    border-radius: 0;
+    ${Button}:focus {
+      border: 0;
+    }
+  }
+
   ${space};
   ${fontSize};
+
+  ${Button} & {
+    margin: 0;
+  }
 `;
 
 CardBlock.propTypes = {
