@@ -27,17 +27,17 @@ storiesOf('Card', module)
         <CardBlock>Title</CardBlock>
         <CardBlock>Content</CardBlock>
         <CardBlock p={0}>
-          <Button border={0} borderRadius={0} block size="lg">
+          <Button block size="lg">
             With Button
           </Button>
         </CardBlock>
         <CardBlock p={0}>
-          <Button border={0} borderRadius={0} block size="lg">
+          <Button block size="lg">
             With Button
           </Button>
         </CardBlock>
         <CardBlock p={0}>
-          <Button border={0} borderRadius={0} block size="lg">
+          <Button block size="lg">
             With Button
           </Button>
         </CardBlock>
