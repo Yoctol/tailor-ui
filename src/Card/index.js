@@ -1,17 +1,28 @@
 import styled from 'styled-components';
-import { themeGet, color, space, borderRadius } from 'styled-system';
+import {
+  themeGet,
+  color,
+  space,
+  height,
+  borderRadius,
+  fontSize,
+} from 'styled-system';
 
 import theme from '../theme';
 
 const Card = styled.div`
   display: flex;
-  overflow: hidden;
   border: ${themeGet('borders.default')} ${themeGet('colors.border')};
   flex-direction: column;
-  ${color} ${borderRadius};
+  ${space};
+  ${height};
+  ${color};
+  ${borderRadius};
 `;
 
 Card.propTypes = {
+  ...space.propTypes,
+  ...height.propTypes,
   ...color.propTypes,
   ...borderRadius.propTypes,
 };
@@ -23,7 +34,6 @@ Card.defaultProps = {
 };
 
 const CardBlock = styled.div`
-  overflow: hidden;
   border-bottom: ${themeGet('borders.default')} ${themeGet('colors.border')};
 
   :last-child {
@@ -31,6 +41,7 @@ const CardBlock = styled.div`
   }
 
   ${space};
+  ${fontSize};
 `;
 
 CardBlock.propTypes = {
@@ -40,6 +51,7 @@ CardBlock.propTypes = {
 CardBlock.defaultProps = {
   theme,
   p: 4,
+  fontSize: 'default',
 };
 
 const CardImage = styled.div`
