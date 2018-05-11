@@ -3,9 +3,8 @@ import centered from '@storybook/addon-centered';
 import { storiesOf } from '@storybook/react';
 
 import Card from '../';
-import Button from '../../Button';
 
-const { CardBlock, CardImage } = Card;
+const { CardButton, CardBlock, CardImage } = Card;
 
 // eslint-disable-next-line react/prop-types
 const Wrapper = ({ children }) => <div style={{ width: 400 }}>{children}</div>;
@@ -26,21 +25,9 @@ storiesOf('Card', module)
       <Card>
         <CardBlock>Title</CardBlock>
         <CardBlock>Content</CardBlock>
-        <CardBlock p={0}>
-          <Button block size="lg">
-            With Button
-          </Button>
-        </CardBlock>
-        <CardBlock p={0}>
-          <Button block size="lg">
-            With Button
-          </Button>
-        </CardBlock>
-        <CardBlock p={0}>
-          <Button block size="lg">
-            With Button
-          </Button>
-        </CardBlock>
+        <CardButton block>With Button</CardButton>
+        <CardButton block>With Button</CardButton>
+        <CardButton block>With Button</CardButton>
       </Card>
     </Wrapper>
   ))

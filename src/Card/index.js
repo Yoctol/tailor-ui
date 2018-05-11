@@ -4,6 +4,7 @@ import {
   color,
   space,
   height,
+  width,
   borderRadius,
   fontSize,
 } from 'styled-system';
@@ -11,27 +12,26 @@ import {
 import theme from '../theme';
 import Button from '../Button';
 
-const Card = styled.div`
-  display: flex;
-  border: ${themeGet('borders.default')} ${themeGet('colors.border')};
-  flex-direction: column;
-  ${space};
-  ${height};
-  ${color};
-  ${borderRadius};
+const CardButton = styled(Button)`
+  border: 0;
+  border-bottom: ${themeGet('borders.default')} ${themeGet('colors.border')};
+  border-radius: 0;
+
+  :last-child {
+    border-bottom: 0;
+  }
+
+  :focus {
+    border: 0;
+
+    &:not(:last-child) {
+      border-bottom: ${themeGet('borders.default')} ${themeGet('colors.border')};
+    }
+  }
 `;
 
-Card.propTypes = {
-  ...space.propTypes,
-  ...height.propTypes,
-  ...color.propTypes,
-  ...borderRadius.propTypes,
-};
-
-Card.defaultProps = {
+CardButton.defaultProps = {
   theme,
-  bg: 'bgLight',
-  borderRadius: 1,
 };
 
 const CardBlock = styled.div`
@@ -41,20 +41,8 @@ const CardBlock = styled.div`
     border-bottom: 0;
   }
 
-  ${Button} {
-    border: 0;
-    border-radius: 0;
-    ${Button}:focus {
-      border: 0;
-    }
-  }
-
   ${space};
   ${fontSize};
-
-  ${Button} & {
-    margin: 0;
-  }
 `;
 
 CardBlock.propTypes = {
@@ -72,20 +60,9 @@ const CardImage = styled.div`
 
   img {
     display: block;
-  }
-
-  :first-child {
-    img {
-      border-top-left-radius: ${themeGet('radii.0')};
-      border-top-right-radius: ${themeGet('radii.0')};
-    }
-  }
-
-  :last-child {
-    img {
-      border-bottom-left-radius: ${themeGet('radii.0')};
-      border-bottom-right-radius: ${themeGet('radii.0')};
-    }
+    width: auto;
+    max-width: 100%;
+    height: auto;
   }
 
   ${space};
@@ -99,6 +76,47 @@ CardImage.defaultProps = {
   theme,
 };
 
+const Card = styled.div`
+  display: flex;
+  border: ${themeGet('borders.default')} ${themeGet('colors.border')};
+  flex-direction: column;
+
+  ${space};
+  ${height};
+  ${width};
+  ${color};
+  ${borderRadius};
+
+  ${CardButton}:first-child {
+    border-top-left-radius: ${props =>
+      themeGet(`radii.${props.borderRadius}`, 'radii.1')(props)};
+    border-top-right-radius: ${props =>
+      themeGet(`radii.${props.borderRadius}`, 'radii.1')(props)};
+  }
+
+  ${CardButton}:last-child {
+    border-bottom-left-radius: ${props =>
+      themeGet(`radii.${props.borderRadius}`, 'radii.1')(props)};
+    border-bottom-right-radius: ${props =>
+      themeGet(`radii.${props.borderRadius}`, 'radii.1')(props)};
+  }
+`;
+
+Card.propTypes = {
+  ...space.propTypes,
+  ...height.propTypes,
+  ...width.propTypes,
+  ...color.propTypes,
+  ...borderRadius.propTypes,
+};
+
+Card.defaultProps = {
+  theme,
+  bg: 'bgLight',
+  borderRadius: 1,
+};
+
+Card.CardButton = CardButton;
 Card.CardBlock = CardBlock;
 Card.CardImage = CardImage;
 
