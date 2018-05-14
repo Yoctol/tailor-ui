@@ -21,6 +21,7 @@ const Dropdown = styled.div`
   position: absolute;
   z-index: 99;
   display: ${ifProp('visible', 'block', 'none')};
+
   ${shadowVariant(0.1)};
   ${width};
   ${top};

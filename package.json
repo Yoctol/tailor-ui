@@ -26,6 +26,7 @@
     "lodash": "^4.17.10",
     "polished": "^1.9.2",
     "prop-types": "^15.6.1",
+    "rc-checkbox": "^2.1.5",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
     "recompose": "^0.27.0",
