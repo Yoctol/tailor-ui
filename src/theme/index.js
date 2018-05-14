@@ -38,6 +38,7 @@ const radii = [0, toRem(unit[1]), toRem(unit[2])];
 
 const borderDefault = unit.o;
 const borderLg = unit.h;
+const borderXl = unit[2];
 
 const borders = {
   none: '',
@@ -45,6 +46,7 @@ const borders = {
   defaultRem: toRem(borderDefault),
   lg: `${toRem(borderLg)} solid`,
   lgRem: toRem(borderLg),
+  xl: `${toRem(borderXl)} solid`,
 };
 
 const layouts = {
