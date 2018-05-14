@@ -42,7 +42,9 @@ const borderLg = unit.h;
 const borders = {
   none: '',
   default: `${toRem(borderDefault)} solid`,
+  defaultRem: toRem(borderDefault),
   lg: `${toRem(borderLg)} solid`,
+  lgRem: toRem(borderLg),
 };
 
 const layouts = {

@@ -1,9 +1,9 @@
 import { css } from 'styled-components';
 import { rgba } from 'polished';
 
-import { dark } from '../theme/colors';
+import { dark, primary } from '../theme/colors';
 
-export const controlShadow = colorOrPropsHandler => {
+export const controlShadow = (colorOrPropsHandler = primary) => {
   const getShadowCss = color => css`
     box-shadow: 0 0 0 0.1rem ${rgba(color, 0.2)};
   `;
