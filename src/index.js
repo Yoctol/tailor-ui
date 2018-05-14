@@ -6,3 +6,5 @@ export { default as Menu } from './Menu';
 export { default as Modal } from './Modal';
 export { default as Tabs } from './Tabs';
 export { default as Tooltip } from './Tooltip';
+export { default as Input } from './Form/Input';
+export { default as Label } from './Form/Label';

@@ -15,7 +15,7 @@ export default css`
     margin-bottom: 0.5em;
     color: inherit;
     line-height: 1.2;
-    font-weight: 500;
+    font-weight: 400;
   }
 
   h1 {
