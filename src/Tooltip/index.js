@@ -18,6 +18,7 @@ const TooltipToggle = styled.div`
   position: absolute;
   z-index: 99;
   display: ${ifProp('visible', 'block', 'none')};
+
   ${switchProp('placement', {
     top: css`
       bottom: 100%;
@@ -55,6 +56,7 @@ const Content = styled.div`
   min-width: 132px;
   border: ${themeGet('borders.default')} ${themeGet('colors.gray.4')};
   border-radius: ${themeGet('radii.2')};
+
   ${ifProp(
     'light',
     css`
@@ -66,6 +68,7 @@ const Content = styled.div`
       color: ${themeGet('colors.light')};
     `
   )};
+
   ${space};
   ${color};
   ${borders};
@@ -96,6 +99,7 @@ const Arrow = styled.div`
   border-top: 8px solid ${themeGet('colors.gray.4')};
   border-right: 5px solid transparent;
   border-left: 5px solid transparent;
+
   ${switchProp('placement', {
     top: css`
       left: 50%;
@@ -121,7 +125,7 @@ const Arrow = styled.div`
     `,
   })};
 
-  ::after {
+  &::after {
     position: absolute;
     top: -11px;
     left: -5px;
