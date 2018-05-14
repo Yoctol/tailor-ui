@@ -13,6 +13,11 @@ storiesOf('Icon', module)
     <div>
       <Icon mx={2} type="line" />
       <Icon mx={2} type="messenger" />
+      <Icon mx={2} type="understood" />
+      <Icon mx={2} type="kurator" />
+      <Icon mx={2} type="touch" />
+      <Icon mx={2} type="analytics" />
+      <Icon mx={2} type="settings" />
     </div>
   ))
   .add('with react-icons', () => (
