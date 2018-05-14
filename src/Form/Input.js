@@ -11,7 +11,7 @@ const Input = styled.input`
   display: block;
   width: 100%;
   max-width: 100%;
-  border: ${themeGet('borders.default')} ${themeGet('colors.border')};
+  border: ${themeGet('borders.default')} ${themeGet('colors.borderDark')};
   border-radius: ${themeGet('radii.1')};
   outline: none;
   background: ${themeGet('bgLight')};
@@ -24,6 +24,14 @@ const Input = styled.input`
     border-color: ${themeGet('colors.primary')};
     ${controlShadow()};
   }
+
+  &:disabled,
+  [disabled] {
+    cursor: not-allowed;
+    background-color: ${themeGet('colors.bgDark')};
+    opacity: 0.5;
+  }
+
   &::placeholder {
     color: ${themeGet('colors.gray.4')};
   }

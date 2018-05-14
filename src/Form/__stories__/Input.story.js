@@ -14,6 +14,12 @@ storiesOf('Input', module)
       <Input id="demo" placeholder="placeholder" />
     </div>
   ))
+  .add('with disabled', () => (
+    <div>
+      <Label htmlFor="demo">With Disabled:</Label>
+      <Input id="demo" placeholder="placeholder" disabled />
+    </div>
+  ))
   .add('with inline', () => (
     <Flex width="600px">
       <Box width={1 / 4}>
