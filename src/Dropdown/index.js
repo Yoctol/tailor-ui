@@ -46,7 +46,7 @@ const List = styled.ul`
   background-color: transparent;
   list-style: none;
 
-  :focus {
+  &:focus {
     outline: 0;
   }
 
@@ -74,14 +74,15 @@ const Item = styled.li`
   margin-top: 0;
   padding: ${themeGet('space.2')} ${themeGet('space.0')};
   border: ${themeGet('borders.default')} ${themeGet('colors.borderDark')};
+  transition: all 0.2s ease-in-out;
   cursor: pointer;
 
-  :hover {
+  &:hover {
     background-color: ${props =>
       darken(0.05, themeGet(`colors.${props.bg}`, props.bg)(props))};
   }
 
-  :not(:first-child) {
+  &:not(:first-child) {
     border-top: 0;
   }
 
@@ -89,7 +90,6 @@ const Item = styled.li`
   ${space};
   ${borders};
   ${fontSize};
-  transition: all 0.2s ease-in-out;
 `;
 
 Item.propTypes = {

@@ -17,11 +17,11 @@ const Button = styled(_Button)`
   border-bottom: ${themeGet('borders.default')} ${themeGet('colors.border')};
   border-radius: 0;
 
-  :last-child {
+  &:last-child {
     border-bottom: 0;
   }
 
-  :focus {
+  &:focus {
     border: 0;
 
     &:not(:last-child) {
@@ -37,7 +37,7 @@ Button.defaultProps = {
 const Block = styled.div`
   border-bottom: ${themeGet('borders.default')} ${themeGet('colors.border')};
 
-  :last-child {
+  &:last-child {
     border-bottom: 0;
   }
 

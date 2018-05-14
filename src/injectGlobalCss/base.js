@@ -18,6 +18,7 @@ export default css`
   }
 
   body {
+    overflow-x: hidden;
     background: ${colors.bodyBg};
     color: ${colors.bodyFont};
     /* stylelint-disable value-list-comma-newline-after */
@@ -25,13 +26,12 @@ export default css`
       'PingFang TC', 'Microsoft JhengHei', Roboto, 'Helvetica Neue', sans-serif;
     /* stylelint-enable */
     font-size: 0.7rem;
-    overflow-x: hidden;
     text-rendering: optimizeLegibility;
   }
 
   a {
-    color: ${colors.link};
     outline: none;
+    color: ${colors.link};
     text-decoration: none;
 
     &:focus {

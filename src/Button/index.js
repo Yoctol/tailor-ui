@@ -19,12 +19,13 @@ const Button = styled.button`
   display: inline-block;
   width: ${ifProp('block', '100%')};
   line-height: ${themeGet('lineHeight')};
+  transition: all 0.2s ease-in-out;
   cursor: pointer;
 
   &:focus {
     border: ${themeGet('borders.default')} ${themeGet('colors.primaryDark')};
-    ${controlShadow(themeGet('colors.primary'))};
     outline: 0;
+    ${controlShadow(themeGet('colors.primary'))};
   }
 
   &:hover {
@@ -65,7 +66,6 @@ const Button = styled.button`
   ${borderColor};
   ${borderRadius};
   text-decoration: none;
-  transition: all 0.2s ease-in-out;
   user-select: none;
   vertical-align: middle;
   white-space: nowrap;
