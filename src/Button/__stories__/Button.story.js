@@ -8,16 +8,29 @@ import Button from '../';
 storiesOf('Button', module)
   .addDecorator(centered)
   .add('with text', () => (
-    <Button onClick={action('clicked')}>Hello Button</Button>
+    <Button onClick={action('clicked')}>Text Button</Button>
   ))
   .add('with circle', () => (
     <Button circle onClick={action('clicked')}>
-      Hello Button
+      Circle Button
     </Button>
+  ))
+  .add('with light', () => (
+    <div>
+      <Button light onClick={action('clicked')}>
+        Light Button
+      </Button>
+      <Button light circle onClick={action('clicked')}>
+        Light Circle Button
+      </Button>
+      <Button light circle active onClick={action('clicked')}>
+        Light Circle Button with Active
+      </Button>
+    </div>
   ))
   .add('with disabled', () => (
     <Button onClick={action('clicked')} disabled>
-      Disabled
+      Disabled Button
     </Button>
   ))
   .add('with size', () => (
@@ -26,7 +39,7 @@ storiesOf('Button', module)
         with size = sm
       </Button>
       <Button mr={2} onClick={action('clicked')}>
-        with size = default
+        with size = null (default as m)
       </Button>
       <Button size="lg" onClick={action('clicked')}>
         with size = lg
@@ -36,7 +49,7 @@ storiesOf('Button', module)
   .add('with block', () => (
     <div style={{ width: 400 }}>
       <Button size="lg" block onClick={action('clicked')}>
-        Block lg Button
+        Block size lg Button
       </Button>
     </div>
   ))

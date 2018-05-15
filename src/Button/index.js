@@ -32,7 +32,11 @@ const Button = styled.button`
   width: ${ifProp('block', '100%')};
   border: ${themeGet('borders.default')};
   border-radius: ${ifProp('circle', '999px', themeGet('radii.1'))};
-  color: ${themeGet('colors.light')};
+  color: ${ifProp(
+    'light',
+    themeGet('colors.bodyFont'),
+    themeGet('colors.light')
+  )};
   line-height: ${themeGet('lineHeight')};
   cursor: pointer;
 
@@ -41,7 +45,11 @@ const Button = styled.button`
   }
 
   &:hover {
-    background-color: ${themeGet('colors.primary')};
+    background-color: ${ifProp(
+      'light',
+      themeGet('colors.gray.8'),
+      themeGet('colors.primary')
+    )};
   }
 
   &:disabled,
@@ -62,13 +70,46 @@ const Button = styled.button`
       }
     `,
     css`
-      background-color: ${themeGet('colors.primaryDark')};
-      border-color: ${themeGet('colors.primary')};
+      ${ifProp(
+        'light',
+        css`
+          border-color: ${themeGet('colors.border')};
+          ${ifProp(
+            'active',
+            css`
+              color: ${themeGet('colors.light')};
+              background-color: ${themeGet('colors.secondaryDark')};
+              border-color: ${themeGet('colors.secondaryDark')};
 
-      &:focus {
-        border-color: ${themeGet('colors.primaryDark')};
-        ${controlShadow(themeGet('colors.primary'))};
-      }
+              &:hover {
+                background-color: ${themeGet('colors.secondary')};
+              }
+
+              &:focus {
+                border-color: ${themeGet('colors.secondaryDark')};
+              }
+            `,
+            css`
+              background-color: ${themeGet('colors.bgLight')};
+              border-color: ${themeGet('colors.border')};
+
+              &:focus {
+                border-color: ${themeGet('colors.primaryDark')};
+                ${controlShadow(themeGet('colors.primary'))};
+              }
+            `
+          )};
+        `,
+        css`
+          background-color: ${themeGet('colors.primaryDark')};
+          border-color: ${themeGet('colors.primary')};
+
+          &:focus {
+            border-color: ${themeGet('colors.primaryDark')};
+            ${controlShadow(themeGet('colors.primary'))};
+          }
+        `
+      )};
     `
   )};
 
@@ -83,9 +124,11 @@ const Button = styled.button`
 `;
 
 Button.propTypes = {
+  active: PropTypes.bool,
   block: PropTypes.bool,
   circle: PropTypes.bool,
   ghost: PropTypes.bool,
+  light: PropTypes.bool,
   size: PropTypes.oneOf(['sm', 'm', 'lg']),
   ...space.propTypes,
 };
@@ -99,6 +142,8 @@ Button.defaultProps = {
   block: false,
   circle: false,
   ghost: false,
+  light: false,
+  active: false,
 };
 
 export default Button;
