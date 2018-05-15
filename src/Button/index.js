@@ -1,35 +1,55 @@
 import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
-import {
-  themeGet,
-  color,
-  fontSize,
-  space,
-  width,
-  border,
-  borderColor,
-  borderRadius,
-} from 'styled-system';
-import { ifProp, switchProp } from 'styled-tools';
+import { themeGet, complexStyle, space } from 'styled-system';
+import { ifProp } from 'styled-tools';
 
 import theme from '../theme';
 import { controlShadow } from '../utils/shadow';
+import controlTransition from '../utils/transition';
+
+const buttonSizes = {
+  sm: {
+    height: theme.space.sizeSm,
+    padding: `${theme.space.paddingYSm} ${theme.space.paddingXSm}`,
+    fontSize: theme.fontSizes.sm,
+  },
+  m: {
+    height: theme.space.size,
+    padding: `${theme.space.paddingY} ${theme.space.paddingX}`,
+    fontSize: theme.fontSizes.default,
+  },
+  lg: {
+    height: theme.space.sizeLg,
+    padding: `${theme.space.paddingYLg} ${theme.space.paddingXLg}`,
+    fontSize: theme.fontSizes.lg,
+  },
+};
+
+const sizes = complexStyle({ prop: 'size', key: 'buttonSizes' });
 
 const Button = styled.button`
   display: inline-block;
   width: ${ifProp('block', '100%')};
+  border: ${themeGet('borders.default')};
+  border-radius: ${ifProp('circle', '999px', themeGet('radii.1'))};
+  color: ${ifProp(
+    'light',
+    themeGet('colors.bodyFont'),
+    themeGet('colors.light')
+  )};
   line-height: ${themeGet('lineHeight')};
-  transition: all 0.2s ease-in-out;
   cursor: pointer;
 
   &:focus {
-    border: ${themeGet('borders.default')} ${themeGet('colors.primaryDark')};
     outline: 0;
-    ${controlShadow(themeGet('colors.primary'))};
   }
 
   &:hover {
-    background-color: ${themeGet('colors.gray.8')};
+    background-color: ${ifProp(
+      'light',
+      themeGet('colors.gray.8'),
+      themeGet('colors.primary')
+    )};
   }
 
   &:disabled,
@@ -39,32 +59,64 @@ const Button = styled.button`
     pointer-events: none;
   }
 
-  ${switchProp('size', {
-    sm: css`
-      height: ${themeGet('space.sizeSm')};
-      padding: ${themeGet('space.paddingYSm')} ${themeGet('space.paddingXSm')};
-      font-size: ${themeGet('fontSizes.sm')};
+  ${ifProp(
+    'ghost',
+    css`
+      background-color: transparent;
+      border-color: ${themeGet('colors.light')};
+      &:focus {
+        background-color: ${themeGet('colors.primary')};
+        ${controlShadow(themeGet('colors.light'))};
+      }
     `,
+    css`
+      ${ifProp(
+        'light',
+        css`
+          border-color: ${themeGet('colors.border')};
+          ${ifProp(
+            'active',
+            css`
+              color: ${themeGet('colors.light')};
+              background-color: ${themeGet('colors.secondaryDark')};
+              border-color: ${themeGet('colors.secondaryDark')};
 
-    m: css`
-      height: ${themeGet('space.size')};
-      padding: ${themeGet('space.paddingY')} ${themeGet('space.paddingX')};
-      font-size: ${themeGet('fontSizes.default')};
-    `,
+              &:hover {
+                background-color: ${themeGet('colors.secondary')};
+              }
 
-    lg: css`
-      height: ${themeGet('space.sizeLg')};
-      padding: ${themeGet('space.paddingYLg')} ${themeGet('space.paddingXLg')};
-      font-size: ${themeGet('fontSizes.lg')};
-    `,
-  })};
-  ${color};
-  ${fontSize};
+              &:focus {
+                border-color: ${themeGet('colors.secondaryDark')};
+              }
+            `,
+            css`
+              background-color: ${themeGet('colors.bgLight')};
+              border-color: ${themeGet('colors.border')};
+
+              &:focus {
+                border-color: ${themeGet('colors.primaryDark')};
+                ${controlShadow(themeGet('colors.primary'))};
+              }
+            `
+          )};
+        `,
+        css`
+          background-color: ${themeGet('colors.primaryDark')};
+          border-color: ${themeGet('colors.primary')};
+
+          &:focus {
+            border-color: ${themeGet('colors.primaryDark')};
+            ${controlShadow(themeGet('colors.primary'))};
+          }
+        `
+      )};
+    `
+  )};
+
+  ${controlTransition()};
+  ${sizes};
   ${space};
-  ${width};
-  ${border};
-  ${borderColor};
-  ${borderRadius};
+
   text-decoration: none;
   user-select: none;
   vertical-align: middle;
@@ -72,26 +124,26 @@ const Button = styled.button`
 `;
 
 Button.propTypes = {
-  fixed: PropTypes.bool,
+  active: PropTypes.bool,
+  block: PropTypes.bool,
+  circle: PropTypes.bool,
+  ghost: PropTypes.bool,
+  light: PropTypes.bool,
   size: PropTypes.oneOf(['sm', 'm', 'lg']),
-  ...color.propTypes,
-  ...fontSize.propTypes,
   ...space.propTypes,
-  ...width.propTypes,
-  ...border.propTypes,
-  ...borderColor.propTypes,
-  ...borderRadius.propTypes,
 };
 
 Button.defaultProps = {
-  theme,
-  bg: 'bgLight',
+  theme: {
+    ...theme,
+    buttonSizes,
+  },
   size: 'm',
   block: false,
-  color: 'bodyFont',
-  border: 'default',
-  borderRadius: 1,
-  borderColor: 'primary',
+  circle: false,
+  ghost: false,
+  light: false,
+  active: false,
 };
 
 export default Button;
