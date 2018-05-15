@@ -54,8 +54,8 @@ TooltipToggle.propTypes = {
 
 const Content = styled.div`
   min-width: 132px;
-  border: ${themeGet('borders.default')} ${themeGet('colors.gray.4')};
-  border-radius: ${themeGet('radii.2')};
+  border: ${themeGet('borders.default')} ${themeGet('colors.primaryDark')};
+  border-radius: ${themeGet('radii.1')};
 
   ${ifProp(
     'light',
@@ -64,7 +64,7 @@ const Content = styled.div`
       color: ${themeGet('colors.bodyFont')};
     `,
     css`
-      background: ${themeGet('colors.gray.4')};
+      background: ${themeGet('colors.primaryDark')};
       color: ${themeGet('colors.light')};
     `
   )};
@@ -96,7 +96,7 @@ const Arrow = styled.div`
   position: absolute;
   width: 0;
   height: 0;
-  border-top: 8px solid ${themeGet('colors.gray.4')};
+  border-top: 8px solid ${themeGet('colors.primaryDark')};
   border-right: 5px solid transparent;
   border-left: 5px solid transparent;
 
@@ -130,7 +130,11 @@ const Arrow = styled.div`
     top: -11px;
     left: -5px;
     border-top: 10px solid
-      ${ifProp('light', themeGet('colors.light'), themeGet('colors.gray.4'))};
+      ${ifProp(
+        'light',
+        themeGet('colors.light'),
+        themeGet('colors.primaryDark')
+      )};
     border-right: 5px solid transparent;
     border-left: 5px solid transparent;
     content: '';
