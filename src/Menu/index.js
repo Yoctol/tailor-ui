@@ -28,7 +28,7 @@ Menu.defaultProps = {
 
 const Item = styled.button`
   width: 100%;
-  padding: 15px 16px;
+  padding: 15px 24px;
   border: 0;
   border-left: ${themeGet('borders.xl')}
     ${ifProp('active', themeGet('colors.secondary'), 'transparent')};
