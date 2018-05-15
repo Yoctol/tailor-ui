@@ -2,20 +2,18 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import centered from '@storybook/addon-centered';
-import backgrounds from '@storybook/addon-backgrounds';
 
 import Button from '../';
 
 storiesOf('Button', module)
   .addDecorator(centered)
-  .addDecorator(
-    backgrounds([
-      { name: 'white', value: '#fff', default: true },
-      { name: 'gray', value: '#e0e0e0' },
-    ])
-  )
   .add('with text', () => (
     <Button onClick={action('clicked')}>Hello Button</Button>
+  ))
+  .add('with circle', () => (
+    <Button circle onClick={action('clicked')}>
+      Hello Button
+    </Button>
   ))
   .add('with disabled', () => (
     <Button onClick={action('clicked')} disabled>
@@ -42,8 +40,19 @@ storiesOf('Button', module)
       </Button>
     </div>
   ))
-  .add('with custom border', () => (
-    <Button border="0" borderRadius={23} onClick={action('clicked')}>
-      Custom Border Button
-    </Button>
+  .add('with ghost', () => (
+    <div
+      style={{
+        height: 300,
+        width: 300,
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#000',
+      }}
+    >
+      <Button ghost onClick={action('clicked')}>
+        Ghost Button
+      </Button>
+    </div>
   ));
