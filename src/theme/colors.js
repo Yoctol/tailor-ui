@@ -1,18 +1,27 @@
 import { darken, lighten } from 'polished';
 
-const grayLevels = [0.05, 0.1, 0.15, 0.2, 0.3, 0.5, 0.6, 0.7, 0.8, 0.9];
-
 export const primary = '#2f2a4a';
 export const primaryDark = '#0e0c1a';
 export const primaryLight = '#423b63';
 
 export const secondary = '#80bdc7';
-export const secondaryDark = '#59a6b3';
+export const secondaryDark = '#63bed5';
 export const secondaryLight = '#9fdfea';
 
 export const dark = '#111';
 export const light = '#fff';
-export const gray = grayLevels.map(level => lighten(level, dark));
+export const gray = [
+  '#1e1e1e',
+  '#2b2b2b',
+  '#373737',
+  '#444',
+  '#5e5e5e',
+  '#919191',
+  '#aaa',
+  '#c3c3c3',
+  '#e9e9e9',
+  '#f7f7f7',
+];
 
 export const success = '#63bf2d';
 export const warning = '#de8a15';
