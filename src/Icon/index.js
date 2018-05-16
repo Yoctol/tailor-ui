@@ -36,7 +36,7 @@ const Icon = ({ type, ...otherProps }) => {
 };
 
 Icon.propTypes = {
-  type: PropTypes.oneOf(PropTypes.string, PropTypes.element).isRequired,
+  type: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
 };
 
 export default Icon;
