@@ -1,31 +1,12 @@
 import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
-import { themeGet, complexStyle, space } from 'styled-system';
+import { themeGet, space } from 'styled-system';
 import { ifProp } from 'styled-tools';
 
 import theme from '../theme';
+import { sizes } from '../utils/system';
 import { controlShadow } from '../utils/shadow';
 import controlTransition from '../utils/transition';
-
-const buttonSizes = {
-  sm: {
-    height: theme.space.sizeSm,
-    padding: `${theme.space.paddingYSm} ${theme.space.paddingXSm}`,
-    fontSize: theme.fontSizes.sm,
-  },
-  m: {
-    height: theme.space.size,
-    padding: `${theme.space.paddingY} ${theme.space.paddingX}`,
-    fontSize: theme.fontSizes.default,
-  },
-  lg: {
-    height: theme.space.sizeLg,
-    padding: `${theme.space.paddingYLg} ${theme.space.paddingXLg}`,
-    fontSize: theme.fontSizes.lg,
-  },
-};
-
-const sizes = complexStyle({ prop: 'size', key: 'buttonSizes' });
 
 const Button = styled.button`
   display: inline-block;
@@ -134,10 +115,7 @@ Button.propTypes = {
 };
 
 Button.defaultProps = {
-  theme: {
-    ...theme,
-    buttonSizes,
-  },
+  theme,
   size: 'm',
   block: false,
   circle: false,

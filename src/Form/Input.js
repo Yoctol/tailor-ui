@@ -1,7 +1,8 @@
 import styled, { css } from 'styled-components';
 import { themeGet } from 'styled-system';
-import { ifProp, switchProp } from 'styled-tools';
+import { ifProp } from 'styled-tools';
 
+import { sizes } from '../utils/system';
 import { controlShadow } from '../utils/shadow';
 import controlTransition from '../utils/transition';
 import theme from '../theme';
@@ -38,23 +39,36 @@ const Input = styled.input`
 
   ${controlTransition()};
 
-  ${switchProp('size', {
-    sm: css`
-      height: ${themeGet('space.sizeSm')};
-      padding: ${themeGet('space.paddingYSm')} ${themeGet('space.paddingXSm')};
-      font-size: ${themeGet('fontSizes.sm')};
-    `,
-    m: css`
-      height: ${themeGet('space.size')};
-      padding: ${themeGet('space.paddingY')} ${themeGet('space.paddingX')};
-      font-size: ${themeGet('fontSizes.default')};
-    `,
-    lg: css`
-      height: ${themeGet('space.sizeLg')};
-      padding: ${themeGet('space.paddingYLg')} ${themeGet('space.paddingXLg')};
-      font-size: ${themeGet('fontSizes.lg')};
-    `,
-  })};
+  ${ifProp(
+    'success',
+    css`
+      border-color: ${themeGet('colors.success')};
+      &:focus {
+        border-color: ${themeGet('colors.success')};
+        ${controlShadow(themeGet('colors.success'))};
+      }
+    `
+  )};
+  ${ifProp(
+    'warning',
+    css`
+      border-color: ${themeGet('colors.warning')};
+      &:focus {
+        border-color: ${themeGet('colors.warning')};
+        ${controlShadow(themeGet('colors.warning'))};
+      }
+    `
+  )};
+  ${ifProp(
+    'error',
+    css`
+      border-color: ${themeGet('colors.error')};
+      &:focus {
+        border-color: ${themeGet('colors.error')};
+        ${controlShadow(themeGet('colors.error'))};
+      }
+    `
+  )};
 
   ${ifProp(
     'inline',
@@ -64,6 +78,8 @@ const Input = styled.input`
       vertical-align: middle;
     `
   )};
+
+  ${sizes};
 `;
 
 Input.defaultProps = {

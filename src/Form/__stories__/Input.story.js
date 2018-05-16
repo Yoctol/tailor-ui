@@ -5,6 +5,7 @@ import { Flex, Box } from 'grid-styled';
 
 import Label from '../Label';
 import Input from '../Input';
+import Hint from '../Hint';
 
 storiesOf('Input', module)
   .addDecorator(centered)
@@ -12,6 +13,22 @@ storiesOf('Input', module)
     <div>
       <Label htmlFor="demo">With Default:</Label>
       <Input id="demo" placeholder="placeholder" />
+    </div>
+  ))
+  .add('with status', () => (
+    <div>
+      <Label htmlFor="default">With default:</Label>
+      <Input id="default" placeholder="default status" />
+      <Hint>default status</Hint>
+      <Label htmlFor="success">With Success:</Label>
+      <Input id="success" success placeholder="has success" />
+      <Hint success>has success</Hint>
+      <Label htmlFor="warning">With Warning:</Label>
+      <Input id="warning" warning placeholder="has warning" />
+      <Hint warning>has warning</Hint>
+      <Label htmlFor="error">With Error:</Label>
+      <Input id="error" error placeholder="has error" />
+      <Hint error>has error</Hint>
     </div>
   ))
   .add('with disabled', () => (
