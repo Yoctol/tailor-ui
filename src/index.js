@@ -10,6 +10,7 @@ export { default as Icon } from './Icon';
 export { default as injectGlobalCss } from './injectGlobalCss';
 export { default as Menu } from './Menu';
 export { default as Modal } from './Modal';
+export { default as Select } from './Select';
 export { default as Table } from './Table';
 export { default as Tabs } from './Tabs';
 export { default as Tooltip } from './Tooltip';
