@@ -12,7 +12,7 @@ import {
 import theme from '../theme';
 import _Button from '../Button';
 
-const Button = styled(_Button)`
+const Button = styled(_Button).attrs({ light: true })`
   border: 0;
   border-bottom: ${themeGet('borders.default')} ${themeGet('colors.border')};
   border-radius: 0;
@@ -22,16 +22,18 @@ const Button = styled(_Button)`
   }
 
   &:focus {
+    z-index: 1;
     border: 0;
+    border-bottom: ${themeGet('borders.default')} ${themeGet('colors.border')};
 
-    &:not(:last-child) {
-      border-bottom: ${themeGet('borders.default')} ${themeGet('colors.border')};
+    &:last-child {
+      border-bottom: 0;
     }
   }
 `;
 
 Button.defaultProps = {
-  theme,
+  theme: _Button.defaultProps.theme,
 };
 
 const Block = styled.div`
