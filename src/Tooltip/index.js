@@ -8,6 +8,7 @@ import {
   borders,
   fontSize,
   textAlign,
+  minWidth,
 } from 'styled-system';
 import { ifProp, switchProp } from 'styled-tools';
 import { withStateHandlers } from 'recompose';
@@ -53,7 +54,6 @@ TooltipToggle.propTypes = {
 };
 
 const Content = styled.div`
-  min-width: 132px;
   border: ${themeGet('borders.default')} ${themeGet('colors.primaryDark')};
   border-radius: ${themeGet('radii.1')};
 
@@ -70,6 +70,7 @@ const Content = styled.div`
   )};
 
   ${space};
+  ${minWidth};
   ${color};
   ${borders};
   ${fontSize};
@@ -79,6 +80,7 @@ const Content = styled.div`
 Content.propTypes = {
   light: PropTypes.bool.isRequired,
   ...space.propTypes,
+  ...minWidth.propTypes,
   ...color.propTypes,
   ...borders.propTypes,
   ...fontSize.propTypes,
@@ -87,6 +89,7 @@ Content.propTypes = {
 
 Content.defaultProps = {
   theme,
+  minWidth: 120,
   fontSize: 'sm',
   p: 1,
   textAlign: 'center',
