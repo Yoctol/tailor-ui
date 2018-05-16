@@ -28,12 +28,13 @@ Menu.defaultProps = {
 
 const Item = styled.button`
   width: 100%;
-  padding: 15px 24px;
+  padding: ${themeGet('space.4')} ${themeGet('space.6')};
   border: 0;
   border-left: ${themeGet('borders.xl')}
     ${ifProp('active', themeGet('colors.secondary'), 'transparent')};
   flex-shrink: 0;
   color: ${themeGet('colors.light')};
+  font-size: ${themeGet('fontSizes.default')};
   text-align: left;
   transition: all 0.1s ease-in-out;
   cursor: pointer;
