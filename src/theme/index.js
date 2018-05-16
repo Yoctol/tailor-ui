@@ -80,11 +80,30 @@ const space = mapValues(
   value => toRem(round(value, 2))
 );
 
+const sizes = {
+  sm: {
+    height: space.sizeSm,
+    padding: `${space.paddingYSm} ${space.paddingXSm}`,
+    fontSize: fontSizes.sm,
+  },
+  m: {
+    height: space.size,
+    padding: `${space.paddingY} ${space.paddingX}`,
+    fontSize: fontSizes.default,
+  },
+  lg: {
+    height: space.sizeLg,
+    padding: `${space.paddingYLg} ${space.paddingXLg}`,
+    fontSize: fontSizes.lg,
+  },
+};
+
 const theme = {
   breakpoints,
   colors,
   space,
   fontSizes,
+  sizes,
   radii,
   borders,
   controls,
