@@ -4,52 +4,92 @@ import RcCheckbox from 'rc-checkbox';
 import styled from 'styled-components';
 import { themeGet, width, height } from 'styled-system';
 import { ifProp } from 'styled-tools';
-import 'rc-checkbox/assets/index.css';
 
 import theme from '../theme';
 
 const CheckboxWrapper = styled.span`
-  span.rc-checkbox {
-    line-height: 0;
+  .rc-checkbox {
+    position: relative;
+    display: inline-block;
+    outline: none;
+    line-height: 1;
   }
 
-  input.rc-checkbox-input {
-    cursor: ${ifProp('disabled', 'auto')};
+  .rc-checkbox-inner {
+    position: relative;
+    top: 0;
+    left: 0;
+    display: inline-block;
+    border: 1px solid
+      ${ifProp(
+        'disabled',
+        themeGet('colors.gray.8'),
+        themeGet('colors.primary')
+      )};
+    border-radius: 3px;
+    background-color: #fff;
 
     ${width};
     ${height};
   }
 
-  span.rc-checkbox-inner {
-    border: ${themeGet('borders.default')} ${themeGet('colors.gray.4')};
+  .rc-checkbox-inner::after {
+    position: absolute;
+    top: ${props => (props.height - 11) / 2}px;
+    left: ${props => (props.height - 7) / 2}px;
+    display: table;
+    width: 5px;
+    height: 8px;
+    border-top: 0;
+    border-left: 0;
     border-radius: ${themeGet('radii.1')};
-    border-color: ${ifProp(
-      'disabled',
-      themeGet('colors.gray.8'),
-      themeGet('colors.gray.4')
-    )};
+    transform: rotate(45deg);
+    content: ' ';
+  }
 
-    &::after {
-      top: ${props => (props.height - 11) / 2}px;
-      left: ${props => (props.height - 7) / 2}px;
-    }
+  .rc-checkbox-input {
+    position: absolute;
+    z-index: 9999;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    cursor: ${ifProp('disabled', 'default', 'pointer')};
 
     ${width};
     ${height};
+
+    opacity: 0;
   }
 
   .rc-checkbox-checked .rc-checkbox-inner {
-    background-color: ${themeGet('colors.gray.4')};
-    border-color: ${themeGet('colors.gray.4')};
+    background-color: ${themeGet('colors.primary')};
+    border-color: ${themeGet('colors.primary')};
   }
 
-  .rc-checkbox:hover .rc-checkbox-inner,
-  .rc-checkbox-input:focus + .rc-checkbox-inner {
-    border-color: ${ifProp(
-      'disabled',
-      themeGet('colors.gray.8'),
-      themeGet('colors.gray.4')
-    )};
+  .rc-checkbox-checked .rc-checkbox-inner::after {
+    position: absolute;
+    top: ${props => (props.height - 11) / 2}px;
+    left: ${props => (props.height - 7) / 2}px;
+    display: table;
+    border: 2px solid #fff;
+    border-top: 0;
+    border-left: 0;
+    transform: rotate(45deg);
+    content: ' ';
+  }
+
+  .rc-checkbox-disabled .rc-checkbox-inner::after {
+    border-color: #f3f3f3;
+  }
+
+  .rc-checkbox-disabled.rc-checkbox-checked .rc-checkbox-inner::after {
+    border-color: #ccc;
+  }
+
+  .rc-checkbox-disabled .rc-checkbox-inner {
+    background-color: #f3f3f3;
+    border-color: #d9d9d9;
   }
 `;
 
