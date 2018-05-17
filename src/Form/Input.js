@@ -1,5 +1,6 @@
+import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
-import { themeGet } from 'styled-system';
+import { themeGet, width, space } from 'styled-system';
 import { ifProp } from 'styled-tools';
 
 import { sizes } from '../utils/system';
@@ -80,7 +81,15 @@ const Input = styled.input`
   )};
 
   ${sizes};
+  ${width};
+  ${space};
 `;
+
+Input.propTypes = {
+  size: PropTypes.string.isRequired,
+  ...width.propTypes,
+  ...space.propTypes,
+};
 
 Input.defaultProps = {
   theme,
