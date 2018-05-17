@@ -9,7 +9,7 @@ import Icon from '../';
 
 storiesOf('Icon', module)
   .addDecorator(centered)
-  .add('with build in icon', () => (
+  .add('with build-in icon', () => (
     <div>
       <Icon mx={2} type="line" />
       <Icon mx={2} type="messenger" />
@@ -18,6 +18,22 @@ storiesOf('Icon', module)
       <Icon mx={2} type="touch" />
       <Icon mx={2} type="analytics" />
       <Icon mx={2} type="settings" />
+    </div>
+  ))
+  .addDecorator(centered)
+  .add('with custom props', () => (
+    <div>
+      <Icon mx={2} fill="#00c300" type="line" />
+      <Icon mx={2} fill="#0084ff" type="messenger" />
+      <Icon mx={2} fill="primaryLight" size={32} type="understood" />
+      <Icon mx={2} fill="primaryLight" size={32} type="kurator" />
+      <Icon mx={2} fill="primaryLight" size={32} type="touch" />
+      <Icon mx={2} fill="primaryLight" size={32} type="analytics" />
+      <Icon mx={2} fill="primaryLight" size={32} type="settings" />
+      <Icon mx={2} fill="secondary" size={48} type={MdEdit} />
+      <Icon mx={2} fill="secondary" size={48} type={MdComment} />
+      <Icon mx={2} fill="secondary" size={48} type={MdInput} />
+      <Icon mx={2} fill="secondary" size={48} type={TiFlowChildren} />
     </div>
   ))
   .add('with react-icons', () => (
