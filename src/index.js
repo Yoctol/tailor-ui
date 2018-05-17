@@ -1,3 +1,5 @@
+import { Flex, Box } from 'grid-styled';
+
 import * as colors from './theme/colors';
 
 export { default as Button } from './Button';
@@ -15,4 +17,4 @@ export { default as Select } from './Select';
 export { default as Table } from './Table';
 export { default as Tabs } from './Tabs';
 export { default as Tooltip } from './Tooltip';
-export { colors };
+export { Flex, Box, colors };
