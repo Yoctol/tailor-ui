@@ -9,7 +9,7 @@ import Icon from '../';
 
 storiesOf('Icon', module)
   .addDecorator(centered)
-  .add('with build-in icon', () => (
+  .add('with built-in icon', () => (
     <div>
       <Icon mx={2} type="line" />
       <Icon mx={2} type="messenger" />
