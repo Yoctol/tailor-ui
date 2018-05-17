@@ -64,7 +64,12 @@ const Icon = ({ type, ...otherProps }) => {
 };
 
 Icon.propTypes = {
+  clickable: PropTypes.bool,
   type: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
+};
+
+Icon.defaultProps = {
+  clickable: false,
 };
 
 export default Icon;
