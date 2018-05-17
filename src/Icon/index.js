@@ -1,38 +1,66 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
-import { space, color } from 'styled-system';
-import { ifProp } from 'styled-tools';
+import styled, { css } from 'styled-components';
+import { style, space } from 'styled-system';
+import { ifProp, prop } from 'styled-tools';
 
 import theme from '../theme';
 
 import * as icons from './icons';
 
-const IconWrapper = styled.img`
+const fill = style({
+  prop: 'fill',
+  cssProperty: 'fill',
+  key: 'colors',
+});
+
+const size = css`
+  width: ${prop('size')}px;
+  height: ${prop('size')}px;
+
+  svg {
+    width: ${prop('size')}px;
+    height: ${prop('size')}px;
+  }
+`;
+
+const IconWrapper = styled.i`
+  display: inline-block;
+
   ${ifProp('clickable', 'cursor: pointer')};
 
+  svg {
+    ${fill};
+    vertical-align: middle;
+  }
+
+  ${size};
   ${space};
-  ${color};
 `;
 
 IconWrapper.defaultProps = {
   theme,
-  width: 24,
-  height: 24,
-  color: 'bodyFont',
+  size: 24,
+  fill: 'bodyFont',
 };
 
 const Icon = ({ type, ...otherProps }) => {
-  if (typeof type === 'string') {
-    if (icons[type]) {
-      return <IconWrapper src={icons[type]} {...otherProps} />;
-    }
+  let IconComponent = type;
 
-    return console.error('Build-in icon does not exists!');
+  if (typeof type === 'string') {
+    const BuiltInIcon = icons[type];
+    if (BuiltInIcon) {
+      IconComponent = BuiltInIcon;
+    } else {
+      return console.error('Built-in icon does not exists!');
+    }
   }
 
-  const IconWithComponent = IconWrapper.withComponent(type);
-  return <IconWithComponent {...otherProps} />;
+  return (
+    <IconWrapper {...otherProps}>
+      <IconComponent />
+    </IconWrapper>
+  );
 };
 
 Icon.propTypes = {
