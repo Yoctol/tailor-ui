@@ -3,6 +3,7 @@ import {
   Card,
   Checkbox,
   Dropdown,
+  Hint,
   Input,
   Label,
   Icon,
@@ -22,6 +23,7 @@ describe('index', () => {
     expect(Card).toBeDefined();
     expect(Checkbox).toBeDefined();
     expect(Dropdown).toBeDefined();
+    expect(Hint).toBeDefined();
     expect(Input).toBeDefined();
     expect(Label).toBeDefined();
     expect(Icon).toBeDefined();
