@@ -5,7 +5,7 @@
   "files": ["lib"],
   "scripts": {
     "build":
-      "npm run clean && cross-env NODE_ENV=production babel src -d lib --ignore **/__tests__,**/__stories__ && cp -r ./src/Icon/icons/* ./lib/Icon/icons",
+      "npm run clean && cross-env NODE_ENV=production babel src -d lib --ignore **/__tests__,**/__stories__",
     "clean": "rimraf lib",
     "precommit": "lint-staged",
     "deploy:storybook": "storybook-to-ghpages",
