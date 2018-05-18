@@ -85,7 +85,7 @@ SubMenuWrapper.defaultProps = {
 const Arrow = styled.div`
   position: absolute;
   z-index: 99;
-  top: 45px;
+  top: 50px;
   left: 50%;
   width: 0;
   height: 0;
