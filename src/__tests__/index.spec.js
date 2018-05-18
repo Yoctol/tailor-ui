@@ -8,6 +8,7 @@ import {
   Hint,
   Input,
   Label,
+  Textarea,
   Icon,
   Menu,
   Modal,
@@ -30,6 +31,7 @@ describe('index', () => {
     expect(Hint).toBeDefined();
     expect(Input).toBeDefined();
     expect(Label).toBeDefined();
+    expect(Textarea).toBeDefined();
     expect(Icon).toBeDefined();
     expect(Menu).toBeDefined();
     expect(Modal).toBeDefined();
