@@ -13,7 +13,7 @@ import {
 import theme from '../theme';
 
 const HeadColumn = styled.th`
-  padding: ${themeGet('space.4')} ${themeGet('space.5')};
+  padding: ${themeGet('space.paddingYLg')} ${themeGet('space.paddingXLg')};
   font-weight: 500;
 
   ${width};
@@ -35,7 +35,7 @@ HeadColumn.defaultProps = {
 };
 
 const Column = styled.td`
-  padding: ${themeGet('space.4')} ${themeGet('space.5')};
+  padding: ${themeGet('space.paddingYLg')} ${themeGet('space.paddingXLg')};
 
   ${borders};
   ${borderColor};
