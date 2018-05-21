@@ -23,8 +23,8 @@ const Input = styled.input`
   appearance: none;
 
   &:focus {
-    border-color: ${themeGet('colors.primary')};
-    ${controlShadow()};
+    border-color: ${themeGet('colors.secondaryDark')};
+    ${controlShadow(themeGet('colors.secondaryDark'))};
   }
 
   &:disabled,
