@@ -80,8 +80,8 @@ Image.defaultProps = {
 
 const Card = styled.div`
   display: flex;
-  border: ${themeGet('borders.default')} ${themeGet('colors.border')};
   flex-direction: column;
+  border: ${themeGet('borders.default')} ${themeGet('colors.border')};
 
   ${space};
   ${height};
@@ -97,9 +97,9 @@ const Card = styled.div`
   }
 
   ${Button}:last-child {
-    border-bottom-left-radius: ${props =>
-      themeGet(`radii.${props.borderRadius}`, 'radii.1')(props)};
     border-bottom-right-radius: ${props =>
+      themeGet(`radii.${props.borderRadius}`, 'radii.1')(props)};
+    border-bottom-left-radius: ${props =>
       themeGet(`radii.${props.borderRadius}`, 'radii.1')(props)};
   }
 `;

@@ -1,6 +1,6 @@
 import { darken, lighten } from 'polished';
 
-export const primary = '#2f2a4a';
+export const primary = '#191723';
 export const primaryDark = '#0e0c1a';
 export const primaryLight = '#423b63';
 
@@ -8,16 +8,20 @@ export const secondary = '#80bdc7';
 export const secondaryDark = '#63bed5';
 export const secondaryLight = '#9fdfea';
 
-export const dark = '#111';
-export const light = '#fff';
+// export const secondary = '#77B088';
+// export const secondaryDark = '#5A916B';
+// export const secondaryLight = '#98CFA8';
+
+export const dark = '#111111';
+export const light = '#ffffff';
 export const gray = [
   '#1e1e1e',
   '#2b2b2b',
   '#373737',
-  '#444',
+  '#444444',
   '#5e5e5e',
   '#919191',
-  '#aaa',
+  '#aaaaaa',
   '#c3c3c3',
   '#e9e9e9',
   '#f7f7f7',

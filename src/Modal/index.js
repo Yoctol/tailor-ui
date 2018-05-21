@@ -23,16 +23,17 @@ const ModalOverlay = styled.div`
 `;
 
 const ModalContent = styled.div`
+  display: flex;
   position: fixed;
   z-index: 10001;
   top: 50%;
   left: 50%;
-  display: flex;
+  flex-direction: column;
   max-height: 90vh;
   padding: ${themeGet('space.spacingLg')};
-  flex-direction: column;
-  transform: translate(-50%, -50%);
   background-color: #fff;
+  transform: translate(-50%, -50%);
+
   ${shadowVariant(0.2)}
   ${space}
   ${border}

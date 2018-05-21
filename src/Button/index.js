@@ -19,7 +19,11 @@ const Button = styled.button`
     themeGet('colors.light')
   )};
   line-height: ${themeGet('lineHeight')};
+  text-decoration: none;
+  vertical-align: middle;
+  white-space: nowrap;
   cursor: pointer;
+  user-select: none;
 
   &:focus {
     outline: 0;
@@ -35,16 +39,16 @@ const Button = styled.button`
 
   &:disabled,
   &[disabled] {
-    cursor: default;
     opacity: 0.5;
+    cursor: default;
     pointer-events: none;
   }
 
   ${ifProp(
     'ghost',
     css`
-      background-color: transparent;
       border-color: ${themeGet('colors.light')};
+      background-color: transparent;
       &:focus {
         background-color: ${themeGet('colors.primary')};
         ${controlShadow(themeGet('colors.light'))};
@@ -58,9 +62,9 @@ const Button = styled.button`
           ${ifProp(
             'active',
             css`
-              color: ${themeGet('colors.light')};
-              background-color: ${themeGet('colors.secondaryDark')};
               border-color: ${themeGet('colors.secondaryDark')};
+              background-color: ${themeGet('colors.secondaryDark')};
+              color: ${themeGet('colors.light')};
 
               &:hover {
                 background-color: ${themeGet('colors.secondary')};
@@ -71,8 +75,8 @@ const Button = styled.button`
               }
             `,
             css`
-              background-color: ${themeGet('colors.bgLight')};
               border-color: ${themeGet('colors.border')};
+              background-color: ${themeGet('colors.bgLight')};
 
               &:focus {
                 border-color: ${themeGet('colors.primaryDark')};
@@ -82,8 +86,8 @@ const Button = styled.button`
           )};
         `,
         css`
-          background-color: ${themeGet('colors.primaryDark')};
           border-color: ${themeGet('colors.primary')};
+          background-color: ${themeGet('colors.primaryDark')};
 
           &:focus {
             border-color: ${themeGet('colors.primaryDark')};
@@ -97,11 +101,6 @@ const Button = styled.button`
   ${controlTransition()};
   ${sizes};
   ${space};
-
-  text-decoration: none;
-  user-select: none;
-  vertical-align: middle;
-  white-space: nowrap;
 `;
 
 Button.propTypes = {

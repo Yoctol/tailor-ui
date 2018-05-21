@@ -8,11 +8,11 @@ import { ifProp } from 'styled-tools';
 import theme from '../theme';
 
 const Menu = styled(Flex)`
-  overflow-y: auto;
-  width: 200px;
-  height: 100%;
   flex-direction: column;
   justify-content: start;
+  width: 200px;
+  height: 100%;
+  overflow-y: auto;
 
   ${color};
 `;
@@ -27,18 +27,19 @@ Menu.defaultProps = {
 };
 
 const Item = styled.button`
+  flex-shrink: 0;
   width: 100%;
   padding: ${themeGet('space.4')} ${themeGet('space.6')};
   border: 0;
   border-left: ${themeGet('borders.xl')}
     ${ifProp('active', themeGet('colors.secondary'), 'transparent')};
-  flex-shrink: 0;
+  opacity: ${ifProp('active', 1, 0.6)};
+  background-color: ${themeGet('colors.primaryDark')};
   color: ${themeGet('colors.light')};
   font-size: ${themeGet('fontSizes.default')};
   text-align: left;
   transition: all 0.1s ease-in-out;
   cursor: pointer;
-  background-color: ${themeGet('colors.primaryDark')};
 
   &:hover {
     opacity: 1;
@@ -51,8 +52,6 @@ const Item = styled.button`
   ${space};
   ${borders};
   ${borderRadius};
-
-  opacity: ${ifProp('active', 1, 0.6)};
 `;
 
 Item.propTypes = {
@@ -67,8 +66,8 @@ Item.defaultProps = {
 };
 
 const SubMenuWrapper = styled.div`
-  position: relative;
   display: flex;
+  position: relative;
   flex-direction: column;
 
   /* stylelint-disable no-duplicate-selectors */
@@ -100,8 +99,8 @@ Arrow.defaultProps = {
 };
 
 const SubMenuAnimation = styled.div`
-  overflow: hidden;
   max-height: ${ifProp('active', '200px', 0)};
+  overflow: hidden;
   transition: all 0.3s ease-in-out;
 
   /* stylelint-disable no-duplicate-selectors */

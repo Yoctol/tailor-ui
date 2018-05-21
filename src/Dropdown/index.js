@@ -18,9 +18,9 @@ import theme from '../theme';
 import { shadowVariant } from '../utils/shadow';
 
 const Dropdown = styled.div`
+  display: ${ifProp('visible', 'block', 'none')};
   position: absolute;
   z-index: 99;
-  display: ${ifProp('visible', 'block', 'none')};
 
   ${shadowVariant(0.1)};
   ${width};

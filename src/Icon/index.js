@@ -29,8 +29,9 @@ const IconWrapper = styled.i`
   cursor: ${prop('cursor')};
 
   svg {
-    ${fill};
     vertical-align: middle;
+
+    ${fill};
   }
 
   ${size};
