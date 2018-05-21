@@ -19,7 +19,7 @@
     "testonly": "jest",
     "testonly:cov": "jest --coverage --runInBand --forceExit",
     "testonly:watch": "jest --watch",
-    "preversion": "npm test"
+    "preversion": "npm test && npm run deploy:storybook"
   },
   "dependencies": {
     "grid-styled": "^4.1.0",
