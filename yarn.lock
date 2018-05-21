@@ -7676,6 +7676,10 @@ react-modal@^3.3.2:
     react-lifecycles-compat "^3.0.0"
     warning "^3.0.0"
 
+react-powerplug@^0.1.5:
+  version "0.1.5"
+  resolved "https://registry.yarnpkg.com/react-powerplug/-/react-powerplug-0.1.5.tgz#f3dd7612c60efc55b6c7a2ddee284a8bcb6db783"
+
 react-select@^2.0.0-beta.4:
   version "2.0.0-beta.4"
   resolved "https://registry.yarnpkg.com/react-select/-/react-select-2.0.0-beta.4.tgz#44009c06d9d5c8f8580b9969fa062cf6f4ec8d52"
@@ -7841,9 +7845,9 @@ rechoir@^0.6.2:
   dependencies:
     resolve "^1.1.6"
 
-recompose@^0.27.0:
-  version "0.27.0"
-  resolved "https://registry.yarnpkg.com/recompose/-/recompose-0.27.0.tgz#8230ebd651bf1159097006f79083fe224b1501cf"
+recompose@^0.27.1:
+  version "0.27.1"
+  resolved "https://registry.yarnpkg.com/recompose/-/recompose-0.27.1.tgz#1a49e931f183634516633bbb4f4edbfd3f38a7ba"
   dependencies:
     babel-runtime "^6.26.0"
     change-emitter "^0.1.2"

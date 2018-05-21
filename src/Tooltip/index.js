@@ -11,7 +11,7 @@ import {
   minWidth,
 } from 'styled-system';
 import { ifProp, switchProp } from 'styled-tools';
-import { withStateHandlers } from 'recompose';
+import { Toggle } from 'react-powerplug';
 
 import theme from '../theme';
 
@@ -176,36 +176,28 @@ TooltipWrapper.propTypes = {
   trigger: PropTypes.string.isRequired,
 };
 
-const Tooltip = withStateHandlers(
-  ({ trigger, visible }) => ({ trigger, visible }),
-  {
-    toggleVisible: ({ visible, trigger }) => () => {
-      if (trigger === 'click') {
-        return { visible: !visible };
-      }
-    },
-  }
-)(
-  ({
-    toggleVisible,
-    trigger,
-    visible,
-    children,
-    content,
-    light,
-    placement,
-    ...otherProps
-  }) => (
-    <TooltipWrapper trigger={trigger} onClick={() => toggleVisible()}>
-      {children}
-      <TooltipToggle visible={visible} placement={placement}>
-        <Content light={light} {...otherProps}>
-          {content}
-        </Content>
-        <Arrow light={light} placement={placement} />
-      </TooltipToggle>
-    </TooltipWrapper>
-  )
+const Tooltip = ({
+  trigger,
+  visible,
+  children,
+  content,
+  light,
+  placement,
+  ...otherProps
+}) => (
+  <Toggle initial={visible}>
+    {({ on, toggle }) => (
+      <TooltipWrapper trigger={trigger} onClick={trigger === 'click' && toggle}>
+        {children}
+        <TooltipToggle visible={on} placement={placement}>
+          <Content light={light} {...otherProps}>
+            {content}
+          </Content>
+          <Arrow light={light} placement={placement} />
+        </TooltipToggle>
+      </TooltipWrapper>
+    )}
+  </Toggle>
 );
 
 Tooltip.propTypes = {
