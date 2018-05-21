@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
 import { style, space } from 'styled-system';
-import { ifProp, prop } from 'styled-tools';
+import { prop } from 'styled-tools';
 
 import theme from '../theme';
 
@@ -26,8 +26,7 @@ const size = css`
 
 const IconWrapper = styled.i`
   display: inline-block;
-
-  ${ifProp('clickable', 'cursor: pointer')};
+  cursor: ${prop('cursor')};
 
   svg {
     ${fill};
@@ -37,6 +36,12 @@ const IconWrapper = styled.i`
   ${size};
   ${space};
 `;
+
+IconWrapper.propTypes = {
+  cursor: PropTypes.string.isRequired,
+  ...size.propTypes,
+  ...space.propTypes,
+};
 
 IconWrapper.defaultProps = {
   theme,
@@ -64,12 +69,12 @@ const Icon = ({ type, ...otherProps }) => {
 };
 
 Icon.propTypes = {
-  clickable: PropTypes.bool,
+  cursor: PropTypes.string,
   type: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
 };
 
 Icon.defaultProps = {
-  clickable: false,
+  cursor: 'default',
 };
 
 export default Icon;

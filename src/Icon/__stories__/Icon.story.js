@@ -44,19 +44,24 @@ storiesOf('Icon', module)
       <Icon mx={2} type={TiFlowChildren} />
     </div>
   ))
-  .add('with clickable', () => (
+  .add('with cursor', () => (
     <div>
-      <Icon mx={2} clickable onClick={action('click MdEdit')} type={MdEdit} />
+      <Icon mx={2} onClick={action('click MdEdit')} type={MdEdit} />
       <Icon
         mx={2}
-        clickable
+        cursor="pointer"
         onClick={action('click MdComment')}
         type={MdComment}
       />
-      <Icon mx={2} clickable onClick={action('click MdInput')} type={MdInput} />
       <Icon
         mx={2}
-        clickable
+        cursor="grab"
+        onClick={action('click MdInput')}
+        type={MdInput}
+      />
+      <Icon
+        mx={2}
+        cursor="help"
         onClick={action('click TiFlowChildren')}
         type={TiFlowChildren}
       />
