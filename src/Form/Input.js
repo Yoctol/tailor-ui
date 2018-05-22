@@ -9,8 +9,8 @@ import controlTransition from '../utils/transition';
 import theme from '../theme';
 
 const Input = styled.input`
-  position: relative;
   display: block;
+  position: relative;
   width: 100%;
   max-width: 100%;
   border: ${themeGet('borders.default')} ${themeGet('colors.borderDark')};
@@ -29,9 +29,9 @@ const Input = styled.input`
 
   &:disabled,
   [disabled] {
-    cursor: not-allowed;
-    background-color: ${themeGet('colors.bgDark')};
     opacity: 0.5;
+    background-color: ${themeGet('colors.bgDark')};
+    cursor: not-allowed;
   }
 
   &::placeholder {

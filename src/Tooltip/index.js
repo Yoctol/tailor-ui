@@ -16,9 +16,9 @@ import { Toggle } from 'react-powerplug';
 import theme from '../theme';
 
 const TooltipToggle = styled.div`
+  display: ${ifProp('visible', 'block', 'none')};
   position: absolute;
   z-index: 99;
-  display: ${ifProp('visible', 'block', 'none')};
 
   ${switchProp('placement', {
     top: css`
@@ -129,6 +129,7 @@ const Arrow = styled.div`
   })};
 
   &::after {
+    content: '';
     position: absolute;
     top: -11px;
     left: -5px;
@@ -140,7 +141,6 @@ const Arrow = styled.div`
       )};
     border-right: 5px solid transparent;
     border-left: 5px solid transparent;
-    content: '';
   }
 `;
 
@@ -154,9 +154,9 @@ Arrow.defaultProps = {
 };
 
 const TooltipWrapper = styled.div`
+  display: inline-block;
   position: relative;
   z-index: 98;
-  display: inline-block;
 
   ${ifProp(
     { trigger: 'hover' },

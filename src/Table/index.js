@@ -73,17 +73,21 @@ Head.propTypes = {
 const Body = ({ children }) => <tbody>{children}</tbody>;
 
 Body.propTypes = {
-  children: PropTypes.arrayOf(PropTypes.element).isRequired,
+  children: PropTypes.element,
+};
+
+Body.defaultProps = {
+  children: '',
 };
 
 const Table = styled.table`
   overflow: hidden;
-  box-shadow: 0 0 0 1px ${themeGet('colors.border')};
-  border-collapse: collapse;
   border-spacing: 0;
+  border-collapse: collapse;
   border-style: hidden;
   border-top-left-radius: ${themeGet('radii.1')};
   border-top-right-radius: ${themeGet('radii.1')};
+  box-shadow: 0 0 0 1px ${themeGet('colors.border')};
 
   & > thead {
     border-bottom: ${themeGet('borders.default')} ${themeGet('colors.border')};

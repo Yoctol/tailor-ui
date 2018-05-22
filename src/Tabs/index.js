@@ -27,20 +27,20 @@ const DefaultTab = css`
 `;
 
 const Tab = styled.a`
-  position: relative;
   display: inline-block;
-  text-align: center;
-  cursor: pointer;
+  position: relative;
   background-color: ${ifProp('active', themeGet('colors.bgLight'))};
-
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
   &:hover {
     text-decoration: none;
   }
 
   &:disabled,
   &[disabled] {
-    cursor: default;
     opacity: 0.5;
+    cursor: default;
     pointer-events: none;
   }
 
@@ -68,7 +68,6 @@ const Tab = styled.a`
 
   ${space};
   ${borderRadius};
-  text-decoration: none;
 `;
 
 Tab.propTypes = {

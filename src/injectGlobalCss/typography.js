@@ -14,8 +14,8 @@ export default css`
     margin-top: 0;
     margin-bottom: 0.5em;
     color: inherit;
-    line-height: 1.2;
     font-weight: 400;
+    line-height: 1.2;
   }
 
   h1 {
@@ -54,8 +54,8 @@ export default css`
 
   abbr[title] {
     border-bottom: ${theme.borders.default} dotted;
-    cursor: help;
     text-decoration: none;
+    cursor: help;
   }
 
   kbd {
