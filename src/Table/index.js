@@ -67,13 +67,17 @@ const Head = ({ children }) => (
 );
 
 Head.propTypes = {
-  children: PropTypes.element.isRequired,
+  children: PropTypes.node,
+};
+
+Head.defaultProps = {
+  children: '',
 };
 
 const Body = ({ children }) => <tbody>{children}</tbody>;
 
 Body.propTypes = {
-  children: PropTypes.element,
+  children: PropTypes.node,
 };
 
 Body.defaultProps = {

@@ -71,7 +71,7 @@ const Icon = ({ type, ...otherProps }) => {
 
 Icon.propTypes = {
   cursor: PropTypes.string,
-  type: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
+  type: PropTypes.oneOfType([PropTypes.string, PropTypes.func]).isRequired,
 };
 
 Icon.defaultProps = {
