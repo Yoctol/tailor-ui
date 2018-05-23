@@ -187,7 +187,10 @@ const Tooltip = ({
 }) => (
   <Toggle initial={visible}>
     {({ on, toggle }) => (
-      <TooltipWrapper trigger={trigger} onClick={trigger === 'click' && toggle}>
+      <TooltipWrapper
+        trigger={trigger}
+        onClick={trigger === 'click' ? toggle : undefined}
+      >
         {children}
         <TooltipToggle visible={on} placement={placement}>
           <Content light={light} {...otherProps}>
