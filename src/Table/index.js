@@ -67,7 +67,7 @@ const Head = ({ children }) => (
 );
 
 Head.propTypes = {
-  children: PropTypes.arrayOf(PropTypes.element).isRequired,
+  children: PropTypes.element.isRequired,
 };
 
 const Body = ({ children }) => <tbody>{children}</tbody>;
