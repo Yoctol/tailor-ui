@@ -5,6 +5,7 @@ import { space, border, borderColor, borderRadius } from 'styled-system';
 import { ifProp } from 'styled-tools';
 import { themeGet } from 'styled-system/dist/util';
 
+import Keydown from '../utils/Keydown';
 import theme from '../theme';
 import { shadowVariant } from '../utils/shadow';
 
@@ -55,11 +56,15 @@ ModalContent.defaultProps = {
   borderColor: 'border',
 };
 
+const ESC_KEY_CODE = 27;
+
 const Modal = ({ children, show, handleClose, ...otherProps }) => (
-  <ModalToggle show={show}>
-    <ModalOverlay onClick={handleClose} />
-    <ModalContent {...otherProps}>{children}</ModalContent>
-  </ModalToggle>
+  <Keydown keyCode={ESC_KEY_CODE} handleKeydown={handleClose}>
+    <ModalToggle show={show}>
+      <ModalOverlay onClick={handleClose} />
+      <ModalContent {...otherProps}>{children}</ModalContent>
+    </ModalToggle>
+  </Keydown>
 );
 
 Modal.propTypes = {
