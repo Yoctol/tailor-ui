@@ -59,10 +59,7 @@ ModalContent.defaultProps = {
 const ESC_KEY_CODE = 27;
 
 const Modal = ({ children, show, handleClose, ...otherProps }) => (
-  <Keydown
-    keyCode={ESC_KEY_CODE}
-    handleKeydown={show ? handleClose : undefined}
-  >
+  <Keydown keyCode={ESC_KEY_CODE} handleKeydown={() => show && handleClose()}>
     <ModalToggle show={show}>
       <ModalOverlay onClick={handleClose} />
       <ModalContent {...otherProps}>{children}</ModalContent>
