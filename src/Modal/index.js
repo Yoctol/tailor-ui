@@ -4,6 +4,8 @@ import styled from 'styled-components';
 import { space, border, borderColor, borderRadius } from 'styled-system';
 import { ifProp } from 'styled-tools';
 import { themeGet } from 'styled-system/dist/util';
+import CloseIcon from 'react-icons/lib/md/close';
+import { Flex } from 'grid-styled';
 
 import Keydown from '../utils/Keydown';
 import theme from '../theme';
@@ -12,6 +14,31 @@ import { shadowVariant } from '../utils/shadow';
 const ModalToggle = styled.div`
   display: ${ifProp('show', 'block', 'none')};
 `;
+
+const CloseBtn = styled.button.attrs({
+  type: 'button',
+})`
+  padding: 5px;
+  border: 0;
+  color: #94989e;
+  cursor: pointer;
+
+  :focus {
+    outline: 0;
+  }
+`;
+
+const CloseButton = ({ handleClose }) => (
+  <Flex flexDirection="row-reverse" mb="-15px">
+    <CloseBtn onClick={handleClose}>
+      <CloseIcon size="20" />
+    </CloseBtn>
+  </Flex>
+);
+
+CloseButton.propTypes = {
+  handleClose: PropTypes.func.isRequired,
+};
 
 const ModalOverlay = styled.div`
   position: fixed;
@@ -58,22 +85,27 @@ ModalContent.defaultProps = {
 
 const ESC_KEY_CODE = 27;
 
-const Modal = ({ children, show, handleClose, ...otherProps }) => (
+const Modal = ({ children, show, handleClose, closeButton, ...otherProps }) => (
   <Keydown keyCode={ESC_KEY_CODE} handleKeydown={() => show && handleClose()}>
     <ModalToggle show={show}>
       <ModalOverlay onClick={handleClose} />
-      <ModalContent {...otherProps}>{children}</ModalContent>
+      <ModalContent {...otherProps}>
+        {closeButton && <CloseButton handleClose={handleClose} />}
+        {children}
+      </ModalContent>
     </ModalToggle>
   </Keydown>
 );
 
 Modal.propTypes = {
   children: PropTypes.node,
+  closeButton: PropTypes.bool,
   handleClose: PropTypes.func.isRequired,
   show: PropTypes.bool.isRequired,
 };
 
 Modal.defaultProps = {
+  closeButton: false,
   children: '',
 };
 
