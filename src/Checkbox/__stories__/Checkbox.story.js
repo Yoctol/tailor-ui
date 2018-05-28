@@ -7,7 +7,13 @@ import Checkbox from '../';
 
 storiesOf('Checkbox', module)
   .addDecorator(centered)
-  .add('default', () => <Checkbox onChange={action('onChange')} />)
+  .add('default', () => (
+    <div>
+      <Checkbox onChange={action('onChange')} />
+      <br />
+      <Checkbox circle onChange={action('onChange')} />
+    </div>
+  ))
   .add('with disabled', () => (
     <div>
       <Checkbox checked disabled />
@@ -15,6 +21,12 @@ storiesOf('Checkbox', module)
       <Checkbox disabled />
     </div>
   ))
-  .add('with cutomized width and height', () => (
-    <Checkbox width={30} height={30} onChange={action('onChange')} />
+  .add('with cutomized style', () => (
+    <Checkbox
+      width={30}
+      height={30}
+      bg="#63bf2d"
+      borderColor="#423b63"
+      onChange={action('onChange')}
+    />
   ));
