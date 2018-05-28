@@ -8,9 +8,9 @@ export const secondary = '#80bdc7';
 export const secondaryDark = '#63bed5';
 export const secondaryLight = '#9fdfea';
 
-// export const secondary = '#77B088';
-// export const secondaryDark = '#5A916B';
-// export const secondaryLight = '#98CFA8';
+// export const secondary = '#56e495';
+// export const secondaryDark = '#3fcc74';
+// export const secondaryLight = '#9cffb9';
 
 export const dark = '#111111';
 export const light = '#ffffff';
