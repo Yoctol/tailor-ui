@@ -59,6 +59,9 @@
     "babel-jest": "^23.0.1",
     "babel-plugin-styled-components": "^1.5.1",
     "cross-env": "^5.1.6",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "enzyme-to-json": "^3.3.4",
     "eslint": "^4.19.1",
     "eslint-config-yoctol": "^0.16.1",
     "eslint-plugin-import": "^2.12.0",
@@ -67,6 +70,7 @@
     "eslint-plugin-react": "^7.8.2",
     "husky": "^0.14.3",
     "jest": "^23.0.1",
+    "jest-styled-components": "^5.0.1",
     "lint-staged": "^7.1.2",
     "prettier": "^1.13.0",
     "prettier-package-json": "^1.6.0",
@@ -87,9 +91,13 @@
       "lib"
     ],
     "moduleNameMapper": {
-      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/test/__mocks__/fileMock.js",
       "\\.(css|less)$": "<rootDir>/__mocks__/styleMock.js"
     },
+    "setupTestFrameworkScriptFile": "<rootDir>/test/configure-enzyme.js",
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ],
     "timers": "fake",
     "resetModules": true,
     "resetMocks": true

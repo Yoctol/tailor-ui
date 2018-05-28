@@ -1,0 +1,112 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button should render correctly 1`] = `
+.c0 {
+  display: inline-block;
+  border: 0.05rem solid;
+  border-radius: 0.2rem;
+  color: #ffffff;
+  line-height: 1rem;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border-color: #191723;
+  background-color: #0e0c1a;
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
+  height: 1.8rem;
+  padding: 0.35rem 0.4rem;
+  font-size: .8rem;
+}
+
+.c0:focus {
+  outline: 0;
+}
+
+.c0:hover {
+  background-color: #191723;
+}
+
+.c0:disabled,
+.c0[disabled] {
+  opacity: 0.5;
+  cursor: default;
+  pointer-events: none;
+}
+
+.c0:focus {
+  border-color: #0e0c1a;
+  box-shadow: 0 0 0 0.1rem rgba(25,23,35,0.2);
+}
+
+<button
+  className="c0"
+  size="m"
+>
+  Text Button
+</button>
+`;
+
+exports[`Button should render with props light, circle and active 1`] = `
+.c0 {
+  display: inline-block;
+  border: 0.05rem solid;
+  border-radius: 999px;
+  color: #1e1e1e;
+  line-height: 1rem;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border-color: #dddddd;
+  border-color: #63bed5;
+  background-color: #63bed5;
+  color: #ffffff;
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
+  height: 1.8rem;
+  padding: 0.35rem 0.4rem;
+  font-size: .8rem;
+}
+
+.c0:focus {
+  outline: 0;
+}
+
+.c0:hover {
+  background-color: #e9e9e9;
+}
+
+.c0:disabled,
+.c0[disabled] {
+  opacity: 0.5;
+  cursor: default;
+  pointer-events: none;
+}
+
+.c0:hover {
+  background-color: #80bdc7;
+}
+
+.c0:focus {
+  border-color: #63bed5;
+}
+
+<button
+  className="c0"
+  size="m"
+>
+  Text Button
+</button>
+`;
