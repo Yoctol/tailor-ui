@@ -1,0 +1,361 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Modal should render correctly 1`] = `
+<Keydown
+  handleKeydown={[Function]}
+  keyCode={27}
+>
+  <Modal__ModalToggle
+    show={true}
+  >
+    <Modal__ModalOverlay
+      onClick={[Function]}
+    />
+    <Modal__ModalContent
+      border="default"
+      borderColor="border"
+      borderRadius={2}
+      p={7}
+      theme={
+        Object {
+          "borderColor": Object {
+            "bg": "#b9b9b9",
+            "bgDark": "#b1b1b1",
+            "bgLight": "#ffffff",
+            "bodyBg": "#ffffff",
+            "bodyFont": "#1e1e1e",
+            "border": "#e0e0e0",
+            "borderDark": "#c7c7c7",
+            "code": "#e06870",
+            "dark": "#111111",
+            "error": "#da3333",
+            "gray": Array [
+              "#1e1e1e",
+              "#2b2b2b",
+              "#373737",
+              "#444444",
+              "#5e5e5e",
+              "#919191",
+              "#aaaaaa",
+              "#c3c3c3",
+              "#e9e9e9",
+              "#f7f7f7",
+            ],
+            "highlight": "#ffe9b3",
+            "light": "#ffffff",
+            "link": "#191723",
+            "linkDark": "#0e0d14",
+            "primary": "#191723",
+            "primaryDark": "#0e0c1a",
+            "primaryLight": "#423b63",
+            "secondary": "#80bdc7",
+            "secondaryDark": "#63bed5",
+            "secondaryLight": "#9fdfea",
+            "success": "#63bf2d",
+            "warning": "#de8a15",
+          },
+          "borders": Object {
+            "default": "0.05rem solid",
+            "defaultRem": "0.05rem",
+            "lg": "0.1rem solid",
+            "lgRem": "0.1rem",
+            "none": "",
+            "xl": "0.4rem solid",
+          },
+          "breakpoints": Array [
+            "40em",
+            "52em",
+            "64em",
+          ],
+          "colors": Object {
+            "bg": "#b9b9b9",
+            "bgDark": "#b1b1b1",
+            "bgLight": "#ffffff",
+            "bodyBg": "#ffffff",
+            "bodyFont": "#1e1e1e",
+            "border": "#e0e0e0",
+            "borderDark": "#c7c7c7",
+            "code": "#e06870",
+            "dark": "#111111",
+            "error": "#da3333",
+            "gray": Array [
+              "#1e1e1e",
+              "#2b2b2b",
+              "#373737",
+              "#444444",
+              "#5e5e5e",
+              "#919191",
+              "#aaaaaa",
+              "#c3c3c3",
+              "#e9e9e9",
+              "#f7f7f7",
+            ],
+            "highlight": "#ffe9b3",
+            "light": "#ffffff",
+            "link": "#191723",
+            "linkDark": "#0e0d14",
+            "primary": "#191723",
+            "primaryDark": "#0e0c1a",
+            "primaryLight": "#423b63",
+            "secondary": "#80bdc7",
+            "secondaryDark": "#63bed5",
+            "secondaryLight": "#9fdfea",
+            "success": "#63bf2d",
+            "warning": "#de8a15",
+          },
+          "controls": Object {
+            "paddingX": 0.4,
+            "paddingXLg": 0.6000000000000001,
+            "paddingXSm": 0.30000000000000004,
+            "paddingY": 0.35000000000000003,
+            "paddingYLg": 0.45,
+            "paddingYSm": 0.14999999999999997,
+            "size": 1.8,
+            "sizeLg": 2,
+            "sizeSm": 1.4,
+          },
+          "fontSizes": Object {
+            "default": ".8rem",
+            "lg": ".9rem",
+            "sm": ".7rem",
+          },
+          "lineHeight": "1rem",
+          "radii": Array [
+            0,
+            "0.2rem",
+            "0.4rem",
+          ],
+          "sizes": Object {
+            "lg": Object {
+              "fontSize": ".9rem",
+              "height": "2rem",
+              "padding": "0.45rem 0.6rem",
+            },
+            "m": Object {
+              "fontSize": ".8rem",
+              "height": "1.8rem",
+              "padding": "0.35rem 0.4rem",
+            },
+            "sm": Object {
+              "fontSize": ".7rem",
+              "height": "1.4rem",
+              "padding": "0.15rem 0.3rem",
+            },
+          },
+          "space": Object {
+            "0": "0rem",
+            "1": "0.2rem",
+            "10": "2rem",
+            "12": "2.4rem",
+            "16": "3.2rem",
+            "2": "0.4rem",
+            "3": "0.6rem",
+            "4": "0.8rem",
+            "5": "1rem",
+            "6": "1.2rem",
+            "7": "1.4rem",
+            "8": "1.6rem",
+            "9": "1.8rem",
+            "h": "0.1rem",
+            "o": "0.05rem",
+            "paddingX": "0.4rem",
+            "paddingXLg": "0.6rem",
+            "paddingXSm": "0.3rem",
+            "paddingY": "0.35rem",
+            "paddingYLg": "0.45rem",
+            "paddingYSm": "0.15rem",
+            "size": "1.8rem",
+            "sizeLg": "2rem",
+            "sizeSm": "1.4rem",
+            "spacing": "0.4rem",
+            "spacingLg": "0.8rem",
+            "spacingSm": "0.2rem",
+          },
+        }
+      }
+    />
+  </Modal__ModalToggle>
+</Keydown>
+`;
+
+exports[`Modal should render with props closeButton 1`] = `
+<Keydown
+  handleKeydown={[Function]}
+  keyCode={27}
+>
+  <Modal__ModalToggle
+    show={true}
+  >
+    <Modal__ModalOverlay
+      onClick={[Function]}
+    />
+    <Modal__ModalContent
+      border="default"
+      borderColor="border"
+      borderRadius={2}
+      p={7}
+      theme={
+        Object {
+          "borderColor": Object {
+            "bg": "#b9b9b9",
+            "bgDark": "#b1b1b1",
+            "bgLight": "#ffffff",
+            "bodyBg": "#ffffff",
+            "bodyFont": "#1e1e1e",
+            "border": "#e0e0e0",
+            "borderDark": "#c7c7c7",
+            "code": "#e06870",
+            "dark": "#111111",
+            "error": "#da3333",
+            "gray": Array [
+              "#1e1e1e",
+              "#2b2b2b",
+              "#373737",
+              "#444444",
+              "#5e5e5e",
+              "#919191",
+              "#aaaaaa",
+              "#c3c3c3",
+              "#e9e9e9",
+              "#f7f7f7",
+            ],
+            "highlight": "#ffe9b3",
+            "light": "#ffffff",
+            "link": "#191723",
+            "linkDark": "#0e0d14",
+            "primary": "#191723",
+            "primaryDark": "#0e0c1a",
+            "primaryLight": "#423b63",
+            "secondary": "#80bdc7",
+            "secondaryDark": "#63bed5",
+            "secondaryLight": "#9fdfea",
+            "success": "#63bf2d",
+            "warning": "#de8a15",
+          },
+          "borders": Object {
+            "default": "0.05rem solid",
+            "defaultRem": "0.05rem",
+            "lg": "0.1rem solid",
+            "lgRem": "0.1rem",
+            "none": "",
+            "xl": "0.4rem solid",
+          },
+          "breakpoints": Array [
+            "40em",
+            "52em",
+            "64em",
+          ],
+          "colors": Object {
+            "bg": "#b9b9b9",
+            "bgDark": "#b1b1b1",
+            "bgLight": "#ffffff",
+            "bodyBg": "#ffffff",
+            "bodyFont": "#1e1e1e",
+            "border": "#e0e0e0",
+            "borderDark": "#c7c7c7",
+            "code": "#e06870",
+            "dark": "#111111",
+            "error": "#da3333",
+            "gray": Array [
+              "#1e1e1e",
+              "#2b2b2b",
+              "#373737",
+              "#444444",
+              "#5e5e5e",
+              "#919191",
+              "#aaaaaa",
+              "#c3c3c3",
+              "#e9e9e9",
+              "#f7f7f7",
+            ],
+            "highlight": "#ffe9b3",
+            "light": "#ffffff",
+            "link": "#191723",
+            "linkDark": "#0e0d14",
+            "primary": "#191723",
+            "primaryDark": "#0e0c1a",
+            "primaryLight": "#423b63",
+            "secondary": "#80bdc7",
+            "secondaryDark": "#63bed5",
+            "secondaryLight": "#9fdfea",
+            "success": "#63bf2d",
+            "warning": "#de8a15",
+          },
+          "controls": Object {
+            "paddingX": 0.4,
+            "paddingXLg": 0.6000000000000001,
+            "paddingXSm": 0.30000000000000004,
+            "paddingY": 0.35000000000000003,
+            "paddingYLg": 0.45,
+            "paddingYSm": 0.14999999999999997,
+            "size": 1.8,
+            "sizeLg": 2,
+            "sizeSm": 1.4,
+          },
+          "fontSizes": Object {
+            "default": ".8rem",
+            "lg": ".9rem",
+            "sm": ".7rem",
+          },
+          "lineHeight": "1rem",
+          "radii": Array [
+            0,
+            "0.2rem",
+            "0.4rem",
+          ],
+          "sizes": Object {
+            "lg": Object {
+              "fontSize": ".9rem",
+              "height": "2rem",
+              "padding": "0.45rem 0.6rem",
+            },
+            "m": Object {
+              "fontSize": ".8rem",
+              "height": "1.8rem",
+              "padding": "0.35rem 0.4rem",
+            },
+            "sm": Object {
+              "fontSize": ".7rem",
+              "height": "1.4rem",
+              "padding": "0.15rem 0.3rem",
+            },
+          },
+          "space": Object {
+            "0": "0rem",
+            "1": "0.2rem",
+            "10": "2rem",
+            "12": "2.4rem",
+            "16": "3.2rem",
+            "2": "0.4rem",
+            "3": "0.6rem",
+            "4": "0.8rem",
+            "5": "1rem",
+            "6": "1.2rem",
+            "7": "1.4rem",
+            "8": "1.6rem",
+            "9": "1.8rem",
+            "h": "0.1rem",
+            "o": "0.05rem",
+            "paddingX": "0.4rem",
+            "paddingXLg": "0.6rem",
+            "paddingXSm": "0.3rem",
+            "paddingY": "0.35rem",
+            "paddingYLg": "0.45rem",
+            "paddingYSm": "0.15rem",
+            "size": "1.8rem",
+            "sizeLg": "2rem",
+            "sizeSm": "1.4rem",
+            "spacing": "0.4rem",
+            "spacingLg": "0.8rem",
+            "spacingSm": "0.2rem",
+          },
+        }
+      }
+    >
+      <CloseButton
+        handleClose={[Function]}
+      />
+    </Modal__ModalContent>
+  </Modal__ModalToggle>
+</Keydown>
+`;

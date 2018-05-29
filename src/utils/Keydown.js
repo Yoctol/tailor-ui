@@ -17,12 +17,11 @@ class Keydown extends Component {
   };
 
   render() {
-    return this.props.children;
+    return null;
   }
 }
 
 Keydown.propTypes = {
-  children: PropTypes.node.isRequired,
   handleKeydown: PropTypes.func.isRequired,
   keyCode: PropTypes.number.isRequired,
 };

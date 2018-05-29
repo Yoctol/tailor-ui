@@ -4,12 +4,11 @@ import styled from 'styled-components';
 import { space, border, borderColor, borderRadius } from 'styled-system';
 import { ifProp } from 'styled-tools';
 import { themeGet } from 'styled-system/dist/util';
-import CloseIcon from 'react-icons/lib/md/close';
-import { Flex } from 'grid-styled';
+import Close from 'react-icons/lib/md/close';
 
+import Icon from '../Icon';
 import Keydown from '../utils/Keydown';
 import theme from '../theme';
-import { shadowVariant } from '../utils/shadow';
 
 const ModalToggle = styled.div`
   display: ${ifProp('show', 'block', 'none')};
@@ -18,9 +17,11 @@ const ModalToggle = styled.div`
 const CloseBtn = styled.button.attrs({
   type: 'button',
 })`
+  position: absolute;
+  top: 15px;
+  right: 15px;
   padding: 5px;
   border: 0;
-  color: #94989e;
   cursor: pointer;
 
   :focus {
@@ -29,11 +30,9 @@ const CloseBtn = styled.button.attrs({
 `;
 
 const CloseButton = ({ handleClose }) => (
-  <Flex flexDirection="row-reverse" mb="-15px">
-    <CloseBtn onClick={handleClose}>
-      <CloseIcon size="20" />
-    </CloseBtn>
-  </Flex>
+  <CloseBtn onClick={handleClose}>
+    <Icon cursor="pointer" type={Close} />
+  </CloseBtn>
 );
 
 CloseButton.propTypes = {
@@ -47,7 +46,7 @@ const ModalOverlay = styled.div`
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(17, 17, 17, 0.25);
 `;
 
 const ModalContent = styled.div`
@@ -60,9 +59,9 @@ const ModalContent = styled.div`
   max-height: 90vh;
   padding: ${themeGet('space.spacingLg')};
   background-color: #fff;
+  box-shadow: 0 10px 30px 0 rgba(17, 17, 17, 0.2);
   transform: translate(-50%, -50%);
 
-  ${shadowVariant(0.2)}
   ${space}
   ${border}
   ${borderColor}
@@ -78,6 +77,7 @@ ModalContent.propTypes = {
 
 ModalContent.defaultProps = {
   theme,
+  p: 7,
   border: 'default',
   borderRadius: 2,
   borderColor: 'border',
@@ -86,15 +86,17 @@ ModalContent.defaultProps = {
 const ESC_KEY_CODE = 27;
 
 const Modal = ({ children, show, handleClose, closeButton, ...otherProps }) => (
-  <Keydown keyCode={ESC_KEY_CODE} handleKeydown={() => show && handleClose()}>
-    <ModalToggle show={show}>
-      <ModalOverlay onClick={handleClose} />
-      <ModalContent {...otherProps}>
-        {closeButton && <CloseButton handleClose={handleClose} />}
-        {children}
-      </ModalContent>
-    </ModalToggle>
-  </Keydown>
+  <ModalToggle show={show}>
+    <Keydown
+      keyCode={ESC_KEY_CODE}
+      handleKeydown={() => show && handleClose()}
+    />
+    <ModalOverlay onClick={handleClose} />
+    <ModalContent {...otherProps}>
+      {closeButton && <CloseButton handleClose={handleClose} />}
+      {children}
+    </ModalContent>
+  </ModalToggle>
 );
 
 Modal.propTypes = {
