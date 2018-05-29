@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { range } from 'lodash';
+import { range } from 'ramda';
 import { compose, withState, withHandlers } from 'recompose';
 
 import Menu from '../';

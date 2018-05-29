@@ -24,9 +24,9 @@
   },
   "dependencies": {
     "grid-styled": "^4.1.0",
-    "lodash": "^4.17.10",
     "polished": "^1.9.2",
     "prop-types": "^15.6.1",
+    "ramda": "^0.25.0",
     "rc-checkbox": "^2.1.5",
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
@@ -58,6 +58,7 @@
     "babel-core": "^7.0.0-0",
     "babel-eslint": "^8.2.3",
     "babel-jest": "^23.0.1",
+    "babel-plugin-ramda": "^1.6.1",
     "babel-plugin-styled-components": "^1.5.1",
     "cross-env": "^5.1.6",
     "enzyme": "^3.3.0",
@@ -118,7 +119,7 @@
       "git add"
     ],
     ".babelrc": [
-      "prettier --write",
+      "prettier --parser json --write",
       "git add"
     ]
   }
