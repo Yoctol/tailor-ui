@@ -31,7 +31,7 @@ export const success = '#63bf2d';
 export const warning = '#de8a15';
 export const error = '#da3333';
 
-export const border = '#dddddd';
+export const border = '#e0e0e0';
 export const borderDark = darken(0.1, border);
 export const bg = lighten(0.66, dark);
 export const bgDark = darken(0.03, bg);
