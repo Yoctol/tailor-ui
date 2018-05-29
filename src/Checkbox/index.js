@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import RcCheckbox from 'rc-checkbox';
 import styled from 'styled-components';
-import { themeGet, width, height } from 'styled-system';
+import { themeGet, width, height, color, borderColor } from 'styled-system';
 import { ifProp } from 'styled-tools';
 
 import theme from '../theme';
@@ -24,9 +24,9 @@ const CheckboxWrapper = styled.span`
       ${ifProp(
         'disabled',
         themeGet('colors.gray.8'),
-        themeGet('colors.primary')
+        props => themeGet(`colors.${props.borderColor}`) || props.borderColor
       )};
-    border-radius: 3px;
+    border-radius: ${ifProp('circle', props => +props.height / 2, '3')}px;
     background-color: #fff;
 
     ${width};
@@ -37,8 +37,8 @@ const CheckboxWrapper = styled.span`
     content: ' ';
     display: table;
     position: absolute;
-    top: ${props => (props.height - 11) / 2}px;
-    left: ${props => (props.height - 7) / 2}px;
+    top: ${props => (+props.height - 11) / 2}px;
+    left: ${props => (+props.height - 7) / 2}px;
     width: 5px;
     height: 8px;
     border-top: 0;
@@ -62,16 +62,16 @@ const CheckboxWrapper = styled.span`
   }
 
   .rc-checkbox-checked .rc-checkbox-inner {
-    border-color: ${themeGet('colors.primary')};
-    background-color: ${themeGet('colors.primary')};
+    ${borderColor};
+    ${color};
   }
 
   .rc-checkbox-checked .rc-checkbox-inner::after {
     content: ' ';
     display: table;
     position: absolute;
-    top: ${props => (props.height - 11) / 2}px;
-    left: ${props => (props.height - 7) / 2}px;
+    top: ${props => (+props.height - 11) / 2}px;
+    left: ${props => (+props.height - 7) / 2}px;
     border: 2px solid #fff;
     border-top: 0;
     border-left: 0;
@@ -93,30 +93,55 @@ const CheckboxWrapper = styled.span`
 `;
 
 CheckboxWrapper.propTypes = {
+  circle: PropTypes.bool.isRequired,
+  disabled: PropTypes.bool.isRequired,
+  ...borderColor.propTypes,
+  ...color.propTypes,
   ...width.propTypes,
   ...height.propTypes,
 };
 
 CheckboxWrapper.defaultProps = {
   theme,
+  borderColor: 'primary',
+  bg: 'primary',
+  height: 19,
+  width: 19,
 };
 
-const Checkbox = ({ disabled, width: _width, height: _height, ...props }) => (
-  <CheckboxWrapper disabled={disabled} width={_width} height={_height}>
+const Checkbox = ({
+  circle,
+  disabled,
+  borderColor: _borderColor,
+  bg: _bg,
+  width: _width,
+  height: _height,
+  ...props
+}) => (
+  <CheckboxWrapper
+    circle={circle}
+    disabled={disabled}
+    borderColor={_borderColor}
+    bg={_bg}
+    width={_width}
+    height={_height}
+  >
     <RcCheckbox disabled={disabled} {...props} />
   </CheckboxWrapper>
 );
 
 Checkbox.propTypes = {
+  circle: PropTypes.bool,
   disabled: PropTypes.bool,
-  height: PropTypes.number,
-  width: PropTypes.number,
+  ...borderColor.propTypes,
+  ...color.propTypes,
+  ...width.propTypes,
+  ...height.propTypes,
 };
 
 Checkbox.defaultProps = {
+  circle: false,
   disabled: false,
-  height: 19,
-  width: 19,
 };
 
 export default Checkbox;
