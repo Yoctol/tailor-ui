@@ -1,5 +1,4 @@
-import mapValues from 'lodash/mapValues';
-import round from 'lodash/round';
+import { map } from 'ramda';
 
 import * as colors from './colors';
 
@@ -71,14 +70,11 @@ const controls = {
   paddingYLg: (sizeLg - lineHeight) / 2 - borderDefault,
 };
 
-const space = mapValues(
-  {
-    ...unit,
-    ...layouts,
-    ...controls,
-  },
-  value => toRem(round(value, 2))
-);
+const space = map(value => toRem(Math.round(value * 100) / 100), {
+  ...unit,
+  ...layouts,
+  ...controls,
+});
 
 const sizes = {
   sm: {
