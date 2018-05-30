@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import centered from '@storybook/addon-centered';
 import { Flex } from 'grid-styled';
 
-import Label from '../../../Form/Label';
+import Label from '../../Form/Label';
 import Radio from '../';
 
 storiesOf('Data Entry|Radio', module)
