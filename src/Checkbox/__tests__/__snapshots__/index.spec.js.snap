@@ -2,6 +2,8 @@
 
 exports[`Checkbox should render correctly 1`] = `
 <Checkbox__CheckboxWrapper
+  bg="primary"
+  borderColor="primary"
   circle={false}
   disabled={false}
   height={19}
@@ -13,8 +15,8 @@ exports[`Checkbox should render correctly 1`] = `
         "bgLight": "#ffffff",
         "bodyBg": "#ffffff",
         "bodyFont": "#1e1e1e",
-        "border": "#dddddd",
-        "borderDark": "#c4c4c4",
+        "border": "#e0e0e0",
+        "borderDark": "#c7c7c7",
         "code": "#e06870",
         "dark": "#111111",
         "error": "#da3333",
@@ -62,8 +64,8 @@ exports[`Checkbox should render correctly 1`] = `
         "bgLight": "#ffffff",
         "bodyBg": "#ffffff",
         "bodyFont": "#1e1e1e",
-        "border": "#dddddd",
-        "borderDark": "#c4c4c4",
+        "border": "#e0e0e0",
+        "borderDark": "#c7c7c7",
         "code": "#e06870",
         "dark": "#111111",
         "error": "#da3333",
@@ -180,6 +182,8 @@ exports[`Checkbox should render correctly 1`] = `
 
 exports[`Checkbox should render with props circle, checked and disabled 1`] = `
 <Checkbox__CheckboxWrapper
+  bg="primary"
+  borderColor="primary"
   circle={true}
   disabled={true}
   height={19}
@@ -191,8 +195,8 @@ exports[`Checkbox should render with props circle, checked and disabled 1`] = `
         "bgLight": "#ffffff",
         "bodyBg": "#ffffff",
         "bodyFont": "#1e1e1e",
-        "border": "#dddddd",
-        "borderDark": "#c4c4c4",
+        "border": "#e0e0e0",
+        "borderDark": "#c7c7c7",
         "code": "#e06870",
         "dark": "#111111",
         "error": "#da3333",
@@ -240,8 +244,8 @@ exports[`Checkbox should render with props circle, checked and disabled 1`] = `
         "bgLight": "#ffffff",
         "bodyBg": "#ffffff",
         "bodyFont": "#1e1e1e",
-        "border": "#dddddd",
-        "borderDark": "#c4c4c4",
+        "border": "#e0e0e0",
+        "borderDark": "#c7c7c7",
         "code": "#e06870",
         "dark": "#111111",
         "error": "#da3333",
