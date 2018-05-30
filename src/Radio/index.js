@@ -4,7 +4,7 @@ import styled, { css } from 'styled-components';
 import { themeGet } from 'styled-system';
 import { ifProp, switchProp } from 'styled-tools';
 
-import theme from '../../theme';
+import theme from '../theme';
 
 const getCheckmarkSpace = size => css`
   width: calc(${themeGet(size)} * 1.5);

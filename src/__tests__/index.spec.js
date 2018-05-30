@@ -6,15 +6,16 @@ import {
   Dropdown,
   Flex,
   Hint,
+  Icon,
   Input,
   Label,
-  Textarea,
-  Icon,
   Menu,
   Modal,
+  Radio,
   Select,
   Table,
   Tabs,
+  Textarea,
   Tooltip,
   colors,
   injectGlobalCss,
@@ -29,15 +30,16 @@ describe('index', () => {
     expect(Dropdown).toBeDefined();
     expect(Flex).toBeDefined();
     expect(Hint).toBeDefined();
+    expect(Icon).toBeDefined();
     expect(Input).toBeDefined();
     expect(Label).toBeDefined();
-    expect(Textarea).toBeDefined();
-    expect(Icon).toBeDefined();
     expect(Menu).toBeDefined();
     expect(Modal).toBeDefined();
+    expect(Radio).toBeDefined();
     expect(Select).toBeDefined();
     expect(Table).toBeDefined();
     expect(Tabs).toBeDefined();
+    expect(Textarea).toBeDefined();
     expect(Tooltip).toBeDefined();
     expect(colors).toBeDefined();
     expect(injectGlobalCss).toBeDefined();
