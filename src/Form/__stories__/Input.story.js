@@ -7,7 +7,7 @@ import Label from '../Label';
 import Input from '../Input';
 import Hint from '../Hint';
 
-storiesOf('Input', module)
+storiesOf('Data Entry|Input', module)
   .addDecorator(centered)
   .add('default', () => (
     <div>

@@ -7,7 +7,7 @@ import { MdEdit, MdComment, MdInput } from 'react-icons/lib/md';
 
 import Icon from '../';
 
-storiesOf('Icon', module)
+storiesOf('General|Icon', module)
   .addDecorator(centered)
   .add('with built-in icon', () => (
     <div>

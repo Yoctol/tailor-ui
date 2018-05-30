@@ -5,7 +5,7 @@ import centered from '@storybook/addon-centered';
 
 import Button from '../';
 
-storiesOf('Button', module)
+storiesOf('General|Button', module)
   .addDecorator(centered)
   .add('with text', () => (
     <Button onClick={action('clicked')}>Text Button</Button>

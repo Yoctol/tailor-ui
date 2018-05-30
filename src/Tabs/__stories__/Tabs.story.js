@@ -45,7 +45,7 @@ const TabWithActive = withActiveTab(
   )
 );
 
-storiesOf('Tabs', module)
+storiesOf('Data Display|Tabs', module)
   .addDecorator(centered)
   .add('default', () => <TabWithActive />)
   .add('default with disabled', () => <TabWithActive disabled="tab_2" />)

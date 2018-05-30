@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import centered from '@storybook/addon-centered';
 import { Flex, Box } from 'grid-styled';
 
-storiesOf('Typography', module)
+storiesOf('General|Typography', module)
   .addDecorator(centered)
   .add('Heading', () => (
     <div>

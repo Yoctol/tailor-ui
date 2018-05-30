@@ -5,7 +5,7 @@ import { range } from 'ramda';
 
 import Select from '../';
 
-storiesOf('Select', module)
+storiesOf('Data Entry|Select', module)
   .addDecorator(centered)
   .add('default', () => (
     <div style={{ width: 200 }}>

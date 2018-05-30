@@ -7,7 +7,7 @@ import Card from '../';
 // eslint-disable-next-line react/prop-types
 const Wrapper = ({ children }) => <div style={{ width: 400 }}>{children}</div>;
 
-storiesOf('Card', module)
+storiesOf('Data Display|Card', module)
   .addDecorator(centered)
   .add('with text', () => (
     <Wrapper>

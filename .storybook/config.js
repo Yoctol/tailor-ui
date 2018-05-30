@@ -1,5 +1,11 @@
 import { configure } from '@storybook/react';
+import { setOptions } from "@storybook/addon-options";
 import injectGlobalCss from '../src/injectGlobalCss';
+
+setOptions({
+  hierarchySeparator: /\/|\./,
+  hierarchyRootSeparator: /\|/,
+});
 
 injectGlobalCss();
 
