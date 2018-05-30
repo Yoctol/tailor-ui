@@ -84,7 +84,7 @@ const TabsWrapper = styled.nav`
   display: flex;
 
   ${ifProp(
-    { pills: false },
+    { pills: false, absolute: true },
     css`
       position: absolute;
       bottom: -3px;

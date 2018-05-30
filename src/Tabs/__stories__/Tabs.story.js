@@ -16,20 +16,20 @@ const TABS = range(1, 4).map(val => ({
 const withActiveTab = withState('activeTab', 'setActiveTab', 'tab_1');
 
 const TabWithActive = withActiveTab(
-  ({ activeTab, setActiveTab, pills, disabled, ...props }) => (
+  ({ activeTab, setActiveTab, pills, absolute, disabled, ...props }) => (
     <div
       style={{
         width: 600,
         padding: 20,
-        ...(pills
-          ? {}
-          : {
+        ...(absolute
+          ? {
               position: 'relative',
               borderBottom: '3px solid #e9e9e9',
-            }),
+            }
+          : {}),
       }}
     >
-      <Tabs pills={pills} {...props}>
+      <Tabs pills={pills} absolute={absolute} {...props}>
         {TABS.map(({ key, text }) => (
           <Tab
             active={key === activeTab}
@@ -48,7 +48,10 @@ const TabWithActive = withActiveTab(
 storiesOf('Data Display|Tabs', module)
   .addDecorator(centered)
   .add('default', () => <TabWithActive />)
-  .add('default with disabled', () => <TabWithActive disabled="tab_2" />)
+  .add('default with absolute', () => <TabWithActive absolute />)
+  .add('default with disabled', () => (
+    <TabWithActive absolute disabled="tab_2" />
+  ))
   .add('default with size', () => (
     <div>
       <TabWithActive size="sm" />
