@@ -18,7 +18,7 @@ const WithShow = ({ children }) => (
   </Value>
 );
 
-storiesOf('Modal', module)
+storiesOf('Feedback|Modal', module)
   .addDecorator(centered)
   .add('default', () => (
     <WithShow>

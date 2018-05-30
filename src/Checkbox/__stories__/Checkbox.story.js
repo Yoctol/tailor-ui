@@ -5,7 +5,7 @@ import { action } from '@storybook/addon-actions';
 
 import Checkbox from '../';
 
-storiesOf('Checkbox', module)
+storiesOf('Data Entry|Checkbox', module)
   .addDecorator(centered)
   .add('default', () => (
     <div>

@@ -5,7 +5,7 @@ import { range } from 'ramda';
 
 import Table from '../';
 
-storiesOf('Table', module)
+storiesOf('Data Display|Table', module)
   .addDecorator(centered)
   .add('default', () => (
     <Table>

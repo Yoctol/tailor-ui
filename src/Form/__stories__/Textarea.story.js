@@ -5,7 +5,7 @@ import centered from '@storybook/addon-centered';
 import Label from '../Label';
 import Textarea from '../Textarea';
 
-storiesOf('Textarea', module)
+storiesOf('Data Entry|Textarea', module)
   .addDecorator(centered)
   .add('default', () => (
     <div>

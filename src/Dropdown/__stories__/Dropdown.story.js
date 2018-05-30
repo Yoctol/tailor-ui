@@ -21,7 +21,7 @@ const WithToggle = visibleEnhancer(({ visible, toggleVisible, children }) => (
   </div>
 ));
 
-storiesOf('Dropdown', module)
+storiesOf('Navigation|Dropdown', module)
   .addDecorator(centered)
   .add('with visible', () => (
     <WithToggle>

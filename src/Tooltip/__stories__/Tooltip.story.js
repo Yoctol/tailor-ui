@@ -6,7 +6,7 @@ import { Flex, Box } from 'grid-styled';
 import Tooltip from '../';
 import Button from '../../Button';
 
-storiesOf('Tooltip', module)
+storiesOf('Data Display|Tooltip', module)
   .addDecorator(centered)
   .add('with dark version', () => (
     <Flex flexDirection="column" alignItems="center">

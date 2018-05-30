@@ -14,7 +14,7 @@ const Color = ({ bg, title, color = '#fff' }) => (
   </Box>
 );
 
-storiesOf('Colors', module).add('colors', () => (
+storiesOf('Other|Colors', module).add('colors', () => (
   <div style={{ width: 800 }}>
     <Flex>
       <Color bg={colors.primary} title="Primary" />

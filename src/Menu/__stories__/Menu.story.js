@@ -17,7 +17,7 @@ const WithActive = activeEnhancer(({ active, updateActive, children }) => (
   <div style={{ height: 600 }}>{children({ active, updateActive })}</div>
 ));
 
-storiesOf('Menu', module)
+storiesOf('Navigation|Menu', module)
   .add('default', () => (
     <WithActive>
       {({ active, updateActive }) => (
