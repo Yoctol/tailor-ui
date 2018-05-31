@@ -17,6 +17,7 @@ import {
   Table,
   Tabs,
   Textarea,
+  ThemeProvider,
   Tooltip,
   colors,
   injectGlobalCss,
@@ -42,6 +43,7 @@ describe('index', () => {
     expect(Table).toBeDefined();
     expect(Tabs).toBeDefined();
     expect(Textarea).toBeDefined();
+    expect(ThemeProvider).toBeDefined();
     expect(Tooltip).toBeDefined();
     expect(colors).toBeDefined();
     expect(injectGlobalCss).toBeDefined();
