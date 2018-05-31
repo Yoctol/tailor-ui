@@ -16,6 +16,15 @@ describe('shadow', () => {
   });
 
   describe('controlShadow', () => {
+    it('should work', () => {
+      const offset = 0.1;
+      const shadow = shadowVariant(offset);
+
+      expect(shadow).toEqual(css`
+        box-shadow: 0 ${offset}rem ${(offset + 0.1) * 2}rem ${rgba(dark, 0.2)};
+      `);
+    });
+
     it('should work with default color', () => {
       const shadow = controlShadow();
 
@@ -41,17 +50,6 @@ describe('shadow', () => {
 
       expect(shadow).toEqual(css`
         box-shadow: 0 0 0 0.1rem ${rgba('#da3333', 0.2)};
-      `);
-    });
-  });
-
-  describe('controlShadow', () => {
-    it('should work', () => {
-      const offset = 0.1;
-      const shadow = shadowVariant(offset);
-
-      expect(shadow).toEqual(css`
-        box-shadow: 0 ${offset}rem ${(offset + 0.1) * 2}rem ${rgba(dark, 0.2)};
       `);
     });
   });

@@ -70,8 +70,8 @@ exports[`Button should render with props light, circle and active 1`] = `
   -ms-user-select: none;
   user-select: none;
   border-color: #e0e0e0;
-  border-color: #63bed5;
-  background-color: #63bed5;
+  border-color: #3fcc74;
+  background-color: #3fcc74;
   color: #ffffff;
   -webkit-transition: all .2s ease;
   transition: all .2s ease;
@@ -96,11 +96,11 @@ exports[`Button should render with props light, circle and active 1`] = `
 }
 
 .c0:hover {
-  background-color: #80bdc7;
+  background-color: #56e495;
 }
 
 .c0:focus {
-  border-color: #63bed5;
+  border-color: #3fcc74;
 }
 
 <button

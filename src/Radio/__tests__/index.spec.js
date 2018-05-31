@@ -1,12 +1,12 @@
 import React from 'react';
-import { shallow } from 'enzyme';
 
-import Label from '../../Form/Label';
 import Radio from '../';
+import Label from '../../Form/Label';
+import shallowWithTheme from '../../../test/shallowWithTheme';
 
 describe('Radio', () => {
   it('should render correctly', () => {
-    const component = shallow(
+    const component = shallowWithTheme(
       <form>
         <Radio />
         <Label htmlFor="medium">中</Label>
@@ -17,7 +17,7 @@ describe('Radio', () => {
   });
 
   it('should render with props size and disabled', () => {
-    const component = shallow(
+    const component = shallowWithTheme(
       <form>
         <Radio size="lg" disabled />
         <Label htmlFor="large">大</Label>
