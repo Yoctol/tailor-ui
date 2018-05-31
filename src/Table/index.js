@@ -10,8 +10,6 @@ import {
   borderColor,
 } from 'styled-system';
 
-import theme from '../theme';
-
 const HeadColumn = styled.th`
   padding: ${themeGet('space.paddingYLg')} ${themeGet('space.paddingXLg')};
   font-weight: 500;
@@ -30,7 +28,6 @@ HeadColumn.propTypes = {
 };
 
 HeadColumn.defaultProps = {
-  theme,
   borderColor: 'border',
 };
 
@@ -48,17 +45,12 @@ Column.propTypes = {
 };
 
 Column.defaultProps = {
-  theme,
   borderColor: 'border',
 };
 
 const Row = styled.tr`
   border-bottom: ${themeGet('borders.default')} ${themeGet('colors.border')};
 `;
-
-Row.defaultProps = {
-  theme,
-};
 
 const Head = ({ children }) => (
   <thead>
@@ -103,7 +95,6 @@ const Table = styled.table`
 `;
 
 Table.defaultProps = {
-  theme,
   width: '100%',
   textAlign: 'left',
 };

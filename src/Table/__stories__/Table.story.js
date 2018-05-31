@@ -3,10 +3,12 @@ import { storiesOf } from '@storybook/react';
 import centered from '@storybook/addon-centered';
 import { range } from 'ramda';
 
+import themeProvider from '../../../.storybook/theme-provider';
 import Table from '../';
 
 storiesOf('Data Display|Table', module)
   .addDecorator(centered)
+  .addDecorator(themeProvider)
   .add('default', () => (
     <Table>
       <Table.Head>

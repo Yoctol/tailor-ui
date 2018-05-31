@@ -4,8 +4,6 @@ import styled, { css } from 'styled-components';
 import { themeGet, space, borderRadius } from 'styled-system';
 import { ifProp, switchProp } from 'styled-tools';
 
-import theme from '../theme';
-
 const PillsTab = css`
   border-radius: ${themeGet('radii.1')};
   background-color: ${ifProp(
@@ -75,7 +73,6 @@ Tab.propTypes = {
 };
 
 Tab.defaultProps = {
-  theme,
   active: false,
   size: 'm',
 };
@@ -114,7 +111,6 @@ Tabs.propTypes = {
 };
 
 Tabs.defaultProps = {
-  theme, // eslint-disable-line react/default-props-match-prop-types
   block: false,
   pills: false,
 };

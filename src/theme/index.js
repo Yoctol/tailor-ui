@@ -1,6 +1,6 @@
 import { map } from 'ramda';
 
-import * as colors from './colors';
+import * as defaultColors from './colors';
 
 const toRem = rem => `${rem}rem`;
 
@@ -94,17 +94,31 @@ const sizes = {
   },
 };
 
-const theme = {
-  breakpoints,
-  colors,
-  space,
-  fontSizes,
-  sizes,
-  radii,
-  borders,
-  controls,
-  borderColor: colors,
-  lineHeight: toRem(lineHeight),
+const { secondaryBlue, secondaryGreen, ...otherColors } = defaultColors;
+
+const secondaryMap = {
+  blue: secondaryBlue,
+  green: secondaryGreen,
 };
 
-export default theme;
+const getTheme = secondaryType => {
+  const secondary = secondaryMap[secondaryType];
+  const colors = { ...secondary, ...otherColors };
+
+  return {
+    breakpoints,
+    colors,
+    space,
+    fontSizes,
+    sizes,
+    radii,
+    borders,
+    controls,
+    borderColor: colors,
+    lineHeight: toRem(lineHeight),
+  };
+};
+
+export default getTheme;
+
+export const defaultTheme = getTheme('green');

@@ -9,7 +9,6 @@ import {
   fontSize,
 } from 'styled-system';
 
-import theme from '../theme';
 import _Button from '../Button';
 
 const Button = styled(_Button).attrs({ light: true })`
@@ -32,10 +31,6 @@ const Button = styled(_Button).attrs({ light: true })`
   }
 `;
 
-Button.defaultProps = {
-  theme: _Button.defaultProps.theme,
-};
-
 const Block = styled.div`
   border-bottom: ${themeGet('borders.default')} ${themeGet('colors.border')};
 
@@ -52,7 +47,6 @@ Block.propTypes = {
 };
 
 Block.defaultProps = {
-  theme,
   p: 4,
   fontSize: 'default',
 };
@@ -72,10 +66,6 @@ const Image = styled.div`
 
 Image.propTypes = {
   ...space.propTypes,
-};
-
-Image.defaultProps = {
-  theme,
 };
 
 const Card = styled.div`
@@ -113,7 +103,6 @@ Card.propTypes = {
 };
 
 Card.defaultProps = {
-  theme,
   bg: 'bgLight',
   borderRadius: 1,
 };

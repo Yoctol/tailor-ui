@@ -3,7 +3,6 @@ import styled, { css } from 'styled-components';
 import { themeGet, space } from 'styled-system';
 import { ifProp } from 'styled-tools';
 
-import theme from '../theme';
 import { sizes } from '../utils/system';
 import { controlShadow } from '../utils/shadow';
 import controlTransition from '../utils/transition';
@@ -114,7 +113,6 @@ Button.propTypes = {
 };
 
 Button.defaultProps = {
-  theme,
   size: 'm',
   block: false,
   circle: false,

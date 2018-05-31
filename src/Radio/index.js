@@ -4,8 +4,6 @@ import styled, { css } from 'styled-components';
 import { themeGet } from 'styled-system';
 import { ifProp, switchProp } from 'styled-tools';
 
-import theme from '../theme';
-
 const getCheckmarkSpace = size => css`
   width: calc(${themeGet(size)} * 1.5);
   height: calc(${themeGet(size)} * 1.5);
@@ -50,10 +48,6 @@ const Checkmark = styled.span`
 
 Checkmark.propTypes = {
   size: PropTypes.oneOf(['sm', 'm', 'lg']).isRequired,
-};
-
-Checkmark.defaultProps = {
-  theme,
 };
 
 const Container = styled.div`

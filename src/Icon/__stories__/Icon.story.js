@@ -5,10 +5,12 @@ import { action } from '@storybook/addon-actions';
 import { TiFlowChildren } from 'react-icons/lib/ti';
 import { MdEdit, MdComment, MdInput } from 'react-icons/lib/md';
 
+import themeProvider from '../../../.storybook/theme-provider';
 import Icon from '../';
 
 storiesOf('General|Icon', module)
   .addDecorator(centered)
+  .addDecorator(themeProvider)
   .add('with built-in icon', () => (
     <div>
       <Icon mx={2} type="line" />

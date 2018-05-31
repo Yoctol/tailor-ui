@@ -2,11 +2,13 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import centered from '@storybook/addon-centered';
 
+import themeProvider from '../../../.storybook/theme-provider';
 import Label from '../Label';
 import Textarea from '../Textarea';
 
 storiesOf('Data Entry|Textarea', module)
   .addDecorator(centered)
+  .addDecorator(themeProvider)
   .add('default', () => (
     <div>
       <Label htmlFor="demo">With Default:</Label>

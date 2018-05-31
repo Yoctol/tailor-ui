@@ -8,7 +8,6 @@ import Close from 'react-icons/lib/md/close';
 
 import Icon from '../Icon';
 import Keydown from '../utils/Keydown';
-import theme from '../theme';
 
 const ModalToggle = styled.div`
   display: ${ifProp('show', 'block', 'none')};
@@ -76,7 +75,6 @@ ModalContent.propTypes = {
 };
 
 ModalContent.defaultProps = {
-  theme,
   p: 7,
   border: 'default',
   borderRadius: 2,

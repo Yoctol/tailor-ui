@@ -14,7 +14,6 @@ import {
 import { ifProp } from 'styled-tools';
 import { darken } from 'polished';
 
-import theme from '../theme';
 import { shadowVariant } from '../utils/shadow';
 
 const Dropdown = styled.div`
@@ -36,7 +35,6 @@ Dropdown.propTypes = {
 };
 
 Dropdown.defaultProps = {
-  theme,
   visible: false,
   top: 36,
   right: 0,
@@ -63,7 +61,6 @@ List.propTypes = {
 };
 
 List.defaultProps = {
-  theme,
   m: 0,
   p: 0,
   textAlign: 'center',
@@ -101,7 +98,6 @@ Item.propTypes = {
 };
 
 Item.defaultProps = {
-  theme,
   bg: 'light',
   color: 'gray.4',
   fontSize: 'default',

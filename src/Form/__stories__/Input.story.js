@@ -3,12 +3,14 @@ import { storiesOf } from '@storybook/react';
 import centered from '@storybook/addon-centered';
 import { Flex, Box } from 'grid-styled';
 
+import themeProvider from '../../../.storybook/theme-provider';
 import Label from '../Label';
 import Input from '../Input';
 import Hint from '../Hint';
 
 storiesOf('Data Entry|Input', module)
   .addDecorator(centered)
+  .addDecorator(themeProvider)
   .add('default', () => (
     <div>
       <Label htmlFor="demo">With Default:</Label>

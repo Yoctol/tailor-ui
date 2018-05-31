@@ -13,8 +13,6 @@ import {
 import { ifProp, switchProp } from 'styled-tools';
 import { Toggle } from 'react-powerplug';
 
-import theme from '../theme';
-
 const TooltipToggle = styled.div`
   display: ${ifProp('visible', 'block', 'none')};
   position: absolute;
@@ -88,7 +86,6 @@ Content.propTypes = {
 };
 
 Content.defaultProps = {
-  theme,
   minWidth: 120,
   fontSize: 'sm',
   p: 1,
@@ -147,10 +144,6 @@ const Arrow = styled.div`
 Arrow.propTypes = {
   light: PropTypes.bool.isRequired,
   placement: PropTypes.string.isRequired,
-};
-
-Arrow.defaultProps = {
-  theme,
 };
 
 const TooltipWrapper = styled.div`

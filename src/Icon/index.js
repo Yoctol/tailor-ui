@@ -4,8 +4,6 @@ import styled, { css } from 'styled-components';
 import { style, space } from 'styled-system';
 import { prop } from 'styled-tools';
 
-import theme from '../theme';
-
 import * as icons from './icons';
 
 const fill = style({
@@ -45,7 +43,6 @@ IconWrapper.propTypes = {
 };
 
 IconWrapper.defaultProps = {
-  theme,
   size: 24,
   fill: 'bodyFont',
 };

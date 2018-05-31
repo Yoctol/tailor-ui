@@ -3,11 +3,13 @@ import { storiesOf } from '@storybook/react';
 import centered from '@storybook/addon-centered';
 import { Flex, Box } from 'grid-styled';
 
+import themeProvider from '../../../.storybook/theme-provider';
 import Tooltip from '../';
 import Button from '../../Button';
 
 storiesOf('Data Display|Tooltip', module)
   .addDecorator(centered)
+  .addDecorator(themeProvider)
   .add('with dark version', () => (
     <Flex flexDirection="column" alignItems="center">
       <Box m={3}>

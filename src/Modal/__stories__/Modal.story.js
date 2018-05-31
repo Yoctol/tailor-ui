@@ -3,6 +3,7 @@ import { storiesOf } from '@storybook/react';
 import centered from '@storybook/addon-centered';
 import { Value } from 'react-powerplug';
 
+import themeProvider from '../../../.storybook/theme-provider';
 import Modal from '../';
 import Button from '../../Button';
 
@@ -20,6 +21,7 @@ const WithShow = ({ children }) => (
 
 storiesOf('Feedback|Modal', module)
   .addDecorator(centered)
+  .addDecorator(themeProvider)
   .add('default', () => (
     <WithShow>
       {({ handleClose, show }) => (

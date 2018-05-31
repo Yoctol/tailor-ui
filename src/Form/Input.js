@@ -6,7 +6,6 @@ import { ifProp } from 'styled-tools';
 import { sizes } from '../utils/system';
 import { controlShadow } from '../utils/shadow';
 import controlTransition from '../utils/transition';
-import theme from '../theme';
 
 const Input = styled.input`
   display: block;
@@ -92,7 +91,6 @@ Input.propTypes = {
 };
 
 Input.defaultProps = {
-  theme,
   size: 'm',
 };
 

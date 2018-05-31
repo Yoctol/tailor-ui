@@ -2,8 +2,6 @@ import styled, { css } from 'styled-components';
 import { themeGet } from 'styled-system';
 import { switchProp } from 'styled-tools';
 
-import theme from '../theme';
-
 const Label = styled.label`
   display: block;
   line-height: ${themeGet('lineHeight')};
@@ -34,7 +32,6 @@ const Label = styled.label`
 `;
 
 Label.defaultProps = {
-  theme,
   size: 'm',
 };
 

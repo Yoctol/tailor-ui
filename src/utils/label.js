@@ -1,6 +1,6 @@
 import { css } from 'styled-components';
 
-import theme from '../theme';
+import { defaultTheme as theme } from '../theme';
 
 export const labelBase = () => css`
   padding: 0.1rem 0.15rem;

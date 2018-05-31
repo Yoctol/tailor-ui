@@ -4,6 +4,7 @@ import centered from '@storybook/addon-centered';
 import { withState } from 'recompose';
 import { range } from 'ramda';
 
+import themeProvider from '../../../.storybook/theme-provider';
 import Tabs from '../';
 
 const { Tab } = Tabs;
@@ -47,6 +48,7 @@ const TabWithActive = withActiveTab(
 
 storiesOf('Data Display|Tabs', module)
   .addDecorator(centered)
+  .addDecorator(themeProvider)
   .add('default', () => <TabWithActive />)
   .add('default with absolute', () => <TabWithActive absolute />)
   .add('default with disabled', () => (

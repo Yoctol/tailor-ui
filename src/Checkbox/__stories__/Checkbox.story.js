@@ -3,10 +3,12 @@ import { storiesOf } from '@storybook/react';
 import centered from '@storybook/addon-centered';
 import { action } from '@storybook/addon-actions';
 
+import themeProvider from '../../../.storybook/theme-provider';
 import Checkbox from '../';
 
 storiesOf('Data Entry|Checkbox', module)
   .addDecorator(centered)
+  .addDecorator(themeProvider)
   .add('default', () => (
     <div>
       <Checkbox onChange={action('onChange')} />

@@ -3,6 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { range } from 'ramda';
 import { compose, withState, withHandlers } from 'recompose';
 
+import themeProvider from '../../../.storybook/theme-provider';
 import Menu from '../';
 
 const activeEnhancer = compose(
@@ -18,6 +19,7 @@ const WithActive = activeEnhancer(({ active, updateActive, children }) => (
 ));
 
 storiesOf('Navigation|Menu', module)
+  .addDecorator(themeProvider)
   .add('default', () => (
     <WithActive>
       {({ active, updateActive }) => (

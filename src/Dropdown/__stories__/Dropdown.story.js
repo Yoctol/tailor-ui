@@ -4,6 +4,7 @@ import centered from '@storybook/addon-centered';
 import { action } from '@storybook/addon-actions';
 import { compose, withState, withHandlers } from 'recompose';
 
+import themeProvider from '../../../.storybook/theme-provider';
 import Button from '../../Button';
 import Dropdown from '../';
 
@@ -23,6 +24,7 @@ const WithToggle = visibleEnhancer(({ visible, toggleVisible, children }) => (
 
 storiesOf('Navigation|Dropdown', module)
   .addDecorator(centered)
+  .addDecorator(themeProvider)
   .add('with visible', () => (
     <WithToggle>
       {visible => (

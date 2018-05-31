@@ -2,6 +2,7 @@ import React from 'react';
 import centered from '@storybook/addon-centered';
 import { storiesOf } from '@storybook/react';
 
+import themeProvider from '../../../.storybook/theme-provider';
 import Card from '../';
 
 // eslint-disable-next-line react/prop-types
@@ -9,6 +10,7 @@ const Wrapper = ({ children }) => <div style={{ width: 400 }}>{children}</div>;
 
 storiesOf('Data Display|Card', module)
   .addDecorator(centered)
+  .addDecorator(themeProvider)
   .add('with text', () => (
     <Wrapper>
       <Card>

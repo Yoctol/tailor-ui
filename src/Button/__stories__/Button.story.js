@@ -4,6 +4,7 @@ import { action } from '@storybook/addon-actions';
 import centered from '@storybook/addon-centered';
 import { withKnobs, select, boolean } from '@storybook/addon-knobs';
 
+import themeProvider from '../../../.storybook/theme-provider';
 import Button from '../';
 
 const sizes = { sm: 'SM', m: 'M (Default)', lg: 'LG' };
@@ -11,6 +12,7 @@ const sizes = { sm: 'SM', m: 'M (Default)', lg: 'LG' };
 storiesOf('General|Button', module)
   .addDecorator(centered)
   .addDecorator(withKnobs)
+  .addDecorator(themeProvider)
   .add('with text', () => (
     <Button onClick={action('clicked')}>Text Button</Button>
   ))

@@ -4,13 +4,17 @@ export const primary = '#191723';
 export const primaryDark = '#0e0c1a';
 export const primaryLight = '#423b63';
 
-export const secondary = '#80bdc7';
-export const secondaryDark = '#63bed5';
-export const secondaryLight = '#9fdfea';
+export const secondaryBlue = {
+  secondary: '#80bdc7',
+  secondaryDark: '#63bed5',
+  secondaryLight: '#9fdfea',
+};
 
-// export const secondary = '#56e495';
-// export const secondaryDark = '#3fcc74';
-// export const secondaryLight = '#9cffb9';
+export const secondaryGreen = {
+  secondary: '#56e495',
+  secondaryDark: '#3fcc74',
+  secondaryLight: '#9cffb9',
+};
 
 export const dark = '#111111';
 export const light = '#ffffff';

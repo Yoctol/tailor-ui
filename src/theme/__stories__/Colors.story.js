@@ -22,9 +22,32 @@ storiesOf('Other|Colors', module).add('colors', () => (
       <Color bg={colors.primaryLight} title="Primary Light" />
     </Flex>
     <Flex>
-      <Color bg={colors.secondary} title="Secondary" />
-      <Color bg={colors.secondaryDark} title="Secondary Dark" />
-      <Color bg={colors.secondaryLight} title="Secondary Light" />
+      <Color
+        bg={colors.secondaryGreen.secondary}
+        title="Secondary Green"
+        color="#0E0C1A"
+      />
+      <Color
+        bg={colors.secondaryGreen.secondaryDark}
+        title="Secondary Green Dark"
+      />
+      <Color
+        bg={colors.secondaryGreen.secondaryLight}
+        title="Secondary Green Light"
+        color="#0E0C1A"
+      />
+    </Flex>
+    <Flex>
+      <Color bg={colors.secondaryBlue.secondary} title="Secondary Blue" />
+      <Color
+        bg={colors.secondaryBlue.secondaryDark}
+        title="Secondary Blue Dark"
+      />
+      <Color
+        bg={colors.secondaryBlue.secondaryLight}
+        title="Secondary Blue Light"
+        color="#0E0C1A"
+      />
     </Flex>
     <Flex>
       <Color bg={colors.success} title="Success" />

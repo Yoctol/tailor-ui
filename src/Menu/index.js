@@ -5,8 +5,6 @@ import { Flex } from 'grid-styled';
 import { themeGet, space, color, borders, borderRadius } from 'styled-system';
 import { ifProp } from 'styled-tools';
 
-import theme from '../theme';
-
 const Menu = styled(Flex)`
   flex-direction: column;
   justify-content: start;
@@ -22,7 +20,6 @@ Menu.propTypes = {
 };
 
 Menu.defaultProps = {
-  theme,
   bg: 'primaryDark',
 };
 
@@ -61,10 +58,6 @@ Item.propTypes = {
   ...borderRadius.propTypes,
 };
 
-Item.defaultProps = {
-  theme,
-};
-
 const SubMenuWrapper = styled.div`
   display: flex;
   position: relative;
@@ -76,10 +69,6 @@ const SubMenuWrapper = styled.div`
   }
   /* stylelint-enable */
 `;
-
-SubMenuWrapper.defaultProps = {
-  theme,
-};
 
 const Arrow = styled.div`
   position: absolute;
@@ -93,10 +82,6 @@ const Arrow = styled.div`
   border-right: 7px solid transparent;
   border-left: 7px solid transparent;
 `;
-
-Arrow.defaultProps = {
-  theme,
-};
 
 const SubMenuAnimation = styled.div`
   max-height: ${ifProp('active', '200px', 0)};
@@ -116,10 +101,6 @@ const SubMenuAnimation = styled.div`
 
 SubMenuAnimation.propTypes = {
   active: PropTypes.bool.isRequired,
-};
-
-SubMenuAnimation.defaultProps = {
-  theme,
 };
 
 const SubMenu = ({ title, children, active, ...otherProps }) => (

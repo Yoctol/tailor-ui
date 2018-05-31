@@ -5,8 +5,6 @@ import styled from 'styled-components';
 import { themeGet, width, height, color, borderColor } from 'styled-system';
 import { ifProp } from 'styled-tools';
 
-import theme from '../theme';
-
 const CheckboxWrapper = styled.span`
   .rc-checkbox {
     display: inline-block;
@@ -102,7 +100,6 @@ CheckboxWrapper.propTypes = {
 };
 
 CheckboxWrapper.defaultProps = {
-  theme,
   borderColor: 'primary',
   bg: 'primary',
   height: 19,

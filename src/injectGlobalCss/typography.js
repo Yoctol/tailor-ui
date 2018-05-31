@@ -1,7 +1,7 @@
 import { css } from 'styled-components';
 import { lighten } from 'polished';
 
-import theme from '../theme';
+import { defaultTheme as theme } from '../theme';
 import { labelBase, labelVariant } from '../utils/label';
 
 export default css`

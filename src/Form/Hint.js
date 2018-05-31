@@ -2,8 +2,6 @@ import styled, { css } from 'styled-components';
 import { themeGet } from 'styled-system';
 import { ifProp } from 'styled-tools';
 
-import theme from '../theme';
-
 const Hint = styled.span`
   margin-top: ${themeGet('space.1')};
   color: ${themeGet('colors.gray.6')};
@@ -28,9 +26,5 @@ const Hint = styled.span`
     `
   )};
 `;
-
-Hint.defaultProps = {
-  theme,
-};
 
 export default Hint;
