@@ -1,13 +1,13 @@
 import React from 'react';
-import { shallow } from 'enzyme';
 
 import Tabs from '../';
+import shallowWithTheme from '../../../test/shallowWithTheme';
 
 const { Tab } = Tabs;
 
 describe('Tabs', () => {
   it('should render correctly', () => {
-    const component = shallow(
+    const component = shallowWithTheme(
       <Tabs>
         <Tab active>Tab 1</Tab>
         <Tab disabled>Tab 2</Tab>
@@ -19,7 +19,7 @@ describe('Tabs', () => {
   });
 
   it('should render with props absolute', () => {
-    const component = shallow(
+    const component = shallowWithTheme(
       <Tabs absolute>
         <Tab active>Tab 1</Tab>
         <Tab disabled>Tab 2</Tab>
@@ -31,7 +31,7 @@ describe('Tabs', () => {
   });
 
   it('should render with props pills', () => {
-    const component = shallow(
+    const component = shallowWithTheme(
       <Tabs pills>
         <Tab active>Tab 1</Tab>
         <Tab disabled>Tab 2</Tab>

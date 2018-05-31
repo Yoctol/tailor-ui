@@ -1,17 +1,17 @@
 import React from 'react';
-import { shallow } from 'enzyme';
 
 import Checkbox from '../';
+import shallowWithTheme from '../../../test/shallowWithTheme';
 
 describe('Checkbox', () => {
   it('should render correctly', () => {
-    const component = shallow(<Checkbox />);
+    const component = shallowWithTheme(<Checkbox />);
 
     expect(component).toMatchSnapshot();
   });
 
   it('should render with props circle, checked and disabled', () => {
-    const component = shallow(<Checkbox circle checked disabled />);
+    const component = shallowWithTheme(<Checkbox circle checked disabled />);
 
     expect(component).toMatchSnapshot();
   });
