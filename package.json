@@ -23,7 +23,6 @@
     "preversion": "npm test && npm run deploy:storybook"
   },
   "dependencies": {
-    "grid-styled": "^4.1.0",
     "polished": "^1.9.2",
     "prop-types": "^15.6.1",
     "ramda": "^0.25.0",

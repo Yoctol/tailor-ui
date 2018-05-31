@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
-import { Flex } from 'grid-styled';
 import { themeGet, space, color, borders, borderRadius } from 'styled-system';
 import { ifProp } from 'styled-tools';
+
+import { Flex } from '../';
 
 const Menu = styled(Flex)`
   flex-direction: column;
