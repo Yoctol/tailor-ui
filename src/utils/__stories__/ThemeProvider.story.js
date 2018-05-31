@@ -6,7 +6,7 @@ import { Toggle } from 'react-powerplug';
 import ThemeProvider from '../ThemeProvider';
 import Button from '../../Button';
 
-storiesOf('ThemeProvider', module)
+storiesOf('Other|ThemeProvider', module)
   .addDecorator(centered)
   .add('default', () => (
     <Toggle>
