@@ -1,8 +1,8 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import centered from '@storybook/addon-centered';
-import { Flex } from 'grid-styled';
 
+import { Flex } from '../../';
 import themeProvider from '../../../.storybook/theme-provider';
 import Label from '../../Form/Label';
 import Radio from '../';
