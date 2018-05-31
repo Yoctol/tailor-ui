@@ -13,6 +13,7 @@ import {
   Modal,
   Radio,
   Select,
+  Space,
   Table,
   Tabs,
   Textarea,
@@ -37,6 +38,7 @@ describe('index', () => {
     expect(Modal).toBeDefined();
     expect(Radio).toBeDefined();
     expect(Select).toBeDefined();
+    expect(Space).toBeDefined();
     expect(Table).toBeDefined();
     expect(Tabs).toBeDefined();
     expect(Textarea).toBeDefined();
