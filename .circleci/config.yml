@@ -1,0 +1,118 @@
+version: 2
+# Reference variables.
+references:
+  docker_default: &docker_8
+    working_directory: /tmp/app
+    docker:
+      - image: node:8
+    environment:
+      TZ: "/usr/share/zoneinfo/Asia/Taipei"
+  docker_default: &docker_10
+    working_directory: /tmp/app
+    docker:
+      - image: node:10
+    environment:
+      TZ: "/usr/share/zoneinfo/Asia/Taipei"
+
+jobs:
+  build-node-10:
+    <<: *docker_10
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - node-10-cache-{{checksum "yarn.lock"}}
+            - node-10-cache
+      - run:
+          name: install dependencies
+          command: |
+            yarn config set cache-folder .yarn-cache
+            yarn
+      - run:
+          name: build
+          command: npm run build
+      - save_cache:
+          key: node-10-cache-{{checksum "yarn.lock"}}
+          paths:
+            - .yarn-cache
+            - ./node_modules
+      - persist_to_workspace:
+          root: .
+          paths:
+            - node_modules
+            - lib
+  test-node-10:
+    <<: *docker_10
+    steps:
+      - checkout
+      - attach_workspace:
+          at: .
+      - run:
+          name: run test
+          command: npm run testonly:cov -- --no-cache --colors
+      - store_artifacts:
+          path: coverage
+          prefix: coverage
+  build-node-8:
+    <<: *docker_8
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - node-8-cache-{{checksum "yarn.lock"}}
+            - node-8-cache
+      - run:
+          name: install dependencies
+          command: |
+            yarn config set cache-folder .yarn-cache
+            yarn
+      - run:
+          name: build
+          command: npm run build
+      - save_cache:
+          key: node-8-cache-{{checksum "yarn.lock"}}
+          paths:
+            - .yarn-cache
+            - ./node_modules
+      - persist_to_workspace:
+          root: .
+          paths:
+            - node_modules
+            - lib
+  lint-node-8:
+    <<: *docker_8
+    steps:
+      - checkout
+      - attach_workspace:
+          at: .
+      - run:
+          name: run lint
+          command: npm run lint && npm run lint:css
+  test-node-8:
+    <<: *docker_8
+    steps:
+      - checkout
+      - attach_workspace:
+          at: .
+      - run:
+          name: run test
+          command: npm run testonly:cov -- --no-cache --colors
+      - store_artifacts:
+          path: coverage
+          prefix: coverage
+
+workflows:
+  version: 2
+  test-on-node-8-and-10:
+    jobs:
+      - build-node-10
+      - test-node-10:
+          requires:
+            - build-node-10
+      - build-node-8
+      - lint-node-8:
+          requires:
+            - build-node-8
+      - test-node-8:
+          requires:
+            - build-node-8
