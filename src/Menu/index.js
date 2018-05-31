@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { Flex } from 'grid-styled';
 import { themeGet, space, color, borders, borderRadius } from 'styled-system';
 import { ifProp } from 'styled-tools';
@@ -30,16 +30,19 @@ const Item = styled.button`
   border: 0;
   border-left: ${themeGet('borders.xl')}
     ${ifProp('active', themeGet('colors.secondary'), 'transparent')};
-  opacity: ${ifProp('active', 1, 0.6)};
   background-color: ${themeGet('colors.primaryDark')};
-  color: ${themeGet('colors.light')};
+  color: ${ifProp(
+    'active',
+    themeGet('colors.light'),
+    themeGet('colors.gray.4')
+  )};
   font-size: ${themeGet('fontSizes.default')};
   text-align: left;
   transition: all 0.1s ease-in-out;
   cursor: pointer;
 
   &:hover {
-    opacity: 1;
+    color: ${themeGet('colors.light')};
   }
 
   &:focus {
@@ -88,13 +91,16 @@ const SubMenuAnimation = styled.div`
   overflow: hidden;
   transition: all 0.3s ease-in-out;
 
+  ${ifProp(
+    'active',
+    css`
+      border-bottom: ${themeGet('borders.default')} ${themeGet('colors.gray.7')};
+    `
+  )}
+
   /* stylelint-disable no-duplicate-selectors */
   ${Item} {
     background-color: ${themeGet('colors.primary')};
-
-    &:last-child {
-      border-bottom: ${themeGet('borders.default')} ${themeGet('colors.light')};
-    }
   }
   /* stylelint-enable */
 `;
