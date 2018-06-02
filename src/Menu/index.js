@@ -67,11 +67,9 @@ const SubMenuWrapper = styled.div`
   position: relative;
   flex-direction: column;
 
-  /* stylelint-disable no-duplicate-selectors */
-  ${Item} {
+  ${Item /* sc-selector */} {
     background-color: ${themeGet('colors.primaryDark')};
   }
-  /* stylelint-enable */
 `;
 
 const Arrow = styled.div`
@@ -97,13 +95,11 @@ const SubMenuAnimation = styled.div`
     css`
       border-bottom: ${themeGet('borders.default')} ${themeGet('colors.gray.7')};
     `
-  )}
+  )};
 
-  /* stylelint-disable no-duplicate-selectors */
-  ${Item} {
+  ${Item /* sc-selector */} {
     background-color: ${themeGet('colors.primary')};
   }
-  /* stylelint-enable */
 `;
 
 SubMenuAnimation.propTypes = {

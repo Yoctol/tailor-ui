@@ -50,7 +50,7 @@ Checkmark.propTypes = {
   size: PropTypes.oneOf(['sm', 'm', 'lg']).isRequired,
 };
 
-const Container = styled.div`
+const RadioContainer = styled.div`
   display: inline-flex;
   align-items: center;
   user-select: none;
@@ -60,8 +60,7 @@ const Container = styled.div`
     opacity: 0;
 
     &:checked {
-      /* stylelint-disable-next-line */
-      & ~ ${Checkmark}::after {
+      & ~ ${Checkmark /* sc-selector */}::after {
         display: block;
       }
     }
@@ -69,10 +68,10 @@ const Container = styled.div`
 `;
 
 const Radio = ({ disabled, size, ...props }) => (
-  <Container>
+  <RadioContainer>
     <input type="radio" disabled={disabled} {...props} />
     <Checkmark size={size} disabled={disabled} />
-  </Container>
+  </RadioContainer>
 );
 
 Radio.propTypes = {

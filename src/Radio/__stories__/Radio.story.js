@@ -14,15 +14,15 @@ storiesOf('Data Entry|Radio', module)
     <Flex flexDirection="column">
       <Flex>
         <Radio name="radio" size="sm" defaultChecked />
-        <Label htmlFor="small">小</Label>
+        <Label htmlFor="small">Small</Label>
       </Flex>
       <Flex>
         <Radio name="radio" />
-        <Label htmlFor="medium">中</Label>
+        <Label htmlFor="medium">Medium</Label>
       </Flex>
       <Flex>
         <Radio name="radio" size="lg" disabled />
-        <Label htmlFor="large">大（disabled）</Label>
+        <Label htmlFor="large">Large with disabled</Label>
       </Flex>
     </Flex>
   ));

@@ -88,11 +88,9 @@ const TabsWrapper = styled.nav`
     `
   )};
 
-  /* stylelint-disable no-duplicate-selectors */
-  ${Tab} {
+  ${Tab /* sc-selector */} {
     flex-grow: ${ifProp('block', 1, 0)};
   }
-  /* stylelint-enable */
 
   ${space};
 `;
