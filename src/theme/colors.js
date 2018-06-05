@@ -19,16 +19,16 @@ export const secondaryGreen = {
 export const dark = '#111111';
 export const light = '#ffffff';
 export const gray = [
-  '#1e1e1e',
-  '#2b2b2b',
-  '#373737',
-  '#444444',
-  '#5e5e5e',
-  '#919191',
-  '#aaaaaa',
-  '#c3c3c3',
-  '#e9e9e9',
-  '#f7f7f7',
+  '#1e1e1e', // 0
+  '#2b2b2b', // 1
+  '#373737', // 2
+  '#444444', // 3
+  '#5e5e5e', // 4
+  '#919191', // 5
+  '#aaaaaa', // 6
+  '#c3c3c3', // 7
+  '#e9e9e9', // 8
+  '#f7f7f7', // 9
 ];
 
 export const success = '#63bf2d';
