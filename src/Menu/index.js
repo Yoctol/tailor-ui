@@ -1,10 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
+import { Spring, animated } from 'react-spring';
 import { themeGet, space, color, borders, borderRadius } from 'styled-system';
-import { ifProp } from 'styled-tools';
+import createPropsTransform from 'react-props-classnames';
 
 import { Flex } from '../';
+import { IconWrapper } from '../Icon';
+
+const propsTransform = createPropsTransform({
+  prefix: 'menu',
+  props: ['active'],
+});
 
 const Menu = styled(Flex)`
   flex-direction: column;
@@ -29,40 +36,38 @@ const Item = styled.button`
   width: 100%;
   padding: ${themeGet('space.3')} ${themeGet('space.5')};
   border: 0;
-  border-left: ${themeGet('borders.xl')}
-    ${ifProp('active', themeGet('colors.secondary'), 'transparent')};
+  border-left: ${themeGet('borders.xl')};
+  border-left-color: transparent;
   background-color: ${themeGet('colors.primaryDark')};
-  color: ${ifProp(
-    'active',
-    themeGet('colors.light'),
-    themeGet('colors.gray.4')
-  )};
+  color: ${themeGet('colors.gray.4')};
   font-size: ${themeGet('fontSizes.default')};
   line-height: ${themeGet('space.6')};
   text-align: left;
   transition: all 0.1s ease-in-out;
   cursor: pointer;
 
-  & .icon {
+  & ${IconWrapper /* sc-selector */} {
     margin-right: 7px;
     vertical-align: 10%;
 
     svg {
       fill: ${themeGet('colors.gray.4')};
+    }
+  }
 
-      ${ifProp(
-        'active',
-        css`
-          fill: ${themeGet('colors.light')};
-        `
-      )};
+  &.menu-active {
+    border-left-color: ${themeGet('colors.secondary')};
+    color: ${themeGet('colors.light')};
+
+    & ${IconWrapper /* sc-selector */} svg {
+      fill: ${themeGet('colors.light')};
     }
   }
 
   &:hover {
     color: ${themeGet('colors.light')};
 
-    & .icon svg {
+    & ${IconWrapper /* sc-selector */} svg {
       fill: ${themeGet('colors.light')};
     }
   }
@@ -77,10 +82,15 @@ const Item = styled.button`
 `;
 
 Item.propTypes = {
+  active: PropTypes.bool.isRequired,
   ...space.propTypes,
   ...color.propTypes,
   ...borders.propTypes,
   ...borderRadius.propTypes,
+};
+
+Item.defaultProps = {
+  active: false,
 };
 
 const SubMenuWrapper = styled.div`
@@ -106,26 +116,19 @@ const Arrow = styled.div`
   border-left: 7px solid transparent;
 `;
 
-const SubMenuAnimation = styled.div`
-  max-height: ${ifProp('active', '200px', 0)};
+const Animation = styled.div`
   overflow: hidden;
-  transition: all 0.3s ease-in-out;
-
-  ${ifProp(
-    'active',
-    css`
-      border-bottom: ${themeGet('borders.default')} ${themeGet('colors.gray.7')};
-    `
-  )};
 
   ${Item /* sc-selector */} {
     background-color: ${themeGet('colors.primary')};
   }
+
+  &.menu-active {
+    border-bottom: ${themeGet('borders.default')} ${themeGet('colors.gray.7')};
+  }
 `;
 
-SubMenuAnimation.propTypes = {
-  active: PropTypes.bool.isRequired,
-};
+const AnimationWrapper = propsTransform(Animation);
 
 const SubMenu = ({ title, children, active, ...otherProps }) => (
   <SubMenuWrapper>
@@ -133,7 +136,11 @@ const SubMenu = ({ title, children, active, ...otherProps }) => (
       {title}
     </Item>
     <Arrow />
-    <SubMenuAnimation active={active}>{children}</SubMenuAnimation>
+    <AnimationWrapper active={active}>
+      <Spring native from={{ height: 0 }} to={{ height: active ? 'auto' : 0 }}>
+        {props => <animated.div style={props}>{children}</animated.div>}
+      </Spring>
+    </AnimationWrapper>
   </SubMenuWrapper>
 );
 
@@ -143,7 +150,7 @@ SubMenu.propTypes = {
   title: PropTypes.node.isRequired,
 };
 
-Menu.SubMenu = SubMenu;
-Menu.Item = Item;
+Menu.SubMenu = propsTransform(SubMenu);
+Menu.Item = propsTransform(Item);
 
 export default Menu;
