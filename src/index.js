@@ -6,6 +6,7 @@ export { default as Card } from './Card';
 export { default as Checkbox } from './Checkbox';
 export { default as Dropdown } from './Dropdown';
 export { default as Flex } from './Grid/Flex';
+export { default as Heading } from './Heading';
 export { default as Hint } from './Form/Hint';
 export { default as Icon } from './Icon';
 export { default as Input } from './Form/Input';
