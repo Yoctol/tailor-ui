@@ -1,0 +1,320 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Menu should render correctly 1`] = `
+.c2 {
+  box-sizing: border-box;
+  background-color: #0e0c1a;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c0 {
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: start;
+  -webkit-justify-content: start;
+  -ms-flex-pack: start;
+  justify-content: start;
+  width: 200px;
+  height: 100%;
+  overflow-y: auto;
+  background-color: #0e0c1a;
+}
+
+.c5 {
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  width: 100%;
+  padding: 0.6rem 1rem;
+  border: 0;
+  border-left: 0.4rem solid;
+  border-left-color: transparent;
+  background-color: #0e0c1a;
+  color: #5e5e5e;
+  font-size: .8rem;
+  line-height: 1.2rem;
+  text-align: left;
+  -webkit-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+  cursor: pointer;
+}
+
+.c5 .Icon__IconWrapper-ksWXhn {
+  margin-right: 7px;
+  vertical-align: 10%;
+}
+
+.c5 .Icon__IconWrapper-ksWXhn svg {
+  fill: #5e5e5e;
+}
+
+.c5.menu-active {
+  border-left-color: #56e495;
+  color: #ffffff;
+}
+
+.c5.menu-active .Icon__IconWrapper-ksWXhn svg {
+  fill: #ffffff;
+}
+
+.c5:hover {
+  color: #ffffff;
+}
+
+.c5:hover .Icon__IconWrapper-ksWXhn svg {
+  fill: #ffffff;
+}
+
+.c5:focus {
+  outline: 0;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c3 .c4 {
+  background-color: #0e0c1a;
+}
+
+.c6 {
+  position: absolute;
+  z-index: 99;
+  top: 50px;
+  left: 50%;
+  width: 0;
+  height: 0;
+  margin-left: -2px;
+  border-top: 8px solid #0e0c1a;
+  border-right: 7px solid transparent;
+  border-left: 7px solid transparent;
+}
+
+.c7 {
+  overflow: hidden;
+}
+
+.c7 .c4 {
+  background-color: #191723;
+}
+
+.c7.menu-active {
+  border-bottom: 0.05rem solid #c3c3c3;
+}
+
+<Menu
+  bg="primaryDark"
+>
+  <Flex
+    bg="primaryDark"
+    className="c0"
+  >
+    <Box
+      bg="primaryDark"
+      className="c0 c1"
+    >
+      <div
+        className="c0 c1 c2"
+      >
+        <PropsTransformer(SubMenu)
+          active={true}
+          title="Group"
+        >
+          <SubMenu
+            active={true}
+            className="menu-active"
+            title="Group"
+          >
+            <Menu__SubMenuWrapper>
+              <div
+                className="c3"
+              >
+                <Menu__Item
+                  active={true}
+                  className="menu-active"
+                >
+                  <button
+                    className="menu-active c4 c5"
+                  >
+                    Group
+                  </button>
+                </Menu__Item>
+                <Menu__Arrow>
+                  <div
+                    className="c6"
+                  />
+                </Menu__Arrow>
+                <PropsTransformer(Menu__Animation)
+                  active={true}
+                >
+                  <Menu__Animation
+                    active={true}
+                    className="menu-active"
+                  >
+                    <div
+                      className="menu-active c7"
+                    >
+                      <Spring
+                        config={
+                          Object {
+                            "friction": 26,
+                            "tension": 170,
+                          }
+                        }
+                        from={
+                          Object {
+                            "height": 0,
+                          }
+                        }
+                        hold={false}
+                        immediate={false}
+                        impl={[Function]}
+                        inject={[Function]}
+                        native={true}
+                        reset={false}
+                        to={
+                          Object {
+                            "height": "auto",
+                          }
+                        }
+                      >
+                        <AnimatedComponent
+                          style={
+                            Object {
+                              "height": AnimatedValue {
+                                "_animatedStyles": Set {},
+                                "_animation": null,
+                                "_children": Array [
+                                  AnimatedStyle {
+                                    "_children": Array [
+                                      AnimatedProps {
+                                        "_callback": [Function],
+                                        "_props": Object {
+                                          "children": Array [
+                                            <PropsTransformer(Menu__Item)
+                                              active={true}
+                                            >
+                                              Group Item 1
+                                            </PropsTransformer(Menu__Item)>,
+                                            <PropsTransformer(Menu__Item)
+                                              active={false}
+                                            >
+                                              Group Item 2
+                                            </PropsTransformer(Menu__Item)>,
+                                            <PropsTransformer(Menu__Item)
+                                              active={false}
+                                            >
+                                              Group Item 3
+                                            </PropsTransformer(Menu__Item)>,
+                                            <PropsTransformer(Menu__Item)
+                                              active={false}
+                                            >
+                                              Group Item 4
+                                            </PropsTransformer(Menu__Item)>,
+                                          ],
+                                          "style": [Circular],
+                                        },
+                                      },
+                                    ],
+                                    "_style": [Circular],
+                                  },
+                                ],
+                                "_listeners": Object {},
+                                "_value": "auto",
+                              },
+                              "position": "absolute",
+                              "visibility": "hidden",
+                            }
+                          }
+                        >
+                          <div
+                            style={
+                              Object {
+                                "height": "auto",
+                                "position": "absolute",
+                                "visibility": "hidden",
+                              }
+                            }
+                          >
+                            <PropsTransformer(Menu__Item)
+                              active={true}
+                            >
+                              <Menu__Item
+                                active={true}
+                                className="menu-active"
+                              >
+                                <button
+                                  className="menu-active c4 c5"
+                                >
+                                  Group Item 1
+                                </button>
+                              </Menu__Item>
+                            </PropsTransformer(Menu__Item)>
+                            <PropsTransformer(Menu__Item)
+                              active={false}
+                            >
+                              <Menu__Item
+                                active={false}
+                              >
+                                <button
+                                  className="c4 c5"
+                                >
+                                  Group Item 2
+                                </button>
+                              </Menu__Item>
+                            </PropsTransformer(Menu__Item)>
+                            <PropsTransformer(Menu__Item)
+                              active={false}
+                            >
+                              <Menu__Item
+                                active={false}
+                              >
+                                <button
+                                  className="c4 c5"
+                                >
+                                  Group Item 3
+                                </button>
+                              </Menu__Item>
+                            </PropsTransformer(Menu__Item)>
+                            <PropsTransformer(Menu__Item)
+                              active={false}
+                            >
+                              <Menu__Item
+                                active={false}
+                              >
+                                <button
+                                  className="c4 c5"
+                                >
+                                  Group Item 4
+                                </button>
+                              </Menu__Item>
+                            </PropsTransformer(Menu__Item)>
+                          </div>
+                        </AnimatedComponent>
+                      </Spring>
+                    </div>
+                  </Menu__Animation>
+                </PropsTransformer(Menu__Animation)>
+              </div>
+            </Menu__SubMenuWrapper>
+          </SubMenu>
+        </PropsTransformer(SubMenu)>
+      </div>
+    </Box>
+  </Flex>
+</Menu>
+`;
