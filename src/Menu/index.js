@@ -27,7 +27,7 @@ Menu.defaultProps = {
 const Item = styled.button`
   flex-shrink: 0;
   width: 100%;
-  padding: ${themeGet('space.4')} ${themeGet('space.6')};
+  padding: ${themeGet('space.3')} ${themeGet('space.5')};
   border: 0;
   border-left: ${themeGet('borders.xl')}
     ${ifProp('active', themeGet('colors.secondary'), 'transparent')};
@@ -38,12 +38,33 @@ const Item = styled.button`
     themeGet('colors.gray.4')
   )};
   font-size: ${themeGet('fontSizes.default')};
+  line-height: ${themeGet('space.6')};
   text-align: left;
   transition: all 0.1s ease-in-out;
   cursor: pointer;
 
+  & .icon {
+    margin-right: 7px;
+    vertical-align: 10%;
+
+    svg {
+      fill: ${themeGet('colors.gray.4')};
+
+      ${ifProp(
+        'active',
+        css`
+          fill: ${themeGet('colors.light')};
+        `
+      )};
+    }
+  }
+
   &:hover {
     color: ${themeGet('colors.light')};
+
+    & .icon svg {
+      fill: ${themeGet('colors.light')};
+    }
   }
 
   &:focus {

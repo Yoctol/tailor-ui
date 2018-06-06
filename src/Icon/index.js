@@ -60,7 +60,7 @@ const Icon = ({ type, ...otherProps }) => {
   }
 
   return (
-    <IconWrapper {...otherProps}>
+    <IconWrapper {...otherProps} className="icon">
       <IconComponent />
     </IconWrapper>
   );

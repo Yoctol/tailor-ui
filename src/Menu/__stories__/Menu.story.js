@@ -5,6 +5,7 @@ import { compose, withState, withHandlers } from 'recompose';
 
 import themeProvider from '../../../.storybook/theme-provider';
 import Menu from '../';
+import Icon from '../../Icon';
 
 const activeEnhancer = compose(
   withState('active', 'setActive', 1),
@@ -39,7 +40,11 @@ storiesOf('Navigation|Menu', module)
         <Menu>
           {range(1, 6).map(key => (
             <Menu.SubMenu
-              title={`Group ${key}`}
+              title={
+                <span>
+                  <Icon type="kurator" />Group {key}
+                </span>
+              }
               onClick={updateActive(key)}
               active={active === key}
             >
