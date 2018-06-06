@@ -1,89 +1,72 @@
-import React from 'react';
 import PropTypes from 'prop-types';
-import styled, { css } from 'styled-components';
-import { themeGet } from 'styled-system';
-import { ifProp, switchProp } from 'styled-tools';
+import styled from 'styled-components';
+import { themeGet, color, borderColor } from 'styled-system';
 
-const getCheckmarkSpace = size => css`
-  width: calc(${themeGet(size)} * 1.5);
-  height: calc(${themeGet(size)} * 1.5);
-`;
+import { controlShadow } from '../utils/shadow';
+import Label from '../Form/Label';
 
-const Checkmark = styled.span`
-  height: 0;
-  margin-right: 0.25rem;
-  border: 1px solid
-    ${ifProp('disabled', themeGet('colors.border'), themeGet('colors.primary'))};
-  border-radius: 50%;
-  background-color: #fff;
-  cursor: ${ifProp('disabled', 'default', 'pointer')};
+const Radio = styled.input.attrs({
+  type: 'radio',
+})`
+  position: absolute;
+  opacity: 0;
 
-  &::after {
+  & + ${Label /* sc-selector */} {
+    position: relative;
+    padding: 0;
+    cursor: pointer;
+  }
+
+  & + ${Label /* sc-selector */}::before {
     content: '';
-    display: none;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: ${themeGet('space.2')};
+    border: ${themeGet('borders.default')};
+    border-radius: 999px;
+    background: white;
+    vertical-align: text-bottom;
+    ${borderColor};
+  }
+
+  &:focus + ${Label /* sc-selector */}::before {
+    ${controlShadow()};
+  }
+
+  &:disabled + ${Label /* sc-selector */} {
+    opacity: 0.5;
+    cursor: auto;
+    pointer-events: none;
+  }
+
+  &:disabled + ${Label /* sc-selector */}::before {
+    opacity: 0.5;
+  }
+
+  &:checked + ${Label /* sc-selector */}::after {
+    content: '';
     position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 14px;
+    height: 14px;
+    border: solid 1px ${({ bg }) => themeGet(`colors.${bg}`)};
     border-radius: 50%;
-    background: ${themeGet('colors.primary')};
-    transform: translate(-50%, -50%);
-
-    ${switchProp('size', {
-      sm: getCheckmarkSpace('space.paddingXSm'),
-      m: getCheckmarkSpace('space.paddingX'),
-      lg: getCheckmarkSpace('space.paddingXLg'),
-    })};
-  }
-
-  ${switchProp('size', {
-    sm: css`
-      padding: ${themeGet('space.paddingXSm')} ${themeGet('space.paddingXSm')};
-    `,
-    m: css`
-      padding: ${themeGet('space.paddingX')} ${themeGet('space.paddingX')};
-    `,
-    lg: css`
-      padding: ${themeGet('space.paddingXLg')} ${themeGet('space.paddingXLg')};
-    `,
-  })};
-`;
-
-Checkmark.propTypes = {
-  size: PropTypes.oneOf(['sm', 'm', 'lg']).isRequired,
-};
-
-const RadioContainer = styled.div`
-  display: inline-flex;
-  align-items: center;
-  user-select: none;
-
-  input {
-    position: absolute;
-    opacity: 0;
-
-    &:checked {
-      & ~ ${Checkmark /* sc-selector */}::after {
-        display: block;
-      }
-    }
+    ${color};
   }
 `;
-
-const Radio = ({ disabled, size, ...props }) => (
-  <RadioContainer>
-    <input type="radio" disabled={disabled} {...props} />
-    <Checkmark size={size} disabled={disabled} />
-  </RadioContainer>
-);
 
 Radio.propTypes = {
   disabled: PropTypes.bool,
-  name: PropTypes.string,
-  size: PropTypes.oneOf(['sm', 'm', 'lg']),
+  ...borderColor.propTypes,
+  ...color.propTypes,
 };
 
 Radio.defaultProps = {
   disabled: false,
-  name: 'radio',
-  size: 'm',
+  bg: 'primary',
+  borderColor: 'primary',
 };
 
 export default Radio;

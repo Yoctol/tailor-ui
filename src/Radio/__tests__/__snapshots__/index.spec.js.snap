@@ -3,9 +3,9 @@
 exports[`Radio should render correctly 1`] = `
 <form>
   <Radio
+    bg="primary"
+    borderColor="primary"
     disabled={false}
-    name="radio"
-    size="m"
   />
   <Label
     htmlFor="medium"
@@ -19,8 +19,9 @@ exports[`Radio should render correctly 1`] = `
 exports[`Radio should render with props size and disabled 1`] = `
 <form>
   <Radio
+    bg="primary"
+    borderColor="primary"
     disabled={true}
-    name="radio"
     size="lg"
   />
   <Label

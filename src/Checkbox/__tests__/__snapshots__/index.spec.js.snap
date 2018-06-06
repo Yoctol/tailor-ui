@@ -1,48 +1,130 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Checkbox should render correctly 1`] = `
-<Checkbox__CheckboxWrapper
-  bg="primary"
-  borderColor="primary"
-  circle={false}
+.c0 {
+  position: absolute;
+  opacity: 0;
+}
+
+.c0 + .Label-bxMjsr {
+  position: relative;
+  padding: 0;
+  cursor: pointer;
+}
+
+.c0 + .Label-bxMjsr::before {
+  content: '';
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 0.4rem;
+  border: 0.05rem solid;
+  border-radius: 0.2rem;
+  background: white;
+  vertical-align: text-bottom;
+  border-color: #191723;
+}
+
+.c0:focus + .Label-bxMjsr::before {
+  box-shadow: 0 0 0 0.1rem rgba(25,23,35,0.2);
+}
+
+.c0:checked + .Label-bxMjsr::before {
+  background-color: #191723;
+}
+
+.c0:disabled + .Label-bxMjsr {
+  opacity: 0.5;
+  cursor: auto;
+  pointer-events: none;
+}
+
+.c0:disabled + .Label-bxMjsr::before {
+  opacity: 0.5;
+}
+
+.c0:checked + .Label-bxMjsr::after {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 7px;
+  width: 7px;
+  height: 11px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+<input
+  className="c0"
   disabled={false}
-  height={19}
-  width={19}
->
-  <Checkbox
-    className=""
-    defaultChecked={false}
-    disabled={false}
-    onBlur={[Function]}
-    onChange={[Function]}
-    onFocus={[Function]}
-    prefixCls="rc-checkbox"
-    style={Object {}}
-    type="checkbox"
-  />
-</Checkbox__CheckboxWrapper>
+  type="checkbox"
+/>
 `;
 
 exports[`Checkbox should render with props circle, checked and disabled 1`] = `
-<Checkbox__CheckboxWrapper
-  bg="primary"
-  borderColor="primary"
-  circle={true}
+.c0 {
+  position: absolute;
+  opacity: 0;
+}
+
+.c0 + .Label-bxMjsr {
+  position: relative;
+  padding: 0;
+  cursor: pointer;
+}
+
+.c0 + .Label-bxMjsr::before {
+  content: '';
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 0.4rem;
+  border: 0.05rem solid;
+  border-radius: 0.2rem;
+  background: white;
+  vertical-align: text-bottom;
+  border-color: #191723;
+}
+
+.c0:focus + .Label-bxMjsr::before {
+  box-shadow: 0 0 0 0.1rem rgba(25,23,35,0.2);
+}
+
+.c0:checked + .Label-bxMjsr::before {
+  background-color: #191723;
+}
+
+.c0:disabled + .Label-bxMjsr {
+  opacity: 0.5;
+  cursor: auto;
+  pointer-events: none;
+}
+
+.c0:disabled + .Label-bxMjsr::before {
+  opacity: 0.5;
+}
+
+.c0:checked + .Label-bxMjsr::after {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 7px;
+  width: 7px;
+  height: 11px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+<input
+  checked={true}
+  className="c0"
   disabled={true}
-  height={19}
-  width={19}
->
-  <Checkbox
-    checked={true}
-    className=""
-    defaultChecked={false}
-    disabled={true}
-    onBlur={[Function]}
-    onChange={[Function]}
-    onFocus={[Function]}
-    prefixCls="rc-checkbox"
-    style={Object {}}
-    type="checkbox"
-  />
-</Checkbox__CheckboxWrapper>
+  type="checkbox"
+/>
 `;

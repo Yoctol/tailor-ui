@@ -5,30 +5,34 @@ import { action } from '@storybook/addon-actions';
 
 import themeProvider from '../../../.storybook/theme-provider';
 import Checkbox from '../';
+import Label from '../../Form/Label';
 
 storiesOf('Data Entry|Checkbox', module)
   .addDecorator(centered)
   .addDecorator(themeProvider)
   .add('default', () => (
-    <div>
-      <Checkbox onChange={action('onChange')} />
-      <br />
-      <Checkbox circle onChange={action('onChange')} />
-    </div>
+    <>
+      <Checkbox id="checkbox" onChange={action('onChange')} />
+      <Label htmlFor="checkbox">Checkbox</Label>
+    </>
   ))
   .add('with disabled', () => (
-    <div>
-      <Checkbox checked disabled />
+    <>
+      <Checkbox id="checked-disabled" checked disabled />
+      <Label htmlFor="checked-disabled">Checked Disabled</Label>
       <br />
-      <Checkbox disabled />
-    </div>
+      <Checkbox id="disabled" disabled />
+      <Label htmlFor="disabled">Disabled</Label>
+    </>
   ))
-  .add('with cutomized style', () => (
-    <Checkbox
-      width={30}
-      height={30}
-      bg="#63bf2d"
-      borderColor="#423b63"
-      onChange={action('onChange')}
-    />
+  .add('with cutomized color', () => (
+    <>
+      <Checkbox
+        id="custom"
+        bg="#63bf2d"
+        borderColor="#423b63"
+        onChange={action('onChange')}
+      />
+      <Label htmlFor="custom">Customized Color Checkbox</Label>
+    </>
   ));
