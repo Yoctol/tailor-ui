@@ -55,6 +55,13 @@ const Content = styled.div`
   border: ${themeGet('borders.default')} ${themeGet('colors.primaryDark')};
   border-radius: ${themeGet('radii.1')};
 
+  ${space};
+  ${minWidth};
+  ${color};
+  ${borders};
+  ${fontSize};
+  ${textAlign};
+
   ${ifProp(
     'light',
     css`
@@ -66,13 +73,6 @@ const Content = styled.div`
       color: ${themeGet('colors.light')};
     `
   )};
-
-  ${space};
-  ${minWidth};
-  ${color};
-  ${borders};
-  ${fontSize};
-  ${textAlign};
 `;
 
 Content.propTypes = {
@@ -155,11 +155,9 @@ const TooltipWrapper = styled.div`
     { trigger: 'hover' },
     css`
       &:hover {
-        /* stylelint-disable no-duplicate-selectors */
-        ${TooltipToggle} {
+        ${TooltipToggle /* sc-selector */} {
           display: block;
         }
-        /* stylelint-enable */
       }
     `
   )};
