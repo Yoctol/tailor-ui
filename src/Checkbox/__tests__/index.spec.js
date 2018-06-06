@@ -1,7 +1,8 @@
 import React from 'react';
 
+import shallowWithTheme from 'test/shallowWithTheme';
+
 import Checkbox from '../';
-import shallowWithTheme from '../../../test/shallowWithTheme';
 
 describe('Checkbox', () => {
   it('should render correctly', () => {

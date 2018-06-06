@@ -1,8 +1,9 @@
 import React from 'react';
 
+import shallowWithTheme from 'test/shallowWithTheme';
+
 import Radio from '../';
 import Label from '../../Form/Label';
-import shallowWithTheme from '../../../test/shallowWithTheme';
 
 describe('Radio', () => {
   it('should render correctly', () => {

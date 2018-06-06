@@ -1,7 +1,8 @@
 import React from 'react';
 
+import shallowWithTheme from 'test/shallowWithTheme';
+
 import Tabs from '../';
-import shallowWithTheme from '../../../test/shallowWithTheme';
 
 const { Tab } = Tabs;
 

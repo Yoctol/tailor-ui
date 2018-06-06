@@ -8,4 +8,9 @@ module.exports = {
     jest: true,
     jasmine: true,
   },
+  settings: {
+    'import/resolver': {
+      jest: {},
+    },
+  },
 };
