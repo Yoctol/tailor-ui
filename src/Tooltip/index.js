@@ -55,12 +55,12 @@ const Content = styled.div`
   border: ${themeGet('borders.default')} ${themeGet('colors.primaryDark')};
   border-radius: ${themeGet('radii.1')};
 
-  ${space /* sc-declaration */}
-  ${minWidth /* sc-declaration */}
-  ${color /* sc-declaration */}
-  ${borders /* sc-declaration */}
-  ${fontSize /* sc-declaration */}
-  ${textAlign /* sc-declaration */}
+  ${space};
+  ${minWidth};
+  ${color};
+  ${borders};
+  ${fontSize};
+  ${textAlign};
 
   ${ifProp(
     'light',

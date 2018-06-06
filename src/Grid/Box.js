@@ -4,25 +4,25 @@ import * as system from 'styled-system';
 const Box = styled.div`
   box-sizing: border-box;
 
-  ${system.position /* sc-declaration */}
-  ${system.display /* sc-declaration */}
-  ${system.space /* sc-declaration */}
-  ${system.fontSize /* sc-declaration */}
-  ${system.color /* sc-declaration */}
+  ${system.position};
+  ${system.display};
+  ${system.space};
+  ${system.fontSize};
+  ${system.color};
 
-  ${system.width /* sc-declaration */}
-  ${system.minWidth /* sc-declaration */}
-  ${system.maxWidth /* sc-declaration */}
+  ${system.width};
+  ${system.minWidth};
+  ${system.maxWidth};
 
-  ${system.height /* sc-declaration */}
-  ${system.minHeight /* sc-declaration */}
+  ${system.height};
+  ${system.minHeight};
   /* stylelint-disable */
-  ${system.maxHeight /* sc-declaration */}
+  ${system.maxHeight};
   /* stylelint-enable */
 
-  ${system.flex /* sc-declaration */}
-  ${system.order /* sc-declaration */}
-  ${system.alignSelf /* sc-declaration */}
+  ${system.flex};
+  ${system.order};
+  ${system.alignSelf};
 `;
 
 export default Box;

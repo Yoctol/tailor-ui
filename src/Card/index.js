@@ -73,11 +73,11 @@ const Card = styled.div`
   flex-direction: column;
   border: ${themeGet('borders.default')} ${themeGet('colors.border')};
 
-  ${space /* sc-declaration */}
-  ${height /* sc-declaration */}
-  ${width /* sc-declaration */}
-  ${color /* sc-declaration */}
-  ${borderRadius /* sc-declaration */}
+  ${space};
+  ${height};
+  ${width};
+  ${color};
+  ${borderRadius};
 
   ${Button}:first-child {
     border-top-left-radius: ${props =>
