@@ -6,13 +6,12 @@ import {
   color,
   borders,
   textAlign,
-  width,
+  minWidth,
   top,
   right,
   fontSize,
 } from 'styled-system';
 import { ifProp } from 'styled-tools';
-import { darken } from 'polished';
 
 import { shadowVariant } from '../utils/shadow';
 
@@ -22,14 +21,14 @@ const Dropdown = styled.div`
   z-index: 99;
 
   ${shadowVariant(0.1)};
-  ${width};
+  ${minWidth};
   ${top};
   ${right};
 `;
 
 Dropdown.propTypes = {
   visible: PropTypes.bool,
-  ...width.propTypes,
+  ...minWidth.propTypes,
   ...top.propTypes,
   ...right.propTypes,
 };
@@ -38,7 +37,7 @@ Dropdown.defaultProps = {
   visible: false,
   top: 36,
   right: 0,
-  width: 165,
+  minWidth: 100,
 };
 
 const List = styled.ul`
@@ -70,14 +69,13 @@ Dropdown.List = List;
 
 const Item = styled.li`
   margin-top: 0;
-  padding: ${themeGet('space.2')} ${themeGet('space.0')};
-  border: ${themeGet('borders.default')} ${themeGet('colors.borderDark')};
+  padding: ${themeGet('space.paddingY')} ${themeGet('space.paddingX')};
+  border: ${themeGet('borders.default')} ${themeGet('colors.border')};
   transition: all 0.2s ease-in-out;
   cursor: pointer;
 
   &:hover {
-    background-color: ${props =>
-      darken(0.05, themeGet(`colors.${props.bg}`, props.bg)(props))};
+    background-color: ${themeGet('colors.gray.8')};
   }
 
   &:not(:first-child) {
