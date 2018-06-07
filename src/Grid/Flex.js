@@ -1,15 +1,28 @@
 import styled from 'styled-components';
-import * as system from 'styled-system';
+import {
+  alignItems,
+  flexDirection,
+  justifyContent,
+  flexWrap,
+} from 'styled-system';
 
 import Box from './Box';
 
 const Flex = styled(Box)`
   display: flex;
 
-  ${system.alignItems};
-  ${system.flexDirection};
-  ${system.justifyContent};
-  ${system.flexWrap};
+  ${alignItems};
+  ${flexDirection};
+  ${justifyContent};
+  ${flexWrap};
 `;
+
+Flex.propTypes = {
+  ...Box.propTypes,
+  ...alignItems.propTypes,
+  ...flexDirection.propTypes,
+  ...justifyContent.propTypes,
+  ...flexWrap.propTypes,
+};
 
 export default Flex;

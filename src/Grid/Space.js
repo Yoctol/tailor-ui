@@ -5,4 +5,8 @@ const Space = styled.div`
   ${space};
 `;
 
+Space.propTypes = {
+  ...space.propTypes,
+};
+
 export default Space;
