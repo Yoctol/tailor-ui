@@ -39,11 +39,13 @@ const Block = styled.div`
   }
 
   ${space};
+  ${height};
   ${fontSize};
 `;
 
 Block.propTypes = {
   ...space.propTypes,
+  ...height.propTypes,
 };
 
 Block.defaultProps = {
