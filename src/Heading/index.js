@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import createPropsTransform from 'react-props-classnames';
-import { themeGet } from 'styled-system';
+import { themeGet, space } from 'styled-system';
 
 const propsTransform = createPropsTransform({
   prefix: 'heading',
@@ -8,11 +8,10 @@ const propsTransform = createPropsTransform({
 });
 
 const BaseHeading = styled.p`
-  margin-top: 0;
-  margin-bottom: 0.5em;
-  color: ${themeGet('colors.primary')};
+  margin: 0;
+  color: ${themeGet('colors.primaryDark')};
   font-weight: 500;
-  line-height: 1.2;
+  line-height: 1;
 
   &.heading-gray {
     color: ${themeGet('colors.gray.2')};
@@ -29,7 +28,13 @@ const BaseHeading = styled.p`
   &.heading-white {
     color: ${themeGet('colors.light')};
   }
+
+  ${space};
 `;
+
+BaseHeading.propTypes = {
+  ...space.propTypes,
+};
 
 const h1 = styled(BaseHeading.withComponent('h1'))`
   font-size: 1.4rem;
