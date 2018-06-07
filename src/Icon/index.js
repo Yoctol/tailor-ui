@@ -4,6 +4,8 @@ import styled, { css } from 'styled-components';
 import { style, space } from 'styled-system';
 import { prop } from 'styled-tools';
 
+import controlTransition from '../utils/transition';
+
 import * as icons from './icons';
 
 const fill = style({
@@ -15,24 +17,20 @@ const fill = style({
 const size = css`
   width: ${prop('size')}px;
   height: ${prop('size')}px;
-
-  svg {
-    width: ${prop('size')}px;
-    height: ${prop('size')}px;
-  }
 `;
 
-const IconWrapper = styled.i`
+export const IconWrapper = styled.i`
   display: inline-block;
   cursor: ${prop('cursor')};
 
   svg {
     vertical-align: middle;
 
+    ${controlTransition()};
     ${fill};
+    ${size};
   }
 
-  ${size};
   ${space};
 `;
 
@@ -60,7 +58,7 @@ const Icon = ({ type, ...otherProps }) => {
   }
 
   return (
-    <IconWrapper {...otherProps} className="icon">
+    <IconWrapper {...otherProps}>
       <IconComponent />
     </IconWrapper>
   );
