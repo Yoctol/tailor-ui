@@ -4,11 +4,7 @@
 import { Button } from "@yoctol/ui";
 ```
 
-```jsx
-<Button>Text</Button>
-```
-
-Try it with `knobs`:
+### Try it with `knobs`:
 
 <!-- STORY -->
 
