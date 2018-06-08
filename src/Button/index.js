@@ -123,7 +123,10 @@ const Button = styled.button`
   }
 
   ${controlTransition()};
-  ${space};
+
+  &.styled-system.important {
+    ${space};
+  }
 `;
 
 Button.propTypes = {
@@ -143,6 +146,7 @@ Button.defaultProps = {
   ghost: false,
   light: false,
   active: false,
+  className: 'styled-system important',
 };
 
 export default propsTransform(Button);

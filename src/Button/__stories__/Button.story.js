@@ -1,101 +1,100 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import centered from '@storybook/addon-centered';
-import { withKnobs, select, boolean } from '@storybook/addon-knobs';
+import { withKnobs, select, boolean, text } from '@storybook/addon-knobs';
+import { withDocs } from 'storybook-readme';
 
 import themeProvider from '../../../.storybook/theme-provider';
+import { space } from '../../../.storybook/knobs';
+import { Flex, Heading } from '../../';
 import Button from '../';
+import Showcase from '../../__stories__/Showcase';
+import README from '../README.md';
 
 const sizes = { sm: 'SM', m: 'M (Default)', lg: 'LG' };
 
 storiesOf('General|Button', module)
-  .addDecorator(centered)
   .addDecorator(withKnobs)
   .addDecorator(themeProvider)
-  .add('with text', () => (
-    <Button onClick={action('clicked')}>Text Button</Button>
-  ))
-  .add('with circle', () => (
-    <Button circle={boolean('circle', true)} onClick={action('clicked')}>
-      Circle Button
-    </Button>
-  ))
-  .add('with light', () => (
-    <div>
-      <Button light={boolean('light(left)', true)} onClick={action('clicked')}>
-        Light Button
-      </Button>
+  .add(
+    'Docs',
+    withDocs(README, () => (
       <Button
-        light={boolean('light(middle)', true)}
-        circle={boolean('circle(middle)', true)}
+        block={boolean('block', false, 'props')}
+        circle={boolean('circle', false, 'props')}
+        light={boolean('light', false, 'props')}
+        active={boolean('active', false, 'props')}
+        ghost={boolean('ghost', false, 'props')}
+        size={select('size', sizes, 'm', 'props')}
+        {...space()}
         onClick={action('clicked')}
       >
-        Light Circle Button
+        {text('children', 'Button', 'props')}
       </Button>
-      <Button
-        light={boolean('light(right)', true)}
-        circle={boolean('circle(right)', true)}
-        active={boolean('active(right)', true)}
-        onClick={action('clicked')}
-      >
-        Light Circle Button with Active
-      </Button>
-    </div>
-  ))
-  .add('with disabled', () => (
-    <Button onClick={action('clicked')} disabled={boolean('disabled', true)}>
-      Disabled Button
-    </Button>
-  ))
-  .add('with size', () => (
-    <div>
-      <Button
-        size={select('size(left)', sizes, 'sm')}
-        mr={2}
-        onClick={action('clicked')}
-      >
-        with size = sm
-      </Button>
-      <Button
-        size={select('size(middle)', sizes, 'm')}
-        mr={2}
-        onClick={action('clicked')}
-      >
-        with size = null (default as m)
-      </Button>
-      <Button
-        size={select('size(right)', sizes, 'lg')}
-        onClick={action('clicked')}
-      >
-        with size = lg
-      </Button>
-    </div>
-  ))
-  .add('with block', () => (
-    <div style={{ width: 400 }}>
-      <Button
-        size={select('Size', sizes, 'lg')}
-        block={boolean('block', true)}
-        onClick={action('clicked')}
-      >
-        Block size lg Button
-      </Button>
-    </div>
-  ))
-  .add('with ghost', () => (
-    <div
-      style={{
-        height: 300,
-        width: 300,
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: '#000',
-      }}
-    >
-      <Button ghost={boolean('ghost', true)} onClick={action('clicked')}>
-        Ghost Button
-      </Button>
-    </div>
+    ))
+  )
+  .add('Showcase', () => (
+    <Flex flexDirection="column" p={5}>
+      <Heading.h1 mb={5}>Button Showcase</Heading.h1>
+
+      <Heading.h3>Button with circle</Heading.h3>
+      <Showcase>
+        <Button circle onClick={action('clicked')}>
+          Button
+        </Button>
+      </Showcase>
+
+      <Heading.h3>Button with light</Heading.h3>
+      <Showcase>
+        <Button light onClick={action('clicked')}>
+          Button
+        </Button>
+      </Showcase>
+
+      <Heading.h3>Button with light & circle</Heading.h3>
+      <Showcase>
+        <Button light circle onClick={action('clicked')}>
+          Button
+        </Button>
+      </Showcase>
+
+      <Heading.h3>Button with light & circle & active</Heading.h3>
+      <Showcase>
+        <Button light circle active onClick={action('clicked')}>
+          Button
+        </Button>
+      </Showcase>
+
+      <Heading.h3>Button with disabled</Heading.h3>
+      <Showcase>
+        <Button disalbed>Button</Button>
+      </Showcase>
+
+      <Heading.h3>Button with size</Heading.h3>
+      <Showcase>
+        <Button size="sm" onClick={action('clicked')}>
+          Button sm
+        </Button>
+        <Button mt={2} onClick={action('clicked')}>
+          Button m
+        </Button>
+        <Button size="lg" mt={2} onClick={action('clicked')}>
+          Button lg
+        </Button>
+      </Showcase>
+
+      <Heading.h3>Button with block</Heading.h3>
+      <Showcase>
+        <Button block onClick={action('clicked')}>
+          Button
+        </Button>
+      </Showcase>
+
+      <Heading.h3>Button with ghost</Heading.h3>
+      <Showcase bg="primary">
+        <Button ghost onClick={action('clicked')}>
+          Button
+        </Button>
+      </Showcase>
+    </Flex>
   ));

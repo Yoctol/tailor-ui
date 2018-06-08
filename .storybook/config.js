@@ -3,8 +3,10 @@ import { setOptions } from "@storybook/addon-options";
 import injectGlobalCss from '../src/injectGlobalCss';
 
 setOptions({
+  name: 'Yoctol UI',
   hierarchySeparator: /\/|\./,
   hierarchyRootSeparator: /\|/,
+  addonPanelInRight: true,
 });
 
 injectGlobalCss();
