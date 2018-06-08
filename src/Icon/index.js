@@ -21,6 +21,7 @@ const size = css`
 
 export const IconWrapper = styled.i`
   display: inline-block;
+  line-height: 1;
   cursor: ${prop('cursor')};
 
   svg {
