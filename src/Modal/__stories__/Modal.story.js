@@ -1,71 +1,117 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import centered from '@storybook/addon-centered';
+import { withKnobs, boolean } from '@storybook/addon-knobs';
 import { Value } from 'react-powerplug';
 
 import themeProvider from '../../../.storybook/theme-provider';
+import { Showcase, ShowcasePage } from '../../../.storybook/showcase';
+import {
+  withComponentReadme,
+  withComponentShowcase,
+} from '../../../.storybook/withDocs';
+import { Heading, Box } from '../../';
 import Modal from '../';
 import Button from '../../Button';
-
-// eslint-disable-next-line react/prop-types
-const WithShow = ({ children }) => (
-  <Value initial={false}>
-    {({ value, setValue }) => (
-      <>
-        <Button onClick={() => setValue(true)}>Open Modal</Button>
-        {children({ handleClose: () => setValue(false), show: value })}
-      </>
-    )}
-  </Value>
-);
+import README from '../README.md';
 
 storiesOf('Feedback|Modal', module)
-  .addDecorator(centered)
+  .addDecorator(withKnobs)
   .addDecorator(themeProvider)
-  .add('default', () => (
-    <WithShow>
-      {({ handleClose, show }) => (
-        <Modal handleClose={handleClose} show={show}>
-          <h1>Modal</h1>
-          <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati
-            ducimus quas beatae commodi corrupti quidem aut a rem sapiente,
-            minus ipsum incidunt fugiat quibusdam cupiditate suscipit iste
-            pariatur consectetur autem?
-          </p>
-        </Modal>
-      )}
-    </WithShow>
-  ))
-  .add('with custom width', () => (
-    <WithShow>
-      {({ handleClose, show }) => (
-        <Modal handleClose={handleClose} show={show}>
-          <div style={{ width: 600 }}>
-            <h1>Modal</h1>
-            <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-              Obcaecati ducimus quas beatae commodi corrupti quidem aut a rem
-              sapiente, minus ipsum incidunt fugiat quibusdam cupiditate
-              suscipit iste pariatur consectetur autem?
-            </p>
-          </div>
-        </Modal>
-      )}
-    </WithShow>
-  ))
-  .add('with close button', () => (
-    <WithShow>
-      {({ handleClose, show }) => (
-        <Modal handleClose={handleClose} show={show} closeButton>
-          <h1>Modal</h1>
-          <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati
-            ducimus quas beatae commodi corrupti quidem aut a rem sapiente,
-            minus ipsum incidunt fugiat quibusdam cupiditate suscipit iste
-            pariatur consectetur autem?
-          </p>
-        </Modal>
-      )}
-    </WithShow>
-  ));
+  .add(
+    'Docs',
+    withComponentReadme(README, () => (
+      <Value initial={false}>
+        {({ value, setValue }) => (
+          <Showcase>
+            <Modal
+              handleClose={() => setValue(false)}
+              show={boolean('show', value, 'props')}
+              closeButton={boolean('closeButton', value, 'props')}
+            >
+              <h1>Modal</h1>
+              <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                Obcaecati ducimus quas beatae commodi corrupti quidem aut a rem
+                sapiente, minus ipsum incidunt fugiat quibusdam cupiditate
+                suscipit iste pariatur consectetur autem?
+              </p>
+            </Modal>
+            <Button onClick={() => setValue(true)}>Open Modal</Button>
+          </Showcase>
+        )}
+      </Value>
+    ))
+  )
+  .add(
+    'Showcase',
+    withComponentShowcase(() => (
+      <ShowcasePage title="Modal Showcase">
+        <Heading.h3>Default Modal</Heading.h3>
+        <Value initial={false}>
+          {({ value, setValue }) => (
+            <Showcase>
+              <Modal
+                handleClose={() => setValue(false)}
+                show={boolean('show', value, 'props')}
+              >
+                <h1>Modal</h1>
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Obcaecati ducimus quas beatae commodi corrupti quidem aut a
+                  rem sapiente, minus ipsum incidunt fugiat quibusdam cupiditate
+                  suscipit iste pariatur consectetur autem?
+                </p>
+              </Modal>
+              <Button onClick={() => setValue(true)}>Open Modal</Button>
+            </Showcase>
+          )}
+        </Value>
+
+        <Heading.h3>Modal with closeButton</Heading.h3>
+        <Value initial={false}>
+          {({ value, setValue }) => (
+            <Showcase>
+              <Modal
+                handleClose={() => setValue(false)}
+                show={boolean('show', value, 'props')}
+                closeButton={boolean('closeButton', value, 'props')}
+              >
+                <h1>Modal</h1>
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Obcaecati ducimus quas beatae commodi corrupti quidem aut a
+                  rem sapiente, minus ipsum incidunt fugiat quibusdam cupiditate
+                  suscipit iste pariatur consectetur autem?
+                </p>
+              </Modal>
+              <Button onClick={() => setValue(true)}>Open Modal</Button>
+            </Showcase>
+          )}
+        </Value>
+
+        <Heading.h3>Modal with custom style</Heading.h3>
+        <Value initial={false}>
+          {({ value, setValue }) => (
+            <Showcase>
+              <Modal
+                handleClose={() => setValue(false)}
+                show={boolean('show', value, 'props')}
+                closeButton={boolean('closeButton', value, 'props')}
+              >
+                <Box style={{ width: 800, height: 300 }}>
+                  <h1>Modal</h1>
+                  <p>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                    Obcaecati ducimus quas beatae commodi corrupti quidem aut a
+                    rem sapiente, minus ipsum incidunt fugiat quibusdam
+                    cupiditate suscipit iste pariatur consectetur autem?
+                  </p>
+                </Box>
+              </Modal>
+              <Button onClick={() => setValue(true)}>Open Modal</Button>
+            </Showcase>
+          )}
+        </Value>
+      </ShowcasePage>
+    ))
+  );
