@@ -7,7 +7,7 @@ import omitBy from 'lodash/omitBy';
 import prettier from 'prettier/standalone';
 import babylon from 'prettier/parser-babylon';
 
-import { Flex, Box, Icon, Tooltip } from '../';
+import { Flex, Box, Icon, Tooltip, Heading } from '../';
 
 const renderToString = component => {
   const { displayName } = component.type;
@@ -101,4 +101,12 @@ Showcase.defaultProps = {
   bg: 'light',
 };
 
-export default Showcase;
+const ShowcasePage = ({ children, title }) => (
+  <Flex flexDirection="column" p={5}>
+    <Heading.h1 mb={5}>{title}</Heading.h1>
+    {children}
+  </Flex>
+);
+
+export { Showcase, ShowcasePage };
+
