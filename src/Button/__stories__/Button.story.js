@@ -2,27 +2,26 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { withKnobs, select, boolean, text } from '@storybook/addon-knobs';
-import { withDocs } from 'storybook-readme';
 
 import themeProvider from '../../../.storybook/theme-provider';
 import { space } from '../../../.storybook/knobs';
-import Showcase from '../../../.storybook/showcase';
-import { Flex, Space, Heading } from '../../';
+import {
+  withComponentReadme,
+  withComponentShowcase,
+} from '../../../.storybook/withDocs';
+import { Showcase, ShowcasePage } from '../../../.storybook/showcase';
+import { Heading } from '../../';
 import Button from '../';
 import README from '../README.md';
 
 const sizes = { sm: 'SM', m: 'M (Default)', lg: 'LG' };
-
-const withCustomizePreviewDocs = withDocs({
-  PreviewComponent: Space,
-});
 
 storiesOf('General|Button', module)
   .addDecorator(withKnobs)
   .addDecorator(themeProvider)
   .add(
     'Docs',
-    withCustomizePreviewDocs(README, () => (
+    withComponentReadme(README, () => (
       <Showcase>
         <Button
           block={boolean('block', false, 'props')}
@@ -41,10 +40,8 @@ storiesOf('General|Button', module)
   )
   .add(
     'Showcase',
-    withCustomizePreviewDocs('<!-- STORY -->', () => (
-      <Flex flexDirection="column" p={5}>
-        <Heading.h1 mb={5}>Button Showcase</Heading.h1>
-
+    withComponentShowcase(() => (
+      <ShowcasePage title="Button Showcase">
         <Heading.h3>Button with circle</Heading.h3>
         <Showcase>
           <Button circle onClick={action('clicked')}>
@@ -75,7 +72,7 @@ storiesOf('General|Button', module)
 
         <Heading.h3>Button with disabled</Heading.h3>
         <Showcase>
-          <Button disalbed>Button</Button>
+          <Button disabled>Button</Button>
         </Showcase>
 
         <Heading.h3>Button with size</Heading.h3>
@@ -106,6 +103,6 @@ storiesOf('General|Button', module)
             Button
           </Button>
         </Showcase>
-      </Flex>
+      </ShowcasePage>
     ))
   );
