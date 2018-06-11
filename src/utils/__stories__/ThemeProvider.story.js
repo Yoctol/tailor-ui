@@ -1,26 +1,36 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import centered from '@storybook/addon-centered';
-import { Toggle } from 'react-powerplug';
+import { Value } from 'react-powerplug';
 
 import ThemeProvider from '../ThemeProvider';
 import Button from '../../Button';
+import Select from '../../Select';
+
+const options = [
+  { value: 'yellow', label: 'Yellow' },
+  { value: 'green', label: 'Green' },
+  { value: 'blue', label: 'Blue' },
+  { value: 'red', label: 'Red' },
+];
 
 storiesOf('Other|ThemeProvider', module)
   .addDecorator(centered)
   .add('default', () => (
-    <Toggle>
-      {({ toggle, on }) => (
-        <ThemeProvider theme={on ? 'green' : 'blue'}>
+    <Value initial="yellow">
+      {({ value, setValue }) => (
+        <ThemeProvider theme={value}>
           <>
-            <Button mr={3} onClick={toggle}>
-              Change Secondary
+            <Button mb={3} light circle active>
+              {options.find(option => option.value === value).label} Secondary
             </Button>
-            <Button light circle active>
-              {on ? 'Green' : 'Blue'} Secondary
-            </Button>
+            <Select
+              options={options}
+              value={options.find(option => option.value === value)}
+              onChange={option => setValue(option.value)}
+            />
           </>
         </ThemeProvider>
       )}
-    </Toggle>
+    </Value>
   ));

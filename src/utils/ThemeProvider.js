@@ -14,7 +14,7 @@ ThemeProvider.propTypes = {
 };
 
 ThemeProvider.defaultProps = {
-  theme: 'green',
+  theme: 'yellow',
 };
 
 export default ThemeProvider;
