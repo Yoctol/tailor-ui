@@ -5,6 +5,7 @@ import { space, border, borderColor, borderRadius } from 'styled-system';
 import { ifProp } from 'styled-tools';
 import { themeGet } from 'styled-system/dist/util';
 import Close from 'react-icons/lib/md/close';
+import createPropsTransform from 'react-props-classnames';
 
 import Icon from '../Icon';
 import Keydown from '../utils/Keydown';
@@ -83,6 +84,11 @@ ModalContent.defaultProps = {
 
 const ESC_KEY_CODE = 27;
 
+const propsTransform = createPropsTransform({
+  prefix: 'modal',
+  props: ['show'],
+});
+
 const Modal = ({ children, show, handleClose, closeButton, ...otherProps }) => (
   <ModalToggle show={show}>
     <Keydown
@@ -109,4 +115,4 @@ Modal.defaultProps = {
   children: '',
 };
 
-export default Modal;
+export default propsTransform(Modal);

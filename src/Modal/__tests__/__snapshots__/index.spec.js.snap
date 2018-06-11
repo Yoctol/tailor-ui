@@ -1,45 +1,259 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Modal should render correctly 1`] = `
-<Modal__ModalToggle
+.c0 {
+  display: block;
+}
+
+.c1 {
+  position: fixed;
+  z-index: 10000;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(17,17,17,0.25);
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: fixed;
+  z-index: 10001;
+  top: 50%;
+  left: 50%;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  max-height: 90vh;
+  padding: 0.8rem;
+  background-color: #fff;
+  box-shadow: 0 10px 30px 0 rgba(17,17,17,0.2);
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  padding: 1.4rem;
+  border: 0.05rem solid;
+  border-color: #e0e0e0;
+  border-radius: 0.4rem;
+}
+
+<PropsTransformer(Modal)
+  closeButton={false}
+  handleClose={[Function]}
   show={true}
 >
-  <Keydown
-    handleKeydown={[Function]}
-    keyCode={27}
-  />
-  <Modal__ModalOverlay
-    onClick={[Function]}
-  />
-  <Modal__ModalContent
-    border="default"
-    borderColor="border"
-    borderRadius={2}
-    p={7}
-  />
-</Modal__ModalToggle>
+  <Modal
+    className="modal-show"
+    closeButton={false}
+    handleClose={[Function]}
+    show={true}
+  >
+    <Modal__ModalToggle
+      show={true}
+    >
+      <div
+        className="c0"
+      >
+        <Keydown
+          handleKeydown={[Function]}
+          keyCode={27}
+        />
+        <Modal__ModalOverlay
+          onClick={[Function]}
+        >
+          <div
+            className="c1"
+            onClick={[Function]}
+          />
+        </Modal__ModalOverlay>
+        <Modal__ModalContent
+          border="default"
+          borderColor="border"
+          borderRadius={2}
+          className="modal-show"
+          p={7}
+        >
+          <div
+            className="modal-show c2"
+          />
+        </Modal__ModalContent>
+      </div>
+    </Modal__ModalToggle>
+  </Modal>
+</PropsTransformer(Modal)>
 `;
 
 exports[`Modal should render with props closeButton 1`] = `
-<Modal__ModalToggle
+.c4 {
+  display: inline-block;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.c4 svg {
+  vertical-align: middle;
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
+  fill: #1e1e1e;
+  width: 24px;
+  height: 24px;
+}
+
+.c0 {
+  display: block;
+}
+
+.c3 {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  padding: 5px;
+  border: 0;
+  cursor: pointer;
+}
+
+.c3:focus {
+  outline: 0;
+}
+
+.c1 {
+  position: fixed;
+  z-index: 10000;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(17,17,17,0.25);
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: fixed;
+  z-index: 10001;
+  top: 50%;
+  left: 50%;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  max-height: 90vh;
+  padding: 0.8rem;
+  background-color: #fff;
+  box-shadow: 0 10px 30px 0 rgba(17,17,17,0.2);
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  padding: 1.4rem;
+  border: 0.05rem solid;
+  border-color: #e0e0e0;
+  border-radius: 0.4rem;
+}
+
+<PropsTransformer(Modal)
+  closeButton={true}
+  handleClose={[Function]}
   show={true}
 >
-  <Keydown
-    handleKeydown={[Function]}
-    keyCode={27}
-  />
-  <Modal__ModalOverlay
-    onClick={[Function]}
-  />
-  <Modal__ModalContent
-    border="default"
-    borderColor="border"
-    borderRadius={2}
-    p={7}
+  <Modal
+    className="modal-show"
+    closeButton={true}
+    handleClose={[Function]}
+    show={true}
   >
-    <CloseButton
-      handleClose={[Function]}
-    />
-  </Modal__ModalContent>
-</Modal__ModalToggle>
+    <Modal__ModalToggle
+      show={true}
+    >
+      <div
+        className="c0"
+      >
+        <Keydown
+          handleKeydown={[Function]}
+          keyCode={27}
+        />
+        <Modal__ModalOverlay
+          onClick={[Function]}
+        >
+          <div
+            className="c1"
+            onClick={[Function]}
+          />
+        </Modal__ModalOverlay>
+        <Modal__ModalContent
+          border="default"
+          borderColor="border"
+          borderRadius={2}
+          className="modal-show"
+          p={7}
+        >
+          <div
+            className="modal-show c2"
+          >
+            <CloseButton
+              handleClose={[Function]}
+            >
+              <Modal__CloseBtn
+                onClick={[Function]}
+              >
+                <button
+                  className="c3"
+                  onClick={[Function]}
+                  type="button"
+                >
+                  <Icon
+                    cursor="pointer"
+                    type={[Function]}
+                  >
+                    <Icon__IconWrapper
+                      cursor="pointer"
+                      fill="bodyFont"
+                      size={24}
+                    >
+                      <i
+                        className="c4"
+                        cursor="pointer"
+                        fill="bodyFont"
+                        size={24}
+                      >
+                        <MdClose>
+                          <IconBase
+                            viewBox="0 0 40 40"
+                          >
+                            <svg
+                              fill="currentColor"
+                              height="1em"
+                              preserveAspectRatio="xMidYMid meet"
+                              style={
+                                Object {
+                                  "color": undefined,
+                                  "verticalAlign": "middle",
+                                }
+                              }
+                              viewBox="0 0 40 40"
+                              width="1em"
+                            >
+                              <g>
+                                <path
+                                  d="m31.6 10.7l-9.3 9.3 9.3 9.3-2.3 2.3-9.3-9.3-9.3 9.3-2.3-2.3 9.3-9.3-9.3-9.3 2.3-2.3 9.3 9.3 9.3-9.3z"
+                                />
+                              </g>
+                            </svg>
+                          </IconBase>
+                        </MdClose>
+                      </i>
+                    </Icon__IconWrapper>
+                  </Icon>
+                </button>
+              </Modal__CloseBtn>
+            </CloseButton>
+          </div>
+        </Modal__ModalContent>
+      </div>
+    </Modal__ModalToggle>
+  </Modal>
+</PropsTransformer(Modal)>
 `;
