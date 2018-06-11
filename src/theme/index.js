@@ -94,11 +94,19 @@ const sizes = {
   },
 };
 
-const { secondaryBlue, secondaryGreen, ...otherColors } = defaultColors;
+const {
+  secondaryBlue,
+  secondaryGreen,
+  secondaryYellow,
+  secondaryRed,
+  ...otherColors
+} = defaultColors;
 
 const secondaryMap = {
   blue: secondaryBlue,
   green: secondaryGreen,
+  yellow: secondaryYellow,
+  red: secondaryRed,
 };
 
 const getTheme = secondaryType => {
@@ -121,4 +129,4 @@ const getTheme = secondaryType => {
 
 export default getTheme;
 
-export const defaultTheme = getTheme('green');
+export const defaultTheme = getTheme('yellow');

@@ -16,6 +16,18 @@ export const secondaryGreen = {
   secondaryLight: '#9cffb9',
 };
 
+export const secondaryYellow = {
+  secondary: '#c7ad8d',
+  secondaryDark: '#ab9272',
+  secondaryLight: '#e6d1b7',
+};
+
+export const secondaryRed = {
+  secondary: '#f08181',
+  secondaryDark: '#c26868',
+  secondaryLight: '#fbadad',
+};
+
 export const dark = '#111111';
 export const light = '#ffffff';
 export const gray = [
