@@ -6,6 +6,8 @@ import {
   space,
   color,
   borders,
+  borderColor,
+  borderRadius,
   fontSize,
   textAlign,
   minWidth,
@@ -52,13 +54,12 @@ TooltipToggle.propTypes = {
 };
 
 const Content = styled.div`
-  border: ${themeGet('borders.default')} ${themeGet('colors.primaryDark')};
-  border-radius: ${themeGet('radii.1')};
-
   ${space};
   ${minWidth};
   ${color};
   ${borders};
+  ${borderColor};
+  ${borderRadius};
   ${fontSize};
   ${textAlign};
 
@@ -90,6 +91,9 @@ Content.defaultProps = {
   fontSize: 'sm',
   p: 1,
   textAlign: 'center',
+  borders: 'default',
+  borderColor: 'primaryDark',
+  borderRadius: 1,
 };
 
 const Arrow = styled.div`
@@ -169,14 +173,13 @@ TooltipWrapper.propTypes = {
 
 const Tooltip = ({
   trigger,
-  visible,
   children,
   content,
   light,
   placement,
   ...otherProps
 }) => (
-  <Toggle initial={visible}>
+  <Toggle>
     {({ on, toggle }) => (
       <TooltipWrapper
         trigger={trigger}
@@ -200,16 +203,20 @@ Tooltip.propTypes = {
   light: PropTypes.bool,
   placement: PropTypes.string,
   trigger: PropTypes.string,
-  visible: PropTypes.bool,
+  ...space.propTypes,
+  ...minWidth.propTypes,
+  ...color.propTypes,
+  ...borders.propTypes,
+  ...fontSize.propTypes,
+  ...textAlign.propTypes,
 };
 
 Tooltip.defaultProps = {
   children: '',
-  content: PropTypes.node,
+  content: '',
   light: false,
   placement: 'top',
   trigger: 'hover',
-  visible: false,
 };
 
 export default Tooltip;

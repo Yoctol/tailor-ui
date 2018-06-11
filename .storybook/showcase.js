@@ -9,30 +9,36 @@ import babylon from 'prettier/parser-babylon';
 
 import { Flex, Box, Icon, Tooltip, Heading } from '../';
 
-const renderToString = component => {
-  const { displayName } = component.type;
+const createElementWithFilterName = component => {
+  const { displayName = '' } = component.type;
   if (displayName.includes('PropsTransformer')) {
     // eslint-disable-next-line no-param-reassign
     component.type.displayName = displayName.slice(17, -1);
   }
 
-  const jsxString = jsxToString(
-    createElement(
-      component.type,
-      omitBy(component.props, value => !value),
-      component.props.children
-    ),
-    {
-      shortBooleanSyntax: true,
-      useFunctionCode: true,
-      functionNameOnly: true,
-    }
+  return createElement(
+    component.type,
+    omitBy(component.props, value => !value),
+    component.props.children && component.props.children.type
+      ? createElementWithFilterName(component.props.children)
+      : component.props.children
   );
+};
 
-  const code = prettier.format(jsxString, {
-    parser: 'babylon',
-    plugins: [babylon],
+const renderToString = component => {
+  const filteredComponent = createElementWithFilterName(component);
+  const jsxString = jsxToString(filteredComponent, {
+    shortBooleanSyntax: true,
+    useFunctionCode: true,
+    functionNameOnly: true,
   });
+
+  const code = prettier
+    .format(jsxString, {
+      parser: 'babylon',
+      plugins: [babylon],
+    })
+    .slice(0, -2); // Remove trailing semicolons
 
   return {
     preview: (
@@ -109,4 +115,3 @@ const ShowcasePage = ({ children, title }) => (
 );
 
 export { Showcase, ShowcasePage };
-
