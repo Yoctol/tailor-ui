@@ -60,17 +60,17 @@ exports[`Button should render correctly 1`] = `
 }
 
 .c0.button-light.button-active {
-  border-color: #3fcc74;
-  background-color: #3fcc74;
+  border-color: #ab9272;
+  background-color: #ab9272;
   color: #ffffff;
 }
 
 .c0.button-light.button-active:hover {
-  background-color: #56e495;
+  background-color: #c7ad8d;
 }
 
 .c0.button-light.button-active:focus {
-  border-color: #3fcc74;
+  border-color: #ab9272;
 }
 
 .c0.button-circle {
@@ -204,17 +204,17 @@ exports[`Button should render with props light, circle and active 1`] = `
 }
 
 .c0.button-light.button-active {
-  border-color: #3fcc74;
-  background-color: #3fcc74;
+  border-color: #ab9272;
+  background-color: #ab9272;
   color: #ffffff;
 }
 
 .c0.button-light.button-active:hover {
-  background-color: #56e495;
+  background-color: #c7ad8d;
 }
 
 .c0.button-light.button-active:focus {
-  border-color: #3fcc74;
+  border-color: #ab9272;
 }
 
 .c0.button-circle {

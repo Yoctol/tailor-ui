@@ -56,7 +56,7 @@ exports[`Menu should render correctly 1`] = `
 }
 
 .c5.menu-active {
-  border-left-color: #56e495;
+  border-left-color: #c7ad8d;
   color: #ffffff;
 }
 

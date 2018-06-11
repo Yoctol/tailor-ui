@@ -17,15 +17,15 @@ export const secondaryGreen = {
 };
 
 export const secondaryYellow = {
-  secondary: '#C7AD8D',
-  secondaryDark: '#AB9272',
-  secondaryLight: '#E6D1B7',
+  secondary: '#c7ad8d',
+  secondaryDark: '#ab9272',
+  secondaryLight: '#e6d1b7',
 };
 
 export const secondaryRed = {
-  secondary: '#F08181',
-  secondaryDark: '#C26868',
-  secondaryLight: '#FBADAD',
+  secondary: '#f08181',
+  secondaryDark: '#c26868',
+  secondaryLight: '#fbadad',
 };
 
 export const dark = '#111111';
