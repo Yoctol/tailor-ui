@@ -8300,14 +8300,6 @@ react-powerplug@^0.1.5:
   version "0.1.5"
   resolved "https://registry.yarnpkg.com/react-powerplug/-/react-powerplug-0.1.5.tgz#f3dd7612c60efc55b6c7a2ddee284a8bcb6db783"
 
-react-props-classnames@^0.2.3:
-  version "0.2.3"
-  resolved "https://registry.yarnpkg.com/react-props-classnames/-/react-props-classnames-0.2.3.tgz#64fccdb7f79c4eb89cea118f6501b798b56f69e1"
-  dependencies:
-    prop-types "^15.6.1"
-    react "^16.4.0"
-    react-dom "^16.4.0"
-
 react-reconciler@^0.7.0:
   version "0.7.0"
   resolved "https://registry.yarnpkg.com/react-reconciler/-/react-reconciler-0.7.0.tgz#9614894103e5f138deeeb5eabaf3ee80eb1d026d"

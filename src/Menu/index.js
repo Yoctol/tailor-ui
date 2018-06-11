@@ -1,17 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { Spring, animated } from 'react-spring';
 import { themeGet, space, color, borders, borderRadius } from 'styled-system';
-import createPropsTransform from 'react-props-classnames';
+import { ifProp } from 'styled-tools';
 
 import { Flex } from '../';
 import { IconWrapper } from '../Icon';
-
-const propsTransform = createPropsTransform({
-  prefix: 'menu',
-  props: ['active'],
-});
 
 const Menu = styled(Flex)`
   flex-direction: column;
@@ -55,14 +50,18 @@ const Item = styled.button`
     }
   }
 
-  &.menu-active {
-    border-left-color: ${themeGet('colors.secondary')};
-    color: ${themeGet('colors.light')};
+  ${ifProp(
+    'active',
+    css`
+      border-left-color: ${themeGet('colors.secondary')};
+      color: ${themeGet('colors.light')};
 
-    & ${IconWrapper /* sc-selector */} svg {
-      fill: ${themeGet('colors.light')};
-    }
-  }
+      /* stylelint-disable-next-line */
+      & ${IconWrapper /* sc-selector */} svg {
+        fill: ${themeGet('colors.light')};
+      }
+    `
+  )};
 
   &:hover {
     color: ${themeGet('colors.light')};
@@ -123,12 +122,15 @@ const Animation = styled.div`
     background-color: ${themeGet('colors.primary')};
   }
 
-  &.menu-active {
-    border-bottom: ${themeGet('borders.default')} ${themeGet('colors.gray.7')};
-  }
+  ${ifProp(
+    'active',
+    css`
+      border-bottom: ${themeGet('borders.default')} ${themeGet('colors.gray.7')};
+    `
+  )};
 `;
 
-const AnimationWrapper = propsTransform(Animation);
+const AnimationWrapper = Animation;
 
 const SubMenu = ({ title, children, active, ...otherProps }) => (
   <SubMenuWrapper>
@@ -150,7 +152,7 @@ SubMenu.propTypes = {
   title: PropTypes.node.isRequired,
 };
 
-Menu.SubMenu = propsTransform(SubMenu);
-Menu.Item = propsTransform(Item);
+Menu.SubMenu = SubMenu;
+Menu.Item = Item;
 
 export default Menu;

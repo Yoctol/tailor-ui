@@ -18,85 +18,11 @@ exports[`Button should render correctly 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  -webkit-transition: all .2s ease;
-  transition: all .2s ease;
-}
-
-.c0.button-size-sm {
-  height: 1.4rem;
-  padding: 0.15rem 0.3rem;
-  font-size: .7rem;
-}
-
-.c0.button-size-m {
   height: 1.8rem;
   padding: 0.35rem 0.4rem;
   font-size: .8rem;
-}
-
-.c0.button-size-lg {
-  height: 2rem;
-  padding: 0.45rem 0.6rem;
-  font-size: .9rem;
-}
-
-.c0.button-block {
-  width: 100%;
-}
-
-.c0.button-light {
-  border-color: #e0e0e0;
-  background-color: #ffffff;
-  color: #1e1e1e;
-}
-
-.c0.button-light:focus {
-  border-color: #0e0c1a;
-  box-shadow: 0 0 0 0.1rem rgba(25,23,35,0.2);
-}
-
-.c0.button-light:hover {
-  background-color: #e9e9e9;
-}
-
-.c0.button-light.button-active {
-  border-color: #ab9272;
-  background-color: #ab9272;
-  color: #ffffff;
-}
-
-.c0.button-light.button-active:hover {
-  background-color: #c7ad8d;
-}
-
-.c0.button-light.button-active:focus {
-  border-color: #ab9272;
-}
-
-.c0.button-circle {
-  border-radius: 999px;
-}
-
-.c0.button-circle.button-size-sm {
-  padding: 0.15rem calc(0.3rem * 2);
-}
-
-.c0.button-circle.button-size-m {
-  padding: 0.35rem calc(0.4rem * 2);
-}
-
-.c0.button-circle.button-size-lg {
-  padding: 0.45rem calc(0.6rem * 2);
-}
-
-.c0.button-ghost {
-  border-color: #ffffff;
-  background-color: transparent;
-}
-
-.c0.button-ghost:focus {
-  background-color: #191723;
-  box-shadow: 0 0 0 0.1rem rgba(255,255,255,0.2);
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
 }
 
 .c0:focus {
@@ -116,32 +42,21 @@ exports[`Button should render correctly 1`] = `
   pointer-events: none;
 }
 
-<PropsTransformer(Button)
+<Button
   active={false}
   block={false}
   circle={false}
-  className="styled-system important"
   ghost={false}
   light={false}
   size="m"
 >
-  <Button
-    active={false}
-    block={false}
-    circle={false}
-    className="styled-system important button-size-m"
-    ghost={false}
-    light={false}
+  <button
+    className="c0"
     size="m"
   >
-    <button
-      className="styled-system important button-size-m c0"
-      size="m"
-    >
-      Text Button
-    </button>
-  </Button>
-</PropsTransformer(Button)>
+    Text Button
+  </button>
+</Button>
 `;
 
 exports[`Button should render with props light, circle and active 1`] = `
@@ -162,85 +77,19 @@ exports[`Button should render with props light, circle and active 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  -webkit-transition: all .2s ease;
-  transition: all .2s ease;
-}
-
-.c0.button-size-sm {
-  height: 1.4rem;
-  padding: 0.15rem 0.3rem;
-  font-size: .7rem;
-}
-
-.c0.button-size-m {
   height: 1.8rem;
   padding: 0.35rem 0.4rem;
   font-size: .8rem;
-}
-
-.c0.button-size-lg {
-  height: 2rem;
-  padding: 0.45rem 0.6rem;
-  font-size: .9rem;
-}
-
-.c0.button-block {
-  width: 100%;
-}
-
-.c0.button-light {
   border-color: #e0e0e0;
   background-color: #ffffff;
   color: #1e1e1e;
-}
-
-.c0.button-light:focus {
-  border-color: #0e0c1a;
-  box-shadow: 0 0 0 0.1rem rgba(25,23,35,0.2);
-}
-
-.c0.button-light:hover {
-  background-color: #e9e9e9;
-}
-
-.c0.button-light.button-active {
   border-color: #ab9272;
   background-color: #ab9272;
   color: #ffffff;
-}
-
-.c0.button-light.button-active:hover {
-  background-color: #c7ad8d;
-}
-
-.c0.button-light.button-active:focus {
-  border-color: #ab9272;
-}
-
-.c0.button-circle {
   border-radius: 999px;
-}
-
-.c0.button-circle.button-size-sm {
-  padding: 0.15rem calc(0.3rem * 2);
-}
-
-.c0.button-circle.button-size-m {
   padding: 0.35rem calc(0.4rem * 2);
-}
-
-.c0.button-circle.button-size-lg {
-  padding: 0.45rem calc(0.6rem * 2);
-}
-
-.c0.button-ghost {
-  border-color: #ffffff;
-  background-color: transparent;
-}
-
-.c0.button-ghost:focus {
-  background-color: #191723;
-  box-shadow: 0 0 0 0.1rem rgba(255,255,255,0.2);
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
 }
 
 .c0:focus {
@@ -260,30 +109,36 @@ exports[`Button should render with props light, circle and active 1`] = `
   pointer-events: none;
 }
 
-<PropsTransformer(Button)
+.c0:focus {
+  border-color: #0e0c1a;
+  box-shadow: 0 0 0 0.1rem rgba(25,23,35,0.2);
+}
+
+.c0:hover {
+  background-color: #e9e9e9;
+}
+
+.c0:hover {
+  background-color: #c7ad8d;
+}
+
+.c0:focus {
+  border-color: #ab9272;
+}
+
+<Button
   active={true}
   block={false}
   circle={true}
-  className="styled-system important"
   ghost={false}
   light={true}
   size="m"
 >
-  <Button
-    active={true}
-    block={false}
-    circle={true}
-    className="styled-system important button-light button-circle button-active button-size-m"
-    ghost={false}
-    light={true}
+  <button
+    className="c0"
     size="m"
   >
-    <button
-      className="styled-system important button-light button-circle button-active button-size-m c0"
-      size="m"
-    >
-      Text Button
-    </button>
-  </Button>
-</PropsTransformer(Button)>
+    Text Button
+  </button>
+</Button>
 `;

@@ -1,11 +1,6 @@
-import styled from 'styled-components';
-import createPropsTransform from 'react-props-classnames';
+import styled, { css } from 'styled-components';
 import { themeGet, space } from 'styled-system';
-
-const propsTransform = createPropsTransform({
-  prefix: 'heading',
-  props: ['gray', 'grayLight', 'grayHint', 'white'],
-});
+import { ifProp } from 'styled-tools';
 
 const BaseHeading = styled.p`
   margin: 0;
@@ -13,21 +8,33 @@ const BaseHeading = styled.p`
   font-weight: 500;
   line-height: 1;
 
-  &.heading-gray {
-    color: ${themeGet('colors.gray.2')};
-  }
+  ${ifProp(
+    'gray',
+    css`
+      color: ${themeGet('colors.gray.2')};
+    `
+  )}
 
-  &.heading-grayLight {
-    color: ${themeGet('colors.gray.4')};
-  }
+  ${ifProp(
+    'grayLight',
+    css`
+      color: ${themeGet('colors.gray.4')};
+    `
+  )}
 
-  &.heading-grayHint {
-    color: ${themeGet('colors.gray.5')};
-  }
+  ${ifProp(
+    'grayHint',
+    css`
+      color: ${themeGet('colors.gray.5')};
+    `
+  )}
 
-  &.heading-white {
-    color: ${themeGet('colors.light')};
-  }
+  ${ifProp(
+    'white',
+    css`
+      color: ${themeGet('colors.light')};
+    `
+  )}
 
   ${space};
 `;
@@ -60,13 +67,13 @@ const h6 = styled(BaseHeading.withComponent('h6'))`
   font-size: 0.6rem;
 `;
 
-const Heading = propsTransform(BaseHeading);
+const Heading = BaseHeading;
 
-Heading.h1 = propsTransform(h1);
-Heading.h2 = propsTransform(h2);
-Heading.h3 = propsTransform(h3);
-Heading.h4 = propsTransform(h4);
-Heading.h5 = propsTransform(h5);
-Heading.h6 = propsTransform(h6);
+Heading.h1 = h1;
+Heading.h2 = h2;
+Heading.h3 = h3;
+Heading.h4 = h4;
+Heading.h5 = h5;
+Heading.h6 = h6;
 
 export default Heading;
