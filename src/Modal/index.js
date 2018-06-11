@@ -2,17 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { space, border, borderColor, borderRadius } from 'styled-system';
-import { ifProp } from 'styled-tools';
 import { themeGet } from 'styled-system/dist/util';
 import Close from 'react-icons/lib/md/close';
 import createPropsTransform from 'react-props-classnames';
 
 import Icon from '../Icon';
 import Keydown from '../utils/Keydown';
-
-const ModalToggle = styled.div`
-  display: ${ifProp('show', 'block', 'none')};
-`;
 
 const CloseBtn = styled.button.attrs({
   type: 'button',
@@ -89,19 +84,20 @@ const propsTransform = createPropsTransform({
   props: ['show'],
 });
 
-const Modal = ({ children, show, handleClose, closeButton, ...otherProps }) => (
-  <ModalToggle show={show}>
-    <Keydown
-      keyCode={ESC_KEY_CODE}
-      handleKeydown={() => show && handleClose()}
-    />
-    <ModalOverlay onClick={handleClose} />
-    <ModalContent {...otherProps}>
-      {closeButton && <CloseButton handleClose={handleClose} />}
-      {children}
-    </ModalContent>
-  </ModalToggle>
-);
+const Modal = ({ children, show, handleClose, closeButton, ...otherProps }) =>
+  show && (
+    <>
+      <Keydown
+        keyCode={ESC_KEY_CODE}
+        handleKeydown={() => show && handleClose()}
+      />
+      <ModalOverlay onClick={handleClose} />
+      <ModalContent {...otherProps}>
+        {closeButton && <CloseButton handleClose={handleClose} />}
+        {children}
+      </ModalContent>
+    </>
+  );
 
 Modal.propTypes = {
   children: PropTypes.node,

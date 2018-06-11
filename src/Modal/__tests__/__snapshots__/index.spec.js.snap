@@ -2,10 +2,6 @@
 
 exports[`Modal should render correctly 1`] = `
 .c0 {
-  display: block;
-}
-
-.c1 {
   position: fixed;
   z-index: 10000;
   top: 0;
@@ -15,7 +11,7 @@ exports[`Modal should render correctly 1`] = `
   background-color: rgba(17,17,17,0.25);
 }
 
-.c2 {
+.c1 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -51,49 +47,41 @@ exports[`Modal should render correctly 1`] = `
     handleClose={[Function]}
     show={true}
   >
-    <Modal__ModalToggle
-      show={true}
+    <Keydown
+      handleKeydown={[Function]}
+      keyCode={27}
+    />
+    <Modal__ModalOverlay
+      onClick={[Function]}
     >
       <div
         className="c0"
-      >
-        <Keydown
-          handleKeydown={[Function]}
-          keyCode={27}
-        />
-        <Modal__ModalOverlay
-          onClick={[Function]}
-        >
-          <div
-            className="c1"
-            onClick={[Function]}
-          />
-        </Modal__ModalOverlay>
-        <Modal__ModalContent
-          border="default"
-          borderColor="border"
-          borderRadius={2}
-          className="modal-show"
-          p={7}
-        >
-          <div
-            className="modal-show c2"
-          />
-        </Modal__ModalContent>
-      </div>
-    </Modal__ModalToggle>
+        onClick={[Function]}
+      />
+    </Modal__ModalOverlay>
+    <Modal__ModalContent
+      border="default"
+      borderColor="border"
+      borderRadius={2}
+      className="modal-show"
+      p={7}
+    >
+      <div
+        className="modal-show c1"
+      />
+    </Modal__ModalContent>
   </Modal>
 </PropsTransformer(Modal)>
 `;
 
 exports[`Modal should render with props closeButton 1`] = `
-.c4 {
+.c3 {
   display: inline-block;
   line-height: 1;
   cursor: pointer;
 }
 
-.c4 svg {
+.c3 svg {
   vertical-align: middle;
   -webkit-transition: all .2s ease;
   transition: all .2s ease;
@@ -102,11 +90,7 @@ exports[`Modal should render with props closeButton 1`] = `
   height: 24px;
 }
 
-.c0 {
-  display: block;
-}
-
-.c3 {
+.c2 {
   position: absolute;
   top: 15px;
   right: 15px;
@@ -115,11 +99,11 @@ exports[`Modal should render with props closeButton 1`] = `
   cursor: pointer;
 }
 
-.c3:focus {
+.c2:focus {
   outline: 0;
 }
 
-.c1 {
+.c0 {
   position: fixed;
   z-index: 10000;
   top: 0;
@@ -129,7 +113,7 @@ exports[`Modal should render with props closeButton 1`] = `
   background-color: rgba(17,17,17,0.25);
 }
 
-.c2 {
+.c1 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -165,95 +149,87 @@ exports[`Modal should render with props closeButton 1`] = `
     handleClose={[Function]}
     show={true}
   >
-    <Modal__ModalToggle
-      show={true}
+    <Keydown
+      handleKeydown={[Function]}
+      keyCode={27}
+    />
+    <Modal__ModalOverlay
+      onClick={[Function]}
     >
       <div
         className="c0"
+        onClick={[Function]}
+      />
+    </Modal__ModalOverlay>
+    <Modal__ModalContent
+      border="default"
+      borderColor="border"
+      borderRadius={2}
+      className="modal-show"
+      p={7}
+    >
+      <div
+        className="modal-show c1"
       >
-        <Keydown
-          handleKeydown={[Function]}
-          keyCode={27}
-        />
-        <Modal__ModalOverlay
-          onClick={[Function]}
+        <CloseButton
+          handleClose={[Function]}
         >
-          <div
-            className="c1"
+          <Modal__CloseBtn
             onClick={[Function]}
-          />
-        </Modal__ModalOverlay>
-        <Modal__ModalContent
-          border="default"
-          borderColor="border"
-          borderRadius={2}
-          className="modal-show"
-          p={7}
-        >
-          <div
-            className="modal-show c2"
           >
-            <CloseButton
-              handleClose={[Function]}
+            <button
+              className="c2"
+              onClick={[Function]}
+              type="button"
             >
-              <Modal__CloseBtn
-                onClick={[Function]}
+              <Icon
+                cursor="pointer"
+                type={[Function]}
               >
-                <button
-                  className="c3"
-                  onClick={[Function]}
-                  type="button"
+                <Icon__IconWrapper
+                  cursor="pointer"
+                  fill="bodyFont"
+                  size={24}
                 >
-                  <Icon
+                  <i
+                    className="c3"
                     cursor="pointer"
-                    type={[Function]}
+                    fill="bodyFont"
+                    size={24}
                   >
-                    <Icon__IconWrapper
-                      cursor="pointer"
-                      fill="bodyFont"
-                      size={24}
-                    >
-                      <i
-                        className="c4"
-                        cursor="pointer"
-                        fill="bodyFont"
-                        size={24}
+                    <MdClose>
+                      <IconBase
+                        viewBox="0 0 40 40"
                       >
-                        <MdClose>
-                          <IconBase
-                            viewBox="0 0 40 40"
-                          >
-                            <svg
-                              fill="currentColor"
-                              height="1em"
-                              preserveAspectRatio="xMidYMid meet"
-                              style={
-                                Object {
-                                  "color": undefined,
-                                  "verticalAlign": "middle",
-                                }
-                              }
-                              viewBox="0 0 40 40"
-                              width="1em"
-                            >
-                              <g>
-                                <path
-                                  d="m31.6 10.7l-9.3 9.3 9.3 9.3-2.3 2.3-9.3-9.3-9.3 9.3-2.3-2.3 9.3-9.3-9.3-9.3 2.3-2.3 9.3 9.3 9.3-9.3z"
-                                />
-                              </g>
-                            </svg>
-                          </IconBase>
-                        </MdClose>
-                      </i>
-                    </Icon__IconWrapper>
-                  </Icon>
-                </button>
-              </Modal__CloseBtn>
-            </CloseButton>
-          </div>
-        </Modal__ModalContent>
+                        <svg
+                          fill="currentColor"
+                          height="1em"
+                          preserveAspectRatio="xMidYMid meet"
+                          style={
+                            Object {
+                              "color": undefined,
+                              "verticalAlign": "middle",
+                            }
+                          }
+                          viewBox="0 0 40 40"
+                          width="1em"
+                        >
+                          <g>
+                            <path
+                              d="m31.6 10.7l-9.3 9.3 9.3 9.3-2.3 2.3-9.3-9.3-9.3 9.3-2.3-2.3 9.3-9.3-9.3-9.3 2.3-2.3 9.3 9.3 9.3-9.3z"
+                            />
+                          </g>
+                        </svg>
+                      </IconBase>
+                    </MdClose>
+                  </i>
+                </Icon__IconWrapper>
+              </Icon>
+            </button>
+          </Modal__CloseBtn>
+        </CloseButton>
       </div>
-    </Modal__ModalToggle>
+    </Modal__ModalContent>
   </Modal>
 </PropsTransformer(Modal)>
 `;
