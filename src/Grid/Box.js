@@ -4,8 +4,16 @@ import * as system from 'styled-system';
 const overflow = system.style({
   prop: 'overflow',
   cssProperty: 'overflow',
-  key: 'overflows',
-  alias: 'of',
+});
+
+const overflowX = system.style({
+  prop: 'overflowX',
+  cssProperty: 'overflow-x',
+});
+
+const overflowY = system.style({
+  prop: 'overflowY',
+  cssProperty: 'overflow-y',
 });
 
 const Box = styled.div`
@@ -17,15 +25,17 @@ const Box = styled.div`
   ${system.bottom};
   ${system.left};
   ${overflow};
+  ${overflowX};
+  ${overflowY};
 
   ${system.display};
   ${system.space};
+  /* stylelint-disable */
   ${system.fontSize};
+  /* stylelint-enable */
   ${system.color};
 
-  /* stylelint-disable */
   ${system.borders};
-  /* stylelint-enable */
   ${system.borderColor};
   ${system.borderRadius};
 
