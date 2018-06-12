@@ -21,10 +21,10 @@ storiesOf('Feedback|Modal', module)
     'Docs',
     withComponentReadme(README, () => (
       <Value initial={false}>
-        {({ value, setValue }) => (
+        {({ value, set }) => (
           <Showcase>
             <Modal
-              handleClose={() => setValue(false)}
+              handleClose={() => set(false)}
               show={boolean('show', value, 'props')}
               closeButton={boolean('closeButton', value, 'props')}
             >
@@ -36,7 +36,7 @@ storiesOf('Feedback|Modal', module)
                 suscipit iste pariatur consectetur autem?
               </p>
             </Modal>
-            <Button onClick={() => setValue(true)}>Open Modal</Button>
+            <Button onClick={() => set(true)}>Open Modal</Button>
           </Showcase>
         )}
       </Value>
@@ -48,10 +48,10 @@ storiesOf('Feedback|Modal', module)
       <ShowcasePage title="Modal Showcase">
         <Heading.h3>Default Modal</Heading.h3>
         <Value initial={false}>
-          {({ value, setValue }) => (
+          {({ value, set }) => (
             <Showcase>
               <Modal
-                handleClose={() => setValue(false)}
+                handleClose={() => set(false)}
                 show={boolean('show', value, 'props')}
               >
                 <h1>Modal</h1>
@@ -62,17 +62,17 @@ storiesOf('Feedback|Modal', module)
                   suscipit iste pariatur consectetur autem?
                 </p>
               </Modal>
-              <Button onClick={() => setValue(true)}>Open Modal</Button>
+              <Button onClick={() => set(true)}>Open Modal</Button>
             </Showcase>
           )}
         </Value>
 
         <Heading.h3>Modal with closeButton</Heading.h3>
         <Value initial={false}>
-          {({ value, setValue }) => (
+          {({ value, set }) => (
             <Showcase>
               <Modal
-                handleClose={() => setValue(false)}
+                handleClose={() => set(false)}
                 show={boolean('show', value, 'props')}
                 closeButton={boolean('closeButton', value, 'props')}
               >
@@ -84,17 +84,17 @@ storiesOf('Feedback|Modal', module)
                   suscipit iste pariatur consectetur autem?
                 </p>
               </Modal>
-              <Button onClick={() => setValue(true)}>Open Modal</Button>
+              <Button onClick={() => set(true)}>Open Modal</Button>
             </Showcase>
           )}
         </Value>
 
         <Heading.h3>Modal with custom style</Heading.h3>
         <Value initial={false}>
-          {({ value, setValue }) => (
+          {({ value, set }) => (
             <Showcase>
               <Modal
-                handleClose={() => setValue(false)}
+                handleClose={() => set(false)}
                 show={boolean('show', value, 'props')}
                 closeButton={boolean('closeButton', value, 'props')}
               >
@@ -108,7 +108,7 @@ storiesOf('Feedback|Modal', module)
                   </p>
                 </Box>
               </Modal>
-              <Button onClick={() => setValue(true)}>Open Modal</Button>
+              <Button onClick={() => set(true)}>Open Modal</Button>
             </Showcase>
           )}
         </Value>

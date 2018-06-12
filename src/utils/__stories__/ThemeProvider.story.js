@@ -18,7 +18,7 @@ storiesOf('Other|ThemeProvider', module)
   .addDecorator(centered)
   .add('default', () => (
     <Value initial="yellow">
-      {({ value, setValue }) => (
+      {({ value, set }) => (
         <ThemeProvider theme={value}>
           <>
             <Button mb={3} light circle active>
@@ -27,7 +27,7 @@ storiesOf('Other|ThemeProvider', module)
             <Select
               options={options}
               value={options.find(option => option.value === value)}
-              onChange={option => setValue(option.value)}
+              onChange={option => set(option.value)}
             />
           </>
         </ThemeProvider>

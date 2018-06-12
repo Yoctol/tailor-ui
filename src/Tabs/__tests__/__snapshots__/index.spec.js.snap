@@ -2,34 +2,33 @@
 
 exports[`Tabs should render correctly 1`] = `
 <Tabs__TabsWrapper
+  absolute={false}
   block={false}
-  pills={false}
 >
-  <Tabs__Tab
+  <Tabs.Tab
     active={true}
+    disabled={false}
     key=".0"
-    pills={false}
     size="m"
   >
     Tab 1
-  </Tabs__Tab>
-  <Tabs__Tab
+  </Tabs.Tab>
+  <Tabs.Tab
     active={false}
     disabled={true}
     key=".1"
-    pills={false}
     size="m"
   >
     Tab 2
-  </Tabs__Tab>
-  <Tabs__Tab
+  </Tabs.Tab>
+  <Tabs.Tab
     active={false}
+    disabled={false}
     key=".2"
-    pills={false}
     size="m"
   >
     Tab 3
-  </Tabs__Tab>
+  </Tabs.Tab>
 </Tabs__TabsWrapper>
 `;
 
@@ -37,65 +36,63 @@ exports[`Tabs should render with props absolute 1`] = `
 <Tabs__TabsWrapper
   absolute={true}
   block={false}
-  pills={false}
 >
-  <Tabs__Tab
+  <Tabs.Tab
     active={true}
+    disabled={false}
     key=".0"
-    pills={false}
     size="m"
   >
     Tab 1
-  </Tabs__Tab>
-  <Tabs__Tab
+  </Tabs.Tab>
+  <Tabs.Tab
     active={false}
     disabled={true}
     key=".1"
-    pills={false}
     size="m"
   >
     Tab 2
-  </Tabs__Tab>
-  <Tabs__Tab
+  </Tabs.Tab>
+  <Tabs.Tab
     active={false}
+    disabled={false}
     key=".2"
-    pills={false}
     size="m"
   >
     Tab 3
-  </Tabs__Tab>
+  </Tabs.Tab>
 </Tabs__TabsWrapper>
 `;
 
 exports[`Tabs should render with props pills 1`] = `
 <Tabs__TabsWrapper
+  absolute={false}
   block={false}
   pills={true}
 >
-  <Tabs__Tab
+  <Tabs.Tab
     active={true}
+    disabled={false}
     key=".0"
-    pills={true}
     size="m"
   >
     Tab 1
-  </Tabs__Tab>
-  <Tabs__Tab
+  </Tabs.Tab>
+  <Tabs.Tab
     active={false}
     disabled={true}
     key=".1"
-    pills={true}
     size="m"
   >
     Tab 2
-  </Tabs__Tab>
-  <Tabs__Tab
+  </Tabs.Tab>
+  <Tabs.Tab
     active={false}
+    disabled={false}
     key=".2"
-    pills={true}
     size="m"
   >
     Tab 3
-  </Tabs__Tab>
+  </Tabs.Tab>
 </Tabs__TabsWrapper>
 `;

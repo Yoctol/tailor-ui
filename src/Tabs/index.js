@@ -1,36 +1,17 @@
 import React, { Children, cloneElement } from 'react';
 import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
-import { themeGet, space, borderRadius } from 'styled-system';
+import { themeGet, space } from 'styled-system';
 import { ifProp, switchProp } from 'styled-tools';
-
-const PillsTab = css`
-  border-radius: ${themeGet('radii.1')};
-  background-color: ${ifProp(
-    'active',
-    themeGet('colors.gray.8'),
-    themeGet('colors.bgLight')
-  )};
-`;
-
-const DefaultTab = css`
-  border-bottom: 3px solid transparent;
-
-  ${ifProp(
-    'active',
-    css`
-      border-color: ${themeGet('colors.secondary')};
-    `
-  )};
-`;
 
 const Tab = styled.a`
   display: inline-block;
   position: relative;
-  background-color: ${ifProp('active', themeGet('colors.bgLight'))};
+  border-bottom: 3px solid transparent;
   text-align: center;
   text-decoration: none;
   cursor: pointer;
+
   &:hover {
     text-decoration: none;
   }
@@ -41,6 +22,13 @@ const Tab = styled.a`
     cursor: default;
     pointer-events: none;
   }
+
+  ${ifProp(
+    'active',
+    css`
+      border-bottom-color: ${themeGet('colors.secondary')};
+    `
+  )};
 
   ${switchProp('size', {
     sm: css`
@@ -62,55 +50,68 @@ const Tab = styled.a`
     `,
   })};
 
-  ${ifProp('pills', PillsTab, DefaultTab)};
-
   ${space};
-  ${borderRadius};
 `;
 
 Tab.propTypes = {
   active: PropTypes.bool,
+  disabled: PropTypes.bool,
+  size: PropTypes.string,
 };
 
 Tab.defaultProps = {
   active: false,
+  disabled: false,
   size: 'm',
 };
+
+Tab.displayName = 'Tabs.Tab';
 
 const TabsWrapper = styled.nav`
   display: flex;
 
   ${ifProp(
-    { pills: false, absolute: true },
+    'absolute',
     css`
       position: absolute;
       bottom: -3px;
     `
   )};
 
-  ${Tab /* sc-selector */} {
-    flex-grow: ${ifProp('block', 1, 0)};
-  }
+  ${ifProp(
+    'block',
+    css`
+      right: 0;
+      left: 0;
+      padding-right: inherit;
+      padding-left: inherit;
+      ${Tab /* sc-selector */} {
+        flex-grow: 1;
+      }
+    `
+  )};
 
   ${space};
 `;
 
-const Tabs = ({ children, pills, size, ...otherProps }) => (
-  <TabsWrapper pills={pills} {...otherProps}>
-    {Children.map(children, child => cloneElement(child, { pills, size }))}
+const Tabs = ({ absolute, children, size, ...otherProps }) => (
+  <TabsWrapper absolute={absolute} {...otherProps}>
+    {Children.map(children, child => cloneElement(child, { size }))}
   </TabsWrapper>
 );
 
 Tabs.propTypes = {
+  absolute: PropTypes.bool,
   block: PropTypes.bool,
   children: PropTypes.node.isRequired,
-  pills: PropTypes.bool,
+  size: PropTypes.string,
   ...space.propTypes,
 };
 
 Tabs.defaultProps = {
+  absolute: false,
   block: false,
-  pills: false,
+  size: 'm',
 };
 
 Tabs.Tab = Tab;
