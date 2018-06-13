@@ -4,6 +4,7 @@ import centered from '@storybook/addon-centered';
 
 import { Flex, Box } from '../../';
 import themeProvider from '../../../.storybook/theme-provider';
+import FormField from '../FormField';
 import Label from '../Label';
 import Input from '../Input';
 import Hint from '../Hint';
@@ -12,26 +13,38 @@ storiesOf('Data Entry|Input', module)
   .addDecorator(centered)
   .addDecorator(themeProvider)
   .add('default', () => (
-    <div>
+    <FormField>
       <Label htmlFor="demo">With Default:</Label>
       <Input id="demo" placeholder="placeholder" />
-    </div>
+    </FormField>
   ))
   .add('with status', () => (
-    <div>
-      <Label htmlFor="default">With default:</Label>
-      <Input id="default" placeholder="default status" />
-      <Hint>default status</Hint>
-      <Label htmlFor="success">With Success:</Label>
-      <Input id="success" success placeholder="has success" />
-      <Hint success>has success</Hint>
-      <Label htmlFor="warning">With Warning:</Label>
-      <Input id="warning" warning placeholder="has warning" />
-      <Hint warning>has warning</Hint>
-      <Label htmlFor="error">With Error:</Label>
-      <Input id="error" error placeholder="has error" />
-      <Hint error>has error</Hint>
-    </div>
+    <>
+      <FormField>
+        <Label htmlFor="default">With none:</Label>
+        <Input id="none" placeholder="none status" />
+      </FormField>
+      <FormField>
+        <Label htmlFor="default">With default:</Label>
+        <Input id="default" placeholder="default status" />
+        <Hint>default status</Hint>
+      </FormField>
+      <FormField success>
+        <Label htmlFor="success">With Success:</Label>
+        <Input id="success" placeholder="has success" />
+        <Hint>has success</Hint>
+      </FormField>
+      <FormField warning>
+        <Label htmlFor="warning">With Warning:</Label>
+        <Input id="warning" placeholder="has warning" />
+        <Hint>has warning</Hint>
+      </FormField>
+      <FormField error>
+        <Label htmlFor="error">With Error:</Label>
+        <Input id="error" placeholder="has error" />
+        <Hint>has error</Hint>
+      </FormField>
+    </>
   ))
   .add('with disabled', () => (
     <div>
@@ -51,17 +64,23 @@ storiesOf('Data Entry|Input', module)
   ))
   .add('with size', () => (
     <div>
-      <Label size="sm" htmlFor="demo_sm">
-        With sm:
-      </Label>
-      <Input id="demo_sm" size="sm" placeholder="placeholder" />
-      <Label size="m" htmlFor="demo_m">
-        With m:
-      </Label>
-      <Input id="demo_m" size="m" placeholder="placeholder" />
-      <Label size="lg" htmlFor="demo_lg">
-        With lg:
-      </Label>
-      <Input id="demo_lg" size="lg" placeholder="placeholder" />
+      <FormField>
+        <Label size="sm" htmlFor="demo_sm">
+          With sm:
+        </Label>
+        <Input id="demo_sm" size="sm" placeholder="placeholder" />
+      </FormField>
+      <FormField>
+        <Label size="m" htmlFor="demo_m">
+          With m:
+        </Label>
+        <Input id="demo_m" size="m" placeholder="placeholder" />
+      </FormField>
+      <FormField>
+        <Label size="lg" htmlFor="demo_lg">
+          With lg:
+        </Label>
+        <Input id="demo_lg" size="lg" placeholder="placeholder" />
+      </FormField>
     </div>
   ));

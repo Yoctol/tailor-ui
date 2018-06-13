@@ -40,37 +40,6 @@ const Input = styled.input`
   ${controlTransition()};
 
   ${ifProp(
-    'success',
-    css`
-      border-color: ${themeGet('colors.success')};
-      &:focus {
-        border-color: ${themeGet('colors.success')};
-        ${controlShadow(themeGet('colors.success'))};
-      }
-    `
-  )};
-  ${ifProp(
-    'warning',
-    css`
-      border-color: ${themeGet('colors.warning')};
-      &:focus {
-        border-color: ${themeGet('colors.warning')};
-        ${controlShadow(themeGet('colors.warning'))};
-      }
-    `
-  )};
-  ${ifProp(
-    'error',
-    css`
-      border-color: ${themeGet('colors.error')};
-      &:focus {
-        border-color: ${themeGet('colors.error')};
-        ${controlShadow(themeGet('colors.error'))};
-      }
-    `
-  )};
-
-  ${ifProp(
     'inline',
     css`
       display: inline-block;
