@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { space, border, borderColor, borderRadius } from 'styled-system';
 import { themeGet } from 'styled-system/dist/util';
 import Close from 'react-icons/lib/md/close';
+import { Transition } from 'react-spring';
 
 import Icon from '../Icon';
 import Keydown from '../utils/Keydown';
@@ -54,7 +55,6 @@ const ModalContent = styled.div`
   padding: ${themeGet('space.spacingLg')};
   background-color: #fff;
   box-shadow: 0 10px 30px 0 rgba(17, 17, 17, 0.2);
-  transform: translate(-50%, -50%);
 
   ${space}
   ${border}
@@ -77,21 +77,51 @@ ModalContent.defaultProps = {
 };
 
 const ESC_KEY_CODE = 27;
+const NUMBER_FOR_PREVENT_COMPONENT_UNMOUNT_DELAY = -149;
 
-const Modal = ({ children, show, handleClose, closeButton, ...otherProps }) =>
-  show && (
-    <>
-      <Keydown
-        keyCode={ESC_KEY_CODE}
-        handleKeydown={() => show && handleClose()}
-      />
-      <ModalOverlay onClick={handleClose} />
-      <ModalContent {...otherProps}>
-        {closeButton && <CloseButton handleClose={handleClose} />}
-        {children}
-      </ModalContent>
-    </>
-  );
+const Modal = ({ children, show, handleClose, closeButton, ...otherProps }) => (
+  <>
+    <Keydown
+      keyCode={ESC_KEY_CODE}
+      handleKeydown={() => show && handleClose()}
+    />
+    <Transition
+      from={{ opacity: 0, translateY: -150 }}
+      enter={{ opacity: 1, translateY: 0 }}
+      leave={{ opacity: 0, translateY: -150 }}
+    >
+      {show &&
+        (({ opacity, translateY }) => (
+          <>
+            <ModalOverlay
+              style={{
+                opacity,
+                display:
+                  translateY < NUMBER_FOR_PREVENT_COMPONENT_UNMOUNT_DELAY
+                    ? 'none'
+                    : 'block',
+              }}
+              onClick={handleClose}
+            />
+            <ModalContent
+              style={{
+                opacity,
+                display:
+                  translateY < NUMBER_FOR_PREVENT_COMPONENT_UNMOUNT_DELAY
+                    ? 'none'
+                    : 'flex',
+                transform: `translate(-50%, -50%) translateY(${translateY}px)`,
+              }}
+              {...otherProps}
+            >
+              {closeButton && <CloseButton handleClose={handleClose} />}
+              {children}
+            </ModalContent>
+          </>
+        ))}
+    </Transition>
+  </>
+);
 
 Modal.propTypes = {
   children: PropTypes.node,
