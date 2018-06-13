@@ -6,17 +6,16 @@ import {
   space,
   color,
   borders,
-  borderColor,
   borderRadius,
   fontSize,
   textAlign,
   minWidth,
 } from 'styled-system';
 import { ifProp, switchProp } from 'styled-tools';
-import { Toggle } from 'react-powerplug';
+import { Toggle, Hover } from 'react-powerplug';
+import { Transition, animated, config } from 'react-spring';
 
-const TooltipToggle = styled.div`
-  display: ${ifProp('visible', 'block', 'none')};
+const TooltipToggle = styled(animated.div)`
   position: absolute;
   z-index: 99;
 
@@ -50,30 +49,40 @@ const TooltipToggle = styled.div`
 
 TooltipToggle.propTypes = {
   placement: PropTypes.string.isRequired,
-  visible: PropTypes.bool.isRequired,
 };
 
 const Content = styled.div`
+  border: ${themeGet('borders.default')};
+  border-color: ${ifProp(
+    'light',
+    themeGet('colors.gray.7'),
+    themeGet('colors.primaryDark')
+  )};
+  background-color: ${ifProp(
+    'light',
+    themeGet('colors.gray.9'),
+    themeGet('colors.primaryDark')
+  )};
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  color: ${ifProp(
+    'light',
+    themeGet('colors.bodyFont'),
+    themeGet('colors.light')
+  )};
+
+  ${ifProp(
+    { light: false },
+    css`
+      opacity: 0.8;
+    `
+  )};
+
   ${space};
   ${minWidth};
   ${color};
-  ${borders};
-  ${borderColor};
   ${borderRadius};
   ${fontSize};
   ${textAlign};
-
-  ${ifProp(
-    'light',
-    css`
-      background: ${themeGet('colors.light')};
-      color: ${themeGet('colors.bodyFont')};
-    `,
-    css`
-      background: ${themeGet('colors.primaryDark')};
-      color: ${themeGet('colors.light')};
-    `
-  )};
 `;
 
 Content.propTypes = {
@@ -91,8 +100,6 @@ Content.defaultProps = {
   fontSize: 'sm',
   p: 1,
   textAlign: 'center',
-  borders: 'default',
-  borderColor: 'primaryDark',
   borderRadius: 1,
 };
 
@@ -100,49 +107,61 @@ const Arrow = styled.div`
   position: absolute;
   width: 0;
   height: 0;
-  border-top: 8px solid ${themeGet('colors.primaryDark')};
+  border-top: 5px solid
+    ${ifProp(
+      'light',
+      themeGet('colors.gray.7'),
+      themeGet('colors.primaryDark')
+    )};
   border-right: 5px solid transparent;
   border-left: 5px solid transparent;
+
+  ${ifProp(
+    { light: false },
+    css`
+      opacity: 0.8;
+    `
+  )};
 
   ${switchProp('placement', {
     top: css`
       left: 50%;
-      margin-left: -2px;
+      margin-left: -4px;
     `,
     bottom: css`
-      top: -8px;
+      top: -5px;
       left: 50%;
-      margin-left: -2px;
+      margin-left: -3px;
       transform: rotate(180deg);
     `,
     right: css`
       top: 50%;
-      left: -8px;
-      margin-top: -2px;
+      left: -7px;
+      margin-top: -1px;
       transform: rotate(90deg);
     `,
     left: css`
       top: 50%;
-      right: -8px;
-      margin-top: -2px;
+      right: -7px;
+      margin-top: -1px;
       transform: rotate(-90deg);
     `,
   })};
 
-  &::after {
-    content: '';
-    position: absolute;
-    top: -11px;
-    left: -5px;
-    border-top: 10px solid
-      ${ifProp(
-        'light',
-        themeGet('colors.light'),
-        themeGet('colors.primaryDark')
-      )};
-    border-right: 5px solid transparent;
-    border-left: 5px solid transparent;
-  }
+  ${ifProp(
+    'light',
+    css`
+      &::after {
+        content: '';
+        position: absolute;
+        top: -7px;
+        left: -6px;
+        border-top: 6px solid ${themeGet('colors.gray.9')};
+        border-right: 6px solid transparent;
+        border-left: 6px solid transparent;
+      }
+    `
+  )};
 `;
 
 Arrow.propTypes = {
@@ -154,48 +173,61 @@ const TooltipWrapper = styled.div`
   display: inline-block;
   position: relative;
   z-index: 98;
-
-  ${ifProp(
-    { trigger: 'hover' },
-    css`
-      &:hover {
-        ${TooltipToggle /* sc-selector */} {
-          display: block;
-        }
-      }
-    `
-  )};
 `;
 
-TooltipWrapper.propTypes = {
-  trigger: PropTypes.string.isRequired,
-};
-
-const Tooltip = ({
-  trigger,
-  children,
-  content,
-  light,
+const AnimatedTooltip = ({
+  visible,
   placement,
+  light,
+  content,
   ...otherProps
 }) => (
-  <Toggle>
-    {({ on, toggle }) => (
-      <TooltipWrapper
-        trigger={trigger}
-        onClick={trigger === 'click' ? toggle : undefined}
-      >
-        {children}
-        <TooltipToggle visible={on} placement={placement}>
+  <Transition
+    native
+    from={{ opacity: 0 }}
+    enter={{ opacity: 1 }}
+    leave={{ opacity: 0 }}
+    config={config.gentle}
+  >
+    {visible &&
+      (style => (
+        <TooltipToggle style={style} placement={placement}>
           <Content light={light} {...otherProps}>
             {content}
           </Content>
           <Arrow light={light} placement={placement} />
         </TooltipToggle>
-      </TooltipWrapper>
-    )}
-  </Toggle>
+      ))}
+  </Transition>
 );
+
+AnimatedTooltip.propTypes = {
+  content: PropTypes.node.isRequired,
+  light: PropTypes.bool.isRequired,
+  placement: PropTypes.string.isRequired,
+  visible: PropTypes.bool.isRequired,
+};
+
+const Tooltip = ({ trigger, children, ...otherProps }) =>
+  trigger === 'click' ? (
+    <Toggle>
+      {({ on, toggle }) => (
+        <TooltipWrapper onClick={toggle}>
+          {children}
+          <AnimatedTooltip visible={on} {...otherProps} />
+        </TooltipWrapper>
+      )}
+    </Toggle>
+  ) : (
+    <Hover>
+      {({ bind, isHovered }) => (
+        <TooltipWrapper {...bind}>
+          {children}
+          <AnimatedTooltip visible={isHovered} {...otherProps} />
+        </TooltipWrapper>
+      )}
+    </Hover>
+  );
 
 Tooltip.propTypes = {
   children: PropTypes.node,
