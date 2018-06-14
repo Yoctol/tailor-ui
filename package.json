@@ -130,5 +130,9 @@
       "prettier --parser json --write",
       "git add"
     ]
+  },
+  "prettier": {
+    "trailingComma": "es5",
+    "singleQuote": true
   }
 }

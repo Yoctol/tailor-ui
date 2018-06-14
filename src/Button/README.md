@@ -1,7 +1,7 @@
 # Button Docs
 
 ```js
-import { Button } from "@yoctol/ui";
+import { Button } from '@yoctol/ui';
 ```
 
 ### Try it with `knobs`:

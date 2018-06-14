@@ -1,7 +1,7 @@
 # Tabs Docs
 
 ```js
-import { Tabs } from "@yoctol/ui";
+import { Tabs } from '@yoctol/ui';
 ```
 
 ### Try it with `knobs`:

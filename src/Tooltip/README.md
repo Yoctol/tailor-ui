@@ -1,7 +1,7 @@
 # Tooltip Docs
 
 ```js
-import { Tooltip } from "@yoctol/ui";
+import { Tooltip } from '@yoctol/ui';
 ```
 
 ### Try it with `knobs`:
