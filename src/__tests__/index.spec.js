@@ -5,6 +5,7 @@ import {
   Checkbox,
   Dropdown,
   Flex,
+  FormField,
   Heading,
   Hint,
   Icon,
@@ -32,6 +33,7 @@ describe('index', () => {
     expect(Checkbox).toBeDefined();
     expect(Dropdown).toBeDefined();
     expect(Flex).toBeDefined();
+    expect(FormField).toBeDefined();
     expect(Heading).toBeDefined();
     expect(Hint).toBeDefined();
     expect(Icon).toBeDefined();
