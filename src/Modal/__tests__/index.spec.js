@@ -1,18 +1,18 @@
 import React from 'react';
 
-import mountWithTheme from 'test/mountWithTheme';
+import shallowWithTheme from 'test/shallowWithTheme';
 
 import Modal from '../';
 
 describe('Modal', () => {
   it('should render correctly', () => {
-    const component = mountWithTheme(<Modal show handleClose={() => {}} />);
+    const component = shallowWithTheme(<Modal show handleClose={() => {}} />);
 
     expect(component).toMatchSnapshot();
   });
 
   it('should render with props closeButton', () => {
-    const component = mountWithTheme(
+    const component = shallowWithTheme(
       <Modal show closeButton handleClose={() => {}} />
     );
 
