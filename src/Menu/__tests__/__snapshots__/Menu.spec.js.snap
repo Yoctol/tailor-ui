@@ -73,46 +73,6 @@ exports[`Menu should render correctly 1`] = `
   outline: 0;
 }
 
-.c8 {
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
-  width: 100%;
-  padding: 0.6rem 1rem;
-  border: 0;
-  border-left: 0.4rem solid;
-  border-left-color: transparent;
-  background-color: #0e0c1a;
-  color: #5e5e5e;
-  font-size: .8rem;
-  line-height: 1.2rem;
-  text-align: left;
-  -webkit-transition: all 0.1s ease-in-out;
-  transition: all 0.1s ease-in-out;
-  cursor: pointer;
-}
-
-.c8 .Icon__IconWrapper-ksWXhn {
-  margin-right: 7px;
-  vertical-align: 10%;
-}
-
-.c8 .Icon__IconWrapper-ksWXhn svg {
-  fill: #5e5e5e;
-}
-
-.c8:hover {
-  color: #ffffff;
-}
-
-.c8:hover .Icon__IconWrapper-ksWXhn svg {
-  fill: #ffffff;
-}
-
-.c8:focus {
-  outline: 0;
-}
-
 .c3 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -204,7 +164,6 @@ exports[`Menu should render correctly 1`] = `
                         "height": 0,
                       }
                     }
-                    hold={false}
                     immediate={false}
                     impl={[Function]}
                     inject={[Function]}
@@ -215,104 +174,7 @@ exports[`Menu should render correctly 1`] = `
                         "height": "auto",
                       }
                     }
-                  >
-                    <AnimatedComponent
-                      style={
-                        Object {
-                          "height": AnimatedValue {
-                            "_animatedStyles": Set {},
-                            "_animation": null,
-                            "_children": Array [
-                              AnimatedStyle {
-                                "_children": Array [
-                                  AnimatedProps {
-                                    "_callback": [Function],
-                                    "_props": Object {
-                                      "children": Array [
-                                        <Menu__Item
-                                          active={true}
-                                        >
-                                          Group Item 1
-                                        </Menu__Item>,
-                                        <Menu__Item
-                                          active={false}
-                                        >
-                                          Group Item 2
-                                        </Menu__Item>,
-                                        <Menu__Item
-                                          active={false}
-                                        >
-                                          Group Item 3
-                                        </Menu__Item>,
-                                        <Menu__Item
-                                          active={false}
-                                        >
-                                          Group Item 4
-                                        </Menu__Item>,
-                                      ],
-                                      "style": [Circular],
-                                    },
-                                  },
-                                ],
-                                "_style": [Circular],
-                              },
-                            ],
-                            "_listeners": Object {},
-                            "_value": "auto",
-                          },
-                          "position": "absolute",
-                          "visibility": "hidden",
-                        }
-                      }
-                    >
-                      <div
-                        style={
-                          Object {
-                            "height": "auto",
-                            "position": "absolute",
-                            "visibility": "hidden",
-                          }
-                        }
-                      >
-                        <Menu__Item
-                          active={true}
-                        >
-                          <button
-                            className="c4 c5"
-                          >
-                            Group Item 1
-                          </button>
-                        </Menu__Item>
-                        <Menu__Item
-                          active={false}
-                        >
-                          <button
-                            className="c4 c8"
-                          >
-                            Group Item 2
-                          </button>
-                        </Menu__Item>
-                        <Menu__Item
-                          active={false}
-                        >
-                          <button
-                            className="c4 c8"
-                          >
-                            Group Item 3
-                          </button>
-                        </Menu__Item>
-                        <Menu__Item
-                          active={false}
-                        >
-                          <button
-                            className="c4 c8"
-                          >
-                            Group Item 4
-                          </button>
-                        </Menu__Item>
-                      </div>
-                    </AnimatedComponent>
-                  </Spring>
+                  />
                 </div>
               </Menu__Animation>
             </div>
