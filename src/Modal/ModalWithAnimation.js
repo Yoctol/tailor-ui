@@ -69,9 +69,42 @@ ModalContent.defaultProps = {
   p: 7,
 };
 
+const ModalWrapper = ({
+  opacity,
+  translateY,
+  pointerEvents,
+  handleClose,
+  closeButton,
+  content,
+  ...otherProps
+}) => (
+  <>
+    <ModalOverlay
+      style={{
+        opacity,
+        pointerEvents,
+      }}
+      onClick={handleClose}
+    />
+    <ModalContent
+      style={{
+        opacity,
+        pointerEvents,
+        transform: translateY.interpolate(
+          y => `translate(-50%, calc(-50% - ${y}px))`
+        ),
+      }}
+      {...otherProps}
+    >
+      {closeButton && <CloseButton handleClose={handleClose} />}
+      {content}
+    </ModalContent>
+  </>
+);
+
 const ESC_KEY_CODE = 27;
 
-const Modal = ({ children, show, handleClose, closeButton, ...otherProps }) => (
+const Modal = ({ children, show, handleClose, ...otherProps }) => (
   <>
     <Keydown
       keyCode={ESC_KEY_CODE}
@@ -81,7 +114,7 @@ const Modal = ({ children, show, handleClose, closeButton, ...otherProps }) => (
       native
       from={{
         opacity: 0,
-        translateY: -150,
+        translateY: 150,
       }}
       enter={{
         opacity: 1,
@@ -89,7 +122,7 @@ const Modal = ({ children, show, handleClose, closeButton, ...otherProps }) => (
       }}
       leave={{
         opacity: 0,
-        translateY: -150,
+        translateY: 150,
         pointerEvents: 'none',
       }}
       config={{
@@ -98,32 +131,11 @@ const Modal = ({ children, show, handleClose, closeButton, ...otherProps }) => (
         restSpeedThreshold: 0.01,
         restDisplacementThreshold: 0.01,
       }}
+      handleClose={handleClose}
+      content={children}
+      {...otherProps}
     >
-      {show &&
-        (({ opacity, translateY, pointerEvents }) => (
-          <>
-            <ModalOverlay
-              style={{
-                opacity,
-                pointerEvents,
-              }}
-              onClick={handleClose}
-            />
-            <ModalContent
-              style={{
-                opacity,
-                pointerEvents,
-                transform: translateY.interpolate(
-                  y => `translate(-50%, -50%) translateY(${y}px)`
-                ),
-              }}
-              {...otherProps}
-            >
-              {closeButton && <CloseButton handleClose={handleClose} />}
-              {children}
-            </ModalContent>
-          </>
-        ))}
+      {show && ModalWrapper}
     </Transition>
   </>
 );
