@@ -1,8 +1,8 @@
 import styled, { css } from 'styled-components';
-import { themeGet, space } from 'styled-system';
+import { themeGet, space, color } from 'styled-system';
 import { ifProp } from 'styled-tools';
 
-const BaseHeading = styled.p`
+const Heading = styled.p`
   margin: 0;
   color: ${themeGet('colors.primaryDark')};
   font-weight: 500;
@@ -37,37 +37,43 @@ const BaseHeading = styled.p`
   )}
 
   ${space};
+  ${color}
 `;
 
-BaseHeading.propTypes = {
+Heading.propTypes = {
   ...space.propTypes,
+  ...color.propTypes,
 };
 
-const h1 = styled(BaseHeading.withComponent('h1'))`
+const h1 = styled(Heading.withComponent('h1'))`
   font-size: 1.4rem;
 `;
+h1.displayName = 'Heading.h1';
 
-const h2 = styled(BaseHeading.withComponent('h2'))`
+const h2 = styled(Heading.withComponent('h2'))`
   font-size: 1.25rem;
 `;
+h2.displayName = 'Heading.h2';
 
-const h3 = styled(BaseHeading.withComponent('h3'))`
+const h3 = styled(Heading.withComponent('h3'))`
   font-size: 0.9rem;
 `;
+h3.displayName = 'Heading.h3';
 
-const h4 = styled(BaseHeading.withComponent('h4'))`
+const h4 = styled(Heading.withComponent('h4'))`
   font-size: 0.8rem;
 `;
+h4.displayName = 'Heading.h4';
 
-const h5 = styled(BaseHeading.withComponent('h5'))`
+const h5 = styled(Heading.withComponent('h5'))`
   font-size: 0.7rem;
 `;
+h5.displayName = 'Heading.h5';
 
-const h6 = styled(BaseHeading.withComponent('h6'))`
+const h6 = styled(Heading.withComponent('h6'))`
   font-size: 0.6rem;
 `;
-
-const Heading = BaseHeading;
+h6.displayName = 'Heading.h6';
 
 Heading.h1 = h1;
 Heading.h2 = h2;
