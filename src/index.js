@@ -14,6 +14,9 @@ export { default as Input } from './Form/Input';
 export { default as Label } from './Form/Label';
 export { default as Menu } from './Menu';
 export { default as Modal } from './Modal';
+export {
+  default as ModalWithoutAnimation,
+} from './Modal/ModalWithoutAnimation';
 export { default as Radio } from './Radio';
 export { default as Select } from './Select';
 export { default as Space } from './Grid/Space';
