@@ -3,6 +3,7 @@ import BaseSelect from 'react-select';
 import { themeGet } from 'styled-system';
 
 import { controlShadow } from '../utils/shadow';
+import controlTransition from '../utils/transition';
 
 const Select = styled(BaseSelect).attrs({
   classNamePrefix: 'yoctol-select',
@@ -16,33 +17,45 @@ const Select = styled(BaseSelect).attrs({
       border-color: ${themeGet('colors.gray.4')};
     }
 
-    &.yoctol-select__control-is-focused {
-      border-color: ${themeGet('colors.secondaryDark')};
-      ${controlShadow(themeGet('colors.secondaryDark'))};
-    }
-
     .yoctol-select__value-container {
       /* empty */
     }
 
     & .yoctol-select__indicators {
-      &::before {
-        content: '';
-        position: relative;
-        right: 10px;
-        width: 0;
-        height: 0;
-        border-top: 5px solid black;
-        border-right: 5px solid transparent;
-        border-left: 5px solid transparent;
-      }
-
       .yoctol-select__indicator-separator {
         display: none;
       }
 
       .yoctol-select__indicator {
-        display: none;
+        ${controlTransition()};
+
+        &.yoctol-select__dropdown-indicator {
+          content: '';
+          position: relative;
+          width: 0;
+          height: 0;
+          margin-right: 13px;
+          margin-left: 5px;
+          padding: 0;
+          border-top: 6px solid ${themeGet('colors.gray.7')};
+          border-right: 6px solid transparent;
+          border-left: 6px solid transparent;
+
+          &:hover {
+            border-top-color: ${themeGet('colors.gray.5')};
+          }
+        }
+      }
+    }
+
+    &.yoctol-select__control-is-focused {
+      border-color: ${themeGet('colors.secondaryDark')};
+      ${controlShadow(themeGet('colors.secondaryDark'))};
+
+      .yoctol-select__indicators {
+        .yoctol-select__indicator.yoctol-select__dropdown-indicator {
+          border-top-color: ${themeGet('colors.primaryDark')};
+        }
       }
     }
 
