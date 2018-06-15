@@ -1,79 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Modal should render correctly 1`] = `
-<React.Fragment>
-  <Keydown
-    handleKeydown={[Function]}
-    keyCode={27}
-  />
-  <Transition
-    config={
-      Object {
-        "friction": 14,
-        "restDisplacementThreshold": 0.01,
-        "restSpeedThreshold": 0.01,
-        "tension": 120,
-      }
-    }
-    enter={
-      Object {
-        "opacity": 1,
-        "translateY": 0,
-      }
-    }
-    from={
-      Object {
-        "opacity": 0,
-        "translateY": -150,
-      }
-    }
-    leave={
-      Object {
-        "opacity": 0,
-        "pointerEvents": "none",
-        "translateY": -150,
-      }
-    }
-    native={true}
-  />
-</React.Fragment>
+<Modal
+  closeButton={false}
+  handleClose={[Function]}
+  show={true}
+/>
 `;
 
 exports[`Modal should render with props closeButton 1`] = `
-<React.Fragment>
-  <Keydown
-    handleKeydown={[Function]}
-    keyCode={27}
-  />
-  <Transition
-    config={
-      Object {
-        "friction": 14,
-        "restDisplacementThreshold": 0.01,
-        "restSpeedThreshold": 0.01,
-        "tension": 120,
-      }
-    }
-    enter={
-      Object {
-        "opacity": 1,
-        "translateY": 0,
-      }
-    }
-    from={
-      Object {
-        "opacity": 0,
-        "translateY": -150,
-      }
-    }
-    leave={
-      Object {
-        "opacity": 0,
-        "pointerEvents": "none",
-        "translateY": -150,
-      }
-    }
-    native={true}
-  />
-</React.Fragment>
+<Modal
+  closeButton={true}
+  handleClose={[Function]}
+  show={true}
+/>
 `;

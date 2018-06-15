@@ -10,9 +10,9 @@ import {
   withComponentShowcase,
 } from '../../../.storybook/withDocs';
 import { Heading, Box } from '../../';
-import Modal from '../';
 import Button from '../../Button';
 import README from '../README.md';
+import Modal from '../';
 
 storiesOf('Feedback|Modal', module)
   .addDecorator(withKnobs)
