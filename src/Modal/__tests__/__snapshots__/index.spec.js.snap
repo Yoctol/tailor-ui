@@ -7,6 +7,14 @@ exports[`Modal should render correctly 1`] = `
     keyCode={27}
   />
   <Transition
+    config={
+      Object {
+        "friction": 14,
+        "restDisplacementThreshold": 0.01,
+        "restSpeedThreshold": 0.01,
+        "tension": 120,
+      }
+    }
     enter={
       Object {
         "opacity": 1,
@@ -22,9 +30,11 @@ exports[`Modal should render correctly 1`] = `
     leave={
       Object {
         "opacity": 0,
+        "pointerEvents": "none",
         "translateY": -150,
       }
     }
+    native={true}
   />
 </React.Fragment>
 `;
@@ -36,6 +46,14 @@ exports[`Modal should render with props closeButton 1`] = `
     keyCode={27}
   />
   <Transition
+    config={
+      Object {
+        "friction": 14,
+        "restDisplacementThreshold": 0.01,
+        "restSpeedThreshold": 0.01,
+        "tension": 120,
+      }
+    }
     enter={
       Object {
         "opacity": 1,
@@ -51,9 +69,11 @@ exports[`Modal should render with props closeButton 1`] = `
     leave={
       Object {
         "opacity": 0,
+        "pointerEvents": "none",
         "translateY": -150,
       }
     }
+    native={true}
   />
 </React.Fragment>
 `;

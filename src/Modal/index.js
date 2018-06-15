@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { space, border, borderColor, borderRadius } from 'styled-system';
+import { space } from 'styled-system';
 import { themeGet } from 'styled-system/dist/util';
 import Close from 'react-icons/lib/md/close';
-import { Transition } from 'react-spring';
+import { Transition, animated } from 'react-spring';
 
 import Icon from '../Icon';
 import Keydown from '../utils/Keydown';
@@ -34,7 +34,7 @@ CloseButton.propTypes = {
   handleClose: PropTypes.func.isRequired,
 };
 
-const ModalOverlay = styled.div`
+const ModalOverlay = styled(animated.div)`
   position: fixed;
   z-index: 10000;
   top: 0;
@@ -44,7 +44,7 @@ const ModalOverlay = styled.div`
   background-color: rgba(17, 17, 17, 0.25);
 `;
 
-const ModalContent = styled.div`
+const ModalContent = styled(animated.div)`
   display: flex;
   position: fixed;
   z-index: 10001;
@@ -53,31 +53,23 @@ const ModalContent = styled.div`
   flex-direction: column;
   max-height: 90vh;
   padding: ${themeGet('space.spacingLg')};
+  border: ${themeGet('borders.default')} ${themeGet('colors.border')};
+  border-radius: ${themeGet('radii.2')};
   background-color: #fff;
   box-shadow: 0 10px 30px 0 rgba(17, 17, 17, 0.2);
 
-  ${space}
-  ${border}
-  ${borderColor}
-  ${borderRadius};
+  ${space};
 `;
 
 ModalContent.propTypes = {
   ...space.propTypes,
-  ...border.propTypes,
-  ...borderColor.propTypes,
-  ...borderRadius.propTypes,
 };
 
 ModalContent.defaultProps = {
   p: 7,
-  border: 'default',
-  borderRadius: 2,
-  borderColor: 'border',
 };
 
 const ESC_KEY_CODE = 27;
-const NUMBER_FOR_PREVENT_COMPONENT_UNMOUNT_DELAY = -149;
 
 const Modal = ({ children, show, handleClose, closeButton, ...otherProps }) => (
   <>
@@ -86,31 +78,44 @@ const Modal = ({ children, show, handleClose, closeButton, ...otherProps }) => (
       handleKeydown={() => show && handleClose()}
     />
     <Transition
-      from={{ opacity: 0, translateY: -150 }}
-      enter={{ opacity: 1, translateY: 0 }}
-      leave={{ opacity: 0, translateY: -150 }}
+      native
+      from={{
+        opacity: 0,
+        translateY: -150,
+      }}
+      enter={{
+        opacity: 1,
+        translateY: 0,
+      }}
+      leave={{
+        opacity: 0,
+        translateY: -150,
+        pointerEvents: 'none',
+      }}
+      config={{
+        tension: 120,
+        friction: 14,
+        restSpeedThreshold: 0.01,
+        restDisplacementThreshold: 0.01,
+      }}
     >
       {show &&
-        (({ opacity, translateY }) => (
+        (({ opacity, translateY, pointerEvents }) => (
           <>
             <ModalOverlay
               style={{
                 opacity,
-                display:
-                  translateY < NUMBER_FOR_PREVENT_COMPONENT_UNMOUNT_DELAY
-                    ? 'none'
-                    : 'block',
+                pointerEvents,
               }}
               onClick={handleClose}
             />
             <ModalContent
               style={{
                 opacity,
-                display:
-                  translateY < NUMBER_FOR_PREVENT_COMPONENT_UNMOUNT_DELAY
-                    ? 'none'
-                    : 'flex',
-                transform: `translate(-50%, -50%) translateY(${translateY}px)`,
+                pointerEvents,
+                transform: translateY.interpolate(
+                  y => `translate(-50%, -50%) translateY(${y}px)`
+                ),
               }}
               {...otherProps}
             >
