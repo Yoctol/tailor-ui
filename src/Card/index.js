@@ -1,3 +1,5 @@
+import React, { Children, cloneElement } from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import {
   themeGet,
@@ -11,27 +13,8 @@ import {
 
 import _Button from '../Button';
 
-const Button = styled(_Button).attrs({ light: true })`
-  border: 0;
-  border-bottom: ${themeGet('borders.default')} ${themeGet('colors.border')};
-  border-radius: 0;
-
-  &:last-child {
-    border-bottom: 0;
-  }
-
-  &:focus {
-    z-index: 1;
-    border: 0;
-    border-bottom: ${themeGet('borders.default')} ${themeGet('colors.border')};
-
-    &:last-child {
-      border-bottom: 0;
-    }
-  }
-`;
-
 const Block = styled.div`
+  position: relative;
   border-bottom: ${themeGet('borders.default')} ${themeGet('colors.border')};
 
   &:last-child {
@@ -53,6 +36,28 @@ Block.defaultProps = {
   fontSize: 'default',
 };
 
+const Button = styled(_Button).attrs({ light: true })`
+  border: 0;
+  border-bottom: ${themeGet('borders.default')} ${themeGet('colors.border')};
+  border-radius: 0;
+
+  &:last-child {
+    border-bottom: 0;
+  }
+
+  &:focus {
+    z-index: 1;
+    border: 0;
+    border-bottom: ${themeGet('borders.default')} ${themeGet('colors.border')};
+
+    &:last-child {
+      border-bottom: 0;
+    }
+  }
+`;
+
+Button.displayName = 'Card.Button';
+
 const Image = styled.div`
   overflow: hidden;
 
@@ -70,7 +75,7 @@ Image.propTypes = {
   ...space.propTypes,
 };
 
-const Card = styled.div`
+const CardWrapper = styled.div`
   display: flex;
   flex-direction: column;
   border: ${themeGet('borders.default')} ${themeGet('colors.border')};
@@ -96,7 +101,23 @@ const Card = styled.div`
   }
 `;
 
+const Card = ({ children, ...otherProps }) => (
+  <CardWrapper {...otherProps}>
+    {Children.map(
+      children,
+      child =>
+        child.props.children &&
+        child.props.children.type &&
+        child.props.children.type.displayName &&
+        ['Input', 'Button'].includes(child.props.children.type.displayName)
+          ? cloneElement(child, { p: 1 })
+          : cloneElement(child)
+    )}
+  </CardWrapper>
+);
+
 Card.propTypes = {
+  children: PropTypes.node.isRequired,
   ...space.propTypes,
   ...height.propTypes,
   ...width.propTypes,
@@ -104,13 +125,15 @@ Card.propTypes = {
   ...borderRadius.propTypes,
 };
 
+/* eslint-disable react/default-props-match-prop-types */
 Card.defaultProps = {
   bg: 'bgLight',
   borderRadius: 1,
 };
+/* eslint-enable react/default-props-match-prop-types */
 
-Card.Button = Button;
 Card.Block = Block;
+Card.Button = Button;
 Card.Image = Image;
 
 export default Card;
