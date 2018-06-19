@@ -4,6 +4,7 @@ import { storiesOf } from '@storybook/react';
 
 import themeProvider from '../../../.storybook/theme-provider';
 import Card from '../';
+import { Input, Button } from '../..';
 
 // eslint-disable-next-line react/prop-types
 const Wrapper = ({ children }) => <div style={{ width: 400 }}>{children}</div>;
@@ -25,9 +26,23 @@ storiesOf('Data Display|Card', module)
       <Card>
         <Card.Block>Title</Card.Block>
         <Card.Block>Content</Card.Block>
-        <Card.Button block>With Button</Card.Button>
-        <Card.Button block>With Button</Card.Button>
-        <Card.Button block>With Button</Card.Button>
+        <Card.Button>With Button</Card.Button>
+        <Card.Button>With Button</Card.Button>
+        <Card.Button>With Button</Card.Button>
+      </Card>
+    </Wrapper>
+  ))
+  .add('with children Input & Button', () => (
+    <Wrapper>
+      <Card>
+        <Card.Block>
+          <Input placeholder="With children Input" textAlign="center" />
+        </Card.Block>
+        <Card.Block>
+          <Button block light border="none">
+            With children Button
+          </Button>
+        </Card.Block>
       </Card>
     </Wrapper>
   ))
