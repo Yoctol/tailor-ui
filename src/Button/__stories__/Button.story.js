@@ -29,6 +29,7 @@ storiesOf('General|Button', module)
           light={boolean('light', false, 'props')}
           active={boolean('active', false, 'props')}
           ghost={boolean('ghost', false, 'props')}
+          loading={boolean('loading', false, 'props')}
           size={select('size', sizes, 'm', 'props')}
           {...space()}
           onClick={action('clicked')}

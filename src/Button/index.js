@@ -1,13 +1,23 @@
 import PropTypes from 'prop-types';
-import styled, { css } from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 import { themeGet, space } from 'styled-system';
 import { ifProp, switchProp } from 'styled-tools';
 
 import { controlShadow } from '../utils/shadow';
 import controlTransition from '../utils/transition';
 
+const spin = keyframes`
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+`;
+
 const Button = styled.button`
   display: inline-block;
+  position: relative;
   border: ${themeGet('borders.default')};
   border-radius: ${themeGet('radii.1')};
   border-color: ${themeGet('colors.primary')};
@@ -139,6 +149,29 @@ const Button = styled.button`
     `
   )}
 
+  ${ifProp(
+    'loading',
+    css`
+      color: transparent;
+      pointer-events: none;
+
+      &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: calc(50% - (1em / 2));
+        left: calc(50% - (1em / 2));
+        width: 1em;
+        height: 1em;
+        border: 2px solid ${themeGet('colors.gray.6')};
+        border-radius: 50%;
+        border-top-color: transparent;
+        border-right-color: transparent;
+        animation: ${spin} 0.7s linear infinite;
+      }
+    `
+  )}
+
   ${controlTransition()};
 
   ${space};
@@ -150,6 +183,7 @@ Button.propTypes = {
   circle: PropTypes.bool,
   ghost: PropTypes.bool,
   light: PropTypes.bool,
+  loading: PropTypes.bool,
   size: PropTypes.oneOf(['sm', 'm', 'lg']),
   ...space.propTypes,
 };
@@ -161,6 +195,7 @@ Button.defaultProps = {
   ghost: false,
   light: false,
   active: false,
+  loading: false,
 };
 
 export default Button;

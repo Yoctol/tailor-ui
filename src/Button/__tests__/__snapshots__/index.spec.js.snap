@@ -3,6 +3,7 @@
 exports[`Button should render correctly 1`] = `
 .c0 {
   display: inline-block;
+  position: relative;
   border: 0.05rem solid;
   border-radius: 0.2rem;
   border-color: #191723;
@@ -48,6 +49,7 @@ exports[`Button should render correctly 1`] = `
   circle={false}
   ghost={false}
   light={false}
+  loading={false}
   size="m"
 >
   <button
@@ -62,6 +64,7 @@ exports[`Button should render correctly 1`] = `
 exports[`Button should render with props light, circle and active 1`] = `
 .c0 {
   display: inline-block;
+  position: relative;
   border: 0.05rem solid;
   border-radius: 0.2rem;
   border-color: #191723;
@@ -132,6 +135,7 @@ exports[`Button should render with props light, circle and active 1`] = `
   circle={true}
   ghost={false}
   light={true}
+  loading={false}
   size="m"
 >
   <button
