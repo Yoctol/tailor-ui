@@ -14,13 +14,13 @@
     "lint:css": "stylelint './src/**/*.js'",
     "lint:fix": "npm run lint -- --fix",
     "lint:staged": "lint-staged",
-    "prepublish": "npm run build",
+    "prepublishOnly": "npm run build && npm run deploy:storybook",
     "storybook": "start-storybook -p 9001 -c .storybook",
     "test": "npm run lint:fix && npm run testonly",
     "testonly": "jest",
     "testonly:cov": "jest --coverage --runInBand --forceExit",
     "testonly:watch": "jest --watch",
-    "preversion": "npm test && npm run deploy:storybook"
+    "preversion": "npm test"
   },
   "dependencies": {
     "polished": "^1.9.2",
