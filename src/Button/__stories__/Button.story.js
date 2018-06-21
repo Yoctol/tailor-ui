@@ -76,6 +76,19 @@ storiesOf('General|Button', module)
           <Button disabled>Button</Button>
         </Showcase>
 
+        <Heading.h3>Button with loading</Heading.h3>
+        <Showcase>
+          <Button loading>Button</Button>
+          <br />
+          <Button light loading onClick={action('clicked')}>
+            Button
+          </Button>
+          <br />
+          <Button light circle loading onClick={action('clicked')}>
+            Button
+          </Button>
+        </Showcase>
+
         <Heading.h3>Button with size</Heading.h3>
         <Showcase>
           <Button size="sm" onClick={action('clicked')}>
