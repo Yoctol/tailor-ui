@@ -112,6 +112,7 @@ const Modal = ({ children, show, handleClose, ...otherProps }) => (
     />
     <Transition
       native
+      keys={show}
       from={{
         opacity: 0,
         translateY: 150,

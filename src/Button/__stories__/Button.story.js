@@ -26,6 +26,7 @@ storiesOf('General|Button', module)
         <Button
           block={boolean('block', false, 'props')}
           circle={boolean('circle', false, 'props')}
+          danger={boolean('danger', false, 'props')}
           light={boolean('light', false, 'props')}
           active={boolean('active', false, 'props')}
           ghost={boolean('ghost', false, 'props')}
@@ -53,6 +54,13 @@ storiesOf('General|Button', module)
         <Heading.h3>Button with light</Heading.h3>
         <Showcase>
           <Button light onClick={action('clicked')}>
+            Button
+          </Button>
+        </Showcase>
+
+        <Heading.h3>Button with danger</Heading.h3>
+        <Showcase>
+          <Button danger onClick={action('clicked')}>
             Button
           </Button>
         </Showcase>

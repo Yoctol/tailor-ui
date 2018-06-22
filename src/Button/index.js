@@ -73,6 +73,24 @@ const Button = styled.button`
   )}
 
   ${ifProp(
+    'danger',
+    css`
+      border-color: ${themeGet('colors.error')};
+      background-color: ${themeGet('colors.error')};
+      color: ${themeGet('colors.light')};
+
+      &:focus {
+        border-color: ${themeGet('colors.error')};
+        ${controlShadow(themeGet('colors.error'))};
+      }
+
+      &:hover {
+        background-color: ${themeGet('colors.error')};
+      }
+    `
+  )};
+
+  ${ifProp(
     'light',
     css`
       border-color: ${themeGet('colors.border')};

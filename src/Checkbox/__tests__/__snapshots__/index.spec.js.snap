@@ -6,13 +6,13 @@ exports[`Checkbox should render correctly 1`] = `
   opacity: 0;
 }
 
-.c0 + .Label-bxMjsr {
+.c0 + .Label-ghyrbC {
   position: relative;
   padding: 0;
   cursor: pointer;
 }
 
-.c0 + .Label-bxMjsr::before {
+.c0 + .Label-ghyrbC::before {
   content: '';
   display: inline-block;
   width: 20px;
@@ -25,25 +25,25 @@ exports[`Checkbox should render correctly 1`] = `
   border-color: #191723;
 }
 
-.c0:focus + .Label-bxMjsr::before {
+.c0:focus + .Label-ghyrbC::before {
   box-shadow: 0 0 0 0.1rem rgba(25,23,35,0.2);
 }
 
-.c0:checked + .Label-bxMjsr::before {
+.c0:checked + .Label-ghyrbC::before {
   background-color: #191723;
 }
 
-.c0:disabled + .Label-bxMjsr {
+.c0:disabled + .Label-ghyrbC {
   opacity: 0.5;
   cursor: auto;
   pointer-events: none;
 }
 
-.c0:disabled + .Label-bxMjsr::before {
+.c0:disabled + .Label-ghyrbC::before {
   opacity: 0.5;
 }
 
-.c0:checked + .Label-bxMjsr::after {
+.c0:checked + .Label-ghyrbC::after {
   content: '';
   position: absolute;
   top: 3px;
@@ -70,13 +70,13 @@ exports[`Checkbox should render with props circle, checked and disabled 1`] = `
   opacity: 0;
 }
 
-.c0 + .Label-bxMjsr {
+.c0 + .Label-ghyrbC {
   position: relative;
   padding: 0;
   cursor: pointer;
 }
 
-.c0 + .Label-bxMjsr::before {
+.c0 + .Label-ghyrbC::before {
   content: '';
   display: inline-block;
   width: 20px;
@@ -89,25 +89,25 @@ exports[`Checkbox should render with props circle, checked and disabled 1`] = `
   border-color: #191723;
 }
 
-.c0:focus + .Label-bxMjsr::before {
+.c0:focus + .Label-ghyrbC::before {
   box-shadow: 0 0 0 0.1rem rgba(25,23,35,0.2);
 }
 
-.c0:checked + .Label-bxMjsr::before {
+.c0:checked + .Label-ghyrbC::before {
   background-color: #191723;
 }
 
-.c0:disabled + .Label-bxMjsr {
+.c0:disabled + .Label-ghyrbC {
   opacity: 0.5;
   cursor: auto;
   pointer-events: none;
 }
 
-.c0:disabled + .Label-bxMjsr::before {
+.c0:disabled + .Label-ghyrbC::before {
   opacity: 0.5;
 }
 
-.c0:checked + .Label-bxMjsr::after {
+.c0:checked + .Label-ghyrbC::after {
   content: '';
   position: absolute;
   top: 3px;

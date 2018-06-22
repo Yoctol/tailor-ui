@@ -48,16 +48,16 @@ exports[`Menu should render correctly 1`] = `
   color: #ffffff;
 }
 
-.c5 .Icon__IconWrapper-ksWXhn {
+.c5 .Icon__IconWrapper-jjpTqA {
   margin-right: 7px;
   vertical-align: 10%;
 }
 
-.c5 .Icon__IconWrapper-ksWXhn svg {
+.c5 .Icon__IconWrapper-jjpTqA svg {
   fill: #5e5e5e;
 }
 
-.c5 .Icon__IconWrapper-ksWXhn svg {
+.c5 .Icon__IconWrapper-jjpTqA svg {
   fill: #ffffff;
 }
 
@@ -65,7 +65,7 @@ exports[`Menu should render correctly 1`] = `
   color: #ffffff;
 }
 
-.c5:hover .Icon__IconWrapper-ksWXhn svg {
+.c5:hover .Icon__IconWrapper-jjpTqA svg {
   fill: #ffffff;
 }
 

@@ -15,6 +15,7 @@ import { Button } from '@yoctol/ui';
 | `block`    | Boolean                                                                           | `false` |                      |
 | `circle`   | Boolean                                                                           | `false` |                      |
 | `active`   | Boolean                                                                           | `false` |                      |
+| `danger`   | Boolean                                                                           | `false` |                      |
 | `ghost`    | Boolean                                                                           | `false` |                      |
 | `light`    | Boolean                                                                           | `false` |                      |
 | `disabled` | Boolean                                                                           | `false` |                      |
