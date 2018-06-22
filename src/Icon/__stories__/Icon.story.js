@@ -19,6 +19,7 @@ storiesOf('General|Icon', module)
       <Icon mx={2} type="kurator" />
       <Icon mx={2} type="touch" />
       <Icon mx={2} type="analytics" />
+      <Icon mx={2} type="tags" />
       <Icon mx={2} type="settings" />
     </div>
   ))
@@ -31,6 +32,7 @@ storiesOf('General|Icon', module)
       <Icon mx={2} fill="primaryLight" size={32} type="kurator" />
       <Icon mx={2} fill="primaryLight" size={32} type="touch" />
       <Icon mx={2} fill="primaryLight" size={32} type="analytics" />
+      <Icon mx={2} fill="primaryLight" size={32} type="tags" />
       <Icon mx={2} fill="primaryLight" size={32} type="settings" />
       <Icon mx={2} fill="secondary" size={48} type={MdEdit} />
       <Icon mx={2} fill="secondary" size={48} type={MdComment} />
