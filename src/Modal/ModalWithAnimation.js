@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { space } from 'styled-system';
@@ -104,42 +104,45 @@ const ModalWrapper = ({
 
 const ESC_KEY_CODE = 27;
 
-const Modal = ({ children, show, handleClose, ...otherProps }) => (
-  <>
-    <Keydown
-      keyCode={ESC_KEY_CODE}
-      handleKeydown={() => show && handleClose()}
-    />
-    <Transition
-      native
-      keys={show}
-      from={{
-        opacity: 0,
-        translateY: 150,
-      }}
-      enter={{
-        opacity: 1,
-        translateY: 0,
-      }}
-      leave={{
-        opacity: 0,
-        translateY: 150,
-        pointerEvents: 'none',
-      }}
-      config={{
-        tension: 120,
-        friction: 14,
-        restSpeedThreshold: 0.01,
-        restDisplacementThreshold: 0.01,
-      }}
-      handleClose={handleClose}
-      content={children}
-      {...otherProps}
-    >
-      {show && ModalWrapper}
-    </Transition>
-  </>
-);
+class Modal extends PureComponent {
+  render() {
+    const { children, show, handleClose, ...otherProps } = this.props;
+
+    return (
+      <>
+        {show && <Keydown keyCode={ESC_KEY_CODE} handleKeydown={handleClose} />}
+        <Transition
+          native
+          keys={show}
+          from={{
+            opacity: 0,
+            translateY: 150,
+          }}
+          enter={{
+            opacity: 1,
+            translateY: 0,
+          }}
+          leave={{
+            opacity: 0,
+            translateY: 150,
+            pointerEvents: 'none',
+          }}
+          config={{
+            tension: 120,
+            friction: 14,
+            restSpeedThreshold: 0.01,
+            restDisplacementThreshold: 0.01,
+          }}
+          handleClose={handleClose}
+          content={children}
+          {...otherProps}
+        >
+          {show ? ModalWrapper : null}
+        </Transition>
+      </>
+    );
+  }
+}
 
 Modal.propTypes = {
   children: PropTypes.node,
