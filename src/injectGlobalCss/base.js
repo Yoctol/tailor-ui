@@ -19,7 +19,7 @@ export default css`
 
   body {
     overflow-x: hidden;
-    background: ${colors.bodyBg};
+    background: ${colors.light};
     color: ${colors.bodyFont};
     /* stylelint-disable value-list-comma-newline-after */
     font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI',

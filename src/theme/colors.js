@@ -1,5 +1,3 @@
-import { darken, lighten } from 'polished';
-
 export const primary = '#191723';
 export const primaryDark = '#0e0c1a';
 export const primaryLight = '#423b63';
@@ -47,15 +45,10 @@ export const success = '#63bf2d';
 export const warning = '#de8a15';
 export const error = '#da3333';
 
-export const border = '#e0e0e0';
-export const borderDark = darken(0.1, border);
-export const bg = lighten(0.66, dark);
-export const bgDark = darken(0.03, bg);
-export const bgLight = light;
+export const border = gray[8];
 
 export const code = '#e06870';
 export const highlight = '#ffe9b3';
-export const bodyBg = bgLight;
-export const bodyFont = lighten(0.05, dark);
+export const bodyFont = gray[2];
 export const link = primary;
-export const linkDark = darken(0.05, link);
+export const linkDark = primaryDark;

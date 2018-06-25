@@ -57,15 +57,7 @@ storiesOf('Other|Colors', module).add('colors', () => (
     <Flex>
       <Color bg={colors.dark} title="Dark" />
       <Color bg={colors.light} title="Light" color="#0E0C1A" />
-    </Flex>
-    <Flex>
       <Color bg={colors.border} title="Border" color="#0E0C1A" />
-      <Color bg={colors.borderDark} title="Border Dark" color="#0E0C1A" />
-    </Flex>
-    <Flex>
-      <Color bg={colors.bg} title="Background" color="#0E0C1A" />
-      <Color bg={colors.bgDark} title="Background Dark" color="#0E0C1A" />
-      <Color bg={colors.bgLight} title="Background Light" color="#0E0C1A" />
     </Flex>
     <Flex flexWrap="wrap">
       {colors.gray.map((g, index) => (
