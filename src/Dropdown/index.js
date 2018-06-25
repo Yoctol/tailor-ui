@@ -14,6 +14,7 @@ import {
 import { ifProp } from 'styled-tools';
 
 import { shadowVariant } from '../utils/shadow';
+import controlTransition from '../utils/transition';
 
 const Dropdown = styled.div`
   display: ${ifProp('visible', 'block', 'none')};
@@ -71,17 +72,18 @@ const Item = styled.li`
   margin-top: 0;
   padding: ${themeGet('space.paddingY')} ${themeGet('space.paddingX')};
   border: ${themeGet('borders.default')} ${themeGet('colors.border')};
-  transition: all 0.2s ease-in-out;
   cursor: pointer;
 
   &:hover {
-    background-color: ${themeGet('colors.gray.8')};
+    background-color: ${themeGet('colors.primaryDark')};
+    color: ${themeGet('colors.light')};
   }
 
   &:not(:first-child) {
     border-top: 0;
   }
 
+  ${controlTransition()};
   ${color};
   ${space};
   ${borders};
