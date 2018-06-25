@@ -9,7 +9,6 @@ exports[`Radio should render correctly 1`] = `
   />
   <Label
     htmlFor="medium"
-    size="m"
   >
     中
   </Label>
@@ -26,7 +25,6 @@ exports[`Radio should render with props size and disabled 1`] = `
   />
   <Label
     htmlFor="large"
-    size="m"
   >
     大
   </Label>

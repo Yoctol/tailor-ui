@@ -9,8 +9,8 @@ import Hint from './Hint';
 
 const FormField = styled.div`
   position: relative;
-  margin-top: ${themeGet('space.2')};
-  padding-bottom: ${themeGet('space.2')};
+  margin-top: ${themeGet('space.3')};
+  padding-bottom: ${themeGet('space.3')};
 
   ${ifProp(
     'success',
