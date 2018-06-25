@@ -94,7 +94,7 @@ const Button = styled.button`
     'light',
     css`
       border-color: ${themeGet('colors.border')};
-      background-color: ${themeGet('colors.bgLight')};
+      background-color: ${themeGet('colors.light')};
       color: ${themeGet('colors.bodyFont')};
 
       &:focus {
