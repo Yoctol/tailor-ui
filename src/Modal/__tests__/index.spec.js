@@ -2,7 +2,7 @@ import React from 'react';
 
 import shallowWithTheme from 'test/shallowWithTheme';
 
-import Modal from '../';
+import Modal from '..';
 
 describe('Modal', () => {
   it('should render correctly', () => {

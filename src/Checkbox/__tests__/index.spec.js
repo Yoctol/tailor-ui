@@ -2,7 +2,8 @@ import React from 'react';
 
 import mountWithTheme from 'test/mountWithTheme';
 
-import Checkbox from '../';
+import Checkbox from '..';
+
 import Label from '../../Form/Label';
 
 describe('Checkbox', () => {

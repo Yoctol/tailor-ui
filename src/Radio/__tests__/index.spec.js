@@ -2,7 +2,8 @@ import React from 'react';
 
 import mountWithTheme from 'test/mountWithTheme';
 
-import Radio from '../';
+import Radio from '..';
+
 import Label from '../../Form/Label';
 
 describe('Radio', () => {

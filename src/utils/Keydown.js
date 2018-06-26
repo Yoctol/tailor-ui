@@ -11,8 +11,9 @@ class Keydown extends Component {
   }
 
   keydownHandler = ({ keyCode }) => {
-    if (keyCode === this.props.keyCode) {
-      this.props.handleKeydown();
+    const { keyCode: targetKeyCode, handleKeydown } = this.props;
+    if (keyCode === targetKeyCode) {
+      handleKeydown();
     }
   };
 

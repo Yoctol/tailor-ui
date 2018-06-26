@@ -2,7 +2,7 @@ import React from 'react';
 
 import mountWithTheme from 'test/mountWithTheme';
 
-import Icon from '../';
+import Icon from '..';
 
 describe('Icon', () => {
   it('should render correctly', () => {

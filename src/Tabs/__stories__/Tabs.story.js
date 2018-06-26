@@ -12,8 +12,9 @@ import {
 } from '../../../.storybook/withDocs';
 import { Showcase, ShowcasePage } from '../../../.storybook/showcase';
 import README from '../README.md';
-import { Heading, Box } from '../../';
-import Tabs from '../';
+import { Heading, Box } from '../..';
+
+import Tabs from '..';
 
 const TABS = range(1, 4).map(val => ({
   key: `tab_${val}`,

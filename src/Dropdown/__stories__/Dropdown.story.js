@@ -6,7 +6,8 @@ import { compose, withState, withHandlers } from 'recompose';
 
 import themeProvider from '../../../.storybook/theme-provider';
 import Button from '../../Button';
-import Dropdown from '../';
+
+import Dropdown from '..';
 
 const visibleEnhancer = compose(
   withState('visible', 'setVisible', false),

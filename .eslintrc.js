@@ -8,6 +8,9 @@ module.exports = {
     jest: true,
     jasmine: true,
   },
+  rules: {
+    'react/destructuring-assignment': 'off',
+  },
   settings: {
     'import/resolver': {
       jest: {},

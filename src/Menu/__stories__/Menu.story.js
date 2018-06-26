@@ -4,7 +4,9 @@ import { range } from 'ramda';
 import { compose, withState, withHandlers } from 'recompose';
 
 import themeProvider from '../../../.storybook/theme-provider';
-import Menu from '../';
+
+import Menu from '..';
+
 import Icon from '../../Icon';
 
 const activeEnhancer = compose(

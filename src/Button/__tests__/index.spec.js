@@ -2,7 +2,7 @@ import React from 'react';
 
 import mountWithTheme from 'test/mountWithTheme';
 
-import Button from '../';
+import Button from '..';
 
 describe('Button', () => {
   it('should render correctly', () => {

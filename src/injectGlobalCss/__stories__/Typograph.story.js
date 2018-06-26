@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import centered from '@storybook/addon-centered';
 
-import { Flex, Box } from '../../';
+import { Flex, Box } from '../..';
 
 storiesOf('General|Typography', module)
   .addDecorator(centered)

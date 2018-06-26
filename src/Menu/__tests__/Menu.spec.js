@@ -2,7 +2,7 @@ import React from 'react';
 
 import mountWithTheme from 'test/mountWithTheme';
 
-import Menu from '../';
+import Menu from '..';
 
 describe('Menu', () => {
   it('should render correctly', () => {
