@@ -221,13 +221,41 @@ class Button extends PureComponent {
 Button.displayName = 'Button';
 
 Button.propTypes = {
+  /**
+   * Description of prop "active".
+   */
   active: PropTypes.bool,
+  /**
+   * Description of prop "block".
+   */
   block: PropTypes.bool,
+  /**
+   * Description of prop "circle".
+   */
   circle: PropTypes.bool,
+  /**
+   * Description of prop "ghost".
+   */
+  danger: PropTypes.bool,
+  /**
+   * Description of prop "light".
+   */
   ghost: PropTypes.bool,
+  /**
+   * Description of prop "danger".
+   */
   light: PropTypes.bool,
+  /**
+   * Description of prop "loading".
+   */
   loading: PropTypes.bool,
+  /**
+   * Description of prop "size".
+   */
   size: PropTypes.oneOf(['sm', 'm', 'lg']),
+  /**
+   * Description of prop "Space".
+   */
   ...space.propTypes,
 };
 
@@ -235,6 +263,7 @@ Button.defaultProps = {
   size: 'm',
   block: false,
   circle: false,
+  danger: false,
   ghost: false,
   light: false,
   active: false,

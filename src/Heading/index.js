@@ -1,9 +1,11 @@
+import React from 'react';
+import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
 import { color, space, themeGet } from 'styled-system';
 import { ifProp } from 'styled-tools';
 import { rem } from 'polished';
 
-const Heading = styled.p`
+const HeadingBase = styled.p`
   margin: 0;
   color: ${themeGet('colors.primaryDark')};
   font-weight: 500;
@@ -41,40 +43,53 @@ const Heading = styled.p`
   ${color}
 `;
 
-Heading.propTypes = {
-  ...space.propTypes,
-  ...color.propTypes,
-};
-
-const h1 = styled(Heading.withComponent('h1'))`
+const h1 = styled(HeadingBase.withComponent('h1'))`
   font-size: ${rem('28px')};
 `;
 h1.displayName = 'Heading.h1';
 
-const h2 = styled(Heading.withComponent('h2'))`
+const h2 = styled(HeadingBase.withComponent('h2'))`
   font-size: ${rem('24px')};
 `;
 h2.displayName = 'Heading.h2';
 
-const h3 = styled(Heading.withComponent('h3'))`
+const h3 = styled(HeadingBase.withComponent('h3'))`
   font-size: ${rem('18px')};
 `;
 h3.displayName = 'Heading.h3';
 
-const h4 = styled(Heading.withComponent('h4'))`
+const h4 = styled(HeadingBase.withComponent('h4'))`
   font-size: ${rem('16px')};
 `;
 h4.displayName = 'Heading.h4';
 
-const h5 = styled(Heading.withComponent('h5'))`
+const h5 = styled(HeadingBase.withComponent('h5'))`
   font-size: ${rem('14px')};
 `;
 h5.displayName = 'Heading.h5';
 
-const h6 = styled(Heading.withComponent('h6'))`
+const h6 = styled(HeadingBase.withComponent('h6'))`
   font-size: ${rem('12px')};
 `;
 h6.displayName = 'Heading.h6';
+
+const Heading = (...props) => <HeadingBase {...props} />;
+
+Heading.propTypes = {
+  gray: PropTypes.bool,
+  grayHint: PropTypes.bool,
+  grayLight: PropTypes.bool,
+  white: PropTypes.bool,
+  ...space.propTypes,
+  ...color.propTypes,
+};
+
+Heading.defaultProps = {
+  gray: false,
+  grayLight: false,
+  grayHint: false,
+  white: false,
+};
 
 Heading.h1 = h1;
 Heading.h2 = h2;
