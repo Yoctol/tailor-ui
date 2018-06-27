@@ -10,9 +10,8 @@ import {
   withComponentShowcase,
 } from '../../../.storybook/withDocs';
 import { Showcase, ShowcasePage } from '../../../.storybook/showcase';
-import { Heading } from '../../';
+import { Heading, Label } from '../../';
 import README from '../README.md';
-import { Label } from '../../../';
 import Radio from '../';
 
 storiesOf('Data Entry|Radio', module)

@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { themeGet, color, borderColor } from 'styled-system';
 
 import { controlShadow } from '../utils/shadow';
+import controlTransition from '../utils/transition';
 import Label from '../Form/Label';
 
 const Radio = styled.input.attrs({
@@ -14,6 +15,7 @@ const Radio = styled.input.attrs({
   & + ${Label /* sc-selector */} {
     position: relative;
     padding: 0;
+    font-size: 0.8rem;
     cursor: pointer;
   }
 
@@ -28,6 +30,17 @@ const Radio = styled.input.attrs({
     background: white;
     vertical-align: text-bottom;
     ${borderColor};
+  }
+
+  & + ${Label /* sc-selector */}::after {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    ${controlTransition()};
   }
 
   &:focus + ${Label /* sc-selector */}::before {
@@ -45,14 +58,6 @@ const Radio = styled.input.attrs({
   }
 
   &:checked + ${Label /* sc-selector */}::after {
-    content: '';
-    position: absolute;
-    top: 3px;
-    left: 3px;
-    width: 14px;
-    height: 14px;
-    border: solid 1px ${({ bg }) => themeGet(`colors.${bg}`)};
-    border-radius: 50%;
     ${color};
   }
 `;

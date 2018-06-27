@@ -1,4 +1,4 @@
-# Button Docs
+# Radio Docs
 
 ```js
 import { Radio, Label } from '@yoctol/ui';
@@ -12,7 +12,8 @@ import { Radio, Label } from '@yoctol/ui';
 
 This component needs using with `Label`.
 
-| Props      | type                                                                              | Default | Description          |
-| ---------- | --------------------------------------------------------------------------------- | ------- | -------------------- |
-| `disabled` | Boolean                                                                           | `false` |                      |
-| Color      | [View on docs](https://github.com/jxnblk/styled-system/blob/master/docs/table.md) |         | From `styled-stsyem` |
+| Props       | type                                                                              | Default | Description          |
+| ----------- | --------------------------------------------------------------------------------- | ------- | -------------------- |
+| `disabled`  | Boolean                                                                           | `false` |                      |
+| borderColor | [View on docs](https://github.com/jxnblk/styled-system/blob/master/docs/table.md) |         | From `styled-stsyem` |
+| Color       | [View on docs](https://github.com/jxnblk/styled-system/blob/master/docs/table.md) |         | From `styled-stsyem` |

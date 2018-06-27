@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { themeGet, color, borderColor } from 'styled-system';
 
 import { controlShadow } from '../utils/shadow';
+import controlTransition from '../utils/transition';
 import Label from '../Form/Label';
 
 const Checkbox = styled.input.attrs({
@@ -14,6 +15,7 @@ const Checkbox = styled.input.attrs({
   & + ${Label /* sc-selector */} {
     position: relative;
     padding: 0;
+    font-size: 0.8rem;
     cursor: pointer;
   }
 
@@ -27,6 +29,7 @@ const Checkbox = styled.input.attrs({
     border-radius: ${themeGet('radii.1')};
     background: white;
     vertical-align: text-bottom;
+    ${controlTransition()};
     ${borderColor};
   }
 

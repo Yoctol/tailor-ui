@@ -1,28 +1,28 @@
 import React from 'react';
 
-import shallowWithTheme from 'test/shallowWithTheme';
+import mountWithTheme from 'test/mountWithTheme';
 
 import Radio from '../';
 import Label from '../../Form/Label';
 
 describe('Radio', () => {
   it('should render correctly', () => {
-    const component = shallowWithTheme(
-      <form>
-        <Radio />
-        <Label htmlFor="medium">中</Label>
-      </form>
+    const component = mountWithTheme(
+      <div>
+        <Radio id="radio" />
+        <Label htmlFor="radio">Radio</Label>
+      </div>
     );
 
     expect(component).toMatchSnapshot();
   });
 
-  it('should render with props size and disabled', () => {
-    const component = shallowWithTheme(
-      <form>
-        <Radio size="lg" disabled />
-        <Label htmlFor="large">大</Label>
-      </form>
+  it('should render with props disabled', () => {
+    const component = mountWithTheme(
+      <div>
+        <Radio id="radio" disabled />
+        <Label htmlFor="radio">Radio</Label>
+      </div>
     );
 
     expect(component).toMatchSnapshot();
