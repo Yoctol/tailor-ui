@@ -22,13 +22,13 @@ exports[`Icon should render correctly 1`] = `
 >
   <Icon__IconWrapper
     cursor="default"
-    fill="bodyFont"
+    fill="gray.2"
     size={24}
   >
     <i
       className="c0"
       cursor="default"
-      fill="bodyFont"
+      fill="gray.2"
       size={24}
     >
       <_default>

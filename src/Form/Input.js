@@ -12,12 +12,12 @@ const Input = styled.input`
   position: relative;
   width: 100%;
   max-width: 100%;
-  border: ${themeGet('borders.default')} ${themeGet('colors.border')};
+  border: ${themeGet('borders.default')} ${themeGet('colors.gray.8')};
   border-radius: ${themeGet('radii.1')};
   outline: none;
   background: ${themeGet('bgLight')};
   background-image: none;
-  color: ${themeGet('colors.bodyFont')};
+  color: ${themeGet('colors.gray.2')};
   line-height: ${themeGet('lineHeight')};
   appearance: none;
 

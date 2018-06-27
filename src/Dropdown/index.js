@@ -71,7 +71,7 @@ Dropdown.List = List;
 const Item = styled.li`
   margin-top: 0;
   padding: ${themeGet('space.paddingY')} ${themeGet('space.paddingX')};
-  border: ${themeGet('borders.default')} ${themeGet('colors.border')};
+  border: ${themeGet('borders.default')} ${themeGet('colors.gray.8')};
   cursor: pointer;
 
   &:hover {

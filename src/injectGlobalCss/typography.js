@@ -66,13 +66,13 @@ export default css`
   mark {
     padding: 0.05rem;
     border-radius: ${theme.radii[1]};
-    ${labelVariant(theme.colors.bodyFont, theme.colors.highlight)};
+    ${labelVariant(theme.colors.gray[2], theme.colors.highlight)};
   }
 
   blockquote {
     margin-left: 0;
     padding: ${theme.space[2]} ${theme.space[4]};
-    border-left: ${theme.borders.lg} ${theme.colors.border};
+    border-left: ${theme.borders.lg} ${theme.colors.gray[8]};
 
     p:last-child {
       margin-bottom: 0;

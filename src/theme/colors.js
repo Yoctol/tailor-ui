@@ -44,11 +44,5 @@ export const gray = [
 export const success = '#63bf2d';
 export const warning = '#de8a15';
 export const error = '#da3333';
-
-export const border = gray[8];
-
 export const code = '#e06870';
 export const highlight = '#ffe9b3';
-export const bodyFont = gray[2];
-export const link = primary;
-export const linkDark = primaryDark;

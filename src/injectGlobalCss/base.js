@@ -20,7 +20,7 @@ export default css`
   body {
     overflow-x: hidden;
     background: ${colors.light};
-    color: ${colors.bodyFont};
+    color: ${colors.gray[2]};
     /* stylelint-disable value-list-comma-newline-after */
     font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI',
       'PingFang TC', 'Microsoft JhengHei', Roboto, 'Helvetica Neue', sans-serif;
@@ -31,18 +31,18 @@ export default css`
 
   a {
     outline: none;
-    color: ${colors.link};
+    color: ${colors.primary};
     text-decoration: none;
 
     &:focus {
-      ${controlShadow(colors.link)};
+      ${controlShadow(colors.primary)};
     }
 
     &:focus,
     &:hover,
     &:active,
     &.active {
-      color: ${colors.linkDark};
+      color: ${colors.primaryDark};
       text-decoration: underline;
     }
   }

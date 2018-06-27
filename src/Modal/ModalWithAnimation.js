@@ -53,7 +53,7 @@ const ModalContent = styled(animated.div)`
   flex-direction: column;
   max-height: 90vh;
   padding: ${themeGet('space.spacingLg')};
-  border: ${themeGet('borders.default')} ${themeGet('colors.border')};
+  border: ${themeGet('borders.default')} ${themeGet('colors.gray.8')};
   border-radius: ${themeGet('radii.2')};
   background-color: #fff;
   box-shadow: 0 10px 30px 0 rgba(17, 17, 17, 0.2);

@@ -28,7 +28,7 @@ HeadColumn.propTypes = {
 };
 
 HeadColumn.defaultProps = {
-  borderColor: 'border',
+  borderColor: 'gray.8',
 };
 
 const Column = styled.td`
@@ -45,11 +45,11 @@ Column.propTypes = {
 };
 
 Column.defaultProps = {
-  borderColor: 'border',
+  borderColor: 'gray.8',
 };
 
 const Row = styled.tr`
-  border-bottom: ${themeGet('borders.default')} ${themeGet('colors.border')};
+  border-bottom: ${themeGet('borders.default')} ${themeGet('colors.gray.8')};
 `;
 
 const Head = ({ children }) => (
@@ -83,10 +83,10 @@ const Table = styled.table`
   border-style: hidden;
   border-top-left-radius: ${themeGet('radii.1')};
   border-top-right-radius: ${themeGet('radii.1')};
-  box-shadow: 0 0 0 1px ${themeGet('colors.border')};
+  box-shadow: 0 0 0 1px ${themeGet('colors.gray.8')};
 
   & > thead {
-    border-bottom: ${themeGet('borders.default')} ${themeGet('colors.border')};
+    border-bottom: ${themeGet('borders.default')} ${themeGet('colors.gray.8')};
     background-color: ${themeGet('colors.gray.9')};
   }
 

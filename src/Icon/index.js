@@ -43,7 +43,7 @@ IconWrapper.propTypes = {
 
 IconWrapper.defaultProps = {
   size: 24,
-  fill: 'bodyFont',
+  fill: 'gray.2',
 };
 
 const Icon = ({ type, ...otherProps }) => {

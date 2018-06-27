@@ -66,7 +66,7 @@ const Content = styled.div`
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   color: ${ifProp(
     'light',
-    themeGet('colors.bodyFont'),
+    themeGet('colors.gray.2'),
     themeGet('colors.light')
   )};
 

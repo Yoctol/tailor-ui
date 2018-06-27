@@ -15,7 +15,7 @@ import _Button from '../Button';
 
 const Block = styled.div`
   position: relative;
-  border-bottom: ${themeGet('borders.default')} ${themeGet('colors.border')};
+  border-bottom: ${themeGet('borders.default')} ${themeGet('colors.gray.8')};
 
   &:last-child {
     border-bottom: 0;
@@ -38,7 +38,7 @@ Block.defaultProps = {
 
 const Button = styled(_Button).attrs({ light: true })`
   border: 0;
-  border-bottom: ${themeGet('borders.default')} ${themeGet('colors.border')};
+  border-bottom: ${themeGet('borders.default')} ${themeGet('colors.gray.8')};
   border-radius: 0;
 
   &:last-child {
@@ -48,7 +48,7 @@ const Button = styled(_Button).attrs({ light: true })`
   &:focus {
     z-index: 1;
     border: 0;
-    border-bottom: ${themeGet('borders.default')} ${themeGet('colors.border')};
+    border-bottom: ${themeGet('borders.default')} ${themeGet('colors.gray.8')};
 
     &:last-child {
       border-bottom: 0;
@@ -78,7 +78,7 @@ Image.propTypes = {
 const CardWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  border: ${themeGet('borders.default')} ${themeGet('colors.border')};
+  border: ${themeGet('borders.default')} ${themeGet('colors.gray.8')};
 
   ${space};
   ${height};

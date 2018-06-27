@@ -78,10 +78,10 @@ const Select = styled(BaseSelect).attrs({
       .yoctol-select__option {
         &:not(:last-child) {
           border-bottom: ${themeGet('borders.default')}
-            ${themeGet('colors.border')};
+            ${themeGet('colors.gray.8')};
         }
         background-color: ${themeGet('colors.light')};
-        color: ${themeGet('colors.bodyFont')};
+        color: ${themeGet('colors.gray.2')};
 
         &.yoctol-select__option--is-focused {
           background-color: ${themeGet('colors.primaryDark')};
