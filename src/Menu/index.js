@@ -5,7 +5,7 @@ import { Spring, animated } from 'react-spring';
 import { themeGet, space, color, borders, borderRadius } from 'styled-system';
 import { ifProp } from 'styled-tools';
 
-import { Flex } from '../';
+import Flex from '../Grid/Flex';
 import { IconWrapper } from '../Icon';
 
 const Menu = styled(Flex)`

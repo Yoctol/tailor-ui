@@ -7,7 +7,9 @@ import { Value } from 'react-powerplug';
 import themeProvider from '../../../.storybook/theme-provider';
 import { Showcase } from '../../../.storybook/showcase';
 import { withComponentReadme } from '../../../.storybook/withDocs';
-import Select from '../';
+
+import Select from '..';
+
 import README from '../README.md';
 
 storiesOf('Data Entry|Select', module)

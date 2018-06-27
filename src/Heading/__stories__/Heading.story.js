@@ -10,7 +10,8 @@ import {
 } from '../../../.storybook/withDocs';
 import { Showcase, ShowcasePage } from '../../../.storybook/showcase';
 import README from '../README.md';
-import Heading from '../';
+
+import Heading from '..';
 
 storiesOf('General|Heading', module)
   .addDecorator(withKnobs)

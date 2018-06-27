@@ -2,7 +2,7 @@ import React from 'react';
 
 import shallowWithTheme from 'test/shallowWithTheme';
 
-import Tabs from '../';
+import Tabs from '..';
 
 const { Tab } = Tabs;
 

@@ -19,8 +19,10 @@ import {
   textAlign,
 } from '../../../.storybook/knobs';
 import README from '../README.md';
-import Tooltip from '../';
-import { Button, Heading } from '../../';
+
+import Tooltip from '..';
+
+import { Button, Heading } from '../..';
 
 const placements = {
   top: 'Top (Default)',

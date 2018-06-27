@@ -3,7 +3,9 @@ import centered from '@storybook/addon-centered';
 import { storiesOf } from '@storybook/react';
 
 import themeProvider from '../../../.storybook/theme-provider';
-import Card from '../';
+
+import Card from '..';
+
 import { Input, Button } from '../..';
 
 // eslint-disable-next-line react/prop-types

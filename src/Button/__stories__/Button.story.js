@@ -10,8 +10,10 @@ import {
   withComponentShowcase,
 } from '../../../.storybook/withDocs';
 import { Showcase, ShowcasePage } from '../../../.storybook/showcase';
-import { Heading } from '../../';
-import Button from '../';
+import { Heading } from '../..';
+
+import Button from '..';
+
 import README from '../README.md';
 
 const sizes = { sm: 'SM', m: 'M (Default)', lg: 'LG' };

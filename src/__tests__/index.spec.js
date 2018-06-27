@@ -23,7 +23,7 @@ import {
   Tooltip,
   colors,
   injectGlobalCss,
-} from '../';
+} from '..';
 
 describe('index', () => {
   it('should export all components', () => {

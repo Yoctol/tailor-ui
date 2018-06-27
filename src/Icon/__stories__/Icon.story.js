@@ -6,7 +6,8 @@ import { TiFlowChildren } from 'react-icons/lib/ti';
 import { MdEdit, MdComment, MdInput } from 'react-icons/lib/md';
 
 import themeProvider from '../../../.storybook/theme-provider';
-import Icon from '../';
+
+import Icon from '..';
 
 storiesOf('General|Icon', module)
   .addDecorator(centered)
