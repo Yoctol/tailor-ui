@@ -19,37 +19,36 @@ const overflowY = system.style({
 const Box = styled.div`
   box-sizing: border-box;
 
-  ${system.position};
-  ${system.top};
-  ${system.right};
-  ${system.bottom};
-  ${system.left};
-  ${overflow};
-  ${overflowX};
-  ${overflowY};
+  ${system.position /* sc-declaration */}
+  ${system.top /* sc-declaration */}
+  ${system.right /* sc-declaration */}
+  ${system.bottom /* sc-declaration */}
+  ${system.left /* sc-declaration */}
+  ${overflow /* sc-declaration */}
+  ${overflowX /* sc-declaration */}
+  ${overflowY /* sc-declaration */}
 
-  ${system.display};
-  ${system.space};
-  /* stylelint-disable */
-  ${system.fontSize};
-  /* stylelint-enable */
-  ${system.color};
+  ${system.display /* sc-declaration */}
+  ${system.space /* sc-declaration */}
+  /* stylelint-disable-next-line */
+  ${system.fontSize /* sc-declaration */}
+  ${system.color /* sc-declaration */}
 
-  ${system.borders};
-  ${system.borderColor};
-  ${system.borderRadius};
+  ${system.borders /* sc-declaration */}
+  ${system.borderColor /* sc-declaration */}
+  ${system.borderRadius /* sc-declaration */}
 
-  ${system.width};
-  ${system.minWidth};
-  ${system.maxWidth};
+  ${system.width /* sc-declaration */}
+  ${system.minWidth /* sc-declaration */}
+  ${system.maxWidth /* sc-declaration */}
 
-  ${system.height};
-  ${system.minHeight};
-  ${system.maxHeight};
+  ${system.height /* sc-declaration */}
+  ${system.minHeight /* sc-declaration */}
+  ${system.maxHeight /* sc-declaration */}
 
-  ${system.flex};
-  ${system.order};
-  ${system.alignSelf};
+  ${system.flex /* sc-declaration */}
+  ${system.order /* sc-declaration */}
+  ${system.alignSelf /* sc-declaration */}
 `;
 
 Box.propTypes = {

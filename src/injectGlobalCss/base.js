@@ -21,10 +21,8 @@ export default css`
     overflow-x: hidden;
     background: ${colors.light};
     color: ${colors.gray[2]};
-    /* stylelint-disable value-list-comma-newline-after */
     font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI',
       'PingFang TC', 'Microsoft JhengHei', Roboto, 'Helvetica Neue', sans-serif;
-    /* stylelint-enable */
     font-size: 0.7rem;
     text-rendering: optimizeLegibility;
   }

@@ -9548,6 +9548,12 @@ styled-tools@^0.5.3:
   dependencies:
     lodash "^4.17.10"
 
+stylelint-config-prettier@^3.3.0:
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/stylelint-config-prettier/-/stylelint-config-prettier-3.3.0.tgz#cc22a4b5310c1919cee77131d6e220c60a62a480"
+  dependencies:
+    stylelint "^9.1.1"
+
 stylelint-config-recommended@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/stylelint-config-recommended/-/stylelint-config-recommended-2.1.0.tgz#f526d5c771c6811186d9eaedbed02195fee30858"
@@ -9586,7 +9592,7 @@ stylelint-processor-styled-components@^1.3.1:
     babylon "^7.0.0-beta.40"
     postcss "^6.0.14"
 
-stylelint@9.3.0:
+stylelint@9.3.0, stylelint@^9.1.1:
   version "9.3.0"
   resolved "https://registry.yarnpkg.com/stylelint/-/stylelint-9.3.0.tgz#fe176e4e421ac10eac1a6b6d9f28e908eb58c5db"
   dependencies:

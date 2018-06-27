@@ -79,8 +79,26 @@ export default css`
     }
   }
 
+  ol {
+    list-style: decimal inside;
+
+    ol {
+      list-style-type: lower-alpha;
+    }
+  }
+
+  ul {
+    list-style: disc inside;
+
+    ul {
+      list-style-type: circle;
+    }
+  }
+
+  /* stylelint-disable */
   ul,
   ol {
+    /* stylelint-enable */
     margin: ${theme.space[4]} 0 ${theme.space[4]} ${theme.space[4]};
     padding: 0;
 
@@ -93,24 +111,6 @@ export default css`
       margin-top: ${theme.space[2]};
     }
   }
-
-  /* stylelint-disable no-descending-specificity */
-  ul {
-    list-style: disc inside;
-
-    ul {
-      list-style-type: circle;
-    }
-  }
-
-  ol {
-    list-style: decimal inside;
-
-    ol {
-      list-style-type: lower-alpha;
-    }
-  }
-  /* stylelint-enable */
 
   dl {
     dt {

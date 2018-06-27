@@ -2,7 +2,8 @@
   "processors": ["stylelint-processor-styled-components"],
   "extends": [
     "stylelint-config-yoctol",
-    "stylelint-config-styled-components"
+    "stylelint-config-styled-components",
+    "stylelint-config-prettier"
   ],
   "rules": {
     "comment-empty-line-before": null,
@@ -10,6 +11,6 @@
     "declaration-colon-newline-after": null,
     "declaration-empty-line-before": null,
     "value-list-max-empty-lines": null,
-    "rule-empty-line-before": null,
+    "rule-empty-line-before": null
   }
 }
