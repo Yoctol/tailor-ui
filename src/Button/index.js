@@ -37,7 +37,8 @@ const Button = styled.button`
   }
 
   &:hover {
-    background-color: ${themeGet('colors.primary')};
+    background-color: ${themeGet('colors.light')};
+    color: ${themeGet('colors.primaryDark')};
   }
 
   &:disabled,
@@ -86,6 +87,7 @@ const Button = styled.button`
 
       &:hover {
         background-color: ${themeGet('colors.error')};
+        color: ${themeGet('colors.light')};
       }
     `
   )};
@@ -115,6 +117,7 @@ const Button = styled.button`
 
           &:hover {
             background-color: ${themeGet('colors.secondary')};
+            color: ${themeGet('colors.light')};
           }
 
           &:focus {
@@ -161,7 +164,6 @@ const Button = styled.button`
       background-color: transparent;
 
       &:focus {
-        background-color: ${themeGet('colors.primary')};
         ${controlShadow(themeGet('colors.light'))};
       }
     `
