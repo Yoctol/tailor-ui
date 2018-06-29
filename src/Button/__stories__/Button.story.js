@@ -122,7 +122,7 @@ storiesOf('General|Button', module)
         </Showcase>
 
         <Heading.h3>Button with ghost</Heading.h3>
-        <Showcase bg="primary">
+        <Showcase bg="gray.5">
           <Button ghost onClick={action('clicked')}>
             Button
           </Button>
