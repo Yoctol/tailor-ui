@@ -127,7 +127,7 @@ Card.propTypes = {
 
 /* eslint-disable react/default-props-match-prop-types */
 Card.defaultProps = {
-  bg: 'bgLight',
+  bg: 'light',
   borderRadius: 1,
 };
 /* eslint-enable react/default-props-match-prop-types */
