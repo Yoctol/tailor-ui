@@ -15,7 +15,7 @@ const Input = styled.input`
   border: ${themeGet('borders.default')} ${themeGet('colors.gray.8')};
   border-radius: ${themeGet('radii.1')};
   outline: none;
-  background: ${themeGet('bgLight')};
+  background: ${themeGet('light')};
   background-image: none;
   color: ${themeGet('colors.gray.2')};
   line-height: ${themeGet('lineHeight')};
