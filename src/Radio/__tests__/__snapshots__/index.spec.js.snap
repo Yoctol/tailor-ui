@@ -17,16 +17,16 @@ exports[`Radio should render correctly 1`] = `
 .c0 + .c1 {
   position: relative;
   padding: 0;
-  font-size: 0.8rem;
+  color: #444444;
   cursor: pointer;
 }
 
 .c0 + .c1::before {
   content: '';
   display: inline-block;
-  width: 20px;
-  height: 20px;
-  margin-right: 0.4rem;
+  width: 16px;
+  height: 16px;
+  margin-right: 0.2rem;
   border: 0.05rem solid;
   border-radius: 999px;
   background: white;
@@ -37,10 +37,10 @@ exports[`Radio should render correctly 1`] = `
 .c0 + .c1::after {
   content: '';
   position: absolute;
-  top: 3px;
-  left: 3px;
-  width: 14px;
-  height: 14px;
+  top: 2px;
+  left: 2px;
+  width: 12px;
+  height: 12px;
   border-radius: 50%;
   -webkit-transition: all .2s ease;
   transition: all .2s ease;
@@ -108,16 +108,16 @@ exports[`Radio should render with props disabled 1`] = `
 .c0 + .c1 {
   position: relative;
   padding: 0;
-  font-size: 0.8rem;
+  color: #444444;
   cursor: pointer;
 }
 
 .c0 + .c1::before {
   content: '';
   display: inline-block;
-  width: 20px;
-  height: 20px;
-  margin-right: 0.4rem;
+  width: 16px;
+  height: 16px;
+  margin-right: 0.2rem;
   border: 0.05rem solid;
   border-radius: 999px;
   background: white;
@@ -128,10 +128,10 @@ exports[`Radio should render with props disabled 1`] = `
 .c0 + .c1::after {
   content: '';
   position: absolute;
-  top: 3px;
-  left: 3px;
-  width: 14px;
-  height: 14px;
+  top: 2px;
+  left: 2px;
+  width: 12px;
+  height: 12px;
   border-radius: 50%;
   -webkit-transition: all .2s ease;
   transition: all .2s ease;

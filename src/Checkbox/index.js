@@ -15,16 +15,16 @@ const Checkbox = styled.input.attrs({
   & + ${Label /* sc-selector */} {
     position: relative;
     padding: 0;
-    font-size: 0.8rem;
+    color: ${themeGet('colors.gray.3')};
     cursor: pointer;
   }
 
   & + ${Label /* sc-selector */}::before {
     content: '';
     display: inline-block;
-    width: 20px;
-    height: 20px;
-    margin-right: ${themeGet('space.2')};
+    width: 16px;
+    height: 16px;
+    margin-right: ${themeGet('space.1')};
     border: ${themeGet('borders.default')};
     border-radius: ${themeGet('radii.1')};
     background: white;
@@ -54,10 +54,10 @@ const Checkbox = styled.input.attrs({
   &:checked + ${Label /* sc-selector */}::after {
     content: '';
     position: absolute;
-    top: 3px;
-    left: 7px;
-    width: 7px;
-    height: 11px;
+    top: 2px;
+    left: 6px;
+    width: 5px;
+    height: 10px;
     border: solid white;
     border-width: 0 2px 2px 0;
     transform: rotate(45deg);

@@ -15,16 +15,16 @@ const Radio = styled.input.attrs({
   & + ${Label /* sc-selector */} {
     position: relative;
     padding: 0;
-    font-size: 0.8rem;
+    color: ${themeGet('colors.gray.3')};
     cursor: pointer;
   }
 
   & + ${Label /* sc-selector */}::before {
     content: '';
     display: inline-block;
-    width: 20px;
-    height: 20px;
-    margin-right: ${themeGet('space.2')};
+    width: 16px;
+    height: 16px;
+    margin-right: ${themeGet('space.1')};
     border: ${themeGet('borders.default')};
     border-radius: 999px;
     background: white;
@@ -35,10 +35,10 @@ const Radio = styled.input.attrs({
   & + ${Label /* sc-selector */}::after {
     content: '';
     position: absolute;
-    top: 3px;
-    left: 3px;
-    width: 14px;
-    height: 14px;
+    top: 2px;
+    left: 2px;
+    width: 12px;
+    height: 12px;
     border-radius: 50%;
     ${controlTransition()};
   }
