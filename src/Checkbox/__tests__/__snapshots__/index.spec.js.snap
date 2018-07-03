@@ -17,16 +17,16 @@ exports[`Checkbox should render correctly 1`] = `
 .c0 + .c1 {
   position: relative;
   padding: 0;
-  font-size: 0.8rem;
+  color: #444444;
   cursor: pointer;
 }
 
 .c0 + .c1::before {
   content: '';
   display: inline-block;
-  width: 20px;
-  height: 20px;
-  margin-right: 0.4rem;
+  width: 16px;
+  height: 16px;
+  margin-right: 0.2rem;
   border: 0.05rem solid;
   border-radius: 0.2rem;
   background: white;
@@ -57,10 +57,10 @@ exports[`Checkbox should render correctly 1`] = `
 .c0:checked + .c1::after {
   content: '';
   position: absolute;
-  top: 3px;
-  left: 7px;
-  width: 7px;
-  height: 11px;
+  top: 2px;
+  left: 6px;
+  width: 5px;
+  height: 10px;
   border: solid white;
   border-width: 0 2px 2px 0;
   -webkit-transform: rotate(45deg);
@@ -112,16 +112,16 @@ exports[`Checkbox should render with props disabled 1`] = `
 .c0 + .c1 {
   position: relative;
   padding: 0;
-  font-size: 0.8rem;
+  color: #444444;
   cursor: pointer;
 }
 
 .c0 + .c1::before {
   content: '';
   display: inline-block;
-  width: 20px;
-  height: 20px;
-  margin-right: 0.4rem;
+  width: 16px;
+  height: 16px;
+  margin-right: 0.2rem;
   border: 0.05rem solid;
   border-radius: 0.2rem;
   background: white;
@@ -152,10 +152,10 @@ exports[`Checkbox should render with props disabled 1`] = `
 .c0:checked + .c1::after {
   content: '';
   position: absolute;
-  top: 3px;
-  left: 7px;
-  width: 7px;
-  height: 11px;
+  top: 2px;
+  left: 6px;
+  width: 5px;
+  height: 10px;
   border: solid white;
   border-width: 0 2px 2px 0;
   -webkit-transform: rotate(45deg);
