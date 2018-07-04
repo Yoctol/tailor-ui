@@ -17,6 +17,7 @@ export { default as Modal } from './Modal';
 export { default as Radio } from './Radio';
 export { default as Select } from './Select';
 export { default as Space } from './Grid/Space';
+export { default as Spin } from './Spin';
 export { default as Table } from './Table';
 export { default as Tabs } from './Tabs';
 export { default as Textarea } from './Form/Textarea';

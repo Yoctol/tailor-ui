@@ -16,6 +16,7 @@ import {
   Radio,
   Select,
   Space,
+  Spin,
   Table,
   Tabs,
   Textarea,
@@ -44,6 +45,7 @@ describe('index', () => {
     expect(Radio).toBeDefined();
     expect(Select).toBeDefined();
     expect(Space).toBeDefined();
+    expect(Spin).toBeDefined();
     expect(Table).toBeDefined();
     expect(Tabs).toBeDefined();
     expect(Textarea).toBeDefined();
