@@ -34,7 +34,7 @@ CloseButton.propTypes = {
   handleClose: PropTypes.func.isRequired,
 };
 
-const ModalOverlay = styled(animated.div)`
+const ModalOverlay = styled.div`
   position: fixed;
   z-index: 10000;
   top: 0;
@@ -44,7 +44,9 @@ const ModalOverlay = styled(animated.div)`
   background-color: rgba(17, 17, 17, 0.25);
 `;
 
-const ModalContent = styled(animated.div)`
+const AnimatedModalOverlay = animated(ModalOverlay);
+
+const ModalContent = styled.div`
   display: flex;
   position: fixed;
   z-index: 10001;
@@ -69,6 +71,8 @@ ModalContent.defaultProps = {
   p: 7,
 };
 
+const AnimatedModalContent = animated(ModalContent);
+
 const ModalWrapper = ({
   opacity,
   translateY,
@@ -79,14 +83,14 @@ const ModalWrapper = ({
   ...otherProps
 }) => (
   <>
-    <ModalOverlay
+    <AnimatedModalOverlay
       style={{
         opacity,
         pointerEvents,
       }}
       onClick={handleClose}
     />
-    <ModalContent
+    <AnimatedModalContent
       style={{
         opacity,
         pointerEvents,
@@ -98,7 +102,7 @@ const ModalWrapper = ({
     >
       {closeButton && <CloseButton handleClose={handleClose} />}
       {content}
-    </ModalContent>
+    </AnimatedModalContent>
   </>
 );
 
@@ -113,7 +117,7 @@ class Modal extends PureComponent {
         {show && <Keydown keyCode={ESC_KEY_CODE} handleKeydown={handleClose} />}
         <Transition
           native
-          keys={show}
+          keys={show ? 'show' : 'hide'}
           from={{
             opacity: 0,
             translateY: 150,
