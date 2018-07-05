@@ -220,10 +220,10 @@ const Tooltip = ({ trigger, children, ...otherProps }) =>
     </Toggle>
   ) : (
     <Hover>
-      {({ bind, isHovered }) => (
+      {({ bind, hovered }) => (
         <TooltipWrapper {...bind}>
           {children}
-          <AnimatedTooltip visible={isHovered} {...otherProps} />
+          <AnimatedTooltip visible={hovered} {...otherProps} />
         </TooltipWrapper>
       )}
     </Hover>
