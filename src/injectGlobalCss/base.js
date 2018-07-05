@@ -23,7 +23,7 @@ export default css`
     overflow-x: hidden;
     background: ${colors.light};
     color: ${colors.gray[2]};
-    font-family: Roboto, 'PingFang TC', 'Microsoft JhengHei', 'Helvetica Neue', ,
+    font-family: Roboto, 'PingFang TC', 'Microsoft JhengHei', 'Helvetica Neue',
       sans-serif;
     font-size: 0.7rem;
     text-rendering: optimizeLegibility;
