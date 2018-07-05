@@ -71,4 +71,9 @@ storiesOf('General|Icon', module)
         type={TiFlowChildren}
       />
     </div>
+  ))
+  .add('with loading', () => (
+    <div>
+      <Icon size="40" type="loading" />
+    </div>
   ));

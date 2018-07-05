@@ -6,3 +6,4 @@ export { default as touch } from './touch';
 export { default as analytics } from './analytics';
 export { default as tags } from './tags';
 export { default as settings } from './settings';
+export { default as loading } from './loading';
