@@ -1,5 +1,5 @@
 import React from 'react';
-import PropType from 'prop-types';
+import PropTypes from 'prop-types';
 import styled, { keyframes } from 'styled-components';
 import { themeGet } from 'styled-system';
 
@@ -41,7 +41,7 @@ const Spin = ({ text }) => (
 );
 
 Spin.propTypes = {
-  text: PropType.string,
+  text: PropTypes.string,
 };
 
 Spin.defaultProps = {
