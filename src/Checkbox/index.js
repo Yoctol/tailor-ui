@@ -13,6 +13,7 @@ const Checkbox = styled.input.attrs({
   opacity: 0;
 
   & + ${Label /* sc-selector */} {
+    display: inline-block;
     position: relative;
     padding: 0;
     color: ${themeGet('colors.gray.3')};
