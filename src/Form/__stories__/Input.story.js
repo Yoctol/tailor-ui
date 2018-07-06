@@ -2,7 +2,6 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import centered from '@storybook/addon-centered';
 
-import { Flex, Box } from '../..';
 import themeProvider from '../../../.storybook/theme-provider';
 import FormField from '../FormField';
 import Label from '../Label';
@@ -51,16 +50,6 @@ storiesOf('Data Entry|Input', module)
       <Label htmlFor="demo">With Disabled:</Label>
       <Input id="demo" placeholder="placeholder" disabled />
     </div>
-  ))
-  .add('with inline', () => (
-    <Flex width="600px">
-      <Box width={1 / 4}>
-        <Label htmlFor="demo">With Inline:</Label>
-      </Box>
-      <Box width={3 / 4}>
-        <Input id="demo" inline placeholder="placeholder" />
-      </Box>
-    </Flex>
   ))
   .add('with size', () => (
     <div>

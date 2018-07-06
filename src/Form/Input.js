@@ -1,15 +1,12 @@
 import PropTypes from 'prop-types';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import { themeGet, width, space, textAlign } from 'styled-system';
-import { ifProp } from 'styled-tools';
 
 import { sizes } from '../utils/system';
-import { controlShadow } from '../utils/shadow';
 import controlTransition from '../utils/transition';
 
 const Input = styled.input`
   display: block;
-  position: relative;
   width: 100%;
   max-width: 100%;
   border: ${themeGet('borders.default')} ${themeGet('colors.gray.8')};
@@ -22,8 +19,7 @@ const Input = styled.input`
   appearance: none;
 
   &:focus {
-    border-color: ${themeGet('colors.secondaryDark')};
-    ${controlShadow(themeGet('colors.secondaryDark'))};
+    border-color: ${themeGet('colors.gray.3')};
   }
 
   &:disabled,
@@ -39,15 +35,6 @@ const Input = styled.input`
   }
 
   ${controlTransition()};
-
-  ${ifProp(
-    'inline',
-    css`
-      display: inline-block;
-      width: auto;
-      vertical-align: middle;
-    `
-  )};
 
   ${sizes};
   ${width};
