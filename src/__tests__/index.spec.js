@@ -20,6 +20,7 @@ import {
   Table,
   Tabs,
   Textarea,
+  TextField,
   ThemeProvider,
   Tooltip,
   colors,
@@ -49,6 +50,7 @@ describe('index', () => {
     expect(Table).toBeDefined();
     expect(Tabs).toBeDefined();
     expect(Textarea).toBeDefined();
+    expect(TextField).toBeDefined();
     expect(ThemeProvider).toBeDefined();
     expect(Tooltip).toBeDefined();
     expect(colors).toBeDefined();

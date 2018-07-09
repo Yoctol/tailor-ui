@@ -21,6 +21,7 @@ export { default as Spin } from './Spin';
 export { default as Table } from './Table';
 export { default as Tabs } from './Tabs';
 export { default as Textarea } from './Form/Textarea';
+export { default as TextField } from './Form/TextField';
 export { default as ThemeProvider } from './utils/ThemeProvider';
 export { default as Tooltip } from './Tooltip';
 export { default as injectGlobalCss } from './injectGlobalCss';
