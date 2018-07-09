@@ -1,9 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Button should render correctly 1`] = `
+.c1 {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 1;
+  background: rgba(0,0,0,0.2);
+  -webkit-transform: scale(0);
+  -ms-transform: scale(0);
+  transform: scale(0);
+}
+
 .c0 {
   display: inline-block;
   position: relative;
+  overflow: hidden;
   border: 0.05rem solid;
   border-radius: 0.2rem;
   border-color: #191723;
@@ -29,7 +40,6 @@ exports[`Button should render correctly 1`] = `
 .c0:focus {
   border-color: #0e0c1a;
   outline: 0;
-  box-shadow: 0 0 0 0.1rem rgba(25,23,35,0.2);
 }
 
 .c0:hover {
@@ -53,19 +63,66 @@ exports[`Button should render correctly 1`] = `
   loading={false}
   size="m"
 >
-  <button
-    className="c0"
+  <Button__StyledButton
+    active={false}
+    block={false}
+    circle={false}
+    ghost={false}
+    innerRef={
+      Object {
+        "current": <button
+          class="c0"
+        >
+          Text Button
+          <div
+            class="c1"
+          />
+        </button>,
+      }
+    }
+    light={false}
+    loading={false}
+    onMouseUp={[Function]}
+    onTouchend={[Function]}
     size="m"
   >
-    Text Button
-  </button>
+    <button
+      className="c0"
+      onMouseUp={[Function]}
+      size="m"
+    >
+      Text Button
+      <Ripple>
+        <Ripple__StyledRipple
+          rippling={false}
+          style={Object {}}
+        >
+          <div
+            className="c1"
+            style={Object {}}
+          />
+        </Ripple__StyledRipple>
+      </Ripple>
+    </button>
+  </Button__StyledButton>
 </Button>
 `;
 
 exports[`Button should render with props light, circle and active 1`] = `
+.c1 {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 1;
+  background: rgba(0,0,0,0.2);
+  -webkit-transform: scale(0);
+  -ms-transform: scale(0);
+  transform: scale(0);
+}
+
 .c0 {
   display: inline-block;
   position: relative;
+  overflow: hidden;
   border: 0.05rem solid;
   border-radius: 0.2rem;
   border-color: #191723;
@@ -99,7 +156,6 @@ exports[`Button should render with props light, circle and active 1`] = `
 .c0:focus {
   border-color: #0e0c1a;
   outline: 0;
-  box-shadow: 0 0 0 0.1rem rgba(25,23,35,0.2);
 }
 
 .c0:hover {
@@ -116,7 +172,6 @@ exports[`Button should render with props light, circle and active 1`] = `
 
 .c0:focus {
   border-color: #0e0c1a;
-  box-shadow: 0 0 0 0.1rem rgba(25,23,35,0.2);
 }
 
 .c0:hover {
@@ -141,11 +196,47 @@ exports[`Button should render with props light, circle and active 1`] = `
   loading={false}
   size="m"
 >
-  <button
-    className="c0"
+  <Button__StyledButton
+    active={true}
+    block={false}
+    circle={true}
+    ghost={false}
+    innerRef={
+      Object {
+        "current": <button
+          class="c0"
+        >
+          Text Button
+          <div
+            class="c1"
+          />
+        </button>,
+      }
+    }
+    light={true}
+    loading={false}
+    onMouseUp={[Function]}
+    onTouchend={[Function]}
     size="m"
   >
-    Text Button
-  </button>
+    <button
+      className="c0"
+      onMouseUp={[Function]}
+      size="m"
+    >
+      Text Button
+      <Ripple>
+        <Ripple__StyledRipple
+          rippling={false}
+          style={Object {}}
+        >
+          <div
+            className="c1"
+            style={Object {}}
+          />
+        </Ripple__StyledRipple>
+      </Ripple>
+    </button>
+  </Button__StyledButton>
 </Button>
 `;

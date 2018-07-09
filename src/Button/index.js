@@ -1,10 +1,12 @@
+import React, { PureComponent, createRef } from 'react';
 import PropTypes from 'prop-types';
 import styled, { css, keyframes } from 'styled-components';
 import { themeGet, space } from 'styled-system';
 import { ifProp, switchProp } from 'styled-tools';
 
-import { controlShadow } from '../utils/shadow';
 import controlTransition from '../utils/transition';
+
+import Ripple from './Ripple';
 
 const spin = keyframes`
   0% {
@@ -15,9 +17,10 @@ const spin = keyframes`
   }
 `;
 
-const Button = styled.button`
+const StyledButton = styled.button`
   display: inline-block;
   position: relative;
+  overflow: hidden;
   border: ${themeGet('borders.default')};
   border-radius: ${themeGet('radii.1')};
   border-color: ${themeGet('colors.primary')};
@@ -33,7 +36,6 @@ const Button = styled.button`
   &:focus {
     border-color: ${themeGet('colors.primaryDark')};
     outline: 0;
-    ${controlShadow(themeGet('colors.primary'))};
   }
 
   &:hover {
@@ -82,7 +84,6 @@ const Button = styled.button`
 
       &:focus {
         border-color: ${themeGet('colors.error')};
-        ${controlShadow(themeGet('colors.error'))};
       }
 
       &:hover {
@@ -101,7 +102,6 @@ const Button = styled.button`
 
       &:focus {
         border-color: ${themeGet('colors.primaryDark')};
-        ${controlShadow(themeGet('colors.primary'))};
       }
 
       &:hover {
@@ -162,10 +162,6 @@ const Button = styled.button`
     css`
       border-color: ${themeGet('colors.light')};
       background-color: transparent;
-
-      &:focus {
-        ${controlShadow(themeGet('colors.light'))};
-      }
     `
   )}
 
@@ -196,6 +192,33 @@ const Button = styled.button`
 
   ${space};
 `;
+
+class Button extends PureComponent {
+  constructor(props) {
+    super(props);
+    this.ripple = createRef();
+    this.button = createRef();
+  }
+
+  handleClick = e => this.ripple.current.startRipple(e, this.button);
+
+  render() {
+    const { children, ...props } = this.props;
+    return (
+      <StyledButton
+        innerRef={this.button}
+        onMouseUp={this.handleClick}
+        onTouchend={this.handleClick}
+        {...props}
+      >
+        {children}
+        <Ripple ref={this.ripple} />
+      </StyledButton>
+    );
+  }
+}
+
+Button.displayName = 'Button';
 
 Button.propTypes = {
   active: PropTypes.bool,
