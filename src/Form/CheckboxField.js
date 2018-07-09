@@ -51,7 +51,7 @@ CheckboxField.defaultProps = {
 
 const CheckboxFieldGroup = ({
   label: groupLabel,
-  value: groupValue,
+  values: groupValues,
   options,
   onChange,
   success,
@@ -60,14 +60,14 @@ const CheckboxFieldGroup = ({
   message,
   ...otherProps
 }) => (
-  <Set initial={groupValue} onChange={onChange}>
+  <Set initial={groupValues} onChange={onChange}>
     {({ add, remove, has }) => (
       <FormField success={success} warning={warning} error={error}>
         <Label>{groupLabel}</Label>
         {options.map(({ label, value, disabled = false }) => {
           const id = getUuid();
           return (
-            <Space mt={2} mb={1}>
+            <Space mt={2} mb={1} key={label}>
               <Checkbox
                 id={id}
                 disabled={disabled}
@@ -104,7 +104,7 @@ CheckboxFieldGroup.propTypes = {
     })
   ).isRequired,
   success: PropTypes.bool,
-  value: PropTypes.arrayOf(PropTypes.string).isRequired,
+  values: PropTypes.arrayOf(PropTypes.string).isRequired,
   warning: PropTypes.bool,
   onChange: PropTypes.func.isRequired,
 };
