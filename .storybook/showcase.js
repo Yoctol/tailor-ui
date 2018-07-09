@@ -7,7 +7,7 @@ import omitBy from 'lodash/omitBy';
 import prettier from 'prettier/standalone';
 import babylon from 'prettier/parser-babylon';
 
-import { Flex, Box, Icon, Tooltip, Heading } from '../';
+import { Flex, Box, Icon, Tooltip, Heading } from '../src';
 
 const createElementWithFilterName = component => {
   const { displayName = '' } = component.type;

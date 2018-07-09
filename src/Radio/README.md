@@ -15,5 +15,5 @@ This component needs using with `Label`.
 | Props       | type                                                                              | Default | Description          |
 | ----------- | --------------------------------------------------------------------------------- | ------- | -------------------- |
 | `disabled`  | Boolean                                                                           | `false` |                      |
-| borderColor | [View on docs](https://github.com/jxnblk/styled-system/blob/master/docs/table.md) |         | From `styled-stsyem` |
-| Color       | [View on docs](https://github.com/jxnblk/styled-system/blob/master/docs/table.md) |         | From `styled-stsyem` |
+| borderColor | [View on docs](https://github.com/jxnblk/styled-system/blob/master/docs/table.md) |         | From `styled-system` |
+| Color       | [View on docs](https://github.com/jxnblk/styled-system/blob/master/docs/table.md) |         | From `styled-system` |

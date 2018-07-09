@@ -21,4 +21,4 @@ import { Button } from '@yoctol/ui';
 | `disabled` | Boolean                                                                           | `false` |                      |
 | `loading`  | Boolean                                                                           | `false` |                      |
 | `size`     | `'sm'`&#124;`'m'`&#124;`'lg'`                                                     | `'m'`   |                      |
-| Space      | [View on docs](https://github.com/jxnblk/styled-system/blob/master/docs/table.md) |         | From `styled-stsyem` |
+| Space      | [View on docs](https://github.com/jxnblk/styled-system/blob/master/docs/table.md) |         | From `styled-system` |
