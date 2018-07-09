@@ -16,7 +16,7 @@ const Checkbox = styled.input.attrs({
     display: inline-block;
     position: relative;
     padding: 0;
-    color: ${themeGet('colors.gray.3')};
+    color: ${themeGet('colors.gray.3')} !important;
     cursor: pointer;
   }
 
