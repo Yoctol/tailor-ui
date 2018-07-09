@@ -82,7 +82,6 @@
     "prettier": "^1.13.7",
     "prettier-package-json": "^1.6.0",
     "react-element-to-jsx-string": "^14.0.1",
-    "recompose": "^0.27.1",
     "storybook-readme": "^3.3.0",
     "stylelint": "9.3.0",
     "stylelint-config-styled-components": "^0.1.1",
