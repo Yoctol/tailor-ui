@@ -51,7 +51,7 @@ RadioField.defaultProps = {
 
 const RadioFieldGroup = ({
   label: groupLabel,
-  values: groupValues,
+  value: groupValues,
   options,
   onChange,
   success,
@@ -61,18 +61,18 @@ const RadioFieldGroup = ({
   ...otherProps
 }) => (
   <Value initial={groupValues} onChange={onChange}>
-    {({ value, set }) => (
+    {({ value: checkedValue, set }) => (
       <FormField success={success} warning={warning} error={error}>
         <Label>{groupLabel}</Label>
-        {options.map(({ label, value: val, disabled = false }) => {
+        {options.map(({ label, value, disabled = false }) => {
           const id = getUuid();
           return (
             <Space mt={2} mb={1} key={label}>
               <Radio
                 id={id}
                 disabled={disabled}
-                checked={value === val}
-                onChange={() => set(val)}
+                checked={checkedValue === value}
+                onChange={() => set(value)}
                 {...otherProps}
               />
               <Label htmlFor={id}>{label}</Label>
@@ -97,7 +97,7 @@ RadioFieldGroup.propTypes = {
     })
   ).isRequired,
   success: PropTypes.bool,
-  values: PropTypes.arrayOf(PropTypes.string).isRequired,
+  value: PropTypes.string.isRequired,
   warning: PropTypes.bool,
   onChange: PropTypes.func.isRequired,
 };

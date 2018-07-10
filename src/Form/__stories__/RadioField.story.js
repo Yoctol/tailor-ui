@@ -7,7 +7,6 @@ import themeProvider from '../../../.storybook/theme-provider';
 import RadioField from '../RadioField';
 import Box from '../../Grid/Box';
 
-// TODO: Wrong display order
 storiesOf('Data Entry|RadioField', module)
   .addDecorator(centered)
   .addDecorator(themeProvider)
@@ -19,7 +18,7 @@ storiesOf('Data Entry|RadioField', module)
             { label: 'Radio A', value: 'radio_A' },
             { label: 'Radio B', value: 'radio_B' },
           ]}
-          values={value}
+          value={value}
           onChange={val => set(val)}
         />
       )}
@@ -36,7 +35,7 @@ storiesOf('Data Entry|RadioField', module)
             { label: 'Radio C', value: 'radio_C', disabled: true },
             { label: 'Radio D', value: 'radio_D' },
           ]}
-          values={value}
+          value={value}
           onChange={val => set(val)}
         />
       )}
@@ -56,7 +55,7 @@ storiesOf('Data Entry|RadioField', module)
               { label: 'Radio C', value: 'radio_C' },
               { label: 'Radio D', value: 'radio_D' },
             ]}
-            values={value}
+            value={value}
             onChange={val => set(val)}
           />
         )}
