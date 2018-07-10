@@ -11,10 +11,6 @@ import { Flex, Box, Icon, Tooltip, Heading } from '../src';
 
 const createElementWithFilterName = component => {
   const { displayName = '' } = component.type;
-  if (displayName.includes('PropsTransformer')) {
-    // eslint-disable-next-line no-param-reassign
-    component.type.displayName = displayName.slice(17, -1);
-  }
 
   return createElement(
     component.type,
@@ -42,7 +38,7 @@ const renderToString = component => {
 
   return {
     preview: (
-      <pre className="language-jsx">
+      <pre className="language-jsx" key={jsxString}>
         <code className="language-jsx">{code}</code>
       </pre>
     ),

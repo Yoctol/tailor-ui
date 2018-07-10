@@ -1,77 +1,174 @@
+import React, { PureComponent, cloneElement } from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
-import {
-  themeGet,
-  space,
-  color,
-  borders,
-  textAlign,
-  minWidth,
-  top,
-  right,
-  fontSize,
-} from 'styled-system';
-import { ifProp } from 'styled-tools';
+import styled, { css } from 'styled-components';
+import { Transition, animated } from 'react-spring';
+import { themeGet, space, textAlign, minWidth } from 'styled-system';
+import { switchProp, prop } from 'styled-tools';
 
+import ClickOutside from '../utils/ClickOutside';
 import { shadowVariant } from '../utils/shadow';
 import controlTransition from '../utils/transition';
 
-const Dropdown = styled.div`
-  display: ${ifProp('visible', 'block', 'none')};
-  position: absolute;
-  z-index: 99;
+class Dropdown extends PureComponent {
+  state = {
+    visible: false,
+  };
 
-  ${shadowVariant(0.1)};
-  ${minWidth};
-  ${top};
-  ${right};
-`;
+  getOffset = () => {
+    const { offsetHeight } = this.wrapperRef.children[0];
+    const DROPDOWN_MARGIN = 3;
+    return offsetHeight + DROPDOWN_MARGIN;
+  };
+
+  toggle = () => {
+    this.setState(({ visible }) => ({
+      visible: !visible,
+    }));
+  };
+
+  close = () => {
+    this.setState(() => ({ visible: false }));
+  };
+
+  renderChildren = () => {
+    const { children } = this.props;
+    return cloneElement(children, {
+      onClick: event => {
+        this.toggle();
+        if (children.props.onClick) {
+          children.props.onClick(event);
+        }
+      },
+    });
+  };
+
+  renderOverlay = () => {
+    const { overlay, placement } = this.props;
+    const { visible } = this.state;
+
+    const translateFrom = placement.startsWith('top') ? 10 : -10;
+    let offset = 0;
+
+    if (visible) {
+      offset = this.getOffset();
+    }
+
+    return (
+      <Transition
+        native
+        key={visible}
+        from={{ opacity: 0, transform: `translateY(${translateFrom}px)` }}
+        enter={{ opacity: 1, transform: 'translateY(0)' }}
+        leave={{
+          opacity: 0,
+          transform: 'translateY(-10px)',
+          pointerEvents: 'none',
+        }}
+      >
+        {visible &&
+          (styles =>
+            cloneElement(overlay, {
+              placement,
+              offset,
+              style: { ...overlay.style, ...styles },
+            }))}
+      </Transition>
+    );
+  };
+
+  render() {
+    return (
+      <ClickOutside onClickOutside={this.close}>
+        {({ bind }) => (
+          <div
+            ref={wrapperRef => {
+              this.wrapperRef = wrapperRef;
+              bind.ref(wrapperRef);
+            }}
+            style={{ display: 'inline-block', position: 'relative' }}
+          >
+            {this.renderChildren()}
+            {this.renderOverlay()}
+          </div>
+        )}
+      </ClickOutside>
+    );
+  }
+}
 
 Dropdown.propTypes = {
-  visible: PropTypes.bool,
-  ...minWidth.propTypes,
-  ...top.propTypes,
-  ...right.propTypes,
+  children: PropTypes.node.isRequired,
+  overlay: PropTypes.node.isRequired,
+  placement: PropTypes.oneOf([
+    'topRight',
+    'topLeft',
+    'bottomRight',
+    'bottomLeft',
+  ]),
 };
 
 Dropdown.defaultProps = {
-  visible: false,
-  top: 36,
-  right: 0,
-  minWidth: 100,
+  placement: 'bottomLeft',
 };
 
 const List = styled.ul`
+  display: block;
+  position: absolute;
+  z-index: 99;
+  margin: 0;
   background-color: transparent;
   list-style: none;
+
+  ${switchProp('placement', {
+    bottomLeft: css`
+      top: ${prop('offset')}px;
+      right: 0;
+    `,
+    bottomRight: css`
+      top: ${prop('offset')}px;
+      left: 0;
+    `,
+    topLeft: css`
+      right: 0;
+      bottom: ${prop('offset')}px;
+    `,
+    topRight: css`
+      bottom: ${prop('offset')}px;
+      left: 0;
+    `,
+  })};
 
   &:focus {
     outline: 0;
   }
 
-  ${space};
-  ${borders};
+  ${shadowVariant(0.1)};
+  ${minWidth};
   ${textAlign};
 `;
 
 List.propTypes = {
-  ...space.propTypes,
-  ...borders.propTypes,
   ...textAlign.propTypes,
+  ...minWidth.propTypes,
 };
 
 List.defaultProps = {
-  m: 0,
-  p: 0,
   textAlign: 'center',
+  minWidth: 100,
 };
 
-Dropdown.List = List;
+const AnimatedDropdownList = animated(List);
+AnimatedDropdownList.displayName = 'Dropdown.List';
+
+Dropdown.List = AnimatedDropdownList;
 
 const Item = styled.li`
   margin-top: 0;
   padding: ${themeGet('space.paddingY')} ${themeGet('space.paddingX')};
   border: ${themeGet('borders.default')} ${themeGet('colors.gray.8')};
+  background-color: ${themeGet('colors.light')};
+  color: ${themeGet('colors.gray.4')};
+  font-size: ${themeGet('fontSizes.default')};
   cursor: pointer;
 
   &:hover {
@@ -84,23 +181,12 @@ const Item = styled.li`
   }
 
   ${controlTransition()};
-  ${color};
   ${space};
-  ${borders};
-  ${fontSize};
 `;
 
+Item.displayName = 'Dropdown.Item';
 Item.propTypes = {
-  ...color.propTypes,
   ...space.propTypes,
-  ...borders.propTypes,
-  ...fontSize.propTypes,
-};
-
-Item.defaultProps = {
-  bg: 'light',
-  color: 'gray.4',
-  fontSize: 'default',
 };
 
 Dropdown.Item = Item;
