@@ -39,7 +39,11 @@ storiesOf('Navigation|Dropdown', module)
             </Dropdown.List>
           }
         >
-          <Button>Toggle</Button>
+          {({ visible, toggle }) => (
+            <Button light={visible} onClick={toggle}>
+              Toggle
+            </Button>
+          )}
         </Dropdown>
       </Showcase>
     ))
@@ -61,7 +65,11 @@ storiesOf('Navigation|Dropdown', module)
               </Dropdown.List>
             }
           >
-            <Button>Toggle</Button>
+            {({ visible, toggle }) => (
+              <Button light={visible} onClick={toggle}>
+                Toggle
+              </Button>
+            )}
           </Dropdown>
         </Showcase>
 
@@ -78,7 +86,11 @@ storiesOf('Navigation|Dropdown', module)
               </Dropdown.List>
             }
           >
-            <Button>Toggle</Button>
+            {({ visible, toggle }) => (
+              <Button light={visible} onClick={toggle}>
+                Toggle
+              </Button>
+            )}
           </Dropdown>
         </Showcase>
 
@@ -95,7 +107,11 @@ storiesOf('Navigation|Dropdown', module)
               </Dropdown.List>
             }
           >
-            <Button>Toggle</Button>
+            {({ visible, toggle }) => (
+              <Button light={visible} onClick={toggle}>
+                Toggle
+              </Button>
+            )}
           </Dropdown>
         </Showcase>
 
@@ -112,7 +128,11 @@ storiesOf('Navigation|Dropdown', module)
               </Dropdown.List>
             }
           >
-            <Button>Toggle</Button>
+            {({ visible, toggle }) => (
+              <Button light={visible} onClick={toggle}>
+                Toggle
+              </Button>
+            )}
           </Dropdown>
         </Showcase>
       </ShowcasePage>

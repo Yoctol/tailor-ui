@@ -32,13 +32,11 @@ class Dropdown extends PureComponent {
 
   renderChildren = () => {
     const { children } = this.props;
-    return cloneElement(children, {
-      onClick: event => {
-        this.toggle();
-        if (children.props.onClick) {
-          children.props.onClick(event);
-        }
-      },
+    const { visible } = this.state;
+    const { toggle } = this;
+    return children({
+      toggle,
+      visible,
     });
   };
 
