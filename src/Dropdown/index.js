@@ -56,12 +56,11 @@ class Dropdown extends PureComponent {
     return (
       <Transition
         native
-        key={visible}
         from={{ opacity: 0, transform: `translateY(${translateFrom}px)` }}
         enter={{ opacity: 1, transform: 'translateY(0)' }}
         leave={{
           opacity: 0,
-          transform: 'translateY(-10px)',
+          transform: `translateY(${translateFrom}px)`,
           pointerEvents: 'none',
         }}
       >
@@ -71,6 +70,7 @@ class Dropdown extends PureComponent {
               placement,
               offset,
               style: { ...overlay.style, ...styles },
+              onClick: this.close,
             }))}
       </Transition>
     );
@@ -116,6 +116,7 @@ const List = styled.ul`
   position: absolute;
   z-index: 99;
   margin: 0;
+  padding: 0;
   background-color: transparent;
   list-style: none;
 
