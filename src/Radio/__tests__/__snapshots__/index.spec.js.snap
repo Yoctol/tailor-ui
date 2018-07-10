@@ -3,9 +3,9 @@
 exports[`Radio should render correctly 1`] = `
 .c2 {
   display: block;
-  padding-bottom: 0.2rem;
+  padding-bottom: 0.25rem;
   color: #5e5e5e;
-  font-size: 0.7rem;
+  font-size: 0.875rem;
   line-height: 1;
 }
 
@@ -26,8 +26,8 @@ exports[`Radio should render correctly 1`] = `
   display: inline-block;
   width: 16px;
   height: 16px;
-  margin-right: 0.2rem;
-  border: 0.05rem solid;
+  margin-right: 0.25rem;
+  border: 0.0625rem solid;
   border-radius: 999px;
   background: white;
   vertical-align: text-bottom;
@@ -94,9 +94,9 @@ exports[`Radio should render correctly 1`] = `
 exports[`Radio should render with props disabled 1`] = `
 .c2 {
   display: block;
-  padding-bottom: 0.2rem;
+  padding-bottom: 0.25rem;
   color: #5e5e5e;
-  font-size: 0.7rem;
+  font-size: 0.875rem;
   line-height: 1;
 }
 
@@ -117,8 +117,8 @@ exports[`Radio should render with props disabled 1`] = `
   display: inline-block;
   width: 16px;
   height: 16px;
-  margin-right: 0.2rem;
-  border: 0.05rem solid;
+  margin-right: 0.25rem;
+  border: 0.0625rem solid;
   border-radius: 999px;
   background: white;
   vertical-align: text-bottom;

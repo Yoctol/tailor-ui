@@ -1,6 +1,5 @@
 import { configure } from '@storybook/react';
-import { setOptions } from "@storybook/addon-options";
-import injectGlobalCss from '../src/injectGlobalCss';
+import { setOptions } from '@storybook/addon-options';
 
 setOptions({
   name: 'Yoctol UI',
@@ -8,8 +7,6 @@ setOptions({
   hierarchyRootSeparator: /\|/,
   addonPanelInRight: true,
 });
-
-injectGlobalCss();
 
 const req = require.context('../src', true, /.story.js$/);
 

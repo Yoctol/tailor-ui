@@ -15,8 +15,8 @@ exports[`Button should render correctly 1`] = `
   display: inline-block;
   position: relative;
   overflow: hidden;
-  border: 0.05rem solid;
-  border-radius: 0.2rem;
+  border: 0.0625rem solid;
+  border-radius: 0.25rem;
   border-color: #191723;
   background-color: #0e0c1a;
   color: #ffffff;
@@ -30,9 +30,9 @@ exports[`Button should render correctly 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  height: 1.8rem;
-  padding: 0.35rem 0.4rem;
-  font-size: .8rem;
+  height: 2.25rem;
+  padding: 0.5625rem 0.5rem;
+  font-size: 1rem;
   -webkit-transition: all .2s ease;
   transition: all .2s ease;
 }
@@ -123,8 +123,8 @@ exports[`Button should render with props light, circle and active 1`] = `
   display: inline-block;
   position: relative;
   overflow: hidden;
-  border: 0.05rem solid;
-  border-radius: 0.2rem;
+  border: 0.0625rem solid;
+  border-radius: 0.25rem;
   border-color: #191723;
   background-color: #0e0c1a;
   color: #ffffff;
@@ -138,9 +138,9 @@ exports[`Button should render with props light, circle and active 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  height: 1.8rem;
-  padding: 0.35rem 0.4rem;
-  font-size: .8rem;
+  height: 2.25rem;
+  padding: 0.5625rem 0.5rem;
+  font-size: 1rem;
   border-color: #e9e9e9;
   background-color: #ffffff;
   color: #373737;
@@ -148,7 +148,7 @@ exports[`Button should render with props light, circle and active 1`] = `
   background-color: #ab9272;
   color: #ffffff;
   border-radius: 999px;
-  padding: 0.35rem calc(0.4rem * 2);
+  padding: 0.5625rem calc(0.5rem * 2);
   -webkit-transition: all .2s ease;
   transition: all .2s ease;
 }

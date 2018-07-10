@@ -4,6 +4,7 @@ import { Focus } from 'react-powerplug';
 import styled, { css } from 'styled-components';
 import { themeGet } from 'styled-system';
 import { ifProp } from 'styled-tools';
+import { rem } from 'polished';
 
 import FormField from './FormField';
 import Input from './Input';
@@ -13,13 +14,13 @@ import Hint from './Hint';
 
 const TextFieldLabel = styled(Label)`
   position: absolute;
-  top: -0.4rem;
-  left: 0.3rem;
-  padding: 0 0.2rem;
+  top: -8px;
+  left: 6px;
+  padding: 0 4px;
   background-color: #fff;
   color: ${themeGet('colors.gray.6')};
-  font-size: 0.8rem;
-  transform: translate(0, 1rem) scale(1);
+  font-size: ${themeGet('fontSizes.default')};
+  transform: translate(0, 20px) scale(1);
   transition: transform 200ms cubic-bezier(0, 0, 0.2, 1) 0ms;
   pointer-events: none;
 
@@ -27,7 +28,7 @@ const TextFieldLabel = styled(Label)`
     'shrink',
     css`
       color: ${themeGet('colors.gray.3')};
-      transform: translate(-0.3rem, 0) scale(0.8);
+      transform: translate(-6px, 0) scale(0.8);
     `
   )};
 `;
@@ -38,7 +39,7 @@ const MaxLenght = styled.div`
   bottom: 0;
   opacity: ${ifProp('visible', 1, 0)};
   color: ${themeGet('colors.gray.6')};
-  font-size: 0.5rem;
+  font-size: ${rem('10px')};
   transition: opacity 200ms ease;
 `;
 

@@ -1,7 +1,7 @@
 import { css } from 'styled-components';
+import { rem } from 'polished';
 
 import * as colors from '../theme/colors';
-import { controlShadow } from '../utils/shadow';
 
 export default css`
   @import url('https://fonts.googleapis.com/css?family=Roboto');
@@ -14,7 +14,7 @@ export default css`
 
   html {
     box-sizing: border-box;
-    font-size: 20px;
+    font-size: 16px;
     line-height: 1.5;
     -webkit-tap-highlight-color: transparent;
   }
@@ -25,25 +25,7 @@ export default css`
     color: ${colors.gray[2]};
     font-family: Roboto, 'PingFang TC', 'Microsoft JhengHei', 'Helvetica Neue',
       sans-serif;
-    font-size: 0.7rem;
+    font-size: ${rem('14px')};
     text-rendering: optimizeLegibility;
-  }
-
-  a {
-    outline: none;
-    color: ${colors.primary};
-    text-decoration: none;
-
-    &:focus {
-      ${controlShadow(colors.primary)};
-    }
-
-    &:focus,
-    &:hover,
-    &:active,
-    &.active {
-      color: ${colors.primaryDark};
-      text-decoration: underline;
-    }
   }
 `;

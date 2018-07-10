@@ -1,35 +1,36 @@
+import { rem } from 'polished';
 import { map } from 'ramda';
 
 import * as defaultColors from './colors';
 
-const toRem = rem => `${rem}rem`;
+const toRem = px => rem(`${px}px`);
 
-const lineHeight = 1;
+const lineHeight = 16;
 
 const breakpoints = ['40em', '52em', '64em'];
 
 const unit = {
-  o: 0.05,
-  h: 0.1,
+  o: 1,
+  h: 2,
   0: 0,
-  1: 0.2,
-  2: 0.4,
-  3: 0.6,
-  4: 0.8,
-  5: 1,
-  6: 1.2,
-  7: 1.4,
-  8: 1.6,
-  9: 1.8,
-  10: 2,
-  12: 2.4,
-  16: 3.2,
+  1: 4,
+  2: 8,
+  3: 12,
+  4: 16,
+  5: 20,
+  6: 24,
+  7: 28,
+  8: 32,
+  9: 36,
+  10: 40,
+  12: 48,
+  16: 64,
 };
 
 const fontSizes = {
-  default: '.8rem',
-  sm: '.7rem',
-  lg: '.9rem',
+  default: rem('16px'),
+  sm: rem('14px'),
+  lg: rem('18px'),
 };
 
 // border-radius
@@ -70,7 +71,7 @@ const controls = {
   paddingYLg: (sizeLg - lineHeight) / 2 - borderDefault,
 };
 
-const space = map(value => toRem(Math.round(value * 100) / 100), {
+const space = map(toRem, {
   ...unit,
   ...layouts,
   ...controls,

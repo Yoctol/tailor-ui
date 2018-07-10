@@ -32,14 +32,14 @@ exports[`Menu should render correctly 1`] = `
   -ms-flex-negative: 0;
   flex-shrink: 0;
   width: 100%;
-  padding: 0.6rem 1rem;
+  padding: 0.75rem 1.25rem;
   border: 0;
-  border-left: 0.4rem solid;
+  border-left: 0.5rem solid;
   border-left-color: transparent;
   background-color: #0e0c1a;
   color: #5e5e5e;
-  font-size: .8rem;
-  line-height: 1.2rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
   text-align: left;
   -webkit-transition: all 0.1s ease-in-out;
   transition: all 0.1s ease-in-out;
@@ -103,7 +103,7 @@ exports[`Menu should render correctly 1`] = `
 
 .c7 {
   overflow: hidden;
-  border-bottom: 0.05rem solid #c3c3c3;
+  border-bottom: 0.0625rem solid #c3c3c3;
 }
 
 .c7 .c4 {

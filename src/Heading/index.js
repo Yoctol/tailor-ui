@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import { rem } from 'polished';
 import { themeGet, space, color } from 'styled-system';
 import { ifProp } from 'styled-tools';
 
@@ -46,32 +47,32 @@ Heading.propTypes = {
 };
 
 const h1 = styled(Heading.withComponent('h1'))`
-  font-size: 1.4rem;
+  font-size: ${rem('28px')};
 `;
 h1.displayName = 'Heading.h1';
 
 const h2 = styled(Heading.withComponent('h2'))`
-  font-size: 1.25rem;
+  font-size: ${rem('24px')};
 `;
 h2.displayName = 'Heading.h2';
 
 const h3 = styled(Heading.withComponent('h3'))`
-  font-size: 0.9rem;
+  font-size: ${rem('18px')};
 `;
 h3.displayName = 'Heading.h3';
 
 const h4 = styled(Heading.withComponent('h4'))`
-  font-size: 0.8rem;
+  font-size: ${rem('16px')};
 `;
 h4.displayName = 'Heading.h4';
 
 const h5 = styled(Heading.withComponent('h5'))`
-  font-size: 0.7rem;
+  font-size: ${rem('14px')};
 `;
 h5.displayName = 'Heading.h5';
 
 const h6 = styled(Heading.withComponent('h6'))`
-  font-size: 0.6rem;
+  font-size: ${rem('12px')};
 `;
 h6.displayName = 'Heading.h6';
 
