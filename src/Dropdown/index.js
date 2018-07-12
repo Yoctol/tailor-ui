@@ -75,6 +75,7 @@ class Dropdown extends PureComponent {
   };
 
   render() {
+    const { display } = this.props;
     return (
       <ClickOutside onClickOutside={this.close}>
         {({ bind }) => (
@@ -83,7 +84,7 @@ class Dropdown extends PureComponent {
               this.wrapperRef = wrapperRef;
               bind.ref(wrapperRef);
             }}
-            style={{ display: 'inline-block', position: 'relative' }}
+            style={{ display, position: 'relative' }}
           >
             {this.renderChildren()}
             {this.renderOverlay()}
@@ -95,7 +96,8 @@ class Dropdown extends PureComponent {
 }
 
 Dropdown.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.func.isRequired,
+  display: PropTypes.string,
   overlay: PropTypes.node.isRequired,
   placement: PropTypes.oneOf([
     'topRight',
@@ -107,6 +109,7 @@ Dropdown.propTypes = {
 
 Dropdown.defaultProps = {
   placement: 'bottomLeft',
+  display: 'inline-block',
 };
 
 const List = styled.ul`
