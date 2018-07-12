@@ -7,7 +7,7 @@ const Heading = styled.p`
   margin: 0;
   color: ${themeGet('colors.primaryDark')};
   font-weight: 500;
-  line-height: 1;
+  line-height: 1.5;
 
   ${ifProp(
     'gray',

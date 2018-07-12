@@ -20,7 +20,7 @@ exports[`Button should render correctly 1`] = `
   border-color: #191723;
   background-color: #0e0c1a;
   color: #ffffff;
-  line-height: 1rem;
+  line-height: 1.5rem;
   -webkit-text-decoration: none;
   text-decoration: none;
   vertical-align: middle;
@@ -31,7 +31,7 @@ exports[`Button should render correctly 1`] = `
   -ms-user-select: none;
   user-select: none;
   height: 2.25rem;
-  padding: 0.5625rem 0.5rem;
+  padding: 0.3125rem 0.5rem;
   font-size: 1rem;
   -webkit-transition: all .2s ease;
   transition: all .2s ease;
@@ -128,7 +128,7 @@ exports[`Button should render with props light, circle and active 1`] = `
   border-color: #191723;
   background-color: #0e0c1a;
   color: #ffffff;
-  line-height: 1rem;
+  line-height: 1.5rem;
   -webkit-text-decoration: none;
   text-decoration: none;
   vertical-align: middle;
@@ -139,7 +139,7 @@ exports[`Button should render with props light, circle and active 1`] = `
   -ms-user-select: none;
   user-select: none;
   height: 2.25rem;
-  padding: 0.5625rem 0.5rem;
+  padding: 0.3125rem 0.5rem;
   font-size: 1rem;
   border-color: #e9e9e9;
   background-color: #ffffff;
@@ -148,7 +148,7 @@ exports[`Button should render with props light, circle and active 1`] = `
   background-color: #ab9272;
   color: #ffffff;
   border-radius: 999px;
-  padding: 0.5625rem calc(0.5rem * 2);
+  padding: 0.3125rem calc(0.5rem * 2);
   -webkit-transition: all .2s ease;
   transition: all .2s ease;
 }
