@@ -5,7 +5,7 @@ import * as defaultColors from './colors';
 
 const toRem = px => rem(`${px}px`);
 
-const lineHeight = 16;
+const lineHeight = 24;
 
 const breakpoints = ['40em', '52em', '64em'];
 
