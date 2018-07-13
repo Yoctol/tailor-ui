@@ -2,6 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { withKnobs, select, boolean, text } from '@storybook/addon-knobs';
+import SettingIcon from 'react-icons/lib/md/build';
 
 import themeProvider from '../../../.storybook/theme-provider';
 import { space } from '../../../.storybook/knobs';
@@ -11,6 +12,7 @@ import {
 } from '../../../.storybook/withDocs';
 import { Showcase, ShowcasePage } from '../../../.storybook/showcase';
 import { Heading } from '../..';
+import Icon from '../../Icon';
 
 import Button from '..';
 
@@ -124,6 +126,14 @@ storiesOf('General|Button', module)
         <Heading.h3>Button with ghost</Heading.h3>
         <Showcase bg="gray.5">
           <Button ghost onClick={action('clicked')}>
+            Button
+          </Button>
+        </Showcase>
+
+        <Heading.h3>Button with Icon</Heading.h3>
+        <Showcase>
+          <Button light onClick={action('clicked')}>
+            <Icon type={SettingIcon} size="16" mr="5px" />
             Button
           </Button>
         </Showcase>

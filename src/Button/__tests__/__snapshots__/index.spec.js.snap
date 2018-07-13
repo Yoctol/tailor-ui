@@ -12,8 +12,19 @@ exports[`Button should render correctly 1`] = `
 }
 
 .c0 {
-  display: inline-block;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   position: relative;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   overflow: hidden;
   border: 0.0625rem solid;
   border-radius: 0.25rem;
@@ -30,7 +41,6 @@ exports[`Button should render correctly 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  height: 2.25rem;
   padding: 0.3125rem 0.5rem;
   font-size: 1rem;
   -webkit-transition: all .2s ease;
@@ -120,8 +130,19 @@ exports[`Button should render with props light, circle and active 1`] = `
 }
 
 .c0 {
-  display: inline-block;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   position: relative;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   overflow: hidden;
   border: 0.0625rem solid;
   border-radius: 0.25rem;
@@ -138,7 +159,6 @@ exports[`Button should render with props light, circle and active 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  height: 2.25rem;
   padding: 0.3125rem 0.5rem;
   font-size: 1rem;
   border-color: #e9e9e9;

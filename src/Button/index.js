@@ -18,8 +18,10 @@ const spin = keyframes`
 `;
 
 const StyledButton = styled.button`
-  display: inline-block;
+  display: inline-flex;
   position: relative;
+  align-items: center;
+  justify-content: center;
   overflow: hidden;
   border: ${themeGet('borders.default')};
   border-radius: ${themeGet('radii.1')};
@@ -52,17 +54,14 @@ const StyledButton = styled.button`
 
   ${switchProp('size', {
     sm: css`
-      height: ${themeGet('space.sizeSm')};
       padding: ${themeGet('space.paddingYSm')} ${themeGet('space.paddingXSm')};
       font-size: ${themeGet('fontSizes.sm')};
     `,
     m: css`
-      height: ${themeGet('space.size')};
       padding: ${themeGet('space.paddingY')} ${themeGet('space.paddingX')};
       font-size: ${themeGet('fontSizes.default')};
     `,
     lg: css`
-      height: ${themeGet('space.sizeLg')};
       padding: ${themeGet('space.paddingYLg')} ${themeGet('space.paddingXLg')};
       font-size: ${themeGet('fontSizes.lg')};
     `,
