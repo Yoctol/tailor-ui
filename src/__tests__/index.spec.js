@@ -3,6 +3,7 @@ import {
   Button,
   Card,
   Checkbox,
+  CheckboxField,
   Dropdown,
   Flex,
   FormField,
@@ -14,6 +15,7 @@ import {
   Menu,
   Modal,
   Radio,
+  RadioField,
   Select,
   Space,
   Spin,
@@ -33,6 +35,7 @@ describe('index', () => {
     expect(Button).toBeDefined();
     expect(Card).toBeDefined();
     expect(Checkbox).toBeDefined();
+    expect(CheckboxField).toBeDefined();
     expect(Dropdown).toBeDefined();
     expect(Flex).toBeDefined();
     expect(FormField).toBeDefined();
@@ -44,6 +47,7 @@ describe('index', () => {
     expect(Menu).toBeDefined();
     expect(Modal).toBeDefined();
     expect(Radio).toBeDefined();
+    expect(RadioField).toBeDefined();
     expect(Select).toBeDefined();
     expect(Space).toBeDefined();
     expect(Spin).toBeDefined();
