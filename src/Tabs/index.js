@@ -52,7 +52,7 @@ const StyledTab = styled.a`
   ${space};
 `;
 
-const Tab = (children, ...props) => (
+const Tab = ({ children, ...props }) => (
   <Consumer>
     {size => (
       <StyledTab size={size} {...props}>
@@ -64,6 +64,7 @@ const Tab = (children, ...props) => (
 
 Tab.propTypes = {
   active: PropTypes.bool,
+  children: PropTypes.node.isRequired,
   disabled: PropTypes.bool,
   size: PropTypes.string,
 };
@@ -94,7 +95,7 @@ const StyledTabs = styled.nav`
       left: 0;
       padding-right: inherit;
       padding-left: inherit;
-      ${Tab /* sc-selector */} {
+      ${StyledTab /* sc-selector */} {
         flex-grow: 1;
       }
     `
