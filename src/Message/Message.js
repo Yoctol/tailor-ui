@@ -55,27 +55,33 @@ class MessageComponent extends PureComponent {
     }));
   };
 
-  add = ({ content: baseContent, duration, type }) => {
-    const key = getUuid();
-    const timer = setTimeout(() => this.remove(key), duration);
-    const TypeIcon = icons[type];
-    const content = (
-      <>
-        {TypeIcon}
-        {baseContent}
-      </>
-    );
+  add = ({ content: baseContent, duration, type }) =>
+    new Promise(resolve => {
+      const key = getUuid();
 
-    const newMessage = {
-      key,
-      content,
-      timer,
-    };
+      const timer = setTimeout(() => {
+        this.remove(key);
+        resolve();
+      }, duration);
 
-    this.setState(({ messages }) => ({
-      messages: [...messages, newMessage],
-    }));
-  };
+      const TypeIcon = icons[type];
+      const content = (
+        <>
+          {TypeIcon}
+          {baseContent}
+        </>
+      );
+
+      const newMessage = {
+        key,
+        content,
+        timer,
+      };
+
+      this.setState(({ messages }) => ({
+        messages: [...messages, newMessage],
+      }));
+    });
 
   render() {
     const { messages } = this.state;
@@ -84,12 +90,6 @@ class MessageComponent extends PureComponent {
         <MessageContainer>
           <Transition
             native
-            config={{
-              tension: 170,
-              friction: 26,
-              restSpeedThreshold: 0.01,
-              restDisplacementThreshold: 0.01,
-            }}
             keys={messages.map(({ key }) => key)}
             from={{ opacity: 0, transform: 'translateY(-30px)' }}
             enter={{ opacity: 1, transform: 'translateY(0)' }}

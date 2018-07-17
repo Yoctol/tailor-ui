@@ -20,4 +20,17 @@ storiesOf('Feedback|Message', module)
       </Button>
       <Button onClick={() => message.error('Error Message')}>Error</Button>
     </>
+  ))
+  .add('with promise', () => (
+    <>
+      <Button
+        onClick={() => {
+          message.info('Message').then(() => {
+            console.log('message done');
+          });
+        }}
+      >
+        Message
+      </Button>
+    </>
   ));

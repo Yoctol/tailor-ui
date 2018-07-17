@@ -17,9 +17,8 @@ class Message {
     this.messageRef = messageRef;
   };
 
-  message = ({ content, duration, type }) => {
+  message = ({ content, duration, type }) =>
     this.messageRef.add({ content, duration, type });
-  };
 }
 
 const getMessageInstance = () => {
@@ -32,7 +31,7 @@ const getMessageInstance = () => {
 const message = (content, duration = 3000, type) => {
   const instance = getMessageInstance();
 
-  instance.message({
+  return instance.message({
     content,
     duration,
     type,
