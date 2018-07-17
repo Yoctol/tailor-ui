@@ -9565,9 +9565,9 @@ stylelint-config-styled-components@^0.1.1:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/stylelint-config-styled-components/-/stylelint-config-styled-components-0.1.1.tgz#b408388d7c687833ab4be4c4e6522d97d2827ede"
 
-stylelint-config-yoctol@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/stylelint-config-yoctol/-/stylelint-config-yoctol-1.1.0.tgz#ed9b2732673077dd6eae90788a6681315f356ec8"
+stylelint-config-yoctol@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/stylelint-config-yoctol/-/stylelint-config-yoctol-1.1.1.tgz#f90eea0079423800ef14de5e530cfbc3c5095a4d"
   dependencies:
     css-property-sort-order-smacss "^2.1.2"
     stylelint-config-prettier "^3.3.0"
