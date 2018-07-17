@@ -14,6 +14,7 @@ export { default as Icon } from './Icon';
 export { default as Input } from './Form/Input';
 export { default as Label } from './Form/Label';
 export { default as Menu } from './Menu';
+export { default as message } from './Message';
 export { default as Modal } from './Modal';
 export { default as Radio } from './Radio';
 export { default as RadioField } from './Form/RadioField';

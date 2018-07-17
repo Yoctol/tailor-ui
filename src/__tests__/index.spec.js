@@ -13,6 +13,7 @@ import {
   Input,
   Label,
   Menu,
+  message,
   Modal,
   Radio,
   RadioField,
@@ -45,6 +46,7 @@ describe('index', () => {
     expect(Input).toBeDefined();
     expect(Label).toBeDefined();
     expect(Menu).toBeDefined();
+    expect(message).toBeDefined();
     expect(Modal).toBeDefined();
     expect(Radio).toBeDefined();
     expect(RadioField).toBeDefined();
