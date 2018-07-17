@@ -166,26 +166,42 @@ StyledList.defaultProps = {
   minWidth: 100,
 };
 
-const List = (children, style, ...props) => (
-  <Consumer>
-    {({ placement, offset, styles, onClick }) => (
-      <StyledList
-        placement={placement}
-        offset={offset}
-        style={{ ...style, ...styles }}
-        onClick={onClick}
-        {...props}
-      >
-        {children}
-      </StyledList>
-    )}
-  </Consumer>
-);
+const AnimatedStyledList = animated(StyledList);
 
-const AnimatedDropdownList = animated(List);
-AnimatedDropdownList.displayName = 'Dropdown.List';
+// eslint-disable-next-line react/no-multi-comp
+class List extends PureComponent {
+  render() {
+    const { children, style, ...props } = this.props;
+    return (
+      <Consumer>
+        {({ placement, offset, styles, onClick }) => (
+          <AnimatedStyledList
+            placement={placement}
+            offset={offset}
+            style={{ ...style, ...styles }}
+            onClick={onClick}
+            {...props}
+          >
+            {children}
+          </AnimatedStyledList>
+        )}
+      </Consumer>
+    );
+  }
+}
 
-Dropdown.List = AnimatedDropdownList;
+List.propTypes = {
+  children: PropTypes.node.isRequired,
+  style: PropTypes.shape({}),
+};
+
+List.defaultProps = {
+  style: {},
+};
+
+List.displayName = 'Dropdown.List';
+
+Dropdown.List = List;
 
 const Item = styled.li`
   margin-top: 0;
