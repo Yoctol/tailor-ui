@@ -1,4 +1,4 @@
-import React, { PureComponent, cloneElement } from 'react';
+import React, { PureComponent, createContext } from 'react';
 import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
 import { Transition, animated } from 'react-spring';
@@ -8,6 +8,8 @@ import { switchProp, prop } from 'styled-tools';
 import ClickOutside from '../utils/ClickOutside';
 import { shadowVariant } from '../utils/shadow';
 import controlTransition from '../utils/transition';
+
+const { Provider, Consumer } = createContext();
 
 class Dropdown extends PureComponent {
   state = {
@@ -63,13 +65,18 @@ class Dropdown extends PureComponent {
         }}
       >
         {visible &&
-          (styles =>
-            cloneElement(overlay, {
-              placement,
-              offset,
-              style: { ...overlay.style, ...styles },
-              onClick: this.close,
-            }))}
+          (styles => (
+            <Provider
+              value={{
+                placement,
+                offset,
+                styles,
+                onClick: this.close,
+              }}
+            >
+              {overlay}
+            </Provider>
+          ))}
       </Transition>
     );
   };
@@ -112,7 +119,7 @@ Dropdown.defaultProps = {
   display: 'inline-block',
 };
 
-const List = styled.ul`
+const StyledList = styled.ul`
   display: block;
   position: absolute;
   z-index: 99;
@@ -149,15 +156,31 @@ const List = styled.ul`
   ${textAlign};
 `;
 
-List.propTypes = {
+StyledList.propTypes = {
   ...textAlign.propTypes,
   ...minWidth.propTypes,
 };
 
-List.defaultProps = {
+StyledList.defaultProps = {
   textAlign: 'center',
   minWidth: 100,
 };
+
+const List = (children, style, ...props) => (
+  <Consumer>
+    {({ placement, offset, styles, onClick }) => (
+      <StyledList
+        placement={placement}
+        offset={offset}
+        style={{ ...style, ...styles }}
+        onClick={onClick}
+        {...props}
+      >
+        {children}
+      </StyledList>
+    )}
+  </Consumer>
+);
 
 const AnimatedDropdownList = animated(List);
 AnimatedDropdownList.displayName = 'Dropdown.List';

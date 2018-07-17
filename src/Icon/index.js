@@ -51,11 +51,12 @@ const Icon = ({ type, ...otherProps }) => {
 
   if (typeof type === 'string') {
     const BuiltInIcon = icons[type];
-    if (BuiltInIcon) {
-      IconComponent = BuiltInIcon;
-    } else {
-      return console.error('Built-in icon does not exists!');
+
+    if (!BuiltInIcon) {
+      throw new Error('Built-in icon does not exists!');
     }
+
+    IconComponent = BuiltInIcon;
   }
 
   return (

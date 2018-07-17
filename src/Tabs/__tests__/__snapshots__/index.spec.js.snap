@@ -1,98 +1,101 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Tabs should render correctly 1`] = `
-<Tabs__TabsWrapper
+<Tabs__StyledTabs
   absolute={false}
   block={false}
 >
-  <Tabs.Tab
-    active={true}
-    disabled={false}
-    key=".0"
-    size="m"
+  <[object Object]
+    value="m"
   >
-    Tab 1
-  </Tabs.Tab>
-  <Tabs.Tab
-    active={false}
-    disabled={true}
-    key=".1"
-    size="m"
-  >
-    Tab 2
-  </Tabs.Tab>
-  <Tabs.Tab
-    active={false}
-    disabled={false}
-    key=".2"
-    size="m"
-  >
-    Tab 3
-  </Tabs.Tab>
-</Tabs__TabsWrapper>
+    <Tabs.Tab
+      active={true}
+      disabled={false}
+      size="m"
+    >
+      Tab 1
+    </Tabs.Tab>
+    <Tabs.Tab
+      active={false}
+      disabled={true}
+      size="m"
+    >
+      Tab 2
+    </Tabs.Tab>
+    <Tabs.Tab
+      active={false}
+      disabled={false}
+      size="m"
+    >
+      Tab 3
+    </Tabs.Tab>
+  </[object Object]>
+</Tabs__StyledTabs>
 `;
 
 exports[`Tabs should render with props absolute 1`] = `
-<Tabs__TabsWrapper
+<Tabs__StyledTabs
   absolute={true}
   block={false}
 >
-  <Tabs.Tab
-    active={true}
-    disabled={false}
-    key=".0"
-    size="m"
+  <[object Object]
+    value="m"
   >
-    Tab 1
-  </Tabs.Tab>
-  <Tabs.Tab
-    active={false}
-    disabled={true}
-    key=".1"
-    size="m"
-  >
-    Tab 2
-  </Tabs.Tab>
-  <Tabs.Tab
-    active={false}
-    disabled={false}
-    key=".2"
-    size="m"
-  >
-    Tab 3
-  </Tabs.Tab>
-</Tabs__TabsWrapper>
+    <Tabs.Tab
+      active={true}
+      disabled={false}
+      size="m"
+    >
+      Tab 1
+    </Tabs.Tab>
+    <Tabs.Tab
+      active={false}
+      disabled={true}
+      size="m"
+    >
+      Tab 2
+    </Tabs.Tab>
+    <Tabs.Tab
+      active={false}
+      disabled={false}
+      size="m"
+    >
+      Tab 3
+    </Tabs.Tab>
+  </[object Object]>
+</Tabs__StyledTabs>
 `;
 
 exports[`Tabs should render with props pills 1`] = `
-<Tabs__TabsWrapper
+<Tabs__StyledTabs
   absolute={false}
   block={false}
   pills={true}
 >
-  <Tabs.Tab
-    active={true}
-    disabled={false}
-    key=".0"
-    size="m"
+  <[object Object]
+    value="m"
   >
-    Tab 1
-  </Tabs.Tab>
-  <Tabs.Tab
-    active={false}
-    disabled={true}
-    key=".1"
-    size="m"
-  >
-    Tab 2
-  </Tabs.Tab>
-  <Tabs.Tab
-    active={false}
-    disabled={false}
-    key=".2"
-    size="m"
-  >
-    Tab 3
-  </Tabs.Tab>
-</Tabs__TabsWrapper>
+    <Tabs.Tab
+      active={true}
+      disabled={false}
+      size="m"
+    >
+      Tab 1
+    </Tabs.Tab>
+    <Tabs.Tab
+      active={false}
+      disabled={true}
+      size="m"
+    >
+      Tab 2
+    </Tabs.Tab>
+    <Tabs.Tab
+      active={false}
+      disabled={false}
+      size="m"
+    >
+      Tab 3
+    </Tabs.Tab>
+  </[object Object]>
+</Tabs__StyledTabs>
 `;

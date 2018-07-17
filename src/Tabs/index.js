@@ -1,10 +1,12 @@
-import React, { Children, cloneElement } from 'react';
+import React, { createContext } from 'react';
 import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
 import { themeGet, space } from 'styled-system';
 import { ifProp, switchProp } from 'styled-tools';
 
-const Tab = styled.a`
+const { Provider, Consumer } = createContext();
+
+const StyledTab = styled.a`
   display: inline-block;
   position: relative;
   border-bottom: 3px solid transparent;
@@ -32,19 +34,16 @@ const Tab = styled.a`
 
   ${switchProp('size', {
     sm: css`
-      height: ${themeGet('space.sizeSm')};
       padding: ${themeGet('space.paddingYSm')} ${themeGet('space.paddingXSm')};
       font-size: ${themeGet('fontSizes.sm')};
     `,
 
     m: css`
-      height: ${themeGet('space.size')};
       padding: ${themeGet('space.paddingY')} ${themeGet('space.paddingX')};
       font-size: ${themeGet('fontSizes.default')};
     `,
 
     lg: css`
-      height: ${themeGet('space.sizeLg')};
       padding: ${themeGet('space.paddingYLg')} ${themeGet('space.paddingXLg')};
       font-size: ${themeGet('fontSizes.lg')};
     `,
@@ -52,6 +51,16 @@ const Tab = styled.a`
 
   ${space};
 `;
+
+const Tab = (children, ...props) => (
+  <Consumer>
+    {size => (
+      <StyledTab size={size} {...props}>
+        {children}
+      </StyledTab>
+    )}
+  </Consumer>
+);
 
 Tab.propTypes = {
   active: PropTypes.bool,
@@ -67,7 +76,7 @@ Tab.defaultProps = {
 
 Tab.displayName = 'Tabs.Tab';
 
-const TabsWrapper = styled.nav`
+const StyledTabs = styled.nav`
   display: flex;
 
   ${ifProp(
@@ -95,9 +104,9 @@ const TabsWrapper = styled.nav`
 `;
 
 const Tabs = ({ absolute, children, size, ...otherProps }) => (
-  <TabsWrapper absolute={absolute} {...otherProps}>
-    {Children.map(children, child => cloneElement(child, { size }))}
-  </TabsWrapper>
+  <StyledTabs absolute={absolute} {...otherProps}>
+    <Provider value={size}>{children}</Provider>
+  </StyledTabs>
 );
 
 Tabs.propTypes = {
