@@ -20,7 +20,7 @@ storiesOf('Data Entry|CheckboxField', module)
     </Toggle>
   ))
   .add('group', () => (
-    <Value initial={[]}>
+    <Value initial={['check_1']}>
       {({ set, value }) => (
         <CheckboxField.Group
           label="Checkbox Group"

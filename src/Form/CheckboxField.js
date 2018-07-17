@@ -70,6 +70,7 @@ const CheckboxFieldGroup = ({
             <Space mt={2} mb={1} key={label}>
               <Checkbox
                 id={id}
+                checked={has(value)}
                 disabled={disabled}
                 onChange={event => {
                   const { checked } = event.target;
