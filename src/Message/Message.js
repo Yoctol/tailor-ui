@@ -27,10 +27,10 @@ const icons = {
 const MessageContainer = styled.div`
   display: flex;
   position: fixed;
-  width: 100%;
   top: 10px;
   flex-direction: column;
   align-items: center;
+  width: 100%;
   pointer-events: none;
 `;
 
