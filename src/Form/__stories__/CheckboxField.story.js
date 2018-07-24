@@ -1,11 +1,11 @@
 import React from 'react';
 import centered from '@storybook/addon-centered';
-import { storiesOf } from '@storybook/react';
 import { Toggle, Value } from 'react-powerplug';
+import { storiesOf } from '@storybook/react';
 
-import themeProvider from '../../../.storybook/theme-provider';
-import CheckboxField from '../CheckboxField';
 import Box from '../../Grid/Box';
+import CheckboxField from '../CheckboxField';
+import themeProvider from '../../../.storybook/theme-provider';
 
 storiesOf('Data Entry|CheckboxField', module)
   .addDecorator(centered)

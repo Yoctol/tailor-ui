@@ -1,18 +1,18 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Value } from 'react-powerplug';
+import { boolean, select, withKnobs } from '@storybook/addon-knobs';
 import { range } from 'ramda';
-import { withKnobs, boolean, select } from '@storybook/addon-knobs';
+import { storiesOf } from '@storybook/react';
 
+import README from '../README.md';
 import themeProvider from '../../../.storybook/theme-provider';
+import { Box, Heading } from '../..';
+import { Showcase, ShowcasePage } from '../../../.storybook/showcase';
 import { space } from '../../../.storybook/knobs';
 import {
   withComponentReadme,
   withComponentShowcase,
 } from '../../../.storybook/withDocs';
-import { Showcase, ShowcasePage } from '../../../.storybook/showcase';
-import README from '../README.md';
-import { Heading, Box } from '../..';
 
 import Tabs from '..';
 

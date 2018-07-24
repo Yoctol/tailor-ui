@@ -1,10 +1,10 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import centered from '@storybook/addon-centered';
+import { storiesOf } from '@storybook/react';
 
-import themeProvider from '../../../.storybook/theme-provider';
 import Label from '../Label';
 import Textarea from '../Textarea';
+import themeProvider from '../../../.storybook/theme-provider';
 
 storiesOf('Data Entry|Textarea', module)
   .addDecorator(centered)

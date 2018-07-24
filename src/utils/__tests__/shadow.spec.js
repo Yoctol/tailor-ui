@@ -2,8 +2,8 @@ import { css } from 'styled-components';
 import { rgba } from 'polished';
 import { themeGet } from 'styled-system';
 
-import { dark, primary } from '../../theme/colors';
 import { controlShadow, shadowVariant } from '../shadow';
+import { dark, primary } from '../../theme/colors';
 
 jest.mock('styled-system', () => ({
   themeGet: jest.fn(),

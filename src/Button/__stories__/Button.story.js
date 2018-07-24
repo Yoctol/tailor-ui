@@ -1,18 +1,18 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
-import { withKnobs, select, boolean, text } from '@storybook/addon-knobs';
 import SettingIcon from 'react-icons/lib/md/build';
+import { action } from '@storybook/addon-actions';
+import { boolean, select, text, withKnobs } from '@storybook/addon-knobs';
+import { storiesOf } from '@storybook/react';
 
+import Icon from '../../Icon';
 import themeProvider from '../../../.storybook/theme-provider';
+import { Heading } from '../..';
+import { Showcase, ShowcasePage } from '../../../.storybook/showcase';
 import { space } from '../../../.storybook/knobs';
 import {
   withComponentReadme,
   withComponentShowcase,
 } from '../../../.storybook/withDocs';
-import { Showcase, ShowcasePage } from '../../../.storybook/showcase';
-import { Heading } from '../..';
-import Icon from '../../Icon';
 
 import Button from '..';
 

@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { themeGet, color, borderColor } from 'styled-system';
+import { borderColor, color, themeGet } from 'styled-system';
 
-import { controlShadow } from '../utils/shadow';
-import controlTransition from '../utils/transition';
 import Label from '../Form/Label';
+import controlTransition from '../utils/transition';
+import { controlShadow } from '../utils/shadow';
 
 const Checkbox = styled.input.attrs({
   type: 'checkbox',

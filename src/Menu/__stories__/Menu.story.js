@@ -1,7 +1,7 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { range } from 'ramda';
 import { Value } from 'react-powerplug';
+import { range } from 'ramda';
+import { storiesOf } from '@storybook/react';
 
 import Box from '../../Grid/Box';
 import themeProvider from '../../../.storybook/theme-provider';

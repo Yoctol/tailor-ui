@@ -1,11 +1,11 @@
 import React from 'react';
 import centered from '@storybook/addon-centered';
-import { storiesOf } from '@storybook/react';
 import { Value } from 'react-powerplug';
+import { storiesOf } from '@storybook/react';
 
-import themeProvider from '../../../.storybook/theme-provider';
-import RadioField from '../RadioField';
 import Box from '../../Grid/Box';
+import RadioField from '../RadioField';
+import themeProvider from '../../../.storybook/theme-provider';
 
 storiesOf('Data Entry|RadioField', module)
   .addDecorator(centered)

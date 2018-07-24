@@ -2,8 +2,8 @@ import styled from 'styled-components';
 import {
   alignItems,
   flexDirection,
-  justifyContent,
   flexWrap,
+  justifyContent,
 } from 'styled-system';
 
 import Box from './Box';

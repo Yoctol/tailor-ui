@@ -1,8 +1,8 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
 import styled, { css } from 'styled-components';
 import { Spring, animated } from 'react-spring';
-import { themeGet, space, color, borders, borderRadius } from 'styled-system';
+import { borderRadius, borders, color, space, themeGet } from 'styled-system';
 import { ifProp } from 'styled-tools';
 
 import Flex from '../Grid/Flex';

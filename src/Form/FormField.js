@@ -2,9 +2,9 @@ import styled, { css } from 'styled-components';
 import { ifProp } from 'styled-tools';
 import { themeGet } from 'styled-system';
 
-import Label from './Label';
-import Input from './Input';
 import Hint from './Hint';
+import Input from './Input';
+import Label from './Label';
 
 const FormField = styled.div`
   position: relative;

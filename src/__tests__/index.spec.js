@@ -13,7 +13,6 @@ import {
   Input,
   Label,
   Menu,
-  message,
   Modal,
   Radio,
   RadioField,
@@ -22,12 +21,13 @@ import {
   Spin,
   Table,
   Tabs,
-  Textarea,
   TextField,
+  Textarea,
   ThemeProvider,
   Tooltip,
   colors,
   injectGlobalCss,
+  message,
 } from '..';
 
 describe('index', () => {

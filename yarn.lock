@@ -1827,9 +1827,9 @@ babel-plugin-minify-type-constructors@^0.3.0:
   dependencies:
     babel-helper-is-void-0 "^0.3.0"
 
-babel-plugin-ramda@^1.6.1:
-  version "1.6.1"
-  resolved "https://registry.yarnpkg.com/babel-plugin-ramda/-/babel-plugin-ramda-1.6.1.tgz#600efdcc2fe85620a6619cbccbd491f8699272e8"
+babel-plugin-ramda@^1.6.2:
+  version "1.6.2"
+  resolved "https://registry.yarnpkg.com/babel-plugin-ramda/-/babel-plugin-ramda-1.6.2.tgz#006915bf76535a4c4afcc2b6f7b1e372d16fd145"
   dependencies:
     "@babel/helper-module-imports" "^7.0.0-beta.40"
     ramda "0.x"
@@ -4036,20 +4036,20 @@ eslint-config-prettier@^2.9.0:
   dependencies:
     get-stdin "^5.0.1"
 
-eslint-config-yoctol-base@^0.16.0:
-  version "0.16.0"
-  resolved "https://registry.yarnpkg.com/eslint-config-yoctol-base/-/eslint-config-yoctol-base-0.16.0.tgz#c43ace4cb1679468f83467f1fca470cce1c5c02c"
+eslint-config-yoctol-base@^0.17.0:
+  version "0.17.0"
+  resolved "https://registry.yarnpkg.com/eslint-config-yoctol-base/-/eslint-config-yoctol-base-0.17.0.tgz#e7724fb657f9487014b0a0f9d488db679be5e7e8"
   dependencies:
     eslint-config-airbnb-base "^13.0.0"
     eslint-config-prettier "^2.9.0"
-    prettier "^1.13.5"
+    prettier "^1.13.7"
 
-eslint-config-yoctol@^0.17.1:
-  version "0.17.1"
-  resolved "https://registry.yarnpkg.com/eslint-config-yoctol/-/eslint-config-yoctol-0.17.1.tgz#da1cd007bbf94e31644f4dafa67f6eb4047701cb"
+eslint-config-yoctol@^0.18.0:
+  version "0.18.0"
+  resolved "https://registry.yarnpkg.com/eslint-config-yoctol/-/eslint-config-yoctol-0.18.0.tgz#f166cfa9fe03e4d754841ae99d8fa701a76a8096"
   dependencies:
     eslint-config-airbnb "^17.0.0"
-    eslint-config-yoctol-base "^0.16.0"
+    eslint-config-yoctol-base "^0.17.0"
 
 eslint-import-resolver-jest@^2.1.1:
   version "2.1.1"
@@ -4117,6 +4117,12 @@ eslint-plugin-react@^7.10.0:
     jsx-ast-utils "^2.0.1"
     prop-types "^15.6.2"
 
+eslint-plugin-sort-imports-es6-autofix@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-sort-imports-es6-autofix/-/eslint-plugin-sort-imports-es6-autofix-0.3.0.tgz#e3826318c0656c943d18a04da5994439ab369a5d"
+  dependencies:
+    eslint "^4.15.0"
+
 eslint-restricted-globals@^0.1.1:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/eslint-restricted-globals/-/eslint-restricted-globals-0.1.1.tgz#35f0d5cbc64c2e3ed62e93b4b1a7af05ba7ed4d7"
@@ -4132,7 +4138,7 @@ eslint-visitor-keys@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/eslint-visitor-keys/-/eslint-visitor-keys-1.0.0.tgz#3f3180fb2e291017716acb4c9d6d5b5c34a6a81d"
 
-eslint@^4.19.1:
+eslint@^4.15.0, eslint@^4.19.1:
   version "4.19.1"
   resolved "https://registry.yarnpkg.com/eslint/-/eslint-4.19.1.tgz#32d1d653e1d90408854bfb296f076ec7e186a300"
   dependencies:
@@ -6635,6 +6641,10 @@ mem@^1.1.0:
   dependencies:
     mimic-fn "^1.0.0"
 
+memoize-one@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/memoize-one/-/memoize-one-4.0.0.tgz#fc5e2f1427a216676a62ec652cf7398cfad123db"
+
 memory-fs@^0.4.0, memory-fs@~0.4.1:
   version "0.4.1"
   resolved "https://registry.yarnpkg.com/memory-fs/-/memory-fs-0.4.1.tgz#3a9a20b8462523e447cfbc7e8bb80ed667bfc552"
@@ -7925,10 +7935,6 @@ prettier-package-json@^1.6.0:
     sort-object-keys "^1.1.2"
     sort-order "^1.0.1"
 
-prettier@^1.13.5:
-  version "1.13.5"
-  resolved "https://registry.yarnpkg.com/prettier/-/prettier-1.13.5.tgz#7ae2076998c8edce79d63834e9b7b09fead6bfd0"
-
 prettier@^1.13.7:
   version "1.13.7"
   resolved "https://registry.yarnpkg.com/prettier/-/prettier-1.13.7.tgz#850f3b8af784a49a6ea2d2eaa7ed1428a34b7281"
@@ -8350,12 +8356,13 @@ react-reconciler@^0.7.0:
     object-assign "^4.1.1"
     prop-types "^15.6.0"
 
-react-select@^2.0.0-beta.5:
-  version "2.0.0-beta.6"
-  resolved "https://registry.yarnpkg.com/react-select/-/react-select-2.0.0-beta.6.tgz#87ac27831f348cb9535dfd825534934adcfb7e97"
+react-select@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/react-select/-/react-select-2.0.0.tgz#7e7ba31eff360b37ffc52b343a720f4248bd9b3b"
   dependencies:
     classnames "^2.2.5"
     emotion "^9.1.2"
+    memoize-one "^4.0.0"
     prop-types "^15.6.0"
     raf "^3.4.0"
     react-input-autosize "^2.2.1"
@@ -8369,9 +8376,9 @@ react-split-pane@^0.1.77:
     prop-types "^15.5.10"
     react-style-proptype "^3.0.0"
 
-react-spring@^5.4.0:
-  version "5.4.0"
-  resolved "https://registry.yarnpkg.com/react-spring/-/react-spring-5.4.0.tgz#4989b10dd0fac20a14f43ef3de78fabec705f832"
+react-spring@^5.4.4:
+  version "5.4.4"
+  resolved "https://registry.yarnpkg.com/react-spring/-/react-spring-5.4.4.tgz#d4f7c9626c9fb83b7e85769538cd80bcc7ba6f61"
   dependencies:
     "@babel/runtime" "7.0.0-beta.51"
 
@@ -8396,9 +8403,9 @@ react-textarea-autosize@^5.2.1:
   dependencies:
     prop-types "^15.6.0"
 
-react-textarea-autosize@^7.0.3:
-  version "7.0.3"
-  resolved "https://registry.yarnpkg.com/react-textarea-autosize/-/react-textarea-autosize-7.0.3.tgz#a7b35b86d0b9cd8f13cb446ed8145d7df3239056"
+react-textarea-autosize@^7.0.4:
+  version "7.0.4"
+  resolved "https://registry.yarnpkg.com/react-textarea-autosize/-/react-textarea-autosize-7.0.4.tgz#4e4be649b544a88713e7b5043f76950f35d3d503"
   dependencies:
     prop-types "^15.6.0"
 
@@ -9533,15 +9540,15 @@ styled-normalize@^8.0.0:
   version "8.0.0"
   resolved "https://registry.yarnpkg.com/styled-normalize/-/styled-normalize-8.0.0.tgz#54881c9389540bf9fb2a3d34dca2e2d4d68601f2"
 
-styled-system@^3.0.1:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/styled-system/-/styled-system-3.0.1.tgz#fde623de598882a8b2272811b88b73f4b9179d8a"
+styled-system@^3.0.2:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/styled-system/-/styled-system-3.0.2.tgz#2189a6d829117d212fb6ac8ebc4260fdb75d1109"
   dependencies:
     prop-types "^15.6.2"
 
-styled-tools@^0.6.2:
-  version "0.6.2"
-  resolved "https://registry.yarnpkg.com/styled-tools/-/styled-tools-0.6.2.tgz#e9328ebc42e7b14d99d75e5abcffe5e8c2260e09"
+styled-tools@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/styled-tools/-/styled-tools-1.0.0.tgz#ac854a0652d7a35d92debf2d5612c804fda4579a"
   dependencies:
     lodash "^4.17.10"
 

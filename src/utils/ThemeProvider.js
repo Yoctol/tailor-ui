@@ -1,9 +1,9 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
 import { ThemeProvider as StyledThemeProvider } from 'styled-components';
 
-import injectGlobalCss from '../injectGlobalCss';
 import getTheme from '../theme';
+import injectGlobalCss from '../injectGlobalCss';
 
 injectGlobalCss();
 

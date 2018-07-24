@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from 'react-dom';
 
-import MessageComponent, { INFO, SUCCESS, ERROR, WARNING } from './Message';
+import MessageComponent, { ERROR, INFO, SUCCESS, WARNING } from './Message';
 
 let messageInstance;
 

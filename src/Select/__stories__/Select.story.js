@@ -1,8 +1,8 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { range } from 'ramda';
-import { withKnobs, boolean } from '@storybook/addon-knobs';
 import { Value } from 'react-powerplug';
+import { boolean, withKnobs } from '@storybook/addon-knobs';
+import { range } from 'ramda';
+import { storiesOf } from '@storybook/react';
 
 import themeProvider from '../../../.storybook/theme-provider';
 import { Showcase } from '../../../.storybook/showcase';

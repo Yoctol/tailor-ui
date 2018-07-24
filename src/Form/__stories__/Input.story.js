@@ -1,12 +1,12 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import centered from '@storybook/addon-centered';
+import { storiesOf } from '@storybook/react';
 
-import themeProvider from '../../../.storybook/theme-provider';
 import FormField from '../FormField';
-import Label from '../Label';
-import Input from '../Input';
 import Hint from '../Hint';
+import Input from '../Input';
+import Label from '../Label';
+import themeProvider from '../../../.storybook/theme-provider';
 
 storiesOf('Data Entry|Input', module)
   .addDecorator(centered)

@@ -1,8 +1,8 @@
-import React, { PureComponent, createRef } from 'react';
 import PropTypes from 'prop-types';
+import React, { PureComponent, createRef } from 'react';
 import styled, { css, keyframes } from 'styled-components';
-import { themeGet, space } from 'styled-system';
 import { ifProp, switchProp } from 'styled-tools';
+import { space, themeGet } from 'styled-system';
 
 import controlTransition from '../utils/transition';
 

@@ -1,5 +1,5 @@
-import styled from 'styled-components';
 import TextareaAutosize from 'react-textarea-autosize';
+import styled from 'styled-components';
 import { ifProp } from 'styled-tools';
 
 import Input from './Input';

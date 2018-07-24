@@ -1,19 +1,19 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
 import styled, { css } from 'styled-components';
+import { Hover, Toggle } from 'react-powerplug';
+import { Transition, animated, config } from 'react-spring';
 import {
-  themeGet,
-  space,
-  color,
-  borders,
   borderRadius,
+  borders,
+  color,
   fontSize,
-  textAlign,
   minWidth,
+  space,
+  textAlign,
+  themeGet,
 } from 'styled-system';
 import { ifProp, switchProp } from 'styled-tools';
-import { Toggle, Hover } from 'react-powerplug';
-import { Transition, animated, config } from 'react-spring';
 
 const TooltipToggle = styled(animated.div)`
   position: absolute;

@@ -1,8 +1,8 @@
-import React, { createContext } from 'react';
 import PropTypes from 'prop-types';
+import React, { createContext } from 'react';
 import styled, { css } from 'styled-components';
-import { themeGet, space } from 'styled-system';
 import { ifProp, switchProp } from 'styled-tools';
+import { space, themeGet } from 'styled-system';
 
 const { Provider, Consumer } = createContext();
 
