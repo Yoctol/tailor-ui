@@ -1,24 +1,24 @@
 import React from 'react';
+import { boolean, select, text, withKnobs } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, select, boolean, text } from '@storybook/addon-knobs';
 
+import README from '../README.md';
 import themeProvider from '../../../.storybook/theme-provider';
+import { Showcase, ShowcasePage } from '../../../.storybook/showcase';
+import {
+  borderColor,
+  borderRadius,
+  borders,
+  color,
+  fontSize,
+  minWidth,
+  space,
+  textAlign,
+} from '../../../.storybook/knobs';
 import {
   withComponentReadme,
   withComponentShowcase,
 } from '../../../.storybook/withDocs';
-import { Showcase, ShowcasePage } from '../../../.storybook/showcase';
-import {
-  space,
-  color,
-  borders,
-  borderColor,
-  borderRadius,
-  minWidth,
-  fontSize,
-  textAlign,
-} from '../../../.storybook/knobs';
-import README from '../README.md';
 
 import Tooltip from '..';
 

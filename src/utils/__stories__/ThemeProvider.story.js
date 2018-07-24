@@ -1,11 +1,11 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import centered from '@storybook/addon-centered';
 import { Value } from 'react-powerplug';
+import { storiesOf } from '@storybook/react';
 
-import ThemeProvider from '../ThemeProvider';
 import Button from '../../Button';
 import Select from '../../Select';
+import ThemeProvider from '../ThemeProvider';
 
 const options = [
   { value: 'yellow', label: 'Yellow' },

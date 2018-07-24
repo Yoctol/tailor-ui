@@ -1,9 +1,9 @@
-import styled from 'styled-components';
 import BaseSelect from 'react-select';
+import styled from 'styled-components';
 import { themeGet } from 'styled-system';
 
-import { controlShadow } from '../utils/shadow';
 import controlTransition from '../utils/transition';
+import { controlShadow } from '../utils/shadow';
 
 const Select = styled(BaseSelect).attrs({
   classNamePrefix: 'yoctol-select',

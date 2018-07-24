@@ -1,13 +1,13 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
 import styled from 'styled-components';
 import {
-  themeGet,
-  width,
+  borderColor,
+  borders,
   space,
   textAlign,
-  borders,
-  borderColor,
+  themeGet,
+  width,
 } from 'styled-system';
 
 const HeadColumn = styled.th`

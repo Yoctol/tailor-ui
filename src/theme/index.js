@@ -1,5 +1,5 @@
-import { rem } from 'polished';
 import { map } from 'ramda';
+import { rem } from 'polished';
 
 import * as defaultColors from './colors';
 

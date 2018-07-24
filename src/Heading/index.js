@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
-import { rem } from 'polished';
-import { themeGet, space, color } from 'styled-system';
+import { color, space, themeGet } from 'styled-system';
 import { ifProp } from 'styled-tools';
+import { rem } from 'polished';
 
 const Heading = styled.p`
   margin: 0;

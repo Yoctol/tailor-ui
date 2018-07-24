@@ -1,10 +1,10 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import centered from '@storybook/addon-centered';
 import { Input } from 'react-powerplug';
+import { storiesOf } from '@storybook/react';
 
-import themeProvider from '../../../.storybook/theme-provider';
 import TextField from '../TextField';
+import themeProvider from '../../../.storybook/theme-provider';
 
 storiesOf('Data Entry|TextField', module)
   .addDecorator(centered)

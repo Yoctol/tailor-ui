@@ -1,13 +1,13 @@
+import ErrorIcon from 'react-icons/lib/md/error';
+import InfoIcon from 'react-icons/lib/md/info';
 import React, { PureComponent } from 'react';
+import SuccessIcon from 'react-icons/lib/md/check-circle';
+import WarningIcon from 'react-icons/lib/md/warning';
 import styled from 'styled-components';
 import { Transition, animated } from 'react-spring';
-import InfoIcon from 'react-icons/lib/md/info';
-import SuccessIcon from 'react-icons/lib/md/check-circle';
-import ErrorIcon from 'react-icons/lib/md/error';
-import WarningIcon from 'react-icons/lib/md/warning';
 
-import ThemeProvider from '../utils/ThemeProvider';
 import Icon from '../Icon';
+import ThemeProvider from '../utils/ThemeProvider';
 import createUuidGenerator from '../utils/createUuidGenerator';
 
 const getUuid = createUuidGenerator('message');
@@ -27,10 +27,10 @@ const icons = {
 const MessageContainer = styled.div`
   display: flex;
   position: fixed;
-  width: 100%;
   top: 10px;
   flex-direction: column;
   align-items: center;
+  width: 100%;
   pointer-events: none;
 `;
 

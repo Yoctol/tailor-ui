@@ -1,16 +1,16 @@
 import React from 'react';
+import { select, withKnobs } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, select } from '@storybook/addon-knobs';
 
+import Button from '../../Button';
+import README from '../README.md';
 import themeProvider from '../../../.storybook/theme-provider';
+import { Heading } from '../..';
+import { Showcase, ShowcasePage } from '../../../.storybook/showcase';
 import {
   withComponentReadme,
   withComponentShowcase,
 } from '../../../.storybook/withDocs';
-import { Showcase, ShowcasePage } from '../../../.storybook/showcase';
-import { Heading } from '../..';
-import README from '../README.md';
-import Button from '../../Button';
 
 import Dropdown from '..';
 

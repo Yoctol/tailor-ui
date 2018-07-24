@@ -1,16 +1,16 @@
-import React from 'react';
 import PropTypes from 'prop-types';
-import { Focus } from 'react-powerplug';
+import React from 'react';
 import styled, { css } from 'styled-components';
-import { themeGet } from 'styled-system';
+import { Focus } from 'react-powerplug';
 import { ifProp } from 'styled-tools';
 import { rem } from 'polished';
+import { themeGet } from 'styled-system';
 
 import FormField from './FormField';
-import Input from './Input';
-import Textarea from './Textarea';
-import Label from './Label';
 import Hint from './Hint';
+import Input from './Input';
+import Label from './Label';
+import Textarea from './Textarea';
 
 const TextFieldLabel = styled(Label)`
   position: absolute;

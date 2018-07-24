@@ -1,13 +1,13 @@
-import React, { PureComponent, createContext } from 'react';
 import PropTypes from 'prop-types';
+import React, { PureComponent, createContext } from 'react';
 import styled, { css } from 'styled-components';
 import { Transition, animated } from 'react-spring';
-import { themeGet, space, textAlign, minWidth } from 'styled-system';
-import { switchProp, prop } from 'styled-tools';
+import { minWidth, space, textAlign, themeGet } from 'styled-system';
+import { prop, switchProp } from 'styled-tools';
 
 import ClickOutside from '../utils/ClickOutside';
-import { shadowVariant } from '../utils/shadow';
 import controlTransition from '../utils/transition';
+import { shadowVariant } from '../utils/shadow';
 
 const { Provider, Consumer } = createContext();
 

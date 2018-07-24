@@ -1,9 +1,9 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import centered from '@storybook/addon-centered';
-import { action } from '@storybook/addon-actions';
+import { MdComment, MdEdit, MdInput } from 'react-icons/lib/md';
 import { TiFlowChildren } from 'react-icons/lib/ti';
-import { MdEdit, MdComment, MdInput } from 'react-icons/lib/md';
+import { action } from '@storybook/addon-actions';
+import { storiesOf } from '@storybook/react';
 
 import themeProvider from '../../../.storybook/theme-provider';
 

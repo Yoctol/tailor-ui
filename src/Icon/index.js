@@ -1,8 +1,8 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
 import styled, { css } from 'styled-components';
-import { style, space } from 'styled-system';
 import { prop } from 'styled-tools';
+import { space, style } from 'styled-system';
 
 import controlTransition from '../utils/transition';
 

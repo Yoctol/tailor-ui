@@ -1,13 +1,13 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
 import { Set } from 'react-powerplug';
 
 import Checkbox from '../Checkbox';
 import Space from '../Grid/Space';
 
-import Label from './Label';
-import Hint from './Hint';
 import FormField from './FormField';
+import Hint from './Hint';
+import Label from './Label';
 
 let seed = 0;
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Flex, Box } from '../..';
+import { Box, Flex } from '../..';
 import * as colors from '../colors';
 
 // eslint-disable-next-line react/prop-types

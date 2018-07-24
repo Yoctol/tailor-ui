@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { themeGet, width, space, textAlign } from 'styled-system';
+import { space, textAlign, themeGet, width } from 'styled-system';
 
-import { sizes } from '../utils/system';
 import controlTransition from '../utils/transition';
+import { sizes } from '../utils/system';
 
 const Input = styled.input`
   display: block;

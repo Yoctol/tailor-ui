@@ -1,14 +1,14 @@
-import React, { Children, cloneElement } from 'react';
 import PropTypes from 'prop-types';
+import React, { Children, cloneElement } from 'react';
 import styled from 'styled-components';
 import {
-  themeGet,
-  color,
-  space,
-  height,
-  width,
   borderRadius,
+  color,
   fontSize,
+  height,
+  space,
+  themeGet,
+  width,
 } from 'styled-system';
 
 import _Button from '../Button';

@@ -1,17 +1,17 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { withKnobs, boolean } from '@storybook/addon-knobs';
 import { Value } from 'react-powerplug';
+import { boolean, withKnobs } from '@storybook/addon-knobs';
+import { storiesOf } from '@storybook/react';
 
+import Button from '../../Button';
+import README from '../README.md';
 import themeProvider from '../../../.storybook/theme-provider';
+import { Box, Heading } from '../..';
 import { Showcase, ShowcasePage } from '../../../.storybook/showcase';
 import {
   withComponentReadme,
   withComponentShowcase,
 } from '../../../.storybook/withDocs';
-import { Heading, Box } from '../..';
-import Button from '../../Button';
-import README from '../README.md';
 
 import Modal from '..';
 

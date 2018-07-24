@@ -6,7 +6,7 @@ import themeProvider from '../../../.storybook/theme-provider';
 
 import Card from '..';
 
-import { Input, Button } from '../..';
+import { Button, Input } from '../..';
 
 // eslint-disable-next-line react/prop-types
 const Wrapper = ({ children }) => <div style={{ width: 400 }}>{children}</div>;
