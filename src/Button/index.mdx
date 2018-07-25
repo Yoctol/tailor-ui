@@ -5,6 +5,7 @@ menu: General
 
 import { PropsTable, Playground } from 'docz';
 import Button from './';
+import Box from '../Grid/Box';
 
 # Button
 
@@ -57,11 +58,11 @@ import Button from './';
 <Playground>
   <Button disabled>Button</Button>
 
-  <Button light disabled>
+  <Button ml={2} light disabled>
     Button
   </Button>
 
-  <Button light circle disabled>
+  <Button ml={2} light circle disabled>
     Button
   </Button>
 </Playground>
@@ -69,13 +70,13 @@ import Button from './';
 ### Loadgin
 
 <Playground>
-  <Button loading>Button</Button>
+  <Button ml={2} loading>Button</Button>
 
-  <Button light loading>
+  <Button ml={2} light loading>
     Button
   </Button>
 
-  <Button light circle loading>
+  <Button ml={2} light circle loading>
     Button
   </Button>
 </Playground>
@@ -87,11 +88,11 @@ import Button from './';
     Button sm
   </Button>
 
-  <Button>
+  <Button ml={2}>
     Button m
   </Button>
 
-  <Button size="lg">
+  <Button ml={2} size="lg">
     Button lg
   </Button>
 </Playground>
@@ -107,7 +108,9 @@ import Button from './';
 ### Ghost
 
 <Playground>
-  <Button ghost>
-    Button
-  </Button>
+  <Box bg="dark" p={4}>
+    <Button ghost>
+      Button
+    </Button>
+  </Box>
 </Playground>
