@@ -9,7 +9,7 @@
     "build": "npm run clean && cross-env NODE_ENV=production babel src -d lib --ignore **/__tests__,**/__stories__",
     "clean": "rimraf lib",
     "precommit": "lint-staged",
-    "deploy:storybook": "storybook-to-ghpages",
+    "docz:build": "docz build",
     "docz:dev": "docz dev",
     "lint": "npm run lint:js && npm run lint:css",
     "lint:css": "stylelint './src/**/*.js'",
