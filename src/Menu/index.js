@@ -1,16 +1,21 @@
 import ArrowUp from 'react-icons/lib/md/keyboard-arrow-up';
 import PropTypes from 'prop-types';
-import React, { createContext } from 'react';
+import React from 'react';
 import styled, { css } from 'styled-components';
 import { Spring, animated } from 'react-spring';
-import { Toggle, Value } from 'react-powerplug';
-import { borderRadius, borders, color, space, themeGet } from 'styled-system';
+import { Toggle } from 'react-powerplug';
+import {
+  borderRadius,
+  borders,
+  color,
+  space,
+  themeGet,
+  width,
+} from 'styled-system';
 import { ifProp } from 'styled-tools';
 
 import Flex from '../Grid/Flex';
 import Icon from '../Icon';
-
-const { Provider, Consumer } = createContext();
 
 const StyledMenu = styled(Flex)`
   flex-direction: column;
@@ -19,22 +24,17 @@ const StyledMenu = styled(Flex)`
   height: 100%;
   overflow-y: auto;
   background-color: ${themeGet('colors.primary')};
+
+  ${width};
 `;
 
-const Menu = ({ initial, children, onChange }) => (
-  <Value onChange={onChange} initial={initial}>
-    {({ value, set }) => (
-      <Provider value={{ activeKey: value, setActiveKey: set }}>
-        <StyledMenu>{children}</StyledMenu>
-      </Provider>
-    )}
-  </Value>
+const Menu = ({ children, ...props }) => (
+  <StyledMenu {...props}>{children}</StyledMenu>
 );
 
 Menu.propTypes = {
   children: PropTypes.node.isRequired,
-  initial: PropTypes.string.isRequired,
-  onChange: PropTypes.func.isRequired,
+  ...width.propTypes,
 };
 
 const StyledItem = styled.button`
@@ -73,31 +73,28 @@ const StyledItem = styled.button`
   ${borderRadius};
 `;
 
-const Item = ({ children, icon, value, ...props }) => (
-  <Consumer>
-    {({ activeKey, setActiveKey }) => {
-      const active = activeKey === value;
-      return (
-        <StyledItem
-          active={active}
-          onClick={() => setActiveKey(value)}
-          {...props}
-        >
-          {icon && (
-            <Icon type={icon} mr="6px" fill={active ? 'secondary' : 'light'} />
-          )}
-          {children}
-        </StyledItem>
-      );
-    }}
-  </Consumer>
+const Item = ({ children, icon, active, ...props }) => (
+  <StyledItem active={active} {...props}>
+    {icon && (
+      <Icon type={icon} mr="6px" fill={active ? 'secondary' : 'light'} />
+    )}
+    {children}
+  </StyledItem>
 );
 
 Item.propTypes = {
+  active: PropTypes.bool,
+  children: PropTypes.node.isRequired,
+  icon: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   ...space.propTypes,
   ...color.propTypes,
   ...borders.propTypes,
   ...borderRadius.propTypes,
+};
+
+Item.defaultProps = {
+  active: false,
+  icon: null,
 };
 
 const SubMenuWrapper = styled.div`
@@ -117,7 +114,11 @@ const SubMenu = ({ initial, icon, title, children, ...otherProps }) => (
       <>
         <Item icon={icon} onClick={toggle} {...otherProps}>
           {title}
-          <Spring native from={{ rotate: 0 }} to={{ rotate: on ? 180 : 0 }}>
+          <Spring
+            native
+            from={{ rotate: on ? 180 : 0 }}
+            to={{ rotate: on ? 180 : 0 }}
+          >
             {({ rotate }) => (
               <animated.div
                 style={{
@@ -131,7 +132,11 @@ const SubMenu = ({ initial, icon, title, children, ...otherProps }) => (
             )}
           </Spring>
         </Item>
-        <Spring native from={{ height: 0 }} to={{ height: on ? 'auto' : 0 }}>
+        <Spring
+          native
+          from={{ height: on ? 'auto' : 0 }}
+          to={{ height: on ? 'auto' : 0 }}
+        >
           {style => (
             <AnimatedSubMenuWrapper style={style}>
               {children}
