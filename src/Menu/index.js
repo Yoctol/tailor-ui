@@ -55,13 +55,13 @@ const StyledItem = styled.button`
   ${ifProp(
     'active',
     css`
-      border-left-color: ${themeGet('colors.secondaryYellow.secondary')};
-      color: ${themeGet('colors.secondaryYellow.secondary')};
+      border-left-color: ${themeGet('colors.secondary')};
+      color: ${themeGet('colors.secondary')};
     `
   )};
 
   &:hover {
-    border-left-color: ${themeGet('colors.secondaryYellow.secondary')};
+    border-left-color: ${themeGet('colors.secondary')};
   }
 
   &:focus {
@@ -84,11 +84,7 @@ const Item = ({ children, icon, value, ...props }) => (
           {...props}
         >
           {icon && (
-            <Icon
-              type={icon}
-              mr="6px"
-              fill={active ? 'secondaryYellow.secondary' : 'light'}
-            />
+            <Icon type={icon} mr="6px" fill={active ? 'secondary' : 'light'} />
           )}
           {children}
         </StyledItem>

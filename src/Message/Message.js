@@ -18,7 +18,7 @@ export const ERROR = '__error__';
 export const WARNING = '__warning__';
 
 const icons = {
-  [INFO]: <Icon size="20" mr={2} type={InfoIcon} fill="primaryLight" />,
+  [INFO]: <Icon size="20" mr={2} type={InfoIcon} fill="info" />,
   [SUCCESS]: <Icon size="20" mr={2} type={SuccessIcon} fill="success" />,
   [ERROR]: <Icon size="20" mr={2} type={ErrorIcon} fill="error" />,
   [WARNING]: <Icon size="20" mr={2} type={WarningIcon} fill="warning" />,

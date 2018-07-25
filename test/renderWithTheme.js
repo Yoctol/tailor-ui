@@ -2,7 +2,7 @@ import React from 'react';
 import { ThemeProvider } from 'styled-components';
 import { render } from 'enzyme';
 
-import { defaultTheme } from '../src/theme';
+import defaultTheme from '../src/theme';
 
 const renderWithTheme = (children, theme = defaultTheme) => {
   const wrapper = render(

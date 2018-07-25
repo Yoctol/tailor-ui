@@ -1,7 +1,7 @@
 import { map } from 'ramda';
 import { rem } from 'polished';
 
-import * as defaultColors from './colors';
+import * as colors from './colors';
 
 const toRem = px => rem(`${px}px`);
 
@@ -95,38 +95,15 @@ const sizes = {
   },
 };
 
-const {
-  secondaryBlue,
-  secondaryGreen,
-  secondaryYellow,
-  secondaryRed,
-} = defaultColors;
-
-const secondaryMap = {
-  blue: secondaryBlue,
-  green: secondaryGreen,
-  yellow: secondaryYellow,
-  red: secondaryRed,
+export default {
+  breakpoints,
+  colors,
+  space,
+  fontSizes,
+  sizes,
+  radii,
+  borders,
+  controls,
+  borderColor: colors,
+  lineHeight: toRem(lineHeight),
 };
-
-const getTheme = secondaryType => {
-  const secondary = secondaryMap[secondaryType];
-  const colors = { ...secondary, ...defaultColors };
-
-  return {
-    breakpoints,
-    colors,
-    space,
-    fontSizes,
-    sizes,
-    radii,
-    borders,
-    controls,
-    borderColor: colors,
-    lineHeight: toRem(lineHeight),
-  };
-};
-
-export default getTheme;
-
-export const defaultTheme = getTheme('yellow');
