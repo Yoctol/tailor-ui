@@ -1,6 +1,6 @@
 import { css } from 'styled-components';
 
-import { defaultTheme } from '../../theme';
+import theme from '../../theme';
 import { labelBase, labelVariant } from '../label';
 
 describe('label', () => {
@@ -12,8 +12,8 @@ describe('label', () => {
   describe('labelVariant', () => {
     it('should work with default value', () => {
       expect(labelVariant()).toEqual(css`
-        background: ${defaultTheme.colors.primary};
-        color: ${defaultTheme.colors.light};
+        background: ${theme.colors.primary};
+        color: ${theme.colors.light};
       `);
     });
 
