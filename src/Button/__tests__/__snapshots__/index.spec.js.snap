@@ -28,8 +28,8 @@ exports[`Button should render correctly 1`] = `
   overflow: hidden;
   border: 0.0625rem solid;
   border-radius: 0.25rem;
-  border-color: #191723;
-  background-color: #0e0c1a;
+  border-color: #423b63;
+  background-color: #2a2640;
   color: #ffffff;
   line-height: 1.5rem;
   -webkit-text-decoration: none;
@@ -48,13 +48,13 @@ exports[`Button should render correctly 1`] = `
 }
 
 .c0:focus {
-  border-color: #0e0c1a;
+  border-color: #2a2640;
   outline: 0;
 }
 
 .c0:hover {
   background-color: #ffffff;
-  color: #0e0c1a;
+  color: #2a2640;
 }
 
 .c0:disabled,
@@ -146,8 +146,8 @@ exports[`Button should render with props light, circle and active 1`] = `
   overflow: hidden;
   border: 0.0625rem solid;
   border-radius: 0.25rem;
-  border-color: #191723;
-  background-color: #0e0c1a;
+  border-color: #423b63;
+  background-color: #2a2640;
   color: #ffffff;
   line-height: 1.5rem;
   -webkit-text-decoration: none;
@@ -174,13 +174,13 @@ exports[`Button should render with props light, circle and active 1`] = `
 }
 
 .c0:focus {
-  border-color: #0e0c1a;
+  border-color: #2a2640;
   outline: 0;
 }
 
 .c0:hover {
   background-color: #ffffff;
-  color: #0e0c1a;
+  color: #2a2640;
 }
 
 .c0:disabled,
@@ -191,7 +191,7 @@ exports[`Button should render with props light, circle and active 1`] = `
 }
 
 .c0:focus {
-  border-color: #0e0c1a;
+  border-color: #2a2640;
 }
 
 .c0:hover {

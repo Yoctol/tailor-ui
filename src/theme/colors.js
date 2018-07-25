@@ -1,5 +1,5 @@
-export const primary = '#191723';
-export const primaryDark = '#0e0c1a';
+export const primary = '#423b63';
+export const primaryDark = '#2a2640';
 export const primaryLight = '#423b63';
 
 export const secondaryBlue = {

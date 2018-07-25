@@ -31,7 +31,7 @@ exports[`Radio should render correctly 1`] = `
   border-radius: 999px;
   background: white;
   vertical-align: text-bottom;
-  border-color: #191723;
+  border-color: #423b63;
 }
 
 .c0 + .c1::after {
@@ -47,7 +47,7 @@ exports[`Radio should render correctly 1`] = `
 }
 
 .c0:focus + .c1::before {
-  box-shadow: 0 0 0 0.1rem rgba(25,23,35,0.2);
+  box-shadow: 0 0 0 0.1rem rgba(66,59,99,0.2);
 }
 
 .c0:disabled + .c1 {
@@ -61,7 +61,7 @@ exports[`Radio should render correctly 1`] = `
 }
 
 .c0:checked + .c1::after {
-  background-color: #191723;
+  background-color: #423b63;
 }
 
 <div>
@@ -122,7 +122,7 @@ exports[`Radio should render with props disabled 1`] = `
   border-radius: 999px;
   background: white;
   vertical-align: text-bottom;
-  border-color: #191723;
+  border-color: #423b63;
 }
 
 .c0 + .c1::after {
@@ -138,7 +138,7 @@ exports[`Radio should render with props disabled 1`] = `
 }
 
 .c0:focus + .c1::before {
-  box-shadow: 0 0 0 0.1rem rgba(25,23,35,0.2);
+  box-shadow: 0 0 0 0.1rem rgba(66,59,99,0.2);
 }
 
 .c0:disabled + .c1 {
@@ -152,7 +152,7 @@ exports[`Radio should render with props disabled 1`] = `
 }
 
 .c0:checked + .c1::after {
-  background-color: #191723;
+  background-color: #423b63;
 }
 
 <div>

@@ -100,7 +100,6 @@ const {
   secondaryGreen,
   secondaryYellow,
   secondaryRed,
-  ...otherColors
 } = defaultColors;
 
 const secondaryMap = {
@@ -112,7 +111,7 @@ const secondaryMap = {
 
 const getTheme = secondaryType => {
   const secondary = secondaryMap[secondaryType];
-  const colors = { ...secondary, ...otherColors };
+  const colors = { ...secondary, ...defaultColors };
 
   return {
     breakpoints,

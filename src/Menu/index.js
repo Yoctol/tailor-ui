@@ -1,74 +1,67 @@
+import ArrowUp from 'react-icons/lib/md/keyboard-arrow-up';
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { createContext } from 'react';
 import styled, { css } from 'styled-components';
 import { Spring, animated } from 'react-spring';
+import { Toggle, Value } from 'react-powerplug';
 import { borderRadius, borders, color, space, themeGet } from 'styled-system';
 import { ifProp } from 'styled-tools';
 
 import Flex from '../Grid/Flex';
-import { IconWrapper } from '../Icon';
+import Icon from '../Icon';
 
-const Menu = styled(Flex)`
+const { Provider, Consumer } = createContext();
+
+const StyledMenu = styled(Flex)`
   flex-direction: column;
   justify-content: start;
-  width: 200px;
+  width: 180px;
   height: 100%;
   overflow-y: auto;
-
-  ${color};
+  background-color: ${themeGet('colors.primary')};
 `;
 
+const Menu = ({ initial, children, onChange }) => (
+  <Value onChange={onChange} initial={initial}>
+    {({ value, set }) => (
+      <Provider value={{ activeKey: value, setActiveKey: set }}>
+        <StyledMenu>{children}</StyledMenu>
+      </Provider>
+    )}
+  </Value>
+);
+
 Menu.propTypes = {
-  ...color.propTypes,
+  children: PropTypes.node.isRequired,
+  initial: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
 };
 
-Menu.defaultProps = {
-  bg: 'primaryDark',
-};
-
-const Item = styled.button`
-  flex-shrink: 0;
+const StyledItem = styled.button`
+  display: inline-flex;
+  align-items: center;
   width: 100%;
-  padding: ${themeGet('space.3')} ${themeGet('space.5')};
+  height: 50px;
+  padding-left: 15px;
   border: 0;
   border-left: ${themeGet('borders.xl')};
   border-left-color: transparent;
-  background-color: ${themeGet('colors.primaryDark')};
-  color: ${themeGet('colors.gray.4')};
+  background-color: ${themeGet('colors.primary')};
+  color: rgba(255, 255, 255, 0.8);
   font-size: ${themeGet('fontSizes.default')};
-  line-height: ${themeGet('space.6')};
-  text-align: left;
   transition: all 0.1s ease-in-out;
   cursor: pointer;
-
-  & ${IconWrapper /* sc-selector */} {
-    margin-right: 7px;
-    vertical-align: 10%;
-
-    svg {
-      fill: ${themeGet('colors.gray.4')};
-    }
-  }
 
   ${ifProp(
     'active',
     css`
-      border-left-color: ${themeGet('colors.secondary')};
-      color: ${themeGet('colors.light')};
-
-      /* stylelint-disable-next-line */
-      & ${IconWrapper /* sc-selector */} svg {
-        fill: ${themeGet('colors.light')};
-      }
+      border-left-color: ${themeGet('colors.secondaryYellow.secondary')};
+      color: ${themeGet('colors.secondaryYellow.secondary')};
     `
   )};
 
   &:hover {
-    color: ${themeGet('colors.light')};
-
-    & ${IconWrapper /* sc-selector */} svg {
-      fill: ${themeGet('colors.light')};
-    }
+    border-left-color: ${themeGet('colors.secondaryYellow.secondary')};
   }
 
   &:focus {
@@ -80,76 +73,90 @@ const Item = styled.button`
   ${borderRadius};
 `;
 
+const Item = ({ children, icon, value, ...props }) => (
+  <Consumer>
+    {({ activeKey, setActiveKey }) => {
+      const active = activeKey === value;
+      return (
+        <StyledItem
+          active={active}
+          onClick={() => setActiveKey(value)}
+          {...props}
+        >
+          {icon && (
+            <Icon
+              type={icon}
+              mr="6px"
+              fill={active ? 'secondaryYellow.secondary' : 'light'}
+            />
+          )}
+          {children}
+        </StyledItem>
+      );
+    }}
+  </Consumer>
+);
+
 Item.propTypes = {
-  active: PropTypes.bool.isRequired,
   ...space.propTypes,
   ...color.propTypes,
   ...borders.propTypes,
   ...borderRadius.propTypes,
 };
 
-Item.defaultProps = {
-  active: false,
-};
-
 const SubMenuWrapper = styled.div`
-  display: flex;
-  position: relative;
-  flex-direction: column;
+  overflow: hidden;
 
-  ${Item /* sc-selector */} {
+  ${StyledItem /* sc-selector */} {
+    padding-left: 45px;
     background-color: ${themeGet('colors.primaryDark')};
   }
 `;
 
-const Arrow = styled.div`
-  position: absolute;
-  z-index: 99;
-  top: 50px;
-  left: 50%;
-  width: 0;
-  height: 0;
-  margin-left: -2px;
-  border-top: 8px solid ${themeGet('colors.primaryDark')};
-  border-right: 7px solid transparent;
-  border-left: 7px solid transparent;
-`;
+const AnimatedSubMenuWrapper = animated(SubMenuWrapper);
 
-const Animation = styled.div`
-  overflow: hidden;
-
-  ${Item /* sc-selector */} {
-    background-color: ${themeGet('colors.primary')};
-  }
-
-  ${ifProp(
-    'active',
-    css`
-      border-bottom: ${themeGet('borders.default')} ${themeGet('colors.gray.7')};
-    `
-  )};
-`;
-
-const AnimationWrapper = Animation;
-
-const SubMenu = ({ title, children, active, ...otherProps }) => (
-  <SubMenuWrapper>
-    <Item active={active} {...otherProps}>
-      {title}
-    </Item>
-    <Arrow />
-    <AnimationWrapper active={active}>
-      <Spring native from={{ height: 0 }} to={{ height: active ? 'auto' : 0 }}>
-        {props => <animated.div style={props}>{children}</animated.div>}
-      </Spring>
-    </AnimationWrapper>
-  </SubMenuWrapper>
+const SubMenu = ({ initial, icon, title, children, ...otherProps }) => (
+  <Toggle initial={initial}>
+    {({ on, toggle }) => (
+      <>
+        <Item icon={icon} onClick={toggle} {...otherProps}>
+          {title}
+          <Spring native from={{ rotate: 0 }} to={{ rotate: on ? 180 : 0 }}>
+            {({ rotate }) => (
+              <animated.div
+                style={{
+                  pointerEvents: 'none',
+                  marginLeft: 'auto',
+                  transform: rotate.interpolate(r => `rotate(${r}deg)`),
+                }}
+              >
+                <Icon type={ArrowUp} size="20" fill="light" />
+              </animated.div>
+            )}
+          </Spring>
+        </Item>
+        <Spring native from={{ height: 0 }} to={{ height: on ? 'auto' : 0 }}>
+          {style => (
+            <AnimatedSubMenuWrapper style={style}>
+              {children}
+            </AnimatedSubMenuWrapper>
+          )}
+        </Spring>
+      </>
+    )}
+  </Toggle>
 );
 
 SubMenu.propTypes = {
-  active: PropTypes.bool.isRequired,
   children: PropTypes.node.isRequired,
+  icon: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+  initial: PropTypes.bool,
   title: PropTypes.node.isRequired,
+};
+
+SubMenu.defaultProps = {
+  icon: null,
+  initial: false,
 };
 
 Menu.SubMenu = SubMenu;
