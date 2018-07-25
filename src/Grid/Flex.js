@@ -1,3 +1,4 @@
+import React from 'react';
 import styled from 'styled-components';
 import {
   alignItems,
@@ -8,7 +9,7 @@ import {
 
 import Box from './Box';
 
-const Flex = styled(Box)`
+const StyledFlex = styled(Box)`
   display: flex;
 
   ${alignItems};
@@ -16,6 +17,10 @@ const Flex = styled(Box)`
   ${justifyContent};
   ${flexWrap};
 `;
+
+const Flex = ({ children, ...props }) => (
+  <StyledFlex {...props}>{children}</StyledFlex>
+);
 
 Flex.propTypes = {
   ...Box.propTypes,
