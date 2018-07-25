@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { Component } from 'react';
 import styled, { css } from 'styled-components';
 import { Hover, Toggle } from 'react-powerplug';
 import { Transition, animated, config } from 'react-spring';
@@ -208,26 +208,31 @@ AnimatedTooltip.propTypes = {
   visible: PropTypes.bool.isRequired,
 };
 
-const Tooltip = ({ trigger, children, ...otherProps }) =>
-  trigger === 'click' ? (
-    <Toggle>
-      {({ on, toggle }) => (
-        <TooltipWrapper onClick={toggle}>
-          {children}
-          <AnimatedTooltip visible={on} {...otherProps} />
-        </TooltipWrapper>
-      )}
-    </Toggle>
-  ) : (
-    <Hover>
-      {({ bind, hovered }) => (
-        <TooltipWrapper {...bind}>
-          {children}
-          <AnimatedTooltip visible={hovered} {...otherProps} />
-        </TooltipWrapper>
-      )}
-    </Hover>
-  );
+class Tooltip extends Component {
+  render() {
+    const { trigger, children, ...otherProps } = this.props;
+
+    return trigger === 'click' ? (
+      <Toggle>
+        {({ on, toggle }) => (
+          <TooltipWrapper onClick={toggle}>
+            {children}
+            <AnimatedTooltip visible={on} {...otherProps} />
+          </TooltipWrapper>
+        )}
+      </Toggle>
+    ) : (
+      <Hover>
+        {({ bind, hovered }) => (
+          <TooltipWrapper {...bind}>
+            {children}
+            <AnimatedTooltip visible={hovered} {...otherProps} />
+          </TooltipWrapper>
+        )}
+      </Hover>
+    );
+  }
+}
 
 Tooltip.propTypes = {
   children: PropTypes.node,
