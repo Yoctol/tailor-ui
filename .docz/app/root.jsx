@@ -3,7 +3,7 @@ import { hot } from 'react-hot-loader'
 import Theme from 'docz-theme-default'
 import Wrapper from 'src/utils/DoczWrapper'
 
-const socket = new WebSocket(`ws://127.0.0.1:8089`)
+const socket = new WebSocket(`ws://127.0.0.1:8090`)
 
 class Root extends React.Component {
   state = {
