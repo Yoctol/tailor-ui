@@ -4,12 +4,13 @@ import styled, { css } from 'styled-components';
 import { ifProp, switchProp } from 'styled-tools';
 import { space, themeGet } from 'styled-system';
 
+import controlTransition from '../utils/transition';
+
 const { Provider, Consumer } = createContext();
 
 const StyledTab = styled.a`
   display: inline-block;
   position: relative;
-  border-bottom: 3px solid transparent;
   text-align: center;
   text-decoration: none;
   cursor: pointer;
@@ -24,13 +25,6 @@ const StyledTab = styled.a`
     cursor: default;
     pointer-events: none;
   }
-
-  ${ifProp(
-    'active',
-    css`
-      border-bottom-color: ${themeGet('colors.secondary')};
-    `
-  )};
 
   ${switchProp('size', {
     sm: css`
@@ -49,13 +43,60 @@ const StyledTab = styled.a`
     `,
   })};
 
+  ${ifProp(
+    'pills',
+    css`
+      border-radius: 999px;
+
+      &:not(:first-child) {
+        margin-left: ${themeGet('space.3')};
+      }
+
+      ${switchProp('size', {
+        sm: css`
+          padding: ${themeGet('space.paddingYSm')}
+            calc(${themeGet('space.paddingXSm')} * 2);
+        `,
+
+        m: css`
+          padding: ${themeGet('space.paddingY')}
+            calc(${themeGet('space.paddingX')} * 2);
+        `,
+
+        lg: css`
+          padding: ${themeGet('space.paddingYLg')}
+            calc(${themeGet('space.paddingXLg')} * 2);
+        `,
+      })};
+
+      ${ifProp(
+        'active',
+        css`
+          background-color: ${themeGet('colors.primary')};
+          color: ${themeGet('colors.light')};
+        `
+      )};
+    `,
+    css`
+      border-bottom: 3px solid transparent;
+
+      ${ifProp(
+        'active',
+        css`
+          border-bottom-color: ${themeGet('colors.secondary')};
+        `
+      )};
+    `
+  )};
+
+  ${controlTransition()};
   ${space};
 `;
 
 const Tab = ({ children, ...props }) => (
   <Consumer>
-    {size => (
-      <StyledTab size={size} {...props}>
+    {({ size, pills }) => (
+      <StyledTab size={size} pills={pills} {...props}>
         {children}
       </StyledTab>
     )}
@@ -66,13 +107,11 @@ Tab.propTypes = {
   active: PropTypes.bool,
   children: PropTypes.node.isRequired,
   disabled: PropTypes.bool,
-  size: PropTypes.string,
 };
 
 Tab.defaultProps = {
   active: false,
   disabled: false,
-  size: 'm',
 };
 
 Tab.displayName = 'Tabs.Tab';
@@ -104,9 +143,9 @@ const StyledTabs = styled.nav`
   ${space};
 `;
 
-const Tabs = ({ absolute, children, size, ...otherProps }) => (
+const Tabs = ({ absolute, children, size, pills, ...otherProps }) => (
   <StyledTabs absolute={absolute} {...otherProps}>
-    <Provider value={size}>{children}</Provider>
+    <Provider value={{ size, pills }}>{children}</Provider>
   </StyledTabs>
 );
 
@@ -114,6 +153,7 @@ Tabs.propTypes = {
   absolute: PropTypes.bool,
   block: PropTypes.bool,
   children: PropTypes.node.isRequired,
+  pills: PropTypes.bool,
   size: PropTypes.string,
   ...space.propTypes,
 };
@@ -121,6 +161,7 @@ Tabs.propTypes = {
 Tabs.defaultProps = {
   absolute: false,
   block: false,
+  pills: false,
   size: 'm',
 };
 

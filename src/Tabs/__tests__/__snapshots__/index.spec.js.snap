@@ -6,26 +6,28 @@ exports[`Tabs should render correctly 1`] = `
   block={false}
 >
   <[object Object]
-    value="m"
+    value={
+      Object {
+        "pills": false,
+        "size": "m",
+      }
+    }
   >
     <Tabs.Tab
       active={true}
       disabled={false}
-      size="m"
     >
       Tab 1
     </Tabs.Tab>
     <Tabs.Tab
       active={false}
       disabled={true}
-      size="m"
     >
       Tab 2
     </Tabs.Tab>
     <Tabs.Tab
       active={false}
       disabled={false}
-      size="m"
     >
       Tab 3
     </Tabs.Tab>
@@ -39,26 +41,28 @@ exports[`Tabs should render with props absolute 1`] = `
   block={false}
 >
   <[object Object]
-    value="m"
+    value={
+      Object {
+        "pills": false,
+        "size": "m",
+      }
+    }
   >
     <Tabs.Tab
       active={true}
       disabled={false}
-      size="m"
     >
       Tab 1
     </Tabs.Tab>
     <Tabs.Tab
       active={false}
       disabled={true}
-      size="m"
     >
       Tab 2
     </Tabs.Tab>
     <Tabs.Tab
       active={false}
       disabled={false}
-      size="m"
     >
       Tab 3
     </Tabs.Tab>
@@ -70,29 +74,30 @@ exports[`Tabs should render with props pills 1`] = `
 <Tabs__StyledTabs
   absolute={false}
   block={false}
-  pills={true}
 >
   <[object Object]
-    value="m"
+    value={
+      Object {
+        "pills": true,
+        "size": "m",
+      }
+    }
   >
     <Tabs.Tab
       active={true}
       disabled={false}
-      size="m"
     >
       Tab 1
     </Tabs.Tab>
     <Tabs.Tab
       active={false}
       disabled={true}
-      size="m"
     >
       Tab 2
     </Tabs.Tab>
     <Tabs.Tab
       active={false}
       disabled={false}
-      size="m"
     >
       Tab 3
     </Tabs.Tab>
