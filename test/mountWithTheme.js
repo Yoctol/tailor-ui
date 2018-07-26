@@ -2,7 +2,7 @@ import React from 'react';
 import { ThemeProvider } from 'styled-components';
 import { mount } from 'enzyme';
 
-import { defaultTheme } from '../src/theme';
+import defaultTheme from '../src/theme';
 
 const mountWithTheme = (children, options = {}, theme = defaultTheme) => {
   const wrapper = mount(
