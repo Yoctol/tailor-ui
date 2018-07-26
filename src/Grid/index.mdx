@@ -1,0 +1,134 @@
+---
+name: Grid
+menu: Layout
+route: /layout/grid
+---
+
+import { PropsTable, Playground } from 'docz';
+import Flex from './Flex';
+import Box from './Box';
+
+# Grid
+
+## Properties
+
+<PropsTable of={Flex} />
+<PropsTable of={Box} />
+
+## Usage
+
+```js
+import { Flex, Box } from '@yoctol/ui';
+```
+
+### 25%
+
+<Playground>
+  <Flex>
+    <Box
+      bg="primary"
+      color="light"
+      width={1 / 4}
+      mx={2}
+      py={4}
+      style={{ textAlign: 'center '}}
+    >
+      25%
+    </Box>
+    <Box
+      bg="primary"
+      color="light"
+      width={1 / 4}
+      mx={2}
+      py={4}
+      style={{ textAlign: 'center '}}
+    >
+      25%
+    </Box>
+    <Box
+      bg="primary"
+      color="light"
+      width={1 / 4}
+      mx={2}
+      py={4}
+      style={{ textAlign: 'center '}}
+    >
+      25%
+    </Box>
+    <Box
+      bg="primary"
+      color="light"
+      width={1 / 4}
+      mx={2}
+      py={4}
+      style={{ textAlign: 'center '}}
+    >
+      25%
+    </Box>
+  </Flex>
+</Playground>
+
+### 33% Grid
+
+
+<Playground>
+  <Flex>
+    <Box
+      bg="primary"
+      color="light"
+      width={1 / 3}
+      mx={2}
+      py={4}
+      style={{ textAlign: 'center '}}
+    >
+      33%
+    </Box>
+    <Box
+      bg="primary"
+      color="light"
+      width={1 / 3}
+      mx={2}
+      py={4}
+      style={{ textAlign: 'center '}}
+    >
+      33%
+    </Box>
+    <Box
+      bg="primary"
+      color="light"
+      width={1 / 3}
+      mx={2}
+      py={4}
+      style={{ textAlign: 'center '}}
+    >
+      33%
+    </Box>
+  </Flex>
+</Playground>
+
+### 50% Grid
+
+<Playground>
+  <Flex>
+    <Box
+      bg="primary"
+      color="light"
+      width={1 / 2}
+      mx={2}
+      py={4}
+      style={{ textAlign: 'center '}}
+    >
+      50%
+    </Box>
+    <Box
+      bg="primary"
+      color="light"
+      width={1 / 2}
+      mx={2}
+      py={4}
+      style={{ textAlign: 'center '}}
+    >
+      50%
+    </Box>
+  </Flex>
+</Playground>

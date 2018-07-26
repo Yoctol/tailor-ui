@@ -1,0 +1,28 @@
+---
+name: Space
+menu: Layout
+route: /layout/space
+---
+
+import { PropsTable, Playground } from 'docz';
+import Space from './Space';
+
+# Space
+
+## Properties
+
+<PropsTable of={Space} />
+
+## Usage
+
+```js
+import { Space } from '@yoctol/ui';
+```
+
+### Basic
+
+<Playground>
+  <Space m={4} p={8} style={{ backgroundColor: '#ccc', textAlign: 'center'}}>
+    With margin & padding
+  </Space>
+</Playground>
