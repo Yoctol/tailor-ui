@@ -1,0 +1,41 @@
+---
+name: Modal
+menu: Feedback
+route: /feedback/modal
+---
+
+import { Toggle } from 'react-powerplug';
+import { PropsTable, Playground } from 'docz';
+import Modal from './';
+import { Button } from '../';
+
+# Modal
+
+## Properties
+
+<PropsTable of={Modal} />
+
+## Usage
+
+```js
+import { Modal } from '@yoctol/ui';
+```
+
+### Basic
+
+<Playground>
+  <Toggle>
+    {({ on, toggle }) => (
+      <div>
+        <Modal
+          handleClose={toggle}
+          show={on}
+          closeButton
+        >
+          This is the content of Modal
+        </Modal>
+        <Button onClick={toggle}>Open Modal</Button>
+      </div>
+    )}
+  </Toggle>
+</Playground>
