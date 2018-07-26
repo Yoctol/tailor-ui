@@ -103,9 +103,21 @@ class Dropdown extends PureComponent {
 }
 
 Dropdown.propTypes = {
+  /**
+   * The component which this dropdown show up
+   */
   children: PropTypes.func.isRequired,
+  /**
+   * The wrapper component's display style
+   */
   display: PropTypes.string,
+  /**
+   * The content in this dropdown component
+   */
   overlay: PropTypes.node.isRequired,
+  /**
+   * The position base on the children component
+   */
   placement: PropTypes.oneOf([
     'topRight',
     'topLeft',
