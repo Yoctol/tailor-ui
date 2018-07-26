@@ -6,7 +6,7 @@ import { storiesOf } from '@storybook/react';
 
 import README from '../README.md';
 import themeProvider from '../../../.storybook/theme-provider';
-import { Box, Heading } from '../..';
+import { Box, Heading, Space } from '../..';
 import { Showcase, ShowcasePage } from '../../../.storybook/showcase';
 import { space } from '../../../.storybook/knobs';
 import {
@@ -69,6 +69,22 @@ storiesOf('Data Display|Tabs', module)
           {({ value, set }) => (
             <Showcase>
               <Tabs>
+                {TABS.map(({ key, label }) => (
+                  <Tabs.Tab onClick={() => set(key)} active={key === value}>
+                    {label}
+                  </Tabs.Tab>
+                ))}
+              </Tabs>
+              <p>{`Active Tab is ${value}`}</p>
+            </Showcase>
+          )}
+        </Value>
+
+        <Heading.h3>with Pills</Heading.h3>
+        <Value initial="tab_1">
+          {({ value, set }) => (
+            <Showcase>
+              <Tabs pills>
                 {TABS.map(({ key, label }) => (
                   <Tabs.Tab onClick={() => set(key)} active={key === value}>
                     {label}
@@ -148,6 +164,40 @@ storiesOf('Data Display|Tabs', module)
                   </Tabs.Tab>
                 ))}
               </Tabs>
+              <p>{`Active Tab is ${value}`}</p>
+            </Showcase>
+          )}
+        </Value>
+
+        <Heading.h3>with size & pills</Heading.h3>
+        <Value initial="tab_1">
+          {({ value, set }) => (
+            <Showcase>
+              <Tabs size="sm" pills>
+                {TABS.map(({ key, label }) => (
+                  <Tabs.Tab onClick={() => set(key)} active={key === value}>
+                    {label}
+                  </Tabs.Tab>
+                ))}
+              </Tabs>
+              <Space mt="3">
+                <Tabs pills>
+                  {TABS.map(({ key, label }) => (
+                    <Tabs.Tab onClick={() => set(key)} active={key === value}>
+                      {label}
+                    </Tabs.Tab>
+                  ))}
+                </Tabs>
+              </Space>
+              <Space mt="3">
+                <Tabs size="lg" pills>
+                  {TABS.map(({ key, label }) => (
+                    <Tabs.Tab onClick={() => set(key)} active={key === value}>
+                      {label}
+                    </Tabs.Tab>
+                  ))}
+                </Tabs>
+              </Space>
               <p>{`Active Tab is ${value}`}</p>
             </Showcase>
           )}

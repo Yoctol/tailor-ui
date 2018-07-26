@@ -2,7 +2,7 @@ import React from 'react';
 import { ThemeProvider } from 'styled-components';
 import { shallow } from 'enzyme';
 
-import { defaultTheme } from '../src/theme';
+import defaultTheme from '../src/theme';
 
 const shallowWithTheme = (children, options = {}, theme = defaultTheme) => {
   const wrapper = shallow(

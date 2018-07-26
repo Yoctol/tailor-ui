@@ -2,29 +2,9 @@ export const primary = '#423b63';
 export const primaryDark = '#2a2640';
 export const primaryLight = '#423b63';
 
-export const secondaryBlue = {
-  secondary: '#80bdc7',
-  secondaryDark: '#63bed5',
-  secondaryLight: '#9fdfea',
-};
-
-export const secondaryGreen = {
-  secondary: '#56e495',
-  secondaryDark: '#3fcc74',
-  secondaryLight: '#9cffb9',
-};
-
-export const secondaryYellow = {
-  secondary: '#c7ad8d',
-  secondaryDark: '#ab9272',
-  secondaryLight: '#e6d1b7',
-};
-
-export const secondaryRed = {
-  secondary: '#f08181',
-  secondaryDark: '#c26868',
-  secondaryLight: '#fbadad',
-};
+export const secondary = '#c7ad8d';
+export const secondaryDark = '#ab9272';
+export const secondaryLight = '#e6d1b7';
 
 export const dark = '#111111';
 export const light = '#ffffff';
@@ -41,8 +21,10 @@ export const gray = [
   '#f7f7f7', // 9
 ];
 
-export const success = '#63bf2d';
+export const success = '#30be72';
 export const warning = '#de8a15';
-export const error = '#da3333';
+export const error = '#e65541';
+export const info = '#4384f0';
+
 export const code = '#e06870';
 export const highlight = '#ffe9b3';

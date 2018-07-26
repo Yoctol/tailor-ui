@@ -2,22 +2,21 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { ThemeProvider as StyledThemeProvider } from 'styled-components';
 
-import getTheme from '../theme';
 import injectGlobalCss from '../injectGlobalCss';
+import theme from '../theme';
 
 injectGlobalCss();
 
-const ThemeProvider = ({ theme, children }) => (
-  <StyledThemeProvider theme={getTheme(theme)}>{children}</StyledThemeProvider>
+const ThemeProvider = ({ children }) => (
+  <StyledThemeProvider theme={theme}>{children}</StyledThemeProvider>
 );
 
 ThemeProvider.propTypes = {
-  children: PropTypes.element.isRequired,
-  theme: PropTypes.string,
+  children: PropTypes.node,
 };
 
 ThemeProvider.defaultProps = {
-  theme: 'yellow',
+  children: null,
 };
 
 export default ThemeProvider;

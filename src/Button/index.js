@@ -131,30 +131,25 @@ const StyledButton = styled.button`
   ${ifProp(
     'circle',
     css`
-    border-radius: 999px;
+      border-radius: 999px;
 
-    ${ifProp(
-      { size: 'sm' },
-      css`
-        padding: ${themeGet('space.paddingYSm')}
-          calc(${themeGet('space.paddingXSm')} * 2);
-      `
-    )}
-    ${ifProp(
-      { size: 'm' },
-      css`
-        padding: ${themeGet('space.paddingY')}
-          calc(${themeGet('space.paddingX')} * 2);
-      `
-    )}
-    ${ifProp(
-      { size: 'lg' },
-      css`
-        padding: ${themeGet('space.paddingYLg')}
-          calc(${themeGet('space.paddingXLg')} * 2);
-      `
-    )}
-  `
+      ${switchProp('size', {
+        sm: css`
+          padding: ${themeGet('space.paddingYSm')}
+            calc(${themeGet('space.paddingXSm')} * 2);
+        `,
+
+        m: css`
+          padding: ${themeGet('space.paddingY')}
+            calc(${themeGet('space.paddingX')} * 2);
+        `,
+
+        lg: css`
+          padding: ${themeGet('space.paddingYLg')}
+            calc(${themeGet('space.paddingXLg')} * 2);
+        `,
+      })};
+    `
   )}
 
   ${ifProp(
