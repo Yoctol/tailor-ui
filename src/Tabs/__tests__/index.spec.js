@@ -4,15 +4,13 @@ import shallowWithTheme from 'test/shallowWithTheme';
 
 import Tabs from '..';
 
-const { Tab } = Tabs;
-
 describe('Tabs', () => {
   it('should render correctly', () => {
     const component = shallowWithTheme(
       <Tabs>
-        <Tab active>Tab 1</Tab>
-        <Tab disabled>Tab 2</Tab>
-        <Tab>Tab 3</Tab>
+        <Tabs.Tab active>Tab 1</Tabs.Tab>
+        <Tabs.Tab disabled>Tab 2</Tabs.Tab>
+        <Tabs.Tab>Tab 3</Tabs.Tab>
       </Tabs>
     );
 
@@ -22,9 +20,9 @@ describe('Tabs', () => {
   it('should render with props absolute', () => {
     const component = shallowWithTheme(
       <Tabs absolute>
-        <Tab active>Tab 1</Tab>
-        <Tab disabled>Tab 2</Tab>
-        <Tab>Tab 3</Tab>
+        <Tabs.Tab active>Tab 1</Tabs.Tab>
+        <Tabs.Tab disabled>Tab 2</Tabs.Tab>
+        <Tabs.Tab>Tab 3</Tabs.Tab>
       </Tabs>
     );
 
@@ -34,9 +32,9 @@ describe('Tabs', () => {
   it('should render with props pills', () => {
     const component = shallowWithTheme(
       <Tabs pills>
-        <Tab active>Tab 1</Tab>
-        <Tab disabled>Tab 2</Tab>
-        <Tab>Tab 3</Tab>
+        <Tabs.Tab active>Tab 1</Tabs.Tab>
+        <Tabs.Tab disabled>Tab 2</Tabs.Tab>
+        <Tabs.Tab>Tab 3</Tabs.Tab>
       </Tabs>
     );
 
