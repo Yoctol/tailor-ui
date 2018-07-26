@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import styled, { css } from 'styled-components';
 import { Hover, Toggle } from 'react-powerplug';
 import { Transition, animated, config } from 'react-spring';
@@ -208,7 +208,7 @@ AnimatedTooltip.propTypes = {
   visible: PropTypes.bool.isRequired,
 };
 
-class Tooltip extends Component {
+class Tooltip extends PureComponent {
   render() {
     const { trigger, children, ...otherProps } = this.props;
 
@@ -235,11 +235,26 @@ class Tooltip extends Component {
 }
 
 Tooltip.propTypes = {
-  children: PropTypes.node,
-  content: PropTypes.node,
+  /**
+   * The component which this tooltip show up
+   */
+  children: PropTypes.node.isRequired,
+  /**
+   * A string or react component inside this tooltip
+   */
+  content: PropTypes.node.isRequired,
+  /**
+   * The style of this tooltip
+   */
   light: PropTypes.bool,
-  placement: PropTypes.string,
-  trigger: PropTypes.string,
+  /**
+   * The position base on the children component
+   */
+  placement: PropTypes.oneOf(['top', 'right', 'bottom', 'left']),
+  /**
+   * Decide how to trigger this tooltip
+   */
+  trigger: PropTypes.oneOf(['hover', 'click']),
   ...space.propTypes,
   ...minWidth.propTypes,
   ...color.propTypes,
@@ -249,8 +264,6 @@ Tooltip.propTypes = {
 };
 
 Tooltip.defaultProps = {
-  children: '',
-  content: '',
   light: false,
   placement: 'top',
   trigger: 'hover',
