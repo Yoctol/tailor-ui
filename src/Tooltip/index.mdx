@@ -1,0 +1,73 @@
+---
+name: Tooltip
+menu: Data Display
+route: /data-display/tooltip
+---
+
+import { PropsTable, Playground } from 'docz';
+import Tooltip from './';
+import { Button } from '../';
+
+# Tooltip
+
+## Properites
+
+<PropsTable of={Tooltip} />
+
+## Usage
+
+```js
+import { Tooltip } from '@yoctol/ui';
+```
+
+### Basic
+
+#### Top & Hover
+
+<Playground>
+  <Tooltip placement="top" content={<span>Tooltip Content</span>}>
+    <Button>Button</Button>
+  </Tooltip>
+</Playground>
+
+#### Right & Hover
+
+<Playground>
+  <Tooltip placement="right" content={<span>Tooltip Content</span>}>
+    <Button>Button</Button>
+  </Tooltip>
+</Playground>
+
+#### Left & Click
+
+<Playground>
+  <Tooltip placement="left" trigger="click" content={<span>Tooltip Content</span>}>
+    <Button>Button</Button>
+  </Tooltip>
+</Playground>
+
+#### Bottom & Click
+
+<Playground>
+  <Tooltip placement="bottom" trigger="click" content={<span>Tooltip Content</span>}>
+    <Button>Button</Button>
+  </Tooltip>
+</Playground>
+
+### Light
+
+#### Top & Hover
+
+<Playground>
+  <Tooltip light placement="top" content={<span>Tooltip Content</span>}>
+    <Button>Button</Button>
+  </Tooltip>
+</Playground>
+
+### Right & Click
+
+<Playground>
+  <Tooltip light placement="right" trigger="click" content={<span>Tooltip Content</span>}>
+    <Button>Button</Button>
+  </Tooltip>
+</Playground>
