@@ -14,7 +14,7 @@ storiesOf('Data Entry|Input', module)
   .add('default', () => (
     <FormField>
       <Label htmlFor="demo">With Default:</Label>
-      <Input id="demo" placeholder="placeholder" />
+      <Input id="demo" placeholder="placeholder" onPressEnter={console.log} />
     </FormField>
   ))
   .add('with status', () => (

@@ -2,9 +2,9 @@ import TextareaAutosize from 'react-textarea-autosize';
 import styled from 'styled-components';
 import { ifProp } from 'styled-tools';
 
-import Input from './Input';
+import { StyledInput } from './Input';
 
-const Textarea = styled(Input.withComponent(TextareaAutosize))`
+const Textarea = styled(StyledInput.withComponent(TextareaAutosize))`
   word-wrap: break-word;
   transition: border 0.2s ease;
   resize: ${ifProp('resize', 'initial', 'none')};
