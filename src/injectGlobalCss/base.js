@@ -5,6 +5,7 @@ import * as colors from '../theme/colors';
 
 export default css`
   @import url('https://fonts.googleapis.com/css?family=Roboto');
+  @import url('https://fonts.googleapis.com/css?family=Roboto+Mono');
 
   *,
   *::before,
