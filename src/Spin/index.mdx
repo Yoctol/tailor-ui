@@ -1,0 +1,36 @@
+---
+name: Spin
+menu: Feedback
+route: /feedback/spin
+---
+
+import { PropsTable, Playground } from 'docz';
+import Spin from './';
+
+# Spin
+
+## Properties
+
+<PropsTable of={Spin} />
+
+## Usage
+
+```js
+import { Spin } from '@yoctol/ui';
+```
+
+### Default
+
+<Playground>
+  <div style={{ height: '300px' }}>
+    <Spin />
+  </div>
+</Playground>
+
+### With text
+
+<Playground>
+  <div style={{ height: '300px' }}>
+    <Spin text="foo bar"/>
+  </div>
+</Playground>
