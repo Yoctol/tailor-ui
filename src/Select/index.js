@@ -1,11 +1,13 @@
 import BaseSelect from 'react-select';
+import PropTypes from 'prop-types';
+import React from 'react';
 import styled from 'styled-components';
 import { themeGet } from 'styled-system';
 
 import controlTransition from '../utils/transition';
 import { controlShadow } from '../utils/shadow';
 
-const Select = styled(BaseSelect).attrs({
+const StyledSelect = styled(BaseSelect).attrs({
   classNamePrefix: 'yoctol-select',
 })`
   & .yoctol-select__control {
@@ -91,5 +93,45 @@ const Select = styled(BaseSelect).attrs({
     }
   }
 `;
+
+const Select = props => <StyledSelect {...props} />;
+
+Select.propTypes = {
+  /**
+   * Disable the control
+   */
+  isDisabled: PropTypes.bool,
+  /**
+   * Allow the user to search for matching options
+   */
+  isSearchable: PropTypes.bool,
+  /**
+   * Specify the options the user can select from
+   */
+  options: PropTypes.arrayOf(
+    PropTypes.shape({
+      label: PropTypes.string,
+      value: PropTypes.string,
+    })
+  ).isRequired,
+  /**
+   * Change the text displayed when no option is selected
+   */
+  placeholder: PropTypes.string,
+  /**
+   * Control the current value
+   */
+  value: PropTypes.string.isRequired,
+  /**
+   * Subscribe to change events
+   */
+  onChange: PropTypes.func.isRequired,
+};
+
+Select.defaultProps = {
+  isDisabled: false,
+  isSearchable: false,
+  placeholder: '',
+};
 
 export default Select;

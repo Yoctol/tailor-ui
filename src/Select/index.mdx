@@ -1,0 +1,57 @@
+---
+name: Select
+menu: Data Entry
+route: /data-entry/select
+---
+
+import { PropsTable, Playground } from 'docz';
+import { Value } from 'react-powerplug';
+import { range } from 'ramda';
+import Select from './';
+
+# Select
+
+## Properties
+
+<PropsTable of={Select} />
+
+## Usage
+
+```js
+import { Select } from '@yoctol/ui';
+```
+
+### Basic
+
+<Playground>
+  <Value initial={{ label: 'Item 1', value: 1 }}>
+    {({ value, set }) => (
+      <Select
+        value={value}
+        onChange={option => set(option)}
+        options={[
+          {
+            label: 'Item 1',
+            val: 1
+          },
+          {
+            label: 'Item 2',
+            val: 2
+          },
+          {
+            label: 'Item 3',
+            val: 3
+          },
+          {
+            label: 'Item 4',
+            val: 4
+          },
+          {
+            label: 'Item 5',
+            val: 5
+          }
+        ]}
+      />
+    )}
+  </Value>
+</Playground>
