@@ -13,7 +13,7 @@ import {
 
 import _Button from '../Button';
 
-const Block = styled.div`
+const StyledBlock = styled.div`
   position: relative;
   border-bottom: ${themeGet('borders.default')} ${themeGet('colors.gray.8')};
 
@@ -26,14 +26,18 @@ const Block = styled.div`
   ${fontSize};
 `;
 
+export const Block = props => <StyledBlock {...props} />;
+
 Block.propTypes = {
+  fontSize: PropTypes.string,
+  p: PropTypes.number,
   ...space.propTypes,
   ...height.propTypes,
 };
 
 Block.defaultProps = {
-  p: 4,
   fontSize: 'default',
+  p: 4,
 };
 
 const Button = styled(_Button).attrs({ light: true })`
@@ -58,7 +62,7 @@ const Button = styled(_Button).attrs({ light: true })`
 
 Button.displayName = 'Card.Button';
 
-const Image = styled.div`
+const StyledImage = styled.div`
   overflow: hidden;
 
   img {
@@ -70,6 +74,8 @@ const Image = styled.div`
 
   ${space};
 `;
+
+export const Image = props => <StyledImage {...props} />;
 
 Image.propTypes = {
   ...space.propTypes,
