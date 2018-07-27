@@ -1,7 +1,12 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import styled, { css } from 'styled-components';
-import { Focus } from 'react-powerplug';
+import {
+  Compose,
+  Focus,
+  Input as PowerplugInput,
+  composeEvents,
+} from 'react-powerplug';
 import { ifProp } from 'styled-tools';
 import { rem } from 'polished';
 import { themeGet } from 'styled-system';
@@ -44,8 +49,6 @@ const MaxLenght = styled.div`
 `;
 
 const TextField = ({
-  value,
-  onChange,
   label,
   success,
   warning,
@@ -55,24 +58,27 @@ const TextField = ({
   textarea,
   ...props
 }) => (
-  <Focus>
-    {({ focused, bind }) => {
+  <Compose
+    components={[
+      Focus,
+      // eslint-disable-next-line react/prop-types
+      <PowerplugInput initial={props.value || props.defaultValue || ''} />,
+    ]}
+  >
+    {({ focused, bind: focusBind }, { value, bind: { onChange } }) => {
       const actived = focused || value !== '';
-      const hasMaxLength = maxLength !== 0;
       const hasError = success || warning || error;
       const inputProps = {
-        value,
-        onChange,
-        maxLength: hasMaxLength ? maxLength : undefined,
+        maxLength,
         ...props,
-        ...bind,
+        ...composeEvents(props, { ...focusBind, onChange }),
       };
       const RenderComponent = textarea ? Textarea : Input;
 
       return (
         <FormField success={success} warning={warning} error={error}>
           <TextFieldLabel shrink={actived}>{label}</TextFieldLabel>
-          {hasMaxLength &&
+          {maxLength &&
             !hasError && (
               <MaxLenght visible={actived}>
                 {maxLength - value.length}
@@ -83,30 +89,47 @@ const TextField = ({
         </FormField>
       );
     }}
-  </Focus>
+  </Compose>
 );
 
 TextField.propTypes = {
+  /**
+   * Set the textfield status to error
+   */
   error: PropTypes.bool,
+  /**
+   * The label text
+   */
   label: PropTypes.string.isRequired,
+  /**
+   * The content max length of textfield
+   */
   maxLength: PropTypes.number,
+  /**
+   * The message will show when success or warning or error is true
+   */
   message: PropTypes.string,
+  /**
+   * Set the textfield status to success
+   */
   success: PropTypes.bool,
+  /**
+   * Whether the input is a textarea
+   */
   textarea: PropTypes.bool,
-  value: PropTypes.string,
+  /**
+   * Set the textfield status to warning
+   */
   warning: PropTypes.bool,
-  onChange: PropTypes.func,
 };
 
 TextField.defaultProps = {
   error: false,
   message: '',
-  maxLength: 0,
+  maxLength: null,
   success: false,
   textarea: false,
-  value: '',
   warning: false,
-  onChange: () => {},
 };
 
 export default TextField;

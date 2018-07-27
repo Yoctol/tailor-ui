@@ -1,11 +1,13 @@
 import PropTypes from 'prop-types';
+import React from 'react';
 import styled from 'styled-components';
+import { composeEvents } from 'react-powerplug';
 import { space, textAlign, themeGet, width } from 'styled-system';
 
 import controlTransition from '../utils/transition';
 import { sizes } from '../utils/system';
 
-const Input = styled.input`
+export const StyledInput = styled.input`
   display: block;
   width: 100%;
   max-width: 100%;
@@ -42,8 +44,19 @@ const Input = styled.input`
   ${textAlign};
 `;
 
+const Input = ({ onPressEnter, ...props }) => {
+  const onKeyPress = event => {
+    if (event.key === 'Enter') {
+      onPressEnter(event);
+    }
+  };
+
+  return <StyledInput {...props} {...composeEvents(props, { onKeyPress })} />;
+};
+
 Input.propTypes = {
-  size: PropTypes.string.isRequired,
+  size: PropTypes.oneOf(['sm', 'm', 'lg']),
+  onPressEnter: PropTypes.func,
   ...width.propTypes,
   ...space.propTypes,
   ...textAlign.propTypes,
@@ -51,6 +64,7 @@ Input.propTypes = {
 
 Input.defaultProps = {
   size: 'm',
+  onPressEnter: () => {},
 };
 
 export default Input;
