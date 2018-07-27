@@ -12,11 +12,7 @@ storiesOf('Data Entry|Textarea', module)
   .add('default', () => (
     <div>
       <Label htmlFor="demo">With Default:</Label>
-      <Textarea
-        id="demo"
-        placeholder="placeholder"
-        onPressEnter={console.log}
-      />
+      <Textarea id="demo" placeholder="placeholder" />
     </div>
   ))
   .add('with react-textarea-autosize props', () => (

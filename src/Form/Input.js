@@ -55,7 +55,7 @@ const Input = ({ onPressEnter, ...props }) => {
 };
 
 Input.propTypes = {
-  size: PropTypes.string,
+  size: PropTypes.oneOf(['sm', 'm', 'lg']),
   onPressEnter: PropTypes.func,
   ...width.propTypes,
   ...space.propTypes,

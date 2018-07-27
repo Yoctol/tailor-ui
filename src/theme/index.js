@@ -79,17 +79,14 @@ const space = map(toRem, {
 
 const sizes = {
   sm: {
-    height: space.sizeSm,
     padding: `${space.paddingYSm} ${space.paddingXSm}`,
     fontSize: fontSizes.sm,
   },
   m: {
-    height: space.size,
     padding: `${space.paddingY} ${space.paddingX}`,
     fontSize: fontSizes.default,
   },
   lg: {
-    height: space.sizeLg,
     padding: `${space.paddingYLg} ${space.paddingXLg}`,
     fontSize: fontSizes.lg,
   },
