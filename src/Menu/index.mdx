@@ -7,16 +7,21 @@ route: /navigation/menu
 import { PropsTable, Playground } from 'docz';
 import { Value } from 'react-powerplug';
 import { range } from 'ramda';
-import Menu from './';
+import Menu, { Item, SubMenu } from './';
 import { Box } from '../';
 
 # Menu
 
 ## Properties
 
+### Menu
 <PropsTable of={Menu} />
-<PropsTable of={Menu.SubMenu} />
-<PropsTable of={Menu.Item} />
+
+### Menu.SubMenu
+<PropsTable of={SubMenu} />
+
+### Menu.Item
+<PropsTable of={Item} />
 
 ## Usage
 
