@@ -11,7 +11,11 @@ storiesOf('Data Entry|TextField', module)
   .addDecorator(themeProvider)
   .add('default', () => (
     <>
-      <Input>{({ bind }) => <TextField label="Text Field" {...bind} />}</Input>
+      <Input>
+        {({ bind }) => (
+          <TextField label="Text Field" {...bind} onPressEnter={console.log} />
+        )}
+      </Input>
       <Input>
         {({ bind }) => (
           <TextField label="Text Field" maxLength={12} {...bind} />

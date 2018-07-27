@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import styled, { css } from 'styled-components';
-import { Focus } from 'react-powerplug';
+import { Focus, composeEvents } from 'react-powerplug';
 import { ifProp } from 'styled-tools';
 import { rem } from 'polished';
 import { themeGet } from 'styled-system';
@@ -65,7 +65,7 @@ const TextField = ({
         onChange,
         maxLength: hasMaxLength ? maxLength : undefined,
         ...props,
-        ...bind,
+        ...composeEvents(props, bind),
       };
       const RenderComponent = textarea ? Textarea : Input;
 
