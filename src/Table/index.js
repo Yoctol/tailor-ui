@@ -76,7 +76,7 @@ Body.defaultProps = {
   children: '',
 };
 
-const Table = styled.table`
+const StyledTable = styled.table`
   overflow: hidden;
   border-spacing: 0;
   border-collapse: collapse;
@@ -94,9 +94,16 @@ const Table = styled.table`
   ${width};
 `;
 
+const Table = props => <StyledTable {...props} />;
+
+Table.propTypes = {
+  ...width.propTypes,
+  ...textAlign.propTypes,
+};
+
 Table.defaultProps = {
-  width: '100%',
-  textAlign: 'left',
+  width: '100%', // eslint-disable-line react/default-props-match-prop-types
+  textAlign: 'left', // eslint-disable-line react/default-props-match-prop-types
 };
 
 Table.Head = Head;
