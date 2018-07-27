@@ -1,0 +1,99 @@
+---
+name: Card
+menu: Data Display
+route: /data-display/card
+---
+
+import { PropsTable, Playground } from 'docz';
+import { Input, Button } from '../';
+import Card, { Block, Image } from './';
+
+# Card
+
+## Properties
+
+Some `props` are using object spread syntax and are not showing in these tables.
+
+### Card
+
+<PropsTable of={Card} />
+
+### Card.Block
+
+<PropsTable of={Block} />
+
+### Card.Button
+
+<PropsTable of={Card.Button} />
+
+### Card.Image
+
+<PropsTable of={Image} />
+
+## Usage
+
+```js
+import { Card } from '@yoctol/ui';
+```
+
+### With Block
+
+<Playground>
+  <Card width="400px">
+    <Card.Block>Title</Card.Block>
+    <Card.Block>Content</Card.Block>
+    <Card.Block>Footer</Card.Block>
+  </Card>
+</Playground>
+
+### With Button
+
+<Playground>
+  <Card width="400px">
+    <Card.Block>Title</Card.Block>
+    <Card.Block>Content</Card.Block>
+    <Card.Button>With Button</Card.Button>
+    <Card.Button>With Button</Card.Button>
+    <Card.Button>With Button</Card.Button>
+  </Card>
+</Playground>
+
+### With children Input & Button
+
+<Playground>
+  <Card width="400px">
+    <Card.Block>
+      <Input placeholder="With children Input" textAlign="center" />
+    </Card.Block>
+    <Card.Block>
+      <Button block light border="none">
+        With children Button
+      </Button>
+    </Card.Block>
+  </Card>
+</Playground>
+
+### With Image Top
+
+<Playground>
+  <Card width="400px">
+    <Card.Image>
+      <img src="http://via.placeholder.com/400x300" alt="placeholder" />
+    </Card.Image>
+    <Card.Block>Title</Card.Block>
+    <Card.Block>Content</Card.Block>
+    <Card.Block>Footer</Card.Block>
+  </Card>
+</Playground>
+
+### With Image Bottom
+
+<Playground>
+  <Card width="400px">
+    <Card.Block>Title</Card.Block>
+    <Card.Block>Content</Card.Block>
+    <Card.Image>
+      <img src="http://via.placeholder.com/400x300" alt="placeholder" />
+    </Card.Image>
+  </Card>
+</Playground>
