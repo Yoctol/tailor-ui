@@ -67,7 +67,13 @@ const Icon = ({ type, ...otherProps }) => {
 };
 
 Icon.propTypes = {
+  /**
+   * Set the cursor of Icon
+   */
   cursor: PropTypes.string,
+  /**
+   * Type of icon. Can be a react-icon or built-in icon string
+   */
   type: PropTypes.oneOfType([PropTypes.string, PropTypes.func]).isRequired,
 };
 

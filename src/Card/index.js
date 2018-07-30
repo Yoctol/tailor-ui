@@ -29,14 +29,16 @@ const StyledBlock = styled.div`
 export const Block = props => <StyledBlock {...props} />;
 
 Block.propTypes = {
-  fontSize: PropTypes.string,
-  p: PropTypes.number,
+  /**
+   * The padding of block
+   */
+  p: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   ...space.propTypes,
   ...height.propTypes,
 };
 
 Block.defaultProps = {
-  fontSize: 'default',
+  fontSize: 'default', // eslint-disable-line react/default-props-match-prop-types
   p: 4,
 };
 
@@ -123,6 +125,9 @@ const Card = ({ children, ...otherProps }) => (
 );
 
 Card.propTypes = {
+  /**
+   * Should be Card.Block, Card.Image or Card.Button of React.Children
+   */
   children: PropTypes.node.isRequired,
   ...space.propTypes,
   ...height.propTypes,

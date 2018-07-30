@@ -41,6 +41,9 @@ const Spin = ({ text }) => (
 );
 
 Spin.propTypes = {
+  /**
+   * Customize description content when Spin has children
+   */
   text: PropTypes.string,
 };
 

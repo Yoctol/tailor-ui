@@ -8,12 +8,23 @@ import { TiFlowChildren } from 'react-icons/lib/ti';
 import { MdEdit, MdComment, MdInput } from 'react-icons/lib/md';
 
 import Icon from './';
+import * as icons from './icons';
 
 # Icon
 
 ## Properties
 
 <PropsTable of={Icon} />
+
+## Built-In Icon
+
+<ul>
+  {Object.keys(icons).map(icon => (
+    <li>
+      <code>{icon}</code>
+    </li>
+  ))}
+</ul>
 
 ## Usage
 

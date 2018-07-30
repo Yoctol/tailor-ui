@@ -217,40 +217,37 @@ Button.displayName = 'Button';
 
 Button.propTypes = {
   /**
-   * Description of prop "active".
+   * Set the button to active
    */
   active: PropTypes.bool,
   /**
-   * Description of prop "block".
+   * Set the button width to 100%
    */
   block: PropTypes.bool,
   /**
-   * Description of prop "circle".
+   * Make button shape to circle
    */
   circle: PropTypes.bool,
   /**
-   * Description of prop "ghost".
+   * Make button to danger status
    */
   danger: PropTypes.bool,
   /**
-   * Description of prop "light".
+   * Make background transparent and invert text and border colors
    */
   ghost: PropTypes.bool,
   /**
-   * Description of prop "danger".
+   * Make button to light version
    */
   light: PropTypes.bool,
   /**
-   * Description of prop "loading".
+   * Set the loading status of button
    */
   loading: PropTypes.bool,
   /**
-   * Description of prop "size".
+   * Can be set to sm lg or omitted
    */
   size: PropTypes.oneOf(['sm', 'm', 'lg']),
-  /**
-   * Description of prop "Space".
-   */
   ...space.propTypes,
 };
 
