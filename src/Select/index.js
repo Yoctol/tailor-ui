@@ -4,9 +4,6 @@ import React from 'react';
 import styled from 'styled-components';
 import { themeGet } from 'styled-system';
 
-import controlTransition from '../utils/transition';
-import { controlShadow } from '../utils/shadow';
-
 const StyledSelect = styled(BaseSelect).attrs({
   classNamePrefix: 'yoctol-select',
 })`
@@ -14,51 +11,14 @@ const StyledSelect = styled(BaseSelect).attrs({
     min-width: 150px;
     border-color: ${themeGet('colors.gray.8')};
     background-color: ${themeGet('colors.light')};
+    box-shadow: none;
 
     &:hover {
-      border-color: ${themeGet('colors.gray.4')};
+      border-color: ${themeGet('colors.primary')};
     }
 
-    .yoctol-select__value-container {
-      /* empty */
-    }
-
-    & .yoctol-select__indicators {
-      .yoctol-select__indicator-separator {
-        display: none;
-      }
-
-      .yoctol-select__indicator {
-        ${controlTransition()};
-
-        &.yoctol-select__dropdown-indicator {
-          content: '';
-          position: relative;
-          width: 0;
-          height: 0;
-          margin-right: 13px;
-          margin-left: 5px;
-          padding: 0;
-          border-top: 6px solid ${themeGet('colors.gray.7')};
-          border-right: 6px solid transparent;
-          border-left: 6px solid transparent;
-
-          &:hover {
-            border-top-color: ${themeGet('colors.gray.5')};
-          }
-        }
-      }
-    }
-
-    &.yoctol-select__control-is-focused {
-      border-color: ${themeGet('colors.secondaryDark')};
-      ${controlShadow(themeGet('colors.secondaryDark'))};
-
-      .yoctol-select__indicators {
-        .yoctol-select__indicator.yoctol-select__dropdown-indicator {
-          border-top-color: ${themeGet('colors.primaryDark')};
-        }
-      }
+    &.yoctol-select__control--is-focused {
+      border-color: ${themeGet('colors.primaryDark')};
     }
 
     &.yoctol-select__control-is-disabled {
