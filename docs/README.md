@@ -1,6 +1,6 @@
 # Yoctol UI components
 
-### [See the storybook](https://yoctol.github.io/ui)
+### [Docz](https://yoctol-ui.netlify.com)
 
 ### Usage
 
@@ -30,8 +30,8 @@ Instal dependencies:
 cd ui && yarn
 ```
 
-Start the storybook:
+Start the docz:
 
 ```bash
-yarn storybook
+yarn docz:dev
 ```
