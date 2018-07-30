@@ -35,21 +35,51 @@ const RadioField = ({
 };
 
 RadioField.propTypes = {
+  /**
+   * Specifies whether the checkbox is selected
+   */
+  checked: PropTypes.bool,
+  /**
+   * The label of checkbox field
+   */
   children: PropTypes.string.isRequired,
+  /**
+   * Disable checkbox
+   */
+  disabled: PropTypes.bool,
+  /**
+   * Set the checkbox group status to error
+   */
   error: PropTypes.bool,
+  /**
+   * The message will show when success or warning or error is true
+   */
   message: PropTypes.string,
+  /**
+   * Set the checkbox group status to success
+   */
   success: PropTypes.bool,
+  /**
+   * Set the checkbox group status to warning
+   */
   warning: PropTypes.bool,
+  /**
+   * The callback function that is triggered when the state changes
+   */
+  onChange: PropTypes.func,
 };
 
 RadioField.defaultProps = {
+  disabled: false,
+  checked: false,
   error: false,
   message: '',
   success: false,
   warning: false,
+  onChange: () => {},
 };
 
-const RadioFieldGroup = ({
+export const RadioFieldGroup = ({
   label: groupLabel,
   value: groupValues,
   options,
@@ -85,10 +115,24 @@ const RadioFieldGroup = ({
   </Value>
 );
 
+RadioFieldGroup.displayName = 'RadioField.Group';
+
 RadioFieldGroup.propTypes = {
+  /**
+   * Set the checkbox field group status to error
+   */
   error: PropTypes.bool,
+  /**
+   * The label of checkbox field group
+   */
   label: PropTypes.string.isRequired,
+  /**
+   * The message will show when success or warning or error is true
+   */
   message: PropTypes.string,
+  /**
+   * Specifies options
+   */
   options: PropTypes.arrayOf(
     PropTypes.shape({
       label: PropTypes.string.isRequired,
@@ -96,16 +140,30 @@ RadioFieldGroup.propTypes = {
       disabled: PropTypes.bool,
     })
   ).isRequired,
+  /**
+   * Set the checkbox field group status to success
+   */
   success: PropTypes.bool,
-  value: PropTypes.string.isRequired,
+  /**
+   * Used for setting the currently selected value
+   */
+  value: PropTypes.arrayOf(PropTypes.string),
+  /**
+   * Set the checkbox field group status to warning
+   */
   warning: PropTypes.bool,
-  onChange: PropTypes.func.isRequired,
+  /**
+   * The callback function that is triggered when the state changes
+   */
+  onChange: PropTypes.func,
 };
 RadioFieldGroup.defaultProps = {
   error: false,
   message: '',
   success: false,
   warning: false,
+  value: '',
+  onChange: () => {},
 };
 
 RadioField.Group = RadioFieldGroup;

@@ -1,0 +1,161 @@
+---
+name: Checkbox
+menu: Data Entry
+route: /data-entry/checkbox
+---
+
+import { PropsTable, Playground } from 'docz';
+import { Toggle, Value } from 'react-powerplug';
+import FormField from './FormField';
+import Label from './Label';
+import Checkbox from '../Checkbox';
+import CheckboxField, { CheckboxFieldGroup } from './CheckboxField';
+
+
+# Checkbox
+
+## Properties
+
+### Checkbox
+
+<PropsTable of={Checkbox} />
+
+### CheckboxField
+
+<PropsTable of={CheckboxField} />
+
+### CheckboxField.Group
+
+<PropsTable of={CheckboxFieldGroup} />
+
+## Usage
+
+```js
+import { FormField, Label, Checkbox, CheckboxField } from '@yoctol/ui';
+```
+
+### Checkbox
+
+#### Basic
+
+<Playground>
+  <Toggle>
+    {({ on, toggle }) => (
+      <FormField>
+        <Checkbox
+          id="checkbox-basic"
+          checked={on}
+          onChange={toggle}
+        />
+        <Label htmlFor="checkbox-basic">Checkbox</Label>
+      </FormField>
+    )}
+  </Toggle>
+</Playground>
+
+#### With disabled
+
+<Playground>
+  <FormField>
+    <Checkbox id="checked-disabled" checked disabled />
+    <Label htmlFor="checked-disabled">Checked Disabled</Label>
+  </FormField>
+  <FormField>
+    <Checkbox id="disabled" disabled />
+    <Label htmlFor="disabled">Disabled</Label>
+  </FormField>
+</Playground>
+
+#### Customize color
+
+<Playground>
+  <Toggle>
+    {({ on, toggle }) => (
+      <FormField>
+        <Checkbox
+          id="checkbox-custom"
+          bg="#63bf2d"
+          borderColor="#423b63"
+          checked={on}
+          onChange={toggle}
+        />
+        <Label htmlFor="checkbox-custom">Checkbox</Label>
+      </FormField>
+    )}
+  </Toggle>
+</Playground>
+
+### CheckboxField
+
+#### Basic
+
+<Playground>
+  <Toggle>
+    {({ on, toggle }) => (
+      <CheckboxField checked={on} onChange={toggle}>
+        Checkbox
+      </CheckboxField>
+    )}
+  </Toggle>
+</Playground>
+
+#### With error
+
+<Playground>
+  <Toggle>
+    {({ on, toggle }) => (
+      <CheckboxField
+        checked={on}
+        onChange={toggle}
+        error
+        message="Something went wrong!"
+      >
+        Checkbox
+      </CheckboxField>
+    )}
+  </Toggle>
+</Playground>
+
+### CheckboxField.Group
+
+#### Basic
+
+<Playground>
+  <Value initial={['check_1']}>
+    {({ set, value }) => (
+      <CheckboxField.Group
+        label="Checkbox Group"
+        options={[
+          { label: 'checkbox 1', value: 'check_1' },
+          { label: 'checkbox 2', value: 'check_2' },
+          { label: 'checkbox 3', value: 'check_3', disabled: true },
+          { label: 'checkbox 4', value: 'check_4' },
+        ]}
+        values={value}
+        onChange={set}
+      />
+    )}
+  </Value>
+</Playground>
+
+#### With group & error
+
+<Playground>
+  <Value initial={[]}>
+    {({ set, value }) => (
+      <CheckboxField.Group
+        label="Checkbox Group"
+        error
+        message="Something went wrong!"
+        options={[
+          { label: 'checkbox 1', value: 'check_1' },
+          { label: 'checkbox 2', value: 'check_2' },
+          { label: 'checkbox 3', value: 'check_3' },
+          { label: 'checkbox 4', value: 'check_4' },
+        ]}
+        values={value}
+        onChange={val => set(val)}
+      />
+    )}
+  </Value>
+</Playground>

@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import React from 'react';
 import styled from 'styled-components';
 import { borderColor, color, themeGet } from 'styled-system';
 
@@ -6,7 +7,7 @@ import Label from '../Form/Label';
 import controlTransition from '../utils/transition';
 import { controlShadow } from '../utils/shadow';
 
-const Radio = styled.input.attrs({
+const StyledRadio = styled.input.attrs({
   type: 'radio',
 })`
   position: absolute;
@@ -62,15 +63,32 @@ const Radio = styled.input.attrs({
   }
 `;
 
+const Radio = props => <StyledRadio {...props} />;
+
 Radio.propTypes = {
+  /**
+   * Specifies whether the checkbox is selected
+   */
+  checked: PropTypes.bool,
+  /**
+   * Disable checkbox
+   */
   disabled: PropTypes.bool,
+  /**
+   * The callback function that is triggered when the state changes
+   */
+  onChange: PropTypes.func,
   ...borderColor.propTypes,
   ...color.propTypes,
 };
 
 Radio.defaultProps = {
   disabled: false,
+  checked: false,
+  onChange: () => {},
+  // eslint-disable-next-line react/default-props-match-prop-types
   bg: 'primary',
+  // eslint-disable-next-line react/default-props-match-prop-types
   borderColor: 'primary',
 };
 

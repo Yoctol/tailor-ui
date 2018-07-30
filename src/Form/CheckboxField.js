@@ -35,21 +35,51 @@ const CheckboxField = ({
 };
 
 CheckboxField.propTypes = {
+  /**
+   * Specifies whether the checkbox is selected
+   */
+  checked: PropTypes.bool,
+  /**
+   * The label of checkbox field
+   */
   children: PropTypes.string.isRequired,
+  /**
+   * Disable checkbox
+   */
+  disabled: PropTypes.bool,
+  /**
+   * Set the checkbox group status to error
+   */
   error: PropTypes.bool,
+  /**
+   * The message will show when success or warning or error is true
+   */
   message: PropTypes.string,
+  /**
+   * Set the checkbox group status to success
+   */
   success: PropTypes.bool,
+  /**
+   * Set the checkbox group status to warning
+   */
   warning: PropTypes.bool,
+  /**
+   * The callback function that is triggered when the state changes
+   */
+  onChange: PropTypes.func,
 };
 
 CheckboxField.defaultProps = {
+  disabled: false,
+  checked: false,
   error: false,
   message: '',
   success: false,
   warning: false,
+  onChange: () => {},
 };
 
-const CheckboxFieldGroup = ({
+export const CheckboxFieldGroup = ({
   label: groupLabel,
   values: groupValues,
   options,
@@ -93,10 +123,24 @@ const CheckboxFieldGroup = ({
   </Set>
 );
 
+CheckboxFieldGroup.displayName = 'CheckboxField.Group';
+
 CheckboxFieldGroup.propTypes = {
+  /**
+   * Set the checkbox field group status to error
+   */
   error: PropTypes.bool,
+  /**
+   * The label of checkbox field group
+   */
   label: PropTypes.string.isRequired,
+  /**
+   * The message will show when success or warning or error is true
+   */
   message: PropTypes.string,
+  /**
+   * Specifies options
+   */
   options: PropTypes.arrayOf(
     PropTypes.shape({
       label: PropTypes.string.isRequired,
@@ -104,16 +148,31 @@ CheckboxFieldGroup.propTypes = {
       disabled: PropTypes.bool,
     })
   ).isRequired,
+  /**
+   * Set the checkbox field group status to success
+   */
   success: PropTypes.bool,
-  values: PropTypes.arrayOf(PropTypes.string).isRequired,
+  /**
+   * Used for setting the currently selected value
+   */
+  values: PropTypes.arrayOf(PropTypes.string),
+  /**
+   * Set the checkbox field group status to warning
+   */
   warning: PropTypes.bool,
-  onChange: PropTypes.func.isRequired,
+  /**
+   * The callback function that is triggered when the state changes
+   */
+  onChange: PropTypes.func,
 };
+
 CheckboxFieldGroup.defaultProps = {
   error: false,
   message: '',
   success: false,
   warning: false,
+  values: [],
+  onChange: () => {},
 };
 
 CheckboxField.Group = CheckboxFieldGroup;
