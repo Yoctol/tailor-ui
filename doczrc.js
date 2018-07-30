@@ -21,7 +21,7 @@ module.exports = {
         fontFamily: 'Roboto Mono',
       },
       table: {
-        fontFamily: 'Roboto',
+        fontFamily: 'Roboto Mono',
       },
     },
   },
