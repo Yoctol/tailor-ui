@@ -1,4 +1,3 @@
-import React, { forwardRef } from 'react';
 import styled from 'styled-components';
 import {
   alignItems,
@@ -7,9 +6,9 @@ import {
   justifyContent,
 } from 'styled-system';
 
-import Box, { StyledBox } from './Box';
+import Box from './Box';
 
-const StyledFlex = styled(StyledBox)`
+const Flex = styled(Box)`
   display: flex;
 
   ${alignItems};
@@ -17,12 +16,6 @@ const StyledFlex = styled(StyledBox)`
   ${justifyContent};
   ${flexWrap};
 `;
-
-const Flex = ({ children, ...props }, ref) => (
-  <StyledFlex innerRef={ref} {...props}>
-    {children}
-  </StyledFlex>
-);
 
 Flex.propTypes = {
   ...Box.propTypes,
@@ -32,4 +25,4 @@ Flex.propTypes = {
   ...flexWrap.propTypes,
 };
 
-export default forwardRef(Flex);
+export default Flex;

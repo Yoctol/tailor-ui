@@ -1,4 +1,3 @@
-import React, { forwardRef } from 'react';
 import styled from 'styled-components';
 import * as system from 'styled-system';
 
@@ -17,7 +16,7 @@ const overflowY = system.style({
   cssProperty: 'overflow-y',
 });
 
-export const StyledBox = styled.div`
+const Box = styled.div`
   box-sizing: border-box;
 
   ${system.position /* sc-declaration */}
@@ -52,12 +51,6 @@ export const StyledBox = styled.div`
   ${system.alignSelf /* sc-declaration */}
 `;
 
-const Box = ({ children, ...props }, ref) => (
-  <StyledBox innerRef={ref} {...props}>
-    {children}
-  </StyledBox>
-);
-
 Box.propTypes = {
   ...system.position.propTypes,
   ...system.top.propTypes,
@@ -88,4 +81,4 @@ Box.propTypes = {
   ...system.alignSelf.propTypes,
 };
 
-export default forwardRef(Box);
+export default Box;
