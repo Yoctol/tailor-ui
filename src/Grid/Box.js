@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import styled from 'styled-components';
 import * as system from 'styled-system';
 
@@ -52,7 +52,7 @@ export const StyledBox = styled.div`
   ${system.alignSelf /* sc-declaration */}
 `;
 
-const Box = ({ children, ref, ...props }) => (
+const Box = ({ children, ...props }, ref) => (
   <StyledBox innerRef={ref} {...props}>
     {children}
   </StyledBox>
@@ -88,4 +88,4 @@ Box.propTypes = {
   ...system.alignSelf.propTypes,
 };
 
-export default Box;
+export default forwardRef(Box);

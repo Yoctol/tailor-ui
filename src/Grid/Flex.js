@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import styled from 'styled-components';
 import {
   alignItems,
@@ -18,7 +18,7 @@ const StyledFlex = styled(StyledBox)`
   ${flexWrap};
 `;
 
-const Flex = ({ children, ref, ...props }) => (
+const Flex = ({ children, ...props }, ref) => (
   <StyledFlex innerRef={ref} {...props}>
     {children}
   </StyledFlex>
@@ -32,4 +32,4 @@ Flex.propTypes = {
   ...flexWrap.propTypes,
 };
 
-export default Flex;
+export default forwardRef(Flex);
