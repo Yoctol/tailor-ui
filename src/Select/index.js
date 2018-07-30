@@ -113,19 +113,21 @@ Select.propTypes = {
    * Specify the options the user can select from
    */
   options: PropTypes.arrayOf(
-    PropTypes.shape({
-      label: PropTypes.string,
-      value: PropTypes.string,
-    })
+    PropTypes.oneOfType([PropTypes.number, PropTypes.string, PropTypes.object])
+      .isRequired
   ).isRequired,
   /**
    * Change the text displayed when no option is selected
    */
   placeholder: PropTypes.string,
   /**
-   * Control the current value
+   * One of options
    */
-  value: PropTypes.string.isRequired,
+  value: PropTypes.oneOfType([
+    PropTypes.number,
+    PropTypes.string,
+    PropTypes.object,
+  ]).isRequired,
   /**
    * Subscribe to change events
    */
