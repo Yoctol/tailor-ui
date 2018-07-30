@@ -5,6 +5,7 @@ exports[`Modal should render correctly 1`] = `
   closeButton={false}
   handleClose={[Function]}
   show={true}
+  width={416}
 />
 `;
 
@@ -13,5 +14,6 @@ exports[`Modal should render with props closeButton 1`] = `
   closeButton={true}
   handleClose={[Function]}
   show={true}
+  width={416}
 />
 `;

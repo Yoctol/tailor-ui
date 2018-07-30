@@ -30,12 +30,17 @@ Modal.propTypes = {
    * Whether the modal is show or not
    */
   show: PropTypes.bool.isRequired,
+  /**
+   * Width of modal
+   */
+  width: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
 };
 
 Modal.defaultProps = {
   animation: true,
   closeButton: false,
   children: null,
+  width: 416,
 };
 
 export default Modal;
