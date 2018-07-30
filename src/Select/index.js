@@ -98,6 +98,10 @@ const Select = props => <StyledSelect {...props} />;
 
 Select.propTypes = {
   /**
+   * Is the select value clearable
+   */
+  isClearable: PropTypes.bool,
+  /**
    * Disable the control
    */
   isDisabled: PropTypes.bool,
@@ -129,6 +133,7 @@ Select.propTypes = {
 };
 
 Select.defaultProps = {
+  isClearable: false,
   isDisabled: false,
   isSearchable: false,
   placeholder: '',
