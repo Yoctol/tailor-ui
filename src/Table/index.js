@@ -97,12 +97,16 @@ const StyledTable = styled.table`
 const Table = props => <StyledTable {...props} />;
 
 Table.propTypes = {
+  /**
+   * The table width
+   */
+  width: PropTypes.string,
   ...width.propTypes,
   ...textAlign.propTypes,
 };
 
 Table.defaultProps = {
-  width: '100%', // eslint-disable-line react/default-props-match-prop-types
+  width: '100%',
   textAlign: 'left', // eslint-disable-line react/default-props-match-prop-types
 };
 
