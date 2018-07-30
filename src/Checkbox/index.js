@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import React from 'react';
 import styled from 'styled-components';
 import { borderColor, color, themeGet } from 'styled-system';
 
@@ -6,7 +7,7 @@ import Label from '../Form/Label';
 import controlTransition from '../utils/transition';
 import { controlShadow } from '../utils/shadow';
 
-const Checkbox = styled.input.attrs({
+const StyledCheckbox = styled.input.attrs({
   type: 'checkbox',
 })`
   position: absolute;
@@ -65,15 +66,32 @@ const Checkbox = styled.input.attrs({
   }
 `;
 
+const Checkbox = props => <StyledCheckbox {...props} />;
+
 Checkbox.propTypes = {
+  /**
+   * Specifies whether the checkbox is selected
+   */
+  checked: PropTypes.bool,
+  /**
+   * Disable checkbox
+   */
   disabled: PropTypes.bool,
+  /**
+   * The callback function that is triggered when the state changes
+   */
+  onChange: PropTypes.func,
   ...borderColor.propTypes,
   ...color.propTypes,
 };
 
 Checkbox.defaultProps = {
   disabled: false,
+  checked: false,
+  onChange: () => {},
+  // eslint-disable-next-line react/default-props-match-prop-types
   bg: 'primary',
+  // eslint-disable-next-line react/default-props-match-prop-types
   borderColor: 'primary',
 };
 

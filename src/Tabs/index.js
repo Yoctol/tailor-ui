@@ -93,7 +93,7 @@ const StyledTab = styled.a`
   ${space};
 `;
 
-const Tab = ({ children, ...props }) => (
+export const Tab = ({ children, ...props }) => (
   <Consumer>
     {({ size, pills }) => (
       <StyledTab size={size} pills={pills} {...props}>
@@ -104,8 +104,17 @@ const Tab = ({ children, ...props }) => (
 );
 
 Tab.propTypes = {
+  /**
+   * Active state of tab
+   */
   active: PropTypes.bool,
+  /**
+   * Content of tab
+   */
   children: PropTypes.node.isRequired,
+  /**
+   * Disabled state of tab
+   */
   disabled: PropTypes.bool,
 };
 
@@ -150,10 +159,25 @@ const Tabs = ({ absolute, children, size, pills, ...otherProps }) => (
 );
 
 Tabs.propTypes = {
+  /**
+   * Make the tabs position to bottom of parent
+   */
   absolute: PropTypes.bool,
+  /**
+   * Set the tabs width to 100%
+   */
   block: PropTypes.bool,
+  /**
+   * The Tab component which will render in Tabs
+   */
   children: PropTypes.node.isRequired,
+  /**
+   * Pills style of tabs
+   */
   pills: PropTypes.bool,
+  /**
+   * Preset tab bar size
+   */
   size: PropTypes.string,
   ...space.propTypes,
 };

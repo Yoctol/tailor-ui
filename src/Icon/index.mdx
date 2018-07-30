@@ -1,0 +1,102 @@
+---
+name: Icon
+menu: General
+route: /general/icon
+---
+import { PropsTable, Playground } from 'docz';
+import { TiFlowChildren } from 'react-icons/lib/ti';
+import { MdEdit, MdComment, MdInput } from 'react-icons/lib/md';
+
+import Icon from './';
+import * as icons from './icons';
+
+# Icon
+
+## Properties
+
+<PropsTable of={Icon} />
+
+## Built-In Icon
+
+<ul>
+  {Object.keys(icons).map(icon => (
+    <li>
+      <code>{icon}</code>
+    </li>
+  ))}
+</ul>
+
+## Usage
+
+```js
+import { Icon } from '@yoctol/ui';
+import { TiFlowChildren } from 'react-icons/lib/ti';
+import { MdEdit, MdComment, MdInput } from 'react-icons/lib/md';
+```
+
+### Built-in
+
+<Playground>
+  <Icon mx={2} type="line" />
+  <Icon mx={2} type="messenger" />
+  <Icon mx={2} type="understood" />
+  <Icon mx={2} type="kurator" />
+  <Icon mx={2} type="touch" />
+  <Icon mx={2} type="analytics" />
+  <Icon mx={2} type="tags" />
+  <Icon mx={2} type="settings" />
+</Playground>
+
+
+### Custom props
+
+<Playground>
+  <Icon mx={2} fill="#00c300" type="line" />
+  <Icon mx={2} fill="#0084ff" type="messenger" />
+  <Icon mx={2} fill="primaryLight" size={32} type="understood" />
+  <Icon mx={2} fill="primaryLight" size={32} type="kurator" />
+  <Icon mx={2} fill="primaryLight" size={32} type="touch" />
+  <Icon mx={2} fill="primaryLight" size={32} type="analytics" />
+  <Icon mx={2} fill="primaryLight" size={32} type="tags" />
+  <Icon mx={2} fill="primaryLight" size={32} type="settings" />
+  <Icon mx={2} fill="secondary" size={48} type={MdEdit} />
+  <Icon mx={2} fill="secondary" size={48} type={MdComment} />
+  <Icon mx={2} fill="secondary" size={48} type={MdInput} />
+  <Icon mx={2} fill="secondary" size={48} type={TiFlowChildren} />
+</Playground>
+
+### react-icons
+
+<Playground>
+  <Icon mx={2} type={MdEdit} />
+  <Icon mx={2} type={MdComment} />
+  <Icon mx={2} type={MdInput} />
+  <Icon mx={2} type={TiFlowChildren} />
+</Playground>
+
+### cursor
+
+<Playground>
+  <Icon mx={2} type={MdEdit} />
+  <Icon
+    mx={2}
+    cursor="pointer"
+    type={MdComment}
+  />
+  <Icon
+    mx={2}
+    cursor="grab"
+    type={MdInput}
+  />
+  <Icon
+    mx={2}
+    cursor="help"
+    type={TiFlowChildren}
+  />
+</Playground>
+
+### loading
+
+<Playground>
+  <Icon size="40" type="loading" />
+</Playground>

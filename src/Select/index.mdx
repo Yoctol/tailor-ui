@@ -1,0 +1,130 @@
+---
+name: Select
+menu: Data Entry
+route: /data-entry/select
+---
+
+import { PropsTable, Playground } from 'docz';
+import { Value } from 'react-powerplug';
+import { range } from 'ramda';
+import Select from './';
+
+# Select
+
+## Properties
+
+<PropsTable of={Select} />
+
+## Usage
+
+```js
+import { Select } from '@yoctol/ui';
+```
+
+### Basic
+
+<Playground>
+  <Value initial={{ label: 'Item 1', value: 1 }}>
+    {({ value, set }) => (
+      <Select
+        value={value}
+        onChange={set}
+        options={[
+          {
+            label: 'Item 1',
+            value: 1
+          },
+          {
+            label: 'Item 2',
+            value: 2
+          },
+          {
+            label: 'Item 3',
+            value: 3
+          },
+          {
+            label: 'Item 4',
+            value: 4
+          },
+          {
+            label: 'Item 5',
+            value: 5
+          }
+        ]}
+      />
+    )}
+  </Value>
+</Playground>
+
+### isDisabled
+
+<Playground>
+  <Value initial={{ label: 'Item 1', value: 1 }}>
+    {({ value, set }) => (
+      <Select
+        isDisabled
+        value={value}
+        onChange={set}
+        options={[
+          {
+            label: 'Item 1',
+            value: 1
+          },
+          {
+            label: 'Item 2',
+            value: 2
+          },
+          {
+            label: 'Item 3',
+            value: 3
+          },
+          {
+            label: 'Item 4',
+            value: 4
+          },
+          {
+            label: 'Item 5',
+            value: 5
+          }
+        ]}
+      />
+    )}
+  </Value>
+</Playground>
+
+### With placeholder & isClearable
+
+<Playground>
+  <Value>
+    {({ value, set }) => (
+      <Select
+        isClearable
+        placeholder="どれ"
+        value={value}
+        onChange={set}
+        options={[
+          {
+            label: 'Item 1',
+            value: 1
+          },
+          {
+            label: 'Item 2',
+            value: 2
+          },
+          {
+            label: 'Item 3',
+            value: 3
+          },
+          {
+            label: 'Item 4',
+            value: 4
+          },
+          {
+            label: 'Item 5',
+            value: 5
+          }
+        ]}
+      />
+    )}
+  </Value>
+</Playground>

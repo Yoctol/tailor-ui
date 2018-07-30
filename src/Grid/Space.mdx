@@ -1,0 +1,34 @@
+---
+name: Space
+menu: Layout
+route: /layout/space
+---
+
+import { PropsTable, Playground, Link } from 'docz';
+import Space from './Space';
+
+# Space
+
+## Properties
+
+<Link to="/layout/grid#properties">
+  Same as Grid
+</Link>
+
+## Usage
+
+```js
+import { Space } from '@yoctol/ui';
+```
+
+<div>
+The props converts same as <Link to="/layout/grid#usage">Grid</Link>
+</div>
+
+### Basic
+
+<Playground>
+  <Space m={4} p={8} style={{ backgroundColor: '#ccc', textAlign: 'center'}}>
+    With margin & padding
+  </Space>
+</Playground>

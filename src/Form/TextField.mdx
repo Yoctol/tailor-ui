@@ -1,0 +1,99 @@
+---
+name: TextField
+menu: Data Entry
+route: /data-entry/textfield
+---
+
+import { PropsTable, Playground } from 'docz';
+import { Input } from 'react-powerplug';
+import TextField from './TextField';
+
+# TextField
+
+## Properties
+
+<PropsTable of={TextField} />
+
+## Usage
+
+```js
+import { TextField } from '@yoctol/ui';
+```
+
+### Basic
+
+<Playground>
+  <TextField label="Text Field" />
+</Playground>
+
+### With maxLength
+
+<Playground>
+  <TextField label="Text Field" maxLength={12} />
+</Playground>
+
+### With textarea
+
+<Playground>
+  <TextField
+    textarea
+    minRows={2}
+    maxRows={6}
+    label="Text Field(textarea)"
+  />
+</Playground>
+
+### With textarea & maxLength
+
+<Playground>
+  <TextField
+    textarea
+    minRows={2}
+    maxRows={6}
+    maxLength={100}
+    label="Text Field(textarea)"
+  />
+</Playground>
+
+### With maxLength & error
+
+<Playground>
+  <Input>
+    {({ value, bind }) => {
+      const hasError = value === 'error';
+      return (
+        <TextField
+          label="Please type 'error'"
+          maxLength={12}
+          error={hasError}
+          message="Just show error"
+          {...bind}
+        />
+      );
+    }}
+  </Input>
+</Playground>
+
+### With status
+
+<Playground>
+  <TextField value="default" label="Text Field" />
+  <TextField
+    label="Text Field"
+    value="Success"
+    success
+    message="This is a success message"
+  />
+  <TextField
+    label="Text Field"
+    value="Warning"
+    warning
+    message="This is a warning message"
+  />
+  <TextField
+    label="Text Field"
+    value="Error"
+    error
+    message="This is a error message"
+  />
+</Playground>

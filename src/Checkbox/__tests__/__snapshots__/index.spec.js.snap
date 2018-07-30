@@ -73,15 +73,28 @@ exports[`Checkbox should render correctly 1`] = `
   <Checkbox
     bg="primary"
     borderColor="primary"
+    checked={false}
     disabled={false}
     id="checkbox"
+    onChange={[Function]}
   >
-    <input
-      className="c0"
+    <Checkbox__StyledCheckbox
+      bg="primary"
+      borderColor="primary"
+      checked={false}
       disabled={false}
       id="checkbox"
-      type="checkbox"
-    />
+      onChange={[Function]}
+    >
+      <input
+        checked={false}
+        className="c0"
+        disabled={false}
+        id="checkbox"
+        onChange={[Function]}
+        type="checkbox"
+      />
+    </Checkbox__StyledCheckbox>
   </Checkbox>
   <Label
     htmlFor="checkbox"
@@ -169,15 +182,28 @@ exports[`Checkbox should render with props disabled 1`] = `
   <Checkbox
     bg="primary"
     borderColor="primary"
+    checked={false}
     disabled={true}
     id="checkbox"
+    onChange={[Function]}
   >
-    <input
-      className="c0"
+    <Checkbox__StyledCheckbox
+      bg="primary"
+      borderColor="primary"
+      checked={false}
       disabled={true}
       id="checkbox"
-      type="checkbox"
-    />
+      onChange={[Function]}
+    >
+      <input
+        checked={false}
+        className="c0"
+        disabled={true}
+        id="checkbox"
+        onChange={[Function]}
+        type="checkbox"
+      />
+    </Checkbox__StyledCheckbox>
   </Checkbox>
   <Label
     htmlFor="checkbox"

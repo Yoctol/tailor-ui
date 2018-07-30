@@ -1,11 +1,12 @@
 import React from 'react';
 
-export default () => (
+const AnalyticsIcon = () => (
   <svg
-    xmlns="http://www.w3.org/2000/svg"
-    xmlnsXlink="http://www.w3.org/1999/xlink"
+    xmlns="https://www.w3.org/2000/svg"
+    xmlnsXlink="https://www.w3.org/1999/xlink"
     viewBox="0 0 48 48"
   >
+    <title>Analytics Icon</title>
     <defs>
       <path
         id="analytics_a"
@@ -23,3 +24,5 @@ export default () => (
     </g>
   </svg>
 );
+
+export default AnalyticsIcon;

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import React, { PureComponent } from 'react';
 import styled from 'styled-components';
 import { Transition, animated } from 'react-spring';
-import { space } from 'styled-system';
+import { space, width } from 'styled-system';
 import { themeGet } from 'styled-system/dist/util';
 
 import Icon from '../Icon';
@@ -13,14 +13,21 @@ const CloseBtn = styled.button.attrs({
   type: 'button',
 })`
   position: absolute;
-  top: 15px;
-  right: 15px;
-  padding: 5px;
+  top: 10px;
+  right: 10px;
+  padding: 0;
   border: 0;
+  background: transparent;
+  transform: rotate(0deg);
+  transition: all 0.2s ease-in;
   cursor: pointer;
 
   :focus {
     outline: 0;
+  }
+
+  :hover {
+    transform: rotate(90deg);
   }
 `;
 
@@ -54,21 +61,23 @@ const ModalContent = styled.div`
   left: 50%;
   flex-direction: column;
   max-height: 90vh;
-  padding: ${themeGet('space.spacingLg')};
   border: ${themeGet('borders.default')} ${themeGet('colors.gray.8')};
   border-radius: ${themeGet('radii.2')};
   background-color: #fff;
   box-shadow: 0 10px 30px 0 rgba(17, 17, 17, 0.2);
 
   ${space};
+  ${width};
 `;
 
 ModalContent.propTypes = {
   ...space.propTypes,
+  ...width.propTypes,
 };
 
 ModalContent.defaultProps = {
-  p: 7,
+  p: 8,
+  width: 416,
 };
 
 const AnimatedModalContent = animated(ModalContent);
@@ -157,7 +166,7 @@ Modal.propTypes = {
 
 Modal.defaultProps = {
   closeButton: false,
-  children: '',
+  children: null,
 };
 
 export default Modal;

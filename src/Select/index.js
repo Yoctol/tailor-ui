@@ -1,8 +1,10 @@
 import BaseSelect from 'react-select';
+import PropTypes from 'prop-types';
+import React from 'react';
 import styled from 'styled-components';
 import { themeGet } from 'styled-system';
 
-const Select = styled(BaseSelect).attrs({
+const StyledSelect = styled(BaseSelect).attrs({
   classNamePrefix: 'yoctol-select',
 })`
   & .yoctol-select__control {
@@ -51,5 +53,52 @@ const Select = styled(BaseSelect).attrs({
     }
   }
 `;
+
+const Select = props => <StyledSelect {...props} />;
+
+Select.propTypes = {
+  /**
+   * Is the select value clearable
+   */
+  isClearable: PropTypes.bool,
+  /**
+   * Disable the control
+   */
+  isDisabled: PropTypes.bool,
+  /**
+   * Allow the user to search for matching options
+   */
+  isSearchable: PropTypes.bool,
+  /**
+   * Specify the options the user can select from
+   */
+  options: PropTypes.arrayOf(
+    PropTypes.oneOfType([PropTypes.number, PropTypes.string, PropTypes.object])
+      .isRequired
+  ).isRequired,
+  /**
+   * Change the text displayed when no option is selected
+   */
+  placeholder: PropTypes.string,
+  /**
+   * One of options
+   */
+  value: PropTypes.oneOfType([
+    PropTypes.number,
+    PropTypes.string,
+    PropTypes.object,
+  ]).isRequired,
+  /**
+   * Subscribe to change events
+   */
+  onChange: PropTypes.func.isRequired,
+};
+
+Select.defaultProps = {
+  isClearable: false,
+  isDisabled: false,
+  isSearchable: false,
+  placeholder: '',
+};
 
 export default Select;

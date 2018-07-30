@@ -1,12 +1,13 @@
+import React from 'react';
 import styled, { css } from 'styled-components';
 import { ifProp } from 'styled-tools';
 import { themeGet } from 'styled-system';
 
 import Hint from './Hint';
-import Input from './Input';
 import Label from './Label';
+import { StyledInput } from './Input';
 
-const FormField = styled.div`
+const StyledFormField = styled.div`
   position: relative;
   margin-top: ${themeGet('space.3')};
   padding-bottom: ${themeGet('space.5')};
@@ -14,7 +15,7 @@ const FormField = styled.div`
   ${ifProp(
     'success',
     css`
-      & ${Input /* sc-selector */} {
+      & ${StyledInput /* sc-selector */} {
         border-color: ${themeGet('colors.success')};
       }
 
@@ -33,7 +34,7 @@ const FormField = styled.div`
   ${ifProp(
     'warning',
     css`
-      & ${Input /* sc-selector */} {
+      & ${StyledInput /* sc-selector */} {
         border-color: ${themeGet('colors.warning')};
       }
 
@@ -52,7 +53,7 @@ const FormField = styled.div`
   ${ifProp(
     'error',
     css`
-      & ${Input /* sc-selector */} {
+      & ${StyledInput /* sc-selector */} {
         border-color: ${themeGet('colors.error')};
       }
 
@@ -68,5 +69,7 @@ const FormField = styled.div`
     `
   )};
 `;
+
+const FormField = props => <StyledFormField {...props} />;
 
 export default FormField;

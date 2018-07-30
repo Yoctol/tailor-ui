@@ -1,3 +1,4 @@
+import React from 'react';
 import styled from 'styled-components';
 import * as system from 'styled-system';
 
@@ -16,7 +17,7 @@ const overflowY = system.style({
   cssProperty: 'overflow-y',
 });
 
-const Box = styled.div`
+const StyledBox = styled.div`
   box-sizing: border-box;
 
   ${system.position /* sc-declaration */}
@@ -50,6 +51,10 @@ const Box = styled.div`
   ${system.order /* sc-declaration */}
   ${system.alignSelf /* sc-declaration */}
 `;
+
+const Box = ({ children, ...props }) => (
+  <StyledBox {...props}>{children}</StyledBox>
+);
 
 Box.propTypes = {
   ...system.position.propTypes,

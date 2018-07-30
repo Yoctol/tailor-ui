@@ -216,12 +216,37 @@ class Button extends PureComponent {
 Button.displayName = 'Button';
 
 Button.propTypes = {
+  /**
+   * Set the button to active
+   */
   active: PropTypes.bool,
+  /**
+   * Set the button width to 100%
+   */
   block: PropTypes.bool,
+  /**
+   * Make button shape to circle
+   */
   circle: PropTypes.bool,
+  /**
+   * Make button to danger status
+   */
+  danger: PropTypes.bool,
+  /**
+   * Make background transparent and invert text and border colors
+   */
   ghost: PropTypes.bool,
+  /**
+   * Make button to light version
+   */
   light: PropTypes.bool,
+  /**
+   * Set the loading status of button
+   */
   loading: PropTypes.bool,
+  /**
+   * Can be set to sm lg or omitted
+   */
   size: PropTypes.oneOf(['sm', 'm', 'lg']),
   ...space.propTypes,
 };
@@ -230,6 +255,7 @@ Button.defaultProps = {
   size: 'm',
   block: false,
   circle: false,
+  danger: false,
   ghost: false,
   light: false,
   active: false,

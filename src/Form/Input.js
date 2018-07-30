@@ -55,7 +55,13 @@ const Input = ({ onPressEnter, ...props }) => {
 };
 
 Input.propTypes = {
-  size: PropTypes.string,
+  /**
+   * The size of the input box
+   */
+  size: PropTypes.oneOf(['sm', 'm', 'lg']),
+  /**
+   * The callback function that is triggered when Enter key is pressed
+   */
   onPressEnter: PropTypes.func,
   ...width.propTypes,
   ...space.propTypes,

@@ -1,0 +1,156 @@
+---
+name: Radio
+menu: Data Entry
+route: /data-entry/radio
+---
+
+import { PropsTable, Playground } from 'docz';
+import { Toggle, Value } from 'react-powerplug';
+import FormField from './FormField';
+import Label from './Label';
+import Radio from '../Radio';
+import RadioField, { RadioFieldGroup } from './RadioField';
+
+
+# Radio
+
+## Properties
+
+### Radio
+
+<PropsTable of={Radio} />
+
+### RadioField
+
+<PropsTable of={RadioField} />
+
+### RadioField.Group
+
+<PropsTable of={RadioFieldGroup} />
+
+## Usage
+
+```js
+import { FormField, Label, Radio, RadioField } from '@yoctol/ui';
+```
+
+### Radio
+
+#### Basic
+
+<Playground>
+  <FormField>
+    <Radio name="radio-basic" id="radio-basic-a" defaultChecked />
+    <Label htmlFor="radio-basic-a">Radio A</Label>
+  </FormField>
+  <FormField>
+    <Radio name="radio-basic" id="radio-basic-b" />
+    <Label htmlFor="radio-basic-b">Radio B</Label>
+  </FormField>
+</Playground>
+
+#### With disabled
+
+<Playground>
+  <FormField>
+    <Radio
+      name="radio-disabled"
+      id="radio-disable-a"
+      checked
+      disabled
+    />
+    <Label htmlFor="radio-disable-a">Checked Disabled</Label>
+  </FormField>
+  <FormField>
+    <Radio name="radio-disabled" id="radio-disable-b" disabled />
+    <Label htmlFor="radio-disable-b">Disabled</Label>
+  </FormField>
+</Playground>
+
+#### Custom color
+
+<Playground>
+  <FormField>
+    <Radio
+      name="customized"
+      id="custom-a"
+      bg="#63bf2d"
+      borderColor="#423b63"
+      defaultChecked
+    />
+    <Label htmlFor="custom-a">Customized Color Radio A</Label>
+  </FormField>
+  <FormField>
+    <Radio
+      name="customized"
+      id="custom-b"
+      bg="#63bf2d"
+      borderColor="#423b63"
+    />
+    <Label htmlFor="custom-b">Customized Color Radio B</Label>
+  </FormField>
+</Playground>
+
+
+### RadioField
+
+#### Basic
+
+<Playground>
+  <Value initial="radio-1">
+    {({ value, set }) => (
+      <div>
+        <RadioField checked={value === 'radio-1'} onChange={() => set('radio-1')}>
+          Radio
+        </RadioField>
+        <RadioField checked={value === 'radio-2'} onChange={() => set('radio-2')}>
+          Radio
+        </RadioField>
+      </div>
+    )}
+  </Value>
+</Playground>
+
+### RadioField.Group
+
+#### Basic
+
+<Playground>
+  <Value initial="radio-a">
+    {({ set, value }) => (
+      <RadioField.Group
+        label="Radio Group"
+        options={[
+          { label: 'Radio A', value: 'radio-a' },
+          { label: 'Radio B', value: 'radio-b' },
+          { label: 'Radio C', value: 'radio-c', disabled: true },
+          { label: 'Radio D', value: 'radio-d' },
+        ]}
+        value={value}
+        onChange={set}
+      />
+    )}
+  </Value>
+</Playground>
+
+#### With group & error
+
+<Playground>
+  <Value initial="radio-a">
+    {({ set, value }) => (
+      <RadioField.Group
+        label="Radio Group"
+        error
+        message="Something went wrong!"
+        options={[
+          { label: 'Radio A', value: 'radio-a' },
+          { label: 'Radio B', value: 'radio-b' },
+          { label: 'Radio C', value: 'radio-c', disabled: true },
+          { label: 'Radio D', value: 'radio-d' },
+        ]}
+        value={value}
+        onChange={set}
+      />
+    )}
+  </Value>
+</Playground>

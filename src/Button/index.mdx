@@ -1,0 +1,121 @@
+---
+name: Button
+menu: General
+route: /general/button
+---
+
+import { PropsTable, Playground } from 'docz';
+import Button from './';
+import Box from '../Grid/Box';
+
+# Button
+
+## Properties
+
+<PropsTable of={Button} />
+
+## Usage
+
+```js
+import { Button } from '@yoctol/ui';
+```
+
+### Basic
+
+<Playground>
+  <Button>Button</Button>
+</Playground>
+
+### Circle
+
+<Playground>
+  <Button circle>
+    Button
+  </Button>
+</Playground>
+
+### Danger
+
+<Playground>
+  <Button danger>
+    Button
+  </Button>
+</Playground>
+
+### Circle & Light
+
+<Playground>
+  <Button circle light>
+    Button
+  </Button>
+</Playground>
+
+### Circle & Light & Active
+
+<Playground>
+  <Button circle light active>
+    Button
+  </Button>
+</Playground>
+
+### Disabled
+
+<Playground>
+  <Button disabled>Button</Button>
+
+  <Button ml={2} light disabled>
+    Button
+  </Button>
+
+  <Button ml={2} light circle disabled>
+    Button
+  </Button>
+</Playground>
+
+### Loading
+
+<Playground>
+  <Button ml={2} loading>Button</Button>
+
+  <Button ml={2} light loading>
+    Button
+  </Button>
+
+  <Button ml={2} light circle loading>
+    Button
+  </Button>
+</Playground>
+
+### Sizes
+
+<Playground>
+  <Button size="sm">
+    Button sm
+  </Button>
+
+  <Button ml={2}>
+    Button m
+  </Button>
+
+  <Button ml={2} size="lg">
+    Button lg
+  </Button>
+</Playground>
+
+### Block
+
+<Playground>
+  <Button block>
+    Button
+  </Button>
+</Playground>
+
+### Ghost
+
+<Playground>
+  <Box bg="dark" p={4}>
+    <Button ghost>
+      Button
+    </Button>
+  </Box>
+</Playground>

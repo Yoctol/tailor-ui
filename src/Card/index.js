@@ -13,7 +13,7 @@ import {
 
 import _Button from '../Button';
 
-const Block = styled.div`
+const StyledBlock = styled.div`
   position: relative;
   border-bottom: ${themeGet('borders.default')} ${themeGet('colors.gray.8')};
 
@@ -26,14 +26,20 @@ const Block = styled.div`
   ${fontSize};
 `;
 
+export const Block = props => <StyledBlock {...props} />;
+
 Block.propTypes = {
+  /**
+   * The padding of block
+   */
+  p: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   ...space.propTypes,
   ...height.propTypes,
 };
 
 Block.defaultProps = {
+  fontSize: 'default', // eslint-disable-line react/default-props-match-prop-types
   p: 4,
-  fontSize: 'default',
 };
 
 const Button = styled(_Button).attrs({ light: true })`
@@ -58,7 +64,7 @@ const Button = styled(_Button).attrs({ light: true })`
 
 Button.displayName = 'Card.Button';
 
-const Image = styled.div`
+const StyledImage = styled.div`
   overflow: hidden;
 
   img {
@@ -70,6 +76,8 @@ const Image = styled.div`
 
   ${space};
 `;
+
+export const Image = props => <StyledImage {...props} />;
 
 Image.propTypes = {
   ...space.propTypes,
@@ -117,6 +125,9 @@ const Card = ({ children, ...otherProps }) => (
 );
 
 Card.propTypes = {
+  /**
+   * Should be Card.Block, Card.Image or Card.Button of React.Children
+   */
   children: PropTypes.node.isRequired,
   ...space.propTypes,
   ...height.propTypes,

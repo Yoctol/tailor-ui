@@ -68,15 +68,28 @@ exports[`Radio should render correctly 1`] = `
   <Radio
     bg="primary"
     borderColor="primary"
+    checked={false}
     disabled={false}
     id="radio"
+    onChange={[Function]}
   >
-    <input
-      className="c0"
+    <Radio__StyledRadio
+      bg="primary"
+      borderColor="primary"
+      checked={false}
       disabled={false}
       id="radio"
-      type="radio"
-    />
+      onChange={[Function]}
+    >
+      <input
+        checked={false}
+        className="c0"
+        disabled={false}
+        id="radio"
+        onChange={[Function]}
+        type="radio"
+      />
+    </Radio__StyledRadio>
   </Radio>
   <Label
     htmlFor="radio"
@@ -159,15 +172,28 @@ exports[`Radio should render with props disabled 1`] = `
   <Radio
     bg="primary"
     borderColor="primary"
+    checked={false}
     disabled={true}
     id="radio"
+    onChange={[Function]}
   >
-    <input
-      className="c0"
+    <Radio__StyledRadio
+      bg="primary"
+      borderColor="primary"
+      checked={false}
       disabled={true}
       id="radio"
-      type="radio"
-    />
+      onChange={[Function]}
+    >
+      <input
+        checked={false}
+        className="c0"
+        disabled={true}
+        id="radio"
+        onChange={[Function]}
+        type="radio"
+      />
+    </Radio__StyledRadio>
   </Radio>
   <Label
     htmlFor="radio"

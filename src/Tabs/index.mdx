@@ -1,0 +1,240 @@
+---
+name: Tabs
+menu: Data Display
+route: /data-display/tabs
+---
+
+import { PropsTable, Playground } from 'docz';
+import { Value } from 'react-powerplug';
+import { Space, Box } from '../';
+import Tabs, { Tab } from './';
+
+# Tabs
+
+## Properties
+
+### Tabs
+
+<PropsTable of={Tabs} />
+
+### Tabs.Tab
+
+<PropsTable of={Tab} />
+
+## Usage
+
+```js
+import { Tabs } from '@yoctol/ui';
+```
+
+### Basic
+
+<Playground>
+  <Value initial="1">
+    {({ value, set }) => (
+      <div>
+        <Tabs>
+          <Tabs.Tab onClick={() => set('1')} active={'1' === value}>
+            Tab 1
+          </Tabs.Tab>
+          <Tabs.Tab onClick={() => set('2')} active={'2' === value}>
+            Tab 2
+          </Tabs.Tab>
+          <Tabs.Tab onClick={() => set('3')} active={'3' === value}>
+            Tab 3
+          </Tabs.Tab>
+        </Tabs>
+        <p>Active Tab is {value}</p>
+      </div>
+    )}
+  </Value>
+</Playground>
+
+### With pills
+
+<Playground>
+  <Value initial="1">
+    {({ value, set }) => (
+      <div>
+        <Tabs pills>
+          <Tabs.Tab onClick={() => set('1')} active={'1' === value}>
+            Tab 1
+          </Tabs.Tab>
+          <Tabs.Tab onClick={() => set('2')} active={'2' === value}>
+            Tab 2
+          </Tabs.Tab>
+          <Tabs.Tab onClick={() => set('3')} active={'3' === value}>
+            Tab 3
+          </Tabs.Tab>
+        </Tabs>
+        <p>Active Tab is {value}</p>
+      </div>
+    )}
+  </Value>
+</Playground>
+
+### With absolute
+
+<Playground>
+  <Value initial="1">
+    {({ value, set }) => (
+       <Box
+        position="relative"
+        height="120px"
+        width="300px"
+        borderBottom="3px solid #ddd"
+      >
+        <Tabs absolute>
+          <Tabs.Tab onClick={() => set('1')} active={'1' === value}>
+            Tab 1
+          </Tabs.Tab>
+          <Tabs.Tab onClick={() => set('2')} active={'2' === value}>
+            Tab 2
+          </Tabs.Tab>
+          <Tabs.Tab onClick={() => set('3')} active={'3' === value}>
+            Tab 3
+          </Tabs.Tab>
+        </Tabs>
+        <p>Active Tab is {value}</p>
+      </Box>
+    )}
+  </Value>
+</Playground>
+
+### With disabled
+
+<Playground>
+  <Value initial="1">
+    {({ value, set }) => (
+      <div>
+        <Tabs>
+          <Tabs.Tab onClick={() => set('1')} active={'1' === value}>
+            Tab 1
+          </Tabs.Tab>
+          <Tabs.Tab disabled>
+            Tab 2
+          </Tabs.Tab>
+          <Tabs.Tab onClick={() => set('3')} active={'3' === value}>
+            Tab 3
+          </Tabs.Tab>
+        </Tabs>
+        <p>Active Tab is {value}</p>
+      </div>
+    )}
+  </Value>
+</Playground>
+
+### With pills & disabled
+
+<Playground>
+  <Value initial="1">
+    {({ value, set }) => (
+      <div>
+        <Tabs pills>
+          <Tabs.Tab onClick={() => set('1')} active={'1' === value}>
+            Tab 1
+          </Tabs.Tab>
+          <Tabs.Tab disabled>
+            Tab 2
+          </Tabs.Tab>
+          <Tabs.Tab onClick={() => set('3')} active={'3' === value}>
+            Tab 3
+          </Tabs.Tab>
+        </Tabs>
+        <p>Active Tab is {value}</p>
+      </div>
+    )}
+  </Value>
+</Playground>
+
+### With size
+
+<Playground>
+  <Value initial="1">
+    {({ value, set }) => (
+      <div>
+        <Tabs size="sm">
+          <Tabs.Tab onClick={() => set('1')} active={'1' === value}>
+            Tab 1
+          </Tabs.Tab>
+          <Tabs.Tab onClick={() => set('2')} active={'2' === value}>
+            Tab 2
+          </Tabs.Tab>
+          <Tabs.Tab onClick={() => set('3')} active={'3' === value}>
+            Tab 3
+          </Tabs.Tab>
+        </Tabs>
+        <Tabs>
+          <Tabs.Tab onClick={() => set('1')} active={'1' === value}>
+            Tab 1
+          </Tabs.Tab>
+          <Tabs.Tab onClick={() => set('2')} active={'2' === value}>
+            Tab 2
+          </Tabs.Tab>
+          <Tabs.Tab onClick={() => set('3')} active={'3' === value}>
+            Tab 3
+          </Tabs.Tab>
+        </Tabs>
+        <Tabs size="lg">
+          <Tabs.Tab onClick={() => set('1')} active={'1' === value}>
+            Tab 1
+          </Tabs.Tab>
+          <Tabs.Tab onClick={() => set('2')} active={'2' === value}>
+            Tab 2
+          </Tabs.Tab>
+          <Tabs.Tab onClick={() => set('3')} active={'3' === value}>
+            Tab 3
+          </Tabs.Tab>
+        </Tabs>
+        <p>Active Tab is {value}</p>
+      </div>
+    )}
+  </Value>
+</Playground>
+
+### With size & pills
+
+<Playground>
+  <Value initial="1">
+    {({ value, set }) => (
+      <div>
+        <Tabs size="sm" pills>
+          <Tabs.Tab onClick={() => set('1')} active={'1' === value}>
+            Tab 1
+          </Tabs.Tab>
+          <Tabs.Tab onClick={() => set('2')} active={'2' === value}>
+            Tab 2
+          </Tabs.Tab>
+          <Tabs.Tab onClick={() => set('3')} active={'3' === value}>
+            Tab 3
+          </Tabs.Tab>
+        </Tabs>
+        <Space my={2} />
+        <Tabs pills>
+          <Tabs.Tab onClick={() => set('1')} active={'1' === value}>
+            Tab 1
+          </Tabs.Tab>
+          <Tabs.Tab onClick={() => set('2')} active={'2' === value}>
+            Tab 2
+          </Tabs.Tab>
+          <Tabs.Tab onClick={() => set('3')} active={'3' === value}>
+            Tab 3
+          </Tabs.Tab>
+        </Tabs>
+        <Space my={2} />
+        <Tabs size="lg" pills>
+          <Tabs.Tab onClick={() => set('1')} active={'1' === value}>
+            Tab 1
+          </Tabs.Tab>
+          <Tabs.Tab onClick={() => set('2')} active={'2' === value}>
+            Tab 2
+          </Tabs.Tab>
+          <Tabs.Tab onClick={() => set('3')} active={'3' === value}>
+            Tab 3
+          </Tabs.Tab>
+        </Tabs>
+        <p>Active Tab is {value}</p>
+      </div>
+    )}
+  </Value>
+</Playground>

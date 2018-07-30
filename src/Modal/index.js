@@ -10,11 +10,32 @@ const Modal = ({ animation, ...otherProps }) => {
 };
 
 Modal.propTypes = {
+  /**
+   * Apply animation effects or not
+   */
   animation: PropTypes.bool,
+  /**
+   * The children of modal content
+   */
+  children: PropTypes.node,
+  /**
+   * Whether a close (x) button is visible on top right of the modal dialog or not
+   */
+  closeButton: PropTypes.bool,
+  /**
+   * The function will be triggerd when user click outside of the modal or press ESC key
+   */
+  handleClose: PropTypes.func.isRequired,
+  /**
+   * Whether the modal is show or not
+   */
+  show: PropTypes.bool.isRequired,
 };
 
 Modal.defaultProps = {
   animation: true,
+  closeButton: false,
+  children: null,
 };
 
 export default Modal;
