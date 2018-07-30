@@ -17,7 +17,7 @@ const overflowY = system.style({
   cssProperty: 'overflow-y',
 });
 
-const StyledBox = styled.div`
+export const StyledBox = styled.div`
   box-sizing: border-box;
 
   ${system.position /* sc-declaration */}
@@ -52,8 +52,10 @@ const StyledBox = styled.div`
   ${system.alignSelf /* sc-declaration */}
 `;
 
-const Box = ({ children, ...props }) => (
-  <StyledBox {...props}>{children}</StyledBox>
+const Box = ({ children, ref, ...props }) => (
+  <StyledBox innerRef={ref} {...props}>
+    {children}
+  </StyledBox>
 );
 
 Box.propTypes = {

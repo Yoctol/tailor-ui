@@ -6,8 +6,10 @@ const StyledSpace = styled.div`
   ${space};
 `;
 
-const Space = ({ children, ...props }) => (
-  <StyledSpace {...props}>{children}</StyledSpace>
+const Space = ({ children, ref, ...props }) => (
+  <StyledSpace innerRef={ref} {...props}>
+    {children}
+  </StyledSpace>
 );
 
 Space.propTypes = {

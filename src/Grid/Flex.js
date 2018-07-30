@@ -7,9 +7,9 @@ import {
   justifyContent,
 } from 'styled-system';
 
-import Box from './Box';
+import Box, { StyledBox } from './Box';
 
-const StyledFlex = styled(Box)`
+const StyledFlex = styled(StyledBox)`
   display: flex;
 
   ${alignItems};
@@ -18,8 +18,10 @@ const StyledFlex = styled(Box)`
   ${flexWrap};
 `;
 
-const Flex = ({ children, ...props }) => (
-  <StyledFlex {...props}>{children}</StyledFlex>
+const Flex = ({ children, ref, ...props }) => (
+  <StyledFlex innerRef={ref} {...props}>
+    {children}
+  </StyledFlex>
 );
 
 Flex.propTypes = {
