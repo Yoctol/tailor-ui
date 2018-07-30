@@ -52,7 +52,7 @@ storiesOf('Data Display|Card', module)
     <Wrapper>
       <Card>
         <Card.Image>
-          <img src="http://via.placeholder.com/400x300" alt="placeholder" />
+          <img src="https://via.placeholder.com/400x300" alt="placeholder" />
         </Card.Image>
         <Card.Block>Title</Card.Block>
         <Card.Block>Content</Card.Block>
@@ -66,7 +66,7 @@ storiesOf('Data Display|Card', module)
         <Card.Block>Title</Card.Block>
         <Card.Block>Content</Card.Block>
         <Card.Image>
-          <img src="http://via.placeholder.com/400x300" alt="placeholder" />
+          <img src="https://via.placeholder.com/400x300" alt="placeholder" />
         </Card.Image>
       </Card>
     </Wrapper>
