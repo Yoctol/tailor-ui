@@ -3,8 +3,7 @@ import PropTypes from 'prop-types';
 import React, { PureComponent } from 'react';
 import styled from 'styled-components';
 import { Transition, animated } from 'react-spring';
-import { space, width } from 'styled-system';
-import { themeGet } from 'styled-system/dist/util';
+import { space, themeGet, width } from 'styled-system';
 
 import Icon from '../Icon';
 import Keydown from '../utils/Keydown';
