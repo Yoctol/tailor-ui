@@ -1,106 +1,22 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Tabs should render correctly 1`] = `
-<Tabs__StyledTabs
-  absolute={false}
-  block={false}
->
-  <[object Object]
-    value={
-      Object {
-        "pills": false,
-        "size": "m",
-      }
-    }
-  >
-    <Tabs.Tab
-      active={true}
-      disabled={false}
-    >
-      Tab 1
-    </Tabs.Tab>
-    <Tabs.Tab
-      active={false}
-      disabled={true}
-    >
-      Tab 2
-    </Tabs.Tab>
-    <Tabs.Tab
-      active={false}
-      disabled={false}
-    >
-      Tab 3
-    </Tabs.Tab>
-  </[object Object]>
-</Tabs__StyledTabs>
+<Value
+  initial="1"
+  onChange={[Function]}
+/>
 `;
 
 exports[`Tabs should render with props absolute 1`] = `
-<Tabs__StyledTabs
-  absolute={true}
-  block={false}
->
-  <[object Object]
-    value={
-      Object {
-        "pills": false,
-        "size": "m",
-      }
-    }
-  >
-    <Tabs.Tab
-      active={true}
-      disabled={false}
-    >
-      Tab 1
-    </Tabs.Tab>
-    <Tabs.Tab
-      active={false}
-      disabled={true}
-    >
-      Tab 2
-    </Tabs.Tab>
-    <Tabs.Tab
-      active={false}
-      disabled={false}
-    >
-      Tab 3
-    </Tabs.Tab>
-  </[object Object]>
-</Tabs__StyledTabs>
+<Value
+  initial="1"
+  onChange={[Function]}
+/>
 `;
 
 exports[`Tabs should render with props pills 1`] = `
-<Tabs__StyledTabs
-  absolute={false}
-  block={false}
->
-  <[object Object]
-    value={
-      Object {
-        "pills": true,
-        "size": "m",
-      }
-    }
-  >
-    <Tabs.Tab
-      active={true}
-      disabled={false}
-    >
-      Tab 1
-    </Tabs.Tab>
-    <Tabs.Tab
-      active={false}
-      disabled={true}
-    >
-      Tab 2
-    </Tabs.Tab>
-    <Tabs.Tab
-      active={false}
-      disabled={false}
-    >
-      Tab 3
-    </Tabs.Tab>
-  </[object Object]>
-</Tabs__StyledTabs>
+<Value
+  initial="1"
+  onChange={[Function]}
+/>
 `;

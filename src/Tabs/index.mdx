@@ -33,16 +33,10 @@ import { Tabs } from '@yoctol/ui';
   <Value initial="1">
     {({ value, set }) => (
       <div>
-        <Tabs>
-          <Tabs.Tab onClick={() => set('1')} active={'1' === value}>
-            Tab 1
-          </Tabs.Tab>
-          <Tabs.Tab onClick={() => set('2')} active={'2' === value}>
-            Tab 2
-          </Tabs.Tab>
-          <Tabs.Tab onClick={() => set('3')} active={'3' === value}>
-            Tab 3
-          </Tabs.Tab>
+        <Tabs defaultActiveValue="1" onChange={set}>
+          <Tabs.Tab value="1" label="Tab 1" />
+          <Tabs.Tab value="2" label="Tab 2" />
+          <Tabs.Tab value="3" label="Tab 3" />
         </Tabs>
         <p>Active Tab is {value}</p>
       </div>
@@ -56,16 +50,10 @@ import { Tabs } from '@yoctol/ui';
   <Value initial="1">
     {({ value, set }) => (
       <div>
-        <Tabs pills>
-          <Tabs.Tab onClick={() => set('1')} active={'1' === value}>
-            Tab 1
-          </Tabs.Tab>
-          <Tabs.Tab onClick={() => set('2')} active={'2' === value}>
-            Tab 2
-          </Tabs.Tab>
-          <Tabs.Tab onClick={() => set('3')} active={'3' === value}>
-            Tab 3
-          </Tabs.Tab>
+        <Tabs pills defaultActiveValue="1">
+          <Tabs.Tab value="1" label="Tab 1" />
+          <Tabs.Tab value="2" label="Tab 2" />
+          <Tabs.Tab value="3" label="Tab 3" />
         </Tabs>
         <p>Active Tab is {value}</p>
       </div>
@@ -84,16 +72,10 @@ import { Tabs } from '@yoctol/ui';
         width="300px"
         borderBottom="3px solid #ddd"
       >
-        <Tabs absolute>
-          <Tabs.Tab onClick={() => set('1')} active={'1' === value}>
-            Tab 1
-          </Tabs.Tab>
-          <Tabs.Tab onClick={() => set('2')} active={'2' === value}>
-            Tab 2
-          </Tabs.Tab>
-          <Tabs.Tab onClick={() => set('3')} active={'3' === value}>
-            Tab 3
-          </Tabs.Tab>
+        <Tabs absolute defaultActiveValue="1" onChange={set}>
+          <Tabs.Tab value="1" label="Tab 1" />
+          <Tabs.Tab value="2" label="Tab 2" />
+          <Tabs.Tab value="3" label="Tab 3" />
         </Tabs>
         <p>Active Tab is {value}</p>
       </Box>
@@ -107,16 +89,10 @@ import { Tabs } from '@yoctol/ui';
   <Value initial="1">
     {({ value, set }) => (
       <div>
-        <Tabs>
-          <Tabs.Tab onClick={() => set('1')} active={'1' === value}>
-            Tab 1
-          </Tabs.Tab>
-          <Tabs.Tab disabled>
-            Tab 2
-          </Tabs.Tab>
-          <Tabs.Tab onClick={() => set('3')} active={'3' === value}>
-            Tab 3
-          </Tabs.Tab>
+        <Tabs defaultActiveValue="1" onChange={set}>
+          <Tabs.Tab value="1" label="Tab 1" />
+          <Tabs.Tab disabled label="Tab 2" />
+          <Tabs.Tab value="3" label="Tab 3" />
         </Tabs>
         <p>Active Tab is {value}</p>
       </div>
@@ -130,16 +106,10 @@ import { Tabs } from '@yoctol/ui';
   <Value initial="1">
     {({ value, set }) => (
       <div>
-        <Tabs pills>
-          <Tabs.Tab onClick={() => set('1')} active={'1' === value}>
-            Tab 1
-          </Tabs.Tab>
-          <Tabs.Tab disabled>
-            Tab 2
-          </Tabs.Tab>
-          <Tabs.Tab onClick={() => set('3')} active={'3' === value}>
-            Tab 3
-          </Tabs.Tab>
+        <Tabs pills defaultActiveValue="1" onChange={set}>
+          <Tabs.Tab value="1" label="Tab 1" />
+          <Tabs.Tab disabled label="Tab 2" />
+          <Tabs.Tab value="3" label="Tab 3" />
         </Tabs>
         <p>Active Tab is {value}</p>
       </div>
@@ -153,38 +123,20 @@ import { Tabs } from '@yoctol/ui';
   <Value initial="1">
     {({ value, set }) => (
       <div>
-        <Tabs size="sm">
-          <Tabs.Tab onClick={() => set('1')} active={'1' === value}>
-            Tab 1
-          </Tabs.Tab>
-          <Tabs.Tab onClick={() => set('2')} active={'2' === value}>
-            Tab 2
-          </Tabs.Tab>
-          <Tabs.Tab onClick={() => set('3')} active={'3' === value}>
-            Tab 3
-          </Tabs.Tab>
+        <Tabs size="sm" defaultActiveValue="1" onChange={set}>
+          <Tabs.Tab value="1" label="Tab 1" />
+          <Tabs.Tab value="2" label="Tab 2" />
+          <Tabs.Tab value="3" label="Tab 3" />
         </Tabs>
-        <Tabs>
-          <Tabs.Tab onClick={() => set('1')} active={'1' === value}>
-            Tab 1
-          </Tabs.Tab>
-          <Tabs.Tab onClick={() => set('2')} active={'2' === value}>
-            Tab 2
-          </Tabs.Tab>
-          <Tabs.Tab onClick={() => set('3')} active={'3' === value}>
-            Tab 3
-          </Tabs.Tab>
+        <Tabs defaultActiveValue="1" onChange={set}>
+          <Tabs.Tab value="1" label="Tab 1" />
+          <Tabs.Tab value="2" label="Tab 2" />
+          <Tabs.Tab value="3" label="Tab 3" />
         </Tabs>
-        <Tabs size="lg">
-          <Tabs.Tab onClick={() => set('1')} active={'1' === value}>
-            Tab 1
-          </Tabs.Tab>
-          <Tabs.Tab onClick={() => set('2')} active={'2' === value}>
-            Tab 2
-          </Tabs.Tab>
-          <Tabs.Tab onClick={() => set('3')} active={'3' === value}>
-            Tab 3
-          </Tabs.Tab>
+        <Tabs size="lg" defaultActiveValue="1" onChange={set}>
+          <Tabs.Tab value="1" label="Tab 1" />
+          <Tabs.Tab value="2" label="Tab 2" />
+          <Tabs.Tab value="3" label="Tab 3" />
         </Tabs>
         <p>Active Tab is {value}</p>
       </div>
@@ -198,42 +150,47 @@ import { Tabs } from '@yoctol/ui';
   <Value initial="1">
     {({ value, set }) => (
       <div>
-        <Tabs size="sm" pills>
-          <Tabs.Tab onClick={() => set('1')} active={'1' === value}>
-            Tab 1
-          </Tabs.Tab>
-          <Tabs.Tab onClick={() => set('2')} active={'2' === value}>
-            Tab 2
-          </Tabs.Tab>
-          <Tabs.Tab onClick={() => set('3')} active={'3' === value}>
-            Tab 3
-          </Tabs.Tab>
+        <Tabs size="sm" pills defaultActiveValue="1" onChange={set}>
+          <Tabs.Tab value="1" label="Tab 1" />
+          <Tabs.Tab value="2" label="Tab 2" />
+          <Tabs.Tab value="3" label="Tab 3" />
         </Tabs>
         <Space my={2} />
-        <Tabs pills>
-          <Tabs.Tab onClick={() => set('1')} active={'1' === value}>
-            Tab 1
-          </Tabs.Tab>
-          <Tabs.Tab onClick={() => set('2')} active={'2' === value}>
-            Tab 2
-          </Tabs.Tab>
-          <Tabs.Tab onClick={() => set('3')} active={'3' === value}>
-            Tab 3
-          </Tabs.Tab>
+        <Tabs pills defaultActiveValue="1" onChange={set}>
+          <Tabs.Tab value="1" label="Tab 1" />
+          <Tabs.Tab value="2" label="Tab 2" />
+          <Tabs.Tab value="3" label="Tab 3" />
         </Tabs>
         <Space my={2} />
-        <Tabs size="lg" pills>
-          <Tabs.Tab onClick={() => set('1')} active={'1' === value}>
-            Tab 1
-          </Tabs.Tab>
-          <Tabs.Tab onClick={() => set('2')} active={'2' === value}>
-            Tab 2
-          </Tabs.Tab>
-          <Tabs.Tab onClick={() => set('3')} active={'3' === value}>
-            Tab 3
-          </Tabs.Tab>
+        <Tabs size="lg" pills defaultActiveValue="1" onChange={set}>
+          <Tabs.Tab value="1" label="Tab 1" />
+          <Tabs.Tab value="2" label="Tab 2" />
+          <Tabs.Tab value="3" label="Tab 3" />
         </Tabs>
         <p>Active Tab is {value}</p>
+      </div>
+    )}
+  </Value>
+</Playground>
+
+### With controlled activeValue
+
+
+<Playground>
+  <Value initial="1">
+    {({ value, set }) => (
+      <div>
+        <Tabs pills activeValue={value} onChange={set}>
+          <Tabs.Tab value="1" label="Tab 1" />
+          <Tabs.Tab value="2" label="Tab 2" />
+          <Tabs.Tab value="3" label="Tab 3" />
+        </Tabs>
+        <Space my={2} />
+        <Tabs pills activeValue={value} onChange={set}>
+          <Tabs.Tab value="1" label="Tab 1" />
+          <Tabs.Tab value="2" label="Tab 2" />
+          <Tabs.Tab value="3" label="Tab 3" />
+        </Tabs>
       </div>
     )}
   </Value>

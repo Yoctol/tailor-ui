@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { createContext } from 'react';
 import styled, { css } from 'styled-components';
+import { Value } from 'react-powerplug';
 import { ifProp, switchProp } from 'styled-tools';
 import { space, themeGet } from 'styled-system';
 
@@ -26,6 +27,10 @@ const StyledTab = styled.a`
     pointer-events: none;
   }
 
+  &:not(:first-child) {
+    margin-left: ${themeGet('space.3')};
+  }
+
   ${switchProp('size', {
     sm: css`
       padding: ${themeGet('space.paddingYSm')} ${themeGet('space.paddingXSm')};
@@ -47,10 +52,6 @@ const StyledTab = styled.a`
     'pills',
     css`
       border-radius: 999px;
-
-      &:not(:first-child) {
-        margin-left: ${themeGet('space.3')};
-      }
 
       ${switchProp('size', {
         sm: css`
@@ -93,11 +94,17 @@ const StyledTab = styled.a`
   ${space};
 `;
 
-export const Tab = ({ children, ...props }) => (
+export const Tab = ({ label, value, ...props }) => (
   <Consumer>
-    {({ size, pills }) => (
-      <StyledTab size={size} pills={pills} {...props}>
-        {children}
+    {({ size, pills, activeValue, setValue }) => (
+      <StyledTab
+        size={size}
+        pills={pills}
+        active={activeValue === value}
+        onClick={() => setValue(value)}
+        {...props}
+      >
+        {label}
       </StyledTab>
     )}
   </Consumer>
@@ -105,22 +112,23 @@ export const Tab = ({ children, ...props }) => (
 
 Tab.propTypes = {
   /**
-   * Active state of tab
-   */
-  active: PropTypes.bool,
-  /**
-   * Content of tab
-   */
-  children: PropTypes.node.isRequired,
-  /**
    * Disabled state of tab
    */
   disabled: PropTypes.bool,
+  /**
+   * Content of tab
+   */
+  label: PropTypes.node,
+  /**
+   * Tab's value
+   */
+  value: PropTypes.string,
 };
 
 Tab.defaultProps = {
-  active: false,
+  label: '',
   disabled: false,
+  value: '',
 };
 
 Tab.displayName = 'Tabs.Tab';
@@ -152,10 +160,32 @@ const StyledTabs = styled.nav`
   ${space};
 `;
 
-const Tabs = ({ absolute, children, size, pills, ...otherProps }) => (
-  <StyledTabs absolute={absolute} {...otherProps}>
-    <Provider value={{ size, pills }}>{children}</Provider>
-  </StyledTabs>
+const Tabs = ({
+  absolute,
+  children,
+  size,
+  pills,
+  defaultActiveValue,
+  activeValue,
+  onChange,
+  ...otherProps
+}) => (
+  <Value initial={defaultActiveValue} onChange={onChange}>
+    {({ value, set }) => (
+      <StyledTabs absolute={absolute} {...otherProps}>
+        <Provider
+          value={{
+            activeValue: activeValue || value,
+            setValue: set,
+            size,
+            pills,
+          }}
+        >
+          {children}
+        </Provider>
+      </StyledTabs>
+    )}
+  </Value>
 );
 
 Tabs.propTypes = {
@@ -163,6 +193,10 @@ Tabs.propTypes = {
    * Make the tabs position to bottom of parent
    */
   absolute: PropTypes.bool,
+  /**
+   * Current Tab's value
+   */
+  activeValue: PropTypes.string,
   /**
    * Set the tabs width to 100%
    */
@@ -172,6 +206,10 @@ Tabs.propTypes = {
    */
   children: PropTypes.node.isRequired,
   /**
+   * Initial active Tab's value, if `activeValue` is not set.
+   */
+  defaultActiveValue: PropTypes.string,
+  /**
    * Pills style of tabs
    */
   pills: PropTypes.bool,
@@ -179,6 +217,10 @@ Tabs.propTypes = {
    * Preset tab bar size
    */
   size: PropTypes.string,
+  /**
+   * Callback executed when active tab is changed
+   */
+  onChange: PropTypes.func,
   ...space.propTypes,
 };
 
@@ -186,6 +228,9 @@ Tabs.defaultProps = {
   absolute: false,
   block: false,
   pills: false,
+  defaultActiveValue: '',
+  activeValue: '',
+  onChange: () => {},
   size: 'm',
 };
 
