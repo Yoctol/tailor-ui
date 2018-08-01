@@ -1,28 +1,12 @@
-import ErrorIcon from 'react-icons/lib/md/error';
-import InfoIcon from 'react-icons/lib/md/info';
 import React, { PureComponent } from 'react';
-import SuccessIcon from 'react-icons/lib/md/check-circle';
-import WarningIcon from 'react-icons/lib/md/warning';
 import styled from 'styled-components';
 import { Transition, animated } from 'react-spring';
 
-import Icon from '../Icon';
 import ThemeProvider from '../utils/ThemeProvider';
 import createUuidGenerator from '../utils/createUuidGenerator';
+import getTypeIcon from '../utils/getTypeIcon';
 
 const getUuid = createUuidGenerator('message');
-
-export const INFO = '__info__';
-export const SUCCESS = '__success__';
-export const ERROR = '__error__';
-export const WARNING = '__warning__';
-
-const icons = {
-  [INFO]: <Icon size="20" mr={2} type={InfoIcon} fill="info" />,
-  [SUCCESS]: <Icon size="20" mr={2} type={SuccessIcon} fill="success" />,
-  [ERROR]: <Icon size="20" mr={2} type={ErrorIcon} fill="error" />,
-  [WARNING]: <Icon size="20" mr={2} type={WarningIcon} fill="warning" />,
-};
 
 const MessageContainer = styled.div`
   display: flex;
@@ -65,7 +49,7 @@ class MessageComponent extends PureComponent {
         resolve();
       }, duration);
 
-      const TypeIcon = icons[type];
+      const TypeIcon = getTypeIcon(type);
       const content = (
         <>
           {TypeIcon}

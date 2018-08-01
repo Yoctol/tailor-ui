@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from 'react-dom';
 
-import MessageComponent, { ERROR, INFO, SUCCESS, WARNING } from './Message';
+import MessageComponent from './Message';
 
 let messageInstance;
 
@@ -38,9 +38,9 @@ const message = (content, duration = 3000, type) => {
   });
 };
 
-const info = (content, duration) => message(content, duration, INFO);
-const success = (content, duration) => message(content, duration, SUCCESS);
-const warning = (content, duration) => message(content, duration, WARNING);
-const error = (content, duration) => message(content, duration, ERROR);
+const info = (content, duration) => message(content, duration, 'info');
+const success = (content, duration) => message(content, duration, 'success');
+const warning = (content, duration) => message(content, duration, 'warning');
+const error = (content, duration) => message(content, duration, 'error');
 
 export default { info, success, warning, error };

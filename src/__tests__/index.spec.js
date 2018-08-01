@@ -1,4 +1,5 @@
 import {
+  Alert,
   Box,
   Button,
   Card,
@@ -33,6 +34,7 @@ import {
 
 describe('index', () => {
   it('should export all components', () => {
+    expect(Alert).toBeDefined();
     expect(Box).toBeDefined();
     expect(Button).toBeDefined();
     expect(Card).toBeDefined();

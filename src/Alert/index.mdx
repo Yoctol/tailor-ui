@@ -1,0 +1,35 @@
+---
+name: Alert
+menu: Feedback
+route: /feedback/alert
+---
+
+import { PropsTable, Playground } from 'docz';
+import Alert from './';
+
+# Alert
+
+## Properties
+
+<PropsTable of={Alert} />
+
+## Usage
+
+```js
+import { Alert } from '@yoctol/ui';
+```
+
+### Basic
+
+<Playground>
+  <Alert message="Info Text" />
+</Playground>
+
+### With type
+
+<Playground>
+  <Alert message="Info Text" type="info" />
+  <Alert message="Success Text" type="success" />
+  <Alert message="Warning Text" type="warning" />
+  <Alert message="Error Text" type="error" />
+</Playground>
