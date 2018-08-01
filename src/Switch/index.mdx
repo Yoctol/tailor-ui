@@ -1,0 +1,45 @@
+---
+name: Switch
+menu: Data Entry
+route: /data-entry/Switch
+---
+
+import { PropsTable, Playground } from 'docz';
+import { Toggle } from 'react-powerplug';
+import Switch from './';
+
+# Switch
+
+## Properties
+
+<PropsTable of={Switch} />
+
+## Usage
+
+```js
+import { Switch } from '@yoctol/ui';
+```
+
+### With controlled
+
+<Playground>
+  <Toggle initial={true}>
+    {({ on, set }) => (
+      <Switch checked={on} onChange={set} />
+    )}
+  </Toggle>
+</Playground>
+
+### With uncontrolled
+
+<Playground>
+  <Switch defaultChecked={true} onChange={console.log} />
+</Playground>
+
+### With disabled
+
+<Playground>
+  <Switch defaultChecked disabled />
+  <br />
+  <Switch defaultChecked={false} disabled />
+</Playground>
