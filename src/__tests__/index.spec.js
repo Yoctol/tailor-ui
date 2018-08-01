@@ -19,6 +19,7 @@ import {
   Select,
   Space,
   Spin,
+  Switch,
   Table,
   Tabs,
   TextField,
@@ -53,6 +54,7 @@ describe('index', () => {
     expect(Select).toBeDefined();
     expect(Space).toBeDefined();
     expect(Spin).toBeDefined();
+    expect(Switch).toBeDefined();
     expect(Table).toBeDefined();
     expect(Tabs).toBeDefined();
     expect(Textarea).toBeDefined();
