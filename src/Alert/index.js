@@ -1,33 +1,51 @@
 import PropTypes from 'prop-types';
-import React from 'react';
-import styled from 'styled-components';
-import { space, themeGet } from 'styled-system';
+import React, { PureComponent } from 'react';
+import { Spring } from 'react-spring';
+import { Toggle } from 'react-powerplug';
+import { space } from 'styled-system';
 
-import getTypeIcon from '../utils/getTypeIcon';
+import BaseAlert from './BaseAlert';
 
-const StyledAlert = styled.div`
-  display: flex;
-  border: ${themeGet('borders.default')};
-  border-radius: ${themeGet('radii.1')};
-  border-color: ${p => themeGet(`colors.${p.type}`)(p)};
+class Alert extends PureComponent {
+  renderClosableAlert = () => (
+    <Toggle initial>
+      {({ on, set }) => (
+        <Spring
+          native
+          from={{ transform: 'scale(1, 1)', opacity: 1, height: 'auto' }}
+          to={{
+            transform: on ? 'scale(1, 1)' : 'scale(1, 0)',
+            opacity: on ? 1 : 0,
+            height: on ? 'auto' : 0,
+          }}
+          {...this.props}
+        >
+          {({ transform, opacity, height, ...props }) => (
+            <BaseAlert
+              styles={{ transform, opacity, height }}
+              onClose={() => set(false)}
+              {...props}
+            />
+          )}
+        </Spring>
+      )}
+    </Toggle>
+  );
 
-  ${space};
-`;
+  renderAlert = () => <BaseAlert {...this.props} />;
 
-StyledAlert.defaultProps = {
-  px: 4,
-  py: 2,
-  mb: 4,
-};
-
-const Alert = ({ message, type, ...props }) => (
-  <StyledAlert type={type} {...props}>
-    {getTypeIcon(type)}
-    {message}
-  </StyledAlert>
-);
+  render() {
+    return this.props.closable
+      ? this.renderClosableAlert()
+      : this.renderAlert();
+  }
+}
 
 Alert.propTypes = {
+  /**
+   * Whether Alert can be closed
+   */
+  closable: PropTypes.bool,
   /**
    * Content of Alert
    */
@@ -40,6 +58,7 @@ Alert.propTypes = {
 };
 
 Alert.defaultProps = {
+  closable: false,
   type: 'info',
 };
 
