@@ -11,11 +11,11 @@ import { ifProp } from 'styled-tools';
 import { rem } from 'polished';
 import { themeGet } from 'styled-system';
 
-import FormField from './FormField';
-import Hint from './Hint';
-import Input from './Input';
-import Label from './Label';
-import Textarea from './Textarea';
+import FormField from '../Form/FormField';
+import Hint from '../Form/Hint';
+import Input from '../Input';
+import Label from '../Form/Label';
+import Textarea from '../Input/Textarea';
 
 const TextFieldLabel = styled(Label)`
   position: absolute;

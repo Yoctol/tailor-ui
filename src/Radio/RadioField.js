@@ -1,22 +1,22 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { Set } from 'react-powerplug';
+import { Value } from 'react-powerplug';
 
-import Checkbox from '../Checkbox';
+import FormField from '../Form/FormField';
+import Hint from '../Form/Hint';
+import Label from '../Form/Label';
 import Space from '../Grid/Space';
 
-import FormField from './FormField';
-import Hint from './Hint';
-import Label from './Label';
+import Radio from '.';
 
 let seed = 0;
 
 const getUuid = () => {
   seed += 1;
-  return `yoctol_checkbox_${Date.now()}_${seed}`;
+  return `yoctol_radio_${Date.now()}_${seed}`;
 };
 
-const CheckboxField = ({
+const RadioField = ({
   children,
   success,
   warning,
@@ -27,14 +27,14 @@ const CheckboxField = ({
   const id = getUuid();
   return (
     <FormField success={success} warning={warning} error={error}>
-      <Checkbox id={id} {...otherProps} />
+      <Radio id={id} {...otherProps} />
       <Label htmlFor={id}>{children}</Label>
       {(success || warning || error) && <Hint>{message}</Hint>}
     </FormField>
   );
 };
 
-CheckboxField.propTypes = {
+RadioField.propTypes = {
   /**
    * Specifies whether the checkbox is selected
    */
@@ -69,7 +69,7 @@ CheckboxField.propTypes = {
   onChange: PropTypes.func,
 };
 
-CheckboxField.defaultProps = {
+RadioField.defaultProps = {
   disabled: false,
   checked: false,
   error: false,
@@ -79,9 +79,9 @@ CheckboxField.defaultProps = {
   onChange: () => {},
 };
 
-export const CheckboxFieldGroup = ({
+export const RadioFieldGroup = ({
   label: groupLabel,
-  values: groupValues,
+  value: groupValues,
   options,
   onChange,
   success,
@@ -90,27 +90,19 @@ export const CheckboxFieldGroup = ({
   message,
   ...otherProps
 }) => (
-  <Set initial={groupValues} onChange={onChange}>
-    {({ add, remove, has }) => (
+  <Value initial={groupValues} onChange={onChange}>
+    {({ value: checkedValue, set }) => (
       <FormField success={success} warning={warning} error={error}>
         <Label>{groupLabel}</Label>
         {options.map(({ label, value, disabled = false }) => {
           const id = getUuid();
           return (
             <Space mt={2} mb={1} key={label}>
-              <Checkbox
+              <Radio
                 id={id}
-                checked={has(value)}
                 disabled={disabled}
-                onChange={event => {
-                  const { checked } = event.target;
-                  if (has(value) && !checked) {
-                    remove(value);
-                  }
-                  if (!has(value) && checked) {
-                    add(value);
-                  }
-                }}
+                checked={checkedValue === value}
+                onChange={() => set(value)}
                 {...otherProps}
               />
               <Label htmlFor={id}>{label}</Label>
@@ -120,12 +112,12 @@ export const CheckboxFieldGroup = ({
         {(success || warning || error) && <Hint>{message}</Hint>}
       </FormField>
     )}
-  </Set>
+  </Value>
 );
 
-CheckboxFieldGroup.displayName = 'CheckboxField.Group';
+RadioFieldGroup.displayName = 'RadioField.Group';
 
-CheckboxFieldGroup.propTypes = {
+RadioFieldGroup.propTypes = {
   /**
    * Set the checkbox field group status to error
    */
@@ -155,7 +147,7 @@ CheckboxFieldGroup.propTypes = {
   /**
    * Used for setting the currently selected value
    */
-  values: PropTypes.arrayOf(PropTypes.string),
+  value: PropTypes.arrayOf(PropTypes.string),
   /**
    * Set the checkbox field group status to warning
    */
@@ -165,16 +157,15 @@ CheckboxFieldGroup.propTypes = {
    */
   onChange: PropTypes.func,
 };
-
-CheckboxFieldGroup.defaultProps = {
+RadioFieldGroup.defaultProps = {
   error: false,
   message: '',
   success: false,
   warning: false,
-  values: [],
+  value: '',
   onChange: () => {},
 };
 
-CheckboxField.Group = CheckboxFieldGroup;
+RadioField.Group = RadioFieldGroup;
 
-export default CheckboxField;
+export default RadioField;

@@ -3,9 +3,10 @@ import styled, { css } from 'styled-components';
 import { ifProp } from 'styled-tools';
 import { themeGet } from 'styled-system';
 
+import { StyledInput } from '../Input';
+
 import Hint from './Hint';
 import Label from './Label';
-import { StyledInput } from './Input';
 
 const StyledFormField = styled.div`
   position: relative;
