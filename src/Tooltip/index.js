@@ -32,7 +32,11 @@ class Tooltip extends PureComponent {
                     }
                   },
                 })}
-                <BaseTooltip visible={on} {...otherProps} />
+                <BaseTooltip
+                  visible={on}
+                  hideTooltip={() => set(false)}
+                  {...otherProps}
+                />
               </TooltipWrapper>
             )}
           </ClickOutside>
@@ -68,9 +72,11 @@ Tooltip.propTypes = {
    */
   children: PropTypes.node.isRequired,
   /**
-   * A string or react component inside this tooltip
+   * A string or react component inside this tooltip.
+   * If you are using click to trigger, it can be a
+   * function that with `hide` callback as first argument
    */
-  content: PropTypes.node.isRequired,
+  content: PropTypes.oneOfType([PropTypes.node, PropTypes.func]),
   /**
    * The wrapper component's display style
    */
@@ -97,6 +103,7 @@ Tooltip.propTypes = {
 
 Tooltip.defaultProps = {
   light: false,
+  content: '',
   placement: 'top',
   display: 'inline-block',
   trigger: 'hover',

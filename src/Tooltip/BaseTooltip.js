@@ -191,12 +191,12 @@ const BaseTooltip = ({ visible, ...props }) => (
         placement,
         light,
         content,
-        closeTooltip,
+        hideTooltip,
         ...otherProps
       }) => (
         <AnimatedTooltipToggle style={{ opacity }} placement={placement}>
           <TooltipContent light={light} {...otherProps}>
-            {content}
+            {typeof content === 'function' ? content(hideTooltip) : content}
           </TooltipContent>
           <Arrow light={light} placement={placement} />
         </AnimatedTooltipToggle>
@@ -205,15 +205,15 @@ const BaseTooltip = ({ visible, ...props }) => (
 );
 
 BaseTooltip.propTypes = {
-  closeTooltip: PropTypes.func,
-  content: PropTypes.node.isRequired,
+  content: PropTypes.oneOfType([PropTypes.node, PropTypes.func]).isRequired,
+  hideTooltip: PropTypes.func,
   light: PropTypes.bool.isRequired,
   placement: PropTypes.string.isRequired,
   visible: PropTypes.bool.isRequired,
 };
 
 BaseTooltip.defaultProps = {
-  closeTooltip: () => {},
+  hideTooltip: () => {},
 };
 
 export default BaseTooltip;
