@@ -4,7 +4,7 @@ import TextareaAutosize from 'react-textarea-autosize';
 import styled from 'styled-components';
 import { ifProp } from 'styled-tools';
 
-import { StyledInput } from './Input';
+import { StyledInput } from '.';
 
 const StyledTextarea = styled(StyledInput.withComponent(TextareaAutosize))`
   word-wrap: break-word;
