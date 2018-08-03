@@ -89,3 +89,25 @@ import { Tooltip } from '@yoctol/ui';
     <Button>Button</Button>
   </Tooltip>
 </Playground>
+
+### With onVisibleChange
+
+<Playground>
+  <Tooltip
+    placement="right"
+    trigger="click"
+    content="Tooltip content"
+    onVisibleChange={console.log}
+  >
+    <Button>Button</Button>
+  </Tooltip>
+  <br />
+  <br />
+  <Tooltip
+    placement="right"
+    content="Tooltip content"
+    onVisibleChange={console.log}
+  >
+    <Button>Button</Button>
+  </Tooltip>
+</Playground>
