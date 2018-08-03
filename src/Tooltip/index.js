@@ -16,11 +16,17 @@ import BaseTooltip, { TooltipWrapper } from './BaseTooltip';
 
 class Tooltip extends PureComponent {
   renderClickTooltip = () => {
-    const { children, display, ...otherProps } = this.props;
+    const { children, display, onVisibleChange, ...otherProps } = this.props;
     return (
-      <Toggle>
+      <Toggle onChange={onVisibleChange}>
         {({ on, toggle, set }) => (
-          <ClickOutside onClickOutside={() => set(false)}>
+          <ClickOutside
+            onClickOutside={() => {
+              if (on) {
+                set(false);
+              }
+            }}
+          >
             {({ bind }) => (
               <TooltipWrapper innerRef={bind.ref} display={display}>
                 {cloneElement(children, {
@@ -46,9 +52,9 @@ class Tooltip extends PureComponent {
   };
 
   renderHoverTooltip = () => {
-    const { children, display, ...otherProps } = this.props;
+    const { children, display, onVisibleChange, ...otherProps } = this.props;
     return (
-      <Hover>
+      <Hover onChange={onVisibleChange}>
         {({ bind, hovered }) => (
           <TooltipWrapper display={display} {...bind}>
             {children}
@@ -93,6 +99,10 @@ Tooltip.propTypes = {
    * Decide how to trigger this tooltip
    */
   trigger: PropTypes.oneOf(['hover', 'click']),
+  /**
+   * 	Callback executed when visibility of the tooltip card is changed
+   */
+  onVisibleChange: PropTypes.func,
   ...space.propTypes,
   ...minWidth.propTypes,
   ...color.propTypes,
@@ -107,6 +117,7 @@ Tooltip.defaultProps = {
   placement: 'top',
   display: 'inline-block',
   trigger: 'hover',
+  onVisibleChange: () => {},
 };
 
 export default Tooltip;
