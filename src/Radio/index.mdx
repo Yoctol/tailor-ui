@@ -8,6 +8,7 @@ import { PropsTable, Playground } from 'docz';
 import { Toggle, Value } from 'react-powerplug';
 import FormField from '../Form/FormField';
 import Label from '../Form/Label';
+import Button from '../Button';
 import Radio from '.';
 import RadioField, { RadioFieldGroup } from './RadioField';
 
@@ -40,7 +41,7 @@ import { FormField, Label, Radio, RadioField } from '@yoctol/ui';
 
 <Playground>
   <FormField>
-    <Radio name="radio-basic" id="radio-basic-a" defaultChecked />
+    <Radio name="radio-basic" id="radio-basic-a" checked />
     <Label htmlFor="radio-basic-a">Radio A</Label>
   </FormField>
   <FormField>
@@ -76,7 +77,7 @@ import { FormField, Label, Radio, RadioField } from '@yoctol/ui';
       id="custom-a"
       bg="#63bf2d"
       borderColor="#423b63"
-      defaultChecked
+      checked
     />
     <Label htmlFor="custom-a">Customized Color Radio A</Label>
   </FormField>
@@ -151,6 +152,30 @@ import { FormField, Label, Radio, RadioField } from '@yoctol/ui';
         value={value}
         onChange={set}
       />
+    )}
+  </Value>
+</Playground>
+
+
+#### With controlled
+
+<Playground>
+  <Value initial="radio-a">
+    {({ set, value }) => (
+      <div>
+        <RadioField.Group
+          label="Radio Group"
+          options={[
+            { label: 'Radio A', value: 'radio-a' },
+            { label: 'Radio B', value: 'radio-b' },
+            { label: 'Radio C', value: 'radio-c', disabled: true },
+            { label: 'Radio D', value: 'radio-d' },
+          ]}
+          value={value}
+          onChange={set}
+        />
+        <Button onClick={() => set('radio-d')}>Check last one</Button>
+      </div>
     )}
   </Value>
 </Playground>
