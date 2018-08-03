@@ -68,6 +68,24 @@ import { Tooltip } from '@yoctol/ui';
 
 <Playground>
   <Tooltip light placement="right" trigger="click" content={<span>Tooltip Content</span>}>
+    <Button onClick={() => console.log('clicked')}>Button</Button>
+  </Tooltip>
+</Playground>
+
+### With content hide
+
+<Playground>
+  <Tooltip
+    light
+    placement="right"
+    trigger="click"
+    content={hide => (
+      <div>
+        Tooltip Content
+        <Button size="sm" onClick={hide}>Hide Tooltip</Button>
+      </div>
+    )}
+  >
     <Button>Button</Button>
   </Tooltip>
 </Playground>
