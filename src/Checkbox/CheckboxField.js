@@ -82,6 +82,7 @@ CheckboxField.defaultProps = {
 export const CheckboxFieldGroup = ({
   label: groupLabel,
   values: groupValues,
+  initialValues,
   options,
   onChange,
   success,
@@ -90,7 +91,7 @@ export const CheckboxFieldGroup = ({
   message,
   ...otherProps
 }) => (
-  <Set initial={groupValues} onChange={onChange}>
+  <Set initial={initialValues} onChange={onChange}>
     {({ add, remove, has }) => (
       <FormField success={success} warning={warning} error={error}>
         <Label>{groupLabel}</Label>
@@ -100,15 +101,24 @@ export const CheckboxFieldGroup = ({
             <Space mt={2} mb={1} key={label}>
               <Checkbox
                 id={id}
-                checked={has(value)}
+                checked={groupValues ? groupValues.includes(value) : has(value)}
                 disabled={disabled}
                 onChange={event => {
                   const { checked } = event.target;
-                  if (has(value) && !checked) {
-                    remove(value);
-                  }
-                  if (!has(value) && checked) {
-                    add(value);
+                  if (groupValues) {
+                    if (groupValues.includes(value) && !checked) {
+                      onChange(groupValues.filter(val => val !== value));
+                    }
+                    if (!groupValues.includes(value) && checked) {
+                      onChange(groupValues.push(value));
+                    }
+                  } else {
+                    if (has(value) && !checked) {
+                      remove(value);
+                    }
+                    if (!has(value) && checked) {
+                      add(value);
+                    }
                   }
                 }}
                 {...otherProps}
@@ -130,6 +140,10 @@ CheckboxFieldGroup.propTypes = {
    * Set the checkbox field group status to error
    */
   error: PropTypes.bool,
+  /**
+   * To set the initial values
+   */
+  initialValues: PropTypes.arrayOf(PropTypes.string),
   /**
    * The label of checkbox field group
    */
@@ -171,7 +185,8 @@ CheckboxFieldGroup.defaultProps = {
   message: '',
   success: false,
   warning: false,
-  values: [],
+  values: null,
+  initialValues: null,
   onChange: () => {},
 };
 
