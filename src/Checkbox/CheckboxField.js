@@ -91,7 +91,7 @@ export const CheckboxFieldGroup = ({
   message,
   ...otherProps
 }) => (
-  <Set initial={initialValues} onChange={onChange}>
+  <Set initial={initialValues || []} onChange={onChange}>
     {({ add, remove, has }) => (
       <FormField success={success} warning={warning} error={error}>
         <Label>{groupLabel}</Label>
