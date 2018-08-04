@@ -17,8 +17,11 @@ import BaseTooltip, {
   TooltipContent,
   TooltipWrapper,
 } from './BaseTooltip';
+<<<<<<< HEAD
 
 const { Consumer, Provider } = createContext({});
+=======
+>>>>>>> refactor(tooltip): make render components changable
 
 const ClickTooltip = ({
   children,
@@ -104,7 +107,11 @@ class Tooltip extends PureComponent {
       light,
       content,
       placement,
+<<<<<<< HEAD
       trigger,
+=======
+      hideTooltip,
+>>>>>>> refactor(tooltip): make render components changable
       components,
       ...otherProps
     } = this.props;
@@ -115,6 +122,7 @@ class Tooltip extends PureComponent {
     } = components;
 
     return (
+<<<<<<< HEAD
       <Consumer>
         {hideTooltip => (
           <>
@@ -127,6 +135,14 @@ class Tooltip extends PureComponent {
           </>
         )}
       </Consumer>
+=======
+      <>
+        <ContentComponent light={light} {...otherProps}>
+          {typeof content === 'function' ? content(hideTooltip) : content}
+        </ContentComponent>
+        <ArrowComponent light={light} placement={placement} />
+      </>
+>>>>>>> refactor(tooltip): make render components changable
     );
   };
 
