@@ -14,61 +14,79 @@ import ClickOutside from '../utils/ClickOutside';
 
 import BaseTooltip, { TooltipWrapper } from './BaseTooltip';
 
-class Tooltip extends PureComponent {
-  renderClickTooltip = () => {
-    const { children, display, onVisibleChange, ...otherProps } = this.props;
-    return (
-      <Toggle onChange={onVisibleChange}>
-        {({ on, toggle, set }) => (
-          <ClickOutside
-            onClickOutside={() => {
-              if (on) {
-                set(false);
-              }
-            }}
-          >
-            {({ bind }) => (
-              <TooltipWrapper innerRef={bind.ref} display={display}>
-                {cloneElement(children, {
-                  onClick: event => {
-                    toggle();
+const ClickTooltip = ({
+  children,
+  display,
+  onVisibleChange,
+  ...otherProps
+}) => (
+  <Toggle onChange={onVisibleChange}>
+    {({ on, toggle, set }) => (
+      <ClickOutside
+        onClickOutside={() => {
+          if (on) {
+            set(false);
+          }
+        }}
+      >
+        {({ bind }) => (
+          <TooltipWrapper innerRef={bind.ref} display={display}>
+            {cloneElement(children, {
+              onClick: event => {
+                toggle();
 
-                    if (children.props.onClick) {
-                      children.props.onClick(event);
-                    }
-                  },
-                })}
-                <BaseTooltip
-                  visible={on}
-                  hideTooltip={() => set(false)}
-                  {...otherProps}
-                />
-              </TooltipWrapper>
-            )}
-          </ClickOutside>
-        )}
-      </Toggle>
-    );
-  };
-
-  renderHoverTooltip = () => {
-    const { children, display, onVisibleChange, ...otherProps } = this.props;
-    return (
-      <Hover onChange={onVisibleChange}>
-        {({ bind, hovered }) => (
-          <TooltipWrapper display={display} {...bind}>
-            {children}
-            <BaseTooltip visible={hovered} {...otherProps} />
+                if (children.props.onClick) {
+                  children.props.onClick(event);
+                }
+              },
+            })}
+            <BaseTooltip
+              visible={on}
+              hideTooltip={() => set(false)}
+              {...otherProps}
+            />
           </TooltipWrapper>
         )}
-      </Hover>
-    );
-  };
+      </ClickOutside>
+    )}
+  </Toggle>
+);
 
+ClickTooltip.propTypes = {
+  children: PropTypes.node.isRequired,
+  display: PropTypes.string.isRequired,
+  onVisibleChange: PropTypes.func.isRequired,
+};
+
+const HoverTooltip = ({
+  children,
+  display,
+  onVisibleChange,
+  ...otherProps
+}) => (
+  <Hover onChange={onVisibleChange}>
+    {({ bind, hovered }) => (
+      <TooltipWrapper display={display} {...bind}>
+        {children}
+        <BaseTooltip visible={hovered} {...otherProps} />
+      </TooltipWrapper>
+    )}
+  </Hover>
+);
+
+HoverTooltip.propTypes = {
+  children: PropTypes.node.isRequired,
+  display: PropTypes.string.isRequired,
+  onVisibleChange: PropTypes.func.isRequired,
+};
+
+class Tooltip extends PureComponent {
   render() {
-    return this.props.trigger === 'click'
-      ? this.renderClickTooltip()
-      : this.renderHoverTooltip();
+    return this.props.trigger === 'click' ? (
+      <ClickTooltip {...this.props} />
+    ) : (
+      <HoverTooltip {...this.props} />
+    );
   }
 }
 
