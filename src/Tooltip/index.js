@@ -23,6 +23,8 @@ const { Consumer, Provider } = createContext({});
 =======
 >>>>>>> refactor(tooltip): make render components changable
 
+const { Consumer, Provider } = createContext({});
+
 const ClickTooltip = ({
   children,
   display,
@@ -108,10 +110,14 @@ class Tooltip extends PureComponent {
       content,
       placement,
 <<<<<<< HEAD
+<<<<<<< HEAD
       trigger,
 =======
       hideTooltip,
 >>>>>>> refactor(tooltip): make render components changable
+=======
+      trigger,
+>>>>>>> fix(tooltip): move hideTooltip to context
       components,
       ...otherProps
     } = this.props;
@@ -123,6 +129,9 @@ class Tooltip extends PureComponent {
 
     return (
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> fix(tooltip): move hideTooltip to context
       <Consumer>
         {hideTooltip => (
           <>
@@ -135,6 +144,7 @@ class Tooltip extends PureComponent {
           </>
         )}
       </Consumer>
+<<<<<<< HEAD
 =======
       <>
         <ContentComponent light={light} {...otherProps}>
@@ -143,6 +153,8 @@ class Tooltip extends PureComponent {
         <ArrowComponent light={light} placement={placement} />
       </>
 >>>>>>> refactor(tooltip): make render components changable
+=======
+>>>>>>> fix(tooltip): move hideTooltip to context
     );
   };
 
