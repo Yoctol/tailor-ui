@@ -1,0 +1,76 @@
+---
+name: Popover
+menu: Data Display
+route: /data-display/popover
+---
+
+import { PropsTable, Playground, Link } from 'docz';
+import Popover from './';
+import { Button } from '../';
+
+# Popover
+
+## Properties
+
+<PropsTable of={Popover} />
+
+<div>
+Consult <Link to="/data-display/tooltip#properties">
+Tooltip's documentation</Link> to find more APIs.
+</div>
+
+## Usage
+
+```js
+import { Popover } from '@yoctol/ui';
+```
+
+### Basic
+
+<Playground>
+  <Popover title="Popover Title" content="Popover Content">
+    <Button>Button</Button>
+  </Popover>
+</Playground>
+
+### With placement right
+
+<Playground>
+  <Popover
+    placement="right"
+    title="Popover Title"
+    content="Popover Content"
+  >
+    <Button>Button</Button>
+  </Popover>
+</Playground>
+
+### With content hide
+
+<Playground>
+  <Popover
+    placement="right"
+    title="Title"
+    content={hide => (
+      <div>
+        Popover Content
+        <Button size="sm" onClick={hide}>Hide Popover</Button>
+      </div>
+    )}
+  >
+    <Button>Button</Button>
+  </Popover>
+</Playground>
+
+### With onVisibleChange
+
+<Playground>
+  <Popover
+    placement="right"
+    title="Title"
+    content="Popover content"
+    onVisibleChange={console.log}
+  >
+    <Button>Button</Button>
+  </Popover>
+</Playground>

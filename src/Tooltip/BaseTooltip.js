@@ -48,7 +48,7 @@ AnimatedTooltipToggle.propTypes = {
   placement: PropTypes.string.isRequired,
 };
 
-const TooltipContent = styled.div`
+export const TooltipContent = styled.div`
   border: ${themeGet('borders.default')};
   border-color: ${ifProp(
     'light',
@@ -100,7 +100,7 @@ TooltipContent.defaultProps = {
   borderRadius: 1,
 };
 
-const Arrow = styled.div`
+export const Arrow = styled.div`
   position: absolute;
   width: 0;
   height: 0;
@@ -200,7 +200,7 @@ const BaseTooltip = ({ visible, ...props }) => (
   >
     {visible &&
       // eslint-disable-next-line react/prop-types
-      (({ time, placement, light, content, hideTooltip, ...otherProps }) => {
+      (({ time, placement, overlay }) => {
         const transformOrigin = getTransformOrigin(placement);
         const translateAxis = getTrsnformTranslateAxis(placement);
         return (
@@ -214,10 +214,7 @@ const BaseTooltip = ({ visible, ...props }) => (
               ),
             }}
           >
-            <TooltipContent light={light} {...otherProps}>
-              {typeof content === 'function' ? content(hideTooltip) : content}
-            </TooltipContent>
-            <Arrow light={light} placement={placement} />
+            {overlay}
           </AnimatedTooltipToggle>
         );
       })}
@@ -225,15 +222,9 @@ const BaseTooltip = ({ visible, ...props }) => (
 );
 
 BaseTooltip.propTypes = {
-  content: PropTypes.oneOfType([PropTypes.node, PropTypes.func]).isRequired,
-  hideTooltip: PropTypes.func,
-  light: PropTypes.bool.isRequired,
+  overlay: PropTypes.node.isRequired,
   placement: PropTypes.string.isRequired,
   visible: PropTypes.bool.isRequired,
-};
-
-BaseTooltip.defaultProps = {
-  hideTooltip: () => {},
 };
 
 export default BaseTooltip;

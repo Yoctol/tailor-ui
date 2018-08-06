@@ -15,6 +15,7 @@ import {
   Label,
   Menu,
   Modal,
+  Popover,
   Radio,
   RadioField,
   Select,
@@ -51,6 +52,7 @@ describe('index', () => {
     expect(Menu).toBeDefined();
     expect(message).toBeDefined();
     expect(Modal).toBeDefined();
+    expect(Popover).toBeDefined();
     expect(Radio).toBeDefined();
     expect(RadioField).toBeDefined();
     expect(Select).toBeDefined();

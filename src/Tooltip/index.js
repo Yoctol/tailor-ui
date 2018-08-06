@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import React, { PureComponent, cloneElement } from 'react';
+import React, { PureComponent, cloneElement, createContext } from 'react';
 import { Hover, Toggle } from 'react-powerplug';
 import {
   borders,
@@ -12,13 +12,20 @@ import {
 
 import ClickOutside from '../utils/ClickOutside';
 
-import BaseTooltip, { TooltipWrapper } from './BaseTooltip';
+import BaseTooltip, {
+  Arrow,
+  TooltipContent,
+  TooltipWrapper,
+} from './BaseTooltip';
+
+const { Consumer, Provider } = createContext({});
 
 const ClickTooltip = ({
   children,
   display,
   onVisibleChange,
-  ...otherProps
+  placement,
+  overlay,
 }) => (
   <Toggle onChange={onVisibleChange}>
     {({ on, toggle, set }) => (
@@ -40,11 +47,13 @@ const ClickTooltip = ({
                 }
               },
             })}
-            <BaseTooltip
-              visible={on}
-              hideTooltip={() => set(false)}
-              {...otherProps}
-            />
+            <Provider value={() => set(false)}>
+              <BaseTooltip
+                visible={on}
+                placement={placement}
+                overlay={overlay}
+              />
+            </Provider>
           </TooltipWrapper>
         )}
       </ClickOutside>
@@ -55,6 +64,8 @@ const ClickTooltip = ({
 ClickTooltip.propTypes = {
   children: PropTypes.node.isRequired,
   display: PropTypes.string.isRequired,
+  overlay: PropTypes.node.isRequired,
+  placement: PropTypes.oneOf(['top', 'right', 'bottom', 'left']).isRequired,
   onVisibleChange: PropTypes.func.isRequired,
 };
 
@@ -62,13 +73,18 @@ const HoverTooltip = ({
   children,
   display,
   onVisibleChange,
-  ...otherProps
+  placement,
+  overlay,
 }) => (
   <Hover onChange={onVisibleChange}>
     {({ bind, hovered }) => (
       <TooltipWrapper display={display} {...bind}>
         {children}
-        <BaseTooltip visible={hovered} {...otherProps} />
+        <BaseTooltip
+          visible={hovered}
+          placement={placement}
+          overlay={overlay}
+        />
       </TooltipWrapper>
     )}
   </Hover>
@@ -77,16 +93,48 @@ const HoverTooltip = ({
 HoverTooltip.propTypes = {
   children: PropTypes.node.isRequired,
   display: PropTypes.string.isRequired,
+  overlay: PropTypes.node.isRequired,
+  placement: PropTypes.oneOf(['top', 'right', 'bottom', 'left']).isRequired,
   onVisibleChange: PropTypes.func.isRequired,
 };
 
 class Tooltip extends PureComponent {
-  render() {
-    return this.props.trigger === 'click' ? (
-      <ClickTooltip {...this.props} />
-    ) : (
-      <HoverTooltip {...this.props} />
+  renderOverlay = () => {
+    const {
+      light,
+      content,
+      placement,
+      trigger,
+      components,
+      ...otherProps
+    } = this.props;
+
+    const {
+      ContentComponent = TooltipContent,
+      ArrowComponent = Arrow,
+    } = components;
+
+    return (
+      <Consumer>
+        {hideTooltip => (
+          <>
+            <ContentComponent light={light} {...otherProps}>
+              {typeof content === 'function' && trigger === 'click'
+                ? content(hideTooltip)
+                : content}
+            </ContentComponent>
+            <ArrowComponent light={light} placement={placement} />
+          </>
+        )}
+      </Consumer>
     );
+  };
+
+  render() {
+    const overlay = this.renderOverlay();
+    const RenderTooltip =
+      this.props.trigger === 'click' ? ClickTooltip : HoverTooltip;
+    return <RenderTooltip overlay={overlay} {...this.props} />;
   }
 }
 
@@ -135,6 +183,7 @@ Tooltip.defaultProps = {
   placement: 'top',
   display: 'inline-block',
   trigger: 'hover',
+  components: {},
   onVisibleChange: () => {},
 };
 
