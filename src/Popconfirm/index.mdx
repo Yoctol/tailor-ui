@@ -1,0 +1,55 @@
+---
+name: Popconfirm
+menu: Feedback
+route: /feedback/popconfirm
+---
+
+import { PropsTable, Playground, Link } from 'docz';
+import Popconfirm from './';
+import { Button } from '../';
+
+# Popconfirm
+
+## Properties
+
+<PropsTable of={Popconfirm} />
+
+<div>
+Consult <Link to="/data-display/tooltip#properties">
+Tooltip's documentation</Link> to find more APIs.
+</div>
+
+## Usage
+
+```js
+import { Popconfirm } from '@yoctol/ui';
+```
+
+### Basic
+
+<Playground>
+  <Popconfirm
+    placement="right"
+    content="Are you sure to delete this todo?"
+    onConfirm={() => console.log('confirm')}
+    onCancel={() => console.log('cancel')}
+  >
+    <Button>Button</Button>
+  </Popconfirm>
+</Playground>
+
+### With customize text & type
+
+<Playground>
+  <Popconfirm
+    placement="right"
+    type="error"
+    confirmText="毀了他"
+    cancelText="不要好了"
+    content="此操作將會毀滅本系統，你確定？"
+    onConfirm={() => console.log('confirm')}
+    onCancel={() => console.log('cancel')}
+  >
+    <Button>Button</Button>
+  </Popconfirm>
+</Playground>

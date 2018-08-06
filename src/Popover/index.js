@@ -7,7 +7,7 @@ import Heading from '../Heading';
 import Tooltip from '../Tooltip';
 import { Arrow, TooltipContent } from '../Tooltip/BaseTooltip';
 
-const ArrowComponent = styled(Arrow)`
+export const ArrowComponent = styled(Arrow)`
   border-top: 5px solid ${themeGet('colors.gray.8')};
   opacity: 1;
 
@@ -22,7 +22,7 @@ const ArrowComponent = styled(Arrow)`
   }
 `;
 
-const ContentComponent = styled(TooltipContent)`
+export const ContentComponent = styled(TooltipContent)`
   padding: 0;
   border-color: ${themeGet('colors.gray.8')};
   background-color: ${themeGet('colors.light')};
