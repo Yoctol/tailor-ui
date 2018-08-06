@@ -94,7 +94,7 @@ export const CheckboxFieldGroup = ({
   <Set initial={initialValues || []} onChange={onChange}>
     {({ add, remove, has }) => (
       <FormField success={success} warning={warning} error={error}>
-        <Label>{groupLabel}</Label>
+        {groupLabel && <Label>{groupLabel}</Label>}
         {options.map(({ label, value, disabled = false }) => {
           const id = getUuid();
           return (
@@ -147,7 +147,7 @@ CheckboxFieldGroup.propTypes = {
   /**
    * The label of checkbox field group
    */
-  label: PropTypes.string.isRequired,
+  label: PropTypes.string,
   /**
    * The message will show when success or warning or error is true
    */
@@ -181,6 +181,7 @@ CheckboxFieldGroup.propTypes = {
 };
 
 CheckboxFieldGroup.defaultProps = {
+  label: null,
   error: false,
   message: '',
   success: false,
