@@ -25,6 +25,7 @@ export const ArrowComponent = styled(Arrow)`
 export const ContentComponent = styled(TooltipContent)`
   padding: 0;
   border-color: ${themeGet('colors.gray.8')};
+  opacity: 1;
   background-color: ${themeGet('colors.light')};
   color: ${themeGet('colors.gray.2')};
   text-align: left;
