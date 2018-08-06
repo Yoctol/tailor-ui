@@ -17,11 +17,6 @@ import BaseTooltip, {
   TooltipContent,
   TooltipWrapper,
 } from './BaseTooltip';
-<<<<<<< HEAD
-
-const { Consumer, Provider } = createContext({});
-=======
->>>>>>> refactor(tooltip): make render components changable
 
 const { Consumer, Provider } = createContext({});
 
@@ -109,15 +104,7 @@ class Tooltip extends PureComponent {
       light,
       content,
       placement,
-<<<<<<< HEAD
-<<<<<<< HEAD
       trigger,
-=======
-      hideTooltip,
->>>>>>> refactor(tooltip): make render components changable
-=======
-      trigger,
->>>>>>> fix(tooltip): move hideTooltip to context
       components,
       ...otherProps
     } = this.props;
@@ -128,10 +115,6 @@ class Tooltip extends PureComponent {
     } = components;
 
     return (
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> fix(tooltip): move hideTooltip to context
       <Consumer>
         {hideTooltip => (
           <>
@@ -144,17 +127,6 @@ class Tooltip extends PureComponent {
           </>
         )}
       </Consumer>
-<<<<<<< HEAD
-=======
-      <>
-        <ContentComponent light={light} {...otherProps}>
-          {typeof content === 'function' ? content(hideTooltip) : content}
-        </ContentComponent>
-        <ArrowComponent light={light} placement={placement} />
-      </>
->>>>>>> refactor(tooltip): make render components changable
-=======
->>>>>>> fix(tooltip): move hideTooltip to context
     );
   };
 
