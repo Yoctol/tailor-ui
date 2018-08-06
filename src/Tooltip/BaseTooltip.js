@@ -23,25 +23,21 @@ const TooltipToggle = styled.div`
       bottom: 100%;
       left: 50%;
       margin-bottom: 10px;
-      transform: translateX(-50%);
     `,
     bottom: css`
       top: 100%;
       left: 50%;
       margin-top: 10px;
-      transform: translateX(-50%);
     `,
     right: css`
       top: 50%;
       left: 100%;
       margin-left: 10px;
-      transform: translateY(-50%);
     `,
     left: css`
       top: 50%;
       right: 100%;
       margin-right: 10px;
-      transform: translateY(-50%);
     `,
   })};
 `;
@@ -176,31 +172,55 @@ export const TooltipWrapper = styled.div`
   z-index: 98;
 `;
 
+const getTransformOrigin = placement =>
+  ({
+    top: '0 bottom',
+    bottom: '0 top',
+    left: 'right 0',
+    right: 'left 0',
+  }[placement]);
+
+const getTrsnformTranslateAxis = placement =>
+  ({
+    top: 'X',
+    bottom: 'X',
+    left: 'Y',
+    right: 'Y',
+  }[placement]);
+
 const BaseTooltip = ({ visible, ...props }) => (
   <Transition
     native
-    from={{ opacity: 0 }}
-    enter={{ opacity: 1 }}
-    leave={{ opacity: 0 }}
+    keys={visible}
+    from={{ time: 0 }}
+    enter={{ time: 1 }}
+    leave={{ time: 0 }}
     config={config.gentle}
     {...props}
   >
     {visible &&
-      (({
-        opacity, // eslint-disable-line react/prop-types
-        placement,
-        light,
-        content,
-        hideTooltip,
-        ...otherProps
-      }) => (
-        <AnimatedTooltipToggle style={{ opacity }} placement={placement}>
-          <TooltipContent light={light} {...otherProps}>
-            {typeof content === 'function' ? content(hideTooltip) : content}
-          </TooltipContent>
-          <Arrow light={light} placement={placement} />
-        </AnimatedTooltipToggle>
-      ))}
+      // eslint-disable-next-line react/prop-types
+      (({ time, placement, light, content, hideTooltip, ...otherProps }) => {
+        const transformOrigin = getTransformOrigin(placement);
+        const translateAxis = getTrsnformTranslateAxis(placement);
+        return (
+          <AnimatedTooltipToggle
+            placement={placement}
+            style={{
+              opacity: time,
+              transformOrigin,
+              transform: time.interpolate(
+                t => `scale(${t}) translate${translateAxis}(-50%)`
+              ),
+            }}
+          >
+            <TooltipContent light={light} {...otherProps}>
+              {typeof content === 'function' ? content(hideTooltip) : content}
+            </TooltipContent>
+            <Arrow light={light} placement={placement} />
+          </AnimatedTooltipToggle>
+        );
+      })}
   </Transition>
 );
 
