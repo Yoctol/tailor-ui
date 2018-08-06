@@ -81,7 +81,8 @@ RadioField.defaultProps = {
 
 export const RadioFieldGroup = ({
   label: groupLabel,
-  value: groupValues,
+  value: groupValue,
+  initialValue,
   options,
   onChange,
   success,
@@ -90,7 +91,7 @@ export const RadioFieldGroup = ({
   message,
   ...otherProps
 }) => (
-  <Value initial={groupValues} onChange={onChange}>
+  <Value initial={initialValue} onChange={onChange}>
     {({ value: checkedValue, set }) => (
       <FormField success={success} warning={warning} error={error}>
         <Label>{groupLabel}</Label>
@@ -101,8 +102,10 @@ export const RadioFieldGroup = ({
               <Radio
                 id={id}
                 disabled={disabled}
-                checked={checkedValue === value}
-                onChange={() => set(value)}
+                checked={
+                  groupValue ? value === groupValue : value === checkedValue
+                }
+                onChange={() => (groupValue ? onChange(value) : set(value))}
                 {...otherProps}
               />
               <Label htmlFor={id}>{label}</Label>
@@ -122,6 +125,10 @@ RadioFieldGroup.propTypes = {
    * Set the checkbox field group status to error
    */
   error: PropTypes.bool,
+  /**
+   * To set the initial values
+   */
+  initialValue: PropTypes.string,
   /**
    * The label of checkbox field group
    */
@@ -147,7 +154,7 @@ RadioFieldGroup.propTypes = {
   /**
    * Used for setting the currently selected value
    */
-  value: PropTypes.arrayOf(PropTypes.string),
+  value: PropTypes.string,
   /**
    * Set the checkbox field group status to warning
    */
@@ -162,7 +169,8 @@ RadioFieldGroup.defaultProps = {
   message: '',
   success: false,
   warning: false,
-  value: '',
+  value: null,
+  initialValue: null,
   onChange: () => {},
 };
 
