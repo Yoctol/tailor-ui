@@ -6,15 +6,11 @@ import FormField from '../Form/FormField';
 import Hint from '../Form/Hint';
 import Label from '../Form/Label';
 import Space from '../Grid/Space';
+import createUuidGenerator from '../utils/createUuidGenerator';
 
 import Radio from '.';
 
-let seed = 0;
-
-const getUuid = () => {
-  seed += 1;
-  return `yoctol_radio_${Date.now()}_${seed}`;
-};
+const getUuid = createUuidGenerator('radio');
 
 const RadioField = ({
   children,
