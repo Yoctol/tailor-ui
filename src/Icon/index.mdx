@@ -12,21 +12,19 @@ import * as icons from './icons';
 
 # Icon
 
-## Properties
-
-<PropsTable of={Icon} />
+Semantic vector graphics.
 
 ## Built-In Icon
 
 <ul>
   {Object.keys(icons).map(icon => (
     <li>
-      <code>{icon}</code>
+      {icon}
     </li>
   ))}
 </ul>
 
-## Usage
+## Examples
 
 ```js
 import { Icon } from '@yoctol/ui';
@@ -100,3 +98,7 @@ import { MdEdit, MdComment, MdInput } from 'react-icons/lib/md';
 <Playground>
   <Icon size="40" type="loading" />
 </Playground>
+
+## API
+
+<PropsTable of={Icon} />

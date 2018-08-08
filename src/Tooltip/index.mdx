@@ -10,11 +10,14 @@ import { Button } from '../';
 
 # Tooltip
 
-## Properties
+A simple text popup tip.
 
-<PropsTable of={Tooltip} />
+## When To Use
 
-## Usage
+- The tip is shown on mouse enter, and is hidden on mouse leave. The Tooltip doesn't support complex text or operations.
+- To provide an explanation of a `button/text/operation`. It's often used instead of the html `title` attribute.
+
+## Examples
 
 ```js
 import { Tooltip } from '@yoctol/ui';
@@ -111,3 +114,7 @@ import { Tooltip } from '@yoctol/ui';
     <Button>Button</Button>
   </Tooltip>
 </Playground>
+
+## API
+
+<PropsTable of={Tooltip} />

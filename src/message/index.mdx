@@ -10,24 +10,14 @@ import Button from '../Button';
 
 # Message
 
-## API
+Display global messages as feedback in response to user operations.
 
-### Methods
+## When To Use
 
-- `message.info(content, [duration]) => Promise`
-- `message.success(content, [duration]) => Promise`
-- `message.warning(content, [duration]) => Promise`
-- `message.error(content, [duration]) => Promise`
+- To provide feedback such as success, warning, error etc.
+- A message is displayed at top and center and will be dismissed automatically, as a non-interrupting light-weighted prompt.
 
-### Argument
-
-| Argument | Type                | Default | Description                  |
-| -------- | ------------------- | ------- |----------------------------- |
-| content  | string \| ReactNode | -       |content of the message        |
-| duration | number              | 3000    |time(ms) before auto-dismiss. |
-
-
-## Usage
+## Examples
 
 ```js
 import { message } from '@yoctol/ui'
@@ -78,3 +68,19 @@ import { message } from '@yoctol/ui'
     Show a message
   </Button>
 </Playground>
+
+## API
+
+### Methods
+
+- `message.info(content, [duration]) => Promise`
+- `message.success(content, [duration]) => Promise`
+- `message.warning(content, [duration]) => Promise`
+- `message.error(content, [duration]) => Promise`
+
+### Argument
+
+| Argument | Type                | Default | Description                  |
+| -------- | ------------------- | ------- |----------------------------- |
+| content  | string \| ReactNode | -       |content of the message        |
+| duration | number              | 3000    |time(ms) before auto-dismiss. |

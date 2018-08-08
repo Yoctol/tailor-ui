@@ -4,18 +4,21 @@ menu: Data Entry
 route: /data-entry/select
 ---
 
-import { PropsTable, Playground } from 'docz';
+import { PropsTable, Playground, Link } from 'docz';
 import { Value } from 'react-powerplug';
 import { range } from 'ramda';
 import Select from './';
 
 # Select
 
-## Properties
+Select component to select value from options.
 
-<PropsTable of={Select} />
+## When To Use
 
-## Usage
+- A dropdown menu for displaying choices - an elegant alternative to the native `<select>` element.
+- Utilizing <Link to="/data-entry/radio">Radio</Link> is recommended when there are fewer total options (less than 5).
+
+## Examples
 
 ```js
 import { Select } from '@yoctol/ui';
@@ -128,3 +131,7 @@ import { Select } from '@yoctol/ui';
     )}
   </Value>
 </Playground>
+
+## API
+
+<PropsTable of={Select} />

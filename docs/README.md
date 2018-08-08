@@ -2,7 +2,7 @@
 
 ### [Docz](https://yoctol-ui.netlify.com)
 
-### Usage
+### Examples
 
 First, install it:
 
