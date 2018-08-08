@@ -169,7 +169,6 @@ Arrow.propTypes = {
 export const TooltipWrapper = styled.div`
   display: ${p => p.display};
   position: relative;
-  z-index: 98;
 `;
 
 const getTransformOrigin = placement =>
