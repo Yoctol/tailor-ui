@@ -1,3 +1,11 @@
+<a name="1.8.2"></a>
+
+## [1.8.2](https://github.com/yoctol/ui/compare/v1.8.1...v1.8.2) (2018-08-09)
+
+### Bug Fixes
+
+- **tooltip:** wrapper z-index ([#260](https://github.com/yoctol/ui/issues/260)) ([a08829c](https://github.com/yoctol/ui/commit/a08829c))
+
 <a name="1.8.1"></a>
 
 ## [1.8.1](https://github.com/yoctol/ui/compare/v1.8.0...v1.8.1) (2018-08-08)
