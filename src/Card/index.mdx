@@ -38,23 +38,14 @@ import { Card } from '@yoctol/ui';
   <Card width="400px">
     <Card.Block>Title</Card.Block>
     <Card.Block>Content</Card.Block>
-    <Card.Button>With Button</Card.Button>
-    <Card.Button>With Button</Card.Button>
-    <Card.Button>With Button</Card.Button>
-  </Card>
-</Playground>
-
-### With children Input & Button
-
-<Playground>
-  <Card width="400px">
-    <Card.Block>
-      <Input placeholder="With children Input" textAlign="center" />
+    <Card.Block p="1">
+      <Button block>With Button</Button>
     </Card.Block>
-    <Card.Block>
-      <Button block light border="none">
-        With children Button
-      </Button>
+    <Card.Block p="1">
+      <Button block>With Button</Button>
+    </Card.Block>
+    <Card.Block p="1">
+      <Button block>With Button</Button>
     </Card.Block>
   </Card>
 </Playground>
@@ -96,10 +87,6 @@ Some `props` are using object spread syntax and are not showing in these tables.
 ### Card.Block
 
 <PropsTable of={Block} />
-
-### Card.Button
-
-<PropsTable of={Card.Button} />
 
 ### Card.Image
 
