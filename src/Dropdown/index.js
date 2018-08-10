@@ -137,6 +137,10 @@ const StyledList = styled.ul`
   z-index: 99;
   margin: 0;
   padding: 0;
+  overflow: hidden;
+  border: ${themeGet('borders.default')};
+  border-radius: ${themeGet('radii.2')};
+  border-color: ${themeGet('colors.gray.8')};
   background-color: transparent;
   list-style: none;
 
@@ -218,7 +222,6 @@ Dropdown.List = List;
 const Item = styled.li`
   margin-top: 0;
   padding: ${themeGet('space.paddingY')} ${themeGet('space.paddingX')};
-  border: ${themeGet('borders.default')} ${themeGet('colors.gray.8')};
   background-color: ${themeGet('colors.light')};
   color: ${themeGet('colors.gray.4')};
   font-size: ${themeGet('fontSizes.default')};
@@ -227,10 +230,6 @@ const Item = styled.li`
   &:hover {
     background-color: ${themeGet('colors.primaryDark')};
     color: ${themeGet('colors.light')};
-  }
-
-  &:not(:first-child) {
-    border-top: 0;
   }
 
   ${controlTransition()};
