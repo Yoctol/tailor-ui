@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import React, { Children, cloneElement } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import {
   borderRadius,
@@ -10,8 +10,6 @@ import {
   themeGet,
   width,
 } from 'styled-system';
-
-import _Button from '../Button';
 
 const StyledBlock = styled.div`
   position: relative;
@@ -42,28 +40,6 @@ Block.defaultProps = {
   p: 4,
 };
 
-const Button = styled(_Button).attrs({ light: true })`
-  border: 0;
-  border-bottom: ${themeGet('borders.default')} ${themeGet('colors.gray.8')};
-  border-radius: 0;
-
-  &:last-child {
-    border-bottom: 0;
-  }
-
-  &:focus {
-    z-index: 1;
-    border: 0;
-    border-bottom: ${themeGet('borders.default')} ${themeGet('colors.gray.8')};
-
-    &:last-child {
-      border-bottom: 0;
-    }
-  }
-`;
-
-Button.displayName = 'Card.Button';
-
 const StyledImage = styled.div`
   overflow: hidden;
 
@@ -93,35 +69,10 @@ const CardWrapper = styled.div`
   ${width};
   ${color};
   ${borderRadius};
-
-  ${Button}:first-child {
-    border-top-left-radius: ${props =>
-      themeGet(`radii.${props.borderRadius}`, 'radii.1')(props)};
-    border-top-right-radius: ${props =>
-      themeGet(`radii.${props.borderRadius}`, 'radii.1')(props)};
-  }
-
-  ${Button}:last-child {
-    border-bottom-right-radius: ${props =>
-      themeGet(`radii.${props.borderRadius}`, 'radii.1')(props)};
-    border-bottom-left-radius: ${props =>
-      themeGet(`radii.${props.borderRadius}`, 'radii.1')(props)};
-  }
 `;
 
 const Card = ({ children, ...otherProps }) => (
-  <CardWrapper {...otherProps}>
-    {Children.map(
-      children,
-      child =>
-        child.props.children &&
-        child.props.children.type &&
-        child.props.children.type.displayName &&
-        ['Input', 'Button'].includes(child.props.children.type.displayName)
-          ? cloneElement(child, { p: 1 })
-          : cloneElement(child)
-    )}
-  </CardWrapper>
+  <CardWrapper {...otherProps}>{children}</CardWrapper>
 );
 
 Card.propTypes = {
@@ -139,12 +90,11 @@ Card.propTypes = {
 /* eslint-disable react/default-props-match-prop-types */
 Card.defaultProps = {
   bg: 'light',
-  borderRadius: 1,
+  borderRadius: 2,
 };
 /* eslint-enable react/default-props-match-prop-types */
 
 Card.Block = Block;
-Card.Button = Button;
 Card.Image = Image;
 
 export default Card;
