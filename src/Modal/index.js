@@ -1,19 +1,11 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import ModalWithAnimation from './ModalWithAnimation';
-import ModalWithoutAnimation from './ModalWithoutAnimation';
+import BaseModal from './BaseModal';
 
-const Modal = ({ animation, ...otherProps }) => {
-  const BaseModal = animation ? ModalWithAnimation : ModalWithoutAnimation;
-  return <BaseModal {...otherProps} />;
-};
+const Modal = props => <BaseModal {...props} />;
 
 Modal.propTypes = {
-  /**
-   * Apply animation effects or not
-   */
-  animation: PropTypes.bool,
   /**
    * The children of modal content
    */
@@ -21,15 +13,15 @@ Modal.propTypes = {
   /**
    * Whether a close (x) button is visible on top right of the modal dialog or not
    */
-  closeButton: PropTypes.bool,
+  closable: PropTypes.bool,
   /**
    * The function will be triggerd when user click outside of the modal or press ESC key
    */
   handleClose: PropTypes.func.isRequired,
   /**
-   * Whether the modal is show or not
+   * Whether the modal is visible or not
    */
-  show: PropTypes.bool.isRequired,
+  visible: PropTypes.bool.isRequired,
   /**
    * Width of modal
    */
@@ -37,8 +29,7 @@ Modal.propTypes = {
 };
 
 Modal.defaultProps = {
-  animation: true,
-  closeButton: false,
+  closable: false,
   children: null,
   width: 416,
 };

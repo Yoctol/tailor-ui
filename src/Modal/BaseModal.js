@@ -2,7 +2,7 @@ import Close from 'react-icons/lib/md/close';
 import PropTypes from 'prop-types';
 import React, { PureComponent } from 'react';
 import styled from 'styled-components';
-import { Transition, animated } from 'react-spring';
+import { Transition, animated, config } from 'react-spring';
 import { space, themeGet, width } from 'styled-system';
 
 import Icon from '../Icon';
@@ -60,10 +60,10 @@ const ModalContent = styled.div`
   left: 50%;
   flex-direction: column;
   max-height: 90vh;
-  border: ${themeGet('borders.default')} ${themeGet('colors.gray.8')};
   border-radius: ${themeGet('radii.2')};
   background-color: #fff;
   box-shadow: 0 10px 30px 0 rgba(17, 17, 17, 0.2);
+  transform: translate(-50%, -50%);
 
   ${space};
   ${width};
@@ -86,7 +86,7 @@ const ModalWrapper = ({
   translateY,
   pointerEvents,
   handleClose,
-  closeButton,
+  closable,
   content,
   ...otherProps
 }) => (
@@ -102,13 +102,10 @@ const ModalWrapper = ({
       style={{
         opacity,
         pointerEvents,
-        transform: translateY.interpolate(
-          y => `translate(-50%, calc(-50% - ${y}px))`
-        ),
       }}
       {...otherProps}
     >
-      {closeButton && <CloseButton handleClose={handleClose} />}
+      {closable && <CloseButton handleClose={handleClose} />}
       {content}
     </AnimatedModalContent>
   </>
@@ -116,56 +113,50 @@ const ModalWrapper = ({
 
 const ESC_KEY_CODE = 27;
 
-class Modal extends PureComponent {
+class BaseModal extends PureComponent {
   render() {
-    const { children, show, handleClose, ...otherProps } = this.props;
+    const { children, visible, handleClose, ...otherProps } = this.props;
 
     return (
       <>
-        {show && <Keydown keyCode={ESC_KEY_CODE} handleKeydown={handleClose} />}
+        {visible && (
+          <Keydown keyCode={ESC_KEY_CODE} handleKeydown={handleClose} />
+        )}
         <Transition
           native
-          keys={show ? 'show' : 'hide'}
+          keys={visible ? 'visible' : 'hide'}
           from={{
             opacity: 0,
-            translateY: 150,
           }}
           enter={{
             opacity: 1,
-            translateY: 0,
           }}
           leave={{
             opacity: 0,
-            translateY: 150,
             pointerEvents: 'none',
           }}
-          config={{
-            tension: 120,
-            friction: 14,
-            restSpeedThreshold: 0.01,
-            restDisplacementThreshold: 0.01,
-          }}
+          config={config.stiff}
           handleClose={handleClose}
           content={children}
           {...otherProps}
         >
-          {show ? ModalWrapper : null}
+          {visible ? ModalWrapper : null}
         </Transition>
       </>
     );
   }
 }
 
-Modal.propTypes = {
+BaseModal.propTypes = {
   children: PropTypes.node,
-  closeButton: PropTypes.bool,
+  closable: PropTypes.bool,
   handleClose: PropTypes.func.isRequired,
-  show: PropTypes.bool.isRequired,
+  visible: PropTypes.bool.isRequired,
 };
 
-Modal.defaultProps = {
-  closeButton: false,
+BaseModal.defaultProps = {
+  closable: false,
   children: null,
 };
 
-export default Modal;
+export default BaseModal;
