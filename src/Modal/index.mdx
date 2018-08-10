@@ -30,11 +30,16 @@ import { Modal } from '@yoctol/ui';
     {({ on, toggle }) => (
       <div>
         <Modal
+          title="This is a Modal"
           handleClose={toggle}
           visible={on}
           closable
         >
-          This is the content of Modal
+          <div>This is the content of Modal</div>
+          <div>This is the content of Modal</div>
+          <div>This is the content of Modal</div>
+          <div>This is the content of Modal</div>
+          <div>This is the content of Modal</div>
         </Modal>
         <Button onClick={toggle}>Open Modal</Button>
       </div>
@@ -42,6 +47,31 @@ import { Modal } from '@yoctol/ui';
   </Toggle>
 </Playground>
 
+
+### Customize footer
+
+<Playground>
+  <Toggle>
+    {({ on, toggle }) => (
+      <div>
+        <Modal
+          title="This is a Modal"
+          handleClose={toggle}
+          visible={on}
+          footer="My footer"
+          closable
+        >
+          <div>This is the content of Modal</div>
+          <div>This is the content of Modal</div>
+          <div>This is the content of Modal</div>
+          <div>This is the content of Modal</div>
+          <div>This is the content of Modal</div>
+        </Modal>
+        <Button onClick={toggle}>Open Modal</Button>
+      </div>
+    )}
+  </Toggle>
+</Playground>
 
 ## API
 

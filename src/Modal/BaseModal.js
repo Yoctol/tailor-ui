@@ -1,44 +1,10 @@
-import Close from 'react-icons/lib/md/close';
 import PropTypes from 'prop-types';
 import React, { PureComponent } from 'react';
 import styled from 'styled-components';
 import { Transition, animated, config } from 'react-spring';
 import { space, themeGet, width } from 'styled-system';
 
-import Icon from '../Icon';
 import Keydown from '../utils/Keydown';
-
-const CloseBtn = styled.button.attrs({
-  type: 'button',
-})`
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  padding: 0;
-  border: 0;
-  background: transparent;
-  transform: rotate(0deg);
-  transition: all 0.2s ease-in;
-  cursor: pointer;
-
-  :focus {
-    outline: 0;
-  }
-
-  :hover {
-    transform: rotate(90deg);
-  }
-`;
-
-const CloseButton = ({ handleClose }) => (
-  <CloseBtn onClick={handleClose}>
-    <Icon cursor="pointer" type={Close} />
-  </CloseBtn>
-);
-
-CloseButton.propTypes = {
-  handleClose: PropTypes.func.isRequired,
-};
 
 const ModalOverlay = styled.div`
   position: fixed;
@@ -60,12 +26,11 @@ const ModalContent = styled.div`
   left: 50%;
   flex-direction: column;
   max-height: 90vh;
-  border-radius: ${themeGet('radii.2')};
+  border-radius: ${themeGet('radii.1')};
   background-color: #fff;
   box-shadow: 0 10px 30px 0 rgba(17, 17, 17, 0.2);
   transform: translate(-50%, -50%);
 
-  ${space};
   ${width};
 `;
 
@@ -75,7 +40,6 @@ ModalContent.propTypes = {
 };
 
 ModalContent.defaultProps = {
-  p: 8,
   width: 416,
 };
 
@@ -86,7 +50,6 @@ const ModalWrapper = ({
   translateY,
   pointerEvents,
   handleClose,
-  closable,
   content,
   ...otherProps
 }) => (
@@ -105,7 +68,6 @@ const ModalWrapper = ({
       }}
       {...otherProps}
     >
-      {closable && <CloseButton handleClose={handleClose} />}
       {content}
     </AnimatedModalContent>
   </>
@@ -149,13 +111,11 @@ class BaseModal extends PureComponent {
 
 BaseModal.propTypes = {
   children: PropTypes.node,
-  closable: PropTypes.bool,
   handleClose: PropTypes.func.isRequired,
   visible: PropTypes.bool.isRequired,
 };
 
 BaseModal.defaultProps = {
-  closable: false,
   children: null,
 };
 
