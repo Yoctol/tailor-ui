@@ -51,6 +51,7 @@ const ModalWrapper = ({
   pointerEvents,
   handleClose,
   content,
+  clickOutsite,
   ...otherProps
 }) => (
   <>
@@ -59,7 +60,11 @@ const ModalWrapper = ({
         opacity,
         pointerEvents,
       }}
-      onClick={handleClose}
+      onClick={() => {
+        if (clickOutsite) {
+          handleClose();
+        }
+      }}
     />
     <AnimatedModalContent
       style={{
@@ -111,12 +116,14 @@ class BaseModal extends PureComponent {
 
 BaseModal.propTypes = {
   children: PropTypes.node,
+  clickOutsite: PropTypes.bool,
   handleClose: PropTypes.func.isRequired,
   visible: PropTypes.bool.isRequired,
 };
 
 BaseModal.defaultProps = {
   children: null,
+  clickOutsite: true,
 };
 
 export default BaseModal;

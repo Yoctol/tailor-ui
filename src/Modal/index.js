@@ -2,12 +2,13 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 import Box from '../Grid/Box';
-import Button from '../Button';
 import Flex from '../Grid/Flex';
 import Heading from '../Heading';
 
 import BaseModal from './BaseModal';
 import CloseButton from './CloseButton';
+import Footer from './Footer';
+import { confirm, error, info, success, warning } from './instance';
 
 const Modal = ({
   title,
@@ -36,27 +37,13 @@ const Modal = ({
 
       <Flex p="2" borderTop="default" borderColor="gray.8">
         {footer === 'default' ? (
-          <>
-            <Button
-              light
-              ml="auto"
-              onClick={event => {
-                handleClose();
-                onCancel(event);
-              }}
-            >
-              {cancelText}
-            </Button>
-            <Button
-              ml="2"
-              onClick={event => {
-                handleClose();
-                onConfirm(event);
-              }}
-            >
-              {confirmText}
-            </Button>
-          </>
+          <Footer
+            handleClose={handleClose}
+            cancelText={cancelText}
+            confirmText={confirmText}
+            onCancel={onCancel}
+            onConfirm={onConfirm}
+          />
         ) : (
           footer
         )}
@@ -64,8 +51,18 @@ const Modal = ({
     </>
   );
 
-  return <BaseModal content={content} handleClose={handleClose} {...props} />;
+  return (
+    <BaseModal handleClose={handleClose} {...props}>
+      {content}
+    </BaseModal>
+  );
 };
+
+Modal.confirm = confirm;
+Modal.info = info;
+Modal.success = success;
+Modal.warning = warning;
+Modal.error = error;
 
 Modal.propTypes = {
   /**

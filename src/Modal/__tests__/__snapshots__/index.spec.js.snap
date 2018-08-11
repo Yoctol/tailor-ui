@@ -2,133 +2,83 @@
 
 exports[`Modal should render correctly 1`] = `
 <BaseModal
-  content={
-    <React.Fragment>
-      <Flex
-        borderBottom="default"
-        borderColor="gray.8"
-        p="4"
-      >
-        <Box
-          flex="auto"
-        >
-          <Heading.h3>
-            
-          </Heading.h3>
-        </Box>
-      </Flex>
-      <Flex
-        flexDirection="column"
-        p="4"
-      />
-      <Flex
-        borderColor="gray.8"
-        borderTop="default"
-        p="2"
-      >
-        <React.Fragment>
-          <Button
-            active={false}
-            block={false}
-            circle={false}
-            danger={false}
-            ghost={false}
-            light={true}
-            loading={false}
-            ml="auto"
-            onClick={[Function]}
-            size="m"
-          >
-            Cancel
-          </Button>
-          <Button
-            active={false}
-            block={false}
-            circle={false}
-            danger={false}
-            ghost={false}
-            light={false}
-            loading={false}
-            ml="2"
-            onClick={[Function]}
-            size="m"
-          >
-            Confirm
-          </Button>
-        </React.Fragment>
-      </Flex>
-    </React.Fragment>
-  }
+  clickOutsite={true}
   handleClose={[Function]}
   visible={true}
   width={416}
-/>
+>
+  <React.Fragment>
+    <Flex
+      borderBottom="default"
+      borderColor="gray.8"
+      p="4"
+    >
+      <Box
+        flex="auto"
+      >
+        <Heading.h3 />
+      </Box>
+    </Flex>
+    <Flex
+      flexDirection="column"
+      p="4"
+    />
+    <Flex
+      borderColor="gray.8"
+      borderTop="default"
+      p="2"
+    >
+      <Footer
+        cancelText="Cancel"
+        confirmText="Confirm"
+        handleClose={[Function]}
+        onCancel={[Function]}
+        onConfirm={[Function]}
+      />
+    </Flex>
+  </React.Fragment>
+</BaseModal>
 `;
 
 exports[`Modal should render with props closeButton 1`] = `
 <BaseModal
-  content={
-    <React.Fragment>
-      <Flex
-        borderBottom="default"
-        borderColor="gray.8"
-        p="4"
-      >
-        <Box
-          flex="auto"
-        >
-          <Heading.h3>
-            
-          </Heading.h3>
-        </Box>
-        <CloseButton
-          handleClose={[Function]}
-        />
-      </Flex>
-      <Flex
-        flexDirection="column"
-        p="4"
-      />
-      <Flex
-        borderColor="gray.8"
-        borderTop="default"
-        p="2"
-      >
-        <React.Fragment>
-          <Button
-            active={false}
-            block={false}
-            circle={false}
-            danger={false}
-            ghost={false}
-            light={true}
-            loading={false}
-            ml="auto"
-            onClick={[Function]}
-            size="m"
-          >
-            Cancel
-          </Button>
-          <Button
-            active={false}
-            block={false}
-            circle={false}
-            danger={false}
-            ghost={false}
-            light={false}
-            loading={false}
-            ml="2"
-            onClick={[Function]}
-            size="m"
-          >
-            Confirm
-          </Button>
-        </React.Fragment>
-      </Flex>
-    </React.Fragment>
-  }
+  clickOutsite={true}
   handleClose={[Function]}
   visible={true}
   width={416}
-/>
+>
+  <React.Fragment>
+    <Flex
+      borderBottom="default"
+      borderColor="gray.8"
+      p="4"
+    >
+      <Box
+        flex="auto"
+      >
+        <Heading.h3 />
+      </Box>
+      <CloseButton
+        handleClose={[Function]}
+      />
+    </Flex>
+    <Flex
+      flexDirection="column"
+      p="4"
+    />
+    <Flex
+      borderColor="gray.8"
+      borderTop="default"
+      p="2"
+    >
+      <Footer
+        cancelText="Cancel"
+        confirmText="Confirm"
+        handleClose={[Function]}
+        onCancel={[Function]}
+        onConfirm={[Function]}
+      />
+    </Flex>
+  </React.Fragment>
+</BaseModal>
 `;
