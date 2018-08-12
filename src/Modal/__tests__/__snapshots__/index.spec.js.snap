@@ -2,8 +2,15 @@
 
 exports[`Modal should render correctly 1`] = `
 <BaseModal
+  cancelText="Cancel"
   clickOutsite={true}
+  closable={false}
+  confirmText="Confirm"
+  footer="default"
   handleClose={[Function]}
+  onCancel={[Function]}
+  onConfirm={[Function]}
+  title=""
   visible={true}
   width={416}
 >
@@ -23,7 +30,7 @@ exports[`Modal should render correctly 1`] = `
       flexDirection="column"
       p="4"
     />
-    <Flex
+    <Box
       borderColor="gray.8"
       borderTop="default"
       p="2"
@@ -35,15 +42,22 @@ exports[`Modal should render correctly 1`] = `
         onCancel={[Function]}
         onConfirm={[Function]}
       />
-    </Flex>
+    </Box>
   </React.Fragment>
 </BaseModal>
 `;
 
 exports[`Modal should render with props closeButton 1`] = `
 <BaseModal
+  cancelText="Cancel"
   clickOutsite={true}
+  closable={true}
+  confirmText="Confirm"
+  footer="default"
   handleClose={[Function]}
+  onCancel={[Function]}
+  onConfirm={[Function]}
+  title=""
   visible={true}
   width={416}
 >
@@ -66,7 +80,7 @@ exports[`Modal should render with props closeButton 1`] = `
       flexDirection="column"
       p="4"
     />
-    <Flex
+    <Box
       borderColor="gray.8"
       borderTop="default"
       p="2"
@@ -78,7 +92,7 @@ exports[`Modal should render with props closeButton 1`] = `
         onCancel={[Function]}
         onConfirm={[Function]}
       />
-    </Flex>
+    </Box>
   </React.Fragment>
 </BaseModal>
 `;

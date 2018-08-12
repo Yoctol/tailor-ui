@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { PureComponent } from 'react';
 
 import Box from '../Grid/Box';
 import Flex from '../Grid/Flex';
@@ -10,53 +10,53 @@ import CloseButton from './CloseButton';
 import Footer from './Footer';
 import { confirm, error, info, success, warning } from './instance';
 
-const Modal = ({
-  title,
-  children,
-  handleClose,
-  footer,
-  closable,
-  cancelText,
-  confirmText,
-  onCancel,
-  onConfirm,
-  ...props
-}) => {
-  const content = (
-    <>
-      <Flex p="4" borderBottom="default" borderColor="gray.8">
-        <Box flex="auto">
-          <Heading.h3>{title}</Heading.h3>
+class Modal extends PureComponent {
+  renderContent = () => {
+    const {
+      title,
+      children,
+      handleClose,
+      footer,
+      closable,
+      cancelText,
+      confirmText,
+      onCancel,
+      onConfirm,
+    } = this.props;
+    return (
+      <>
+        <Flex p="4" borderBottom="default" borderColor="gray.8">
+          <Box flex="auto">
+            <Heading.h3>{title}</Heading.h3>
+          </Box>
+          {closable && <CloseButton handleClose={handleClose} />}
+        </Flex>
+
+        <Flex flexDirection="column" p="4">
+          {children}
+        </Flex>
+
+        <Box p="2" borderTop="default" borderColor="gray.8">
+          {footer === 'default' ? (
+            <Footer
+              handleClose={handleClose}
+              cancelText={cancelText}
+              confirmText={confirmText}
+              onCancel={onCancel}
+              onConfirm={onConfirm}
+            />
+          ) : (
+            footer
+          )}
         </Box>
-        {closable && <CloseButton handleClose={handleClose} />}
-      </Flex>
+      </>
+    );
+  };
 
-      <Flex flexDirection="column" p="4">
-        {children}
-      </Flex>
-
-      <Flex p="2" borderTop="default" borderColor="gray.8">
-        {footer === 'default' ? (
-          <Footer
-            handleClose={handleClose}
-            cancelText={cancelText}
-            confirmText={confirmText}
-            onCancel={onCancel}
-            onConfirm={onConfirm}
-          />
-        ) : (
-          footer
-        )}
-      </Flex>
-    </>
-  );
-
-  return (
-    <BaseModal handleClose={handleClose} {...props}>
-      {content}
-    </BaseModal>
-  );
-};
+  render() {
+    return <BaseModal {...this.props}>{this.renderContent()}</BaseModal>;
+  }
+}
 
 Modal.confirm = confirm;
 Modal.info = info;

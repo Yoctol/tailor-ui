@@ -92,7 +92,6 @@ import { Modal } from '@yoctol/ui';
 
 #### Status
 
-
 <Playground>
   <Button
     onClick={() => {
@@ -141,4 +140,25 @@ import { Modal } from '@yoctol/ui';
 
 ## API
 
+### Modal
+
 <PropsTable of={Modal} />
+
+### Instance
+
+- `Modal.confirm(options) => Promise`
+- `Modal.info(options) => Promise`
+- `Modal.success(options) => Promise`
+- `Modal.warning(options) => Promise`
+- `Modal.error(options) => Promise`
+
+### `options`
+
+| Property    | Type                                                                                                                                                                                            | Default  | Description               |
+| ----------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ------------------------- |
+| cancelText  | string                                                                                                                                                                                          |  Cancel  | Text of the Cancel button |
+| confirmText | string                                                                                                                                                                                          |  Conrim  | Text of the Conrim button |
+| onCancel    | function |-| Specify a function that will be called when the user clicks the Cancel button. The parameter of this function is a function whose execution should include closing the dialog. |
+| onConfirm   | function |-| Specify a function that will be called when the user clicks the OK button. The parameter of this function is a function whose execution should include closing the dialog.     |
+| title       | string \| ReactNode                                                                                                                                                                             | -        |Title                     |
+| content     | string \| ReactNode                                                                                                                                                                             | -        | content of the message    |
