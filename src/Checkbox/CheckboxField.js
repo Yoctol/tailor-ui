@@ -106,7 +106,7 @@ export const CheckboxFieldGroup = ({
                       onChange(groupValues.filter(val => val !== value));
                     }
                     if (!groupValues.includes(value) && checked) {
-                      onChange(groupValues.push(value));
+                      onChange([...groupValues, value]);
                     }
                   } else {
                     if (has(value) && !checked) {
