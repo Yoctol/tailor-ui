@@ -11,50 +11,60 @@ import Footer from './Footer';
 import { confirm, error, info, success, warning } from './instance';
 
 class Modal extends PureComponent {
+  renderHeader = () => {
+    const { title, handleClose, closable } = this.props;
+    return (
+      <Flex px="4" py="3" borderBottom="default" borderColor="gray.8">
+        <Box flex="auto">
+          <Heading.h3>{title}</Heading.h3>
+        </Box>
+        {closable && <CloseButton handleClose={handleClose} />}
+      </Flex>
+    );
+  };
+
   renderContent = () => {
+    const { children } = this.props;
+    return (
+      <Flex flexDirection="column" p="4">
+        {children}
+      </Flex>
+    );
+  };
+
+  renderFooter = () => {
     const {
-      title,
-      children,
       handleClose,
       footer,
-      closable,
       cancelText,
       confirmText,
       onCancel,
       onConfirm,
     } = this.props;
+
     return (
-      <>
-        <Flex p="4" borderBottom="default" borderColor="gray.8">
-          <Box flex="auto">
-            <Heading.h3>{title}</Heading.h3>
-          </Box>
-          {closable && <CloseButton handleClose={handleClose} />}
-        </Flex>
-
-        <Flex flexDirection="column" p="4">
-          {children}
-        </Flex>
-
-        <Box p="2" borderTop="default" borderColor="gray.8">
-          {footer === 'default' ? (
-            <Footer
-              handleClose={handleClose}
-              cancelText={cancelText}
-              confirmText={confirmText}
-              onCancel={onCancel}
-              onConfirm={onConfirm}
-            />
-          ) : (
-            footer
-          )}
-        </Box>
-      </>
+      <Box px="4" py="3" borderTop="default" borderColor="gray.8">
+        {footer || (
+          <Footer
+            handleClose={handleClose}
+            cancelText={cancelText}
+            confirmText={confirmText}
+            onCancel={onCancel}
+            onConfirm={onConfirm}
+          />
+        )}
+      </Box>
     );
   };
 
   render() {
-    return <BaseModal {...this.props}>{this.renderContent()}</BaseModal>;
+    return (
+      <BaseModal {...this.props}>
+        {this.renderHeader()}
+        {this.renderContent()}
+        {this.renderFooter()}
+      </BaseModal>
+    );
   }
 }
 
@@ -115,7 +125,7 @@ Modal.defaultProps = {
   closable: false,
   children: null,
   width: 416,
-  footer: 'default',
+  footer: null,
   title: '',
   confirmText: 'Confirm',
   cancelText: 'Cancel',
