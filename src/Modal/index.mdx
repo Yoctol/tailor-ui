@@ -30,11 +30,16 @@ import { Modal } from '@yoctol/ui';
     {({ on, toggle }) => (
       <div>
         <Modal
+          title="This is a Modal"
           handleClose={toggle}
-          show={on}
-          closeButton
+          visible={on}
+          closable
         >
-          This is the content of Modal
+          <div>This is the content of Modal</div>
+          <div>This is the content of Modal</div>
+          <div>This is the content of Modal</div>
+          <div>This is the content of Modal</div>
+          <div>This is the content of Modal</div>
         </Modal>
         <Button onClick={toggle}>Open Modal</Button>
       </div>
@@ -43,6 +48,117 @@ import { Modal } from '@yoctol/ui';
 </Playground>
 
 
+### Customize footer
+
+<Playground>
+  <Toggle>
+    {({ on, toggle }) => (
+      <div>
+        <Modal
+          title="This is a Modal"
+          handleClose={toggle}
+          visible={on}
+          footer="My footer"
+          closable
+        >
+          <div>This is the content of Modal</div>
+          <div>This is the content of Modal</div>
+          <div>This is the content of Modal</div>
+          <div>This is the content of Modal</div>
+          <div>This is the content of Modal</div>
+        </Modal>
+        <Button onClick={toggle}>Open Modal</Button>
+      </div>
+    )}
+  </Toggle>
+</Playground>
+
+### Instacne
+
+#### Confirm
+
+<Playground>
+  <Button
+    onClick={() => {
+      Modal.confirm({
+        title: 'Do you Want to delete these items?',
+        content: 'Some descriptions',
+      })
+    }}
+  >
+    Confirm
+  </Button>
+</Playground>
+
+#### Status
+
+<Playground>
+  <Button
+    onClick={() => {
+      Modal.info({
+        title: 'This is a info modal',
+        content: 'Some descriptions',
+      })
+    }}
+  >
+    Info
+  </Button>
+  <Button
+    ml="2"
+    onClick={() => {
+      Modal.success({
+        title: 'This is a success modal',
+        content: 'Some descriptions',
+      })
+    }}
+  >
+    Success
+  </Button>
+  <Button
+    ml="2"
+    onClick={() => {
+      Modal.warning({
+        title: 'This is a warning modal',
+        content: 'Some descriptions',
+      })
+    }}
+  >
+    Warning
+  </Button>
+  <Button
+    ml="2"
+    onClick={() => {
+      Modal.error({
+        title: 'This is a error modal',
+        content: 'Some descriptions',
+      })
+    }}
+  >
+    Error
+  </Button>
+</Playground>
+
 ## API
 
+### Modal
+
 <PropsTable of={Modal} />
+
+### Instance
+
+- `Modal.confirm(options) => Promise`
+- `Modal.info(options) => Promise`
+- `Modal.success(options) => Promise`
+- `Modal.warning(options) => Promise`
+- `Modal.error(options) => Promise`
+
+### `options`
+
+| Property    | Type                                                                                                                                                                                            | Default  | Description               |
+| ----------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ------------------------- |
+| cancelText  | string                                                                                                                                                                                          |  Cancel  | Text of the Cancel button |
+| confirmText | string                                                                                                                                                                                          |  Conrim  | Text of the Conrim button |
+| onCancel    | function |-| Specify a function that will be called when the user clicks the Cancel button. The parameter of this function is a function whose execution should include closing the dialog. |
+| onConfirm   | function |-| Specify a function that will be called when the user clicks the OK button. The parameter of this function is a function whose execution should include closing the dialog.     |
+| title       | string \| ReactNode                                                                                                                                                                             | -        |Title                     |
+| content     | string \| ReactNode                                                                                                                                                                             | -        | content of the message    |

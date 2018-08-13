@@ -1,44 +1,10 @@
-import Close from 'react-icons/lib/md/close';
 import PropTypes from 'prop-types';
 import React, { PureComponent } from 'react';
 import styled from 'styled-components';
-import { Transition, animated } from 'react-spring';
+import { Transition, animated, config } from 'react-spring';
 import { space, themeGet, width } from 'styled-system';
 
-import Icon from '../Icon';
 import Keydown from '../utils/Keydown';
-
-const CloseBtn = styled.button.attrs({
-  type: 'button',
-})`
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  padding: 0;
-  border: 0;
-  background: transparent;
-  transform: rotate(0deg);
-  transition: all 0.2s ease-in;
-  cursor: pointer;
-
-  :focus {
-    outline: 0;
-  }
-
-  :hover {
-    transform: rotate(90deg);
-  }
-`;
-
-const CloseButton = ({ handleClose }) => (
-  <CloseBtn onClick={handleClose}>
-    <Icon cursor="pointer" type={Close} />
-  </CloseBtn>
-);
-
-CloseButton.propTypes = {
-  handleClose: PropTypes.func.isRequired,
-};
 
 const ModalOverlay = styled.div`
   position: fixed;
@@ -47,7 +13,7 @@ const ModalOverlay = styled.div`
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: rgba(17, 17, 17, 0.25);
+  background-color: rgba(0, 0, 0, 0.65);
 `;
 
 const AnimatedModalOverlay = animated(ModalOverlay);
@@ -60,12 +26,11 @@ const ModalContent = styled.div`
   left: 50%;
   flex-direction: column;
   max-height: 90vh;
-  border: ${themeGet('borders.default')} ${themeGet('colors.gray.8')};
-  border-radius: ${themeGet('radii.2')};
+  border-radius: ${themeGet('radii.1')};
   background-color: #fff;
   box-shadow: 0 10px 30px 0 rgba(17, 17, 17, 0.2);
+  transform: translate(-50%, -50%);
 
-  ${space};
   ${width};
 `;
 
@@ -75,7 +40,6 @@ ModalContent.propTypes = {
 };
 
 ModalContent.defaultProps = {
-  p: 8,
   width: 416,
 };
 
@@ -86,8 +50,8 @@ const ModalWrapper = ({
   translateY,
   pointerEvents,
   handleClose,
-  closeButton,
   content,
+  clickOutsite,
   ...otherProps
 }) => (
   <>
@@ -96,19 +60,19 @@ const ModalWrapper = ({
         opacity,
         pointerEvents,
       }}
-      onClick={handleClose}
+      onClick={() => {
+        if (clickOutsite) {
+          handleClose();
+        }
+      }}
     />
     <AnimatedModalContent
       style={{
         opacity,
         pointerEvents,
-        transform: translateY.interpolate(
-          y => `translate(-50%, calc(-50% - ${y}px))`
-        ),
       }}
       {...otherProps}
     >
-      {closeButton && <CloseButton handleClose={handleClose} />}
       {content}
     </AnimatedModalContent>
   </>
@@ -116,56 +80,50 @@ const ModalWrapper = ({
 
 const ESC_KEY_CODE = 27;
 
-class Modal extends PureComponent {
+class BaseModal extends PureComponent {
   render() {
-    const { children, show, handleClose, ...otherProps } = this.props;
+    const { children, visible, handleClose, ...otherProps } = this.props;
 
     return (
       <>
-        {show && <Keydown keyCode={ESC_KEY_CODE} handleKeydown={handleClose} />}
+        {visible && (
+          <Keydown keyCode={ESC_KEY_CODE} handleKeydown={handleClose} />
+        )}
         <Transition
           native
-          keys={show ? 'show' : 'hide'}
+          keys={visible ? 'visible' : 'hide'}
           from={{
             opacity: 0,
-            translateY: 150,
           }}
           enter={{
             opacity: 1,
-            translateY: 0,
           }}
           leave={{
             opacity: 0,
-            translateY: 150,
             pointerEvents: 'none',
           }}
-          config={{
-            tension: 120,
-            friction: 14,
-            restSpeedThreshold: 0.01,
-            restDisplacementThreshold: 0.01,
-          }}
+          config={config.stiff}
           handleClose={handleClose}
           content={children}
           {...otherProps}
         >
-          {show ? ModalWrapper : null}
+          {visible ? ModalWrapper : null}
         </Transition>
       </>
     );
   }
 }
 
-Modal.propTypes = {
+BaseModal.propTypes = {
   children: PropTypes.node,
-  closeButton: PropTypes.bool,
+  clickOutsite: PropTypes.bool,
   handleClose: PropTypes.func.isRequired,
-  show: PropTypes.bool.isRequired,
+  visible: PropTypes.bool.isRequired,
 };
 
-Modal.defaultProps = {
-  closeButton: false,
+BaseModal.defaultProps = {
   children: null,
+  clickOutsite: true,
 };
 
-export default Modal;
+export default BaseModal;

@@ -7,12 +7,15 @@ import WarningIcon from 'react-icons/lib/md/warning';
 import Icon from '../Icon';
 
 const icons = {
-  info: <Icon size="20" mr={2} type={InfoIcon} fill="info" />,
-  success: <Icon size="20" mr={2} type={SuccessIcon} fill="success" />,
-  error: <Icon size="20" mr={2} type={ErrorIcon} fill="error" />,
-  warning: <Icon size="20" mr={2} type={WarningIcon} fill="warning" />,
+  info: InfoIcon,
+  success: SuccessIcon,
+  error: ErrorIcon,
+  warning: WarningIcon,
 };
 
-const getTypeIcon = (type = 'info') => icons[type];
+const getTypeIcon = (type = 'info', size = '20') => {
+  const MdIcon = icons[type];
+  return <Icon size={size} type={MdIcon} mr={2} fill={type} />;
+};
 
 export default getTypeIcon;

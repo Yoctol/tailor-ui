@@ -1,19 +1,98 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Modal should render correctly 1`] = `
-<Modal
-  closeButton={false}
+<BaseModal
+  cancelText="Cancel"
+  clickOutsite={true}
+  closable={false}
+  confirmText="Confirm"
+  footer={null}
   handleClose={[Function]}
-  show={true}
+  onCancel={[Function]}
+  onConfirm={[Function]}
+  title=""
+  visible={true}
   width={416}
-/>
+>
+  <Flex
+    borderBottom="default"
+    borderColor="gray.8"
+    px="4"
+    py="3"
+  >
+    <Box
+      flex="auto"
+    >
+      <Heading.h3 />
+    </Box>
+  </Flex>
+  <Flex
+    flexDirection="column"
+    p="4"
+  />
+  <Box
+    borderColor="gray.8"
+    borderTop="default"
+    px="4"
+    py="3"
+  >
+    <Footer
+      cancelText="Cancel"
+      confirmText="Confirm"
+      handleClose={[Function]}
+      onCancel={[Function]}
+      onConfirm={[Function]}
+    />
+  </Box>
+</BaseModal>
 `;
 
 exports[`Modal should render with props closeButton 1`] = `
-<Modal
-  closeButton={true}
+<BaseModal
+  cancelText="Cancel"
+  clickOutsite={true}
+  closable={true}
+  confirmText="Confirm"
+  footer={null}
   handleClose={[Function]}
-  show={true}
+  onCancel={[Function]}
+  onConfirm={[Function]}
+  title=""
+  visible={true}
   width={416}
-/>
+>
+  <Flex
+    borderBottom="default"
+    borderColor="gray.8"
+    px="4"
+    py="3"
+  >
+    <Box
+      flex="auto"
+    >
+      <Heading.h3 />
+    </Box>
+    <CloseButton
+      handleClose={[Function]}
+    />
+  </Flex>
+  <Flex
+    flexDirection="column"
+    p="4"
+  />
+  <Box
+    borderColor="gray.8"
+    borderTop="default"
+    px="4"
+    py="3"
+  >
+    <Footer
+      cancelText="Cancel"
+      confirmText="Confirm"
+      handleClose={[Function]}
+      onCancel={[Function]}
+      onConfirm={[Function]}
+    />
+  </Box>
+</BaseModal>
 `;

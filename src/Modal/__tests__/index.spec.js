@@ -6,14 +6,16 @@ import Modal from '..';
 
 describe('Modal', () => {
   it('should render correctly', () => {
-    const component = shallowWithTheme(<Modal show handleClose={() => {}} />);
+    const component = shallowWithTheme(
+      <Modal visible handleClose={() => {}} />
+    );
 
     expect(component).toMatchSnapshot();
   });
 
   it('should render with props closeButton', () => {
     const component = shallowWithTheme(
-      <Modal show closeButton handleClose={() => {}} />
+      <Modal visible closable handleClose={() => {}} />
     );
 
     expect(component).toMatchSnapshot();
