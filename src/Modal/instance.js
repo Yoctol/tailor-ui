@@ -89,11 +89,16 @@ class ModalComponent extends PureComponent {
               </Box>
             </Flex>
             <Footer
-              handleClose={handleClose}
               cancelText={cancelText}
               confirmText={confirmText}
-              onCancel={onCancel}
-              onConfirm={onConfirm}
+              onCancel={() => {
+                onCancel();
+                handleClose();
+              }}
+              onConfirm={() => {
+                onConfirm();
+                handleClose();
+              }}
             />
           </Space>
         </BaseModal>
