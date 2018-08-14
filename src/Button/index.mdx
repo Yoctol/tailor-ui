@@ -26,13 +26,13 @@ import { Button } from '@yoctol/ui';
 
 <Playground>
   <Button>Basic Button</Button>
-  <Button variant="text" ml="2">Text Button</Button>
+  <Button text ml="2">Text Button</Button>
 </Playground>
 
 ### Type
 
 <Playground>
-  <Button>Primary</Button>
+  <Button type="primary">Primary</Button>
   <Button type="secondary" ml="2">
     Secondary
   </Button>
@@ -53,20 +53,20 @@ import { Button } from '@yoctol/ui';
 ### Rounded
 
 <Playground>
-  <Button variant="rounded">Primary</Button>
-  <Button type="secondary" ml="2" variant="rounded">
+  <Button type="primary" rounded>Primary</Button>
+  <Button type="secondary" ml="2" rounded>
     Secondary
   </Button>
-  <Button type="info" ml="2" variant="rounded">
+  <Button type="info" ml="2" rounded>
     Info
   </Button>
-  <Button type="success" ml="2" variant="rounded">
+  <Button type="success" ml="2" rounded>
     Success
   </Button>
-  <Button type="warning" ml="2" variant="rounded">
+  <Button type="warning" ml="2" rounded>
     Warning
   </Button>
-  <Button type="danger" ml="2" variant="rounded">
+  <Button type="danger" ml="2" rounded>
     Danger
   </Button>
 </Playground>
@@ -74,29 +74,49 @@ import { Button } from '@yoctol/ui';
 ### Outlined
 
 <Playground>
-  <Button variant="outlined">Primary</Button>
-  <Button type="secondary" ml="2" variant="outlined">
+  <Button type="primary" outlined>Primary</Button>
+  <Button type="secondary" ml="2" outlined>
     Secondary
   </Button>
-  <Button type="info" ml="2" variant="outlined">
+  <Button type="info" ml="2" outlined>
     Info
   </Button>
-  <Button type="success" ml="2" variant="outlined">
+  <Button type="success" ml="2" outlined>
     Success
   </Button>
-  <Button type="warning" ml="2" variant="outlined">
+  <Button type="warning" ml="2" outlined>
     Warning
   </Button>
-  <Button type="danger" ml="2" variant="outlined">
+  <Button type="danger" ml="2" outlined>
     Danger
   </Button>
 </Playground>
 
+### Rounded & Outlined
+
+<Playground>
+  <Button type="primary" rounded outlined>Primary</Button>
+  <Button type="secondary" ml="2" rounded outlined>
+    Secondary
+  </Button>
+  <Button type="info" ml="2" rounded outlined>
+    Info
+  </Button>
+  <Button type="success" ml="2" rounded outlined>
+    Success
+  </Button>
+  <Button type="warning" ml="2" rounded outlined>
+    Warning
+  </Button>
+  <Button type="danger" ml="2" rounded outlined>
+    Danger
+  </Button>
+</Playground>
 
 ### Disabled
 
 <Playground>
-  <Button disabled>Primary</Button>
+  <Button type="primary" disabled>Primary</Button>
   <Button type="secondary" ml="2" disabled>
     Secondary
   </Button>
@@ -117,7 +137,7 @@ import { Button } from '@yoctol/ui';
 ### Loading
 
 <Playground>
-  <Button loading>Primary</Button>
+  <Button type="primary" loading>Primary</Button>
   <Button type="secondary" ml="2" loading>
     Secondary
   </Button>

@@ -33,20 +33,12 @@ class Modal extends PureComponent {
   };
 
   renderFooter = () => {
-    const {
-      handleClose,
-      footer,
-      cancelText,
-      confirmText,
-      onCancel,
-      onConfirm,
-    } = this.props;
+    const { footer, cancelText, confirmText, onCancel, onConfirm } = this.props;
 
     return (
       <Box px="4" py="3" borderTop="default" borderColor="gray.8">
         {footer || (
           <Footer
-            handleClose={handleClose}
             cancelText={cancelText}
             confirmText={confirmText}
             onCancel={onCancel}

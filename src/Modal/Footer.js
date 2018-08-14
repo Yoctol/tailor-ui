@@ -5,34 +5,12 @@ import Box from '../Grid/Box';
 import Button from '../Button';
 import Flex from '../Grid/Flex';
 
-const Footer = ({
-  handleClose,
-  cancelText,
-  confirmText,
-  onCancel,
-  onConfirm,
-}) => (
+const Footer = ({ cancelText, confirmText, onCancel, onConfirm }) => (
   <Flex>
     <Box ml="auto">
-      {cancelText && (
-        <Button
-          light
-          onClick={event => {
-            handleClose();
-            onCancel(event);
-          }}
-        >
-          {cancelText}
-        </Button>
-      )}
+      {cancelText && <Button onClick={onCancel}>{cancelText}</Button>}
       {confirmText && (
-        <Button
-          ml="2"
-          onClick={event => {
-            handleClose();
-            onConfirm(event);
-          }}
-        >
+        <Button ml="2" type="primary" onClick={onConfirm}>
           {confirmText}
         </Button>
       )}
@@ -43,7 +21,6 @@ const Footer = ({
 Footer.propTypes = {
   cancelText: PropTypes.string,
   confirmText: PropTypes.string.isRequired,
-  handleClose: PropTypes.func.isRequired,
   onCancel: PropTypes.func.isRequired,
   onConfirm: PropTypes.func.isRequired,
 };

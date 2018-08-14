@@ -39,7 +39,6 @@ exports[`Modal should render correctly 1`] = `
     <Footer
       cancelText="Cancel"
       confirmText="Confirm"
-      handleClose={[Function]}
       onCancel={[Function]}
       onConfirm={[Function]}
     />
@@ -89,7 +88,6 @@ exports[`Modal should render with props closeButton 1`] = `
     <Footer
       cancelText="Cancel"
       confirmText="Confirm"
-      handleClose={[Function]}
       onCancel={[Function]}
       onConfirm={[Function]}
     />
