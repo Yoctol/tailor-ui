@@ -1,3 +1,21 @@
+<a name="1.10.0"></a>
+
+# [1.10.0](https://github.com/yoctol/ui/compare/v1.9.0...v1.10.0) (2018-08-14)
+
+### Bug Fixes
+
+- **button:** button default is light color ([fe6634e](https://github.com/yoctol/ui/commit/fe6634e))
+- **modal:** confirm events ([3e7097e](https://github.com/yoctol/ui/commit/3e7097e))
+
+### Code Refactoring
+
+- **button:** remove variant props ([51a2da3](https://github.com/yoctol/ui/commit/51a2da3))
+
+### BREAKING CHANGES
+
+- **button:** use bool props instead of variant props
+- **button:** the button default color is light (previous is primary)
+
 <a name="1.9.0"></a>
 
 # [1.9.0](https://github.com/yoctol/ui/compare/v1.8.2...v1.9.0) (2018-08-14)
