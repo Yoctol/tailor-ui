@@ -61,7 +61,7 @@ const getSize = css`
   })};
 
   ${ifProp(
-    { variant: 'rounded' },
+    'rounded',
     switchProp('size', {
       sm: css`
         padding: ${themeGet('space.paddingYSm')}
@@ -87,32 +87,32 @@ const getBlock = ({ block }) =>
     width: 100%;
   `;
 
-const getRounded = ({ variant }) =>
-  variant === 'rounded' &&
+const getRounded = ({ rounded }) =>
+  rounded &&
   css`
     border-radius: 999px;
   `;
 
-const typeCss = variant => bg => {
+const typeCss = outlined => bg => {
   const color = '#fff';
-  const backgroundColor = variant === 'outlined' ? 'transparent' : bg;
+  const backgroundColor = outlined ? 'transparent' : bg;
 
   return css`
     border-color: ${bg};
     background: ${backgroundColor};
-    color: ${variant === 'outlined' ? bg : color};
+    color: ${outlined ? bg : color};
 
     &:hover {
-      background: ${variant === 'outlined' ? bg : color};
-      color: ${variant === 'outlined' ? color : bg};
+      background: ${outlined ? bg : color};
+      color: ${outlined ? color : bg};
     }
   `;
 };
 
-const getTypes = ({ type, variant, theme }) => {
+const getTypes = ({ type, text, outlined, theme }) => {
   const color = path(__, prop('colors', theme));
 
-  if (variant === 'text') {
+  if (text) {
     return css`
       border-color: transparent;
       background: transparent;
@@ -137,7 +137,7 @@ const getTypes = ({ type, variant, theme }) => {
     `;
   }
 
-  const get = typeCss(variant);
+  const get = typeCss(outlined);
 
   return get(color([type]));
 };
@@ -214,9 +214,21 @@ Button.propTypes = {
    */
   loading: PropTypes.bool,
   /**
+   * Outlined button
+   */
+  outlined: PropTypes.bool,
+  /**
+   * Rounded button
+   */
+  rounded: PropTypes.bool,
+  /**
    * Can be set to `sm` `md` `lg` or omitted (meaning `md`)
    */
   size: PropTypes.oneOf(['sm', 'md', 'lg']),
+  /**
+   * Text button
+   */
+  text: PropTypes.bool,
   /**
    * Can be set to `default`, `primary` `secondary` `info` `success` `warning` `danger` or omitted (meaning `primary`)
    */
@@ -229,17 +241,15 @@ Button.propTypes = {
     'warning',
     'danger',
   ]),
-  /**
-   * Can be set to `regular` `text` `outlined` `rounded` or omitted (meaning `regular`)
-   */
-  variant: PropTypes.oneOf(['regular', 'text', 'outlined', 'rounded']),
   ...space.propTypes,
 };
 
 Button.defaultProps = {
   type: 'default',
   size: 'md',
-  variant: 'regular',
+  text: false,
+  outlined: false,
+  rounded: false,
   block: false,
   loading: false,
 };

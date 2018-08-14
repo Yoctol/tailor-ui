@@ -42,9 +42,9 @@ exports[`Button should render correctly 1`] = `
   transition: all .2s ease;
   padding: 0.3125rem 0.5rem;
   font-size: 1rem;
-  border-color: #423b63;
-  background: #423b63;
-  color: #fff;
+  border-color: #c3c3c3;
+  background: #ffffff;
+  color: #111111;
 }
 
 .c0:focus {
@@ -59,16 +59,18 @@ exports[`Button should render correctly 1`] = `
 }
 
 .c0:hover {
-  background: #fff;
-  color: #423b63;
+  border-color: #423b63;
+  background: #e9e9e9;
 }
 
 <Button
   block={false}
   loading={false}
+  outlined={false}
+  rounded={false}
   size="md"
-  type="primary"
-  variant="regular"
+  text={false}
+  type="default"
 >
   <Button__StyledButton
     block={false}
@@ -76,7 +78,7 @@ exports[`Button should render correctly 1`] = `
       Object {
         "current": <button
           class="c0"
-          type="primary"
+          type="default"
         >
           Text Button
           <div
@@ -88,15 +90,17 @@ exports[`Button should render correctly 1`] = `
     loading={false}
     onMouseUp={[Function]}
     onTouchend={[Function]}
+    outlined={false}
+    rounded={false}
     size="md"
-    type="primary"
-    variant="regular"
+    text={false}
+    type="default"
   >
     <button
       className="c0"
       onMouseUp={[Function]}
       size="md"
-      type="primary"
+      type="default"
     >
       Text Button
       <Ripple>
@@ -155,10 +159,8 @@ exports[`Button should render with props variant and type 1`] = `
   user-select: none;
   -webkit-transition: all .2s ease;
   transition: all .2s ease;
-  border-radius: 999px;
   padding: 0.3125rem 0.5rem;
   font-size: 1rem;
-  padding: 0.3125rem calc(0.5rem * 2);
   border-color: #4384f0;
   background: #4384f0;
   color: #fff;
@@ -183,7 +185,10 @@ exports[`Button should render with props variant and type 1`] = `
 <Button
   block={false}
   loading={false}
+  outlined={false}
+  rounded={false}
   size="md"
+  text={false}
   type="info"
   variant="rounded"
 >
@@ -205,7 +210,10 @@ exports[`Button should render with props variant and type 1`] = `
     loading={false}
     onMouseUp={[Function]}
     onTouchend={[Function]}
+    outlined={false}
+    rounded={false}
     size="md"
+    text={false}
     type="info"
     variant="rounded"
   >
