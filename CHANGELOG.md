@@ -1,3 +1,31 @@
+<a name="1.9.0"></a>
+
+# [1.9.0](https://github.com/yoctol/ui/compare/v1.8.2...v1.9.0) (2018-08-14)
+
+### Bug Fixes
+
+- **checkbox:** checkbox group onChange event ([6f04083](https://github.com/yoctol/ui/commit/6f04083))
+
+### Code Refactoring
+
+- **button:** add type & variant ([de8d462](https://github.com/yoctol/ui/commit/de8d462)), closes [#270](https://github.com/yoctol/ui/issues/270)
+- **card:** drop useless api ([05684ac](https://github.com/yoctol/ui/commit/05684ac))
+- **modal:** remove no animation modal & rename api ([cf016ea](https://github.com/yoctol/ui/commit/cf016ea))
+
+### Features
+
+- **dropdown:** update styles ([#264](https://github.com/yoctol/ui/issues/264)) ([c8dad0e](https://github.com/yoctol/ui/commit/c8dad0e))
+- **modal:** add header & footer ([73e797d](https://github.com/yoctol/ui/commit/73e797d))
+- **modal:** implement instance method ([5c54632](https://github.com/yoctol/ui/commit/5c54632))
+- **utils:** add size to get-type-icon ([c178282](https://github.com/yoctol/ui/commit/c178282))
+
+### BREAKING CHANGES
+
+- **button:** move all type & variant to new props
+- **modal:** renamed `show` to `visible`, renamed `closeButton` to `closable`, remove
+  `animation`
+- **card:** REMOVE Card.Button from Card component
+
 <a name="1.8.2"></a>
 
 ## [1.8.2](https://github.com/yoctol/ui/compare/v1.8.1...v1.8.2) (2018-08-09)
