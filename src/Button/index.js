@@ -1,7 +1,9 @@
 import PropTypes from 'prop-types';
 import React, { PureComponent, createRef } from 'react';
 import styled, { css, keyframes } from 'styled-components';
+import { __, path, prop } from 'ramda';
 import { ifProp, switchProp } from 'styled-tools';
+import { readableColor } from 'polished';
 import { space, themeGet } from 'styled-system';
 
 import controlTransition from '../utils/transition';
@@ -18,6 +20,114 @@ const spin = keyframes`
   }
 `;
 
+const getLoading = ({ loading, type, theme }) =>
+  loading &&
+  css`
+    color: transparent;
+    cursor: default;
+    pointer-events: none;
+
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: calc(50% - (1em / 2));
+      left: calc(50% - (1em / 2));
+      width: 1em;
+      height: 1em;
+      border: 1px solid ${readableColor(theme.colors[type])};
+      border-radius: 50%;
+      border-top-color: transparent;
+      border-right-color: transparent;
+      animation: ${spin} 0.7s linear infinite;
+    }
+  `;
+
+const getSize = css`
+  ${switchProp('size', {
+    sm: css`
+      padding: ${themeGet('space.paddingYSm')} ${themeGet('space.paddingXSm')};
+      font-size: ${themeGet('fontSizes.sm')};
+    `,
+    md: css`
+      padding: ${themeGet('space.paddingY')} ${themeGet('space.paddingX')};
+      font-size: ${themeGet('fontSizes.default')};
+    `,
+    lg: css`
+      padding: ${themeGet('space.paddingYLg')} ${themeGet('space.paddingXLg')};
+      font-size: ${themeGet('fontSizes.lg')};
+    `,
+  })};
+
+  ${ifProp(
+    { variant: 'rounded' },
+    switchProp('size', {
+      sm: css`
+        padding: ${themeGet('space.paddingYSm')}
+          calc(${themeGet('space.paddingXSm')} * 2);
+      `,
+
+      md: css`
+        padding: ${themeGet('space.paddingY')}
+          calc(${themeGet('space.paddingX')} * 2);
+      `,
+
+      lg: css`
+        padding: ${themeGet('space.paddingYLg')}
+          calc(${themeGet('space.paddingXLg')} * 2);
+      `,
+    })
+  )};
+`;
+
+const getBlock = ({ block }) =>
+  block &&
+  css`
+    width: 100%;
+  `;
+
+const getRounded = ({ variant }) =>
+  variant === 'rounded' &&
+  css`
+    border-radius: 999px;
+  `;
+
+const typeCss = variant => bg => {
+  const color = '#fff';
+  const backgroundColor = variant === 'outlined' ? 'transparent' : bg;
+
+  return css`
+    border-color: ${bg};
+    background: ${backgroundColor};
+    color: ${variant === 'outlined' ? bg : color};
+
+    &:hover {
+      background: ${variant === 'outlined' ? bg : color};
+      color: ${variant === 'outlined' ? color : bg};
+    }
+  `;
+};
+
+const getTypes = ({ type, variant, theme }) => {
+  const color = path(__, prop('colors', theme));
+
+  if (variant === 'text') {
+    return css`
+      border-color: transparent;
+      background: transparent;
+      color: ${color(['dark'])};
+
+      &:hover {
+        background: ${color(['gray', '8'])};
+      }
+    `;
+  }
+
+  const get = typeCss(variant);
+
+  return get(color([type]));
+};
+
 const StyledButton = styled.button`
   display: inline-flex;
   position: relative;
@@ -26,9 +136,6 @@ const StyledButton = styled.button`
   overflow: hidden;
   border: ${themeGet('borders.default')};
   border-radius: ${themeGet('radii.1')};
-  border-color: ${themeGet('colors.primary')};
-  background-color: ${themeGet('colors.primaryDark')};
-  color: ${themeGet('colors.light')};
   line-height: ${themeGet('lineHeight')};
   text-decoration: none;
   vertical-align: middle;
@@ -37,13 +144,7 @@ const StyledButton = styled.button`
   user-select: none;
 
   &:focus {
-    border-color: ${themeGet('colors.primaryDark')};
     outline: 0;
-  }
-
-  &:hover {
-    background-color: ${themeGet('colors.light')};
-    color: ${themeGet('colors.primaryDark')};
   }
 
   &:disabled,
@@ -53,137 +154,13 @@ const StyledButton = styled.button`
     pointer-events: none;
   }
 
-  ${switchProp('size', {
-    sm: css`
-      padding: ${themeGet('space.paddingYSm')} ${themeGet('space.paddingXSm')};
-      font-size: ${themeGet('fontSizes.sm')};
-    `,
-    m: css`
-      padding: ${themeGet('space.paddingY')} ${themeGet('space.paddingX')};
-      font-size: ${themeGet('fontSizes.default')};
-    `,
-    lg: css`
-      padding: ${themeGet('space.paddingYLg')} ${themeGet('space.paddingXLg')};
-      font-size: ${themeGet('fontSizes.lg')};
-    `,
-  })}
-
-  ${ifProp(
-    'block',
-    css`
-      width: 100%;
-    `
-  )}
-
-  ${ifProp(
-    'danger',
-    css`
-      border-color: ${themeGet('colors.error')};
-      background-color: ${themeGet('colors.error')};
-      color: ${themeGet('colors.light')};
-
-      &:focus {
-        border-color: ${themeGet('colors.error')};
-      }
-
-      &:hover {
-        background-color: ${themeGet('colors.error')};
-        color: ${themeGet('colors.light')};
-      }
-    `
-  )};
-
-  ${ifProp(
-    'light',
-    css`
-      border-color: ${themeGet('colors.gray.8')};
-      background-color: ${themeGet('colors.light')};
-      color: ${themeGet('colors.gray.2')};
-
-      &:focus {
-        border-color: ${themeGet('colors.primaryDark')};
-      }
-
-      &:hover {
-        background-color: ${themeGet('colors.gray.8')};
-      }
-
-      ${ifProp(
-        'active',
-        css`
-          border-color: ${themeGet('colors.secondaryDark')};
-          background-color: ${themeGet('colors.secondaryDark')};
-          color: ${themeGet('colors.light')};
-
-          &:hover {
-            background-color: ${themeGet('colors.secondary')};
-            color: ${themeGet('colors.light')};
-          }
-
-          &:focus {
-            border-color: ${themeGet('colors.secondaryDark')};
-          }
-        `
-      )};
-    `
-  )};
-
-  ${ifProp(
-    'circle',
-    css`
-      border-radius: 999px;
-
-      ${switchProp('size', {
-        sm: css`
-          padding: ${themeGet('space.paddingYSm')}
-            calc(${themeGet('space.paddingXSm')} * 2);
-        `,
-
-        m: css`
-          padding: ${themeGet('space.paddingY')}
-            calc(${themeGet('space.paddingX')} * 2);
-        `,
-
-        lg: css`
-          padding: ${themeGet('space.paddingYLg')}
-            calc(${themeGet('space.paddingXLg')} * 2);
-        `,
-      })};
-    `
-  )}
-
-  ${ifProp(
-    'ghost',
-    css`
-      border-color: ${themeGet('colors.light')};
-      background-color: transparent;
-    `
-  )}
-
-  ${ifProp(
-    'loading',
-    css`
-      color: transparent;
-      pointer-events: none;
-
-      &::after {
-        content: '';
-        display: block;
-        position: absolute;
-        top: calc(50% - (1em / 2));
-        left: calc(50% - (1em / 2));
-        width: 1em;
-        height: 1em;
-        border: 2px solid ${themeGet('colors.gray.6')};
-        border-radius: 50%;
-        border-top-color: transparent;
-        border-right-color: transparent;
-        animation: ${spin} 0.7s linear infinite;
-      }
-    `
-  )}
-
   ${controlTransition()};
+
+  ${getBlock /* sc-declaration */}
+  ${getRounded /* sc-declaration */}
+  ${getSize /* sc-declaration */}
+  ${getTypes /* sc-declaration */}
+  ${getLoading /* sc-declaration */};
 
   ${space};
 `;
@@ -215,48 +192,40 @@ Button.displayName = 'Button';
 
 Button.propTypes = {
   /**
-   * Set the button to active
-   */
-  active: PropTypes.bool,
-  /**
    * Set the button width to 100%
    */
   block: PropTypes.bool,
-  /**
-   * Make button shape to circle
-   */
-  circle: PropTypes.bool,
-  /**
-   * Make button to danger status
-   */
-  danger: PropTypes.bool,
-  /**
-   * Make background transparent and invert text and border colors
-   */
-  ghost: PropTypes.bool,
-  /**
-   * Make button to light version
-   */
-  light: PropTypes.bool,
   /**
    * Set the loading status of button
    */
   loading: PropTypes.bool,
   /**
-   * Can be set to sm lg or omitted
+   * Can be set to `sm` `md` `lg` or omitted (meaning `md`)
    */
-  size: PropTypes.oneOf(['sm', 'm', 'lg']),
+  size: PropTypes.oneOf(['sm', 'md', 'lg']),
+  /**
+   * Can be set to `primary` `secondary` `info` `success` `warning` `danger` or omitted (meaning `primary`)
+   */
+  type: PropTypes.oneOf([
+    'primary',
+    'secondary',
+    'info',
+    'success',
+    'warning',
+    'danger',
+  ]),
+  /**
+   * Can be set to `regular` `text` `outlined` `rounded` or omitted (meaning `regular`)
+   */
+  variant: PropTypes.oneOf(['regular', 'text', 'outlined', 'rounded']),
   ...space.propTypes,
 };
 
 Button.defaultProps = {
-  size: 'm',
+  type: 'primary',
+  size: 'md',
+  variant: 'regular',
   block: false,
-  circle: false,
-  danger: false,
-  ghost: false,
-  light: false,
-  active: false,
   loading: false,
 };
 

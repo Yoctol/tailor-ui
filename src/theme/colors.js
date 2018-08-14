@@ -23,7 +23,8 @@ export const gray = [
 
 export const success = '#30be72';
 export const warning = '#de8a15';
-export const error = '#e65541';
+export const error = '#e65541'; // FIXME: remove this line later
+export const danger = '#e65541';
 export const info = '#4384f0';
 
 export const code = '#e06870';

@@ -11,9 +11,9 @@ describe('Button', () => {
     expect(component).toMatchSnapshot();
   });
 
-  it('should render with props light, circle and active', () => {
+  it('should render with props variant and type', () => {
     const component = mountWithTheme(
-      <Button light circle active>
+      <Button type="info" variant="rounded">
         Text Button
       </Button>
     );
