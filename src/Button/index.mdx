@@ -25,66 +25,113 @@ import { Button } from '@yoctol/ui';
 ### Basic
 
 <Playground>
-  <Button>Button</Button>
+  <Button>Basic Button</Button>
+  <Button variant="text" ml="2">Text Button</Button>
 </Playground>
 
-### Circle
+### Type
 
 <Playground>
-  <Button circle>
-    Button
+  <Button>Primary</Button>
+  <Button type="secondary" ml="2">
+    Secondary
+  </Button>
+  <Button type="info" ml="2">
+    Info
+  </Button>
+  <Button type="success" ml="2">
+    Success
+  </Button>
+  <Button type="warning" ml="2">
+    Warning
+  </Button>
+  <Button type="danger" ml="2">
+    Danger
   </Button>
 </Playground>
 
-### Danger
+### Rounded
 
 <Playground>
-  <Button danger>
-    Button
+  <Button variant="rounded">Primary</Button>
+  <Button type="secondary" ml="2" variant="rounded">
+    Secondary
+  </Button>
+  <Button type="info" ml="2" variant="rounded">
+    Info
+  </Button>
+  <Button type="success" ml="2" variant="rounded">
+    Success
+  </Button>
+  <Button type="warning" ml="2" variant="rounded">
+    Warning
+  </Button>
+  <Button type="danger" ml="2" variant="rounded">
+    Danger
   </Button>
 </Playground>
 
-### Circle & Light
+### Outlined
 
 <Playground>
-  <Button circle light>
-    Button
+  <Button variant="outlined">Primary</Button>
+  <Button type="secondary" ml="2" variant="outlined">
+    Secondary
+  </Button>
+  <Button type="info" ml="2" variant="outlined">
+    Info
+  </Button>
+  <Button type="success" ml="2" variant="outlined">
+    Success
+  </Button>
+  <Button type="warning" ml="2" variant="outlined">
+    Warning
+  </Button>
+  <Button type="danger" ml="2" variant="outlined">
+    Danger
   </Button>
 </Playground>
 
-### Circle & Light & Active
-
-<Playground>
-  <Button circle light active>
-    Button
-  </Button>
-</Playground>
 
 ### Disabled
 
 <Playground>
-  <Button disabled>Button</Button>
-
-  <Button ml={2} light disabled>
-    Button
+  <Button disabled>Primary</Button>
+  <Button type="secondary" ml="2" disabled>
+    Secondary
   </Button>
-
-  <Button ml={2} light circle disabled>
-    Button
+  <Button type="info" ml="2" disabled>
+    Info
+  </Button>
+  <Button type="success" ml="2" disabled>
+    Success
+  </Button>
+  <Button type="warning" ml="2" disabled>
+    Warning
+  </Button>
+  <Button type="danger" ml="2" disabled>
+    Danger
   </Button>
 </Playground>
 
 ### Loading
 
 <Playground>
-  <Button ml={2} loading>Button</Button>
-
-  <Button ml={2} light loading>
-    Button
+  <Button loading>Primary</Button>
+  <Button type="secondary" ml="2" loading>
+    Secondary
   </Button>
-
-  <Button ml={2} light circle loading>
-    Button
+  <Button type="info" ml="2" loading>
+    Info
+  </Button>
+  <Button type="success" ml="2" loading>
+    Success
+  </Button>
+  <Button type="warning" ml="2" loading>
+    Warning
+  </Button>
+  <Button type="danger" ml="2" loading>
+    Danger
   </Button>
 </Playground>
 
@@ -96,7 +143,7 @@ import { Button } from '@yoctol/ui';
   </Button>
 
   <Button ml={2}>
-    Button m
+    Button md
   </Button>
 
   <Button ml={2} size="lg">
@@ -108,20 +155,9 @@ import { Button } from '@yoctol/ui';
 
 <Playground>
   <Button block>
-    Button
+    Block Button
   </Button>
 </Playground>
-
-### Ghost
-
-<Playground>
-  <Box bg="dark" p={4}>
-    <Button ghost>
-      Button
-    </Button>
-  </Box>
-</Playground>
-
 
 ## API
 

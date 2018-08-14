@@ -4,19 +4,25 @@ exports[`Tabs should render correctly 1`] = `
 <Value
   initial="1"
   onChange={[Function]}
-/>
+>
+  <Component />
+</Value>
 `;
 
 exports[`Tabs should render with props absolute 1`] = `
 <Value
   initial="1"
   onChange={[Function]}
-/>
+>
+  <Component />
+</Value>
 `;
 
 exports[`Tabs should render with props pills 1`] = `
 <Value
   initial="1"
   onChange={[Function]}
-/>
+>
+  <Component />
+</Value>
 `;
