@@ -37,7 +37,6 @@ const Popconfirm = ({
       {content}
       <Flex mt="4">
         <Button
-          light
           ml="auto"
           size="sm"
           onClick={event => {
@@ -50,6 +49,7 @@ const Popconfirm = ({
         <Button
           ml="2"
           size="sm"
+          type="primary"
           onClick={event => {
             hideTooltip();
             onConfirm(event);

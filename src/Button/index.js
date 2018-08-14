@@ -35,7 +35,8 @@ const getLoading = ({ loading, type, theme }) =>
       left: calc(50% - (1em / 2));
       width: 1em;
       height: 1em;
-      border: 1px solid ${readableColor(theme.colors[type])};
+      border: 1px solid
+        ${readableColor(theme.colors[type] || theme.colors.light)};
       border-radius: 50%;
       border-top-color: transparent;
       border-right-color: transparent;
@@ -123,6 +124,19 @@ const getTypes = ({ type, variant, theme }) => {
     `;
   }
 
+  if (type === 'default') {
+    return css`
+      border-color: ${color(['gray', '7'])};
+      background: ${color(['light'])};
+      color: ${color(['dark'])};
+
+      &:hover {
+        border-color: ${color(['primary'])};
+        background: ${color(['gray', '8'])};
+      }
+    `;
+  }
+
   const get = typeCss(variant);
 
   return get(color([type]));
@@ -204,9 +218,10 @@ Button.propTypes = {
    */
   size: PropTypes.oneOf(['sm', 'md', 'lg']),
   /**
-   * Can be set to `primary` `secondary` `info` `success` `warning` `danger` or omitted (meaning `primary`)
+   * Can be set to `default`, `primary` `secondary` `info` `success` `warning` `danger` or omitted (meaning `primary`)
    */
   type: PropTypes.oneOf([
+    'default',
     'primary',
     'secondary',
     'info',
@@ -222,7 +237,7 @@ Button.propTypes = {
 };
 
 Button.defaultProps = {
-  type: 'primary',
+  type: 'default',
   size: 'md',
   variant: 'regular',
   block: false,

@@ -77,7 +77,7 @@ const Card = ({ children, ...otherProps }) => (
 
 Card.propTypes = {
   /**
-   * Should be Card.Block, Card.Image or Card.Button of React.Children
+   * Should be Card.Block, Card.Image of React.Children
    */
   children: PropTypes.node.isRequired,
   ...space.propTypes,
