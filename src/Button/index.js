@@ -189,11 +189,9 @@ const StyledButton = styled.button`
 `;
 
 class Button extends PureComponent {
-  constructor(props) {
-    super(props);
-    this.ripple = createRef();
-    this.button = createRef();
-  }
+  ripple = createRef();
+
+  button = createRef();
 
   handleClick = e => this.ripple.current.startRipple(e, this.button);
 
