@@ -77,11 +77,11 @@ const TextField = ({
 
       return (
         <FormField success={success} warning={warning} error={error}>
-          <TextFieldLabel shrink={actived}>{label}</TextFieldLabel>
+          {label && <TextFieldLabel shrink={actived}>{label}</TextFieldLabel>}
           {maxLength &&
             !hasError && (
               <MaxLenght visible={actived}>
-                {maxLength - value.length}
+                {maxLength - (props.value ? props.value.length : value.length)}
               </MaxLenght>
             )}
           <RenderComponent {...inputProps} />
@@ -100,7 +100,7 @@ TextField.propTypes = {
   /**
    * The label text
    */
-  label: PropTypes.string.isRequired,
+  label: PropTypes.string,
   /**
    * The content max length of textfield
    */
@@ -125,7 +125,8 @@ TextField.propTypes = {
 
 TextField.defaultProps = {
   error: false,
-  message: '',
+  message: null,
+  label: null,
   maxLength: null,
   success: false,
   textarea: false,
