@@ -22,12 +22,13 @@ const { Consumer, Provider } = createContext({});
 
 const ClickTooltip = ({
   children,
+  defaultVisible,
   display,
   onVisibleChange,
   placement,
   overlay,
 }) => (
-  <Toggle onChange={onVisibleChange}>
+  <Toggle initial={defaultVisible} onChange={onVisibleChange}>
     {({ on, toggle, set }) => (
       <ClickOutside
         onClickOutside={() => {
@@ -63,6 +64,7 @@ const ClickTooltip = ({
 
 ClickTooltip.propTypes = {
   children: PropTypes.node.isRequired,
+  defaultVisible: PropTypes.bool.isRequired,
   display: PropTypes.string.isRequired,
   overlay: PropTypes.node.isRequired,
   placement: PropTypes.oneOf(['top', 'right', 'bottom', 'left']).isRequired,
@@ -150,6 +152,10 @@ Tooltip.propTypes = {
    */
   content: PropTypes.oneOfType([PropTypes.node, PropTypes.func]),
   /**
+   * Whether the floating tooltip card is visible by default. Only support when the trigger is `click`
+   */
+  defaultVisible: PropTypes.bool,
+  /**
    * The wrapper component's display style
    */
   display: PropTypes.string,
@@ -178,12 +184,13 @@ Tooltip.propTypes = {
 };
 
 Tooltip.defaultProps = {
-  light: false,
-  content: '',
-  placement: 'top',
-  display: 'inline-block',
-  trigger: 'hover',
   components: {},
+  content: '',
+  display: 'inline-block',
+  defaultVisible: false,
+  light: false,
+  placement: 'top',
+  trigger: 'hover',
   onVisibleChange: () => {},
 };
 
