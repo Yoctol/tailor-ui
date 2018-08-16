@@ -115,6 +115,29 @@ import { Tooltip } from '@yoctol/ui';
   </Tooltip>
 </Playground>
 
+
+### With defaultVisible
+
+<Playground>
+  <Tooltip
+    placement="right"
+    trigger="click"
+    content="Tooltip content"
+    defaultVisible
+  >
+    <Button>Button</Button>
+  </Tooltip>
+  <br />
+  <br />
+  <Tooltip
+    placement="right"
+    content="Tooltip content"
+    defaultVisible
+  >
+    <Button>Button</Button>
+  </Tooltip>
+</Playground>
+
 ## API
 
 <PropsTable of={Tooltip} />
