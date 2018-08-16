@@ -52,7 +52,9 @@ class Popover extends PureComponent {
     return hideTooltip => (
       <>
         <Header>
-          <Heading.h5>{title}</Heading.h5>
+          <Heading.h5>
+            {typeof title === 'function' ? title(hideTooltip) : title}
+          </Heading.h5>
         </Header>
         <Content>
           {typeof content === 'function' ? content(hideTooltip) : content}
@@ -86,7 +88,8 @@ Popover.propTypes = {
   /**
    * Title of the popover
    */
-  title: PropTypes.oneOfType([PropTypes.node, PropTypes.string]).isRequired,
+  title: PropTypes.oneOfType([PropTypes.node, PropTypes.string, PropTypes.func])
+    .isRequired,
 };
 
 export default Popover;
