@@ -34,6 +34,8 @@ import { Modal } from '@yoctol/ui';
           handleClose={toggle}
           visible={on}
           closable
+          onConfirm={toggle}
+          onCancel={toggle}
         >
           <div>This is the content of Modal</div>
           <div>This is the content of Modal</div>
@@ -58,8 +60,38 @@ import { Modal } from '@yoctol/ui';
           title="This is a Modal"
           handleClose={toggle}
           visible={on}
-          footer="My footer"
+          footer={<div>My footer</div>}
           closable
+          onConfirm={toggle}
+          onCancel={toggle}
+        >
+          <div>This is the content of Modal</div>
+          <div>This is the content of Modal</div>
+          <div>This is the content of Modal</div>
+          <div>This is the content of Modal</div>
+          <div>This is the content of Modal</div>
+        </Modal>
+        <Button onClick={toggle}>Open Modal</Button>
+      </div>
+    )}
+  </Toggle>
+</Playground>
+
+
+### Without footer
+
+<Playground>
+  <Toggle>
+    {({ on, toggle }) => (
+      <div>
+        <Modal
+          title="This is a Modal"
+          handleClose={toggle}
+          visible={on}
+          footer={null}
+          closable
+          onConfirm={toggle}
+          onCancel={toggle}
         >
           <div>This is the content of Modal</div>
           <div>This is the content of Modal</div>

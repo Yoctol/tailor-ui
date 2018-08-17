@@ -36,16 +36,16 @@ class Modal extends PureComponent {
     const { footer, cancelText, confirmText, onCancel, onConfirm } = this.props;
 
     return (
-      <Box px="4" py="3" borderTop="default" borderColor="gray.8">
-        {footer || (
+      footer && (
+        <Box px="4" py="3" borderTop="default" borderColor="gray.8">
           <Footer
             cancelText={cancelText}
             confirmText={confirmText}
             onCancel={onCancel}
             onConfirm={onConfirm}
           />
-        )}
-      </Box>
+        </Box>
+      )
     );
   };
 
@@ -86,7 +86,11 @@ Modal.propTypes = {
   /**
    * Footer content, set as `footer={null}` when you don't need default buttons
    */
-  footer: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
+  footer: PropTypes.oneOfType([
+    PropTypes.node,
+    PropTypes.string,
+    PropTypes.func,
+  ]),
   /**
    * The function will be triggerd when user click outside of the modal or press ESC key
    */
@@ -117,7 +121,7 @@ Modal.defaultProps = {
   closable: false,
   children: null,
   width: 416,
-  footer: null,
+  footer: Footer,
   title: '',
   confirmText: 'Confirm',
   cancelText: 'Cancel',
