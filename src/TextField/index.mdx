@@ -5,8 +5,9 @@ route: /data-entry/textfield
 ---
 
 import { PropsTable, Playground, Link } from 'docz';
-import { Input } from 'react-powerplug';
+import { Input, Toggle } from 'react-powerplug';
 import TextField from '.';
+import Button from '../Button';
 
 # TextField
 
@@ -25,13 +26,13 @@ import { TextField } from '@yoctol/ui';
 ### Basic
 
 <Playground>
-  <TextField label="Text Field" />
+  <TextField label="Text Field" onChange={event => console.log(event.target.value)} />
 </Playground>
 
 ### With maxLength
 
 <Playground>
-  <TextField label="Text Field" maxLength={12} />
+  <TextField label="Text Field" maxLength={12} onChange={event => console.log(event.target.value)} />
 </Playground>
 
 ### With textarea
@@ -42,6 +43,7 @@ import { TextField } from '@yoctol/ui';
     minRows={2}
     maxRows={6}
     label="Text Field(textarea)"
+    onChange={event => console.log(event.target.value)}
   />
 </Playground>
 
@@ -54,6 +56,7 @@ import { TextField } from '@yoctol/ui';
     maxRows={6}
     maxLength={100}
     label="Text Field(textarea)"
+    onChange={event => console.log(event.target.value)}
   />
 </Playground>
 
@@ -98,6 +101,29 @@ import { TextField } from '@yoctol/ui';
     error
     message="This is a error message"
   />
+</Playground>
+
+### With empty label
+
+<Playground>
+  <TextField maxLength={30} onChange={event => console.log(event.target.value)} />
+</Playground>
+
+### With controlled value switch
+
+<Playground>
+  <Toggle>
+    {({ on, toggle }) => (
+      <div>
+        <Button onClick={toggle}>Toggle</Button>
+        <TextField
+          value={on ? 'toggle' : 'after toggle'}
+          maxLength={30}
+          onChange={event => console.log(event.target.value)}
+        />
+      </div>
+    )}
+  </Toggle>
 </Playground>
 
 ## API

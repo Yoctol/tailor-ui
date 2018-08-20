@@ -50,6 +50,8 @@ const MaxLenght = styled.div`
 
 const TextField = ({
   label,
+  value: controlledValue,
+  defaultValue,
   success,
   warning,
   error,
@@ -62,30 +64,39 @@ const TextField = ({
     components={[
       Focus,
       // eslint-disable-next-line react/prop-types
-      <PowerplugInput initial={props.value || props.defaultValue || ''} />,
+      <PowerplugInput initial={defaultValue} />,
     ]}
   >
-    {({ focused, bind: focusBind }, { value, bind: { onChange } }) => {
-      const actived = focused || value !== '';
-      const hasError = success || warning || error;
+    {(
+      { focused, bind: focusBind },
+      { value: uncontrolledValue, bind: { onChange } }
+    ) => {
+      const value = controlledValue || uncontrolledValue;
+      const hasValue = value !== '';
+      const actived = focused || hasValue;
+      const hasHint = success || warning || error;
+      const RenderComponent = textarea ? Textarea : Input;
       const inputProps = {
         maxLength,
+        value,
         ...props,
-        ...composeEvents(props, { ...focusBind, onChange }),
+        ...composeEvents(props, {
+          ...focusBind,
+          onChange,
+        }),
       };
-      const RenderComponent = textarea ? Textarea : Input;
 
       return (
         <FormField success={success} warning={warning} error={error}>
           {label && <TextFieldLabel shrink={actived}>{label}</TextFieldLabel>}
           {maxLength &&
-            !hasError && (
+            !hasHint && (
               <MaxLenght visible={actived}>
-                {maxLength - (props.value ? props.value.length : value.length)}
+                {maxLength - value.length}
               </MaxLenght>
             )}
           <RenderComponent {...inputProps} />
-          {hasError && <Hint>{message}</Hint>}
+          {hasHint && <Hint>{message}</Hint>}
         </FormField>
       );
     }}
@@ -104,7 +115,7 @@ TextField.propTypes = {
   /**
    * The content max length of textfield
    */
-  maxLength: PropTypes.number,
+  maxLength: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   /**
    * The message will show when success or warning or error is true
    */
