@@ -1,3 +1,11 @@
+<a name="1.10.2"></a>
+
+## [1.10.2](https://github.com/yoctol/ui/compare/v1.10.1...v1.10.2) (2018-08-20)
+
+### Bug Fixes
+
+- **textfield:** actived condition ([#279](https://github.com/yoctol/ui/issues/279)) ([46a4ff9](https://github.com/yoctol/ui/commit/46a4ff9))
+
 <a name="1.10.1"></a>
 
 ## [1.10.1](https://github.com/yoctol/ui/compare/v1.10.0...v1.10.1) (2018-08-20)
