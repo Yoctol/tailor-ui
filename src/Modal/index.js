@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import React, { PureComponent } from 'react';
+import React, { PureComponent, isValidElement } from 'react';
 
 import Box from '../Grid/Box';
 import Flex from '../Grid/Flex';
@@ -43,9 +43,13 @@ class Modal extends PureComponent {
       cancelButtonProps,
     } = this.props;
 
+    if (footer === null) return null;
+
     return (
-      footer && (
-        <Box px="4" py="3" borderTop="default" borderColor="gray.8">
+      <Box px="4" py="3" borderTop="default" borderColor="gray.8">
+        {isValidElement(footer) ? (
+          footer
+        ) : (
           <Footer
             cancelText={cancelText}
             confirmText={confirmText}
@@ -54,8 +58,8 @@ class Modal extends PureComponent {
             confirmButtonProps={confirmButtonProps}
             cancelButtonProps={cancelButtonProps}
           />
-        </Box>
-      )
+        )}
+      </Box>
     );
   };
 
@@ -139,7 +143,7 @@ Modal.defaultProps = {
   closable: false,
   children: null,
   width: 416,
-  footer: Footer,
+  footer: 'Default',
   title: '',
   confirmText: 'Confirm',
   cancelText: 'Cancel',
