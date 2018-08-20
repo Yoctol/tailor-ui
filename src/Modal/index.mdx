@@ -4,7 +4,7 @@ menu: Feedback
 route: /feedback/modal
 ---
 
-import { Toggle } from 'react-powerplug';
+import { Toggle, State } from 'react-powerplug';
 import { PropsTable, Playground } from 'docz';
 import Modal from './';
 import { Button } from '../';
@@ -103,6 +103,39 @@ import { Modal } from '@yoctol/ui';
       </div>
     )}
   </Toggle>
+</Playground>
+
+### With button props
+
+<Playground>
+  <State initial={{ visible: false, loading: false }}>
+    {({ state, setState }) => (
+      <div>
+        <Modal
+          title="This is a Modal"
+          handleClose={() => setState({ visible: false })}
+          visible={state.visible}
+          closable
+          onConfirm={() => {
+            setState({ loading: true });
+            setTimeout(() => {
+              setState({ visible: false, loading: false});
+            }, 3000);
+          }}
+          onCancel={() => setState({ visible: false })}
+          confirmText="DELETE"
+          confirmButtonProps={{ type: 'danger', loading: state.loading }}
+        >
+          <div>This is the content of Modal</div>
+          <div>This is the content of Modal</div>
+          <div>This is the content of Modal</div>
+          <div>This is the content of Modal</div>
+          <div>This is the content of Modal</div>
+        </Modal>
+        <Button onClick={() => setState({ visible: true })}>Open Modal</Button>
+      </div>
+    )}
+  </State>
 </Playground>
 
 ### Instacne

@@ -2,9 +2,11 @@
 
 exports[`Modal should render correctly 1`] = `
 <BaseModal
+  cancelButtonProps={Object {}}
   cancelText="Cancel"
   clickOutsite={true}
   closable={false}
+  confirmButtonProps={Object {}}
   confirmText="Confirm"
   footer={[Function]}
   handleClose={[Function]}
@@ -37,7 +39,9 @@ exports[`Modal should render correctly 1`] = `
     py="3"
   >
     <Footer
+      cancelButtonProps={Object {}}
       cancelText="Cancel"
+      confirmButtonProps={Object {}}
       confirmText="Confirm"
       onCancel={[Function]}
       onConfirm={[Function]}
@@ -48,9 +52,11 @@ exports[`Modal should render correctly 1`] = `
 
 exports[`Modal should render with props closeButton 1`] = `
 <BaseModal
+  cancelButtonProps={Object {}}
   cancelText="Cancel"
   clickOutsite={true}
   closable={true}
+  confirmButtonProps={Object {}}
   confirmText="Confirm"
   footer={[Function]}
   handleClose={[Function]}
@@ -86,7 +92,9 @@ exports[`Modal should render with props closeButton 1`] = `
     py="3"
   >
     <Footer
+      cancelButtonProps={Object {}}
       cancelText="Cancel"
+      confirmButtonProps={Object {}}
       confirmText="Confirm"
       onCancel={[Function]}
       onConfirm={[Function]}

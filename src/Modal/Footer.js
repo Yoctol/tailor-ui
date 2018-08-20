@@ -5,12 +5,28 @@ import Box from '../Grid/Box';
 import Button from '../Button';
 import Flex from '../Grid/Flex';
 
-const Footer = ({ cancelText, confirmText, onCancel, onConfirm }) => (
+const Footer = ({
+  cancelText,
+  confirmText,
+  onCancel,
+  onConfirm,
+  confirmButtonProps,
+  cancelButtonProps,
+}) => (
   <Flex>
     <Box ml="auto">
-      {cancelText && <Button onClick={onCancel}>{cancelText}</Button>}
+      {cancelText && (
+        <Button onClick={onCancel} {...cancelButtonProps}>
+          {cancelText}
+        </Button>
+      )}
       {confirmText && (
-        <Button ml="2" type="primary" onClick={onConfirm}>
+        <Button
+          ml="2"
+          type="primary"
+          onClick={onConfirm}
+          {...confirmButtonProps}
+        >
           {confirmText}
         </Button>
       )}

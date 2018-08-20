@@ -33,7 +33,15 @@ class Modal extends PureComponent {
   };
 
   renderFooter = () => {
-    const { footer, cancelText, confirmText, onCancel, onConfirm } = this.props;
+    const {
+      footer,
+      cancelText,
+      confirmText,
+      onCancel,
+      onConfirm,
+      confirmButtonProps,
+      cancelButtonProps,
+    } = this.props;
 
     return (
       footer && (
@@ -43,6 +51,8 @@ class Modal extends PureComponent {
             confirmText={confirmText}
             onCancel={onCancel}
             onConfirm={onConfirm}
+            confirmButtonProps={confirmButtonProps}
+            cancelButtonProps={cancelButtonProps}
           />
         </Box>
       )
@@ -68,6 +78,10 @@ Modal.error = error;
 
 Modal.propTypes = {
   /**
+   * The cancel button props
+   */
+  cancelButtonProps: PropTypes.shape({}), // FIXME
+  /**
    * text of the Cancel button
    */
   cancelText: PropTypes.string,
@@ -79,6 +93,10 @@ Modal.propTypes = {
    * Whether a close (x) button is visible on top right of the modal dialog or not
    */
   closable: PropTypes.bool,
+  /**
+   * The confirm button props
+   */
+  confirmButtonProps: PropTypes.shape({}), // FIXME
   /**
    * text of the Confirm button
    */
@@ -127,6 +145,8 @@ Modal.defaultProps = {
   cancelText: 'Cancel',
   onConfirm: () => {},
   onCancel: () => {},
+  confirmButtonProps: {},
+  cancelButtonProps: {},
 };
 
 export default Modal;
