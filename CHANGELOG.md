@@ -1,6 +1,21 @@
+<a name="1.10.1"></a>
+
+## [1.10.1](https://github.com/yoctol/ui/compare/v1.10.0...v1.10.1) (2018-08-20)
+
+### Bug Fixes
+
+- **textfield:** controlled max length ([79c55d6](https://github.com/yoctol/ui/commit/79c55d6))
+
+### Features
+
+- **modal:** add confirmButtonProps & cancelButtonProps ([f17bc32](https://github.com/yoctol/ui/commit/f17bc32))
+- **modal:** add empty footer ([679f9cc](https://github.com/yoctol/ui/commit/679f9cc))
+- **popover:** add hide popover to title props ([e507616](https://github.com/yoctol/ui/commit/e507616))
+- **tooltip:** add defaultVisible ([f085c67](https://github.com/yoctol/ui/commit/f085c67))
+
 <a name="1.10.0"></a>
 
-# [1.10.0](https://github.com/yoctol/ui/compare/v1.9.0...v1.10.0) (2018-08-14)
+# [1.10.0](https://github.com/yoctol/ui/compare/1.10.0...v1.10.0) (2018-08-14)
 
 ### Bug Fixes
 
