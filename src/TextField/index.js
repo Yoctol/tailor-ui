@@ -71,7 +71,10 @@ const TextField = ({
       { focused, bind: focusBind },
       { value: uncontrolledValue, bind: { onChange } }
     ) => {
-      const value = controlledValue || uncontrolledValue;
+      const value =
+        controlledValue || controlledValue === ''
+          ? controlledValue
+          : uncontrolledValue;
       const hasValue = value !== '';
       const actived = focused || hasValue;
       const hasHint = success || warning || error;
