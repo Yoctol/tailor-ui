@@ -4,6 +4,7 @@ import { ifProp } from 'styled-tools';
 import { themeGet } from 'styled-system';
 
 import { StyledInput } from '../Input';
+import { StyledTextarea } from '../Input/Textarea';
 
 import Hint from './Hint';
 import Label from './Label';
@@ -17,6 +18,11 @@ const StyledFormField = styled.div`
     'success',
     css`
       & ${StyledInput /* sc-selector */} {
+        border-color: ${themeGet('colors.success')};
+      }
+
+      /* stylelint-disable-next-line */
+      & ${StyledTextarea /* sc-selector */} {
         border-color: ${themeGet('colors.success')};
       }
 
@@ -40,6 +46,11 @@ const StyledFormField = styled.div`
       }
 
       /* stylelint-disable-next-line */
+      & ${StyledTextarea /* sc-selector */} {
+        border-color: ${themeGet('colors.warning')};
+      }
+
+      /* stylelint-disable-next-line */
       & ${Hint /* sc-selector */} {
         color: ${themeGet('colors.warning')};
       }
@@ -55,6 +66,11 @@ const StyledFormField = styled.div`
     'error',
     css`
       & ${StyledInput /* sc-selector */} {
+        border-color: ${themeGet('colors.error')};
+      }
+
+      /* stylelint-disable-next-line */
+      & ${StyledTextarea /* sc-selector */} {
         border-color: ${themeGet('colors.error')};
       }
 

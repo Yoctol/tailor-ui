@@ -38,7 +38,7 @@ const TextFieldLabel = styled(Label)`
   )};
 `;
 
-const MaxLenght = styled.div`
+const MaxLength = styled.div`
   position: absolute;
   right: 0;
   bottom: 0;
@@ -91,9 +91,9 @@ const TextField = ({
           {label && <TextFieldLabel shrink={actived}>{label}</TextFieldLabel>}
           {maxLength &&
             !hasHint && (
-              <MaxLenght visible={actived}>
+              <MaxLength visible={actived}>
                 {maxLength - value.length}
-              </MaxLenght>
+              </MaxLength>
             )}
           <RenderComponent {...inputProps} />
           {hasHint && <Hint>{message}</Hint>}

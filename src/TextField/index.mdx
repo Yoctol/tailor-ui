@@ -60,6 +60,28 @@ import { TextField } from '@yoctol/ui';
   />
 </Playground>
 
+### With textarea & error
+
+<Playground>
+  <Input>
+    {({ value, bind }) => {
+      const hasError = value === 'error';
+      return (
+        <TextField
+          textarea
+          minRows={2}
+          maxRows={6}
+          label="Please type 'error'"
+          error={hasError}
+          message="Just show error"
+          {...bind}
+        />
+      );
+    }}
+  </Input>
+</Playground>
+
+
 ### With maxLength & error
 
 <Playground>

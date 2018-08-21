@@ -6,7 +6,9 @@ import { ifProp } from 'styled-tools';
 
 import { StyledInput } from '.';
 
-const StyledTextarea = styled(StyledInput.withComponent(TextareaAutosize))`
+export const StyledTextarea = styled(
+  StyledInput.withComponent(TextareaAutosize)
+)`
   word-wrap: break-word;
   transition: border 0.2s ease;
   resize: ${ifProp('resize', 'initial', 'none')};
@@ -30,9 +32,9 @@ Textarea.propTypes = {
 };
 
 Textarea.defaultProps = {
-  onHeightChange: () => {},
   maxRows: null,
   minRows: null,
+  onHeightChange: () => {},
 };
 
 export default Textarea;
