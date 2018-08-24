@@ -24,6 +24,7 @@ export { default as RadioField } from './Radio/RadioField';
 export { default as Select } from './Select';
 export { default as Space } from './Grid/Space';
 export { default as Spin } from './Spin';
+export { default as Steps } from './Steps';
 export { default as Switch } from './Switch';
 export { default as Table } from './Table';
 export { default as Tabs } from './Tabs';

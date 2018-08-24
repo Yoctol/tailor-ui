@@ -22,6 +22,7 @@ import {
   Select,
   Space,
   Spin,
+  Steps,
   Switch,
   Table,
   Tabs,
@@ -60,6 +61,7 @@ describe('index', () => {
     expect(Select).toBeDefined();
     expect(Space).toBeDefined();
     expect(Spin).toBeDefined();
+    expect(Steps).toBeDefined();
     expect(Switch).toBeDefined();
     expect(Table).toBeDefined();
     expect(Tabs).toBeDefined();
