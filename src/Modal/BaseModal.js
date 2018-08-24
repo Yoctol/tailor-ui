@@ -49,7 +49,7 @@ const ModalWrapper = ({
   opacity,
   translateY,
   pointerEvents,
-  handleClose,
+  onCancel,
   content,
   clickOutsite,
   ...otherProps
@@ -62,7 +62,7 @@ const ModalWrapper = ({
       }}
       onClick={() => {
         if (clickOutsite) {
-          handleClose();
+          onCancel();
         }
       }}
     />
@@ -82,13 +82,11 @@ const ESC_KEY_CODE = 27;
 
 class BaseModal extends PureComponent {
   render() {
-    const { children, visible, handleClose, ...otherProps } = this.props;
+    const { children, visible, onCancel, ...otherProps } = this.props;
 
     return (
       <>
-        {visible && (
-          <Keydown keyCode={ESC_KEY_CODE} handleKeydown={handleClose} />
-        )}
+        {visible && <Keydown keyCode={ESC_KEY_CODE} handleKeydown={onCancel} />}
         <Transition
           native
           keys={visible ? 'visible' : 'hide'}
@@ -103,7 +101,7 @@ class BaseModal extends PureComponent {
             pointerEvents: 'none',
           }}
           config={config.stiff}
-          handleClose={handleClose}
+          onCancel={onCancel}
           content={children}
           {...otherProps}
         >
@@ -117,8 +115,8 @@ class BaseModal extends PureComponent {
 BaseModal.propTypes = {
   children: PropTypes.node,
   clickOutsite: PropTypes.bool,
-  handleClose: PropTypes.func.isRequired,
   visible: PropTypes.bool.isRequired,
+  onCancel: PropTypes.func.isRequired,
 };
 
 BaseModal.defaultProps = {

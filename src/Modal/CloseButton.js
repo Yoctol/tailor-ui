@@ -24,14 +24,14 @@ const CloseBtn = styled.button.attrs({
   }
 `;
 
-const CloseButton = ({ handleClose }) => (
-  <CloseBtn onClick={handleClose}>
+const CloseButton = ({ onCancel }) => (
+  <CloseBtn onClick={onCancel}>
     <Icon cursor="pointer" type={Close} />
   </CloseBtn>
 );
 
 CloseButton.propTypes = {
-  handleClose: PropTypes.func.isRequired,
+  onCancel: PropTypes.func.isRequired,
 };
 
 export default CloseButton;

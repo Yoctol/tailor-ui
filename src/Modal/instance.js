@@ -49,7 +49,7 @@ class ModalComponent extends PureComponent {
     });
   };
 
-  handleClose = () => {
+  closeModal = () => {
     this.setState(() => ({
       visible: false,
     }));
@@ -67,7 +67,7 @@ class ModalComponent extends PureComponent {
       type,
     } = this.state;
 
-    const { handleClose, getIcon } = this;
+    const { closeModal, getIcon } = this;
 
     const icon = getIcon();
 
@@ -76,7 +76,7 @@ class ModalComponent extends PureComponent {
         <BaseModal
           clickOutsite={type === 'confirm'}
           visible={visible}
-          handleClose={handleClose}
+          onCancel={onCancel}
         >
           <Space p="6">
             <Flex>
@@ -93,11 +93,11 @@ class ModalComponent extends PureComponent {
               confirmText={confirmText}
               onCancel={() => {
                 onCancel();
-                handleClose();
+                closeModal();
               }}
               onConfirm={() => {
                 onConfirm();
-                handleClose();
+                closeModal();
               }}
             />
           </Space>

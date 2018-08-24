@@ -12,13 +12,13 @@ import { confirm, error, info, success, warning } from './instance';
 
 class Modal extends PureComponent {
   renderHeader = () => {
-    const { title, handleClose, closable } = this.props;
+    const { title, onCancel, closable } = this.props;
     return (
       <Flex px="4" py="3" borderBottom="default" borderColor="gray.8">
         <Box flex="auto">
           <Heading.h3>{title}</Heading.h3>
         </Box>
-        {closable && <CloseButton handleClose={handleClose} />}
+        {closable && <CloseButton onCancel={onCancel} />}
       </Flex>
     );
   };
@@ -114,10 +114,6 @@ Modal.propTypes = {
     PropTypes.func,
   ]),
   /**
-   * The function will be triggerd when user click outside of the modal or press ESC key
-   */
-  handleClose: PropTypes.func.isRequired,
-  /**
    * The modal dialog's title
    */
   title: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
@@ -130,7 +126,8 @@ Modal.propTypes = {
    */
   width: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   /**
-   * callback of cancel
+   * Specify a function that will be called when a user clicks mask,
+   * close button on top right or Cancel button
    */
   onCancel: PropTypes.func,
   /**

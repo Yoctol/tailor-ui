@@ -9,7 +9,6 @@ exports[`Modal should render correctly 1`] = `
   confirmButtonProps={Object {}}
   confirmText="Confirm"
   footer="Default"
-  handleClose={[Function]}
   onCancel={[Function]}
   onConfirm={[Function]}
   title=""
@@ -59,7 +58,6 @@ exports[`Modal should render with props closeButton 1`] = `
   confirmButtonProps={Object {}}
   confirmText="Confirm"
   footer="Default"
-  handleClose={[Function]}
   onCancel={[Function]}
   onConfirm={[Function]}
   title=""
@@ -78,7 +76,7 @@ exports[`Modal should render with props closeButton 1`] = `
       <Heading.h3 />
     </Box>
     <CloseButton
-      handleClose={[Function]}
+      onCancel={[Function]}
     />
   </Flex>
   <Flex

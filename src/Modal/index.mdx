@@ -31,7 +31,6 @@ import { Modal } from '@yoctol/ui';
       <div>
         <Modal
           title="This is a Modal"
-          handleClose={toggle}
           visible={on}
           closable
           onConfirm={toggle}
@@ -58,10 +57,10 @@ import { Modal } from '@yoctol/ui';
       <div>
         <Modal
           title="This is a Modal"
-          handleClose={toggle}
           visible={on}
           footer={<div>My footer</div>}
           closable
+          onCancel={toggle}
         >
           <div>This is the content of Modal</div>
           <div>This is the content of Modal</div>
@@ -84,10 +83,10 @@ import { Modal } from '@yoctol/ui';
       <div>
         <Modal
           title="This is a Modal"
-          handleClose={toggle}
           visible={on}
           footer={null}
           closable
+          onCancel={toggle}
         >
           <div>This is the content of Modal</div>
           <div>This is the content of Modal</div>
@@ -109,7 +108,6 @@ import { Modal } from '@yoctol/ui';
       <div>
         <Modal
           title="This is a Modal"
-          handleClose={() => setState({ visible: false })}
           visible={state.visible}
           closable
           onConfirm={() => {
