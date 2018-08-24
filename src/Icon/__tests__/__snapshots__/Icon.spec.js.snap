@@ -3,7 +3,7 @@
 exports[`Icon should render correctly 1`] = `
 .c0 {
   display: inline-block;
-  line-height: 1.5;
+  line-height: 1;
   cursor: default;
 }
 

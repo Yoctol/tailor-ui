@@ -5,10 +5,9 @@ import injectGlobalCss from '../injectGlobalCss';
 
 import ThemeProvider from './ThemeProvider';
 
-const DoczWrapper = ({ children }) => {
-  injectGlobalCss();
-  return <ThemeProvider theme="blue">{children}</ThemeProvider>;
-};
+injectGlobalCss();
+
+const DoczWrapper = ({ children }) => <ThemeProvider>{children}</ThemeProvider>;
 
 DoczWrapper.propTypes = {
   children: PropTypes.node.isRequired,
