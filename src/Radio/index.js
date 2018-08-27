@@ -4,7 +4,6 @@ import styled from 'styled-components';
 import { borderColor, color, themeGet } from 'styled-system';
 
 import Label from '../Form/Label';
-import controlTransition from '../utils/transition';
 import { controlShadow } from '../utils/shadow';
 
 const StyledRadio = styled.input.attrs({
@@ -41,7 +40,7 @@ const StyledRadio = styled.input.attrs({
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    ${controlTransition()};
+    ${p => p.theme.transition /* sc-declaration */};
   }
 
   &:focus + ${Label /* sc-selector */}::before {

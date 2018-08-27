@@ -42,8 +42,8 @@ exports[`Radio should render correctly 1`] = `
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  -webkit-transition: all .2s ease;
-  transition: all .2s ease;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
 }
 
 .c0:focus + .c1::before {
@@ -146,8 +146,8 @@ exports[`Radio should render with props disabled 1`] = `
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  -webkit-transition: all .2s ease;
-  transition: all .2s ease;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
 }
 
 .c0:focus + .c1::before {

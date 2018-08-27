@@ -1,3 +1,4 @@
+import { css } from 'styled-components';
 import { map } from 'ramda';
 import { rem } from 'polished';
 
@@ -92,6 +93,10 @@ const sizes = {
   },
 };
 
+const transition = css`
+  transition: all 200ms ease 0s;
+`;
+
 export default {
   breakpoints,
   colors,
@@ -103,4 +108,5 @@ export default {
   controls,
   borderColor: colors,
   lineHeight: toRem(lineHeight),
+  transition,
 };

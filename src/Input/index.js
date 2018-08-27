@@ -4,7 +4,6 @@ import styled from 'styled-components';
 import { composeEvents } from 'react-powerplug';
 import { space, textAlign, themeGet, width } from 'styled-system';
 
-import controlTransition from '../utils/transition';
 import { sizes } from '../utils/system';
 
 export const StyledInput = styled.input`
@@ -36,7 +35,7 @@ export const StyledInput = styled.input`
     font-size: 0.8rem;
   }
 
-  ${controlTransition()};
+  ${p => p.theme.transition /* sc-declaration */};
 
   ${sizes};
   ${width};

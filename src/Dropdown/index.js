@@ -6,7 +6,6 @@ import { minWidth, space, textAlign, themeGet } from 'styled-system';
 import { prop, switchProp } from 'styled-tools';
 
 import ClickOutside from '../utils/ClickOutside';
-import controlTransition from '../utils/transition';
 import { shadowVariant } from '../utils/shadow';
 
 const { Provider, Consumer } = createContext();
@@ -232,7 +231,7 @@ const Item = styled.li`
     color: ${themeGet('colors.light')};
   }
 
-  ${controlTransition()};
+  ${p => p.theme.transition /* sc-declaration */};
   ${space};
 `;
 
