@@ -1,8 +1,8 @@
 import ErrorIcon from 'react-icons/lib/md/close';
 import FinishIcon from 'react-icons/lib/md/done';
+import PropTypes from 'prop-types';
 import React, { Children, createContext } from 'react';
 import styled, { css } from 'styled-components';
-import t from 'prop-types';
 
 import Flex from '../Grid/Flex';
 import Icon from '../Icon';
@@ -10,7 +10,7 @@ import controlTransition from '../utils/transition';
 
 const { Provider, Consumer } = createContext();
 
-const statusType = t.oneOf(['finish', 'progress', 'wait', 'error']);
+const statusType = PropTypes.oneOf(['finish', 'progress', 'wait', 'error']);
 
 const StepsIconItem = styled.div`
   display: flex;
@@ -181,12 +181,12 @@ const StepIcon = ({ status, count, isLast, direction, tailColor, onClick }) => {
 };
 
 StepIcon.propTypes = {
-  count: t.number.isRequired,
-  direction: t.oneOf(['horizontal', 'vertical']).isRequired,
-  isLast: t.bool.isRequired,
+  count: PropTypes.number.isRequired,
+  direction: PropTypes.oneOf(['horizontal', 'vertical']).isRequired,
+  isLast: PropTypes.bool.isRequired,
   status: statusType.isRequired,
-  tailColor: t.oneOf(['primary', 'error', 'gray']).isRequired,
-  onClick: t.func.isRequired,
+  tailColor: PropTypes.oneOf(['primary', 'error', 'gray']).isRequired,
+  onClick: PropTypes.func.isRequired,
 };
 
 export const Step = ({ title, description }) => (
@@ -231,7 +231,7 @@ Step.propTypes = {
   /**
    * description of the step, optional property
    */
-  description: t.string,
+  description: PropTypes.string,
   /**
    * to specify the status. It will be automatically set by current of Steps
    * if not configured. Optional values are: `wait` `process` `finish` `error`
@@ -241,7 +241,7 @@ Step.propTypes = {
   /**
    * title of the step
    */
-  title: t.string.isRequired,
+  title: PropTypes.string.isRequired,
 };
 
 Step.defaultProps = {
@@ -284,16 +284,16 @@ Steps.propTypes = {
   /**
    * Step component of Steps.
    */
-  children: t.node.isRequired,
+  children: PropTypes.node.isRequired,
   /**
    * to set the current step, counting from 0. You can overwrite this state by using `status` of `Step`
    */
-  current: t.number.isRequired,
+  current: PropTypes.number.isRequired,
   /**
    * to specify the direction of the step bar, `horizontal` and `vertical` are currently supported
    */
-  direction: t.oneOf(['horizontal', 'vertical']),
-  onCurrentChange: t.func,
+  direction: PropTypes.oneOf(['horizontal', 'vertical']),
+  onCurrentChange: PropTypes.func,
 };
 
 Steps.defaultProps = {
