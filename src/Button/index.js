@@ -3,8 +3,9 @@ import React, { PureComponent, createRef } from 'react';
 import styled, { css, keyframes } from 'styled-components';
 import { __, compose, path, prop, split } from 'ramda';
 import { ifProp, switchProp } from 'styled-tools';
-import { readableColor } from 'polished';
 import { space, themeGet } from 'styled-system';
+
+import Icon, { IconWrapper } from '../Icon';
 
 import Ripple from './Ripple';
 
@@ -18,7 +19,52 @@ const spin = keyframes`
   }
 `;
 
-const getLoading = ({ loading, type, theme }) =>
+const getTypeStyles = ({ type, text, outlined, theme }) => {
+  const getColor = compose(
+    path(__, prop('colors', theme)),
+    split('.')
+  );
+
+  if (text) {
+    return {
+      borderColor: 'transparent',
+      backgroundColor: 'transparent',
+      color: getColor('dark'),
+      hover: {
+        backgroundColor: getColor('gray.8'),
+        borderColor: 'transparent',
+      },
+    };
+  }
+
+  if (type === 'default') {
+    return {
+      borderColor: getColor('gray.7'),
+      backgroundColor: getColor('light'),
+      color: getColor('dark'),
+      hover: {
+        backgroundColor: getColor('gray.8'),
+        borderColor: getColor('primary'),
+      },
+    };
+  }
+
+  const bg = getColor(type);
+  const light = getColor('light');
+  const backgroundColor = outlined ? 'transparent' : bg;
+
+  return {
+    borderColor: bg,
+    backgroundColor,
+    color: outlined ? bg : light,
+    hover: {
+      backgroundColor: outlined ? bg : light,
+      color: outlined ? light : bg,
+    },
+  };
+};
+
+const getLoading = ({ loading, ...props }) =>
   loading &&
   css`
     color: transparent;
@@ -33,8 +79,7 @@ const getLoading = ({ loading, type, theme }) =>
       left: calc(50% - (1em / 2));
       width: 1em;
       height: 1em;
-      border: 1px solid
-        ${readableColor(theme.colors[type] || theme.colors.light)};
+      border: 1px solid ${getTypeStyles(props).color};
       border-radius: 50%;
       border-top-color: transparent;
       border-right-color: transparent;
@@ -91,63 +136,26 @@ const getRounded = ({ rounded }) =>
     border-radius: 999px;
   `;
 
-const getTypesStyles = ({ type, text, outlined, theme }) => {
-  const getColor = compose(
-    path(__, prop('colors', theme)),
-    split('.')
-  );
-
-  if (text) {
-    return {
-      borderColor: 'transparent',
-      backgroundColor: 'transparent',
-      color: getColor('dark'),
-      hover: {
-        backgroundColor: getColor('gray.8'),
-        borderColor: 'transparent',
-      },
-    };
-  }
-
-  if (type === 'default') {
-    return {
-      borderColor: getColor('gray.7'),
-      backgroundColor: getColor('light'),
-      color: getColor('dark'),
-      hover: {
-        backgroundColor: getColor('gray.8'),
-        borderColor: getColor('primary'),
-      },
-    };
-  }
-
-  const bg = getColor(type);
-  const light = getColor('light');
-  const backgroundColor = outlined ? 'transparent' : bg;
-
-  return {
-    borderColor: bg,
-    backgroundColor,
-    color: outlined ? bg : light,
-    hover: {
-      backgroundColor: outlined ? bg : light,
-      color: outlined ? light : bg,
-    },
-  };
-};
-
 const getTypes = ({ type, text, outlined, theme }) => {
-  const styles = getTypesStyles({ type, text, outlined, theme });
+  const styles = getTypeStyles({ type, text, outlined, theme });
 
   return css`
     border-color: ${styles.borderColor};
     background-color: ${styles.backgroundColor};
     color: ${styles.color};
 
+    ${IconWrapper} svg {
+      fill: ${styles.color};
+    }
+
     &:hover {
       border-color: ${styles.hover.borderColor};
       background-color: ${styles.hover.backgroundColor};
       color: ${styles.hover.color};
+
+      ${IconWrapper} svg {
+        fill: ${styles.hover.color};
+      }
     }
   `;
 };
@@ -196,7 +204,7 @@ class Button extends PureComponent {
   handleClick = e => this.ripple.current.startRipple(e, this.button);
 
   render() {
-    const { children, ...props } = this.props;
+    const { children, icon, ...props } = this.props;
     return (
       <StyledButton
         innerRef={this.button}
@@ -204,6 +212,7 @@ class Button extends PureComponent {
         onTouchend={this.handleClick}
         {...props}
       >
+        {icon && <Icon type={icon} size="20" mr="1" />}
         {children}
         <Ripple ref={this.ripple} />
       </StyledButton>
@@ -218,6 +227,10 @@ Button.propTypes = {
    * Set the button width to 100%
    */
   block: PropTypes.bool,
+  /**
+   * set the icon of button, see: Icon component
+   */
+  icon: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
   /**
    * Set the loading status of button
    */
@@ -261,6 +274,7 @@ Button.defaultProps = {
   rounded: false,
   block: false,
   loading: false,
+  icon: null,
 };
 
 export default Button;
