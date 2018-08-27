@@ -5,8 +5,6 @@ import { Value } from 'react-powerplug';
 import { ifProp, switchProp } from 'styled-tools';
 import { space, themeGet } from 'styled-system';
 
-import controlTransition from '../utils/transition';
-
 const { Provider, Consumer } = createContext();
 
 const StyledTab = styled.a`
@@ -90,7 +88,7 @@ const StyledTab = styled.a`
     `
   )};
 
-  ${controlTransition()};
+  ${p => p.theme.transition /* sc-declaration */};
   ${space};
 `;
 

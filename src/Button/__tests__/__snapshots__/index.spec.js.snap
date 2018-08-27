@@ -38,13 +38,13 @@ exports[`Button should render correctly 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  -webkit-transition: all .2s ease;
-  transition: all .2s ease;
   padding: 0.3125rem 0.5rem;
   font-size: 1rem;
   border-color: #c3c3c3;
   background-color: #ffffff;
   color: #111111;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
 }
 
 .c0:focus {
@@ -113,13 +113,13 @@ exports[`Button should render correctly 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  -webkit-transition: all .2s ease;
-  transition: all .2s ease;
   padding: 0.3125rem 0.5rem;
   font-size: 1rem;
   border-color: #c3c3c3;
   background-color: #ffffff;
   color: #111111;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
 }
 
 .c0:focus {
@@ -219,13 +219,13 @@ exports[`Button should render with props variant and type 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  -webkit-transition: all .2s ease;
-  transition: all .2s ease;
   padding: 0.3125rem 0.5rem;
   font-size: 1rem;
   border-color: #4384f0;
   background-color: #4384f0;
   color: #ffffff;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
 }
 
 .c0:focus {
@@ -295,13 +295,13 @@ exports[`Button should render with props variant and type 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  -webkit-transition: all .2s ease;
-  transition: all .2s ease;
   padding: 0.3125rem 0.5rem;
   font-size: 1rem;
   border-color: #4384f0;
   background-color: #4384f0;
   color: #ffffff;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
 }
 
 .c0:focus {

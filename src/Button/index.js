@@ -6,8 +6,6 @@ import { ifProp, switchProp } from 'styled-tools';
 import { readableColor } from 'polished';
 import { space, themeGet } from 'styled-system';
 
-import controlTransition from '../utils/transition';
-
 import Ripple from './Ripple';
 
 const spin = keyframes`
@@ -180,14 +178,13 @@ const StyledButton = styled.button`
     pointer-events: none;
   }
 
-  ${controlTransition()};
-
   ${getBlock /* sc-declaration */}
   ${getRounded /* sc-declaration */}
   ${getSize /* sc-declaration */}
   ${getTypes /* sc-declaration */}
   ${getLoading /* sc-declaration */};
 
+  ${p => p.theme.transition /* sc-declaration */};
   ${space};
 `;
 

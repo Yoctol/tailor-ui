@@ -4,8 +4,6 @@ import styled, { css } from 'styled-components';
 import { prop } from 'styled-tools';
 import { space, style } from 'styled-system';
 
-import controlTransition from '../utils/transition';
-
 import * as icons from './icons';
 
 const fill = style({
@@ -27,7 +25,7 @@ export const IconWrapper = styled.i`
   svg {
     vertical-align: middle;
 
-    ${controlTransition()};
+    ${p => p.theme.transition /* sc-declaration */};
     ${fill};
     ${size};
   }

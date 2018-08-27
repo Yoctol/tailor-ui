@@ -6,7 +6,6 @@ import styled, { css } from 'styled-components';
 
 import Flex from '../Grid/Flex';
 import Icon from '../Icon';
-import controlTransition from '../utils/transition';
 
 const { Provider, Consumer } = createContext();
 
@@ -70,7 +69,7 @@ const StepsIconItem = styled.div`
       }
     `};
 
-  ${controlTransition()};
+  ${p => p.theme.transition /* sc-declaration */};
 `;
 
 const Title = styled.div`
@@ -111,7 +110,7 @@ const Title = styled.div`
       }
     `};
 
-  ${controlTransition()};
+  ${p => p.theme.transition /* sc-declaration */};
 `;
 
 const Description = styled.div`
@@ -129,7 +128,7 @@ const Description = styled.div`
     }
   }};
   font-size: ${p => p.theme.fontSizes.sm};
-  ${controlTransition()};
+  ${p => p.theme.transition /* sc-declaration */};
 `;
 
 const getStatus = ({ current, count }) => {
