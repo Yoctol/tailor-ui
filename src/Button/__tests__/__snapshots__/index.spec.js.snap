@@ -43,7 +43,7 @@ exports[`Button should render correctly 1`] = `
   padding: 0.3125rem 0.5rem;
   font-size: 1rem;
   border-color: #c3c3c3;
-  background: #ffffff;
+  background-color: #ffffff;
   color: #111111;
 }
 
@@ -60,7 +60,7 @@ exports[`Button should render correctly 1`] = `
 
 .c0:hover {
   border-color: #423b63;
-  background: #e9e9e9;
+  background-color: #e9e9e9;
 }
 
 <Button
@@ -118,7 +118,7 @@ exports[`Button should render correctly 1`] = `
   padding: 0.3125rem 0.5rem;
   font-size: 1rem;
   border-color: #c3c3c3;
-  background: #ffffff;
+  background-color: #ffffff;
   color: #111111;
 }
 
@@ -135,7 +135,7 @@ exports[`Button should render correctly 1`] = `
 
 .c0:hover {
   border-color: #423b63;
-  background: #e9e9e9;
+  background-color: #e9e9e9;
 }
 
 <button
@@ -224,8 +224,8 @@ exports[`Button should render with props variant and type 1`] = `
   padding: 0.3125rem 0.5rem;
   font-size: 1rem;
   border-color: #4384f0;
-  background: #4384f0;
-  color: #fff;
+  background-color: #4384f0;
+  color: #ffffff;
 }
 
 .c0:focus {
@@ -240,7 +240,7 @@ exports[`Button should render with props variant and type 1`] = `
 }
 
 .c0:hover {
-  background: #fff;
+  background-color: #ffffff;
   color: #4384f0;
 }
 
@@ -300,8 +300,8 @@ exports[`Button should render with props variant and type 1`] = `
   padding: 0.3125rem 0.5rem;
   font-size: 1rem;
   border-color: #4384f0;
-  background: #4384f0;
-  color: #fff;
+  background-color: #4384f0;
+  color: #ffffff;
 }
 
 .c0:focus {
@@ -316,7 +316,7 @@ exports[`Button should render with props variant and type 1`] = `
 }
 
 .c0:hover {
-  background: #fff;
+  background-color: #ffffff;
   color: #4384f0;
 }
 

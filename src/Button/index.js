@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { PureComponent, createRef } from 'react';
 import styled, { css, keyframes } from 'styled-components';
-import { __, path, prop } from 'ramda';
+import { __, compose, path, prop, split } from 'ramda';
 import { ifProp, switchProp } from 'styled-tools';
 import { readableColor } from 'polished';
 import { space, themeGet } from 'styled-system';
@@ -93,53 +93,65 @@ const getRounded = ({ rounded }) =>
     border-radius: 999px;
   `;
 
-const typeCss = outlined => bg => {
-  const color = '#fff';
-  const backgroundColor = outlined ? 'transparent' : bg;
-
-  return css`
-    border-color: ${bg};
-    background: ${backgroundColor};
-    color: ${outlined ? bg : color};
-
-    &:hover {
-      background: ${outlined ? bg : color};
-      color: ${outlined ? color : bg};
-    }
-  `;
-};
-
-const getTypes = ({ type, text, outlined, theme }) => {
-  const color = path(__, prop('colors', theme));
+const getTypesStyles = ({ type, text, outlined, theme }) => {
+  const getColor = compose(
+    path(__, prop('colors', theme)),
+    split('.')
+  );
 
   if (text) {
-    return css`
-      border-color: transparent;
-      background: transparent;
-      color: ${color(['dark'])};
-
-      &:hover {
-        background: ${color(['gray', '8'])};
-      }
-    `;
+    return {
+      borderColor: 'transparent',
+      backgroundColor: 'transparent',
+      color: getColor('dark'),
+      hover: {
+        backgroundColor: getColor('gray.8'),
+        borderColor: 'transparent',
+      },
+    };
   }
 
   if (type === 'default') {
-    return css`
-      border-color: ${color(['gray', '7'])};
-      background: ${color(['light'])};
-      color: ${color(['dark'])};
-
-      &:hover {
-        border-color: ${color(['primary'])};
-        background: ${color(['gray', '8'])};
-      }
-    `;
+    return {
+      borderColor: getColor('gray.7'),
+      backgroundColor: getColor('light'),
+      color: getColor('dark'),
+      hover: {
+        backgroundColor: getColor('gray.8'),
+        borderColor: getColor('primary'),
+      },
+    };
   }
 
-  const get = typeCss(outlined);
+  const bg = getColor(type);
+  const light = getColor('light');
+  const backgroundColor = outlined ? 'transparent' : bg;
 
-  return get(color([type]));
+  return {
+    borderColor: bg,
+    backgroundColor,
+    color: outlined ? bg : light,
+    hover: {
+      backgroundColor: outlined ? bg : light,
+      color: outlined ? light : bg,
+    },
+  };
+};
+
+const getTypes = ({ type, text, outlined, theme }) => {
+  const styles = getTypesStyles({ type, text, outlined, theme });
+
+  return css`
+    border-color: ${styles.borderColor};
+    background-color: ${styles.backgroundColor};
+    color: ${styles.color};
+
+    &:hover {
+      border-color: ${styles.hover.borderColor};
+      background-color: ${styles.hover.backgroundColor};
+      color: ${styles.hover.color};
+    }
+  `;
 };
 
 const StyledButton = styled.button`
