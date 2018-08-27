@@ -1,3 +1,25 @@
+<a name="1.11.0"></a>
+
+# [1.11.0](https://github.com/yoctol/ui/compare/v1.10.3...v1.11.0) (2018-08-27)
+
+### Bug Fixes
+
+- **deps:** remove peer deps from deps ([dbe59d9](https://github.com/yoctol/ui/commit/dbe59d9))
+- **icon:** line-height ([#292](https://github.com/yoctol/ui/issues/292)) ([f35ba86](https://github.com/yoctol/ui/commit/f35ba86))
+- **textfield:** render props value when it is empty string ([#286](https://github.com/yoctol/ui/issues/286)) ([b1c789c](https://github.com/yoctol/ui/commit/b1c789c))
+
+### Code Refactoring
+
+- **modal:** Drop handleClose ([3935fe2](https://github.com/yoctol/ui/commit/3935fe2))
+
+### Features
+
+- **steps:** impelment steps component ([4ee4220](https://github.com/yoctol/ui/commit/4ee4220))
+
+### BREAKING CHANGES
+
+- **modal:** Drop handleClose, use onCancel instead
+
 <a name="1.10.3"></a>
 
 ## [1.10.3](https://github.com/yoctol/ui/compare/v1.10.2...v1.10.3) (2018-08-21)
