@@ -67,9 +67,7 @@ class ModalComponent extends PureComponent {
       type,
     } = this.state;
 
-    const { closeModal, getIcon } = this;
-
-    const icon = getIcon();
+    const icon = this.getIcon();
 
     return (
       <ThemeProvider>
@@ -93,11 +91,11 @@ class ModalComponent extends PureComponent {
               confirmText={confirmText}
               onCancel={() => {
                 onCancel();
-                closeModal();
+                this.closeModal();
               }}
               onConfirm={() => {
                 onConfirm();
-                closeModal();
+                this.closeModal();
               }}
             />
           </Space>

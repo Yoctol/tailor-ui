@@ -13,6 +13,7 @@ import { confirm, error, info, success, warning } from './instance';
 class Modal extends PureComponent {
   renderHeader = () => {
     const { title, onCancel, closable } = this.props;
+
     return (
       <Flex px="4" py="3" borderBottom="default" borderColor="gray.8">
         <Box flex="auto">
@@ -25,6 +26,7 @@ class Modal extends PureComponent {
 
   renderContent = () => {
     const { children } = this.props;
+
     return (
       <Flex flexDirection="column" p="4">
         {children}
