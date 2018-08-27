@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { PureComponent } from 'react';
-import { Spring } from 'react-spring';
+import { Spring, animated, config } from 'react-spring';
 import { Toggle } from 'react-powerplug';
 import { space } from 'styled-system';
 
@@ -18,14 +18,17 @@ class Alert extends PureComponent {
             opacity: on ? 1 : 0,
             height: on ? 'auto' : 0,
           }}
+          config={{
+            ...config.default,
+            restSpeedThreshold: 1,
+            restDisplacementThreshold: 0.01,
+          }}
           {...this.props}
         >
-          {({ transform, opacity, height, ...props }) => (
-            <BaseAlert
-              styles={{ transform, opacity, height }}
-              onClose={() => set(false)}
-              {...props}
-            />
+          {({ transform, opacity, display, height, ...props }) => (
+            <animated.div style={{ transform, opacity, display, height }}>
+              <BaseAlert onClose={() => set(false)} {...props} />
+            </animated.div>
           )}
         </Spring>
       )}
