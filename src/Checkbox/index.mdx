@@ -7,8 +7,6 @@ route: /data-entry/checkbox
 import { PropsTable, Playground } from 'docz';
 import { Toggle, Value } from 'react-powerplug';
 
-import FormField from '../Form/FormField';
-import Label from '../Form/Label';
 import Button from '../Button';
 import Box from '../Grid/Box';
 
@@ -27,7 +25,7 @@ Checkbox component.
 ## Examples
 
 ```js
-import { FormField, Label, Checkbox, Checkbox } from '@yoctol/ui';
+import { Checkbox } from '@yoctol/ui';
 ```
 
 ### Checkbox
@@ -49,7 +47,7 @@ import { FormField, Label, Checkbox, Checkbox } from '@yoctol/ui';
   </Toggle>
 </Playground>
 
-#### With disabled
+#### Disabled
 
 <Playground>
   <Checkbox checked disabled>Checked Disabled</Checkbox>
@@ -113,7 +111,7 @@ import { FormField, Label, Checkbox, Checkbox } from '@yoctol/ui';
   </Value>
 </Playground>
 
-#### With composition
+#### Composition render
 
 <Playground>
   <Value initial={[]}>
@@ -151,7 +149,7 @@ import { FormField, Label, Checkbox, Checkbox } from '@yoctol/ui';
   </Checkbox.Group>
 </Playground>
 
-#### With direction
+#### Direction
 
 <Playground>
   <Value initial={[]}>

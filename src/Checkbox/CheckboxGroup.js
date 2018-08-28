@@ -1,11 +1,19 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import styled from 'styled-components';
 import { Set } from 'react-powerplug';
-
-import Flex from '../Grid/Flex';
 
 import Checkbox from './Checkbox';
 import { Provider } from './CheckboxContext';
+
+const getSpacing = ({ direction, index, length }) => ({
+  [direction === 'horizontal' ? 'mr' : 'mb']: index + 1 !== length ? 2 : 0,
+});
+
+const CheckboxGroupFlex = styled.div`
+  display: ${p => (p.direction === 'horizontal' ? 'flex' : 'inline-flex')};
+  flex-direction: ${p => (p.direction === 'horizontal' ? 'row' : 'column')};
+`;
 
 const CheckboxGroup = ({
   value,
@@ -16,7 +24,7 @@ const CheckboxGroup = ({
   children,
   ...otherProps
 }) => (
-  <Flex flexDirection={direction === 'horizontal' ? 'row' : 'column'}>
+  <CheckboxGroupFlex direction={direction}>
     <Set initial={defaultValue} onChange={onChange}>
       {({ add, remove, has }) => (
         <Provider
@@ -46,35 +54,35 @@ const CheckboxGroup = ({
         >
           {options
             ? options.map(
-                ({ label, value: optionValue, disabled = false }, index) => {
-                  const spacing = {
-                    [direction === 'horizontal' ? 'mr' : 'mb']:
-                      index + 1 !== options.length ? 2 : 0,
-                  };
-
-                  return (
-                    <Checkbox
-                      key={label}
-                      value={optionValue}
-                      disabled={disabled}
-                      {...otherProps}
-                      {...spacing}
-                    >
-                      {label}
-                    </Checkbox>
-                  );
-                }
+                ({ label, value: optionValue, disabled = false }, index) => (
+                  <Checkbox
+                    key={label}
+                    value={optionValue}
+                    disabled={disabled}
+                    {...otherProps}
+                    {...getSpacing({
+                      direction,
+                      index,
+                      length: options.length,
+                    })}
+                  >
+                    {label}
+                  </Checkbox>
+                )
               )
             : children}
         </Provider>
       )}
     </Set>
-  </Flex>
+  </CheckboxGroupFlex>
 );
 
-CheckboxGroup.displayName = 'CheckboxField.Group';
+CheckboxGroup.displayName = 'Checkbox.Group';
 
 CheckboxGroup.propTypes = {
+  /**
+   * For composition render
+   */
   children: PropTypes.node,
   /**
    * to specify the direction of the step bar, `horizontal` and `vertical` are currently supported

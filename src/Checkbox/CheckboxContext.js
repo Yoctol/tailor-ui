@@ -2,7 +2,7 @@ import { createContext } from 'react';
 
 const { Provider, Consumer } = createContext({
   _onChange: null,
-  _values: null,
+  _isChecked: null,
 });
 
 export { Provider, Consumer };
