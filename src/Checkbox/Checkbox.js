@@ -5,6 +5,8 @@ import { space } from 'styled-system';
 
 import Space from '../Grid/Space';
 
+import { Consumer } from './CheckboxContext';
+
 const CheckboxWrapper = styled.span`
   display: inline-block;
   position: relative;
@@ -88,20 +90,28 @@ const Checkbox = ({
   checked,
   defaultChecked,
   onChange,
+  value,
   ...props
 }) => (
-  <CheckboxLabel disabled={disabled} {...props}>
-    <CheckboxWrapper>
-      <StyledCheckbox
-        disabled={disabled}
-        checked={checked}
-        defaultChecked={defaultChecked}
-        onChange={onChange}
-      />
-      <CheckboxInner />
-    </CheckboxWrapper>
-    <Space px="2">{children}</Space>
-  </CheckboxLabel>
+  <Consumer>
+    {({ _onChange, _isChecked }) => (
+      <CheckboxLabel disabled={disabled} {...props}>
+        <CheckboxWrapper>
+          <StyledCheckbox
+            disabled={disabled}
+            checked={_isChecked ? _isChecked(value) : checked}
+            defaultChecked={defaultChecked}
+            onChange={event => {
+              onChange(event);
+              if (_onChange) _onChange(event, value);
+            }}
+          />
+          <CheckboxInner />
+        </CheckboxWrapper>
+        <Space px="2">{children}</Space>
+      </CheckboxLabel>
+    )}
+  </Consumer>
 );
 
 Checkbox.propTypes = {

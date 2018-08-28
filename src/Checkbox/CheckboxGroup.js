@@ -5,55 +5,69 @@ import { Set } from 'react-powerplug';
 import Flex from '../Grid/Flex';
 
 import Checkbox from './Checkbox';
+import { Provider } from './CheckboxContext';
 
 const CheckboxGroup = ({
-  values: groupValues,
-  initialValues,
+  value,
+  defaultValue,
   options,
   onChange,
   direction,
+  children,
   ...otherProps
 }) => (
   <Flex flexDirection={direction === 'horizontal' ? 'row' : 'column'}>
-    <Set initial={initialValues || []} onChange={onChange}>
-      {({ add, remove, has }) =>
-        options.map(({ label, value, disabled = false }, index) => {
-          const spacing = {
-            [direction === 'horizontal' ? 'mr' : 'mb']:
-              index + 1 !== options.length ? 2 : 0,
-          };
+    <Set initial={defaultValue} onChange={onChange}>
+      {({ add, remove, has }) => (
+        <Provider
+          value={{
+            _onChange: (event, _value) => {
+              const { checked } = event.target;
 
-          return (
-            <Checkbox
-              key={label}
-              checked={groupValues ? groupValues.includes(value) : has(value)}
-              disabled={disabled}
-              onChange={event => {
-                const { checked } = event.target;
-                if (groupValues) {
-                  if (groupValues.includes(value) && !checked) {
-                    onChange(groupValues.filter(val => val !== value));
-                  }
-                  if (!groupValues.includes(value) && checked) {
-                    onChange([...groupValues, value]);
-                  }
-                } else {
-                  if (has(value) && !checked) {
-                    remove(value);
-                  }
-                  if (!has(value) && checked) {
-                    add(value);
-                  }
+              if (value) {
+                if (value.includes(_value) && !checked) {
+                  onChange(value.filter(val => val !== _value));
                 }
-              }}
-              {...otherProps}
-              {...spacing}
-            >
-              {label}
-            </Checkbox>
-          );
-        })
-      }
+                if (!value.includes(_value) && checked) {
+                  onChange([...value, _value]);
+                }
+              } else {
+                if (has(_value) && !checked) {
+                  remove(_value);
+                }
+                if (!has(_value) && checked) {
+                  add(_value);
+                }
+              }
+            },
+            _isChecked: _value =>
+              value ? value.includes(_value) : has(_value),
+          }}
+        >
+          {options
+            ? options.map(
+                ({ label, value: optionValue, disabled = false }, index) => {
+                  const spacing = {
+                    [direction === 'horizontal' ? 'mr' : 'mb']:
+                      index + 1 !== options.length ? 2 : 0,
+                  };
+
+                  return (
+                    <Checkbox
+                      key={label}
+                      value={optionValue}
+                      disabled={disabled}
+                      {...otherProps}
+                      {...spacing}
+                    >
+                      {label}
+                    </Checkbox>
+                  );
+                }
+              )
+            : children}
+        </Provider>
+      )}
     </Set>
   </Flex>
 );
@@ -61,14 +75,15 @@ const CheckboxGroup = ({
 CheckboxGroup.displayName = 'CheckboxField.Group';
 
 CheckboxGroup.propTypes = {
+  children: PropTypes.node,
   /**
    * to specify the direction of the step bar, `horizontal` and `vertical` are currently supported
    */
-  direction: PropTypes.oneOf(['horizontal', 'vertical']),
+  defaultValue: PropTypes.arrayOf(PropTypes.string),
   /**
-   * To set the initial values
+   * To set the initial value
    */
-  initialValues: PropTypes.arrayOf(PropTypes.string),
+  direction: PropTypes.oneOf(['horizontal', 'vertical']),
   /**
    * Specifies options
    */
@@ -78,11 +93,11 @@ CheckboxGroup.propTypes = {
       value: PropTypes.string.isRequired,
       disabled: PropTypes.bool,
     })
-  ).isRequired,
+  ),
   /**
    * Used for setting the currently selected value
    */
-  values: PropTypes.arrayOf(PropTypes.string),
+  value: PropTypes.arrayOf(PropTypes.string),
   /**
    * The callback function that is triggered when the state changes
    */
@@ -90,9 +105,11 @@ CheckboxGroup.propTypes = {
 };
 
 CheckboxGroup.defaultProps = {
+  children: null,
   direction: 'horizontal',
-  values: null,
-  initialValues: null,
+  value: null,
+  defaultValue: [],
+  options: null,
   onChange: () => {},
 };
 

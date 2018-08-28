@@ -10,6 +10,7 @@ import { Toggle, Value } from 'react-powerplug';
 import FormField from '../Form/FormField';
 import Label from '../Form/Label';
 import Button from '../Button';
+import Box from '../Grid/Box';
 
 import Checkbox from '.';
 import CheckboxGroup from './CheckboxGroup';
@@ -63,57 +64,45 @@ import { FormField, Label, Checkbox, Checkbox } from '@yoctol/ui';
   <Value initial={['check_1']}>
     {({ set, value }) => (
       <Checkbox.Group
-        label="Checkbox Group"
         options={[
           { label: 'checkbox 1', value: 'check_1' },
           { label: 'checkbox 2', value: 'check_2' },
           { label: 'checkbox 3', value: 'check_3', disabled: true },
           { label: 'checkbox 4', value: 'check_4' },
         ]}
-        values={value}
+        value={value}
         onChange={set}
       />
     )}
   </Value>
+  <br />
+  <Checkbox.Group
+    options={[
+      { label: 'checkbox 1', value: 'check_1' },
+      { label: 'checkbox 2', value: 'check_2' },
+      { label: 'checkbox 3', value: 'check_3', disabled: true },
+      { label: 'checkbox 4', value: 'check_4' },
+    ]}
+    defaultValue={['check_1']}
+    onChange={console.log}
+  />
 </Playground>
 
-#### With group & error
 
-<Playground>
-  <Value initial={[]}>
-    {({ set, value }) => (
-      <Checkbox.Group
-        label="Checkbox Group"
-        error
-        message="Something went wrong!"
-        options={[
-          { label: 'checkbox 1', value: 'check_1' },
-          { label: 'checkbox 2', value: 'check_2' },
-          { label: 'checkbox 3', value: 'check_3' },
-          { label: 'checkbox 4', value: 'check_4' },
-        ]}
-        values={value}
-        onChange={val => set(val)}
-      />
-    )}
-  </Value>
-</Playground>
-
-#### With controlled
+#### Controlled
 
 <Playground>
   <Value initial={[]}>
     {({ set, value }) => (
       <div>
         <Checkbox.Group
-          label="Checkbox Group"
           options={[
             { label: 'checkbox 1', value: 'check_1' },
             { label: 'checkbox 2', value: 'check_2' },
             { label: 'checkbox 3', value: 'check_3' },
             { label: 'checkbox 4', value: 'check_4' },
           ]}
-          values={value}
+          value={value}
           onChange={set}
         />
         <br />
@@ -124,13 +113,50 @@ import { FormField, Label, Checkbox, Checkbox } from '@yoctol/ui';
   </Value>
 </Playground>
 
+#### With composition
+
+<Playground>
+  <Value initial={[]}>
+    {({ set, value }) => (
+      <Checkbox.Group value={value} onChange={set}>
+        <Box bg="gray.8" p="2" m="2">
+          <Checkbox value="check_1">checkbox 1</Checkbox>
+        </Box>
+        <Box bg="gray.8" p="2" m="2">
+          <Checkbox value="check_2">checkbox 2</Checkbox>
+        </Box>
+        <Box bg="gray.8" p="2" m="2">
+          <Checkbox value="check_3">checkbox 3</Checkbox>
+        </Box>
+        <Box bg="gray.8" p="2" m="2">
+          <Checkbox value="check_4">checkbox 4</Checkbox>
+        </Box>
+      </Checkbox.Group>
+    )}
+  </Value>
+  <br />
+  <Checkbox.Group defaultValue={['check_1']} onChange={console.log}>
+    <Box bg="gray.8" p="2" m="2">
+      <Checkbox value="check_1">checkbox 1</Checkbox>
+    </Box>
+    <Box bg="gray.8" p="2" m="2">
+      <Checkbox value="check_2">checkbox 2</Checkbox>
+    </Box>
+    <Box bg="gray.8" p="2" m="2">
+      <Checkbox value="check_3">checkbox 3</Checkbox>
+    </Box>
+    <Box bg="gray.8" p="2" m="2">
+      <Checkbox value="check_4">checkbox 4</Checkbox>
+    </Box>
+  </Checkbox.Group>
+</Playground>
+
 #### With direction
 
 <Playground>
   <Value initial={[]}>
     {({ set, value }) => (
       <Checkbox.Group
-        label="Checkbox Group"
         direction="vertical"
         options={[
           { label: 'checkbox 1', value: 'check_1' },
@@ -138,7 +164,7 @@ import { FormField, Label, Checkbox, Checkbox } from '@yoctol/ui';
           { label: 'checkbox 3', value: 'check_3' },
           { label: 'checkbox 4', value: 'check_4' },
         ]}
-        values={value}
+        value={value}
         onChange={set}
       />
     )}
