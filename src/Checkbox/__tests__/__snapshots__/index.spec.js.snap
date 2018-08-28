@@ -1,19 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Checkbox should render correctly 1`] = `
-.c5 {
+.c7 {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
 }
 
-.c1 {
+.c3 {
   display: inline-block;
   position: relative;
   margin-bottom: 1px;
   line-height: 1;
 }
 
-.c4 {
+.c6 {
   display: block;
   position: relative;
   width: 16px;
@@ -28,7 +28,7 @@ exports[`Checkbox should render correctly 1`] = `
   transition: all 200ms ease 0s;
 }
 
-.c4::after {
+.c6::after {
   content: '';
   position: absolute;
   top: 1px;
@@ -45,7 +45,7 @@ exports[`Checkbox should render correctly 1`] = `
   transition: all 200ms ease 0s;
 }
 
-.c2 {
+.c4 {
   position: absolute;
   top: 0;
   right: 0;
@@ -56,19 +56,19 @@ exports[`Checkbox should render correctly 1`] = `
   opacity: 0;
 }
 
-.c2:checked + .c3 {
+.c4:checked + .c5 {
   border-color: #423b63;
   background-color: #423b63;
 }
 
-.c2:checked + .c3::after {
+.c4:checked + .c5::after {
   opacity: 1;
   -webkit-transform: rotate(45deg) scale(1);
   -ms-transform: rotate(45deg) scale(1);
   transform: rotate(45deg) scale(1);
 }
 
-.c0 {
+.c2 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -80,12 +80,16 @@ exports[`Checkbox should render correctly 1`] = `
   cursor: pointer;
 }
 
-.c0 + .c0 {
+.c2 + .c2 {
   margin-top: 0.5rem;
 }
 
-.c0:hover .c3 {
+.c2:hover .c5 {
   border-color: #423b63;
+}
+
+.c0 + .c1 {
+  margin-top: 0.5rem;
 }
 
 <Checkbox
@@ -95,60 +99,65 @@ exports[`Checkbox should render correctly 1`] = `
   <Checkbox__CheckboxLabel
     disabled={false}
   >
-    <label
+    <Checkbox__CheckboxLabelBase
       className="c0"
       disabled={false}
     >
-      <Checkbox__CheckboxWrapper>
-        <span
-          className="c1"
-        >
-          <Checkbox__StyledCheckbox
-            disabled={false}
-            onChange={[Function]}
+      <label
+        className="c0 c1 c2"
+        disabled={false}
+      >
+        <Checkbox__CheckboxWrapper>
+          <span
+            className="c3"
           >
-            <input
-              className="c2"
+            <Checkbox__StyledCheckbox
               disabled={false}
               onChange={[Function]}
-              type="checkbox"
-            />
-          </Checkbox__StyledCheckbox>
-          <Checkbox__CheckboxInner>
-            <span
-              className="c3 c4"
-            />
-          </Checkbox__CheckboxInner>
-        </span>
-      </Checkbox__CheckboxWrapper>
-      <Space
-        px="2"
-      >
-        <div
-          className="c5"
+            >
+              <input
+                className="c4"
+                disabled={false}
+                onChange={[Function]}
+                type="checkbox"
+              />
+            </Checkbox__StyledCheckbox>
+            <Checkbox__CheckboxInner>
+              <span
+                className="c5 c6"
+              />
+            </Checkbox__CheckboxInner>
+          </span>
+        </Checkbox__CheckboxWrapper>
+        <Space
+          px="2"
         >
-          Checkbox
-        </div>
-      </Space>
-    </label>
+          <div
+            className="c7"
+          >
+            Checkbox
+          </div>
+        </Space>
+      </label>
+    </Checkbox__CheckboxLabelBase>
   </Checkbox__CheckboxLabel>
 </Checkbox>
 `;
 
 exports[`Checkbox should render with props disabled 1`] = `
-.c5 {
+.c7 {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
 }
 
-.c1 {
+.c3 {
   display: inline-block;
   position: relative;
   margin-bottom: 1px;
   line-height: 1;
 }
 
-.c4 {
+.c6 {
   display: block;
   position: relative;
   width: 16px;
@@ -163,7 +172,7 @@ exports[`Checkbox should render with props disabled 1`] = `
   transition: all 200ms ease 0s;
 }
 
-.c4::after {
+.c6::after {
   content: '';
   position: absolute;
   top: 1px;
@@ -180,7 +189,7 @@ exports[`Checkbox should render with props disabled 1`] = `
   transition: all 200ms ease 0s;
 }
 
-.c2 {
+.c4 {
   position: absolute;
   top: 0;
   right: 0;
@@ -191,23 +200,23 @@ exports[`Checkbox should render with props disabled 1`] = `
   opacity: 0;
 }
 
-.c2:checked + .c3 {
+.c4:checked + .c5 {
   border-color: #423b63;
   background-color: #423b63;
 }
 
-.c2:checked + .c3::after {
+.c4:checked + .c5::after {
   opacity: 1;
   -webkit-transform: rotate(45deg) scale(1);
   -ms-transform: rotate(45deg) scale(1);
   transform: rotate(45deg) scale(1);
 }
 
-.c6:hover .c3 {
+.c8:hover .c5 {
   border-color: #423b63;
 }
 
-.c0 {
+.c2 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -220,7 +229,11 @@ exports[`Checkbox should render with props disabled 1`] = `
   opacity: 0.5;
 }
 
-.c0 + .c0 {
+.c2 + .c2 {
+  margin-top: 0.5rem;
+}
+
+.c0 + .c1 {
   margin-top: 0.5rem;
 }
 
@@ -231,42 +244,47 @@ exports[`Checkbox should render with props disabled 1`] = `
   <Checkbox__CheckboxLabel
     disabled={true}
   >
-    <label
+    <Checkbox__CheckboxLabelBase
       className="c0"
       disabled={true}
     >
-      <Checkbox__CheckboxWrapper>
-        <span
-          className="c1"
-        >
-          <Checkbox__StyledCheckbox
-            disabled={true}
-            onChange={[Function]}
+      <label
+        className="c0 c1 c2"
+        disabled={true}
+      >
+        <Checkbox__CheckboxWrapper>
+          <span
+            className="c3"
           >
-            <input
-              className="c2"
+            <Checkbox__StyledCheckbox
               disabled={true}
               onChange={[Function]}
-              type="checkbox"
-            />
-          </Checkbox__StyledCheckbox>
-          <Checkbox__CheckboxInner>
-            <span
-              className="c3 c4"
-            />
-          </Checkbox__CheckboxInner>
-        </span>
-      </Checkbox__CheckboxWrapper>
-      <Space
-        px="2"
-      >
-        <div
-          className="c5"
+            >
+              <input
+                className="c4"
+                disabled={true}
+                onChange={[Function]}
+                type="checkbox"
+              />
+            </Checkbox__StyledCheckbox>
+            <Checkbox__CheckboxInner>
+              <span
+                className="c5 c6"
+              />
+            </Checkbox__CheckboxInner>
+          </span>
+        </Checkbox__CheckboxWrapper>
+        <Space
+          px="2"
         >
-          Checkbox
-        </div>
-      </Space>
-    </label>
+          <div
+            className="c7"
+          >
+            Checkbox
+          </div>
+        </Space>
+      </label>
+    </Checkbox__CheckboxLabelBase>
   </Checkbox__CheckboxLabel>
 </Checkbox>
 `;

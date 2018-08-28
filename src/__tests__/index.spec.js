@@ -17,7 +17,6 @@ import {
   Popconfirm,
   Popover,
   Radio,
-  RadioField,
   Select,
   Space,
   Spin,
@@ -56,7 +55,7 @@ describe('index', () => {
     expect(Popconfirm).toBeDefined();
     expect(Popover).toBeDefined();
     expect(Radio).toBeDefined();
-    expect(RadioField).toBeDefined();
+    expect(Radio.Group).toBeDefined();
     expect(Select).toBeDefined();
     expect(Space).toBeDefined();
     expect(Spin).toBeDefined();

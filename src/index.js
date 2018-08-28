@@ -19,7 +19,6 @@ export { default as Modal } from './Modal';
 export { default as Popconfirm } from './Popconfirm';
 export { default as Popover } from './Popover';
 export { default as Radio } from './Radio';
-export { default as RadioField } from './Radio/RadioField';
 export { default as Select } from './Select';
 export { default as Space } from './Grid/Space';
 export { default as Spin } from './Spin';
