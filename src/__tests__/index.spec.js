@@ -25,6 +25,7 @@ import {
   Switch,
   Table,
   Tabs,
+  Tag,
   TextField,
   Textarea,
   ThemeProvider,
@@ -64,6 +65,7 @@ describe('index', () => {
     expect(Switch).toBeDefined();
     expect(Table).toBeDefined();
     expect(Tabs).toBeDefined();
+    expect(Tag).toBeDefined();
     expect(Textarea).toBeDefined();
     expect(TextField).toBeDefined();
     expect(ThemeProvider).toBeDefined();

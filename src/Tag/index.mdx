@@ -1,0 +1,95 @@
+---
+name: Tag
+menu: Data Display
+route: /data-display/tag
+---
+
+import { PropsTable, Playground } from 'docz';
+import { Set, Toggle } from 'react-powerplug';
+
+import Input from '../Input';
+import Button from '../Button';
+import Flex from '../Grid/Flex';
+import Box from '../Grid/Box';
+import Tag from './';
+
+# Tag
+
+Tag for categorizing or markup.
+
+## When To Use
+
+- It can be used to tag by dimension or property.
+- When categorizing.
+
+## Examples
+
+```js
+import { Tag } from '@yoctol/ui';
+```
+
+### Basic
+
+<Playground>
+  <Tag>Content</Tag>
+  <Tag>Content</Tag>
+</Playground>
+
+### Closable
+
+<Playground>
+  <Tag closable>Content</Tag>
+  <Tag closable>Content</Tag>
+  <Tag closable>Content</Tag>
+  <Tag closable>Content</Tag>
+</Playground>
+
+### Add & Remove Dynamically
+
+<Playground>
+  <Set initial={['tag 1', 'tag 2', 'tag 3']}>
+    {({ values, remove, add }) => (
+      <Toggle>
+        {({ on, toggle }) => (
+          <Flex>
+            {values.map((value, index) => (
+              <Tag
+                key={value}
+                closable={index !== 0}
+                onClosed={() => remove(value)}
+              >
+                {value}
+              </Tag>
+            ))}
+            <Box ml="2">
+              {on ? (
+                <Input
+                  width="80px"
+                  size="sm"
+                  defaultValue=""
+                  autoFocus
+                  onBlur={event => {
+                    const value = event.target.value.trim();
+                    value !== '' && add(value);
+                    toggle();
+                  }}
+                  onPressEnter={event => {
+                    const value = event.target.value.trim();
+                    value !== '' && add(value);
+                    toggle();
+                  }}
+                />
+              ) : (
+                <Button text size="sm" onClick={toggle}>+ Add Tag</Button>
+              )}
+            </Box>
+          </Flex>
+        )}
+      </Toggle>
+    )}
+  </Set>
+</Playground>
+
+## API
+
+<PropsTable of={Tag} />

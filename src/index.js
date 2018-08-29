@@ -27,6 +27,7 @@ export { default as Steps } from './Steps';
 export { default as Switch } from './Switch';
 export { default as Table } from './Table';
 export { default as Tabs } from './Tabs';
+export { default as Tag } from './Tag';
 export { default as Textarea } from './Input/Textarea';
 export { default as TextField } from './TextField';
 export { default as ThemeProvider } from './utils/ThemeProvider';
