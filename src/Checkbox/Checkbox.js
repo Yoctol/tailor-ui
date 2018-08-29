@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import styled, { css } from 'styled-components';
-import { space } from 'styled-system';
 
 import Space from '../Grid/Space';
 
@@ -66,11 +65,17 @@ const StyledCheckbox = styled.input.attrs({
   }
 `;
 
+const getMarginPosition = p =>
+  p.direction === 'horizontal' ? 'margin-left' : 'margin-top';
+
 const CheckboxLabel = styled.label`
   display: inline-flex;
   align-items: center;
   cursor: ${p => (p.disabled ? 'not-allowed' : 'pointer')};
-  ${space};
+
+  & + & {
+    ${getMarginPosition /* sc-prop */}: ${p => p.theme.space[2]};
+  }
 
   ${p =>
     p.disabled
@@ -94,8 +99,8 @@ const Checkbox = ({
   ...props
 }) => (
   <Consumer>
-    {({ _onChange, _isChecked }) => (
-      <CheckboxLabel disabled={disabled} {...props}>
+    {({ _onChange, _isChecked, direction }) => (
+      <CheckboxLabel disabled={disabled} direction={direction} {...props}>
         <CheckboxWrapper>
           <StyledCheckbox
             disabled={disabled}

@@ -80,6 +80,10 @@ exports[`Checkbox should render correctly 1`] = `
   cursor: pointer;
 }
 
+.c0 + .c0 {
+  margin-top: 0.5rem;
+}
+
 .c0:hover .c3 {
   border-color: #423b63;
 }
@@ -214,6 +218,10 @@ exports[`Checkbox should render with props disabled 1`] = `
   align-items: center;
   cursor: not-allowed;
   opacity: 0.5;
+}
+
+.c0 + .c0 {
+  margin-top: 0.5rem;
 }
 
 <Checkbox

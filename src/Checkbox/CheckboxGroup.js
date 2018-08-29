@@ -6,10 +6,6 @@ import { Set } from 'react-powerplug';
 import Checkbox from './Checkbox';
 import { Provider } from './CheckboxContext';
 
-const getSpacing = ({ direction, index, length }) => ({
-  [direction === 'horizontal' ? 'mr' : 'mb']: index + 1 !== length ? 2 : 0,
-});
-
 const CheckboxGroupFlex = styled.div`
   display: ${p => (p.direction === 'horizontal' ? 'flex' : 'inline-flex')};
   flex-direction: ${p => (p.direction === 'horizontal' ? 'row' : 'column')};
@@ -29,6 +25,7 @@ const CheckboxGroup = ({
       {({ add, remove, has }) => (
         <Provider
           value={{
+            direction,
             _onChange: (event, _value) => {
               const { checked } = event.target;
 
@@ -53,23 +50,16 @@ const CheckboxGroup = ({
           }}
         >
           {options
-            ? options.map(
-                ({ label, value: optionValue, disabled = false }, index) => (
-                  <Checkbox
-                    key={label}
-                    value={optionValue}
-                    disabled={disabled}
-                    {...otherProps}
-                    {...getSpacing({
-                      direction,
-                      index,
-                      length: options.length,
-                    })}
-                  >
-                    {label}
-                  </Checkbox>
-                )
-              )
+            ? options.map(({ label, value: optionValue, disabled = false }) => (
+                <Checkbox
+                  key={label}
+                  value={optionValue}
+                  disabled={disabled}
+                  {...otherProps}
+                >
+                  {label}
+                </Checkbox>
+              ))
             : children}
         </Provider>
       )}
