@@ -6,11 +6,12 @@ route: /data-entry/radio
 
 import { PropsTable, Playground } from 'docz';
 import { Toggle, Value } from 'react-powerplug';
-import FormField from '../Form/FormField';
-import Label from '../Form/Label';
+
 import Button from '../Button';
+import Box from '../Grid/Box';
+
 import Radio from '.';
-import RadioField, { RadioFieldGroup } from './RadioField';
+import RadioGroup from './RadioGroup';
 
 # Radio
 
@@ -24,7 +25,7 @@ Radio.
 ## Examples
 
 ```js
-import { FormField, Label, Radio, RadioField } from '@yoctol/ui';
+import { Radio } from '@yoctol/ui';
 ```
 
 ### Radio
@@ -32,87 +33,27 @@ import { FormField, Label, Radio, RadioField } from '@yoctol/ui';
 #### Basic
 
 <Playground>
-  <FormField>
-    <Radio name="radio-basic" id="radio-basic-a" checked />
-    <Label htmlFor="radio-basic-a">Radio A</Label>
-  </FormField>
-  <FormField>
-    <Radio name="radio-basic" id="radio-basic-b" />
-    <Label htmlFor="radio-basic-b">Radio B</Label>
-  </FormField>
+  <Radio>Radio</Radio>
+  <br />
+  <Radio defaultChecked>Radio</Radio>
 </Playground>
 
-#### With disabled
+#### Disabled
 
 <Playground>
-  <FormField>
-    <Radio
-      name="radio-disabled"
-      id="radio-disable-a"
-      checked
-      disabled
-    />
-    <Label htmlFor="radio-disable-a">Checked Disabled</Label>
-  </FormField>
-  <FormField>
-    <Radio name="radio-disabled" id="radio-disable-b" disabled />
-    <Label htmlFor="radio-disable-b">Disabled</Label>
-  </FormField>
+  <Radio checked disabled>Radio</Radio>
+  <br />
+  <Radio disabled>Disabled</Radio>
 </Playground>
 
-#### Custom color
-
-<Playground>
-  <FormField>
-    <Radio
-      name="customized"
-      id="custom-a"
-      bg="#63bf2d"
-      borderColor="#423b63"
-      checked
-    />
-    <Label htmlFor="custom-a">Customized Color Radio A</Label>
-  </FormField>
-  <FormField>
-    <Radio
-      name="customized"
-      id="custom-b"
-      bg="#63bf2d"
-      borderColor="#423b63"
-    />
-    <Label htmlFor="custom-b">Customized Color Radio B</Label>
-  </FormField>
-</Playground>
-
-
-### RadioField
-
-#### Basic
-
-<Playground>
-  <Value initial="radio-1">
-    {({ value, set }) => (
-      <div>
-        <RadioField checked={value === 'radio-1'} onChange={() => set('radio-1')}>
-          Radio
-        </RadioField>
-        <RadioField checked={value === 'radio-2'} onChange={() => set('radio-2')}>
-          Radio
-        </RadioField>
-      </div>
-    )}
-  </Value>
-</Playground>
-
-### RadioField.Group
+### Radio.Group
 
 #### Basic
 
 <Playground>
   <Value initial="radio-a">
     {({ set, value }) => (
-      <RadioField.Group
-        label="Radio Group"
+      <Radio.Group
         options={[
           { label: 'Radio A', value: 'radio-a' },
           { label: 'Radio B', value: 'radio-b' },
@@ -124,39 +65,26 @@ import { FormField, Label, Radio, RadioField } from '@yoctol/ui';
       />
     )}
   </Value>
+  <br />
+  <Radio.Group
+    options={[
+      { label: 'Radio A', value: 'radio-a' },
+      { label: 'Radio B', value: 'radio-b' },
+      { label: 'Radio C', value: 'radio-c', disabled: true },
+      { label: 'Radio D', value: 'radio-d' },
+    ]}
+    defaultValue="radio-b"
+    onChange={console.log}
+  />
 </Playground>
 
-#### With group & error
-
-<Playground>
-  <Value initial="radio-a">
-    {({ set, value }) => (
-      <RadioField.Group
-        label="Radio Group"
-        error
-        message="Something went wrong!"
-        options={[
-          { label: 'Radio A', value: 'radio-a' },
-          { label: 'Radio B', value: 'radio-b' },
-          { label: 'Radio C', value: 'radio-c', disabled: true },
-          { label: 'Radio D', value: 'radio-d' },
-        ]}
-        value={value}
-        onChange={set}
-      />
-    )}
-  </Value>
-</Playground>
-
-
-#### With controlled
+#### Controlled
 
 <Playground>
   <Value initial="radio-a">
     {({ set, value }) => (
       <div>
-        <RadioField.Group
-          label="Radio Group"
+        <Radio.Group
           options={[
             { label: 'Radio A', value: 'radio-a' },
             { label: 'Radio B', value: 'radio-b' },
@@ -166,8 +94,68 @@ import { FormField, Label, Radio, RadioField } from '@yoctol/ui';
           value={value}
           onChange={set}
         />
+        <br />
         <Button onClick={() => set('radio-d')}>Check last one</Button>
       </div>
+    )}
+  </Value>
+</Playground>
+
+
+#### Composition render
+
+<Playground>
+  <Value initial="radio_1">
+    {({ set, value }) => (
+      <Radio.Group value={value} onChange={set}>
+        <Box bg="gray.8" p="2" m="2">
+          <Radio value="radio_1">radio 1</Radio>
+        </Box>
+        <Box bg="gray.8" p="2" m="2">
+          <Radio value="radio_2">radio 2</Radio>
+        </Box>
+        <Box bg="gray.8" p="2" m="2">
+          <Radio value="radio_3">radio 3</Radio>
+        </Box>
+        <Box bg="gray.8" p="2" m="2">
+          <Radio value="radio_4">radio 4</Radio>
+        </Box>
+      </Radio.Group>
+    )}
+  </Value>
+  <br />
+  <Radio.Group defaultValue="radio_1" onChange={console.log}>
+    <Box bg="gray.8" p="2" m="2">
+      <Radio value="radio_1">radio 1</Radio>
+    </Box>
+    <Box bg="gray.8" p="2" m="2">
+      <Radio value="radio_2">radio 2</Radio>
+    </Box>
+    <Box bg="gray.8" p="2" m="2">
+      <Radio value="radio_3">radio 3</Radio>
+    </Box>
+    <Box bg="gray.8" p="2" m="2">
+      <Radio value="radio_4">radio 4</Radio>
+    </Box>
+  </Radio.Group>
+</Playground>
+
+#### Direction
+
+<Playground>
+  <Value initial="">
+    {({ set, value }) => (
+      <Radio.Group
+        direction="vertical"
+        options={[
+          { label: 'radio 1', value: 'radio_1' },
+          { label: 'radio 2', value: 'radio_2' },
+          { label: 'radio 3', value: 'radio_3' },
+          { label: 'radio 4', value: 'radio_4' },
+        ]}
+        value={value}
+        onChange={set}
+      />
     )}
   </Value>
 </Playground>
@@ -178,10 +166,6 @@ import { FormField, Label, Radio, RadioField } from '@yoctol/ui';
 
 <PropsTable of={Radio} />
 
-### RadioField
+### Radio.Group
 
-<PropsTable of={RadioField} />
-
-### RadioField.Group
-
-<PropsTable of={RadioFieldGroup} />
+<PropsTable of={RadioGroup} />

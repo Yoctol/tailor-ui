@@ -1,209 +1,280 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Radio should render correctly 1`] = `
-.c2 {
-  display: block;
-  padding-bottom: 0.25rem;
-  color: #5e5e5e;
-  font-size: 0.875rem;
+.c7 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.c3 {
+  display: inline-block;
+  position: relative;
+  margin-bottom: 1px;
   line-height: 1;
 }
 
-.c0 {
-  position: absolute;
-  opacity: 0;
-}
-
-.c0 + .c1 {
+.c6 {
+  display: block;
   position: relative;
-  padding: 0;
-  color: #444444;
-  cursor: pointer;
-}
-
-.c0 + .c1::before {
-  content: '';
-  display: inline-block;
   width: 16px;
   height: 16px;
-  margin-right: 0.25rem;
+  padding: 0;
   border: 0.0625rem solid;
-  border-radius: 999px;
-  background: white;
-  vertical-align: text-bottom;
-  border-color: #423b63;
-}
-
-.c0 + .c1::after {
-  content: '';
-  position: absolute;
-  top: 2px;
-  left: 2px;
-  width: 12px;
-  height: 12px;
   border-radius: 50%;
+  border-color: #c3c3c3;
+  background-color: #ffffff;
+  color: #444444;
   -webkit-transition: all 200ms ease 0s;
   transition: all 200ms ease 0s;
 }
 
-.c0:focus + .c1::before {
-  box-shadow: 0 0 0 0.1rem rgba(66,59,99,0.2);
-}
-
-.c0:disabled + .c1 {
-  opacity: 0.5;
-  cursor: auto;
-  pointer-events: none;
-}
-
-.c0:disabled + .c1::before {
-  opacity: 0.5;
-}
-
-.c0:checked + .c1::after {
+.c6::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  opacity: 0;
   background-color: #423b63;
+  -webkit-transform: scale(0);
+  -ms-transform: scale(0);
+  transform: scale(0);
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
 }
 
-<div>
-  <Radio
-    bg="primary"
-    borderColor="primary"
-    checked={false}
+.c4 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+.c4:checked + .c5 {
+  border-color: #423b63;
+}
+
+.c4:checked + .c5::after {
+  opacity: 1;
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+}
+
+.c2 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.c2:hover .c5 {
+  border-color: #423b63;
+}
+
+.c0 + .c1 {
+  margin-top: 0.5rem;
+}
+
+<Radio
+  disabled={false}
+  onChange={[Function]}
+>
+  <Radio__RadioLabel
     disabled={false}
-    id="radio"
-    onChange={[Function]}
   >
-    <Radio__StyledRadio
-      bg="primary"
-      borderColor="primary"
-      checked={false}
+    <Radio__RadioLabelBase
+      className="c0"
       disabled={false}
-      id="radio"
-      onChange={[Function]}
     >
-      <input
-        checked={false}
-        className="c0"
+      <label
+        className="c0 c1 c2"
         disabled={false}
-        id="radio"
-        onChange={[Function]}
-        type="radio"
-      />
-    </Radio__StyledRadio>
-  </Radio>
-  <Label
-    htmlFor="radio"
-  >
-    <label
-      className="c1 c2"
-      htmlFor="radio"
-    >
-      Radio
-    </label>
-  </Label>
-</div>
+      >
+        <Radio__RadioWrapper>
+          <span
+            className="c3"
+          >
+            <Radio__StyledRadio
+              disabled={false}
+              onChange={[Function]}
+            >
+              <input
+                className="c4"
+                disabled={false}
+                onChange={[Function]}
+                type="radio"
+              />
+            </Radio__StyledRadio>
+            <Radio__RadioInner>
+              <span
+                className="c5 c6"
+              />
+            </Radio__RadioInner>
+          </span>
+        </Radio__RadioWrapper>
+        <Space
+          px="2"
+        >
+          <div
+            className="c7"
+          >
+            Radio
+          </div>
+        </Space>
+      </label>
+    </Radio__RadioLabelBase>
+  </Radio__RadioLabel>
+</Radio>
 `;
 
 exports[`Radio should render with props disabled 1`] = `
-.c2 {
-  display: block;
-  padding-bottom: 0.25rem;
-  color: #5e5e5e;
-  font-size: 0.875rem;
+.c7 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.c3 {
+  display: inline-block;
+  position: relative;
+  margin-bottom: 1px;
   line-height: 1;
 }
 
-.c0 {
-  position: absolute;
-  opacity: 0;
-}
-
-.c0 + .c1 {
+.c6 {
+  display: block;
   position: relative;
-  padding: 0;
-  color: #444444;
-  cursor: pointer;
-}
-
-.c0 + .c1::before {
-  content: '';
-  display: inline-block;
   width: 16px;
   height: 16px;
-  margin-right: 0.25rem;
+  padding: 0;
   border: 0.0625rem solid;
-  border-radius: 999px;
-  background: white;
-  vertical-align: text-bottom;
-  border-color: #423b63;
-}
-
-.c0 + .c1::after {
-  content: '';
-  position: absolute;
-  top: 2px;
-  left: 2px;
-  width: 12px;
-  height: 12px;
   border-radius: 50%;
+  border-color: #c3c3c3;
+  background-color: #ffffff;
+  color: #444444;
   -webkit-transition: all 200ms ease 0s;
   transition: all 200ms ease 0s;
 }
 
-.c0:focus + .c1::before {
-  box-shadow: 0 0 0 0.1rem rgba(66,59,99,0.2);
-}
-
-.c0:disabled + .c1 {
-  opacity: 0.5;
-  cursor: auto;
-  pointer-events: none;
-}
-
-.c0:disabled + .c1::before {
-  opacity: 0.5;
-}
-
-.c0:checked + .c1::after {
+.c6::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  opacity: 0;
   background-color: #423b63;
+  -webkit-transform: scale(0);
+  -ms-transform: scale(0);
+  transform: scale(0);
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
 }
 
-<div>
-  <Radio
-    bg="primary"
-    borderColor="primary"
-    checked={false}
+.c4 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+.c4:checked + .c5 {
+  border-color: #423b63;
+}
+
+.c4:checked + .c5::after {
+  opacity: 1;
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+}
+
+.c8:hover .c5 {
+  border-color: #423b63;
+}
+
+.c2 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.c0 + .c1 {
+  margin-top: 0.5rem;
+}
+
+<Radio
+  disabled={true}
+  onChange={[Function]}
+>
+  <Radio__RadioLabel
     disabled={true}
-    id="radio"
-    onChange={[Function]}
   >
-    <Radio__StyledRadio
-      bg="primary"
-      borderColor="primary"
-      checked={false}
+    <Radio__RadioLabelBase
+      className="c0"
       disabled={true}
-      id="radio"
-      onChange={[Function]}
     >
-      <input
-        checked={false}
-        className="c0"
+      <label
+        className="c0 c1 c2"
         disabled={true}
-        id="radio"
-        onChange={[Function]}
-        type="radio"
-      />
-    </Radio__StyledRadio>
-  </Radio>
-  <Label
-    htmlFor="radio"
-  >
-    <label
-      className="c1 c2"
-      htmlFor="radio"
-    >
-      Radio
-    </label>
-  </Label>
-</div>
+      >
+        <Radio__RadioWrapper>
+          <span
+            className="c3"
+          >
+            <Radio__StyledRadio
+              disabled={true}
+              onChange={[Function]}
+            >
+              <input
+                className="c4"
+                disabled={true}
+                onChange={[Function]}
+                type="radio"
+              />
+            </Radio__StyledRadio>
+            <Radio__RadioInner>
+              <span
+                className="c5 c6"
+              />
+            </Radio__RadioInner>
+          </span>
+        </Radio__RadioWrapper>
+        <Space
+          px="2"
+        >
+          <div
+            className="c7"
+          >
+            Radio
+          </div>
+        </Space>
+      </label>
+    </Radio__RadioLabelBase>
+  </Radio__RadioLabel>
+</Radio>
 `;
