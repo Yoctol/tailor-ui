@@ -1,3 +1,25 @@
+<a name="1.12.0"></a>
+
+# [1.12.0](https://github.com/yoctol/ui/compare/v1.11.0...v1.12.0) (2018-08-29)
+
+### Code Refactoring
+
+- **checkbox:** new API inspired from ant design ([8f076cf](https://github.com/yoctol/ui/commit/8f076cf))
+- **radio:** new API inspired from ant design ([49f3ab1](https://github.com/yoctol/ui/commit/49f3ab1))
+
+### Features
+
+- **button:** add icon prop ([51524c1](https://github.com/yoctol/ui/commit/51524c1))
+- **checkbox:** support component composition ([a6fe672](https://github.com/yoctol/ui/commit/a6fe672))
+- **tag:** implement Tag component ([#305](https://github.com/yoctol/ui/issues/305)) ([67e0ac1](https://github.com/yoctol/ui/commit/67e0ac1))
+
+### BREAKING CHANGES
+
+- **radio:** remove status & message API, remove RadioField, move RadioField.Group to
+  Radio.Group
+- **checkbox:** remove status & message API, remove CheckboxField, move CheckboxField.Group to
+  Checkbox.Group
+
 <a name="1.11.0"></a>
 
 # [1.11.0](https://github.com/yoctol/ui/compare/v1.10.3...v1.11.0) (2018-08-27)
