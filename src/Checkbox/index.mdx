@@ -6,12 +6,12 @@ route: /data-entry/checkbox
 
 import { PropsTable, Playground } from 'docz';
 import { Toggle, Value } from 'react-powerplug';
-import FormField from '../Form/FormField';
-import Label from '../Form/Label';
-import Button from '../Button';
-import Checkbox from '.';
-import CheckboxField, { CheckboxFieldGroup } from './CheckboxField';
 
+import Button from '../Button';
+import Box from '../Grid/Box';
+
+import Checkbox from '.';
+import CheckboxGroup from './CheckboxGroup';
 
 # Checkbox
 
@@ -25,7 +25,7 @@ Checkbox component.
 ## Examples
 
 ```js
-import { FormField, Label, Checkbox, CheckboxField } from '@yoctol/ui';
+import { Checkbox } from '@yoctol/ui';
 ```
 
 ### Checkbox
@@ -33,144 +33,77 @@ import { FormField, Label, Checkbox, CheckboxField } from '@yoctol/ui';
 #### Basic
 
 <Playground>
+  <Checkbox defaultChecked>Uncontrolled Checkbox</Checkbox>
+  <br />
   <Toggle>
     {({ on, toggle }) => (
-      <FormField>
-        <Checkbox
-          id="checkbox-basic"
-          checked={on}
-          onChange={toggle}
-        />
-        <Label htmlFor="checkbox-basic">Checkbox</Label>
-      </FormField>
-    )}
-  </Toggle>
-</Playground>
-
-#### With disabled
-
-<Playground>
-  <FormField>
-    <Checkbox id="checked-disabled" checked disabled />
-    <Label htmlFor="checked-disabled">Checked Disabled</Label>
-  </FormField>
-  <FormField>
-    <Checkbox id="disabled" disabled />
-    <Label htmlFor="disabled">Disabled</Label>
-  </FormField>
-</Playground>
-
-#### Customize color
-
-<Playground>
-  <Toggle>
-    {({ on, toggle }) => (
-      <FormField>
-        <Checkbox
-          id="checkbox-custom"
-          bg="#63bf2d"
-          borderColor="#423b63"
-          checked={on}
-          onChange={toggle}
-        />
-        <Label htmlFor="checkbox-custom">Checkbox</Label>
-      </FormField>
-    )}
-  </Toggle>
-</Playground>
-
-### CheckboxField
-
-#### Basic
-
-<Playground>
-  <Toggle>
-    {({ on, toggle }) => (
-      <CheckboxField checked={on} onChange={toggle}>
-        Checkbox
-      </CheckboxField>
-    )}
-  </Toggle>
-</Playground>
-
-#### With error
-
-<Playground>
-  <Toggle>
-    {({ on, toggle }) => (
-      <CheckboxField
+      <Checkbox
         checked={on}
         onChange={toggle}
-        error
-        message="Something went wrong!"
       >
-        Checkbox
-      </CheckboxField>
+        Controlled Checkbox
+      </Checkbox>
     )}
   </Toggle>
 </Playground>
 
-### CheckboxField.Group
+#### Disabled
+
+<Playground>
+  <Checkbox checked disabled>Checked Disabled</Checkbox>
+  <Checkbox disabled>Disabled</Checkbox>
+</Playground>
+
+### Checkbox.Group
 
 #### Basic
 
 <Playground>
   <Value initial={['check_1']}>
     {({ set, value }) => (
-      <CheckboxField.Group
-        label="Checkbox Group"
+      <Checkbox.Group
         options={[
           { label: 'checkbox 1', value: 'check_1' },
           { label: 'checkbox 2', value: 'check_2' },
           { label: 'checkbox 3', value: 'check_3', disabled: true },
           { label: 'checkbox 4', value: 'check_4' },
         ]}
-        values={value}
+        value={value}
         onChange={set}
       />
     )}
   </Value>
+  <br />
+  <Checkbox.Group
+    options={[
+      { label: 'checkbox 1', value: 'check_1' },
+      { label: 'checkbox 2', value: 'check_2' },
+      { label: 'checkbox 3', value: 'check_3', disabled: true },
+      { label: 'checkbox 4', value: 'check_4' },
+    ]}
+    defaultValue={['check_1']}
+    onChange={console.log}
+  />
 </Playground>
 
-#### With group & error
 
-<Playground>
-  <Value initial={[]}>
-    {({ set, value }) => (
-      <CheckboxField.Group
-        label="Checkbox Group"
-        error
-        message="Something went wrong!"
-        options={[
-          { label: 'checkbox 1', value: 'check_1' },
-          { label: 'checkbox 2', value: 'check_2' },
-          { label: 'checkbox 3', value: 'check_3' },
-          { label: 'checkbox 4', value: 'check_4' },
-        ]}
-        values={value}
-        onChange={val => set(val)}
-      />
-    )}
-  </Value>
-</Playground>
-
-#### With controlled
+#### Controlled
 
 <Playground>
   <Value initial={[]}>
     {({ set, value }) => (
       <div>
-        <CheckboxField.Group
-          label="Checkbox Group"
+        <Checkbox.Group
           options={[
             { label: 'checkbox 1', value: 'check_1' },
             { label: 'checkbox 2', value: 'check_2' },
             { label: 'checkbox 3', value: 'check_3' },
             { label: 'checkbox 4', value: 'check_4' },
           ]}
-          values={value}
+          value={value}
           onChange={set}
         />
+        <br />
         <Button onClick={() => set(['check_1', 'check_2', 'check_3', 'check_4'])}>Select All</Button>
         <Button ml="2" onClick={() => set([])}>Unselect All</Button>
       </div>
@@ -178,6 +111,63 @@ import { FormField, Label, Checkbox, CheckboxField } from '@yoctol/ui';
   </Value>
 </Playground>
 
+#### Composition render
+
+<Playground>
+  <Value initial={[]}>
+    {({ set, value }) => (
+      <Checkbox.Group value={value} onChange={set}>
+        <Box bg="gray.8" p="2" m="2">
+          <Checkbox value="check_1">checkbox 1</Checkbox>
+        </Box>
+        <Box bg="gray.8" p="2" m="2">
+          <Checkbox value="check_2">checkbox 2</Checkbox>
+        </Box>
+        <Box bg="gray.8" p="2" m="2">
+          <Checkbox value="check_3">checkbox 3</Checkbox>
+        </Box>
+        <Box bg="gray.8" p="2" m="2">
+          <Checkbox value="check_4">checkbox 4</Checkbox>
+        </Box>
+      </Checkbox.Group>
+    )}
+  </Value>
+  <br />
+  <Checkbox.Group defaultValue={['check_1']} onChange={console.log}>
+    <Box bg="gray.8" p="2" m="2">
+      <Checkbox value="check_1">checkbox 1</Checkbox>
+    </Box>
+    <Box bg="gray.8" p="2" m="2">
+      <Checkbox value="check_2">checkbox 2</Checkbox>
+    </Box>
+    <Box bg="gray.8" p="2" m="2">
+      <Checkbox value="check_3">checkbox 3</Checkbox>
+    </Box>
+    <Box bg="gray.8" p="2" m="2">
+      <Checkbox value="check_4">checkbox 4</Checkbox>
+    </Box>
+  </Checkbox.Group>
+</Playground>
+
+#### Direction
+
+<Playground>
+  <Value initial={[]}>
+    {({ set, value }) => (
+      <Checkbox.Group
+        direction="vertical"
+        options={[
+          { label: 'checkbox 1', value: 'check_1' },
+          { label: 'checkbox 2', value: 'check_2' },
+          { label: 'checkbox 3', value: 'check_3' },
+          { label: 'checkbox 4', value: 'check_4' },
+        ]}
+        value={value}
+        onChange={set}
+      />
+    )}
+  </Value>
+</Playground>
 
 ## API
 
@@ -185,10 +175,6 @@ import { FormField, Label, Checkbox, CheckboxField } from '@yoctol/ui';
 
 <PropsTable of={Checkbox} />
 
-### CheckboxField
+### Checkbox.Group
 
-<PropsTable of={CheckboxField} />
-
-### CheckboxField.Group
-
-<PropsTable of={CheckboxFieldGroup} />
+<PropsTable of={CheckboxGroup} />

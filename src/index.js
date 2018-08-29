@@ -5,7 +5,6 @@ export { default as Button } from './Button';
 export { default as Box } from './Grid/Box';
 export { default as Card } from './Card';
 export { default as Checkbox } from './Checkbox';
-export { default as CheckboxField } from './Checkbox/CheckboxField';
 export { default as Dropdown } from './Dropdown';
 export { default as Flex } from './Grid/Flex';
 export { default as FormField } from './Form/FormField';
