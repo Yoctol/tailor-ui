@@ -204,15 +204,16 @@ class Button extends PureComponent {
   handleClick = e => this.ripple.current.startRipple(e, this.button);
 
   render() {
-    const { children, icon, ...props } = this.props;
+    const { children, icon, loading, ...props } = this.props;
     return (
       <StyledButton
         innerRef={this.button}
         onMouseUp={this.handleClick}
         onTouchend={this.handleClick}
+        loading={loading}
         {...props}
       >
-        {icon && <Icon type={icon} size="20" mr="1" />}
+        {!loading && icon && <Icon type={icon} size="20" mr="1" />}
         {children}
         <Ripple ref={this.ripple} />
       </StyledButton>
