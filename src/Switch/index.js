@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
-import { Toggle } from 'react-powerplug';
 import { space, themeGet } from 'styled-system';
 
 const StyledSwitch = styled.label`
@@ -58,29 +57,28 @@ const StyledSwitch = styled.label`
 `;
 
 const Switch = ({ defaultChecked, checked, onChange, disabled }) => (
-  <Toggle initial={defaultChecked} onChange={onChange}>
-    {({ on, toggle }) => (
-      <StyledSwitch>
-        <input
-          type="checkbox"
-          checked={on || checked}
-          onChange={toggle}
-          disabled={disabled}
-        />
-        <span />
-      </StyledSwitch>
-    )}
-  </Toggle>
+  <StyledSwitch>
+    <input
+      type="checkbox"
+      defaultChecked={defaultChecked}
+      checked={checked}
+      onChange={({ target }) => onChange(target.checked)}
+      disabled={disabled}
+    />
+    <span />
+  </StyledSwitch>
 );
 
 Switch.propTypes = {
   /**
    * determine whether the Switch is checked
    */
+  // eslint-disable-next-line react/require-default-props
   checked: PropTypes.bool,
   /**
    * to set the initial state
    */
+  // eslint-disable-next-line react/require-default-props
   defaultChecked: PropTypes.bool,
   /**
    * Disable switch
@@ -94,8 +92,6 @@ Switch.propTypes = {
 };
 
 Switch.defaultProps = {
-  defaultChecked: false,
-  checked: false,
   disabled: false,
   onChange: () => {},
 };

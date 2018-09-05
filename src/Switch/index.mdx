@@ -26,6 +26,8 @@ import { Switch } from '@yoctol/ui';
 ### With controlled
 
 <Playground>
+  <Switch checked onChange={console.log} />
+  <br />
   <Toggle initial={true}>
     {({ on, set }) => (
       <Switch checked={on} onChange={set} />
