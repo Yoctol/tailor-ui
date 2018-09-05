@@ -136,15 +136,39 @@ import { Modal } from '@yoctol/ui';
 
 #### Confirm
 
+##### Using callback
+
 <Playground>
   <Button
     onClick={() => {
       Modal.confirm({
         title: 'Do you Want to delete these items?',
         content: 'Some descriptions',
+        onConfirm: () => console.log('confirmed!'),
+        onCancel: () => console.log('canceled!'),
       })
     }}
   >
+    Confirm
+  </Button>
+</Playground>
+
+##### Using promise
+
+<Playground>
+  <Button
+    onClick={() => {
+      Modal.confirm({
+        title: 'Do you want to delete these items?',
+        content: 'Some descriptions',
+      }).then(confirmed => {
+        if (confirmed) {
+          console.log('confirmed!');
+        } else {
+          console.log('canceled!');
+        }
+      });
+    }}>
     Confirm
   </Button>
 </Playground>
@@ -157,6 +181,7 @@ import { Modal } from '@yoctol/ui';
       Modal.info({
         title: 'This is a info modal',
         content: 'Some descriptions',
+        onConfirm: () => console.log('info confirm'),
       })
     }}
   >
@@ -168,7 +193,11 @@ import { Modal } from '@yoctol/ui';
       Modal.success({
         title: 'This is a success modal',
         content: 'Some descriptions',
-      })
+      }).then(confirmed => {
+        if (confirmed) {
+          console.log('success confirm');
+        }
+      });
     }}
   >
     Success

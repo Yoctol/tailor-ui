@@ -30,24 +30,37 @@ class ModalComponent extends PureComponent {
     return getTypeIcon(type === 'confirm' ? 'warning' : type, 32);
   };
 
-  trigger = (options, type) => {
-    this.setState(() => {
-      const cancelText =
-        type === 'confirm' ? options.cancelText || 'Cancel' : null;
+  trigger = (options, type) =>
+    new Promise(resolve =>
+      this.setState(() => {
+        const cancelText =
+          type === 'confirm' ? options.cancelText || 'Cancel' : null;
 
-      return {
-        title: '',
-        content: '',
-        confirmText: 'Confirm',
-        onConfirm: () => {},
-        onCancel: () => {},
-        ...options,
-        cancelText,
-        type,
-        visible: true,
-      };
-    });
-  };
+        return {
+          title: '',
+          content: '',
+          confirmText: 'Confirm',
+          ...options,
+          onConfirm: () => {
+            if (options.onConfirm) {
+              options.onConfirm();
+            } else {
+              resolve(true);
+            }
+          },
+          onCancel: () => {
+            if (options.onCancel) {
+              options.onCancel();
+            } else {
+              resolve(false);
+            }
+          },
+          cancelText,
+          type,
+          visible: true,
+        };
+      })
+    );
 
   closeModal = () => {
     this.setState(() => ({
