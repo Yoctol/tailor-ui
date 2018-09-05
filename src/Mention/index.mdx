@@ -1,0 +1,97 @@
+---
+name: Mention
+menu: Data Entry
+route: /data-entry/mention
+---
+
+import { PropsTable, Playground } from 'docz';
+import { Set, Value } from 'react-powerplug';
+
+import FormField from '../Form/FormField';
+import Hint from '../Form/Hint';
+
+import Mention from '.'
+
+# Mention
+
+Mention component.
+
+## When To Use
+
+When need to mention someone or something.
+
+## Examples
+
+```js
+import { Mention } from '@yoctol/ui';
+```
+
+### Basic
+
+<Playground>
+  <Value initial={Mention.toContentState('我想要一杯 @飲料')}>
+    {({ value, set }) => (
+      <Mention
+        suggestions={['飲料', '食物']}
+        value={value}
+        onChange={contentState => {
+          set(contentState);
+          console.log('Raw value: ', Mention.toString(contentState));
+          console.log('Mentions: ', Mention.getMentions(contentState));
+        }}
+      />
+    )}
+  </Value>
+</Playground>
+
+### Textarea
+
+<Playground>
+  <Value initial={Mention.toContentState('')}>
+    {({ value, set }) => (
+      <Mention
+        suggestions={['drink', 'food']}
+        value={value}
+        onChange={set}
+        textarea
+      />
+    )}
+  </Value>
+</Playground>
+
+### Disabled
+
+<Playground>
+  <Value initial={Mention.toContentState('')}>
+    {({ value, set }) => (
+      <Mention
+        suggestions={['drink', 'food']}
+        value={value}
+        onChange={set}
+        disabled
+      />
+    )}
+  </Value>
+</Playground>
+
+### Error status
+
+<Playground>
+  <Value initial={Mention.toContentState('I want a @food')}>
+    {({ value, set }) => (
+      <FormField error>
+        <Mention
+          error
+          suggestions={['drink', 'food']}
+          value={value}
+          onChange={set}
+        />
+        <Hint>More than one must be selected!</Hint>
+      </FormField>
+    )}
+  </Value>
+</Playground>
+
+## API
+
+<PropsTable of={Mention} />

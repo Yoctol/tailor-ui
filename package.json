@@ -36,6 +36,7 @@
     "polished": "^2.0.3",
     "prop-types": "^15.6.2",
     "ramda": "^0.25.0",
+    "rc-editor-mention": "^1.1.7",
     "react-icons": "^2.2.7",
     "react-powerplug": "^1.0.0-rc.1",
     "react-select": "^2.0.0",

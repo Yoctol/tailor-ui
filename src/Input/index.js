@@ -1,12 +1,12 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { composeEvents } from 'react-powerplug';
 import { space, textAlign, themeGet, width } from 'styled-system';
 
 import { sizes } from '../utils/system';
 
-export const StyledInput = styled.input`
+export const inputStyles = css`
   display: block;
   width: 100%;
   max-width: 100%;
@@ -41,6 +41,10 @@ export const StyledInput = styled.input`
   ${width};
   ${space};
   ${textAlign};
+`;
+
+export const StyledInput = styled.input`
+  ${inputStyles};
 `;
 
 const Input = ({ onPressEnter, ...props }) => {
