@@ -1,3 +1,18 @@
+<a name="1.13.0"></a>
+
+# [1.13.0](https://github.com/yoctol/ui/compare/v1.12.0...v1.13.0) (2018-09-05)
+
+### Bug Fixes
+
+- **button:** hide button icon when loading ([1e8442e](https://github.com/yoctol/ui/commit/1e8442e))
+- **switch:** controlled can not own checked state ([#315](https://github.com/yoctol/ui/issues/315)) ([8e8d0fa](https://github.com/yoctol/ui/commit/8e8d0fa))
+
+### Features
+
+- **alert:** add onClosed ([c19b4c5](https://github.com/yoctol/ui/commit/c19b4c5))
+- **mention:** impelment mention component ([#316](https://github.com/yoctol/ui/issues/316)) ([3674d02](https://github.com/yoctol/ui/commit/3674d02))
+- **modal:** add return promise to modal instance methods ([#314](https://github.com/yoctol/ui/issues/314)) ([d10084b](https://github.com/yoctol/ui/commit/d10084b))
+
 <a name="1.12.0"></a>
 
 # [1.12.0](https://github.com/yoctol/ui/compare/v1.11.0...v1.12.0) (2018-08-29)
