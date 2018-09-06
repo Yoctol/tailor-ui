@@ -6,7 +6,6 @@ import { minWidth, space, textAlign, themeGet } from 'styled-system';
 import { prop, switchProp } from 'styled-tools';
 
 import ClickOutside from '../utils/ClickOutside';
-import { shadowVariant } from '../utils/shadow';
 
 const { Provider, Consumer } = createContext();
 
@@ -22,13 +21,22 @@ class Dropdown extends PureComponent {
   };
 
   toggle = () => {
-    this.setState(({ visible }) => ({
+    const { visible } = this.state;
+    const { onVisibleChange } = this.props;
+
+    this.setState(() => ({
       visible: !visible,
     }));
+
+    if (onVisibleChange) onVisibleChange(!visible);
   };
 
   close = () => {
+    const { onVisibleChange } = this.props;
+
     this.setState(() => ({ visible: false }));
+
+    if (onVisibleChange) onVisibleChange(false);
   };
 
   renderChildren = () => {
@@ -123,11 +131,16 @@ Dropdown.propTypes = {
     'bottomRight',
     'bottomLeft',
   ]),
+  /**
+   * a callback function takes an argument: visible, is executed when the visible state is changed
+   */
+  onVisibleChange: PropTypes.func,
 };
 
 Dropdown.defaultProps = {
   placement: 'bottomLeft',
   display: 'inline-block',
+  onVisibleChange: null,
 };
 
 const StyledList = styled.ul`
@@ -139,8 +152,9 @@ const StyledList = styled.ul`
   overflow: hidden;
   border: ${themeGet('borders.default')};
   border-radius: ${themeGet('radii.2')};
-  border-color: ${themeGet('colors.gray.8')};
+  border-color: ${p => p.theme.colors.gray[8]};
   background-color: transparent;
+  box-shadow: 0 2px 6px 0 rgba(191, 191, 191, 0.5);
   list-style: none;
 
   ${switchProp('placement', {
@@ -166,17 +180,19 @@ const StyledList = styled.ul`
     outline: 0;
   }
 
-  ${shadowVariant(0.1)};
+  ${space};
   ${minWidth};
   ${textAlign};
 `;
 
 StyledList.propTypes = {
+  ...space.propTypes,
   ...textAlign.propTypes,
   ...minWidth.propTypes,
 };
 
 StyledList.defaultProps = {
+  py: 2,
   textAlign: 'center',
   minWidth: 100,
 };
@@ -227,8 +243,7 @@ const Item = styled.li`
   cursor: pointer;
 
   &:hover {
-    background-color: ${themeGet('colors.primaryDark')};
-    color: ${themeGet('colors.light')};
+    background-color: ${themeGet('colors.gray.8')};
   }
 
   ${p => p.theme.transition /* sc-declaration */};
