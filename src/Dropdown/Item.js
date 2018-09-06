@@ -3,10 +3,11 @@ import { space } from 'styled-system';
 
 const Item = styled.li`
   margin-top: 0;
-  padding: ${p => p.theme.space.paddingY} ${p => p.theme.space.paddingX};
+  padding: ${p => p.theme.space.paddingY} ${p => p.theme.space.paddingXLg};
   background-color: ${p => p.theme.colors.light};
   color: ${p => p.theme.colors.gray[4]};
   font-size: ${p => p.theme.fontSizes.default};
+  white-space: nowrap;
   cursor: pointer;
 
   &:hover {

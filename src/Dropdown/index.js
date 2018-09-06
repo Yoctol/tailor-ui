@@ -1,11 +1,12 @@
 import PropTypes from 'prop-types';
 import React, { PureComponent } from 'react';
-import { Transition } from 'react-spring';
+import { Transition, config } from 'react-spring';
 
 import ClickOutside from '../utils/ClickOutside';
 
 import Item from './Item';
 import List from './List';
+import SubList from './SubList';
 import { Provider } from './DropdownContext';
 
 class Dropdown extends PureComponent {
@@ -69,6 +70,7 @@ class Dropdown extends PureComponent {
           transform: `translateY(${translateFrom}px)`,
           pointerEvents: 'none',
         }}
+        config={config.stiff}
       >
         {visible &&
           (styles => (
@@ -144,5 +146,6 @@ Dropdown.defaultProps = {
 
 Dropdown.List = List;
 Dropdown.Item = Item;
+Dropdown.SubList = SubList;
 
 export default Dropdown;

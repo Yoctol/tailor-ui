@@ -5,8 +5,12 @@ route: /navigation/dropdown
 ---
 
 import { PropsTable, Playground } from 'docz';
-import Dropdown from './';
+
 import { Button } from '../';
+
+import Dropdown from './';
+import List from './List';
+import SubList from './SubList';
 
 # Dropdown
 
@@ -22,7 +26,7 @@ If there are too many operations to display, you can wrap them in a `Dropdown`. 
 import { Dropdown } from '@yoctol/ui';
 ```
 
-### With placement bottomLeft
+### Basic
 
 <Playground>
   <Dropdown
@@ -44,7 +48,7 @@ import { Dropdown } from '@yoctol/ui';
   </Dropdown>
 </Playground>
 
-### With placement bottomRight
+### Placement
 
 <Playground>
   <Dropdown
@@ -64,11 +68,7 @@ import { Dropdown } from '@yoctol/ui';
       </Button>
     )}
   </Dropdown>
-</Playground>
 
-### With placement topLeft
-
-<Playground>
   <Dropdown
     placement="topLeft"
     overlay={
@@ -86,11 +86,7 @@ import { Dropdown } from '@yoctol/ui';
       </Button>
     )}
   </Dropdown>
-</Playground>
 
-### With placement topRight
-
-<Playground>
   <Dropdown
     placement="topRight"
     overlay={
@@ -110,7 +106,50 @@ import { Dropdown } from '@yoctol/ui';
   </Dropdown>
 </Playground>
 
+### SubItem
+
+<Playground>
+  <Dropdown
+    placement="bottomRight"
+    overlay={
+      <Dropdown.List>
+        <Dropdown.Item key="Item 1">Item 1</Dropdown.Item>
+        <Dropdown.Item key="Item 2">Item 2</Dropdown.Item>
+        <Dropdown.SubList key="Item 3" title="Sub List">
+          <Dropdown.Item
+            key="Sub Item 1"
+            onClick={() => console.log('sub item 1')}
+          >
+            Sub Item 1
+          </Dropdown.Item>
+          <Dropdown.Item
+            key="Sub Item 2"
+            onClick={() => console.log('sub item 2')}
+          >
+            Sub Item 2
+          </Dropdown.Item>
+        </Dropdown.SubList>
+      </Dropdown.List>
+    }
+  >
+    {({ visible, toggle }) => (
+      <Button light={visible} onClick={toggle}>
+        Toggle
+      </Button>
+    )}
+  </Dropdown>
+</Playground>
 
 ## API
 
+### Dropdown
+
 <PropsTable of={Dropdown} />
+
+### List
+
+<PropsTable of={List} />
+
+### SubList
+
+<PropsTable of={SubList} />

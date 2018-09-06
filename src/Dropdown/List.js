@@ -6,19 +6,22 @@ import { minWidth, space, textAlign } from 'styled-system';
 
 import { Consumer } from './DropdownContext';
 
-const StyledList = styled.ul`
+export const StyledList = styled.ul`
   display: block;
   position: absolute;
   z-index: 99;
   margin: 0;
   padding: 0;
-  overflow: hidden;
   border: ${p => p.theme.borders.default};
   border-radius: ${p => p.theme.radii[2]};
   border-color: ${p => p.theme.colors.gray[8]};
   background-color: transparent;
   box-shadow: 0 2px 6px 0 rgba(191, 191, 191, 0.5);
   list-style: none;
+
+  &:focus {
+    outline: 0;
+  }
 
   ${({ placement, offset }) => {
     switch (placement) {
@@ -45,9 +48,7 @@ const StyledList = styled.ul`
       default:
         return null;
     }
-  }} &:focus {
-    outline: 0;
-  }
+  }};
 
   ${space};
   ${minWidth};
@@ -62,7 +63,7 @@ StyledList.propTypes = {
 
 StyledList.defaultProps = {
   py: 2,
-  textAlign: 'center',
+  textAlign: 'left',
   minWidth: 100,
 };
 
@@ -92,11 +93,15 @@ class List extends PureComponent {
 
 List.propTypes = {
   children: PropTypes.node.isRequired,
+  minWidth: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   style: PropTypes.shape({}),
+  textAlign: PropTypes.oneOf(['left', 'center', 'right']),
 };
 
 List.defaultProps = {
   style: {},
+  textAlign: 'left',
+  minWidth: 100,
 };
 
 List.displayName = 'Dropdown.List';
