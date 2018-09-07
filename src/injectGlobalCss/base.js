@@ -1,7 +1,9 @@
 import { css } from 'styled-components';
 import { rem } from 'polished';
 
-import * as colors from '../theme/colors';
+import theme from '../theme';
+
+const { colors, fontSizes } = theme;
 
 export default css`
   @import url('https://fonts.googleapis.com/css?family=Roboto');
@@ -28,5 +30,12 @@ export default css`
       sans-serif;
     font-size: ${rem('14px')};
     text-rendering: optimizeLegibility;
+  }
+
+  a {
+    color: ${colors.info};
+    font-size: ${fontSizes.default};
+    text-decoration: none;
+    cursor: pointer;
   }
 `;
