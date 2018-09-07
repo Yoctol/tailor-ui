@@ -1,14 +1,13 @@
 import PropTypes from 'prop-types';
-import React, { PureComponent, createContext } from 'react';
-import styled, { css } from 'styled-components';
-import { Transition, animated } from 'react-spring';
-import { minWidth, space, textAlign, themeGet } from 'styled-system';
-import { prop, switchProp } from 'styled-tools';
+import React, { PureComponent } from 'react';
+import { Transition, config } from 'react-spring';
 
 import ClickOutside from '../utils/ClickOutside';
-import { shadowVariant } from '../utils/shadow';
 
-const { Provider, Consumer } = createContext();
+import Item from './Item';
+import List from './List';
+import SubList from './SubList';
+import { Provider } from './DropdownContext';
 
 class Dropdown extends PureComponent {
   state = {
@@ -22,13 +21,22 @@ class Dropdown extends PureComponent {
   };
 
   toggle = () => {
-    this.setState(({ visible }) => ({
+    const { visible } = this.state;
+    const { onVisibleChange } = this.props;
+
+    this.setState(() => ({
       visible: !visible,
     }));
+
+    if (onVisibleChange) onVisibleChange(!visible);
   };
 
   close = () => {
+    const { onVisibleChange } = this.props;
+
     this.setState(() => ({ visible: false }));
+
+    if (onVisibleChange) onVisibleChange(false);
   };
 
   renderChildren = () => {
@@ -62,6 +70,7 @@ class Dropdown extends PureComponent {
           transform: `translateY(${translateFrom}px)`,
           pointerEvents: 'none',
         }}
+        config={config.stiff}
       >
         {visible &&
           (styles => (
@@ -123,123 +132,20 @@ Dropdown.propTypes = {
     'bottomRight',
     'bottomLeft',
   ]),
+  /**
+   * a callback function takes an argument: visible, is executed when the visible state is changed
+   */
+  onVisibleChange: PropTypes.func,
 };
 
 Dropdown.defaultProps = {
   placement: 'bottomLeft',
   display: 'inline-block',
+  onVisibleChange: null,
 };
-
-const StyledList = styled.ul`
-  display: block;
-  position: absolute;
-  z-index: 99;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  border: ${themeGet('borders.default')};
-  border-radius: ${themeGet('radii.2')};
-  border-color: ${themeGet('colors.gray.8')};
-  background-color: transparent;
-  list-style: none;
-
-  ${switchProp('placement', {
-    bottomLeft: css`
-      top: ${prop('offset')}px;
-      right: 0;
-    `,
-    bottomRight: css`
-      top: ${prop('offset')}px;
-      left: 0;
-    `,
-    topLeft: css`
-      right: 0;
-      bottom: ${prop('offset')}px;
-    `,
-    topRight: css`
-      bottom: ${prop('offset')}px;
-      left: 0;
-    `,
-  })};
-
-  &:focus {
-    outline: 0;
-  }
-
-  ${shadowVariant(0.1)};
-  ${minWidth};
-  ${textAlign};
-`;
-
-StyledList.propTypes = {
-  ...textAlign.propTypes,
-  ...minWidth.propTypes,
-};
-
-StyledList.defaultProps = {
-  textAlign: 'center',
-  minWidth: 100,
-};
-
-const AnimatedStyledList = animated(StyledList);
-
-// eslint-disable-next-line react/no-multi-comp
-class List extends PureComponent {
-  render() {
-    const { children, style, ...props } = this.props;
-    return (
-      <Consumer>
-        {({ placement, offset, styles, onClick }) => (
-          <AnimatedStyledList
-            placement={placement}
-            offset={offset}
-            style={{ ...style, ...styles }}
-            onClick={onClick}
-            {...props}
-          >
-            {children}
-          </AnimatedStyledList>
-        )}
-      </Consumer>
-    );
-  }
-}
-
-List.propTypes = {
-  children: PropTypes.node.isRequired,
-  style: PropTypes.shape({}),
-};
-
-List.defaultProps = {
-  style: {},
-};
-
-List.displayName = 'Dropdown.List';
 
 Dropdown.List = List;
-
-const Item = styled.li`
-  margin-top: 0;
-  padding: ${themeGet('space.paddingY')} ${themeGet('space.paddingX')};
-  background-color: ${themeGet('colors.light')};
-  color: ${themeGet('colors.gray.4')};
-  font-size: ${themeGet('fontSizes.default')};
-  cursor: pointer;
-
-  &:hover {
-    background-color: ${themeGet('colors.primaryDark')};
-    color: ${themeGet('colors.light')};
-  }
-
-  ${p => p.theme.transition /* sc-declaration */};
-  ${space};
-`;
-
-Item.displayName = 'Dropdown.Item';
-Item.propTypes = {
-  ...space.propTypes,
-};
-
 Dropdown.Item = Item;
+Dropdown.SubList = SubList;
 
 export default Dropdown;
