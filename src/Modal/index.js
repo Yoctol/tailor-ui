@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { PureComponent, isValidElement } from 'react';
+import { createPortal } from 'react-dom';
 
 import Box from '../Grid/Box';
 import Flex from '../Grid/Flex';
@@ -10,12 +11,29 @@ import CloseButton from './CloseButton';
 import Footer from './Footer';
 import { confirm, error, info, success, warning } from './instance';
 
+let MODAL_PORTAL_ELEMENT = null;
+
 class Modal extends PureComponent {
+  constructor(props) {
+    super(props);
+
+    if (!MODAL_PORTAL_ELEMENT) {
+      MODAL_PORTAL_ELEMENT = document.createElement('div');
+      document.body.appendChild(MODAL_PORTAL_ELEMENT);
+    }
+  }
+
   renderHeader = () => {
     const { title, onCancel, closable } = this.props;
 
     return (
-      <Flex px="4" py="3" borderBottom="default" borderColor="gray.8">
+      <Flex
+        flex="none"
+        px="4"
+        py="3"
+        borderBottom="default"
+        borderColor="gray.8"
+      >
         <Box flex="auto">
           <Heading.h3>{title}</Heading.h3>
         </Box>
@@ -48,7 +66,7 @@ class Modal extends PureComponent {
     if (footer === null) return null;
 
     return (
-      <Box px="4" py="3" borderTop="default" borderColor="gray.8">
+      <Box flex="none" px="4" py="3" borderTop="default" borderColor="gray.8">
         {isValidElement(footer) ? (
           footer
         ) : (
@@ -66,12 +84,13 @@ class Modal extends PureComponent {
   };
 
   render() {
-    return (
+    return createPortal(
       <BaseModal {...this.props}>
         {this.renderHeader()}
         {this.renderContent()}
         {this.renderFooter()}
-      </BaseModal>
+      </BaseModal>,
+      MODAL_PORTAL_ELEMENT
     );
   }
 }
