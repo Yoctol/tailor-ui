@@ -1,4 +1,4 @@
-import BaseSelect from 'react-select';
+import BaseSelect, { components } from 'react-select';
 import React, { SFC } from 'react';
 
 import styled from 'utils/styled-components';
@@ -61,6 +61,10 @@ export interface SelectProps {
    */
   isDisabled?: boolean;
   /**
+   * Allow user to select multiple options
+   */
+  isMulti?: boolean;
+  /**
    * Allow the user to search for matching options
    */
   isSearchable?: boolean;
@@ -82,8 +86,22 @@ export interface SelectProps {
   onChange?: (option: number | string | object) => void;
 }
 
-const Select: SFC<SelectProps> = props => (
-  <StyledSelect classNamePrefix="yoctol-select" {...props} />
-);
+const Select: SFC<SelectProps> = props => {
+  if (props.isMulti) {
+    const Option = _props => (
+      <components.Option {..._props} isFocused={_props.isSelected} />
+    );
+    const MultiValue = _props => _props.data.label;
+    return (
+      <StyledSelect
+        {...props}
+        components={{ Option, MultiValue }}
+        closeMenuOnSelect={false}
+        hideSelectedOptions={false}
+      />
+    );
+  }
+  return <StyledSelect {...props} />;
+};
 
 export default Select;

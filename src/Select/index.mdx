@@ -132,6 +132,43 @@ import { Select } from '@yoctol/ui';
   </Value>
 </Playground>
 
+### Multiple Selection
+
+<Playground>
+  <Value>
+    {({ value, set }) => (
+      <Select
+        isMulti
+        placeholder="choose the flags"
+        value={value}
+        onChange={set}
+        options={[
+          {
+            label: 'i',
+            value: 'i'
+          },
+          {
+            label: 'g',
+            value: 'g'
+          },
+          {
+            label: 'm',
+            value: 'm'
+          },
+          {
+            label: 'u',
+            value: 'u'
+          },
+          {
+            label: 'y',
+            value: 'y'
+          }
+        ]}
+      />
+    )}
+  </Value>
+</Playground>
+
 ## API
 
 <PropsTable of={Select} />
