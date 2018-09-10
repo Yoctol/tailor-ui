@@ -2,8 +2,7 @@ import PropTypes from 'prop-types';
 import React, { PureComponent, createRef } from 'react';
 import styled, { css, keyframes } from 'styled-components';
 import { __, compose, path, prop, split } from 'ramda';
-import { ifProp, switchProp } from 'styled-tools';
-import { space, themeGet } from 'styled-system';
+import { space as styledSpace } from 'styled-system';
 
 import Icon, { IconWrapper } from '../Icon';
 
@@ -67,18 +66,14 @@ const getTypeStyles = ({ type, text, outlined, theme }) => {
 const getLoading = ({ loading, ...props }) =>
   loading &&
   css`
-    color: transparent;
+    opacity: 0.7;
     cursor: default;
     pointer-events: none;
 
-    &::after {
-      content: '';
-      display: block;
-      position: absolute;
-      top: calc(50% - (1em / 2));
-      left: calc(50% - (1em / 2));
+    &::before {
       width: 1em;
       height: 1em;
+      margin-right: 8px;
       border: 1px solid ${getTypeStyles(props).color};
       border-radius: 50%;
       border-top-color: transparent;
@@ -88,40 +83,55 @@ const getLoading = ({ loading, ...props }) =>
   `;
 
 const getSize = css`
-  ${switchProp('size', {
-    sm: css`
-      padding: ${themeGet('space.paddingYSm')} ${themeGet('space.paddingXSm')};
-      font-size: ${themeGet('fontSizes.sm')};
-    `,
-    md: css`
-      padding: ${themeGet('space.paddingY')} ${themeGet('space.paddingX')};
-      font-size: ${themeGet('fontSizes.default')};
-    `,
-    lg: css`
-      padding: ${themeGet('space.paddingYLg')} ${themeGet('space.paddingXLg')};
-      font-size: ${themeGet('fontSizes.lg')};
-    `,
-  })};
+  ${({ onlyIcon, size, theme: { space, fontSizes } }) => {
+    if (onlyIcon) {
+      return {
+        sm: css`
+          width: 28px;
+          height: 28px;
+        `,
+        md: css`
+          width: 36px;
+          height: 36px;
+        `,
+        lg: css`
+          width: 40px;
+          height: 40px;
+        `,
+      }[size];
+    }
 
-  ${ifProp(
-    'rounded',
-    switchProp('size', {
+    return {
       sm: css`
-        padding: ${themeGet('space.paddingYSm')}
-          calc(${themeGet('space.paddingXSm')} * 2);
+        padding: ${space.paddingYSm} ${space.paddingXSm};
+        font-size: ${fontSizes.sm};
       `,
-
       md: css`
-        padding: ${themeGet('space.paddingY')}
-          calc(${themeGet('space.paddingX')} * 2);
+        padding: ${space.paddingY} ${space.paddingX};
+        font-size: ${fontSizes.default};
       `,
-
       lg: css`
-        padding: ${themeGet('space.paddingYLg')}
-          calc(${themeGet('space.paddingXLg')} * 2);
+        padding: ${space.paddingYLg} ${space.paddingXLg};
+        font-size: ${fontSizes.lg};
       `,
-    })
-  )};
+    }[size];
+  }};
+
+  ${({ rounded, onlyIcon, size, theme: { space } }) => {
+    if (rounded && !onlyIcon) {
+      return {
+        sm: css`
+          padding: ${space.paddingYSm} calc(${space.paddingXSm} * 2);
+        `,
+        md: css`
+          padding: ${space.paddingY} calc(${space.paddingX} * 2);
+        `,
+        lg: css`
+          padding: ${space.paddingYLg} calc(${space.paddingXLg} * 2);
+        `,
+      }[size];
+    }
+  }};
 `;
 
 const getBlock = ({ block }) =>
@@ -166,9 +176,9 @@ const StyledButton = styled.button`
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  border: ${themeGet('borders.default')};
-  border-radius: ${themeGet('radii.1')};
-  line-height: ${themeGet('lineHeight')};
+  border: ${p => p.theme.borders.default};
+  border-radius: ${p => p.theme.radii[1]};
+  line-height: ${p => p.theme.lineHeight};
   text-decoration: none;
   vertical-align: middle;
   white-space: nowrap;
@@ -181,10 +191,21 @@ const StyledButton = styled.button`
 
   &:disabled,
   &[disabled] {
-    opacity: 0.5;
+    opacity: 0.7;
     cursor: default;
     pointer-events: none;
   }
+
+   &::before {
+      content: '';
+      display: inline-block;
+      position: relative;
+      left: 0;
+      width: 0;
+      height: 0;
+      margin-right: 0;
+      ${p => p.theme.transition /* sc-declaration */};
+    }
 
   ${getBlock /* sc-declaration */}
   ${getRounded /* sc-declaration */}
@@ -193,7 +214,7 @@ const StyledButton = styled.button`
   ${getLoading /* sc-declaration */};
 
   ${p => p.theme.transition /* sc-declaration */};
-  ${space};
+  ${styledSpace};
 `;
 
 class Button extends PureComponent {
@@ -210,11 +231,20 @@ class Button extends PureComponent {
         innerRef={this.button}
         onMouseUp={this.handleClick}
         onTouchend={this.handleClick}
+        onlyIcon={icon && !children}
         loading={loading}
         {...props}
       >
-        {!loading && icon && <Icon type={icon} size="20" mr="1" />}
-        {children}
+        {!loading &&
+          icon && (
+            <Icon
+              type={icon}
+              size="20"
+              mr={children ? 1 : 0}
+              style={{ pointerEvents: 'none' }}
+            />
+          )}
+        {loading ? 'Loading' : children}
         <Ripple ref={this.ripple} />
       </StyledButton>
     );
@@ -264,7 +294,7 @@ Button.propTypes = {
     'warning',
     'danger',
   ]),
-  ...space.propTypes,
+  ...styledSpace.propTypes,
 };
 
 Button.defaultProps = {
