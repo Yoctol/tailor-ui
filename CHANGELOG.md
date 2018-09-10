@@ -1,3 +1,17 @@
+<a name="1.13.1"></a>
+
+## [1.13.1](https://github.com/yoctol/ui/compare/v1.13.0...v1.13.1) (2018-09-10)
+
+### Bug Fixes
+
+- **modal:** add overflow-y: auto to modal content ([662d0cb](https://github.com/yoctol/ui/commit/662d0cb))
+
+### Features
+
+- **button:** add only icon suppored & improve loading status ([14d2f8e](https://github.com/yoctol/ui/commit/14d2f8e))
+- **dropdown:** add onVisibleChange callback ([1aeede8](https://github.com/yoctol/ui/commit/1aeede8))
+- **dropdown:** implement SubList ([b8fbb9c](https://github.com/yoctol/ui/commit/b8fbb9c))
+
 <a name="1.13.0"></a>
 
 # [1.13.0](https://github.com/yoctol/ui/compare/v1.12.0...v1.13.0) (2018-09-05)
