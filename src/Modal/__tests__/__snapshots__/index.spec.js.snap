@@ -1,102 +1,116 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Modal should render correctly 1`] = `
-<BaseModal
-  cancelButtonProps={Object {}}
-  cancelText="Cancel"
-  clickOutsite={true}
-  closable={false}
-  confirmButtonProps={Object {}}
-  confirmText="Confirm"
-  footer="Default"
-  onCancel={[Function]}
-  onConfirm={[Function]}
-  title=""
-  visible={true}
-  width={416}
+<Portal
+  containerInfo={<div />}
 >
-  <Flex
-    borderBottom="default"
-    borderColor="gray.8"
-    px="4"
-    py="3"
+  <BaseModal
+    cancelButtonProps={Object {}}
+    cancelText="Cancel"
+    clickOutsite={true}
+    closable={false}
+    confirmButtonProps={Object {}}
+    confirmText="Confirm"
+    footer="Default"
+    onCancel={[Function]}
+    onConfirm={[Function]}
+    title=""
+    visible={true}
+    width={416}
   >
-    <Box
-      flex="auto"
+    <Flex
+      borderBottom="default"
+      borderColor="gray.8"
+      flex="none"
+      px="4"
+      py="3"
     >
-      <Heading.h3 />
-    </Box>
-  </Flex>
-  <Flex
-    flexDirection="column"
-    p="4"
-  />
-  <Box
-    borderColor="gray.8"
-    borderTop="default"
-    px="4"
-    py="3"
-  >
-    <Footer
-      cancelButtonProps={Object {}}
-      cancelText="Cancel"
-      confirmButtonProps={Object {}}
-      confirmText="Confirm"
-      onCancel={[Function]}
-      onConfirm={[Function]}
+      <Box
+        flex="auto"
+      >
+        <Heading.h3 />
+      </Box>
+    </Flex>
+    <Flex
+      flexDirection="column"
+      overflowY="auto"
+      p="4"
     />
-  </Box>
-</BaseModal>
+    <Box
+      borderColor="gray.8"
+      borderTop="default"
+      flex="none"
+      px="4"
+      py="3"
+    >
+      <Footer
+        cancelButtonProps={Object {}}
+        cancelText="Cancel"
+        confirmButtonProps={Object {}}
+        confirmText="Confirm"
+        onCancel={[Function]}
+        onConfirm={[Function]}
+      />
+    </Box>
+  </BaseModal>
+</Portal>
 `;
 
 exports[`Modal should render with props closeButton 1`] = `
-<BaseModal
-  cancelButtonProps={Object {}}
-  cancelText="Cancel"
-  clickOutsite={true}
-  closable={true}
-  confirmButtonProps={Object {}}
-  confirmText="Confirm"
-  footer="Default"
-  onCancel={[Function]}
-  onConfirm={[Function]}
-  title=""
-  visible={true}
-  width={416}
+<Portal
+  containerInfo={<div />}
 >
-  <Flex
-    borderBottom="default"
-    borderColor="gray.8"
-    px="4"
-    py="3"
+  <BaseModal
+    cancelButtonProps={Object {}}
+    cancelText="Cancel"
+    clickOutsite={true}
+    closable={true}
+    confirmButtonProps={Object {}}
+    confirmText="Confirm"
+    footer="Default"
+    onCancel={[Function]}
+    onConfirm={[Function]}
+    title=""
+    visible={true}
+    width={416}
   >
-    <Box
-      flex="auto"
+    <Flex
+      borderBottom="default"
+      borderColor="gray.8"
+      flex="none"
+      px="4"
+      py="3"
     >
-      <Heading.h3 />
+      <Box
+        flex="auto"
+      >
+        <Heading.h3 />
+      </Box>
+      <CloseButton
+        onCancel={[Function]}
+      />
+    </Flex>
+    <Flex
+      flexDirection="column"
+      overflowY="auto"
+      p="4"
+    />
+    <Box
+      borderColor="gray.8"
+      borderTop="default"
+      flex="none"
+      px="4"
+      py="3"
+    >
+      <Footer
+        cancelButtonProps={Object {}}
+        cancelText="Cancel"
+        confirmButtonProps={Object {}}
+        confirmText="Confirm"
+        onCancel={[Function]}
+        onConfirm={[Function]}
+      />
     </Box>
-    <CloseButton
-      onCancel={[Function]}
-    />
-  </Flex>
-  <Flex
-    flexDirection="column"
-    p="4"
-  />
-  <Box
-    borderColor="gray.8"
-    borderTop="default"
-    px="4"
-    py="3"
-  >
-    <Footer
-      cancelButtonProps={Object {}}
-      cancelText="Cancel"
-      confirmButtonProps={Object {}}
-      confirmText="Confirm"
-      onCancel={[Function]}
-      onConfirm={[Function]}
-    />
-  </Box>
-</BaseModal>
+  </BaseModal>
+</Portal>
 `;
