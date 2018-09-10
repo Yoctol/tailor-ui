@@ -5,7 +5,9 @@ route: /general/icon
 ---
 import { PropsTable, Playground } from 'docz';
 import { TiFlowChildren } from 'react-icons/lib/ti';
-import { MdEdit, MdComment, MdInput } from 'react-icons/lib/md';
+import { MdEdit, MdComment, MdInput, MdInfo } from 'react-icons/lib/md';
+
+import Flex from '../Grid/Flex';
 
 import Icon from './';
 import * as icons from './icons';
@@ -18,7 +20,7 @@ Semantic vector graphics.
 
 <ul>
   {Object.keys(icons).map(icon => (
-    <li>
+    <li key={icon}>
       {icon}
     </li>
   ))}
@@ -29,7 +31,7 @@ Semantic vector graphics.
 ```js
 import { Icon } from '@yoctol/ui';
 import { TiFlowChildren } from 'react-icons/lib/ti';
-import { MdEdit, MdComment, MdInput } from 'react-icons/lib/md';
+import { MdEdit, MdComment, MdInput, MdInfo } from 'react-icons/lib/md';
 ```
 
 ### Built-in
@@ -45,6 +47,13 @@ import { MdEdit, MdComment, MdInput } from 'react-icons/lib/md';
   <Icon mx={2} type="settings" />
 </Playground>
 
+### With text
+
+<Playground>
+  <Flex alignItems="center">
+    This is a info icon <Icon ml="2" size="20" cursor="help" type={MdInfo} />
+  </Flex>
+</Playground>
 
 ### Custom props
 
