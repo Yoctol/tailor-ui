@@ -8,6 +8,7 @@ import { PropsTable, Playground } from 'docz';
 import CheckIcon from 'react-icons/lib/md/check';
 import DeleteIcon from 'react-icons/lib/md/delete';
 import SearchIcon from 'react-icons/lib/md/search';
+import { Toggle } from 'react-powerplug';
 
 import Box from '../Grid/Box';
 
@@ -130,6 +131,11 @@ import SearchIcon from 'react-icons/lib/md/search';
   <Button type="primary" icon={CheckIcon}>Confirm</Button>
   <Button type="danger" icon={DeleteIcon} ml="2">Delete</Button>
   <Button type="info" icon={SearchIcon} ml="2">Search</Button>
+  <br />
+  <br />
+  <Button type="primary" rounded icon={SearchIcon} ml="2" />
+  <Button type="danger" rounded icon={DeleteIcon} ml="2" />
+  <Button type="info" rounded icon={SearchIcon} ml="2" />
 </Playground>
 
 
@@ -173,6 +179,21 @@ import SearchIcon from 'react-icons/lib/md/search';
   <Button type="danger" ml="2" loading>
     Danger
   </Button>
+  <br />
+  <br />
+  <Toggle>
+    {({ on, toggle }) => (
+      <Button
+        loading={on}
+        onClick={() => {
+          toggle()
+          setTimeout(toggle, 3000)
+        }}
+      >
+        Click me!
+      </Button>
+    )}
+  </Toggle>
 </Playground>
 
 ### Sizes

@@ -53,9 +53,21 @@ exports[`Button should render correctly 1`] = `
 
 .c0:disabled,
 .c0[disabled] {
-  opacity: 0.5;
+  opacity: 0.7;
   cursor: default;
   pointer-events: none;
+}
+
+.c0::before {
+  content: '';
+  display: inline-block;
+  position: relative;
+  left: 0;
+  width: 0;
+  height: 0;
+  margin-right: 0;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
 }
 
 .c0 .c2 svg {
@@ -133,9 +145,21 @@ exports[`Button should render correctly 1`] = `
 
 .c0:disabled,
 .c0[disabled] {
-  opacity: 0.5;
+  opacity: 0.7;
   cursor: default;
   pointer-events: none;
+}
+
+.c0::before {
+  content: '';
+  display: inline-block;
+  position: relative;
+  left: 0;
+  width: 0;
+  height: 0;
+  margin-right: 0;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
 }
 
 .c0 .c2 svg {
@@ -161,6 +185,7 @@ exports[`Button should render correctly 1`] = `
     loading={false}
     onMouseUp={[Function]}
     onTouchend={[Function]}
+    onlyIcon={null}
     outlined={false}
     rounded={false}
     size="md"
@@ -243,9 +268,21 @@ exports[`Button should render with props variant and type 1`] = `
 
 .c0:disabled,
 .c0[disabled] {
-  opacity: 0.5;
+  opacity: 0.7;
   cursor: default;
   pointer-events: none;
+}
+
+.c0::before {
+  content: '';
+  display: inline-block;
+  position: relative;
+  left: 0;
+  width: 0;
+  height: 0;
+  margin-right: 0;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
 }
 
 .c0 .c2 svg {
@@ -328,9 +365,21 @@ exports[`Button should render with props variant and type 1`] = `
 
 .c0:disabled,
 .c0[disabled] {
-  opacity: 0.5;
+  opacity: 0.7;
   cursor: default;
   pointer-events: none;
+}
+
+.c0::before {
+  content: '';
+  display: inline-block;
+  position: relative;
+  left: 0;
+  width: 0;
+  height: 0;
+  margin-right: 0;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
 }
 
 .c0 .c2 svg {
@@ -360,6 +409,7 @@ exports[`Button should render with props variant and type 1`] = `
     loading={false}
     onMouseUp={[Function]}
     onTouchend={[Function]}
+    onlyIcon={null}
     outlined={false}
     rounded={false}
     size="md"
