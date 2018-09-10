@@ -46,7 +46,7 @@ class Modal extends PureComponent {
     const { children } = this.props;
 
     return (
-      <Flex flexDirection="column" p="4">
+      <Flex flexDirection="column" p="4" overflowY="auto">
         {children}
       </Flex>
     );

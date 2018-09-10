@@ -36,11 +36,9 @@ import { Modal } from '@yoctol/ui';
           onConfirm={toggle}
           onCancel={toggle}
         >
-          <div>This is the content of Modal</div>
-          <div>This is the content of Modal</div>
-          <div>This is the content of Modal</div>
-          <div>This is the content of Modal</div>
-          <div>This is the content of Modal</div>
+          {Array.from({ length: 100 }).map((_, index) => (
+            <div key={index}>This is the content of Modal</div>
+          ))}
         </Modal>
         <Button onClick={toggle}>Open Modal</Button>
       </div>
