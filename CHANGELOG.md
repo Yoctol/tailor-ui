@@ -1,3 +1,12 @@
+<a name="1.13.3"></a>
+
+## [1.13.3](https://github.com/yoctol/ui/compare/v1.13.2...v1.13.3) (2018-09-11)
+
+### Bug Fixes
+
+- **dropdown:** dropdown list background color ([e72ffd0](https://github.com/yoctol/ui/commit/e72ffd0))
+- **tabs:** add default tab color ([e9806c7](https://github.com/yoctol/ui/commit/e9806c7))
+
 <a name="1.13.2"></a>
 
 ## [1.13.2](https://github.com/yoctol/ui/compare/v1.13.1...v1.13.2) (2018-09-11)
