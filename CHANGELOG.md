@@ -1,3 +1,11 @@
+<a name="1.13.2"></a>
+
+## [1.13.2](https://github.com/yoctol/ui/compare/v1.13.1...v1.13.2) (2018-09-11)
+
+### Bug Fixes
+
+- **modal:** use portal with SSR ([2f572fb](https://github.com/yoctol/ui/commit/2f572fb))
+
 <a name="1.13.1"></a>
 
 ## [1.13.1](https://github.com/yoctol/ui/compare/v1.13.0...v1.13.1) (2018-09-10)
