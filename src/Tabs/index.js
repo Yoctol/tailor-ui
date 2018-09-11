@@ -10,6 +10,7 @@ const { Provider, Consumer } = createContext();
 const StyledTab = styled.a`
   display: inline-block;
   position: relative;
+  color: ${p => p.theme.colors.dark};
   text-align: center;
   text-decoration: none;
   cursor: pointer;
