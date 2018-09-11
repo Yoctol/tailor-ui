@@ -11,18 +11,15 @@ import CloseButton from './CloseButton';
 import Footer from './Footer';
 import { confirm, error, info, success, warning } from './instance';
 
-let MODAL_PORTAL_ELEMENT = null;
+let MODAL_PORTAL_CONTAINER = null;
+
+const canUseDOM = !!(
+  typeof window !== 'undefined' &&
+  window.document &&
+  window.document.createElement
+);
 
 class Modal extends PureComponent {
-  constructor(props) {
-    super(props);
-
-    if (!MODAL_PORTAL_ELEMENT) {
-      MODAL_PORTAL_ELEMENT = document.createElement('div');
-      document.body.appendChild(MODAL_PORTAL_ELEMENT);
-    }
-  }
-
   renderHeader = () => {
     const { title, onCancel, closable } = this.props;
 
@@ -84,13 +81,22 @@ class Modal extends PureComponent {
   };
 
   render() {
+    if (!canUseDOM) {
+      return null;
+    }
+
+    if (!MODAL_PORTAL_CONTAINER) {
+      MODAL_PORTAL_CONTAINER = document.createElement('div');
+      document.body.appendChild(MODAL_PORTAL_CONTAINER);
+    }
+
     return createPortal(
       <BaseModal {...this.props}>
         {this.renderHeader()}
         {this.renderContent()}
         {this.renderFooter()}
       </BaseModal>,
-      MODAL_PORTAL_ELEMENT
+      MODAL_PORTAL_CONTAINER
     );
   }
 }
