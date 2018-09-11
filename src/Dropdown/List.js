@@ -15,7 +15,7 @@ export const StyledList = styled.ul`
   border: ${p => p.theme.borders.default};
   border-radius: ${p => p.theme.radii[2]};
   border-color: ${p => p.theme.colors.gray[8]};
-  background-color: transparent;
+  background-color: ${p => p.theme.colors.light};
   box-shadow: 0 2px 6px 0 rgba(191, 191, 191, 0.5);
   list-style: none;
 
