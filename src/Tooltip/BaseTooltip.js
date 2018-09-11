@@ -12,34 +12,34 @@ import {
   textAlign,
   themeGet,
 } from 'styled-system';
-import { ifProp, switchProp } from 'styled-tools';
 
 const TooltipToggle = styled.div`
   position: absolute;
   z-index: 99;
 
-  ${switchProp('placement', {
-    top: css`
-      bottom: 100%;
-      left: 50%;
-      margin-bottom: 10px;
-    `,
-    bottom: css`
-      top: 100%;
-      left: 50%;
-      margin-top: 10px;
-    `,
-    right: css`
-      top: 50%;
-      left: 100%;
-      margin-left: 10px;
-    `,
-    left: css`
-      top: 50%;
-      right: 100%;
-      margin-right: 10px;
-    `,
-  })};
+  ${({ placement }) =>
+    ({
+      top: css`
+        bottom: 100%;
+        left: 50%;
+        margin-bottom: 10px;
+      `,
+      bottom: css`
+        top: 100%;
+        left: 50%;
+        margin-top: 10px;
+      `,
+      right: css`
+        top: 50%;
+        left: 100%;
+        margin-left: 10px;
+      `,
+      left: css`
+        top: 50%;
+        right: 100%;
+        margin-right: 10px;
+      `,
+    }[placement])};
 `;
 
 const AnimatedTooltipToggle = animated(TooltipToggle);
@@ -50,29 +50,19 @@ AnimatedTooltipToggle.propTypes = {
 
 export const TooltipContent = styled.div`
   border: ${themeGet('borders.default')};
-  border-color: ${ifProp(
-    'light',
-    themeGet('colors.gray.7'),
-    themeGet('colors.primaryDark')
-  )};
-  background-color: ${ifProp(
-    'light',
-    themeGet('colors.gray.9'),
-    themeGet('colors.primaryDark')
-  )};
+  border-color: ${({ light, theme: { colors } }) =>
+    light ? colors.gray[7] : colors.primaryDark};
+  background-color: ${({ light, theme: { colors } }) =>
+    light ? colors.gray[9] : colors.primaryDark};
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  color: ${ifProp(
-    'light',
-    themeGet('colors.gray.2'),
-    themeGet('colors.light')
-  )};
+  color: ${({ light, theme: { colors } }) =>
+    light ? colors.gray[2] : colors.light};
 
-  ${ifProp(
-    { light: false },
+  ${({ light }) =>
+    !light &&
     css`
       opacity: 0.8;
-    `
-  )};
+    `};
 
   ${space};
   ${minWidth};
@@ -105,48 +95,45 @@ export const Arrow = styled.div`
   width: 0;
   height: 0;
   border-top: 5px solid
-    ${ifProp(
-      'light',
-      themeGet('colors.gray.7'),
-      themeGet('colors.primaryDark')
-    )};
+    ${({ light, theme: { colors } }) =>
+      light ? colors.gray[7] : colors.primaryDark};
   border-right: 5px solid transparent;
   border-left: 5px solid transparent;
 
-  ${ifProp(
-    { light: false },
+  ${({ light }) =>
+    !light &&
     css`
       opacity: 0.8;
-    `
-  )};
+    `};
 
-  ${switchProp('placement', {
-    top: css`
-      left: 50%;
-      margin-left: -4px;
-    `,
-    bottom: css`
-      top: -5px;
-      left: 50%;
-      margin-left: -3px;
-      transform: rotate(180deg);
-    `,
-    right: css`
-      top: 50%;
-      left: -7px;
-      margin-top: -1px;
-      transform: rotate(90deg);
-    `,
-    left: css`
-      top: 50%;
-      right: -7px;
-      margin-top: -1px;
-      transform: rotate(-90deg);
-    `,
-  })};
+  ${({ placement }) =>
+    ({
+      top: css`
+        left: 50%;
+        margin-left: -4px;
+      `,
+      bottom: css`
+        top: -5px;
+        left: 50%;
+        margin-left: -3px;
+        transform: rotate(180deg);
+      `,
+      right: css`
+        top: 50%;
+        left: -7px;
+        margin-top: -1px;
+        transform: rotate(90deg);
+      `,
+      left: css`
+        top: 50%;
+        right: -7px;
+        margin-top: -1px;
+        transform: rotate(-90deg);
+      `,
+    }[placement])};
 
-  ${ifProp(
-    'light',
+  ${({ light }) =>
+    light &&
     css`
       &::after {
         content: '';
@@ -157,8 +144,7 @@ export const Arrow = styled.div`
         border-right: 6px solid transparent;
         border-left: 6px solid transparent;
       }
-    `
-  )};
+    `};
 `;
 
 Arrow.propTypes = {

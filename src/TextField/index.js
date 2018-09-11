@@ -7,7 +7,6 @@ import {
   Input as PowerplugInput,
   composeEvents,
 } from 'react-powerplug';
-import { ifProp } from 'styled-tools';
 import { rem } from 'polished';
 import { themeGet } from 'styled-system';
 
@@ -29,20 +28,19 @@ const TextFieldLabel = styled(Label)`
   transition: transform 200ms cubic-bezier(0, 0, 0.2, 1) 0ms;
   pointer-events: none;
 
-  ${ifProp(
-    'shrink',
+  ${({ shrink }) =>
+    shrink &&
     css`
       color: ${themeGet('colors.gray.3')};
       transform: translate(-6px, 0) scale(0.8);
-    `
-  )};
+    `};
 `;
 
 const MaxLength = styled.div`
   position: absolute;
   right: 0;
   bottom: 0;
-  opacity: ${ifProp('visible', 1, 0)};
+  opacity: ${p => (p.visible ? 1 : 0)};
   color: ${themeGet('colors.gray.6')};
   font-size: ${rem('10px')};
   transition: opacity 200ms ease;

@@ -2,8 +2,7 @@ import PropTypes from 'prop-types';
 import React, { createContext } from 'react';
 import styled, { css } from 'styled-components';
 import { Value } from 'react-powerplug';
-import { ifProp, switchProp } from 'styled-tools';
-import { space, themeGet } from 'styled-system';
+import { space as styledSpace, themeGet } from 'styled-system';
 
 const { Provider, Consumer } = createContext();
 
@@ -30,67 +29,56 @@ const StyledTab = styled.a`
     margin-left: ${themeGet('space.3')};
   }
 
-  ${switchProp('size', {
-    sm: css`
-      padding: ${themeGet('space.paddingYSm')} ${themeGet('space.paddingXSm')};
-      font-size: ${themeGet('fontSizes.sm')};
-    `,
+  ${({ size, theme: { space, fontSizes } }) =>
+    ({
+      sm: css`
+        padding: ${space.paddingYSm} ${space.paddingXSm};
+        font-size: ${fontSizes.sm};
+      `,
+      md: css`
+        padding: ${space.paddingY} ${space.paddingX};
+        font-size: ${fontSizes.default};
+      `,
+      lg: css`
+        padding: ${space.paddingYLg} ${space.paddingXLg};
+        font-size: ${fontSizes.lg};
+      `,
+    }[size])};
 
-    m: css`
-      padding: ${themeGet('space.paddingY')} ${themeGet('space.paddingX')};
-      font-size: ${themeGet('fontSizes.default')};
-    `,
+  ${({ pills, active, size, theme: { space } }) =>
+    pills
+      ? css`
+          border-radius: 999px;
 
-    lg: css`
-      padding: ${themeGet('space.paddingYLg')} ${themeGet('space.paddingXLg')};
-      font-size: ${themeGet('fontSizes.lg')};
-    `,
-  })};
+          ${{
+            sm: css`
+              padding: ${space.paddingYSm} calc(${space.paddingXSm} * 2);
+            `,
+            md: css`
+              padding: ${space.paddingY} calc(${space.paddingX} * 2);
+            `,
+            lg: css`
+              padding: ${space.paddingYLg} calc(${space.paddingXLg} * 2);
+            `,
+          }[size]};
 
-  ${ifProp(
-    'pills',
-    css`
-      border-radius: 999px;
-
-      ${switchProp('size', {
-        sm: css`
-          padding: ${themeGet('space.paddingYSm')}
-            calc(${themeGet('space.paddingXSm')} * 2);
-        `,
-
-        m: css`
-          padding: ${themeGet('space.paddingY')}
-            calc(${themeGet('space.paddingX')} * 2);
-        `,
-
-        lg: css`
-          padding: ${themeGet('space.paddingYLg')}
-            calc(${themeGet('space.paddingXLg')} * 2);
-        `,
-      })};
-
-      ${ifProp(
-        'active',
-        css`
-          background-color: ${themeGet('colors.primary')};
-          color: ${themeGet('colors.light')};
+          ${active &&
+            css`
+              background-color: ${themeGet('colors.primary')};
+              color: ${themeGet('colors.light')};
+            `};
         `
-      )};
-    `,
-    css`
-      border-bottom: 3px solid transparent;
+      : css`
+          border-bottom: 3px solid transparent;
 
-      ${ifProp(
-        'active',
-        css`
-          border-bottom-color: ${themeGet('colors.secondary')};
-        `
-      )};
-    `
-  )};
+          ${active &&
+            css`
+              border-bottom-color: ${themeGet('colors.secondary')};
+            `};
+        `};
 
   ${p => p.theme.transition /* sc-declaration */};
-  ${space};
+  ${styledSpace};
 `;
 
 export const Tab = ({ label, value, ...props }) => (
@@ -135,16 +123,15 @@ Tab.displayName = 'Tabs.Tab';
 const StyledTabs = styled.nav`
   display: flex;
 
-  ${ifProp(
-    'absolute',
+  ${({ absolute }) =>
+    absolute &&
     css`
       position: absolute;
       bottom: -3px;
-    `
-  )};
+    `};
 
-  ${ifProp(
-    'block',
+  ${({ block }) =>
+    block &&
     css`
       right: 0;
       left: 0;
@@ -153,10 +140,9 @@ const StyledTabs = styled.nav`
       ${StyledTab /* sc-selector */} {
         flex-grow: 1;
       }
-    `
-  )};
+    `};
 
-  ${space};
+  ${styledSpace};
 `;
 
 const Tabs = ({
@@ -220,7 +206,7 @@ Tabs.propTypes = {
    * Callback executed when active tab is changed
    */
   onChange: PropTypes.func,
-  ...space.propTypes,
+  ...styledSpace.propTypes,
 };
 
 Tabs.defaultProps = {
@@ -230,7 +216,7 @@ Tabs.defaultProps = {
   defaultActiveValue: '',
   activeValue: '',
   onChange: () => {},
-  size: 'm',
+  size: 'md',
 };
 
 Tabs.Tab = Tab;

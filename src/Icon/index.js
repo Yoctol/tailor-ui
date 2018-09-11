@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import styled, { css } from 'styled-components';
-import { prop } from 'styled-tools';
 import { space, style } from 'styled-system';
 
 import * as icons from './icons';
@@ -13,14 +12,14 @@ const fill = style({
 });
 
 const size = css`
-  width: ${prop('size')}px;
-  height: ${prop('size')}px;
+  width: ${p => p.size}px;
+  height: ${p => p.size}px;
 `;
 
 export const IconWrapper = styled.i`
   display: inline-block;
   line-height: 1;
-  cursor: ${prop('cursor')};
+  cursor: ${p => p.cursor};
 
   svg {
     vertical-align: middle;

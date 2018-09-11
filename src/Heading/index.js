@@ -2,7 +2,6 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import styled, { css } from 'styled-components';
 import { color, space, themeGet } from 'styled-system';
-import { ifProp } from 'styled-tools';
 import { rem } from 'polished';
 
 const HeadingBase = styled.p`
@@ -11,33 +10,29 @@ const HeadingBase = styled.p`
   font-weight: 500;
   line-height: 1.5;
 
-  ${ifProp(
-    'gray',
+  ${({ gray }) =>
+    gray &&
     css`
       color: ${themeGet('colors.gray.2')};
-    `
-  )}
+    `}
 
-  ${ifProp(
-    'grayLight',
+  ${({ grayLight }) =>
+    grayLight &&
     css`
       color: ${themeGet('colors.gray.4')};
-    `
-  )}
+    `}
 
-  ${ifProp(
-    'grayHint',
+  ${({ grayHint }) =>
+    grayHint &&
     css`
       color: ${themeGet('colors.gray.5')};
-    `
-  )}
+    `}
 
-  ${ifProp(
-    'white',
+  ${({ white }) =>
+    white &&
     css`
       color: ${themeGet('colors.light')};
-    `
-  )}
+    `}
 
   ${space};
   ${color}

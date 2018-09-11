@@ -1,6 +1,5 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-import { ifProp } from 'styled-tools';
 import { themeGet } from 'styled-system';
 
 import { StyledInput } from '../Input';
@@ -14,8 +13,8 @@ const StyledFormField = styled.div`
   margin-top: ${themeGet('space.3')};
   padding-bottom: ${themeGet('space.5')};
 
-  ${ifProp(
-    'success',
+  ${({ success }) =>
+    success &&
     css`
       & ${StyledInput /* sc-selector */} {
         border-color: ${themeGet('colors.success')};
@@ -35,11 +34,10 @@ const StyledFormField = styled.div`
       & ${Label /* sc-selector */} {
         color: ${themeGet('colors.success')};
       }
-    `
-  )};
+    `};
 
-  ${ifProp(
-    'warning',
+  ${({ warning }) =>
+    warning &&
     css`
       & ${StyledInput /* sc-selector */} {
         border-color: ${themeGet('colors.warning')};
@@ -59,11 +57,10 @@ const StyledFormField = styled.div`
       & ${Label /* sc-selector */} {
         color: ${themeGet('colors.warning')};
       }
-    `
-  )};
+    `};
 
-  ${ifProp(
-    'error',
+  ${({ error }) =>
+    error &&
     css`
       & ${StyledInput /* sc-selector */} {
         border-color: ${themeGet('colors.error')};
@@ -83,8 +80,7 @@ const StyledFormField = styled.div`
       & ${Label /* sc-selector */} {
         color: ${themeGet('colors.error')};
       }
-    `
-  )};
+    `};
 `;
 
 const FormField = props => <StyledFormField {...props} />;

@@ -2,7 +2,6 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import styled, { css } from 'styled-components';
 import { borderRadius, borders, color, space, themeGet } from 'styled-system';
-import { ifProp } from 'styled-tools';
 
 import Icon from '../Icon';
 
@@ -21,13 +20,12 @@ export const StyledItem = styled.button`
   transition: all 0.1s ease-in-out;
   cursor: pointer;
 
-  ${ifProp(
-    'active',
+  ${({ active }) =>
+    active &&
     css`
       border-left-color: ${themeGet('colors.secondary')};
       color: ${themeGet('colors.secondary')};
-    `
-  )};
+    `};
 
   &:hover {
     border-left-color: ${themeGet('colors.secondary')};

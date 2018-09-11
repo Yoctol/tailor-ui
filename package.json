@@ -43,8 +43,7 @@
     "react-spring": "^5.7.2",
     "react-textarea-autosize": "^7.0.4",
     "styled-normalize": "^8.0.0",
-    "styled-system": "^3.0.3",
-    "styled-tools": "^1.5.1"
+    "styled-system": "^3.0.3"
   },
   "peerDependencies": {
     "react": ">=16.0.0",

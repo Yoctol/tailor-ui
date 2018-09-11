@@ -2,7 +2,6 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import TextareaAutosize from 'react-textarea-autosize';
 import styled from 'styled-components';
-import { ifProp } from 'styled-tools';
 
 import { StyledInput } from '.';
 
@@ -11,7 +10,7 @@ export const StyledTextarea = styled(
 )`
   word-wrap: break-word;
   transition: border 0.2s ease;
-  resize: ${ifProp('resize', 'initial', 'none')};
+  resize: ${({ resize }) => (resize ? 'initial' : 'none')};
 `;
 
 const Textarea = props => <StyledTextarea size="m" {...props} />;

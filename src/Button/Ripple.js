@@ -1,6 +1,5 @@
 import React, { PureComponent } from 'react';
 import styled, { css, keyframes } from 'styled-components';
-import { ifProp } from 'styled-tools';
 
 const rippleAnimation = keyframes`
   100% {
@@ -16,12 +15,11 @@ const StyledRipple = styled.div`
   background: rgba(0, 0, 0, 0.2);
   transform: scale(0);
 
-  ${ifProp(
-    'rippling',
+  ${({ rippling }) =>
+    rippling &&
     css`
       animation: ${rippleAnimation} 0.5s linear;
-    `
-  )};
+    `};
 `;
 
 class Ripple extends PureComponent {

@@ -32,7 +32,7 @@ import { Menu } from '@yoctol/ui';
       <Box height="600px">
         <Menu onChange={console.log} initial="1">
           {range(1, 10).map(key => (
-            <Menu.Item active={value === key} onClick={() => set(key)}>
+            <Menu.Item key={key} active={value === key} onClick={() => set(key)}>
               Menu {key}
             </Menu.Item>
           ))}
