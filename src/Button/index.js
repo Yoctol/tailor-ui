@@ -230,7 +230,7 @@ class Button extends PureComponent {
       <StyledButton
         innerRef={this.button}
         onMouseUp={this.handleClick}
-        onTouchend={this.handleClick}
+        onTouchEnd={this.handleClick}
         onlyIcon={icon && !children}
         loading={loading}
         {...props}
