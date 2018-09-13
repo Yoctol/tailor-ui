@@ -3,7 +3,7 @@ import { rem } from 'polished';
 
 import theme from '../theme';
 
-const { colors, fontSizes } = theme;
+const { colors } = theme;
 
 export default css`
   @import url('https://fonts.googleapis.com/css?family=Roboto');
@@ -34,7 +34,6 @@ export default css`
 
   a {
     color: ${colors.info};
-    font-size: ${fontSizes.default};
     text-decoration: none;
     cursor: pointer;
   }
