@@ -1,9 +1,8 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import injectGlobalCss from '../injectGlobalCss';
-
-import ThemeProvider from './ThemeProvider';
+import ThemeProvider from '../src/utils/ThemeProvider';
+import injectGlobalCss from '../src/injectGlobalCss';
 
 injectGlobalCss();
 

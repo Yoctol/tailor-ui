@@ -5,7 +5,7 @@ module.exports = {
   src: './src',
   title: '@yoctol/ui',
   description: 'Yoctol UI components',
-  wrapper: 'src/utils/DoczWrapper',
+  wrapper: 'docz/DoczWrapper',
   themeConfig: {
     colors: {
       primary: colors.primary,
