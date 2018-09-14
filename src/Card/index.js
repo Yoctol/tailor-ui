@@ -1,7 +1,8 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import {
+  borderColor,
   borderRadius,
   color,
   fontSize,
@@ -38,7 +39,7 @@ Block.propTypes = {
 
 Block.defaultProps = {
   fontSize: 'default', // eslint-disable-line react/default-props-match-prop-types
-  p: 4,
+  p: 3,
 };
 
 const StyledImage = styled.div`
@@ -64,12 +65,28 @@ const CardWrapper = styled.div`
   display: flex;
   flex-direction: column;
   border: ${themeGet('borders.base')};
-  border-color: ${themeGet('colors.gray.8')};
+  transition: all 300ms;
+
+  ${({ clickable }) =>
+    clickable &&
+    css`
+      cursor: pointer;
+    `};
+
+  ${({ hoverable }) =>
+    hoverable &&
+    css`
+      box-shadow: ${p => p.theme.shadows[0]};
+      &:hover {
+        box-shadow: ${p => p.theme.shadows[1]};
+      }
+    `};
 
   ${space};
   ${height};
   ${width};
   ${color};
+  ${borderColor};
   ${borderRadius};
 `;
 
@@ -93,6 +110,7 @@ Card.propTypes = {
 Card.defaultProps = {
   bg: 'light',
   borderRadius: 'lg',
+  borderColor: 'gray.8',
 };
 /* eslint-enable react/default-props-match-prop-types */
 
