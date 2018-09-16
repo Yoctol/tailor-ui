@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { PureComponent } from 'react';
 import styled, { css } from 'styled-components';
 import { composeEvents } from 'react-powerplug';
 import { space, textAlign, themeGet, width } from 'styled-system';
@@ -47,17 +47,44 @@ export const StyledInput = styled.input`
   ${inputStyles};
 `;
 
-const Input = ({ onPressEnter, ...props }) => {
-  const onKeyPress = event => {
-    if (event.key === 'Enter') {
+class Input extends PureComponent {
+  componentDidMount() {
+    const { autoSelect } = this.props;
+
+    if (autoSelect) {
+      this.ref.focus();
+      this.ref.select();
+    }
+  }
+
+  handleRef = ref => {
+    this.ref = ref;
+  };
+
+  onKeyPress = event => {
+    const { onPressEnter } = this.props;
+
+    if (onPressEnter && event.key === 'Enter') {
       onPressEnter(event);
     }
   };
 
-  return <StyledInput {...props} {...composeEvents(props, { onKeyPress })} />;
-};
+  render() {
+    return (
+      <StyledInput
+        innerRef={this.handleRef}
+        {...this.props}
+        {...composeEvents(this.props, { onKeyPress: this.onKeyPress })}
+      />
+    );
+  }
+}
 
 Input.propTypes = {
+  /**
+   * Auto select value of the input if true
+   */
+  autoSelect: PropTypes.bool,
   /**
    * The size of the input box
    */
@@ -65,6 +92,7 @@ Input.propTypes = {
   /**
    * The callback function that is triggered when Enter key is pressed
    */
+
   onPressEnter: PropTypes.func,
   ...width.propTypes,
   ...space.propTypes,
@@ -73,7 +101,8 @@ Input.propTypes = {
 
 Input.defaultProps = {
   size: 'm',
-  onPressEnter: () => {},
+  autoSelect: false,
+  onPressEnter: null,
 };
 
 export default Input;
