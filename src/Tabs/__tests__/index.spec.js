@@ -1,12 +1,12 @@
 import React from 'react';
 
-import shallowWithTheme from 'test/shallowWithTheme';
+import { render } from 'test/test-utils';
 
 import Tabs from '..';
 
 describe('Tabs', () => {
   it('should render correctly', () => {
-    const component = shallowWithTheme(
+    const { container } = render(
       <Tabs defaultActiveValue="1" onChange={() => {}}>
         <Tabs.Tab value="1" label="Tab 1" />
         <Tabs.Tab disabled value="2" label="Tab 2" />
@@ -14,11 +14,11 @@ describe('Tabs', () => {
       </Tabs>
     );
 
-    expect(component).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   it('should render with props absolute', () => {
-    const component = shallowWithTheme(
+    const { container } = render(
       <Tabs absolute defaultActiveValue="1" onChange={() => {}}>
         <Tabs.Tab value="1" label="Tab 1" />
         <Tabs.Tab disabled value="2" label="Tab 2" />
@@ -26,11 +26,11 @@ describe('Tabs', () => {
       </Tabs>
     );
 
-    expect(component).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   it('should render with props pills', () => {
-    const component = shallowWithTheme(
+    const { container } = render(
       <Tabs pills defaultActiveValue="1" onChange={() => {}}>
         <Tabs.Tab value="1" label="Tab 1" />
         <Tabs.Tab disabled value="2" label="Tab 2" />
@@ -38,6 +38,6 @@ describe('Tabs', () => {
       </Tabs>
     );
 
-    expect(component).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
 });

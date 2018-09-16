@@ -1,28 +1,285 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Tabs should render correctly 1`] = `
-<Value
-  initial="1"
-  onChange={[Function]}
+.c1 {
+  display: inline-block;
+  position: relative;
+  color: #111111;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 0.3125rem 0.5rem;
+  font-size: 1rem;
+  border-bottom: 3px solid transparent;
+  border-bottom-color: #c7ad8d;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+}
+
+.c1:hover {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c1:disabled,
+.c1[disabled] {
+  opacity: 0.5;
+  cursor: default;
+  pointer-events: none;
+}
+
+.c1:not(:first-child) {
+  margin-left: 0.75rem;
+}
+
+.c2 {
+  display: inline-block;
+  position: relative;
+  color: #111111;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 0.3125rem 0.5rem;
+  font-size: 1rem;
+  border-bottom: 3px solid transparent;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+}
+
+.c2:hover {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c2:disabled,
+.c2[disabled] {
+  opacity: 0.5;
+  cursor: default;
+  pointer-events: none;
+}
+
+.c2:not(:first-child) {
+  margin-left: 0.75rem;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+<nav
+  class="c0"
 >
-  <Component />
-</Value>
+  <a
+    class="c1"
+  >
+    Tab 1
+  </a>
+  <a
+    class="c2"
+    disabled=""
+  >
+    Tab 2
+  </a>
+  <a
+    class="c2"
+  >
+    Tab 3
+  </a>
+</nav>
 `;
 
 exports[`Tabs should render with props absolute 1`] = `
-<Value
-  initial="1"
-  onChange={[Function]}
+.c1 {
+  display: inline-block;
+  position: relative;
+  color: #111111;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 0.3125rem 0.5rem;
+  font-size: 1rem;
+  border-bottom: 3px solid transparent;
+  border-bottom-color: #c7ad8d;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+}
+
+.c1:hover {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c1:disabled,
+.c1[disabled] {
+  opacity: 0.5;
+  cursor: default;
+  pointer-events: none;
+}
+
+.c1:not(:first-child) {
+  margin-left: 0.75rem;
+}
+
+.c2 {
+  display: inline-block;
+  position: relative;
+  color: #111111;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 0.3125rem 0.5rem;
+  font-size: 1rem;
+  border-bottom: 3px solid transparent;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+}
+
+.c2:hover {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c2:disabled,
+.c2[disabled] {
+  opacity: 0.5;
+  cursor: default;
+  pointer-events: none;
+}
+
+.c2:not(:first-child) {
+  margin-left: 0.75rem;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  bottom: -3px;
+}
+
+<nav
+  class="c0"
 >
-  <Component />
-</Value>
+  <a
+    class="c1"
+  >
+    Tab 1
+  </a>
+  <a
+    class="c2"
+    disabled=""
+  >
+    Tab 2
+  </a>
+  <a
+    class="c2"
+  >
+    Tab 3
+  </a>
+</nav>
 `;
 
 exports[`Tabs should render with props pills 1`] = `
-<Value
-  initial="1"
-  onChange={[Function]}
+.c1 {
+  display: inline-block;
+  position: relative;
+  color: #111111;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 0.3125rem 0.5rem;
+  font-size: 1rem;
+  border-radius: 999px;
+  padding: 0.3125rem calc(0.5rem * 2);
+  background-color: #423b63;
+  color: #ffffff;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+}
+
+.c1:hover {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c1:disabled,
+.c1[disabled] {
+  opacity: 0.5;
+  cursor: default;
+  pointer-events: none;
+}
+
+.c1:not(:first-child) {
+  margin-left: 0.75rem;
+}
+
+.c2 {
+  display: inline-block;
+  position: relative;
+  color: #111111;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 0.3125rem 0.5rem;
+  font-size: 1rem;
+  border-radius: 999px;
+  padding: 0.3125rem calc(0.5rem * 2);
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+}
+
+.c2:hover {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c2:disabled,
+.c2[disabled] {
+  opacity: 0.5;
+  cursor: default;
+  pointer-events: none;
+}
+
+.c2:not(:first-child) {
+  margin-left: 0.75rem;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+<nav
+  class="c0"
 >
-  <Component />
-</Value>
+  <a
+    class="c1"
+  >
+    Tab 1
+  </a>
+  <a
+    class="c2"
+    disabled=""
+  >
+    Tab 2
+  </a>
+  <a
+    class="c2"
+  >
+    Tab 3
+  </a>
+</nav>
 `;
