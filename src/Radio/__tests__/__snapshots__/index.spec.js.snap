@@ -87,56 +87,26 @@ exports[`Radio should render correctly 1`] = `
   margin-top: 0.5rem;
 }
 
-<Radio
-  disabled={false}
-  onChange={[Function]}
+<label
+  class="c0 c1 c2"
 >
-  <Radio__RadioLabel
-    disabled={false}
+  <span
+    class="c3"
   >
-    <Radio__RadioLabelBase
-      className="c0"
-      disabled={false}
-    >
-      <label
-        className="c0 c1 c2"
-        disabled={false}
-      >
-        <Radio__RadioWrapper>
-          <span
-            className="c3"
-          >
-            <Radio__StyledRadio
-              disabled={false}
-              onChange={[Function]}
-            >
-              <input
-                className="c4"
-                disabled={false}
-                onChange={[Function]}
-                type="radio"
-              />
-            </Radio__StyledRadio>
-            <Radio__RadioInner>
-              <span
-                className="c5 c6"
-              />
-            </Radio__RadioInner>
-          </span>
-        </Radio__RadioWrapper>
-        <Space
-          px="2"
-        >
-          <div
-            className="c7"
-          >
-            Radio
-          </div>
-        </Space>
-      </label>
-    </Radio__RadioLabelBase>
-  </Radio__RadioLabel>
-</Radio>
+    <input
+      class="c4"
+      type="radio"
+    />
+    <span
+      class="c5 c6"
+    />
+  </span>
+  <div
+    class="c7"
+  >
+    Radio
+  </div>
+</label>
 `;
 
 exports[`Radio should render with props disabled 1`] = `
@@ -227,54 +197,26 @@ exports[`Radio should render with props disabled 1`] = `
   margin-top: 0.5rem;
 }
 
-<Radio
-  disabled={true}
-  onChange={[Function]}
+<label
+  class="c0 c1 c2"
+  disabled=""
 >
-  <Radio__RadioLabel
-    disabled={true}
+  <span
+    class="c3"
   >
-    <Radio__RadioLabelBase
-      className="c0"
-      disabled={true}
-    >
-      <label
-        className="c0 c1 c2"
-        disabled={true}
-      >
-        <Radio__RadioWrapper>
-          <span
-            className="c3"
-          >
-            <Radio__StyledRadio
-              disabled={true}
-              onChange={[Function]}
-            >
-              <input
-                className="c4"
-                disabled={true}
-                onChange={[Function]}
-                type="radio"
-              />
-            </Radio__StyledRadio>
-            <Radio__RadioInner>
-              <span
-                className="c5 c6"
-              />
-            </Radio__RadioInner>
-          </span>
-        </Radio__RadioWrapper>
-        <Space
-          px="2"
-        >
-          <div
-            className="c7"
-          >
-            Radio
-          </div>
-        </Space>
-      </label>
-    </Radio__RadioLabelBase>
-  </Radio__RadioLabel>
-</Radio>
+    <input
+      class="c4"
+      disabled=""
+      type="radio"
+    />
+    <span
+      class="c5 c6"
+    />
+  </span>
+  <div
+    class="c7"
+  >
+    Radio
+  </div>
+</label>
 `;

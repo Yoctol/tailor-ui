@@ -1,19 +1,19 @@
 import React from 'react';
 
-import mountWithTheme from 'test/mountWithTheme';
+import { render } from 'test/test-utils';
 
 import Checkbox from '..';
 
 describe('Checkbox', () => {
   it('should render correctly', () => {
-    const component = mountWithTheme(<Checkbox>Checkbox</Checkbox>);
+    const { container } = render(<Checkbox>Checkbox</Checkbox>);
 
-    expect(component).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   it('should render with props disabled', () => {
-    const component = mountWithTheme(<Checkbox disabled>Checkbox</Checkbox>);
+    const { container } = render(<Checkbox disabled>Checkbox</Checkbox>);
 
-    expect(component).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
 });

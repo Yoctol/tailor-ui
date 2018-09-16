@@ -1,19 +1,19 @@
 import React from 'react';
 
-import shallowWithTheme from 'test/shallowWithTheme';
+import { render } from 'test/test-utils';
 
 import Modal from '..';
 
 describe('Modal', () => {
   it('should render correctly', () => {
-    const component = shallowWithTheme(<Modal visible />);
+    const { container } = render(<Modal visible />);
 
-    expect(component).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   it('should render with props closeButton', () => {
-    const component = shallowWithTheme(<Modal visible closable />);
+    const { container } = render(<Modal visible closable />);
 
-    expect(component).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
 });

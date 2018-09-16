@@ -1,23 +1,23 @@
 import React from 'react';
 
-import mountWithTheme from 'test/mountWithTheme';
+import { render } from 'test/test-utils';
 
 import Button from '..';
 
 describe('Button', () => {
   it('should render correctly', () => {
-    const component = mountWithTheme(<Button>Text Button</Button>);
+    const { container } = render(<Button>Text Button</Button>);
 
-    expect(component).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   it('should render with props variant and type', () => {
-    const component = mountWithTheme(
+    const { container } = render(
       <Button type="info" variant="rounded">
         Text Button
       </Button>
     );
 
-    expect(component).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
 });

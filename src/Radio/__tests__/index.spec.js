@@ -1,19 +1,19 @@
 import React from 'react';
 
-import mountWithTheme from 'test/mountWithTheme';
+import { render } from 'test/test-utils';
 
 import Radio from '..';
 
 describe('Radio', () => {
   it('should render correctly', () => {
-    const component = mountWithTheme(<Radio>Radio</Radio>);
+    const { container } = render(<Radio>Radio</Radio>);
 
-    expect(component).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   it('should render with props disabled', () => {
-    const component = mountWithTheme(<Radio disabled>Radio</Radio>);
+    const { container } = render(<Radio disabled>Radio</Radio>);
 
-    expect(component).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
 });
