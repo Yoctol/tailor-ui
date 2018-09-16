@@ -19,7 +19,7 @@ const CheckboxInner = styled.span`
   width: 16px;
   height: 16px;
   padding: 0;
-  border: ${p => p.theme.borders.default};
+  border: ${p => p.theme.borders.base};
   border-radius: 2px;
   border-color: ${p => p.theme.colors.gray[7]};
   background-color: ${p => p.theme.colors.light};
@@ -71,6 +71,7 @@ const getMarginPosition = p =>
 const CheckboxLabelBase = styled.label`
   display: inline-flex;
   align-items: center;
+  font-size: ${p => p.theme.fontSizes.base};
   cursor: ${p => (p.disabled ? 'not-allowed' : 'pointer')};
 
   & + & {

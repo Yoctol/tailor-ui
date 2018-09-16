@@ -11,7 +11,7 @@ import {
 } from 'styled-system';
 
 const HeadColumn = styled.th`
-  padding: ${themeGet('space.paddingYLg')} ${themeGet('space.paddingXLg')};
+  padding: ${themeGet('paddings.xs')} ${themeGet('paddings.sm')};
   font-weight: 500;
 
   ${width};
@@ -32,7 +32,7 @@ HeadColumn.defaultProps = {
 };
 
 const Column = styled.td`
-  padding: ${themeGet('space.paddingYLg')} ${themeGet('space.paddingXLg')};
+  padding: ${themeGet('paddings.xs')} ${themeGet('paddings.sm')};
 
   ${borders};
   ${borderColor};
@@ -49,7 +49,7 @@ Column.defaultProps = {
 };
 
 const Row = styled.tr`
-  border-bottom: ${themeGet('borders.default')} ${themeGet('colors.gray.8')};
+  border-bottom: ${themeGet('borders.base')} ${themeGet('colors.gray.8')};
 `;
 
 const Head = ({ children }) => (
@@ -81,12 +81,12 @@ const StyledTable = styled.table`
   border-spacing: 0;
   border-collapse: collapse;
   border-style: hidden;
-  border-top-left-radius: ${themeGet('radii.1')};
-  border-top-right-radius: ${themeGet('radii.1')};
+  border-top-left-radius: ${themeGet('radii.base')};
+  border-top-right-radius: ${themeGet('radii.base')};
   box-shadow: 0 0 0 1px ${themeGet('colors.gray.8')};
 
   & > thead {
-    border-bottom: ${themeGet('borders.default')} ${themeGet('colors.gray.8')};
+    border-bottom: ${themeGet('borders.base')} ${themeGet('colors.gray.8')};
     background-color: ${themeGet('colors.gray.9')};
   }
 

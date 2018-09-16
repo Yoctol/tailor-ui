@@ -13,7 +13,7 @@ export const StyledTextarea = styled(
   resize: ${({ resize }) => (resize ? 'initial' : 'none')};
 `;
 
-const Textarea = props => <StyledTextarea size="m" {...props} />;
+const Textarea = props => <StyledTextarea size="md" {...props} />;
 
 Textarea.propTypes = {
   /**

@@ -12,11 +12,11 @@ export const StyledItem = styled.button`
   height: 50px;
   padding-left: 15px;
   border: 0;
-  border-left: ${themeGet('borders.xl')};
+  border-left: 8px solid;
   border-left-color: transparent;
   background-color: ${themeGet('colors.primary')};
   color: rgba(255, 255, 255, 0.8);
-  font-size: ${themeGet('fontSizes.default')};
+  font-size: ${themeGet('fontSizes.base')};
   transition: all 0.1s ease-in-out;
   cursor: pointer;
 

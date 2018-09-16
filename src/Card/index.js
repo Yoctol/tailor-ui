@@ -13,7 +13,8 @@ import {
 
 const StyledBlock = styled.div`
   position: relative;
-  border-bottom: ${themeGet('borders.default')} ${themeGet('colors.gray.8')};
+  border-bottom: ${themeGet('borders.base')};
+  border-color: ${themeGet('colors.gray.8')};
 
   &:last-child {
     border-bottom: 0;
@@ -62,7 +63,8 @@ Image.propTypes = {
 const CardWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  border: ${themeGet('borders.default')} ${themeGet('colors.gray.8')};
+  border: ${themeGet('borders.base')};
+  border-color: ${themeGet('colors.gray.8')};
 
   ${space};
   ${height};
@@ -90,7 +92,7 @@ Card.propTypes = {
 /* eslint-disable react/default-props-match-prop-types */
 Card.defaultProps = {
   bg: 'light',
-  borderRadius: 2,
+  borderRadius: 'lg',
 };
 /* eslint-enable react/default-props-match-prop-types */
 

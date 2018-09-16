@@ -33,7 +33,7 @@ export const ContentComponent = styled(TooltipContent)`
 
 const Header = styled.div`
   padding: ${themeGet('space.1')} ${themeGet('space.2')};
-  border-bottom: ${themeGet('borders.default')};
+  border-bottom: ${themeGet('borders.base')};
   border-color: ${themeGet('colors.gray.8')};
 `;
 

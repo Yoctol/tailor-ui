@@ -2,19 +2,15 @@ import PropTypes from 'prop-types';
 import React, { PureComponent } from 'react';
 import styled, { css } from 'styled-components';
 import { composeEvents } from 'react-powerplug';
-import {
-  space as styledSpace,
-  textAlign,
-  themeGet,
-  width,
-} from 'styled-system';
+import { space, textAlign, themeGet, width } from 'styled-system';
 
 export const inputStyles = css`
   display: block;
   width: 100%;
   max-width: 100%;
-  border: ${themeGet('borders.default')} ${themeGet('colors.gray.8')};
-  border-radius: ${themeGet('radii.1')};
+  border: ${themeGet('borders.base')};
+  border-radius: ${themeGet('radii.base')};
+  border-color: ${themeGet('colors.gray.8')};
   outline: none;
   background: ${themeGet('light')};
   background-image: none;
@@ -28,6 +24,7 @@ export const inputStyles = css`
 
   &:disabled,
   [disabled] {
+    border-color: ${themeGet('colors.gray.5')};
     opacity: 0.5;
     background-color: ${themeGet('colors.gray.8')};
     cursor: not-allowed;
@@ -35,21 +32,23 @@ export const inputStyles = css`
 
   &::placeholder {
     color: ${themeGet('colors.gray.6')};
-    font-size: 0.8rem;
   }
 
-  ${({ size, theme: { space, fontSizes } }) =>
+  ${({ size, theme: { paddings, heights, fontSizes } }) =>
     ({
       sm: css`
-        padding: ${space.paddingYSm} ${space.paddingXSm};
+        height: ${heights.sm};
+        padding: 1px ${paddings.xs};
         font-size: ${fontSizes.sm};
       `,
       md: css`
-        padding: ${space.paddingY} ${space.paddingX};
-        font-size: ${fontSizes.default};
+        height: ${heights.base};
+        padding: 4px ${paddings.xs};
+        font-size: ${fontSizes.base};
       `,
       lg: css`
-        padding: ${space.paddingYLg} ${space.paddingXLg};
+        height: ${heights.lg};
+        padding: 6px ${paddings.xs};
         font-size: ${fontSizes.lg};
       `,
     }[size])};
@@ -57,7 +56,7 @@ export const inputStyles = css`
   ${p => p.theme.transition /* sc-declaration */};
 
   ${width};
-  ${styledSpace};
+  ${space};
   ${textAlign};
 `;
 
@@ -113,7 +112,7 @@ Input.propTypes = {
 
   onPressEnter: PropTypes.func,
   ...width.propTypes,
-  ...styledSpace.propTypes,
+  ...space.propTypes,
   ...textAlign.propTypes,
 };
 

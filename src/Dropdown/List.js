@@ -12,8 +12,8 @@ export const StyledList = styled.ul`
   z-index: 99;
   margin: 0;
   padding: 0;
-  border: ${p => p.theme.borders.default};
-  border-radius: ${p => p.theme.radii[2]};
+  border: ${p => p.theme.borders.base};
+  border-radius: ${p => p.theme.radii.lg};
   border-color: ${p => p.theme.colors.gray[8]};
   background-color: ${p => p.theme.colors.light};
   box-shadow: 0 2px 6px 0 rgba(191, 191, 191, 0.5);

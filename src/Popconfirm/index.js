@@ -16,7 +16,7 @@ const components = {
 };
 
 const StyledContent = styled(Space)`
-  padding: ${themeGet('space.3')};
+  padding: ${themeGet('space.2')};
   word-break: break-all;
   white-space: nowrap;
 `;
@@ -33,9 +33,11 @@ const Popconfirm = ({
   const icon = getTypeIcon(type);
   const renderContent = hideTooltip => (
     <StyledContent>
-      {icon}
-      {content}
-      <Flex mt="4">
+      <Flex alignItems="center">
+        {icon}
+        {content}
+      </Flex>
+      <Flex mt="3">
         <Button
           ml="auto"
           size="sm"

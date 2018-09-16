@@ -26,7 +26,7 @@ const ModalContent = styled.div`
   left: 50%;
   flex-direction: column;
   max-height: 90vh;
-  border-radius: ${themeGet('radii.1')};
+  border-radius: ${themeGet('radii.base')};
   background-color: #fff;
   box-shadow: 0 10px 30px 0 rgba(17, 17, 17, 0.2);
   transform: translate(-50%, -50%);

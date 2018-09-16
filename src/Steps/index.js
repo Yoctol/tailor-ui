@@ -19,7 +19,7 @@ const StepsIconItem = styled.div`
   width: 32px;
   height: 32px;
   margin-right: 8px;
-  border: ${p => p.theme.borders.default};
+  border: ${p => p.theme.borders.base};
   border-radius: 50%;
   border-color: ${p => {
     switch (p.status) {

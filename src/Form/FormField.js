@@ -6,12 +6,10 @@ import { StyledInput } from '../Input';
 import { StyledTextarea } from '../Input/Textarea';
 
 import Hint from './Hint';
-import Label from './Label';
 
 const StyledFormField = styled.div`
   position: relative;
-  margin-top: ${themeGet('space.3')};
-  padding-bottom: ${themeGet('space.5')};
+  margin-bottom: ${themeGet('space.2')};
 
   ${({ success }) =>
     success &&
@@ -27,11 +25,6 @@ const StyledFormField = styled.div`
 
       /* stylelint-disable-next-line */
       & ${Hint /* sc-selector */} {
-        color: ${themeGet('colors.success')};
-      }
-
-      /* stylelint-disable-next-line */
-      & ${Label /* sc-selector */} {
         color: ${themeGet('colors.success')};
       }
     `};
@@ -52,11 +45,6 @@ const StyledFormField = styled.div`
       & ${Hint /* sc-selector */} {
         color: ${themeGet('colors.warning')};
       }
-
-      /* stylelint-disable-next-line */
-      & ${Label /* sc-selector */} {
-        color: ${themeGet('colors.warning')};
-      }
     `};
 
   ${({ error }) =>
@@ -73,11 +61,6 @@ const StyledFormField = styled.div`
 
       /* stylelint-disable-next-line */
       & ${Hint /* sc-selector */} {
-        color: ${themeGet('colors.error')};
-      }
-
-      /* stylelint-disable-next-line */
-      & ${Label /* sc-selector */} {
         color: ${themeGet('colors.error')};
       }
     `};

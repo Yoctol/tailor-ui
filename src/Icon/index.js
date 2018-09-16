@@ -17,7 +17,7 @@ const size = css`
 `;
 
 export const IconWrapper = styled.i`
-  display: inline-block;
+  display: inline-flex;
   line-height: 1;
   cursor: ${p => p.cursor};
 

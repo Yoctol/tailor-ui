@@ -39,7 +39,7 @@ const StyledSelect = styled(BaseSelect).attrs({
 
       .yoctol-select__option {
         &:not(:last-child) {
-          border-bottom: ${themeGet('borders.default')}
+          border-bottom: ${themeGet('borders.base')}
             ${themeGet('colors.gray.8')};
         }
         background-color: ${themeGet('colors.light')};

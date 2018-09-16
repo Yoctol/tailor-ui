@@ -7,8 +7,9 @@ import { space as styledSpace, themeGet } from 'styled-system';
 const { Provider, Consumer } = createContext();
 
 const StyledTab = styled.a`
-  display: inline-block;
+  display: inline-flex;
   position: relative;
+  align-items: center;
   color: ${p => p.theme.colors.dark};
   text-align: center;
   text-decoration: none;
@@ -26,42 +27,32 @@ const StyledTab = styled.a`
   }
 
   &:not(:first-child) {
-    margin-left: ${themeGet('space.3')};
+    margin-left: ${themeGet('space.2')};
   }
 
-  ${({ size, theme: { space, fontSizes } }) =>
+  ${({ size, theme: { heights, paddings, fontSizes } }) =>
     ({
       sm: css`
-        padding: ${space.paddingYSm} ${space.paddingXSm};
+        height: ${heights.sm};
+        padding: 0 ${paddings.sm};
         font-size: ${fontSizes.sm};
       `,
       md: css`
-        padding: ${space.paddingY} ${space.paddingX};
-        font-size: ${fontSizes.default};
+        height: ${heights.base};
+        padding: 0 ${paddings.md};
+        font-size: ${fontSizes.base};
       `,
       lg: css`
-        padding: ${space.paddingYLg} ${space.paddingXLg};
+        height: ${heights.lg};
+        padding: 0 ${paddings.lg};
         font-size: ${fontSizes.lg};
       `,
     }[size])};
 
-  ${({ pills, active, size, theme: { space } }) =>
+  ${({ pills, active }) =>
     pills
       ? css`
           border-radius: 999px;
-
-          ${{
-            sm: css`
-              padding: ${space.paddingYSm} calc(${space.paddingXSm} * 2);
-            `,
-            md: css`
-              padding: ${space.paddingY} calc(${space.paddingX} * 2);
-            `,
-            lg: css`
-              padding: ${space.paddingYLg} calc(${space.paddingXLg} * 2);
-            `,
-          }[size]};
-
           ${active &&
             css`
               background-color: ${themeGet('colors.primary')};

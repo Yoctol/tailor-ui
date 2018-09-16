@@ -19,6 +19,8 @@ const MessageContainer = styled.div`
 `;
 
 const MessageBox = styled.div`
+  display: flex;
+  align-items: center;
   margin: 8px 0;
   padding: 10px 12px;
   border-radius: 4px;
@@ -76,9 +78,23 @@ class MessageComponent extends PureComponent {
           <Transition
             native
             keys={messages.map(({ key }) => key)}
-            from={{ opacity: 0, transform: 'translateY(-30px)' }}
-            enter={{ opacity: 1, transform: 'translateY(0)' }}
-            leave={{ opacity: 0, transform: 'translateY(-30px)' }}
+            from={{
+              opacity: 0,
+              transform: 'translateY(-30px)',
+              height: 'auto',
+            }}
+            enter={{
+              opacity: 1,
+              transform: 'translateY(0)',
+              height: 'auto',
+            }}
+            leave={{
+              opacity: 0,
+              transform: 'translateY(-30px)',
+              height: 0,
+              padding: 0,
+              margin: 0,
+            }}
           >
             {messages.map(({ content }) => style => (
               <AnimatedMessageBox style={style}>{content}</AnimatedMessageBox>

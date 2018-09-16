@@ -83,54 +83,41 @@ const getLoading = ({ loading, ...props }) =>
   `;
 
 const getSize = css`
-  ${({ onlyIcon, size, theme: { space, fontSizes } }) => {
+  ${({ onlyIcon, size, theme: { paddings, heights, fontSizes } }) => {
     if (onlyIcon) {
       return {
         sm: css`
-          width: 28px;
-          height: 28px;
+          width: ${heights.sm};
+          height: ${heights.sm};
         `,
         md: css`
-          width: 36px;
-          height: 36px;
+          width: ${heights.base};
+          height: ${heights.base};
         `,
         lg: css`
-          width: 40px;
-          height: 40px;
+          width: ${heights.lg};
+          height: ${heights.lg};
         `,
       }[size];
     }
 
     return {
       sm: css`
-        padding: ${space.paddingYSm} ${space.paddingXSm};
+        height: ${heights.sm};
+        padding: 0 ${paddings.sm};
         font-size: ${fontSizes.sm};
       `,
       md: css`
-        padding: ${space.paddingY} ${space.paddingX};
-        font-size: ${fontSizes.default};
+        height: ${heights.base};
+        padding: 0 ${paddings.md};
+        font-size: ${fontSizes.base};
       `,
       lg: css`
-        padding: ${space.paddingYLg} ${space.paddingXLg};
+        height: ${heights.lg};
+        padding: 0 ${paddings.lg};
         font-size: ${fontSizes.lg};
       `,
     }[size];
-  }};
-
-  ${({ rounded, onlyIcon, size, theme: { space } }) => {
-    if (rounded && !onlyIcon) {
-      return {
-        sm: css`
-          padding: ${space.paddingYSm} calc(${space.paddingXSm} * 2);
-        `,
-        md: css`
-          padding: ${space.paddingY} calc(${space.paddingX} * 2);
-        `,
-        lg: css`
-          padding: ${space.paddingYLg} calc(${space.paddingXLg} * 2);
-        `,
-      }[size];
-    }
   }};
 `;
 
@@ -176,8 +163,8 @@ const StyledButton = styled.button`
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  border: ${p => p.theme.borders.default};
-  border-radius: ${p => p.theme.radii[1]};
+  border: ${p => p.theme.borders.base};
+  border-radius: ${p => p.theme.radii.base};
   line-height: ${p => p.theme.lineHeight};
   text-decoration: none;
   vertical-align: middle;

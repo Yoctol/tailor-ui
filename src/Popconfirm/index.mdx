@@ -5,8 +5,10 @@ route: /feedback/popconfirm
 ---
 
 import { PropsTable, Playground, Link } from 'docz';
+
+import { Button, Modal, message } from '../';
+
 import Popconfirm from './';
-import { Button } from '../';
 
 # Popconfirm
 
@@ -41,11 +43,21 @@ import { Popconfirm } from '@yoctol/ui';
   <Popconfirm
     placement="right"
     type="error"
-    confirmText="毀了他"
-    cancelText="不要好了"
+    confirmText="毀了它"
+    cancelText="一小時後再提醒我"
     content="此操作將會毀滅本系統，你確定？"
-    onConfirm={() => console.log('confirm')}
-    onCancel={() => console.log('cancel')}
+    onConfirm={() => {
+      console.log('confirm');
+      message.success('您的系統已被毀滅');
+    }}
+    onCancel={() => {
+      Modal.success({
+        title: '我才不會提醒你',
+        content: '您的系統已被毀滅',
+        confirmText: '感謝',
+      });
+      console.log('cancel')
+    }}
   >
     <Button>Button</Button>
   </Popconfirm>

@@ -49,7 +49,7 @@ AnimatedTooltipToggle.propTypes = {
 };
 
 export const TooltipContent = styled.div`
-  border: ${themeGet('borders.default')};
+  border: ${themeGet('borders.base')};
   border-color: ${({ light, theme: { colors } }) =>
     light ? colors.gray[7] : colors.primaryDark};
   background-color: ${({ light, theme: { colors } }) =>
@@ -87,7 +87,7 @@ TooltipContent.defaultProps = {
   fontSize: 'sm',
   p: 1,
   textAlign: 'center',
-  borderRadius: 1,
+  borderRadius: 'base',
 };
 
 export const Arrow = styled.div`

@@ -11,7 +11,6 @@ import SubMenu from './SubMenu';
 const StyledMenu = styled(Flex)`
   flex-direction: column;
   justify-content: start;
-  width: 180px;
   height: 100%;
   overflow-y: auto;
   background-color: ${themeGet('colors.primary')};
@@ -23,11 +22,19 @@ const Menu = ({ children, ...props }) => (
   <StyledMenu {...props}>{children}</StyledMenu>
 );
 
+Menu.defaultProps = {
+  width: '180px',
+};
+
 Menu.propTypes = {
   /**
    * The content of this Menu component
    */
   children: PropTypes.node.isRequired,
+  /**
+   * The width of this Menu component
+   */
+  width: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   ...width.propTypes,
 };
 

@@ -3,21 +3,12 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
 
-import Icon from '../Icon';
+import Button from '../Button';
 
-const CloseBtn = styled.button.attrs({
-  type: 'button',
-})`
-  padding: 0;
-  border: 0;
+const CloseButtonWrapper = styled.div`
   background: transparent;
   transform: rotate(0deg);
   transition: all 0.2s ease-in;
-  cursor: pointer;
-
-  :focus {
-    outline: 0;
-  }
 
   :hover {
     transform: rotate(90deg);
@@ -25,9 +16,9 @@ const CloseBtn = styled.button.attrs({
 `;
 
 const CloseButton = ({ onCancel }) => (
-  <CloseBtn onClick={onCancel}>
-    <Icon cursor="pointer" type={Close} />
-  </CloseBtn>
+  <CloseButtonWrapper>
+    <Button text rounded icon={Close} onClick={onCancel} />
+  </CloseButtonWrapper>
 );
 
 CloseButton.propTypes = {

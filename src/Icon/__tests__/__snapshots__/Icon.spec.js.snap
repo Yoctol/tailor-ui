@@ -2,7 +2,10 @@
 
 exports[`Icon should render correctly 1`] = `
 .c0 {
-  display: inline-block;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   line-height: 1;
   cursor: default;
 }

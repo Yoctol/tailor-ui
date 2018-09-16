@@ -26,9 +26,10 @@ class Modal extends PureComponent {
     return (
       <Flex
         flex="none"
-        px="4"
-        py="3"
-        borderBottom="default"
+        alignItems="center"
+        px="3"
+        py="2"
+        borderBottom="base"
         borderColor="gray.8"
       >
         <Box flex="auto">
@@ -43,7 +44,7 @@ class Modal extends PureComponent {
     const { children } = this.props;
 
     return (
-      <Flex flexDirection="column" p="4" overflowY="auto">
+      <Flex flexDirection="column" p="3" overflowY="auto">
         {children}
       </Flex>
     );
@@ -63,7 +64,14 @@ class Modal extends PureComponent {
     if (footer === null) return null;
 
     return (
-      <Box flex="none" px="4" py="3" borderTop="default" borderColor="gray.8">
+      <Box
+        flex="none"
+        alignItems="center"
+        px="3"
+        py="2"
+        borderTop="base"
+        borderColor="gray.8"
+      >
         {isValidElement(footer) ? (
           footer
         ) : (

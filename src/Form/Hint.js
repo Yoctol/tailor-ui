@@ -3,8 +3,7 @@ import { rem } from 'polished';
 import { themeGet } from 'styled-system';
 
 const Hint = styled.div`
-  position: absolute;
-  margin-top: ${themeGet('space.o')};
+  margin-top: ${themeGet('space.1')};
   color: ${themeGet('colors.gray.6')};
   font-size: ${rem('12px')};
 `;

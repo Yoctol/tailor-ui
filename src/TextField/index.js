@@ -1,49 +1,72 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import styled, { css } from 'styled-components';
-import {
-  Compose,
-  Focus,
-  Input as PowerplugInput,
-  composeEvents,
-} from 'react-powerplug';
+import styled from 'styled-components';
+import { Input as PowerplugInput, composeEvents } from 'react-powerplug';
 import { rem } from 'polished';
-import { themeGet } from 'styled-system';
 
 import FormField from '../Form/FormField';
 import Hint from '../Form/Hint';
-import Input from '../Input';
-import Label from '../Form/Label';
-import Textarea from '../Input/Textarea';
+import Input, { StyledInput } from '../Input';
+import Textarea, { StyledTextarea } from '../Input/Textarea';
 
-const TextFieldLabel = styled(Label)`
+const TextFieldLabel = styled.label`
   position: absolute;
-  top: -8px;
-  left: 6px;
-  padding: 0 4px;
+  top: -10px;
+  left: 7px;
+  padding: 0 2px;
   background-color: #fff;
-  color: ${themeGet('colors.gray.6')};
-  font-size: ${themeGet('fontSizes.default')};
-  transform: translate(0, 20px) scale(1);
-  transition: transform 200ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+  color: ${p => p.theme.colors.gray[3]};
+  font-size: 0.75rem;
   pointer-events: none;
 
-  ${({ shrink }) =>
-    shrink &&
-    css`
-      color: ${themeGet('colors.gray.3')};
-      transform: translate(-6px, 0) scale(0.8);
-    `};
+  ${p => p.theme.transition};
 `;
 
 const MaxLength = styled.div`
   position: absolute;
-  right: 0;
-  bottom: 0;
-  opacity: ${p => (p.visible ? 1 : 0)};
-  color: ${themeGet('colors.gray.6')};
+  right: -1px;
+  bottom: -2px;
+  padding: 1px 5px;
+  border: ${p => p.theme.borders.base};
+  border-radius: 999px;
+  border-color: ${p => p.theme.colors.primary};
+  opacity: 0;
+  background-color: #fff;
   font-size: ${rem('10px')};
-  transition: opacity 200ms ease;
+  line-height: 1;
+`;
+
+const TextFieldField = styled(FormField)`
+  margin-top: 6px;
+
+  ${StyledInput /* sc-selector */}:invalid, ${StyledTextarea /* sc-selector */}:invalid {
+    box-shadow: none;
+
+    & ~ ${TextFieldLabel /* sc-selector */} {
+      top: 3px;
+      left: 1px;
+      padding: 0 ${p => p.theme.paddings.xs};
+      color: ${p => p.theme.colors.gray[6]};
+      font-size: ${p => p.theme.fontSizes.base};
+    }
+  }
+
+  /* stylelint-disable-next-line no-descending-specificity */
+  ${StyledInput /* sc-selector */}:focus, ${StyledTextarea /* sc-selector */}:focus {
+    & ~ ${TextFieldLabel /* sc-selector */} {
+      top: -10px;
+      left: 7px;
+      padding: 0 2px;
+      background-color: #fff;
+      color: ${p => p.theme.colors.gray[3]};
+      font-size: 0.75rem;
+    }
+
+    /* stylelint-disable-next-line no-duplicate-selectors */
+    & ~ ${MaxLength /* sc-selector */} {
+      opacity: 1;
+    }
+  }
 `;
 
 const TextField = ({
@@ -58,23 +81,12 @@ const TextField = ({
   textarea,
   ...props
 }) => (
-  <Compose
-    components={[
-      Focus,
-      // eslint-disable-next-line react/prop-types
-      <PowerplugInput initial={defaultValue} />,
-    ]}
-  >
-    {(
-      { focused, bind: focusBind },
-      { value: uncontrolledValue, bind: { onChange } }
-    ) => {
+  <PowerplugInput initial={defaultValue}>
+    {({ value: uncontrolledValue, bind: { onChange } }) => {
       const value =
         controlledValue || controlledValue === ''
           ? controlledValue
           : uncontrolledValue;
-      const hasValue = value !== '';
-      const actived = focused || hasValue;
       const hasHint = success || warning || error;
       const RenderComponent = textarea ? Textarea : Input;
       const inputProps = {
@@ -82,26 +94,21 @@ const TextField = ({
         value,
         ...props,
         ...composeEvents(props, {
-          ...focusBind,
           onChange,
         }),
       };
 
       return (
-        <FormField success={success} warning={warning} error={error}>
-          {label && <TextFieldLabel shrink={actived}>{label}</TextFieldLabel>}
+        <TextFieldField success={success} warning={warning} error={error}>
+          <RenderComponent {...inputProps} required />
           {maxLength &&
-            !hasHint && (
-              <MaxLength visible={actived}>
-                {maxLength - value.length}
-              </MaxLength>
-            )}
-          <RenderComponent {...inputProps} />
+            !hasHint && <MaxLength>{maxLength - value.length}</MaxLength>}
+          {label && <TextFieldLabel>{label}</TextFieldLabel>}
           {hasHint && <Hint>{message}</Hint>}
-        </FormField>
+        </TextFieldField>
       );
     }}
-  </Compose>
+  </PowerplugInput>
 );
 
 TextField.propTypes = {

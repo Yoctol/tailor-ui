@@ -19,7 +19,7 @@ exports[`Radio should render correctly 1`] = `
   width: 16px;
   height: 16px;
   padding: 0;
-  border: 0.0625rem solid;
+  border: 1px solid;
   border-radius: 50%;
   border-color: #c3c3c3;
   background-color: #ffffff;
@@ -76,6 +76,7 @@ exports[`Radio should render correctly 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  font-size: 1rem;
   cursor: pointer;
 }
 
@@ -128,7 +129,7 @@ exports[`Radio should render with props disabled 1`] = `
   width: 16px;
   height: 16px;
   padding: 0;
-  border: 0.0625rem solid;
+  border: 1px solid;
   border-radius: 50%;
   border-color: #c3c3c3;
   background-color: #ffffff;
@@ -189,6 +190,7 @@ exports[`Radio should render with props disabled 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  font-size: 1rem;
   cursor: not-allowed;
   opacity: 0.5;
 }

@@ -10,9 +10,10 @@ import Icon from '../Icon';
 const StyledTag = styled.div`
   display: inline-flex;
   align-items: center;
-  padding: ${p => p.theme.space.paddingYSm} ${p => p.theme.space.paddingXSm};
-  border: ${p => p.theme.borders.default};
-  border-radius: ${p => p.theme.radii[2]};
+  height: ${p => p.theme.heights.sm};
+  padding: 0 ${p => p.theme.paddings.xs};
+  border: ${p => p.theme.borders.base};
+  border-radius: ${p => p.theme.radii.base};
   border-color: ${p => p.theme.colors.gray[7]};
   font-size: ${p => p.theme.fontSizes.sm};
   white-space: nowrap;
@@ -32,6 +33,7 @@ const ClosableIcon = styled(Icon)`
 
 const StyledTagWrapper = styled.div`
   display: inline-flex;
+  height: ${p => p.theme.heights.sm};
 
   & + & {
     margin-left: 8px;

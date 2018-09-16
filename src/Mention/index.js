@@ -240,7 +240,7 @@ MentionEditor.propTypes = {
   /**
    * The size of the input
    */
-  size: PropTypes.oneOf(['sm', 'm', 'lg']),
+  size: PropTypes.oneOf(['sm', 'md', 'lg']),
   /**
    * suggestion content
    */

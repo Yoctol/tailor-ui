@@ -89,14 +89,12 @@ class ModalComponent extends PureComponent {
           visible={visible}
           onCancel={onCancel}
         >
-          <Space p="6">
+          <Space p="3">
             <Flex>
               {icon}
-              <Box flex="auto" ml="2">
+              <Box flex="auto" ml="1">
                 <Heading.h3>{title}</Heading.h3>
-                <Space mt="2" mb="4">
-                  {content}
-                </Space>
+                <Space my="3">{content}</Space>
               </Box>
             </Flex>
             <Footer
