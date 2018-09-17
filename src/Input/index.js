@@ -2,9 +2,12 @@ import PropTypes from 'prop-types';
 import React, { PureComponent } from 'react';
 import styled, { css } from 'styled-components';
 import { composeEvents } from 'react-powerplug';
-import { space, textAlign, themeGet, width } from 'styled-system';
-
-import { sizes } from '../utils/system';
+import {
+  space as styledSpace,
+  textAlign,
+  themeGet,
+  width,
+} from 'styled-system';
 
 export const inputStyles = css`
   display: block;
@@ -35,11 +38,26 @@ export const inputStyles = css`
     font-size: 0.8rem;
   }
 
+  ${({ size, theme: { space, fontSizes } }) =>
+    ({
+      sm: css`
+        padding: ${space.paddingYSm} ${space.paddingXSm};
+        font-size: ${fontSizes.sm};
+      `,
+      md: css`
+        padding: ${space.paddingY} ${space.paddingX};
+        font-size: ${fontSizes.default};
+      `,
+      lg: css`
+        padding: ${space.paddingYLg} ${space.paddingXLg};
+        font-size: ${fontSizes.lg};
+      `,
+    }[size])};
+
   ${p => p.theme.transition /* sc-declaration */};
 
-  ${sizes};
   ${width};
-  ${space};
+  ${styledSpace};
   ${textAlign};
 `;
 
@@ -88,19 +106,19 @@ Input.propTypes = {
   /**
    * The size of the input box
    */
-  size: PropTypes.oneOf(['sm', 'm', 'lg']),
+  size: PropTypes.oneOf(['sm', 'md', 'lg']),
   /**
    * The callback function that is triggered when Enter key is pressed
    */
 
   onPressEnter: PropTypes.func,
   ...width.propTypes,
-  ...space.propTypes,
+  ...styledSpace.propTypes,
   ...textAlign.propTypes,
 };
 
 Input.defaultProps = {
-  size: 'm',
+  size: 'md',
   autoSelect: false,
   onPressEnter: null,
 };
