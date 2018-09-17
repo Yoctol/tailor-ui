@@ -1,3 +1,11 @@
+<a name="1.13.4"></a>
+
+## [1.13.4](https://github.com/yoctol/ui/compare/v1.13.3...v1.13.4) (2018-09-17)
+
+### Bug Fixes
+
+- remove font-size from `a` link ([0ee8d41](https://github.com/yoctol/ui/commit/0ee8d41))
+
 <a name="1.13.3"></a>
 
 ## [1.13.3](https://github.com/yoctol/ui/compare/v1.13.2...v1.13.3) (2018-09-11)
