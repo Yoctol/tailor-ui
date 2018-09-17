@@ -1,3 +1,11 @@
+<a name="1.13.5"></a>
+
+## [1.13.5](https://github.com/yoctol/ui/compare/v1.13.4...v1.13.5) (2018-09-17)
+
+### Bug Fixes
+
+- **input:** drop style-system breaking API ([4501fcc](https://github.com/yoctol/ui/commit/4501fcc))
+
 <a name="1.13.4"></a>
 
 ## [1.13.4](https://github.com/yoctol/ui/compare/v1.13.3...v1.13.4) (2018-09-17)
