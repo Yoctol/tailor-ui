@@ -274,7 +274,7 @@ MentionEditor.defaultProps = {
   suggestions: [],
   placeholder: null,
   prefix: '@',
-  size: 'm',
+  size: 'md',
   textarea: false,
   onSelect: () => {},
   onBlur: () => {},
