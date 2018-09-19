@@ -6,7 +6,7 @@ route: /navigation/dropdown
 
 import { PropsTable, Playground } from 'docz';
 
-import { Button } from '../';
+import { Button, Box, Flex } from '../';
 
 import Dropdown from './';
 import List from './List';
@@ -51,59 +51,65 @@ import { Dropdown } from '@yoctol/ui';
 ### Placement
 
 <Playground>
-  <Dropdown
-    placement="bottomRight"
-    overlay={
-      <Dropdown.List>
-        <Dropdown.Item key="Item 1">Item 1</Dropdown.Item>
-        <Dropdown.Item key="Item 2">Item 2</Dropdown.Item>
-        <Dropdown.Item key="Item 3">Item 3</Dropdown.Item>
-        <Dropdown.Item key="Item 4">Item 4</Dropdown.Item>
-      </Dropdown.List>
-    }
-  >
-    {({ visible, toggle }) => (
-      <Button light={visible} onClick={toggle}>
-        Toggle
-      </Button>
-    )}
-  </Dropdown>
+  <Flex>
+    <Dropdown
+      placement="bottomRight"
+      overlay={
+        <Dropdown.List>
+          <Dropdown.Item key="Item 1">Item 1</Dropdown.Item>
+          <Dropdown.Item key="Item 2">Item 2</Dropdown.Item>
+          <Dropdown.Item key="Item 3">Item 3</Dropdown.Item>
+          <Dropdown.Item key="Item 4">Item 4</Dropdown.Item>
+        </Dropdown.List>
+      }
+    >
+      {({ visible, toggle }) => (
+        <Button light={visible} onClick={toggle}>
+          Toggle
+        </Button>
+      )}
+    </Dropdown>
 
-  <Dropdown
-    placement="topLeft"
-    overlay={
-      <Dropdown.List>
-        <Dropdown.Item key="Item 1">Item 1</Dropdown.Item>
-        <Dropdown.Item key="Item 2">Item 2</Dropdown.Item>
-        <Dropdown.Item key="Item 3">Item 3</Dropdown.Item>
-        <Dropdown.Item key="Item 4">Item 4</Dropdown.Item>
-      </Dropdown.List>
-    }
-  >
-    {({ visible, toggle }) => (
-      <Button ml="2" light={visible} onClick={toggle}>
-        Toggle
-      </Button>
-    )}
-  </Dropdown>
+    <Box ml="2">
+      <Dropdown
+        placement="topLeft"
+        overlay={
+          <Dropdown.List>
+            <Dropdown.Item key="Item 1">Item 1</Dropdown.Item>
+            <Dropdown.Item key="Item 2">Item 2</Dropdown.Item>
+            <Dropdown.Item key="Item 3">Item 3</Dropdown.Item>
+            <Dropdown.Item key="Item 4">Item 4</Dropdown.Item>
+          </Dropdown.List>
+        }
+      >
+        {({ visible, toggle }) => (
+          <Button light={visible} onClick={toggle}>
+            Toggle
+          </Button>
+        )}
+      </Dropdown>
+    </Box>
 
-  <Dropdown
-    placement="topRight"
-    overlay={
-      <Dropdown.List>
-        <Dropdown.Item key="Item 1">Item 1</Dropdown.Item>
-        <Dropdown.Item key="Item 2">Item 2</Dropdown.Item>
-        <Dropdown.Item key="Item 3">Item 3</Dropdown.Item>
-        <Dropdown.Item key="Item 4">Item 4</Dropdown.Item>
-      </Dropdown.List>
-    }
-  >
-    {({ visible, toggle }) => (
-      <Button ml="2" light={visible} onClick={toggle}>
-        Toggle
-      </Button>
-    )}
-  </Dropdown>
+    <Box ml="2">
+      <Dropdown
+        placement="topRight"
+        overlay={
+          <Dropdown.List>
+            <Dropdown.Item key="Item 1">Item 1</Dropdown.Item>
+            <Dropdown.Item key="Item 2">Item 2</Dropdown.Item>
+            <Dropdown.Item key="Item 3">Item 3</Dropdown.Item>
+            <Dropdown.Item key="Item 4">Item 4</Dropdown.Item>
+          </Dropdown.List>
+        }
+      >
+        {({ visible, toggle }) => (
+          <Button light={visible} onClick={toggle}>
+            Toggle
+          </Button>
+        )}
+      </Dropdown>
+    </Box>
+  </Flex>
 </Playground>
 
 ### SubItem

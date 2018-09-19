@@ -27,13 +27,13 @@ import { Table } from '@yoctol/ui';
 <Playground>
   <Table>
     <Table.Head>
-      {range(2, 10).map(x => <Table.HeadColumn>{x}</Table.HeadColumn>)}
+      {range(2, 10).map(x => <Table.HeadColumn key={x}>{x}</Table.HeadColumn>)}
     </Table.Head>
     <Table.Body>
       {range(1, 10).map(x => (
         <Table.Row key={x}>
           {range(2, 10).map(y => (
-            <Table.Column>
+            <Table.Column key={y}>
               {y} * {x} = {x * y}
             </Table.Column>
           ))}

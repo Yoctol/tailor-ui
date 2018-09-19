@@ -5,8 +5,12 @@ route: /data-display/card
 ---
 
 import { PropsTable, Playground } from 'docz';
+
 import { Input, Button } from '../';
-import Card, { Block, Image } from './';
+
+import Card from './Card';
+import CardBlock from './CardBlock';
+import CardImage from './CardImage';
 
 # Card
 
@@ -113,8 +117,8 @@ Some `props` are using object spread syntax and are not showing in these tables.
 
 ### Card.Block
 
-<PropsTable of={Block} />
+<PropsTable of={CardBlock} />
 
 ### Card.Image
 
-<PropsTable of={Image} />
+<PropsTable of={CardImage} />
