@@ -91,6 +91,15 @@ jobs:
       - run:
           name: run lint:css
           command: npm run lint:css
+  type-check-node-8:
+    <<: *docker_8
+    steps:
+      - checkout
+      - attach_workspace:
+          at: .
+      - run:
+          name: run type-check
+          command: npm run type-check
   test-node-8:
     <<: *docker_8
     steps:
@@ -114,6 +123,9 @@ workflows:
             - build-node-10
       - build-node-8
       - lint-node-8:
+          requires:
+            - build-node-8
+      - type-check-node-8:
           requires:
             - build-node-8
       - test-node-8:
