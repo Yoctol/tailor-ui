@@ -1,10 +1,10 @@
-import React, { PureComponent, ChangeEvent } from 'react';
+import React, { ChangeEvent, PureComponent } from 'react';
 import styled, { css } from 'styled-components';
 
 import Space from '../Grid/Space';
 
-import { Consumer } from './CheckboxContext';
 import CheckboxGroup from './CheckboxGroup';
+import { Consumer } from './CheckboxContext';
 
 const CheckboxWrapper = styled.span`
   display: inline-block;

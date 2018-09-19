@@ -49,9 +49,9 @@ const RadioGroup: SFC<RadioGroupProps> = ({
   <RadioGroupFlex direction={direction}>
     <Value
       initial={defaultValue}
-      onChange={value => {
-        if (onChange && value) {
-          onChange(value);
+      onChange={_value => {
+        if (onChange && _value) {
+          onChange(_value);
         }
       }}
     >

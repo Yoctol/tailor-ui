@@ -61,30 +61,28 @@ class ModalComponent extends PureComponent<
 
   trigger = (options: ModalOptions, type: ModalTypes) =>
     new Promise(resolve =>
-      this.setState(() => {
-        return {
-          type,
-          visible: true,
-          title: '',
-          content: '',
-          confirmText: 'Confirm',
-          cancelText: type === 'confirm' ? options.cancelText || 'Cancel' : '',
-          onConfirm: () => {
-            if (options.onConfirm) {
-              options.onConfirm();
-            } else {
-              resolve(true);
-            }
-          },
-          onCancel: () => {
-            if (options.onCancel) {
-              options.onCancel();
-            } else {
-              resolve(false);
-            }
-          },
-        };
-      })
+      this.setState(() => ({
+        type,
+        visible: true,
+        title: '',
+        content: '',
+        confirmText: 'Confirm',
+        cancelText: type === 'confirm' ? options.cancelText || 'Cancel' : '',
+        onConfirm: () => {
+          if (options.onConfirm) {
+            options.onConfirm();
+          } else {
+            resolve(true);
+          }
+        },
+        onCancel: () => {
+          if (options.onCancel) {
+            options.onCancel();
+          } else {
+            resolve(false);
+          }
+        },
+      }))
     );
 
   closeModal = () => {

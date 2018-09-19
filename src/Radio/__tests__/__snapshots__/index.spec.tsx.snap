@@ -85,11 +85,12 @@ exports[`Radio should render correctly 1`] = `
 }
 
 .c0 + .c1 {
-  margin-top: 0.5rem;
+  margin-left: 0.5rem;
 }
 
 <label
   class="c0 c1 c2"
+  direction="horizontal"
 >
   <span
     class="c3"
@@ -196,11 +197,12 @@ exports[`Radio should render with props disabled 1`] = `
 }
 
 .c0 + .c1 {
-  margin-top: 0.5rem;
+  margin-left: 0.5rem;
 }
 
 <label
   class="c0 c1 c2"
+  direction="horizontal"
   disabled=""
 >
   <span

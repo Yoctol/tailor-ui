@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { color, space, themeGet, SpaceProps, ColorProps } from 'styled-system';
+import { ColorProps, SpaceProps, color, space, themeGet } from 'styled-system';
 import { rem } from 'polished';
 
 export type HeadingBaseProps = SpaceProps &

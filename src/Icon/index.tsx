@@ -1,6 +1,6 @@
 import React, { ComponentClass, SFC } from 'react';
 import styled, { css } from 'styled-components';
-import { space, style, SpaceProps } from 'styled-system';
+import { SpaceProps, style, space as styledSpace } from 'styled-system';
 
 import * as icons from './icons';
 
@@ -8,7 +8,7 @@ interface Icons {
   [key: string]: any;
 }
 
-const fill = style({
+const styledFill = style({
   prop: 'fill',
   cssProperty: 'fill',
   key: 'colors',
@@ -16,15 +16,15 @@ const fill = style({
 
 type Size = string | number;
 
-const size = css<{ size: Size }>`
+const styledSize = css<{ size: Size }>`
   width: ${p => p.size}px;
   height: ${p => p.size}px;
 `;
 
 export type IconWrapperProps = SpaceProps & {
-  cursor: string;
-  size: Size;
-  fill: string;
+  cursor?: string;
+  size?: Size;
+  fill?: string;
 };
 
 export const IconWrapper = styled<IconWrapperProps, 'i'>('i')`
@@ -36,11 +36,11 @@ export const IconWrapper = styled<IconWrapperProps, 'i'>('i')`
     vertical-align: middle;
 
     ${p => p.theme.transition /* sc-declaration */};
-    ${fill};
-    ${size};
+    ${styledFill};
+    ${styledSize};
   }
 
-  ${space};
+  ${styledSpace};
 `;
 
 export type IconType = string | ComponentClass;

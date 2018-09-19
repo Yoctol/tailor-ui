@@ -1,7 +1,7 @@
 import React, { PureComponent, ReactNode, SFC } from 'react';
 import styled from 'styled-components';
 import { Transition, animated, config } from 'react-spring';
-import { themeGet, width, WidthProps } from 'styled-system';
+import { WidthProps, width as styledWidth, themeGet } from 'styled-system';
 
 import Keydown from '../utils/Keydown';
 
@@ -30,7 +30,7 @@ const ModalContent = styled<WidthProps, 'div'>('div')`
   box-shadow: 0 10px 30px 0 rgba(17, 17, 17, 0.2);
   transform: translate(-50%, -50%);
 
-  ${width};
+  ${styledWidth};
 `;
 
 const AnimatedModalContent = animated(ModalContent);

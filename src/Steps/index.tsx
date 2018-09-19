@@ -2,12 +2,12 @@ import ErrorIcon from 'react-icons/lib/md/close';
 import FinishIcon from 'react-icons/lib/md/done';
 import React, {
   Children,
-  createContext,
-  SFC,
+  PureComponent,
   ReactChild,
   ReactElement,
+  SFC,
+  createContext,
   isValidElement,
-  PureComponent,
 } from 'react';
 import styled, { css } from 'styled-components';
 

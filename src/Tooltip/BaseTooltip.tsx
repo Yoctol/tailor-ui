@@ -1,19 +1,19 @@
 import React, { SFC } from 'react';
 import styled, { css } from 'styled-components';
-import { Transition, animated, config } from 'react-spring';
 import {
+  BorderRadiusProps,
+  ColorProps,
+  MinWidthProps,
+  SpaceProps,
+  TextAlignProps,
   borderRadius,
   color,
   minWidth,
   space,
   textAlign,
   themeGet,
-  SpaceProps,
-  MinWidthProps,
-  ColorProps,
-  BorderRadiusProps,
-  TextAlignProps,
 } from 'styled-system';
+import { Transition, animated, config } from 'react-spring';
 
 export type Placement = 'top' | 'bottom' | 'right' | 'left';
 

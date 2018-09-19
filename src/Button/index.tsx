@@ -1,12 +1,13 @@
 import React, {
-  PureComponent,
-  createRef,
-  MouseEvent,
   ComponentClass,
+  MouseEvent,
+  PureComponent,
+  RefObject,
+  createRef,
 } from 'react';
 import styled, { css, keyframes } from 'styled-components';
+import { SpaceProps, space as styledSpace } from 'styled-system';
 import { path } from 'ramda';
-import { space as styledSpace, SpaceProps } from 'styled-system';
 
 import Icon, { IconWrapper } from '../Icon';
 
@@ -45,9 +46,8 @@ const getTypeStyles = ({
 }: GetTypesStylesInterface & {
   theme: any;
 }) => {
-  const getColor = (colorPath: string): string => {
-    return path(colorPath.split('.'), theme.colors) || '';
-  };
+  const getColor = (colorPath: string): string =>
+    path(colorPath.split('.'), theme.colors) || '';
 
   if (text) {
     return {
@@ -282,9 +282,9 @@ export type ButtonProps = SpaceProps & {
 };
 
 class Button extends PureComponent<ButtonProps> {
-  ripple = createRef<Ripple>();
+  ripple: RefObject<Ripple> = createRef<Ripple>();
 
-  button = createRef<Button>();
+  button: RefObject<Button> = createRef<Button>();
 
   handleClick = (event: MouseEvent) => {
     if (this.ripple.current) {
@@ -301,6 +301,7 @@ class Button extends PureComponent<ButtonProps> {
       size = 'md',
       ...props
     } = this.props;
+
     return (
       <StyledButton
         innerRef={this.button}

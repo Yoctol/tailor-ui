@@ -7,6 +7,7 @@ import SubMenu from './SubMenu';
 
 class Menu extends PureComponent<FlexProps> {
   static SubMenu = SubMenu;
+
   static Item = Item;
 
   render() {

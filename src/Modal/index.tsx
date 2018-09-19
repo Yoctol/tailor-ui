@@ -1,4 +1,4 @@
-import React, { PureComponent, isValidElement, ReactNode } from 'react';
+import React, { PureComponent, ReactNode, isValidElement } from 'react';
 import { createPortal } from 'react-dom';
 
 import Box from '../Grid/Box';
@@ -21,16 +21,24 @@ const canUseDOM = !!(
 export type ModalProps = BaseModalProps &
   FooterProps & {
     title?: string;
-    closable: boolean;
+    closable?: boolean;
     footer?: ReactNode;
   };
 
 class Modal extends PureComponent<ModalProps> {
   static confirm: typeof confirm = confirm;
+
   static info: typeof info = info;
+
   static success: typeof success = success;
+
   static warning: typeof warning = warning;
+
   static error: typeof error = error;
+
+  static defaultProps = {
+    title: 'test',
+  };
 
   renderHeader = () => {
     const { title, onCancel, closable } = this.props;

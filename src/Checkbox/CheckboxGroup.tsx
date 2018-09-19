@@ -50,9 +50,9 @@ const CheckboxGroup: SFC<CheckboxGroupProps> = ({
   <CheckboxGroupFlex direction={direction}>
     <Set
       initial={defaultValue || []}
-      onChange={value => {
-        if (onChange && value) {
-          onChange(value);
+      onChange={_value => {
+        if (onChange && _value) {
+          onChange(_value);
         }
       }}
     >

@@ -129,6 +129,7 @@ exports[`Button should render with props variant and type 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  border-radius: 999px;
   height: 2rem;
   padding: 0 1rem;
   font-size: 1rem;

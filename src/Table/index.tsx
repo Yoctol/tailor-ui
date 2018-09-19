@@ -1,17 +1,17 @@
-import React, { SFC, PureComponent } from 'react';
+import React, { PureComponent, SFC } from 'react';
 import styled from 'styled-components';
 import {
+  BorderColorProps,
+  BordersProps,
+  SpaceProps,
+  TextAlignProps,
+  WidthProps,
   borderColor,
   borders,
   space,
   textAlign,
   themeGet,
   width,
-  WidthProps,
-  SpaceProps,
-  BordersProps,
-  BorderColorProps,
-  TextAlignProps,
 } from 'styled-system';
 
 type HeadColumnProps = WidthProps &
@@ -76,14 +76,22 @@ const StyledTable = styled<StyledTableProps, 'table'>('table')`
 
 class Table extends PureComponent<StyledTableProps> {
   static Head = Head;
+
   static HeadColumn = HeadColumn;
+
   static Body = Body;
+
   static Row = Row;
+
   static Column = Column;
 
+  static defaultProps = {
+    width: '100%',
+    textAlign: 'left',
+  };
+
   render() {
-    const { width = '100%', textAlign = 'left' } = this.props;
-    return <StyledTable width={width} textAlign={textAlign} />;
+    return <StyledTable {...this.props} />;
   }
 }
 

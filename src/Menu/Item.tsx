@@ -1,13 +1,13 @@
 import React, { SFC } from 'react';
 import styled, { css } from 'styled-components';
 import {
+  BorderRadiusProps,
+  BordersProps,
+  SpaceProps,
   borderRadius,
   borders,
   space,
   themeGet,
-  SpaceProps,
-  BorderRadiusProps,
-  BordersProps,
 } from 'styled-system';
 
 import Icon, { IconType } from '../Icon';

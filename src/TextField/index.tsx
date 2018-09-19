@@ -1,6 +1,6 @@
-import React, { SFC } from 'react';
+import React, { ChangeEvent, ChangeEventHandler, SFC } from 'react';
 import styled from 'styled-components';
-import { Input as PowerplugInput, composeEvents } from 'react-powerplug';
+import { Input as PowerplugInput } from 'react-powerplug';
 import { rem } from 'polished';
 
 import FormField from '../Form/FormField';
@@ -78,7 +78,7 @@ export interface TextFieldProps {
   message?: string;
   maxLength?: number;
   textarea?: boolean;
-  onChange?: (event: Event) => void;
+  onChange?: ChangeEventHandler<HTMLInputElement>;
 }
 
 const TextField: SFC<TextFieldProps> = ({
@@ -95,7 +95,7 @@ const TextField: SFC<TextFieldProps> = ({
   ...props
 }) => (
   <PowerplugInput initial={defaultValue}>
-    {({ value: uncontrolledValue, bind: { onChange } }) => {
+    {({ value: uncontrolledValue, bind }) => {
       const value =
         controlledValue || controlledValue === ''
           ? controlledValue
@@ -105,13 +105,13 @@ const TextField: SFC<TextFieldProps> = ({
       const inputProps = {
         maxLength,
         value,
-        ...props,
-        ...composeEvents(
-          { onChange },
-          {
-            onChange,
+        onChange: (event: ChangeEvent<HTMLInputElement>) => {
+          bind.onChange(event);
+          if (onChange) {
+            onChange(event);
           }
-        ),
+        },
+        ...props,
       };
 
       return (

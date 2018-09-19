@@ -82,7 +82,7 @@ exports[`Checkbox should render correctly 1`] = `
 }
 
 .c2 + .c2 {
-  margin-top: 0.5rem;
+  margin-left: 0.5rem;
 }
 
 .c2:hover .c5 {
@@ -90,11 +90,12 @@ exports[`Checkbox should render correctly 1`] = `
 }
 
 .c0 + .c1 {
-  margin-top: 0.5rem;
+  margin-left: 0.5rem;
 }
 
 <label
   class="c0 c1 c2"
+  direction="horizontal"
 >
   <span
     class="c3"
@@ -202,15 +203,16 @@ exports[`Checkbox should render with props disabled 1`] = `
 }
 
 .c2 + .c2 {
-  margin-top: 0.5rem;
+  margin-left: 0.5rem;
 }
 
 .c0 + .c1 {
-  margin-top: 0.5rem;
+  margin-left: 0.5rem;
 }
 
 <label
   class="c0 c1 c2"
+  direction="horizontal"
   disabled=""
 >
   <span

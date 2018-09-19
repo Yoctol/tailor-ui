@@ -1,8 +1,8 @@
 import CloseIcon from 'react-icons/lib/md/close';
 import React, { SFC } from 'react';
 import styled from 'styled-components';
+import { SpaceProps, space } from 'styled-system';
 import { rgba } from 'polished';
-import { space, SpaceProps } from 'styled-system';
 
 import Box from '../Grid/Box';
 import Flex from '../Grid/Flex';
@@ -20,7 +20,7 @@ const StyledAlert = styled<AlertTypes, 'div'>('div')`
   padding: ${p => p.theme.space[2]} ${p => p.theme.space[3]};
   overflow-y: hidden;
   border: ${p => p.theme.borders.base};
-  border-radius: ${p => p.theme.borderRadius.base};
+  border-radius: ${p => p.theme.radii.base};
   border-color: ${p => p.theme.colors[p.type]};
   background-color: ${p => rgba(p.theme.colors[p.type], 0.1)};
   font-size: ${p => p.theme.fontSizes.sm};

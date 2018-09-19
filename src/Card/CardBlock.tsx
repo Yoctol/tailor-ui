@@ -1,11 +1,11 @@
 import React, { SFC } from 'react';
 import styled from 'styled-components';
 import {
+  HeightProps,
+  SpaceProps,
   height,
   space,
   themeGet,
-  SpaceProps,
-  HeightProps,
 } from 'styled-system';
 
 const StyledBlock = styled.div`

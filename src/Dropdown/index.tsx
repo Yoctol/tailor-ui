@@ -6,7 +6,7 @@ import ClickOutside from '../utils/ClickOutside';
 import Item from './Item';
 import List from './List';
 import SubList from './SubList';
-import { Provider, Placement } from './DropdownContext';
+import { Placement, Provider } from './DropdownContext';
 
 export interface DropdownProps {
   /**
@@ -35,16 +35,18 @@ export interface DropdownProps {
 }
 
 class Dropdown extends PureComponent<DropdownProps> {
-  static List = List;
-  static Item = Item;
-  static SubList = SubList;
+  static List: typeof List = List;
 
-  state = {
-    visible: false,
-  };
+  static Item: typeof Item = Item;
+
+  static SubList: typeof SubList = SubList;
 
   wrapperRef?: {
     children: HTMLCollectionOf<HTMLDivElement>;
+  };
+
+  state = {
+    visible: false,
   };
 
   getOffset = () => {
@@ -68,7 +70,7 @@ class Dropdown extends PureComponent<DropdownProps> {
     if (onVisibleChange) onVisibleChange(!visible);
   };
 
-  close = () => {
+  handleClose = () => {
     const { onVisibleChange } = this.props;
 
     this.setState(() => ({ visible: false }));
@@ -116,7 +118,7 @@ class Dropdown extends PureComponent<DropdownProps> {
                 placement,
                 offset,
                 styles,
-                onClick: this.close,
+                onClick: this.handleClose,
               }}
             >
               {overlay}
@@ -130,7 +132,7 @@ class Dropdown extends PureComponent<DropdownProps> {
     const { display = 'inline-block' } = this.props;
 
     return (
-      <ClickOutside onClickOutside={this.close}>
+      <ClickOutside onClickOutside={this.handleClose}>
         {({ bindRef }) => (
           <div
             ref={(wrapperRef: any) => {

@@ -20,6 +20,10 @@ class Keydown extends Component<KeydownProps> {
       handleKeydown();
     }
   };
+
+  render() {
+    return null;
+  }
 }
 
 export default Keydown;

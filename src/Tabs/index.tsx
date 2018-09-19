@@ -1,4 +1,4 @@
-import React, { PureComponent, createContext, SFC } from 'react';
+import React, { PureComponent, SFC, createContext } from 'react';
 import styled, { css } from 'styled-components';
 import { Value } from 'react-powerplug';
 import { space as styledSpace, themeGet } from 'styled-system';
@@ -92,7 +92,7 @@ const StyledTab = styled<StyledTabProps, 'a'>('a')`
 export type TabProps = {
   label: string;
   value: string;
-  disabled: boolean;
+  disabled?: boolean;
 };
 
 export const Tab: SFC<TabProps> = ({ label, value, ...props }) => (
@@ -136,11 +136,11 @@ interface StyledTabsProps {
   /**
    * Make the tabs position to bottom of parent
    */
-  absolute: boolean;
+  absolute?: boolean;
   /**
    * Set the tabs width to 100%
    */
-  block: boolean;
+  block?: boolean;
 }
 
 const StyledTabs = styled<StyledTabsProps, 'nav'>('nav')`
@@ -168,29 +168,28 @@ const StyledTabs = styled<StyledTabsProps, 'nav'>('nav')`
   ${styledSpace};
 `;
 
-type TabsProps = StyledTabsProps &
-  StyledTabProps & {
-    /**
-     * Initial active Tab's value, if `activeValue` is not set.
-     */
-    defaultActiveValue: string;
-    /**
-     * Current Tab's value
-     */
-    activeValue: string;
-    /**
-     * Callback executed when active tab is changed
-     */
-    onChange: (activeValue: string) => void;
-    /**
-     * Pills style of tabs
-     */
-    pills: boolean;
-    /**
-     * Preset tab bar size
-     */
-    size: Size;
-  };
+type TabsProps = StyledTabsProps & {
+  /**
+   * Initial active Tab's value, if `activeValue` is not set.
+   */
+  defaultActiveValue?: string;
+  /**
+   * Current Tab's value
+   */
+  activeValue?: string;
+  /**
+   * Callback executed when active tab is changed
+   */
+  onChange?: (activeValue: string) => void;
+  /**
+   * Pills style of tabs
+   */
+  pills?: boolean;
+  /**
+   * Preset tab bar size
+   */
+  size?: Size;
+};
 
 class Tabs extends PureComponent<TabsProps> {
   static Tab = Tab;
@@ -208,12 +207,19 @@ class Tabs extends PureComponent<TabsProps> {
     } = this.props;
 
     return (
-      <Value initial={defaultActiveValue} onChange={onChange}>
+      <Value
+        initial={defaultActiveValue}
+        onChange={value => {
+          if (onChange && value) {
+            onChange(value);
+          }
+        }}
+      >
         {({ value, set }) => (
           <StyledTabs absolute={absolute} {...otherProps}>
             <Provider
               value={{
-                activeValue: activeValue || value,
+                activeValue: activeValue || value || '',
                 setValue: set,
                 size,
                 pills,

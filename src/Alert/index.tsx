@@ -1,4 +1,4 @@
-import React, { SFC, PureComponent } from 'react';
+import React, { PureComponent, SFC } from 'react';
 import { Spring, animated, config } from 'react-spring';
 import { Toggle } from 'react-powerplug';
 

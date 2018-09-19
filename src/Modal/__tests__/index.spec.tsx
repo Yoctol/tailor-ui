@@ -6,13 +6,15 @@ import Modal from '..';
 
 describe('Modal', () => {
   it('should render correctly', () => {
-    const { container } = render(<Modal visible />);
+    const { container } = render(<Modal visible onCancel={() => {}} />);
 
     expect(container.firstChild).toMatchSnapshot();
   });
 
   it('should render with props closeButton', () => {
-    const { container } = render(<Modal visible closable />);
+    const { container } = render(
+      <Modal visible closable onCancel={() => {}} />
+    );
 
     expect(container.firstChild).toMatchSnapshot();
   });

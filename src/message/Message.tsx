@@ -2,10 +2,9 @@ import React, { PureComponent } from 'react';
 import styled from 'styled-components';
 import { Transition, animated } from 'react-spring';
 
-import { Types } from '../utils/getTypeIcon';
 import ThemeProvider from '../utils/ThemeProvider';
 import createUuidGenerator from '../utils/createUuidGenerator';
-import getTypeIcon from '../utils/getTypeIcon';
+import getTypeIcon, { Types } from '../utils/getTypeIcon';
 
 const getUuid = createUuidGenerator('message');
 

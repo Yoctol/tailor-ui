@@ -1,6 +1,12 @@
 import React, { PureComponent } from 'react';
 import styled, { css } from 'styled-components';
 import {
+  BorderColorProps,
+  BorderRadiusProps,
+  ColorProps,
+  HeightProps,
+  SpaceProps,
+  WidthProps,
   borderColor,
   borderRadius,
   color,
@@ -8,16 +14,10 @@ import {
   space,
   themeGet,
   width,
-  SpaceProps,
-  HeightProps,
-  WidthProps,
-  ColorProps,
-  BorderColorProps,
-  BorderRadiusProps,
 } from 'styled-system';
 
-import CardImage from './CardImage';
 import CardBlock from './CardBlock';
+import CardImage from './CardImage';
 
 export type CardProps = SpaceProps &
   HeightProps &
@@ -69,6 +69,7 @@ class Card extends PureComponent<{
   hoverable: boolean;
 }> {
   static Block = CardBlock;
+
   static Image = CardImage;
 
   render() {

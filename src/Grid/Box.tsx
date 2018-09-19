@@ -1,28 +1,5 @@
 import styled from 'styled-components';
 import * as system from 'styled-system';
-import {
-  PositionProps,
-  TopProps,
-  RightProps,
-  BottomProps,
-  LeftProps,
-  DisplayProps,
-  SpaceProps,
-  FontSizeProps,
-  ColorProps,
-  BordersProps,
-  BorderColorProps,
-  BorderRadiusProps,
-  WidthProps,
-  MinWidthProps,
-  MaxWidthProps,
-  HeightProps,
-  MinHeightProps,
-  MaxHeightProps,
-  FlexProps,
-  OrderProps,
-  AlignSelfProps,
-} from 'styled-system';
 
 const overflow = system.style({
   prop: 'overflow',
@@ -39,27 +16,27 @@ const overflowY = system.style({
   cssProperty: 'overflow-y',
 });
 
-export type BoxProps = PositionProps &
-  TopProps &
-  RightProps &
-  BottomProps &
-  LeftProps &
-  DisplayProps &
-  SpaceProps &
-  FontSizeProps &
-  ColorProps &
-  BordersProps &
-  BorderColorProps &
-  BorderRadiusProps &
-  WidthProps &
-  MinWidthProps &
-  MaxWidthProps &
-  HeightProps &
-  MinHeightProps &
-  MaxHeightProps &
-  FlexProps &
-  OrderProps &
-  AlignSelfProps & {
+export type BoxProps = system.PositionProps &
+  system.TopProps &
+  system.RightProps &
+  system.BottomProps &
+  system.LeftProps &
+  system.DisplayProps &
+  system.SpaceProps &
+  system.FontSizeProps &
+  system.ColorProps &
+  system.BordersProps &
+  system.BorderColorProps &
+  system.BorderRadiusProps &
+  system.WidthProps &
+  system.MinWidthProps &
+  system.MaxWidthProps &
+  system.HeightProps &
+  system.MinHeightProps &
+  system.MaxHeightProps &
+  system.FlexProps &
+  system.OrderProps &
+  system.AlignSelfProps & {
     overflow?: string;
     overflowX?: string;
     overflowY?: string;

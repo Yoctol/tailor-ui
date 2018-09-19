@@ -1,14 +1,15 @@
-import React, { SFC, PureComponent, cloneElement, createContext } from 'react';
+import React, { PureComponent, SFC, cloneElement, createContext } from 'react';
 import { Hover, Toggle } from 'react-powerplug';
+
 import ClickOutside from '../utils/ClickOutside';
 
 import BaseTooltip, {
   Arrow,
-  TooltipContent,
-  TooltipWrapper,
-  Placement,
   ArrowProps,
+  Placement,
+  TooltipContent,
   TooltipContentProps,
+  TooltipWrapper,
 } from './BaseTooltip';
 
 const { Consumer, Provider } = createContext(() => {});

@@ -1,4 +1,4 @@
-import React, { PureComponent, RefObject, MouseEvent } from 'react';
+import React, { MouseEvent, PureComponent, RefObject } from 'react';
 import styled, { css, keyframes } from 'styled-components';
 
 const rippleAnimation = keyframes`

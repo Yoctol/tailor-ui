@@ -1,21 +1,22 @@
 import React, {
-  PureComponent,
+  InputHTMLAttributes,
+  KeyboardEvent,
   KeyboardEventHandler,
+  PureComponent,
   RefObject,
   createRef,
-  KeyboardEvent,
-  InputHTMLAttributes,
 } from 'react';
 import styled, { css } from 'styled-components';
 import {
+  SpaceProps,
+  TextAlignProps,
+  WidthProps,
   space,
   textAlign,
   themeGet,
   width,
-  WidthProps,
-  SpaceProps,
-  TextAlignProps,
 } from 'styled-system';
+
 import { Omit } from '../utils/type';
 
 export type Size = 'sm' | 'md' | 'lg';
@@ -104,7 +105,7 @@ export type InputProps = {
 };
 
 class Input extends PureComponent<InputProps> {
-  private inputRef: RefObject<HTMLInputElement> = createRef();
+  inputRef: RefObject<HTMLInputElement> = createRef();
 
   componentDidMount() {
     const { autoSelect = false } = this.props;

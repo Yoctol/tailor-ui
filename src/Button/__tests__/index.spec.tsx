@@ -13,7 +13,7 @@ describe('Button', () => {
 
   it('should render with props variant and type', () => {
     const { container } = render(
-      <Button type="info" variant="rounded">
+      <Button type="info" rounded>
         Text Button
       </Button>
     );

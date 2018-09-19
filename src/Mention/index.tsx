@@ -5,15 +5,15 @@ import Mention, {
   toString,
 } from 'rc-editor-mention';
 import React, {
-  PureComponent,
   FocusEvent,
   FocusEventHandler,
+  PureComponent,
   RefObject,
   createRef,
 } from 'react';
 import styled, { css } from 'styled-components';
 
-import { inputStyles, Size } from '../Input';
+import { Size, inputStyles } from '../Input';
 
 export interface MentionWrapperProps {
   focus?: boolean;
@@ -190,7 +190,9 @@ export interface MentionEditorProps {
 
 class MentionEditor extends PureComponent<MentionEditorProps> {
   static toString = toString;
+
   static toContentState = toEditorState;
+
   static getMentions = getMentions;
 
   static defaultProps = {
@@ -267,7 +269,9 @@ class MentionEditor extends PureComponent<MentionEditorProps> {
         error={error}
         disabled={disabled}
         focus={focus}
-        innerRef={ref => (this.mentionWrapperRef = ref)}
+        innerRef={ref => {
+          this.mentionWrapperRef = ref;
+        }}
       >
         <Mention
           {...this.props}

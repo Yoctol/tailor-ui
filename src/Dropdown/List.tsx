@@ -1,14 +1,14 @@
 import React, { PureComponent } from 'react';
 import styled, { css } from 'styled-components';
-import { animated } from 'react-spring';
 import {
+  MinWidthProps,
+  SpaceProps,
+  TextAlignProps,
   minWidth,
   space,
   textAlign,
-  MinWidthProps,
-  TextAlignProps,
-  SpaceProps,
 } from 'styled-system';
+import { animated } from 'react-spring';
 
 import { Consumer, Placement } from './DropdownContext';
 
@@ -76,14 +76,13 @@ export type ListProps = MinWidthProps &
   };
 
 class List extends PureComponent<ListProps> {
+  static defaultProps = {
+    textAlign: 'left',
+    minWidth: 100,
+  };
+
   render() {
-    const {
-      children,
-      textAlign = 'left',
-      minWidth = 100,
-      style,
-      ...props
-    } = this.props;
+    const { children, style, ...props } = this.props;
     return (
       <Consumer>
         {({ placement, offset, styles, onClick }) => (
