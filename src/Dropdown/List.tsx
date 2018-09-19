@@ -72,7 +72,7 @@ const AnimatedStyledList = animated(StyledList);
 
 export type ListProps = MinWidthProps &
   TextAlignProps & {
-    style: any;
+    style?: any;
   };
 
 class List extends PureComponent<ListProps> {

@@ -102,6 +102,7 @@ export type InputProps = {
    */
   onPressEnter?: KeyboardEventHandler<HTMLInputElement>;
   onKeyPress?: KeyboardEventHandler<HTMLInputElement>;
+  required?: boolean;
 };
 
 class Input extends PureComponent<InputProps> {

@@ -14,7 +14,7 @@ export interface CheckboxGroupProps {
   /**
    * to specify the direction of the step bar, `horizontal` and `vertical` are currently supported
    */
-  direction: Direction;
+  direction?: Direction;
   /**
    * To set the initial value
    */
@@ -25,7 +25,7 @@ export interface CheckboxGroupProps {
   options?: {
     label: string;
     value: string;
-    disabled: boolean;
+    disabled?: boolean;
   }[];
 
   /**
@@ -35,7 +35,7 @@ export interface CheckboxGroupProps {
   /**
    * The callback function that is triggered when the state changes
    */
-  onChange: (value: ReadonlyArray<string>) => void;
+  onChange?: (value: ReadonlyArray<string>) => void;
 }
 
 const CheckboxGroup: SFC<CheckboxGroupProps> = ({
@@ -64,10 +64,10 @@ const CheckboxGroup: SFC<CheckboxGroupProps> = ({
               const { checked } = event.target;
 
               if (value) {
-                if (value.includes(_value) && !checked) {
+                if (value.includes(_value) && !checked && onChange) {
                   onChange(value.filter(val => val !== _value));
                 }
-                if (!value.includes(_value) && checked) {
+                if (!value.includes(_value) && checked && onChange) {
                   onChange([...value, _value]);
                 }
               } else {

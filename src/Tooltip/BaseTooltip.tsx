@@ -149,7 +149,7 @@ export const Arrow = styled<ArrowProps, 'div'>('div')`
 `;
 
 export interface TooltipWrapperProps {
-  display: string;
+  display?: string;
 }
 
 export const TooltipWrapper = styled<TooltipWrapperProps, 'div'>('div')`
@@ -176,12 +176,12 @@ const getTrsnformTranslateAxis = (placement: Placement) =>
 export interface BaseTooltipProps {
   visible: boolean;
   overlay: React.ReactNode;
-  placement: Placement;
+  placement?: Placement;
 }
 
 const BaseTooltip: SFC<BaseTooltipProps> = ({
   visible,
-  placement,
+  placement = 'bottom',
   overlay,
 }) => (
   <Transition

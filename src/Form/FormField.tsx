@@ -8,9 +8,9 @@ import { StyledTextarea } from '../Input/Textarea';
 import Hint from './Hint';
 
 export interface FormFieldProps {
-  success: boolean;
-  warning: boolean;
-  error: boolean;
+  success?: boolean;
+  warning?: boolean;
+  error?: boolean;
 }
 
 const StyledFormField = styled<FormFieldProps, 'div'>('div')`

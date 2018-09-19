@@ -1,14 +1,18 @@
-import React, { PureComponent, SFC, cloneElement, createContext } from 'react';
+import React, {
+  PureComponent,
+  ReactNode,
+  SFC,
+  cloneElement,
+  createContext,
+} from 'react';
 import { Hover, Toggle } from 'react-powerplug';
 
 import ClickOutside from '../utils/ClickOutside';
 
 import BaseTooltip, {
   Arrow,
-  ArrowProps,
   Placement,
   TooltipContent,
-  TooltipContentProps,
   TooltipWrapper,
 } from './BaseTooltip';
 
@@ -16,9 +20,9 @@ const { Consumer, Provider } = createContext(() => {});
 
 interface ClickTooltipProps {
   children: React.ReactElement<any>;
-  defaultVisible: boolean;
-  display: string;
-  onVisibleChange: (visible: boolean) => void;
+  defaultVisible?: boolean;
+  display?: string;
+  onVisibleChange?: (visible: boolean) => void;
   placement: Placement;
   overlay: React.ReactNode;
 }
@@ -67,10 +71,10 @@ const ClickTooltip: SFC<ClickTooltipProps> = ({
 
 interface HoverTooltipProps {
   children: React.ReactElement<any>;
-  display: string;
-  onVisibleChange: (visible: boolean) => void;
+  display?: string;
+  onVisibleChange?: (visible: boolean) => void;
   placement: Placement;
-  overlay: React.ReactNode;
+  overlay: ReactNode;
 }
 
 const HoverTooltip: SFC<HoverTooltipProps> = ({
@@ -94,16 +98,46 @@ const HoverTooltip: SFC<HoverTooltipProps> = ({
   </Hover>
 );
 
-export type TooltipProps = HoverTooltipProps &
-  ClickTooltipProps &
-  ArrowProps & {
-    content: React.ReactNode | ((hideTooltip: () => void) => React.ReactNode);
-    trigger: 'click' | 'hover';
-    components: {
-      ContentComponent: React.ComponentClass<TooltipContentProps>;
-      ArrowComponent: React.ComponentClass<ArrowProps>;
-    };
+export type TooltipProps = {
+  /**
+   * The component which this tooltip show up
+   */
+  children: React.ReactElement<any>;
+  /**
+   * Whether the floating tooltip card is visible by default. Only support when the trigger is `click`
+   */
+  defaultVisible?: boolean;
+  /**
+   * The wrapper component's display style
+   */
+  display?: string;
+  /**
+   * 	Callback executed when visibility of the tooltip card is changed
+   */
+  onVisibleChange?: (visible: boolean) => void;
+  /**
+   * The position base on the children component
+   */
+  placement?: Placement;
+  /**
+   * The style of this tooltip
+   */
+  light?: boolean;
+  /**
+   * A string or react component inside this tooltip.
+   * If you are using click to trigger, it can be a
+   * function that with `hide` callback as first argument
+   */
+  content: React.ReactNode | ((hideTooltip: () => void) => React.ReactNode);
+  /**
+   * Decide how to trigger this tooltip
+   */
+  trigger?: 'click' | 'hover';
+  components?: {
+    ContentComponent: any;
+    ArrowComponent: any;
   };
+};
 
 class Tooltip extends PureComponent<TooltipProps> {
   renderOverlay = () => {
@@ -136,54 +170,14 @@ class Tooltip extends PureComponent<TooltipProps> {
   };
 
   render() {
+    const { trigger, placement = 'top' } = this.props;
     const overlay = this.renderOverlay();
-    const RenderTooltip =
-      this.props.trigger === 'click' ? ClickTooltip : HoverTooltip;
-    return <RenderTooltip overlay={overlay} {...this.props} />;
+    const RenderTooltip = trigger === 'click' ? ClickTooltip : HoverTooltip;
+
+    return (
+      <RenderTooltip overlay={overlay} placement={placement} {...this.props} />
+    );
   }
 }
-
-// Tooltip.propTypes = {
-//   /**
-//    * The component which this tooltip show up
-//    */
-//   children: PropTypes.node.isRequired,
-//   /**
-//    * A string or react component inside this tooltip.
-//    * If you are using click to trigger, it can be a
-//    * function that with `hide` callback as first argument
-//    */
-//   content: PropTypes.oneOfType([PropTypes.node, PropTypes.func]),
-//   /**
-//    * Whether the floating tooltip card is visible by default. Only support when the trigger is `click`
-//    */
-//   defaultVisible: PropTypes.bool,
-//   /**
-//    * The wrapper component's display style
-//    */
-//   display: PropTypes.string,
-//   /**
-//    * The style of this tooltip
-//    */
-//   light: PropTypes.bool,
-//   /**
-//    * The position base on the children component
-//    */
-//   placement: PropTypes.oneOf(['top', 'right', 'bottom', 'left']),
-//   /**
-//    * Decide how to trigger this tooltip
-//    */
-//   trigger: PropTypes.oneOf(['hover', 'click']),
-//   /**
-//    * 	Callback executed when visibility of the tooltip card is changed
-//    */
-//   onVisibleChange: PropTypes.func,
-//   ...space.propTypes,
-//   ...minWidth.propTypes,
-//   ...color.propTypes,
-//   ...borders.propTypes,
-//   ...fontSize.propTypes,
-//   ...textAlign.propTypes,
-// };
 
 export default Tooltip;

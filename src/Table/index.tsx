@@ -19,9 +19,7 @@ type HeadColumnProps = WidthProps &
   BordersProps &
   BorderColorProps;
 
-const HeadColumn = styled<HeadColumnProps, 'th'>('th').attrs({
-  borderColor: 'gray.8',
-})`
+const HeadColumn = styled<HeadColumnProps, 'th'>('th')`
   padding: ${themeGet('paddings.xs')} ${themeGet('paddings.sm')};
   font-weight: 500;
 
@@ -30,6 +28,10 @@ const HeadColumn = styled<HeadColumnProps, 'th'>('th').attrs({
   ${borders};
   ${borderColor};
 `;
+
+HeadColumn.defaultProps = {
+  borderColor: 'gray.8',
+};
 
 type ColumnProps = SpaceProps & BordersProps & BorderColorProps;
 
@@ -64,6 +66,7 @@ const StyledTable = styled<StyledTableProps, 'table'>('table')`
   border-top-left-radius: ${themeGet('radii.base')};
   border-top-right-radius: ${themeGet('radii.base')};
   box-shadow: 0 0 0 1px ${themeGet('colors.gray.8')};
+  font-size: ${themeGet('fontSizes.sm')};
 
   & > thead {
     border-bottom: ${themeGet('borders.base')} ${themeGet('colors.gray.8')};

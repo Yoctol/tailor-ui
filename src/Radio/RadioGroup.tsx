@@ -18,14 +18,14 @@ export interface RadioGroupProps {
   /**
    * to specify the direction of the step bar, `horizontal` and `vertical` are currently supported
    */
-  direction: Direction;
+  direction?: Direction;
   /**
    * Specifies options
    */
   options?: {
     label: string;
     value: string;
-    disabled: boolean;
+    disabled?: boolean;
   }[];
   /**
    * Used for setting the currently selected value
@@ -34,7 +34,7 @@ export interface RadioGroupProps {
   /**
    * The callback function that is triggered when the state changes
    */
-  onChange: (value: string) => void;
+  onChange?: (value: string) => void;
 }
 
 const RadioGroup: SFC<RadioGroupProps> = ({
@@ -59,7 +59,8 @@ const RadioGroup: SFC<RadioGroupProps> = ({
         <Provider
           value={{
             direction,
-            _onChange: _value => (value ? onChange(_value) : set(_value)),
+            _onChange: _value =>
+              value && onChange ? onChange(_value) : set(_value),
             _isChecked: _value =>
               value ? value === _value : uncontrolledValue === _value,
           }}

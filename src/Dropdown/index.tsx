@@ -18,7 +18,7 @@ export interface DropdownProps {
   /**
    * The wrapper component's display style
    */
-  display: string;
+  display?: string;
   /**
    * The content in this dropdown component
    */
@@ -26,12 +26,12 @@ export interface DropdownProps {
   /**
    * The position base on the children component
    */
-  placement: Placement;
+  placement?: Placement;
 
   /**
    * a callback function takes an argument: visible, is executed when the visible state is changed
    */
-  onVisibleChange: (visible: boolean) => void;
+  onVisibleChange?: (visible: boolean) => void;
 }
 
 class Dropdown extends PureComponent<DropdownProps> {

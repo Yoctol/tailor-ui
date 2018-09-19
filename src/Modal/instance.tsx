@@ -60,13 +60,13 @@ class ModalComponent extends PureComponent<
   };
 
   trigger = (options: ModalOptions, type: ModalTypes) =>
-    new Promise(resolve =>
+    new Promise<boolean>(resolve =>
       this.setState(() => ({
         type,
         visible: true,
-        title: '',
-        content: '',
-        confirmText: 'Confirm',
+        title: options.title || '',
+        content: options.content || '',
+        confirmText: options.confirmText || 'Confirm',
         cancelText: type === 'confirm' ? options.cancelText || 'Cancel' : '',
         onConfirm: () => {
           if (options.onConfirm) {
@@ -149,10 +149,12 @@ class Modal {
     render(<ModalComponent ref={this.ref} />, elementRoot);
   }
 
-  trigger = (options: ModalOptions, type: ModalTypes) => {
+  trigger = (options: ModalOptions, type: ModalTypes): Promise<boolean> => {
     if (this.ref.current) {
-      this.ref.current.trigger(options, type);
+      return this.ref.current.trigger(options, type);
     }
+
+    return Promise.resolve(false);
   };
 }
 

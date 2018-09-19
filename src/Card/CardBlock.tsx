@@ -26,4 +26,8 @@ export type BlockProps = SpaceProps & HeightProps;
 
 const Block: SFC<BlockProps> = props => <StyledBlock {...props} />;
 
+Block.defaultProps = {
+  p: 3,
+};
+
 export default Block;

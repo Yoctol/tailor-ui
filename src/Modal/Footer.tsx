@@ -21,7 +21,7 @@ const Footer: SFC<FooterProps> = ({
   confirmButtonProps,
   cancelButtonProps,
 }) => (
-  <Flex>
+  <Flex width="100%">
     <Box ml="auto">
       {cancelText && (
         <Button onClick={onCancel} {...cancelButtonProps}>

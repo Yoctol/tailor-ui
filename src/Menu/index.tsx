@@ -10,8 +10,12 @@ class Menu extends PureComponent<FlexProps> {
 
   static Item = Item;
 
+  static defaultProps = {
+    width: 180,
+  };
+
   render() {
-    const { children, width = 180, ...props } = this.props;
+    const { children, ...props } = this.props;
     return (
       <Flex
         flexDirection="column"

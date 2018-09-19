@@ -50,7 +50,9 @@ const MentionWrapper = styled<MentionWrapperProps, 'div'>('div')`
       ${p =>
         p.disabled &&
         css`
+          border-color: ${p.theme.colors.gray[5]};
           opacity: 0.5;
+          background-color: ${p.theme.colors.gray[8]};
           cursor: not-allowed;
         `};
 
@@ -59,7 +61,7 @@ const MentionWrapper = styled<MentionWrapperProps, 'div'>('div')`
       }
     }
 
-    &.multilines {
+    &.multilines .yoctol-ui-mention-editor {
       height: auto;
     }
   }

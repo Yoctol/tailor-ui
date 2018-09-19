@@ -36,7 +36,7 @@ const MaxLength = styled.div`
 `;
 
 const TextFieldField = styled(FormField)`
-  margin-top: 6px;
+  margin-top: 10px;
 
   ${StyledInput /* sc-selector */}:invalid, ${StyledTextarea /* sc-selector */}:invalid {
     box-shadow: none;

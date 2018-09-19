@@ -30,7 +30,7 @@ export interface SpinProps {
   /**
    * Customize description content when Spin has children
    */
-  text: string;
+  text?: string;
 }
 
 const Spin: SFC<SpinProps> = ({ text = 'Loading...' }) => (

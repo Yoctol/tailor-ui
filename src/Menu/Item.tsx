@@ -54,7 +54,7 @@ export const StyledItem = styled<StyledItemProps, 'button'>('button')`
 `;
 
 export type ItemProps = StyledItemProps & {
-  icon: IconType;
+  icon?: IconType;
   onClick?: () => void;
 };
 

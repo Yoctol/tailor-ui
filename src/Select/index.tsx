@@ -55,19 +55,19 @@ export interface SelectProps {
   /**
    * Is the select value clearable
    */
-  isClearable: boolean;
+  isClearable?: boolean;
   /**
    * Disable the control
    */
-  isDisabled: boolean;
+  isDisabled?: boolean;
   /**
    * Allow the user to search for matching options
    */
-  isSearchable: boolean;
+  isSearchable?: boolean;
   /**
    * Specify the options the user can select from
    */
-  options: number[] | string[] | object[];
+  options?: number[] | string[] | object[];
   /**
    * Change the text displayed when no option is selected
    */
@@ -75,11 +75,11 @@ export interface SelectProps {
   /**
    * One of options
    */
-  value: number | string | object;
+  value?: number | string | object;
   /**
    * Subscribe to change events
    */
-  onChange: (option: number | string | object) => void;
+  onChange?: (option: number | string | object) => void;
 }
 
 const Select: SFC<SelectProps> = props => (

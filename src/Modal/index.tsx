@@ -38,6 +38,8 @@ class Modal extends PureComponent<ModalProps> {
 
   static defaultProps = {
     title: 'test',
+    confirmText: 'Confirm',
+    cancelText: 'Cancel',
   };
 
   renderHeader = () => {
@@ -72,7 +74,7 @@ class Modal extends PureComponent<ModalProps> {
 
   renderFooter = () => {
     const {
-      footer = null,
+      footer,
       cancelText,
       confirmText,
       onCancel,

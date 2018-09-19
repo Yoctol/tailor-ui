@@ -289,8 +289,8 @@ export const Step: SFC<StepProps> = ({ title, description = null }) => (
 
 export interface StepsProps {
   current: number;
-  direction: Direction;
-  onCurrentChange: () => void;
+  direction?: Direction;
+  onCurrentChange?: () => void;
   children: ReactElement<StepProps>[];
 }
 

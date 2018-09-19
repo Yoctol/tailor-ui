@@ -25,15 +25,17 @@ export type CardProps = SpaceProps &
   ColorProps &
   BorderColorProps &
   BorderRadiusProps & {
-    clickable: boolean;
-    hoverable: boolean;
+    clickable?: boolean;
+    hoverable?: boolean;
   };
 
-const CardWrapper = styled<CardProps, 'div'>('div')`
+const CardWrapper = styled<CardProps, any>('div')`
   display: flex;
   flex-direction: column;
   border: ${themeGet('borders.base')};
   border-color: ${themeGet('colors.gray.8')};
+
+  ${p => p.theme.transition};
 
   ${({ clickable }) =>
     clickable &&
@@ -58,19 +60,16 @@ const CardWrapper = styled<CardProps, 'div'>('div')`
   ${borderRadius};
 `;
 
-CardWrapper.defaultProps = {
-  bg: 'light',
-  borderRadius: 'lg',
-  borderColor: 'gray.8',
-};
-
-class Card extends PureComponent<{
-  clickable: boolean;
-  hoverable: boolean;
-}> {
+class Card extends PureComponent<CardProps> {
   static Block = CardBlock;
 
   static Image = CardImage;
+
+  static defaultProps = {
+    bg: 'light',
+    borderRadius: 'lg',
+    borderColor: 'gray.8',
+  };
 
   render() {
     return <CardWrapper {...this.props} />;

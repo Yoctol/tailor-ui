@@ -1,5 +1,5 @@
 import CloseIcon from 'react-icons/lib/md/close';
-import React, { SFC } from 'react';
+import React, { ReactNode, SFC } from 'react';
 import styled from 'styled-components';
 import { SpaceProps, space } from 'styled-system';
 import { rgba } from 'polished';
@@ -7,10 +7,10 @@ import { rgba } from 'polished';
 import Box from '../Grid/Box';
 import Flex from '../Grid/Flex';
 import Icon from '../Icon';
-import getTypeIcon from '../utils/getTypeIcon';
+import getTypeIcon, { Types } from '../utils/getTypeIcon';
 
 export interface AlertTypes extends SpaceProps {
-  type: 'info' | 'success' | 'warning' | 'error';
+  type: Types;
 }
 
 const StyledAlert = styled<AlertTypes, 'div'>('div')`
@@ -29,10 +29,11 @@ const StyledAlert = styled<AlertTypes, 'div'>('div')`
   ${space};
 `;
 
-export interface BaseAlertProps extends AlertTypes {
+export interface BaseAlertProps extends SpaceProps {
   closable?: boolean;
-  message: JSX.Element;
-  onClose: () => void;
+  type?: Types;
+  message: ReactNode;
+  onClose?: () => void;
 }
 
 const BaseAlert: SFC<BaseAlertProps> = ({
