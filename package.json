@@ -7,7 +7,7 @@
   "bugs": {
     "url": "https://github.com/yoctol/ui/issues"
   },
-  "version": "1.13.5",
+  "version": "2.0.0-alpha.0",
   "main": "lib/index.js",
   "files": [
     "lib"

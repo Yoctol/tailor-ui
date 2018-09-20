@@ -1,3 +1,14 @@
+<a name="2.0.0-alpha.0"></a>
+
+# [2.0.0-alpha.0](https://github.com/yoctol/ui/compare/v1.13.5...v2.0.0-alpha.0) (2018-09-20)
+
+### Bug Fixes
+
+- **mention:** use md as default input size ([1f43115](https://github.com/yoctol/ui/commit/1f43115))
+- **ts:** eslint & tests ([89e5a89](https://github.com/yoctol/ui/commit/89e5a89))
+- build types ([1195e7a](https://github.com/yoctol/ui/commit/1195e7a))
+- components types ([5a7c1f5](https://github.com/yoctol/ui/commit/5a7c1f5))
+
 <a name="1.13.5"></a>
 
 ## [1.13.5](https://github.com/yoctol/ui/compare/v1.13.4...v1.13.5) (2018-09-17)
