@@ -11,7 +11,6 @@ import {
   color,
   height,
   space,
-  themeGet,
   width,
 } from 'styled-system';
 
@@ -33,8 +32,8 @@ export type CardProps = SpaceProps &
 const CardWrapper = styled<CardProps, any>('div')`
   display: flex;
   flex-direction: column;
-  border: ${themeGet('borders.base')};
-  border-color: ${themeGet('colors.gray.8')};
+  border: ${p => p.theme.borders.base};
+  border-color: ${p => p.theme.colors.gray[8]};
 
   ${p => p.theme.transition};
 

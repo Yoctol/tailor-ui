@@ -9,7 +9,6 @@ import {
   borders,
   space,
   textAlign,
-  themeGet,
   width,
 } from 'styled-system';
 
@@ -21,7 +20,7 @@ type HeadColumnProps = WidthProps &
   BorderColorProps;
 
 const HeadColumn = styled<HeadColumnProps, 'th'>('th')`
-  padding: ${themeGet('paddings.xs')} ${themeGet('paddings.sm')};
+  padding: ${p => p.theme.paddings.xs} ${p => p.theme.paddings.sm};
   font-weight: 500;
 
   ${width};
@@ -39,14 +38,14 @@ type ColumnProps = SpaceProps & BordersProps & BorderColorProps;
 const Column = styled<ColumnProps, 'td'>('td').attrs({
   borderColor: 'gray.8',
 })`
-  padding: ${themeGet('paddings.xs')} ${themeGet('paddings.sm')};
+  padding: ${p => p.theme.paddings.xs} ${p => p.theme.paddings.sm};
 
   ${space} ${borders};
   ${borderColor};
 `;
 
 const Row = styled.tr`
-  border-bottom: ${themeGet('borders.base')} ${themeGet('colors.gray.8')};
+  border-bottom: ${p => p.theme.borders.base} ${p => p.theme.colors.gray[8]};
 `;
 
 const Head: SFC = ({ children }) => (
@@ -64,14 +63,14 @@ const StyledTable = styled<StyledTableProps, 'table'>('table')`
   border-spacing: 0;
   border-collapse: collapse;
   border-style: hidden;
-  border-top-left-radius: ${themeGet('radii.base')};
-  border-top-right-radius: ${themeGet('radii.base')};
-  box-shadow: 0 0 0 1px ${themeGet('colors.gray.8')};
-  font-size: ${themeGet('fontSizes.sm')};
+  border-top-left-radius: ${p => p.theme.radii.base};
+  border-top-right-radius: ${p => p.theme.radii.base};
+  box-shadow: 0 0 0 1px ${p => p.theme.colors.gray[8]};
+  font-size: ${p => p.theme.fontSizes.sm};
 
   & > thead {
-    border-bottom: ${themeGet('borders.base')} ${themeGet('colors.gray.8')};
-    background-color: ${themeGet('colors.gray.9')};
+    border-bottom: ${p => p.theme.borders.base} ${p => p.theme.colors.gray[8]};
+    background-color: ${p => p.theme.colors.gray[9]};
   }
 
   ${width};
