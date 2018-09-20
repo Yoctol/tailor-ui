@@ -1,8 +1,23 @@
 {
-  "presets": ["@babel/preset-env", "@babel/preset-react"],
+  "presets": [
+    "@babel/preset-env",
+    "@babel/preset-react",
+    "@babel/preset-typescript"
+  ],
   "plugins": [
-    "babel-plugin-styled-components",
     "@babel/plugin-proposal-class-properties",
-    "ramda"
+    "babel-plugin-typescript-to-proptypes",
+    "babel-plugin-styled-components",
+    "ramda",
+    [
+      "module-resolver",
+      {
+        "root": ["./"],
+        "extensions": [".js", ".jsx", ".ts", ".tsx"],
+        "alias": {
+          "utils": "./src/utils"
+        }
+      }
+    ]
   ]
 }

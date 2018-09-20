@@ -61,7 +61,7 @@ import { Tag } from '@yoctol/ui';
                 {value}
               </Tag>
             ))}
-            <Box ml="2">
+            <Flex ml="2">
               {on ? (
                 <Input
                   width="80px"
@@ -82,7 +82,7 @@ import { Tag } from '@yoctol/ui';
               ) : (
                 <Button text size="sm" onClick={toggle}>+ Add Tag</Button>
               )}
-            </Box>
+            </Flex>
           </Flex>
         )}
       </Toggle>

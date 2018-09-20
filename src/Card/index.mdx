@@ -5,8 +5,12 @@ route: /data-display/card
 ---
 
 import { PropsTable, Playground } from 'docz';
+
 import { Input, Button } from '../';
-import Card, { Block, Image } from './';
+
+import Card from './Card';
+import CardBlock from './CardBlock';
+import CardImage from './CardImage';
 
 # Card
 
@@ -75,6 +79,33 @@ import { Card } from '@yoctol/ui';
   </Card>
 </Playground>
 
+### hoverable
+
+
+<Playground>
+  <Card width="400px" hoverable>
+    <Card.Block>Title</Card.Block>
+    <Card.Block>Content</Card.Block>
+    <Card.Block>Footer</Card.Block>
+  </Card>
+</Playground>
+
+
+### clickable
+
+<Playground>
+  <Card width="400px" clickable>
+    <Card.Block>Title</Card.Block>
+    <Card.Block>Content</Card.Block>
+    <Card.Block>Footer</Card.Block>
+  </Card>
+  <br />
+  <Card width="400px" hoverable clickable>
+    <Card.Block>Title</Card.Block>
+    <Card.Block>Content</Card.Block>
+    <Card.Block>Footer</Card.Block>
+  </Card>
+</Playground>
 
 ## API
 
@@ -86,8 +117,8 @@ Some `props` are using object spread syntax and are not showing in these tables.
 
 ### Card.Block
 
-<PropsTable of={Block} />
+<PropsTable of={CardBlock} />
 
 ### Card.Image
 
-<PropsTable of={Image} />
+<PropsTable of={CardImage} />
