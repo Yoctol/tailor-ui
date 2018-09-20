@@ -90,6 +90,7 @@ const MentionWrapper = styled<MentionWrapperProps, 'div'>('div')`
       &-item {
         display: flex;
         position: relative;
+        flex: none;
         align-items: center;
         height: ${p => p.theme.heights.sm};
         padding: 0 ${p => p.theme.paddings.sm};
