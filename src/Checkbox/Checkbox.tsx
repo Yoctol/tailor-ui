@@ -1,5 +1,6 @@
 import React, { ChangeEvent, PureComponent } from 'react';
-import styled, { css } from 'styled-components';
+
+import styled, { css } from 'utils/styled-components';
 
 import Space from '../Grid/Space';
 

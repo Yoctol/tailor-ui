@@ -1,7 +1,38 @@
-import { css } from 'styled-components';
 import { rem } from 'polished';
 
-import * as colors from './colors';
+const colors = {
+  primary: '#423b63',
+  primaryDark: '#2a2640',
+  primaryLight: '#423b63',
+
+  secondary: '#c7ad8d',
+  secondaryDark: '#ab9272',
+  secondaryLight: '#e6d1b7',
+
+  dark: '#111111',
+  light: '#ffffff',
+  gray: [
+    '#1e1e1e', // 0
+    '#2b2b2b', // 1
+    '#373737', // 2
+    '#444444', // 3
+    '#5e5e5e', // 4
+    '#919191', // 5
+    '#aaaaaa', // 6
+    '#c3c3c3', // 7
+    '#e9e9e9', // 8
+    '#f7f7f7', // 9
+  ],
+
+  success: '#30be72',
+  warning: '#de8a15',
+  error: '#e65541', // FIXME: remove this line later
+  danger: '#e65541',
+  info: '#4384f0',
+
+  code: '#e06870',
+  highlight: '#ffe9b3',
+};
 
 const toRem = (px: number) => rem(`${px}px`);
 
@@ -39,9 +70,7 @@ const borders = {
   base: '1px solid',
 };
 
-const transition = css`
-  transition: all 200ms ease 0s;
-`;
+const transition = 'transition: all 200ms ease 0s';
 
 const shadows = [
   '0 1px 4px 0 rgba(191, 191, 191, 0.5)',

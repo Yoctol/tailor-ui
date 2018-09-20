@@ -1,10 +1,10 @@
-import styled from 'styled-components';
 import { rem } from 'polished';
-import { themeGet } from 'styled-system';
+
+import styled from 'utils/styled-components';
 
 const Hint = styled.div`
-  margin-top: ${themeGet('space.1')};
-  color: ${themeGet('colors.gray.6')};
+  margin-top: ${p => p.theme.space[1]};
+  color: ${p => p.theme.colors.gray[6]};
   font-size: ${rem('12px')};
 `;
 

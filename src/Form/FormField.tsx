@@ -1,6 +1,6 @@
 import React, { SFC } from 'react';
-import styled, { css } from 'styled-components';
-import { themeGet } from 'styled-system';
+
+import styled, { css } from 'utils/styled-components';
 
 import { StyledInput } from '../Input';
 import { StyledTextarea } from '../Input/Textarea';
@@ -15,23 +15,23 @@ export interface FormFieldProps {
 
 const StyledFormField = styled<FormFieldProps, 'div'>('div')`
   position: relative;
-  margin-bottom: ${themeGet('space.2')};
+  margin-bottom: ${p => p.theme.space[2]};
 
   ${({ success }) =>
     success &&
     css`
       & ${StyledInput /* sc-selector */} {
-        border-color: ${themeGet('colors.success')};
+        border-color: ${p => p.theme.colors.success};
       }
 
       /* stylelint-disable-next-line */
       & ${StyledTextarea /* sc-selector */} {
-        border-color: ${themeGet('colors.success')};
+        border-color: ${p => p.theme.colors.success};
       }
 
       /* stylelint-disable-next-line */
       & ${Hint /* sc-selector */} {
-        color: ${themeGet('colors.success')};
+        color: ${p => p.theme.colors.success};
       }
     `};
 
@@ -39,17 +39,17 @@ const StyledFormField = styled<FormFieldProps, 'div'>('div')`
     warning &&
     css`
       & ${StyledInput /* sc-selector */} {
-        border-color: ${themeGet('colors.warning')};
+        border-color: ${p => p.theme.colors.warning};
       }
 
       /* stylelint-disable-next-line */
       & ${StyledTextarea /* sc-selector */} {
-        border-color: ${themeGet('colors.warning')};
+        border-color: ${p => p.theme.colors.warning};
       }
 
       /* stylelint-disable-next-line */
       & ${Hint /* sc-selector */} {
-        color: ${themeGet('colors.warning')};
+        color: ${p => p.theme.colors.warning};
       }
     `};
 
@@ -57,17 +57,17 @@ const StyledFormField = styled<FormFieldProps, 'div'>('div')`
     error &&
     css`
       & ${StyledInput /* sc-selector */} {
-        border-color: ${themeGet('colors.error')};
+        border-color: ${p => p.theme.colors.error};
       }
 
       /* stylelint-disable-next-line */
       & ${StyledTextarea /* sc-selector */} {
-        border-color: ${themeGet('colors.error')};
+        border-color: ${p => p.theme.colors.error};
       }
 
       /* stylelint-disable-next-line */
       & ${Hint /* sc-selector */} {
-        color: ${themeGet('colors.error')};
+        color: ${p => p.theme.colors.error};
       }
     `};
 `;

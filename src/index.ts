@@ -1,4 +1,4 @@
-import * as colors from './theme/colors';
+import theme from './theme';
 
 export { default as Alert } from './Alert';
 export { default as Button } from './Button';
@@ -32,5 +32,4 @@ export { default as Textarea } from './Input/Textarea';
 export { default as TextField } from './TextField';
 export { default as ThemeProvider } from './utils/ThemeProvider';
 export { default as Tooltip } from './Tooltip';
-export { default as injectGlobalCss } from './injectGlobalCss';
-export { colors };
+export { theme };

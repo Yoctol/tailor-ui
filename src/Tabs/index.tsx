@@ -1,7 +1,8 @@
 import React, { PureComponent, SFC, createContext } from 'react';
-import styled, { css } from 'styled-components';
 import { Value } from 'react-powerplug';
 import { space as styledSpace, themeGet } from 'styled-system';
+
+import styled, { css } from 'utils/styled-components';
 
 type Size = 'sm' | 'md' | 'lg';
 

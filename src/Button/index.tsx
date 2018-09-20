@@ -5,9 +5,10 @@ import React, {
   RefObject,
   createRef,
 } from 'react';
-import styled, { css, keyframes } from 'styled-components';
 import { SpaceProps, space as styledSpace } from 'styled-system';
 import { path } from 'ramda';
+
+import styled, { css, keyframes } from 'utils/styled-components';
 
 import Icon, { IconWrapper } from '../Icon';
 

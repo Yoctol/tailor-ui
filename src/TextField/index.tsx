@@ -1,7 +1,8 @@
 import React, { ChangeEvent, ChangeEventHandler, SFC } from 'react';
-import styled from 'styled-components';
 import { Input as PowerplugInput } from 'react-powerplug';
 import { rem } from 'polished';
+
+import styled from 'utils/styled-components';
 
 import FormField from '../Form/FormField';
 import Hint from '../Form/Hint';

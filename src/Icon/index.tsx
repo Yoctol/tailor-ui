@@ -1,6 +1,7 @@
 import React, { ComponentClass, SFC } from 'react';
-import styled, { css } from 'styled-components';
 import { SpaceProps, style, space as styledSpace } from 'styled-system';
+
+import styled, { css } from 'utils/styled-components';
 
 import * as icons from './icons';
 

@@ -1,10 +1,12 @@
 import styledNormalize from 'styled-normalize';
-import { injectGlobal } from 'styled-components';
+
+import { injectGlobal } from 'utils/styled-components';
 
 import base from './base';
 
 const injectGlobalCss = () => injectGlobal`
   ${styledNormalize}
+
   ${base}
 `;
 

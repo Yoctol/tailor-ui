@@ -1,8 +1,9 @@
 import CloseIcon from 'react-icons/lib/md/close';
 import React, { ReactNode, SFC } from 'react';
-import styled from 'styled-components';
 import { SpaceProps, space } from 'styled-system';
 import { rgba } from 'polished';
+
+import styled from 'utils/styled-components';
 
 import Box from '../Grid/Box';
 import Flex from '../Grid/Flex';

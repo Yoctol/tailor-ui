@@ -1,5 +1,6 @@
-import styled from 'styled-components';
 import { SpaceProps, space } from 'styled-system';
+
+import styled from 'utils/styled-components';
 
 const Item = styled<SpaceProps, 'li'>('li')`
   display: flex;

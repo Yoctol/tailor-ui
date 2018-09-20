@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
-import styled from 'styled-components';
 import { Transition, animated } from 'react-spring';
+
+import styled from 'utils/styled-components';
 
 import ThemeProvider from '../utils/ThemeProvider';
 import createUuidGenerator from '../utils/createUuidGenerator';

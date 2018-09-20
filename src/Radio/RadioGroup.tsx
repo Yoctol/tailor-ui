@@ -1,6 +1,7 @@
 import React, { SFC } from 'react';
-import styled from 'styled-components';
 import { Value } from 'react-powerplug';
+
+import styled from 'utils/styled-components';
 
 import Radio, { Direction } from './Radio';
 import { Provider } from './RadioContext';

@@ -1,5 +1,6 @@
 import React, { SFC } from 'react';
-import styled from 'styled-components';
+
+import styled from 'utils/styled-components';
 
 const StyledSwitch = styled.label`
   display: inline-block;

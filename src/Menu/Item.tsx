@@ -1,5 +1,4 @@
 import React, { SFC } from 'react';
-import styled, { css } from 'styled-components';
 import {
   BorderRadiusProps,
   BordersProps,
@@ -9,6 +8,8 @@ import {
   space,
   themeGet,
 } from 'styled-system';
+
+import styled, { css } from 'utils/styled-components';
 
 import Icon, { IconType } from '../Icon';
 

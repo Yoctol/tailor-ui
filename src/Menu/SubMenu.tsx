@@ -1,9 +1,9 @@
 import ArrowUp from 'react-icons/lib/md/keyboard-arrow-up';
 import React, { PureComponent, ReactNode } from 'react';
-import styled from 'styled-components';
 import { Spring, animated } from 'react-spring';
 import { Toggle } from 'react-powerplug';
-import { themeGet } from 'styled-system';
+
+import styled from 'utils/styled-components';
 
 import Icon, { IconType } from '../Icon';
 
@@ -14,7 +14,7 @@ const SubMenuWrapper = styled.div`
 
   ${StyledItem /* sc-selector */} {
     padding-left: 45px;
-    background-color: ${themeGet('colors.primaryDark')};
+    background-color: ${p => p.theme.colors.primaryDark};
   }
 `;
 

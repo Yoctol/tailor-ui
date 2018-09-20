@@ -1,6 +1,7 @@
-import styled, { css } from 'styled-components';
-import { ColorProps, SpaceProps, color, space, themeGet } from 'styled-system';
+import { ColorProps, SpaceProps, color, space } from 'styled-system';
 import { rem } from 'polished';
+
+import styled, { css } from 'utils/styled-components';
 
 export type HeadingBaseProps = SpaceProps &
   ColorProps & {
@@ -12,32 +13,32 @@ export type HeadingBaseProps = SpaceProps &
 
 const HeadingBase = styled<HeadingBaseProps, 'p'>('p')`
   margin: 0;
-  color: ${themeGet('colors.primaryDark')};
+  color: ${p => p.theme.colors.primaryDark};
   font-weight: 500;
   line-height: 1.5;
 
   ${({ gray }) =>
     gray &&
     css`
-      color: ${themeGet('colors.gray.2')};
+      color: ${p => p.theme.colors.gray[2]};
     `}
 
   ${({ grayLight }) =>
     grayLight &&
     css`
-      color: ${themeGet('colors.gray.4')};
+      color: ${p => p.theme.colors.gray[4]};
     `}
 
   ${({ grayHint }) =>
     grayHint &&
     css`
-      color: ${themeGet('colors.gray.5')};
+      color: ${p => p.theme.colors.gray[5]};
     `}
 
   ${({ white }) =>
     white &&
     css`
-      color: ${themeGet('colors.light')};
+      color: ${p => p.theme.colors.light};
     `}
 
   ${space};

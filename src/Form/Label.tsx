@@ -1,10 +1,9 @@
-import styled from 'styled-components';
-import { themeGet } from 'styled-system';
+import styled from 'utils/styled-components';
 
 const Label = styled.label`
   display: block;
-  padding-bottom: ${themeGet('space.2')};
-  font-size: ${themeGet('fontSizes.sm')};
+  padding-bottom: ${p => p.theme.space[2]};
+  font-size: ${p => p.theme.fontSizes.sm};
   line-height: 1;
 `;
 

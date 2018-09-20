@@ -3,7 +3,9 @@ import { readableColor } from 'polished';
 
 import { Flex } from '..';
 
-import * as themeColors from './colors';
+import theme from '.';
+
+const { colors: themeColors } = theme;
 
 const get = (colorKey: string) => {
   const path = colorKey.split('.');

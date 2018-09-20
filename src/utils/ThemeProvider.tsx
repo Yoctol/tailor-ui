@@ -1,8 +1,9 @@
 import React, { SFC } from 'react';
-import { ThemeProvider as StyledThemeProvider } from 'styled-components';
 
 import injectGlobalCss from '../injectGlobalCss';
 import theme from '../theme';
+
+import { ThemeProvider as StyledThemeProvider } from './styled-components';
 
 export interface ThemeProviderProps {
   children: JSX.Element;

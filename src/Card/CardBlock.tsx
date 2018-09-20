@@ -1,5 +1,4 @@
 import React, { SFC } from 'react';
-import styled from 'styled-components';
 import {
   HeightProps,
   SpaceProps,
@@ -7,6 +6,8 @@ import {
   space,
   themeGet,
 } from 'styled-system';
+
+import styled from 'utils/styled-components';
 
 const StyledBlock = styled.div`
   position: relative;

@@ -1,6 +1,6 @@
 import React, { MouseEvent, ReactNode, SFC } from 'react';
-import styled from 'styled-components';
-import { themeGet } from 'styled-system';
+
+import styled from 'utils/styled-components';
 
 import Button from '../Button';
 import Flex from '../Grid/Flex';
@@ -15,7 +15,7 @@ const components = {
 };
 
 const StyledContent = styled(Space)`
-  padding: ${themeGet('space.2')};
+  padding: ${p => p.theme.space[2]};
   word-break: break-all;
   white-space: nowrap;
 `;
