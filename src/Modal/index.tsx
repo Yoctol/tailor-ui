@@ -1,5 +1,6 @@
 import React, { PureComponent, ReactNode, isValidElement } from 'react';
 import { createPortal } from 'react-dom';
+import { omit } from 'ramda';
 
 import Box from '../Grid/Box';
 import Flex from '../Grid/Flex';
@@ -120,8 +121,10 @@ class Modal extends PureComponent<ModalProps> {
       document.body.appendChild(MODAL_PORTAL_CONTAINER);
     }
 
+    const props = omit(['title'], this.props);
+
     return createPortal(
-      <BaseModal {...this.props}>
+      <BaseModal {...props}>
         {this.renderHeader()}
         {this.renderContent()}
         {this.renderFooter()}
