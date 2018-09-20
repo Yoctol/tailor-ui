@@ -8,6 +8,16 @@
     "@babel/plugin-proposal-class-properties",
     "babel-plugin-typescript-to-proptypes",
     "babel-plugin-styled-components",
-    "ramda"
+    "ramda",
+    [
+      "module-resolver",
+      {
+        "root": ["./"],
+        "extensions": [".js", ".jsx", ".ts", ".tsx"],
+        "alias": {
+          "utils": "./src/utils"
+        }
+      }
+    ]
   ]
 }

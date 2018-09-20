@@ -1,5 +1,4 @@
 import React, { SFC } from 'react';
-import styled, { css } from 'styled-components';
 import {
   BorderRadiusProps,
   ColorProps,
@@ -11,9 +10,10 @@ import {
   minWidth,
   space,
   textAlign,
-  themeGet,
 } from 'styled-system';
 import { Transition, animated, config } from 'react-spring';
+
+import styled, { css } from 'utils/styled-components';
 
 export type Placement = 'top' | 'bottom' | 'right' | 'left';
 
@@ -57,7 +57,7 @@ export type TooltipContentProps = SpaceProps &
   };
 
 export const TooltipContent = styled<TooltipContentProps, 'div'>('div')`
-  border: ${themeGet('borders.base')};
+  border: ${p => p.theme.borders.base};
   border-color: ${({ light, theme: { colors } }) =>
     light ? colors.gray[7] : colors.primaryDark};
   background-color: ${({ light, theme: { colors } }) =>
@@ -141,7 +141,7 @@ export const Arrow = styled<ArrowProps, 'div'>('div')`
         position: absolute;
         top: -7px;
         left: -6px;
-        border-top: 6px solid ${themeGet('colors.gray.9')};
+        border-top: 6px solid ${p => p.theme.colors.gray[9]};
         border-right: 6px solid transparent;
         border-left: 6px solid transparent;
       }

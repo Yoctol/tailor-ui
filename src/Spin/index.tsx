@@ -1,6 +1,6 @@
 import React, { SFC } from 'react';
-import styled, { keyframes } from 'styled-components';
-import { themeGet } from 'styled-system';
+
+import styled, { keyframes } from 'utils/styled-components';
 
 import Flex from '../Grid/Flex';
 import Icon from '../Icon';
@@ -21,7 +21,7 @@ const textAnimation = keyframes`
 
 const SpinText = styled.div`
   margin-top: 5px;
-  color: ${themeGet('primaryDark')};
+  color: ${p => p.theme.colors.primaryDark};
   animation: 2s ${textAnimation} ease;
   animation-iteration-count: infinite;
 `;

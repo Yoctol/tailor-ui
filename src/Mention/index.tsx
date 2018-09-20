@@ -11,7 +11,8 @@ import React, {
   RefObject,
   createRef,
 } from 'react';
-import styled, { css } from 'styled-components';
+
+import styled, { css } from 'utils/styled-components';
 
 import { Size, inputStyles } from '../Input';
 
@@ -125,7 +126,7 @@ const MentionWrapper = styled<MentionWrapperProps, 'div'>('div')`
           height: 1px;
           margin: 1px 0;
           overflow: hidden;
-          background-color: ${p => p.theme.colors.border};
+          background-color: ${p => p.theme.colors.gray[9]};
           line-height: 0;
         }
       }

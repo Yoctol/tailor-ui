@@ -9,19 +9,22 @@ import React, {
   createContext,
   isValidElement,
 } from 'react';
-import styled, { css } from 'styled-components';
+
+import styled, { css } from 'utils/styled-components';
 
 import Flex from '../Grid/Flex';
 import Icon from '../Icon';
+import theme from '../theme';
 
 type Status = 'finish' | 'progress' | 'wait' | 'error';
 type Direction = 'horizontal' | 'vertical';
+type Colors = keyof typeof theme.colors;
 
 const { Provider, Consumer } = createContext<{
   count: number;
   status: Status;
   isLast: boolean;
-  tailColor: string;
+  tailColor: Colors;
   direction: Direction;
   onCurrentChange?: (count: number) => void;
 }>({
@@ -37,7 +40,7 @@ interface StepsItemProps {
   status: Status;
   direction: Direction;
   isLast: boolean;
-  tailColor: string;
+  tailColor: Colors;
 }
 
 const StepsIconItem = styled<StepsItemProps, 'div'>('div')`

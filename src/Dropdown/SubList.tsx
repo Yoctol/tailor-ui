@@ -1,6 +1,7 @@
 import ArrowIcon from 'react-icons/lib/md/keyboard-arrow-right';
 import React, { PureComponent } from 'react';
-import styled from 'styled-components';
+
+import styled from 'utils/styled-components';
 
 import Icon from '../Icon';
 

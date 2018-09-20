@@ -1,6 +1,7 @@
 import React, { SFC } from 'react';
-import styled from 'styled-components';
 import { SpaceProps, space } from 'styled-system';
+
+import styled from 'utils/styled-components';
 
 const StyledImage = styled.div`
   overflow: hidden;

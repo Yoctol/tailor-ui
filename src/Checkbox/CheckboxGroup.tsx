@@ -1,6 +1,7 @@
 import React, { SFC } from 'react';
-import styled from 'styled-components';
 import { Set } from 'react-powerplug';
+
+import styled from 'utils/styled-components';
 
 import Checkbox, { Direction } from './Checkbox';
 import { Provider } from './CheckboxContext';

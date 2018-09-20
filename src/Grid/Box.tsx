@@ -1,5 +1,6 @@
-import styled from 'styled-components';
 import * as system from 'styled-system';
+
+import styled from 'utils/styled-components';
 
 const overflow = system.style({
   prop: 'overflow',

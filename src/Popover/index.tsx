@@ -1,13 +1,13 @@
 import React, { PureComponent, ReactNode } from 'react';
-import styled from 'styled-components';
-import { themeGet } from 'styled-system';
+
+import styled from 'utils/styled-components';
 
 import Heading from '../Heading';
 import Tooltip, { TooltipProps } from '../Tooltip';
 import { Arrow, TooltipContent } from '../Tooltip/BaseTooltip';
 
 export const ArrowComponent = styled(Arrow)`
-  border-top: 5px solid ${themeGet('colors.gray.8')};
+  border-top: 5px solid ${p => p.theme.colors.gray[8]};
   opacity: 1;
 
   &::after {
@@ -15,7 +15,7 @@ export const ArrowComponent = styled(Arrow)`
     position: absolute;
     top: -7px;
     left: -6px;
-    border-top: 6px solid ${themeGet('colors.light')};
+    border-top: 6px solid ${p => p.theme.colors.light};
     border-right: 6px solid transparent;
     border-left: 6px solid transparent;
   }
@@ -23,21 +23,21 @@ export const ArrowComponent = styled(Arrow)`
 
 export const ContentComponent = styled(TooltipContent)`
   padding: 0;
-  border-color: ${themeGet('colors.gray.8')};
+  border-color: ${p => p.theme.colors.gray[8]};
   opacity: 1;
-  background-color: ${themeGet('colors.light')};
-  color: ${themeGet('colors.gray.2')};
+  background-color: ${p => p.theme.colors.light};
+  color: ${p => p.theme.colors.gray[2]};
   text-align: left;
 `;
 
 const Header = styled.div`
-  padding: ${themeGet('space.1')} ${themeGet('space.2')};
-  border-bottom: ${themeGet('borders.base')};
-  border-color: ${themeGet('colors.gray.8')};
+  padding: ${p => p.theme.space[1]} ${p => p.theme.space[2]};
+  border-bottom: ${p => p.theme.borders.base};
+  border-color: ${p => p.theme.colors.gray[8]};
 `;
 
 const Content = styled.div`
-  padding: ${themeGet('space.2')};
+  padding: ${p => p.theme.space[2]};
 `;
 
 export type PopoverProps = TooltipProps & {

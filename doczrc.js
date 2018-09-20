@@ -1,5 +1,3 @@
-import * as colors from './src/theme/colors.ts';
-
 module.exports = {
   port: 3030,
   src: './src',
@@ -9,7 +7,7 @@ module.exports = {
   wrapper: 'docz/DoczWrapper',
   themeConfig: {
     colors: {
-      primary: colors.primary,
+      primary: '#423b63',
     },
     styles: {
       body: {

@@ -1,6 +1,7 @@
 import Close from 'react-icons/lib/md/close';
 import React, { SFC } from 'react';
-import styled from 'styled-components';
+
+import styled from 'utils/styled-components';
 
 import Button from '../Button';
 

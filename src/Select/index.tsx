@@ -1,21 +1,21 @@
 import BaseSelect from 'react-select';
 import React, { SFC } from 'react';
-import styled from 'styled-components';
-import { themeGet } from 'styled-system';
 
-const StyledSelect = styled<any>(BaseSelect)`
+import styled from 'utils/styled-components';
+
+const StyledSelect = styled<any, any>(BaseSelect)`
   & .yoctol-select__control {
     min-width: 150px;
-    border-color: ${themeGet('colors.gray.8')};
-    background-color: ${themeGet('colors.light')};
+    border-color: ${p => p.theme.colors.gray[8]};
+    background-color: ${p => p.theme.colors.light};
     box-shadow: none;
 
     &:hover {
-      border-color: ${themeGet('colors.primary')};
+      border-color: ${p => p.theme.colors.primary};
     }
 
     &.yoctol-select__control--is-focused {
-      border-color: ${themeGet('colors.primaryDark')};
+      border-color: ${p => p.theme.colors.primaryDark};
     }
 
     &.yoctol-select__control-is-disabled {
@@ -36,15 +36,15 @@ const StyledSelect = styled<any>(BaseSelect)`
 
       .yoctol-select__option {
         &:not(:last-child) {
-          border-bottom: ${themeGet('borders.base')}
-            ${themeGet('colors.gray.8')};
+          border-bottom: ${p => p.theme.borders.base}
+            ${p => p.theme.colors.gray[8]};
         }
-        background-color: ${themeGet('colors.light')};
-        color: ${themeGet('colors.gray.2')};
+        background-color: ${p => p.theme.colors.light};
+        color: ${p => p.theme.colors.gray[2]};
 
         &.yoctol-select__option--is-focused {
-          background-color: ${themeGet('colors.primaryDark')};
-          color: ${themeGet('colors.light')};
+          background-color: ${p => p.theme.colors.primaryDark};
+          color: ${p => p.theme.colors.light};
         }
       }
     }

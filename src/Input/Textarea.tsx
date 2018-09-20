@@ -1,6 +1,7 @@
 import React, { SFC } from 'react';
 import TextareaAutosize from 'react-textarea-autosize';
-import styled from 'styled-components';
+
+import styled from 'utils/styled-components';
 
 import { InputProps, inputStyles } from '.';
 

@@ -6,7 +6,6 @@ import React, {
   RefObject,
   createRef,
 } from 'react';
-import styled, { css } from 'styled-components';
 import {
   SpaceProps,
   TextAlignProps,
@@ -16,6 +15,8 @@ import {
   themeGet,
   width,
 } from 'styled-system';
+
+import styled, { css } from 'utils/styled-components';
 
 import { Omit } from '../utils/type';
 

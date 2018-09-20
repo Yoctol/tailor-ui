@@ -30,9 +30,8 @@ import {
   Textarea,
   ThemeProvider,
   Tooltip,
-  colors,
-  injectGlobalCss,
   message,
+  theme,
 } from '..';
 
 describe('index', () => {
@@ -71,7 +70,6 @@ describe('index', () => {
     expect(TextField).toBeDefined();
     expect(ThemeProvider).toBeDefined();
     expect(Tooltip).toBeDefined();
-    expect(colors).toBeDefined();
-    expect(injectGlobalCss).toBeDefined();
+    expect(theme).toBeDefined();
   });
 });

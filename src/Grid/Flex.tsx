@@ -1,4 +1,3 @@
-import styled from 'styled-components';
 import {
   AlignItemsProps,
   FlexDirectionProps,
@@ -9,6 +8,8 @@ import {
   flexWrap,
   justifyContent,
 } from 'styled-system';
+
+import styled from 'utils/styled-components';
 
 import Box, { BoxProps } from './Box';
 

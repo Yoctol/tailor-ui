@@ -1,5 +1,4 @@
 import React, { PureComponent } from 'react';
-import styled, { css } from 'styled-components';
 import {
   BorderColorProps,
   BorderRadiusProps,
@@ -15,6 +14,8 @@ import {
   themeGet,
   width,
 } from 'styled-system';
+
+import styled, { css } from 'utils/styled-components';
 
 import CardBlock from './CardBlock';
 import CardImage from './CardImage';

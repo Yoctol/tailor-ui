@@ -1,7 +1,8 @@
 import React, { PureComponent, ReactNode, SFC } from 'react';
-import styled from 'styled-components';
 import { Transition, animated, config } from 'react-spring';
-import { WidthProps, width as styledWidth, themeGet } from 'styled-system';
+import { WidthProps, width as styledWidth } from 'styled-system';
+
+import styled from 'utils/styled-components';
 
 import Keydown from '../utils/Keydown';
 
@@ -25,7 +26,7 @@ const ModalContent = styled<WidthProps, 'div'>('div')`
   left: 50%;
   flex-direction: column;
   max-height: 90vh;
-  border-radius: ${themeGet('radii.base')};
+  border-radius: ${p => p.theme.radii.base};
   background-color: #fff;
   box-shadow: 0 10px 30px 0 rgba(17, 17, 17, 0.2);
   transform: translate(-50%, -50%);

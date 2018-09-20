@@ -1,8 +1,9 @@
 import CloseIcon from 'react-icons/lib/md/close';
 import React, { PureComponent, SFC } from 'react';
-import styled from 'styled-components';
 import { Spring, animated } from 'react-spring';
 import { Toggle } from 'react-powerplug';
+
+import styled from 'utils/styled-components';
 
 import Icon from '../Icon';
 
@@ -24,7 +25,7 @@ const StyledTag = styled.div`
   }
 `;
 
-const ClosableIcon = styled<any>(Icon)`
+const ClosableIcon = styled<any, any>(Icon)`
   &:hover svg {
     fill: ${p => p.theme.colors.gray[3]};
   }

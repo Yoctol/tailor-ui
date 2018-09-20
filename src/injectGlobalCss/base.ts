@@ -1,7 +1,7 @@
-import { css } from 'styled-components';
 import { rem } from 'polished';
 
 import theme from '../theme';
+import { css } from '../utils/styled-components';
 
 const { colors } = theme;
 

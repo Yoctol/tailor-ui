@@ -1,5 +1,4 @@
 import React, { PureComponent, SFC } from 'react';
-import styled from 'styled-components';
 import {
   BorderColorProps,
   BordersProps,
@@ -13,6 +12,8 @@ import {
   themeGet,
   width,
 } from 'styled-system';
+
+import styled from 'utils/styled-components';
 
 type HeadColumnProps = WidthProps &
   SpaceProps &

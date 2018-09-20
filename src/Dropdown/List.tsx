@@ -1,5 +1,4 @@
 import React, { PureComponent } from 'react';
-import styled, { css } from 'styled-components';
 import {
   MinWidthProps,
   SpaceProps,
@@ -9,6 +8,8 @@ import {
   textAlign,
 } from 'styled-system';
 import { animated } from 'react-spring';
+
+import styled, { css } from 'utils/styled-components';
 
 import { Consumer, Placement } from './DropdownContext';
 
