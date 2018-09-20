@@ -1,11 +1,9 @@
 import React, { PureComponent, SFC } from 'react';
 import {
-  BorderColorProps,
   BordersProps,
   SpaceProps,
   TextAlignProps,
   WidthProps,
-  borderColor,
   borders,
   space,
   textAlign,
@@ -14,34 +12,26 @@ import {
 
 import styled from 'utils/styled-components';
 
-type HeadColumnProps = WidthProps &
-  SpaceProps &
-  BordersProps &
-  BorderColorProps;
+type HeadColumnProps = WidthProps & SpaceProps & BordersProps;
 
 const HeadColumn = styled<HeadColumnProps, 'th'>('th')`
   padding: ${p => p.theme.paddings.xs} ${p => p.theme.paddings.sm};
+  border-color: ${p => p.theme.colors.gray[8]};
   font-weight: 500;
 
   ${width};
   ${space};
   ${borders};
-  ${borderColor};
 `;
 
-HeadColumn.defaultProps = {
-  borderColor: 'gray.8',
-};
+type ColumnProps = SpaceProps & BordersProps;
 
-type ColumnProps = SpaceProps & BordersProps & BorderColorProps;
-
-const Column = styled<ColumnProps, 'td'>('td').attrs({
-  borderColor: 'gray.8',
-})`
+const Column = styled<ColumnProps, 'td'>('td')`
   padding: ${p => p.theme.paddings.xs} ${p => p.theme.paddings.sm};
+  border-color: ${p => p.theme.colors.gray[8]};
 
-  ${space} ${borders};
-  ${borderColor};
+  ${space};
+  ${borders};
 `;
 
 const Row = styled.tr`
