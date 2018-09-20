@@ -6,7 +6,6 @@ import {
   borderRadius,
   borders,
   space,
-  themeGet,
 } from 'styled-system';
 
 import styled, { css } from 'utils/styled-components';
@@ -28,21 +27,21 @@ export const StyledItem = styled<StyledItemProps, 'button'>('button')`
   border: 0;
   border-left: 8px solid;
   border-left-color: transparent;
-  background-color: ${themeGet('colors.primary')};
+  background-color: ${p => p.theme.colors.primary};
   color: rgba(255, 255, 255, 0.8);
-  font-size: ${themeGet('fontSizes.base')};
+  font-size: ${p => p.theme.fontSizes.base};
   transition: all 0.1s ease-in-out;
   cursor: pointer;
 
   ${({ active }) =>
     active &&
     css`
-      border-left-color: ${themeGet('colors.secondary')};
-      color: ${themeGet('colors.secondary')};
+      border-left-color: ${p => p.theme.colors.secondary};
+      color: ${p => p.theme.colors.secondary};
     `};
 
   &:hover {
-    border-left-color: ${themeGet('colors.secondary')};
+    border-left-color: ${p => p.theme.colors.secondary};
   }
 
   &:focus {

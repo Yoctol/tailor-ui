@@ -12,7 +12,6 @@ import {
   WidthProps,
   space,
   textAlign,
-  themeGet,
   width,
 } from 'styled-system';
 
@@ -33,30 +32,30 @@ export const inputStyles = css<StyledInputProps>`
   display: block;
   width: 100%;
   max-width: 100%;
-  border: ${themeGet('borders.base')};
-  border-radius: ${themeGet('radii.base')};
-  border-color: ${themeGet('colors.gray.8')};
+  border: ${p => p.theme.borders.base};
+  border-radius: ${p => p.theme.radii.base};
+  border-color: ${p => p.theme.colors.gray[8]};
   outline: none;
-  background: ${themeGet('light')};
+  background: ${p => p.theme.colors.light};
   background-image: none;
-  color: ${themeGet('colors.gray.2')};
-  line-height: ${themeGet('lineHeight')};
+  color: ${p => p.theme.colors.gray[2]};
+  line-height: ${p => p.theme.lineHeight};
   appearance: none;
 
   &:focus {
-    border-color: ${themeGet('colors.gray.3')};
+    border-color: ${p => p.theme.colors.gray[3]};
   }
 
   &:disabled,
   [disabled] {
-    border-color: ${themeGet('colors.gray.5')};
+    border-color: ${p => p.theme.colors.gray[5]};
     opacity: 0.5;
-    background-color: ${themeGet('colors.gray.8')};
+    background-color: ${p => p.theme.colors.gray[8]};
     cursor: not-allowed;
   }
 
   &::placeholder {
-    color: ${themeGet('colors.gray.6')};
+    color: ${p => p.theme.colors.gray[6]};
   }
 
   ${({ size = 'md', theme: { paddings, heights, fontSizes } }) =>

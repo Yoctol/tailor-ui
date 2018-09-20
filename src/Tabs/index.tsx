@@ -1,6 +1,6 @@
 import React, { PureComponent, SFC, createContext } from 'react';
 import { Value } from 'react-powerplug';
-import { space as styledSpace, themeGet } from 'styled-system';
+import { space as styledSpace } from 'styled-system';
 
 import styled, { css } from 'utils/styled-components';
 
@@ -45,7 +45,7 @@ const StyledTab = styled<StyledTabProps, 'a'>('a')`
   }
 
   &:not(:first-child) {
-    margin-left: ${themeGet('space.2')};
+    margin-left: ${p => p.theme.space[2]};
   }
 
   ${({ size, theme: { heights, paddings, fontSizes } }) =>
@@ -73,8 +73,8 @@ const StyledTab = styled<StyledTabProps, 'a'>('a')`
           border-radius: 999px;
           ${active &&
             css`
-              background-color: ${themeGet('colors.primary')};
-              color: ${themeGet('colors.light')};
+              background-color: ${p => p.theme.colors.primary};
+              color: ${p => p.theme.colors.light};
             `};
         `
       : css`
@@ -82,7 +82,7 @@ const StyledTab = styled<StyledTabProps, 'a'>('a')`
 
           ${active &&
             css`
-              border-bottom-color: ${themeGet('colors.secondary')};
+              border-bottom-color: ${p => p.theme.colors.secondary};
             `};
         `};
 
