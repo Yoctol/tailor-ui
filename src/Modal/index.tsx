@@ -21,9 +21,9 @@ const canUseDOM = !!(
 
 export type ModalProps = BaseModalProps &
   FooterProps & {
-    title?: string;
-    closable?: boolean;
+    title?: ReactNode;
     footer?: ReactNode;
+    closable?: boolean;
   };
 
 class Modal extends PureComponent<ModalProps> {

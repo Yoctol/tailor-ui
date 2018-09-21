@@ -1,5 +1,10 @@
 {
-  "*.{ts,tsx}": ["eslint --fix", "stylelint", "tsc --noEmit", "git add"],
+  "*.{ts,tsx}": [
+    "eslint --fix",
+    "stylelint",
+    "prettier --parser typescript --write",
+    "git add"
+  ],
   "*.{json,md}": ["prettier --write", "git add"],
   "package.json": [
     "prettier-package-json --write",

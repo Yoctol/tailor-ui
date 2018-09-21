@@ -1,5 +1,7 @@
 import React, {
   PureComponent,
+  ReactChild,
+  ReactElement,
   ReactNode,
   SFC,
   cloneElement,
@@ -19,7 +21,7 @@ import BaseTooltip, {
 const { Consumer, Provider } = createContext(() => {});
 
 interface ClickTooltipProps {
-  children: React.ReactElement<any>;
+  children: ReactElement<any>;
   defaultVisible?: boolean;
   display?: string;
   onVisibleChange?: (visible: boolean) => void;
@@ -70,7 +72,7 @@ const ClickTooltip: SFC<ClickTooltipProps> = ({
 );
 
 interface HoverTooltipProps {
-  children: React.ReactElement<any>;
+  children: ReactChild | ReactChild[];
   display?: string;
   onVisibleChange?: (visible: boolean) => void;
   placement: Placement;
@@ -102,7 +104,7 @@ export type TooltipProps = {
   /**
    * The component which this tooltip show up
    */
-  children: React.ReactElement<any>;
+  children: ReactElement<any> | ReactChild | ReactChild[];
   /**
    * Whether the floating tooltip card is visible by default. Only support when the trigger is `click`
    */
