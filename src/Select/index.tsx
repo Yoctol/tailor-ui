@@ -1,4 +1,4 @@
-import BaseSelect from 'react-select';
+import BaseSelect, { components } from 'react-select';
 import React, { SFC } from 'react';
 
 import styled from 'utils/styled-components';
@@ -53,6 +53,10 @@ const StyledSelect = styled<any, any>(BaseSelect)`
 
 export interface SelectProps {
   /**
+   * delimiter string for multi-select value in text style mode
+   */
+  delimiter?: string;
+  /**
    * Is the select value clearable
    */
   isClearable?: boolean;
@@ -61,9 +65,17 @@ export interface SelectProps {
    */
   isDisabled?: boolean;
   /**
+   * Allow user to select multiple options
+   */
+  isMulti?: boolean;
+  /**
    * Allow the user to search for matching options
    */
   isSearchable?: boolean;
+  /**
+   * Choose tag or text style in multi-select (options: "tag", "text")
+   */
+  multiSelectMode?: string;
   /**
    * Specify the options the user can select from
    */
@@ -75,15 +87,51 @@ export interface SelectProps {
   /**
    * One of options
    */
-  value?: number | string | object;
+  value?: number | string | object | object[];
   /**
    * Subscribe to change events
    */
   onChange?: (option: number | string | object) => void;
 }
 
-const Select: SFC<SelectProps> = props => (
-  <StyledSelect classNamePrefix="yoctol-select" {...props} />
-);
+const Select: SFC<SelectProps> = props => {
+  const { isMulti, delimiter, multiSelectMode } = props;
+  if (isMulti) {
+    if (multiSelectMode === 'text') {
+      const Option = (_props: any) => (
+        <components.Option {..._props} isFocused={_props.isSelected} />
+      );
+      const MultiValue = (_props: any) => {
+        const {
+          selectProps: {
+            value: [{ value: firstValue }],
+          },
+          data: { value: dataValue, label: dataLabel },
+        } = _props;
+        return `${firstValue !== dataValue ? delimiter : ''}${dataLabel}`;
+      };
+      return (
+        <StyledSelect
+          classNamePrefix="yoctol-select"
+          {...props}
+          components={{ Option, MultiValue }}
+          closeMenuOnSelect={false}
+          hideSelectedOptions={false}
+        />
+      );
+    }
+  }
+  return <StyledSelect classNamePrefix="yoctol-select" {...props} />;
+};
+
+Select.defaultProps = {
+  delimiter: ',',
+  isClearable: false,
+  isDisabled: false,
+  isMulti: false,
+  isSearchable: false,
+  multiSelectMode: 'tag',
+  placeholder: '',
+};
 
 export default Select;
