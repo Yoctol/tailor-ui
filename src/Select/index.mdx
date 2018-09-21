@@ -132,13 +132,44 @@ import { Select } from '@yoctol/ui';
   </Value>
 </Playground>
 
-### Multiple Selection
+### Default Multiple Selection
 
 <Playground>
   <Value>
     {({ value, set }) => (
       <Select
         isMulti
+        placeholder="choose the flags"
+        value={value}
+        onChange={set}
+        options={[
+          {
+            label: 'apple',
+            value: 'apple'
+          },
+          {
+            label: 'banana',
+            value: 'banana'
+          },
+          {
+            label: 'guava',
+            value: 'guava'
+          }]
+        }
+      />
+    )}
+  </Value>
+</Playground>
+
+### Multiple Selection with Text Style and No Delimiter
+
+<Playground>
+  <Value>
+    {({ value, set }) => (
+      <Select
+        isMulti
+        multiSelectMode="text"
+        delimiter=""
         placeholder="choose the flags"
         value={value}
         onChange={set}
