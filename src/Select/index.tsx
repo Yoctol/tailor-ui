@@ -112,6 +112,7 @@ const Select: SFC<SelectProps> = props => {
       };
       return (
         <StyledSelect
+          classNamePrefix="yoctol-select"
           {...props}
           components={{ Option, MultiValue }}
           closeMenuOnSelect={false}
@@ -120,7 +121,7 @@ const Select: SFC<SelectProps> = props => {
       );
     }
   }
-  return <StyledSelect {...props} />;
+  return <StyledSelect classNamePrefix="yoctol-select" {...props} />;
 };
 
 Select.defaultProps = {
