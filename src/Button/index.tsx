@@ -322,7 +322,7 @@ class Button extends PureComponent<ButtonProps> {
               style={{ pointerEvents: 'none' }}
             />
           )}
-        {loading ? 'Loading' : children}
+        {children}
         <Ripple ref={this.ripple} />
       </StyledButton>
     );

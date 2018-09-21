@@ -1,13 +1,13 @@
 import React, { SFC } from 'react';
 
-import ThemeProvider from '../src/utils/ThemeProvider';
+import UIProvider from '../src/UIProvider';
 
 export interface WrapperProps {
   children: JSX.Element;
 }
 
 const DoczWrapper: SFC<WrapperProps> = ({ children }) => (
-  <ThemeProvider>{children}</ThemeProvider>
+  <UIProvider>{children}</UIProvider>
 );
 
 export default DoczWrapper;

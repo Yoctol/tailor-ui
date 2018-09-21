@@ -6,6 +6,7 @@ import Box from '../Grid/Box';
 import Flex from '../Grid/Flex';
 import Heading from '../Heading';
 import PortalElement from '../utils/PortalElement';
+import { LocaleConsumer } from '../UIProvider';
 
 import BaseModal, { BaseModalProps } from './BaseModal';
 import CloseButton from './CloseButton';
@@ -34,8 +35,6 @@ class Modal extends PureComponent<ModalProps> {
 
   static defaultProps = {
     title: 'test',
-    confirmText: 'Confirm',
-    cancelText: 'Cancel',
   };
 
   renderHeader = () => {
@@ -93,14 +92,18 @@ class Modal extends PureComponent<ModalProps> {
         {isValidElement(footer) ? (
           footer
         ) : (
-          <Footer
-            cancelText={cancelText}
-            confirmText={confirmText}
-            onCancel={onCancel}
-            onConfirm={onConfirm}
-            confirmButtonProps={confirmButtonProps}
-            cancelButtonProps={cancelButtonProps}
-          />
+          <LocaleConsumer>
+            {({ locale }) => (
+              <Footer
+                cancelText={cancelText || locale.Modal.cancelText}
+                confirmText={confirmText || locale.Modal.confirmText}
+                onCancel={onCancel}
+                onConfirm={onConfirm}
+                confirmButtonProps={confirmButtonProps}
+                cancelButtonProps={cancelButtonProps}
+              />
+            )}
+          </LocaleConsumer>
         )}
       </Flex>
     );

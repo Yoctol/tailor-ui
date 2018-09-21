@@ -1,4 +1,5 @@
-import React, { MouseEvent, ReactNode, SFC } from 'react';
+import React, { MouseEvent, PureComponent, ReactNode } from 'react';
+import { omit } from 'ramda';
 
 import styled from 'utils/styled-components';
 
@@ -8,6 +9,7 @@ import Space from '../Grid/Space';
 import Tooltip, { TooltipProps } from '../Tooltip';
 import getTypeIcon from '../utils/getTypeIcon';
 import { ArrowComponent, ContentComponent } from '../Popover';
+import { LocaleConsumer } from '../UIProvider';
 
 const components = {
   ArrowComponent,
@@ -47,69 +49,82 @@ export type PopconfirmProps = TooltipProps & {
   onConfirm?: (event: MouseEvent) => void;
 };
 
-const Popconfirm: SFC<PopconfirmProps> = ({
-  type = 'warning',
-  content = '',
-  confirmText = 'Confirm',
-  cancelText = 'Cancel',
-  onConfirm,
-  onCancel,
-  ...props
-}) => {
-  const icon = getTypeIcon(type);
-  const renderContent = (hideTooltip: () => void) => (
-    <StyledContent>
-      <Flex alignItems="center">
-        {icon}
-        {content}
-      </Flex>
-      <Flex mt="3">
-        <Button
-          ml="auto"
-          size="sm"
-          onClick={(event: MouseEvent) => {
-            hideTooltip();
-            if (onCancel) {
-              onCancel(event);
-            }
-          }}
-        >
-          {cancelText}
-        </Button>
-        <Button
-          ml="2"
-          size="sm"
-          type="primary"
-          onClick={(event: MouseEvent) => {
-            hideTooltip();
-            if (onConfirm) {
-              onConfirm(event);
-            }
-          }}
-        >
-          {confirmText}
-        </Button>
-      </Flex>
-    </StyledContent>
-  );
+class Popconfirm extends PureComponent<PopconfirmProps> {
+  static defaultProps = {
+    content: '',
+    type: 'warning',
+    onConfirm: () => {},
+    onCancel: () => {},
+  };
 
-  return (
-    <Tooltip
-      components={components}
-      content={renderContent}
-      trigger="click"
-      {...props}
-    />
-  );
-};
+  renderContent = (hideTooltip: () => void) => {
+    const {
+      type = 'warning',
+      content = '',
+      confirmText,
+      cancelText,
+      onConfirm,
+      onCancel,
+    } = this.props;
 
-Popconfirm.defaultProps = {
-  confirmText: 'Confirm',
-  cancelText: 'Cancel',
-  content: '',
-  type: 'warning',
-  onConfirm: () => {},
-  onCancel: () => {},
-};
+    const icon = getTypeIcon(type);
+
+    return (
+      <LocaleConsumer>
+        {({ locale }) => (
+          <StyledContent>
+            <Flex alignItems="center">
+              {icon}
+              {content}
+            </Flex>
+            <Flex mt="3">
+              <Button
+                ml="auto"
+                size="sm"
+                onClick={(event: MouseEvent) => {
+                  hideTooltip();
+                  if (onCancel) {
+                    onCancel(event);
+                  }
+                }}
+              >
+                {cancelText || locale.Popconfirm.cancelText}
+              </Button>
+              <Button
+                ml="2"
+                size="sm"
+                type="primary"
+                onClick={(event: MouseEvent) => {
+                  hideTooltip();
+                  if (onConfirm) {
+                    onConfirm(event);
+                  }
+                }}
+              >
+                {confirmText || locale.Popconfirm.confirmText}
+              </Button>
+            </Flex>
+          </StyledContent>
+        )}
+      </LocaleConsumer>
+    );
+  };
+
+  render() {
+    const props = omit(
+      ['type', 'content', 'confirmText', 'cancelText', 'onConfirm', 'onCancel'],
+      this.props
+    );
+
+    return (
+      <Tooltip
+        components={components}
+        content={this.renderContent}
+        trigger="click"
+        {...props}
+      />
+    );
+  }
+}
 
 export default Popconfirm;

@@ -5,7 +5,7 @@ import Box from '../Grid/Box';
 import Flex from '../Grid/Flex';
 import Heading from '../Heading';
 import Space from '../Grid/Space';
-import ThemeProvider from '../utils/ThemeProvider';
+import UIProvider, { globalLocale } from '../UIProvider';
 import getTypeIcon, { Types } from '../utils/getTypeIcon';
 
 import BaseModal from './BaseModal';
@@ -32,7 +32,7 @@ interface ModalComponentState {
   title?: string;
   content?: string;
   confirmText?: string;
-  cancelText?: string;
+  cancelText?: string | null;
   onConfirm: () => void;
   onCancel: () => void;
   visible: boolean;
@@ -48,8 +48,8 @@ class ModalComponent extends PureComponent<
     type: 'confirm',
     title: '',
     content: '',
-    confirmText: 'Confirm',
-    cancelText: 'Cancel',
+    confirmText: '',
+    cancelText: '',
     onConfirm: () => {},
     onCancel: () => {},
   };
@@ -59,15 +59,18 @@ class ModalComponent extends PureComponent<
     return getTypeIcon(type === 'confirm' ? 'warning' : type, 32);
   };
 
-  trigger = (options: ModalOptions, type: ModalTypes) =>
-    new Promise<boolean>(resolve =>
+  trigger = (options: ModalOptions, type: ModalTypes): Promise<boolean> =>
+    new Promise(resolve =>
       this.setState(() => ({
         type,
         visible: true,
         title: options.title || '',
         content: options.content || '',
-        confirmText: options.confirmText || 'Confirm',
-        cancelText: type === 'confirm' ? options.cancelText || 'Cancel' : '',
+        confirmText: options.confirmText || globalLocale.Modal.confirmText,
+        cancelText:
+          type === 'confirm'
+            ? options.cancelText || globalLocale.Modal.cancelText
+            : null,
         onConfirm: () => {
           if (options.onConfirm) {
             options.onConfirm();
@@ -106,7 +109,7 @@ class ModalComponent extends PureComponent<
     const icon = this.getIcon();
 
     return (
-      <ThemeProvider>
+      <UIProvider>
         <BaseModal
           clickOutsite={type === 'confirm'}
           visible={visible}
@@ -134,7 +137,7 @@ class ModalComponent extends PureComponent<
             />
           </Space>
         </BaseModal>
-      </ThemeProvider>
+      </UIProvider>
     );
   }
 }
