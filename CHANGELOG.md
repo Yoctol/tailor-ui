@@ -1,3 +1,22 @@
+<a name="2.0.0-alpha.1"></a>
+
+# [2.0.0-alpha.1](https://github.com/yoctol/ui/compare/v2.0.0-alpha.0...v2.0.0-alpha.1) (2018-09-25)
+
+### Bug Fixes
+
+- **mention:** dropdown list ([2d6ffec](https://github.com/yoctol/ui/commit/2d6ffec))
+- add and option to use default multi-select, add delimiter for text style multi-select ([2b6caa4](https://github.com/yoctol/ui/commit/2b6caa4))
+- add classNamePrefix ([d68427d](https://github.com/yoctol/ui/commit/d68427d))
+- some types ([32a6fd3](https://github.com/yoctol/ui/commit/32a6fd3))
+- **message:** add z-index ([494d459](https://github.com/yoctol/ui/commit/494d459))
+- **modal:** omit title ([f82ca62](https://github.com/yoctol/ui/commit/f82ca62))
+- **table:** remove borderColor to fix DOM element issue ([bb21610](https://github.com/yoctol/ui/commit/bb21610))
+
+### Features
+
+- **dropdown:** fixed position ([533f8e6](https://github.com/yoctol/ui/commit/533f8e6))
+- **select:** add multiple select in Select ([ebfe5c4](https://github.com/yoctol/ui/commit/ebfe5c4))
+
 <a name="2.0.0-alpha.0"></a>
 
 # [2.0.0-alpha.0](https://github.com/yoctol/ui/compare/v1.13.5...v2.0.0-alpha.0) (2018-09-20)
