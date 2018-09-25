@@ -2,17 +2,20 @@ import { Component } from 'react';
 
 export interface ClickOutsideProps {
   onClickOutside: (e: Event) => void;
-  children: (
-    renderProps: {
-      bindRef: (ref: HTMLElement) => void;
-    }
-  ) => React.ReactNode;
+  bindRef?: HTMLElement;
+  children:
+    | React.ReactNode
+    | ((
+        renderProps: {
+          bindRef: (ref: HTMLElement) => void;
+        }
+      ) => React.ReactNode);
 }
 
 class ClickOutside extends Component<ClickOutsideProps> {
   isTouch = false;
 
-  container?: HTMLElement;
+  container?: HTMLElement = this.props.bindRef;
 
   componentDidMount() {
     document.addEventListener('touchend', this.handle, true);
@@ -34,6 +37,7 @@ class ClickOutside extends Component<ClickOutsideProps> {
     }
 
     const { onClickOutside } = this.props;
+
     const el = this.container;
 
     if (el && event.target && !el.contains(event.target as Node)) {
@@ -44,11 +48,13 @@ class ClickOutside extends Component<ClickOutsideProps> {
   render() {
     const { children } = this.props;
 
-    return children({
-      bindRef: ref => {
-        this.container = ref;
-      },
-    });
+    return typeof children === 'function'
+      ? children({
+          bindRef: ref => {
+            this.container = ref;
+          },
+        })
+      : children;
   }
 }
 
