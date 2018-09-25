@@ -12,6 +12,7 @@ const getUuid = createUuidGenerator('message');
 const MessageContainer = styled.div`
   display: flex;
   position: fixed;
+  z-index: 10000;
   top: 10px;
   flex-direction: column;
   align-items: center;
