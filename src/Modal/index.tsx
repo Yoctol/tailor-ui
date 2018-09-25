@@ -5,19 +5,14 @@ import { omit } from 'ramda';
 import Box from '../Grid/Box';
 import Flex from '../Grid/Flex';
 import Heading from '../Heading';
+import PortalElement from '../utils/PortalElement';
 
 import BaseModal, { BaseModalProps } from './BaseModal';
 import CloseButton from './CloseButton';
 import Footer, { FooterProps } from './Footer';
 import { confirm, error, info, success, warning } from './instance';
 
-let MODAL_PORTAL_CONTAINER: HTMLElement;
-
-const canUseDOM = !!(
-  typeof window !== 'undefined' &&
-  window.document &&
-  window.document.createElement
-);
+const portalElement = new PortalElement();
 
 export type ModalProps = BaseModalProps &
   FooterProps & {
@@ -112,13 +107,8 @@ class Modal extends PureComponent<ModalProps> {
   };
 
   render() {
-    if (!canUseDOM) {
+    if (!portalElement.canUseDOM()) {
       return null;
-    }
-
-    if (!MODAL_PORTAL_CONTAINER) {
-      MODAL_PORTAL_CONTAINER = document.createElement('div');
-      document.body.appendChild(MODAL_PORTAL_CONTAINER);
     }
 
     const props = omit(['title'], this.props);
@@ -129,7 +119,7 @@ class Modal extends PureComponent<ModalProps> {
         {this.renderContent()}
         {this.renderFooter()}
       </BaseModal>,
-      MODAL_PORTAL_CONTAINER
+      portalElement.getPortalElement()
     );
   }
 }
