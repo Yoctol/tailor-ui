@@ -5,7 +5,7 @@ import Button, { ButtonProps } from '../Button';
 import Flex from '../Grid/Flex';
 
 export interface FooterProps {
-  cancelText?: string;
+  cancelText?: string | null;
   confirmText?: string;
   onConfirm?: () => void;
   onCancel?: () => void;
@@ -23,21 +23,14 @@ const Footer: SFC<FooterProps> = ({
 }) => (
   <Flex width="100%">
     <Box ml="auto">
-      {cancelText && (
+      {cancelText !== null && (
         <Button onClick={onCancel} {...cancelButtonProps}>
           {cancelText}
         </Button>
       )}
-      {confirmText && (
-        <Button
-          ml="2"
-          type="primary"
-          onClick={onConfirm}
-          {...confirmButtonProps}
-        >
-          {confirmText}
-        </Button>
-      )}
+      <Button ml="2" type="primary" onClick={onConfirm} {...confirmButtonProps}>
+        {confirmText}
+      </Button>
     </Box>
   </Flex>
 );

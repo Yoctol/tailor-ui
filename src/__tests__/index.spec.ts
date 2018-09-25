@@ -28,8 +28,8 @@ import {
   Tag,
   TextField,
   Textarea,
-  ThemeProvider,
   Tooltip,
+  UIProvider,
   message,
   theme,
 } from '..';
@@ -68,8 +68,8 @@ describe('index', () => {
     expect(Tag).toBeDefined();
     expect(Textarea).toBeDefined();
     expect(TextField).toBeDefined();
-    expect(ThemeProvider).toBeDefined();
     expect(Tooltip).toBeDefined();
     expect(theme).toBeDefined();
+    expect(UIProvider).toBeDefined();
   });
 });

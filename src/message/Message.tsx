@@ -3,7 +3,7 @@ import { Transition, animated } from 'react-spring';
 
 import styled from 'utils/styled-components';
 
-import ThemeProvider from '../utils/ThemeProvider';
+import UIProvider from '../UIProvider';
 import createUuidGenerator from '../utils/createUuidGenerator';
 import getTypeIcon, { Types } from '../utils/getTypeIcon';
 
@@ -91,7 +91,7 @@ class MessageComponent extends PureComponent<{}, MessageComponentState> {
   render() {
     const { messages } = this.state;
     return (
-      <ThemeProvider>
+      <UIProvider>
         <MessageContainer>
           <Transition
             native
@@ -119,7 +119,7 @@ class MessageComponent extends PureComponent<{}, MessageComponentState> {
             ))}
           </Transition>
         </MessageContainer>
-      </ThemeProvider>
+      </UIProvider>
     );
   }
 }

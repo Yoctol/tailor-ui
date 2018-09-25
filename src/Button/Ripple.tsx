@@ -37,6 +37,7 @@ class Ripple extends PureComponent {
       top: clientY,
       left: clientX,
     };
+
     const buttonPos = button.getBoundingClientRect();
     const buttonWidth = button.offsetWidth;
     const buttonHeight = button.offsetHeight;

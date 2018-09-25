@@ -30,6 +30,6 @@ export { default as Tabs } from './Tabs';
 export { default as Tag } from './Tag';
 export { default as Textarea } from './Input/Textarea';
 export { default as TextField } from './TextField';
-export { default as ThemeProvider } from './utils/ThemeProvider';
 export { default as Tooltip } from './Tooltip';
+export { default as UIProvider } from './UIProvider';
 export { theme };
