@@ -1,12 +1,16 @@
 import React, { PureComponent, ReactNode } from 'react';
-import { Transition, config } from 'react-spring';
+import { Spring, config } from 'react-spring';
+import { createPortal, findDOMNode } from 'react-dom';
 
 import ClickOutside from '../utils/ClickOutside';
+import PortalElement from '../utils/PortalElement';
 
 import Item from './Item';
 import List from './List';
 import SubList from './SubList';
 import { Placement, Provider } from './DropdownContext';
+
+const portalElement = new PortalElement();
 
 export interface DropdownProps {
   /**
@@ -41,23 +45,18 @@ class Dropdown extends PureComponent<DropdownProps> {
 
   static SubList: typeof SubList = SubList;
 
-  wrapperRef?: {
-    children: HTMLCollectionOf<HTMLDivElement>;
-  };
+  childrenDOM?: HTMLElement;
+
+  listRef?: HTMLElement;
 
   state = {
     visible: false,
+    handler: false,
   };
 
-  getOffset = () => {
-    if (this.wrapperRef) {
-      const { offsetHeight } = this.wrapperRef.children[0];
-      const DROPDOWN_MARGIN = 3;
-      return offsetHeight + DROPDOWN_MARGIN;
-    }
-
-    return 0;
-  };
+  componentDidMount() {
+    this.childrenDOM = findDOMNode(this) as HTMLElement;
+  }
 
   toggle = () => {
     const { visible } = this.state;
@@ -73,9 +72,52 @@ class Dropdown extends PureComponent<DropdownProps> {
   handleClose = () => {
     const { onVisibleChange } = this.props;
 
-    this.setState(() => ({ visible: false }));
+    this.setState(() => ({ visible: false, handler: false }));
 
     if (onVisibleChange) onVisibleChange(false);
+  };
+
+  handleListRef = (ref: any) => {
+    this.listRef = ref;
+  };
+
+  getOffset = () => {
+    const rect = (this.childrenDOM as Element).getBoundingClientRect();
+
+    const MARGIN_OFFSET = 5;
+
+    const offsetHeight = this.listRef ? this.listRef.offsetHeight : 0;
+    const offsetWidth = this.listRef ? this.listRef.offsetWidth : 0;
+
+    const TOP_OFFSET_TOP = rect.top - offsetHeight - MARGIN_OFFSET;
+    const BOTTOM_OFFSET_TOP = rect.top + rect.height + MARGIN_OFFSET;
+    const LEFT_OFFSET_LEFT = rect.left + rect.width - offsetWidth;
+    const RIGHT_OFFSET_RIGHT = rect.left;
+
+    switch (this.props.placement) {
+      case 'topRight':
+        return {
+          top: TOP_OFFSET_TOP,
+          left: LEFT_OFFSET_LEFT,
+        };
+      case 'topLeft':
+        return {
+          top: TOP_OFFSET_TOP,
+          left: RIGHT_OFFSET_RIGHT,
+        };
+      case 'bottomRight':
+        return {
+          top: BOTTOM_OFFSET_TOP,
+          left: LEFT_OFFSET_LEFT,
+        };
+      case 'bottomLeft':
+        return {
+          top: BOTTOM_OFFSET_TOP,
+          left: RIGHT_OFFSET_RIGHT,
+        };
+      default:
+        return {};
+    }
   };
 
   renderChildren = () => {
@@ -92,62 +134,66 @@ class Dropdown extends PureComponent<DropdownProps> {
     const { overlay, placement = 'bottomLeft' } = this.props;
     const { visible } = this.state;
 
-    const translateFrom = placement.startsWith('top') ? 10 : -10;
-    let offset = 0;
+    if (!this.childrenDOM || this.childrenDOM instanceof Text) {
+      return null;
+    }
 
-    if (visible) {
-      offset = this.getOffset();
+    const translateFrom = placement.startsWith('top') ? 10 : -10;
+
+    const offset = this.getOffset();
+
+    if (!this.state.handler) {
+      window.addEventListener('scroll', this.handleClose, true);
+      this.setState({ handler: true });
     }
 
     return (
-      <Transition
-        native
-        from={{ opacity: 0, transform: `translateY(${translateFrom}px)` }}
-        enter={{ opacity: 1, transform: 'translateY(0)' }}
-        leave={{
-          opacity: 0,
-          transform: `translateY(${translateFrom}px)`,
-          pointerEvents: 'none',
-        }}
-        config={config.stiff}
+      <ClickOutside
+        bindRef={this.childrenDOM}
+        onClickOutside={this.handleClose}
       >
-        {visible &&
-          (styles => (
+        <Spring
+          native
+          from={{
+            opacity: 0,
+            transform: `translateY(${translateFrom}px)`,
+          }}
+          to={{
+            opacity: visible ? 1 : 0,
+            transform: `translateY(${visible ? 0 : translateFrom}px)`,
+            visibility: visible ? 'visible' : 'hidden',
+          }}
+          config={config.stiff}
+        >
+          {styles => (
             <Provider
               value={{
                 placement,
                 offset,
                 styles,
                 onClick: this.handleClose,
+                handleListRef: this.handleListRef,
               }}
             >
               {overlay}
             </Provider>
-          ))}
-      </Transition>
+          )}
+        </Spring>
+      </ClickOutside>
     );
   };
 
   render() {
-    const { display = 'inline-block' } = this.props;
-
     return (
-      <ClickOutside onClickOutside={this.handleClose}>
-        {({ bindRef }) => (
-          <div
-            ref={(wrapperRef: any) => {
-              if (wrapperRef) {
-                this.wrapperRef = wrapperRef;
-                bindRef(wrapperRef);
-              }
-            }}
-            style={{ display, position: 'relative' }}
-          >
-            {this.renderChildren()}
-            {this.renderOverlay()}
-          </div>
-        )}
-      </ClickOutside>
+      <>
+        {this.renderChildren()}
+        {!portalElement.canUseDOM()
+          ? null
+          : createPortal(
+              this.renderOverlay(),
+              portalElement.getPortalElement()
+            )}
+      </>
     );
   }
 }

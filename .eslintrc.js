@@ -19,6 +19,7 @@ module.exports = {
     'react/jsx-filename-extension': 'off',
     'react/prop-types': 'off',
     'react/sort-comp': 'off',
+    'react/no-find-dom-node': 'off',
     'no-restricted-globals': 'off',
     'no-undef': 'off',
     'no-unused-vars': 'off',

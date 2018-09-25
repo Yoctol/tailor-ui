@@ -9,18 +9,15 @@ import Item from './Item';
 import { StyledList } from './List';
 
 export interface StyledSubItemProps {
-  offset: {
-    bottom: number;
-    left: number;
-  };
+  offsetLeft: number;
 }
 
 const StyledSubItem = styled<StyledSubItemProps, any>(Item)`
   position: relative;
 
   & > ${StyledList /* sc-selector */} {
-    bottom: ${p => p.offset.bottom}px;
-    left: ${p => p.offset.left}px;
+    left: ${p => p.offsetLeft}px;
+    margin-left: 3px;
     opacity: 0;
     transform: scale(0.3);
     transform-origin: left;
@@ -52,24 +49,24 @@ class SubItem extends PureComponent<SubItemProps, SubItemState> {
     this.setState(() => ({ subItemEl }));
   };
 
-  getOffset = () => {
+  getOffsetLeft = () => {
     const { subItemEl } = this.state;
 
     if (!subItemEl) {
       return 0;
     }
 
-    return {
-      left: subItemEl.offsetWidth + 5,
-      bottom: -(subItemEl.offsetHeight + 10),
-    };
+    return subItemEl.offsetWidth;
   };
 
   render() {
     const { title, children, ...props } = this.props;
 
     return (
-      <StyledSubItem innerRef={this.subItemRef} offset={this.getOffset()}>
+      <StyledSubItem
+        innerRef={this.subItemRef}
+        offsetLeft={this.getOffsetLeft()}
+      >
         {title}
         <Icon ml="2" size="16" cursor="pointer" type={ArrowIcon} />
         <StyledList {...props}>{children}</StyledList>
