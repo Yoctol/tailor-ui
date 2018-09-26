@@ -45,6 +45,10 @@ class Dropdown extends PureComponent<DropdownProps> {
 
   static SubList: typeof SubList = SubList;
 
+  static defaultProps = {
+    placement: 'bottomLeft',
+  };
+
   childrenDOM?: HTMLElement;
 
   listRef?: HTMLElement;
