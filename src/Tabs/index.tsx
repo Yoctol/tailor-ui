@@ -91,8 +91,17 @@ const StyledTab = styled<StyledTabProps, 'a'>('a')`
 `;
 
 export type TabProps = {
+  /**
+   * label of tab
+   */
   label: string;
+  /**
+   * Tab's value
+   */
   value: string;
+  /**
+   * Disabled state of tab
+   */
   disabled?: boolean;
 };
 
@@ -111,27 +120,6 @@ export const Tab: SFC<TabProps> = ({ label, value, ...props }) => (
     )}
   </Consumer>
 );
-
-// Tab.propTypes = {
-//   /**
-//    * Disabled state of tab
-//    */
-//   disabled: PropTypes.bool,
-//   /**
-//    * Content of tab
-//    */
-//   label: PropTypes.node,
-//   /**
-//    * Tab's value
-//    */
-//   value: PropTypes.string,
-// };
-
-// Tab.defaultProps = {
-//   label: '',
-//   disabled: false,
-//   value: '',
-// };
 
 interface StyledTabsProps {
   /**
