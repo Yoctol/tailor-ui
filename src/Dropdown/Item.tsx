@@ -4,7 +4,8 @@ import styled from 'utils/styled-components';
 
 const Item = styled<SpaceProps, 'li'>('li')`
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center;
   height: ${p => p.theme.heights.base};
   margin-top: 0;
   padding: 0 ${p => p.theme.paddings.md};
