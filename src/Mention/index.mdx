@@ -32,6 +32,7 @@ import { Mention } from '@yoctol/ui';
   <Value initial={Mention.toContentState('我想要一杯 @飲料')}>
     {({ value, set }) => (
       <Mention
+        autoFocus
         suggestions={['飲料', '食物']}
         value={value}
         onChange={contentState => {

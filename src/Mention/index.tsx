@@ -142,6 +142,7 @@ const MentionTag = styled.span.attrs({
 `;
 
 export interface MentionEditorProps {
+  autoFocus?: boolean;
   /**
    * The text
    */
@@ -200,6 +201,7 @@ class MentionEditor extends PureComponent<MentionEditorProps> {
   static getMentions = getMentions;
 
   static defaultProps = {
+    autoFocus: false,
     createText: 'Press enter to create new mention: ',
     disabled: false,
     error: false,
@@ -218,6 +220,12 @@ class MentionEditor extends PureComponent<MentionEditorProps> {
     suggestions: this.props.suggestions,
     focus: false,
   };
+
+  componentDidMount() {
+    if (this.props.autoFocus) {
+      this.focus();
+    }
+  }
 
   onSearchChange = (value: string) => {
     const searchValue = value.toLowerCase();
