@@ -300,7 +300,7 @@ class Button extends PureComponent<ButtonProps> {
 
     return (
       <StyledButton
-        innerRef={this.button}
+        ref={this.button}
         onMouseUp={this.handleClick}
         onlyIcon={Boolean(icon && !children)}
         loading={loading}

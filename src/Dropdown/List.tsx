@@ -62,7 +62,7 @@ class List extends PureComponent<ListProps> {
       <Consumer>
         {({ styles, handleListRef }) => (
           <AnimatedStyledList
-            innerRef={handleListRef}
+            ref={handleListRef}
             style={{
               ...style,
               ...styles,

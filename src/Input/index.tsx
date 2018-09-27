@@ -132,7 +132,7 @@ class Input extends PureComponent<IInputProps> {
   render() {
     return (
       <StyledInput
-        innerRef={this.inputRef}
+        ref={this.inputRef}
         onKeyPress={this.handleKeyPress}
         {...this.props}
       />

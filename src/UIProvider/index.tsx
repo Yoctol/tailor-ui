@@ -4,8 +4,8 @@ import moment from 'moment';
 
 import { ThemeProvider } from 'utils/styled-components';
 
+import GlobalStyle from '../GlobalStyle';
 import defaultTheme from '../theme';
-import injectGlobalCss from '../injectGlobalCss';
 import locales from '../locale';
 
 const { en_US } = locales;
@@ -34,8 +34,6 @@ const UIProvider: SFC<IUIProviderProps> = ({
   locale = en_US,
   skipLocale = false,
 }) => {
-  injectGlobalCss();
-
   if (!skipLocale) {
     globalLocale = locale;
     moment.locale(locale.momentLocale);
@@ -43,7 +41,10 @@ const UIProvider: SFC<IUIProviderProps> = ({
 
   return (
     <ThemeProvider theme={theme}>
-      <Provider value={{ locale }}>{children}</Provider>
+      <>
+        <GlobalStyle />
+        <Provider value={{ locale }}>{children}</Provider>
+      </>
     </ThemeProvider>
   );
 };
