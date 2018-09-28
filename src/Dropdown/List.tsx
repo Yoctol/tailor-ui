@@ -14,18 +14,12 @@ import { Consumer, Placement } from './DropdownContext';
 export type StyledListProps = MinWidthProps &
   TextAlignProps & {
     placement?: Placement;
-    offset?: {
-      top: number;
-      left: number;
-    };
   };
 
 export const StyledList = styled<StyledListProps, 'ul'>('ul')`
   display: block;
   position: absolute;
   z-index: 9999;
-  top: ${p => (p.offset ? p.offset.top : 0)}px;
-  left: ${p => (p.offset ? p.offset.left : 0)}px;
   margin: 0;
   padding: ${p => p.theme.space[1]} 0;
   border: ${p => p.theme.borders.base};
@@ -64,8 +58,12 @@ class List extends PureComponent<ListProps> {
           <AnimatedStyledList
             innerRef={handleListRef}
             placement={placement}
-            offset={offset}
-            style={{ ...style, ...styles }}
+            style={{
+              ...style,
+              ...styles,
+              top: offset.top || 0,
+              left: offset.left || 0,
+            }}
             onClick={onClick}
             {...props}
           >

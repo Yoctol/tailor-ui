@@ -285,3 +285,5 @@ declare module 'rc-editor-mention';
 declare module 'react-textarea-autosize';
 
 declare module 'test/test-utils';
+
+declare module '@reach/observe-rect';

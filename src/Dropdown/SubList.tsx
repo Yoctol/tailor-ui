@@ -14,8 +14,11 @@ export interface StyledSubItemProps {
 
 const StyledSubItem = styled<StyledSubItemProps, any>(Item)`
   position: relative;
+  flex-direction: row;
+  align-items: center;
 
   & > ${StyledList /* sc-selector */} {
+    top: -${p => p.theme.space[1]};
     left: ${p => p.offsetLeft}px;
     margin-left: 3px;
     opacity: 0;
@@ -25,7 +28,7 @@ const StyledSubItem = styled<StyledSubItemProps, any>(Item)`
   }
 
   &:hover {
-    ${StyledList /* sc-selector */} {
+    > ${StyledList /* sc-selector */} {
       opacity: 1;
       transform: scale(1);
     }

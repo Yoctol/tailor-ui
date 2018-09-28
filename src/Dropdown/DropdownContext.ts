@@ -4,13 +4,19 @@ export type Placement = 'topRight' | 'topLeft' | 'bottomRight' | 'bottomLeft';
 
 const { Provider, Consumer } = createContext<{
   placement: Placement;
-  offset: object;
+  offset: {
+    top: number;
+    left: number;
+  };
   styles: any;
   onClick: () => void;
   handleListRef: (ref: any) => void;
 }>({
   placement: 'bottomLeft',
-  offset: {},
+  offset: {
+    top: 0,
+    left: 0,
+  },
   styles: {},
   onClick: () => {},
   handleListRef: () => {},

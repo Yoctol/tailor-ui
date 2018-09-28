@@ -1,4 +1,5 @@
 import React, { PureComponent, ReactNode } from 'react';
+import observeRect from '@reach/observe-rect';
 import { Spring, config } from 'react-spring';
 import { createPortal, findDOMNode } from 'react-dom';
 
@@ -38,7 +39,12 @@ export interface DropdownProps {
   onVisibleChange?: (visible: boolean) => void;
 }
 
-class Dropdown extends PureComponent<DropdownProps> {
+interface DropdownState {
+  visible: boolean;
+  rect: DOMRect | object;
+}
+
+class Dropdown extends PureComponent<DropdownProps, DropdownState> {
   static List: typeof List = List;
 
   static Item: typeof Item = Item;
@@ -53,32 +59,65 @@ class Dropdown extends PureComponent<DropdownProps> {
 
   listRef?: HTMLElement;
 
+  rectObserver?: any;
+
   state = {
     visible: false,
-    handler: false,
+    rect: {},
   };
 
   componentDidMount() {
     this.childrenDOM = findDOMNode(this) as HTMLElement;
+
+    this.rectObserver = observeRect(this.childrenDOM, (rect: DOMRect) => {
+      this.setState({ rect });
+    });
+
+    // Get the width & height of children component
+    this.rectObserver.observe();
+    this.rectObserver.unobserve();
   }
+
+  // componentDidUpdate(prevProps: DropdownProps, prevState: DropdownState) {
+  //   console.log('update', this.state.rect.top);
+  //   if (
+  //     prevState.visible &&
+  //     this.state.visible &&
+  //     ((prevState.rect as DOMRect).top !== (this.state.rect as DOMRect).top ||
+  //       (prevState.rect as DOMRect).left !== (this.state.rect as DOMRect).left)
+  //   ) {
+  //     this.handleClose();
+  //   }
+  // }
 
   toggle = () => {
     const { visible } = this.state;
     const { onVisibleChange } = this.props;
 
-    this.setState(() => ({
-      visible: !visible,
-    }));
+    if (!visible) {
+      this.rectObserver.observe();
 
-    if (onVisibleChange) onVisibleChange(!visible);
+      this.setState(() => ({ visible: true }));
+      if (onVisibleChange) {
+        onVisibleChange(true);
+      }
+    } else {
+      this.handleClose();
+    }
   };
 
   handleClose = () => {
+    const { visible } = this.state;
     const { onVisibleChange } = this.props;
 
-    this.setState(() => ({ visible: false, handler: false }));
+    if (visible) {
+      this.rectObserver.unobserve();
 
-    if (onVisibleChange) onVisibleChange(false);
+      this.setState(() => ({ visible: false }));
+      if (onVisibleChange) {
+        onVisibleChange(false);
+      }
+    }
   };
 
   handleListRef = (ref: any) => {
@@ -86,17 +125,19 @@ class Dropdown extends PureComponent<DropdownProps> {
   };
 
   getOffset = () => {
-    const rect = (this.childrenDOM as Element).getBoundingClientRect();
+    const { rect } = this.state;
 
     const MARGIN_OFFSET = 5;
 
     const offsetHeight = this.listRef ? this.listRef.offsetHeight : 0;
     const offsetWidth = this.listRef ? this.listRef.offsetWidth : 0;
 
-    const TOP_OFFSET_TOP = rect.top - offsetHeight - MARGIN_OFFSET;
-    const BOTTOM_OFFSET_TOP = rect.top + rect.height + MARGIN_OFFSET;
-    const LEFT_OFFSET_LEFT = rect.left + rect.width - offsetWidth;
-    const RIGHT_OFFSET_RIGHT = rect.left;
+    const TOP_OFFSET_TOP = (rect as DOMRect).top - offsetHeight - MARGIN_OFFSET;
+    const BOTTOM_OFFSET_TOP =
+      (rect as DOMRect).top + (rect as DOMRect).height + MARGIN_OFFSET;
+    const LEFT_OFFSET_LEFT =
+      (rect as DOMRect).left + (rect as DOMRect).width - offsetWidth;
+    const RIGHT_OFFSET_RIGHT = (rect as DOMRect).left;
 
     switch (this.props.placement) {
       case 'topRight':
@@ -120,7 +161,10 @@ class Dropdown extends PureComponent<DropdownProps> {
           left: RIGHT_OFFSET_RIGHT,
         };
       default:
-        return {};
+        return {
+          top: 0,
+          left: 0,
+        };
     }
   };
 
@@ -142,14 +186,9 @@ class Dropdown extends PureComponent<DropdownProps> {
       return null;
     }
 
-    const translateFrom = placement.startsWith('top') ? 10 : -10;
-
     const offset = this.getOffset();
 
-    if (!this.state.handler) {
-      window.addEventListener('scroll', this.handleClose, true);
-      this.setState({ handler: true });
-    }
+    const translateFrom = placement.startsWith('top') ? 10 : -10;
 
     return (
       <ClickOutside
