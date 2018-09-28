@@ -28,7 +28,7 @@ const StyledTab = styled<StyledTabProps, 'a'>('a')`
   display: inline-flex;
   position: relative;
   align-items: center;
-  color: ${p => p.theme.colors.dark};
+  color: ${p => p.theme.colors.gray800};
   text-align: center;
   text-decoration: none;
   cursor: pointer;

@@ -9,7 +9,7 @@ const colors = {
   secondaryDark: '#8f7455',
   secondaryLight: '#f3d4b2',
 
-  dark: '#1a1a1a',
+  dark: '#000000',
   light: '#ffffff',
   gray100: '#fafafa',
   gray200: '#f6f6f6',
@@ -18,6 +18,7 @@ const colors = {
   gray500: '#8b8b8b',
   gray600: '#5e5e5e',
   gray700: '#373737',
+  gray800: '#1a1a1a',
 
   success: '#30be72',
   warning: '#de8a15',

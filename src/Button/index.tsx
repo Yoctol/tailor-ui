@@ -52,7 +52,7 @@ const getTypeStyles = ({
     return {
       borderColor: 'transparent',
       backgroundColor: 'transparent',
-      color: colors.dark,
+      color: colors.gray800,
       hover: {
         backgroundColor: colors.gray300,
         borderColor: 'transparent',
@@ -64,7 +64,7 @@ const getTypeStyles = ({
     return {
       borderColor: colors.gray300,
       backgroundColor: colors.light,
-      color: colors.dark,
+      color: colors.gray800,
       hover: {
         backgroundColor: colors.gray200,
         borderColor: colors.primary,
