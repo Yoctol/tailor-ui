@@ -62,7 +62,7 @@ const StepsIconItem = styled<StepsItemProps, 'div'>('div')`
         return p.theme.colors.error;
       case 'wait':
       default:
-        return p.theme.colors.gray[5];
+        return p.theme.colors.gray500;
     }
   }};
   background-color: ${p =>
@@ -77,7 +77,7 @@ const StepsIconItem = styled<StepsItemProps, 'div'>('div')`
         return p.theme.colors.error;
       case 'wait':
       default:
-        return p.theme.colors.gray[5];
+        return p.theme.colors.gray500;
     }
   }};
   cursor: pointer;
@@ -96,7 +96,7 @@ const StepsIconItem = styled<StepsItemProps, 'div'>('div')`
         height: 100%;
         margin-top: 6px;
         background: ${p.tailColor === 'gray'
-          ? p.theme.colors.gray[5]
+          ? p.theme.colors.gray500
           : p.theme.colors[p.tailColor]};
       }
     `};
@@ -119,7 +119,7 @@ const Title = styled<StepsItemProps, 'div'>('div')`
       case 'finish':
       case 'wait':
       default:
-        return p.theme.colors.gray[5];
+        return p.theme.colors.gray500;
     }
   }};
   line-height: 32px;
@@ -137,7 +137,7 @@ const Title = styled<StepsItemProps, 'div'>('div')`
         width: 9999px;
         height: 1px;
         background: ${p.tailColor === 'gray'
-          ? p.theme.colors.gray[5]
+          ? p.theme.colors.gray500
           : p.theme.colors[p.tailColor]};
       }
     `};
@@ -161,7 +161,7 @@ const Description = styled<DescriptionProps, 'div'>('div')`
       case 'finish':
       case 'wait':
       default:
-        return p.theme.colors.gray[5];
+        return p.theme.colors.gray500;
     }
   }};
   font-size: ${p => p.theme.fontSizes.sm};

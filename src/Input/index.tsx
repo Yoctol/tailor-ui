@@ -34,28 +34,28 @@ export const inputStyles = css<StyledInputProps>`
   max-width: 100%;
   border: ${p => p.theme.borders.base};
   border-radius: ${p => p.theme.radii.base};
-  border-color: ${p => p.theme.colors.gray[8]};
+  border-color: ${p => p.theme.colors.gray300};
   outline: none;
   background: ${p => p.theme.colors.light};
   background-image: none;
-  color: ${p => p.theme.colors.gray[2]};
+  color: ${p => p.theme.colors.gray700};
   line-height: ${p => p.theme.lineHeight};
   appearance: none;
 
   &:focus {
-    border-color: ${p => p.theme.colors.gray[3]};
+    border-color: ${p => p.theme.colors.gray700};
   }
 
   &:disabled,
   [disabled] {
-    border-color: ${p => p.theme.colors.gray[5]};
+    border-color: ${p => p.theme.colors.gray500};
     opacity: 0.5;
-    background-color: ${p => p.theme.colors.gray[8]};
+    background-color: ${p => p.theme.colors.gray300};
     cursor: not-allowed;
   }
 
   &::placeholder {
-    color: ${p => p.theme.colors.gray[6]};
+    color: ${p => p.theme.colors.gray400};
   }
 
   ${({ size = 'md', theme: { paddings, heights, fontSizes } }) =>

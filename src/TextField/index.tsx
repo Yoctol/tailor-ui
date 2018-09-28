@@ -11,12 +11,13 @@ import Textarea, { StyledTextarea } from '../Input/Textarea';
 
 const TextFieldLabel = styled.label`
   position: absolute;
-  top: -10px;
+  top: -7px;
   left: 7px;
   padding: 0 2px;
   background-color: #fff;
-  color: ${p => p.theme.colors.gray[3]};
+  color: ${p => p.theme.colors.gray700};
   font-size: 0.75rem;
+  line-height: 1;
   pointer-events: none;
 
   ${p => p.theme.transition};
@@ -43,10 +44,10 @@ const TextFieldField = styled(FormField)`
     box-shadow: none;
 
     & ~ ${TextFieldLabel /* sc-selector */} {
-      top: 3px;
+      top: 9px;
       left: 1px;
       padding: 0 ${p => p.theme.paddings.xs};
-      color: ${p => p.theme.colors.gray[6]};
+      color: ${p => p.theme.colors.gray400};
       font-size: ${p => p.theme.fontSizes.base};
     }
   }
@@ -54,11 +55,11 @@ const TextFieldField = styled(FormField)`
   /* stylelint-disable-next-line no-descending-specificity */
   ${StyledInput /* sc-selector */}:focus, ${StyledTextarea /* sc-selector */}:focus {
     & ~ ${TextFieldLabel /* sc-selector */} {
-      top: -10px;
+      top: -7px;
       left: 7px;
       padding: 0 2px;
       background-color: #fff;
-      color: ${p => p.theme.colors.gray[3]};
+      color: ${p => p.theme.colors.gray700};
       font-size: 0.75rem;
     }
 

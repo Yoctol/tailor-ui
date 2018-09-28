@@ -22,9 +22,9 @@ const CheckboxInner = styled.span`
   padding: 0;
   border: ${p => p.theme.borders.base};
   border-radius: 2px;
-  border-color: ${p => p.theme.colors.gray[7]};
+  border-color: ${p => p.theme.colors.gray400};
   background-color: ${p => p.theme.colors.light};
-  color: ${p => p.theme.colors.gray[3]};
+  color: ${p => p.theme.colors.gray700};
 
   ${p => p.theme.transition};
 

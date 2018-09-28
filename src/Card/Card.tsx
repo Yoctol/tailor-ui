@@ -33,7 +33,6 @@ const CardWrapper = styled<CardProps, any>('div')`
   display: flex;
   flex-direction: column;
   border: ${p => p.theme.borders.base};
-  border-color: ${p => p.theme.colors.gray[8]};
 
   ${p => p.theme.transition};
 
@@ -46,9 +45,9 @@ const CardWrapper = styled<CardProps, any>('div')`
   ${({ hoverable }) =>
     hoverable &&
     css`
-      box-shadow: ${p => p.theme.shadows[0]};
+      box-shadow: ${p => p.theme.shadows.base};
       &:hover {
-        box-shadow: ${p => p.theme.shadows[1]};
+        box-shadow: ${p => p.theme.shadows.lg};
       }
     `};
 
@@ -68,7 +67,7 @@ class Card extends PureComponent<CardProps> {
   static defaultProps = {
     bg: 'light',
     borderRadius: 'lg',
-    borderColor: 'gray.8',
+    borderColor: 'gray300',
   };
 
   render() {

@@ -59,12 +59,12 @@ export type TooltipContentProps = SpaceProps &
 export const TooltipContent = styled<TooltipContentProps, 'div'>('div')`
   border: ${p => p.theme.borders.base};
   border-color: ${({ light, theme: { colors } }) =>
-    light ? colors.gray[7] : colors.primaryDark};
+    light ? colors.gray400 : colors.primaryDark};
   background-color: ${({ light, theme: { colors } }) =>
-    light ? colors.gray[9] : colors.primaryDark};
+    light ? colors.gray100 : colors.primaryDark};
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   color: ${({ light, theme: { colors } }) =>
-    light ? colors.gray[2] : colors.light};
+    light ? colors.gray700 : colors.light};
 
   ${({ light }) =>
     !light &&
@@ -97,7 +97,7 @@ export const Arrow = styled<ArrowProps, 'div'>('div')`
   height: 0;
   border-top: 5px solid
     ${({ light, theme: { colors } }) =>
-      light ? colors.gray[7] : colors.primaryDark};
+      light ? colors.gray400 : colors.primaryDark};
   border-right: 5px solid transparent;
   border-left: 5px solid transparent;
 
@@ -141,7 +141,7 @@ export const Arrow = styled<ArrowProps, 'div'>('div')`
         position: absolute;
         top: -7px;
         left: -6px;
-        border-top: 6px solid ${p => p.theme.colors.gray[9]};
+        border-top: 6px solid ${p => p.theme.colors.gray100};
         border-right: 6px solid transparent;
         border-left: 6px solid transparent;
       }

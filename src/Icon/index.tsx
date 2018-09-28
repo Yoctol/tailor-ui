@@ -58,7 +58,7 @@ const Icon: SFC<IconProps> = ({
   type,
   cursor = 'default',
   size = 24,
-  fill = 'gray.2',
+  fill = 'gray700',
   ...otherProps
 }) => {
   let IconComponent = type;

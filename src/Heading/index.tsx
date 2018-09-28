@@ -20,19 +20,19 @@ const HeadingBase = styled<HeadingBaseProps, 'p'>('p')`
   ${({ gray }) =>
     gray &&
     css`
-      color: ${p => p.theme.colors.gray[2]};
+      color: ${p => p.theme.colors.gray700};
     `}
 
   ${({ grayLight }) =>
     grayLight &&
     css`
-      color: ${p => p.theme.colors.gray[4]};
+      color: ${p => p.theme.colors.gray600};
     `}
 
   ${({ grayHint }) =>
     grayHint &&
     css`
-      color: ${p => p.theme.colors.gray[5]};
+      color: ${p => p.theme.colors.gray500};
     `}
 
   ${({ white }) =>

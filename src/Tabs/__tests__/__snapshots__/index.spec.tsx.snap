@@ -11,7 +11,7 @@ exports[`Tabs should render correctly 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #111111;
+  color: #1a1a1a;
   text-align: center;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -20,7 +20,7 @@ exports[`Tabs should render correctly 1`] = `
   padding: 0 1rem;
   font-size: 1rem;
   border-bottom: 3px solid transparent;
-  border-bottom-color: #c7ad8d;
+  border-bottom-color: #c0a382;
   -webkit-transition: all 200ms ease 0s;
   transition: all 200ms ease 0s;
 }
@@ -51,7 +51,7 @@ exports[`Tabs should render correctly 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #111111;
+  color: #1a1a1a;
   text-align: center;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -120,7 +120,7 @@ exports[`Tabs should render with props absolute 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #111111;
+  color: #1a1a1a;
   text-align: center;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -129,7 +129,7 @@ exports[`Tabs should render with props absolute 1`] = `
   padding: 0 1rem;
   font-size: 1rem;
   border-bottom: 3px solid transparent;
-  border-bottom-color: #c7ad8d;
+  border-bottom-color: #c0a382;
   -webkit-transition: all 200ms ease 0s;
   transition: all 200ms ease 0s;
 }
@@ -160,7 +160,7 @@ exports[`Tabs should render with props absolute 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #111111;
+  color: #1a1a1a;
   text-align: center;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -231,7 +231,7 @@ exports[`Tabs should render with props pills 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #111111;
+  color: #1a1a1a;
   text-align: center;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -272,7 +272,7 @@ exports[`Tabs should render with props pills 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #111111;
+  color: #1a1a1a;
   text-align: center;
   -webkit-text-decoration: none;
   text-decoration: none;

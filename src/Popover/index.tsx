@@ -7,7 +7,7 @@ import Tooltip, { TooltipProps } from '../Tooltip';
 import { Arrow, TooltipContent } from '../Tooltip/BaseTooltip';
 
 export const ArrowComponent = styled(Arrow)`
-  border-top: 5px solid ${p => p.theme.colors.gray[8]};
+  border-top: 5px solid ${p => p.theme.colors.gray300};
   opacity: 1;
 
   &::after {
@@ -23,17 +23,17 @@ export const ArrowComponent = styled(Arrow)`
 
 export const ContentComponent = styled(TooltipContent)`
   padding: 0;
-  border-color: ${p => p.theme.colors.gray[8]};
+  border-color: ${p => p.theme.colors.gray300};
   opacity: 1;
   background-color: ${p => p.theme.colors.light};
-  color: ${p => p.theme.colors.gray[2]};
+  color: ${p => p.theme.colors.gray700};
   text-align: left;
 `;
 
 const Header = styled.div`
   padding: ${p => p.theme.space[1]} ${p => p.theme.space[2]};
   border-bottom: ${p => p.theme.borders.base};
-  border-color: ${p => p.theme.colors.gray[8]};
+  border-color: ${p => p.theme.colors.gray300};
 `;
 
 const Content = styled.div`

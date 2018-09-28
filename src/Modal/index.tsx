@@ -47,7 +47,7 @@ class Modal extends PureComponent<ModalProps> {
         px="3"
         py="2"
         borderBottom="base"
-        borderColor="gray.8"
+        borderColor="gray300"
       >
         <Box flex="auto">
           <Heading.h3>{title}</Heading.h3>
@@ -87,7 +87,7 @@ class Modal extends PureComponent<ModalProps> {
         px="3"
         py="2"
         borderTop="base"
-        borderColor="gray.8"
+        borderColor="gray300"
       >
         {isValidElement(footer) ? (
           footer

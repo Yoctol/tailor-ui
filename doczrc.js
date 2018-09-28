@@ -8,6 +8,7 @@ module.exports = {
   themeConfig: {
     colors: {
       primary: '#423b63',
+      sidebarBg: '#fff',
     },
     styles: {
       body: {

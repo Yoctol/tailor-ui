@@ -3,17 +3,11 @@ import { readableColor } from 'polished';
 
 import { Flex } from '..';
 
-import theme from '.';
+import theme from './index';
 
 const { colors: themeColors } = theme;
 
-const get = (colorKey: string) => {
-  const path = colorKey.split('.');
-
-  return path.length === 2
-    ? (themeColors as any)[path[0]][path[1]]
-    : (themeColors as any)[path[0]];
-};
+type ColorKeys = keyof typeof themeColors;
 
 const upperFirst = (string: string) =>
   string.charAt(0).toUpperCase() + string.slice(1);
@@ -22,20 +16,21 @@ const Color = ({
   colorKey,
   width,
 }: {
-  colorKey: string;
+  colorKey: ColorKeys;
   width: string | number;
 }) => {
-  const color = get(colorKey);
+  const color = themeColors[colorKey];
+
   return (
     <Flex
       flexDirection="column"
       justifyContent="center"
       alignItems="center"
       width={width}
-      p={4}
+      p={3}
       mx={2}
       bg={colorKey}
-      color={readableColor(color)}
+      color={readableColor(color as string)}
     >
       <div>{upperFirst(colorKey)}</div>
       <div>{color}</div>
@@ -43,7 +38,7 @@ const Color = ({
   );
 };
 
-const Colors = ({ colors }: { colors: string[] }) => (
+const Colors = ({ colors }: { colors: ColorKeys[] }) => (
   <Flex mb={4}>
     {colors.map(color => (
       <Color key={color} colorKey={color} width={1 / colors.length} />

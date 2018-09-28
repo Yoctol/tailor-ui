@@ -30,9 +30,9 @@ export const StyledList = styled<StyledListProps, 'ul'>('ul')`
   padding: ${p => p.theme.space[1]} 0;
   border: ${p => p.theme.borders.base};
   border-radius: ${p => p.theme.radii.base};
-  border-color: ${p => p.theme.colors.gray[8]};
+  border-color: ${p => p.theme.colors.gray300};
   background-color: ${p => p.theme.colors.light};
-  box-shadow: ${p => p.theme.shadows[1]};
+  box-shadow: ${p => p.theme.shadows.lg};
   list-style: none;
 
   &:focus {

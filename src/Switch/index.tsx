@@ -19,7 +19,7 @@ const StyledSwitch = styled.label`
     bottom: 0;
     left: 0;
     border-radius: 99px;
-    background-color: ${p => p.theme.colors.gray[7]};
+    background-color: ${p => p.theme.colors.gray400};
     transition: 0.4s;
     cursor: pointer;
   }

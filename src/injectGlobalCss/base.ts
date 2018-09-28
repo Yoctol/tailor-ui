@@ -25,7 +25,7 @@ export default css`
   body {
     overflow-x: hidden;
     background: ${colors.light};
-    color: ${colors.gray[2]};
+    color: ${colors.gray700};
     font-family: Roboto, 'PingFang TC', 'Microsoft JhengHei', 'Helvetica Neue',
       sans-serif;
     font-size: ${rem('14px')};
