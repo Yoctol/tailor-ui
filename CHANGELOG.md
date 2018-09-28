@@ -1,3 +1,19 @@
+<a name="2.0.0-alpha.2"></a>
+
+# [2.0.0-alpha.2](https://github.com/yoctol/ui/compare/v2.0.0-alpha.1...v2.0.0-alpha.2) (2018-09-28)
+
+### Bug Fixes
+
+- **dropdown:** add defaultProps ([f95e5f7](https://github.com/yoctol/ui/commit/f95e5f7))
+- dark colors ([ae715b9](https://github.com/yoctol/ui/commit/ae715b9))
+- **dropdown:** observe rect ([#381](https://github.com/yoctol/ui/issues/381)) ([69d98dc](https://github.com/yoctol/ui/commit/69d98dc))
+- **dropdown:** text-align ([784f5ad](https://github.com/yoctol/ui/commit/784f5ad))
+
+### Features
+
+- **mention:** add autoFocus ([a0ebe37](https://github.com/yoctol/ui/commit/a0ebe37))
+- new gray colors ([443ad3d](https://github.com/yoctol/ui/commit/443ad3d))
+
 <a name="2.0.0-alpha.1"></a>
 
 # [2.0.0-alpha.1](https://github.com/yoctol/ui/compare/v2.0.0-alpha.0...v2.0.0-alpha.1) (2018-09-25)
