@@ -39,7 +39,7 @@ const MentionWrapper = styled<MentionWrapperProps, 'div'>('div')`
         p.focus &&
         !p.disabled &&
         css`
-          border-color: ${p.theme.colors.gray[3]};
+          border-color: ${p.theme.colors.gray700};
         `};
 
       ${p =>
@@ -51,9 +51,9 @@ const MentionWrapper = styled<MentionWrapperProps, 'div'>('div')`
       ${p =>
         p.disabled &&
         css`
-          border-color: ${p.theme.colors.gray[5]};
+          border-color: ${p.theme.colors.gray500};
           opacity: 0.5;
-          background-color: ${p.theme.colors.gray[8]};
+          background-color: ${p.theme.colors.gray300};
           cursor: not-allowed;
         `};
 
@@ -103,12 +103,12 @@ const MentionWrapper = styled<MentionWrapperProps, 'div'>('div')`
         ${p => p.theme.transition};
 
         &:hover {
-          background-color: ${p => p.theme.colors.gray[8]};
+          background-color: ${p => p.theme.colors.gray300};
         }
 
         &.focus,
         &-active {
-          background-color: ${p => p.theme.colors.gray[8]};
+          background-color: ${p => p.theme.colors.gray300};
         }
 
         &-disabled {
@@ -119,7 +119,7 @@ const MentionWrapper = styled<MentionWrapperProps, 'div'>('div')`
         &-selected {
           &,
           &:hover {
-            background-color: ${p => p.theme.colors.gray[8]};
+            background-color: ${p => p.theme.colors.gray300};
           }
         }
 
@@ -127,7 +127,7 @@ const MentionWrapper = styled<MentionWrapperProps, 'div'>('div')`
           height: 1px;
           margin: 1px 0;
           overflow: hidden;
-          background-color: ${p => p.theme.colors.gray[9]};
+          background-color: ${p => p.theme.colors.gray100};
           line-height: 0;
         }
       }

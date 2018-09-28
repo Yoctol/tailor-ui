@@ -14,20 +14,20 @@ const StyledTag = styled.div`
   padding: 0 ${p => p.theme.paddings.xs};
   border: ${p => p.theme.borders.base};
   border-radius: ${p => p.theme.radii.base};
-  border-color: ${p => p.theme.colors.gray[7]};
+  border-color: ${p => p.theme.colors.gray400};
   font-size: ${p => p.theme.fontSizes.sm};
   white-space: nowrap;
   cursor: pointer;
   ${p => p.theme.transition};
 
   &:hover {
-    border-color: ${p => p.theme.colors.gray[3]};
+    border-color: ${p => p.theme.colors.gray700};
   }
 `;
 
 const ClosableIcon = styled<any, any>(Icon)`
   &:hover svg {
-    fill: ${p => p.theme.colors.gray[3]};
+    fill: ${p => p.theme.colors.gray700};
   }
 `;
 
@@ -75,7 +75,7 @@ const AnimatedTag: SFC<AnimatedTagProps> = ({
               <ClosableIcon
                 size="16"
                 ml="1"
-                fill="gray.7"
+                fill="gray400"
                 cursor="pointer"
                 onClick={toggle}
                 type={CloseIcon}

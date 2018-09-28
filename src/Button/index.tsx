@@ -6,7 +6,6 @@ import React, {
   createRef,
 } from 'react';
 import { SpaceProps, space as styledSpace } from 'styled-system';
-import { path } from 'ramda';
 
 import styled, { css, keyframes } from 'utils/styled-components';
 
@@ -47,16 +46,15 @@ const getTypeStyles = ({
 }: GetTypesStylesInterface & {
   theme: any;
 }) => {
-  const getColor = (colorPath: string): string =>
-    path(colorPath.split('.'), theme.colors) || '';
+  const { colors } = theme;
 
   if (text) {
     return {
       borderColor: 'transparent',
       backgroundColor: 'transparent',
-      color: getColor('dark'),
+      color: colors.dark,
       hover: {
-        backgroundColor: getColor('gray.8'),
+        backgroundColor: colors.gray300,
         borderColor: 'transparent',
       },
     };
@@ -64,18 +62,18 @@ const getTypeStyles = ({
 
   if (type === 'default') {
     return {
-      borderColor: getColor('gray.7'),
-      backgroundColor: getColor('light'),
-      color: getColor('dark'),
+      borderColor: colors.gray300,
+      backgroundColor: colors.light,
+      color: colors.dark,
       hover: {
-        backgroundColor: getColor('gray.8'),
-        borderColor: getColor('primary'),
+        backgroundColor: colors.gray200,
+        borderColor: colors.primary,
       },
     };
   }
 
-  const bg = getColor(type);
-  const light = getColor('light');
+  const bg = colors[type];
+  const { light } = colors;
   const backgroundColor = outlined ? 'transparent' : bg;
 
   return {

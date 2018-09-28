@@ -22,7 +22,7 @@ exports[`Icon should render correctly 1`] = `
 <i
   class="c0"
   cursor="default"
-  fill="gray.2"
+  fill="gray700"
   size="24"
 >
   <svg

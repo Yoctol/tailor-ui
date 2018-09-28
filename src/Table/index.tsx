@@ -1,9 +1,11 @@
 import React, { PureComponent, SFC } from 'react';
 import {
+  BorderColorProps,
   BordersProps,
   SpaceProps,
   TextAlignProps,
   WidthProps,
+  borderColor,
   borders,
   space,
   textAlign,
@@ -16,7 +18,7 @@ type HeadColumnProps = WidthProps & SpaceProps & BordersProps;
 
 const HeadColumn = styled<HeadColumnProps, 'th'>('th')`
   padding: ${p => p.theme.paddings.xs} ${p => p.theme.paddings.sm};
-  border-color: ${p => p.theme.colors.gray[8]};
+  border-color: ${p => p.theme.colors.gray300};
   font-weight: 500;
 
   ${width};
@@ -24,18 +26,22 @@ const HeadColumn = styled<HeadColumnProps, 'th'>('th')`
   ${borders};
 `;
 
-type ColumnProps = SpaceProps & BordersProps;
+type ColumnProps = SpaceProps & BordersProps & BorderColorProps;
 
 const Column = styled<ColumnProps, 'td'>('td')`
   padding: ${p => p.theme.paddings.xs} ${p => p.theme.paddings.sm};
-  border-color: ${p => p.theme.colors.gray[8]};
 
   ${space};
   ${borders};
+  ${borderColor};
 `;
 
+Column.defaultProps = {
+  borderColor: 'gray300',
+};
+
 const Row = styled.tr`
-  border-bottom: ${p => p.theme.borders.base} ${p => p.theme.colors.gray[8]};
+  border-bottom: ${p => p.theme.borders.base} ${p => p.theme.colors.gray300};
 `;
 
 const Head: SFC = ({ children }) => (
@@ -55,12 +61,12 @@ const StyledTable = styled<StyledTableProps, 'table'>('table')`
   border-style: hidden;
   border-top-left-radius: ${p => p.theme.radii.base};
   border-top-right-radius: ${p => p.theme.radii.base};
-  box-shadow: 0 0 0 1px ${p => p.theme.colors.gray[8]};
+  box-shadow: 0 0 0 1px ${p => p.theme.colors.gray300};
   font-size: ${p => p.theme.fontSizes.sm};
 
   & > thead {
-    border-bottom: ${p => p.theme.borders.base} ${p => p.theme.colors.gray[8]};
-    background-color: ${p => p.theme.colors.gray[9]};
+    border-bottom: ${p => p.theme.borders.base} ${p => p.theme.colors.gray300};
+    background-color: ${p => p.theme.colors.gray100};
   }
 
   ${width};

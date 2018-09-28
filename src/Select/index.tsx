@@ -6,7 +6,7 @@ import styled from 'utils/styled-components';
 const StyledSelect = styled<any, any>(BaseSelect)`
   & .yoctol-select__control {
     min-width: 150px;
-    border-color: ${p => p.theme.colors.gray[8]};
+    border-color: ${p => p.theme.colors.gray300};
     background-color: ${p => p.theme.colors.light};
     box-shadow: none;
 
@@ -37,10 +37,10 @@ const StyledSelect = styled<any, any>(BaseSelect)`
       .yoctol-select__option {
         &:not(:last-child) {
           border-bottom: ${p => p.theme.borders.base}
-            ${p => p.theme.colors.gray[8]};
+            ${p => p.theme.colors.gray300};
         }
         background-color: ${p => p.theme.colors.light};
-        color: ${p => p.theme.colors.gray[2]};
+        color: ${p => p.theme.colors.gray700};
 
         &.yoctol-select__option--is-focused {
           background-color: ${p => p.theme.colors.primaryDark};

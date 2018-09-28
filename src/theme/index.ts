@@ -2,15 +2,33 @@ import { rem } from 'polished';
 
 const colors = {
   primary: '#423b63',
-  primaryDark: '#2a2640',
-  primaryLight: '#423b63',
+  primaryDark: '#191539',
+  primaryLight: '#6e6591',
 
-  secondary: '#c7ad8d',
-  secondaryDark: '#ab9272',
-  secondaryLight: '#e6d1b7',
+  secondary: '#c0a382',
+  secondaryDark: '#8f7455',
+  secondaryLight: '#f3d4b2',
 
-  dark: '#111111',
+  dark: '#1a1a1a',
   light: '#ffffff',
+  gray100: '#fafafa',
+  gray200: '#f6f6f6',
+  gray300: '#e0e0e0',
+  gray400: '#bfbfbf',
+  gray500: '#8b8b8b',
+  gray600: '#5e5e5e',
+  gray700: '#373737',
+
+  success: '#30be72',
+  warning: '#de8a15',
+  error: '#e65541', // FIXME: remove this line later
+  danger: '#e65541',
+  info: '#4384f0',
+
+  code: '#e06870',
+  highlight: '#ffe9b3',
+
+  // legacy gray
   gray: [
     '#1e1e1e', // 0
     '#2b2b2b', // 1
@@ -23,15 +41,6 @@ const colors = {
     '#e9e9e9', // 8
     '#f7f7f7', // 9
   ],
-
-  success: '#30be72',
-  warning: '#de8a15',
-  error: '#e65541', // FIXME: remove this line later
-  danger: '#e65541',
-  info: '#4384f0',
-
-  code: '#e06870',
-  highlight: '#ffe9b3',
 };
 
 const toRem = (px: number) => rem(`${px}px`);
@@ -72,11 +81,11 @@ const borders = {
 
 const transition = 'transition: all 200ms ease 0s';
 
-const shadows = [
-  '0 1px 4px 0 rgba(191, 191, 191, 0.5)',
-  '0 4px 6px 0 rgba(191, 191, 191, 0.5)',
-  '0 2px 6px 0 rgba(94, 94, 94, 0.5)',
-];
+const shadows = {
+  base: '0 1px 4px 0 rgba(191, 191, 191, 0.5)',
+  lg: '0 4px 6px 0 rgba(191, 191, 191, 0.5)',
+  xl: '0 2px 6px 0 rgba(94, 94, 94, 0.5)',
+};
 
 export default {
   breakpoints,

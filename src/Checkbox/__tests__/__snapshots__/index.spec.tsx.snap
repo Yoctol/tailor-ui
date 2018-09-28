@@ -21,9 +21,9 @@ exports[`Checkbox should render correctly 1`] = `
   padding: 0;
   border: 1px solid;
   border-radius: 2px;
-  border-color: #c3c3c3;
+  border-color: #bfbfbf;
   background-color: #ffffff;
-  color: #444444;
+  color: #373737;
   -webkit-transition: all 200ms ease 0s;
   transition: all 200ms ease 0s;
 }
@@ -137,9 +137,9 @@ exports[`Checkbox should render with props disabled 1`] = `
   padding: 0;
   border: 1px solid;
   border-radius: 2px;
-  border-color: #c3c3c3;
+  border-color: #bfbfbf;
   background-color: #ffffff;
-  color: #444444;
+  color: #373737;
   -webkit-transition: all 200ms ease 0s;
   transition: all 200ms ease 0s;
 }

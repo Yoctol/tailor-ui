@@ -6,7 +6,7 @@ import styled from 'utils/styled-components';
 const StyledBlock = styled.div`
   position: relative;
   border-bottom: ${p => p.theme.borders.base};
-  border-color: ${p => p.theme.colors.gray[8]};
+  border-color: ${p => p.theme.colors.gray300};
   font-size: ${p => p.theme.fontSizes.base};
 
   &:last-child {
