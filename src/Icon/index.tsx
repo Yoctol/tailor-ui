@@ -34,9 +34,12 @@ export const IconWrapper = styled<IconWrapperProps, 'i'>('i')`
   cursor: ${p => p.cursor};
 
   svg {
+    fill: ${p => p.theme.colors.primary};
     vertical-align: middle;
-
     ${p => p.theme.transition /* sc-declaration */};
+  }
+
+  &&& svg {
     ${styledFill};
     ${styledSize};
   }
@@ -58,7 +61,6 @@ const Icon: SFC<IconProps> = ({
   type,
   cursor = 'default',
   size = 24,
-  fill = 'gray700',
   ...otherProps
 }) => {
   let IconComponent = type;
@@ -74,7 +76,7 @@ const Icon: SFC<IconProps> = ({
   }
 
   return (
-    <IconWrapper cursor={cursor} size={size} fill={fill} {...otherProps}>
+    <IconWrapper cursor={cursor} size={size} {...otherProps}>
       <IconComponent />
     </IconWrapper>
   );

@@ -71,6 +71,10 @@ exports[`Button should render correctly 1`] = `
   transition: all 200ms ease 0s;
 }
 
+.c0 .c2 {
+  cursor: pointer;
+}
+
 .c0 .c2 svg {
   fill: #1a1a1a;
 }
@@ -161,6 +165,10 @@ exports[`Button should render with props variant and type 1`] = `
   margin-right: 0;
   -webkit-transition: all 200ms ease 0s;
   transition: all 200ms ease 0s;
+}
+
+.c0 .c2 {
+  cursor: pointer;
 }
 
 .c0 .c2 svg {
