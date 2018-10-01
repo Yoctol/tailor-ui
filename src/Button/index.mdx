@@ -7,10 +7,12 @@ route: /general/button
 import { PropsTable, Playground } from 'docz';
 import CheckIcon from 'react-icons/lib/md/check';
 import DeleteIcon from 'react-icons/lib/md/delete';
+import CloseIcon from 'react-icons/lib/md/close';
 import SearchIcon from 'react-icons/lib/md/search';
 import { Toggle } from 'react-powerplug';
 
 import Box from '../Grid/Box';
+import Icon from '../Icon';
 
 import Button from './';
 
@@ -123,6 +125,7 @@ import { Button } from '@yoctol/ui';
 
 ```js
 import CheckIcon from 'react-icons/lib/md/check';
+import CloseIcon from 'react-icons/lib/md/close';
 import DeleteIcon from 'react-icons/lib/md/delete';
 import SearchIcon from 'react-icons/lib/md/search';
 ```
@@ -136,6 +139,16 @@ import SearchIcon from 'react-icons/lib/md/search';
   <Button type="primary" rounded icon={SearchIcon} ml="2" />
   <Button type="danger" rounded icon={DeleteIcon} ml="2" />
   <Button type="info" rounded icon={SearchIcon} ml="2" />
+  <br />
+  <br />
+  <Button>
+    <Icon type={CheckIcon} fill="success" size="20" mr="2" />
+    Success
+  </Button>
+  <Button ml="2">
+    <Icon type={CloseIcon} fill="danger" size="20" mr="2" />
+    Danger
+  </Button>
 </Playground>
 
 

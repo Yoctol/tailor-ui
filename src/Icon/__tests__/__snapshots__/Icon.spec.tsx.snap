@@ -11,10 +11,13 @@ exports[`Icon should render correctly 1`] = `
 }
 
 .c0 svg {
+  fill: #423b63;
   vertical-align: middle;
   -webkit-transition: all 200ms ease 0s;
   transition: all 200ms ease 0s;
-  fill: #373737;
+}
+
+.c0.c0.c0 svg {
   width: 24px;
   height: 24px;
 }
@@ -22,7 +25,6 @@ exports[`Icon should render correctly 1`] = `
 <i
   class="c0"
   cursor="default"
-  fill="gray700"
   size="24"
 >
   <svg

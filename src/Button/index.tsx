@@ -198,8 +198,11 @@ const getTypes = ({
     background-color: ${styles.backgroundColor};
     color: ${styles.color};
 
-    ${IconWrapper} svg {
-      fill: ${styles.color};
+    ${IconWrapper /* sc-selector */} {
+      cursor: pointer;
+      svg {
+        fill: ${styles.color};
+      }
     }
 
     &:hover {
@@ -207,7 +210,7 @@ const getTypes = ({
       background-color: ${styles.hover.backgroundColor};
       color: ${styles.hover.color};
 
-      ${IconWrapper} svg {
+      ${IconWrapper /* sc-selector */} svg {
         fill: ${styles.hover.color};
       }
     }
