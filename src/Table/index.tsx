@@ -2,11 +2,13 @@ import React, { PureComponent, SFC } from 'react';
 import {
   BorderColorProps,
   BordersProps,
+  ColorProps,
   SpaceProps,
   TextAlignProps,
   WidthProps,
   borderColor,
   borders,
+  color,
   space,
   textAlign,
   width,
@@ -14,7 +16,7 @@ import {
 
 import styled from 'utils/styled-components';
 
-type HeadColumnProps = WidthProps & SpaceProps & BordersProps;
+type HeadColumnProps = WidthProps & SpaceProps & BordersProps & ColorProps;
 
 const HeadColumn = styled<HeadColumnProps, 'th'>('th')`
   padding: ${p => p.theme.paddings.xs} ${p => p.theme.paddings.sm};
@@ -24,9 +26,10 @@ const HeadColumn = styled<HeadColumnProps, 'th'>('th')`
   ${width};
   ${space};
   ${borders};
+  ${color};
 `;
 
-type ColumnProps = SpaceProps & BordersProps & BorderColorProps;
+type ColumnProps = SpaceProps & BordersProps & BorderColorProps & ColorProps;
 
 const Column = styled<ColumnProps, 'td'>('td')`
   padding: ${p => p.theme.paddings.xs} ${p => p.theme.paddings.sm};
@@ -34,14 +37,19 @@ const Column = styled<ColumnProps, 'td'>('td')`
   ${space};
   ${borders};
   ${borderColor};
+  ${color};
 `;
 
 Column.defaultProps = {
   borderColor: 'gray300',
 };
 
-const Row = styled.tr`
+type RowProps = ColorProps;
+
+const Row = styled<RowProps, 'tr'>('tr')`
   border-bottom: ${p => p.theme.borders.base} ${p => p.theme.colors.gray300};
+
+  ${color};
 `;
 
 const Head: SFC = ({ children }) => (
