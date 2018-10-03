@@ -4,12 +4,12 @@ export interface ClickOutsideProps {
   onClickOutside: (e: Event) => void;
   bindRef?: HTMLElement;
   children:
-    | React.ReactNode
     | ((
         renderProps: {
           bindRef: (ref: HTMLElement) => void;
         }
-      ) => React.ReactNode);
+      ) => React.ReactNode)
+    | React.ReactNode;
 }
 
 class ClickOutside extends Component<ClickOutsideProps> {
@@ -48,7 +48,7 @@ class ClickOutside extends Component<ClickOutsideProps> {
   render() {
     const { children } = this.props;
 
-    return typeof children === 'function'
+    return children instanceof Function
       ? children({
           bindRef: ref => {
             this.container = ref;

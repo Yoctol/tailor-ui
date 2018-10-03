@@ -19,7 +19,6 @@ const StyledAlert = styled<AlertTypes, 'div'>('div')`
   align-items: center;
   margin-bottom: ${p => p.theme.space[3]};
   padding: ${p => p.theme.space[2]} ${p => p.theme.space[3]};
-  overflow-y: hidden;
   border: ${p => p.theme.borders.base};
   border-radius: ${p => p.theme.radii.base};
   border-color: ${p => p.theme.colors[p.type]};

@@ -13,25 +13,33 @@ const AnimatedAlert: SFC<AlertProps> = ({ onClosed, ...props }) => (
     {({ on, set }) => (
       <Spring
         native
-        onRest={({ height }: any) => {
-          if (height === 0 && onClosed) {
+        onRest={({ x }: any) => {
+          if (x === 0 && onClosed) {
             onClosed();
           }
         }}
-        from={{ transform: 'scale(1, 1)', opacity: 1, height: 'auto' }}
+        from={{
+          x: 1,
+          height: 'auto',
+        }}
         to={{
-          transform: on ? 'scale(1, 1)' : 'scale(1, 0)',
-          opacity: on ? 1 : 0,
+          x: on ? 1 : 0,
           height: on ? 'auto' : 0,
         }}
         config={{
           ...config.default,
           restSpeedThreshold: 1,
-          restDisplacementThreshold: 0.01,
+          restDisplacementThreshold: 0.1,
         }}
       >
-        {({ transform, opacity, display, height }) => (
-          <animated.div style={{ transform, opacity, display, height }}>
+        {({ x, height }) => (
+          <animated.div
+            style={{
+              transform: x.interpolate((_x: number) => `scaleY(${_x})`),
+              opacity: x,
+              height,
+            }}
+          >
             <BaseAlert onClose={() => set(false)} {...props} />
           </animated.div>
         )}

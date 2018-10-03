@@ -160,7 +160,7 @@ class Tooltip extends PureComponent<TooltipProps> {
         {hideTooltip => (
           <>
             <ContentComponent light={light} {...otherProps}>
-              {typeof content === 'function' && trigger === 'click'
+              {content instanceof Function && trigger === 'click'
                 ? content(hideTooltip)
                 : content}
             </ContentComponent>
