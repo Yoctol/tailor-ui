@@ -1,20 +1,24 @@
 import React, { PureComponent } from 'react';
 import {
+  MaxHeightProps,
   MinWidthProps,
+  OverflowProps,
   TextAlignProps,
+  maxHeight,
   minWidth,
+  overflow,
   textAlign,
 } from 'styled-system';
 import { animated } from 'react-spring';
 
 import styled from 'utils/styled-components';
 
-import { Consumer, Placement } from './DropdownContext';
+import { Consumer } from './DropdownContext';
 
 export type StyledListProps = MinWidthProps &
-  TextAlignProps & {
-    placement?: Placement;
-  };
+  MaxHeightProps &
+  TextAlignProps &
+  OverflowProps;
 
 export const StyledList = styled<StyledListProps, 'ul'>('ul')`
   display: block;
@@ -33,7 +37,9 @@ export const StyledList = styled<StyledListProps, 'ul'>('ul')`
     outline: 0;
   }
 
+  ${overflow};
   ${minWidth};
+  ${maxHeight};
   ${textAlign};
 `;
 
@@ -54,17 +60,14 @@ class List extends PureComponent<ListProps> {
     const { children, style, ...props } = this.props;
     return (
       <Consumer>
-        {({ placement, offset, styles, onClick, handleListRef }) => (
+        {({ offset, styles, handleListRef }) => (
           <AnimatedStyledList
             innerRef={handleListRef}
-            placement={placement}
             style={{
               ...style,
               ...styles,
-              top: offset.top || 0,
-              left: offset.left || 0,
+              ...offset,
             }}
-            onClick={onClick}
             {...props}
           >
             {children}

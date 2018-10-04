@@ -1,6 +1,6 @@
 import React, { PureComponent, ReactNode } from 'react';
 import observeRect from '@reach/observe-rect';
-import { Spring, config } from 'react-spring';
+import { Transition, config } from 'react-spring';
 import { createPortal, findDOMNode } from 'react-dom';
 
 import ClickOutside from '../utils/ClickOutside';
@@ -42,6 +42,7 @@ export interface DropdownProps {
 interface DropdownState {
   visible: boolean;
   rect: DOMRect | object;
+  listRef?: HTMLElement;
 }
 
 class Dropdown extends PureComponent<DropdownProps, DropdownState> {
@@ -57,12 +58,11 @@ class Dropdown extends PureComponent<DropdownProps, DropdownState> {
 
   childrenDOM?: HTMLElement;
 
-  listRef?: HTMLElement;
-
   rectObserver?: any;
 
   state = {
     visible: false,
+    listRef: undefined,
     rect: {},
   };
 
@@ -72,23 +72,7 @@ class Dropdown extends PureComponent<DropdownProps, DropdownState> {
     this.rectObserver = observeRect(this.childrenDOM, (rect: DOMRect) => {
       this.setState({ rect });
     });
-
-    // Get the width & height of children component
-    this.rectObserver.observe();
-    this.rectObserver.unobserve();
   }
-
-  // componentDidUpdate(prevProps: DropdownProps, prevState: DropdownState) {
-  //   console.log('update', this.state.rect.top);
-  //   if (
-  //     prevState.visible &&
-  //     this.state.visible &&
-  //     ((prevState.rect as DOMRect).top !== (this.state.rect as DOMRect).top ||
-  //       (prevState.rect as DOMRect).left !== (this.state.rect as DOMRect).left)
-  //   ) {
-  //     this.handleClose();
-  //   }
-  // }
 
   toggle = () => {
     const { visible } = this.state;
@@ -96,8 +80,8 @@ class Dropdown extends PureComponent<DropdownProps, DropdownState> {
 
     if (!visible) {
       this.rectObserver.observe();
-
       this.setState(() => ({ visible: true }));
+
       if (onVisibleChange) {
         onVisibleChange(true);
       }
@@ -120,17 +104,17 @@ class Dropdown extends PureComponent<DropdownProps, DropdownState> {
     }
   };
 
-  handleListRef = (ref: any) => {
-    this.listRef = ref;
+  handleListRef = (listRef: HTMLElement) => {
+    this.setState(() => ({ listRef }));
   };
 
   getOffset = () => {
-    const { rect } = this.state;
+    const { rect, listRef } = this.state;
 
     const MARGIN_OFFSET = 5;
 
-    const offsetHeight = this.listRef ? this.listRef.offsetHeight : 0;
-    const offsetWidth = this.listRef ? this.listRef.offsetWidth : 0;
+    const offsetHeight = listRef ? (listRef as any).offsetHeight : 0;
+    const offsetWidth = listRef ? (listRef as any).offsetWidth : 0;
 
     const TOP_OFFSET_TOP = (rect as DOMRect).top - offsetHeight - MARGIN_OFFSET;
     const BOTTOM_OFFSET_TOP =
@@ -172,6 +156,7 @@ class Dropdown extends PureComponent<DropdownProps, DropdownState> {
     const { children } = this.props;
     const { visible } = this.state;
     const { toggle } = this;
+
     return children({
       toggle,
       visible,
@@ -180,7 +165,7 @@ class Dropdown extends PureComponent<DropdownProps, DropdownState> {
 
   renderOverlay = () => {
     const { overlay, placement = 'bottomLeft' } = this.props;
-    const { visible } = this.state;
+    const { visible, listRef } = this.state;
 
     if (!this.childrenDOM || this.childrenDOM instanceof Text) {
       return null;
@@ -191,38 +176,46 @@ class Dropdown extends PureComponent<DropdownProps, DropdownState> {
     const translateFrom = placement.startsWith('top') ? 10 : -10;
 
     return (
-      <ClickOutside
-        bindRef={this.childrenDOM}
-        onClickOutside={this.handleClose}
+      <Transition
+        native
+        keys={visible ? 'visible' : 'hidden'}
+        from={{
+          opacity: 0,
+          transform: `translate3d(0, ${translateFrom}px, 0)`,
+        }}
+        enter={{
+          opacity: 1,
+          transform: `translate3d(0, ${0}px, 0)`,
+        }}
+        leave={{
+          opacity: 0,
+          transform: `translate3d(0, ${translateFrom}px, 0)`,
+        }}
+        config={{
+          ...config.stiff,
+          restSpeedThreshold: 1,
+          restDisplacementThreshold: 0.1,
+        }}
       >
-        <Spring
-          native
-          from={{
-            opacity: 0,
-            transform: `translateY(${translateFrom}px)`,
-          }}
-          to={{
-            opacity: visible ? 1 : 0,
-            transform: `translateY(${visible ? 0 : translateFrom}px)`,
-            visibility: visible ? 'visible' : 'hidden',
-          }}
-          config={config.stiff}
-        >
-          {styles => (
-            <Provider
-              value={{
-                placement,
-                offset,
-                styles,
-                onClick: this.handleClose,
-                handleListRef: this.handleListRef,
-              }}
+        {visible &&
+          (styles => (
+            <ClickOutside
+              bindRefs={[this.childrenDOM, listRef]}
+              onClickOutside={this.handleClose}
             >
-              {overlay}
-            </Provider>
-          )}
-        </Spring>
-      </ClickOutside>
+              <Provider
+                value={{
+                  offset,
+                  styles,
+                  handleClose: this.handleClose,
+                  handleListRef: this.handleListRef,
+                }}
+              >
+                {overlay}
+              </Provider>
+            </ClickOutside>
+          ))}
+      </Transition>
     );
   };
 

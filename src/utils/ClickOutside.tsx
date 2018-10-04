@@ -3,6 +3,7 @@ import { Component } from 'react';
 export interface ClickOutsideProps {
   onClickOutside: (e: Event) => void;
   bindRef?: HTMLElement;
+  bindRefs?: (HTMLElement | undefined)[];
   children:
     | React.ReactNode
     | ((
@@ -36,12 +37,31 @@ class ClickOutside extends Component<ClickOutsideProps> {
       return;
     }
 
-    const { onClickOutside } = this.props;
+    const { onClickOutside, bindRef, bindRefs } = this.props;
 
-    const el = this.container;
+    if ((bindRef || this.container) && !bindRefs) {
+      const el = bindRef || this.container;
+      if (el && event.target && !el.contains(event.target as Node)) {
+        onClickOutside(event);
+      }
+    }
 
-    if (el && event.target && !el.contains(event.target as Node)) {
-      onClickOutside(event);
+    if (!bindRef && bindRefs) {
+      let isClickOutside = true;
+
+      bindRefs.forEach(container => {
+        isClickOutside =
+          isClickOutside &&
+          !!(
+            container &&
+            event.target &&
+            !container.contains(event.target as Node)
+          );
+      });
+
+      if (isClickOutside) {
+        onClickOutside(event);
+      }
     }
   };
 

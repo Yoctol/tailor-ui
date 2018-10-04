@@ -5,11 +5,13 @@ route: /navigation/dropdown
 ---
 
 import { PropsTable, Playground } from 'docz';
+import { range } from 'ramda';
 
 import { Button, Box, Flex } from '../';
 
 import Dropdown from './';
 import List from './List';
+import Item from './Item';
 import SubList from './SubList';
 
 # Dropdown
@@ -33,10 +35,9 @@ import { Dropdown } from '@yoctol/ui';
     placement="bottomLeft"
     overlay={
       <Dropdown.List>
-        <Dropdown.Item key="Item 1">Item 1</Dropdown.Item>
-        <Dropdown.Item key="Item 2">Item 2</Dropdown.Item>
-        <Dropdown.Item key="Item 3">Item 3</Dropdown.Item>
-        <Dropdown.Item key="Item 4">Item 4</Dropdown.Item>
+        <Dropdown.Item key="1">Basic Item</Dropdown.Item>
+        <Dropdown.Item key="2" disabled>disibled Item</Dropdown.Item>
+        <Dropdown.Item key="3" keep>Keep Item</Dropdown.Item>
       </Dropdown.List>
     }
   >
@@ -123,36 +124,25 @@ import { Dropdown } from '@yoctol/ui';
         <Dropdown.Item key="Item 2">Item 2</Dropdown.Item>
         <Dropdown.SubList key="Item 3" title="Sub List">
           <Dropdown.Item
-            key="Sub Item 1"
+            key="1"
             onClick={() => console.log('sub item 1')}
           >
-            Sub Item 1
+            Sub Item
           </Dropdown.Item>
-          <Dropdown.Item
-            key="Sub Item 2"
-            onClick={() => console.log('sub item 2')}
+          <Dropdown.SubList
+            key="Overflow Sub List"
+            title="Overflow Sub List"
+            maxHeight="200px"
+            overflow="auto"
           >
-            Sub Item 2
-          </Dropdown.Item>
-          <Dropdown.SubList key="Sub List 2" title="Sub List 2">
-            <Dropdown.Item
-              key="Sub List Item 1"
-              onClick={() => console.log('sub list item 1')}
-            >
-              Sub List Item 1
-            </Dropdown.Item>
-            <Dropdown.Item
-              key="Sub List Item 2"
-              onClick={() => console.log('sub list item 2')}
-            >
-              Sub Item 2
-            </Dropdown.Item>
-            <Dropdown.Item
-              key="Sub Item 3"
-              onClick={() => console.log('sub list item 3')}
-            >
-              Sub List Item 3
-            </Dropdown.Item>
+            {range(1, 20).map(key => (
+              <Dropdown.Item
+                key={key}
+                onClick={() => console.log('sub list item 1')}
+              >
+                Sub List {key}
+              </Dropdown.Item>
+            ))}
           </Dropdown.SubList>
         </Dropdown.SubList>
       </Dropdown.List>
@@ -175,6 +165,10 @@ import { Dropdown } from '@yoctol/ui';
 ### List
 
 <PropsTable of={List} />
+
+### Item
+
+<PropsTable of={Item} />
 
 ### SubList
 

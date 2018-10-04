@@ -1,8 +1,13 @@
+import React, { MouseEventHandler, SFC, forwardRef } from 'react';
 import { SpaceProps, space } from 'styled-system';
 
-import styled from 'utils/styled-components';
+import styled, { css } from 'utils/styled-components';
 
-const Item = styled<SpaceProps, 'li'>('li')`
+import { Consumer } from './DropdownContext';
+
+type StyledItemProps = SpaceProps & { disabled?: boolean };
+
+const StyledListItem = styled<StyledItemProps, 'li'>('li')`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -19,8 +24,48 @@ const Item = styled<SpaceProps, 'li'>('li')`
     background-color: ${p => p.theme.colors.gray300};
   }
 
+  ${p =>
+    p.disabled &&
+    css`
+      background-color: ${p.theme.colors.gray300};
+      color: ${p.theme.colors.gray500};
+      cursor: not-allowed;
+    `};
+
   ${p => p.theme.transition /* sc-declaration */};
   ${space};
 `;
 
-export default Item;
+export interface ItemProps {
+  /**
+   * Disabled the item
+   */
+  disabled?: boolean;
+  /**
+   * Callback for click
+   */
+  onClick?: MouseEventHandler;
+  /**
+   * Keep the dropdown after click item
+   */
+  keep?: boolean;
+}
+
+const Item: SFC<ItemProps> = ({ onClick, disabled, keep, ...props }, ref) => (
+  <Consumer>
+    {({ handleClose }) => (
+      <StyledListItem
+        innerRef={ref}
+        onClick={event => {
+          if (disabled) return;
+          if (onClick) onClick(event);
+          if (!keep) handleClose();
+        }}
+        disabled={disabled}
+        {...props}
+      />
+    )}
+  </Consumer>
+);
+
+export default forwardRef(Item);

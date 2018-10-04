@@ -8,27 +8,34 @@ import Icon from '../Icon';
 import Item from './Item';
 import { StyledList } from './List';
 
-export interface StyledSubItemProps {
+interface SubListWrapperProps {
   offsetLeft: number;
 }
 
-const StyledSubItem = styled<StyledSubItemProps, any>(Item)`
+const SubListWrapper = styled<SubListWrapperProps, 'div'>('div')`
+  position: absolute;
+  top: 0;
+  left: ${p => p.theme.space[1]};
+  padding-left: ${p => p.offsetLeft}px;
+  opacity: 0;
+  transform: scale(0.3);
+  transform-origin: ${p => p.offsetLeft}px top;
+  cursor: pointer;
+
+  ${p => p.theme.transition};
+
+  > ${StyledList /* sc-selector */} {
+    position: unset;
+  }
+`;
+
+const StyledSubItem = styled(Item)`
   position: relative;
   flex-direction: row;
   align-items: center;
 
-  & > ${StyledList /* sc-selector */} {
-    top: -${p => p.theme.space[1]};
-    left: ${p => p.offsetLeft}px;
-    margin-left: 3px;
-    opacity: 0;
-    transform: scale(0.3);
-    transform-origin: left;
-    ${p => p.theme.transition};
-  }
-
   &:hover {
-    > ${StyledList /* sc-selector */} {
+    > ${SubListWrapper /* sc-selector */} {
       opacity: 1;
       transform: scale(1);
     }
@@ -37,6 +44,7 @@ const StyledSubItem = styled<StyledSubItemProps, any>(Item)`
 
 export interface SubItemProps {
   title: string;
+  disabled?: boolean;
 }
 
 export interface SubItemState {
@@ -63,16 +71,16 @@ class SubItem extends PureComponent<SubItemProps, SubItemState> {
   };
 
   render() {
-    const { title, children, ...props } = this.props;
+    const { title, children, disabled, ...props } = this.props;
 
     return (
-      <StyledSubItem
-        innerRef={this.subItemRef}
-        offsetLeft={this.getOffsetLeft()}
-      >
+      <StyledSubItem disabled={disabled} innerRef={this.subItemRef}>
         {title}
         <Icon ml="2" size="16" cursor="pointer" type={ArrowIcon} />
-        <StyledList {...props}>{children}</StyledList>
+
+        <SubListWrapper offsetLeft={this.getOffsetLeft()}>
+          <StyledList {...props}>{children}</StyledList>
+        </SubListWrapper>
       </StyledSubItem>
     );
   }
