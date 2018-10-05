@@ -1,15 +1,9 @@
-import React, {
-  ComponentClass,
-  MouseEvent,
-  PureComponent,
-  RefObject,
-  createRef,
-} from 'react';
+import React, { MouseEvent, PureComponent, RefObject, createRef } from 'react';
 import { SpaceProps, space as styledSpace } from 'styled-system';
 
 import styled, { css, keyframes } from 'utils/styled-components';
 
-import Icon, { IconWrapper } from '../Icon';
+import Icon, { IconType, IconWrapper } from '../Icon';
 
 import Ripple from './Ripple';
 
@@ -278,7 +272,7 @@ export type ButtonProps = SpaceProps & {
   rounded?: boolean;
   outlined?: boolean;
   loading?: boolean;
-  icon?: string | ComponentClass;
+  icon?: string | IconType;
   size?: ButtonSize;
   onClick?: (event: MouseEvent) => void;
 };

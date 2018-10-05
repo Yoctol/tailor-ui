@@ -1,5 +1,3 @@
-import ErrorIcon from 'react-icons/lib/md/close';
-import FinishIcon from 'react-icons/lib/md/done';
 import React, {
   Children,
   PureComponent,
@@ -9,6 +7,7 @@ import React, {
   createContext,
   isValidElement,
 } from 'react';
+import { MdClose, MdDone } from 'react-icons/md';
 
 import styled, { css } from 'utils/styled-components';
 
@@ -231,7 +230,7 @@ const StepIcon: SFC<StepIconProps> = ({
       {renderIcon ? (
         <Icon
           size="20"
-          type={isFinish ? FinishIcon : ErrorIcon}
+          type={isFinish ? MdDone : MdClose}
           fill={isFinish ? 'primary' : 'error'}
           style={{ pointerEvents: 'none' }}
         />

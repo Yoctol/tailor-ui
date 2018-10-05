@@ -1,5 +1,5 @@
-import Close from 'react-icons/lib/md/close';
 import React, { SFC } from 'react';
+import { MdClose } from 'react-icons/md';
 
 import styled from 'utils/styled-components';
 
@@ -21,7 +21,7 @@ export interface CloseButtonProps {
 
 const CloseButton: SFC<CloseButtonProps> = ({ onCancel }) => (
   <CloseButtonWrapper>
-    <Button text rounded icon={Close} onClick={onCancel} />
+    <Button text rounded icon={MdClose} onClick={onCancel} />
   </CloseButtonWrapper>
 );
 

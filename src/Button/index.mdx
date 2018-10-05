@@ -5,10 +5,7 @@ route: /general/button
 ---
 
 import { PropsTable, Playground } from 'docz';
-import CheckIcon from 'react-icons/lib/md/check';
-import DeleteIcon from 'react-icons/lib/md/delete';
-import CloseIcon from 'react-icons/lib/md/close';
-import SearchIcon from 'react-icons/lib/md/search';
+import { MdCheck, MdDelete, MdClose, MdSearch } from 'react-icons/md';
 import { Toggle } from 'react-powerplug';
 
 import Box from '../Grid/Box';
@@ -124,29 +121,26 @@ import { Button } from '@yoctol/ui';
 ### Icon
 
 ```js
-import CheckIcon from 'react-icons/lib/md/check';
-import CloseIcon from 'react-icons/lib/md/close';
-import DeleteIcon from 'react-icons/lib/md/delete';
-import SearchIcon from 'react-icons/lib/md/search';
+import { MdCheck, MdDelete, MdClose, MdSearch } from 'react-icons/md';
 ```
 
 <Playground>
-  <Button type="primary" icon={CheckIcon}>Confirm</Button>
-  <Button type="danger" icon={DeleteIcon} ml="2">Delete</Button>
-  <Button type="info" icon={SearchIcon} ml="2">Search</Button>
+  <Button type="primary" icon={MdCheck}>Confirm</Button>
+  <Button type="danger" icon={MdDelete} ml="2">Delete</Button>
+  <Button type="info" icon={MdSearch} ml="2">Search</Button>
   <br />
   <br />
-  <Button type="primary" rounded icon={SearchIcon} ml="2" />
-  <Button type="danger" rounded icon={DeleteIcon} ml="2" />
-  <Button type="info" rounded icon={SearchIcon} ml="2" />
+  <Button type="primary" rounded icon={MdSearch} ml="2" />
+  <Button type="danger" rounded icon={MdDelete} ml="2" />
+  <Button type="info" rounded icon={MdSearch} ml="2" />
   <br />
   <br />
   <Button>
-    <Icon type={CheckIcon} fill="success" size="20" mr="2" />
+    <Icon type={MdCheck} fill="success" size="20" mr="2" />
     Success
   </Button>
   <Button ml="2">
-    <Icon type={CloseIcon} fill="danger" size="20" mr="2" />
+    <Icon type={MdClose} fill="danger" size="20" mr="2" />
     Danger
   </Button>
 </Playground>

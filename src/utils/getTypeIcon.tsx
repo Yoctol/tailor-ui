@@ -1,18 +1,15 @@
-import ErrorIcon from 'react-icons/lib/md/error';
-import InfoIcon from 'react-icons/lib/md/info';
 import React from 'react';
-import SuccessIcon from 'react-icons/lib/md/check-circle';
-import WarningIcon from 'react-icons/lib/md/warning';
+import { MdCheckCircle, MdError, MdInfo, MdWarning } from 'react-icons/md';
 
 import Icon from '../Icon';
 
 export type Types = 'info' | 'success' | 'error' | 'warning';
 
 const icons = {
-  info: InfoIcon,
-  success: SuccessIcon,
-  error: ErrorIcon,
-  warning: WarningIcon,
+  info: MdInfo,
+  success: MdCheckCircle,
+  error: MdError,
+  warning: MdWarning,
 };
 
 const getTypeIcon = (type: Types = 'info', size: string | number = '20') => {

@@ -1,4 +1,5 @@
-import React, { ComponentClass, SFC } from 'react';
+import React, { SFC } from 'react';
+import { IconType as ReactIconsIconType } from 'react-icons';
 import { SpaceProps, style, space as styledSpace } from 'styled-system';
 
 import styled, { css } from 'utils/styled-components';
@@ -47,7 +48,7 @@ export const IconWrapper = styled<IconWrapperProps, 'i'>('i')`
   ${styledSpace};
 `;
 
-export type IconType = string | ComponentClass;
+export type IconType = string | ReactIconsIconType;
 
 export type IconProps = SpaceProps & {
   cursor?: string;
