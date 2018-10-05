@@ -88,9 +88,6 @@ jobs:
       - run:
           name: run lint
           command: npm run lint
-      - run:
-          name: run lint:css
-          command: npm run lint:css
   type-check-node-8:
     <<: *docker_8
     steps:
