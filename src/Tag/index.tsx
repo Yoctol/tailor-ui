@@ -1,5 +1,5 @@
-import CloseIcon from 'react-icons/lib/md/close';
 import React, { PureComponent, SFC } from 'react';
+import { MdClose } from 'react-icons/md';
 import { Spring, animated } from 'react-spring';
 import { Toggle } from 'react-powerplug';
 
@@ -78,7 +78,7 @@ const AnimatedTag: SFC<AnimatedTagProps> = ({
                 fill="gray400"
                 cursor="pointer"
                 onClick={toggle}
-                type={CloseIcon}
+                type={MdClose}
               />
             </StyledTag>
           </AnimatedStyledTagWrapper>

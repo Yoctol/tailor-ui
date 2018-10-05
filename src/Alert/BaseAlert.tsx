@@ -1,5 +1,5 @@
-import CloseIcon from 'react-icons/lib/md/close';
 import React, { ReactNode, SFC } from 'react';
+import { MdClose } from 'react-icons/md';
 import { SpaceProps, space } from 'styled-system';
 import { rgba } from 'polished';
 
@@ -48,7 +48,7 @@ const BaseAlert: SFC<BaseAlertProps> = ({
     <Box flex="auto">{message}</Box>
     {closable && (
       <Flex flex="none">
-        <Icon size="16" cursor="pointer" type={CloseIcon} onClick={onClose} />
+        <Icon size="16" cursor="pointer" type={MdClose} onClick={onClose} />
       </Flex>
     )}
   </StyledAlert>

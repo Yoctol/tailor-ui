@@ -1,5 +1,5 @@
-import ArrowIcon from 'react-icons/lib/md/keyboard-arrow-right';
 import React, { PureComponent } from 'react';
+import { MdKeyboardArrowRight } from 'react-icons/md';
 
 import styled from 'utils/styled-components';
 
@@ -76,7 +76,7 @@ class SubItem extends PureComponent<SubItemProps, SubItemState> {
     return (
       <StyledSubItem disabled={disabled} innerRef={this.subItemRef}>
         {title}
-        <Icon ml="2" size="16" cursor="pointer" type={ArrowIcon} />
+        <Icon ml="2" size="16" cursor="pointer" type={MdKeyboardArrowRight} />
 
         <SubListWrapper offsetLeft={this.getOffsetLeft()}>
           <StyledList {...props}>{children}</StyledList>

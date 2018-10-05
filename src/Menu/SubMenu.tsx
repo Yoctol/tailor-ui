@@ -1,5 +1,5 @@
-import ArrowUp from 'react-icons/lib/md/keyboard-arrow-up';
 import React, { PureComponent, ReactNode } from 'react';
+import { MdKeyboardArrowUp } from 'react-icons/md';
 import { Spring, animated } from 'react-spring';
 import { Toggle } from 'react-powerplug';
 
@@ -57,7 +57,7 @@ class SubMenu extends PureComponent<SubMenuProps> {
                       ),
                     }}
                   >
-                    <Icon type={ArrowUp} size="20" fill="light" />
+                    <Icon type={MdKeyboardArrowUp} size="20" fill="light" />
                   </animated.div>
                 )}
               </Spring>
