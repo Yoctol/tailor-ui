@@ -70,11 +70,11 @@ export type Direction = 'horizontal' | 'verticle';
 const getMarginPosition = ({ direction }: { direction: Direction }) =>
   direction === 'horizontal' ? 'margin-left' : 'margin-top';
 
-type RadioLabelBaseProps = {
-  disabled: boolean;
-};
+interface IRadioLabelBaseProps {
+  disabled?: boolean;
+}
 
-const RadioLabelBase = styled<RadioLabelBaseProps, 'label'>('label')`
+const RadioLabelBase = styled<IRadioLabelBaseProps, 'label'>('label')`
   display: inline-flex;
   align-items: center;
   font-size: ${p => p.theme.fontSizes.base};
@@ -99,7 +99,7 @@ const RadioLabel = styled(RadioLabelBase)`
   }
 `;
 
-export interface RadioProps {
+export interface IRadioProps {
   /**
    * Specifies whether the Radio is selected
    */
@@ -119,7 +119,7 @@ export interface RadioProps {
   value?: string;
 }
 
-class Radio extends PureComponent<RadioProps> {
+class Radio extends PureComponent<IRadioProps> {
   static Group = RadioGroup;
 
   render() {

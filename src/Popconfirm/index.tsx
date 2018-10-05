@@ -6,7 +6,7 @@ import styled from 'utils/styled-components';
 import Button from '../Button';
 import Flex from '../Grid/Flex';
 import Space from '../Grid/Space';
-import Tooltip, { TooltipProps } from '../Tooltip';
+import Tooltip, { ITooltipProps } from '../Tooltip';
 import getTypeIcon from '../utils/getTypeIcon';
 import { ArrowComponent, ContentComponent } from '../Popover';
 import { LocaleConsumer } from '../UIProvider';
@@ -22,7 +22,7 @@ const StyledContent = styled(Space)`
   white-space: nowrap;
 `;
 
-export type PopconfirmProps = TooltipProps & {
+export type PopconfirmProps = ITooltipProps & {
   /**
    * text of the Cancel button
    */

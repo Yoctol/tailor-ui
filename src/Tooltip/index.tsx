@@ -20,7 +20,7 @@ import BaseTooltip, {
 
 const { Consumer, Provider } = createContext(() => {});
 
-interface ClickTooltipProps {
+interface IClickTooltipProps {
   children: ReactElement<any>;
   defaultVisible?: boolean;
   display?: string;
@@ -29,7 +29,7 @@ interface ClickTooltipProps {
   overlay: React.ReactNode;
 }
 
-const ClickTooltip: SFC<ClickTooltipProps> = ({
+const ClickTooltip: SFC<IClickTooltipProps> = ({
   children,
   defaultVisible,
   display,
@@ -71,7 +71,7 @@ const ClickTooltip: SFC<ClickTooltipProps> = ({
   </Toggle>
 );
 
-interface HoverTooltipProps {
+interface IHoverTooltipProps {
   children: ReactChild | ReactChild[];
   display?: string;
   onVisibleChange?: (visible: boolean) => void;
@@ -79,7 +79,7 @@ interface HoverTooltipProps {
   overlay: ReactNode;
 }
 
-const HoverTooltip: SFC<HoverTooltipProps> = ({
+const HoverTooltip: SFC<IHoverTooltipProps> = ({
   children,
   display,
   onVisibleChange,
@@ -100,7 +100,7 @@ const HoverTooltip: SFC<HoverTooltipProps> = ({
   </Hover>
 );
 
-export type TooltipProps = {
+export interface ITooltipProps {
   /**
    * The component which this tooltip show up
    */
@@ -139,9 +139,9 @@ export type TooltipProps = {
     ContentComponent: any;
     ArrowComponent: any;
   };
-};
+}
 
-class Tooltip extends PureComponent<TooltipProps> {
+class Tooltip extends PureComponent<ITooltipProps> {
   renderOverlay = () => {
     const {
       light = false,

@@ -8,11 +8,11 @@ import Icon from '../Icon';
 import Item from './Item';
 import { StyledList } from './List';
 
-interface SubListWrapperProps {
+interface ISubListWrapperProps {
   offsetLeft: number;
 }
 
-const SubListWrapper = styled<SubListWrapperProps, 'div'>('div')`
+const SubListWrapper = styled<ISubListWrapperProps, 'div'>('div')`
   position: absolute;
   top: 0;
   left: ${p => p.theme.space[1]};
@@ -42,17 +42,17 @@ const StyledSubItem = styled(Item)`
   }
 `;
 
-export interface SubItemProps {
+export interface ISubItemProps {
   title: string;
   disabled?: boolean;
 }
 
-export interface SubItemState {
+export interface ISubItemState {
   subItemEl: HTMLElement | null;
 }
 
-class SubItem extends PureComponent<SubItemProps, SubItemState> {
-  state: SubItemState = {
+class SubItem extends PureComponent<ISubItemProps, ISubItemState> {
+  state: ISubItemState = {
     subItemEl: null,
   };
 

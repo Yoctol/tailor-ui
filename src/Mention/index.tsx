@@ -16,14 +16,14 @@ import styled, { css } from 'utils/styled-components';
 
 import { Size, inputStyles } from '../Input';
 
-export interface MentionWrapperProps {
+export interface IMentionWrapperProps {
   focus?: boolean;
   disabled?: boolean;
   error?: boolean;
   size: Size;
 }
 
-const MentionWrapper = styled<MentionWrapperProps, 'div'>('div')`
+const MentionWrapper = styled<IMentionWrapperProps, 'div'>('div')`
   position: relative;
 
   .yoctol-ui-mention-wrapper {
@@ -141,7 +141,7 @@ const MentionTag = styled.span.attrs({
   color: ${p => p.theme.colors.success};
 `;
 
-export interface MentionEditorProps {
+export interface IMentionEditorProps {
   autoFocus?: boolean;
   /**
    * The text
@@ -193,7 +193,7 @@ export interface MentionEditorProps {
   onSelect?: (suggestion: string, data?: any) => any;
 }
 
-class MentionEditor extends PureComponent<MentionEditorProps> {
+class MentionEditor extends PureComponent<IMentionEditorProps> {
   static toString = toString;
 
   static toContentState = toEditorState;

@@ -20,13 +20,13 @@ const { Provider, Consumer: LocaleConsumer } = createContext<{
 // eslint-disable-next-line import/no-mutable-exports
 let globalLocale: LocaleType = en_US;
 
-export interface UIProviderProps {
+export interface IUIProviderProps {
   children: JSX.Element;
   locale?: LocaleType;
   theme?: typeof defaultTheme;
 }
 
-const UIProvider: SFC<UIProviderProps> = ({
+const UIProvider: SFC<IUIProviderProps> = ({
   children,
   theme = defaultTheme,
   locale = en_US,

@@ -20,13 +20,13 @@ const SubMenuWrapper = styled.div`
 
 const AnimatedSubMenuWrapper = animated(SubMenuWrapper);
 
-export interface SubMenuProps {
+export interface ISubMenuProps {
   initial?: boolean;
   title: ReactNode;
   icon?: IconType;
 }
 
-class SubMenu extends PureComponent<SubMenuProps> {
+class SubMenu extends PureComponent<ISubMenuProps> {
   render() {
     const {
       initial = false,

@@ -3,7 +3,7 @@ import { render } from 'react-dom';
 
 import { Types } from '../utils/getTypeIcon';
 
-import MessageComponent, { MessageOptions } from './Message';
+import MessageComponent, { IMessageOptions } from './Message';
 
 let messageInstance: Message;
 
@@ -19,7 +19,7 @@ class Message {
     render(<MessageComponent ref={this.messageRef} />, this.el);
   }
 
-  message({ content, duration, type }: MessageOptions) {
+  message({ content, duration, type }: IMessageOptions) {
     // eslint-disable-next-line react/no-this-in-sfc
     if (this.messageRef.current) {
       // eslint-disable-next-line react/no-this-in-sfc

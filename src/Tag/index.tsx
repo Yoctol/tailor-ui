@@ -42,11 +42,11 @@ const StyledTagWrapper = styled.div`
 
 const AnimatedStyledTagWrapper = animated(StyledTagWrapper);
 
-interface AnimatedTagProps {
+interface IAnimatedTagProps {
   onClosed?: () => void;
 }
 
-const AnimatedTag: SFC<AnimatedTagProps> = ({
+const AnimatedTag: SFC<IAnimatedTagProps> = ({
   children,
   onClosed,
   ...props
@@ -94,7 +94,7 @@ const BaseTag: SFC = ({ children, ...props }) => (
   </StyledTagWrapper>
 );
 
-export interface TagProps {
+export interface ITagProps {
   /**
    * Whether the Tag can be closed
    */
@@ -105,7 +105,7 @@ export interface TagProps {
   onClosed?: () => void;
 }
 
-class Tag extends PureComponent<TagProps> {
+class Tag extends PureComponent<ITagProps> {
   static defaultProps = {
     closable: false,
     onClosed: () => {},

@@ -33,24 +33,24 @@ const MessageBox = styled.div`
 
 const AnimatedMessageBox = animated(MessageBox);
 
-type Message = {
+interface IMessage {
   key: string;
   content: JSX.Element;
   timer: NodeJS.Timer;
-};
+}
 
-export type MessageOptions = {
+export interface IMessageOptions {
   content: string;
   duration: number;
   type: Types;
-};
-
-export interface MessageComponentState {
-  messages: Message[];
 }
 
-class MessageComponent extends PureComponent<{}, MessageComponentState> {
-  state: MessageComponentState = {
+export interface IMessageComponentState {
+  messages: IMessage[];
+}
+
+class MessageComponent extends PureComponent<{}, IMessageComponentState> {
+  state: IMessageComponentState = {
     messages: [],
   };
 
@@ -60,7 +60,7 @@ class MessageComponent extends PureComponent<{}, MessageComponentState> {
     }));
   };
 
-  add = ({ content: baseContent, duration, type }: MessageOptions) =>
+  add = ({ content: baseContent, duration, type }: IMessageOptions) =>
     new Promise(resolve => {
       const key = getUuid();
 

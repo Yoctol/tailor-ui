@@ -70,7 +70,7 @@ const TextFieldField = styled(FormField)`
   }
 `;
 
-export interface TextFieldProps {
+export interface ITextFieldProps {
   label?: string;
   value?: string;
   defaultValue?: string;
@@ -83,7 +83,7 @@ export interface TextFieldProps {
   onChange?: ChangeEventHandler<HTMLInputElement>;
 }
 
-const TextField: SFC<TextFieldProps> = ({
+const TextField: SFC<ITextFieldProps> = ({
   label = null,
   value: controlledValue,
   defaultValue,

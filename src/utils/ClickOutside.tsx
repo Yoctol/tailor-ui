@@ -1,9 +1,9 @@
 import { Component } from 'react';
 
-export interface ClickOutsideProps {
+export interface IClickOutsideProps {
   onClickOutside: (e: Event) => void;
   bindRef?: HTMLElement;
-  bindRefs?: (HTMLElement | undefined)[];
+  bindRefs?: Array<HTMLElement | undefined>;
   children:
     | ((
         renderProps: {
@@ -13,7 +13,7 @@ export interface ClickOutsideProps {
     | React.ReactNode;
 }
 
-class ClickOutside extends Component<ClickOutsideProps> {
+class ClickOutside extends Component<IClickOutsideProps> {
   isTouch = false;
 
   container?: HTMLElement = this.props.bindRef;

@@ -1,6 +1,7 @@
 {
   "*.{ts,tsx}": [
-    "eslint --fix",
+    "eslint --ext=ts,tsx",
+    "tslint -c tslint.json",
     "stylelint",
     "prettier --parser typescript --write",
     "git add"

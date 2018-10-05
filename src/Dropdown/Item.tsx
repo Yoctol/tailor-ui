@@ -57,9 +57,15 @@ const Item: SFC<ItemProps> = ({ onClick, disabled, keep, ...props }, ref) => (
       <StyledListItem
         innerRef={ref}
         onClick={event => {
-          if (disabled) return;
-          if (onClick) onClick(event);
-          if (!keep) handleClose();
+          if (disabled) {
+            return;
+          }
+          if (onClick) {
+            onClick(event);
+          }
+          if (!keep) {
+            handleClose();
+          }
         }}
         disabled={disabled}
         {...props}
