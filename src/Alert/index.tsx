@@ -2,13 +2,13 @@ import React, { PureComponent, SFC } from 'react';
 import { Spring, animated, config } from 'react-spring';
 import { Toggle } from 'react-powerplug';
 
-import BaseAlert, { BaseAlertProps } from './BaseAlert';
+import BaseAlert, { IBaseAlertProps } from './BaseAlert';
 
-export interface AlertProps extends BaseAlertProps {
+export interface IAlertProps extends IBaseAlertProps {
   onClosed?: () => void;
 }
 
-const AnimatedAlert: SFC<AlertProps> = ({ onClosed, ...props }) => (
+const AnimatedAlert: SFC<IAlertProps> = ({ onClosed, ...props }) => (
   <Toggle initial>
     {({ on, set }) => (
       <Spring
@@ -48,7 +48,7 @@ const AnimatedAlert: SFC<AlertProps> = ({ onClosed, ...props }) => (
   </Toggle>
 );
 
-class Alert extends PureComponent<AlertProps, {}> {
+class Alert extends PureComponent<IAlertProps, {}> {
   render() {
     const RenderComponent = this.props.closable ? AnimatedAlert : BaseAlert;
     return <RenderComponent {...this.props} />;

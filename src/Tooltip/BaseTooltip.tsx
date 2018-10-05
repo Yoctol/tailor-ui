@@ -86,12 +86,12 @@ TooltipContent.defaultProps = {
   borderRadius: 'base',
 };
 
-export interface ArrowProps {
+export interface IArrowProps {
   light: boolean;
   placement: Placement;
 }
 
-export const Arrow = styled<ArrowProps, 'div'>('div')`
+export const Arrow = styled<IArrowProps, 'div'>('div')`
   position: absolute;
   width: 0;
   height: 0;
@@ -148,11 +148,11 @@ export const Arrow = styled<ArrowProps, 'div'>('div')`
     `};
 `;
 
-export interface TooltipWrapperProps {
+export interface ITooltipWrapperProps {
   display?: string;
 }
 
-export const TooltipWrapper = styled<TooltipWrapperProps, 'div'>('div')`
+export const TooltipWrapper = styled<ITooltipWrapperProps, 'div'>('div')`
   display: ${p => p.display || 'inline-block'};
   position: relative;
 `;
@@ -173,13 +173,13 @@ const getTrsnformTranslateAxis = (placement: Placement) =>
     right: 'Y',
   }[placement]);
 
-export interface BaseTooltipProps {
+export interface IBaseTooltipProps {
   visible: boolean;
   overlay: React.ReactNode;
   placement?: Placement;
 }
 
-const BaseTooltip: SFC<BaseTooltipProps> = ({
+const BaseTooltip: SFC<IBaseTooltipProps> = ({
   visible,
   placement = 'bottom',
   overlay,

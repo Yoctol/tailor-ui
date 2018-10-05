@@ -26,14 +26,14 @@ const SpinText = styled.div`
   animation-iteration-count: infinite;
 `;
 
-export interface SpinProps {
+export interface ISpinProps {
   /**
    * Customize description content when Spin has children
    */
   text?: string;
 }
 
-const Spin: SFC<SpinProps> = ({ text = 'Loading...' }) => (
+const Spin: SFC<ISpinProps> = ({ text = 'Loading...' }) => (
   <Flex
     flexDirection="column"
     height="100%"

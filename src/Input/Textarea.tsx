@@ -3,9 +3,9 @@ import TextareaAutosize from 'react-textarea-autosize';
 
 import styled from 'utils/styled-components';
 
-import { InputProps, inputStyles } from './index';
+import { IInputProps, inputStyles } from './index';
 
-export type TextareaProps = InputProps & {
+export type TextareaProps = IInputProps & {
   resize?: boolean;
 };
 

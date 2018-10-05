@@ -15,11 +15,11 @@ const CloseButtonWrapper = styled.div`
   }
 `;
 
-export interface CloseButtonProps {
+export interface ICloseButtonProps {
   onCancel?: () => void;
 }
 
-const CloseButton: SFC<CloseButtonProps> = ({ onCancel }) => (
+const CloseButton: SFC<ICloseButtonProps> = ({ onCancel }) => (
   <CloseButtonWrapper>
     <Button text rounded icon={MdClose} onClick={onCancel} />
   </CloseButtonWrapper>

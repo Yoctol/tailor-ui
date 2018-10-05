@@ -18,13 +18,13 @@ const { Provider, Consumer } = createContext<{
   pills: false,
 });
 
-interface StyledTabProps {
+interface IStyledTabProps {
   size: Size;
   pills: boolean;
   active: boolean;
 }
 
-const StyledTab = styled<StyledTabProps, 'a'>('a')`
+const StyledTab = styled<IStyledTabProps, 'a'>('a')`
   display: inline-flex;
   position: relative;
   align-items: center;
@@ -90,7 +90,7 @@ const StyledTab = styled<StyledTabProps, 'a'>('a')`
   ${styledSpace};
 `;
 
-export type TabProps = {
+export interface ITabProps {
   /**
    * label of tab
    */
@@ -103,9 +103,9 @@ export type TabProps = {
    * Disabled state of tab
    */
   disabled?: boolean;
-};
+}
 
-export const Tab: SFC<TabProps> = ({ label, value, ...props }) => (
+export const Tab: SFC<ITabProps> = ({ label, value, ...props }) => (
   <Consumer>
     {({ size, pills, activeValue, setValue }) => (
       <StyledTab
@@ -121,7 +121,7 @@ export const Tab: SFC<TabProps> = ({ label, value, ...props }) => (
   </Consumer>
 );
 
-interface StyledTabsProps {
+interface IStyledTabsProps {
   /**
    * Make the tabs position to bottom of parent
    */
@@ -132,7 +132,7 @@ interface StyledTabsProps {
   block?: boolean;
 }
 
-const StyledTabs = styled<StyledTabsProps, 'nav'>('nav')`
+const StyledTabs = styled<IStyledTabsProps, 'nav'>('nav')`
   display: flex;
 
   ${({ absolute }) =>
@@ -157,7 +157,7 @@ const StyledTabs = styled<StyledTabsProps, 'nav'>('nav')`
   ${styledSpace};
 `;
 
-type TabsProps = StyledTabsProps & {
+type TabsProps = IStyledTabsProps & {
   /**
    * Initial active Tab's value, if `activeValue` is not set.
    */

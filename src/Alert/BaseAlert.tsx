@@ -10,11 +10,11 @@ import Flex from '../Grid/Flex';
 import Icon from '../Icon';
 import getTypeIcon, { Types } from '../utils/getTypeIcon';
 
-export interface AlertTypes extends SpaceProps {
+export interface IAlertTypes extends SpaceProps {
   type: Types;
 }
 
-const StyledAlert = styled<AlertTypes, 'div'>('div')`
+const StyledAlert = styled<IAlertTypes, 'div'>('div')`
   display: flex;
   align-items: center;
   margin-bottom: ${p => p.theme.space[3]};
@@ -29,14 +29,14 @@ const StyledAlert = styled<AlertTypes, 'div'>('div')`
   ${space};
 `;
 
-export interface BaseAlertProps extends SpaceProps {
+export interface IBaseAlertProps extends SpaceProps {
   closable?: boolean;
   type?: Types;
   message: ReactNode;
   onClose?: () => void;
 }
 
-const BaseAlert: SFC<BaseAlertProps> = ({
+const BaseAlert: SFC<IBaseAlertProps> = ({
   message,
   type = 'info',
   closable = false,

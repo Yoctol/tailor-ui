@@ -88,7 +88,7 @@ export const StyledInput = styled<StyledInputProps, any>('input')`
   ${inputStyles};
 `;
 
-export type InputProps = {
+export interface IInputProps {
   /**
    * Auto select value of the input if true
    */
@@ -103,9 +103,9 @@ export type InputProps = {
   onPressEnter?: KeyboardEventHandler<HTMLInputElement>;
   onKeyPress?: KeyboardEventHandler<HTMLInputElement>;
   required?: boolean;
-};
+}
 
-class Input extends PureComponent<InputProps> {
+class Input extends PureComponent<IInputProps> {
   inputRef: RefObject<HTMLInputElement> = createRef();
 
   componentDidMount() {

@@ -51,7 +51,7 @@ const StyledSelect = styled<any, any>(BaseSelect)`
   }
 `;
 
-export interface SelectProps {
+export interface ISelectProps {
   /**
    * delimiter string for multi-select value in text style mode
    */
@@ -94,7 +94,7 @@ export interface SelectProps {
   onChange?: (option: number | string | object) => void;
 }
 
-const Select: SFC<SelectProps> = props => {
+const Select: SFC<ISelectProps> = props => {
   const { isMulti, delimiter, multiSelectMode } = props;
   if (isMulti) {
     if (multiSelectMode === 'text') {
@@ -103,7 +103,7 @@ const Select: SFC<SelectProps> = props => {
       );
       const MultiValue = (_props: any) => {
         const {
-          selectProps: {
+          IselectProps: {
             value: [{ value: firstValue }],
           },
           data: { value: dataValue, label: dataLabel },

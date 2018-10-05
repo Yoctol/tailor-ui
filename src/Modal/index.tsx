@@ -10,13 +10,13 @@ import { LocaleConsumer } from '../UIProvider';
 
 import BaseModal, { BaseModalProps } from './BaseModal';
 import CloseButton from './CloseButton';
-import Footer, { FooterProps } from './Footer';
+import Footer, { IFooterProps } from './Footer';
 import { confirm, error, info, success, warning } from './instance';
 
 const portalElement = new PortalElement();
 
 export type ModalProps = BaseModalProps &
-  FooterProps & {
+  IFooterProps & {
     title?: ReactNode;
     footer?: ReactNode;
     closable?: boolean;
@@ -78,7 +78,9 @@ class Modal extends PureComponent<ModalProps> {
       cancelButtonProps,
     } = this.props;
 
-    if (footer === null) return null;
+    if (footer === null) {
+      return null;
+    }
 
     return (
       <Flex

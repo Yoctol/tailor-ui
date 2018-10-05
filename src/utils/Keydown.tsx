@@ -1,11 +1,11 @@
 import { Component } from 'react';
 
-export interface KeydownProps {
+export interface IKeydownProps {
   handleKeydown: () => void;
   keyCode: number;
 }
 
-class Keydown extends Component<KeydownProps> {
+class Keydown extends Component<IKeydownProps> {
   componentDidMount() {
     window.addEventListener('keydown', this.keydownHandler);
   }

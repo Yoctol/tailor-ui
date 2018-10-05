@@ -3,7 +3,7 @@ import React, { PureComponent, ReactNode } from 'react';
 import styled from 'utils/styled-components';
 
 import Heading from '../Heading';
-import Tooltip, { TooltipProps } from '../Tooltip';
+import Tooltip, { ITooltipProps } from '../Tooltip';
 import { Arrow, TooltipContent } from '../Tooltip/BaseTooltip';
 
 export const ArrowComponent = styled(Arrow)`
@@ -40,7 +40,7 @@ const Content = styled.div`
   padding: ${p => p.theme.space[2]};
 `;
 
-export type PopoverProps = TooltipProps & {
+export type PopoverProps = ITooltipProps & {
   /**
    * Title of the popover
    */

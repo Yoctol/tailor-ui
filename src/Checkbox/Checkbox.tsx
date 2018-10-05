@@ -71,11 +71,11 @@ export type Direction = 'horizontal' | 'verticle';
 const getMarginPosition = ({ direction }: { direction: Direction }) =>
   direction === 'horizontal' ? 'margin-left' : 'margin-top';
 
-type RadioLabelBaseProps = {
+interface IRadioLabelBaseProps {
   disabled: boolean;
-};
+}
 
-const CheckboxLabelBase = styled<RadioLabelBaseProps, 'label'>('label')`
+const CheckboxLabelBase = styled<IRadioLabelBaseProps, 'label'>('label')`
   display: inline-flex;
   align-items: center;
   font-size: ${p => p.theme.fontSizes.base};
@@ -104,7 +104,7 @@ const CheckboxLabel = styled(CheckboxLabelBase)`
   }
 `;
 
-export interface CheckboxProps {
+export interface ICheckboxProps {
   /**
    * Specifies whether the checkbox is selected
    */
@@ -124,7 +124,7 @@ export interface CheckboxProps {
   value?: string;
 }
 
-class Checkbox extends PureComponent<CheckboxProps> {
+class Checkbox extends PureComponent<ICheckboxProps> {
   static Group = CheckboxGroup;
 
   render() {

@@ -13,7 +13,7 @@ import { Placement, Provider } from './DropdownContext';
 
 const portalElement = new PortalElement();
 
-export interface DropdownProps {
+export interface IDropdownProps {
   /**
    * The component which this dropdown show up
    */
@@ -39,13 +39,13 @@ export interface DropdownProps {
   onVisibleChange?: (visible: boolean) => void;
 }
 
-interface DropdownState {
+interface IDropdownState {
   visible: boolean;
   rect: DOMRect | object;
   listRef?: HTMLElement;
 }
 
-class Dropdown extends PureComponent<DropdownProps, DropdownState> {
+class Dropdown extends PureComponent<IDropdownProps, IDropdownState> {
   static List: typeof List = List;
 
   static Item: typeof Item = Item;
@@ -155,10 +155,9 @@ class Dropdown extends PureComponent<DropdownProps, DropdownState> {
   renderChildren = () => {
     const { children } = this.props;
     const { visible } = this.state;
-    const { toggle } = this;
 
     return children({
-      toggle,
+      toggle: this.toggle,
       visible,
     });
   };
