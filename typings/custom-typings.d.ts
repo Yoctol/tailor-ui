@@ -282,6 +282,11 @@ declare module 'react-spring' {
 
 declare module 'rc-editor-mention';
 
+declare module 'rc-calendar';
+declare module 'rc-calendar/*';
+
+declare module 'rc-time-picker/*';
+
 declare module 'react-textarea-autosize';
 
 declare module 'test/test-utils';

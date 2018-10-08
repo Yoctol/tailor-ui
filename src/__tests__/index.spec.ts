@@ -4,6 +4,7 @@ import {
   Button,
   Card,
   Checkbox,
+  DatePicker,
   Dropdown,
   Flex,
   FormField,
@@ -42,6 +43,7 @@ describe('index', () => {
     expect(Card).toBeDefined();
     expect(Checkbox).toBeDefined();
     expect(Checkbox.Group).toBeDefined();
+    expect(DatePicker).toBeDefined();
     expect(Dropdown).toBeDefined();
     expect(Flex).toBeDefined();
     expect(FormField).toBeDefined();

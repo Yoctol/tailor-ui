@@ -1,0 +1,81 @@
+---
+name: DatePicker
+menu: Data Entry
+route: /data-entry/date-picker
+---
+
+import { PropsTable, Playground } from 'docz';
+import moment from 'moment';
+
+import DatePicker from './';
+
+import { Input } from '../';
+
+
+# DatePicker
+
+To select or input a date.
+
+## When To Use
+
+By clicking the input box, you can select a date from a popup calendar.
+
+## Examples
+
+```js
+import { DatePicker } from '@yoctol/ui';
+```
+
+### Date picker
+
+<Playground>
+  <DatePicker defaultValue={moment()} onChange={console.log} />
+</Playground>
+
+### Choose Time
+
+<Playground>
+  <DatePicker
+    onChange={console.log}
+    placeholder="Please Select Date & Time"
+    showTime
+    showSecond
+  />
+</Playground>
+
+
+### Choose Time & with minute step
+
+<Playground>
+  <DatePicker
+    onChange={console.log}
+    format="YYYY-MM-DD HH:mm"
+    minuteStep={15}
+    showTime
+  />
+</Playground>
+
+### Disabled Specified Date
+
+<Playground>
+  <DatePicker
+    disabledDate={current => {
+      if (!current) {
+        return false;
+      }
+
+      const date = moment();
+      date.hour(0);
+      date.minute(0);
+      date.second(0);
+
+      return current.isBefore(date);
+    }}
+    onChange={console.log}
+  />
+</Playground>
+
+
+## API
+
+<PropsTable of={DatePicker} />

@@ -6,6 +6,7 @@ export { default as Box } from './Grid/Box';
 export { default as Card } from './Card';
 export { default as Checkbox } from './Checkbox';
 export { default as Dropdown } from './Dropdown';
+export { default as DatePicker } from './DatePicker';
 export { default as Flex } from './Grid/Flex';
 export { default as FormField } from './Form/FormField';
 export { default as Heading } from './Heading';

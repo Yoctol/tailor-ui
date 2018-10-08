@@ -7,7 +7,7 @@ route: /others/ui-provider
 import { Playground } from 'docz';
 import { Value, Toggle } from 'react-powerplug';
 
-import { UIProvider, Modal, Button, Radio, Space, Flex, Popconfirm } from '../';
+import { UIProvider, Modal, Button, Radio, Space, Flex, Popconfirm, DatePicker } from '../';
 import * as locales from '../locale';
 
 ## Usage
@@ -38,49 +38,54 @@ import zh_TW from '@yoctol/ui/lib/locale/zh_TW';
 
         <Space mt="3">
           <UIProvider locale={locales[value]}>
-            <Flex>
-              <Toggle>
-                {({ on, toggle }) => (
-                  <>
-                    <Modal
-                      title="This is a Modal"
-                      visible={on}
-                      closable
-                      onConfirm={toggle}
-                      onCancel={toggle}
-                    >
-                      <div>This is the content of Modal</div>
-                    </Modal>
-                    <Button onClick={toggle}>Open Modal</Button>
-                  </>
-                )}
-              </Toggle>
+            <>
+              <Flex>
+                <Toggle>
+                  {({ on, toggle }) => (
+                    <>
+                      <Modal
+                        title="This is a Modal"
+                        visible={on}
+                        closable
+                        onConfirm={toggle}
+                        onCancel={toggle}
+                      >
+                        <div>This is the content of Modal</div>
+                      </Modal>
+                      <Button onClick={toggle}>Open Modal</Button>
+                    </>
+                  )}
+                </Toggle>
 
-              <Button
-                ml="2"
-                onClick={() => {
-                  Modal.confirm({
-                    title: 'Do you Want to delete these items?',
-                    content: 'Some descriptions',
-                    onConfirm: () => console.log('confirmed!'),
-                    onCancel: () => console.log('canceled!'),
-                  })
-                }}
-              >
-                Confirm Modal
-              </Button>
-
-              <Space ml="2">
-                <Popconfirm
-                  placement="bottom"
-                  content="Are you sure to delete this todo?"
-                  onConfirm={() => console.log('confirm')}
-                  onCancel={() => console.log('cancel')}
+                <Button
+                  ml="2"
+                  onClick={() => {
+                    Modal.confirm({
+                      title: 'Do you Want to delete these items?',
+                      content: 'Some descriptions',
+                      onConfirm: () => console.log('confirmed!'),
+                      onCancel: () => console.log('canceled!'),
+                    })
+                  }}
                 >
-                  <Button>Popconfirm</Button>
-                </Popconfirm>
+                  Confirm Modal
+                </Button>
+
+                <Space ml="2">
+                  <Popconfirm
+                    placement="bottom"
+                    content="Are you sure to delete this todo?"
+                    onConfirm={() => console.log('confirm')}
+                    onCancel={() => console.log('cancel')}
+                  >
+                    <Button>Popconfirm</Button>
+                  </Popconfirm>
+                </Space>
+              </Flex>
+              <Space mt="3">
+                <DatePicker />
               </Space>
-            </Flex>
+            </>
           </UIProvider>
         </Space>
       </>

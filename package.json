@@ -39,10 +39,13 @@
   "dependencies": {
     "@reach/observe-rect": "^1.0.3",
     "immutable": "^3.8.2",
+    "moment": "^2.22.2",
     "polished": "^2.2.0",
     "prop-types": "^15.6.2",
     "ramda": "^0.25.0",
+    "rc-calendar": "^9.7.9",
     "rc-editor-mention": "^1.1.7",
+    "rc-time-picker": "^3.4.0",
     "react-powerplug": "^1.0.0-rc.1",
     "react-select": "^2.1.0",
     "react-spring": "^5.9.2",

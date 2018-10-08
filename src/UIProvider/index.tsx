@@ -1,5 +1,6 @@
 /* eslint camelcase: "off" */
 import React, { SFC, createContext } from 'react';
+import moment from 'moment';
 
 import { ThemeProvider } from 'utils/styled-components';
 
@@ -33,6 +34,8 @@ const UIProvider: SFC<IUIProviderProps> = ({
 }) => {
   injectGlobalCss();
   globalLocale = locale;
+
+  moment.locale(locale.momentLocale);
 
   return (
     <ThemeProvider theme={theme}>
