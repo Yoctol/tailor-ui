@@ -64,10 +64,7 @@ import { DatePicker } from '@yoctol/ui';
         return false;
       }
 
-      const date = moment();
-      date.hour(0);
-      date.minute(0);
-      date.second(0);
+      const date = moment({ hour: 0, minute: 0, second: 0 });
 
       return current.isBefore(date);
     }}
