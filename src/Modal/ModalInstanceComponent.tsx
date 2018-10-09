@@ -106,7 +106,7 @@ class ModalInstanceComponent extends PureComponent<
     const icon = this.getIcon();
 
     return (
-      <UIProvider>
+      <UIProvider skipLocale>
         <BaseModal
           clickOutsite={type === 'confirm'}
           visible={visible}
