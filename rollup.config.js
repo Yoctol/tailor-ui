@@ -1,6 +1,6 @@
-const commonjs = require('rollup-plugin-commonjs');
+import commonjs from 'rollup-plugin-commonjs';
 
-module.exports = {
+export default {
   input: 'lib/index.js',
   output: [
     {
