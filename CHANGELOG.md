@@ -1,3 +1,11 @@
+<a name="2.0.0-alpha.5"></a>
+
+# [2.0.0-alpha.5](https://github.com/yoctol/ui/compare/v2.0.0-alpha.4...v2.0.0-alpha.5) (2018-10-09)
+
+### Bug Fixes
+
+- add skipLocale to prevent reset globalLocale ([519439c](https://github.com/yoctol/ui/commit/519439c))
+
 <a name="2.0.0-alpha.4"></a>
 
 # [2.0.0-alpha.4](https://github.com/yoctol/ui/compare/v2.0.0-alpha.3...v2.0.0-alpha.4) (2018-10-09)
