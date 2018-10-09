@@ -8,14 +8,16 @@
     "url": "https://github.com/yoctol/ui/issues"
   },
   "version": "2.0.0-alpha.4",
-  "main": "lib/index.js",
+  "main": "lib/index.umd.js",
+  "module": "lib/index.js",
+  "browser": "lib/index.umd.js",
   "files": [
     "lib"
   ],
   "scripts": {
     "build": "npm run clean && npm run build:types && npm run build:js",
-    "build:js": "cross-env NODE_ENV=production babel src -d lib --extensions \".ts,.tsx\" --ignore **/__tests__",
-    "build:types": "tsc --emitDeclarationOnly",
+    "build:js": "rollup -c",
+    "build:types": "tsc",
     "clean": "rimraf lib",
     "commit": "git-cz",
     "docz:build": "docz build",
@@ -109,6 +111,8 @@
     "react-dom": "^16.5.2",
     "react-icons": "^3.1.0",
     "react-testing-library": "^5.2.0",
+    "rollup": "^0.66.5",
+    "rollup-plugin-commonjs": "^9.1.8",
     "styled-components": "^3.4.9",
     "stylelint": "9.6.0",
     "stylelint-config-prettier": "^4.0.0",

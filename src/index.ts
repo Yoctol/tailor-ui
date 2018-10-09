@@ -1,5 +1,3 @@
-import theme from './theme';
-
 export { default as Alert } from './Alert';
 export { default as Button } from './Button';
 export { default as Box } from './Grid/Box';
@@ -33,4 +31,4 @@ export { default as Textarea } from './Input/Textarea';
 export { default as TextField } from './TextField';
 export { default as Tooltip } from './Tooltip';
 export { default as UIProvider } from './UIProvider';
-export { theme };
+export { default as theme } from './theme';
