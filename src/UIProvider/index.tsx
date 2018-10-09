@@ -25,17 +25,21 @@ export interface IUIProviderProps {
   children: JSX.Element;
   locale?: LocaleType;
   theme?: typeof defaultTheme;
+  skipLocale?: boolean;
 }
 
 const UIProvider: SFC<IUIProviderProps> = ({
   children,
   theme = defaultTheme,
   locale = en_US,
+  skipLocale = false,
 }) => {
   injectGlobalCss();
-  globalLocale = locale;
 
-  moment.locale(locale.momentLocale);
+  if (!skipLocale) {
+    globalLocale = locale;
+    moment.locale(locale.momentLocale);
+  }
 
   return (
     <ThemeProvider theme={theme}>
