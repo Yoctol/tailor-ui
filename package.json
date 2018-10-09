@@ -15,9 +15,10 @@
     "lib"
   ],
   "scripts": {
-    "build": "npm run clean && npm run build:types && npm run build:js",
-    "build:js": "rollup -c",
-    "build:types": "tsc",
+    "build": "npm run clean && npm run build:types && npm run build:js && npm run build:esm",
+    "build:esm": "rollup -c",
+    "build:js": "cross-env NODE_ENV=production babel src -d lib --extensions \".ts,.tsx\" --ignore **/__tests__",
+    "build:types": "tsc --emitDeclarationOnly",
     "clean": "rimraf lib",
     "commit": "git-cz",
     "docz:build": "docz build",
