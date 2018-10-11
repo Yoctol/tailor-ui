@@ -1,3 +1,13 @@
+<a name="2.0.0-alpha.7"></a>
+
+# [2.0.0-alpha.7](https://github.com/yoctol/ui/compare/v2.0.0-alpha.6...v2.0.0-alpha.7) (2018-10-11)
+
+### Bug Fixes
+
+- card radius ([b282bdb](https://github.com/yoctol/ui/commit/b282bdb))
+- dropdown padding ([fa69834](https://github.com/yoctol/ui/commit/fa69834))
+- tree shaking ([2aa02cc](https://github.com/yoctol/ui/commit/2aa02cc))
+
 <a name="2.0.0-alpha.6"></a>
 
 # [2.0.0-alpha.6](https://github.com/yoctol/ui/compare/v2.0.0-alpha.5...v2.0.0-alpha.6) (2018-10-11)
