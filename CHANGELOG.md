@@ -1,3 +1,11 @@
+<a name="2.0.0-alpha.6"></a>
+
+# [2.0.0-alpha.6](https://github.com/yoctol/ui/compare/v2.0.0-alpha.5...v2.0.0-alpha.6) (2018-10-11)
+
+### Bug Fixes
+
+- babel build ([ef94ea8](https://github.com/yoctol/ui/commit/ef94ea8))
+
 <a name="2.0.0-alpha.5"></a>
 
 # [2.0.0-alpha.5](https://github.com/yoctol/ui/compare/v2.0.0-alpha.4...v2.0.0-alpha.5) (2018-10-09)
