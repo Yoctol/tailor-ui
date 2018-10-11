@@ -1,3 +1,11 @@
+<a name="2.0.0-alpha.8"></a>
+
+# [2.0.0-alpha.8](https://github.com/yoctol/ui/compare/v2.0.0-alpha.7...v2.0.0-alpha.8) (2018-10-11)
+
+### Bug Fixes
+
+- locale export ([715900d](https://github.com/yoctol/ui/commit/715900d))
+
 <a name="2.0.0-alpha.7"></a>
 
 # [2.0.0-alpha.7](https://github.com/yoctol/ui/compare/v2.0.0-alpha.6...v2.0.0-alpha.7) (2018-10-11)
