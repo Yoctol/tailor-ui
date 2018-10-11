@@ -14,12 +14,13 @@ interface ISubListWrapperProps {
 
 const SubListWrapper = styled<ISubListWrapperProps, 'div'>('div')`
   position: absolute;
-  top: 0;
-  left: ${p => p.theme.space[1]};
-  padding-left: ${p => p.offsetLeft}px;
+  top: calc(-${p => p.theme.space[2]} - ${p => p.theme.space[1]});
+  left: ${p => p.offsetLeft}px;
+  padding: ${p => p.theme.space[2]};
+  padding-left: ${p => p.theme.space[1]};
   opacity: 0;
   transform: scale(0.3);
-  transform-origin: ${p => p.offsetLeft}px top;
+  transform-origin: 0 ${p => p.theme.space[3]};
   cursor: pointer;
 
   ${p => p.theme.transition};
