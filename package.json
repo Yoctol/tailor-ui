@@ -10,16 +10,17 @@
   "version": "2.0.0-alpha.6",
   "main": "lib/index.umd.js",
   "module": "lib/index.js",
-  "browser": "lib/index.umd.js",
   "files": [
-    "lib"
+    "lib",
+    "locale"
   ],
   "scripts": {
-    "build": "npm run clean && npm run build:types && npm run build:js && npm run build:esm",
+    "build": "npm run clean && npm run build:types && npm run build:js && npm run build:esm && npm run build:locale",
     "build:esm": "rollup -c",
-    "build:js": "cross-env NODE_ENV=production babel src -d lib --extensions \".ts,.tsx\" --ignore **/__tests__",
+    "build:js": "cross-env NODE_ENV=production babel src -d lib --extensions '.ts,.tsx' --ignore **/__tests__",
+    "build:locale": "cross-env NODE_ENV=production babel src/locale -d locale --extensions '.ts' --presets=@babel/preset-env,@babel/preset-typescript",
     "build:types": "tsc --emitDeclarationOnly",
-    "clean": "rimraf lib",
+    "clean": "rimraf lib locale",
     "commit": "git-cz",
     "docz:build": "docz build",
     "docz:dev": "docz dev",

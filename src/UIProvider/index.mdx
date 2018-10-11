@@ -16,8 +16,12 @@ import * as locales from '../locale';
 
 ```js
 import { UIProvider } from '@yoctol/ui';
-import zh_TW from '@yoctol/ui/lib/locale/zh_TW';
+import zh_TW from '@yoctol/ui/locale/zh_TW';
 
+// For ejs
+import { UIProvider, locale } from '@yoctol/ui';
+
+const { zh_TW } = locale;
 ...
 
 <UIProvider locale={zh_TW}>

@@ -6,7 +6,7 @@ import { ThemeProvider } from 'utils/styled-components';
 
 import defaultTheme from '../theme';
 import injectGlobalCss from '../injectGlobalCss';
-import * as locales from '../locale';
+import locales from '../locale';
 
 const { en_US } = locales;
 
