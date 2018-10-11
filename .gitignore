@@ -5,4 +5,5 @@ yarn-error.log
 coverage
 jest-report
 lib
+locale
 .docz
