@@ -17,7 +17,7 @@ import {
 import styled, { css } from 'utils/styled-components';
 
 import CardBlock from './CardBlock';
-import CardImage from './CardImage';
+import CardImage, { StyledImage } from './CardImage';
 
 export type CardProps = SpaceProps &
   HeightProps &
@@ -51,12 +51,22 @@ const CardWrapper = styled<CardProps, any>('div')`
       }
     `};
 
+  ${StyledImage /* sc-selector */}:first-child {
+    border-top-left-radius: calc(${p => p.theme.radii.lg} - 1px);
+    border-top-right-radius: calc(${p => p.theme.radii.lg} - 1px);
+  }
+
+  ${StyledImage /* sc-selector */}:last-child {
+    border-bottom-right-radius: calc(${p => p.theme.radii.lg} - 1px);
+    border-bottom-left-radius: calc(${p => p.theme.radii.lg} - 1px);
+  }
+
   ${space};
   ${height};
   ${width};
   ${color};
   ${borderColor};
-  ${borderRadius};
+  ${borderRadius}; /* stylelint-disable-line order/properties-order */
 `;
 
 class Card extends PureComponent<CardProps> {
