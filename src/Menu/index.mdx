@@ -96,6 +96,38 @@ import { Menu } from '@yoctol/ui';
   </Value>
 </Playground>
 
+### Disable togglable
+
+<Playground>
+  <Value initial="1">
+    {({ value, set }) => (
+      <Menu>
+        <Menu.SubMenu
+          title="Understood"
+          icon="understood"
+          togglable={false}
+          onClick={() => console.log('click understood')}
+        >
+          <Menu.Item active={value === 'intent'} onClick={() => set('intent')}>
+            Intent
+          </Menu.Item>
+          <Menu.Item active={value === 'entity'} onClick={() => set('entity')}>
+            Entity
+          </Menu.Item>
+        </Menu.SubMenu>
+        <Menu.SubMenu title="Kurator" icon="kurator">
+          <Menu.Item active={value === 'action'} onClick={() => set('action')}>
+            Action
+          </Menu.Item>
+          <Menu.Item active={value === 'menu'} onClick={() => set('menu')}>
+            Menu
+          </Menu.Item>
+        </Menu.SubMenu>
+      </Menu>
+    )}
+  </Value>
+</Playground>
+
 ## API
 
 ### Menu

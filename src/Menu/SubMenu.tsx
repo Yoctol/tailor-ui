@@ -1,4 +1,4 @@
-import React, { PureComponent, ReactNode } from 'react';
+import React, { ReactNode, SFC } from 'react';
 import { MdKeyboardArrowUp } from 'react-icons/md';
 import { Spring, animated } from 'react-spring';
 import { Toggle } from 'react-powerplug';
@@ -24,60 +24,64 @@ export interface ISubMenuProps {
   initial?: boolean;
   title: ReactNode;
   icon?: IconType;
+  togglable?: boolean;
 }
 
-class SubMenu extends PureComponent<ISubMenuProps> {
-  render() {
-    const {
-      initial = false,
-      icon,
-      title,
-      children,
-      ...otherProps
-    } = this.props;
-
-    return (
-      <Toggle initial={initial}>
-        {({ on, toggle }) => (
-          <>
-            <Item icon={icon} onClick={toggle} {...otherProps}>
-              {title}
-              <Spring
-                native
-                from={{ rotate: on ? 180 : 0 }}
-                to={{ rotate: on ? 180 : 0 }}
-              >
-                {({ rotate }) => (
-                  <animated.div
-                    style={{
-                      pointerEvents: 'none',
-                      marginLeft: 'auto',
-                      transform: rotate.interpolate(
-                        (r: number) => `rotate(${r}deg)`
-                      ),
-                    }}
-                  >
-                    <Icon type={MdKeyboardArrowUp} size="20" fill="light" />
-                  </animated.div>
-                )}
-              </Spring>
-            </Item>
+const SubMenu: SFC<ISubMenuProps> = ({
+  initial = false,
+  togglable = true,
+  icon,
+  title,
+  children,
+  ...otherProps
+}) =>
+  togglable ? (
+    <Toggle initial={initial}>
+      {({ on, toggle }) => (
+        <>
+          <Item icon={icon} onClick={toggle} {...otherProps}>
+            {title}
             <Spring
               native
-              from={{ height: on ? 'auto' : 0 }}
-              to={{ height: on ? 'auto' : 0 }}
+              from={{ rotate: on ? 180 : 0 }}
+              to={{ rotate: on ? 180 : 0 }}
             >
-              {style => (
-                <AnimatedSubMenuWrapper style={style}>
-                  {children}
-                </AnimatedSubMenuWrapper>
+              {({ rotate }) => (
+                <animated.div
+                  style={{
+                    pointerEvents: 'none',
+                    marginLeft: 'auto',
+                    transform: rotate.interpolate(
+                      (r: number) => `rotate(${r}deg)`
+                    ),
+                  }}
+                >
+                  <Icon type={MdKeyboardArrowUp} size="20" fill="light" />
+                </animated.div>
               )}
             </Spring>
-          </>
-        )}
-      </Toggle>
-    );
-  }
-}
+          </Item>
+          <Spring
+            native
+            from={{ height: on ? 'auto' : 0 }}
+            to={{ height: on ? 'auto' : 0 }}
+          >
+            {style => (
+              <AnimatedSubMenuWrapper style={style}>
+                {children}
+              </AnimatedSubMenuWrapper>
+            )}
+          </Spring>
+        </>
+      )}
+    </Toggle>
+  ) : (
+    <>
+      <Item icon={icon} {...otherProps}>
+        {title}
+      </Item>
+      <SubMenuWrapper>{children}</SubMenuWrapper>
+    </>
+  );
 
 export default SubMenu;
