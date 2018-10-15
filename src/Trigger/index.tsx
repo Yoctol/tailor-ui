@@ -15,11 +15,11 @@ import Portal from '../utils/Portal';
 import getPositionOffset, { Placement } from './getPositionOffset';
 
 export interface IPopupRenderProps {
-  offset: {
+  styles: {
     top: number;
     left: number;
+    [key: string]: any;
   };
-  styles: any;
   handleClose: () => void;
   handlePopupRef: (ref: HTMLElement) => void;
 }
@@ -56,6 +56,9 @@ export interface ITriggerProps {
    */
   onVisibleChange?: (visible: boolean) => void;
   trigger?: 'hover' | 'click';
+  animation: 'slide' | 'scale';
+  appendFor?: string;
+  offset?: number;
 }
 
 interface ITriggerState {
@@ -68,6 +71,7 @@ class Trigger extends PureComponent<ITriggerProps, ITriggerState> {
   static defaultProps = {
     placement: 'bottomLeft',
     trigger: 'hover',
+    animation: 'slide',
   };
 
   childrenDOM?: HTMLElement;
@@ -140,27 +144,83 @@ class Trigger extends PureComponent<ITriggerProps, ITriggerState> {
     this.setState(() => ({ popupRef }));
   };
 
-  getTransform = () => {
-    const { placement } = this.props;
-    const translateFrom = placement.startsWith('top') ? 10 : -10;
+  getTransitions = () => {
+    const { placement, animation } = this.props;
 
-    return `translate3d(0, ${translateFrom}px, 0)`;
+    if (animation === 'slide') {
+      const translateFrom = placement.startsWith('top') ? 10 : -10;
+      const transform =
+        placement.startsWith('top') || placement.startsWith('bottom')
+          ? `translate3d(0, ${translateFrom}px, 0)`
+          : `translate3d(${translateFrom}px, 0, 0)`;
+
+      return {
+        from: {
+          opacity: 0,
+          transform,
+        },
+        enter: {
+          opacity: 1,
+          transform: `translate3d(0, 0px, 0)`,
+        },
+        leave: {
+          opacity: 0,
+          transform,
+        },
+      };
+    }
+
+    const transformOrigin = {
+      topLeft: 'left bottom',
+      top: '50% bottom',
+      topRight: 'right bottom',
+      bottomLeft: 'left top',
+      bottom: '50% top',
+      bottomRight: 'right top',
+      leftTop: 'right top',
+      left: 'right 50%',
+      leftBottom: 'right bottom',
+      rightTop: 'left top',
+      right: 'left 50%',
+      rightBottom: 'left bottom',
+    }[placement];
+
+    return {
+      from: {
+        opacity: 0,
+        transformOrigin,
+        transform: `scale(0.3)`,
+      },
+      enter: {
+        opacity: 1,
+        transformOrigin,
+        transform: `scale(1)`,
+      },
+      leave: {
+        opacity: 0,
+        transformOrigin,
+        transform: `scale(0.3)`,
+      },
+    };
   };
 
   renderChildren = () => {
     const { children, trigger } = this.props;
     const { visible } = this.state;
 
+    let bind = {};
+
+    if (trigger === 'hover') {
+      bind = {
+        onMouseEnter: this.handleOpen,
+        onMouseLeave: this.handleClose,
+      };
+    }
+
     if (children instanceof Function) {
       return children({
         toggle: this.toggle,
-        bind:
-          trigger === 'hover'
-            ? {
-                onMouseEnter: this.handleOpen,
-                onMouseLeave: this.handleClose,
-              }
-            : {},
+        bind,
         visible,
       });
     }
@@ -168,15 +228,14 @@ class Trigger extends PureComponent<ITriggerProps, ITriggerState> {
     return cloneElement(
       children,
       composeEvents(children.props, {
-        onClick: this.toggle,
-        onMouseEnter: this.handleOpen,
-        onMouseLeave: this.handleClose,
+        onClick: trigger === 'click' ? this.toggle : () => {},
+        ...bind,
       })
     );
   };
 
   renderPopup = () => {
-    const { popup, placement, trigger } = this.props;
+    const { popup, placement, trigger, offset } = this.props;
     const { visible, popupRef, rect } = this.state;
 
     if (!this.childrenDOM || this.childrenDOM instanceof Text) {
@@ -184,27 +243,14 @@ class Trigger extends PureComponent<ITriggerProps, ITriggerState> {
     }
 
     if (visible && popupRef && rect) {
-      this.offset = getPositionOffset(rect, popupRef, placement);
+      this.offset = getPositionOffset(rect, popupRef, placement, offset);
     }
-
-    const transform = this.getTransform();
 
     return (
       <Transition
         native
         keys={visible ? 'visible' : 'hidden'}
-        from={{
-          opacity: 0,
-          transform,
-        }}
-        enter={{
-          opacity: 1,
-          transform: `translate3d(0, 0px, 0)`,
-        }}
-        leave={{
-          opacity: 0,
-          transform,
-        }}
+        {...this.getTransitions()}
         config={{
           ...config.stiff,
           restSpeedThreshold: 1,
@@ -212,27 +258,28 @@ class Trigger extends PureComponent<ITriggerProps, ITriggerState> {
         }}
       >
         {visible &&
-          (styles =>
-            trigger === 'click' ? (
+          (styles => {
+            const renderPopup = () =>
+              popup({
+                styles: {
+                  ...styles,
+                  ...this.offset,
+                },
+                handleClose: this.handleClose,
+                handlePopupRef: this.handlePopupRef,
+              });
+
+            return trigger === 'click' ? (
               <ClickOutside
                 bindRefs={[this.childrenDOM, popupRef]}
                 onClickOutside={this.handleClose}
               >
-                {popup({
-                  styles,
-                  offset: this.offset,
-                  handleClose: this.handleClose,
-                  handlePopupRef: this.handlePopupRef,
-                })}
+                {renderPopup()}
               </ClickOutside>
             ) : (
-              popup({
-                styles,
-                offset: this.offset,
-                handleClose: this.handleClose,
-                handlePopupRef: this.handlePopupRef,
-              })
-            ))}
+              renderPopup()
+            );
+          })}
       </Transition>
     );
   };
@@ -241,7 +288,7 @@ class Trigger extends PureComponent<ITriggerProps, ITriggerState> {
     return (
       <>
         {this.renderChildren()}
-        <Portal>{this.renderPopup()}</Portal>
+        <Portal appendFor={this.props.appendFor}>{this.renderPopup()}</Portal>
       </>
     );
   }

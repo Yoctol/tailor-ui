@@ -1,110 +1,14 @@
-import React, {
-  PureComponent,
-  ReactChild,
-  ReactElement,
-  ReactNode,
-  SFC,
-  cloneElement,
-  createContext,
-} from 'react';
-import { Hover, Toggle } from 'react-powerplug';
+import React, { PureComponent, ReactElement } from 'react';
 
-import ClickOutside from '../utils/ClickOutside';
+import Trigger, { IPopupRenderProps } from '../Trigger';
 
-import BaseTooltip, {
-  Arrow,
-  Placement,
-  TooltipContent,
-  TooltipWrapper,
-} from './BaseTooltip';
-
-const { Consumer, Provider } = createContext(() => {});
-
-interface IClickTooltipProps {
-  children: ReactElement<any>;
-  defaultVisible?: boolean;
-  display?: string;
-  onVisibleChange?: (visible: boolean) => void;
-  placement: Placement;
-  overlay: React.ReactNode;
-}
-
-const ClickTooltip: SFC<IClickTooltipProps> = ({
-  children,
-  defaultVisible,
-  display,
-  onVisibleChange,
-  placement,
-  overlay,
-}) => (
-  <Toggle initial={defaultVisible} onChange={onVisibleChange}>
-    {({ on, toggle, set }) => (
-      <ClickOutside
-        onClickOutside={() => {
-          if (on) {
-            set(false);
-          }
-        }}
-      >
-        {({ bindRef }) => (
-          <TooltipWrapper innerRef={bindRef} display={display}>
-            {cloneElement(children, {
-              onClick: (event: Event) => {
-                toggle();
-
-                if (children.props.onClick) {
-                  children.props.onClick(event);
-                }
-              },
-            })}
-            <Provider value={() => set(false)}>
-              <BaseTooltip
-                visible={on}
-                placement={placement}
-                overlay={overlay}
-              />
-            </Provider>
-          </TooltipWrapper>
-        )}
-      </ClickOutside>
-    )}
-  </Toggle>
-);
-
-interface IHoverTooltipProps {
-  children: ReactChild | ReactChild[];
-  display?: string;
-  onVisibleChange?: (visible: boolean) => void;
-  placement: Placement;
-  overlay: ReactNode;
-}
-
-const HoverTooltip: SFC<IHoverTooltipProps> = ({
-  children,
-  display,
-  onVisibleChange,
-  placement,
-  overlay,
-}) => (
-  <Hover onChange={onVisibleChange}>
-    {({ bind, hovered }) => (
-      <TooltipWrapper display={display} {...bind}>
-        {children}
-        <BaseTooltip
-          visible={hovered}
-          placement={placement}
-          overlay={overlay}
-        />
-      </TooltipWrapper>
-    )}
-  </Hover>
-);
+import BaseTooltip, { Arrow, Placement, TooltipContent } from './BaseTooltip';
 
 export interface ITooltipProps {
   /**
    * The component which this tooltip show up
    */
-  children: ReactElement<any> | ReactChild | ReactChild[];
+  children: ReactElement<any>;
   /**
    * Whether the floating tooltip card is visible by default. Only support when the trigger is `click`
    */
@@ -142,7 +46,15 @@ export interface ITooltipProps {
 }
 
 class Tooltip extends PureComponent<ITooltipProps> {
-  renderOverlay = () => {
+  static defaultProps = {
+    placement: 'top',
+  };
+
+  renderOverlay = ({
+    styles,
+    handleClose,
+    handlePopupRef,
+  }: IPopupRenderProps) => {
     const {
       light = false,
       content,
@@ -156,28 +68,31 @@ class Tooltip extends PureComponent<ITooltipProps> {
     } = this.props;
 
     return (
-      <Consumer>
-        {hideTooltip => (
-          <>
-            <ContentComponent light={light} {...otherProps}>
-              {content instanceof Function && trigger === 'click'
-                ? content(hideTooltip)
-                : content}
-            </ContentComponent>
-            <ArrowComponent light={light} placement={placement} />
-          </>
-        )}
-      </Consumer>
+      <BaseTooltip styles={styles} ref={handlePopupRef}>
+        <ContentComponent light={light} {...otherProps}>
+          {content instanceof Function && trigger === 'click'
+            ? content(handleClose)
+            : content}
+        </ContentComponent>
+        <ArrowComponent light={light} placement={placement} />
+      </BaseTooltip>
     );
   };
 
   render() {
-    const { trigger, placement = 'top' } = this.props;
-    const overlay = this.renderOverlay();
-    const RenderTooltip = trigger === 'click' ? ClickTooltip : HoverTooltip;
+    const { trigger, placement, children } = this.props;
 
     return (
-      <RenderTooltip overlay={overlay} placement={placement} {...this.props} />
+      <Trigger
+        appendFor="tooltip"
+        offset={10}
+        animation="scale"
+        trigger={trigger}
+        placement={placement}
+        popup={this.renderOverlay}
+      >
+        {children}
+      </Trigger>
     );
   }
 }

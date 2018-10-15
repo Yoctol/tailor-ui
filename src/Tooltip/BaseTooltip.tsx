@@ -1,4 +1,4 @@
-import React, { SFC } from 'react';
+import React, { forwardRef } from 'react';
 import {
   BorderRadiusProps,
   ColorProps,
@@ -11,7 +11,7 @@ import {
   space,
   textAlign,
 } from 'styled-system';
-import { Transition, animated, config } from 'react-spring';
+import { animated } from 'react-spring';
 
 import styled, { css } from 'utils/styled-components';
 
@@ -20,30 +20,6 @@ export type Placement = 'top' | 'bottom' | 'right' | 'left';
 const TooltipToggle = styled.div`
   position: absolute;
   z-index: 99;
-
-  ${({ placement }: { placement: Placement }) =>
-    ({
-      top: css`
-        bottom: 100%;
-        left: 50%;
-        margin-bottom: 10px;
-      `,
-      bottom: css`
-        top: 100%;
-        left: 50%;
-        margin-top: 10px;
-      `,
-      right: css`
-        top: 50%;
-        left: 100%;
-        margin-left: 10px;
-      `,
-      left: css`
-        top: 50%;
-        right: 100%;
-        margin-right: 10px;
-      `,
-    }[placement])};
 `;
 
 const AnimatedTooltipToggle = animated(TooltipToggle);
@@ -65,6 +41,7 @@ export const TooltipContent = styled<TooltipContentProps, 'div'>('div')`
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   color: ${({ light, theme: { colors } }) =>
     light ? colors.gray700 : colors.light};
+  font-size: ${p => p.theme.fontSizes.sm};
 
   ${({ light }) =>
     !light &&
@@ -109,9 +86,23 @@ export const Arrow = styled<IArrowProps, 'div'>('div')`
 
   ${({ placement }) =>
     ({
+      topLeft: css`
+        left: 25%;
+        margin-left: -4px;
+      `,
       top: css`
         left: 50%;
         margin-left: -4px;
+      `,
+      topRight: css`
+        left: 75%;
+        margin-left: -4px;
+      `,
+      bottomLeft: css`
+        top: -5px;
+        left: 25%;
+        margin-left: -3px;
+        transform: rotate(180deg);
       `,
       bottom: css`
         top: -5px;
@@ -119,16 +110,46 @@ export const Arrow = styled<IArrowProps, 'div'>('div')`
         margin-left: -3px;
         transform: rotate(180deg);
       `,
+      bottomRight: css`
+        top: -5px;
+        left: 75%;
+        margin-left: -3px;
+        transform: rotate(180deg);
+      `,
+      rightTop: css`
+        top: 30%;
+        left: -7px;
+        margin-top: -2px;
+        transform: rotate(90deg);
+      `,
       right: css`
         top: 50%;
         left: -7px;
-        margin-top: -1px;
+        margin-top: -2px;
         transform: rotate(90deg);
+      `,
+      rightBottom: css`
+        top: 70%;
+        left: -7px;
+        margin-top: -2px;
+        transform: rotate(90deg);
+      `,
+      leftTop: css`
+        top: 30%;
+        right: -7px;
+        margin-top: -2px;
+        transform: rotate(-90deg);
       `,
       left: css`
         top: 50%;
         right: -7px;
-        margin-top: -1px;
+        margin-top: -2px;
+        transform: rotate(-90deg);
+      `,
+      leftBottom: css`
+        top: 70%;
+        right: -7px;
+        margin-top: -2px;
         transform: rotate(-90deg);
       `,
     }[placement])};
@@ -148,70 +169,20 @@ export const Arrow = styled<IArrowProps, 'div'>('div')`
     `};
 `;
 
-export interface ITooltipWrapperProps {
-  display?: string;
-}
-
-export const TooltipWrapper = styled<ITooltipWrapperProps, 'div'>('div')`
-  display: ${p => p.display || 'inline-block'};
-  position: relative;
-`;
-
-const getTransformOrigin = (placement: Placement) =>
-  ({
-    top: '0 bottom',
-    bottom: '0 top',
-    left: 'right 0',
-    right: 'left 0',
-  }[placement]);
-
-const getTrsnformTranslateAxis = (placement: Placement) =>
-  ({
-    top: 'X',
-    bottom: 'X',
-    left: 'Y',
-    right: 'Y',
-  }[placement]);
-
 export interface IBaseTooltipProps {
-  visible: boolean;
-  overlay: React.ReactNode;
+  children: React.ReactNode;
   placement?: Placement;
+  styles: {
+    [key: string]: any;
+  };
 }
 
-const BaseTooltip: SFC<IBaseTooltipProps> = ({
-  visible,
-  placement = 'bottom',
-  overlay,
-}) => (
-  <Transition
-    native
-    keys={visible ? 'on' : 'off'}
-    from={{ time: 0 }}
-    enter={{ time: 1 }}
-    leave={{ time: 0 }}
-    config={config.gentle}
-  >
-    {visible &&
-      (({ time }) => {
-        const transformOrigin = getTransformOrigin(placement);
-        const translateAxis = getTrsnformTranslateAxis(placement);
-        return (
-          <AnimatedTooltipToggle
-            placement={placement}
-            style={{
-              opacity: time,
-              transformOrigin,
-              transform: time.interpolate(
-                (t: number) => `scale(${t}) translate${translateAxis}(-50%)`
-              ),
-            }}
-          >
-            {overlay}
-          </AnimatedTooltipToggle>
-        );
-      })}
-  </Transition>
+const BaseTooltip = forwardRef<{}, IBaseTooltipProps>(
+  ({ styles, placement = 'bottom', children }, ref) => (
+    <AnimatedTooltipToggle innerRef={ref} placement={placement} style={styles}>
+      {children}
+    </AnimatedTooltipToggle>
+  )
 );
 
 export default BaseTooltip;
