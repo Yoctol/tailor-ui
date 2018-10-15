@@ -1,19 +1,16 @@
 import React, { PureComponent, ReactNode, isValidElement } from 'react';
-import { createPortal } from 'react-dom';
 import { omit } from 'ramda';
 
 import Box from '../Grid/Box';
 import Flex from '../Grid/Flex';
 import Heading from '../Heading';
-import PortalElement from '../utils/PortalElement';
+import Portal from '../utils/Portal';
 import { LocaleConsumer } from '../UIProvider';
 
 import BaseModal, { BaseModalProps } from './BaseModal';
 import CloseButton from './CloseButton';
 import Footer, { IFooterProps } from './Footer';
 import { confirm, error, info, success, warning } from './instance';
-
-const portalElement = new PortalElement();
 
 export type ModalProps = BaseModalProps &
   IFooterProps & {
@@ -112,19 +109,16 @@ class Modal extends PureComponent<ModalProps> {
   };
 
   render() {
-    if (!portalElement.canUseDOM()) {
-      return null;
-    }
-
     const props = omit(['title'], this.props);
 
-    return createPortal(
-      <BaseModal {...props}>
-        {this.renderHeader()}
-        {this.renderContent()}
-        {this.renderFooter()}
-      </BaseModal>,
-      portalElement.getPortalElement()
+    return (
+      <Portal>
+        <BaseModal {...props}>
+          {this.renderHeader()}
+          {this.renderContent()}
+          {this.renderFooter()}
+        </BaseModal>
+      </Portal>
     );
   }
 }
