@@ -1,3 +1,15 @@
+<a name="2.0.0-alpha.9"></a>
+
+# [2.0.0-alpha.9](https://github.com/yoctol/ui/compare/v2.0.0-alpha.8...v2.0.0-alpha.9) (2018-10-15)
+
+### Bug Fixes
+
+- **dropdown:** forwardRef warning ([2a2126d](https://github.com/yoctol/ui/commit/2a2126d))
+
+### Features
+
+- **menu:** add togglable to sub menu ([#407](https://github.com/yoctol/ui/issues/407)) ([48d27e6](https://github.com/yoctol/ui/commit/48d27e6))
+
 <a name="2.0.0-alpha.8"></a>
 
 # [2.0.0-alpha.8](https://github.com/yoctol/ui/compare/v2.0.0-alpha.7...v2.0.0-alpha.8) (2018-10-11)
