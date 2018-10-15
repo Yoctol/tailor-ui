@@ -14,10 +14,6 @@ export interface ITooltipProps {
    */
   defaultVisible?: boolean;
   /**
-   * The wrapper component's display style
-   */
-  display?: string;
-  /**
    * 	Callback executed when visibility of the tooltip card is changed
    */
   onVisibleChange?: (visible: boolean) => void;
@@ -80,7 +76,13 @@ class Tooltip extends PureComponent<ITooltipProps> {
   };
 
   render() {
-    const { trigger, placement, children } = this.props;
+    const {
+      trigger,
+      placement,
+      defaultVisible,
+      onVisibleChange,
+      children,
+    } = this.props;
 
     return (
       <Trigger
@@ -90,6 +92,8 @@ class Tooltip extends PureComponent<ITooltipProps> {
         trigger={trigger}
         placement={placement}
         popup={this.renderOverlay}
+        defaultVisible={defaultVisible}
+        onVisibleChange={onVisibleChange}
       >
         {children}
       </Trigger>
