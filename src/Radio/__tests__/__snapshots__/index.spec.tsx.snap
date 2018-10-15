@@ -1,19 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Radio should render correctly 1`] = `
-.c7 {
+.c5 {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
 }
 
-.c3 {
+.c1 {
   display: inline-block;
   position: relative;
   margin-bottom: 1px;
   line-height: 1;
 }
 
-.c6 {
+.c4 {
   display: block;
   position: relative;
   width: 16px;
@@ -28,7 +28,7 @@ exports[`Radio should render correctly 1`] = `
   transition: all 200ms ease 0s;
 }
 
-.c6::after {
+.c4::after {
   content: '';
   position: absolute;
   top: 2px;
@@ -45,7 +45,7 @@ exports[`Radio should render correctly 1`] = `
   transition: all 200ms ease 0s;
 }
 
-.c4 {
+.c2 {
   position: absolute;
   top: 0;
   right: 0;
@@ -56,18 +56,18 @@ exports[`Radio should render correctly 1`] = `
   opacity: 0;
 }
 
-.c4:checked + .c5 {
+.c2:checked + .c3 {
   border-color: #423b63;
 }
 
-.c4:checked + .c5::after {
+.c2:checked + .c3::after {
   opacity: 1;
   -webkit-transform: scale(1);
   -ms-transform: scale(1);
   transform: scale(1);
 }
 
-.c2 {
+.c0 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -80,31 +80,31 @@ exports[`Radio should render correctly 1`] = `
   cursor: pointer;
 }
 
-.c2:hover .c5 {
+.c0:hover .c3 {
   border-color: #423b63;
 }
 
-.c0 + .c1 {
+.c0 + .c6 {
   margin-left: 0.5rem;
 }
 
 <label
-  class="c0 c1 c2"
+  class="c0"
   direction="horizontal"
 >
   <span
-    class="c3"
+    class="c1"
   >
     <input
-      class="c4"
+      class="c2"
       type="radio"
     />
     <span
-      class="c5 c6"
+      class="c3 c4"
     />
   </span>
   <div
-    class="c7"
+    class="c5"
   >
     Radio
   </div>
@@ -112,19 +112,19 @@ exports[`Radio should render correctly 1`] = `
 `;
 
 exports[`Radio should render with props disabled 1`] = `
-.c7 {
+.c5 {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
 }
 
-.c3 {
+.c1 {
   display: inline-block;
   position: relative;
   margin-bottom: 1px;
   line-height: 1;
 }
 
-.c6 {
+.c4 {
   display: block;
   position: relative;
   width: 16px;
@@ -139,7 +139,7 @@ exports[`Radio should render with props disabled 1`] = `
   transition: all 200ms ease 0s;
 }
 
-.c6::after {
+.c4::after {
   content: '';
   position: absolute;
   top: 2px;
@@ -156,7 +156,7 @@ exports[`Radio should render with props disabled 1`] = `
   transition: all 200ms ease 0s;
 }
 
-.c4 {
+.c2 {
   position: absolute;
   top: 0;
   right: 0;
@@ -167,22 +167,22 @@ exports[`Radio should render with props disabled 1`] = `
   opacity: 0;
 }
 
-.c4:checked + .c5 {
+.c2:checked + .c3 {
   border-color: #423b63;
 }
 
-.c4:checked + .c5::after {
+.c2:checked + .c3::after {
   opacity: 1;
   -webkit-transform: scale(1);
   -ms-transform: scale(1);
   transform: scale(1);
 }
 
-.c8:hover .c5 {
+.c6:hover .c3 {
   border-color: #423b63;
 }
 
-.c2 {
+.c0 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -196,29 +196,29 @@ exports[`Radio should render with props disabled 1`] = `
   opacity: 0.5;
 }
 
-.c0 + .c1 {
+.c0 + .c7 {
   margin-left: 0.5rem;
 }
 
 <label
-  class="c0 c1 c2"
+  class="c0"
   direction="horizontal"
   disabled=""
 >
   <span
-    class="c3"
+    class="c1"
   >
     <input
-      class="c4"
+      class="c2"
       disabled=""
       type="radio"
     />
     <span
-      class="c5 c6"
+      class="c3 c4"
     />
   </span>
   <div
-    class="c7"
+    class="c5"
   >
     Radio
   </div>

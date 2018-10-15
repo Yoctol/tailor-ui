@@ -57,7 +57,7 @@ class SubItem extends PureComponent<ISubItemProps, ISubItemState> {
     subItemEl: null,
   };
 
-  subItemRef = (subItemEl: HTMLElement) => {
+  subItemRef = (subItemEl: any) => {
     this.setState(() => ({ subItemEl }));
   };
 

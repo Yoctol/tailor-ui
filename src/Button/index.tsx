@@ -113,16 +113,16 @@ type ButtonSize = 'sm' | 'md' | 'lg';
 
 interface IGetSizeInterface {
   size: ButtonSize;
-  onlyIcon?: boolean;
+  icon?: boolean;
 }
 
 const getSize = css`
   ${({
-    onlyIcon,
+    icon,
     size,
     theme: { paddings, heights, fontSizes },
   }: IGetSizeInterface & { theme: any }) => {
-    if (onlyIcon) {
+    if (icon) {
       return {
         sm: css`
           width: ${heights.sm};
@@ -280,7 +280,7 @@ export type ButtonProps = SpaceProps & {
 class Button extends PureComponent<ButtonProps> {
   ripple: RefObject<Ripple> = createRef<Ripple>();
 
-  button: RefObject<Button> = createRef<Button>();
+  button: any = createRef<Button>();
 
   handleClick = (event: MouseEvent) => {
     if (this.ripple.current) {
@@ -302,7 +302,7 @@ class Button extends PureComponent<ButtonProps> {
       <StyledButton
         ref={this.button}
         onMouseUp={this.handleClick}
-        onlyIcon={Boolean(icon && !children)}
+        icon={Boolean(icon && !children)}
         loading={loading}
         size={size}
         type={type}
