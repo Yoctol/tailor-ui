@@ -1,22 +1,14 @@
 import { PureComponent } from 'react';
 import { createPortal } from 'react-dom';
 
-class Portal extends PureComponent {
-  element: HTMLElement;
+const elements: {
+  [key: string]: HTMLElement;
+} = {};
 
-  constructor(props: any) {
-    super(props);
-
-    const element = document.createElement('div');
-    element.style.position = 'fixed';
-    element.style.top = '0';
-    element.style.left = '0';
-    element.style.zIndex = '9999';
-
-    document.body.appendChild(element);
-
-    this.element = element;
-  }
+class Portal extends PureComponent<{
+  appendFor?: string;
+}> {
+  element?: HTMLElement;
 
   canUseDOM = () =>
     !!(
@@ -25,20 +17,46 @@ class Portal extends PureComponent {
       window.document.createElement
     );
 
-  getPortalElement = () => {
-    if (!this.element) {
-      this.element = document.createElement('div');
-      this.element.style.position = 'fixed';
-      this.element.style.top = '0';
-      this.element.style.left = '0';
-      this.element.style.zIndex = '9999';
+  createMountElement = () => {
+    const element = document.createElement('div');
 
-      document.body.appendChild(this.element);
+    element.style.position = 'fixed';
+    element.style.top = '0';
+    element.style.left = '0';
+    element.style.zIndex = '9999';
+
+    document.body.appendChild(element);
+
+    return element;
+  };
+
+  getPortalElement = () => {
+    const { appendFor } = this.props;
+
+    if (appendFor && elements[appendFor]) {
+      return elements[appendFor];
     }
+
+    if (this.element) {
+      return this.element;
+    }
+
+    const element = this.createMountElement();
+
+    if (appendFor) {
+      elements[appendFor] = element;
+    } else {
+      this.element = element;
+    }
+
+    return element;
   };
 
   render() {
-    return this.canUseDOM() && createPortal(this.props.children, this.element);
+    return (
+      this.canUseDOM() &&
+      createPortal(this.props.children, this.getPortalElement())
+    );
   }
 }
 

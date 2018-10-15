@@ -44,13 +44,11 @@ class Dropdown extends PureComponent<IDropdownProps> {
 
   renderOverlay = ({
     styles,
-    offset,
     handleClose,
     handlePopupRef,
   }: IPopupRenderProps) => (
     <Provider
       value={{
-        offset,
         styles,
         handleClose,
         handleListRef: handlePopupRef,
@@ -65,6 +63,7 @@ class Dropdown extends PureComponent<IDropdownProps> {
 
     return (
       <Trigger
+        appendFor="dropdown"
         placement={placement}
         onVisibleChange={onVisibleChange}
         popup={this.renderOverlay}

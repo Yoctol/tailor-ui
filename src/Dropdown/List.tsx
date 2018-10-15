@@ -60,13 +60,12 @@ class List extends PureComponent<ListProps> {
     const { children, style, ...props } = this.props;
     return (
       <Consumer>
-        {({ offset, styles, handleListRef }) => (
+        {({ styles, handleListRef }) => (
           <AnimatedStyledList
             innerRef={handleListRef}
             style={{
               ...style,
               ...styles,
-              ...offset,
             }}
             {...props}
           >
