@@ -1,3 +1,12 @@
+<a name="2.0.0-alpha.11"></a>
+
+# [2.0.0-alpha.11](https://github.com/yoctol/ui/compare/v2.0.0-alpha.10...v2.0.0-alpha.11) (2018-10-15)
+
+### Bug Fixes
+
+- **dropdown:** missing trigger ([a6f3cdf](https://github.com/yoctol/ui/commit/a6f3cdf))
+- **tooltip:** defaultVisible ([3890b67](https://github.com/yoctol/ui/commit/3890b67))
+
 <a name="2.0.0-alpha.10"></a>
 
 # [2.0.0-alpha.10](https://github.com/yoctol/ui/compare/v2.0.0-alpha.9...v2.0.0-alpha.10) (2018-10-15)
