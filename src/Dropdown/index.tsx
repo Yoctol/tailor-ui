@@ -63,6 +63,7 @@ class Dropdown extends PureComponent<IDropdownProps> {
 
     return (
       <Trigger
+        trigger="click"
         appendFor="dropdown"
         placement={placement}
         onVisibleChange={onVisibleChange}

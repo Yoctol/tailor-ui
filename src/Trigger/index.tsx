@@ -209,6 +209,7 @@ class Trigger extends PureComponent<ITriggerProps, ITriggerState> {
     const { visible } = this.state;
 
     let bind = {};
+    let toggle = () => {};
 
     if (trigger === 'hover') {
       bind = {
@@ -217,9 +218,13 @@ class Trigger extends PureComponent<ITriggerProps, ITriggerState> {
       };
     }
 
+    if (trigger === 'click') {
+      toggle = this.toggle;
+    }
+
     if (children instanceof Function) {
       return children({
-        toggle: this.toggle,
+        toggle,
         bind,
         visible,
       });
@@ -228,7 +233,7 @@ class Trigger extends PureComponent<ITriggerProps, ITriggerState> {
     return cloneElement(
       children,
       composeEvents(children.props, {
-        onClick: trigger === 'click' ? this.toggle : () => {},
+        onClick: toggle,
         ...bind,
       })
     );
