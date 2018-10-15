@@ -59,6 +59,7 @@ export interface ITriggerProps {
   animation: 'slide' | 'scale';
   appendFor?: string;
   offset?: number;
+  defaultVisible?: boolean;
 }
 
 interface ITriggerState {
@@ -72,6 +73,7 @@ class Trigger extends PureComponent<ITriggerProps, ITriggerState> {
     placement: 'bottomLeft',
     trigger: 'hover',
     animation: 'slide',
+    defaultVisible: false,
   };
 
   childrenDOM?: HTMLElement;
@@ -87,7 +89,7 @@ class Trigger extends PureComponent<ITriggerProps, ITriggerState> {
   };
 
   state = {
-    visible: false,
+    visible: this.props.defaultVisible || false,
     popupRef: undefined,
     rect: undefined,
   };
@@ -98,6 +100,10 @@ class Trigger extends PureComponent<ITriggerProps, ITriggerState> {
     this.rectObserver = observeRect(this.childrenDOM, (rect: DOMRect) => {
       this.setState({ rect });
     });
+
+    if (this.props.defaultVisible) {
+      this.rectObserver.observe();
+    }
   }
 
   toggle = () => {
