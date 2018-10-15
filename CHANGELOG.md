@@ -1,3 +1,12 @@
+<a name="2.0.0-alpha.10"></a>
+
+# [2.0.0-alpha.10](https://github.com/yoctol/ui/compare/v2.0.0-alpha.9...v2.0.0-alpha.10) (2018-10-15)
+
+### Features
+
+- add trigger props to Trigger for hover event ([60912b4](https://github.com/yoctol/ui/commit/60912b4))
+- **tooltip:** absolute position ([6848d2e](https://github.com/yoctol/ui/commit/6848d2e))
+
 <a name="2.0.0-alpha.9"></a>
 
 # [2.0.0-alpha.9](https://github.com/yoctol/ui/compare/v2.0.0-alpha.8...v2.0.0-alpha.9) (2018-10-15)
