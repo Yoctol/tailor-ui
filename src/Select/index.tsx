@@ -103,7 +103,7 @@ const Select: SFC<ISelectProps> = props => {
       );
       const MultiValue = (_props: any) => {
         const {
-          IselectProps: {
+          selectProps: {
             value: [{ value: firstValue }],
           },
           data: { value: dataValue, label: dataLabel },
