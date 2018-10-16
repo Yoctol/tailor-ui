@@ -1,3 +1,4 @@
+import React from 'react';
 import { ColorProps, SpaceProps, color, space } from 'styled-system';
 import { rem } from 'polished';
 
@@ -45,27 +46,27 @@ const HeadingBase = styled<HeadingBaseProps, 'p'>('p')`
   ${color}
 `;
 
-const h1 = styled(HeadingBase.withComponent('h1'))`
+const h1 = styled(props => <HeadingBase as="h1" {...props} />)`
   font-size: ${rem('28px')};
 `;
 
-const h2 = styled(HeadingBase.withComponent('h2'))`
+const h2 = styled(props => <HeadingBase as="h2" {...props} />)`
   font-size: ${rem('24px')};
 `;
 
-const h3 = styled(HeadingBase.withComponent('h3'))`
+const h3 = styled(props => <HeadingBase as="h3" {...props} />)`
   font-size: ${rem('18px')};
 `;
 
-const h4 = styled(HeadingBase.withComponent('h4'))`
+const h4 = styled(props => <HeadingBase as="h4" {...props} />)`
   font-size: ${rem('16px')};
 `;
 
-const h5 = styled(HeadingBase.withComponent('h5'))`
+const h5 = styled(props => <HeadingBase as="h5" {...props} />)`
   font-size: ${rem('14px')};
 `;
 
-const h6 = styled(HeadingBase.withComponent('h6'))`
+const h6 = styled(props => <HeadingBase as="h6" {...props} />)`
   font-size: ${rem('12px')};
 `;
 

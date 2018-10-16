@@ -281,7 +281,7 @@ class MentionEditor extends PureComponent<IMentionEditorProps> {
         error={error}
         disabled={disabled}
         focus={focus}
-        innerRef={ref => {
+        ref={(ref: any) => {
           this.mentionWrapperRef = ref;
         }}
       >

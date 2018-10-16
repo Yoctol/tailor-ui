@@ -3,7 +3,6 @@ import React, {
   KeyboardEvent,
   KeyboardEventHandler,
   PureComponent,
-  RefObject,
   createRef,
 } from 'react';
 import {
@@ -106,7 +105,7 @@ export type IInputProps = StyledInputProps & {
 };
 
 class Input extends PureComponent<IInputProps> {
-  inputRef: RefObject<HTMLInputElement> = createRef();
+  inputRef: any = createRef();
 
   componentDidMount() {
     const { autoSelect = false } = this.props;
@@ -132,7 +131,7 @@ class Input extends PureComponent<IInputProps> {
   render() {
     return (
       <StyledInput
-        innerRef={this.inputRef}
+        ref={this.inputRef}
         onKeyPress={this.handleKeyPress}
         {...this.props}
       />

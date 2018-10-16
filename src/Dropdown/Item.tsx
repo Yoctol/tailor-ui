@@ -56,7 +56,7 @@ const Item = forwardRef<{}, ItemProps>(
     <Consumer>
       {({ handleClose }) => (
         <StyledListItem
-          innerRef={ref}
+          ref={ref}
           onClick={event => {
             if (disabled) {
               return;

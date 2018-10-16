@@ -1,11 +1,11 @@
+import styledNormalize from 'styled-normalize';
 import { rem } from 'polished';
 
-import theme from '../theme';
-import { css } from '../utils/styled-components';
+import { createGlobalStyle } from 'utils/styled-components';
 
-const { colors } = theme;
+const GlobalStyle = createGlobalStyle`
+  ${styledNormalize}
 
-export default css`
   @import url('https://fonts.googleapis.com/css?family=Roboto');
   @import url('https://fonts.googleapis.com/css?family=Roboto+Mono');
 
@@ -24,8 +24,8 @@ export default css`
 
   body {
     overflow-x: hidden;
-    background: ${colors.light};
-    color: ${colors.gray700};
+    background: ${p => p.theme.colors.light};
+    color: ${p => p.theme.colors.gray700};
     font-family: Roboto, 'PingFang TC', 'Microsoft JhengHei', 'Helvetica Neue',
       sans-serif;
     font-size: ${rem('14px')};
@@ -33,8 +33,10 @@ export default css`
   }
 
   a {
-    color: ${colors.info};
+    color: ${p => p.theme.colors.info};
     text-decoration: none;
     cursor: pointer;
   }
 `;
+
+export default GlobalStyle;

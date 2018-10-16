@@ -57,7 +57,7 @@ class SubItem extends PureComponent<ISubItemProps, ISubItemState> {
     subItemEl: null,
   };
 
-  subItemRef = (subItemEl: HTMLElement) => {
+  subItemRef = (subItemEl: any) => {
     this.setState(() => ({ subItemEl }));
   };
 
@@ -75,7 +75,7 @@ class SubItem extends PureComponent<ISubItemProps, ISubItemState> {
     const { title, children, disabled, ...props } = this.props;
 
     return (
-      <StyledSubItem disabled={disabled} innerRef={this.subItemRef}>
+      <StyledSubItem disabled={disabled} ref={this.subItemRef}>
         {title}
         <Icon ml="2" size="16" cursor="pointer" type={MdKeyboardArrowRight} />
 

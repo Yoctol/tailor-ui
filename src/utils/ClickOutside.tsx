@@ -7,7 +7,7 @@ export interface IClickOutsideProps {
   children:
     | ((
         renderProps: {
-          bindRef: (ref: HTMLElement) => void;
+          bindRef: (ref: any) => void;
         }
       ) => React.ReactNode)
     | React.ReactNode;
