@@ -64,7 +64,7 @@ export interface ITriggerProps {
 
 interface ITriggerState {
   visible: boolean;
-  rect?: DOMRect;
+  rect: DOMRect | null;
   popupRef?: HTMLElement;
 }
 
@@ -91,7 +91,7 @@ class Trigger extends PureComponent<ITriggerProps, ITriggerState> {
   state = {
     visible: this.props.defaultVisible || false,
     popupRef: undefined,
-    rect: undefined,
+    rect: null,
   };
 
   componentDidMount() {
@@ -104,6 +104,10 @@ class Trigger extends PureComponent<ITriggerProps, ITriggerState> {
     if (this.props.defaultVisible) {
       this.rectObserver.observe();
     }
+  }
+
+  componentWillUnmount() {
+    this.rectObserver.unobserve();
   }
 
   toggle = () => {
@@ -137,7 +141,7 @@ class Trigger extends PureComponent<ITriggerProps, ITriggerState> {
     if (visible) {
       const { onVisibleChange } = this.props;
 
-      this.setState(() => ({ visible: false }));
+      this.setState(() => ({ visible: false, rect: null }));
       this.rectObserver.unobserve();
 
       if (onVisibleChange) {
