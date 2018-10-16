@@ -1,3 +1,12 @@
+<a name="2.0.0-beta.0"></a>
+
+# [2.0.0-beta.0](https://github.com/yoctol/ui/compare/v2.0.0-alpha.11...v2.0.0-beta.0) (2018-10-16)
+
+### Bug Fixes
+
+- styled-components v4 typing ([4bab22b](https://github.com/yoctol/ui/commit/4bab22b))
+- unobserve when trigge unmount ([b432a85](https://github.com/yoctol/ui/commit/b432a85))
+
 <a name="2.0.0-alpha.11"></a>
 
 # [2.0.0-alpha.11](https://github.com/yoctol/ui/compare/v2.0.0-alpha.10...v2.0.0-alpha.11) (2018-10-15)
