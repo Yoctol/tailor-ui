@@ -35,6 +35,9 @@ const MentionWrapper = styled<IMentionWrapperProps, 'div'>('div')`
     .yoctol-ui-mention-editor {
       ${inputStyles};
 
+      /* stylelint-disable-next-line order/properties-order */
+      height: auto;
+
       ${p =>
         p.focus &&
         !p.disabled &&
@@ -275,6 +278,7 @@ class MentionEditor extends PureComponent<IMentionEditorProps> {
   render() {
     const { suggestions, focus } = this.state;
     const { size, error, disabled, textarea } = this.props;
+
     return (
       <MentionWrapper
         size={size}
