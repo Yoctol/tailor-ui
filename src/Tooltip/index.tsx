@@ -64,7 +64,7 @@ class Tooltip extends PureComponent<ITooltipProps> {
     } = this.props;
 
     return (
-      <BaseTooltip styles={styles} ref={handlePopupRef}>
+      <BaseTooltip style={styles} ref={handlePopupRef}>
         <ContentComponent light={light} {...otherProps}>
           {content instanceof Function && trigger === 'click'
             ? content(handleClose)

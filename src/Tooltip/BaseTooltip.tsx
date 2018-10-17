@@ -1,4 +1,4 @@
-import React, { forwardRef } from 'react';
+import React from 'react';
 import {
   BorderRadiusProps,
   ColorProps,
@@ -16,13 +16,6 @@ import { animated } from 'react-spring';
 import styled, { css } from 'utils/styled-components';
 
 export type Placement = 'top' | 'bottom' | 'right' | 'left';
-
-const TooltipToggle = styled.div`
-  position: absolute;
-  z-index: 99;
-`;
-
-const AnimatedTooltipToggle = animated(TooltipToggle);
 
 export type TooltipContentProps = SpaceProps &
   MinWidthProps &
@@ -171,18 +164,14 @@ export const Arrow = styled<IArrowProps, 'div'>('div')`
 
 export interface IBaseTooltipProps {
   children: React.ReactNode;
-  placement?: Placement;
   styles: {
     [key: string]: any;
   };
 }
 
-const BaseTooltip = forwardRef<{}, IBaseTooltipProps>(
-  ({ styles, placement = 'bottom', children }, ref) => (
-    <AnimatedTooltipToggle innerRef={ref} placement={placement} style={styles}>
-      {children}
-    </AnimatedTooltipToggle>
-  )
-);
+const TooltipToggle = styled<IBaseTooltipProps, 'div'>('div')`
+  position: absolute;
+  z-index: 99;
+`;
 
-export default BaseTooltip;
+export default animated(TooltipToggle);
