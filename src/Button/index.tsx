@@ -218,7 +218,7 @@ type StyledButtonProps = IGetTypesStylesInterface &
   IRoundedInterface &
   SpaceProps;
 
-const StyledButton = styled<StyledButtonProps, 'button'>('button')`
+export const StyledButton = styled<StyledButtonProps, 'button'>('button')`
   display: inline-flex;
   position: relative;
   align-items: center;

@@ -1,9 +1,10 @@
 import React, {
-  InputHTMLAttributes,
   KeyboardEvent,
   KeyboardEventHandler,
   PureComponent,
+  ReactNode,
   createRef,
+  isValidElement,
 } from 'react';
 import {
   SpaceProps,
@@ -16,14 +17,13 @@ import {
 
 import styled, { css } from 'utils/styled-components';
 
-import { Omit } from '../utils/type';
+import { StyledButton } from '../Button';
 
 export type Size = 'sm' | 'md' | 'lg';
 
 export type StyledInputProps = WidthProps &
   SpaceProps &
-  TextAlignProps &
-  Omit<InputHTMLAttributes<HTMLInputElement>, 'size'> & {
+  TextAlignProps & {
     size?: Size;
   };
 
@@ -41,8 +41,12 @@ export const inputStyles = css<StyledInputProps>`
   line-height: ${p => p.theme.lineHeight};
   appearance: none;
 
+  &:hover {
+    border-color: ${p => p.theme.colors.gray500};
+  }
+
   &:focus {
-    border-color: ${p => p.theme.colors.gray700};
+    border-color: ${p => p.theme.colors.primaryDark};
   }
 
   &:disabled,
@@ -87,7 +91,67 @@ export const StyledInput = styled<StyledInputProps, any>('input')`
   ${inputStyles};
 `;
 
-export type IInputProps = StyledInputProps & {
+const InputLabel = styled.span`
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 ${p => p.theme.space[2]};
+  border: ${p => p.theme.borders.base};
+  border-radius: ${p => p.theme.radii.base};
+  border-color: ${p => p.theme.colors.gray300};
+  background-color: ${p => p.theme.colors.gray200};
+  font-size: ${p => p.theme.fontSizes.base};
+  line-height: 1;
+`;
+
+interface IInputLabel {
+  prefix?: any;
+  suffix?: any;
+}
+
+const InputWrapper = styled<IInputLabel, 'div'>('div')`
+  display: flex;
+
+  ${p =>
+    p.prefix &&
+    css`
+      ${StyledInput} {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+      }
+
+      ${InputLabel}:first-child {
+        border-right: none;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+    `};
+
+  ${p =>
+    p.suffix &&
+    css`
+      ${StyledInput} {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+
+      ${InputLabel}:last-child {
+        border-left: none;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+      }
+
+      ${StyledButton} {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+      }
+    `};
+
+  ${space};
+  ${width};
+`;
+
+export interface IInputProps {
   /**
    * Auto select value of the input if true
    */
@@ -100,11 +164,25 @@ export type IInputProps = StyledInputProps & {
    * The callback function that is triggered when Enter key is pressed
    */
   onPressEnter?: KeyboardEventHandler<HTMLInputElement>;
+  /**
+   * The label text displayed before (on the right side of) the input field.
+   */
+  prefix?: ReactNode;
+  /**
+   * The label text displayed after (on the right side of) the input field.
+   */
+  suffix?: ReactNode;
   onKeyPress?: KeyboardEventHandler<HTMLInputElement>;
   required?: boolean;
-};
+  [key: string]: any;
+}
 
 class Input extends PureComponent<IInputProps> {
+  static defaultProps = {
+    prefix: null,
+    suffix: null,
+  };
+
   inputRef: any = createRef();
 
   componentDidMount() {
@@ -129,11 +207,28 @@ class Input extends PureComponent<IInputProps> {
   };
 
   render() {
+    const { prefix, suffix, ...props } = this.props;
+
+    if (prefix || suffix) {
+      return (
+        <InputWrapper prefix={prefix} suffix={suffix} {...props}>
+          {prefix && <InputLabel>{prefix}</InputLabel>}
+          <StyledInput ref={this.inputRef} onKeyPress={this.handleKeyPress} />
+          {suffix &&
+            (isValidElement(suffix) ? (
+              suffix
+            ) : (
+              <InputLabel>{suffix}</InputLabel>
+            ))}
+        </InputWrapper>
+      );
+    }
+
     return (
       <StyledInput
         ref={this.inputRef}
         onKeyPress={this.handleKeyPress}
-        {...this.props}
+        {...props}
       />
     );
   }

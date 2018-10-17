@@ -5,11 +5,14 @@ route: /data-entry/input
 ---
 
 import { PropsTable, Playground } from 'docz';
+import { MdAccountCircle } from 'react-icons/md';
 
+import Button from '../Button';
 import Textarea from './Textarea';
 import Label from '../Form/Label';
 import FormField from '../Form/FormField';
 import Hint from '../Form/Hint';
+import Icon from '../Icon';
 
 import Input from './';
 
@@ -112,6 +115,25 @@ import { Input, Textarea, FormField, Hint } from '@yoctol/ui';
     </Label>
     <Input id="demo_lg" size="lg" placeholder="placeholder" />
   </FormField>
+</Playground>
+
+### Prefix an Suffix
+
+<Playground>
+  <Input prefix="Prefix" defaultValue="" />
+  <Input mt="2" suffix="Suffix" defaultValue="" />
+  <Input mt="2" suffix={<Button type="success">Send It</Button>} defaultValue="" />
+  <Input mt="2" prefix="https://" suffix=".com" defaultValue="yoctol" />
+  <Input
+    mt="2"
+    prefix={
+      <>
+        <Icon type={MdAccountCircle} size="20" mr="1"/>
+        username:
+      </>
+    }
+    defaultValue="yoctol"
+  />
 </Playground>
 
 ### Textarea
