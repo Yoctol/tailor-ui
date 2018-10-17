@@ -22,9 +22,13 @@ export type BoxProps = system.PositionProps &
   system.RightProps &
   system.BottomProps &
   system.LeftProps &
+  system.ZIndexProps &
   system.DisplayProps &
   system.SpaceProps &
+  system.LineHeightProps &
+  system.BackgroundProps &
   system.FontSizeProps &
+  system.TextAlignProps &
   system.ColorProps &
   system.BordersProps &
   system.BorderColorProps &
@@ -55,10 +59,14 @@ const Box = styled<BoxProps, 'div'>('div')`
   ${overflowX /* sc-declaration */}
   ${overflowY /* sc-declaration */}
 
+  ${system.zIndex /* sc-declaration */}
   ${system.display /* sc-declaration */}
-  ${system.space /* sc-declaration */}
   /* stylelint-disable-next-line */
+  ${system.space /* sc-declaration */}
+  ${system.lineHeight /* sc-declaration */}
+  ${system.background /* sc-declaration */}
   ${system.fontSize /* sc-declaration */}
+  ${system.textAlign /* sc-declaration */}
   ${system.color /* sc-declaration */}
 
   ${system.borders /* sc-declaration */}
