@@ -1,3 +1,11 @@
+<a name="2.0.0-beta.1"></a>
+
+# [2.0.0-beta.1](https://github.com/yoctol/ui/compare/v2.0.0-beta.0...v2.0.0-beta.1) (2018-10-17)
+
+### Bug Fixes
+
+- **tooltip:** base tooltip ref ([93d2d55](https://github.com/yoctol/ui/commit/93d2d55))
+
 <a name="2.0.0-beta.0"></a>
 
 # [2.0.0-beta.0](https://github.com/yoctol/ui/compare/v2.0.0-alpha.11...v2.0.0-beta.0) (2018-10-16)
