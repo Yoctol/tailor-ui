@@ -1,3 +1,12 @@
+<a name="2.0.0-beta.2"></a>
+
+# [2.0.0-beta.2](https://github.com/yoctol/ui/compare/v2.0.0-beta.1...v2.0.0-beta.2) (2018-10-17)
+
+### Features
+
+- **grid:** add lineHeight, background, zIndex and textAlign to Box ([2fc8b2d](https://github.com/yoctol/ui/commit/2fc8b2d))
+- **input:** add prefix/suffix to input ([#417](https://github.com/yoctol/ui/issues/417)) ([0f716d1](https://github.com/yoctol/ui/commit/0f716d1))
+
 <a name="2.0.0-beta.1"></a>
 
 # [2.0.0-beta.1](https://github.com/yoctol/ui/compare/v2.0.0-beta.0...v2.0.0-beta.1) (2018-10-17)
