@@ -1,3 +1,12 @@
+<a name="2.0.0-beta.3"></a>
+
+# [2.0.0-beta.3](https://github.com/yoctol/ui/compare/v2.0.0-beta.2...v2.0.0-beta.3) (2018-10-18)
+
+### Bug Fixes
+
+- **date-picker:** missing global styles ([4217bd2](https://github.com/yoctol/ui/commit/4217bd2))
+- **mention:** set height to auto ([5a62ddc](https://github.com/yoctol/ui/commit/5a62ddc))
+
 <a name="2.0.0-beta.2"></a>
 
 # [2.0.0-beta.2](https://github.com/yoctol/ui/compare/v2.0.0-beta.1...v2.0.0-beta.2) (2018-10-17)
