@@ -3,6 +3,8 @@ import { rem } from 'polished';
 
 import { createGlobalStyle } from 'utils/styled-components';
 
+import datePickerStyles from '../DatePicker/styles';
+
 const GlobalStyle = createGlobalStyle`
   ${styledNormalize}
 
@@ -37,6 +39,8 @@ const GlobalStyle = createGlobalStyle`
     text-decoration: none;
     cursor: pointer;
   }
+
+  ${datePickerStyles}
 `;
 
 export default GlobalStyle;
