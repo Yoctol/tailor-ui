@@ -1,3 +1,15 @@
+<a name="2.0.0-beta.4"></a>
+
+# [2.0.0-beta.4](https://github.com/yoctol/ui/compare/v2.0.0-beta.3...v2.0.0-beta.4) (2018-10-19)
+
+### Bug Fixes
+
+- filter html attrs ([eb2b777](https://github.com/yoctol/ui/commit/eb2b777))
+
+### Features
+
+- add esc to trigger ([e9f53c8](https://github.com/yoctol/ui/commit/e9f53c8))
+
 <a name="2.0.0-beta.3"></a>
 
 # [2.0.0-beta.3](https://github.com/yoctol/ui/compare/v2.0.0-beta.2...v2.0.0-beta.3) (2018-10-18)
