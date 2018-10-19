@@ -10,6 +10,7 @@ import { composeEvents } from 'react-powerplug';
 import { findDOMNode } from 'react-dom';
 
 import ClickOutside from '../utils/ClickOutside';
+import Keydown from '../utils/Keydown';
 import Portal from '../utils/Portal';
 
 import getPositionOffset, { Placement } from './getPositionOffset';
@@ -300,10 +301,20 @@ class Trigger extends PureComponent<ITriggerProps, ITriggerState> {
   };
 
   render() {
+    const { visible } = this.state;
+    const { trigger, appendFor } = this.props;
+
     return (
       <>
         {this.renderChildren()}
-        <Portal appendFor={this.props.appendFor}>{this.renderPopup()}</Portal>
+        {visible &&
+          trigger === 'click' && (
+            <Keydown
+              keyCode={Keydown.ESC_KEY_CODE}
+              handleKeydown={this.handleClose}
+            />
+          )}
+        <Portal appendFor={appendFor}>{this.renderPopup()}</Portal>
       </>
     );
   }
