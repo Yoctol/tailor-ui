@@ -14,6 +14,7 @@ import {
 import { animated } from 'react-spring';
 
 import styled, { css } from 'utils/styled-components';
+import tag from 'utils/CleanTag';
 
 export type Placement = 'top' | 'bottom' | 'right' | 'left';
 
@@ -25,7 +26,7 @@ export type TooltipContentProps = SpaceProps &
     light: boolean;
   };
 
-export const TooltipContent = styled<TooltipContentProps, 'div'>('div')`
+export const TooltipContent = styled<TooltipContentProps, 'div'>(tag.div)`
   border: ${p => p.theme.borders.base};
   border-color: ${({ light, theme: { colors } }) =>
     light ? colors.gray400 : colors.primaryDark};
@@ -61,7 +62,7 @@ export interface IArrowProps {
   placement: Placement;
 }
 
-export const Arrow = styled<IArrowProps, 'div'>('div')`
+export const Arrow = styled<IArrowProps, 'div'>(tag.div)`
   position: absolute;
   width: 0;
   height: 0;
@@ -169,7 +170,7 @@ export interface IBaseTooltipProps {
   };
 }
 
-const TooltipToggle = styled<IBaseTooltipProps, 'div'>('div')`
+const TooltipToggle = styled<IBaseTooltipProps, 'div'>(tag.div)`
   position: absolute;
   z-index: 99;
 `;

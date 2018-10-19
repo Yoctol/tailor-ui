@@ -1,1 +1,2 @@
-/// <reference path="custom-typings.d.ts" />
+import './custom-typings';
+import './react-spring';

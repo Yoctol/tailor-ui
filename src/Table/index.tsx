@@ -15,10 +15,11 @@ import {
 } from 'styled-system';
 
 import styled from 'utils/styled-components';
+import tag from 'utils/CleanTag';
 
 type HeadColumnProps = WidthProps & SpaceProps & BordersProps & ColorProps;
 
-const HeadColumn = styled<HeadColumnProps, 'th'>('th')`
+const HeadColumn = styled<HeadColumnProps, 'th'>(tag.th)`
   padding: ${p => p.theme.paddings.xs} ${p => p.theme.paddings.sm};
   border-color: ${p => p.theme.colors.gray300};
   font-weight: 500;
@@ -31,7 +32,7 @@ const HeadColumn = styled<HeadColumnProps, 'th'>('th')`
 
 type ColumnProps = SpaceProps & BordersProps & BorderColorProps & ColorProps;
 
-const Column = styled<ColumnProps, 'td'>('td')`
+const Column = styled<ColumnProps, 'td'>(tag.td)`
   padding: ${p => p.theme.paddings.xs} ${p => p.theme.paddings.sm};
 
   ${space};
@@ -46,7 +47,7 @@ Column.defaultProps = {
 
 type RowProps = ColorProps;
 
-const Row = styled<RowProps, 'tr'>('tr')`
+const Row = styled<RowProps, 'tr'>(tag.tr)`
   border-bottom: ${p => p.theme.borders.base} ${p => p.theme.colors.gray300};
 
   ${color};
@@ -62,7 +63,7 @@ const Body: SFC = ({ children }) => <tbody>{children}</tbody>;
 
 type StyledTableProps = TextAlignProps & WidthProps;
 
-const StyledTable = styled<StyledTableProps, 'table'>('table')`
+const StyledTable = styled<StyledTableProps, 'table'>(tag.table)`
   overflow: hidden;
   border-spacing: 0;
   border-collapse: collapse;

@@ -2,11 +2,12 @@ import React, { SFC } from 'react';
 import { Set } from 'react-powerplug';
 
 import styled from 'utils/styled-components';
+import tag from 'utils/CleanTag';
 
 import Checkbox, { Direction } from './Checkbox';
 import { Provider } from './CheckboxContext';
 
-const CheckboxGroupFlex = styled<{ direction: Direction }, 'div'>('div')`
+const CheckboxGroupFlex = styled<{ direction: Direction }, 'div'>(tag.div)`
   display: ${p => (p.direction === 'horizontal' ? 'flex' : 'inline-flex')};
   flex-direction: ${p => (p.direction === 'horizontal' ? 'row' : 'column')};
 `;

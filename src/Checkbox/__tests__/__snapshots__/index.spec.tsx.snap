@@ -217,7 +217,6 @@ exports[`Checkbox should render with props disabled 1`] = `
 <label
   class="c0 c1"
   direction="horizontal"
-  disabled=""
 >
   <span
     class="c2"

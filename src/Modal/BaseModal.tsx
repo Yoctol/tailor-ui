@@ -3,6 +3,7 @@ import { Transition, animated, config } from 'react-spring';
 import { WidthProps, width as styledWidth } from 'styled-system';
 
 import styled from 'utils/styled-components';
+import tag from 'utils/CleanTag';
 
 import Keydown from '../utils/Keydown';
 
@@ -18,7 +19,7 @@ const ModalOverlay = styled.div`
 
 const AnimatedModalOverlay = animated(ModalOverlay);
 
-const ModalContent = styled<WidthProps, 'div'>('div')`
+const ModalContent = styled<WidthProps, 'div'>(tag.div)`
   display: flex;
   position: fixed;
   z-index: 10001;

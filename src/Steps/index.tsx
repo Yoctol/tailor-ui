@@ -10,6 +10,7 @@ import React, {
 import { MdClose, MdDone } from 'react-icons/md';
 
 import styled, { css } from 'utils/styled-components';
+import tag from 'utils/CleanTag';
 
 import Flex from '../Grid/Flex';
 import Icon from '../Icon';
@@ -42,7 +43,7 @@ interface IStepsItemProps {
   tailColor: Colors;
 }
 
-const StepsIconItem = styled<IStepsItemProps, 'div'>('div')`
+const StepsIconItem = styled<IStepsItemProps, 'div'>(tag.div)`
   display: flex;
   position: relative;
   align-items: center;
@@ -103,7 +104,7 @@ const StepsIconItem = styled<IStepsItemProps, 'div'>('div')`
   ${p => p.theme.transition /* sc-declaration */};
 `;
 
-const Title = styled<IStepsItemProps, 'div'>('div')`
+const Title = styled<IStepsItemProps, 'div'>(tag.div)`
   display: inline-block;
   position: relative;
   align-items: center;
@@ -149,7 +150,7 @@ interface IDescriptionProps {
   status: Status;
 }
 
-const Description = styled<IDescriptionProps, 'div'>('div')`
+const Description = styled<IDescriptionProps, 'div'>(tag.div)`
   padding-bottom: ${p => p.direction === 'vertical' && '12px'};
   color: ${p => {
     switch (p.status) {

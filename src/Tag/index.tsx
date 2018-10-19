@@ -2,6 +2,7 @@ import React, { PureComponent, SFC } from 'react';
 import { MdClose } from 'react-icons/md';
 import { Spring, animated } from 'react-spring';
 import { Toggle } from 'react-powerplug';
+import { omit } from 'ramda';
 
 import styled from 'utils/styled-components';
 
@@ -90,7 +91,7 @@ const AnimatedTag: SFC<IAnimatedTagProps> = ({
 
 const BaseTag: SFC = ({ children, ...props }) => (
   <StyledTagWrapper>
-    <StyledTag {...props}>{children}</StyledTag>
+    <StyledTag {...omit(['onClosed'], props)}>{children}</StyledTag>
   </StyledTagWrapper>
 );
 

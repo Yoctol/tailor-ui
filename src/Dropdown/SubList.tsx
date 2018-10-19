@@ -1,21 +1,18 @@
 import React, { PureComponent } from 'react';
 import { MdKeyboardArrowRight } from 'react-icons/md';
+import { findDOMNode } from 'react-dom';
 
 import styled from 'utils/styled-components';
+import tag from 'utils/CleanTag';
 
 import Icon from '../Icon';
 
 import Item from './Item';
 import { StyledList } from './List';
 
-interface ISubListWrapperProps {
-  offsetLeft: number;
-}
-
-const SubListWrapper = styled<ISubListWrapperProps, 'div'>('div')`
+const SubListWrapper = styled(tag.div)`
   position: absolute;
   top: calc(-${p => p.theme.space[2]} - ${p => p.theme.space[1]});
-  left: ${p => p.offsetLeft}px;
   padding: ${p => p.theme.space[2]};
   padding-left: ${p => p.theme.space[1]};
   opacity: 0;
@@ -53,13 +50,21 @@ export interface ISubItemState {
 }
 
 class SubItem extends PureComponent<ISubItemProps, ISubItemState> {
+  subItemRef: any;
+
   state: ISubItemState = {
     subItemEl: null,
   };
 
-  subItemRef = (subItemEl: any) => {
-    this.setState(() => ({ subItemEl }));
+  handleSubItemRef = (subItemRef: any) => {
+    this.subItemRef = subItemRef;
   };
+
+  componentDidMount() {
+    const subItemEl = findDOMNode(this.subItemRef) as HTMLElement;
+
+    this.setState(() => ({ subItemEl }));
+  }
 
   getOffsetLeft = () => {
     const { subItemEl } = this.state;
@@ -75,11 +80,11 @@ class SubItem extends PureComponent<ISubItemProps, ISubItemState> {
     const { title, children, disabled, ...props } = this.props;
 
     return (
-      <StyledSubItem disabled={disabled} ref={this.subItemRef}>
+      <StyledSubItem disabled={disabled} ref={this.handleSubItemRef}>
         {title}
         <Icon ml="2" size="16" cursor="pointer" type={MdKeyboardArrowRight} />
 
-        <SubListWrapper offsetLeft={this.getOffsetLeft()}>
+        <SubListWrapper style={{ left: this.getOffsetLeft() }}>
           <StyledList {...props}>{children}</StyledList>
         </SubListWrapper>
       </StyledSubItem>
