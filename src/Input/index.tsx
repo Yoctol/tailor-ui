@@ -3,7 +3,6 @@ import React, {
   KeyboardEventHandler,
   PureComponent,
   ReactNode,
-  createRef,
   isValidElement,
 } from 'react';
 import {
@@ -14,8 +13,11 @@ import {
   textAlign,
   width,
 } from 'styled-system';
+import { findDOMNode } from 'react-dom';
+import { omit } from 'ramda';
 
 import styled, { css } from 'utils/styled-components';
+import tag from 'utils/CleanTag';
 
 import { StyledButton } from '../Button';
 
@@ -87,7 +89,7 @@ export const inputStyles = css<StyledInputProps>`
   ${textAlign};
 `;
 
-export const StyledInput = styled<StyledInputProps, any>('input')`
+export const StyledInput = styled<StyledInputProps, any>(tag.input)`
   ${inputStyles};
 `;
 
@@ -109,7 +111,7 @@ interface IInputLabel {
   suffix?: any;
 }
 
-const InputWrapper = styled<IInputLabel, 'div'>('div')`
+const InputWrapper = styled<IInputLabel, 'div'>(tag.div)`
   display: flex;
 
   ${p =>
@@ -183,16 +185,22 @@ class Input extends PureComponent<IInputProps> {
     suffix: null,
   };
 
-  inputRef: any = createRef();
+  inputRef: any;
 
   componentDidMount() {
     const { autoSelect = false } = this.props;
 
-    if (autoSelect && this.inputRef.current) {
-      this.inputRef.current.focus();
-      this.inputRef.current.select();
+    const inputDOM = findDOMNode(this.inputRef) as HTMLInputElement;
+
+    if (autoSelect && inputDOM) {
+      inputDOM.focus();
+      inputDOM.select();
     }
   }
+
+  handleInputRef = (ref: any) => {
+    this.inputRef = ref;
+  };
 
   handleKeyPress = (event: KeyboardEvent<HTMLInputElement>) => {
     const { onPressEnter, onKeyPress } = this.props;
@@ -209,11 +217,17 @@ class Input extends PureComponent<IInputProps> {
   render() {
     const { prefix, suffix, ...props } = this.props;
 
+    const otherProps = omit(['onPressEnter'], props);
+
     if (prefix || suffix) {
       return (
-        <InputWrapper prefix={prefix} suffix={suffix} {...props}>
+        <InputWrapper prefix={prefix} suffix={suffix}>
           {prefix && <InputLabel>{prefix}</InputLabel>}
-          <StyledInput ref={this.inputRef} onKeyPress={this.handleKeyPress} />
+          <StyledInput
+            ref={this.inputRef}
+            onKeyPress={this.handleKeyPress}
+            {...otherProps}
+          />
           {suffix &&
             (isValidElement(suffix) ? (
               suffix
@@ -226,9 +240,9 @@ class Input extends PureComponent<IInputProps> {
 
     return (
       <StyledInput
-        ref={this.inputRef}
+        ref={this.handleInputRef}
         onKeyPress={this.handleKeyPress}
-        {...props}
+        {...otherProps}
       />
     );
   }

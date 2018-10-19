@@ -12,6 +12,7 @@ import {
 import { animated } from 'react-spring';
 
 import styled from 'utils/styled-components';
+import tag from 'utils/CleanTag';
 
 import { Consumer } from './DropdownContext';
 
@@ -20,7 +21,7 @@ export type StyledListProps = MinWidthProps &
   TextAlignProps &
   OverflowProps;
 
-export const StyledList = styled<StyledListProps, 'ul'>('ul')`
+export const StyledList = styled<StyledListProps, 'ul'>(tag.ul)`
   display: block;
   position: absolute;
   z-index: 9999;

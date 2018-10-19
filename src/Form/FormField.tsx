@@ -1,6 +1,7 @@
 import React, { SFC } from 'react';
 
 import styled, { css } from 'utils/styled-components';
+import tag from 'utils/CleanTag';
 
 import { StyledInput } from '../Input';
 import { StyledTextarea } from '../Input/Textarea';
@@ -13,7 +14,7 @@ export interface IFormFieldProps {
   error?: boolean;
 }
 
-const StyledFormField = styled<IFormFieldProps, 'div'>('div')`
+const StyledFormField = styled<IFormFieldProps, 'div'>(tag.div)`
   position: relative;
   margin-bottom: ${p => p.theme.space[2]};
 

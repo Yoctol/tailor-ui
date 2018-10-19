@@ -2,11 +2,12 @@ import React, { SFC } from 'react';
 import { Value } from 'react-powerplug';
 
 import styled from 'utils/styled-components';
+import tag from 'utils/CleanTag';
 
 import Radio, { Direction } from './Radio';
 import { Provider } from './RadioContext';
 
-const RadioGroupFlex = styled<{ direction: Direction }, 'div'>('div')`
+const RadioGroupFlex = styled<{ direction: Direction }, 'div'>(tag.div)`
   display: ${p => (p.direction === 'horizontal' ? 'flex' : 'inline-flex')};
   flex-direction: ${p => (p.direction === 'horizontal' ? 'row' : 'column')};
 `;

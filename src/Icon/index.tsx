@@ -3,6 +3,7 @@ import { IconType as ReactIconsIconType } from 'react-icons';
 import { SpaceProps, style, space as styledSpace } from 'styled-system';
 
 import styled, { css } from 'utils/styled-components';
+import tag from 'utils/CleanTag';
 
 import * as icons from './icons';
 
@@ -29,7 +30,7 @@ export type IconWrapperProps = SpaceProps & {
   fill?: string;
 };
 
-export const IconWrapper = styled<IconWrapperProps, 'i'>('i')`
+export const IconWrapper = styled<IconWrapperProps, 'i'>(tag.i)`
   display: inline-flex;
   line-height: 1;
   cursor: ${p => p.cursor};

@@ -2,12 +2,13 @@ import React, { MouseEventHandler, forwardRef } from 'react';
 import { SpaceProps, space } from 'styled-system';
 
 import styled, { css } from 'utils/styled-components';
+import tag from 'utils/CleanTag';
 
 import { Consumer } from './DropdownContext';
 
 type StyledItemProps = SpaceProps & { disabled?: boolean };
 
-const StyledListItem = styled<StyledItemProps, 'li'>('li')`
+const StyledListItem = styled<StyledItemProps, 'li'>(tag.li)`
   display: flex;
   flex-direction: column;
   justify-content: center;

@@ -109,7 +109,17 @@ class Modal extends PureComponent<ModalProps> {
   };
 
   render() {
-    const props = omit(['title'], this.props);
+    const props = omit(
+      [
+        'title',
+        'onConfirm',
+        'confirmButtonProps',
+        'cancelButtonProps',
+        'confirmText',
+        'cancelText',
+      ],
+      this.props
+    );
 
     return (
       <Portal>

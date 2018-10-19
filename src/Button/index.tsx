@@ -1,7 +1,14 @@
-import React, { MouseEvent, PureComponent, RefObject, createRef } from 'react';
+import React, {
+  MouseEvent,
+  PureComponent,
+  ReactInstance,
+  RefObject,
+  createRef,
+} from 'react';
 import { SpaceProps, space as styledSpace } from 'styled-system';
 
 import styled, { css, keyframes } from 'utils/styled-components';
+import tag from 'utils/CleanTag';
 
 import Icon, { IconType, IconWrapper } from '../Icon';
 
@@ -218,7 +225,7 @@ type StyledButtonProps = IGetTypesStylesInterface &
   IRoundedInterface &
   SpaceProps;
 
-export const StyledButton = styled<StyledButtonProps, 'button'>('button')`
+export const StyledButton = styled<StyledButtonProps, 'button'>(tag.button)`
   display: inline-flex;
   position: relative;
   align-items: center;
@@ -280,11 +287,15 @@ export type ButtonProps = SpaceProps & {
 class Button extends PureComponent<ButtonProps> {
   ripple: RefObject<Ripple> = createRef<Ripple>();
 
-  button: any = createRef<Button>();
+  buttonRef: ReactInstance | null = null;
+
+  handleButtonRef = (ref: any) => {
+    this.buttonRef = ref;
+  };
 
   handleClick = (event: MouseEvent) => {
-    if (this.ripple.current) {
-      this.ripple.current.startRipple(event, this.button);
+    if (this.ripple.current && this.buttonRef) {
+      this.ripple.current.startRipple(event, this.buttonRef);
     }
   };
 
@@ -300,7 +311,7 @@ class Button extends PureComponent<ButtonProps> {
 
     return (
       <StyledButton
-        ref={this.button}
+        ref={this.handleButtonRef}
         onMouseUp={this.handleClick}
         icon={Boolean(icon && !children)}
         loading={loading}

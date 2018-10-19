@@ -1,9 +1,11 @@
 import React, { ReactNode, SFC } from 'react';
 import { MdClose } from 'react-icons/md';
 import { SpaceProps, space } from 'styled-system';
+import { omit } from 'ramda';
 import { rgba } from 'polished';
 
 import styled from 'utils/styled-components';
+import tag from 'utils/CleanTag';
 
 import Box from '../Grid/Box';
 import Flex from '../Grid/Flex';
@@ -14,7 +16,7 @@ export interface IAlertTypes extends SpaceProps {
   type: Types;
 }
 
-const StyledAlert = styled<IAlertTypes, 'div'>('div')`
+const StyledAlert = styled<IAlertTypes, 'div'>(tag.div)`
   display: flex;
   align-items: center;
   margin-bottom: ${p => p.theme.space[3]};
@@ -43,7 +45,7 @@ const BaseAlert: SFC<IBaseAlertProps> = ({
   onClose,
   ...props
 }) => (
-  <StyledAlert type={type} {...props}>
+  <StyledAlert type={type} {...omit(['onClosed'], props)}>
     <Flex flex="none">{getTypeIcon(type)}</Flex>
     <Box flex="auto">{message}</Box>
     {closable && (

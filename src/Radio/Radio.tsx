@@ -1,6 +1,7 @@
 import React, { ChangeEvent, PureComponent } from 'react';
 
 import styled, { css } from 'utils/styled-components';
+import tag from 'utils/CleanTag';
 
 import Space from '../Grid/Space';
 
@@ -74,7 +75,7 @@ interface IRadioLabelBaseProps {
   disabled?: boolean;
 }
 
-const RadioLabelBase = styled<IRadioLabelBaseProps, 'label'>('label')`
+const RadioLabelBase = styled<IRadioLabelBaseProps, 'label'>(tag.label)`
   display: inline-flex;
   align-items: center;
   font-size: ${p => p.theme.fontSizes.base};

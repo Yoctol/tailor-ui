@@ -25,7 +25,6 @@ exports[`Icon should render correctly 1`] = `
 <i
   class="c0"
   cursor="default"
-  size="24"
 >
   <svg
     viewBox="0 0 48 48"

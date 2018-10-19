@@ -15,6 +15,7 @@ import {
 } from 'styled-system';
 
 import styled, { css } from 'utils/styled-components';
+import tag from 'utils/CleanTag';
 
 import CardBlock from './CardBlock';
 import CardImage, { StyledImage } from './CardImage';
@@ -29,7 +30,7 @@ export type CardProps = SpaceProps &
     hoverable?: boolean;
   };
 
-const CardWrapper = styled<CardProps, any>('div')`
+const CardWrapper = styled<CardProps, any>(tag.div)`
   display: flex;
   flex-direction: column;
   border: ${p => p.theme.borders.base};

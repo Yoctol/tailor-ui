@@ -151,8 +151,14 @@ class Trigger extends PureComponent<ITriggerProps, ITriggerState> {
     }
   };
 
-  handlePopupRef = (popupRef: HTMLElement) => {
-    this.setState(() => ({ popupRef }));
+  handlePopupRef = (popupRef: any) => {
+    const popupElement = findDOMNode(popupRef);
+
+    if (popupElement instanceof HTMLElement) {
+      this.setState(() => ({
+        popupRef: popupElement,
+      }));
+    }
   };
 
   getTransitions = () => {

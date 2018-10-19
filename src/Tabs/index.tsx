@@ -3,6 +3,7 @@ import { Value } from 'react-powerplug';
 import { space as styledSpace } from 'styled-system';
 
 import styled, { css } from 'utils/styled-components';
+import tag from 'utils/CleanTag';
 
 type Size = 'sm' | 'md' | 'lg';
 
@@ -24,7 +25,7 @@ interface IStyledTabProps {
   active: boolean;
 }
 
-const StyledTab = styled<IStyledTabProps, 'a'>('a')`
+const StyledTab = styled<IStyledTabProps, 'a'>(tag.a)`
   display: inline-flex;
   position: relative;
   align-items: center;
@@ -132,7 +133,7 @@ interface IStyledTabsProps {
   block?: boolean;
 }
 
-const StyledTabs = styled<IStyledTabsProps, 'nav'>('nav')`
+const StyledTabs = styled<IStyledTabsProps, 'nav'>(tag.nav)`
   display: flex;
 
   ${({ absolute }) =>
