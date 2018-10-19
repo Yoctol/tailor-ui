@@ -79,8 +79,6 @@ const ModalWrapper: SFC<ModalWrapperProps> = ({
   </>
 );
 
-const ESC_KEY_CODE = 27;
-
 export type BaseModalProps = WidthProps & {
   onCancel: () => void;
   clickOutsite?: boolean;
@@ -93,7 +91,9 @@ class BaseModal extends PureComponent<BaseModalProps> {
 
     return (
       <>
-        {visible && <Keydown keyCode={ESC_KEY_CODE} handleKeydown={onCancel} />}
+        {visible && (
+          <Keydown keyCode={Keydown.ESC_KEY_CODE} handleKeydown={onCancel} />
+        )}
         <Transition
           native
           keys={visible ? 'visible' : 'hide'}

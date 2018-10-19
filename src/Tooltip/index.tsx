@@ -1,4 +1,5 @@
 import React, { PureComponent, ReactElement } from 'react';
+import { omit } from 'ramda';
 
 import Trigger, { IPopupRenderProps } from '../Trigger';
 
@@ -65,7 +66,10 @@ class Tooltip extends PureComponent<ITooltipProps> {
 
     return (
       <BaseTooltip style={styles} ref={handlePopupRef}>
-        <ContentComponent light={light} {...otherProps}>
+        <ContentComponent
+          light={light}
+          {...omit(['onVisibleChange'], otherProps)}
+        >
           {content instanceof Function && trigger === 'click'
             ? content(handleClose)
             : content}

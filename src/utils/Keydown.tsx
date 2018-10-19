@@ -6,6 +6,8 @@ export interface IKeydownProps {
 }
 
 class Keydown extends Component<IKeydownProps> {
+  static ESC_KEY_CODE = 27;
+
   componentDidMount() {
     window.addEventListener('keydown', this.keydownHandler);
   }
