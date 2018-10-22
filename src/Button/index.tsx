@@ -120,16 +120,16 @@ type ButtonSize = 'sm' | 'md' | 'lg';
 
 interface IGetSizeInterface {
   size: ButtonSize;
-  icon?: boolean;
+  hasIcon?: boolean;
 }
 
 const getSize = css`
   ${({
-    icon,
+    hasIcon,
     size,
     theme: { paddings, heights, fontSizes },
   }: IGetSizeInterface & { theme: any }) => {
-    if (icon) {
+    if (hasIcon) {
       return {
         sm: css`
           width: ${heights.sm};
@@ -313,7 +313,7 @@ class Button extends PureComponent<ButtonProps> {
       <StyledButton
         ref={this.handleButtonRef}
         onMouseUp={this.handleClick}
-        icon={Boolean(icon && !children)}
+        hasIcon={Boolean(icon && !children)}
         loading={loading}
         size={size}
         type={type}

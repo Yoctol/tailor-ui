@@ -12,3 +12,5 @@ declare module 'test/test-utils';
 declare module '@reach/observe-rect';
 
 declare module 'html-tags';
+
+declare module 'react-html-attributes';

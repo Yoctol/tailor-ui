@@ -1,5 +1,6 @@
 // https://github.com/jxnblk/styled-system/blob/master/clean-tag/index.js
-import React from 'react';
+import React, { forwardRef } from 'react';
+import htmlElementAttributes from 'react-html-attributes';
 import tags from 'html-tags';
 import * as styles from 'styled-system';
 
@@ -19,47 +20,39 @@ const defaultBlacklist = [
   'tailColor',
 ];
 
-const whitelist = ['required', 'autoFocus'];
-
-export const omit = (obj: { [key: string]: any }, keys: string[]) => {
+const omit = (obj: { [key: string]: any }, tagName: string, keys: string[]) => {
   const next: { [key: string]: any } = {};
 
   Object.keys(obj).forEach(key => {
-    if (
-      (!whitelist.includes(key) && typeof obj[key] === 'boolean') ||
-      keys.indexOf(key) > -1
-    ) {
-      return;
-    }
+    const acceptAttrs = [
+      ...htmlElementAttributes['*'],
+      ...(htmlElementAttributes[tagName] || []),
+    ];
 
-    next[key] = obj[key];
+    if (
+      acceptAttrs.includes(key) ||
+      (keys.indexOf(key) === -1 && typeof obj[key] !== 'boolean')
+    ) {
+      next[key] = obj[key];
+    }
   });
 
   return next;
 };
 
-interface ITag {
-  [key: string]: any;
-}
+const Tags: { [key: string]: any } = {};
 
-export const Tag: ITag = React.forwardRef<{}, { is: any; blacklist: any }>(
-  ({ is: TagName = 'div', blacklist = [], ...props }, ref) =>
-    React.createElement(TagName, {
-      ref,
-      ...omit(props, blacklist),
-    })
-);
+tags.forEach((Tag: string) => {
+  Tags[Tag] = forwardRef<{}, { is: any; blacklist: string[] }>(
+    ({ blacklist = [], ...props }, ref) => (
+      <Tag
+        ref={ref}
+        {...omit(props, Tag, [...blacklist, ...defaultBlacklist])}
+      />
+    )
+  );
 
-Tag.displayName = 'Clean.div';
-
-Tag.defaultProps = {
-  blacklist: defaultBlacklist,
-};
-
-tags.forEach((tag: string) => {
-  Tag[tag] = (props: any) =>
-    React.createElement(Tag as any, { is: tag, ...props });
-  Tag[tag].displayName = `Clean.${tag}`;
+  Tags[Tag].displayName = `Clean.${Tag}`;
 });
 
-export default Tag;
+export default Tags;
