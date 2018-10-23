@@ -1,3 +1,11 @@
+<a name="2.0.0-beta.5"></a>
+
+# [2.0.0-beta.5](https://github.com/yoctol/ui/compare/v2.0.0-beta.4...v2.0.0-beta.5) (2018-10-23)
+
+### Bug Fixes
+
+- clean tag ref ([4aa1d23](https://github.com/yoctol/ui/commit/4aa1d23))
+
 <a name="2.0.0-beta.4"></a>
 
 # [2.0.0-beta.4](https://github.com/yoctol/ui/compare/v2.0.0-beta.3...v2.0.0-beta.4) (2018-10-19)
