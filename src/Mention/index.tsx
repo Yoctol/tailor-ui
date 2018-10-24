@@ -84,10 +84,12 @@ const MentionWrapper = styled<IMentionWrapperProps, 'div'>(tag.div)`
       margin-top: 1.5em;
       overflow-x: hidden;
       overflow-y: auto;
-      border: 1px solid #eee;
+      border: ${p => p.theme.borders.base};
+      border-radius: ${p => p.theme.radii.sm};
+      border-color: ${p => p.theme.colors.gray300};
       outline: none;
-      background-color: white;
-      box-shadow: 0 4px 30px 0 #dcdcdc;
+      background-color: ${p => p.theme.colors.light};
+      box-shadow: ${p => p.theme.shadows.lg};
       line-height: 1;
       cursor: pointer;
 
@@ -96,7 +98,7 @@ const MentionWrapper = styled<IMentionWrapperProps, 'div'>(tag.div)`
         position: relative;
         flex: none;
         align-items: center;
-        height: ${p => p.theme.heights.sm};
+        height: ${p => p.theme.heights.base};
         padding: 0 ${p => p.theme.paddings.sm};
         overflow: hidden;
         font-weight: normal;
@@ -112,7 +114,7 @@ const MentionWrapper = styled<IMentionWrapperProps, 'div'>(tag.div)`
 
         &.focus,
         &-active {
-          background-color: ${p => p.theme.colors.gray300};
+          background-color: ${p => p.theme.colors.gray200};
         }
 
         &-disabled {
@@ -142,6 +144,7 @@ const MentionWrapper = styled<IMentionWrapperProps, 'div'>(tag.div)`
 const MentionTag = styled.span.attrs({
   contentEditable: false,
 })`
+  padding-left: ${p => p.theme.space[1]};
   color: ${p => p.theme.colors.success};
 `;
 
@@ -237,15 +240,17 @@ class MentionEditor extends PureComponent<IMentionEditorProps> {
       suggestion => suggestion.toLowerCase().indexOf(searchValue) !== -1
     );
 
+    const createTag = [
+      <Nav value={value}>
+        {this.props.createText}
+        <MentionTag>{value}</MentionTag>
+      </Nav>,
+    ];
+
     const suggestions =
       filtered.length !== 0
-        ? filtered
-        : [
-            <Nav value={value}>
-              {this.props.createText}
-              <MentionTag>{value}</MentionTag>
-            </Nav>,
-          ];
+        ? [...filtered, ...(value !== '' ? createTag : [])]
+        : createTag;
 
     this.setState({
       suggestions,
