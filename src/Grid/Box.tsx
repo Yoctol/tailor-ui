@@ -2,6 +2,7 @@ import * as system from 'styled-system';
 
 import styled from 'utils/styled-components';
 import tag from 'utils/CleanTag';
+import { ICssProps, styledCss } from 'utils/css';
 
 const overflow = system.style({
   prop: 'overflow',
@@ -42,7 +43,8 @@ export type BoxProps = system.PositionProps &
   system.MaxHeightProps &
   system.FlexProps &
   system.OrderProps &
-  system.AlignSelfProps & {
+  system.AlignSelfProps &
+  ICssProps & {
     overflow?: string;
     overflowX?: string;
     overflowY?: string;
@@ -85,6 +87,8 @@ const Box = styled<BoxProps, 'div'>(tag.div)`
   ${system.flex /* sc-declaration */}
   ${system.order /* sc-declaration */}
   ${system.alignSelf /* sc-declaration */}
+
+  ${styledCss};
 `;
 
 export default Box;

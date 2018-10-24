@@ -2,10 +2,10 @@ import React, { PureComponent, ReactNode, SFC } from 'react';
 import { Transition, animated, config } from 'react-spring';
 import { WidthProps, width as styledWidth } from 'styled-system';
 
+import Keydown from 'utils/Keydown';
 import styled from 'utils/styled-components';
 import tag from 'utils/CleanTag';
-
-import Keydown from '../utils/Keydown';
+import { ICssProps, styledCss } from 'utils/css';
 
 const ModalOverlay = styled.div`
   position: fixed;
@@ -19,7 +19,7 @@ const ModalOverlay = styled.div`
 
 const AnimatedModalOverlay = animated(ModalOverlay);
 
-const ModalContent = styled<WidthProps, 'div'>(tag.div)`
+const ModalContent = styled<WidthProps & ICssProps, 'div'>(tag.div)`
   display: flex;
   position: fixed;
   z-index: 10001;
@@ -33,6 +33,7 @@ const ModalContent = styled<WidthProps, 'div'>(tag.div)`
   transform: translate(-50%, -50%);
 
   ${styledWidth};
+  ${styledCss};
 `;
 
 const AnimatedModalContent = animated(ModalContent);

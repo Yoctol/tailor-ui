@@ -2,8 +2,12 @@ import React, { SFC } from 'react';
 import { SpaceProps, space } from 'styled-system';
 
 import styled from 'utils/styled-components';
+import tag from 'utils/CleanTag';
+import { ICssProps, styledCss } from 'utils/css';
 
-export const StyledImage = styled.div`
+export type ImageProps = SpaceProps & ICssProps;
+
+export const StyledImage = styled<ImageProps, 'div'>(tag.div)`
   overflow: hidden;
 
   img {
@@ -14,9 +18,8 @@ export const StyledImage = styled.div`
   }
 
   ${space};
+  ${styledCss};
 `;
-
-export type ImageProps = SpaceProps;
 
 const Image: SFC<ImageProps> = props => <StyledImage {...props} />;
 

@@ -9,6 +9,7 @@ import { SpaceProps, space as styledSpace } from 'styled-system';
 
 import styled, { css, keyframes } from 'utils/styled-components';
 import tag from 'utils/CleanTag';
+import { ICssProps, styledCss } from 'utils/css';
 
 import Icon, { IconType, IconWrapper } from '../Icon';
 
@@ -223,7 +224,8 @@ type StyledButtonProps = IGetTypesStylesInterface &
   IGetSizeInterface &
   IBlockInterface &
   IRoundedInterface &
-  SpaceProps;
+  SpaceProps &
+  ICssProps;
 
 export const StyledButton = styled<StyledButtonProps, 'button'>(tag.button)`
   display: inline-flex;
@@ -270,6 +272,7 @@ export const StyledButton = styled<StyledButtonProps, 'button'>(tag.button)`
 
   ${p => p.theme.transition /* sc-declaration */};
   ${styledSpace};
+  ${styledCss};
 `;
 
 export type ButtonProps = SpaceProps & {

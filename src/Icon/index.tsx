@@ -4,6 +4,7 @@ import { SpaceProps, style, space as styledSpace } from 'styled-system';
 
 import styled, { css } from 'utils/styled-components';
 import tag from 'utils/CleanTag';
+import { ICssProps, styledCss } from 'utils/css';
 
 import * as icons from './icons';
 
@@ -24,11 +25,12 @@ const styledSize = css<{ size: Size }>`
   height: ${p => p.size}px;
 `;
 
-export type IconWrapperProps = SpaceProps & {
-  cursor?: string;
-  size?: Size;
-  fill?: string;
-};
+export type IconWrapperProps = SpaceProps &
+  ICssProps & {
+    cursor?: string;
+    size?: Size;
+    fill?: string;
+  };
 
 export const IconWrapper = styled<IconWrapperProps, 'i'>(tag.i)`
   display: inline-flex;
@@ -47,6 +49,7 @@ export const IconWrapper = styled<IconWrapperProps, 'i'>(tag.i)`
   }
 
   ${styledSpace};
+  ${styledCss};
 `;
 
 export type IconType = string | ReactIconsIconType;

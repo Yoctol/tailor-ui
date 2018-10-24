@@ -6,15 +6,17 @@ import { rgba } from 'polished';
 
 import styled from 'utils/styled-components';
 import tag from 'utils/CleanTag';
+import { ICssProps, styledCss } from 'utils/css';
 
 import Box from '../Grid/Box';
 import Flex from '../Grid/Flex';
 import Icon from '../Icon';
 import getTypeIcon, { Types } from '../utils/getTypeIcon';
 
-export interface IAlertTypes extends SpaceProps {
-  type: Types;
-}
+export type IAlertTypes = SpaceProps &
+  ICssProps & {
+    type: Types;
+  };
 
 const StyledAlert = styled<IAlertTypes, 'div'>(tag.div)`
   display: flex;
@@ -29,19 +31,20 @@ const StyledAlert = styled<IAlertTypes, 'div'>(tag.div)`
   transform-origin: top;
 
   ${space};
+  ${styledCss};
 `;
 
-export interface IBaseAlertProps extends SpaceProps {
-  closable?: boolean;
-  type?: Types;
+export interface IBaseAlertProps extends IAlertTypes {
+  closable: boolean;
   message: ReactNode;
+  type: Types;
   onClose?: () => void;
 }
 
 const BaseAlert: SFC<IBaseAlertProps> = ({
   message,
-  type = 'info',
-  closable = false,
+  type,
+  closable,
   onClose,
   ...props
 }) => (

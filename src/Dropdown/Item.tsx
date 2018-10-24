@@ -3,10 +3,11 @@ import { SpaceProps, space } from 'styled-system';
 
 import styled, { css } from 'utils/styled-components';
 import tag from 'utils/CleanTag';
+import { ICssProps, styledCss } from 'utils/css';
 
 import { Consumer } from './DropdownContext';
 
-type StyledItemProps = SpaceProps & { disabled?: boolean };
+type StyledItemProps = SpaceProps & ICssProps & { disabled?: boolean };
 
 const StyledListItem = styled<StyledItemProps, 'li'>(tag.li)`
   display: flex;
@@ -35,6 +36,7 @@ const StyledListItem = styled<StyledItemProps, 'li'>(tag.li)`
 
   ${p => p.theme.transition /* sc-declaration */};
   ${space};
+  ${styledCss};
 `;
 
 export interface ItemProps {

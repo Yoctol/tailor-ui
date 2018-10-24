@@ -4,6 +4,7 @@ import { space as styledSpace } from 'styled-system';
 
 import styled, { css } from 'utils/styled-components';
 import tag from 'utils/CleanTag';
+import { ICssProps, styledCss } from 'utils/css';
 
 type Size = 'sm' | 'md' | 'lg';
 
@@ -19,11 +20,11 @@ const { Provider, Consumer } = createContext<{
   pills: false,
 });
 
-interface IStyledTabProps {
+type IStyledTabProps = ICssProps & {
   size: Size;
   pills: boolean;
   active: boolean;
-}
+};
 
 const StyledTab = styled<IStyledTabProps, 'a'>(tag.a)`
   display: inline-flex;
@@ -89,6 +90,7 @@ const StyledTab = styled<IStyledTabProps, 'a'>(tag.a)`
 
   ${p => p.theme.transition /* sc-declaration */};
   ${styledSpace};
+  ${styledCss};
 `;
 
 export interface ITabProps {
@@ -122,7 +124,7 @@ export const Tab: SFC<ITabProps> = ({ label, value, ...props }) => (
   </Consumer>
 );
 
-interface IStyledTabsProps {
+type IStyledTabsProps = ICssProps & {
   /**
    * Make the tabs position to bottom of parent
    */
@@ -131,7 +133,7 @@ interface IStyledTabsProps {
    * Set the tabs width to 100%
    */
   block?: boolean;
-}
+};
 
 const StyledTabs = styled<IStyledTabsProps, 'nav'>(tag.nav)`
   display: flex;
@@ -156,6 +158,7 @@ const StyledTabs = styled<IStyledTabsProps, 'nav'>(tag.nav)`
     `};
 
   ${styledSpace};
+  ${styledCss};
 `;
 
 type TabsProps = IStyledTabsProps & {

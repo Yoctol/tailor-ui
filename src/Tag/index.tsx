@@ -5,10 +5,12 @@ import { Toggle } from 'react-powerplug';
 import { omit } from 'ramda';
 
 import styled from 'utils/styled-components';
+import tag from 'utils/CleanTag';
+import { ICssProps, styledCss } from 'utils/css';
 
 import Icon from '../Icon';
 
-const StyledTag = styled.div`
+const StyledTag = styled<ICssProps, 'div'>(tag.div)`
   display: inline-flex;
   align-items: center;
   height: ${p => p.theme.heights.sm};
@@ -24,6 +26,8 @@ const StyledTag = styled.div`
   &:hover {
     border-color: ${p => p.theme.colors.gray700};
   }
+
+  ${styledCss};
 `;
 
 const ClosableIcon = styled<any, any>(Icon)`

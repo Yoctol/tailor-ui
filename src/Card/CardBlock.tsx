@@ -2,8 +2,12 @@ import React, { SFC } from 'react';
 import { HeightProps, SpaceProps, height, space } from 'styled-system';
 
 import styled from 'utils/styled-components';
+import tag from 'utils/CleanTag';
+import { ICssProps, styledCss } from 'utils/css';
 
-const StyledBlock = styled.div`
+export type BlockProps = SpaceProps & HeightProps & ICssProps;
+
+const StyledBlock = styled<BlockProps, 'div'>(tag.div)`
   position: relative;
   border-bottom: ${p => p.theme.borders.base};
   border-color: ${p => p.theme.colors.gray300};
@@ -15,9 +19,8 @@ const StyledBlock = styled.div`
 
   ${space};
   ${height};
+  ${styledCss};
 `;
-
-export type BlockProps = SpaceProps & HeightProps;
 
 const Block: SFC<BlockProps> = props => <StyledBlock {...props} />;
 
