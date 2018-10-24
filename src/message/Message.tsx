@@ -96,6 +96,7 @@ class MessageComponent extends PureComponent<{}, IMessageComponentState> {
           <Transition
             native
             keys={messages.map(({ key }) => key)}
+            items={messages}
             from={{
               opacity: 0,
               transform: 'translateY(-30px)',
@@ -114,9 +115,11 @@ class MessageComponent extends PureComponent<{}, IMessageComponentState> {
               margin: 0,
             }}
           >
-            {messages.map(({ content }) => (style: any) => (
-              <AnimatedMessageBox style={style}>{content}</AnimatedMessageBox>
-            ))}
+            {(message: any) => (style: any) => (
+              <AnimatedMessageBox style={style}>
+                {message.content}
+              </AnimatedMessageBox>
+            )}
           </Transition>
         </MessageContainer>
       </UIProvider>

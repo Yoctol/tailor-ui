@@ -2,6 +2,7 @@ import React, {
   PureComponent,
   ReactElement,
   ReactNode,
+  Ref,
   cloneElement,
 } from 'react';
 import observeRect from '@reach/observe-rect';
@@ -22,7 +23,7 @@ export interface IPopupRenderProps {
     [key: string]: any;
   };
   handleClose: () => void;
-  handlePopupRef: (ref: HTMLElement) => void;
+  handlePopupRef: Ref<any>;
 }
 
 export interface IChildrenRenderProps {
@@ -164,59 +165,54 @@ class Trigger extends PureComponent<ITriggerProps, ITriggerState> {
   getTransitions = () => {
     const { placement, animation } = this.props;
 
+    let transform = {
+      enter: 'scale(1)',
+      leave: 'scale(0.3)',
+    };
+
+    let transformOrigin = 'initial';
+
     if (animation === 'slide') {
       const translateFrom = placement.startsWith('top') ? 10 : -10;
-      const transform =
-        placement.startsWith('top') || placement.startsWith('bottom')
-          ? `translate3d(0, ${translateFrom}px, 0)`
-          : `translate3d(${translateFrom}px, 0, 0)`;
-
-      return {
-        from: {
-          opacity: 0,
-          transform,
-        },
-        enter: {
-          opacity: 1,
-          transform: `translate3d(0, 0px, 0)`,
-        },
-        leave: {
-          opacity: 0,
-          transform,
-        },
+      transform = {
+        leave: 'translate3d(0, 0px, 0)',
+        enter:
+          placement.startsWith('top') || placement.startsWith('bottom')
+            ? `translate3d(0, ${translateFrom}px, 0)`
+            : `translate3d(${translateFrom}px, 0, 0)`,
       };
+    } else if (animation === 'scale') {
+      transformOrigin = {
+        topLeft: 'left bottom',
+        top: '50% bottom',
+        topRight: 'right bottom',
+        bottomLeft: 'left top',
+        bottom: '50% top',
+        bottomRight: 'right top',
+        leftTop: 'right top',
+        left: 'right 50%',
+        leftBottom: 'right bottom',
+        rightTop: 'left top',
+        right: 'left 50%',
+        rightBottom: 'left bottom',
+      }[placement];
     }
-
-    const transformOrigin = {
-      topLeft: 'left bottom',
-      top: '50% bottom',
-      topRight: 'right bottom',
-      bottomLeft: 'left top',
-      bottom: '50% top',
-      bottomRight: 'right top',
-      leftTop: 'right top',
-      left: 'right 50%',
-      leftBottom: 'right bottom',
-      rightTop: 'left top',
-      right: 'left 50%',
-      rightBottom: 'left bottom',
-    }[placement];
 
     return {
       from: {
         opacity: 0,
+        transform: transform.leave,
         transformOrigin,
-        transform: `scale(0.3)`,
       },
       enter: {
         opacity: 1,
+        transform: transform.enter,
         transformOrigin,
-        transform: `scale(1)`,
       },
       leave: {
         opacity: 0,
+        transform: transform.leave,
         transformOrigin,
-        transform: `scale(0.3)`,
       },
     };
   };
@@ -271,16 +267,16 @@ class Trigger extends PureComponent<ITriggerProps, ITriggerState> {
     return (
       <Transition
         native
-        keys={visible ? 'visible' : 'hidden'}
+        items={visible ? 'visible' : 'hidden'}
         {...this.getTransitions()}
         config={{
           ...config.stiff,
-          restSpeedThreshold: 1,
-          restDisplacementThreshold: 0.1,
+          precision: 0.1,
         }}
       >
-        {visible &&
-          (styles => {
+        {v =>
+          v === 'visible' && // FIXME: waiting for the typing update
+          ((styles: any) => {
             const renderPopup = () =>
               popup({
                 styles: {
@@ -301,7 +297,8 @@ class Trigger extends PureComponent<ITriggerProps, ITriggerState> {
             ) : (
               renderPopup()
             );
-          })}
+          })
+        }
       </Transition>
     );
   };

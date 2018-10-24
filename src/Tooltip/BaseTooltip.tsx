@@ -165,9 +165,6 @@ export const Arrow = styled<IArrowProps, 'div'>(tag.div)`
 
 export interface IBaseTooltipProps {
   children: React.ReactNode;
-  styles: {
-    [key: string]: any;
-  };
 }
 
 const TooltipToggle = styled<IBaseTooltipProps, 'div'>(tag.div)`

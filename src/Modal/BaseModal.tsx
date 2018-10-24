@@ -38,8 +38,6 @@ const ModalContent = styled<WidthProps, 'div'>(tag.div)`
 const AnimatedModalContent = animated(ModalContent);
 
 export type ModalWrapperProps = WidthProps & {
-  opacity: number;
-  pointerEvents?: string;
   onCancel: () => void;
   content?: ReactNode;
   clickOutsite?: boolean;
@@ -48,8 +46,7 @@ export type ModalWrapperProps = WidthProps & {
 
 const ModalWrapper: SFC<ModalWrapperProps> = ({
   width = 416,
-  opacity,
-  pointerEvents,
+  style,
   onCancel,
   content = '',
   clickOutsite = true,
@@ -57,24 +54,14 @@ const ModalWrapper: SFC<ModalWrapperProps> = ({
 }) => (
   <>
     <AnimatedModalOverlay
-      style={{
-        opacity,
-        pointerEvents,
-      }}
+      style={style}
       onClick={() => {
         if (clickOutsite) {
           onCancel();
         }
       }}
     />
-    <AnimatedModalContent
-      style={{
-        opacity,
-        pointerEvents,
-      }}
-      width={width}
-      {...otherProps}
-    >
+    <AnimatedModalContent width={width} style={style} {...otherProps}>
       {content}
     </AnimatedModalContent>
   </>
@@ -97,7 +84,7 @@ class BaseModal extends PureComponent<BaseModalProps> {
         )}
         <Transition
           native
-          keys={visible ? 'visible' : 'hide'}
+          items={visible ? 'visible' : 'hidden'}
           from={{
             opacity: 0,
           }}
@@ -109,11 +96,18 @@ class BaseModal extends PureComponent<BaseModalProps> {
             pointerEvents: 'none',
           }}
           config={config.stiff}
-          onCancel={onCancel}
-          content={children}
-          {...otherProps}
         >
-          {visible && ModalWrapper}
+          {v =>
+            v === 'visible' && // FIXME: waiting for the typing update
+            ((style: any) => (
+              <ModalWrapper
+                style={style}
+                onCancel={onCancel}
+                content={children}
+                {...otherProps}
+              />
+            ))
+          }
         </Transition>
       </>
     );

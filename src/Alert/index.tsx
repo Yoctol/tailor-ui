@@ -28,8 +28,7 @@ const ClosableAlert: SFC<IAlertProps> = ({ onClosed, ...props }) => (
         }}
         config={{
           ...config.default,
-          restSpeedThreshold: 1,
-          restDisplacementThreshold: 0.1,
+          precision: 0.1,
         }}
       >
         {({ x, height }) => (
