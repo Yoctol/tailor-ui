@@ -13,6 +13,7 @@ import Label from '../Form/Label';
 import FormField from '../Form/FormField';
 import Hint from '../Form/Hint';
 import Icon from '../Icon';
+import Space from '../Grid/Space';
 
 import Input from './';
 
@@ -121,19 +122,30 @@ import { Input, Textarea, FormField, Hint } from '@yoctol/ui';
 
 <Playground>
   <Input prefix="Prefix" defaultValue="" />
-  <Input mt="2" suffix="Suffix" defaultValue="" />
-  <Input mt="2" suffix={<Button type="success">Send It</Button>} defaultValue="" />
-  <Input mt="2" prefix="https://" suffix=".com" defaultValue="yoctol" />
-  <Input
-    mt="2"
-    prefix={
-      <>
-        <Icon type={MdAccountCircle} size="20" mr="1"/>
-        username:
-      </>
-    }
-    defaultValue="yoctol"
-  />
+
+  <Space mt="2">
+    <Input suffix="Suffix" defaultValue="" />
+  </Space>
+
+  <Space mt="2">
+    <Input suffix={<Button type="success">Send It</Button>} defaultValue="" />
+  </Space>
+
+  <Space mt="2">
+    <Input prefix="https://" suffix=".com" defaultValue="yoctol" />
+  </Space>
+
+  <Space mt="2">
+    <Input
+      prefix={
+        <>
+          <Icon type={MdAccountCircle} size="20" mr="1"/>
+          username:
+        </>
+      }
+      defaultValue="yoctol"
+    />
+  </Space>
 </Playground>
 
 ### Textarea
