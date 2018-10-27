@@ -8,7 +8,7 @@ export interface IAlertProps extends IBaseAlertProps {
   onClosed?: () => void;
 }
 
-const AnimatedAlert: SFC<IAlertProps> = ({ onClosed, ...props }) => (
+const ClosableAlert: SFC<IAlertProps> = ({ onClosed, ...props }) => (
   <Toggle initial>
     {({ on, set }) => (
       <Spring
@@ -50,7 +50,7 @@ const AnimatedAlert: SFC<IAlertProps> = ({ onClosed, ...props }) => (
 
 class Alert extends PureComponent<IAlertProps, {}> {
   render() {
-    const RenderComponent = this.props.closable ? AnimatedAlert : BaseAlert;
+    const RenderComponent = this.props.closable ? ClosableAlert : BaseAlert;
     return <RenderComponent {...this.props} />;
   }
 }
