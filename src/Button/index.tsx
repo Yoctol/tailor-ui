@@ -279,6 +279,7 @@ export type ButtonProps = SpaceProps & {
   rounded?: boolean;
   outlined?: boolean;
   loading?: boolean;
+  disabled?: boolean;
   icon?: string | IconType;
   size?: ButtonSize;
   onClick?: (event: MouseEvent) => void;
