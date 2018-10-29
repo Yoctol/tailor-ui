@@ -67,7 +67,7 @@ const StyledCheckbox = styled.input.attrs({
   }
 `;
 
-export type Direction = 'horizontal' | 'verticle';
+export type Direction = 'horizontal' | 'vertical';
 
 const getMarginPosition = ({ direction }: { direction: Direction }) =>
   direction === 'horizontal' ? 'margin-left' : 'margin-top';

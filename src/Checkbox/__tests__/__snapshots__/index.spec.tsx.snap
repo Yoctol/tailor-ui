@@ -116,20 +116,34 @@ exports[`Checkbox should render correctly 1`] = `
 </label>
 `;
 
-exports[`Checkbox should render with props disabled 1`] = `
-.c6 {
+exports[`Checkbox.Group composition with Checkbox should render correctly 1`] = `
+.c1 {
+  box-sizing: border-box;
+}
+
+.c8 {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
 }
 
-.c2 {
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c4 {
   display: inline-block;
   position: relative;
   margin-bottom: 1px;
   line-height: 1;
 }
 
-.c5 {
+.c7 {
   display: block;
   position: relative;
   width: 16px;
@@ -144,7 +158,7 @@ exports[`Checkbox should render with props disabled 1`] = `
   transition: all 200ms ease 0s;
 }
 
-.c5::after {
+.c7::after {
   content: '';
   position: absolute;
   top: 1px;
@@ -161,7 +175,7 @@ exports[`Checkbox should render with props disabled 1`] = `
   transition: all 200ms ease 0s;
 }
 
-.c3 {
+.c5 {
   position: absolute;
   top: 0;
   right: 0;
@@ -172,27 +186,19 @@ exports[`Checkbox should render with props disabled 1`] = `
   opacity: 0;
 }
 
-.c3:checked + .c4 {
+.c5:checked + .c6 {
   border-color: #423b63;
   background-color: #423b63;
 }
 
-.c3:checked + .c4::after {
+.c5:checked + .c6::after {
   opacity: 1;
   -webkit-transform: rotate(45deg) scale(1);
   -ms-transform: rotate(45deg) scale(1);
   transform: rotate(45deg) scale(1);
 }
 
-.c7 + .c0 {
-  margin-left: 0.5rem;
-}
-
-.c7:hover .c4 {
-  border-color: #423b63;
-}
-
-.c1 {
+.c3 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -202,38 +208,304 @@ exports[`Checkbox should render with props disabled 1`] = `
   -ms-flex-align: center;
   align-items: center;
   font-size: 1rem;
-  cursor: not-allowed;
-  opacity: 0.5;
+  cursor: pointer;
 }
 
-.c1 + .c0 {
+.c3 + .c2 {
   margin-left: 0.5rem;
 }
 
-.c1 + .c8 {
+.c3:hover .c6 {
+  border-color: #423b63;
+}
+
+.c3 + .c12 {
   margin-left: 0.5rem;
 }
 
-<label
-  class="c0 c1"
+.c9 + .c2 {
+  margin-left: 0.5rem;
+}
+
+.c10 + .c2 {
+  margin-top: 0.5rem;
+}
+
+.c11 + .c2 {
+  margin-top: 0.5rem;
+}
+
+.c11:hover .c6 {
+  border-color: #423b63;
+}
+
+<div
+  class="c0"
   direction="horizontal"
 >
-  <span
-    class="c2"
-  >
-    <input
-      class="c3"
-      disabled=""
-      type="checkbox"
-    />
-    <span
-      class="c4 c5"
-    />
-  </span>
   <div
-    class="c6"
+    class="c1"
   >
-    Checkbox
+    <label
+      class="c2 c3"
+      direction="horizontal"
+    >
+      <span
+        class="c4"
+      >
+        <input
+          class="c5"
+          type="checkbox"
+        />
+        <span
+          class="c6 c7"
+        />
+      </span>
+      <div
+        class="c8"
+      >
+        checkbox 1
+      </div>
+    </label>
   </div>
-</label>
+  <div
+    class="c1"
+  >
+    <label
+      class="c2 c3"
+      direction="horizontal"
+    >
+      <span
+        class="c4"
+      >
+        <input
+          class="c5"
+          type="checkbox"
+        />
+        <span
+          class="c6 c7"
+        />
+      </span>
+      <div
+        class="c8"
+      >
+        checkbox 2
+      </div>
+    </label>
+  </div>
+  <div
+    class="c1"
+  >
+    <label
+      class="c2 c3"
+      direction="horizontal"
+    >
+      <span
+        class="c4"
+      >
+        <input
+          class="c5"
+          type="checkbox"
+        />
+        <span
+          class="c6 c7"
+        />
+      </span>
+      <div
+        class="c8"
+      >
+        checkbox 3
+      </div>
+    </label>
+  </div>
+</div>
+`;
+
+exports[`Checkbox.Group should render vertical checkbox group 1`] = `
+.c7 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.c0 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c3 {
+  display: inline-block;
+  position: relative;
+  margin-bottom: 1px;
+  line-height: 1;
+}
+
+.c6 {
+  display: block;
+  position: relative;
+  width: 16px;
+  height: 16px;
+  padding: 0;
+  border: 1px solid;
+  border-radius: 2px;
+  border-color: #bfbfbf;
+  background-color: #ffffff;
+  color: #373737;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+}
+
+.c6::after {
+  content: '';
+  position: absolute;
+  top: 1px;
+  left: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  opacity: 0;
+  -webkit-transform: rotate(45deg) scale(0);
+  -ms-transform: rotate(45deg) scale(0);
+  transform: rotate(45deg) scale(0);
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+}
+
+.c4 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+.c4:checked + .c5 {
+  border-color: #423b63;
+  background-color: #423b63;
+}
+
+.c4:checked + .c5::after {
+  opacity: 1;
+  -webkit-transform: rotate(45deg) scale(1);
+  -ms-transform: rotate(45deg) scale(1);
+  transform: rotate(45deg) scale(1);
+}
+
+.c8 + .c1 {
+  margin-left: 0.5rem;
+}
+
+.c8:hover .c5 {
+  border-color: #423b63;
+}
+
+.c9 + .c1 {
+  margin-left: 0.5rem;
+}
+
+.c10 + .c1 {
+  margin-top: 0.5rem;
+}
+
+.c2 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.c2 + .c1 {
+  margin-top: 0.5rem;
+}
+
+.c2:hover .c5 {
+  border-color: #423b63;
+}
+
+.c2 + .c11 {
+  margin-top: 0.5rem;
+}
+
+<div
+  class="c0"
+  direction="vertical"
+>
+  <label
+    class="c1 c2"
+    direction="vertical"
+  >
+    <span
+      class="c3"
+    >
+      <input
+        class="c4"
+        type="checkbox"
+      />
+      <span
+        class="c5 c6"
+      />
+    </span>
+    <div
+      class="c7"
+    >
+      checkbox 1
+    </div>
+  </label>
+  <label
+    class="c1 c2"
+    direction="vertical"
+  >
+    <span
+      class="c3"
+    >
+      <input
+        class="c4"
+        type="checkbox"
+      />
+      <span
+        class="c5 c6"
+      />
+    </span>
+    <div
+      class="c7"
+    >
+      checkbox 2
+    </div>
+  </label>
+  <label
+    class="c1 c2"
+    direction="vertical"
+  >
+    <span
+      class="c3"
+    >
+      <input
+        class="c4"
+        type="checkbox"
+      />
+      <span
+        class="c5 c6"
+      />
+    </span>
+    <div
+      class="c7"
+    >
+      checkbox 3
+    </div>
+  </label>
+</div>
 `;
