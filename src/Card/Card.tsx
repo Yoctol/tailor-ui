@@ -30,6 +30,7 @@ export type CardProps = SpaceProps &
   ICssProps & {
     clickable?: boolean;
     hoverable?: boolean;
+    onClick?: (event: MouseEvent) => void;
   };
 
 const CardWrapper = styled<CardProps, any>(tag.div)`
@@ -84,8 +85,22 @@ class Card extends PureComponent<CardProps> {
     borderColor: 'gray300',
   };
 
+  handleClick = (event: MouseEvent) => {
+    if (this.props.onClick && event.target === event.currentTarget) {
+      this.props.onClick(event);
+    }
+  };
+
   render() {
-    return <CardWrapper {...this.props} />;
+    const clickable = !!this.props.onClick;
+
+    return (
+      <CardWrapper
+        {...this.props}
+        clickable={clickable}
+        onClick={this.handleClick}
+      />
+    );
   }
 }
 

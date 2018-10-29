@@ -94,13 +94,13 @@ import { Card } from '@yoctol/ui';
 ### clickable
 
 <Playground>
-  <Card width="400px" clickable>
+  <Card width="400px" onClick={console.log}>
     <Card.Block>Title</Card.Block>
     <Card.Block>Content</Card.Block>
     <Card.Block>Footer</Card.Block>
   </Card>
   <br />
-  <Card width="400px" hoverable clickable>
+  <Card width="400px" hoverable onClick={console.log}>
     <Card.Block>Title</Card.Block>
     <Card.Block>Content</Card.Block>
     <Card.Block>Footer</Card.Block>
