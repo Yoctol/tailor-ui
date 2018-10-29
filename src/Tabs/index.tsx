@@ -69,22 +69,30 @@ const StyledTab = styled<IStyledTabProps, 'a'>(tag.a)`
       `,
     }[size])};
 
-  ${({ pills, active }) =>
+  ${({ pills, active, theme }) =>
     pills
       ? css`
-          border-radius: 999px;
-          ${active &&
-            css`
-              background-color: ${p => p.theme.colors.primary};
-              color: ${p => p.theme.colors.light};
-            `};
+          border-radius: ${theme.radii.lg};
+          color: ${theme.colors.gray600};
+
+          ${active
+            ? css`
+                background-color: ${theme.colors.primary};
+                color: ${theme.colors.light};
+              `
+            : css`
+                &:hover {
+                  background-color: ${theme.colors.gray300};
+                  color: ${theme.colors.gray700};
+                }
+              `};
         `
       : css`
           border-bottom: 3px solid transparent;
 
           ${active &&
             css`
-              border-bottom-color: ${p => p.theme.colors.secondary};
+              border-bottom-color: ${theme.colors.secondary};
             `};
         `};
 
