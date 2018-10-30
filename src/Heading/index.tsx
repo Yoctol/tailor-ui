@@ -50,27 +50,39 @@ const HeadingBase = styled<HeadingBaseProps, 'p'>(tag.p)`
   ${styledCss};
 `;
 
-const h1 = styled(props => <HeadingBase as={tag.h1} {...props} />)`
+const h1 = styled<HeadingBaseProps, any>((props: any) => (
+  <HeadingBase as={tag.h1} {...props} />
+))`
   font-size: ${rem('28px')};
 `;
 
-const h2 = styled(props => <HeadingBase as={tag.h2} {...props} />)`
+const h2 = styled<HeadingBaseProps, any>((props: any) => (
+  <HeadingBase as={tag.h2} {...props} />
+))`
   font-size: ${rem('24px')};
 `;
 
-const h3 = styled(props => <HeadingBase as={tag.h3} {...props} />)`
+const h3 = styled<HeadingBaseProps, any>((props: any) => (
+  <HeadingBase as={tag.h3} {...props} />
+))`
   font-size: ${rem('18px')};
 `;
 
-const h4 = styled(props => <HeadingBase as={tag.h4} {...props} />)`
+const h4 = styled<HeadingBaseProps, any>((props: any) => (
+  <HeadingBase as={tag.h4} {...props} />
+))`
   font-size: ${rem('16px')};
 `;
 
-const h5 = styled(props => <HeadingBase as={tag.h5} {...props} />)`
+const h5 = styled<HeadingBaseProps, any>((props: any) => (
+  <HeadingBase as={tag.h5} {...props} />
+))`
   font-size: ${rem('14px')};
 `;
 
-const h6 = styled(props => <HeadingBase as={tag.h6} {...props} />)`
+const h6 = styled<HeadingBaseProps, any>((props: any) => (
+  <HeadingBase as={tag.h6} {...props} />
+))`
   font-size: ${rem('12px')};
 `;
 

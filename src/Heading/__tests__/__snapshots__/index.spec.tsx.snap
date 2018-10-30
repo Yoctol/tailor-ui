@@ -1,0 +1,147 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Heading should render correctly 1`] = `
+.c1 {
+  margin: 0;
+  color: #191539;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.c0 {
+  font-size: 1.75rem;
+}
+
+.c2 {
+  font-size: 1.5rem;
+}
+
+.c3 {
+  font-size: 1.125rem;
+}
+
+.c4 {
+  font-size: 1rem;
+}
+
+.c5 {
+  font-size: 0.875rem;
+}
+
+.c6 {
+  font-size: 0.75rem;
+}
+
+<div>
+  <h1
+    class="c0 c1"
+  >
+    H1 Heading 28px
+  </h1>
+  <h2
+    class="c2 c1"
+  >
+    H2 Heading 26px
+  </h2>
+  <h3
+    class="c3 c1"
+  >
+    H3 Heading 18px
+  </h3>
+  <h4
+    class="c4 c1"
+  >
+    H4 Heading 16px
+  </h4>
+  <h5
+    class="c5 c1"
+  >
+    H5 Heading 14px
+  </h5>
+  <h6
+    class="c6 c1"
+  >
+    H6 Heading 12px
+  </h6>
+</div>
+`;
+
+exports[`Heading should render gray heading 1`] = `
+.c1 {
+  margin: 0;
+  color: #191539;
+  font-weight: 500;
+  line-height: 1.5;
+  color: #373737;
+}
+
+.c0 {
+  font-size: 1.75rem;
+}
+
+<h1
+  class="c0 c1"
+>
+  H1 Heading 28px
+</h1>
+`;
+
+exports[`Heading should render grayHint heading 1`] = `
+.c1 {
+  margin: 0;
+  color: #191539;
+  font-weight: 500;
+  line-height: 1.5;
+  color: #8b8b8b;
+}
+
+.c0 {
+  font-size: 1.75rem;
+}
+
+<h1
+  class="c0 c1"
+>
+  H1 Heading 28px
+</h1>
+`;
+
+exports[`Heading should render grayLight heading 1`] = `
+.c1 {
+  margin: 0;
+  color: #191539;
+  font-weight: 500;
+  line-height: 1.5;
+  color: #5e5e5e;
+}
+
+.c0 {
+  font-size: 1.75rem;
+}
+
+<h1
+  class="c0 c1"
+>
+  H1 Heading 28px
+</h1>
+`;
+
+exports[`Heading should render white heading 1`] = `
+.c1 {
+  margin: 0;
+  color: #191539;
+  font-weight: 500;
+  line-height: 1.5;
+  color: #ffffff;
+}
+
+.c0 {
+  font-size: 1.75rem;
+}
+
+<h1
+  class="c0 c1"
+>
+  H1 Heading 28px
+</h1>
+`;
