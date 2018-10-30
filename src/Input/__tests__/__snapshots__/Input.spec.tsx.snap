@@ -1,0 +1,616 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input should render correctly 1`] = `
+.c0 {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  border: 1px solid;
+  border-radius: 0.25rem;
+  border-color: #e0e0e0;
+  outline: none;
+  background: #ffffff;
+  background-image: none;
+  color: #373737;
+  line-height: 1.5;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  height: 2rem;
+  padding: 4px 0.5rem;
+  font-size: 1rem;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+}
+
+.c0:hover {
+  border-color: #8b8b8b;
+}
+
+.c0:focus {
+  border-color: #191539;
+}
+
+.c0:disabled,
+.c0 [disabled] {
+  border-color: #8b8b8b;
+  opacity: 0.5;
+  background-color: #e0e0e0;
+  cursor: not-allowed;
+}
+
+.c0::-webkit-input-placeholder {
+  color: #bfbfbf;
+}
+
+.c0::-moz-placeholder {
+  color: #bfbfbf;
+}
+
+.c0:-ms-input-placeholder {
+  color: #bfbfbf;
+}
+
+.c0::placeholder {
+  color: #bfbfbf;
+}
+
+<input
+  class="c0"
+  placeholder="placeholder"
+/>
+`;
+
+exports[`Input should render correctly with Button suffix 1`] = `
+.c5 {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 1;
+  background: rgba(0,0,0,0.2);
+  -webkit-transform: scale(0);
+  -ms-transform: scale(0);
+  transform: scale(0);
+}
+
+.c4 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  position: relative;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  overflow: hidden;
+  border: 1px solid;
+  border-radius: 0.25rem;
+  line-height: 1.5;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  height: 2rem;
+  padding: 0 1rem;
+  font-size: 1rem;
+  border-color: #30be72;
+  background-color: #30be72;
+  color: #ffffff;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+}
+
+.c4:focus {
+  outline: 0;
+}
+
+.c4:disabled,
+.c4[disabled] {
+  opacity: 0.7;
+  cursor: default;
+  pointer-events: none;
+}
+
+.c4::before {
+  content: '';
+  display: inline-block;
+  position: relative;
+  left: 0;
+  width: 0;
+  height: 0;
+  margin-right: 0;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+}
+
+.c4 .c7 {
+  cursor: pointer;
+}
+
+.c4 .c7 svg {
+  fill: #ffffff;
+}
+
+.c4:hover {
+  background-color: #ffffff;
+  color: #30be72;
+}
+
+.c4:hover .c7 svg {
+  fill: #30be72;
+}
+
+.c2 {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  border: 1px solid;
+  border-radius: 0.25rem;
+  border-color: #e0e0e0;
+  outline: none;
+  background: #ffffff;
+  background-image: none;
+  color: #373737;
+  line-height: 1.5;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  height: 2rem;
+  padding: 4px 0.5rem;
+  font-size: 1rem;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+}
+
+.c2:hover {
+  border-color: #8b8b8b;
+}
+
+.c2:focus {
+  border-color: #191539;
+}
+
+.c2:disabled,
+.c2 [disabled] {
+  border-color: #8b8b8b;
+  opacity: 0.5;
+  background-color: #e0e0e0;
+  cursor: not-allowed;
+}
+
+.c2::-webkit-input-placeholder {
+  color: #bfbfbf;
+}
+
+.c2::-moz-placeholder {
+  color: #bfbfbf;
+}
+
+.c2:-ms-input-placeholder {
+  color: #bfbfbf;
+}
+
+.c2::placeholder {
+  color: #bfbfbf;
+}
+
+.c6 .c1 {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c0 .c1 {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.c0 .c8:last-child {
+  border-left: none;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.c0 .c3 {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+<div
+  class="c0"
+  suffix="[object Object]"
+>
+  <input
+    class="c1 c2"
+  />
+  <button
+    class="c3 c4"
+    type="success"
+  >
+    Send It
+    <div
+      class="c5"
+    />
+  </button>
+</div>
+`;
+
+exports[`Input should render correctly with text prefix 1`] = `
+.c4 {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  border: 1px solid;
+  border-radius: 0.25rem;
+  border-color: #e0e0e0;
+  outline: none;
+  background: #ffffff;
+  background-image: none;
+  color: #373737;
+  line-height: 1.5;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  height: 2rem;
+  padding: 4px 0.5rem;
+  font-size: 1rem;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+}
+
+.c4:hover {
+  border-color: #8b8b8b;
+}
+
+.c4:focus {
+  border-color: #191539;
+}
+
+.c4:disabled,
+.c4 [disabled] {
+  border-color: #8b8b8b;
+  opacity: 0.5;
+  background-color: #e0e0e0;
+  cursor: not-allowed;
+}
+
+.c4::-webkit-input-placeholder {
+  color: #bfbfbf;
+}
+
+.c4::-moz-placeholder {
+  color: #bfbfbf;
+}
+
+.c4:-ms-input-placeholder {
+  color: #bfbfbf;
+}
+
+.c4::placeholder {
+  color: #bfbfbf;
+}
+
+.c2 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 0 0.5rem;
+  border: 1px solid;
+  border-radius: 0.25rem;
+  border-color: #e0e0e0;
+  background-color: #f6f6f6;
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c0 .c3 {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.c0 .c1:first-child {
+  border-right: none;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+<div
+  class="c0"
+  prefix="Prefix"
+>
+  <span
+    class="c1 c2"
+  >
+    Prefix
+  </span>
+  <input
+    class="c3 c4"
+  />
+</div>
+`;
+
+exports[`Input should render different input size 1`] = `
+.c0 {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  border: 1px solid;
+  border-radius: 0.25rem;
+  border-color: #e0e0e0;
+  outline: none;
+  background: #ffffff;
+  background-image: none;
+  color: #373737;
+  line-height: 1.5;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  height: 1.5rem;
+  padding: 1px 0.5rem;
+  font-size: 0.875rem;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+}
+
+.c0:hover {
+  border-color: #8b8b8b;
+}
+
+.c0:focus {
+  border-color: #191539;
+}
+
+.c0:disabled,
+.c0 [disabled] {
+  border-color: #8b8b8b;
+  opacity: 0.5;
+  background-color: #e0e0e0;
+  cursor: not-allowed;
+}
+
+.c0::-webkit-input-placeholder {
+  color: #bfbfbf;
+}
+
+.c0::-moz-placeholder {
+  color: #bfbfbf;
+}
+
+.c0:-ms-input-placeholder {
+  color: #bfbfbf;
+}
+
+.c0::placeholder {
+  color: #bfbfbf;
+}
+
+<input
+  class="c0"
+  placeholder="placeholder"
+/>
+`;
+
+exports[`Input should render disabled input 1`] = `
+.c0 {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  border: 1px solid;
+  border-radius: 0.25rem;
+  border-color: #e0e0e0;
+  outline: none;
+  background: #ffffff;
+  background-image: none;
+  color: #373737;
+  line-height: 1.5;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  height: 2rem;
+  padding: 4px 0.5rem;
+  font-size: 1rem;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+}
+
+.c0:hover {
+  border-color: #8b8b8b;
+}
+
+.c0:focus {
+  border-color: #191539;
+}
+
+.c0:disabled,
+.c0 [disabled] {
+  border-color: #8b8b8b;
+  opacity: 0.5;
+  background-color: #e0e0e0;
+  cursor: not-allowed;
+}
+
+.c0::-webkit-input-placeholder {
+  color: #bfbfbf;
+}
+
+.c0::-moz-placeholder {
+  color: #bfbfbf;
+}
+
+.c0:-ms-input-placeholder {
+  color: #bfbfbf;
+}
+
+.c0::placeholder {
+  color: #bfbfbf;
+}
+
+<input
+  class="c0"
+  disabled=""
+/>
+`;
+
+exports[`Textarea should render correctly 1`] = `
+.c0 {
+  word-wrap: break-word;
+  -webkit-transition: border 0.2s ease;
+  transition: border 0.2s ease;
+  resize: none;
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  border: 1px solid;
+  border-radius: 0.25rem;
+  border-color: #e0e0e0;
+  outline: none;
+  background: #ffffff;
+  background-image: none;
+  color: #373737;
+  line-height: 1.5;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  height: 2rem;
+  padding: 4px 0.5rem;
+  font-size: 1rem;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+}
+
+.c0:hover {
+  border-color: #8b8b8b;
+}
+
+.c0:focus {
+  border-color: #191539;
+}
+
+.c0:disabled,
+.c0 [disabled] {
+  border-color: #8b8b8b;
+  opacity: 0.5;
+  background-color: #e0e0e0;
+  cursor: not-allowed;
+}
+
+.c0::-webkit-input-placeholder {
+  color: #bfbfbf;
+}
+
+.c0::-moz-placeholder {
+  color: #bfbfbf;
+}
+
+.c0:-ms-input-placeholder {
+  color: #bfbfbf;
+}
+
+.c0::placeholder {
+  color: #bfbfbf;
+}
+
+<textarea
+  class="c0"
+  placeholder="placeholder"
+  style="height: 0px;"
+/>
+`;
+
+exports[`Textarea should render correctly with minRows & maxRows 1`] = `
+.c0 {
+  word-wrap: break-word;
+  -webkit-transition: border 0.2s ease;
+  transition: border 0.2s ease;
+  resize: none;
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  border: 1px solid;
+  border-radius: 0.25rem;
+  border-color: #e0e0e0;
+  outline: none;
+  background: #ffffff;
+  background-image: none;
+  color: #373737;
+  line-height: 1.5;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  height: 2rem;
+  padding: 4px 0.5rem;
+  font-size: 1rem;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+}
+
+.c0:hover {
+  border-color: #8b8b8b;
+}
+
+.c0:focus {
+  border-color: #191539;
+}
+
+.c0:disabled,
+.c0 [disabled] {
+  border-color: #8b8b8b;
+  opacity: 0.5;
+  background-color: #e0e0e0;
+  cursor: not-allowed;
+}
+
+.c0::-webkit-input-placeholder {
+  color: #bfbfbf;
+}
+
+.c0::-moz-placeholder {
+  color: #bfbfbf;
+}
+
+.c0:-ms-input-placeholder {
+  color: #bfbfbf;
+}
+
+.c0::placeholder {
+  color: #bfbfbf;
+}
+
+<textarea
+  class="c0"
+  id="demo"
+  placeholder="placeholder"
+  style="height: 0px;"
+/>
+`;
