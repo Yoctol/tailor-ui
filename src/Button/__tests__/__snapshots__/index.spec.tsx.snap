@@ -142,11 +142,7 @@ exports[`Button should render button with specified icon 1`] = `
 }
 
 .c5 .c1 svg {
-  fill: #ffffff;
-}
-
-.c5:hover .c1 svg {
-  fill: #4384f0;
+  fill: #1a1a1a;
 }
 
 .c6 .c1 {
@@ -154,7 +150,11 @@ exports[`Button should render button with specified icon 1`] = `
 }
 
 .c6 .c1 svg {
-  fill: #1a1a1a;
+  fill: #ffffff;
+}
+
+.c6:hover .c1 svg {
+  fill: #4384f0;
 }
 
 .c7 .c1 {
@@ -170,6 +170,14 @@ exports[`Button should render button with specified icon 1`] = `
 }
 
 .c8 .c1 svg {
+  fill: #1a1a1a;
+}
+
+.c9 .c1 {
+  cursor: pointer;
+}
+
+.c9 .c1 svg {
   fill: #1a1a1a;
 }
 
@@ -462,7 +470,7 @@ exports[`Button should render correctly 1`] = `
   class="c0"
   type="default"
 >
-  Text Button
+  Button
   <div
     class="c1"
   />
@@ -952,6 +960,101 @@ exports[`Button should render rounded button 1`] = `
 .c0:hover {
   border-color: #423b63;
   background-color: #f6f6f6;
+}
+
+<button
+  class="c0"
+  type="default"
+>
+  Text Button
+  <div
+    class="c1"
+  />
+</button>
+`;
+
+exports[`Button should render text button 1`] = `
+.c1 {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 1;
+  background: rgba(0,0,0,0.2);
+  -webkit-transform: scale(0);
+  -ms-transform: scale(0);
+  transform: scale(0);
+}
+
+.c0 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  position: relative;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  overflow: hidden;
+  border: 1px solid;
+  border-radius: 0.25rem;
+  line-height: 1.5;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  height: 2rem;
+  padding: 0 1rem;
+  font-size: 1rem;
+  border-color: transparent;
+  background-color: transparent;
+  color: #1a1a1a;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+}
+
+.c0:focus {
+  outline: 0;
+}
+
+.c0:disabled,
+.c0[disabled] {
+  opacity: 0.7;
+  cursor: default;
+  pointer-events: none;
+}
+
+.c0::before {
+  content: '';
+  display: inline-block;
+  position: relative;
+  left: 0;
+  width: 0;
+  height: 0;
+  margin-right: 0;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+}
+
+.c0 .c2 {
+  cursor: pointer;
+}
+
+.c0 .c2 svg {
+  fill: #1a1a1a;
+}
+
+.c0:hover {
+  border-color: transparent;
+  background-color: #e0e0e0;
 }
 
 <button

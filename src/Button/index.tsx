@@ -49,12 +49,13 @@ const getTypeStyles = ({
   theme: any;
 }) => {
   const { colors } = theme;
+  const mainColor = colors[type];
 
   if (text) {
     return {
       borderColor: 'transparent',
       backgroundColor: 'transparent',
-      color: colors.gray800,
+      color: mainColor || colors.gray800,
       hover: {
         backgroundColor: colors.gray300,
         borderColor: 'transparent',
@@ -74,17 +75,16 @@ const getTypeStyles = ({
     };
   }
 
-  const bg = colors[type];
   const { light } = colors;
-  const backgroundColor = outlined ? 'transparent' : bg;
+  const backgroundColor = outlined ? 'transparent' : mainColor;
 
   return {
-    borderColor: bg,
+    borderColor: mainColor,
     backgroundColor,
-    color: outlined ? bg : light,
+    color: outlined ? mainColor : light,
     hover: {
-      backgroundColor: outlined ? bg : light,
-      color: outlined ? light : bg,
+      backgroundColor: outlined ? mainColor : light,
+      color: outlined ? light : mainColor,
     },
   };
 };

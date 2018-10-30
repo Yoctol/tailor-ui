@@ -7,7 +7,13 @@ import Button from '..';
 
 describe('Button', () => {
   it('should render correctly', () => {
-    const { container } = render(<Button>Text Button</Button>);
+    const { container } = render(<Button>Button</Button>);
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  it('should render text button', () => {
+    const { container } = render(<Button text>Text Button</Button>);
 
     expect(container.firstChild).toMatchSnapshot();
   });
