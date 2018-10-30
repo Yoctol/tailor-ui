@@ -1,0 +1,134 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Textarea should render correctly 1`] = `
+.c0 {
+  word-wrap: break-word;
+  -webkit-transition: border 0.2s ease;
+  transition: border 0.2s ease;
+  resize: none;
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  border: 1px solid;
+  border-radius: 0.25rem;
+  border-color: #e0e0e0;
+  outline: none;
+  background: #ffffff;
+  background-image: none;
+  color: #373737;
+  line-height: 1.5;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  height: 2rem;
+  padding: 4px 0.5rem;
+  font-size: 1rem;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+}
+
+.c0:hover {
+  border-color: #8b8b8b;
+}
+
+.c0:focus {
+  border-color: #191539;
+}
+
+.c0:disabled,
+.c0 [disabled] {
+  border-color: #8b8b8b;
+  opacity: 0.5;
+  background-color: #e0e0e0;
+  cursor: not-allowed;
+}
+
+.c0::-webkit-input-placeholder {
+  color: #bfbfbf;
+}
+
+.c0::-moz-placeholder {
+  color: #bfbfbf;
+}
+
+.c0:-ms-input-placeholder {
+  color: #bfbfbf;
+}
+
+.c0::placeholder {
+  color: #bfbfbf;
+}
+
+<textarea
+  class="c0"
+  placeholder="placeholder"
+  style="height: 0px;"
+/>
+`;
+
+exports[`Textarea should render correctly with minRows & maxRows 1`] = `
+.c0 {
+  word-wrap: break-word;
+  -webkit-transition: border 0.2s ease;
+  transition: border 0.2s ease;
+  resize: none;
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  border: 1px solid;
+  border-radius: 0.25rem;
+  border-color: #e0e0e0;
+  outline: none;
+  background: #ffffff;
+  background-image: none;
+  color: #373737;
+  line-height: 1.5;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  height: 2rem;
+  padding: 4px 0.5rem;
+  font-size: 1rem;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+}
+
+.c0:hover {
+  border-color: #8b8b8b;
+}
+
+.c0:focus {
+  border-color: #191539;
+}
+
+.c0:disabled,
+.c0 [disabled] {
+  border-color: #8b8b8b;
+  opacity: 0.5;
+  background-color: #e0e0e0;
+  cursor: not-allowed;
+}
+
+.c0::-webkit-input-placeholder {
+  color: #bfbfbf;
+}
+
+.c0::-moz-placeholder {
+  color: #bfbfbf;
+}
+
+.c0:-ms-input-placeholder {
+  color: #bfbfbf;
+}
+
+.c0::placeholder {
+  color: #bfbfbf;
+}
+
+<textarea
+  class="c0"
+  id="demo"
+  placeholder="placeholder"
+  style="height: 0px;"
+/>
+`;
