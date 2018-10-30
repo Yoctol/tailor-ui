@@ -53,8 +53,10 @@ describe('Alert', () => {
 
     fireEvent.click(closeIcon);
 
+    const message = queryByText('Info Text');
+
     await wait(() => {
-      expect(queryByText('Info Text')).not.toBeVisible();
+      expect(message).not.toBeVisible();
     });
 
     expect(onClosed).toBeCalled();

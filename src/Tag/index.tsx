@@ -30,7 +30,7 @@ const StyledTag = styled<ICssProps, 'div'>(tag.div)`
   ${styledCss};
 `;
 
-const ClosableIcon = styled<any, any>(Icon)`
+const CloseIcon = styled<any, any>(Icon)`
   &:hover svg {
     fill: ${p => p.theme.colors.gray700};
   }
@@ -47,11 +47,11 @@ const StyledTagWrapper = styled.div`
 
 const AnimatedStyledTagWrapper = animated(StyledTagWrapper);
 
-interface IAnimatedTagProps {
+interface IClosableTagProps {
   onClosed?: () => void;
 }
 
-const AnimatedTag: SFC<IAnimatedTagProps> = ({
+const ClosableTag: SFC<IClosableTagProps> = ({
   children,
   onClosed,
   ...props
@@ -77,7 +77,7 @@ const AnimatedTag: SFC<IAnimatedTagProps> = ({
           <AnimatedStyledTagWrapper style={styles}>
             <StyledTag {...props}>
               {children}
-              <ClosableIcon
+              <CloseIcon
                 size="16"
                 ml="1"
                 fill="gray400"
@@ -118,7 +118,7 @@ class Tag extends PureComponent<ITagProps> {
 
   render() {
     const { closable, children, ...props } = this.props;
-    const RenderComponent = closable ? AnimatedTag : BaseTag;
+    const RenderComponent = closable ? ClosableTag : BaseTag;
 
     return <RenderComponent {...props}>{children}</RenderComponent>;
   }
