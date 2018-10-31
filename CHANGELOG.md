@@ -1,3 +1,13 @@
+<a name="2.0.0-beta.6"></a>
+
+# [2.0.0-beta.6](https://github.com/yoctol/ui/compare/v2.0.0-beta.5...v2.0.0-beta.6) (2018-10-31)
+
+### Features
+
+- add css props support ([8ee5c4f](https://github.com/yoctol/ui/commit/8ee5c4f))
+- **button:** add text type button ([#425](https://github.com/yoctol/ui/issues/425)) ([eeeadd1](https://github.com/yoctol/ui/commit/eeeadd1))
+- **mention:** create same prefix mention ([#426](https://github.com/yoctol/ui/issues/426)) ([f907f9a](https://github.com/yoctol/ui/commit/f907f9a))
+
 <a name="2.0.0-beta.5"></a>
 
 # [2.0.0-beta.5](https://github.com/yoctol/ui/compare/v2.0.0-beta.4...v2.0.0-beta.5) (2018-10-23)
