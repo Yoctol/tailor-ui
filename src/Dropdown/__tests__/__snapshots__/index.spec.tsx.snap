@@ -1,0 +1,407 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Dropdown should render correctly 1`] = `
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  height: 2rem;
+  margin-top: 0;
+  padding: 0 1rem;
+  background-color: #ffffff;
+  color: #5e5e5e;
+  font-size: 1rem;
+  white-space: nowrap;
+  cursor: pointer;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+}
+
+.c3:hover {
+  background-color: #e0e0e0;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  height: 2rem;
+  margin-top: 0;
+  padding: 0 1rem;
+  background-color: #ffffff;
+  color: #5e5e5e;
+  font-size: 1rem;
+  white-space: nowrap;
+  cursor: pointer;
+  background-color: #e0e0e0;
+  color: #8b8b8b;
+  cursor: not-allowed;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+}
+
+.c4:hover {
+  background-color: #e0e0e0;
+}
+
+.c2 {
+  display: block;
+  position: absolute;
+  z-index: 9999;
+  margin: 0;
+  padding: 0.25rem 0;
+  border: 1px solid;
+  border-radius: 0.25rem;
+  border-color: #e0e0e0;
+  background-color: #ffffff;
+  box-shadow: 0 4px 6px 0 rgba(191,191,191,0.5);
+  list-style: none;
+  min-width: 100px;
+  text-align: left;
+}
+
+.c2:focus {
+  outline: 0;
+}
+
+.c1 {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 1;
+  background: rgba(0,0,0,0.2);
+  -webkit-transform: scale(0);
+  -ms-transform: scale(0);
+  transform: scale(0);
+}
+
+.c0 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  position: relative;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  overflow: hidden;
+  border: 1px solid;
+  border-radius: 0.25rem;
+  line-height: 1.5;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  height: 2rem;
+  padding: 0 1rem;
+  font-size: 1rem;
+  border-color: transparent;
+  background-color: transparent;
+  color: #1a1a1a;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+}
+
+.c0:focus {
+  outline: 0;
+}
+
+.c0:disabled,
+.c0[disabled] {
+  opacity: 0.7;
+  cursor: default;
+  pointer-events: none;
+}
+
+.c0::before {
+  content: '';
+  display: inline-block;
+  position: relative;
+  left: 0;
+  width: 0;
+  height: 0;
+  margin-right: 0;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+}
+
+.c0 .c5 {
+  cursor: pointer;
+}
+
+.c0 .c5 svg {
+  fill: #1a1a1a;
+}
+
+.c0:hover {
+  border-color: transparent;
+  background-color: #e0e0e0;
+}
+
+<body>
+  <div>
+    <button
+      class="c0"
+      type="default"
+    >
+      Toggle
+      <div
+        class="c1"
+      />
+    </button>
+  </div>
+  <div
+    style="position: fixed; top: 0px; left: 0px; z-index: 9999;"
+  >
+    <ul
+      class="c2"
+      data-testid="dropdown-overlay"
+      style="opacity: 0; transform: translate3d(0, -10px, 0); top: 5px; left: 0px;"
+    >
+      <li
+        class="c3"
+      >
+        Basic Item
+      </li>
+      <li
+        class="c4"
+      >
+        Disibled Item
+      </li>
+      <li
+        class="c3"
+      >
+        Keep Item
+      </li>
+    </ul>
+  </div>
+</body>
+`;
+
+exports[`Dropdown should render with diffrient placement 1`] = `
+<body>
+  <div
+    style="position: fixed; top: 0px; left: 0px; z-index: 9999;"
+  >
+    .c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  height: 2rem;
+  margin-top: 0;
+  padding: 0 1rem;
+  background-color: #ffffff;
+  color: #5e5e5e;
+  font-size: 1rem;
+  white-space: nowrap;
+  cursor: pointer;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+}
+
+.c1:hover {
+  background-color: #e0e0e0;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  height: 2rem;
+  margin-top: 0;
+  padding: 0 1rem;
+  background-color: #ffffff;
+  color: #5e5e5e;
+  font-size: 1rem;
+  white-space: nowrap;
+  cursor: pointer;
+  background-color: #e0e0e0;
+  color: #8b8b8b;
+  cursor: not-allowed;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+}
+
+.c2:hover {
+  background-color: #e0e0e0;
+}
+
+.c0 {
+  display: block;
+  position: absolute;
+  z-index: 9999;
+  margin: 0;
+  padding: 0.25rem 0;
+  border: 1px solid;
+  border-radius: 0.25rem;
+  border-color: #e0e0e0;
+  background-color: #ffffff;
+  box-shadow: 0 4px 6px 0 rgba(191,191,191,0.5);
+  list-style: none;
+  min-width: 100px;
+  text-align: left;
+}
+
+.c0:focus {
+  outline: 0;
+}
+
+<ul
+      class="c0"
+      data-testid="dropdown-overlay"
+      style="opacity: 0; transform: translate3d(0, 10px, 0); top: -5px; left: 0px;"
+    >
+      <li
+        class="c1"
+      >
+        Basic Item
+      </li>
+      <li
+        class="c2"
+      >
+        Disibled Item
+      </li>
+      <li
+        class="c1"
+      >
+        Keep Item
+      </li>
+    </ul>
+  </div>
+  .c1 {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 1;
+  background: rgba(0,0,0,0.2);
+  -webkit-transform: scale(0);
+  -ms-transform: scale(0);
+  transform: scale(0);
+}
+
+.c0 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  position: relative;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  overflow: hidden;
+  border: 1px solid;
+  border-radius: 0.25rem;
+  line-height: 1.5;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  height: 2rem;
+  padding: 0 1rem;
+  font-size: 1rem;
+  border-color: transparent;
+  background-color: transparent;
+  color: #1a1a1a;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+}
+
+.c0:focus {
+  outline: 0;
+}
+
+.c0:disabled,
+.c0[disabled] {
+  opacity: 0.7;
+  cursor: default;
+  pointer-events: none;
+}
+
+.c0::before {
+  content: '';
+  display: inline-block;
+  position: relative;
+  left: 0;
+  width: 0;
+  height: 0;
+  margin-right: 0;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+}
+
+.c0 .c2 {
+  cursor: pointer;
+}
+
+.c0 .c2 svg {
+  fill: #1a1a1a;
+}
+
+.c0:hover {
+  border-color: transparent;
+  background-color: #e0e0e0;
+}
+
+<div>
+    <button
+      class="c0"
+      type="default"
+    >
+      Toggle
+      <div
+        class="c1"
+      />
+    </button>
+  </div>
+</body>
+`;

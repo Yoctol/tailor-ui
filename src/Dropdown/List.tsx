@@ -66,6 +66,7 @@ class List extends PureComponent<ListProps> {
       <Consumer>
         {({ styles, handleListRef }) => (
           <AnimatedStyledList
+            data-testid="dropdown-overlay"
             ref={handleListRef}
             style={{
               ...style,
