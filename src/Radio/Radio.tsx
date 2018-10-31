@@ -1,4 +1,4 @@
-import React, { ChangeEvent, PureComponent } from 'react';
+import React, { ChangeEvent, SFC } from 'react';
 
 import styled, { css } from 'utils/styled-components';
 import tag from 'utils/CleanTag';
@@ -120,46 +120,42 @@ export interface IRadioProps {
   value?: string;
 }
 
-class Radio extends PureComponent<IRadioProps> {
-  static Group = RadioGroup;
+const Radio: SFC<IRadioProps> & {
+  Group: typeof RadioGroup;
+} = ({
+  children,
+  disabled = false,
+  checked,
+  defaultChecked,
+  onChange,
+  value,
+  ...props
+}) => (
+  <Consumer>
+    {({ _onChange, _isChecked, direction }) => (
+      <RadioLabel disabled={disabled} direction={direction} {...props}>
+        <RadioWrapper>
+          <StyledRadio
+            disabled={disabled}
+            checked={_isChecked && value ? _isChecked(value) : checked}
+            defaultChecked={defaultChecked}
+            onChange={event => {
+              if (onChange) {
+                onChange(event);
+              }
+              if (_onChange && value) {
+                _onChange(value);
+              }
+            }}
+          />
+          <RadioInner />
+        </RadioWrapper>
+        <Space px="2">{children}</Space>
+      </RadioLabel>
+    )}
+  </Consumer>
+);
 
-  render() {
-    const {
-      children,
-      disabled = false,
-      checked,
-      defaultChecked,
-      onChange,
-      value,
-      ...props
-    } = this.props;
-
-    return (
-      <Consumer>
-        {({ _onChange, _isChecked, direction }) => (
-          <RadioLabel disabled={disabled} direction={direction} {...props}>
-            <RadioWrapper>
-              <StyledRadio
-                disabled={disabled}
-                checked={_isChecked && value ? _isChecked(value) : checked}
-                defaultChecked={defaultChecked}
-                onChange={event => {
-                  if (onChange) {
-                    onChange(event);
-                  }
-                  if (_onChange && value) {
-                    _onChange(value);
-                  }
-                }}
-              />
-              <RadioInner />
-            </RadioWrapper>
-            <Space px="2">{children}</Space>
-          </RadioLabel>
-        )}
-      </Consumer>
-    );
-  }
-}
+Radio.Group = RadioGroup;
 
 export default Radio;

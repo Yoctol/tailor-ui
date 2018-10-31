@@ -175,11 +175,11 @@ class Trigger extends PureComponent<ITriggerProps, ITriggerState> {
     if (animation === 'slide') {
       const translateFrom = placement.startsWith('top') ? 10 : -10;
       transform = {
-        leave: 'translate3d(0, 0px, 0)',
-        enter:
+        leave:
           placement.startsWith('top') || placement.startsWith('bottom')
             ? `translate3d(0, ${translateFrom}px, 0)`
             : `translate3d(${translateFrom}px, 0, 0)`,
+        enter: 'translate3d(0, 0px, 0)',
       };
     } else if (animation === 'scale') {
       transformOrigin = {
