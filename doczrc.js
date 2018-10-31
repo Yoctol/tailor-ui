@@ -4,8 +4,10 @@ module.exports = {
   title: '@yoctol/ui',
   description: 'Yoctol UI components',
   typescript: true,
+  codeSandbox: false,
   wrapper: 'docz/DoczWrapper',
   themeConfig: {
+    showPlaygroundEditor: false,
     colors: {
       primary: '#423b63',
       sidebarBg: '#fff',
