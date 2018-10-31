@@ -1,4 +1,4 @@
-import React, { ChangeEvent, PureComponent } from 'react';
+import React, { ChangeEvent, SFC } from 'react';
 
 import styled, { css } from 'utils/styled-components';
 import tag from 'utils/CleanTag';
@@ -125,45 +125,42 @@ export interface ICheckboxProps {
   value?: string;
 }
 
-class Checkbox extends PureComponent<ICheckboxProps> {
-  static Group = CheckboxGroup;
+const Checkbox: SFC<ICheckboxProps> & {
+  Group: typeof CheckboxGroup;
+} = ({
+  children,
+  disabled = false,
+  checked,
+  defaultChecked,
+  onChange,
+  value,
+  ...props
+}) => (
+  <Consumer>
+    {({ _onChange, _isChecked, direction }) => (
+      <CheckboxLabel disabled={disabled} direction={direction} {...props}>
+        <CheckboxWrapper>
+          <StyledCheckbox
+            disabled={disabled}
+            checked={_isChecked && value ? _isChecked(value) : checked}
+            defaultChecked={defaultChecked}
+            onChange={event => {
+              if (onChange) {
+                onChange(event);
+              }
+              if (_onChange && value) {
+                _onChange(event, value);
+              }
+            }}
+          />
+          <CheckboxInner />
+        </CheckboxWrapper>
+        <Space px="2">{children}</Space>
+      </CheckboxLabel>
+    )}
+  </Consumer>
+);
 
-  render() {
-    const {
-      children,
-      disabled = false,
-      checked,
-      defaultChecked,
-      onChange,
-      value,
-      ...props
-    } = this.props;
-    return (
-      <Consumer>
-        {({ _onChange, _isChecked, direction }) => (
-          <CheckboxLabel disabled={disabled} direction={direction} {...props}>
-            <CheckboxWrapper>
-              <StyledCheckbox
-                disabled={disabled}
-                checked={_isChecked && value ? _isChecked(value) : checked}
-                defaultChecked={defaultChecked}
-                onChange={event => {
-                  if (onChange) {
-                    onChange(event);
-                  }
-                  if (_onChange && value) {
-                    _onChange(event, value);
-                  }
-                }}
-              />
-              <CheckboxInner />
-            </CheckboxWrapper>
-            <Space px="2">{children}</Space>
-          </CheckboxLabel>
-        )}
-      </Consumer>
-    );
-  }
-}
+Checkbox.Group = CheckboxGroup;
 
 export default Checkbox;

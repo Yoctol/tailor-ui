@@ -1,34 +1,31 @@
-import React, { PureComponent } from 'react';
+import React, { SFC } from 'react';
 
 import Flex, { FlexProps } from '../Grid/Flex';
 
 import Item from './Item';
 import SubMenu from './SubMenu';
 
-class Menu extends PureComponent<FlexProps> {
-  static SubMenu = SubMenu;
+const Menu: SFC<FlexProps> & {
+  SubMenu: typeof SubMenu;
+  Item: typeof Item;
+} = ({ children, ...props }) => (
+  <Flex
+    flexDirection="column"
+    justifyContent="start"
+    height="100%"
+    overflowY="auto"
+    bg="primary"
+    {...props}
+  >
+    {children}
+  </Flex>
+);
 
-  static Item = Item;
+Menu.defaultProps = {
+  width: 180,
+};
 
-  static defaultProps = {
-    width: 180,
-  };
-
-  render() {
-    const { children, ...props } = this.props;
-    return (
-      <Flex
-        flexDirection="column"
-        justifyContent="start"
-        height="100%"
-        overflowY="auto"
-        bg="primary"
-        {...props}
-      >
-        {children}
-      </Flex>
-    );
-  }
-}
+Menu.SubMenu = SubMenu;
+Menu.Item = Item;
 
 export default Menu;

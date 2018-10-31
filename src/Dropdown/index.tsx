@@ -1,4 +1,4 @@
-import React, { PureComponent, ReactNode } from 'react';
+import React, { ReactNode, SFC } from 'react';
 
 import Trigger, { IChildrenRenderProps, IPopupRenderProps } from '../Trigger';
 
@@ -31,48 +31,40 @@ export interface IDropdownProps {
   onVisibleChange?: (visible: boolean) => void;
 }
 
-class Dropdown extends PureComponent<IDropdownProps> {
-  static List: typeof List = List;
+const renderOverlay = (overlay: ReactNode) => ({
+  styles,
+  handleClose,
+  handlePopupRef,
+}: IPopupRenderProps) => (
+  <Provider
+    value={{
+      styles,
+      handleClose,
+      handleListRef: handlePopupRef,
+    }}
+  >
+    {overlay}
+  </Provider>
+);
 
-  static Item: typeof Item = Item;
+const Dropdown: SFC<IDropdownProps> & {
+  List: typeof List;
+  Item: typeof Item;
+  SubList: typeof SubList;
+} = ({ placement, onVisibleChange, overlay, children }) => (
+  <Trigger
+    trigger="click"
+    appendFor="dropdown"
+    placement={placement}
+    onVisibleChange={onVisibleChange}
+    popup={renderOverlay(overlay)}
+  >
+    {children}
+  </Trigger>
+);
 
-  static SubList: typeof SubList = SubList;
-
-  static defaultProps = {
-    placement: 'bottomLeft',
-  };
-
-  renderOverlay = ({
-    styles,
-    handleClose,
-    handlePopupRef,
-  }: IPopupRenderProps) => (
-    <Provider
-      value={{
-        styles,
-        handleClose,
-        handleListRef: handlePopupRef,
-      }}
-    >
-      {this.props.overlay}
-    </Provider>
-  );
-
-  render() {
-    const { placement, onVisibleChange, children } = this.props;
-
-    return (
-      <Trigger
-        trigger="click"
-        appendFor="dropdown"
-        placement={placement}
-        onVisibleChange={onVisibleChange}
-        popup={this.renderOverlay}
-      >
-        {children}
-      </Trigger>
-    );
-  }
-}
+Dropdown.List = List;
+Dropdown.Item = Item;
+Dropdown.SubList = SubList;
 
 export default Dropdown;

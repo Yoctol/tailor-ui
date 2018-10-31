@@ -1,6 +1,5 @@
 import React, {
   Children,
-  PureComponent,
   ReactChild,
   ReactElement,
   SFC,
@@ -297,50 +296,43 @@ export interface IStepsProps {
   children: Array<ReactElement<IStepProps>>;
 }
 
-class Steps extends PureComponent<IStepsProps> {
-  static Step = Step;
+const Steps: SFC<IStepsProps> & {
+  Step: typeof Step;
+} = ({ children, current, onCurrentChange, direction = 'horizontal' }) => {
+  const totalCount = Children.count(children) - 1;
+  const steps = Children.toArray(children);
 
-  render() {
-    const {
-      children,
-      current,
-      onCurrentChange,
-      direction = 'horizontal',
-    } = this.props;
+  return (
+    <Flex flexDirection={direction === 'horizontal' ? 'row' : 'column'}>
+      {steps.map((step, count) => {
+        if (isValidElement<IStepProps>(step)) {
+          const status = step.props.status || getStatus({ current, count });
+          const isLast = count === totalCount;
+          const tailColor = getTailColor({ count, status, steps });
 
-    const totalCount = Children.count(children) - 1;
-    const steps = Children.toArray(children);
+          return (
+            <Provider
+              key={step.key || count}
+              value={{
+                count,
+                status,
+                isLast,
+                tailColor,
+                direction,
+                onCurrentChange,
+              }}
+            >
+              {step}
+            </Provider>
+          );
+        }
 
-    return (
-      <Flex flexDirection={direction === 'horizontal' ? 'row' : 'column'}>
-        {steps.map((step, count) => {
-          if (isValidElement<IStepProps>(step)) {
-            const status = step.props.status || getStatus({ current, count });
-            const isLast = count === totalCount;
-            const tailColor = getTailColor({ count, status, steps });
+        return null;
+      })}
+    </Flex>
+  );
+};
 
-            return (
-              <Provider
-                key={step.key || count}
-                value={{
-                  count,
-                  status,
-                  isLast,
-                  tailColor,
-                  direction,
-                  onCurrentChange,
-                }}
-              >
-                {step}
-              </Provider>
-            );
-          }
-
-          return null;
-        })}
-      </Flex>
-    );
-  }
-}
+Steps.Step = Step;
 
 export default Steps;
