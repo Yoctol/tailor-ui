@@ -23,7 +23,7 @@ export interface IDropdownProps {
   /**
    * The position base on the children component
    */
-  placement: Placement;
+  placement?: Placement;
 
   /**
    * a callback function takes an argument: visible, is executed when the visible state is changed
@@ -62,6 +62,10 @@ const Dropdown: SFC<IDropdownProps> & {
     {children}
   </Trigger>
 );
+
+Dropdown.defaultProps = {
+  placement: 'bottomLeft',
+};
 
 Dropdown.List = List;
 Dropdown.Item = Item;
