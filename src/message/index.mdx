@@ -61,7 +61,7 @@ import { message } from '@yoctol/ui'
 ### Handle Promise
 
 <Playground>
-  <Button onClick={async () => {
+  <Button onClick={async function() {
     await message.info('This is a info message!');
     message.success('Previous message has been resolve!');
   }}>

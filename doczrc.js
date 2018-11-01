@@ -7,7 +7,6 @@ module.exports = {
   codeSandbox: false,
   wrapper: 'docz/DoczWrapper',
   themeConfig: {
-    showPlaygroundEditor: false,
     colors: {
       primary: '#423b63',
       sidebarBg: '#fff',

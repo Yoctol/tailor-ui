@@ -155,17 +155,17 @@ import { Modal } from '@yoctol/ui';
 
 <Playground>
   <Button
-    onClick={() => {
-      Modal.confirm({
+    onClick={async function() {
+      const confirmed = await Modal.confirm({
         title: 'Do you want to delete these items?',
         content: 'Some descriptions',
-      }).then(confirmed => {
-        if (confirmed) {
-          console.log('confirmed!');
-        } else {
-          console.log('canceled!');
-        }
       });
+
+      if (confirmed) {
+        console.log('confirmed!');
+      } else {
+        console.log('canceled!');
+      }
     }}>
     Confirm
   </Button>
@@ -187,17 +187,16 @@ import { Modal } from '@yoctol/ui';
   </Button>
   <Button
     ml="2"
-    onClick={() => {
-      Modal.success({
+    onClick={async function() {
+      const confirmed = await Modal.success({
         title: 'This is a success modal',
         content: 'Some descriptions',
-      }).then(confirmed => {
-        if (confirmed) {
-          console.log('success confirm');
-        }
       });
-    }}
-  >
+
+      if (confirmed) {
+        console.log('success confirm');
+      }
+    }}>
     Success
   </Button>
   <Button
