@@ -60,6 +60,26 @@ describe('Card', () => {
     expect(onClick).toBeCalled();
   });
 
+  it('should call Card onClick when clicked item is not a button', () => {
+    const onCardClick = jest.fn();
+
+    const { getByText } = render(
+      <Card width="400px" onClick={onCardClick}>
+        <Card.Block>Title</Card.Block>
+        <Card.Block>Content</Card.Block>
+        <Card.Block p="1">
+          <Button block>With Button</Button>
+        </Card.Block>
+      </Card>
+    );
+
+    const title = getByText('Title');
+
+    fireEvent.click(title);
+
+    expect(onCardClick).toBeCalled();
+  });
+
   it('should call Button onClick instead of Card onClick when button is clicked', () => {
     const onButtonClick = jest.fn();
     const onCardClick = jest.fn();
@@ -69,7 +89,13 @@ describe('Card', () => {
         <Card.Block>Title</Card.Block>
         <Card.Block>Content</Card.Block>
         <Card.Block p="1">
-          <Button block onClick={onButtonClick}>
+          <Button
+            block
+            onClick={(event: any) => {
+              event.stopPropagation();
+              onButtonClick();
+            }}
+          >
             With Button
           </Button>
         </Card.Block>

@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { SFC } from 'react';
 import {
   BorderColorProps,
   BorderRadiusProps,
@@ -74,34 +74,18 @@ const CardWrapper = styled<CardProps, any>(tag.div)`
   ${styledCss};
 `;
 
-class Card extends PureComponent<CardProps> {
-  static Block = CardBlock;
+const Card: SFC<CardProps> & {
+  Block: typeof CardBlock;
+  Image: typeof CardImage;
+} = props => <CardWrapper clickable={!!props.onClick} {...props} />;
 
-  static Image = CardImage;
+Card.Block = CardBlock;
+Card.Image = CardImage;
 
-  static defaultProps = {
-    bg: 'light',
-    borderRadius: 'lg',
-    borderColor: 'gray300',
-  };
-
-  handleClick = (event: MouseEvent) => {
-    if (this.props.onClick && event.target === event.currentTarget) {
-      this.props.onClick(event);
-    }
-  };
-
-  render() {
-    const clickable = !!this.props.onClick;
-
-    return (
-      <CardWrapper
-        {...this.props}
-        clickable={clickable}
-        onClick={this.handleClick}
-      />
-    );
-  }
-}
+Card.defaultProps = {
+  bg: 'light',
+  borderRadius: 'lg',
+  borderColor: 'gray300',
+};
 
 export default Card;
