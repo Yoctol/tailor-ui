@@ -1,3 +1,11 @@
+<a name="2.0.0-beta.8"></a>
+
+# [2.0.0-beta.8](https://github.com/yoctol/ui/compare/v2.0.0-beta.7...v2.0.0-beta.8) (2018-11-01)
+
+### Bug Fixes
+
+- **card:** onClick event ([53fc705](https://github.com/yoctol/ui/commit/53fc705))
+
 <a name="2.0.0-beta.7"></a>
 
 # [2.0.0-beta.7](https://github.com/yoctol/ui/compare/v2.0.0-beta.6...v2.0.0-beta.7) (2018-11-01)
