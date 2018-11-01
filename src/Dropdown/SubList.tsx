@@ -8,7 +8,7 @@ import tag from 'utils/CleanTag';
 import Icon from '../Icon';
 
 import Item from './Item';
-import { StyledList } from './List';
+import { StyledList, StyledListProps } from './List';
 
 const SubListWrapper = styled(tag.div)`
   position: absolute;
@@ -40,7 +40,7 @@ const StyledSubItem = styled(Item)`
   }
 `;
 
-export interface ISubItemProps {
+export interface ISubItemProps extends StyledListProps {
   title: string;
   disabled?: boolean;
 }
