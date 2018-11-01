@@ -1,3 +1,11 @@
+<a name="2.0.0-beta.7"></a>
+
+# [2.0.0-beta.7](https://github.com/yoctol/ui/compare/v2.0.0-beta.6...v2.0.0-beta.7) (2018-11-01)
+
+### Bug Fixes
+
+- **dropdown:** default props ([b737c37](https://github.com/yoctol/ui/commit/b737c37))
+
 <a name="2.0.0-beta.6"></a>
 
 # [2.0.0-beta.6](https://github.com/yoctol/ui/compare/v2.0.0-beta.5...v2.0.0-beta.6) (2018-10-31)
@@ -326,7 +334,7 @@
 
 <a name="1.10.0"></a>
 
-# [1.10.0](https://github.com/yoctol/ui/compare/1.10.0...v1.10.0) (2018-08-14)
+# [1.10.0](https://github.com/yoctol/ui/compare/v1.9.0...v1.10.0) (2018-08-14)
 
 ### Bug Fixes
 
