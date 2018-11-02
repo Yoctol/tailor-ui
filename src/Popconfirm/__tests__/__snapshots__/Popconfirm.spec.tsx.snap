@@ -1,0 +1,417 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Popconfirm should render correctly 1`] = `
+.c7 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  line-height: 1;
+  cursor: default;
+  margin-right: 0.5rem;
+}
+
+.c7 svg {
+  fill: #423b63;
+  vertical-align: middle;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+}
+
+.c7.c7.c7 svg {
+  fill: #de8a15;
+  width: 20px;
+  height: 20px;
+}
+
+.c1 {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 1;
+  background: rgba(0,0,0,0.2);
+  -webkit-transform: scale(0);
+  -ms-transform: scale(0);
+  transform: scale(0);
+}
+
+.c0 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  position: relative;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  overflow: hidden;
+  border: 1px solid;
+  border-radius: 0.25rem;
+  line-height: 1.5;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  height: 2rem;
+  padding: 0 1rem;
+  font-size: 1rem;
+  border-color: #e0e0e0;
+  background-color: #ffffff;
+  color: #1a1a1a;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+}
+
+.c0:focus {
+  outline: 0;
+}
+
+.c0:disabled,
+.c0[disabled] {
+  opacity: 0.7;
+  cursor: default;
+  pointer-events: none;
+}
+
+.c0::before {
+  content: '';
+  display: inline-block;
+  position: relative;
+  left: 0;
+  width: 0;
+  height: 0;
+  margin-right: 0;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+}
+
+.c0 .c6 {
+  cursor: pointer;
+}
+
+.c0 .c6 svg {
+  fill: #1a1a1a;
+}
+
+.c0:hover {
+  border-color: #423b63;
+  background-color: #f6f6f6;
+}
+
+.c9 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  position: relative;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  overflow: hidden;
+  border: 1px solid;
+  border-radius: 0.25rem;
+  line-height: 1.5;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  height: 1.5rem;
+  padding: 0 0.75rem;
+  font-size: 0.875rem;
+  border-color: #e0e0e0;
+  background-color: #ffffff;
+  color: #1a1a1a;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+  margin-left: auto;
+}
+
+.c9:focus {
+  outline: 0;
+}
+
+.c9:disabled,
+.c9[disabled] {
+  opacity: 0.7;
+  cursor: default;
+  pointer-events: none;
+}
+
+.c9::before {
+  content: '';
+  display: inline-block;
+  position: relative;
+  left: 0;
+  width: 0;
+  height: 0;
+  margin-right: 0;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+}
+
+.c9 .c6 {
+  cursor: pointer;
+}
+
+.c9 .c6 svg {
+  fill: #1a1a1a;
+}
+
+.c9:hover {
+  border-color: #423b63;
+  background-color: #f6f6f6;
+}
+
+.c10 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  position: relative;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  overflow: hidden;
+  border: 1px solid;
+  border-radius: 0.25rem;
+  line-height: 1.5;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  height: 1.5rem;
+  padding: 0 0.75rem;
+  font-size: 0.875rem;
+  border-color: #423b63;
+  background-color: #423b63;
+  color: #ffffff;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+  margin-left: 0.5rem;
+}
+
+.c10:focus {
+  outline: 0;
+}
+
+.c10:disabled,
+.c10[disabled] {
+  opacity: 0.7;
+  cursor: default;
+  pointer-events: none;
+}
+
+.c10::before {
+  content: '';
+  display: inline-block;
+  position: relative;
+  left: 0;
+  width: 0;
+  height: 0;
+  margin-right: 0;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+}
+
+.c10 .c6 {
+  cursor: pointer;
+}
+
+.c10 .c6 svg {
+  fill: #ffffff;
+}
+
+.c10:hover {
+  background-color: #ffffff;
+  color: #423b63;
+}
+
+.c10:hover .c6 svg {
+  fill: #423b63;
+}
+
+.c5 {
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c8 {
+  box-sizing: border-box;
+  margin-top: 1rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c2 {
+  position: absolute;
+  z-index: 99;
+}
+
+.c11 {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-top: 5px solid #191539;
+  border-right: 5px solid transparent;
+  border-left: 5px solid transparent;
+  opacity: 0.8;
+  left: 50%;
+  margin-left: -4px;
+  border-top: 5px solid #e0e0e0;
+  opacity: 1;
+}
+
+.c11::after {
+  content: '';
+  position: absolute;
+  top: -7px;
+  left: -6px;
+  border-top: 6px solid #ffffff;
+  border-right: 6px solid transparent;
+  border-left: 6px solid transparent;
+}
+
+.c3 {
+  border: 1px solid;
+  border-color: #191539;
+  background-color: #191539;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  color: #ffffff;
+  font-size: 0.875rem;
+  opacity: 0.8;
+  padding: 0.25rem;
+  min-width: 120px;
+  border-radius: 0.25rem;
+  text-align: center;
+  padding: 0;
+  border-color: #e0e0e0;
+  opacity: 1;
+  background-color: #ffffff;
+  color: #373737;
+  text-align: left;
+}
+
+.c4 {
+  padding: 0.5rem;
+  word-break: break-all;
+  white-space: nowrap;
+}
+
+<body>
+  <div>
+    <button
+      class="c0"
+      type="default"
+    >
+      Button
+      <div
+        class="c1"
+      />
+    </button>
+  </div>
+  <div
+    style="position: fixed; top: 0px; left: 0px; z-index: 9999;"
+  >
+    <div
+      class="c2"
+      style="opacity: 0; transform: scale(0.3); top: -10px; left: 0px;"
+    >
+      <div
+        class="c3"
+      >
+        <div
+          class="c4"
+        >
+          <div
+            class="c5"
+          >
+            <i
+              class="c6 c7"
+              cursor="default"
+              fill="warning"
+            >
+              <svg
+                fill="currentColor"
+                height="1em"
+                stroke="currentColor"
+                stroke-width="0"
+                viewBox="0 0 24 24"
+                width="1em"
+              >
+                <path
+                  d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"
+                />
+              </svg>
+            </i>
+            Test Popconfirm
+          </div>
+          <div
+            class="c8"
+          >
+            <button
+              class="c9"
+              type="default"
+            >
+              Cancel
+              <div
+                class="c1"
+              />
+            </button>
+            <button
+              class="c10"
+              type="primary"
+            >
+              Confirm
+              <div
+                class="c1"
+              />
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        class="c11"
+        placement="top"
+      />
+    </div>
+  </div>
+</body>
+`;
