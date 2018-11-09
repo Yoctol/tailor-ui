@@ -35,11 +35,7 @@ import { Popover } from '@yoctol/ui';
 ### With placement right
 
 <Playground>
-  <Popover
-    placement="right"
-    title="Popover Title"
-    content="Popover Content"
-  >
+  <Popover placement="right" title="Popover Title" content="Popover Content">
     <Button>Button</Button>
   </Popover>
 </Playground>
@@ -53,7 +49,9 @@ import { Popover } from '@yoctol/ui';
     content={hide => (
       <div>
         Popover Content
-        <Button size="sm" onClick={hide}>Hide Popover</Button>
+        <Button size="sm" onClick={hide}>
+          Hide Popover
+        </Button>
       </div>
     )}
   >
@@ -74,11 +72,12 @@ import { Popover } from '@yoctol/ui';
   </Popover>
 </Playground>
 
-
 ## API
 
 <PropsTable of={Popover} />
 
 <div>
-Consult <Link to="/data-display/tooltip#properties">Tooltip's documentation</Link> to find more APIs.
+  Consult{' '}
+  <Link to="/data-display/tooltip#properties">Tooltip's documentation</Link> to
+  find more APIs.
 </div>

@@ -1,5 +1,5 @@
 import React, { ChangeEvent, ChangeEventHandler, SFC } from 'react';
-import { Input as PowerplugInput } from 'react-powerplug';
+import { Field } from 'react-powerplug';
 import { rem } from 'polished';
 
 import styled from 'utils/styled-components';
@@ -96,7 +96,7 @@ const TextField: SFC<ITextFieldProps> = ({
   onChange = null,
   ...props
 }) => (
-  <PowerplugInput initial={defaultValue}>
+  <Field initial={defaultValue}>
     {({ value: uncontrolledValue, bind }) => {
       const value =
         controlledValue || controlledValue === ''
@@ -119,14 +119,15 @@ const TextField: SFC<ITextFieldProps> = ({
       return (
         <TextFieldField success={success} warning={warning} error={error}>
           <RenderComponent {...inputProps} required />
-          {maxLength &&
-            !hasHint && <MaxLength>{maxLength - value.length}</MaxLength>}
+          {maxLength && !hasHint && (
+            <MaxLength>{maxLength - value.length}</MaxLength>
+          )}
           {label && <TextFieldLabel>{label}</TextFieldLabel>}
           {hasHint && <Hint>{message}</Hint>}
         </TextFieldField>
       );
     }}
-  </PowerplugInput>
+  </Field>
 );
 
 // TextField.propTypes = {

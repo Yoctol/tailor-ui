@@ -31,7 +31,7 @@ const ClosableAlert: SFC<IAlertProps> = ({ onClosed, ...props }) => (
           precision: 0.1,
         }}
       >
-        {({ x, height }) => (
+        {({ x, height }: { x: any; height: any }) => (
           <animated.div
             style={{
               transform: x.interpolate((_x: number) => `scaleY(${_x})`),

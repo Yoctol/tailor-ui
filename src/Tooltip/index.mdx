@@ -34,7 +34,11 @@ import { Tooltip } from '@yoctol/ui';
 ### Click
 
 <Playground>
-  <Tooltip placement="top" trigger="click" content={<span>Tooltip Content</span>}>
+  <Tooltip
+    placement="top"
+    trigger="click"
+    content={<span>Tooltip Content</span>}
+  >
     <Button>Button</Button>
   </Tooltip>
 </Playground>
@@ -78,6 +82,7 @@ import { Tooltip } from '@yoctol/ui';
         <Button>Right Bottom</Button>
       </Tooltip>
     </Flex>
+
   </Flex>
 
   <Flex justifyContent="center">
@@ -111,7 +116,9 @@ import { Tooltip } from '@yoctol/ui';
     content={hide => (
       <div>
         Tooltip Content
-        <Button size="sm" onClick={hide}>Hide Tooltip</Button>
+        <Button size="sm" onClick={hide}>
+          Hide Tooltip
+        </Button>
       </div>
     )}
   >
@@ -141,7 +148,6 @@ import { Tooltip } from '@yoctol/ui';
   </Tooltip>
 </Playground>
 
-
 ### With defaultVisible
 
 <Playground>
@@ -155,11 +161,7 @@ import { Tooltip } from '@yoctol/ui';
   </Tooltip>
   <br />
   <br />
-  <Tooltip
-    placement="right"
-    content="Tooltip content"
-    defaultVisible
-  >
+  <Tooltip placement="right" content="Tooltip content" defaultVisible>
     <Button>Button</Button>
   </Tooltip>
 </Playground>

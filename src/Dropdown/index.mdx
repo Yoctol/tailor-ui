@@ -36,8 +36,12 @@ import { Dropdown } from '@yoctol/ui';
     overlay={
       <Dropdown.List>
         <Dropdown.Item key="1">Basic Item</Dropdown.Item>
-        <Dropdown.Item key="2" disabled>disibled Item</Dropdown.Item>
-        <Dropdown.Item key="3" keep>Keep Item</Dropdown.Item>
+        <Dropdown.Item key="2" disabled>
+          disibled Item
+        </Dropdown.Item>
+        <Dropdown.Item key="3" keep>
+          Keep Item
+        </Dropdown.Item>
       </Dropdown.List>
     }
   >
@@ -110,6 +114,7 @@ import { Dropdown } from '@yoctol/ui';
         )}
       </Dropdown>
     </Box>
+
   </Flex>
 </Playground>
 
@@ -123,10 +128,7 @@ import { Dropdown } from '@yoctol/ui';
         <Dropdown.Item key="Item 1">Item 1</Dropdown.Item>
         <Dropdown.Item key="Item 2">Item 2</Dropdown.Item>
         <Dropdown.SubList key="Item 3" title="Sub List">
-          <Dropdown.Item
-            key="1"
-            onClick={() => console.log('sub item 1')}
-          >
+          <Dropdown.Item key="1" onClick={() => console.log('sub item 1')}>
             Sub Item
           </Dropdown.Item>
           <Dropdown.SubList

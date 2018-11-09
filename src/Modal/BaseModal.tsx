@@ -99,15 +99,16 @@ class BaseModal extends PureComponent<BaseModalProps> {
           config={config.stiff}
         >
           {v =>
-            v === 'visible' && // FIXME: waiting for the typing update
-            ((style: any) => (
-              <ModalWrapper
-                style={style}
-                onCancel={onCancel}
-                content={children}
-                {...otherProps}
-              />
-            ))
+            v === 'visible' // FIXME: waiting for the typing update
+              ? (style: any) => (
+                  <ModalWrapper
+                    style={style}
+                    onCancel={onCancel}
+                    content={children}
+                    {...otherProps}
+                  />
+                )
+              : () => null
           }
         </Transition>
       </>

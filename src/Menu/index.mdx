@@ -14,7 +14,6 @@ import Menu from './';
 import Item from './Item';
 import SubMenu from './SubMenu';
 
-
 # Menu
 
 Menu list of Navigation.
@@ -37,7 +36,11 @@ import { Menu } from '@yoctol/ui';
       <Box height="600px">
         <Menu onChange={console.log} initial="1">
           {range(1, 10).map(key => (
-            <Menu.Item key={key} active={value === key} onClick={() => set(key)}>
+            <Menu.Item
+              key={key}
+              active={value === key}
+              onClick={() => set(key)}
+            >
               Menu {key}
             </Menu.Item>
           ))}
@@ -77,11 +80,7 @@ import { Menu } from '@yoctol/ui';
             Item 6
           </Menu.Item>
         </Menu.SubMenu>
-        <Menu.Item
-          icon="tags"
-          active={value === '7'}
-          onClick={() => set('7')}
-        >
+        <Menu.Item icon="tags" active={value === '7'} onClick={() => set('7')}>
           Item 7
         </Menu.Item>
         <Menu.Item
@@ -131,10 +130,13 @@ import { Menu } from '@yoctol/ui';
 ## API
 
 ### Menu
+
 <PropsTable of={Menu} />
 
 ### Menu.SubMenu
+
 <PropsTable of={SubMenu} />
 
 ### Menu.Item
+
 <PropsTable of={Item} />

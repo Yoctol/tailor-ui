@@ -275,29 +275,30 @@ class Trigger extends PureComponent<ITriggerProps, ITriggerState> {
         }}
       >
         {v =>
-          v === 'visible' && // FIXME: waiting for the typing update
-          ((styles: any) => {
-            const renderPopup = () =>
-              popup({
-                styles: {
-                  ...styles,
-                  ...this.offset,
-                },
-                handleClose: this.handleClose,
-                handlePopupRef: this.handlePopupRef,
-              });
+          v === 'visible' // FIXME: waiting for the typing update
+            ? (styles: any) => {
+                const renderPopup = () =>
+                  popup({
+                    styles: {
+                      ...styles,
+                      ...this.offset,
+                    },
+                    handleClose: this.handleClose,
+                    handlePopupRef: this.handlePopupRef,
+                  });
 
-            return trigger === 'click' ? (
-              <ClickOutside
-                bindRefs={[this.childrenDOM, popupRef]}
-                onClickOutside={this.handleClose}
-              >
-                {renderPopup()}
-              </ClickOutside>
-            ) : (
-              renderPopup()
-            );
-          })
+                return trigger === 'click' ? (
+                  <ClickOutside
+                    bindRefs={[this.childrenDOM, popupRef]}
+                    onClickOutside={this.handleClose}
+                  >
+                    {renderPopup()}
+                  </ClickOutside>
+                ) : (
+                  renderPopup()
+                );
+              }
+            : () => null
         }
       </Transition>
     );
@@ -310,13 +311,12 @@ class Trigger extends PureComponent<ITriggerProps, ITriggerState> {
     return (
       <>
         {this.renderChildren()}
-        {visible &&
-          trigger === 'click' && (
-            <Keydown
-              keyCode={Keydown.ESC_KEY_CODE}
-              handleKeydown={this.handleClose}
-            />
-          )}
+        {visible && trigger === 'click' && (
+          <Keydown
+            keyCode={Keydown.ESC_KEY_CODE}
+            handleKeydown={this.handleClose}
+          />
+        )}
         <Portal appendFor={appendFor}>{this.renderPopup()}</Portal>
       </>
     );

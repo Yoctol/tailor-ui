@@ -37,10 +37,7 @@ import { Checkbox } from '@yoctol/ui';
   <br />
   <Toggle>
     {({ on, toggle }) => (
-      <Checkbox
-        checked={on}
-        onChange={toggle}
-      >
+      <Checkbox checked={on} onChange={toggle}>
         Controlled Checkbox
       </Checkbox>
     )}
@@ -50,7 +47,9 @@ import { Checkbox } from '@yoctol/ui';
 #### Disabled
 
 <Playground>
-  <Checkbox checked disabled>Checked Disabled</Checkbox>
+  <Checkbox checked disabled>
+    Checked Disabled
+  </Checkbox>
   <Checkbox disabled>Disabled</Checkbox>
 </Playground>
 
@@ -86,7 +85,6 @@ import { Checkbox } from '@yoctol/ui';
   />
 </Playground>
 
-
 #### Controlled
 
 <Playground>
@@ -104,8 +102,14 @@ import { Checkbox } from '@yoctol/ui';
           onChange={set}
         />
         <br />
-        <Button onClick={() => set(['check_1', 'check_2', 'check_3', 'check_4'])}>Select All</Button>
-        <Button ml="2" onClick={() => set([])}>Unselect All</Button>
+        <Button
+          onClick={() => set(['check_1', 'check_2', 'check_3', 'check_4'])}
+        >
+          Select All
+        </Button>
+        <Button ml="2" onClick={() => set([])}>
+          Unselect All
+        </Button>
       </div>
     )}
   </Value>

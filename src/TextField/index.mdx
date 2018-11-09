@@ -5,7 +5,7 @@ route: /components/textfield
 ---
 
 import { PropsTable, Playground, Link } from 'docz';
-import { Input, Toggle } from 'react-powerplug';
+import { Field, Toggle } from 'react-powerplug';
 
 import Button from '../Button';
 
@@ -28,14 +28,24 @@ import { TextField } from '@yoctol/ui';
 ### Basic
 
 <Playground>
-  <TextField label="Text Field" onChange={event => console.log(event.target.value)} />
-  <TextField label="Text Field" onChange={event => console.log(event.target.value)} />
+  <TextField
+    label="Text Field"
+    onChange={event => console.log(event.target.value)}
+  />
+  <TextField
+    label="Text Field"
+    onChange={event => console.log(event.target.value)}
+  />
 </Playground>
 
 ### With maxLength
 
 <Playground>
-  <TextField label="Text Field" maxLength={12} onChange={event => console.log(event.target.value)} />
+  <TextField
+    label="Text Field"
+    maxLength={12}
+    onChange={event => console.log(event.target.value)}
+  />
 </Playground>
 
 ### With textarea
@@ -66,7 +76,7 @@ import { TextField } from '@yoctol/ui';
 ### With textarea & error
 
 <Playground>
-  <Input>
+  <field>
     {({ value, bind }) => {
       const hasError = value === 'error';
       return (
@@ -81,14 +91,13 @@ import { TextField } from '@yoctol/ui';
         />
       );
     }}
-  </Input>
+  </field>
 </Playground>
-
 
 ### With maxLength & error
 
 <Playground>
-  <Input>
+  <field>
     {({ value, bind }) => {
       const hasError = value === 'error';
       return (
@@ -101,7 +110,7 @@ import { TextField } from '@yoctol/ui';
         />
       );
     }}
-  </Input>
+  </field>
 </Playground>
 
 ### With status
@@ -131,7 +140,10 @@ import { TextField } from '@yoctol/ui';
 ### With empty label
 
 <Playground>
-  <TextField maxLength={30} onChange={event => console.log(event.target.value)} />
+  <TextField
+    maxLength={30}
+    onChange={event => console.log(event.target.value)}
+  />
 </Playground>
 
 ### With controlled value switch
@@ -156,5 +168,7 @@ import { TextField } from '@yoctol/ui';
 <PropsTable of={TextField} />
 
 <div>
-If you are using `textarea` props, you can consult <Link to="/data-entry/input#api">Input's documentation</Link> to find more `textarea` APIs.
+  If you are using `textarea` props, you can consult{' '}
+  <Link to="/data-entry/input#api">Input's documentation</Link> to find more
+  `textarea` APIs.
 </div>

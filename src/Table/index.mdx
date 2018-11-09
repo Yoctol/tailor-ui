@@ -13,6 +13,7 @@ import Table from './';
 A table displays rows of data.
 
 ## When To Use
+
 - To display a collection of structured data.
 - To sort, search, paginate, filter data.
 
@@ -27,7 +28,9 @@ import { Table } from '@yoctol/ui';
 <Playground>
   <Table>
     <Table.Head>
-      {range(2, 10).map(x => <Table.HeadColumn key={x}>{x}</Table.HeadColumn>)}
+      {range(2, 10).map(x => (
+        <Table.HeadColumn key={x}>{x}</Table.HeadColumn>
+      ))}
     </Table.Head>
     <Table.Body>
       {range(1, 10).map(x => (
@@ -63,7 +66,9 @@ import { Table } from '@yoctol/ui';
       </Table.Row>
       <Table.Row>
         <Table.Column>
-          Morning<br />10:00-13:00
+          Morning
+          <br />
+          10:00-13:00
         </Table.Column>
         <Table.Column
           rowSpan={3}
@@ -82,7 +87,9 @@ import { Table } from '@yoctol/ui';
       </Table.Row>
       <Table.Row>
         <Table.Column>
-          Afternoon<br />14:00-18:00
+          Afternoon
+          <br />
+          14:00-18:00
         </Table.Column>
         {range(1, 7).map(key => (
           <Table.Column key={key}>
@@ -93,7 +100,9 @@ import { Table } from '@yoctol/ui';
       </Table.Row>
       <Table.Row>
         <Table.Column>
-          Night<br />19:00-22:00
+          Night
+          <br />
+          19:00-22:00
         </Table.Column>
         {range(1, 7).map(key => (
           <Table.Column key={key}>

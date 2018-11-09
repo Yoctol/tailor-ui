@@ -31,7 +31,9 @@ import { Button } from '@yoctol/ui';
 
 <Playground>
   <Button>Basic Button</Button>
-  <Button text ml="2">Text Button</Button>
+  <Button text ml="2">
+    Text Button
+  </Button>
 </Playground>
 
 ### Type
@@ -55,11 +57,12 @@ import { Button } from '@yoctol/ui';
   </Button>
 </Playground>
 
-
 ### Text
 
 <Playground>
-  <Button text type="primary">Primary</Button>
+  <Button text type="primary">
+    Primary
+  </Button>
   <Button text type="secondary" ml="2">
     Secondary
   </Button>
@@ -80,7 +83,9 @@ import { Button } from '@yoctol/ui';
 ### Rounded
 
 <Playground>
-  <Button type="primary" rounded>Primary</Button>
+  <Button type="primary" rounded>
+    Primary
+  </Button>
   <Button type="secondary" ml="2" rounded>
     Secondary
   </Button>
@@ -101,7 +106,9 @@ import { Button } from '@yoctol/ui';
 ### Outlined
 
 <Playground>
-  <Button type="primary" outlined>Primary</Button>
+  <Button type="primary" outlined>
+    Primary
+  </Button>
   <Button type="secondary" ml="2" outlined>
     Secondary
   </Button>
@@ -122,7 +129,9 @@ import { Button } from '@yoctol/ui';
 ### Rounded & Outlined
 
 <Playground>
-  <Button type="primary" rounded outlined>Primary</Button>
+  <Button type="primary" rounded outlined>
+    Primary
+  </Button>
   <Button type="secondary" ml="2" rounded outlined>
     Secondary
   </Button>
@@ -147,9 +156,15 @@ import { MdCheck, MdDelete, MdClose, MdSearch } from 'react-icons/md';
 ```
 
 <Playground>
-  <Button type="primary" icon={MdCheck}>Confirm</Button>
-  <Button type="danger" icon={MdDelete} ml="2">Delete</Button>
-  <Button type="info" icon={MdSearch} ml="2">Search</Button>
+  <Button type="primary" icon={MdCheck}>
+    Confirm
+  </Button>
+  <Button type="danger" icon={MdDelete} ml="2">
+    Delete
+  </Button>
+  <Button type="info" icon={MdSearch} ml="2">
+    Search
+  </Button>
   <br />
   <br />
   <Button type="primary" rounded icon={MdSearch} ml="2" />
@@ -167,11 +182,12 @@ import { MdCheck, MdDelete, MdClose, MdSearch } from 'react-icons/md';
   </Button>
 </Playground>
 
-
 ### Disabled
 
 <Playground>
-  <Button type="primary" disabled>Primary</Button>
+  <Button type="primary" disabled>
+    Primary
+  </Button>
   <Button type="secondary" ml="2" disabled>
     Secondary
   </Button>
@@ -192,7 +208,9 @@ import { MdCheck, MdDelete, MdClose, MdSearch } from 'react-icons/md';
 ### Loading
 
 <Playground>
-  <Button type="primary" loading>Primary</Button>
+  <Button type="primary" loading>
+    Primary
+  </Button>
   <Button type="secondary" ml="2" loading>
     Secondary
   </Button>
@@ -215,8 +233,8 @@ import { MdCheck, MdDelete, MdClose, MdSearch } from 'react-icons/md';
       <Button
         loading={on}
         onClick={() => {
-          toggle()
-          setTimeout(toggle, 3000)
+          toggle();
+          setTimeout(toggle, 3000);
         }}
       >
         Click me!
@@ -232,9 +250,7 @@ import { MdCheck, MdDelete, MdClose, MdSearch } from 'react-icons/md';
     Button sm
   </Button>
 
-  <Button ml={2}>
-    Button md
-  </Button>
+<Button ml={2}>Button md</Button>
 
   <Button ml={2} size="lg">
     Button lg
@@ -244,9 +260,7 @@ import { MdCheck, MdDelete, MdClose, MdSearch } from 'react-icons/md';
 ### Block
 
 <Playground>
-  <Button block>
-    Block Button
-  </Button>
+  <Button block>Block Button</Button>
 </Playground>
 
 ## API

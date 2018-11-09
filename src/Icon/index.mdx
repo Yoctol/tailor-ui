@@ -3,6 +3,7 @@ name: Icon
 menu: Components
 route: /components/icon
 ---
+
 import { PropsTable, Playground } from 'docz';
 import { TiFlowChildren } from 'react-icons/ti';
 import { MdEdit, MdComment, MdInput, MdInfo } from 'react-icons/md';
@@ -20,9 +21,7 @@ Semantic vector graphics.
 
 <ul>
   {Object.keys(icons).map(icon => (
-    <li key={icon}>
-      {icon}
-    </li>
+    <li key={icon}>{icon}</li>
   ))}
 </ul>
 
@@ -85,21 +84,9 @@ import { MdEdit, MdComment, MdInput, MdInfo } from 'react-icons/md';
 
 <Playground>
   <Icon mx={2} type={MdEdit} />
-  <Icon
-    mx={2}
-    cursor="pointer"
-    type={MdComment}
-  />
-  <Icon
-    mx={2}
-    cursor="grab"
-    type={MdInput}
-  />
-  <Icon
-    mx={2}
-    cursor="help"
-    type={TiFlowChildren}
-  />
+  <Icon mx={2} cursor="pointer" type={MdComment} />
+  <Icon mx={2} cursor="grab" type={MdInput} />
+  <Icon mx={2} cursor="help" type={TiFlowChildren} />
 </Playground>
 
 ### loading

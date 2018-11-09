@@ -323,15 +323,14 @@ class Button extends PureComponent<ButtonProps> {
         type={type}
         {...props}
       >
-        {!loading &&
-          icon && (
-            <Icon
-              type={icon}
-              size="20"
-              mr={children ? 1 : 0}
-              style={{ pointerEvents: 'none' }}
-            />
-          )}
+        {!loading && icon && (
+          <Icon
+            type={icon}
+            size="20"
+            mr={children ? 1 : 0}
+            style={{ pointerEvents: 'none' }}
+          />
+        )}
         {children}
         <Ripple ref={this.ripple} />
       </StyledButton>

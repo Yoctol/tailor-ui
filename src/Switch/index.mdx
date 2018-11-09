@@ -29,9 +29,7 @@ import { Switch } from '@yoctol/ui';
   <Switch checked onChange={console.log} />
   <br />
   <Toggle initial={true}>
-    {({ on, set }) => (
-      <Switch checked={on} onChange={set} />
-    )}
+    {({ on, set }) => <Switch checked={on} onChange={set} />}
   </Toggle>
 </Playground>
 
@@ -48,7 +46,6 @@ import { Switch } from '@yoctol/ui';
   <br />
   <Switch defaultChecked={false} disabled />
 </Playground>
-
 
 ## API
 

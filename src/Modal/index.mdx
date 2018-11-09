@@ -46,7 +46,6 @@ import { Modal } from '@yoctol/ui';
   </Toggle>
 </Playground>
 
-
 ### Customize footer
 
 <Playground>
@@ -71,7 +70,6 @@ import { Modal } from '@yoctol/ui';
     )}
   </Toggle>
 </Playground>
-
 
 ### Without footer
 
@@ -111,7 +109,7 @@ import { Modal } from '@yoctol/ui';
           onConfirm={() => {
             setState({ loading: true });
             setTimeout(() => {
-              setState({ visible: false, loading: false});
+              setState({ visible: false, loading: false });
             }, 3000);
           }}
           onCancel={() => setState({ visible: false })}
@@ -144,7 +142,7 @@ import { Modal } from '@yoctol/ui';
         content: 'Some descriptions',
         onConfirm: () => console.log('confirmed!'),
         onCancel: () => console.log('canceled!'),
-      })
+      });
     }}
   >
     Confirm
@@ -168,6 +166,7 @@ import { Modal } from '@yoctol/ui';
       }
     }}>
     Confirm
+
   </Button>
 </Playground>
 
@@ -198,6 +197,7 @@ import { Modal } from '@yoctol/ui';
       }
     }}>
     Success
+
   </Button>
   <Button
     ml="2"
@@ -239,11 +239,11 @@ import { Modal } from '@yoctol/ui';
 
 ### `options`
 
-| Property    | Type                                                                                                                                                                                            | Default  | Description               |
-| ----------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ------------------------- |
-| cancelText  | string                                                                                                                                                                                          |  Cancel  | Text of the Cancel button |
-| confirmText | string                                                                                                                                                                                          |  Conrim  | Text of the Conrim button |
-| onCancel    | function |-| Specify a function that will be called when the user clicks the Cancel button. The parameter of this function is a function whose execution should include closing the dialog. |
-| onConfirm   | function |-| Specify a function that will be called when the user clicks the OK button. The parameter of this function is a function whose execution should include closing the dialog.     |
-| title       | string \| ReactNode                                                                                                                                                                             | -        |Title                     |
-| content     | string \| ReactNode                                                                                                                                                                             | -        | content of the message    |
+| Property    | Type                | Default | Description                                                                                                                                                                    |
+| ----------- | ------------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| cancelText  | string              | Cancel  | Text of the Cancel button                                                                                                                                                      |
+| confirmText | string              | Conrim  | Text of the Conrim button                                                                                                                                                      |
+| onCancel    | function            | -       | Specify a function that will be called when the user clicks the Cancel button. The parameter of this function is a function whose execution should include closing the dialog. |
+| onConfirm   | function            | -       | Specify a function that will be called when the user clicks the OK button. The parameter of this function is a function whose execution should include closing the dialog.     |
+| title       | string \| ReactNode | -       | Title                                                                                                                                                                          |
+| content     | string \| ReactNode | -       | content of the message                                                                                                                                                         |

@@ -1,12 +1,12 @@
 {
   "*.{ts,tsx}": [
-    "eslint --ext=ts,tsx",
+    "eslint --ext=ts,tsx --fix",
     "tslint -c tslint.json",
     "stylelint",
     "prettier --parser typescript --write",
     "git add"
   ],
-  "*.{json,md}": ["prettier --write", "git add"],
+  "*.{json,md,mdx}": ["prettier --write", "git add"],
   "package.json": [
     "prettier-package-json --write",
     "prettier --write",

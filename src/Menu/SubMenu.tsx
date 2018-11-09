@@ -46,7 +46,7 @@ const SubMenu: SFC<ISubMenuProps> = ({
               from={{ rotate: on ? 180 : 0 }}
               to={{ rotate: on ? 180 : 0 }}
             >
-              {({ rotate }) => (
+              {({ rotate }: { rotate: any }) => (
                 <animated.div
                   style={{
                     pointerEvents: 'none',
