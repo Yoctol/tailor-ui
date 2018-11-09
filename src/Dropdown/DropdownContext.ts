@@ -1,11 +1,11 @@
-import { Ref, createContext } from 'react';
+import { createContext } from 'react';
 
 export type Placement = 'topRight' | 'topLeft' | 'bottomRight' | 'bottomLeft';
 
 const { Provider, Consumer } = createContext<{
   styles: any;
   handleClose: () => void;
-  handleListRef: Ref<any>;
+  handleListRef: any;
 }>({
   styles: {},
   handleClose: () => {},

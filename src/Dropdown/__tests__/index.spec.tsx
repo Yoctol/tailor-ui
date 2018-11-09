@@ -131,7 +131,7 @@ describe('Dropdown', () => {
               maxHeight="200px"
               overflow="auto"
             >
-              <Dropdown.Item>Sub List Item</Dropdown.Item>
+              <Dropdown.Item key="1">Sub List Item</Dropdown.Item>
             </Dropdown.SubList>
           </Dropdown.SubList>
         </Dropdown.List>
