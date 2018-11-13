@@ -78,6 +78,7 @@ const radii = {
 
 const borders = {
   base: '1px solid',
+  dashed: '1px dashed',
 };
 
 const transition = 'transition: all 200ms ease 0s';
