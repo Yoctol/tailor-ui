@@ -1,4 +1,9 @@
-import React, { ChangeEvent, ChangeEventHandler, SFC } from 'react';
+import React, {
+  ChangeEvent,
+  ChangeEventHandler,
+  KeyboardEventHandler,
+  SFC,
+} from 'react';
 import { Field } from 'react-powerplug';
 import { rem } from 'polished';
 
@@ -71,16 +76,48 @@ const TextFieldField = styled(FormField)`
 `;
 
 export interface ITextFieldProps {
+  /**
+   * The label text
+   */
   label?: string;
+  /**
+   * value of the TextField
+   */
   value?: string;
+  /**
+   * defaultValue of the TextField
+   */
   defaultValue?: string;
+  /**
+   * Set the textfield status to success
+   */
   success?: boolean;
+  /**
+   * Set the textfield status to warning
+   */
   warning?: boolean;
+  /**
+   * Set the textfield status to error
+   */
   error?: boolean;
+  /**
+   * The message will show when success or warning or error is true
+   */
   message?: string;
+  /**
+   * The content max length of textfield
+   */
   maxLength?: number;
+  /**
+   * Whether the input is a textarea
+   */
   textarea?: boolean;
+  /**
+   * Disabled the TextField
+   */
+  disabled?: boolean;
   onChange?: ChangeEventHandler<HTMLInputElement>;
+  onPressEnter?: KeyboardEventHandler<HTMLInputElement>;
 }
 
 const TextField: SFC<ITextFieldProps> = ({
@@ -129,36 +166,5 @@ const TextField: SFC<ITextFieldProps> = ({
     }}
   </Field>
 );
-
-// TextField.propTypes = {
-//   /**
-//    * Set the textfield status to error
-//    */
-//   error: PropTypes.bool,
-//   /**
-//    * The label text
-//    */
-//   label: PropTypes.string,
-//   /**
-//    * The content max length of textfield
-//    */
-//   maxLength: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-//   /**
-//    * The message will show when success or warning or error is true
-//    */
-//   message: PropTypes.string,
-//   /**
-//    * Set the textfield status to success
-//    */
-//   success: PropTypes.bool,
-//   /**
-//    * Whether the input is a textarea
-//    */
-//   textarea: PropTypes.bool,
-//   /**
-//    * Set the textfield status to warning
-//    */
-//   warning: PropTypes.bool,
-// };
 
 export default TextField;

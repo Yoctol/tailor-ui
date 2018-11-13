@@ -1,0 +1,517 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TextField should render as textarea 1`] = `
+.c3 {
+  word-wrap: break-word;
+  -webkit-transition: border 0.2s ease;
+  transition: border 0.2s ease;
+  resize: none;
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  border: 1px solid;
+  border-radius: 0.25rem;
+  border-color: #e0e0e0;
+  outline: none;
+  background: #ffffff;
+  background-image: none;
+  color: #373737;
+  line-height: 1.5;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  height: 2rem;
+  padding: 4px 0.5rem;
+  font-size: 1rem;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+}
+
+.c3:hover {
+  border-color: #8b8b8b;
+}
+
+.c3:focus {
+  border-color: #191539;
+}
+
+.c3:disabled,
+.c3 [disabled] {
+  border-color: #8b8b8b;
+  opacity: 0.5;
+  background-color: #e0e0e0;
+  cursor: not-allowed;
+}
+
+.c3::-webkit-input-placeholder {
+  color: #bfbfbf;
+}
+
+.c3::-moz-placeholder {
+  color: #bfbfbf;
+}
+
+.c3:-ms-input-placeholder {
+  color: #bfbfbf;
+}
+
+.c3::placeholder {
+  color: #bfbfbf;
+}
+
+.c1 {
+  position: relative;
+  margin-bottom: 0.5rem;
+}
+
+.c5 {
+  position: absolute;
+  top: -7px;
+  left: 7px;
+  padding: 0 2px;
+  background-color: #fff;
+  color: #373737;
+  font-size: 0.75rem;
+  line-height: 1;
+  pointer-events: none;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+}
+
+.c0 {
+  margin-top: 10px;
+}
+
+.c0 .c6:invalid,
+.c0 .c2:invalid {
+  box-shadow: none;
+}
+
+.c0 .c6:invalid ~ .c4,
+.c0 .c2:invalid ~ .c4 {
+  top: 9px;
+  left: 1px;
+  padding: 0 0.5rem;
+  color: #bfbfbf;
+  font-size: 1rem;
+}
+
+.c0 .c6:focus ~ .c4,
+.c0 .c2:focus ~ .c4 {
+  top: -7px;
+  left: 7px;
+  padding: 0 2px;
+  background-color: #fff;
+  color: #373737;
+  font-size: 0.75rem;
+}
+
+.c0 .c6:focus ~ .c7,
+.c0 .c2:focus ~ .c7 {
+  opacity: 1;
+}
+
+<div
+  class="c0 c1"
+>
+  <textarea
+    class="c2 c3"
+    required=""
+    style="height: 0px;"
+  />
+  <label
+    class="c4 c5"
+  >
+    Text Field(textarea)
+  </label>
+</div>
+`;
+
+exports[`TextField should render correctly 1`] = `
+.c3 {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  border: 1px solid;
+  border-radius: 0.25rem;
+  border-color: #e0e0e0;
+  outline: none;
+  background: #ffffff;
+  background-image: none;
+  color: #373737;
+  line-height: 1.5;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  height: 2rem;
+  padding: 4px 0.5rem;
+  font-size: 1rem;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+}
+
+.c3:hover {
+  border-color: #8b8b8b;
+}
+
+.c3:focus {
+  border-color: #191539;
+}
+
+.c3:disabled,
+.c3 [disabled] {
+  border-color: #8b8b8b;
+  opacity: 0.5;
+  background-color: #e0e0e0;
+  cursor: not-allowed;
+}
+
+.c3::-webkit-input-placeholder {
+  color: #bfbfbf;
+}
+
+.c3::-moz-placeholder {
+  color: #bfbfbf;
+}
+
+.c3:-ms-input-placeholder {
+  color: #bfbfbf;
+}
+
+.c3::placeholder {
+  color: #bfbfbf;
+}
+
+.c1 {
+  position: relative;
+  margin-bottom: 0.5rem;
+}
+
+.c5 {
+  position: absolute;
+  top: -7px;
+  left: 7px;
+  padding: 0 2px;
+  background-color: #fff;
+  color: #373737;
+  font-size: 0.75rem;
+  line-height: 1;
+  pointer-events: none;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+}
+
+.c0 {
+  margin-top: 10px;
+}
+
+.c0 .c2:invalid,
+.c0 .Textarea__StyledTextarea-sc-9fyr3x-0:invalid {
+  box-shadow: none;
+}
+
+.c0 .c2:invalid ~ .c4,
+.c0 .Textarea__StyledTextarea-sc-9fyr3x-0:invalid ~ .c4 {
+  top: 9px;
+  left: 1px;
+  padding: 0 0.5rem;
+  color: #bfbfbf;
+  font-size: 1rem;
+}
+
+.c0 .c2:focus ~ .c4,
+.c0 .Textarea__StyledTextarea-sc-9fyr3x-0:focus ~ .c4 {
+  top: -7px;
+  left: 7px;
+  padding: 0 2px;
+  background-color: #fff;
+  color: #373737;
+  font-size: 0.75rem;
+}
+
+.c0 .c2:focus ~ .c6,
+.c0 .Textarea__StyledTextarea-sc-9fyr3x-0:focus ~ .c6 {
+  opacity: 1;
+}
+
+<div
+  class="c0 c1"
+>
+  <input
+    class="c2 c3"
+    required=""
+    value=""
+  />
+  <label
+    class="c4 c5"
+  >
+    placeholder
+  </label>
+</div>
+`;
+
+exports[`TextField should render correctly with defaultValue 1`] = `
+.c3 {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  border: 1px solid;
+  border-radius: 0.25rem;
+  border-color: #e0e0e0;
+  outline: none;
+  background: #ffffff;
+  background-image: none;
+  color: #373737;
+  line-height: 1.5;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  height: 2rem;
+  padding: 4px 0.5rem;
+  font-size: 1rem;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+}
+
+.c3:hover {
+  border-color: #8b8b8b;
+}
+
+.c3:focus {
+  border-color: #191539;
+}
+
+.c3:disabled,
+.c3 [disabled] {
+  border-color: #8b8b8b;
+  opacity: 0.5;
+  background-color: #e0e0e0;
+  cursor: not-allowed;
+}
+
+.c3::-webkit-input-placeholder {
+  color: #bfbfbf;
+}
+
+.c3::-moz-placeholder {
+  color: #bfbfbf;
+}
+
+.c3:-ms-input-placeholder {
+  color: #bfbfbf;
+}
+
+.c3::placeholder {
+  color: #bfbfbf;
+}
+
+.c1 {
+  position: relative;
+  margin-bottom: 0.5rem;
+}
+
+.c5 {
+  position: absolute;
+  top: -7px;
+  left: 7px;
+  padding: 0 2px;
+  background-color: #fff;
+  color: #373737;
+  font-size: 0.75rem;
+  line-height: 1;
+  pointer-events: none;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+}
+
+.c0 {
+  margin-top: 10px;
+}
+
+.c0 .c2:invalid,
+.c0 .Textarea__StyledTextarea-sc-9fyr3x-0:invalid {
+  box-shadow: none;
+}
+
+.c0 .c2:invalid ~ .c4,
+.c0 .Textarea__StyledTextarea-sc-9fyr3x-0:invalid ~ .c4 {
+  top: 9px;
+  left: 1px;
+  padding: 0 0.5rem;
+  color: #bfbfbf;
+  font-size: 1rem;
+}
+
+.c0 .c2:focus ~ .c4,
+.c0 .Textarea__StyledTextarea-sc-9fyr3x-0:focus ~ .c4 {
+  top: -7px;
+  left: 7px;
+  padding: 0 2px;
+  background-color: #fff;
+  color: #373737;
+  font-size: 0.75rem;
+}
+
+.c0 .c2:focus ~ .c6,
+.c0 .Textarea__StyledTextarea-sc-9fyr3x-0:focus ~ .c6 {
+  opacity: 1;
+}
+
+<div
+  class="c0 c1"
+>
+  <input
+    class="c2 c3"
+    required=""
+    value="text field"
+  />
+  <label
+    class="c4 c5"
+  >
+    placeholder
+  </label>
+</div>
+`;
+
+exports[`TextField should render with maxLength 1`] = `
+.c3 {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  border: 1px solid;
+  border-radius: 0.25rem;
+  border-color: #e0e0e0;
+  outline: none;
+  background: #ffffff;
+  background-image: none;
+  color: #373737;
+  line-height: 1.5;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  height: 2rem;
+  padding: 4px 0.5rem;
+  font-size: 1rem;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+}
+
+.c3:hover {
+  border-color: #8b8b8b;
+}
+
+.c3:focus {
+  border-color: #191539;
+}
+
+.c3:disabled,
+.c3 [disabled] {
+  border-color: #8b8b8b;
+  opacity: 0.5;
+  background-color: #e0e0e0;
+  cursor: not-allowed;
+}
+
+.c3::-webkit-input-placeholder {
+  color: #bfbfbf;
+}
+
+.c3::-moz-placeholder {
+  color: #bfbfbf;
+}
+
+.c3:-ms-input-placeholder {
+  color: #bfbfbf;
+}
+
+.c3::placeholder {
+  color: #bfbfbf;
+}
+
+.c1 {
+  position: relative;
+  margin-bottom: 0.5rem;
+}
+
+.c7 {
+  position: absolute;
+  top: -7px;
+  left: 7px;
+  padding: 0 2px;
+  background-color: #fff;
+  color: #373737;
+  font-size: 0.75rem;
+  line-height: 1;
+  pointer-events: none;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+}
+
+.c5 {
+  position: absolute;
+  right: -1px;
+  bottom: -2px;
+  padding: 1px 5px;
+  border: 1px solid;
+  border-radius: 999px;
+  border-color: #423b63;
+  opacity: 0;
+  background-color: #fff;
+  font-size: 0.625rem;
+  line-height: 1;
+}
+
+.c0 {
+  margin-top: 10px;
+}
+
+.c0 .c2:invalid,
+.c0 .Textarea__StyledTextarea-sc-9fyr3x-0:invalid {
+  box-shadow: none;
+}
+
+.c0 .c2:invalid ~ .c6,
+.c0 .Textarea__StyledTextarea-sc-9fyr3x-0:invalid ~ .c6 {
+  top: 9px;
+  left: 1px;
+  padding: 0 0.5rem;
+  color: #bfbfbf;
+  font-size: 1rem;
+}
+
+.c0 .c2:focus ~ .c6,
+.c0 .Textarea__StyledTextarea-sc-9fyr3x-0:focus ~ .c6 {
+  top: -7px;
+  left: 7px;
+  padding: 0 2px;
+  background-color: #fff;
+  color: #373737;
+  font-size: 0.75rem;
+}
+
+.c0 .c2:focus ~ .c4,
+.c0 .Textarea__StyledTextarea-sc-9fyr3x-0:focus ~ .c4 {
+  opacity: 1;
+}
+
+<div
+  class="c0 c1"
+>
+  <input
+    class="c2 c3"
+    maxlength="20"
+    required=""
+    value=""
+  />
+  <div
+    class="c4 c5"
+  >
+    20
+  </div>
+  <label
+    class="c6 c7"
+  >
+    placeholder
+  </label>
+</div>
+`;
