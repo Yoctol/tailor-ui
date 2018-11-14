@@ -1,4 +1,13 @@
-<a name="2.0.0-beta.8"></a>
+# [2.0.0-beta.9](https://github.com/yoctol/ui/compare/v2.0.0-beta.8...v2.0.0-beta.9) (2018-11-14)
+
+### Bug Fixes
+
+- test script ([0b68df6](https://github.com/yoctol/ui/commit/0b68df6))
+
+### Features
+
+- **divider:** implement divider ([384f417](https://github.com/yoctol/ui/commit/384f417))
+- **spin:** implement new spin ([c78c7cc](https://github.com/yoctol/ui/commit/c78c7cc))
 
 # [2.0.0-beta.8](https://github.com/yoctol/ui/compare/v2.0.0-beta.7...v2.0.0-beta.8) (2018-11-01)
 
@@ -6,15 +15,11 @@
 
 - **card:** onClick event ([53fc705](https://github.com/yoctol/ui/commit/53fc705))
 
-<a name="2.0.0-beta.7"></a>
-
 # [2.0.0-beta.7](https://github.com/yoctol/ui/compare/v2.0.0-beta.6...v2.0.0-beta.7) (2018-11-01)
 
 ### Bug Fixes
 
 - **dropdown:** default props ([b737c37](https://github.com/yoctol/ui/commit/b737c37))
-
-<a name="2.0.0-beta.6"></a>
 
 # [2.0.0-beta.6](https://github.com/yoctol/ui/compare/v2.0.0-beta.5...v2.0.0-beta.6) (2018-10-31)
 
@@ -24,15 +29,11 @@
 - **button:** add text type button ([#425](https://github.com/yoctol/ui/issues/425)) ([eeeadd1](https://github.com/yoctol/ui/commit/eeeadd1))
 - **mention:** create same prefix mention ([#426](https://github.com/yoctol/ui/issues/426)) ([f907f9a](https://github.com/yoctol/ui/commit/f907f9a))
 
-<a name="2.0.0-beta.5"></a>
-
 # [2.0.0-beta.5](https://github.com/yoctol/ui/compare/v2.0.0-beta.4...v2.0.0-beta.5) (2018-10-23)
 
 ### Bug Fixes
 
 - clean tag ref ([4aa1d23](https://github.com/yoctol/ui/commit/4aa1d23))
-
-<a name="2.0.0-beta.4"></a>
 
 # [2.0.0-beta.4](https://github.com/yoctol/ui/compare/v2.0.0-beta.3...v2.0.0-beta.4) (2018-10-19)
 
@@ -44,16 +45,12 @@
 
 - add esc to trigger ([e9f53c8](https://github.com/yoctol/ui/commit/e9f53c8))
 
-<a name="2.0.0-beta.3"></a>
-
 # [2.0.0-beta.3](https://github.com/yoctol/ui/compare/v2.0.0-beta.2...v2.0.0-beta.3) (2018-10-18)
 
 ### Bug Fixes
 
 - **date-picker:** missing global styles ([4217bd2](https://github.com/yoctol/ui/commit/4217bd2))
 - **mention:** set height to auto ([5a62ddc](https://github.com/yoctol/ui/commit/5a62ddc))
-
-<a name="2.0.0-beta.2"></a>
 
 # [2.0.0-beta.2](https://github.com/yoctol/ui/compare/v2.0.0-beta.1...v2.0.0-beta.2) (2018-10-17)
 
@@ -62,15 +59,11 @@
 - **grid:** add lineHeight, background, zIndex and textAlign to Box ([2fc8b2d](https://github.com/yoctol/ui/commit/2fc8b2d))
 - **input:** add prefix/suffix to input ([#417](https://github.com/yoctol/ui/issues/417)) ([0f716d1](https://github.com/yoctol/ui/commit/0f716d1))
 
-<a name="2.0.0-beta.1"></a>
-
 # [2.0.0-beta.1](https://github.com/yoctol/ui/compare/v2.0.0-beta.0...v2.0.0-beta.1) (2018-10-17)
 
 ### Bug Fixes
 
 - **tooltip:** base tooltip ref ([93d2d55](https://github.com/yoctol/ui/commit/93d2d55))
-
-<a name="2.0.0-beta.0"></a>
 
 # [2.0.0-beta.0](https://github.com/yoctol/ui/compare/v2.0.0-alpha.11...v2.0.0-beta.0) (2018-10-16)
 
@@ -79,8 +72,6 @@
 - styled-components v4 typing ([4bab22b](https://github.com/yoctol/ui/commit/4bab22b))
 - unobserve when trigge unmount ([b432a85](https://github.com/yoctol/ui/commit/b432a85))
 
-<a name="2.0.0-alpha.11"></a>
-
 # [2.0.0-alpha.11](https://github.com/yoctol/ui/compare/v2.0.0-alpha.10...v2.0.0-alpha.11) (2018-10-15)
 
 ### Bug Fixes
@@ -88,16 +79,12 @@
 - **dropdown:** missing trigger ([a6f3cdf](https://github.com/yoctol/ui/commit/a6f3cdf))
 - **tooltip:** defaultVisible ([3890b67](https://github.com/yoctol/ui/commit/3890b67))
 
-<a name="2.0.0-alpha.10"></a>
-
 # [2.0.0-alpha.10](https://github.com/yoctol/ui/compare/v2.0.0-alpha.9...v2.0.0-alpha.10) (2018-10-15)
 
 ### Features
 
 - add trigger props to Trigger for hover event ([60912b4](https://github.com/yoctol/ui/commit/60912b4))
 - **tooltip:** absolute position ([6848d2e](https://github.com/yoctol/ui/commit/6848d2e))
-
-<a name="2.0.0-alpha.9"></a>
 
 # [2.0.0-alpha.9](https://github.com/yoctol/ui/compare/v2.0.0-alpha.8...v2.0.0-alpha.9) (2018-10-15)
 
@@ -109,15 +96,11 @@
 
 - **menu:** add togglable to sub menu ([#407](https://github.com/yoctol/ui/issues/407)) ([48d27e6](https://github.com/yoctol/ui/commit/48d27e6))
 
-<a name="2.0.0-alpha.8"></a>
-
 # [2.0.0-alpha.8](https://github.com/yoctol/ui/compare/v2.0.0-alpha.7...v2.0.0-alpha.8) (2018-10-11)
 
 ### Bug Fixes
 
 - locale export ([715900d](https://github.com/yoctol/ui/commit/715900d))
-
-<a name="2.0.0-alpha.7"></a>
 
 # [2.0.0-alpha.7](https://github.com/yoctol/ui/compare/v2.0.0-alpha.6...v2.0.0-alpha.7) (2018-10-11)
 
@@ -127,23 +110,17 @@
 - dropdown padding ([fa69834](https://github.com/yoctol/ui/commit/fa69834))
 - tree shaking ([2aa02cc](https://github.com/yoctol/ui/commit/2aa02cc))
 
-<a name="2.0.0-alpha.6"></a>
-
 # [2.0.0-alpha.6](https://github.com/yoctol/ui/compare/v2.0.0-alpha.5...v2.0.0-alpha.6) (2018-10-11)
 
 ### Bug Fixes
 
 - babel build ([ef94ea8](https://github.com/yoctol/ui/commit/ef94ea8))
 
-<a name="2.0.0-alpha.5"></a>
-
 # [2.0.0-alpha.5](https://github.com/yoctol/ui/compare/v2.0.0-alpha.4...v2.0.0-alpha.5) (2018-10-09)
 
 ### Bug Fixes
 
 - add skipLocale to prevent reset globalLocale ([519439c](https://github.com/yoctol/ui/commit/519439c))
-
-<a name="2.0.0-alpha.4"></a>
 
 # [2.0.0-alpha.4](https://github.com/yoctol/ui/compare/v2.0.0-alpha.3...v2.0.0-alpha.4) (2018-10-09)
 
@@ -152,16 +129,12 @@
 - add tslint ([960f7e6](https://github.com/yoctol/ui/commit/960f7e6))
 - **date-picker:** implement date-picker ([82366ec](https://github.com/yoctol/ui/commit/82366ec))
 
-<a name="2.0.0-alpha.3"></a>
-
 # [2.0.0-alpha.3](https://github.com/yoctol/ui/compare/v2.0.0-alpha.2...v2.0.0-alpha.3) (2018-10-04)
 
 ### Features
 
 - **button:** support customize icon color ([2f26b76](https://github.com/yoctol/ui/commit/2f26b76))
 - **table:** add color props from styled-system ([b9f8281](https://github.com/yoctol/ui/commit/b9f8281))
-
-<a name="2.0.0-alpha.2"></a>
 
 # [2.0.0-alpha.2](https://github.com/yoctol/ui/compare/v2.0.0-alpha.1...v2.0.0-alpha.2) (2018-09-28)
 
@@ -176,8 +149,6 @@
 
 - **mention:** add autoFocus ([a0ebe37](https://github.com/yoctol/ui/commit/a0ebe37))
 - new gray colors ([443ad3d](https://github.com/yoctol/ui/commit/443ad3d))
-
-<a name="2.0.0-alpha.1"></a>
 
 # [2.0.0-alpha.1](https://github.com/yoctol/ui/compare/v2.0.0-alpha.0...v2.0.0-alpha.1) (2018-09-25)
 
@@ -196,8 +167,6 @@
 - **dropdown:** fixed position ([533f8e6](https://github.com/yoctol/ui/commit/533f8e6))
 - **select:** add multiple select in Select ([ebfe5c4](https://github.com/yoctol/ui/commit/ebfe5c4))
 
-<a name="2.0.0-alpha.0"></a>
-
 # [2.0.0-alpha.0](https://github.com/yoctol/ui/compare/v1.13.5...v2.0.0-alpha.0) (2018-09-20)
 
 ### Bug Fixes
@@ -207,23 +176,17 @@
 - build types ([1195e7a](https://github.com/yoctol/ui/commit/1195e7a))
 - components types ([5a7c1f5](https://github.com/yoctol/ui/commit/5a7c1f5))
 
-<a name="1.13.5"></a>
-
 ## [1.13.5](https://github.com/yoctol/ui/compare/v1.13.4...v1.13.5) (2018-09-17)
 
 ### Bug Fixes
 
 - **input:** drop style-system breaking API ([4501fcc](https://github.com/yoctol/ui/commit/4501fcc))
 
-<a name="1.13.4"></a>
-
 ## [1.13.4](https://github.com/yoctol/ui/compare/v1.13.3...v1.13.4) (2018-09-17)
 
 ### Bug Fixes
 
 - remove font-size from `a` link ([0ee8d41](https://github.com/yoctol/ui/commit/0ee8d41))
-
-<a name="1.13.3"></a>
 
 ## [1.13.3](https://github.com/yoctol/ui/compare/v1.13.2...v1.13.3) (2018-09-11)
 
@@ -232,15 +195,11 @@
 - **dropdown:** dropdown list background color ([e72ffd0](https://github.com/yoctol/ui/commit/e72ffd0))
 - **tabs:** add default tab color ([e9806c7](https://github.com/yoctol/ui/commit/e9806c7))
 
-<a name="1.13.2"></a>
-
 ## [1.13.2](https://github.com/yoctol/ui/compare/v1.13.1...v1.13.2) (2018-09-11)
 
 ### Bug Fixes
 
 - **modal:** use portal with SSR ([2f572fb](https://github.com/yoctol/ui/commit/2f572fb))
-
-<a name="1.13.1"></a>
 
 ## [1.13.1](https://github.com/yoctol/ui/compare/v1.13.0...v1.13.1) (2018-09-10)
 
@@ -254,8 +213,6 @@
 - **dropdown:** add onVisibleChange callback ([1aeede8](https://github.com/yoctol/ui/commit/1aeede8))
 - **dropdown:** implement SubList ([b8fbb9c](https://github.com/yoctol/ui/commit/b8fbb9c))
 
-<a name="1.13.0"></a>
-
 # [1.13.0](https://github.com/yoctol/ui/compare/v1.12.0...v1.13.0) (2018-09-05)
 
 ### Bug Fixes
@@ -268,8 +225,6 @@
 - **alert:** add onClosed ([c19b4c5](https://github.com/yoctol/ui/commit/c19b4c5))
 - **mention:** impelment mention component ([#316](https://github.com/yoctol/ui/issues/316)) ([3674d02](https://github.com/yoctol/ui/commit/3674d02))
 - **modal:** add return promise to modal instance methods ([#314](https://github.com/yoctol/ui/issues/314)) ([d10084b](https://github.com/yoctol/ui/commit/d10084b))
-
-<a name="1.12.0"></a>
 
 # [1.12.0](https://github.com/yoctol/ui/compare/v1.11.0...v1.12.0) (2018-08-29)
 
@@ -291,8 +246,6 @@
 - **checkbox:** remove status & message API, remove CheckboxField, move CheckboxField.Group to
   Checkbox.Group
 
-<a name="1.11.0"></a>
-
 # [1.11.0](https://github.com/yoctol/ui/compare/v1.10.3...v1.11.0) (2018-08-27)
 
 ### Bug Fixes
@@ -313,19 +266,13 @@
 
 - **modal:** Drop handleClose, use onCancel instead
 
-<a name="1.10.3"></a>
-
 ## [1.10.3](https://github.com/yoctol/ui/compare/v1.10.2...v1.10.3) (2018-08-21)
-
-<a name="1.10.2"></a>
 
 ## [1.10.2](https://github.com/yoctol/ui/compare/v1.10.1...v1.10.2) (2018-08-20)
 
 ### Bug Fixes
 
 - **textfield:** actived condition ([#279](https://github.com/yoctol/ui/issues/279)) ([46a4ff9](https://github.com/yoctol/ui/commit/46a4ff9))
-
-<a name="1.10.1"></a>
 
 ## [1.10.1](https://github.com/yoctol/ui/compare/v1.10.0...v1.10.1) (2018-08-20)
 
@@ -339,8 +286,6 @@
 - **modal:** add empty footer ([679f9cc](https://github.com/yoctol/ui/commit/679f9cc))
 - **popover:** add hide popover to title props ([e507616](https://github.com/yoctol/ui/commit/e507616))
 - **tooltip:** add defaultVisible ([f085c67](https://github.com/yoctol/ui/commit/f085c67))
-
-<a name="1.10.0"></a>
 
 # [1.10.0](https://github.com/yoctol/ui/compare/v1.9.0...v1.10.0) (2018-08-14)
 
@@ -357,8 +302,6 @@
 
 - **button:** use bool props instead of variant props
 - **button:** the button default color is light (previous is primary)
-
-<a name="1.9.0"></a>
 
 # [1.9.0](https://github.com/yoctol/ui/compare/v1.8.2...v1.9.0) (2018-08-14)
 
@@ -386,23 +329,17 @@
   `animation`
 - **card:** REMOVE Card.Button from Card component
 
-<a name="1.8.2"></a>
-
 ## [1.8.2](https://github.com/yoctol/ui/compare/v1.8.1...v1.8.2) (2018-08-09)
 
 ### Bug Fixes
 
 - **tooltip:** wrapper z-index ([#260](https://github.com/yoctol/ui/issues/260)) ([a08829c](https://github.com/yoctol/ui/commit/a08829c))
 
-<a name="1.8.1"></a>
-
 ## [1.8.1](https://github.com/yoctol/ui/compare/v1.8.0...v1.8.1) (2018-08-08)
 
 ### Bug Fixes
 
 - **popover:** update opacity to 1 ([#255](https://github.com/yoctol/ui/issues/255)) ([0d6c1b8](https://github.com/yoctol/ui/commit/0d6c1b8))
-
-<a name="1.8.0"></a>
 
 # [1.8.0](https://github.com/yoctol/ui/compare/v1.7.0...v1.8.0) (2018-08-06)
 
@@ -420,8 +357,6 @@
 - **popover:** Implement popover ([#251](https://github.com/yoctol/ui/issues/251)) ([1580492](https://github.com/yoctol/ui/commit/1580492))
 - **tooltip:** add scale animation ([3df98f9](https://github.com/yoctol/ui/commit/3df98f9))
 
-<a name="1.7.0"></a>
-
 # [1.7.0](https://github.com/yoctol/ui/compare/v1.6.2...v1.7.0) (2018-08-03)
 
 ### Features
@@ -430,178 +365,90 @@
 - **tooltip:** Add onVisibleChange ([8574ec2](https://github.com/yoctol/ui/commit/8574ec2))
 - **tooltip:** close tooltip after click outside ([e653e7f](https://github.com/yoctol/ui/commit/e653e7f))
 
-<a name="1.6.2"></a>
-
 ## [1.6.2](https://github.com/yoctol/ui/compare/v1.6.1...v1.6.2) (2018-07-30)
-
-<a name="1.6.1"></a>
 
 ## [1.6.1](https://github.com/yoctol/ui/compare/v1.6.0...v1.6.1) (2018-07-30)
 
-<a name="1.6.0"></a>
-
 # [1.6.0](https://github.com/yoctol/ui/compare/v1.5.2...v1.6.0) (2018-07-30)
-
-<a name="1.5.2"></a>
 
 ## [1.5.2](https://github.com/yoctol/ui/compare/v1.5.1...v1.5.2) (2018-07-26)
 
-<a name="1.5.1"></a>
-
 ## [1.5.1](https://github.com/yoctol/ui/compare/v1.5.0...v1.5.1) (2018-07-25)
-
-<a name="1.5.0"></a>
 
 # [1.5.0](https://github.com/yoctol/ui/compare/v1.4.0...v1.5.0) (2018-07-25)
 
-<a name="1.4.0"></a>
-
 # [1.4.0](https://github.com/yoctol/ui/compare/v1.3.4...v1.4.0) (2018-07-17)
-
-<a name="1.3.4"></a>
 
 ## [1.3.4](https://github.com/yoctol/ui/compare/v1.3.3...v1.3.4) (2018-07-17)
 
-<a name="1.3.3"></a>
-
 ## [1.3.3](https://github.com/yoctol/ui/compare/v1.3.2...v1.3.3) (2018-07-17)
-
-<a name="1.3.2"></a>
 
 ## [1.3.2](https://github.com/yoctol/ui/compare/v1.3.1...v1.3.2) (2018-07-13)
 
-<a name="1.3.1"></a>
-
 ## [1.3.1](https://github.com/yoctol/ui/compare/v1.3.0...v1.3.1) (2018-07-10)
-
-<a name="1.3.0"></a>
 
 # [1.3.0](https://github.com/yoctol/ui/compare/v1.2.6...v1.3.0) (2018-07-10)
 
-<a name="1.2.6"></a>
-
 ## [1.2.6](https://github.com/yoctol/ui/compare/v1.2.5...v1.2.6) (2018-07-03)
-
-<a name="1.2.5"></a>
 
 ## [1.2.5](https://github.com/yoctol/ui/compare/v1.2.4...v1.2.5) (2018-07-02)
 
-<a name="1.2.4"></a>
-
 ## [1.2.4](https://github.com/yoctol/ui/compare/v1.2.3...v1.2.4) (2018-06-22)
-
-<a name="1.2.3"></a>
 
 ## [1.2.3](https://github.com/yoctol/ui/compare/v1.2.2...v1.2.3) (2018-06-15)
 
-<a name="1.2.2"></a>
-
 ## [1.2.2](https://github.com/yoctol/ui/compare/v1.2.1...v1.2.2) (2018-06-15)
-
-<a name="1.2.1"></a>
 
 ## [1.2.1](https://github.com/yoctol/ui/compare/v1.2.0...v1.2.1) (2018-06-14)
 
-<a name="1.2.0"></a>
-
 # [1.2.0](https://github.com/yoctol/ui/compare/v1.1.4...v1.2.0) (2018-06-14)
-
-<a name="1.1.4"></a>
 
 ## [1.1.4](https://github.com/yoctol/ui/compare/v1.1.3...v1.1.4) (2018-06-11)
 
-<a name="1.1.3"></a>
-
 ## [1.1.3](https://github.com/yoctol/ui/compare/v1.1.2...v1.1.3) (2018-06-11)
-
-<a name="1.1.2"></a>
 
 ## [1.1.2](https://github.com/yoctol/ui/compare/v1.1.1...v1.1.2) (2018-06-07)
 
-<a name="1.1.1"></a>
-
 ## [1.1.1](https://github.com/yoctol/ui/compare/v1.1.0...v1.1.1) (2018-06-06)
-
-<a name="1.1.0"></a>
 
 # [1.1.0](https://github.com/yoctol/ui/compare/v1.0.1...v1.1.0) (2018-06-06)
 
-<a name="1.0.1"></a>
-
 ## [1.0.1](https://github.com/yoctol/ui/compare/v1.0.0...v1.0.1) (2018-05-31)
-
-<a name="1.0.0"></a>
 
 # [1.0.0](https://github.com/yoctol/ui/compare/v0.7.1...v1.0.0) (2018-05-31)
 
-<a name="0.7.1"></a>
-
 ## [0.7.1](https://github.com/yoctol/ui/compare/v0.7.0...v0.7.1) (2018-05-30)
-
-<a name="0.7.0"></a>
 
 # [0.7.0](https://github.com/yoctol/ui/compare/v0.6.4...v0.7.0) (2018-05-30)
 
-<a name="0.6.4"></a>
-
 ## [0.6.4](https://github.com/yoctol/ui/compare/v0.6.3...v0.6.4) (2018-05-28)
-
-<a name="0.6.3"></a>
 
 ## [0.6.3](https://github.com/yoctol/ui/compare/v0.6.2...v0.6.3) (2018-05-24)
 
-<a name="0.6.2"></a>
-
 ## [0.6.2](https://github.com/yoctol/ui/compare/v0.6.1...v0.6.2) (2018-05-24)
-
-<a name="0.6.1"></a>
 
 ## [0.6.1](https://github.com/yoctol/ui/compare/v0.6.0...v0.6.1) (2018-05-23)
 
-<a name="0.6.0"></a>
-
 # [0.6.0](https://github.com/yoctol/ui/compare/v0.5.1...v0.6.0) (2018-05-22)
-
-<a name="0.5.1"></a>
 
 ## [0.5.1](https://github.com/yoctol/ui/compare/v0.5.0...v0.5.1) (2018-05-18)
 
-<a name="0.5.0"></a>
-
 # [0.5.0](https://github.com/yoctol/ui/compare/v0.4.0...v0.5.0) (2018-05-17)
-
-<a name="0.4.0"></a>
 
 # [0.4.0](https://github.com/yoctol/ui/compare/v0.3.2...v0.4.0) (2018-05-16)
 
-<a name="0.3.2"></a>
-
 ## [0.3.2](https://github.com/yoctol/ui/compare/v0.3.1...v0.3.2) (2018-05-15)
-
-<a name="0.3.1"></a>
 
 ## [0.3.1](https://github.com/yoctol/ui/compare/v0.3.0...v0.3.1) (2018-05-15)
 
-<a name="0.3.0"></a>
-
 # [0.3.0](https://github.com/yoctol/ui/compare/v0.2.0...v0.3.0) (2018-05-15)
-
-<a name="0.2.0"></a>
 
 # [0.2.0](https://github.com/yoctol/ui/compare/v0.1.3...v0.2.0) (2018-05-14)
 
-<a name="0.1.3"></a>
-
 ## [0.1.3](https://github.com/yoctol/ui/compare/v0.1.2...v0.1.3) (2018-05-11)
-
-<a name="0.1.2"></a>
 
 ## [0.1.2](https://github.com/yoctol/ui/compare/v0.1.1...v0.1.2) (2018-05-10)
 
-<a name="0.1.1"></a>
-
 ## [0.1.1](https://github.com/yoctol/ui/compare/v0.1.0...v0.1.1) (2018-05-10)
-
-<a name="0.1.0"></a>
 
 # 0.1.0 (2018-05-10)
