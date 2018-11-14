@@ -2,7 +2,6 @@ import React, {
   PureComponent,
   ReactElement,
   ReactNode,
-  Ref,
   cloneElement,
 } from 'react';
 import observeRect from '@reach/observe-rect';
@@ -23,7 +22,7 @@ export interface IPopupRenderProps {
     [key: string]: any;
   };
   handleClose: () => void;
-  handlePopupRef: Ref<any>;
+  handlePopupRef: any;
 }
 
 export interface IChildrenRenderProps {

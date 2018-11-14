@@ -1,4 +1,4 @@
-import React, { MouseEventHandler, forwardRef } from 'react';
+import React, { MouseEventHandler, SFC, forwardRef } from 'react';
 import { SpaceProps, space } from 'styled-system';
 
 import styled, { css } from 'utils/styled-components';
@@ -54,29 +54,30 @@ export interface ItemProps {
   keep?: boolean;
 }
 
-const Item = forwardRef<{}, ItemProps>(
-  ({ onClick, disabled, keep, ...props }, ref: any) => (
-    <Consumer>
-      {({ handleClose }) => (
-        <StyledListItem
-          ref={ref}
-          onClick={event => {
-            if (disabled) {
-              return;
-            }
-            if (onClick) {
-              onClick(event);
-            }
-            if (!keep) {
-              handleClose();
-            }
-          }}
-          disabled={disabled}
-          {...props}
-        />
-      )}
-    </Consumer>
-  )
+const Item: SFC<ItemProps> = (
+  { onClick, disabled, keep, ...props },
+  ref: any
+) => (
+  <Consumer>
+    {({ handleClose }) => (
+      <StyledListItem
+        ref={ref}
+        onClick={event => {
+          if (disabled) {
+            return;
+          }
+          if (onClick) {
+            onClick(event);
+          }
+          if (!keep) {
+            handleClose();
+          }
+        }}
+        disabled={disabled}
+        {...props}
+      />
+    )}
+  </Consumer>
 );
 
-export default Item;
+export default forwardRef(Item);

@@ -42,7 +42,7 @@ const MaxLength = styled.div`
   line-height: 1;
 `;
 
-const TextFieldField = styled(FormField)`
+const TextFieldField = styled<any>(FormField)`
   margin-top: 10px;
 
   ${StyledInput /* sc-selector */}:invalid, ${StyledTextarea /* sc-selector */}:invalid {
