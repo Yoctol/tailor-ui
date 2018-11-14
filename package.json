@@ -28,7 +28,7 @@
     "lint:staged": "lint-staged && npm run type-check",
     "lint:ts": "tslint -c tslint.json 'src/**/*.{ts,tsx}'",
     "prepublishOnly": "npm run build",
-    "test": "npm run lint:fix && npm run testonly",
+    "test": "npm run lint && npm run testonly",
     "testonly": "jest",
     "testonly:cov": "jest --coverage --runInBand",
     "testonly:watch": "jest --watch",
