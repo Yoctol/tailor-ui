@@ -43,7 +43,7 @@ const omit = (obj: { [key: string]: any }, tagName: string, keys: string[]) => {
 const Tags: { [key: string]: any } = {};
 
 tags.forEach((Tag: string) => {
-  Tags[Tag] = forwardRef<{}, { is: any; blacklist: string[] }>(
+  Tags[Tag] = forwardRef<any, { is: any; blacklist: string[] }>(
     ({ blacklist = [], ...props }, ref) => (
       <Tag
         ref={ref}
