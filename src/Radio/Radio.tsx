@@ -1,12 +1,12 @@
-import React, { ChangeEvent, SFC } from 'react';
+import React, { ChangeEvent, SFC, useContext } from 'react';
 
 import styled, { css } from 'utils/styled-components';
 import tag from 'utils/CleanTag';
 
 import Space from '../Grid/Space';
 
+import RadioContext, { Direction } from './RadioContext';
 import RadioGroup from './RadioGroup';
-import { Consumer } from './RadioContext';
 
 const RadioWrapper = styled.span`
   display: inline-block;
@@ -65,8 +65,6 @@ const StyledRadio = styled.input.attrs({
     transform: scale(1);
   }
 `;
-
-export type Direction = 'horizontal' | 'verticle';
 
 const getMarginPosition = ({ direction }: { direction: Direction }) =>
   direction === 'horizontal' ? 'margin-left' : 'margin-top';
@@ -130,31 +128,31 @@ const Radio: SFC<IRadioProps> & {
   onChange,
   value,
   ...props
-}) => (
-  <Consumer>
-    {({ _onChange, _isChecked, direction }) => (
-      <RadioLabel disabled={disabled} direction={direction} {...props}>
-        <RadioWrapper>
-          <StyledRadio
-            disabled={disabled}
-            checked={_isChecked && value ? _isChecked(value) : checked}
-            defaultChecked={defaultChecked}
-            onChange={event => {
-              if (onChange) {
-                onChange(event);
-              }
-              if (_onChange && value) {
-                _onChange(value);
-              }
-            }}
-          />
-          <RadioInner />
-        </RadioWrapper>
-        <Space px="2">{children}</Space>
-      </RadioLabel>
-    )}
-  </Consumer>
-);
+}) => {
+  const { _onChange, _isChecked, direction } = useContext(RadioContext);
+
+  return (
+    <RadioLabel disabled={disabled} direction={direction} {...props}>
+      <RadioWrapper>
+        <StyledRadio
+          disabled={disabled}
+          checked={_isChecked && value ? _isChecked(value) : checked}
+          defaultChecked={defaultChecked}
+          onChange={event => {
+            if (onChange) {
+              onChange(event);
+            }
+            if (_onChange && value) {
+              _onChange(value);
+            }
+          }}
+        />
+        <RadioInner />
+      </RadioWrapper>
+      <Space px="2">{children}</Space>
+    </RadioLabel>
+  );
+};
 
 Radio.Group = RadioGroup;
 

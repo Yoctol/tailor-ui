@@ -1,12 +1,12 @@
-import React, { ChangeEvent, SFC } from 'react';
+import React, { ChangeEvent, SFC, useContext } from 'react';
 
 import styled, { css } from 'utils/styled-components';
 import tag from 'utils/CleanTag';
 
 import Space from '../Grid/Space';
 
+import CheckboxContext, { Direction } from './CheckboxContext';
 import CheckboxGroup from './CheckboxGroup';
-import { Consumer } from './CheckboxContext';
 
 const CheckboxWrapper = styled.span`
   display: inline-block;
@@ -67,8 +67,6 @@ const StyledCheckbox = styled.input.attrs({
   }
 `;
 
-export type Direction = 'horizontal' | 'vertical';
-
 const getMarginPosition = ({ direction }: { direction: Direction }) =>
   direction === 'horizontal' ? 'margin-left' : 'margin-top';
 
@@ -122,6 +120,9 @@ export interface ICheckboxProps {
    * The callback function that is triggered when the state changes
    */
   onChange?: (evnet: ChangeEvent) => void;
+  /**
+   * The value of checkbox
+   */
   value?: string;
 }
 
@@ -135,31 +136,31 @@ const Checkbox: SFC<ICheckboxProps> & {
   onChange,
   value,
   ...props
-}) => (
-  <Consumer>
-    {({ _onChange, _isChecked, direction }) => (
-      <CheckboxLabel disabled={disabled} direction={direction} {...props}>
-        <CheckboxWrapper>
-          <StyledCheckbox
-            disabled={disabled}
-            checked={_isChecked && value ? _isChecked(value) : checked}
-            defaultChecked={defaultChecked}
-            onChange={event => {
-              if (onChange) {
-                onChange(event);
-              }
-              if (_onChange && value) {
-                _onChange(event, value);
-              }
-            }}
-          />
-          <CheckboxInner />
-        </CheckboxWrapper>
-        <Space px="2">{children}</Space>
-      </CheckboxLabel>
-    )}
-  </Consumer>
-);
+}) => {
+  const { _onChange, _isChecked, direction } = useContext(CheckboxContext);
+
+  return (
+    <CheckboxLabel disabled={disabled} direction={direction} {...props}>
+      <CheckboxWrapper>
+        <StyledCheckbox
+          disabled={disabled}
+          checked={_isChecked && value ? _isChecked(value) : checked}
+          defaultChecked={defaultChecked}
+          onChange={event => {
+            if (onChange) {
+              onChange(event);
+            }
+            if (_onChange && value) {
+              _onChange(event, value);
+            }
+          }}
+        />
+        <CheckboxInner />
+      </CheckboxWrapper>
+      <Space px="2">{children}</Space>
+    </CheckboxLabel>
+  );
+};
 
 Checkbox.Group = CheckboxGroup;
 

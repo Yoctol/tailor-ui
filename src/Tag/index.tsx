@@ -1,7 +1,6 @@
-import React, { PureComponent, SFC } from 'react';
+import React, { PureComponent, SFC, useState } from 'react';
 import { MdClose } from 'react-icons/md';
 import { Spring, animated } from 'react-spring';
-import { Toggle } from 'react-powerplug';
 import { omit } from 'ramda';
 
 import styled from 'utils/styled-components';
@@ -55,43 +54,43 @@ const ClosableTag: SFC<IClosableTagProps> = ({
   children,
   onClosed,
   ...props
-}) => (
-  <Toggle initial>
-    {({ on, toggle }) => (
-      <Spring
-        native
-        onRest={({ width }: any) => {
-          if (width === 0 && onClosed) {
-            onClosed();
-          }
-        }}
-        from={{ transform: 'scale(1)', opacity: 1, width: 'auto' }}
-        to={{
-          transform: on ? 'scale(1)' : 'scale(0)',
-          opacity: on ? 1 : 0,
-          width: on ? 'auto' : 0,
-          marginLeft: on ? undefined : 0,
-        }}
-      >
-        {styles => (
-          <AnimatedStyledTagWrapper style={styles}>
-            <StyledTag {...props}>
-              {children}
-              <CloseIcon
-                size="16"
-                ml="1"
-                fill="gray400"
-                cursor="pointer"
-                onClick={toggle}
-                type={MdClose}
-              />
-            </StyledTag>
-          </AnimatedStyledTagWrapper>
-        )}
-      </Spring>
-    )}
-  </Toggle>
-);
+}) => {
+  const [on, setOn] = useState(true);
+
+  return (
+    <Spring
+      native
+      onRest={({ width }: any) => {
+        if (width === 0 && onClosed) {
+          onClosed();
+        }
+      }}
+      from={{ transform: 'scale(1)', opacity: 1, width: 'auto' }}
+      to={{
+        transform: on ? 'scale(1)' : 'scale(0)',
+        opacity: on ? 1 : 0,
+        width: on ? 'auto' : 0,
+        marginLeft: on ? undefined : 0,
+      }}
+    >
+      {styles => (
+        <AnimatedStyledTagWrapper style={styles}>
+          <StyledTag {...props}>
+            {children}
+            <CloseIcon
+              size="16"
+              ml="1"
+              fill="gray400"
+              cursor="pointer"
+              onClick={() => setOn(!on)}
+              type={MdClose}
+            />
+          </StyledTag>
+        </AnimatedStyledTagWrapper>
+      )}
+    </Spring>
+  );
+};
 
 const BaseTag: SFC = ({ children, ...props }) => (
   <StyledTagWrapper>

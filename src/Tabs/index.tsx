@@ -1,24 +1,11 @@
-import React, { PureComponent, SFC, createContext } from 'react';
-import { Value } from 'react-powerplug';
+import React, { SFC, useContext, useState } from 'react';
 import { space as styledSpace } from 'styled-system';
 
 import styled, { css } from 'utils/styled-components';
 import tag from 'utils/CleanTag';
 import { ICssProps, styledCss } from 'utils/css';
 
-type Size = 'sm' | 'md' | 'lg';
-
-const { Provider, Consumer } = createContext<{
-  activeValue: string;
-  setValue: (value: string) => void;
-  size: Size;
-  pills: boolean;
-}>({
-  activeValue: '',
-  setValue: () => {},
-  size: 'md',
-  pills: false,
-});
+import TabContext, { Size } from './TabContext';
 
 type IStyledTabProps = ICssProps & {
   size: Size;
@@ -116,21 +103,21 @@ export interface ITabProps {
   disabled?: boolean;
 }
 
-export const Tab: SFC<ITabProps> = ({ label, value, ...props }) => (
-  <Consumer>
-    {({ size, pills, activeValue, setValue }) => (
-      <StyledTab
-        size={size}
-        pills={pills}
-        active={activeValue === value}
-        onClick={() => setValue(value)}
-        {...props}
-      >
-        {label}
-      </StyledTab>
-    )}
-  </Consumer>
-);
+export const Tab: SFC<ITabProps> = ({ label, value, ...props }) => {
+  const { size, pills, activeValue, setValue } = useContext(TabContext);
+
+  return (
+    <StyledTab
+      size={size}
+      pills={pills}
+      active={activeValue === value}
+      onClick={() => setValue(value)}
+      {...props}
+    >
+      {label}
+    </StyledTab>
+  );
+};
 
 type IStyledTabsProps = ICssProps & {
   /**
@@ -192,47 +179,42 @@ type TabsProps = IStyledTabsProps & {
   size?: Size;
 };
 
-class Tabs extends PureComponent<TabsProps> {
-  static Tab = Tab;
+const Tabs: SFC<TabsProps> & {
+  Tab: typeof Tab;
+} = ({
+  absolute = false,
+  pills = false,
+  size = 'md',
+  children,
+  defaultActiveValue,
+  activeValue,
+  onChange,
+  ...otherProps
+}) => {
+  const [activeTab, setActiveTab] = useState(defaultActiveValue);
 
-  render() {
-    const {
-      absolute = false,
-      pills = false,
-      size = 'md',
-      children,
-      defaultActiveValue,
-      activeValue,
-      onChange,
-      ...otherProps
-    } = this.props;
+  return (
+    <TabContext.Provider
+      value={{
+        activeValue: activeValue || activeTab || '',
+        setValue: value => {
+          setActiveTab(value);
 
-    return (
-      <Value
-        initial={defaultActiveValue}
-        onChange={value => {
           if (onChange && value) {
             onChange(value);
           }
-        }}
-      >
-        {({ value, set }) => (
-          <StyledTabs absolute={absolute} {...otherProps}>
-            <Provider
-              value={{
-                activeValue: activeValue || value || '',
-                setValue: set,
-                size,
-                pills,
-              }}
-            >
-              {children}
-            </Provider>
-          </StyledTabs>
-        )}
-      </Value>
-    );
-  }
-}
+        },
+        size,
+        pills,
+      }}
+    >
+      <StyledTabs absolute={absolute} {...otherProps}>
+        {children}
+      </StyledTabs>
+    </TabContext.Provider>
+  );
+};
+
+Tabs.Tab = Tab;
 
 export default Tabs;
