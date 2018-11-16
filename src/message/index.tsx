@@ -20,11 +20,10 @@ class Message {
   }
 
   message({ content, duration, type }: IMessageOptions) {
-    // eslint-disable-next-line react/no-this-in-sfc
     if (this.messageRef.current) {
-      // eslint-disable-next-line react/no-this-in-sfc
       return this.messageRef.current.add({ content, duration, type });
     }
+
     return null;
   }
 }

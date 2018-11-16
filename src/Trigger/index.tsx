@@ -6,7 +6,6 @@ import React, {
 } from 'react';
 import observeRect from '@reach/observe-rect';
 import { Transition, config } from 'react-spring';
-import { composeEvents } from 'react-powerplug';
 import { findDOMNode } from 'react-dom';
 
 import ClickOutside from '../utils/ClickOutside';
@@ -242,13 +241,27 @@ class Trigger extends PureComponent<ITriggerProps, ITriggerState> {
       });
     }
 
-    return cloneElement(
-      children,
-      composeEvents(children.props, {
-        onClick: toggle,
-        ...bind,
-      })
-    );
+    return cloneElement(children, {
+      ...children.props,
+      onClick: (event: MouseEvent) => {
+        toggle();
+        if (children.props.onClick) {
+          children.props.onClick(event);
+        }
+      },
+      onMouseEnter: (event: MouseEvent) => {
+        this.handleOpen();
+        if (children.props.onMouseEnter) {
+          children.props.onMouseEnter(event);
+        }
+      },
+      onMouseLeave: (event: MouseEvent) => {
+        this.handleClose();
+        if (children.props.onMouseLeave) {
+          children.props.onMouseLeave(event);
+        }
+      },
+    });
   };
 
   renderPopup = () => {

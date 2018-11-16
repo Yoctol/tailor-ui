@@ -1,8 +1,8 @@
 import { ChangeEvent, createContext } from 'react';
 
-import { Direction } from './Checkbox';
+export type Direction = 'horizontal' | 'vertical';
 
-const { Provider, Consumer } = createContext<{
+const CheckboxContext = createContext<{
   _onChange?: (event: ChangeEvent<HTMLInputElement>, value: string) => void;
   _isChecked?: (value: string) => boolean;
   direction: Direction;
@@ -10,4 +10,4 @@ const { Provider, Consumer } = createContext<{
   direction: 'horizontal',
 });
 
-export { Provider, Consumer };
+export default CheckboxContext;

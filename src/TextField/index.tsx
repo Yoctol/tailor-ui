@@ -3,8 +3,9 @@ import React, {
   ChangeEventHandler,
   KeyboardEventHandler,
   SFC,
+  useState,
 } from 'react';
-import { Field } from 'react-powerplug';
+import { omit } from 'ramda';
 import { rem } from 'polished';
 
 import styled from 'utils/styled-components';
@@ -123,7 +124,7 @@ export interface ITextFieldProps {
 const TextField: SFC<ITextFieldProps> = ({
   label = null,
   value: controlledValue,
-  defaultValue,
+  defaultValue = '',
   success = false,
   warning = false,
   error = false,
@@ -132,39 +133,37 @@ const TextField: SFC<ITextFieldProps> = ({
   textarea = false,
   onChange = null,
   ...props
-}) => (
-  <Field initial={defaultValue}>
-    {({ value: uncontrolledValue, bind }) => {
-      const value =
-        controlledValue || controlledValue === ''
-          ? controlledValue
-          : uncontrolledValue;
-      const hasHint = success || warning || error;
-      const RenderComponent = textarea ? Textarea : Input;
-      const inputProps = {
-        maxLength,
-        value,
-        onChange: (event: ChangeEvent<HTMLInputElement>) => {
-          bind.onChange(event);
-          if (onChange) {
-            onChange(event);
-          }
-        },
-        ...props,
-      };
+}) => {
+  const [uncontrolledValue, setUncontrolledValue] = useState(defaultValue);
 
-      return (
-        <TextFieldField success={success} warning={warning} error={error}>
-          <RenderComponent {...inputProps} required />
-          {maxLength && !hasHint && (
-            <MaxLength>{maxLength - value.length}</MaxLength>
-          )}
-          {label && <TextFieldLabel>{label}</TextFieldLabel>}
-          {hasHint && <Hint>{message}</Hint>}
-        </TextFieldField>
-      );
-    }}
-  </Field>
-);
+  const value =
+    controlledValue || controlledValue === ''
+      ? controlledValue
+      : uncontrolledValue;
+  const hasHint = success || warning || error;
+  const RenderComponent = textarea ? Textarea : Input;
+  const inputProps = {
+    maxLength,
+    value,
+    onChange: (event: ChangeEvent<HTMLInputElement>) => {
+      setUncontrolledValue(event.target.value);
+      if (onChange) {
+        onChange(event);
+      }
+    },
+    ...(textarea ? omit(['onPressEnter'], props) : props),
+  };
+
+  return (
+    <TextFieldField success={success} warning={warning} error={error}>
+      <RenderComponent {...inputProps} required />
+      {maxLength && !hasHint && (
+        <MaxLength>{maxLength - value.length}</MaxLength>
+      )}
+      {label && <TextFieldLabel>{label}</TextFieldLabel>}
+      {hasHint && <Hint>{message}</Hint>}
+    </TextFieldField>
+  );
+};
 
 export default TextField;

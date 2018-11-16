@@ -1,11 +1,10 @@
-import React, { SFC } from 'react';
-import { Value } from 'react-powerplug';
+import React, { SFC, useState } from 'react';
 
 import styled from 'utils/styled-components';
 import tag from 'utils/CleanTag';
 
-import Radio, { Direction } from './Radio';
-import { Provider } from './RadioContext';
+import Radio from './Radio';
+import RadioContext, { Direction } from './RadioContext';
 
 const RadioGroupFlex = styled<{ direction: Direction }, 'div'>(tag.div)`
   display: ${p => (p.direction === 'horizontal' ? 'flex' : 'inline-flex')};
@@ -40,49 +39,51 @@ export interface IRadioGroupProps {
 }
 
 const RadioGroup: SFC<IRadioGroupProps> = ({
-  value,
+  value: controlledValue,
   defaultValue,
   options = null,
   onChange,
   direction = 'horizontal',
   children,
   ...otherProps
-}) => (
-  <RadioGroupFlex direction={direction}>
-    <Value
-      initial={defaultValue}
-      onChange={_value => {
-        if (onChange && _value) {
-          onChange(_value);
-        }
+}) => {
+  const [uncontrolledValue, setUncontrolledValue] = useState(defaultValue);
+
+  return (
+    <RadioContext.Provider
+      value={{
+        direction,
+        _onChange: _value => {
+          if (uncontrolledValue) {
+            setUncontrolledValue(_value);
+          }
+
+          if (onChange) {
+            onChange(_value);
+          }
+        },
+        _isChecked: _value =>
+          controlledValue
+            ? controlledValue === _value
+            : uncontrolledValue === _value,
       }}
     >
-      {({ value: uncontrolledValue, set }) => (
-        <Provider
-          value={{
-            direction,
-            _onChange: _value =>
-              value && onChange ? onChange(_value) : set(_value),
-            _isChecked: _value =>
-              value ? value === _value : uncontrolledValue === _value,
-          }}
-        >
-          {options
-            ? options.map(({ label, value: optionValue, disabled = false }) => (
-                <Radio
-                  key={label}
-                  value={optionValue}
-                  disabled={disabled}
-                  {...otherProps}
-                >
-                  {label}
-                </Radio>
-              ))
-            : children}
-        </Provider>
-      )}
-    </Value>
-  </RadioGroupFlex>
-);
+      <RadioGroupFlex direction={direction}>
+        {options
+          ? options.map(({ label, value: optionValue, disabled = false }) => (
+              <Radio
+                key={label}
+                value={optionValue}
+                disabled={disabled}
+                {...otherProps}
+              >
+                {label}
+              </Radio>
+            ))
+          : children}
+      </RadioGroupFlex>
+    </RadioContext.Provider>
+  );
+};
 
 export default RadioGroup;

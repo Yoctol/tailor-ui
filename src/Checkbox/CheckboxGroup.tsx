@@ -1,11 +1,10 @@
-import React, { SFC } from 'react';
-import { Set } from 'react-powerplug';
+import React, { SFC, useState } from 'react';
 
 import styled from 'utils/styled-components';
 import tag from 'utils/CleanTag';
 
-import Checkbox, { Direction } from './Checkbox';
-import { Provider } from './CheckboxContext';
+import Checkbox from './Checkbox';
+import CheckboxContext, { Direction } from './CheckboxContext';
 
 const CheckboxGroupFlex = styled<{ direction: Direction }, 'div'>(tag.div)`
   display: ${p => (p.direction === 'horizontal' ? 'flex' : 'inline-flex')};
@@ -41,67 +40,64 @@ export interface ICheckboxGroupProps {
 }
 
 const CheckboxGroup: SFC<ICheckboxGroupProps> = ({
-  value,
+  value: controlledValue,
   defaultValue,
   options = null,
   onChange,
   direction = 'horizontal',
   children,
   ...otherProps
-}) => (
-  <CheckboxGroupFlex direction={direction}>
-    <Set
-      initial={defaultValue || []}
-      onChange={_value => {
-        if (onChange && _value) {
-          onChange(_value);
-        }
+}) => {
+  const [uncontrolledValue, setUncontrolledValue] = useState(defaultValue);
+
+  return (
+    <CheckboxContext.Provider
+      value={{
+        direction,
+        _onChange: (event, _value) => {
+          const { checked } = event.target;
+          const targetValue = controlledValue || uncontrolledValue || [];
+          let nextValue = targetValue;
+
+          if (targetValue.includes(_value) && !checked) {
+            nextValue = targetValue.filter(val => val !== _value);
+          }
+
+          if (!targetValue.includes(_value) && checked) {
+            nextValue = [...targetValue, _value];
+          }
+
+          if (!controlledValue) {
+            setUncontrolledValue(nextValue);
+          }
+
+          if (onChange) {
+            onChange(nextValue);
+          }
+        },
+        _isChecked: _value => {
+          const targetValue = controlledValue || uncontrolledValue || [];
+          return targetValue.includes(_value);
+        },
       }}
     >
-      {({ add, remove, has }) => (
-        <Provider
-          value={{
-            direction,
-            _onChange: (event, _value) => {
-              const { checked } = event.target;
-
-              if (value) {
-                if (value.includes(_value) && !checked && onChange) {
-                  onChange(value.filter(val => val !== _value));
-                }
-                if (!value.includes(_value) && checked && onChange) {
-                  onChange([...value, _value]);
-                }
-              } else {
-                if (has(_value) && !checked) {
-                  remove(_value);
-                }
-                if (!has(_value) && checked) {
-                  add(_value);
-                }
-              }
-            },
-            _isChecked: _value =>
-              value ? value.includes(_value) : has(_value),
-          }}
-        >
-          {options
-            ? options.map(({ label, value: optionValue, disabled = false }) => (
-                <Checkbox
-                  key={label}
-                  value={optionValue}
-                  disabled={disabled}
-                  {...otherProps}
-                >
-                  {label}
-                </Checkbox>
-              ))
-            : children}
-        </Provider>
-      )}
-    </Set>
-  </CheckboxGroupFlex>
-);
+      <CheckboxGroupFlex direction={direction}>
+        {options
+          ? options.map(({ label, value: optionValue, disabled = false }) => (
+              <Checkbox
+                key={label}
+                value={optionValue}
+                disabled={disabled}
+                {...otherProps}
+              >
+                {label}
+              </Checkbox>
+            ))
+          : children}
+      </CheckboxGroupFlex>
+    </CheckboxContext.Provider>
+  );
+};
 
 CheckboxGroup.displayName = 'Checkbox.Group';
 
