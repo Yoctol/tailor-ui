@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { Transition, animated } from 'react-spring';
+import { Transition, animated, config } from 'react-spring';
 
 import styled from 'utils/styled-components';
 
@@ -12,31 +12,39 @@ const getUuid = createUuidGenerator('message');
 const MessageContainer = styled.div`
   display: flex;
   position: fixed;
-  z-index: 10000;
-  top: 10px;
+  right: 10px;
+  bottom: 10px;
   flex-direction: column;
-  align-items: center;
-  width: 100%;
-  pointer-events: none;
 `;
 
 const MessageBox = styled.div`
+  position: relative;
+  box-sizing: border-box;
+  flex: none;
+  width: 280px;
+  overflow: hidden;
+`;
+
+const MessageContent = styled.div`
   display: flex;
-  align-items: center;
-  margin: 8px 0;
-  padding: 10px 12px;
-  border-radius: 4px;
-  background: #fff;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  pointer-events: all;
+  position: relative;
+  margin-top: ${p => p.theme.space[2]};
+  padding: ${p => p.theme.space[3]};
+  overflow: hidden;
+  border-radius: ${p => p.theme.radii.base};
+  background-color: ${p => p.theme.colors.primaryDark};
+  color: ${p => p.theme.colors.light};
+  font-size: ${p => p.theme.fontSizes.sm};
 `;
 
 const AnimatedMessageBox = animated(MessageBox);
 
 interface IMessage {
   key: string;
-  content: JSX.Element;
-  timer: NodeJS.Timer;
+  icon: JSX.Element;
+  content: string;
+  duration: number;
+  resolve: () => void;
 }
 
 export interface IMessageOptions {
@@ -54,33 +62,25 @@ class MessageHub extends PureComponent<{}, IMessageHubState> {
     messages: [],
   };
 
-  remove = (key: string) => {
+  cancelMap = new WeakMap();
+
+  remove = ({ key }: { key: string }) => {
     this.setState(({ messages }) => ({
       messages: messages.filter(message => message.key !== key),
     }));
   };
 
-  add = ({ content: baseContent, duration, type }: IMessageOptions) =>
+  add = ({ content, duration, type }: IMessageOptions) =>
     new Promise(resolve => {
       const key = getUuid();
-
-      const timer = setTimeout(() => {
-        this.remove(key);
-        resolve();
-      }, duration);
-
-      const TypeIcon = getTypeIcon(type);
-      const content = (
-        <>
-          {TypeIcon}
-          {baseContent}
-        </>
-      );
+      const icon = getTypeIcon(type);
 
       const newMessage = {
         key,
+        icon,
         content,
-        timer,
+        duration,
+        resolve,
       };
 
       this.setState(({ messages }) => ({
@@ -88,36 +88,53 @@ class MessageHub extends PureComponent<{}, IMessageHubState> {
       }));
     });
 
+  cancel = (item: any) =>
+    this.cancelMap.has(item) && this.cancelMap.get(item)();
+
+  leave = (item: any) => async (next: any, cancel: any) => {
+    this.cancelMap.set(item, () => {
+      cancel();
+      item.resolve();
+    });
+
+    await next({ life: 0 });
+    await next({ opacity: 0 });
+    item.resolve();
+    await next({ height: 0 }, true);
+  };
+
+  config = (item: any, state: any) =>
+    state === 'leave' ? [{ duration: item.duration }, spring, spring] : spring;
+
   render() {
     const { messages } = this.state;
+
     return (
       <UIProvider>
         <MessageContainer>
           <Transition
             native
-            keys={messages.map(({ key }) => key)}
+            keys={message => message.key}
             items={messages}
             from={{
               opacity: 0,
-              transform: 'translateY(-30px)',
-              height: 'auto',
+              height: 0,
+              life: 1,
             }}
             enter={{
               opacity: 1,
-              transform: 'translateY(0)',
               height: 'auto',
             }}
-            leave={{
-              opacity: 0,
-              transform: 'translateY(-30px)',
-              height: 0,
-              padding: 0,
-              margin: 0,
-            }}
+            leave={this.leave}
+            onRest={this.remove}
+            config={this.config as any}
           >
-            {(message: any) => (style: any) => (
-              <AnimatedMessageBox style={style}>
-                {message.content}
+            {(message: any) => ({ life, ...props }) => (
+              <AnimatedMessageBox style={props}>
+                <MessageContent>
+                  {message.icon}
+                  <div>{message.content}</div>
+                </MessageContent>
               </AnimatedMessageBox>
             )}
           </Transition>
