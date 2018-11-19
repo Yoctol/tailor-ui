@@ -1,10 +1,10 @@
-import React, { PureComponent, ReactNode, SFC } from 'react';
+import React, { ReactNode, SFC } from 'react';
 import { Transition, animated, config } from 'react-spring';
 import { WidthProps, width as styledWidth } from 'styled-system';
 
-import Keydown from 'utils/Keydown';
 import styled from 'utils/styled-components';
 import tag from 'utils/CleanTag';
+import useKeydown, { ESC_KEY_CODE } from 'utils/useKeydown';
 import { ICssProps, styledCss } from 'utils/css';
 
 const ModalOverlay = styled.div`
@@ -74,46 +74,44 @@ export type BaseModalProps = WidthProps & {
   visible: boolean;
 };
 
-class BaseModal extends PureComponent<BaseModalProps> {
-  render() {
-    const { children, visible, onCancel, ...otherProps } = this.props;
+const BaseModal: SFC<BaseModalProps> = ({
+  children,
+  visible,
+  onCancel,
+  ...otherProps
+}) => {
+  useKeydown({ keyCode: ESC_KEY_CODE, onKeydown: onCancel });
 
-    return (
-      <>
-        {visible && (
-          <Keydown keyCode={Keydown.ESC_KEY_CODE} handleKeydown={onCancel} />
-        )}
-        <Transition
-          native
-          items={visible ? 'visible' : 'hidden'}
-          from={{
-            opacity: 0,
-          }}
-          enter={{
-            opacity: 1,
-          }}
-          leave={{
-            opacity: 0,
-            pointerEvents: 'none',
-          }}
-          config={config.stiff}
-        >
-          {v =>
-            v === 'visible' // FIXME: waiting for the typing update
-              ? (style: any) => (
-                  <ModalWrapper
-                    style={style}
-                    onCancel={onCancel}
-                    content={children}
-                    {...otherProps}
-                  />
-                )
-              : () => null
-          }
-        </Transition>
-      </>
-    );
-  }
-}
+  return (
+    <Transition
+      native
+      items={visible ? 'visible' : 'hidden'}
+      from={{
+        opacity: 0,
+      }}
+      enter={{
+        opacity: 1,
+      }}
+      leave={{
+        opacity: 0,
+        pointerEvents: 'none',
+      }}
+      config={config.stiff}
+    >
+      {v =>
+        v === 'visible' // FIXME: waiting for the typing update
+          ? (style: any) => (
+              <ModalWrapper
+                style={style}
+                onCancel={onCancel}
+                content={children}
+                {...otherProps}
+              />
+            )
+          : () => null
+      }
+    </Transition>
+  );
+};
 
 export default BaseModal;
