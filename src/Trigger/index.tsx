@@ -9,7 +9,6 @@ import { Transition, config } from 'react-spring';
 import { findDOMNode } from 'react-dom';
 
 import ClickOutside from '../utils/ClickOutside';
-import Keydown from '../utils/Keydown';
 import Portal from '../utils/Portal';
 
 import getPositionOffset, { Placement } from './getPositionOffset';
@@ -95,6 +94,8 @@ class Trigger extends PureComponent<ITriggerProps, ITriggerState> {
   };
 
   componentDidMount() {
+    window.addEventListener('keydown', this.handleKeydown);
+
     this.childrenDOM = findDOMNode(this) as HTMLElement;
 
     this.rectObserver = observeRect(this.childrenDOM, (rect: DOMRect) => {
@@ -108,7 +109,17 @@ class Trigger extends PureComponent<ITriggerProps, ITriggerState> {
 
   componentWillUnmount() {
     this.rectObserver.unobserve();
+    window.removeEventListener('keydown', this.handleKeydown);
   }
+
+  handleKeydown = ({ keyCode }: KeyboardEvent) => {
+    const { visible } = this.state;
+    const { trigger } = this.props;
+
+    if (visible && trigger === 'click' && keyCode === 27) {
+      this.handleClose();
+    }
+  };
 
   toggle = () => {
     const { visible } = this.state;
@@ -219,7 +230,10 @@ class Trigger extends PureComponent<ITriggerProps, ITriggerState> {
     const { children, trigger } = this.props;
     const { visible } = this.state;
 
-    let bind = {};
+    let bind = {
+      onMouseEnter: () => {},
+      onMouseLeave: () => {},
+    };
     let toggle = () => {};
 
     if (trigger === 'hover') {
@@ -250,13 +264,13 @@ class Trigger extends PureComponent<ITriggerProps, ITriggerState> {
         }
       },
       onMouseEnter: (event: MouseEvent) => {
-        this.handleOpen();
+        bind.onMouseEnter();
         if (children.props.onMouseEnter) {
           children.props.onMouseEnter(event);
         }
       },
       onMouseLeave: (event: MouseEvent) => {
-        this.handleClose();
+        bind.onMouseLeave();
         if (children.props.onMouseLeave) {
           children.props.onMouseLeave(event);
         }
@@ -317,18 +331,11 @@ class Trigger extends PureComponent<ITriggerProps, ITriggerState> {
   };
 
   render() {
-    const { visible } = this.state;
-    const { trigger, appendFor } = this.props;
+    const { appendFor } = this.props;
 
     return (
       <>
         {this.renderChildren()}
-        {visible && trigger === 'click' && (
-          <Keydown
-            keyCode={Keydown.ESC_KEY_CODE}
-            handleKeydown={this.handleClose}
-          />
-        )}
         <Portal appendFor={appendFor}>{this.renderPopup()}</Portal>
       </>
     );
