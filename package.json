@@ -46,7 +46,7 @@
     "prop-types": "^15.6.2",
     "ramda": "^0.25.0",
     "rc-calendar": "^9.7.11",
-    "rc-editor-mention": "^1.1.10",
+    "rc-editor-mention": "1.1.7",
     "rc-time-picker": "^3.4.0",
     "react-html-attributes": "^1.4.3",
     "react-powerplug": "^1.0.0",
