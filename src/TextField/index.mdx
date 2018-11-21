@@ -5,7 +5,6 @@ route: /components/textfield
 ---
 
 import { PropsTable, Playground, Link } from 'docz';
-import { Field, Toggle } from 'react-powerplug';
 
 import Button from '../Button';
 
@@ -76,41 +75,47 @@ import { TextField } from '@yoctol/ui';
 ### With textarea & error
 
 <Playground>
-  <field>
-    {({ value, bind }) => {
-      const hasError = value === 'error';
-      return (
-        <TextField
-          textarea
-          minRows={2}
-          maxRows={6}
-          label="Please type 'error'"
-          error={hasError}
-          message="Just show error"
-          {...bind}
-        />
-      );
-    }}
-  </field>
+  {() => {
+    const [value, setValue] = React.useState('')
+    const hasError = value === 'error';
+
+    return (
+      <TextField
+        textarea
+        minRows={2}
+        maxRows={6}
+        label="Please type 'error'"
+        error={hasError}
+        message="Just show error"
+        value={value}
+        onChange={event => setValue(event.target.value)}
+      />
+    );
+
+}}
+
 </Playground>
 
 ### With maxLength & error
 
 <Playground>
-  <field>
-    {({ value, bind }) => {
-      const hasError = value === 'error';
-      return (
-        <TextField
-          label="Please type 'error'"
-          maxLength={12}
-          error={hasError}
-          message="Just show error"
-          {...bind}
-        />
-      );
-    }}
-  </field>
+  {() => {
+    const [value, setValue] = React.useState('')
+    const hasError = value === 'error';
+
+    return (
+      <TextField
+        label="Please type 'error'"
+        maxLength={12}
+        error={hasError}
+        message="Just show error"
+        value={value}
+        onChange={event => setValue(event.target.value)}
+      />
+    );
+
+}}
+
 </Playground>
 
 ### With status
@@ -149,18 +154,22 @@ import { TextField } from '@yoctol/ui';
 ### With controlled value switch
 
 <Playground>
-  <Toggle>
-    {({ on, toggle }) => (
-      <div>
-        <Button onClick={toggle}>Toggle</Button>
+  {() => {
+    const [on, setOn] = React.useState(false);
+
+    return (
+      <>
+        <Button onClick={() => setOn(!on)}>Toggle</Button>
         <TextField
           value={on ? 'toggle' : 'after toggle'}
           maxLength={30}
           onChange={event => console.log(event.target.value)}
         />
-      </div>
-    )}
-  </Toggle>
+      </>
+    );
+
+}}
+
 </Playground>
 
 ## API

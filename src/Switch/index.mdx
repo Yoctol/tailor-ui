@@ -5,7 +5,6 @@ route: /components/switch
 ---
 
 import { PropsTable, Playground } from 'docz';
-import { Toggle } from 'react-powerplug';
 import Switch from './';
 
 # Switch
@@ -26,17 +25,25 @@ import { Switch } from '@yoctol/ui';
 ### With controlled
 
 <Playground>
-  <Switch checked onChange={console.log} />
-  <br />
-  <Toggle initial={true}>
-    {({ on, set }) => <Switch checked={on} onChange={set} />}
-  </Toggle>
+  {() => {
+    const [checked, setChecked] = React.useState(true);
+
+    return (
+      <>
+        <Switch checked onChange={console.log} />
+        <br />
+        <Switch checked={checked} onChange={() => setChecked(!checked)} />
+      </>
+    );
+
+}}
+
 </Playground>
 
 ### With uncontrolled
 
 <Playground>
-  <Switch defaultChecked={true} onChange={console.log} />
+  <Switch defaultChecked onChange={console.log} />
 </Playground>
 
 ### With disabled

@@ -5,7 +5,6 @@ route: /components/menu
 ---
 
 import { PropsTable, Playground } from 'docz';
-import { Value } from 'react-powerplug';
 import { range } from 'ramda';
 
 import { Box } from '../';
@@ -31,75 +30,85 @@ import { Menu } from '@yoctol/ui';
 ### Basic
 
 <Playground>
-  <Value initial="1">
-    {({ value, set }) => (
+  {() => {
+    const [value, setValue] = React.useState('1');
+
+    return (
       <Box height="600px">
         <Menu onChange={console.log} initial="1">
           {range(1, 10).map(key => (
             <Menu.Item
               key={key}
               active={value === key}
-              onClick={() => set(key)}
+              onClick={() => setValue(key)}
             >
               Menu {key}
             </Menu.Item>
           ))}
         </Menu>
       </Box>
-    )}
-  </Value>
+    );
+
+}}
+
 </Playground>
 
 ### Group with custom width
 
 <Playground>
-  <Value initial="1">
-    {({ value, set }) => (
+  {() => {
+    const [value, setValue] = React.useState('1');
+
+    return (
       <Menu>
         <Menu.SubMenu title="Group 1" icon="understood" initial width={180}>
-          <Menu.Item active={value === '1'} onClick={() => set('1')}>
+          <Menu.Item active={value === '1'} onClick={() => setValue('1')}>
             Item 1
           </Menu.Item>
-          <Menu.Item active={value === '2'} onClick={() => set('2')}>
+          <Menu.Item active={value === '2'} onClick={() => setValue('2')}>
             Item 2
           </Menu.Item>
         </Menu.SubMenu>
         <Menu.SubMenu title="Group 2" icon="kurator">
-          <Menu.Item active={value === '3'} onClick={() => set('3')}>
+          <Menu.Item active={value === '3'} onClick={() => setValue('3')}>
             Item 3
           </Menu.Item>
-          <Menu.Item active={value === '4'} onClick={() => set('4')}>
+          <Menu.Item active={value === '4'} onClick={() => setValue('4')}>
             Item 4
           </Menu.Item>
         </Menu.SubMenu>
         <Menu.SubMenu title="Group 3" icon="touch">
-          <Menu.Item active={value === '5'} onClick={() => set('5')}>
+          <Menu.Item active={value === '5'} onClick={() => setValue('5')}>
             Item 5
           </Menu.Item>
-          <Menu.Item active={value === '6'} onClick={() => set('6')}>
+          <Menu.Item active={value === '6'} onClick={() => setValue('6')}>
             Item 6
           </Menu.Item>
         </Menu.SubMenu>
-        <Menu.Item icon="tags" active={value === '7'} onClick={() => set('7')}>
+        <Menu.Item icon="tags" active={value === '7'} onClick={() => setValue('7')}>
           Item 7
         </Menu.Item>
         <Menu.Item
           icon="settings"
           active={value === '8'}
-          onClick={() => set('8')}
+          onClick={() => setValue('8')}
         >
           Item 8
         </Menu.Item>
       </Menu>
-    )}
-  </Value>
+    );
+
+}}
+
 </Playground>
 
 ### Disable togglable
 
 <Playground>
-  <Value initial="1">
-    {({ value, set }) => (
+  {() => {
+    const [value, setValue] = React.useState('1');
+
+    return (
       <Menu>
         <Menu.SubMenu
           title="Understood"
@@ -107,24 +116,26 @@ import { Menu } from '@yoctol/ui';
           togglable={false}
           onClick={() => console.log('click understood')}
         >
-          <Menu.Item active={value === 'intent'} onClick={() => set('intent')}>
+          <Menu.Item active={value === 'intent'} onClick={() => setValue('intent')}>
             Intent
           </Menu.Item>
-          <Menu.Item active={value === 'entity'} onClick={() => set('entity')}>
+          <Menu.Item active={value === 'entity'} onClick={() => setValue('entity')}>
             Entity
           </Menu.Item>
         </Menu.SubMenu>
         <Menu.SubMenu title="Kurator" icon="kurator">
-          <Menu.Item active={value === 'action'} onClick={() => set('action')}>
+          <Menu.Item active={value === 'action'} onClick={() => setValue('action')}>
             Action
           </Menu.Item>
-          <Menu.Item active={value === 'menu'} onClick={() => set('menu')}>
+          <Menu.Item active={value === 'menu'} onClick={() => setValue('menu')}>
             Menu
           </Menu.Item>
         </Menu.SubMenu>
       </Menu>
-    )}
-  </Value>
+    );
+
+}}
+
 </Playground>
 
 ## API

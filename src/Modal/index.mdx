@@ -4,7 +4,6 @@ menu: Components
 route: /components/modal
 ---
 
-import { Toggle, State } from 'react-powerplug';
 import { PropsTable, Playground } from 'docz';
 import Modal from './';
 import { Button } from '../';
@@ -26,38 +25,44 @@ import { Modal } from '@yoctol/ui';
 ### Basic
 
 <Playground>
-  <Toggle>
-    {({ on, toggle }) => (
-      <div>
+  {() => {
+    const [visible, setVisible] = React.useState(false);
+
+    return (
+      <>
         <Modal
           title="This is a Modal"
-          visible={on}
+          visible={visible}
           closable
-          onConfirm={toggle}
-          onCancel={toggle}
+          onConfirm={() => setVisible(false)}
+          onCancel={() => setVisible(false)}
         >
           {Array.from({ length: 100 }).map((_, index) => (
             <div key={index}>This is the content of Modal</div>
           ))}
         </Modal>
-        <Button onClick={toggle}>Open Modal</Button>
-      </div>
-    )}
-  </Toggle>
+        <Button onClick={() => setVisible(true)}>Open Modal</Button>
+      </>
+    )
+
+}}
+
 </Playground>
 
 ### Customize footer
 
 <Playground>
-  <Toggle>
-    {({ on, toggle }) => (
-      <div>
+  {() => {
+    const [visible, setVisible] = React.useState(false);
+
+    return (
+      <>
         <Modal
           title="This is a Modal"
-          visible={on}
+          visible={visible}
           footer={<div>My footer</div>}
           closable
-          onCancel={toggle}
+          onCancel={() => setVisible(false)}
         >
           <div>This is the content of Modal</div>
           <div>This is the content of Modal</div>
@@ -65,24 +70,28 @@ import { Modal } from '@yoctol/ui';
           <div>This is the content of Modal</div>
           <div>This is the content of Modal</div>
         </Modal>
-        <Button onClick={toggle}>Open Modal</Button>
-      </div>
-    )}
-  </Toggle>
+        <Button onClick={() => setVisible(true)}>Open Modal</Button>
+      </>
+    );
+
+}}
+
 </Playground>
 
 ### Without footer
 
 <Playground>
-  <Toggle>
-    {({ on, toggle }) => (
-      <div>
+  {() => {
+    const [visible, setVisible] = React.useState(false);
+
+    return (
+      <>
         <Modal
           title="This is a Modal"
-          visible={on}
+          visible={visible}
           footer={null}
           closable
-          onCancel={toggle}
+          onCancel={() => setVisible(false)}
         >
           <div>This is the content of Modal</div>
           <div>This is the content of Modal</div>
@@ -90,31 +99,37 @@ import { Modal } from '@yoctol/ui';
           <div>This is the content of Modal</div>
           <div>This is the content of Modal</div>
         </Modal>
-        <Button onClick={toggle}>Open Modal</Button>
-      </div>
-    )}
-  </Toggle>
+        <Button onClick={() => setVisible(true)}>Open Modal</Button>
+      </>
+    );
+
+}}
+
 </Playground>
 
 ### With button props
 
 <Playground>
-  <State initial={{ visible: false, loading: false }}>
-    {({ state, setState }) => (
-      <div>
+  {() => {
+    const [visible, setVisible] = React.useState(false);
+    const [loading, setLoading] = React.useState(false);
+
+    return (
+      <>
         <Modal
           title="This is a Modal"
-          visible={state.visible}
+          visible={visible}
           closable
           onConfirm={() => {
-            setState({ loading: true });
+            setLoading(true);
             setTimeout(() => {
-              setState({ visible: false, loading: false });
+              setLoading(false);
+              setVisible(false);
             }, 3000);
           }}
-          onCancel={() => setState({ visible: false })}
+          onCancel={() => setVisible(false)}
           confirmText="DELETE"
-          confirmButtonProps={{ type: 'danger', loading: state.loading }}
+          confirmButtonProps={{ type: 'danger', loading }}
         >
           <div>This is the content of Modal</div>
           <div>This is the content of Modal</div>
@@ -122,10 +137,12 @@ import { Modal } from '@yoctol/ui';
           <div>This is the content of Modal</div>
           <div>This is the content of Modal</div>
         </Modal>
-        <Button onClick={() => setState({ visible: true })}>Open Modal</Button>
-      </div>
-    )}
-  </State>
+        <Button onClick={() => setVisible(true)}>Open Modal</Button>
+      </>
+    );
+
+}}
+
 </Playground>
 
 ### Instance

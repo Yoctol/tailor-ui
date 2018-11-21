@@ -5,7 +5,6 @@ route: /components/checkbox
 ---
 
 import { PropsTable, Playground } from 'docz';
-import { Toggle, Value } from 'react-powerplug';
 
 import Button from '../Button';
 import Box from '../Grid/Box';
@@ -33,15 +32,21 @@ import { Checkbox } from '@yoctol/ui';
 #### Basic
 
 <Playground>
-  <Checkbox defaultChecked>Uncontrolled Checkbox</Checkbox>
-  <br />
-  <Toggle>
-    {({ on, toggle }) => (
-      <Checkbox checked={on} onChange={toggle}>
-        Controlled Checkbox
-      </Checkbox>
-    )}
-  </Toggle>
+  {() => {
+    const [on, set] = React.useState(false);
+
+    return (
+      <>
+        <Checkbox defaultChecked>Uncontrolled Checkbox</Checkbox>
+        <br />
+        <Checkbox checked={on} onChange={() => set(!on)}>
+          Controlled Checkbox
+        </Checkbox>
+      </>
+    );
+
+}}
+
 </Playground>
 
 #### Disabled
@@ -58,39 +63,47 @@ import { Checkbox } from '@yoctol/ui';
 #### Basic
 
 <Playground>
-  <Value initial={['check_1']}>
-    {({ set, value }) => (
-      <Checkbox.Group
-        options={[
-          { label: 'checkbox 1', value: 'check_1' },
-          { label: 'checkbox 2', value: 'check_2' },
-          { label: 'checkbox 3', value: 'check_3', disabled: true },
-          { label: 'checkbox 4', value: 'check_4' },
-        ]}
-        value={value}
-        onChange={set}
-      />
-    )}
-  </Value>
-  <br />
-  <Checkbox.Group
-    options={[
-      { label: 'checkbox 1', value: 'check_1' },
-      { label: 'checkbox 2', value: 'check_2' },
-      { label: 'checkbox 3', value: 'check_3', disabled: true },
-      { label: 'checkbox 4', value: 'check_4' },
-    ]}
-    defaultValue={['check_1']}
-    onChange={console.log}
-  />
+  {() => {
+    const [value, set] = React.useState(['check_1']);
+
+    return (
+      <>
+        <Checkbox.Group
+          options={[
+            { label: 'checkbox 1', value: 'check_1' },
+            { label: 'checkbox 2', value: 'check_2' },
+            { label: 'checkbox 3', value: 'check_3', disabled: true },
+            { label: 'checkbox 4', value: 'check_4' },
+          ]}
+          value={value}
+          onChange={set}
+        />
+        <br />
+        <Checkbox.Group
+          options={[
+            { label: 'checkbox 1', value: 'check_1' },
+            { label: 'checkbox 2', value: 'check_2' },
+            { label: 'checkbox 3', value: 'check_3', disabled: true },
+            { label: 'checkbox 4', value: 'check_4' },
+          ]}
+          defaultValue={['check_1']}
+          onChange={console.log}
+        />
+      </>
+    );
+
+}}
+
 </Playground>
 
 #### Controlled
 
 <Playground>
-  <Value initial={[]}>
-    {({ set, value }) => (
-      <div>
+  {() => {
+    const [value, set] = React.useState([]);
+
+    return (
+      <>
         <Checkbox.Group
           options={[
             { label: 'checkbox 1', value: 'check_1' },
@@ -110,55 +123,65 @@ import { Checkbox } from '@yoctol/ui';
         <Button ml="2" onClick={() => set([])}>
           Unselect All
         </Button>
-      </div>
-    )}
-  </Value>
+      </>
+    )
+
+}}
+
 </Playground>
 
 #### Composition render
 
 <Playground>
-  <Value initial={[]}>
-    {({ set, value }) => (
-      <Checkbox.Group value={value} onChange={set}>
-        <Box bg="gray300" p="2" m="2">
-          <Checkbox value="check_1">checkbox 1</Checkbox>
-        </Box>
-        <Box bg="gray300" p="2" m="2">
-          <Checkbox value="check_2">checkbox 2</Checkbox>
-        </Box>
-        <Box bg="gray300" p="2" m="2">
-          <Checkbox value="check_3">checkbox 3</Checkbox>
-        </Box>
-        <Box bg="gray300" p="2" m="2">
-          <Checkbox value="check_4">checkbox 4</Checkbox>
-        </Box>
-      </Checkbox.Group>
-    )}
-  </Value>
-  <br />
-  <Checkbox.Group defaultValue={['check_1']} onChange={console.log}>
-    <Box bg="gray300" p="2" m="2">
-      <Checkbox value="check_1">checkbox 1</Checkbox>
-    </Box>
-    <Box bg="gray300" p="2" m="2">
-      <Checkbox value="check_2">checkbox 2</Checkbox>
-    </Box>
-    <Box bg="gray300" p="2" m="2">
-      <Checkbox value="check_3">checkbox 3</Checkbox>
-    </Box>
-    <Box bg="gray300" p="2" m="2">
-      <Checkbox value="check_4">checkbox 4</Checkbox>
-    </Box>
-  </Checkbox.Group>
+  {() => {
+    const [value, set] = React.useState([]);
+
+    return (
+      <>
+        <Checkbox.Group value={value} onChange={set}>
+          <Box bg="gray300" p="2" m="2">
+            <Checkbox value="check_1">checkbox 1</Checkbox>
+          </Box>
+          <Box bg="gray300" p="2" m="2">
+            <Checkbox value="check_2">checkbox 2</Checkbox>
+          </Box>
+          <Box bg="gray300" p="2" m="2">
+            <Checkbox value="check_3">checkbox 3</Checkbox>
+          </Box>
+          <Box bg="gray300" p="2" m="2">
+            <Checkbox value="check_4">checkbox 4</Checkbox>
+          </Box>
+        </Checkbox.Group>
+        <br />
+        <Checkbox.Group defaultValue={['check_1']} onChange={console.log}>
+          <Box bg="gray300" p="2" m="2">
+            <Checkbox value="check_1">checkbox 1</Checkbox>
+          </Box>
+          <Box bg="gray300" p="2" m="2">
+            <Checkbox value="check_2">checkbox 2</Checkbox>
+          </Box>
+          <Box bg="gray300" p="2" m="2">
+            <Checkbox value="check_3">checkbox 3</Checkbox>
+          </Box>
+          <Box bg="gray300" p="2" m="2">
+            <Checkbox value="check_4">checkbox 4</Checkbox>
+          </Box>
+        </Checkbox.Group>
+      </>
+    )
+
+}}
+
 </Playground>
 
 #### Direction
 
 <Playground>
-  <Value initial={[]}>
-    {({ set, value }) => (
-      <Checkbox.Group
+  {() => {
+    const [value, set] = React.useState([]);
+
+    return (
+       <Checkbox.Group
         direction="vertical"
         options={[
           { label: 'checkbox 1', value: 'check_1' },
@@ -169,8 +192,10 @@ import { Checkbox } from '@yoctol/ui';
         value={value}
         onChange={set}
       />
-    )}
-  </Value>
+    );
+
+}}
+
 </Playground>
 
 ## API

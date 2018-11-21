@@ -5,7 +5,6 @@ route: /others/ui-provider
 ---
 
 import { Playground } from 'docz';
-import { Value, Toggle } from 'react-powerplug';
 
 import {
   UIProvider,
@@ -41,8 +40,11 @@ const { zh_TW } = locale;
 ## Examples
 
 <Playground>
-  <Value initial="en_US">
-    {({ value, set }) => (
+  {() => {
+    const [value, setValue] = React.useState('en_US');
+    const [visible, setVisible] = React.useState(false);
+
+    return (
       <>
         <Radio.Group value={value} onChange={set}>
           <Radio value="en_US">English</Radio>
@@ -53,22 +55,16 @@ const { zh_TW } = locale;
           <UIProvider locale={locales[value]}>
             <>
               <Flex>
-                <Toggle>
-                  {({ on, toggle }) => (
-                    <>
-                      <Modal
-                        title="This is a Modal"
-                        visible={on}
-                        closable
-                        onConfirm={toggle}
-                        onCancel={toggle}
-                      >
-                        <div>This is the content of Modal</div>
-                      </Modal>
-                      <Button onClick={toggle}>Open Modal</Button>
-                    </>
-                  )}
-                </Toggle>
+                <Modal
+                  title="This is a Modal"
+                  visible={visible}
+                  closable
+                  onConfirm={() => setVisible(false)}
+                  onCancel={() => setVisible(false)}
+                >
+                  <div>This is the content of Modal</div>
+                </Modal>
+                <Button onClick={() => setVisible(true)}>Open Modal</Button>
 
                 <Button
                   ml="2"
@@ -102,7 +98,8 @@ const { zh_TW } = locale;
           </UIProvider>
         </Space>
       </>
-    )}
+    );
 
-  </Value>
+}}
+
 </Playground>

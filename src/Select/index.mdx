@@ -5,7 +5,6 @@ route: /components/select
 ---
 
 import { PropsTable, Playground, Link } from 'docz';
-import { Value } from 'react-powerplug';
 import { range } from 'ramda';
 import Select from './';
 
@@ -27,11 +26,13 @@ import { Select } from '@yoctol/ui';
 ### Basic
 
 <Playground>
-  <Value initial={{ label: 'Item 1', value: 1 }}>
-    {({ value, set }) => (
+  {() => {
+    const [value, setValue] = React.useState({ label: 'Item 1', value: 1 });
+
+    return (
       <Select
         value={value}
-        onChange={set}
+        onChange={setValue}
         options={[
           {
             label: 'Item 1',
@@ -55,19 +56,23 @@ import { Select } from '@yoctol/ui';
           },
         ]}
       />
-    )}
-  </Value>
+    );
+
+}}
+
 </Playground>
 
 ### isDisabled
 
 <Playground>
-  <Value initial={{ label: 'Item 1', value: 1 }}>
-    {({ value, set }) => (
+  {() => {
+    const [value, setValue] = React.useState({ label: 'Item 1', value: 1 });
+
+    return (
       <Select
         isDisabled
         value={value}
-        onChange={set}
+        onChange={setValue}
         options={[
           {
             label: 'Item 1',
@@ -91,20 +96,24 @@ import { Select } from '@yoctol/ui';
           },
         ]}
       />
-    )}
-  </Value>
+    );
+
+}}
+
 </Playground>
 
 ### With placeholder & isClearable
 
 <Playground>
-  <Value>
-    {({ value, set }) => (
+  {() => {
+    const [value, setValue] = React.useState();
+
+    return (
       <Select
         isClearable
         placeholder="どれ"
         value={value}
-        onChange={set}
+        onChange={setValue}
         options={[
           {
             label: 'Item 1',
@@ -128,20 +137,24 @@ import { Select } from '@yoctol/ui';
           },
         ]}
       />
-    )}
-  </Value>
+    );
+
+}}
+
 </Playground>
 
 ### Default Multiple Selection
 
 <Playground>
-  <Value>
-    {({ value, set }) => (
+  {() => {
+    const [value, setValue] = React.useState();
+
+    return (
       <Select
         isMulti
         placeholder="choose the flags"
         value={value}
-        onChange={set}
+        onChange={setValue}
         options={[
           {
             label: 'apple',
@@ -157,22 +170,26 @@ import { Select } from '@yoctol/ui';
           },
         ]}
       />
-    )}
-  </Value>
+    );
+
+}}
+
 </Playground>
 
 ### Multiple Selection with Text Style and No Delimiter
 
 <Playground>
-  <Value>
-    {({ value, set }) => (
+  {() => {
+    const [value, setValue] = React.useState();
+
+    return (
       <Select
         isMulti
         multiSelectMode="text"
         delimiter=""
         placeholder="choose the flags"
         value={value}
-        onChange={set}
+        onChange={setValue}
         options={[
           {
             label: 'i',
@@ -196,8 +213,10 @@ import { Select } from '@yoctol/ui';
           },
         ]}
       />
-    )}
-  </Value>
+    );
+
+}}
+
 </Playground>
 
 ## API

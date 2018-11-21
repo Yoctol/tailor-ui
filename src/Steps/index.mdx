@@ -5,7 +5,6 @@ route: /components/steps
 ---
 
 import { PropsTable, Playground } from 'docz';
-import { Value } from 'react-powerplug';
 
 import Steps, { Step } from './';
 
@@ -98,59 +97,60 @@ When the task is complicated or has a certain sequence in the series of subtasks
 ### Switch Step
 
 <Playground>
-  <Value initial={0}>
-    {({ value, set }) => {
-      const steps = [{
-        title: 'First',
-        content: 'First-content',
-      }, {
-        title: 'Second',
-        content: 'Second-content',
-      }, {
-        title: 'Last',
-        content: 'Last-content',
-      }];
+  {() => {
+    const [step, setStep] = React.useState(0);
 
-      return (
-        <div>
-          <Steps current={value} onCurrentChange={set}>
-            {steps.map(({ title }) => (
-              <Steps.Step key={title} title={title} description="This is a description" />
-            ))}
-          </Steps>
+    const steps = [{
+      title: 'First',
+      content: 'First-content',
+    }, {
+      title: 'Second',
+      content: 'Second-content',
+    }, {
+      title: 'Last',
+      content: 'Last-content',
+    }];
 
-          <Flex
-            my="4"
-            height="200px"
-            alignItems="center"
-            justifyContent="center"
-            bg="gray300"
-            borderRadius="1"
+    return (
+      <div>
+        <Steps current={step} onCurrentChange={setStep}>
+          {steps.map(({ title }) => (
+            <Steps.Step key={title} title={title} description="This is a description" />
+          ))}
+        </Steps>
+
+        <Flex
+          my="4"
+          height="200px"
+          alignItems="center"
+          justifyContent="center"
+          bg="gray300"
+          borderRadius="1"
+        >
+          {steps[step].content}
+        </Flex>
+
+        {step < steps.length - 1 && (
+          <Button type="primary" onClick={() => setStep(step + 1)}>Next</Button>
+        )}
+        {step === steps.length - 1 && (
+          <Button
+            type="primary"
+            onClick={() => message.success('Processing complete!')}
           >
-            {steps[value].content}
-          </Flex>
+            Done
+          </Button>
+        )}
+        {step > 0 && (
+          <Button ml="2" onClick={() => setStep(step - 1)}>
+            Previous
+          </Button>
+        )}
+      </div>
+    );
 
-          {value < steps.length - 1 && (
-            <Button type="primary" onClick={() => set(value + 1)}>Next</Button>
-          )}
-          {value === steps.length - 1 && (
-            <Button
-              type="primary"
-              onClick={() => message.success('Processing complete!')}
-            >
-              Done
-            </Button>
-          )}
-          { value > 0 && (
-            <Button ml="2" onClick={() => set(value - 1)}>
-              Previous
-            </Button>
-          )}
-        </div>
-      );
-    }}
+}}
 
-  </Value>
 </Playground>
 
 ## API

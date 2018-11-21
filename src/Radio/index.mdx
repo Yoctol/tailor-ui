@@ -5,7 +5,6 @@ route: /components/radio
 ---
 
 import { PropsTable, Playground } from 'docz';
-import { Toggle, Value } from 'react-powerplug';
 
 import Button from '../Button';
 import Box from '../Grid/Box';
@@ -53,39 +52,11 @@ import { Radio } from '@yoctol/ui';
 #### Basic
 
 <Playground>
-  <Value initial="radio-a">
-    {({ set, value }) => (
-      <Radio.Group
-        options={[
-          { label: 'Radio A', value: 'radio-a' },
-          { label: 'Radio B', value: 'radio-b' },
-          { label: 'Radio C', value: 'radio-c', disabled: true },
-          { label: 'Radio D', value: 'radio-d' },
-        ]}
-        value={value}
-        onChange={set}
-      />
-    )}
-  </Value>
-  <br />
-  <Radio.Group
-    options={[
-      { label: 'Radio A', value: 'radio-a' },
-      { label: 'Radio B', value: 'radio-b' },
-      { label: 'Radio C', value: 'radio-c', disabled: true },
-      { label: 'Radio D', value: 'radio-d' },
-    ]}
-    defaultValue="radio-b"
-    onChange={console.log}
-  />
-</Playground>
+  {() => {
+    const [value, setValue] = React.useState('radio-a');
 
-#### Controlled
-
-<Playground>
-  <Value initial="radio-a">
-    {({ set, value }) => (
-      <div>
+    return (
+      <>
         <Radio.Group
           options={[
             { label: 'Radio A', value: 'radio-a' },
@@ -94,58 +65,104 @@ import { Radio } from '@yoctol/ui';
             { label: 'Radio D', value: 'radio-d' },
           ]}
           value={value}
-          onChange={set}
+          onChange={setValue}
+        />
+        <br />
+        <Radio.Group
+          options={[
+            { label: 'Radio A', value: 'radio-a' },
+            { label: 'Radio B', value: 'radio-b' },
+            { label: 'Radio C', value: 'radio-c', disabled: true },
+            { label: 'Radio D', value: 'radio-d' },
+          ]}
+          defaultValue="radio-b"
+          onChange={console.log}
+        />
+      </>
+    );
+
+}}
+
+</Playground>
+
+#### Controlled
+
+<Playground>
+  {() => {
+    const [value, setValue] = React.useState('radio-a');
+
+    return (
+      <>
+        <Radio.Group
+          options={[
+            { label: 'Radio A', value: 'radio-a' },
+            { label: 'Radio B', value: 'radio-b' },
+            { label: 'Radio C', value: 'radio-c', disabled: true },
+            { label: 'Radio D', value: 'radio-d' },
+          ]}
+          value={value}
+          onChange={setValue}
         />
         <br />
         <Button onClick={() => set('radio-d')}>Check last one</Button>
-      </div>
-    )}
-  </Value>
+      </>
+    );
+
+}}
+
 </Playground>
 
 #### Composition render
 
 <Playground>
-  <Value initial="radio_1">
-    {({ set, value }) => (
-      <Radio.Group value={value} onChange={set}>
-        <Box bg="gray300" p="2" m="2">
-          <Radio value="radio_1">radio 1</Radio>
-        </Box>
-        <Box bg="gray300" p="2" m="2">
-          <Radio value="radio_2">radio 2</Radio>
-        </Box>
-        <Box bg="gray300" p="2" m="2">
-          <Radio value="radio_3">radio 3</Radio>
-        </Box>
-        <Box bg="gray300" p="2" m="2">
-          <Radio value="radio_4">radio 4</Radio>
-        </Box>
-      </Radio.Group>
-    )}
-  </Value>
-  <br />
-  <Radio.Group defaultValue="radio_1" onChange={console.log}>
-    <Box bg="gray300" p="2" m="2">
-      <Radio value="radio_1">radio 1</Radio>
-    </Box>
-    <Box bg="gray300" p="2" m="2">
-      <Radio value="radio_2">radio 2</Radio>
-    </Box>
-    <Box bg="gray300" p="2" m="2">
-      <Radio value="radio_3">radio 3</Radio>
-    </Box>
-    <Box bg="gray300" p="2" m="2">
-      <Radio value="radio_4">radio 4</Radio>
-    </Box>
-  </Radio.Group>
+  {() => {
+    const [value, setValue] = React.useState('radio_1');
+
+    return (
+      <>
+        <Radio.Group value={value} onChange={setValue}>
+          <Box bg="gray300" p="2" m="2">
+            <Radio value="radio_1">radio 1</Radio>
+          </Box>
+          <Box bg="gray300" p="2" m="2">
+            <Radio value="radio_2">radio 2</Radio>
+          </Box>
+          <Box bg="gray300" p="2" m="2">
+            <Radio value="radio_3">radio 3</Radio>
+          </Box>
+          <Box bg="gray300" p="2" m="2">
+            <Radio value="radio_4">radio 4</Radio>
+          </Box>
+        </Radio.Group>
+        <br />
+        <Radio.Group defaultValue="radio_1" onChange={console.log}>
+          <Box bg="gray300" p="2" m="2">
+            <Radio value="radio_1">radio 1</Radio>
+          </Box>
+          <Box bg="gray300" p="2" m="2">
+            <Radio value="radio_2">radio 2</Radio>
+          </Box>
+          <Box bg="gray300" p="2" m="2">
+            <Radio value="radio_3">radio 3</Radio>
+          </Box>
+          <Box bg="gray300" p="2" m="2">
+            <Radio value="radio_4">radio 4</Radio>
+          </Box>
+        </Radio.Group>
+      </>
+    );
+
+}}
+
 </Playground>
 
 #### Direction
 
 <Playground>
-  <Value initial="">
-    {({ set, value }) => (
+  {() => {
+    const [value, setValue] = React.useState('');
+
+    return (
       <Radio.Group
         direction="vertical"
         options={[
@@ -155,10 +172,12 @@ import { Radio } from '@yoctol/ui';
           { label: 'radio 4', value: 'radio_4' },
         ]}
         value={value}
-        onChange={set}
+        onChange={setValue}
       />
-    )}
-  </Value>
+    );
+
+}}
+
 </Playground>
 
 ## API

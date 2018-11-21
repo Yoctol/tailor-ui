@@ -5,7 +5,6 @@ route: /components/mention
 ---
 
 import { PropsTable, Playground } from 'docz';
-import { Set, Value } from 'react-powerplug';
 
 import FormField from '../Form/FormField';
 import Hint from '../Form/Hint';
@@ -29,68 +28,85 @@ import { Mention } from '@yoctol/ui';
 ### Basic
 
 <Playground>
-  <Value initial={Mention.toContentState('我想要一杯 @飲料')}>
-    {({ value, set }) => (
+  {() => {
+    const [value, setValue] = React.useState(Mention.toContentState('我想要一杯 @飲料'));
+
+    return (
       <Mention
         autoFocus
         suggestions={['飲料', '食物']}
         value={value}
         onChange={contentState => {
-          set(contentState);
+          setValue(contentState);
           console.log('Raw value: ', Mention.toString(contentState));
           console.log('Mentions: ', Mention.getMentions(contentState));
         }}
       />
-    )}
-  </Value>
+    );
+
+}}
+
 </Playground>
 
 ### Textarea
 
 <Playground>
-  <Value initial={Mention.toContentState('')}>
-    {({ value, set }) => (
+  {() => {
+    const [value, setValue] = React.useState(Mention.toContentState(''));
+
+    return (
       <Mention
         suggestions={['drink', 'food']}
         value={value}
-        onChange={set}
+        onChange={setValue}
         textarea
       />
-    )}
-  </Value>
+    );
+
+}}
+
 </Playground>
 
 ### Disabled
 
 <Playground>
-  <Value initial={Mention.toContentState('')}>
-    {({ value, set }) => (
+  {() => {
+    const [value, setValue] = React.useState(Mention.toContentState(''));
+
+    return (
+
       <Mention
         suggestions={['drink', 'food']}
         value={value}
-        onChange={set}
+        onChange={setValue}
         disabled
       />
-    )}
-  </Value>
+    );
+
+}}
+
 </Playground>
 
 ### Error status
 
 <Playground>
-  <Value initial={Mention.toContentState('I want a @food')}>
-    {({ value, set }) => (
+  {() => {
+    const [value, setValue] = React.useState(Mention.toContentState('I want a @food'));
+
+    return (
       <FormField error>
         <Mention
           error
           suggestions={['drink', 'food']}
           value={value}
-          onChange={set}
+          onChange={setValue}
         />
         <Hint>More than one must be selected!</Hint>
       </FormField>
-    )}
-  </Value>
+    );
+
+}}
+
 </Playground>
 
 ## API

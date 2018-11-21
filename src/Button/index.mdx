@@ -6,7 +6,6 @@ route: /components/button
 
 import { PropsTable, Playground } from 'docz';
 import { MdCheck, MdDelete, MdClose, MdSearch } from 'react-icons/md';
-import { Toggle } from 'react-powerplug';
 
 import Box from '../Grid/Box';
 import Icon from '../Icon';
@@ -226,21 +225,26 @@ import { MdCheck, MdDelete, MdClose, MdSearch } from 'react-icons/md';
   <Button type="danger" ml="2" loading>
     Danger
   </Button>
-  <br />
-  <br />
-  <Toggle>
-    {({ on, toggle }) => (
+</Playground>
+
+<Playground>
+  {() => {
+    const [loading, setLoading] = React.useState(false);
+
+    return (
       <Button
-        loading={on}
+        loading={loading}
         onClick={() => {
-          toggle();
-          setTimeout(toggle, 3000);
+          setLoading(true);
+          setTimeout(() => setLoading(false), 3000);
         }}
       >
         Click me!
       </Button>
-    )}
-  </Toggle>
+    )
+
+}}
+
 </Playground>
 
 ### Sizes

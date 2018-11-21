@@ -5,7 +5,6 @@ route: /components/tag
 ---
 
 import { PropsTable, Playground } from 'docz';
-import { Set, Toggle } from 'react-powerplug';
 
 import Input from '../Input';
 import Button from '../Button';
@@ -47,49 +46,52 @@ import { Tag } from '@yoctol/ui';
 ### Add & Remove Dynamically
 
 <Playground>
-  <Set initial={['tag 1', 'tag 2', 'tag 3']}>
-    {({ values, remove, add }) => (
-      <Toggle>
-        {({ on, toggle }) => (
-          <Flex>
-            {values.map((value, index) => (
-              <Tag
-                key={value}
-                closable={index !== 0}
-                onClosed={() => remove(value)}
-              >
-                {value}
-              </Tag>
-            ))}
-            <Flex ml="2">
-              {on ? (
-                <Input
-                  width="80px"
-                  size="sm"
-                  defaultValue=""
-                  autoFocus
-                  onBlur={event => {
-                    const value = event.target.value.trim();
-                    value !== '' && add(value);
-                    toggle();
-                  }}
-                  onPressEnter={event => {
-                    const value = event.target.value.trim();
-                    value !== '' && add(value);
-                    toggle();
-                  }}
-                />
-              ) : (
-                <Button text size="sm" onClick={toggle}>
-                  + Add Tag
-                </Button>
-              )}
-            </Flex>
-          </Flex>
-        )}
-      </Toggle>
-    )}
-  </Set>
+  {() => {
+    const [values, setValues] = React.useState(['tag 1', 'tag 2', 'tag 3']);
+    const [editing, setEditing] = React.useState(false);
+
+    const handleCreateTag = event => {
+      const value = event.target.value.trim();
+
+      if (value !== '') {
+        setValues([...values, value]);
+      }
+
+      setEditing(false);
+    };
+
+    return (
+      <Flex>
+        {values.map((value, index) => (
+          <Tag
+            key={value}
+            closable={index !== 0}
+            onClosed={() => setValues(values.filter(v => v !== value))}
+          >
+            {value}
+          </Tag>
+        ))}
+        <Flex ml="2">
+          {editing ? (
+            <Input
+              width="80px"
+              size="sm"
+              defaultValue=""
+              autoFocus
+              onBlur={handleCreateTag}
+              onPressEnter={handleCreateTag}
+            />
+          ) : (
+            <Button text size="sm" onClick={() => setEditing(true)}>
+              + Add Tag
+            </Button>
+          )}
+        </Flex>
+      </Flex>
+    );
+
+}}
+
 </Playground>
 
 ## API
