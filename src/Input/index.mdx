@@ -45,7 +45,7 @@ import { Input, Textarea, FormField, Hint } from '@yoctol/ui';
 <Playground>
   <Input
     autoSelect
-    defaultValue="Exmaple default value"
+    defaultValue="Example default value"
     placeholder="placeholder"
   />
 </Playground>
@@ -140,6 +140,28 @@ import { Input, Textarea, FormField, Hint } from '@yoctol/ui';
       defaultValue="yoctol"
     />
   </Space>
+</Playground>
+
+#### focus and blur with ref
+
+<Playground>
+  {() => {
+    const ref = React.useRef();
+
+    return (
+      <>
+        <Input
+          ref={ref}
+          onPressEnter={() => {
+            ref.current.blur();
+          }}
+        />
+        <Button mt="2" onClick={() => ref.current.focus()}>Focus</Button>
+      </>
+    )
+
+}}
+
 </Playground>
 
 ### Textarea

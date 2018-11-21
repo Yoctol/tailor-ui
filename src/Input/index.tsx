@@ -1,9 +1,13 @@
 import React, {
   KeyboardEvent,
   KeyboardEventHandler,
-  PureComponent,
   ReactNode,
+  SFC,
+  forwardRef,
   isValidElement,
+  useEffect,
+  useImperativeMethods,
+  useRef,
 } from 'react';
 import {
   SpaceProps,
@@ -13,7 +17,6 @@ import {
   textAlign,
   width,
 } from 'styled-system';
-import { findDOMNode } from 'react-dom';
 import { omit } from 'ramda';
 
 import styled, { css } from 'utils/styled-components';
@@ -120,12 +123,12 @@ const InputWrapper = styled<IInputLabel, 'div'>(tag.div)`
   ${p =>
     p.prefix &&
     css`
-      ${StyledInput} {
+      ${StyledInput /* sc-selector */} {
         border-top-left-radius: 0;
         border-bottom-left-radius: 0;
       }
 
-      ${InputLabel}:first-child {
+      ${InputLabel /* sc-selector */}:first-child {
         border-right: none;
         border-top-right-radius: 0;
         border-bottom-right-radius: 0;
@@ -135,18 +138,18 @@ const InputWrapper = styled<IInputLabel, 'div'>(tag.div)`
   ${p =>
     p.suffix &&
     css`
-      ${StyledInput} {
+      ${StyledInput /* sc-selector */} {
         border-top-right-radius: 0;
         border-bottom-right-radius: 0;
       }
 
-      ${InputLabel}:last-child {
+      ${InputLabel /* sc-selector */}:last-child {
         border-left: none;
         border-top-left-radius: 0;
         border-bottom-left-radius: 0;
       }
 
-      ${StyledButton} {
+      ${StyledButton /* sc-selector */} {
         border-top-left-radius: 0;
         border-bottom-left-radius: 0;
       }
@@ -182,55 +185,58 @@ export interface IInputProps {
   [key: string]: any;
 }
 
-class Input extends PureComponent<IInputProps> {
-  static defaultProps = {
-    prefix: null,
-    suffix: null,
-  };
+const Input: SFC<IInputProps> = forwardRef(
+  (
+    {
+      prefix,
+      suffix,
+      onPressEnter,
+      onKeyPress,
+      autoSelect,
+      autoFocus,
+      ...props
+    },
+    ref
+  ) => {
+    const inputRef = useRef<any>(null);
 
-  inputRef: any;
+    useImperativeMethods(ref, () => ({
+      focus: () => inputRef.current.focus(),
+      blur: () => inputRef.current.blur(),
+    }));
 
-  componentDidMount() {
-    const { autoSelect = false } = this.props;
+    useEffect(() => {
+      if (autoSelect && inputRef.current) {
+        inputRef.current.select();
+      }
+    });
 
-    const inputDOM = findDOMNode(this.inputRef) as HTMLInputElement;
+    const handleKeyPress = (event: KeyboardEvent<HTMLInputElement>) => {
+      if (onKeyPress) {
+        onKeyPress(event);
+      }
 
-    if (autoSelect && inputDOM) {
-      inputDOM.focus();
-      inputDOM.select();
-    }
-  }
-
-  handleInputRef = (ref: any) => {
-    this.inputRef = ref;
-  };
-
-  handleKeyPress = (event: KeyboardEvent<HTMLInputElement>) => {
-    const { onPressEnter, onKeyPress } = this.props;
-
-    if (onKeyPress) {
-      onKeyPress(event);
-    }
-
-    if (onPressEnter && event.key === 'Enter') {
-      onPressEnter(event);
-    }
-  };
-
-  render() {
-    const { prefix, suffix, ...props } = this.props;
+      if (onPressEnter && event.key === 'Enter') {
+        onPressEnter(event);
+      }
+    };
 
     const otherProps = omit(['onPressEnter'], props);
+
+    const input = (
+      <StyledInput
+        ref={inputRef}
+        onKeyPress={handleKeyPress}
+        autoFocus={autoFocus || autoSelect}
+        {...otherProps}
+      />
+    );
 
     if (prefix || suffix) {
       return (
         <InputWrapper prefix={prefix} suffix={suffix}>
           {prefix && <InputLabel>{prefix}</InputLabel>}
-          <StyledInput
-            ref={this.inputRef}
-            onKeyPress={this.handleKeyPress}
-            {...otherProps}
-          />
+          {input}
           {suffix &&
             (isValidElement(suffix) ? (
               suffix
@@ -241,14 +247,8 @@ class Input extends PureComponent<IInputProps> {
       );
     }
 
-    return (
-      <StyledInput
-        ref={this.handleInputRef}
-        onKeyPress={this.handleKeyPress}
-        {...otherProps}
-      />
-    );
+    return input;
   }
-}
+);
 
 export default Input;

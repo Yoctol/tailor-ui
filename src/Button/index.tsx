@@ -1,10 +1,4 @@
-import React, {
-  MouseEvent,
-  PureComponent,
-  ReactInstance,
-  RefObject,
-  createRef,
-} from 'react';
+import React, { MouseEvent, SFC, useRef } from 'react';
 import { SpaceProps, space as styledSpace } from 'styled-system';
 
 import styled, { css, keyframes } from 'utils/styled-components';
@@ -288,54 +282,45 @@ export type ButtonProps = SpaceProps & {
   onClick?: (event: MouseEvent) => void;
 };
 
-class Button extends PureComponent<ButtonProps> {
-  ripple: RefObject<Ripple> = createRef<Ripple>();
+const Button: SFC<ButtonProps> = ({
+  children,
+  icon,
+  loading = false,
+  type = 'default',
+  size = 'md',
+  ...props
+}) => {
+  const rippleRef = useRef<Ripple>(null);
+  const buttonRef = useRef<any>(null);
 
-  buttonRef: ReactInstance | null = null;
-
-  handleButtonRef = (ref: any) => {
-    this.buttonRef = ref;
-  };
-
-  handleClick = (event: MouseEvent) => {
-    if (this.ripple.current && this.buttonRef) {
-      this.ripple.current.startRipple(event, this.buttonRef);
+  const handleRippling = (event: MouseEvent) => {
+    if (rippleRef.current && buttonRef.current) {
+      rippleRef.current.startRipple(event, buttonRef.current);
     }
   };
 
-  render() {
-    const {
-      children,
-      icon,
-      loading = false,
-      type = 'default',
-      size = 'md',
-      ...props
-    } = this.props;
-
-    return (
-      <StyledButton
-        ref={this.handleButtonRef}
-        onMouseUp={this.handleClick}
-        hasIcon={Boolean(icon && !children)}
-        loading={loading}
-        size={size}
-        type={type}
-        {...props}
-      >
-        {!loading && icon && (
-          <Icon
-            type={icon}
-            size="20"
-            mr={children ? 1 : 0}
-            style={{ pointerEvents: 'none' }}
-          />
-        )}
-        {children}
-        <Ripple ref={this.ripple} />
-      </StyledButton>
-    );
-  }
-}
+  return (
+    <StyledButton
+      ref={buttonRef}
+      onMouseUp={handleRippling}
+      hasIcon={Boolean(icon && !children)}
+      loading={loading}
+      size={size}
+      type={type}
+      {...props}
+    >
+      {!loading && icon && (
+        <Icon
+          type={icon}
+          size="20"
+          mr={children ? 1 : 0}
+          style={{ pointerEvents: 'none' }}
+        />
+      )}
+      {children}
+      <Ripple ref={rippleRef} />
+    </StyledButton>
+  );
+};
 
 export default Button;

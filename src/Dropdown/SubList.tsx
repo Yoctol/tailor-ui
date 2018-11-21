@@ -1,6 +1,5 @@
-import React, { PureComponent } from 'react';
+import React, { SFC, useEffect, useRef, useState } from 'react';
 import { MdKeyboardArrowRight } from 'react-icons/md';
-import { findDOMNode } from 'react-dom';
 
 import styled from 'utils/styled-components';
 import tag from 'utils/CleanTag';
@@ -49,47 +48,31 @@ export interface ISubItemState {
   subItemEl: HTMLElement | null;
 }
 
-class SubItem extends PureComponent<ISubItemProps, ISubItemState> {
-  subItemRef: any;
+const SubItem: SFC<ISubItemProps> = ({
+  title,
+  children,
+  disabled,
+  ...props
+}) => {
+  const subItemRef = useRef<any>(null);
+  const [left, setLeft] = useState(0);
 
-  state: ISubItemState = {
-    subItemEl: null,
-  };
-
-  handleSubItemRef = (subItemRef: any) => {
-    this.subItemRef = subItemRef;
-  };
-
-  componentDidMount() {
-    const subItemEl = findDOMNode(this.subItemRef) as HTMLElement;
-
-    this.setState(() => ({ subItemEl }));
-  }
-
-  getOffsetLeft = () => {
-    const { subItemEl } = this.state;
-
-    if (!subItemEl) {
-      return 0;
+  useEffect(() => {
+    if (subItemRef.current) {
+      setLeft(subItemRef.current.offsetWidth);
     }
+  });
 
-    return subItemEl.offsetWidth;
-  };
+  return (
+    <StyledSubItem disabled={disabled} ref={subItemRef}>
+      {title}
+      <Icon ml="2" size="16" cursor="pointer" type={MdKeyboardArrowRight} />
 
-  render() {
-    const { title, children, disabled, ...props } = this.props;
-
-    return (
-      <StyledSubItem disabled={disabled} ref={this.handleSubItemRef}>
-        {title}
-        <Icon ml="2" size="16" cursor="pointer" type={MdKeyboardArrowRight} />
-
-        <SubListWrapper style={{ left: this.getOffsetLeft() }}>
-          <StyledList {...props}>{children}</StyledList>
-        </SubListWrapper>
-      </StyledSubItem>
-    );
-  }
-}
+      <SubListWrapper style={{ left }}>
+        <StyledList {...props}>{children}</StyledList>
+      </SubListWrapper>
+    </StyledSubItem>
+  );
+};
 
 export default SubItem;

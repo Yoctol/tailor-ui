@@ -1,5 +1,4 @@
-import React, { MouseEvent, PureComponent, ReactInstance } from 'react';
-import { findDOMNode } from 'react-dom';
+import React, { MouseEvent, PureComponent } from 'react';
 
 import styled, { css, keyframes } from 'utils/styled-components';
 import tag from 'utils/CleanTag';
@@ -60,12 +59,10 @@ class Ripple extends PureComponent {
 
   startRipple = (
     { clientX, clientY }: MouseEvent,
-    buttonRef: ReactInstance
+    buttonRef: HTMLButtonElement
   ) => {
     const rippling = () => {
-      this.rippling({ clientX, clientY }, findDOMNode(
-        buttonRef
-      ) as HTMLButtonElement);
+      this.rippling({ clientX, clientY }, buttonRef);
     };
 
     if (this.state.animate) {
