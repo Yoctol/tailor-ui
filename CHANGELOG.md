@@ -1,3 +1,10 @@
+# [2.0.0-beta.10](https://github.com/yoctol/ui/compare/v2.0.0-beta.9...v2.0.0-beta.10) (2018-11-21)
+
+### Bug Fixes
+
+- forwardRef warning ([#458](https://github.com/yoctol/ui/issues/458)) ([f9fcf37](https://github.com/yoctol/ui/commit/f9fcf37))
+- **mention:** prevent display undefined when click ([b009cb3](https://github.com/yoctol/ui/commit/b009cb3))
+
 # [2.0.0-beta.9](https://github.com/yoctol/ui/compare/v2.0.0-beta.8...v2.0.0-beta.9) (2018-11-14)
 
 ### Bug Fixes
