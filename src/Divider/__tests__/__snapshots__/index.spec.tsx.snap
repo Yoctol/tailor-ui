@@ -12,7 +12,7 @@ exports[`Divider should render correct with orientation 1`] = `
   width: 100%;
   min-width: 100%;
   height: 1px;
-  margin: 24px 0;
+  margin: 1rem 0;
   clear: both;
   display: table;
   margin: 16px 0;
@@ -59,7 +59,7 @@ exports[`Divider should render correct with orientation 1`] = `
   width: 100%;
   min-width: 100%;
   height: 1px;
-  margin: 24px 0;
+  margin: 1rem 0;
   clear: both;
   display: table;
   margin: 16px 0;
@@ -179,7 +179,7 @@ exports[`Divider should render correctly 1`] = `
   width: 100%;
   min-width: 100%;
   height: 1px;
-  margin: 24px 0;
+  margin: 1rem 0;
   clear: both;
 }
 
@@ -189,7 +189,7 @@ exports[`Divider should render correctly 1`] = `
   width: 100%;
   min-width: 100%;
   height: 1px;
-  margin: 24px 0;
+  margin: 1rem 0;
   clear: both;
   display: table;
   margin: 16px 0;
@@ -221,7 +221,7 @@ exports[`Divider should render correctly 1`] = `
   width: 100%;
   min-width: 100%;
   height: 1px;
-  margin: 24px 0;
+  margin: 1rem 0;
   clear: both;
   border-top: 1px dashed;
   border-color: #e0e0e0;

@@ -46,7 +46,7 @@ const StyledDivider = styled<IStyledDividerProps>(tag.div)`
       width: 100%;
       min-width: 100%;
       height: 1px;
-      margin: 24px 0;
+      margin: ${p.theme.space[3]} 0;
       clear: both;
 
       ${p.withText &&
