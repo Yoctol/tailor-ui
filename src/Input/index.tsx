@@ -205,11 +205,14 @@ const Input: SFC<IInputProps> = forwardRef(
       blur: () => inputRef.current.blur(),
     }));
 
-    useEffect(() => {
-      if (autoSelect && inputRef.current) {
-        inputRef.current.select();
-      }
-    });
+    useEffect(
+      () => {
+        if (autoSelect && inputRef.current) {
+          inputRef.current.select();
+        }
+      },
+      [autoSelect]
+    );
 
     const handleKeyPress = (event: KeyboardEvent<HTMLInputElement>) => {
       if (onKeyPress) {
