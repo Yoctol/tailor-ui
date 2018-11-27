@@ -80,7 +80,10 @@ const BaseModal: SFC<BaseModalProps> = ({
   onCancel,
   ...otherProps
 }) => {
-  useKeydown({ keyCode: ESC_KEY_CODE, onKeydown: onCancel });
+  useKeydown({
+    keyCode: ESC_KEY_CODE,
+    onKeydown: visible ? onCancel : undefined,
+  });
 
   return (
     <Transition
