@@ -1,3 +1,10 @@
+# [2.0.0-beta.11](https://github.com/yoctol/ui/compare/v2.0.0-beta.10...v2.0.0-beta.11) (2018-11-27)
+
+### Bug Fixes
+
+- **input:** only auto select when on mount ([#468](https://github.com/yoctol/ui/issues/468)) ([9a226ab](https://github.com/yoctol/ui/commit/9a226ab))
+- **modal:** useKeydown effect callback ([c3dd209](https://github.com/yoctol/ui/commit/c3dd209))
+
 # [2.0.0-beta.10](https://github.com/yoctol/ui/compare/v2.0.0-beta.9...v2.0.0-beta.10) (2018-11-21)
 
 ### Bug Fixes
