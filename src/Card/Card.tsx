@@ -16,7 +16,6 @@ import {
 
 import styled, { css } from 'utils/styled-components';
 import tag from 'utils/CleanTag';
-import { ICssProps, styledCss } from 'utils/css';
 
 import CardBlock from './CardBlock';
 import CardImage, { StyledImage } from './CardImage';
@@ -26,8 +25,7 @@ export type CardProps = SpaceProps &
   WidthProps &
   ColorProps &
   BorderColorProps &
-  BorderRadiusProps &
-  ICssProps & {
+  BorderRadiusProps & {
     clickable?: boolean;
     hoverable?: boolean;
     onClick?: (event: MouseEvent) => void;
@@ -71,7 +69,6 @@ const CardWrapper = styled<CardProps, any>(tag.div)`
   ${color};
   ${borderColor};
   ${borderRadius}; /* stylelint-disable-line order/properties-order */
-  ${styledCss};
 `;
 
 const Card: SFC<CardProps> & {

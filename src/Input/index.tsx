@@ -21,7 +21,6 @@ import { omit } from 'ramda';
 
 import styled, { css } from 'utils/styled-components';
 import tag from 'utils/CleanTag';
-import { ICssProps, styledCss } from 'utils/css';
 
 import { StyledButton } from '../Button';
 
@@ -29,8 +28,7 @@ export type Size = 'sm' | 'md' | 'lg';
 
 export type StyledInputProps = WidthProps &
   SpaceProps &
-  TextAlignProps &
-  ICssProps & {
+  TextAlignProps & {
     size?: Size;
   };
 
@@ -92,7 +90,6 @@ export const inputStyles = css<StyledInputProps>`
   ${width};
   ${space};
   ${textAlign};
-  ${styledCss};
 `;
 
 export const StyledInput = styled<StyledInputProps, any>(tag.input)`

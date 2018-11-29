@@ -2,9 +2,8 @@ import React, { SFC } from 'react';
 import styled, { css } from 'styled-components';
 
 import tag from 'utils/CleanTag';
-import { ICssProps, styledCss } from 'utils/css';
 
-interface IStyledDividerProps extends ICssProps {
+interface IStyledDividerProps {
   type: 'horizontal' | 'vertical';
   orientation?: 'left' | 'right';
   dashed?: boolean;
@@ -100,11 +99,9 @@ const StyledDivider = styled<IStyledDividerProps>(tag.div)`
       border-color: ${p.theme.colors.gray300};
       background-color: transparent;
     `}
-
-  ${styledCss}
 `;
 
-export interface IDividerProps extends ICssProps {
+export interface IDividerProps {
   /**
    * direction type of divider
    */

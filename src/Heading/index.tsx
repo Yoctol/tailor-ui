@@ -4,11 +4,9 @@ import { rem } from 'polished';
 
 import styled, { css } from 'utils/styled-components';
 import tag from 'utils/CleanTag';
-import { ICssProps, styledCss } from 'utils/css';
 
 export type HeadingBaseProps = SpaceProps &
-  ColorProps &
-  ICssProps & {
+  ColorProps & {
     gray?: boolean;
     grayHint?: boolean;
     grayLight?: boolean;
@@ -47,7 +45,6 @@ const HeadingBase = styled<HeadingBaseProps, 'p'>(tag.p)`
 
   ${space};
   ${color};
-  ${styledCss};
 `;
 
 const h1 = styled<HeadingBaseProps, any>((props: any) => (

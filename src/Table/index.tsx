@@ -16,13 +16,8 @@ import {
 
 import styled from 'utils/styled-components';
 import tag from 'utils/CleanTag';
-import { ICssProps, styledCss } from 'utils/css';
 
-type HeadColumnProps = WidthProps &
-  SpaceProps &
-  BordersProps &
-  ColorProps &
-  ICssProps;
+type HeadColumnProps = WidthProps & SpaceProps & BordersProps & ColorProps;
 
 const HeadColumn = styled<HeadColumnProps, 'th'>(tag.th)`
   padding: ${p => p.theme.paddings.xs} ${p => p.theme.paddings.sm};
@@ -33,14 +28,9 @@ const HeadColumn = styled<HeadColumnProps, 'th'>(tag.th)`
   ${space};
   ${borders};
   ${color};
-  ${styledCss};
 `;
 
-type ColumnProps = SpaceProps &
-  BordersProps &
-  BorderColorProps &
-  ColorProps &
-  ICssProps;
+type ColumnProps = SpaceProps & BordersProps & BorderColorProps & ColorProps;
 
 const Column = styled<ColumnProps, 'td'>(tag.td)`
   padding: ${p => p.theme.paddings.xs} ${p => p.theme.paddings.sm};
@@ -49,20 +39,18 @@ const Column = styled<ColumnProps, 'td'>(tag.td)`
   ${borders};
   ${borderColor};
   ${color};
-  ${styledCss};
 `;
 
 Column.defaultProps = {
   borderColor: 'gray300',
 };
 
-type RowProps = ColorProps & ICssProps;
+type RowProps = ColorProps;
 
 const Row = styled<RowProps, 'tr'>(tag.tr)`
   border-bottom: ${p => p.theme.borders.base} ${p => p.theme.colors.gray300};
 
   ${color};
-  ${styledCss};
 `;
 
 const Head: SFC = ({ children }) => (
@@ -73,7 +61,7 @@ const Head: SFC = ({ children }) => (
 
 const Body: SFC = ({ children }) => <tbody>{children}</tbody>;
 
-type StyledTableProps = TextAlignProps & WidthProps & ICssProps;
+type StyledTableProps = TextAlignProps & WidthProps;
 
 const StyledTable = styled<StyledTableProps, 'table'>(tag.table)`
   overflow: hidden;
@@ -92,7 +80,6 @@ const StyledTable = styled<StyledTableProps, 'table'>(tag.table)`
 
   ${width};
   ${textAlign};
-  ${styledCss};
 `;
 
 class Table extends PureComponent<StyledTableProps> {

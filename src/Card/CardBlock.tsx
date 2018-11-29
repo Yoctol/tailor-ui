@@ -3,9 +3,8 @@ import { HeightProps, SpaceProps, height, space } from 'styled-system';
 
 import styled from 'utils/styled-components';
 import tag from 'utils/CleanTag';
-import { ICssProps, styledCss } from 'utils/css';
 
-export type BlockProps = SpaceProps & HeightProps & ICssProps;
+export type BlockProps = SpaceProps & HeightProps;
 
 const StyledBlock = styled<BlockProps, 'div'>(tag.div)`
   position: relative;
@@ -19,7 +18,6 @@ const StyledBlock = styled<BlockProps, 'div'>(tag.div)`
 
   ${space};
   ${height};
-  ${styledCss};
 `;
 
 const Block: SFC<BlockProps> = props => <StyledBlock {...props} />;

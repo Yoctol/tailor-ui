@@ -13,15 +13,13 @@ import { animated } from 'react-spring';
 
 import styled from 'utils/styled-components';
 import tag from 'utils/CleanTag';
-import { ICssProps, styledCss } from 'utils/css';
 
 import { Consumer } from './DropdownContext';
 
 export type StyledListProps = MinWidthProps &
   MaxHeightProps &
   TextAlignProps &
-  OverflowProps &
-  ICssProps;
+  OverflowProps;
 
 export const StyledList = styled<StyledListProps, 'ul'>(tag.ul)`
   display: block;
@@ -44,7 +42,6 @@ export const StyledList = styled<StyledListProps, 'ul'>(tag.ul)`
   ${minWidth};
   ${maxHeight};
   ${textAlign};
-  ${styledCss};
 `;
 
 const AnimatedStyledList = animated(StyledList);

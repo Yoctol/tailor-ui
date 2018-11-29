@@ -5,11 +5,10 @@ import { omit } from 'ramda';
 
 import styled from 'utils/styled-components';
 import tag from 'utils/CleanTag';
-import { ICssProps, styledCss } from 'utils/css';
 
 import Icon from '../Icon';
 
-const StyledTag = styled<ICssProps, 'div'>(tag.div)`
+const StyledTag = styled(tag.div)`
   display: inline-flex;
   align-items: center;
   height: ${p => p.theme.heights.sm};
@@ -25,8 +24,6 @@ const StyledTag = styled<ICssProps, 'div'>(tag.div)`
   &:hover {
     border-color: ${p => p.theme.colors.gray700};
   }
-
-  ${styledCss};
 `;
 
 const CloseIcon = styled<any, any>(Icon)`
