@@ -147,6 +147,7 @@ const InputWrapper = styled<IInputLabel, 'div'>(tag.div)`
       }
 
       ${StyledButton /* sc-selector */} {
+        flex: none;
         border-top-left-radius: 0;
         border-bottom-left-radius: 0;
       }

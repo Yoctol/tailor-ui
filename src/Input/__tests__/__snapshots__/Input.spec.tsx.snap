@@ -227,6 +227,9 @@ exports[`Input should render correctly with Button suffix 1`] = `
 }
 
 .c0 .c3 {
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
 }
