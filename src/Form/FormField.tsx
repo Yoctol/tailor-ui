@@ -2,18 +2,17 @@ import React, { SFC } from 'react';
 
 import styled, { css } from 'utils/styled-components';
 import tag from 'utils/CleanTag';
-import { ICssProps, styledCss } from 'utils/css';
 
 import { StyledInput } from '../Input';
 import { StyledTextarea } from '../Input/Textarea';
 
 import Hint from './Hint';
 
-export type IFormFieldProps = ICssProps & {
+export interface IFormFieldProps {
   success?: boolean;
   warning?: boolean;
   error?: boolean;
-};
+}
 
 const StyledFormField = styled<IFormFieldProps, 'div'>(tag.div)`
   position: relative;
@@ -72,8 +71,6 @@ const StyledFormField = styled<IFormFieldProps, 'div'>(tag.div)`
         color: ${p => p.theme.colors.error};
       }
     `};
-
-  ${styledCss};
 `;
 
 const FormField: SFC<IFormFieldProps> = props => <StyledFormField {...props} />;

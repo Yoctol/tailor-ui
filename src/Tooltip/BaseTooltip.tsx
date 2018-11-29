@@ -15,7 +15,6 @@ import { animated } from 'react-spring';
 
 import styled, { css } from 'utils/styled-components';
 import tag from 'utils/CleanTag';
-import { ICssProps, styledCss } from 'utils/css';
 
 export type Placement = 'top' | 'bottom' | 'right' | 'left';
 
@@ -23,8 +22,7 @@ export type TooltipContentProps = SpaceProps &
   MinWidthProps &
   ColorProps &
   BorderRadiusProps &
-  TextAlignProps &
-  ICssProps & {
+  TextAlignProps & {
     light: boolean;
   };
 
@@ -50,7 +48,6 @@ export const TooltipContent = styled<TooltipContentProps, 'div'>(tag.div)`
   ${color};
   ${borderRadius};
   ${textAlign};
-  ${styledCss};
 `;
 
 TooltipContent.defaultProps = {

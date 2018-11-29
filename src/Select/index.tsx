@@ -2,7 +2,6 @@ import BaseSelect, { components } from 'react-select';
 import React, { SFC } from 'react';
 
 import styled from 'utils/styled-components';
-import { styledCss } from 'utils/css';
 
 const StyledSelect = styled<any, any>(BaseSelect)`
   & .yoctol-select__control {
@@ -50,8 +49,6 @@ const StyledSelect = styled<any, any>(BaseSelect)`
       }
     }
   }
-
-  ${styledCss};
 `;
 
 export interface ISelectProps {
