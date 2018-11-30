@@ -1,3 +1,9 @@
+# [2.0.0-beta.12](https://github.com/yoctol/ui/compare/v2.0.0-beta.11...v2.0.0-beta.12) (2018-11-30)
+
+### Bug Fixes
+
+- **input:** button loading ([#473](https://github.com/yoctol/ui/issues/473)) ([b49a62a](https://github.com/yoctol/ui/commit/b49a62a))
+
 # [2.0.0-beta.11](https://github.com/yoctol/ui/compare/v2.0.0-beta.10...v2.0.0-beta.11) (2018-11-27)
 
 ### Bug Fixes
