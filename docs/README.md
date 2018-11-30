@@ -1,40 +1,47 @@
-# Yoctol UI components
+# Tailor UI
 
-[![npm](https://img.shields.io/npm/v/@yoctol/ui.svg)](https://www.npmjs.com/package/@yoctol/ui)
-[![CircleCI](https://circleci.com/gh/Yoctol/ui.svg?style=shield&circle-token=cd9b3c150c27a37f0aa28d41486ee35ac16652ac	)](https://circleci.com/gh/Yoctol/ui)
+[![npm](https://img.shields.io/npm/v/@yoctol/tailor-ui.svg)](https://www.npmjs.com/package/@yoctol/tailor-ui)
+[![CircleCI](https://circleci.com/gh/Yoctol/tailor-ui.svg?style=shield&circle-token=cd9b3c150c27a37f0aa28d41486ee35ac16652ac)](https://circleci.com/gh/Yoctol/tailor-ui)
 
-### [Docz](https://yoctol-ui.netlify.com)
+### [Docz](https://tailor-ui.netlify.com)
 
-### Examples
-
-First, install it:
+### Installation
 
 ```bash
-yarn add @yoctol/ui
+// with npm
+npm install tailor-ui
+
+// with yarn
+yarn add tailor-ui
 ```
 
-And whatever you want, just import:
+### Usage
+
+Here is a quick example to get you started, it's all you need:
 
 ```js
-import { Button } from '@yoctol/ui';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Button, UIProvider } from 'tailor-ui';
+
+const App = () => (
+  <UIProvider>
+    <Button>Hello World</Button>
+  </UIProvider>
+);
+
+ReactDOM.render(<App />, document.querySelector('#root'));
 ```
 
 ### Development
 
-Clone it:
-
 ```bash
-git clone git@github.com:Yoctol/ui.git
+git clone git@github.com:Yoctol/tailor-ui.git
 ```
 
-Instal dependencies:
+Instal dependencies and run docz:
 
 ```bash
-cd ui && yarn
-```
-
-Start the docz:
-
-```bash
+cd tailor-ui && yarn
 yarn docz:dev
 ```

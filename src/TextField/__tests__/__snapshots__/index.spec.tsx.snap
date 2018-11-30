@@ -206,12 +206,12 @@ exports[`TextField should render correctly 1`] = `
 }
 
 .c0 .c2:invalid,
-.c0 .Textarea__StyledTextarea-sc-9fyr3x-0:invalid {
+.c0 .Textarea__StyledTextarea-vlcri7-0:invalid {
   box-shadow: none;
 }
 
 .c0 .c2:invalid ~ .c4,
-.c0 .Textarea__StyledTextarea-sc-9fyr3x-0:invalid ~ .c4 {
+.c0 .Textarea__StyledTextarea-vlcri7-0:invalid ~ .c4 {
   top: 9px;
   left: 1px;
   padding: 0 0.5rem;
@@ -220,7 +220,7 @@ exports[`TextField should render correctly 1`] = `
 }
 
 .c0 .c2:focus ~ .c4,
-.c0 .Textarea__StyledTextarea-sc-9fyr3x-0:focus ~ .c4 {
+.c0 .Textarea__StyledTextarea-vlcri7-0:focus ~ .c4 {
   top: -7px;
   left: 7px;
   padding: 0 2px;
@@ -230,7 +230,7 @@ exports[`TextField should render correctly 1`] = `
 }
 
 .c0 .c2:focus ~ .c6,
-.c0 .Textarea__StyledTextarea-sc-9fyr3x-0:focus ~ .c6 {
+.c0 .Textarea__StyledTextarea-vlcri7-0:focus ~ .c6 {
   opacity: 1;
 }
 
@@ -329,12 +329,12 @@ exports[`TextField should render correctly with defaultValue 1`] = `
 }
 
 .c0 .c2:invalid,
-.c0 .Textarea__StyledTextarea-sc-9fyr3x-0:invalid {
+.c0 .Textarea__StyledTextarea-vlcri7-0:invalid {
   box-shadow: none;
 }
 
 .c0 .c2:invalid ~ .c4,
-.c0 .Textarea__StyledTextarea-sc-9fyr3x-0:invalid ~ .c4 {
+.c0 .Textarea__StyledTextarea-vlcri7-0:invalid ~ .c4 {
   top: 9px;
   left: 1px;
   padding: 0 0.5rem;
@@ -343,7 +343,7 @@ exports[`TextField should render correctly with defaultValue 1`] = `
 }
 
 .c0 .c2:focus ~ .c4,
-.c0 .Textarea__StyledTextarea-sc-9fyr3x-0:focus ~ .c4 {
+.c0 .Textarea__StyledTextarea-vlcri7-0:focus ~ .c4 {
   top: -7px;
   left: 7px;
   padding: 0 2px;
@@ -353,7 +353,7 @@ exports[`TextField should render correctly with defaultValue 1`] = `
 }
 
 .c0 .c2:focus ~ .c6,
-.c0 .Textarea__StyledTextarea-sc-9fyr3x-0:focus ~ .c6 {
+.c0 .Textarea__StyledTextarea-vlcri7-0:focus ~ .c6 {
   opacity: 1;
 }
 
@@ -466,12 +466,12 @@ exports[`TextField should render with maxLength 1`] = `
 }
 
 .c0 .c2:invalid,
-.c0 .Textarea__StyledTextarea-sc-9fyr3x-0:invalid {
+.c0 .Textarea__StyledTextarea-vlcri7-0:invalid {
   box-shadow: none;
 }
 
 .c0 .c2:invalid ~ .c6,
-.c0 .Textarea__StyledTextarea-sc-9fyr3x-0:invalid ~ .c6 {
+.c0 .Textarea__StyledTextarea-vlcri7-0:invalid ~ .c6 {
   top: 9px;
   left: 1px;
   padding: 0 0.5rem;
@@ -480,7 +480,7 @@ exports[`TextField should render with maxLength 1`] = `
 }
 
 .c0 .c2:focus ~ .c6,
-.c0 .Textarea__StyledTextarea-sc-9fyr3x-0:focus ~ .c6 {
+.c0 .Textarea__StyledTextarea-vlcri7-0:focus ~ .c6 {
   top: -7px;
   left: 7px;
   padding: 0 2px;
@@ -490,7 +490,7 @@ exports[`TextField should render with maxLength 1`] = `
 }
 
 .c0 .c2:focus ~ .c4,
-.c0 .Textarea__StyledTextarea-sc-9fyr3x-0:focus ~ .c4 {
+.c0 .Textarea__StyledTextarea-vlcri7-0:focus ~ .c4 {
   opacity: 1;
 }
 
