@@ -6,7 +6,7 @@ export default {
     {
       file: 'lib/index.umd.js',
       format: 'umd',
-      name: '@yoctol/ui',
+      name: 'tailor-ui',
       sourcemap: false,
     },
   ],

@@ -1,8 +1,8 @@
 module.exports = {
   port: 3030,
   src: './src',
-  title: '@yoctol/ui',
-  description: 'Yoctol UI components',
+  title: 'Tailor UI',
+  description: 'A bespoke UI collection for building web application.',
   typescript: true,
   codeSandbox: false,
   wrapper: 'docz/DoczWrapper',
