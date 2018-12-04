@@ -7,7 +7,7 @@ references:
       - image: node:8
     environment:
       TZ: "/usr/share/zoneinfo/Asia/Taipei"
-  docker_default: &docker_10
+  docker_default2: &docker_10
     working_directory: /tmp/app
     docker:
       - image: node:10
