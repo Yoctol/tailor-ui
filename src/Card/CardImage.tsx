@@ -1,4 +1,4 @@
-import React, { SFC } from 'react';
+import React, { FunctionComponent } from 'react';
 import { SpaceProps, space } from 'styled-system';
 
 import styled from 'utils/styled-components';
@@ -19,6 +19,8 @@ export const StyledImage = styled<ImageProps, 'div'>(tag.div)`
   ${space};
 `;
 
-const Image: SFC<ImageProps> = props => <StyledImage {...props} />;
+const Image: FunctionComponent<ImageProps> = props => (
+  <StyledImage {...props} />
+);
 
 export default Image;

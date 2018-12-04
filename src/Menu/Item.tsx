@@ -1,4 +1,4 @@
-import React, { SFC } from 'react';
+import React, { FunctionComponent } from 'react';
 import {
   BorderRadiusProps,
   BordersProps,
@@ -59,7 +59,7 @@ export type ItemProps = StyledItemProps & {
   onClick?: () => void;
 };
 
-const Item: SFC<ItemProps> = ({
+const Item: FunctionComponent<ItemProps> = ({
   children,
   icon,
   active = false,

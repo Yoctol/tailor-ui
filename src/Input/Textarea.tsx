@@ -1,4 +1,4 @@
-import React, { SFC } from 'react';
+import React, { FunctionComponent } from 'react';
 import TextareaAutosize from 'react-textarea-autosize';
 
 import styled from 'utils/styled-components';
@@ -17,6 +17,8 @@ export const StyledTextarea = styled<TextareaProps, any>(TextareaAutosize)`
   ${inputStyles};
 `;
 
-const Textarea: SFC<TextareaProps> = props => <StyledTextarea {...props} />;
+const Textarea: FunctionComponent<TextareaProps> = props => (
+  <StyledTextarea {...props} />
+);
 
 export default Textarea;

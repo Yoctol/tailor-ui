@@ -1,4 +1,4 @@
-import React, { ReactNode, SFC } from 'react';
+import React, { FunctionComponent, ReactNode } from 'react';
 
 import { Types } from 'utils/getTypeIcon';
 
@@ -13,7 +13,7 @@ interface IAlertProps {
   onClosed?: () => void;
 }
 
-const Alert: SFC<IAlertProps> = ({
+const Alert: FunctionComponent<IAlertProps> = ({
   type = 'info',
   closable = false,
   ...props

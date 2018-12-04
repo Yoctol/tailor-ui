@@ -1,4 +1,4 @@
-import React, { ReactNode, SFC } from 'react';
+import React, { FunctionComponent, ReactNode } from 'react';
 import { MdClose } from 'react-icons/md';
 import { SpaceProps, space } from 'styled-system';
 import { omit } from 'ramda';
@@ -38,7 +38,7 @@ export interface IBaseAlertProps extends IAlertTypes {
   onClose?: () => void;
 }
 
-const BaseAlert: SFC<IBaseAlertProps> = ({
+const BaseAlert: FunctionComponent<IBaseAlertProps> = ({
   message,
   type,
   closable,

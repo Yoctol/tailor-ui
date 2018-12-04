@@ -1,4 +1,4 @@
-import React, { ChangeEvent, SFC, useContext } from 'react';
+import React, { ChangeEvent, FunctionComponent, useContext } from 'react';
 
 import styled, { css } from 'utils/styled-components';
 import tag from 'utils/CleanTag';
@@ -126,7 +126,7 @@ export interface ICheckboxProps {
   value?: string;
 }
 
-const Checkbox: SFC<ICheckboxProps> & {
+const Checkbox: FunctionComponent<ICheckboxProps> & {
   Group: typeof CheckboxGroup;
 } = ({
   children,

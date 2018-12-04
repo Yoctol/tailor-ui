@@ -1,5 +1,5 @@
 /* eslint camelcase: "off" */
-import React, { SFC, createContext } from 'react';
+import React, { FunctionComponent, createContext } from 'react';
 import moment from 'moment';
 
 import { ThemeProvider } from 'utils/styled-components';
@@ -28,7 +28,7 @@ export interface IUIProviderProps {
   skipLocale?: boolean;
 }
 
-const UIProvider: SFC<IUIProviderProps> = ({
+const UIProvider: FunctionComponent<IUIProviderProps> = ({
   children,
   theme = defaultTheme,
   locale = en_US,

@@ -1,5 +1,5 @@
 import BaseSelect, { components } from 'react-select';
-import React, { SFC } from 'react';
+import React, { FunctionComponent } from 'react';
 
 import styled from 'utils/styled-components';
 
@@ -94,7 +94,7 @@ export interface ISelectProps {
   onChange?: (option: number | string | object) => void;
 }
 
-const Select: SFC<ISelectProps> = props => {
+const Select: FunctionComponent<ISelectProps> = props => {
   const { isMulti, delimiter, multiSelectMode } = props;
   if (isMulti) {
     if (multiSelectMode === 'text') {

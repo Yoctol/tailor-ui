@@ -1,4 +1,4 @@
-import React, { PureComponent, SFC } from 'react';
+import React, { FunctionComponent, PureComponent } from 'react';
 import {
   BorderColorProps,
   BordersProps,
@@ -53,13 +53,13 @@ const Row = styled<RowProps, 'tr'>(tag.tr)`
   ${color};
 `;
 
-const Head: SFC = ({ children }) => (
+const Head: FunctionComponent = ({ children }) => (
   <thead>
     <Row>{children}</Row>
   </thead>
 );
 
-const Body: SFC = ({ children }) => <tbody>{children}</tbody>;
+const Body: FunctionComponent = ({ children }) => <tbody>{children}</tbody>;
 
 type StyledTableProps = TextAlignProps & WidthProps;
 

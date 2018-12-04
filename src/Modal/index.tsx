@@ -1,4 +1,4 @@
-import React, { ReactNode, SFC, isValidElement } from 'react';
+import React, { FunctionComponent, ReactNode, isValidElement } from 'react';
 
 import Box from '../Grid/Box';
 import Flex from '../Grid/Flex';
@@ -17,7 +17,11 @@ interface IModalHeaderProps {
   onCancel: () => void;
 }
 
-const ModalHeader: SFC<IModalHeaderProps> = ({ title, onCancel, closable }) => (
+const ModalHeader: FunctionComponent<IModalHeaderProps> = ({
+  title,
+  onCancel,
+  closable,
+}) => (
   <Flex
     flex="none"
     alignItems="center"
@@ -33,7 +37,7 @@ const ModalHeader: SFC<IModalHeaderProps> = ({ title, onCancel, closable }) => (
   </Flex>
 );
 
-const ModalContent: SFC = ({ children }) => (
+const ModalContent: FunctionComponent = ({ children }) => (
   <Flex flexDirection="column" p="3" overflowY="auto">
     {children}
   </Flex>
@@ -43,7 +47,7 @@ interface IModalFooterProps extends IFooterProps {
   footer?: ReactNode;
 }
 
-const ModalFooter: SFC<IModalFooterProps> = ({
+const ModalFooter: FunctionComponent<IModalFooterProps> = ({
   footer,
   cancelText,
   confirmText,
@@ -85,7 +89,7 @@ export type ModalProps = BaseModalProps &
   IModalHeaderProps &
   IModalFooterProps;
 
-const Modal: SFC<ModalProps> & {
+const Modal: FunctionComponent<ModalProps> & {
   confirm: typeof confirm;
   info: typeof info;
   success: typeof success;

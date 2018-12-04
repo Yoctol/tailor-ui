@@ -1,4 +1,4 @@
-import React, { ReactNode, SFC } from 'react';
+import React, { FunctionComponent, ReactNode } from 'react';
 import { Transition, animated, config } from 'react-spring';
 import { WidthProps, width as styledWidth } from 'styled-system';
 
@@ -43,7 +43,7 @@ export type ModalWrapperProps = WidthProps & {
   [key: string]: any;
 };
 
-const ModalWrapper: SFC<ModalWrapperProps> = ({
+const ModalWrapper: FunctionComponent<ModalWrapperProps> = ({
   width = 416,
   style,
   onCancel,
@@ -72,7 +72,7 @@ export type BaseModalProps = WidthProps & {
   visible: boolean;
 };
 
-const BaseModal: SFC<BaseModalProps> = ({
+const BaseModal: FunctionComponent<BaseModalProps> = ({
   children,
   visible,
   onCancel,

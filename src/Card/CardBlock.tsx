@@ -1,4 +1,4 @@
-import React, { SFC } from 'react';
+import React, { FunctionComponent } from 'react';
 import { HeightProps, SpaceProps, height, space } from 'styled-system';
 
 import styled from 'utils/styled-components';
@@ -20,7 +20,9 @@ const StyledBlock = styled<BlockProps, 'div'>(tag.div)`
   ${height};
 `;
 
-const Block: SFC<BlockProps> = props => <StyledBlock {...props} />;
+const Block: FunctionComponent<BlockProps> = props => (
+  <StyledBlock {...props} />
+);
 
 Block.defaultProps = {
   p: 3,

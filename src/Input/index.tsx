@@ -1,8 +1,8 @@
 import React, {
+  FunctionComponent,
   KeyboardEvent,
   KeyboardEventHandler,
   ReactNode,
-  SFC,
   forwardRef,
   isValidElement,
   useEffect,
@@ -183,7 +183,7 @@ export interface IInputProps {
   [key: string]: any;
 }
 
-const Input: SFC<IInputProps> = forwardRef(
+const Input: FunctionComponent<IInputProps> = forwardRef(
   (
     {
       prefix,

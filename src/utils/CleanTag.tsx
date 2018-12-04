@@ -44,12 +44,11 @@ const Tags: { [key: string]: any } = {};
 
 tags.forEach((Tag: string) => {
   Tags[Tag] = forwardRef<any, { is: any; blacklist: string[] }>(
-    ({ blacklist = [], ...props }, ref) => (
-      <Tag
-        ref={ref}
-        {...omit(props, Tag, [...blacklist, ...defaultBlacklist])}
-      />
-    )
+    ({ blacklist = [], ...props }, ref) =>
+      React.createElement(Tag, {
+        ref,
+        ...omit(props, Tag, [...blacklist, ...defaultBlacklist]),
+      })
   );
 
   Tags[Tag].displayName = `Clean.${Tag}`;

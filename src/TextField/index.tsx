@@ -1,8 +1,8 @@
 import React, {
   ChangeEvent,
   ChangeEventHandler,
+  FunctionComponent,
   KeyboardEventHandler,
-  SFC,
   useState,
 } from 'react';
 import { omit } from 'ramda';
@@ -121,7 +121,7 @@ export interface ITextFieldProps {
   onPressEnter?: KeyboardEventHandler<HTMLInputElement>;
 }
 
-const TextField: SFC<ITextFieldProps> = ({
+const TextField: FunctionComponent<ITextFieldProps> = ({
   label = null,
   value: controlledValue,
   defaultValue = '',

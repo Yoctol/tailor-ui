@@ -1,11 +1,11 @@
-import React, { SFC } from 'react';
+import React, { FunctionComponent } from 'react';
 
 import Flex, { FlexProps } from '../Grid/Flex';
 
 import Item from './Item';
 import SubMenu from './SubMenu';
 
-const Menu: SFC<FlexProps> & {
+const Menu: FunctionComponent<FlexProps> & {
   SubMenu: typeof SubMenu;
   Item: typeof Item;
 } = ({ children, ...props }) => (

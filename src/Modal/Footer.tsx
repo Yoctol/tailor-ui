@@ -1,4 +1,4 @@
-import React, { SFC } from 'react';
+import React, { FunctionComponent } from 'react';
 
 import Box from '../Grid/Box';
 import Button, { ButtonProps } from '../Button';
@@ -13,7 +13,7 @@ export interface IFooterProps {
   cancelButtonProps?: ButtonProps;
 }
 
-const Footer: SFC<IFooterProps> = ({
+const Footer: FunctionComponent<IFooterProps> = ({
   cancelText,
   confirmText,
   onCancel,

@@ -1,4 +1,4 @@
-import React, { SFC } from 'react';
+import React, { FunctionComponent } from 'react';
 
 import styled, { css, keyframes } from 'utils/styled-components';
 import tag from 'utils/CleanTag';
@@ -101,7 +101,10 @@ interface ISpinProps {
   fullscreen?: boolean;
 }
 
-const Spin: SFC<ISpinProps> = ({ size = 40, fullscreen = false }) => (
+const Spin: FunctionComponent<ISpinProps> = ({
+  size = 40,
+  fullscreen = false,
+}) => (
   <SpinWrapper fullscreen={fullscreen}>
     <SpinCubeWrapper size={size}>
       <SpinCube />

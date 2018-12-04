@@ -1,4 +1,4 @@
-import React, { SFC, useEffect, useRef, useState } from 'react';
+import React, { FunctionComponent, useEffect, useRef, useState } from 'react';
 import { MdKeyboardArrowRight } from 'react-icons/md';
 
 import styled from 'utils/styled-components';
@@ -48,7 +48,7 @@ export interface ISubItemState {
   subItemEl: HTMLElement | null;
 }
 
-const SubItem: SFC<ISubItemProps> = ({
+const SubItem: FunctionComponent<ISubItemProps> = ({
   title,
   children,
   disabled,

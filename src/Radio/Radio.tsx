@@ -1,4 +1,4 @@
-import React, { ChangeEvent, SFC, useContext } from 'react';
+import React, { ChangeEvent, FunctionComponent, useContext } from 'react';
 
 import styled, { css } from 'utils/styled-components';
 import tag from 'utils/CleanTag';
@@ -118,7 +118,7 @@ export interface IRadioProps {
   value?: string;
 }
 
-const Radio: SFC<IRadioProps> & {
+const Radio: FunctionComponent<IRadioProps> & {
   Group: typeof RadioGroup;
 } = ({
   children,

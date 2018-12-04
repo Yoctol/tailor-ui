@@ -1,4 +1,4 @@
-import React, { PureComponent, SFC, useState } from 'react';
+import React, { FunctionComponent, PureComponent, useState } from 'react';
 import { MdClose } from 'react-icons/md';
 import { Spring, animated } from 'react-spring';
 import { omit } from 'ramda';
@@ -47,7 +47,7 @@ interface IClosableTagProps {
   onClosed?: () => void;
 }
 
-const ClosableTag: SFC<IClosableTagProps> = ({
+const ClosableTag: FunctionComponent<IClosableTagProps> = ({
   children,
   onClosed,
   ...props
@@ -89,7 +89,7 @@ const ClosableTag: SFC<IClosableTagProps> = ({
   );
 };
 
-const BaseTag: SFC = ({ children, ...props }) => (
+const BaseTag: FunctionComponent = ({ children, ...props }) => (
   <StyledTagWrapper>
     <StyledTag {...omit(['onClosed'], props)}>{children}</StyledTag>
   </StyledTagWrapper>

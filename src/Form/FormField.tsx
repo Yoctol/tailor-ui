@@ -1,4 +1,4 @@
-import React, { SFC } from 'react';
+import React, { FunctionComponent } from 'react';
 
 import styled, { css } from 'utils/styled-components';
 import tag from 'utils/CleanTag';
@@ -73,6 +73,8 @@ const StyledFormField = styled<IFormFieldProps, 'div'>(tag.div)`
     `};
 `;
 
-const FormField: SFC<IFormFieldProps> = props => <StyledFormField {...props} />;
+const FormField: FunctionComponent<IFormFieldProps> = props => (
+  <StyledFormField {...props} />
+);
 
 export default FormField;

@@ -1,4 +1,4 @@
-import React, { SFC } from 'react';
+import React, { FunctionComponent } from 'react';
 
 import styled from 'utils/styled-components';
 
@@ -72,7 +72,7 @@ export interface ISwitchProps {
   onChange: (checked: boolean) => void;
 }
 
-const Switch: SFC<ISwitchProps> = ({
+const Switch: FunctionComponent<ISwitchProps> = ({
   defaultChecked,
   checked,
   onChange,

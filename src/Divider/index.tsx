@@ -1,4 +1,4 @@
-import React, { SFC } from 'react';
+import React, { FunctionComponent } from 'react';
 import styled, { css } from 'styled-components';
 
 import tag from 'utils/CleanTag';
@@ -116,7 +116,7 @@ export interface IDividerProps {
   dashed?: boolean;
 }
 
-const Divider: SFC<IDividerProps> = ({
+const Divider: FunctionComponent<IDividerProps> = ({
   type = 'horizontal',
   orientation,
   dashed,

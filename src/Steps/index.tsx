@@ -1,8 +1,8 @@
 import React, {
   Children,
+  FunctionComponent,
   ReactChild,
   ReactElement,
-  SFC,
   createContext,
   isValidElement,
 } from 'react';
@@ -208,7 +208,7 @@ type StepIconProps = IStepsItemProps & {
   onClick: () => void;
 };
 
-const StepIcon: SFC<StepIconProps> = ({
+const StepIcon: FunctionComponent<StepIconProps> = ({
   status,
   count,
   isLast,
@@ -247,7 +247,10 @@ export interface IStepProps {
   status?: Status;
 }
 
-export const Step: SFC<IStepProps> = ({ title, description = null }) => (
+export const Step: FunctionComponent<IStepProps> = ({
+  title,
+  description = null,
+}) => (
   <Consumer>
     {({ count, status, isLast, tailColor, direction, onCurrentChange }) => (
       <Flex
@@ -296,7 +299,7 @@ export interface IStepsProps {
   children: Array<ReactElement<IStepProps>>;
 }
 
-const Steps: SFC<IStepsProps> & {
+const Steps: FunctionComponent<IStepsProps> & {
   Step: typeof Step;
 } = ({ children, current, onCurrentChange, direction = 'horizontal' }) => {
   const totalCount = Children.count(children) - 1;

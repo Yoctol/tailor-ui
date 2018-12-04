@@ -1,4 +1,4 @@
-import React, { ReactNode, SFC } from 'react';
+import React, { FunctionComponent, ReactNode } from 'react';
 
 import Trigger, { IChildrenRenderProps, IPopupRenderProps } from '../Trigger';
 
@@ -47,7 +47,7 @@ const renderOverlay = (overlay: ReactNode) => ({
   </Provider>
 );
 
-const Dropdown: SFC<IDropdownProps> & {
+const Dropdown: FunctionComponent<IDropdownProps> & {
   List: typeof List;
   Item: typeof Item;
   SubList: typeof SubList;

@@ -1,4 +1,4 @@
-import React, { SFC, useState } from 'react';
+import React, { FunctionComponent, useState } from 'react';
 
 import styled from 'utils/styled-components';
 import tag from 'utils/CleanTag';
@@ -38,7 +38,7 @@ export interface IRadioGroupProps {
   onChange?: (value: string) => void;
 }
 
-const RadioGroup: SFC<IRadioGroupProps> = ({
+const RadioGroup: FunctionComponent<IRadioGroupProps> = ({
   value: controlledValue,
   defaultValue,
   options = null,

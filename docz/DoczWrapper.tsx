@@ -1,12 +1,12 @@
-import React, { SFC } from 'react';
+import React, { FunctionComponent } from 'react';
 
 import UIProvider from '../src/UIProvider';
 
-export interface WrapperProps {
+export interface IWrapperProps {
   children: JSX.Element;
 }
 
-const DoczWrapper: SFC<WrapperProps> = ({ children }) => (
+const DoczWrapper: FunctionComponent<IWrapperProps> = ({ children }) => (
   <UIProvider>{children}</UIProvider>
 );
 

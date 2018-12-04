@@ -1,4 +1,4 @@
-import React, { SFC } from 'react';
+import React, { FunctionComponent } from 'react';
 import { IconType as ReactIconsIconType } from 'react-icons';
 import { SpaceProps, style, space as styledSpace } from 'styled-system';
 
@@ -59,7 +59,7 @@ export type IconProps = SpaceProps & {
   [key: string]: any;
 };
 
-const Icon: SFC<IconProps> = ({
+const Icon: FunctionComponent<IconProps> = ({
   type,
   cursor = 'default',
   size = 24,

@@ -1,4 +1,4 @@
-import React, { SFC, useState } from 'react';
+import React, { FunctionComponent, useState } from 'react';
 
 import styled from 'utils/styled-components';
 import tag from 'utils/CleanTag';
@@ -39,7 +39,7 @@ export interface ICheckboxGroupProps {
   onChange?: (value: ReadonlyArray<string>) => void;
 }
 
-const CheckboxGroup: SFC<ICheckboxGroupProps> = ({
+const CheckboxGroup: FunctionComponent<ICheckboxGroupProps> = ({
   value: controlledValue,
   defaultValue,
   options = null,

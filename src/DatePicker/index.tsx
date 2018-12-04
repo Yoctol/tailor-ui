@@ -1,6 +1,6 @@
 import RcCalendar from 'rc-calendar';
 import RcDatePicker from 'rc-calendar/lib/Picker';
-import React, { SFC } from 'react';
+import React, { FunctionComponent } from 'react';
 import TimePickerPanel from 'rc-time-picker/lib/Panel';
 
 import Input from '../Input';
@@ -41,7 +41,7 @@ export interface IDatePickerProps {
   placeholder?: string;
 }
 
-const DatePicker: SFC<IDatePickerProps> = ({
+const DatePicker: FunctionComponent<IDatePickerProps> = ({
   onChange,
   showTime,
   showSecond,

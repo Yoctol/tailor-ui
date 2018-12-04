@@ -1,4 +1,4 @@
-import React, { SFC, useContext, useState } from 'react';
+import React, { FunctionComponent, useContext, useState } from 'react';
 import { space as styledSpace } from 'styled-system';
 
 import styled, { css } from 'utils/styled-components';
@@ -101,7 +101,11 @@ export interface ITabProps {
   disabled?: boolean;
 }
 
-export const Tab: SFC<ITabProps> = ({ label, value, ...props }) => {
+export const Tab: FunctionComponent<ITabProps> = ({
+  label,
+  value,
+  ...props
+}) => {
   const { size, pills, activeValue, setValue } = useContext(TabContext);
 
   return (
@@ -176,7 +180,7 @@ type TabsProps = IStyledTabsProps & {
   size?: Size;
 };
 
-const Tabs: SFC<TabsProps> & {
+const Tabs: FunctionComponent<TabsProps> & {
   Tab: typeof Tab;
 } = ({
   absolute = false,

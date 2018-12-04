@@ -1,4 +1,4 @@
-import React, { SFC, useState } from 'react';
+import React, { FunctionComponent, useState } from 'react';
 import { Spring, animated, config } from 'react-spring';
 
 import BaseAlert, { IBaseAlertProps } from './BaseAlert';
@@ -7,7 +7,10 @@ export interface IAlertProps extends IBaseAlertProps {
   onClosed?: () => void;
 }
 
-const ClosableAlert: SFC<IAlertProps> = ({ onClosed, ...props }) => {
+const ClosableAlert: FunctionComponent<IAlertProps> = ({
+  onClosed,
+  ...props
+}) => {
   const [visible, setVisible] = useState(true);
 
   return (
