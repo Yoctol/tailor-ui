@@ -1,9 +1,11 @@
 # Tailor UI
 
-[![npm](https://img.shields.io/npm/v/@yoctol/tailor-ui.svg)](https://www.npmjs.com/package/@yoctol/tailor-ui)
-[![CircleCI](https://circleci.com/gh/Yoctol/tailor-ui.svg?style=shield&circle-token=cd9b3c150c27a37f0aa28d41486ee35ac16652ac)](https://circleci.com/gh/Yoctol/tailor-ui)
+[![npm](https://img.shields.io/npm/v/tailor-ui.svg)](https://www.npmjs.com/package/tailor-ui)
+[![CircleCI](https://circleci.com/gh/Yoctol/tailor-ui.svg?style=svg&circle-token=3586bec62e7ddc76eca1227bc7a168d680169e09)](https://circleci.com/gh/Yoctol/tailor-ui)
 
-### [Docz](https://tailor-ui.netlify.com)
+### Documentation
+
+Check out our [documentation website](https://tailor-ui.netlify.com).
 
 ### Installation
 
