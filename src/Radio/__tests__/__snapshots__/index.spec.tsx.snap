@@ -1,318 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Radio should render correctly 1`] = `
-.c5 {
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
-}
-
-.c1 {
-  display: inline-block;
-  position: relative;
-  margin-bottom: 1px;
-  line-height: 1;
-}
-
-.c4 {
-  display: block;
-  position: relative;
-  width: 16px;
-  height: 16px;
-  padding: 0;
-  border: 1px solid;
-  border-radius: 50%;
-  border-color: #bfbfbf;
-  background-color: #ffffff;
-  color: #373737;
-  -webkit-transition: all 200ms ease 0s;
-  transition: all 200ms ease 0s;
-}
-
-.c4::after {
-  content: '';
-  position: absolute;
-  top: 2px;
-  left: 2px;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  opacity: 0;
-  background-color: #423b63;
-  -webkit-transform: scale(0);
-  -ms-transform: scale(0);
-  transform: scale(0);
-  -webkit-transition: all 200ms ease 0s;
-  transition: all 200ms ease 0s;
-}
-
-.c2 {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-}
-
-.c2:checked + .c3 {
-  border-color: #423b63;
-}
-
-.c2:checked + .c3::after {
-  opacity: 1;
-  -webkit-transform: scale(1);
-  -ms-transform: scale(1);
-  transform: scale(1);
-}
-
-.c0 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  font-size: 1rem;
-  cursor: pointer;
-}
-
-.c0:hover .c3 {
-  border-color: #423b63;
-}
-
-.c0 + .c6 {
-  margin-left: 0.5rem;
-}
-
-<label
-  class="c0"
-  direction="horizontal"
->
-  <span
-    class="c1"
-  >
-    <input
-      class="c2"
-      type="radio"
-    />
-    <span
-      class="c3 c4"
-    />
-  </span>
-  <div
-    class="c5"
-  >
-    Radio
-  </div>
-</label>
-`;
-
-exports[`Radio.Group composition with Radio should render correctly 1`] = `
-.c1 {
-  box-sizing: border-box;
-}
-
-.c7 {
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
-}
-
-.c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-}
-
-.c3 {
-  display: inline-block;
-  position: relative;
-  margin-bottom: 1px;
-  line-height: 1;
-}
-
-.c6 {
-  display: block;
-  position: relative;
-  width: 16px;
-  height: 16px;
-  padding: 0;
-  border: 1px solid;
-  border-radius: 50%;
-  border-color: #bfbfbf;
-  background-color: #ffffff;
-  color: #373737;
-  -webkit-transition: all 200ms ease 0s;
-  transition: all 200ms ease 0s;
-}
-
-.c6::after {
-  content: '';
-  position: absolute;
-  top: 2px;
-  left: 2px;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  opacity: 0;
-  background-color: #423b63;
-  -webkit-transform: scale(0);
-  -ms-transform: scale(0);
-  transform: scale(0);
-  -webkit-transition: all 200ms ease 0s;
-  transition: all 200ms ease 0s;
-}
-
-.c4 {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-}
-
-.c4:checked + .c5 {
-  border-color: #423b63;
-}
-
-.c4:checked + .c5::after {
-  opacity: 1;
-  -webkit-transform: scale(1);
-  -ms-transform: scale(1);
-  transform: scale(1);
-}
-
-.c2 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  font-size: 1rem;
-  cursor: pointer;
-}
-
-.c2:hover .c5 {
-  border-color: #423b63;
-}
-
-.c2 + .c9 {
-  margin-left: 0.5rem;
-}
-
-.c8:hover .c5 {
-  border-color: #423b63;
-}
-
-<div
-  class="c0"
-  direction="horizontal"
->
-  <div
-    class="c1"
-  >
-    <label
-      class="c2"
-      direction="horizontal"
-    >
-      <span
-        class="c3"
-      >
-        <input
-          class="c4"
-          type="radio"
-        />
-        <span
-          class="c5 c6"
-        />
-      </span>
-      <div
-        class="c7"
-      >
-        Radio 1
-      </div>
-    </label>
-  </div>
-  <div
-    class="c1"
-  >
-    <label
-      class="c2"
-      direction="horizontal"
-    >
-      <span
-        class="c3"
-      >
-        <input
-          class="c4"
-          type="radio"
-        />
-        <span
-          class="c5 c6"
-        />
-      </span>
-      <div
-        class="c7"
-      >
-        Radio 2
-      </div>
-    </label>
-  </div>
-  <div
-    class="c1"
-  >
-    <label
-      class="c2"
-      direction="horizontal"
-    >
-      <span
-        class="c3"
-      >
-        <input
-          class="c4"
-          type="radio"
-        />
-        <span
-          class="c5 c6"
-        />
-      </span>
-      <div
-        class="c7"
-      >
-        Radio 3
-      </div>
-    </label>
-  </div>
-</div>
-`;
-
-exports[`Radio.Group should render vertical radio group 1`] = `
 .c6 {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
-}
-
-.c0 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
 }
 
 .c2 {
@@ -376,10 +67,6 @@ exports[`Radio.Group should render vertical radio group 1`] = `
   transform: scale(1);
 }
 
-.c7:hover .c4 {
-  border-color: #423b63;
-}
-
 .c1 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -397,7 +84,344 @@ exports[`Radio.Group should render vertical radio group 1`] = `
   border-color: #423b63;
 }
 
-.c1 + .c8 {
+.c1 + .c0 {
+  margin-left: 0.5rem;
+}
+
+<label
+  class="c0 c1"
+  direction="horizontal"
+>
+  <span
+    class="c2"
+  >
+    <input
+      class="c3"
+      type="radio"
+    />
+    <span
+      class="c4 c5"
+    />
+  </span>
+  <div
+    class="c6"
+  >
+    Radio
+  </div>
+</label>
+`;
+
+exports[`Radio.Group composition with Radio should render correctly 1`] = `
+.c1 {
+  box-sizing: border-box;
+}
+
+.c8 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c4 {
+  display: inline-block;
+  position: relative;
+  margin-bottom: 1px;
+  line-height: 1;
+}
+
+.c7 {
+  display: block;
+  position: relative;
+  width: 16px;
+  height: 16px;
+  padding: 0;
+  border: 1px solid;
+  border-radius: 50%;
+  border-color: #bfbfbf;
+  background-color: #ffffff;
+  color: #373737;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+}
+
+.c7::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  opacity: 0;
+  background-color: #423b63;
+  -webkit-transform: scale(0);
+  -ms-transform: scale(0);
+  transform: scale(0);
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+}
+
+.c5 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+.c5:checked + .c6 {
+  border-color: #423b63;
+}
+
+.c5:checked + .c6::after {
+  opacity: 1;
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+}
+
+.c3 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.c3:hover .c6 {
+  border-color: #423b63;
+}
+
+.c3 + .c2 {
+  margin-left: 0.5rem;
+}
+
+.c9 + .c2 {
+  margin-left: 0.5rem;
+}
+
+.c10 + .c2 {
+  margin-top: 0.5rem;
+}
+
+.c11:hover .c6 {
+  border-color: #423b63;
+}
+
+.c11 + .c2 {
+  margin-top: 0.5rem;
+}
+
+<div
+  class="c0"
+  direction="horizontal"
+>
+  <div
+    class="c1"
+  >
+    <label
+      class="c2 c3"
+      direction="horizontal"
+    >
+      <span
+        class="c4"
+      >
+        <input
+          class="c5"
+          type="radio"
+        />
+        <span
+          class="c6 c7"
+        />
+      </span>
+      <div
+        class="c8"
+      >
+        Radio 1
+      </div>
+    </label>
+  </div>
+  <div
+    class="c1"
+  >
+    <label
+      class="c2 c3"
+      direction="horizontal"
+    >
+      <span
+        class="c4"
+      >
+        <input
+          class="c5"
+          type="radio"
+        />
+        <span
+          class="c6 c7"
+        />
+      </span>
+      <div
+        class="c8"
+      >
+        Radio 2
+      </div>
+    </label>
+  </div>
+  <div
+    class="c1"
+  >
+    <label
+      class="c2 c3"
+      direction="horizontal"
+    >
+      <span
+        class="c4"
+      >
+        <input
+          class="c5"
+          type="radio"
+        />
+        <span
+          class="c6 c7"
+        />
+      </span>
+      <div
+        class="c8"
+      >
+        Radio 3
+      </div>
+    </label>
+  </div>
+</div>
+`;
+
+exports[`Radio.Group should render vertical radio group 1`] = `
+.c7 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.c0 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c3 {
+  display: inline-block;
+  position: relative;
+  margin-bottom: 1px;
+  line-height: 1;
+}
+
+.c6 {
+  display: block;
+  position: relative;
+  width: 16px;
+  height: 16px;
+  padding: 0;
+  border: 1px solid;
+  border-radius: 50%;
+  border-color: #bfbfbf;
+  background-color: #ffffff;
+  color: #373737;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+}
+
+.c6::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  opacity: 0;
+  background-color: #423b63;
+  -webkit-transform: scale(0);
+  -ms-transform: scale(0);
+  transform: scale(0);
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+}
+
+.c4 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+.c4:checked + .c5 {
+  border-color: #423b63;
+}
+
+.c4:checked + .c5::after {
+  opacity: 1;
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+}
+
+.c8:hover .c5 {
+  border-color: #423b63;
+}
+
+.c8 + .c1 {
+  margin-left: 0.5rem;
+}
+
+.c9 + .c1 {
+  margin-left: 0.5rem;
+}
+
+.c10 + .c1 {
+  margin-top: 0.5rem;
+}
+
+.c2 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.c2:hover .c5 {
+  border-color: #423b63;
+}
+
+.c2 + .c1 {
   margin-top: 0.5rem;
 }
 
@@ -406,64 +430,64 @@ exports[`Radio.Group should render vertical radio group 1`] = `
   direction="vertical"
 >
   <label
-    class="c1"
+    class="c1 c2"
     direction="vertical"
   >
     <span
-      class="c2"
+      class="c3"
     >
       <input
-        class="c3"
+        class="c4"
         type="radio"
       />
       <span
-        class="c4 c5"
+        class="c5 c6"
       />
     </span>
     <div
-      class="c6"
+      class="c7"
     >
       radio 1
     </div>
   </label>
   <label
-    class="c1"
+    class="c1 c2"
     direction="vertical"
   >
     <span
-      class="c2"
+      class="c3"
     >
       <input
-        class="c3"
+        class="c4"
         type="radio"
       />
       <span
-        class="c4 c5"
+        class="c5 c6"
       />
     </span>
     <div
-      class="c6"
+      class="c7"
     >
       radio 2
     </div>
   </label>
   <label
-    class="c1"
+    class="c1 c2"
     direction="vertical"
   >
     <span
-      class="c2"
+      class="c3"
     >
       <input
-        class="c3"
+        class="c4"
         type="radio"
       />
       <span
-        class="c4 c5"
+        class="c5 c6"
       />
     </span>
     <div
-      class="c6"
+      class="c7"
     >
       radio 3
     </div>
