@@ -17,7 +17,6 @@ import {
   textAlign,
   width,
 } from 'styled-system';
-import { omit } from 'ramda';
 
 import styled, { css } from 'utils/styled-components';
 import tag from 'utils/CleanTag';
@@ -222,14 +221,12 @@ const Input: FunctionComponent<IInputProps> = forwardRef(
       }
     };
 
-    const otherProps = omit(['onPressEnter'], props);
-
     const input = (
       <StyledInput
         ref={inputRef}
         onKeyPress={handleKeyPress}
         autoFocus={autoFocus || autoSelect}
-        {...otherProps}
+        {...props}
       />
     );
 

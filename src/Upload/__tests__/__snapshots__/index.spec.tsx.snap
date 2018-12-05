@@ -1,0 +1,163 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Upload should render correctly 1`] = `
+.c2 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  line-height: 1;
+  cursor: default;
+  margin-right: 0.25rem;
+}
+
+.c2 svg {
+  fill: #423b63;
+  vertical-align: middle;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+}
+
+.c2.c2.c2 svg {
+  width: 20px;
+  height: 20px;
+}
+
+.c3 {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 1;
+  background: rgba(0,0,0,0.2);
+  -webkit-transform: scale(0);
+  -ms-transform: scale(0);
+  transform: scale(0);
+}
+
+.c0 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  position: relative;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  overflow: hidden;
+  border: 1px solid;
+  border-radius: 0.25rem;
+  line-height: 1.5;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  height: 2rem;
+  padding: 0 1rem;
+  font-size: 1rem;
+  border-color: #e0e0e0;
+  background-color: #ffffff;
+  color: #1a1a1a;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+}
+
+.c0:focus {
+  outline: 0;
+}
+
+.c0:disabled,
+.c0[disabled] {
+  opacity: 0.7;
+  cursor: default;
+  pointer-events: none;
+}
+
+.c0::before {
+  content: '';
+  display: inline-block;
+  position: relative;
+  left: 0;
+  width: 0;
+  height: 0;
+  margin-right: 0;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+}
+
+.c0 .c1 {
+  cursor: pointer;
+}
+
+.c0 .c1 svg {
+  fill: #1a1a1a;
+}
+
+.c0:hover {
+  border-color: #423b63;
+  background-color: #f6f6f6;
+}
+
+.c4 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+<div>
+  <div
+    aria-disabled="false"
+    class=""
+    style="position: relative;"
+  >
+    <button
+      class="c0"
+      type="default"
+    >
+      <i
+        class="c1 c2"
+        cursor="default"
+        style="pointer-events: none;"
+      >
+        <svg
+          fill="currentColor"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="0"
+          viewBox="0 0 24 24"
+          width="1em"
+        >
+          <path
+            d="M9 16h6v-6h4l-7-7-7 7h4zm-4 2h14v2H5z"
+          />
+        </svg>
+      </i>
+      Click to Upload
+      <div
+        class="c3"
+      />
+    </button>
+    <input
+      autocomplete="off"
+      multiple=""
+      style="position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px; opacity: 0.00001; pointer-events: none;"
+      type="file"
+    />
+  </div>
+  <div
+    class="c4"
+  />
+</div>
+`;

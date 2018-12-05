@@ -1,0 +1,46 @@
+---
+name: Upload
+menu: Components
+route: /components/upload
+---
+
+import { PropsTable, Playground } from 'docz';
+
+import Upload from './';
+
+# Upload
+
+Upload file by selecting or dragging.
+
+## When To Use
+
+- When you need to upload one or more files.
+- When you need to show the process of uploading.
+- When you need to upload files by dragging and dropping.
+
+## Examples
+
+```js
+import { Upload } from 'tailor-ui';
+```
+
+### Basic
+
+<Playground>
+  <Upload onSelect={() => new Promise(resolve => setTimeout(resolve, 2000))} />
+</Playground>
+
+### Multiple
+
+<Playground>
+  <Upload
+    multiple
+    onSelect={() => new Promise(resolve => setTimeout(resolve, 2000))}
+  />
+</Playground>
+
+## API
+
+This component is based on [react-dropzone](https://github.com/react-dropzone/react-dropzone), please check [it's documentation](https://react-dropzone.js.org/#proptypes) for more usage.
+
+<PropsTable of={Upload} />

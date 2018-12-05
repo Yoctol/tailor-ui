@@ -32,5 +32,6 @@ export { default as Textarea } from './Input/Textarea';
 export { default as TextField } from './TextField';
 export { default as Tooltip } from './Tooltip';
 export { default as UIProvider } from './UIProvider';
+export { default as Upload } from './Upload';
 export { default as theme } from './theme';
 export { default as locale } from './locale';

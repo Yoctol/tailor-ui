@@ -15,8 +15,9 @@ import {
   Flex,
   Popconfirm,
   DatePicker,
+  Upload,
 } from '../';
-import * as locales from '../locale';
+import locales from '../locale';
 
 ## Usage
 
@@ -46,7 +47,7 @@ const { zh_TW } = locale;
 
     return (
       <>
-        <Radio.Group value={value} onChange={set}>
+        <Radio.Group value={value} onChange={setValue}>
           <Radio value="en_US">English</Radio>
           <Radio value="zh_TW">中文</Radio>
         </Radio.Group>
@@ -93,6 +94,18 @@ const { zh_TW } = locale;
               </Flex>
               <Space mt="3">
                 <DatePicker />
+              </Space>
+              <Space mt="3">
+                <Flex>
+                  <Space mr="2">With Success:</Space>
+                  <Upload onSelect={() => new Promise(resolve => setTimeout(resolve, 2000))} />
+                </Flex>
+              </Space>
+              <Space mt="1">
+                <Flex>
+                  <Space mr="2">With Failure:</Space>
+                  <Upload onSelect={() => new Promise((resolve, reject) => setTimeout(reject, 2000))} />
+                </Flex>
               </Space>
             </>
           </UIProvider>
