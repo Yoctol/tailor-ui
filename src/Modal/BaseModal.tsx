@@ -1,4 +1,4 @@
-import React, { FunctionComponent, ReactNode } from 'react';
+import React, { FunctionComponent } from 'react';
 import { Transition, animated, config } from 'react-spring';
 import { WidthProps, width as styledWidth } from 'styled-system';
 
@@ -6,17 +6,7 @@ import styled from 'utils/styled-components';
 import tag from 'utils/CleanTag';
 import useKeydown, { ESC_KEY_CODE } from 'utils/useKeydown';
 
-const ModalOverlay = styled.div`
-  position: fixed;
-  z-index: 10000;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-color: rgba(0, 0, 0, 0.65);
-`;
-
-const AnimatedModalOverlay = animated(ModalOverlay);
+import Backdrop from '../Backdrop';
 
 const ModalContent = styled<WidthProps, 'div'>(tag.div)`
   display: flex;
@@ -36,36 +26,6 @@ const ModalContent = styled<WidthProps, 'div'>(tag.div)`
 
 const AnimatedModalContent = animated(ModalContent);
 
-export type ModalWrapperProps = WidthProps & {
-  onCancel: () => void;
-  content?: ReactNode;
-  clickOutsite?: boolean;
-  [key: string]: any;
-};
-
-const ModalWrapper: FunctionComponent<ModalWrapperProps> = ({
-  width = 416,
-  style,
-  onCancel,
-  content = '',
-  clickOutsite = true,
-  ...otherProps
-}) => (
-  <>
-    <AnimatedModalOverlay
-      style={style}
-      onClick={() => {
-        if (clickOutsite) {
-          onCancel();
-        }
-      }}
-    />
-    <AnimatedModalContent width={width} style={style} {...otherProps}>
-      {content}
-    </AnimatedModalContent>
-  </>
-);
-
 export type BaseModalProps = WidthProps & {
   onCancel: () => void;
   clickOutsite?: boolean;
@@ -73,45 +33,53 @@ export type BaseModalProps = WidthProps & {
 };
 
 const BaseModal: FunctionComponent<BaseModalProps> = ({
-  children,
+  children = '',
   visible,
   onCancel,
+  clickOutsite = true,
+  width = 416,
   ...otherProps
 }) => {
   useKeydown({
+    listening: visible,
     keyCode: ESC_KEY_CODE,
-    onKeydown: visible ? onCancel : undefined,
+    onKeydown: onCancel,
   });
 
   return (
-    <Transition
-      native
-      items={visible ? 'visible' : 'hidden'}
-      from={{
-        opacity: 0,
-      }}
-      enter={{
-        opacity: 1,
-      }}
-      leave={{
-        opacity: 0,
-        pointerEvents: 'none',
-      }}
-      config={config.stiff}
-    >
-      {v =>
-        v === 'visible' // FIXME: waiting for the typing update
-          ? (style: any) => (
-              <ModalWrapper
-                style={style}
-                onCancel={onCancel}
-                content={children}
-                {...otherProps}
-              />
-            )
-          : () => null
-      }
-    </Transition>
+    <>
+      <Backdrop
+        visible={visible}
+        onClick={() => {
+          if (clickOutsite) {
+            onCancel();
+          }
+        }}
+      />
+      <Transition
+        native
+        items={visible}
+        from={{
+          opacity: 0,
+        }}
+        enter={{
+          opacity: 1,
+        }}
+        leave={{
+          opacity: 0,
+        }}
+        config={config.stiff}
+      >
+        {_visible =>
+          _visible &&
+          (style => (
+            <AnimatedModalContent width={width} style={style} {...otherProps}>
+              {children}
+            </AnimatedModalContent>
+          ))
+        }
+      </Transition>
+    </>
   );
 };
 
