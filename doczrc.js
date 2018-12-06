@@ -24,6 +24,12 @@ module.exports = {
       table: {
         fontFamily: 'Roboto Mono',
       },
+      h1: {
+        fontFamily: 'Roboto',
+      },
+      h2: {
+        fontFamily: 'Roboto',
+      },
     },
   },
 };
