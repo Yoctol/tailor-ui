@@ -1,10 +1,15 @@
-import React, { FunctionComponent, ReactNode, isValidElement } from 'react';
+import React, {
+  FunctionComponent,
+  ReactNode,
+  isValidElement,
+  useContext,
+} from 'react';
 
 import Box from '../Grid/Box';
 import Flex from '../Grid/Flex';
 import Heading from '../Heading';
 import Portal from '../utils/Portal';
-import { LocaleConsumer } from '../UIProvider';
+import { LocaleContext } from '../UIProvider';
 
 import BaseModal, { BaseModalProps } from './BaseModal';
 import CloseButton from './CloseButton';
@@ -55,8 +60,10 @@ const ModalFooter: FunctionComponent<IModalFooterProps> = ({
   onConfirm,
   confirmButtonProps,
   cancelButtonProps,
-}) =>
-  footer === null ? null : (
+}) => {
+  const { locale } = useContext(LocaleContext);
+
+  return footer === null ? null : (
     <Flex
       flex="none"
       alignItems="center"
@@ -68,21 +75,18 @@ const ModalFooter: FunctionComponent<IModalFooterProps> = ({
       {isValidElement(footer) ? (
         footer
       ) : (
-        <LocaleConsumer>
-          {({ locale }) => (
-            <Footer
-              cancelText={cancelText || locale.Modal.cancelText}
-              confirmText={confirmText || locale.Modal.confirmText}
-              onCancel={onCancel}
-              onConfirm={onConfirm}
-              confirmButtonProps={confirmButtonProps}
-              cancelButtonProps={cancelButtonProps}
-            />
-          )}
-        </LocaleConsumer>
+        <Footer
+          cancelText={cancelText || locale.Modal.cancelText}
+          confirmText={confirmText || locale.Modal.confirmText}
+          onCancel={onCancel}
+          onConfirm={onConfirm}
+          confirmButtonProps={confirmButtonProps}
+          cancelButtonProps={cancelButtonProps}
+        />
       )}
     </Flex>
   );
+};
 
 export type ModalProps = BaseModalProps &
   IFooterProps &

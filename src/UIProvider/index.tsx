@@ -18,8 +18,6 @@ export const LocaleContext = createContext<{
   locale: en_US,
 });
 
-const { Provider, Consumer: LocaleConsumer } = LocaleContext;
-
 // eslint-disable-next-line import/no-mutable-exports
 let globalLocale: LocaleType = en_US;
 
@@ -45,12 +43,14 @@ const UIProvider: FunctionComponent<IUIProviderProps> = ({
     <ThemeProvider theme={theme}>
       <>
         <GlobalStyle />
-        <Provider value={{ locale }}>{children}</Provider>
+        <LocaleContext.Provider value={{ locale }}>
+          {children}
+        </LocaleContext.Provider>
       </>
     </ThemeProvider>
   );
 };
 
-export { LocaleConsumer, globalLocale };
+export { globalLocale };
 
 export default UIProvider;
