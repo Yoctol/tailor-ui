@@ -13,4 +13,10 @@ export default {
     confirmText: '確認',
     cancelText: '取消',
   },
+  Upload: {
+    uploadText: '點擊上傳',
+    uploadingText: '上傳中...',
+    uploadedText: '上傳成功！',
+    failureText: '上傳失敗！',
+  },
 };

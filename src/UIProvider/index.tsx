@@ -10,13 +10,15 @@ import locales from '../locale';
 
 const { en_US } = locales;
 
-type LocaleType = typeof locales.en_US;
+export type LocaleType = typeof locales.en_US;
 
-const { Provider, Consumer: LocaleConsumer } = createContext<{
+export const LocaleContext = createContext<{
   locale: LocaleType;
 }>({
   locale: en_US,
 });
+
+const { Provider, Consumer: LocaleConsumer } = LocaleContext;
 
 // eslint-disable-next-line import/no-mutable-exports
 let globalLocale: LocaleType = en_US;

@@ -12,4 +12,10 @@ export default {
     confirmText: 'Confirm',
     cancelText: 'Cancel',
   },
+  Upload: {
+    uploadText: 'Click to Upload',
+    uploadingText: 'Uploading...',
+    uploadedText: 'Upload Completed!',
+    failureText: 'Upload Failure!',
+  },
 };

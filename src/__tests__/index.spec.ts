@@ -32,6 +32,7 @@ import {
   Textarea,
   Tooltip,
   UIProvider,
+  Upload,
   message,
   theme,
 } from '..';
@@ -75,5 +76,6 @@ describe('index', () => {
     expect(Tooltip).toBeDefined();
     expect(theme).toBeDefined();
     expect(UIProvider).toBeDefined();
+    expect(Upload).toBeDefined();
   });
 });

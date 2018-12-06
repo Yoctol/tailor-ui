@@ -50,6 +50,7 @@
     "rc-calendar": "^9.7.11",
     "rc-editor-mention": "1.1.7",
     "rc-time-picker": "^3.4.0",
+    "react-dropzone": "^7.0.1",
     "react-html-attributes": "^1.4.3",
     "react-select": "^2.1.2",
     "react-spring": "^6.1.10",
