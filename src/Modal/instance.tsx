@@ -13,6 +13,10 @@ class Modal {
 
   constructor() {
     const elementRoot = document.createElement('div');
+    elementRoot.style.position = 'fixed';
+    elementRoot.style.top = '0';
+    elementRoot.style.left = '0';
+    elementRoot.style.zIndex = '9999';
     document.body.appendChild(elementRoot);
 
     render(<ModalInstanceComponent ref={this.ref} />, elementRoot);
