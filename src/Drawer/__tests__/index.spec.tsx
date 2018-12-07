@@ -4,18 +4,18 @@ import { render } from 'test/test-utils';
 
 import Drawer from '..';
 
-describe('Modal', () => {
+describe('Drawer', () => {
   it('should render correctly', () => {
-    const { container } = render(<Drawer visible onClose={() => {}} />);
+    const { baseElement } = render(<Drawer visible onClose={() => {}} />);
 
-    expect(container.firstChild).toMatchSnapshot();
+    expect(baseElement).toMatchSnapshot();
   });
 
   it('should render with props closable', () => {
-    const { container } = render(
+    const { baseElement } = render(
       <Drawer visible closable={false} onClose={() => {}} />
     );
 
-    expect(container.firstChild).toMatchSnapshot();
+    expect(baseElement).toMatchSnapshot();
   });
 });
