@@ -2,7 +2,7 @@ import React from 'react';
 
 import { fireEvent, render } from 'test/test-utils';
 
-import TextField from '..';
+import TextField from '../TextField';
 
 describe('TextField', () => {
   it('should render correctly', () => {

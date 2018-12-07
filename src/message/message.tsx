@@ -3,20 +3,20 @@ import { render } from 'react-dom';
 
 import { Types } from '../utils/getTypeIcon';
 
-import MessageComponent, { IMessageOptions } from './Message';
+import MessageHub, { IMessageOptions } from './MessageHub';
 
 let messageInstance: Message;
 
 class Message {
   el: Element;
 
-  messageRef: RefObject<MessageComponent> = createRef();
+  messageRef: RefObject<MessageHub> = createRef();
 
   constructor() {
     this.el = document.createElement('div');
     document.body.appendChild(this.el);
 
-    render(<MessageComponent ref={this.messageRef} />, this.el);
+    render(<MessageHub ref={this.messageRef} />, this.el);
   }
 
   message({ content, duration, type }: IMessageOptions) {

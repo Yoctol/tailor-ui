@@ -2,7 +2,7 @@ import React from 'react';
 
 import { render } from 'test/test-utils';
 
-import Spin from '..';
+import Spin from '../Spin';
 
 describe('Spin', () => {
   it('should render correctly', () => {

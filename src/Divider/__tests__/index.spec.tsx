@@ -3,7 +3,7 @@ import React from 'react';
 
 import { render } from 'test/test-utils';
 
-import Divider from '..';
+import Divider from '../Divider';
 
 describe('Divider', () => {
   it('should render correctly', () => {

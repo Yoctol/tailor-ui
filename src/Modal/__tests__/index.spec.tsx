@@ -2,7 +2,7 @@ import React from 'react';
 
 import { render } from 'test/test-utils';
 
-import Modal from '..';
+import Modal from '../Modal';
 
 describe('Modal', () => {
   it('should render correctly', () => {

@@ -3,8 +3,7 @@ import React from 'react';
 import { fireEvent, render } from 'test/test-utils';
 
 import Button from '../../Button';
-
-import Popconfirm from '..';
+import Popconfirm from '../Popconfirm';
 
 describe('Popconfirm', () => {
   it('should render correctly', () => {

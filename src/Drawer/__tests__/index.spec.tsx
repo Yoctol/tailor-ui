@@ -2,7 +2,7 @@ import React from 'react';
 
 import { render } from 'test/test-utils';
 
-import Drawer from '..';
+import Drawer from '../Drawer';
 
 describe('Drawer', () => {
   it('should render correctly', () => {

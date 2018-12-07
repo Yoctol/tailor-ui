@@ -3,7 +3,7 @@ import TextareaAutosize from 'react-textarea-autosize';
 
 import styled from 'utils/styled-components';
 
-import { IInputProps, inputStyles } from './index';
+import { IInputProps, inputStyles } from './Input';
 
 export type TextareaProps = IInputProps & {
   resize?: boolean;

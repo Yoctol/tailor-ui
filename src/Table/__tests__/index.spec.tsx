@@ -2,7 +2,7 @@ import React from 'react';
 
 import { render } from 'test/test-utils';
 
-import Table from '..';
+import Table from '../Table';
 
 function range(start: number, end: number) {
   return new Array(end - start).fill(0).map((_, i) => start + i);
