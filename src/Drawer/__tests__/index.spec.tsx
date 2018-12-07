@@ -2,18 +2,18 @@ import React from 'react';
 
 import { render } from 'test/test-utils';
 
-import Modal from '..';
+import Drawer from '..';
 
-describe('Modal', () => {
+describe('Drawer', () => {
   it('should render correctly', () => {
-    const { baseElement } = render(<Modal visible onCancel={() => {}} />);
+    const { baseElement } = render(<Drawer visible onClose={() => {}} />);
 
     expect(baseElement).toMatchSnapshot();
   });
 
   it('should render with props closable', () => {
     const { baseElement } = render(
-      <Modal visible closable onCancel={() => {}} />
+      <Drawer visible closable={false} onClose={() => {}} />
     );
 
     expect(baseElement).toMatchSnapshot();

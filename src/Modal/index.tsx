@@ -22,7 +22,7 @@ interface IModalHeaderProps {
   onCancel: () => void;
 }
 
-const ModalHeader: FunctionComponent<IModalHeaderProps> = ({
+export const ModalHeader: FunctionComponent<IModalHeaderProps> = ({
   title,
   onCancel,
   closable,
@@ -42,10 +42,22 @@ const ModalHeader: FunctionComponent<IModalHeaderProps> = ({
   </Flex>
 );
 
-const ModalContent: FunctionComponent = ({ children }) => (
-  <Flex flexDirection="column" p="3" overflowY="auto">
+export const ModalContent: FunctionComponent = ({ children }) => (
+  <Flex flex="auto" flexDirection="column" p="3" overflowY="auto">
     {children}
   </Flex>
+);
+
+export const FooterWrapper: FunctionComponent = props => (
+  <Flex
+    flex="none"
+    alignItems="center"
+    px="3"
+    py="2"
+    borderTop="base"
+    borderColor="gray300"
+    {...props}
+  />
 );
 
 interface IModalFooterProps extends IFooterProps {
@@ -64,14 +76,7 @@ const ModalFooter: FunctionComponent<IModalFooterProps> = ({
   const { locale } = useContext(LocaleContext);
 
   return footer === null ? null : (
-    <Flex
-      flex="none"
-      alignItems="center"
-      px="3"
-      py="2"
-      borderTop="base"
-      borderColor="gray300"
-    >
+    <FooterWrapper>
       {isValidElement(footer) ? (
         footer
       ) : (
@@ -84,7 +89,7 @@ const ModalFooter: FunctionComponent<IModalFooterProps> = ({
           cancelButtonProps={cancelButtonProps}
         />
       )}
-    </Flex>
+    </FooterWrapper>
   );
 };
 
