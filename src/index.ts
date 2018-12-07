@@ -3,6 +3,7 @@ export { default as Button } from './Button';
 export { default as Box } from './Grid/Box';
 export { default as Card } from './Card';
 export { default as Checkbox } from './Checkbox';
+export { default as Drawer } from './Drawer';
 export { default as Dropdown } from './Dropdown';
 export { default as Divider } from './Divider';
 export { default as DatePicker } from './DatePicker';
