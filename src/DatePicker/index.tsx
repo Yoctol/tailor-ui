@@ -1,10 +1,10 @@
 import RcCalendar from 'rc-calendar';
 import RcDatePicker from 'rc-calendar/lib/Picker';
-import React, { FunctionComponent } from 'react';
+import React, { FunctionComponent, useContext } from 'react';
 import TimePickerPanel from 'rc-time-picker/lib/Panel';
 
 import Input from '../Input';
-import { LocaleConsumer } from '../UIProvider';
+import { LocaleContext } from '../UIProvider';
 
 export interface IDatePickerProps {
   /**
@@ -52,6 +52,7 @@ const DatePicker: FunctionComponent<IDatePickerProps> = ({
   placeholder,
   ...props
 }) => {
+  const { locale } = useContext(LocaleContext);
   let format = propsFormat;
 
   if (!format) {
@@ -61,49 +62,45 @@ const DatePicker: FunctionComponent<IDatePickerProps> = ({
   }
 
   return (
-    <LocaleConsumer>
-      {({ locale }) => (
-        <RcDatePicker
-          animation="slide-up"
-          onChange={(value: any) => {
-            if (!value) {
-              return onChange(null, '');
-            }
+    <RcDatePicker
+      animation="slide-up"
+      onChange={(value: any) => {
+        if (!value) {
+          return onChange(null, '');
+        }
 
-            return onChange(value, value.format(format));
-          }}
-          {...props}
-          calendar={
-            <RcCalendar
-              format={format}
-              disabledDate={disabledDate}
-              disabledTime={disabledTime}
-              locale={locale.DatePicker}
-              showWeekNumber={false}
-              dateInputPlaceholder={placeholder}
-              showOk
-              timePicker={
-                showTime && (
-                  <TimePickerPanel
-                    minuteStep={minuteStep}
-                    showSecond={showSecond}
-                  />
-                )
-              }
-            />
+        return onChange(value, value.format(format));
+      }}
+      {...props}
+      calendar={
+        <RcCalendar
+          format={format}
+          disabledDate={disabledDate}
+          disabledTime={disabledTime}
+          locale={locale.DatePicker}
+          showWeekNumber={false}
+          dateInputPlaceholder={placeholder}
+          showOk
+          timePicker={
+            showTime && (
+              <TimePickerPanel
+                minuteStep={minuteStep}
+                showSecond={showSecond}
+              />
+            )
           }
-        >
-          {({ value }: { value: any }) => (
-            <Input
-              readOnly
-              width="253px"
-              value={value ? value.format(format) : ''}
-              placeholder={placeholder}
-            />
-          )}
-        </RcDatePicker>
+        />
+      }
+    >
+      {({ value }: { value: any }) => (
+        <Input
+          readOnly
+          width="253px"
+          value={value ? value.format(format) : ''}
+          placeholder={placeholder}
+        />
       )}
-    </LocaleConsumer>
+    </RcDatePicker>
   );
 };
 
