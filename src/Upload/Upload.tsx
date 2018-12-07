@@ -8,7 +8,8 @@ import Box from '../Grid/Box';
 import Button from '../Button';
 import Flex from '../Grid/Flex';
 import Icon from '../Icon';
-import { LocaleContext, LocaleType } from '../UIProvider';
+import { LocaleContext } from '../UIProvider';
+import { LocaleType } from '../UIProvider/LocaleContext';
 
 type Omit<T, K> = Pick<T, Exclude<keyof T, K>>;
 

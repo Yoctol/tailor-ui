@@ -45,12 +45,12 @@ export interface IMessageOptions {
   type: Types;
 }
 
-export interface IMessageComponentState {
+export interface IMessageHubState {
   messages: IMessage[];
 }
 
-class MessageComponent extends PureComponent<{}, IMessageComponentState> {
-  state: IMessageComponentState = {
+class MessageHub extends PureComponent<{}, IMessageHubState> {
+  state: IMessageHubState = {
     messages: [],
   };
 
@@ -127,4 +127,4 @@ class MessageComponent extends PureComponent<{}, IMessageComponentState> {
   }
 }
 
-export default MessageComponent;
+export default MessageHub;

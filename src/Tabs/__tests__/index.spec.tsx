@@ -2,7 +2,7 @@ import React from 'react';
 
 import { render } from 'test/test-utils';
 
-import Tabs from '..';
+import Tabs from '../Tabs';
 
 describe('Tabs', () => {
   it('should render correctly', () => {

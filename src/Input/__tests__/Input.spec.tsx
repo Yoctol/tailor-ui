@@ -3,8 +3,7 @@ import React from 'react';
 import { fireEvent, render } from 'test/test-utils';
 
 import Button from '../../Button';
-
-import Input from '..';
+import Input from '../Input';
 
 describe('Input', () => {
   it('should render correctly', () => {

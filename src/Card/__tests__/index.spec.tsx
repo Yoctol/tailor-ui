@@ -3,8 +3,7 @@ import React from 'react';
 import { fireEvent, render } from 'test/test-utils';
 
 import Button from '../../Button';
-
-import Card from '..';
+import Card from '../Card';
 
 describe('Card', () => {
   it('should render correctly with Card.Block', () => {

@@ -2,9 +2,8 @@ import React, { ReactElement } from 'react';
 
 import { fireEvent, render, wait, waitForElement } from 'test/test-utils';
 
-import Dropdown from '..';
-
 import Button from '../../Button';
+import Dropdown from '../Dropdown';
 
 const overlayTestId = 'dropdown-overlay';
 

@@ -1,85 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Dropdown should render correctly 1`] = `
-.c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  height: 2rem;
-  margin-top: 0;
-  padding: 0 1rem;
-  background-color: #ffffff;
-  color: #5e5e5e;
-  font-size: 1rem;
-  white-space: nowrap;
-  cursor: pointer;
-  -webkit-transition: all 200ms ease 0s;
-  transition: all 200ms ease 0s;
-}
-
-.c3:hover {
-  background-color: #e0e0e0;
-}
-
-.c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  height: 2rem;
-  margin-top: 0;
-  padding: 0 1rem;
-  background-color: #ffffff;
-  color: #5e5e5e;
-  font-size: 1rem;
-  white-space: nowrap;
-  cursor: pointer;
-  background-color: #e0e0e0;
-  color: #8b8b8b;
-  cursor: not-allowed;
-  -webkit-transition: all 200ms ease 0s;
-  transition: all 200ms ease 0s;
-}
-
-.c4:hover {
-  background-color: #e0e0e0;
-}
-
-.c2 {
-  display: block;
-  position: absolute;
-  z-index: 9999;
-  margin: 0;
-  padding: 0.25rem 0;
-  border: 1px solid;
-  border-radius: 0.25rem;
-  border-color: #e0e0e0;
-  background-color: #ffffff;
-  box-shadow: 0 4px 6px 0 rgba(191,191,191,0.5);
-  list-style: none;
-  min-width: 100px;
-  text-align: left;
-}
-
-.c2:focus {
-  outline: 0;
-}
-
 .c1 {
   position: absolute;
   border-radius: 50%;
@@ -161,6 +82,85 @@ exports[`Dropdown should render correctly 1`] = `
 .c0:hover {
   border-color: transparent;
   background-color: #e0e0e0;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  height: 2rem;
+  margin-top: 0;
+  padding: 0 1rem;
+  background-color: #ffffff;
+  color: #5e5e5e;
+  font-size: 1rem;
+  white-space: nowrap;
+  cursor: pointer;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+}
+
+.c3:hover {
+  background-color: #e0e0e0;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  height: 2rem;
+  margin-top: 0;
+  padding: 0 1rem;
+  background-color: #ffffff;
+  color: #5e5e5e;
+  font-size: 1rem;
+  white-space: nowrap;
+  cursor: pointer;
+  background-color: #e0e0e0;
+  color: #8b8b8b;
+  cursor: not-allowed;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+}
+
+.c4:hover {
+  background-color: #e0e0e0;
+}
+
+.c2 {
+  display: block;
+  position: absolute;
+  z-index: 9999;
+  margin: 0;
+  padding: 0.25rem 0;
+  border: 1px solid;
+  border-radius: 0.25rem;
+  border-color: #e0e0e0;
+  background-color: #ffffff;
+  box-shadow: 0 4px 6px 0 rgba(191,191,191,0.5);
+  list-style: none;
+  min-width: 100px;
+  text-align: left;
+}
+
+.c2:focus {
+  outline: 0;
 }
 
 <body>

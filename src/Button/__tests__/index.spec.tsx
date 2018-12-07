@@ -3,7 +3,7 @@ import { MdDelete } from 'react-icons/md';
 
 import { fireEvent, render } from 'test/test-utils';
 
-import Button from '..';
+import Button from '../Button';
 
 describe('Button', () => {
   it('should render correctly', () => {

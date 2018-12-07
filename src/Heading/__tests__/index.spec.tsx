@@ -2,7 +2,7 @@ import React from 'react';
 
 import { render } from 'test/test-utils';
 
-import Heading from '..';
+import Heading from '../Heading';
 
 describe('Heading', () => {
   it('should default export h1 ~ h6', () => {
