@@ -10,6 +10,7 @@
     "@babel/preset-typescript"
   ],
   "plugins": [
+    "@babel/plugin-transform-runtime",
     "@babel/plugin-proposal-class-properties",
     "babel-plugin-typescript-to-proptypes",
     "babel-plugin-styled-components",
