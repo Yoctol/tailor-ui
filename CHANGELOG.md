@@ -1,3 +1,9 @@
+## [0.2.1](https://github.com/yoctol/tailor-ui/compare/v0.2.0...v0.2.1) (2018-12-10)
+
+### Bug Fixes
+
+- **modal:** instance mount root z-index ([#13](https://github.com/yoctol/tailor-ui/issues/13)) ([bccdd22](https://github.com/yoctol/tailor-ui/commit/bccdd22))
+
 # [0.2.0](https://github.com/yoctol/tailor-ui/compare/v0.1.0...v0.2.0) (2018-12-07)
 
 ### Features
