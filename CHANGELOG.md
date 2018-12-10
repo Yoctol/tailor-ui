@@ -1,3 +1,13 @@
+## [0.2.2](https://github.com/yoctol/tailor-ui/compare/v0.2.1...v0.2.2) (2018-12-10)
+
+### Bug Fixes
+
+- babel runtime ([27e161f](https://github.com/yoctol/tailor-ui/commit/27e161f))
+
+### Features
+
+- **drawer:** add press esc key to close drawer ([#14](https://github.com/yoctol/tailor-ui/issues/14)) ([86b922b](https://github.com/yoctol/tailor-ui/commit/86b922b))
+
 ## [0.2.1](https://github.com/yoctol/tailor-ui/compare/v0.2.0...v0.2.1) (2018-12-10)
 
 ### Bug Fixes
