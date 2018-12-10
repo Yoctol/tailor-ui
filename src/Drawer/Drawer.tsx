@@ -4,6 +4,7 @@ import { Transition, animated, config } from 'react-spring';
 import Portal from 'utils/Portal';
 import styled, { css } from 'utils/styled-components';
 import tag from 'utils/CleanTag';
+import useKeydown, { ESC_KEY_CODE } from 'utils/useKeydown';
 
 import Backdrop from '../Backdrop';
 import { FooterWrapper, ModalContent, ModalHeader } from '../Modal';
@@ -107,6 +108,12 @@ const Drawer: FunctionComponent<IDrawerProps> = ({
   const breadth = getWrapperBreadth({ placement, width, height });
   const transformAxis = getTransformAxis(placement);
   const transformBreadth = getTransformBreadth({ placement, breadth });
+
+  useKeydown({
+    listening: visible,
+    keyCode: ESC_KEY_CODE,
+    onKeydown: onClose,
+  });
 
   useEffect(
     () => {
