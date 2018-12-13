@@ -104,6 +104,7 @@ const Drawer: FunctionComponent<IDrawerProps> = ({
   maskClosable = true,
   onClose,
   children,
+  ...otherProps
 }) => {
   const breadth = getWrapperBreadth({ placement, width, height });
   const transformAxis = getTransformAxis(placement);
@@ -173,7 +174,7 @@ const Drawer: FunctionComponent<IDrawerProps> = ({
                     closable={closable}
                   />
                 )}
-                <ModalContent>{children}</ModalContent>
+                <ModalContent {...otherProps}>{children}</ModalContent>
                 {footer && <FooterWrapper>{footer}</FooterWrapper>}
               </AnimatedDrawerWrapper>
             </>
