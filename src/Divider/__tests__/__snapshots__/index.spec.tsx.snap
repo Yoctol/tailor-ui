@@ -15,13 +15,16 @@ exports[`Divider should render correct with orientation 1`] = `
   margin: 1rem 0;
   clear: both;
   display: table;
-  margin: 16px 0;
   background-color: transparent;
-  color: #191539;
-  font-size: 1.125rem;
-  font-weight: 500;
   text-align: center;
   white-space: nowrap;
+  margin-left: 0rem;
+  margin-right: 0rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  color: #bfbfbf;
+  font-size: 0.875rem;
+  font-weight: 500;
 }
 
 .c0::before,
@@ -62,13 +65,16 @@ exports[`Divider should render correct with orientation 1`] = `
   margin: 1rem 0;
   clear: both;
   display: table;
-  margin: 16px 0;
   background-color: transparent;
-  color: #191539;
-  font-size: 1.125rem;
-  font-weight: 500;
   text-align: center;
   white-space: nowrap;
+  margin-left: 0rem;
+  margin-right: 0rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  color: #bfbfbf;
+  font-size: 0.875rem;
+  font-weight: 500;
 }
 
 .c3::before,
@@ -140,8 +146,14 @@ exports[`Divider should render correct with type vertical 1`] = `
   top: -0.06em;
   width: 1px;
   height: 0.9em;
-  margin: 0 8px;
   vertical-align: middle;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  margin-top: 0rem;
+  margin-bottom: 0rem;
+  color: #bfbfbf;
+  font-size: 0.875rem;
+  font-weight: 500;
 }
 
 <div>
@@ -181,6 +193,13 @@ exports[`Divider should render correctly 1`] = `
   height: 1px;
   margin: 1rem 0;
   clear: both;
+  margin-left: 0rem;
+  margin-right: 0rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  color: #bfbfbf;
+  font-size: 0.875rem;
+  font-weight: 500;
 }
 
 .c1 {
@@ -192,13 +211,16 @@ exports[`Divider should render correctly 1`] = `
   margin: 1rem 0;
   clear: both;
   display: table;
-  margin: 16px 0;
   background-color: transparent;
-  color: #191539;
-  font-size: 1.125rem;
-  font-weight: 500;
   text-align: center;
   white-space: nowrap;
+  margin-left: 0rem;
+  margin-right: 0rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  color: #bfbfbf;
+  font-size: 0.875rem;
+  font-weight: 500;
 }
 
 .c1::before,
@@ -226,6 +248,13 @@ exports[`Divider should render correctly 1`] = `
   border-top: 1px dashed;
   border-color: #e0e0e0;
   background-color: transparent;
+  margin-left: 0rem;
+  margin-right: 0rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  color: #bfbfbf;
+  font-size: 0.875rem;
+  font-weight: 500;
 }
 
 <div>

@@ -1,14 +1,27 @@
 import React, { FunctionComponent } from 'react';
 import styled, { css } from 'styled-components';
+import {
+  ColorProps,
+  FontSizeProps,
+  FontWeightProps,
+  SpaceProps,
+  color,
+  fontSize,
+  fontWeight,
+  space,
+} from 'styled-system';
 
 import tag from 'utils/CleanTag';
 
-interface IStyledDividerProps {
-  type: 'horizontal' | 'vertical';
-  orientation?: 'left' | 'right';
-  dashed?: boolean;
-  withText: boolean;
-}
+type IStyledDividerProps = SpaceProps &
+  ColorProps &
+  FontSizeProps &
+  FontWeightProps & {
+    type: 'horizontal' | 'vertical';
+    orientation?: 'left' | 'right';
+    dashed?: boolean;
+    withText: boolean;
+  };
 
 const StyledInnerText = styled(tag.span)`
   display: inline-block;
@@ -26,7 +39,6 @@ const StyledDivider = styled<IStyledDividerProps>(tag.div)`
         top: -0.06em;
         width: 1px;
         height: 0.9em;
-        margin: 0 8px;
         vertical-align: middle;
 
         ${p.withText &&
@@ -51,11 +63,7 @@ const StyledDivider = styled<IStyledDividerProps>(tag.div)`
       ${p.withText &&
         css`
           display: table;
-          margin: 16px 0;
           background-color: transparent;
-          color: ${p.theme.colors.primaryDark};
-          font-size: ${p.theme.fontSizes.lg};
-          font-weight: 500;
           text-align: center;
           white-space: nowrap;
 
@@ -99,7 +107,18 @@ const StyledDivider = styled<IStyledDividerProps>(tag.div)`
       border-color: ${p.theme.colors.gray300};
       background-color: transparent;
     `}
+
+    ${space};
+    ${color};
+    ${fontSize};
+    ${fontWeight};
 `;
+
+StyledDivider.defaultProps = {
+  color: 'gray400',
+  fontSize: 'sm',
+  fontWeight: 500,
+};
 
 export interface IDividerProps {
   /**
@@ -127,6 +146,8 @@ const Divider: FunctionComponent<IDividerProps> = ({
     orientation={orientation}
     dashed={dashed}
     withText={!!children}
+    my={type === 'horizontal' ? 2 : 0}
+    mx={type === 'vertical' ? 2 : 0}
   >
     {children && <StyledInnerText>{children}</StyledInnerText>}
   </StyledDivider>
