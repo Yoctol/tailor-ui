@@ -140,6 +140,7 @@ const Divider: FunctionComponent<IDividerProps> = ({
   orientation,
   dashed,
   children,
+  ...props
 }) => (
   <StyledDivider
     type={type}
@@ -148,6 +149,7 @@ const Divider: FunctionComponent<IDividerProps> = ({
     withText={!!children}
     my={type === 'horizontal' ? 2 : 0}
     mx={type === 'vertical' ? 2 : 0}
+    {...props}
   >
     {children && <StyledInnerText>{children}</StyledInnerText>}
   </StyledDivider>
