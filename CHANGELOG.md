@@ -1,3 +1,9 @@
+## [0.2.3](https://github.com/yoctol/tailor-ui/compare/v0.2.2...v0.2.3) (2018-12-17)
+
+### Bug Fixes
+
+- **drawer:** pass other props to drawer content ([bf1ee67](https://github.com/yoctol/tailor-ui/commit/bf1ee67))
+
 ## [0.2.2](https://github.com/yoctol/tailor-ui/compare/v0.2.1...v0.2.2) (2018-12-10)
 
 ### Bug Fixes
