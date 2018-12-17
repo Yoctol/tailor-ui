@@ -69,7 +69,7 @@ export interface ISwitchProps {
   /**
    * a callback function, can be executed when the checked state is changing
    */
-  onChange: (checked: boolean) => void;
+  onChange?: (checked: boolean) => void;
 }
 
 const Switch: FunctionComponent<ISwitchProps> = ({
