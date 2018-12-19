@@ -1,3 +1,9 @@
+## [0.2.4](https://github.com/yoctol/tailor-ui/compare/v0.2.3...v0.2.4) (2018-12-19)
+
+### Bug Fixes
+
+- **divider:** pass other props to component for spacing ([cf4acb2](https://github.com/yoctol/tailor-ui/commit/cf4acb2))
+
 ## [0.2.3](https://github.com/yoctol/tailor-ui/compare/v0.2.2...v0.2.3) (2018-12-17)
 
 ### Bug Fixes

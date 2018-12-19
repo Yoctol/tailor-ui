@@ -10,7 +10,7 @@
   "bugs": {
     "url": "https://github.com/yoctol/tailor-ui/issues"
   },
-  "version": "0.2.3",
+  "version": "0.2.4",
   "main": "lib/index.umd.js",
   "module": "lib/index.js",
   "files": [
