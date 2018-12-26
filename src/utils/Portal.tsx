@@ -7,6 +7,7 @@ const elements: {
 
 class Portal extends PureComponent<{
   appendFor?: string;
+  zIndex?: string;
 }> {
   element?: HTMLElement;
 
@@ -23,7 +24,7 @@ class Portal extends PureComponent<{
     element.style.position = 'fixed';
     element.style.top = '0';
     element.style.left = '0';
-    element.style.zIndex = '9999';
+    element.style.zIndex = this.props.zIndex || '9999';
 
     document.body.appendChild(element);
 

@@ -60,6 +60,7 @@ export interface ITriggerProps {
   appendFor?: string;
   offset?: number;
   defaultVisible?: boolean;
+  zIndex?: string;
 }
 
 interface ITriggerState {
@@ -277,12 +278,14 @@ class Trigger extends PureComponent<ITriggerProps, ITriggerState> {
   };
 
   render() {
-    const { appendFor } = this.props;
+    const { appendFor, zIndex } = this.props;
 
     return (
       <>
         {this.renderChildren()}
-        <Portal appendFor={appendFor}>{this.renderPopup()}</Portal>
+        <Portal appendFor={appendFor} zIndex={zIndex}>
+          {this.renderPopup()}
+        </Portal>
       </>
     );
   }
