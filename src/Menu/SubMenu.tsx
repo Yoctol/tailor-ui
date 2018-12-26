@@ -1,4 +1,4 @@
-import React, { FunctionComponent, ReactNode, useState } from 'react';
+import React, { FunctionComponent, ReactNode, useContext } from 'react';
 import { MdKeyboardArrowUp } from 'react-icons/md';
 import { Spring, animated } from 'react-spring';
 
@@ -7,6 +7,7 @@ import styled from 'utils/styled-components';
 import Icon, { IconType } from '../Icon';
 
 import Item, { StyledItem } from './Item';
+import MenuContext from './MenuContext';
 
 const SubMenuWrapper = styled.div`
   overflow: hidden;
@@ -20,6 +21,7 @@ const SubMenuWrapper = styled.div`
 const AnimatedSubMenuWrapper = animated(SubMenuWrapper);
 
 export interface ISubMenuProps {
+  id: string;
   initial?: boolean;
   title: ReactNode;
   icon?: IconType;
@@ -27,23 +29,28 @@ export interface ISubMenuProps {
 }
 
 const SubMenu: FunctionComponent<ISubMenuProps> = ({
-  initial = false,
   togglable = true,
+  id,
   icon,
   title,
   children,
   ...otherProps
 }) => {
-  const [on, setOn] = useState(initial);
+  const { openKeys, handleToggleOpenKeys } = useContext(MenuContext);
+  const menuOn = openKeys.has(id);
 
   return togglable ? (
     <>
-      <Item icon={icon} onClick={() => setOn(!on)} {...otherProps}>
+      <Item
+        icon={icon}
+        onClick={() => handleToggleOpenKeys(id)}
+        {...otherProps}
+      >
         {title}
         <Spring
           native
-          from={{ rotate: on ? 180 : 0 }}
-          to={{ rotate: on ? 180 : 0 }}
+          from={{ rotate: menuOn ? 180 : 0 }}
+          to={{ rotate: menuOn ? 180 : 0 }}
         >
           {({ rotate }: { rotate: any }) => (
             <animated.div
@@ -60,8 +67,8 @@ const SubMenu: FunctionComponent<ISubMenuProps> = ({
       </Item>
       <Spring
         native
-        from={{ height: on ? 'auto' : 0 }}
-        to={{ height: on ? 'auto' : 0 }}
+        from={{ height: menuOn ? 'auto' : 0 }}
+        to={{ height: menuOn ? 'auto' : 0 }}
       >
         {style => (
           <AnimatedSubMenuWrapper style={style}>
