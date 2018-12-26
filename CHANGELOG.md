@@ -1,3 +1,14 @@
+## [0.2.5](https://github.com/yoctol/tailor-ui/compare/v0.2.4...v0.2.5) (2018-12-26)
+
+### Bug Fixes
+
+- **tooltip:** z-index must more than Modal ([#26](https://github.com/yoctol/tailor-ui/issues/26)) ([6fd5b36](https://github.com/yoctol/tailor-ui/commit/6fd5b36))
+
+### Features
+
+- **menu:** add current sub only support ([#25](https://github.com/yoctol/tailor-ui/issues/25)) ([fc9d5de](https://github.com/yoctol/tailor-ui/commit/fc9d5de))
+- **select:** support creatable ([#23](https://github.com/yoctol/tailor-ui/issues/23)) ([e538621](https://github.com/yoctol/tailor-ui/commit/e538621))
+
 ## [0.2.4](https://github.com/yoctol/tailor-ui/compare/v0.2.3...v0.2.4) (2018-12-19)
 
 ### Bug Fixes
