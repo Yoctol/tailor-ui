@@ -1,55 +1,60 @@
 import BaseSelect, { components } from 'react-select';
+import CreatableSelect from 'react-select/lib/Creatable';
 import React, { FunctionComponent } from 'react';
 
 import styled from 'utils/styled-components';
 
-const StyledSelect = styled<any, any>(BaseSelect)`
-  & .yoctol-select__control {
-    min-width: 150px;
-    border-color: ${p => p.theme.colors.gray300};
-    background-color: ${p => p.theme.colors.light};
-    box-shadow: none;
+const getStyledSelect = (creatable: boolean) => {
+  const SelectComponent = creatable ? CreatableSelect : BaseSelect;
 
-    &:hover {
-      border-color: ${p => p.theme.colors.primary};
-    }
+  return styled<any>(SelectComponent)`
+    & .yoctol-select__control {
+      min-width: 150px;
+      border-color: ${p => p.theme.colors.gray300};
+      background-color: ${p => p.theme.colors.light};
+      box-shadow: none;
 
-    &.yoctol-select__control--is-focused {
-      border-color: ${p => p.theme.colors.primaryDark};
-    }
+      &:hover {
+        border-color: ${p => p.theme.colors.primary};
+      }
 
-    &.yoctol-select__control-is-disabled {
-      & .yoctol-select__indicators {
-        &::before {
-          opacity: 0.5;
+      &.yoctol-select__control--is-focused {
+        border-color: ${p => p.theme.colors.primaryDark};
+      }
+
+      &.yoctol-select__control-is-disabled {
+        & .yoctol-select__indicators {
+          &::before {
+            opacity: 0.5;
+          }
         }
       }
     }
-  }
 
-  & .yoctol-select__menu {
-    margin-top: 2px;
+    & .yoctol-select__menu {
+      margin-top: 2px;
 
-    .yoctol-select__menu-list {
-      padding-top: 0;
-      padding-bottom: 0;
+      .yoctol-select__menu-list {
+        padding-top: 0;
+        padding-bottom: 0;
 
-      .yoctol-select__option {
-        &:not(:last-child) {
-          border-bottom: ${p => p.theme.borders.base}
-            ${p => p.theme.colors.gray300};
-        }
-        background-color: ${p => p.theme.colors.light};
-        color: ${p => p.theme.colors.gray700};
+        .yoctol-select__option {
+          &:not(:last-child) {
+            border-bottom: ${p => p.theme.borders.base}
+              ${p => p.theme.colors.gray300};
+          }
+          background-color: ${p => p.theme.colors.light};
+          color: ${p => p.theme.colors.gray700};
 
-        &.yoctol-select__option--is-focused {
-          background-color: ${p => p.theme.colors.primaryDark};
-          color: ${p => p.theme.colors.light};
+          &.yoctol-select__option--is-focused {
+            background-color: ${p => p.theme.colors.primaryDark};
+            color: ${p => p.theme.colors.light};
+          }
         }
       }
     }
-  }
-`;
+  `;
+};
 
 export interface ISelectProps {
   /**
@@ -60,6 +65,10 @@ export interface ISelectProps {
    * Is the select value clearable
    */
   isClearable?: boolean;
+  /**
+   * Allow create new option
+   */
+  creatable?: boolean;
   /**
    * Disable the control
    */
@@ -95,7 +104,10 @@ export interface ISelectProps {
 }
 
 const Select: FunctionComponent<ISelectProps> = props => {
-  const { isMulti, delimiter, multiSelectMode } = props;
+  const { isMulti, delimiter, multiSelectMode, creatable = false } = props;
+
+  const StyledSelect = getStyledSelect(creatable);
+
   if (isMulti) {
     if (multiSelectMode === 'text') {
       const Option = (_props: any) => (
@@ -113,7 +125,9 @@ const Select: FunctionComponent<ISelectProps> = props => {
       return (
         <StyledSelect
           classNamePrefix="yoctol-select"
+          createOptionPosition="first"
           {...props}
+          isSearchable={creatable || props.isSearchable}
           components={{ Option, MultiValue }}
           closeMenuOnSelect={false}
           hideSelectedOptions={false}
@@ -121,12 +135,21 @@ const Select: FunctionComponent<ISelectProps> = props => {
       );
     }
   }
-  return <StyledSelect classNamePrefix="yoctol-select" {...props} />;
+
+  return (
+    <StyledSelect
+      classNamePrefix="yoctol-select"
+      createOptionPosition="first"
+      {...props}
+      isSearchable={creatable || props.isSearchable}
+    />
+  );
 };
 
 Select.defaultProps = {
   delimiter: ',',
   isClearable: false,
+  creatable: false,
   isDisabled: false,
   isMulti: false,
   isSearchable: false,

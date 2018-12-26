@@ -62,6 +62,47 @@ import { Select } from 'tailor-ui';
 
 </Playground>
 
+### Creatable
+
+<Playground>
+  {() => {
+    const [loading, setLoading] = React.useState(false);
+    const [value, setValue] = React.useState({ label: 'Item 1', value: 'Item 1' });
+    const [options, setOptions] = React.useState([
+      {
+        label: 'Item 1',
+        value: 'Item 1',
+      },
+      {
+        label: 'Item 2',
+        value: 'Item 2',
+      },
+    ]);
+
+    return (
+      <Select
+        creatable
+        isLoading={loading}
+        value={value}
+        onChange={setValue}
+        options={options}
+        onCreateOption={name => {
+          const newOption = { label: name, value: name };
+          setLoading(true);
+          setTimeout(() => {
+            setOptions([...options, newOption]);
+            setValue(newOption);
+            setLoading(false);
+          }, 3000)
+        }
+      }
+      />
+    );
+
+}}
+
+</Playground>
+
 ### isDisabled
 
 <Playground>
