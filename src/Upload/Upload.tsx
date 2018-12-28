@@ -66,10 +66,15 @@ const getUploadIcon = ({
 
 interface IFileItemProps {
   file: File;
+  uploaded: boolean;
   onClear: (file: File) => void;
 }
 
-const FileItem: FunctionComponent<IFileItemProps> = ({ file, onClear }) => (
+const FileItem: FunctionComponent<IFileItemProps> = ({
+  file,
+  uploaded,
+  onClear,
+}) => (
   <Flex
     alignItems="center"
     mt="1"
@@ -81,13 +86,15 @@ const FileItem: FunctionComponent<IFileItemProps> = ({ file, onClear }) => (
       }
     `}
   >
-    <Icon
-      type={MdClose}
-      cursor="pointer"
-      mr="1"
-      size="16"
-      onClick={() => onClear(file)}
-    />
+    {uploaded && (
+      <Icon
+        type={MdClose}
+        cursor="pointer"
+        mr="1"
+        size="16"
+        onClick={() => onClear(file)}
+      />
+    )}
     <Box color="gray600" fontSize="sm">
       {file.name}
     </Box>
@@ -97,9 +104,11 @@ const FileItem: FunctionComponent<IFileItemProps> = ({ file, onClear }) => (
 interface IUploadProps extends Omit<DropzoneProps, 'ref' | 'onSelect'> {
   onSelect: (files: File[]) => Promise<any>;
   onClear?: (file: File) => void;
+  onBeforeSelect?: () => Promise<boolean> | boolean;
 }
 
 const Upload: FunctionComponent<IUploadProps> = ({
+  onBeforeSelect,
   onSelect,
   onClear,
   disabled,
@@ -152,10 +161,24 @@ const Upload: FunctionComponent<IUploadProps> = ({
             icon={icon}
             loading={uploading}
             disabled={disabled}
-            onClick={() => {
+            onClick={async () => {
+              if (onBeforeSelect) {
+                try {
+                  const success = await onBeforeSelect();
+                  if (!success) {
+                    return;
+                  }
+                } catch (error) {
+                  console.error(error);
+
+                  return;
+                }
+              }
+
               if (uploaded) {
                 setUploaded(false);
               }
+
               open();
             }}
           >
@@ -165,7 +188,12 @@ const Upload: FunctionComponent<IUploadProps> = ({
       </Dropzone>
       <FileList>
         {files.map(file => (
-          <FileItem key={file.name} file={file} onClear={handleClear} />
+          <FileItem
+            key={file.name}
+            file={file}
+            uploaded={uploaded}
+            onClear={handleClear}
+          />
         ))}
       </FileList>
     </div>
