@@ -1,3 +1,9 @@
+## [0.2.6](https://github.com/yoctol/tailor-ui/compare/v0.2.5...v0.2.6) (2018-12-28)
+
+### Features
+
+- **upload:** add onBeforeSelect & show clear icon when uploaded ([896a120](https://github.com/yoctol/tailor-ui/commit/896a120))
+
 ## [0.2.5](https://github.com/yoctol/tailor-ui/compare/v0.2.4...v0.2.5) (2018-12-26)
 
 ### Bug Fixes
