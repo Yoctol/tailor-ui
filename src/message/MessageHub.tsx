@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { Transition, animated, config } from 'react-spring';
+import { Transition, animated } from 'react-spring';
 
 import styled from 'utils/styled-components';
 
@@ -12,6 +12,7 @@ const getUuid = createUuidGenerator('message');
 const MessageContainer = styled.div`
   display: flex;
   position: fixed;
+  z-index: 10001;
   right: 10px;
   bottom: 10px;
   flex-direction: column;
@@ -39,6 +40,8 @@ const MessageContent = styled.div`
 
 const AnimatedMessageBox = animated(MessageBox);
 
+const config = { tension: 125, friction: 20, precision: 0.1 };
+
 interface IMessage {
   key: string;
   icon: JSX.Element;
@@ -64,7 +67,7 @@ class MessageHub extends PureComponent<{}, IMessageHubState> {
 
   cancelMap = new WeakMap();
 
-  remove = ({ key }: { key: string }) => {
+  remove = ({ key }: any) => {
     this.setState(({ messages }) => ({
       messages: messages.filter(message => message.key !== key),
     }));
@@ -104,7 +107,7 @@ class MessageHub extends PureComponent<{}, IMessageHubState> {
   };
 
   config = (item: any, state: any) =>
-    state === 'leave' ? [{ duration: item.duration }, spring, spring] : spring;
+    state === 'leave' ? [{ duration: item.duration }, config, config] : config;
 
   render() {
     const { messages } = this.state;
