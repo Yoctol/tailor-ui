@@ -56,14 +56,17 @@ exports[`Drawer should render correctly 1`] = `
       style="opacity: 0;"
     />
     <div
-      breadth="400px"
-      class="c1"
-      placement="right"
       style="transform: translateX(400px);"
     >
       <div
-        class="c2"
-      />
+        breadth="400px"
+        class="c1"
+        placement="right"
+      >
+        <div
+          class="c2"
+        />
+      </div>
     </div>
   </div>
 </body>
@@ -124,14 +127,17 @@ exports[`Drawer should render with props closable 1`] = `
 }
 
 <div
-      breadth="400px"
-      class="c0"
-      placement="right"
       style="transform: translateX(400px);"
     >
       <div
-        class="c1"
-      />
+        breadth="400px"
+        class="c0"
+        placement="right"
+      >
+        <div
+          class="c1"
+        />
+      </div>
     </div>
   </div>
   <div />

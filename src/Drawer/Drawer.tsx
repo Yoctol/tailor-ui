@@ -41,8 +41,6 @@ const DrawerWrapper = styled<IDrawerWrapperProps, 'div'>(tag.div)`
         `}
 `;
 
-const AnimatedDrawerWrapper = animated(DrawerWrapper);
-
 const formatBreadth = (breadth: number | string) =>
   typeof breadth === 'number' ? `${breadth}px` : breadth;
 
@@ -158,25 +156,25 @@ const Drawer: FunctionComponent<IDrawerProps> = ({
                   }
                 }}
               />
-              <AnimatedDrawerWrapper
-                placement={placement}
-                breadth={breadth}
+              <animated.div
                 style={{
                   transform: props.offset.interpolate(
                     (offset: any) => `${transformAxis}(${offset})`
                   ),
                 }}
               >
-                {title && (
-                  <ModalHeader
-                    title={title}
-                    onCancel={onClose}
-                    closable={closable}
-                  />
-                )}
-                <ModalContent {...otherProps}>{children}</ModalContent>
-                {footer && <FooterWrapper>{footer}</FooterWrapper>}
-              </AnimatedDrawerWrapper>
+                <DrawerWrapper placement={placement} breadth={breadth}>
+                  {title && (
+                    <ModalHeader
+                      title={title}
+                      onCancel={onClose}
+                      closable={closable}
+                    />
+                  )}
+                  <ModalContent {...otherProps}>{children}</ModalContent>
+                  {footer && <FooterWrapper>{footer}</FooterWrapper>}
+                </DrawerWrapper>
+              </animated.div>
             </>
           ))
         }

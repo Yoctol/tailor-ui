@@ -1,4 +1,3 @@
-import React from 'react';
 import {
   BorderRadiusProps,
   ColorProps,
@@ -163,11 +162,7 @@ export const Arrow = styled<IArrowProps, 'div'>(tag.div)`
     `};
 `;
 
-export interface IBaseTooltipProps {
-  children: React.ReactNode;
-}
-
-const TooltipToggle = styled<IBaseTooltipProps, 'div'>(tag.div)`
+const TooltipToggle = styled<any, 'div'>(tag.div)`
   position: absolute;
   z-index: 99;
 `;
