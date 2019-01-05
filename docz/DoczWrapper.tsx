@@ -1,9 +1,9 @@
-import React, { FunctionComponent } from 'react';
+import React, { FunctionComponent, ReactNode } from 'react';
 
 import UIProvider from '../src/UIProvider';
 
 export interface IWrapperProps {
-  children: JSX.Element;
+  children: ReactNode;
 }
 
 const DoczWrapper: FunctionComponent<IWrapperProps> = ({ children }) => (

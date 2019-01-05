@@ -40,6 +40,11 @@
     "preversion": "npm test",
     "version": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md"
   },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
   "dependencies": {
     "@babel/runtime": "^7.2.0",
     "@reach/observe-rect": "^1.0.3",

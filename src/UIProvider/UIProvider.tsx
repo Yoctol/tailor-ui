@@ -1,5 +1,5 @@
 /* eslint camelcase: "off" */
-import React, { FunctionComponent } from 'react';
+import React, { FunctionComponent, ReactNode } from 'react';
 import moment from 'moment';
 
 import { ThemeProvider } from 'utils/styled-components';
@@ -16,7 +16,7 @@ const { en_US } = locales;
 let globalLocale: LocaleType = en_US;
 
 export interface IUIProviderProps {
-  children: JSX.Element;
+  children: ReactNode;
   locale?: LocaleType;
   theme?: typeof defaultTheme;
   skipLocale?: boolean;
