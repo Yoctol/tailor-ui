@@ -119,7 +119,7 @@ export interface ICheckboxProps {
   /**
    * The callback function that is triggered when the state changes
    */
-  onChange?: (evnet: ChangeEvent) => void;
+  onChange?: (event: ChangeEvent) => void;
   /**
    * The value of checkbox
    */
