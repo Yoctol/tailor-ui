@@ -114,7 +114,7 @@ export interface IRadioProps {
   /**
    * The callback function that is triggered when the state changes
    */
-  onChange?: (evnet: ChangeEvent) => void;
+  onChange?: (event: ChangeEvent) => void;
   value?: string;
 }
 
