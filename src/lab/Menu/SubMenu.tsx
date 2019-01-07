@@ -10,7 +10,7 @@ import Icon, { IconType } from '../../Icon';
 import Tooltip from '../../Tooltip';
 
 import MenuContext from './MenuContext';
-import SubMenuContent from './SubMeneContent';
+import SubMenuContent from './SubMenuContent';
 import { StyledSubMenu, SubMenuBadge } from './styles';
 
 interface ISubMenuProps {

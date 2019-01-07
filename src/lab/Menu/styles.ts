@@ -44,8 +44,7 @@ export const StyledSubMenu = styled<IStyledSubMenuProps, 'div'>(tag.div)`
   box-sizing: border-box;
   width: 48px;
   height: 48px;
-  border-left: 3px solid;
-  border-color: transparent;
+  border-left: 3px solid transparent;
   background-color: ${p => p.theme.colors.primaryDark};
   color: white;
 
