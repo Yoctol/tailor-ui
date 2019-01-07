@@ -1,3 +1,15 @@
+## [0.2.7](https://github.com/yoctol/tailor-ui/compare/v0.2.6...v0.2.7) (2019-01-07)
+
+### Bug Fixes
+
+- **message:** upgrade spring types ([cdff0bb](https://github.com/yoctol/tailor-ui/commit/cdff0bb))
+
+### Features
+
+- **menu:** add new menu implement to lab ([#34](https://github.com/yoctol/tailor-ui/issues/34)) ([0abf049](https://github.com/yoctol/tailor-ui/commit/0abf049))
+- **message:** add cancel button to message ([#36](https://github.com/yoctol/tailor-ui/issues/36)) ([7261819](https://github.com/yoctol/tailor-ui/commit/7261819))
+- **upload:** customize text ([#35](https://github.com/yoctol/tailor-ui/issues/35)) ([4d1547d](https://github.com/yoctol/tailor-ui/commit/4d1547d))
+
 ## [0.2.6](https://github.com/yoctol/tailor-ui/compare/v0.2.5...v0.2.6) (2018-12-28)
 
 ### Features
