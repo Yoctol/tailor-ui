@@ -1,8 +1,11 @@
 import React, { PureComponent } from 'react';
+import { MdClose } from 'react-icons/md';
 import { Transition, animated } from 'react-spring';
 
 import styled from 'utils/styled-components';
 
+import Box from '../Grid/Box';
+import Icon from '../Icon';
 import UIProvider from '../UIProvider';
 import createUuidGenerator from '../utils/createUuidGenerator';
 import getTypeIcon, { Types } from '../utils/getTypeIcon';
@@ -36,6 +39,16 @@ const MessageContent = styled.div`
   background-color: ${p => p.theme.colors.primaryDark};
   color: ${p => p.theme.colors.light};
   font-size: ${p => p.theme.fontSizes.sm};
+`;
+
+const Life = styled(animated.div)`
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  left: 0;
+  width: auto;
+  height: 3px;
+  background-color: ${p => p.theme.colors.gray400};
 `;
 
 const AnimatedMessageBox = animated(MessageBox);
@@ -100,7 +113,7 @@ class MessageHub extends PureComponent<{}, IMessageHubState> {
       item.resolve();
     });
 
-    await next({ life: 0 });
+    await next({ life: '0%' });
     await next({ opacity: 0 });
     item.resolve();
     await next({ height: 0 }, true);
@@ -122,7 +135,7 @@ class MessageHub extends PureComponent<{}, IMessageHubState> {
             from={{
               opacity: 0,
               height: 0,
-              life: 1,
+              life: '100%',
             }}
             enter={{
               opacity: 1,
@@ -136,8 +149,16 @@ class MessageHub extends PureComponent<{}, IMessageHubState> {
               <AnimatedMessageBox style={props}>
                 <MessageContent>
                   {message.icon}
-                  <div>{message.content}</div>
+                  <Box flex="auto">{message.content}</Box>
+                  <Icon
+                    type={MdClose}
+                    fill="light"
+                    size="16"
+                    cursor="pointer"
+                    onClick={() => this.cancel(message)}
+                  />
                 </MessageContent>
+                <Life style={{ right: life }} />
               </AnimatedMessageBox>
             )}
           </Transition>
