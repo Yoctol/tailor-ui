@@ -2,10 +2,16 @@ import React, { PureComponent, ReactElement } from 'react';
 import { omit } from 'ramda';
 
 import Trigger, { IPopupRenderProps } from '../Trigger';
+import { Omit } from '../utils/type';
 
-import BaseTooltip, { Arrow, Placement, TooltipContent } from './BaseTooltip';
+import BaseTooltip, {
+  Arrow,
+  Placement,
+  TooltipContent,
+  TooltipContentProps,
+} from './BaseTooltip';
 
-export interface ITooltipProps {
+export type ITooltipProps = Omit<TooltipContentProps, 'light'> & {
   /**
    * The component which this tooltip show up
    */
@@ -14,6 +20,10 @@ export interface ITooltipProps {
    * Whether the floating tooltip card is visible by default. Only support when the trigger is `click`
    */
   defaultVisible?: boolean;
+  /**
+   * Whether the floating tooltip card is visible. Only support when the trigger is `click`
+   */
+  visible?: boolean;
   /**
    * 	Callback executed when visibility of the tooltip card is changed
    */
@@ -40,7 +50,7 @@ export interface ITooltipProps {
     ContentComponent: any;
     ArrowComponent: any;
   };
-}
+};
 
 class Tooltip extends PureComponent<ITooltipProps> {
   static defaultProps = {
@@ -84,6 +94,7 @@ class Tooltip extends PureComponent<ITooltipProps> {
       trigger,
       placement,
       defaultVisible,
+      visible,
       onVisibleChange,
       children,
     } = this.props;
@@ -98,6 +109,7 @@ class Tooltip extends PureComponent<ITooltipProps> {
         placement={placement}
         popup={this.renderOverlay}
         defaultVisible={defaultVisible}
+        visible={visible}
         onVisibleChange={onVisibleChange}
       >
         {children}
