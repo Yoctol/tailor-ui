@@ -9,7 +9,6 @@ import Button from '../Button';
 import Flex from '../Grid/Flex';
 import Icon from '../Icon';
 import { LocaleContext } from '../UIProvider';
-import { LocaleType } from '../UIProvider/LocaleContext';
 
 type Omit<T, K> = Pick<T, Exclude<keyof T, K>>;
 
@@ -22,15 +21,18 @@ const getUploadText = ({
   uploading,
   uploaded,
   failure,
-  locale,
+  texts,
 }: {
   uploading: boolean;
   uploaded: boolean;
   failure: boolean;
-  locale: LocaleType;
+  texts: {
+    uploadText: string;
+    uploadingText: string;
+    uploadedText: string;
+    failureText: string;
+  };
 }) => {
-  const texts = locale.Upload;
-
   if (uploading) {
     return texts.uploadingText;
   }
@@ -105,6 +107,12 @@ interface IUploadProps extends Omit<DropzoneProps, 'ref' | 'onSelect'> {
   onSelect: (files: File[]) => Promise<any>;
   onClear?: (file: File) => void;
   onBeforeSelect?: () => Promise<boolean> | boolean;
+  texts?: {
+    uploadText?: string;
+    uploadingText?: string;
+    uploadedText?: string;
+    failureText?: string;
+  };
 }
 
 const Upload: FunctionComponent<IUploadProps> = ({
@@ -112,6 +120,7 @@ const Upload: FunctionComponent<IUploadProps> = ({
   onSelect,
   onClear,
   disabled,
+  texts = {},
   ...props
 }) => {
   const { locale } = useContext(LocaleContext);
@@ -145,7 +154,15 @@ const Upload: FunctionComponent<IUploadProps> = ({
     }
   };
 
-  const text = getUploadText({ uploading, uploaded, failure, locale });
+  const text = getUploadText({
+    uploading,
+    uploaded,
+    failure,
+    texts: {
+      ...locale.Upload,
+      ...texts,
+    },
+  });
   const icon = getUploadIcon({ uploaded, failure });
 
   return (
