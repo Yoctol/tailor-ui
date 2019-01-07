@@ -9,8 +9,7 @@ import Button from '../Button';
 import Flex from '../Grid/Flex';
 import Icon from '../Icon';
 import { LocaleContext } from '../UIProvider';
-
-type Omit<T, K> = Pick<T, Exclude<keyof T, K>>;
+import { Omit } from '../utils/type';
 
 const FileList = styled.div`
   display: inline-flex;

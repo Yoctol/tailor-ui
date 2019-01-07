@@ -60,6 +60,7 @@ export interface ITriggerProps {
   appendFor?: string;
   offset?: number;
   defaultVisible?: boolean;
+  visible?: boolean;
   zIndex?: string;
 }
 
@@ -114,8 +115,18 @@ class Trigger extends PureComponent<ITriggerProps, ITriggerState> {
     window.removeEventListener('keydown', this.handleKeydown);
   }
 
+  getVisible() {
+    const { visible } = this.props;
+
+    if (typeof visible === 'boolean') {
+      return visible;
+    }
+
+    return this.state.visible;
+  }
+
   handleKeydown = ({ keyCode }: KeyboardEvent) => {
-    const { visible } = this.state;
+    const visible = this.getVisible();
     const { trigger } = this.props;
 
     if (visible && trigger === 'click' && keyCode === 27) {
@@ -124,7 +135,7 @@ class Trigger extends PureComponent<ITriggerProps, ITriggerState> {
   };
 
   toggle = () => {
-    const { visible } = this.state;
+    const visible = this.getVisible();
 
     if (!visible) {
       this.handleOpen();
@@ -134,7 +145,7 @@ class Trigger extends PureComponent<ITriggerProps, ITriggerState> {
   };
 
   handleOpen = () => {
-    const { visible } = this.state;
+    const visible = this.getVisible();
 
     if (!visible) {
       const { onVisibleChange } = this.props;
@@ -149,7 +160,7 @@ class Trigger extends PureComponent<ITriggerProps, ITriggerState> {
   };
 
   handleClose = () => {
-    const { visible } = this.state;
+    const visible = this.getVisible();
 
     if (visible) {
       const { onVisibleChange } = this.props;
@@ -175,7 +186,7 @@ class Trigger extends PureComponent<ITriggerProps, ITriggerState> {
 
   renderChildren = () => {
     const { children, trigger } = this.props;
-    const { visible } = this.state;
+    const visible = this.getVisible();
 
     let bind = {
       onMouseEnter: () => {},
@@ -227,7 +238,8 @@ class Trigger extends PureComponent<ITriggerProps, ITriggerState> {
 
   renderPopup = () => {
     const { popup, placement, trigger, offset, animation } = this.props;
-    const { visible, popupRef, rect } = this.state;
+    const { popupRef, rect } = this.state;
+    const visible = this.getVisible();
 
     if (!this.childrenDOM || this.childrenDOM instanceof Text) {
       return null;
@@ -240,38 +252,37 @@ class Trigger extends PureComponent<ITriggerProps, ITriggerState> {
     return (
       <Transition
         native
-        items={visible ? 'visible' : 'hidden'}
+        items={visible}
         {...getTransitionStyles({ animation, placement })}
         config={{
           ...config.stiff,
           precision: 0.1,
         }}
       >
-        {v =>
-          v === 'visible' // FIXME: waiting for the typing update
-            ? (styles: any) => {
-                const renderPopup = () =>
-                  popup({
-                    styles: {
-                      ...styles,
-                      ...this.offset,
-                    },
-                    handleClose: this.handleClose,
-                    handlePopupRef: this.handlePopupRef,
-                  });
+        {_visible =>
+          _visible &&
+          ((styles: any) => {
+            const renderPopup = () =>
+              popup({
+                styles: {
+                  ...styles,
+                  ...this.offset,
+                },
+                handleClose: this.handleClose,
+                handlePopupRef: this.handlePopupRef,
+              });
 
-                return trigger === 'click' ? (
-                  <ClickOutside
-                    bindRefs={[this.childrenDOM, popupRef]}
-                    onClickOutside={this.handleClose}
-                  >
-                    {renderPopup()}
-                  </ClickOutside>
-                ) : (
-                  renderPopup()
-                );
-              }
-            : () => null
+            return trigger === 'click' ? (
+              <ClickOutside
+                bindRefs={[this.childrenDOM, popupRef]}
+                onClickOutside={this.handleClose}
+              >
+                {renderPopup()}
+              </ClickOutside>
+            ) : (
+              renderPopup()
+            );
+          })
         }
       </Transition>
     );
