@@ -3,12 +3,7 @@ module.exports = {
   transformIgnorePatterns: ['/node_modules/'],
   testPathIgnorePatterns: ['/node_modules/', 'lib', '/test/'],
   transform: {
-    '^.+\\.(ts|tsx)?$': 'babel-jest',
-  },
-  globals: {
-    'ts-jest': {
-      tsConfigFile: 'tsconfig.json',
-    },
+    '^.+\\.(ts|tsx|js|jsx)?$': 'babel-jest',
   },
   testMatch: ['**/__tests__/*.+(ts|tsx|js)'],
   moduleFileExtensions: ['ts', 'tsx', 'js'],

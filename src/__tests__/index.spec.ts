@@ -18,6 +18,7 @@ import {
   Mention,
   Menu,
   Modal,
+  NewMenu,
   Popconfirm,
   Popover,
   Radio,
@@ -61,6 +62,7 @@ describe('index', () => {
     expect(Menu).toBeDefined();
     expect(Mention).toBeDefined();
     expect(message).toBeDefined();
+    expect(NewMenu).toBeDefined();
     expect(Modal).toBeDefined();
     expect(Popconfirm).toBeDefined();
     expect(Popover).toBeDefined();
