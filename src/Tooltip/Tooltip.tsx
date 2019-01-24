@@ -75,7 +75,7 @@ class Tooltip extends PureComponent<ITooltipProps> {
     } = this.props;
 
     return (
-      <BaseTooltip style={styles} ref={handlePopupRef}>
+      <div style={styles} ref={handlePopupRef}>
         <ContentComponent
           light={light}
           {...omit(['onVisibleChange'], otherProps)}
@@ -85,7 +85,7 @@ class Tooltip extends PureComponent<ITooltipProps> {
             : content}
         </ContentComponent>
         <ArrowComponent light={light} placement={placement} />
-      </BaseTooltip>
+      </div>
     );
   };
 

@@ -161,10 +161,3 @@ export const Arrow = styled<IArrowProps, 'div'>(tag.div)`
       }
     `};
 `;
-
-const TooltipToggle = styled<any, 'div'>(tag.div)`
-  position: absolute;
-  z-index: 99;
-`;
-
-export default animated(TooltipToggle);
