@@ -1,8 +1,13 @@
 import BaseSelect, { components } from 'react-select';
 import CreatableSelect from 'react-select/lib/Creatable';
 import React, { FunctionComponent } from 'react';
+import { MdSearch } from 'react-icons/md';
 
 import styled from 'utils/styled-components';
+
+import Box from '../Grid/Box';
+import Flex from '../Grid/Flex';
+import Icon from '../Icon';
 
 const getStyledSelect = (creatable: boolean) => {
   const SelectComponent = creatable ? CreatableSelect : BaseSelect;
@@ -103,47 +108,62 @@ export interface ISelectProps {
   onChange?: (option: number | string | object) => void;
 }
 
+const ValueContainer: FunctionComponent<any> = ({ children, ...props }) => (
+  <components.ValueContainer {...props}>
+    <Flex width="100%" alignItems="center">
+      <Icon type={MdSearch} size="20" mr="2" />
+      <Box flex="auto" position="relative">
+        {children}
+      </Box>
+    </Flex>
+  </components.ValueContainer>
+);
+
 const Select: FunctionComponent<ISelectProps> = props => {
   const { isMulti, delimiter, multiSelectMode, creatable = false } = props;
 
   const StyledSelect = getStyledSelect(creatable);
 
+  const isSearchable = creatable || props.isSearchable;
+
+  let selectProps: any = {
+    classNamePrefix: 'yoctol-select',
+    createOptionPosition: 'first',
+    ...props,
+    isSearchable,
+  };
+
+  if (isSearchable) {
+    selectProps.components = { ValueContainer };
+  }
+
   if (isMulti) {
     if (multiSelectMode === 'text') {
-      const Option = (_props: any) => (
+      const Option: FunctionComponent<any> = _props => (
         <components.Option {..._props} isFocused={_props.isSelected} />
       );
-      const MultiValue = (_props: any) => {
-        const {
-          selectProps: {
-            value: [{ value: firstValue }],
-          },
-          data: { value: dataValue, label: dataLabel },
-        } = _props;
-        return `${firstValue !== dataValue ? delimiter : ''}${dataLabel}`;
+
+      const MultiValue = ({
+        selectProps: {
+          value: [{ value: firstValue }],
+        },
+        data: { value: dataValue, label: dataLabel },
+      }: any) => `${firstValue !== dataValue ? delimiter : ''}${dataLabel}`;
+
+      selectProps = {
+        ...selectProps,
+        components: {
+          ...selectProps.components,
+          Option,
+          MultiValue,
+        },
+        closeMenuOnSelect: false,
+        hideSelectedOptions: false,
       };
-      return (
-        <StyledSelect
-          classNamePrefix="yoctol-select"
-          createOptionPosition="first"
-          {...props}
-          isSearchable={creatable || props.isSearchable}
-          components={{ Option, MultiValue }}
-          closeMenuOnSelect={false}
-          hideSelectedOptions={false}
-        />
-      );
     }
   }
 
-  return (
-    <StyledSelect
-      classNamePrefix="yoctol-select"
-      createOptionPosition="first"
-      {...props}
-      isSearchable={creatable || props.isSearchable}
-    />
-  );
+  return <StyledSelect {...selectProps} />;
 };
 
 Select.defaultProps = {
