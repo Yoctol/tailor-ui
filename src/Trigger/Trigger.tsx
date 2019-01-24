@@ -264,23 +264,36 @@ class Trigger extends PureComponent<ITriggerProps, ITriggerState> {
           ((styles: any) => {
             const renderPopup = () =>
               popup({
-                styles: {
-                  ...styles,
-                  ...this.offset,
-                },
+                styles,
                 handleClose: this.handleClose,
                 handlePopupRef: this.handlePopupRef,
               });
 
-            return trigger === 'click' ? (
-              <ClickOutside
-                bindRefs={[this.childrenDOM, popupRef]}
-                onClickOutside={this.handleClose}
+            const transform = `translate3d(${this.offset.left}px, ${
+              this.offset.top
+            }px, 0px)`;
+
+            return (
+              <div
+                style={{
+                  position: 'absolute',
+                  top: 0,
+                  left: 0,
+                  willChange: 'transform',
+                  transform,
+                }}
               >
-                {renderPopup()}
-              </ClickOutside>
-            ) : (
-              renderPopup()
+                {trigger === 'click' ? (
+                  <ClickOutside
+                    bindRefs={[this.childrenDOM, popupRef]}
+                    onClickOutside={this.handleClose}
+                  >
+                    {renderPopup()}
+                  </ClickOutside>
+                ) : (
+                  renderPopup()
+                )}
+              </div>
             );
           })
         }

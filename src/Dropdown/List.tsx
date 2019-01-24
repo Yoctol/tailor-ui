@@ -23,8 +23,6 @@ export type StyledListProps = MinWidthProps &
 
 export const StyledList = styled<StyledListProps, 'ul'>(tag.ul)`
   display: block;
-  position: absolute;
-  z-index: 9999;
   margin: 0;
   padding: ${p => p.theme.space[1]} 0;
   border: ${p => p.theme.borders.base};

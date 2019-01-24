@@ -10,7 +10,6 @@ import {
   space,
   textAlign,
 } from 'styled-system';
-import { animated } from 'react-spring';
 
 import styled, { css } from 'utils/styled-components';
 import tag from 'utils/CleanTag';
@@ -161,10 +160,3 @@ export const Arrow = styled<IArrowProps, 'div'>(tag.div)`
       }
     `};
 `;
-
-const TooltipToggle = styled<any, 'div'>(tag.div)`
-  position: absolute;
-  z-index: 99;
-`;
-
-export default animated(TooltipToggle);
