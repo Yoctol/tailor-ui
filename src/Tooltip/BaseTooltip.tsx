@@ -10,7 +10,6 @@ import {
   space,
   textAlign,
 } from 'styled-system';
-import { animated } from 'react-spring';
 
 import styled, { css } from 'utils/styled-components';
 import tag from 'utils/CleanTag';

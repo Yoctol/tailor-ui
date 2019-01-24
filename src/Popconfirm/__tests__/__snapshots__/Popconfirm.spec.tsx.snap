@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Popconfirm should render correctly 1`] = `
-.c7 {
+.c6 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -11,14 +11,14 @@ exports[`Popconfirm should render correctly 1`] = `
   margin-right: 0.5rem;
 }
 
-.c7 svg {
+.c6 svg {
   fill: #423b63;
   vertical-align: middle;
   -webkit-transition: all 200ms ease 0s;
   transition: all 200ms ease 0s;
 }
 
-.c7.c7.c7 svg {
+.c6.c6.c6 svg {
   fill: #de8a15;
   width: 20px;
   height: 20px;
@@ -94,11 +94,11 @@ exports[`Popconfirm should render correctly 1`] = `
   transition: all 200ms ease 0s;
 }
 
-.c0 .c6 {
+.c0 .c5 {
   cursor: pointer;
 }
 
-.c0 .c6 svg {
+.c0 .c5 svg {
   fill: #1a1a1a;
 }
 
@@ -107,7 +107,7 @@ exports[`Popconfirm should render correctly 1`] = `
   background-color: #f6f6f6;
 }
 
-.c9 {
+.c8 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -145,18 +145,18 @@ exports[`Popconfirm should render correctly 1`] = `
   margin-left: auto;
 }
 
-.c9:focus {
+.c8:focus {
   outline: 0;
 }
 
-.c9:disabled,
-.c9[disabled] {
+.c8:disabled,
+.c8[disabled] {
   opacity: 0.7;
   cursor: default;
   pointer-events: none;
 }
 
-.c9::before {
+.c8::before {
   content: '';
   display: inline-block;
   position: relative;
@@ -168,20 +168,20 @@ exports[`Popconfirm should render correctly 1`] = `
   transition: all 200ms ease 0s;
 }
 
-.c9 .c6 {
+.c8 .c5 {
   cursor: pointer;
 }
 
-.c9 .c6 svg {
+.c8 .c5 svg {
   fill: #1a1a1a;
 }
 
-.c9:hover {
+.c8:hover {
   border-color: #423b63;
   background-color: #f6f6f6;
 }
 
-.c10 {
+.c9 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -219,18 +219,18 @@ exports[`Popconfirm should render correctly 1`] = `
   margin-left: 0.5rem;
 }
 
-.c10:focus {
+.c9:focus {
   outline: 0;
 }
 
-.c10:disabled,
-.c10[disabled] {
+.c9:disabled,
+.c9[disabled] {
   opacity: 0.7;
   cursor: default;
   pointer-events: none;
 }
 
-.c10::before {
+.c9::before {
   content: '';
   display: inline-block;
   position: relative;
@@ -242,24 +242,24 @@ exports[`Popconfirm should render correctly 1`] = `
   transition: all 200ms ease 0s;
 }
 
-.c10 .c6 {
+.c9 .c5 {
   cursor: pointer;
 }
 
-.c10 .c6 svg {
+.c9 .c5 svg {
   fill: #ffffff;
 }
 
-.c10:hover {
+.c9:hover {
   background-color: #ffffff;
   color: #423b63;
 }
 
-.c10:hover .c6 svg {
+.c9:hover .c5 svg {
   fill: #423b63;
 }
 
-.c5 {
+.c4 {
   box-sizing: border-box;
   display: -webkit-box;
   display: -webkit-flex;
@@ -271,7 +271,7 @@ exports[`Popconfirm should render correctly 1`] = `
   align-items: center;
 }
 
-.c8 {
+.c7 {
   box-sizing: border-box;
   margin-top: 1rem;
   display: -webkit-box;
@@ -280,12 +280,7 @@ exports[`Popconfirm should render correctly 1`] = `
   display: flex;
 }
 
-.c2 {
-  position: absolute;
-  z-index: 99;
-}
-
-.c11 {
+.c10 {
   position: absolute;
   width: 0;
   height: 0;
@@ -299,7 +294,7 @@ exports[`Popconfirm should render correctly 1`] = `
   opacity: 1;
 }
 
-.c11::after {
+.c10::after {
   content: '';
   position: absolute;
   top: -7px;
@@ -309,7 +304,7 @@ exports[`Popconfirm should render correctly 1`] = `
   border-left: 6px solid transparent;
 }
 
-.c3 {
+.c2 {
   border: 1px solid;
   border-color: #191539;
   background-color: #191539;
@@ -329,7 +324,7 @@ exports[`Popconfirm should render correctly 1`] = `
   text-align: left;
 }
 
-.c4 {
+.c3 {
   padding: 0.5rem;
   word-break: break-all;
   white-space: nowrap;
@@ -351,66 +346,69 @@ exports[`Popconfirm should render correctly 1`] = `
     style="position: fixed; top: 0px; left: 0px; z-index: 10000;"
   >
     <div
-      class="c2"
-      style="opacity: 0; transform: scale(0.3); top: -10px; left: 0px;"
+      style="position: absolute; top: 0px; left: 0px; transform: translate3d(0px, -10px, 0px);"
     >
       <div
-        class="c3"
+        style="opacity: 0; transform: scale(0.3);"
       >
         <div
-          class="c4"
+          class="c2"
         >
           <div
-            class="c5"
+            class="c3"
           >
-            <i
-              class="c6 c7"
-              cursor="default"
-              fill="warning"
+            <div
+              class="c4"
             >
-              <svg
-                fill="currentColor"
-                height="1em"
-                stroke="currentColor"
-                stroke-width="0"
-                viewBox="0 0 24 24"
-                width="1em"
+              <i
+                class="c5 c6"
+                cursor="default"
+                fill="warning"
               >
-                <path
-                  d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"
+                <svg
+                  fill="currentColor"
+                  height="1em"
+                  stroke="currentColor"
+                  stroke-width="0"
+                  viewBox="0 0 24 24"
+                  width="1em"
+                >
+                  <path
+                    d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"
+                  />
+                </svg>
+              </i>
+              Test Popconfirm
+            </div>
+            <div
+              class="c7"
+            >
+              <button
+                class="c8"
+                type="default"
+              >
+                Cancel
+                <div
+                  class="c1"
                 />
-              </svg>
-            </i>
-            Test Popconfirm
-          </div>
-          <div
-            class="c8"
-          >
-            <button
-              class="c9"
-              type="default"
-            >
-              Cancel
-              <div
-                class="c1"
-              />
-            </button>
-            <button
-              class="c10"
-              type="primary"
-            >
-              Confirm
-              <div
-                class="c1"
-              />
-            </button>
+              </button>
+              <button
+                class="c9"
+                type="primary"
+              >
+                Confirm
+                <div
+                  class="c1"
+                />
+              </button>
+            </div>
           </div>
         </div>
+        <div
+          class="c10"
+          placement="top"
+        />
       </div>
-      <div
-        class="c11"
-        placement="top"
-      />
     </div>
   </div>
 </body>

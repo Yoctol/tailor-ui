@@ -1,10 +1,11 @@
 import React, { PureComponent, ReactElement } from 'react';
+import { animated } from 'react-spring';
 import { omit } from 'ramda';
 
 import Trigger, { IPopupRenderProps } from '../Trigger';
 import { Omit } from '../utils/type';
 
-import BaseTooltip, {
+import {
   Arrow,
   Placement,
   TooltipContent,
@@ -75,7 +76,7 @@ class Tooltip extends PureComponent<ITooltipProps> {
     } = this.props;
 
     return (
-      <div style={styles} ref={handlePopupRef}>
+      <animated.div style={styles} ref={handlePopupRef}>
         <ContentComponent
           light={light}
           {...omit(['onVisibleChange'], otherProps)}
@@ -85,7 +86,7 @@ class Tooltip extends PureComponent<ITooltipProps> {
             : content}
         </ContentComponent>
         <ArrowComponent light={light} placement={placement} />
-      </div>
+      </animated.div>
     );
   };
 

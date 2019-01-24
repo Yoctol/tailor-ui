@@ -145,8 +145,6 @@ exports[`Dropdown should render correctly 1`] = `
 
 .c2 {
   display: block;
-  position: absolute;
-  z-index: 9999;
   margin: 0;
   padding: 0.25rem 0;
   border: 1px solid;
@@ -178,27 +176,31 @@ exports[`Dropdown should render correctly 1`] = `
   <div
     style="position: fixed; top: 0px; left: 0px; z-index: 9999;"
   >
-    <ul
-      class="c2"
-      data-testid="dropdown-overlay"
-      style="opacity: 0; transform: translate3d(0, -10px, 0); top: 5px; left: 0px;"
+    <div
+      style="position: absolute; top: 0px; left: 0px; transform: translate3d(0px, 5px, 0px);"
     >
-      <li
-        class="c3"
+      <ul
+        class="c2"
+        data-testid="dropdown-overlay"
+        style="opacity: 0; transform: translate3d(0, -10px, 0);"
       >
-        Basic Item
-      </li>
-      <li
-        class="c4"
-      >
-        Disibled Item
-      </li>
-      <li
-        class="c3"
-      >
-        Keep Item
-      </li>
-    </ul>
+        <li
+          class="c3"
+        >
+          Basic Item
+        </li>
+        <li
+          class="c4"
+        >
+          Disibled Item
+        </li>
+        <li
+          class="c3"
+        >
+          Keep Item
+        </li>
+      </ul>
+    </div>
   </div>
 </body>
 `;
@@ -269,8 +271,6 @@ exports[`Dropdown should render with diffrient placement 1`] = `
 
 .c0 {
   display: block;
-  position: absolute;
-  z-index: 9999;
   margin: 0;
   padding: 0.25rem 0;
   border: 1px solid;
@@ -287,27 +287,31 @@ exports[`Dropdown should render with diffrient placement 1`] = `
   outline: 0;
 }
 
-<ul
-      class="c0"
-      data-testid="dropdown-overlay"
-      style="opacity: 0; transform: translate3d(0, 10px, 0); top: -5px; left: 0px;"
+<div
+      style="position: absolute; top: 0px; left: 0px; transform: translate3d(0px, -5px, 0px);"
     >
-      <li
-        class="c1"
+      <ul
+        class="c0"
+        data-testid="dropdown-overlay"
+        style="opacity: 0; transform: translate3d(0, 10px, 0);"
       >
-        Basic Item
-      </li>
-      <li
-        class="c2"
-      >
-        Disibled Item
-      </li>
-      <li
-        class="c1"
-      >
-        Keep Item
-      </li>
-    </ul>
+        <li
+          class="c1"
+        >
+          Basic Item
+        </li>
+        <li
+          class="c2"
+        >
+          Disibled Item
+        </li>
+        <li
+          class="c1"
+        >
+          Keep Item
+        </li>
+      </ul>
+    </div>
   </div>
   .c1 {
   position: absolute;
