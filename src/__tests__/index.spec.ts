@@ -29,6 +29,7 @@ import {
   Table,
   Tabs,
   Tag,
+  TelInput,
   TextField,
   Textarea,
   Tooltip,
@@ -74,6 +75,7 @@ describe('index', () => {
     expect(Tabs).toBeDefined();
     expect(Tag).toBeDefined();
     expect(Textarea).toBeDefined();
+    expect(TelInput).toBeDefined();
     expect(TextField).toBeDefined();
     expect(Tooltip).toBeDefined();
     expect(theme).toBeDefined();

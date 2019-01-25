@@ -1,3 +1,5 @@
+declare module 'react-intl-tel-input';
+
 declare module 'rc-editor-mention';
 
 declare module 'rc-calendar';
