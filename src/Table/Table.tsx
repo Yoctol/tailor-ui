@@ -1,4 +1,5 @@
 import React, { FunctionComponent, PureComponent } from 'react';
+import styled from 'styled-components';
 import {
   BorderColorProps,
   BordersProps,
@@ -14,12 +15,11 @@ import {
   width,
 } from 'styled-system';
 
-import styled from 'utils/styled-components';
 import tag from 'utils/CleanTag';
 
 type HeadColumnProps = WidthProps & SpaceProps & BordersProps & ColorProps;
 
-const HeadColumn = styled<HeadColumnProps, 'th'>(tag.th)`
+const HeadColumn = styled(tag.th)<HeadColumnProps>`
   padding: ${p => p.theme.paddings.xs} ${p => p.theme.paddings.sm};
   border-color: ${p => p.theme.colors.gray300};
   font-weight: 500;
@@ -32,7 +32,7 @@ const HeadColumn = styled<HeadColumnProps, 'th'>(tag.th)`
 
 type ColumnProps = SpaceProps & BordersProps & BorderColorProps & ColorProps;
 
-const Column = styled<ColumnProps, 'td'>(tag.td)`
+const Column = styled(tag.td)<ColumnProps>`
   padding: ${p => p.theme.paddings.xs} ${p => p.theme.paddings.sm};
 
   ${space};
@@ -47,7 +47,7 @@ Column.defaultProps = {
 
 type RowProps = ColorProps;
 
-const Row = styled<RowProps, 'tr'>(tag.tr)`
+const Row = styled(tag.tr)<RowProps>`
   border-bottom: ${p => p.theme.borders.base} ${p => p.theme.colors.gray300};
 
   ${color};
@@ -63,7 +63,7 @@ const Body: FunctionComponent = ({ children }) => <tbody>{children}</tbody>;
 
 type StyledTableProps = TextAlignProps & WidthProps;
 
-const StyledTable = styled<StyledTableProps, 'table'>(tag.table)`
+const StyledTable = styled(tag.table)<StyledTableProps>`
   overflow: hidden;
   border-spacing: 0;
   border-collapse: collapse;

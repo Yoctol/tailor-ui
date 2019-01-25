@@ -1,12 +1,12 @@
 import React, { FunctionComponent } from 'react';
+import styled from 'styled-components';
 import { SpaceProps, space } from 'styled-system';
 
-import styled from 'utils/styled-components';
 import tag from 'utils/CleanTag';
 
 export type ImageProps = SpaceProps;
 
-export const StyledImage = styled<ImageProps, 'div'>(tag.div)`
+export const StyledImage = styled(tag.div)<ImageProps>`
   overflow: hidden;
 
   img {

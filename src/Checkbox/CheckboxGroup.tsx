@@ -1,12 +1,12 @@
 import React, { FunctionComponent, useState } from 'react';
+import styled from 'styled-components';
 
-import styled from 'utils/styled-components';
 import tag from 'utils/CleanTag';
 
 import Checkbox from './Checkbox';
 import CheckboxContext, { Direction } from './CheckboxContext';
 
-const CheckboxGroupFlex = styled<{ direction: Direction }, 'div'>(tag.div)`
+const CheckboxGroupFlex = styled(tag.div)<{ direction: Direction }>`
   display: ${p => (p.direction === 'horizontal' ? 'flex' : 'inline-flex')};
   flex-direction: ${p => (p.direction === 'horizontal' ? 'row' : 'column')};
 `;
@@ -44,7 +44,7 @@ const CheckboxGroup: FunctionComponent<ICheckboxGroupProps> = ({
   defaultValue,
   options = null,
   onChange,
-  direction = 'horizontal',
+  direction = 'horizontal' as Direction,
   children,
   ...otherProps
 }) => {

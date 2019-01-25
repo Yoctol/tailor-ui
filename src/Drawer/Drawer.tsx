@@ -1,8 +1,8 @@
 import React, { FunctionComponent, ReactNode, useEffect } from 'react';
+import styled, { css } from 'styled-components';
 import { Transition, animated, config } from 'react-spring';
 
 import Portal from 'utils/Portal';
-import styled, { css } from 'utils/styled-components';
 import tag from 'utils/CleanTag';
 import useKeydown, { ESC_KEY_CODE } from 'utils/useKeydown';
 
@@ -16,7 +16,7 @@ interface IDrawerWrapperProps {
   placement: Placement;
 }
 
-const DrawerWrapper = styled<IDrawerWrapperProps, 'div'>(tag.div)`
+const DrawerWrapper = styled(tag.div)<IDrawerWrapperProps>`
   display: flex;
   position: absolute;
   z-index: 10000;
@@ -95,7 +95,7 @@ const Drawer: FunctionComponent<IDrawerProps> = ({
   visible,
   title,
   footer,
-  placement = 'right',
+  placement = 'right' as Placement,
   width = 400,
   height = 300,
   closable = true,
@@ -114,16 +114,13 @@ const Drawer: FunctionComponent<IDrawerProps> = ({
     onKeydown: onClose,
   });
 
-  useEffect(
-    () => {
-      document.body.style.overflow = visible ? 'hidden' : '';
+  useEffect(() => {
+    document.body.style.overflow = visible ? 'hidden' : '';
 
-      return () => {
-        document.body.style.overflow = '';
-      };
-    },
-    [visible]
-  );
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [visible]);
 
   return (
     <Portal appendFor="drawer">

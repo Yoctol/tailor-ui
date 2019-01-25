@@ -1,8 +1,7 @@
 import Dropzone, { DropzoneProps } from 'react-dropzone';
 import React, { FunctionComponent, useContext, useState } from 'react';
+import styled, { css } from 'styled-components';
 import { MdCheck, MdClose, MdFileUpload } from 'react-icons/md';
-
-import styled, { css } from 'utils/styled-components';
 
 import Box from '../Grid/Box';
 import Button from '../Button';

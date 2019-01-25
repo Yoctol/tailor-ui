@@ -20,7 +20,7 @@ const MenuItem: FunctionComponent<any> = ({
   return (
     <StyledMenuItem
       active={active}
-      onClick={event => {
+      onClick={(event: MouseEvent) => {
         setActiveItemId(id);
         if (onClick) {
           onClick(event);

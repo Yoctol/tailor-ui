@@ -13,11 +13,13 @@ import MenuContext from './MenuContext';
 import SubMenuContent from './SubMenuContent';
 import { StyledSubMenu, SubMenuBadge } from './styles';
 
+type Placement = 'top' | 'bottom';
+
 interface ISubMenuProps {
   icon: IconType;
   id: string;
   title: string;
-  placement?: 'top' | 'bottom';
+  placement?: Placement;
   header?: ReactNode;
   badge?: string;
 }
@@ -28,7 +30,7 @@ const SubMenu: FunctionComponent<ISubMenuProps> = ({
   icon,
   badge,
   children,
-  placement = 'top',
+  placement = 'top' as Placement,
   header,
 }) => {
   const [tooltipVisible, setTooltipVisible] = useState(false);

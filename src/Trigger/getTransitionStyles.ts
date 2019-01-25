@@ -1,4 +1,4 @@
-import { Placement } from './getPositionOffset';
+import { Placement } from './type';
 
 const getTransitionStyles = ({
   placement,

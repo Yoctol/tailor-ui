@@ -1,5 +1,5 @@
 // stylelint-disable
-import { css } from 'utils/styled-components';
+import { css } from 'styled-components';
 
 import theme from '../../../theme';
 import { timePickerClass } from '../prefix';

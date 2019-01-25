@@ -1,9 +1,32 @@
-export { default as line } from './line';
-export { default as messenger } from './messenger';
-export { default as understood } from './understood';
-export { default as kurator } from './kurator';
-export { default as touch } from './touch';
-export { default as analytics } from './analytics';
-export { default as tags } from './tags';
-export { default as settings } from './settings';
-export { default as loading } from './loading';
+import analytics from './analytics';
+import kurator from './kurator';
+import line from './line';
+import loading from './loading';
+import messenger from './messenger';
+import settings from './settings';
+import tags from './tags';
+import touch from './touch';
+import understood from './understood';
+
+export type BuiltInIconKeys =
+  | 'line'
+  | 'messenger'
+  | 'understood'
+  | 'kurator'
+  | 'touch'
+  | 'analytics'
+  | 'tags'
+  | 'settings'
+  | 'loading';
+
+export const icons = {
+  line,
+  messenger,
+  understood,
+  kurator,
+  touch,
+  analytics,
+  tags,
+  settings,
+  loading,
+};

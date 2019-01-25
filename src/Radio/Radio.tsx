@@ -1,6 +1,6 @@
 import React, { ChangeEvent, FunctionComponent, useContext } from 'react';
+import styled, { css } from 'styled-components';
 
-import styled, { css } from 'utils/styled-components';
 import tag from 'utils/CleanTag';
 
 import Space from '../Grid/Space';
@@ -73,7 +73,7 @@ interface IRadioLabelBaseProps {
   disabled?: boolean;
 }
 
-const RadioLabelBase = styled<IRadioLabelBaseProps, 'label'>(tag.label)`
+const RadioLabelBase = styled(tag.label)<IRadioLabelBaseProps>`
   display: inline-flex;
   align-items: center;
   font-size: ${p => p.theme.fontSizes.base};
@@ -138,7 +138,7 @@ const Radio: FunctionComponent<IRadioProps> & {
           disabled={disabled}
           checked={_isChecked && value ? _isChecked(value) : checked}
           defaultChecked={defaultChecked}
-          onChange={event => {
+          onChange={(event: ChangeEvent) => {
             if (onChange) {
               onChange(event);
             }

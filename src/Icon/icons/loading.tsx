@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { FunctionComponent } from 'react';
 
-const LoadingIcon = () => (
+const LoadingIcon: FunctionComponent = () => (
   <svg
     viewBox="0 0 19 21"
     version="1.1"

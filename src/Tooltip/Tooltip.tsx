@@ -4,13 +4,9 @@ import { omit } from 'ramda';
 
 import Trigger, { IPopupRenderProps } from '../Trigger';
 import { Omit } from '../utils/type';
+import { Placement } from '../Trigger/type';
 
-import {
-  Arrow,
-  Placement,
-  TooltipContent,
-  TooltipContentProps,
-} from './BaseTooltip';
+import { Arrow, TooltipContent, TooltipContentProps } from './BaseTooltip';
 
 export type ITooltipProps = Omit<TooltipContentProps, 'light'> & {
   /**

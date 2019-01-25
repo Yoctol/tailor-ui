@@ -1,14 +1,14 @@
-import React, { MouseEventHandler, forwardRef } from 'react';
+import React, { MouseEvent, MouseEventHandler, forwardRef } from 'react';
+import styled, { css } from 'styled-components';
 import { SpaceProps, space } from 'styled-system';
 
-import styled, { css } from 'utils/styled-components';
 import tag from 'utils/CleanTag';
 
 import { Consumer } from './DropdownContext';
 
 type StyledItemProps = SpaceProps & { disabled?: boolean };
 
-const StyledListItem = styled<StyledItemProps, 'li'>(tag.li)`
+const StyledListItem = styled(tag.li)<StyledItemProps>`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -58,7 +58,7 @@ const Item = forwardRef<any, IItemProps>(
       {({ handleClose }) => (
         <StyledListItem
           ref={ref}
-          onClick={event => {
+          onClick={(event: MouseEvent) => {
             if (disabled) {
               return;
             }

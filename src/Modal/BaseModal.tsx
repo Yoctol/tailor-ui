@@ -1,14 +1,14 @@
 import React, { FunctionComponent } from 'react';
+import styled from 'styled-components';
 import { Transition, animated, config } from 'react-spring';
 import { WidthProps, width as styledWidth } from 'styled-system';
 
-import styled from 'utils/styled-components';
 import tag from 'utils/CleanTag';
 import useKeydown, { ESC_KEY_CODE } from 'utils/useKeydown';
 
 import Backdrop from '../Backdrop';
 
-const ModalContent = styled<WidthProps, 'div'>(tag.div)`
+const ModalContent = styled(tag.div)<WidthProps>`
   display: flex;
   position: fixed;
   z-index: 10001;

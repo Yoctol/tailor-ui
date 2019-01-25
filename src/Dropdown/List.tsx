@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import styled from 'styled-components';
 import {
   MaxHeightProps,
   MinWidthProps,
@@ -11,7 +12,6 @@ import {
 } from 'styled-system';
 import { animated } from 'react-spring';
 
-import styled from 'utils/styled-components';
 import tag from 'utils/CleanTag';
 
 import { Consumer } from './DropdownContext';
@@ -21,7 +21,7 @@ export type StyledListProps = MinWidthProps &
   TextAlignProps &
   OverflowProps;
 
-export const StyledList = styled<StyledListProps, 'ul'>(tag.ul)`
+export const StyledList = styled(tag.ul)<StyledListProps>`
   display: block;
   margin: 0;
   padding: ${p => p.theme.space[1]} 0;

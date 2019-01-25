@@ -1,9 +1,9 @@
 import React, { FunctionComponent, PureComponent, useState } from 'react';
+import styled from 'styled-components';
 import { MdClose } from 'react-icons/md';
 import { Spring, animated } from 'react-spring';
 import { omit } from 'ramda';
 
-import styled from 'utils/styled-components';
 import tag from 'utils/CleanTag';
 
 import Icon from '../Icon';
@@ -26,7 +26,7 @@ const StyledTag = styled(tag.div)`
   }
 `;
 
-const CloseIcon = styled<any, any>(Icon)`
+const CloseIcon = styled(Icon)`
   &:hover svg {
     fill: ${p => p.theme.colors.gray700};
   }

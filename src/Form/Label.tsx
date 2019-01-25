@@ -1,4 +1,5 @@
-import styled from 'utils/styled-components';
+import styled from 'styled-components';
+
 import tag from 'utils/CleanTag';
 
 const Label = styled(tag.label)`

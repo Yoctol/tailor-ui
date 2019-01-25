@@ -14,7 +14,7 @@ const icons = {
 
 const getTypeIcon = (type: Types = 'info', size: string | number = '20') => {
   const MdIcon = icons[type];
-  return <Icon size={size} type={MdIcon} mr={2} fill={type} />;
+  return <Icon size={size} type={MdIcon} mr="2" fill={type} />;
 };
 
 export default getTypeIcon;

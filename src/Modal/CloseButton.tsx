@@ -1,7 +1,6 @@
 import React, { FunctionComponent } from 'react';
+import styled from 'styled-components';
 import { MdClose } from 'react-icons/md';
-
-import styled from 'utils/styled-components';
 
 import Button from '../Button';
 

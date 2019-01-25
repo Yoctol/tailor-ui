@@ -1,4 +1,5 @@
-import { css } from 'utils/styled-components';
+// stylelint-disable
+import { css } from 'styled-components';
 
 import theme from '../../theme';
 

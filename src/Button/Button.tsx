@@ -1,7 +1,7 @@
 import React, { FunctionComponent, MouseEvent, useRef } from 'react';
+import styled, { css, keyframes } from 'styled-components';
 import { SpaceProps, space as styledSpace } from 'styled-system';
 
-import styled, { css, keyframes } from 'utils/styled-components';
 import tag from 'utils/CleanTag';
 
 import Icon, { IconType, IconWrapper } from '../Icon';
@@ -219,7 +219,7 @@ type StyledButtonProps = IGetTypesStylesInterface &
   IRoundedInterface &
   SpaceProps;
 
-export const StyledButton = styled<StyledButtonProps, 'button'>(tag.button)`
+export const StyledButton = styled(tag.button)<StyledButtonProps>`
   display: inline-flex;
   position: relative;
   align-items: center;
@@ -275,7 +275,7 @@ export type ButtonProps = SpaceProps & {
   outlined?: boolean;
   loading?: boolean;
   disabled?: boolean;
-  icon?: string | IconType;
+  icon?: IconType;
   size?: ButtonSize;
   onClick?: (event: MouseEvent) => void;
 };

@@ -1,8 +1,7 @@
 /* eslint camelcase: "off" */
 import React, { FunctionComponent, ReactNode } from 'react';
 import moment from 'moment';
-
-import { ThemeProvider } from 'utils/styled-components';
+import { ThemeProvider } from 'styled-components';
 
 import GlobalStyle from '../GlobalStyle';
 import defaultTheme from '../theme';

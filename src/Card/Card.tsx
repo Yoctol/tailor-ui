@@ -1,4 +1,5 @@
 import React, { FunctionComponent } from 'react';
+import styled, { css } from 'styled-components';
 import {
   BorderColorProps,
   BorderRadiusProps,
@@ -14,7 +15,6 @@ import {
   width,
 } from 'styled-system';
 
-import styled, { css } from 'utils/styled-components';
 import tag from 'utils/CleanTag';
 
 import CardBlock from './CardBlock';
@@ -31,7 +31,7 @@ export type CardProps = SpaceProps &
     onClick?: (event: MouseEvent) => void;
   };
 
-const CardWrapper = styled<CardProps, any>(tag.div)`
+const CardWrapper = styled(tag.div)<CardProps>`
   display: flex;
   flex-direction: column;
   border: ${p => p.theme.borders.base};

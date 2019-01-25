@@ -1,6 +1,6 @@
 import React, { ChangeEvent, FunctionComponent, useContext } from 'react';
+import styled, { css } from 'styled-components';
 
-import styled, { css } from 'utils/styled-components';
 import tag from 'utils/CleanTag';
 
 import Space from '../Grid/Space';
@@ -74,7 +74,7 @@ interface IRadioLabelBaseProps {
   disabled: boolean;
 }
 
-const CheckboxLabelBase = styled<IRadioLabelBaseProps, 'label'>(tag.label)`
+const CheckboxLabelBase = styled(tag.label)<IRadioLabelBaseProps>`
   display: inline-flex;
   align-items: center;
   font-size: ${p => p.theme.fontSizes.base};

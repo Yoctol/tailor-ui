@@ -22,18 +22,15 @@ const useKeydown = ({
     [targetKeyCode, onKeydown]
   );
 
-  useEffect(
-    () => {
-      if (listening) {
-        window.addEventListener('keydown', handleKeydown);
-        return () => window.removeEventListener('keydown', handleKeydown);
-      }
+  useEffect(() => {
+    if (listening) {
+      window.addEventListener('keydown', handleKeydown);
+      return () => window.removeEventListener('keydown', handleKeydown);
+    }
 
-      window.removeEventListener('keydown', handleKeydown);
-      return () => {};
-    },
-    [listening, targetKeyCode, onKeydown]
-  );
+    window.removeEventListener('keydown', handleKeydown);
+    return () => {};
+  }, [listening, targetKeyCode, onKeydown]);
 
   return null;
 };

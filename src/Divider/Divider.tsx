@@ -28,7 +28,7 @@ const StyledInnerText = styled(tag.span)`
   padding: 0 ${p => p.theme.space[3]};
 `;
 
-const StyledDivider = styled<IStyledDividerProps>(tag.div)`
+const StyledDivider = styled(tag.div)<IStyledDividerProps>`
   background-color: ${p => p.theme.colors.gray300};
 
   ${p => {

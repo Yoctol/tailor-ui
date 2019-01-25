@@ -5,10 +5,9 @@ import React, {
   KeyboardEventHandler,
   useState,
 } from 'react';
+import styled from 'styled-components';
 import { omit } from 'ramda';
 import { rem } from 'polished';
-
-import styled from 'utils/styled-components';
 
 import FormField from '../Form/FormField';
 import Hint from '../Form/Hint';

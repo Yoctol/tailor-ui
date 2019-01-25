@@ -5,11 +5,7 @@ export interface IClickOutsideProps {
   bindRef?: HTMLElement;
   bindRefs?: Array<HTMLElement | undefined>;
   children:
-    | ((
-        renderProps: {
-          bindRef: (ref: any) => void;
-        }
-      ) => React.ReactNode)
+    | ((renderProps: { bindRef: (ref: any) => void }) => React.ReactNode)
     | React.ReactNode;
 }
 

@@ -1,3 +1,4 @@
+import styled from 'styled-components';
 import {
   AlignItemsProps,
   FlexDirectionProps,
@@ -9,8 +10,6 @@ import {
   justifyContent,
 } from 'styled-system';
 
-import styled from 'utils/styled-components';
-
 import Box, { BoxProps } from './Box';
 
 export type FlexProps = BoxProps &
@@ -19,7 +18,7 @@ export type FlexProps = BoxProps &
   FlexWrapProps &
   JustifyContentProps;
 
-const Flex = styled<FlexProps, any>(Box)`
+const Flex = styled(Box)<FlexProps>`
   display: flex;
 
   ${alignItems};

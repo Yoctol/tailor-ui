@@ -29,14 +29,11 @@ const SubMenuContent: FunctionComponent<ISubMenuContentProps> = ({
   const headerRef = useRef<any>(null);
   const [headerTop, setHeaderTop] = useState(0);
 
-  useEffect(
-    () => {
-      if (headerRef.current !== null) {
-        setHeaderTop(headerRef.current.offsetHeight);
-      }
-    },
-    [active, title]
-  );
+  useEffect(() => {
+    if (headerRef.current !== null) {
+      setHeaderTop(headerRef.current.offsetHeight);
+    }
+  }, [active, title]);
 
   if (!active) {
     return null;

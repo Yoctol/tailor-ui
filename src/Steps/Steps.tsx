@@ -6,9 +6,9 @@ import React, {
   createContext,
   isValidElement,
 } from 'react';
+import styled, { css } from 'styled-components';
 import { MdClose, MdDone } from 'react-icons/md';
 
-import styled, { css } from 'utils/styled-components';
 import tag from 'utils/CleanTag';
 
 import Flex from '../Grid/Flex';
@@ -42,7 +42,7 @@ interface IStepsItemProps {
   tailColor: Colors;
 }
 
-const StepsIconItem = styled<IStepsItemProps, 'div'>(tag.div)`
+const StepsIconItem = styled(tag.div)<IStepsItemProps>`
   display: flex;
   position: relative;
   align-items: center;
@@ -103,7 +103,7 @@ const StepsIconItem = styled<IStepsItemProps, 'div'>(tag.div)`
   ${p => p.theme.transition /* sc-declaration */};
 `;
 
-const Title = styled<IStepsItemProps, 'div'>(tag.div)`
+const Title = styled(tag.div)<IStepsItemProps>`
   display: inline-block;
   position: relative;
   align-items: center;
@@ -149,7 +149,7 @@ interface IDescriptionProps {
   status: Status;
 }
 
-const Description = styled<IDescriptionProps, 'div'>(tag.div)`
+const Description = styled(tag.div)<IDescriptionProps>`
   padding-bottom: ${p => p.direction === 'vertical' && '12px'};
   color: ${p => {
     switch (p.status) {
@@ -301,7 +301,12 @@ export interface IStepsProps {
 
 const Steps: FunctionComponent<IStepsProps> & {
   Step: typeof Step;
-} = ({ children, current, onCurrentChange, direction = 'horizontal' }) => {
+} = ({
+  children,
+  current,
+  onCurrentChange,
+  direction = 'horizontal' as Direction,
+}) => {
   const totalCount = Children.count(children) - 1;
   const steps = Children.toArray(children);
 

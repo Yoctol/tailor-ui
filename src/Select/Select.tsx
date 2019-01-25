@@ -1,9 +1,8 @@
 import BaseSelect, { components } from 'react-select';
 import CreatableSelect from 'react-select/lib/Creatable';
 import React, { FunctionComponent } from 'react';
+import styled from 'styled-components';
 import { MdSearch } from 'react-icons/md';
-
-import styled from 'utils/styled-components';
 
 import Box from '../Grid/Box';
 import Flex from '../Grid/Flex';
@@ -12,7 +11,7 @@ import Icon from '../Icon';
 const getStyledSelect = (creatable: boolean) => {
   const SelectComponent = creatable ? CreatableSelect : BaseSelect;
 
-  return styled<any>(SelectComponent)`
+  return styled(SelectComponent)`
     & .yoctol-select__control {
       min-width: 150px;
       border-color: ${p => p.theme.colors.gray300};

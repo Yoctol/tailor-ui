@@ -1,12 +1,12 @@
 import React, { FunctionComponent } from 'react';
+import styled from 'styled-components';
 import { HeightProps, SpaceProps, height, space } from 'styled-system';
 
-import styled from 'utils/styled-components';
 import tag from 'utils/CleanTag';
 
 export type BlockProps = SpaceProps & HeightProps;
 
-const StyledBlock = styled<BlockProps, 'div'>(tag.div)`
+const StyledBlock = styled(tag.div)<BlockProps>`
   position: relative;
   border-bottom: ${p => p.theme.borders.base};
   border-color: ${p => p.theme.colors.gray300};
