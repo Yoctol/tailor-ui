@@ -87,6 +87,9 @@ exports[`Popconfirm should render correctly 1`] = `
   display: inline-block;
   position: relative;
   left: 0;
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
   width: 0;
   height: 0;
   margin-right: 0;
@@ -161,6 +164,9 @@ exports[`Popconfirm should render correctly 1`] = `
   display: inline-block;
   position: relative;
   left: 0;
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
   width: 0;
   height: 0;
   margin-right: 0;
@@ -235,6 +241,9 @@ exports[`Popconfirm should render correctly 1`] = `
   display: inline-block;
   position: relative;
   left: 0;
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
   width: 0;
   height: 0;
   margin-right: 0;

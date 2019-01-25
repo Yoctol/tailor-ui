@@ -250,6 +250,7 @@ export const StyledButton = styled<StyledButtonProps, 'button'>(tag.button)`
       display: inline-block;
       position: relative;
       left: 0;
+      flex: none;
       width: 0;
       height: 0;
       margin-right: 0;

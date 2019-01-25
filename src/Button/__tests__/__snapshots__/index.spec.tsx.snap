@@ -65,6 +65,9 @@ exports[`Button should render block button 1`] = `
   display: inline-block;
   position: relative;
   left: 0;
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
   width: 0;
   height: 0;
   margin-right: 0;
@@ -234,6 +237,9 @@ exports[`Button should render button with specified icon 1`] = `
   display: inline-block;
   position: relative;
   left: 0;
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
   width: 0;
   height: 0;
   margin-right: 0;
@@ -351,6 +357,9 @@ exports[`Button should render button with specified size 1`] = `
   display: inline-block;
   position: relative;
   left: 0;
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
   width: 0;
   height: 0;
   margin-right: 0;
@@ -446,6 +455,9 @@ exports[`Button should render correctly 1`] = `
   display: inline-block;
   position: relative;
   left: 0;
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
   width: 0;
   height: 0;
   margin-right: 0;
@@ -541,6 +553,9 @@ exports[`Button should render different button type 1`] = `
   display: inline-block;
   position: relative;
   left: 0;
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
   width: 0;
   height: 0;
   margin-right: 0;
@@ -640,6 +655,9 @@ exports[`Button should render disabled button 1`] = `
   display: inline-block;
   position: relative;
   left: 0;
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
   width: 0;
   height: 0;
   margin-right: 0;
@@ -739,6 +757,9 @@ exports[`Button should render loading button 1`] = `
   display: inline-block;
   position: relative;
   left: 0;
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
   width: 0;
   height: 0;
   margin-right: 0;
@@ -846,6 +867,9 @@ exports[`Button should render outlined button 1`] = `
   display: inline-block;
   position: relative;
   left: 0;
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
   width: 0;
   height: 0;
   margin-right: 0;
@@ -942,6 +966,9 @@ exports[`Button should render rounded button 1`] = `
   display: inline-block;
   position: relative;
   left: 0;
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
   width: 0;
   height: 0;
   margin-right: 0;
@@ -1037,6 +1064,9 @@ exports[`Button should render text button 1`] = `
   display: inline-block;
   position: relative;
   left: 0;
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
   width: 0;
   height: 0;
   margin-right: 0;
