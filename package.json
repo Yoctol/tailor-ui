@@ -60,6 +60,7 @@
     "rc-time-picker": "^3.4.0",
     "react-dropzone": "^7.0.1",
     "react-html-attributes": "^1.4.3",
+    "react-intl-tel-input": "^6.1.0",
     "react-select": "^2.3.0",
     "react-spring": "^7.2.10",
     "react-textarea-autosize": "^7.1.0",
