@@ -1,3 +1,10 @@
+## [0.2.8](https://github.com/yoctol/tailor-ui/compare/v0.2.7...v0.2.8) (2019-01-25)
+
+### Features
+
+- **select:** add search icon ([#43](https://github.com/yoctol/tailor-ui/issues/43)) ([11a028f](https://github.com/yoctol/tailor-ui/commit/11a028f))
+- **tel-input:** implement TelInput ([0fdb7e1](https://github.com/yoctol/tailor-ui/commit/0fdb7e1))
+
 ## [0.2.7](https://github.com/yoctol/tailor-ui/compare/v0.2.6...v0.2.7) (2019-01-07)
 
 ### Bug Fixes
