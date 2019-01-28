@@ -1,8 +1,8 @@
 import React, {
   Children,
   FunctionComponent,
-  ReactChild,
   ReactElement,
+  ReactNode,
   createContext,
   isValidElement,
 } from 'react';
@@ -188,7 +188,7 @@ const getTailColor = ({
 }: {
   count: number;
   status: Status;
-  steps: ReactChild[];
+  steps: ReactNode[];
 }) => {
   const nextStep = steps[count + 1];
   if (

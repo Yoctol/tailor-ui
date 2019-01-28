@@ -1,4 +1,9 @@
-import React, { MouseEvent, MouseEventHandler, forwardRef } from 'react';
+import React, {
+  MouseEvent,
+  MouseEventHandler,
+  ReactNode,
+  forwardRef,
+} from 'react';
 import styled, { css } from 'styled-components';
 import { SpaceProps, space } from 'styled-system';
 
@@ -50,10 +55,14 @@ export interface IItemProps {
    * Keep the dropdown after click item
    */
   keep?: boolean;
+  children?: ReactNode;
 }
 
-const Item = forwardRef<any, IItemProps>(
-  ({ onClick, disabled, keep, ...props }, ref: any) => (
+const Item = forwardRef<any, IItemProps>(function Item(
+  { onClick, disabled, keep, ...props },
+  ref: any
+) {
+  return (
     <Consumer>
       {({ handleClose }) => (
         <StyledListItem
@@ -74,7 +83,7 @@ const Item = forwardRef<any, IItemProps>(
         />
       )}
     </Consumer>
-  )
-);
+  );
+});
 
 export default Item;
