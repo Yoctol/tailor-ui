@@ -1,4 +1,4 @@
-import { PureComponent } from 'react';
+import React, { PureComponent } from 'react';
 import { createPortal } from 'react-dom';
 
 const elements: {
@@ -54,10 +54,11 @@ class Portal extends PureComponent<{
   };
 
   render() {
-    return (
-      this.canUseDOM() &&
-      createPortal(this.props.children, this.getPortalElement())
-    );
+    if (!this.canUseDOM()) {
+      return <></>;
+    }
+
+    return createPortal(this.props.children, this.getPortalElement());
   }
 }
 

@@ -13,7 +13,7 @@ module.exports = {
       '<rootDir>/test/__mocks__/fileMock.js',
     '\\.(css|less)$': '<rootDir>/__mocks__/styleMock.js',
   },
-  setupTestFrameworkScriptFile: require.resolve('./test/jest.setup.ts'),
+  setupFilesAfterEnv: [require.resolve('./test/jest.setup.ts')],
   resetModules: true,
   resetMocks: true,
 };

@@ -48,4 +48,5 @@ const ClosableAlert: FunctionComponent<IAlertProps> = ({
     </Spring>
   );
 };
+
 export default ClosableAlert;

@@ -5,7 +5,7 @@ import tag from 'utils/CleanTag';
 
 import Box from '../Grid/Box';
 
-const SubMenuWrapper = styled(tag.div)`
+export const SubMenuWrapper = styled(animated.div)`
   position: absolute;
   left: 48px;
   flex-direction: column;
@@ -14,17 +14,13 @@ const SubMenuWrapper = styled(tag.div)`
   box-shadow: 4px 0 6px 0 rgba(94, 94, 94, 0.5);
 `;
 
-export const AnimatedSubMenuWrapper = animated(SubMenuWrapper);
-
-const SubMenuContentWrapper = styled(tag.div)`
+export const SubMenuContentWrapper = styled(animated.div)`
   position: absolute;
   z-index: 1;
   left: 45px;
   flex-direction: column;
   width: 180px;
 `;
-
-export const AnimatedSubMenuContentWrapper = animated(SubMenuContentWrapper);
 
 interface IStyledSubMenuProps {
   active?: boolean;

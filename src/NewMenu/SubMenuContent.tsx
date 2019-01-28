@@ -8,7 +8,7 @@ import React, {
 
 import Box from '../Grid/Box';
 
-import { AnimatedSubMenuContentWrapper } from './styles';
+import { SubMenuContentWrapper } from './styles';
 
 interface ISubMenuContentProps {
   active: boolean;
@@ -43,7 +43,7 @@ const SubMenuContent: FunctionComponent<ISubMenuContentProps> = ({
     placement === 'bottom' ? { bottom: 0 } : { top: -headerTop };
 
   return (
-    <AnimatedSubMenuContentWrapper
+    <SubMenuContentWrapper
       style={{ ...subMenuContentSpringProps, ...placementStyle }}
     >
       <Box ref={headerRef} pb="1">
@@ -59,7 +59,7 @@ const SubMenuContent: FunctionComponent<ISubMenuContentProps> = ({
       >
         {children}
       </Box>
-    </AnimatedSubMenuContentWrapper>
+    </SubMenuContentWrapper>
   );
 };
 

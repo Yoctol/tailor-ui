@@ -8,7 +8,7 @@ import MenuContext from './MenuContext';
 import MenuDivider from './MenuDivider';
 import MenuItem from './MenuItem';
 import SubMenu from './SubMenu';
-import { AnimatedSubMenuWrapper } from './styles';
+import { SubMenuWrapper } from './styles';
 
 const spring = { ...config.stiff, precision: 0.1 };
 
@@ -80,7 +80,7 @@ const Menu: FunctionComponent<IMenuProps> & {
           position="relative"
         >
           {children}
-          <AnimatedSubMenuWrapper style={subMenuSpringProps} />
+          <SubMenuWrapper style={subMenuSpringProps} />
           <Backdrop
             visible={subMenuVisible}
             style={{ backgroundColor: 'rgba(0, 0, 0, 0)' }}

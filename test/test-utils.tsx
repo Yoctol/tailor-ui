@@ -1,8 +1,8 @@
 import React from 'react';
+import { ThemeProvider } from 'styled-components';
 import { render } from 'react-testing-library';
 
 import defaultTheme from '../src/theme';
-import { ThemeProvider } from '../src/utils/styled-components';
 
 const customRender = (node: any, ...options: any[]) =>
   render(

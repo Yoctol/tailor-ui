@@ -26,7 +26,7 @@ const SubListWrapper = styled(tag.div)`
   }
 `;
 
-const StyledSubItem = styled(Item)`
+const StyledSubItem = styled(Item)<any>`
   position: relative;
   flex-direction: row;
   align-items: center;
