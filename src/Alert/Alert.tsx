@@ -13,8 +13,10 @@ interface IAlertProps {
   onClosed?: () => void;
 }
 
+const defaultType: string = 'info';
+
 const Alert: FunctionComponent<IAlertProps> = ({
-  type = 'info',
+  type = defaultType as Types,
   closable = false,
   ...props
 }) => {

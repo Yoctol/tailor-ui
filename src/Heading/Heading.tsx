@@ -1,8 +1,8 @@
 import React from 'react';
+import styled, { css } from 'styled-components';
 import { ColorProps, SpaceProps, color, space } from 'styled-system';
 import { rem } from 'polished';
 
-import styled, { css } from 'utils/styled-components';
 import tag from 'utils/CleanTag';
 
 export type HeadingBaseProps = SpaceProps &
@@ -13,7 +13,7 @@ export type HeadingBaseProps = SpaceProps &
     white?: boolean;
   };
 
-const HeadingBase = styled<HeadingBaseProps, 'p'>(tag.p)`
+const HeadingBase = styled(tag.p)<HeadingBaseProps>`
   margin: 0;
   color: ${p => p.theme.colors.primaryDark};
   font-weight: 500;
@@ -47,39 +47,39 @@ const HeadingBase = styled<HeadingBaseProps, 'p'>(tag.p)`
   ${color};
 `;
 
-const h1 = styled<HeadingBaseProps, any>((props: any) => (
-  <HeadingBase as={tag.h1} {...props} />
-))`
+const h1 = styled((props: any) => <HeadingBase as={tag.h1} {...props} />)<
+  HeadingBaseProps
+>`
   font-size: ${rem('28px')};
 `;
 
-const h2 = styled<HeadingBaseProps, any>((props: any) => (
-  <HeadingBase as={tag.h2} {...props} />
-))`
+const h2 = styled((props: any) => <HeadingBase as={tag.h2} {...props} />)<
+  HeadingBaseProps
+>`
   font-size: ${rem('24px')};
 `;
 
-const h3 = styled<HeadingBaseProps, any>((props: any) => (
-  <HeadingBase as={tag.h3} {...props} />
-))`
+const h3 = styled((props: any) => <HeadingBase as={tag.h3} {...props} />)<
+  HeadingBaseProps
+>`
   font-size: ${rem('18px')};
 `;
 
-const h4 = styled<HeadingBaseProps, any>((props: any) => (
-  <HeadingBase as={tag.h4} {...props} />
-))`
+const h4 = styled((props: any) => <HeadingBase as={tag.h4} {...props} />)<
+  HeadingBaseProps
+>`
   font-size: ${rem('16px')};
 `;
 
-const h5 = styled<HeadingBaseProps, any>((props: any) => (
-  <HeadingBase as={tag.h5} {...props} />
-))`
+const h5 = styled((props: any) => <HeadingBase as={tag.h5} {...props} />)<
+  HeadingBaseProps
+>`
   font-size: ${rem('14px')};
 `;
 
-const h6 = styled<HeadingBaseProps, any>((props: any) => (
-  <HeadingBase as={tag.h6} {...props} />
-))`
+const h6 = styled((props: any) => <HeadingBase as={tag.h6} {...props} />)<
+  HeadingBaseProps
+>`
   font-size: ${rem('12px')};
 `;
 

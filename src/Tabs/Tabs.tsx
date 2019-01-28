@@ -1,7 +1,7 @@
 import React, { FunctionComponent, useContext, useState } from 'react';
+import styled, { css } from 'styled-components';
 import { space as styledSpace } from 'styled-system';
 
-import styled, { css } from 'utils/styled-components';
 import tag from 'utils/CleanTag';
 
 import TabContext, { Size } from './TabContext';
@@ -12,7 +12,7 @@ interface IStyledTabProps {
   active: boolean;
 }
 
-const StyledTab = styled<IStyledTabProps, 'a'>(tag.a)`
+const StyledTab = styled(tag.a)<IStyledTabProps>`
   display: inline-flex;
   position: relative;
   align-items: center;
@@ -36,7 +36,10 @@ const StyledTab = styled<IStyledTabProps, 'a'>(tag.a)`
     margin-left: ${p => p.theme.space[2]};
   }
 
-  ${({ size, theme: { heights, paddings, fontSizes } }) =>
+  ${({
+    size,
+    theme: { heights, paddings, fontSizes },
+  }: IStyledTabProps & { theme: any }) =>
     ({
       sm: css`
         height: ${heights.sm};
@@ -132,7 +135,7 @@ interface IStyledTabsProps {
   block?: boolean;
 }
 
-const StyledTabs = styled<IStyledTabsProps, 'nav'>(tag.nav)`
+const StyledTabs = styled(tag.nav)<IStyledTabsProps>`
   display: flex;
 
   ${({ absolute }) =>
@@ -185,7 +188,7 @@ const Tabs: FunctionComponent<TabsProps> & {
 } = ({
   absolute = false,
   pills = false,
-  size = 'md',
+  size = 'md' as Size,
   children,
   defaultActiveValue,
   activeValue,

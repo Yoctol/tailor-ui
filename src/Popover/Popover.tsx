@@ -1,6 +1,5 @@
 import React, { PureComponent, ReactNode } from 'react';
-
-import styled from 'utils/styled-components';
+import styled from 'styled-components';
 
 import Heading from '../Heading';
 import Tooltip, { ITooltipProps } from '../Tooltip';

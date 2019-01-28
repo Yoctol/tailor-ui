@@ -1,8 +1,7 @@
 import React, { PureComponent } from 'react';
+import styled from 'styled-components';
 import { MdClose } from 'react-icons/md';
 import { Transition, animated } from 'react-spring';
-
-import styled from 'utils/styled-components';
 
 import Box from '../Grid/Box';
 import Icon from '../Icon';

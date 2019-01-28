@@ -4,8 +4,7 @@ import React, {
   ReactNode,
   useContext,
 } from 'react';
-
-import styled from 'utils/styled-components';
+import styled from 'styled-components';
 
 import Button from '../Button';
 import Flex from '../Grid/Flex';

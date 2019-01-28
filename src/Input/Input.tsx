@@ -6,9 +6,9 @@ import React, {
   forwardRef,
   isValidElement,
   useEffect,
-  useImperativeMethods,
   useRef,
 } from 'react';
+import styled, { css } from 'styled-components';
 import {
   SpaceProps,
   TextAlignProps,
@@ -18,7 +18,6 @@ import {
   width,
 } from 'styled-system';
 
-import styled, { css } from 'utils/styled-components';
 import tag from 'utils/CleanTag';
 
 import { StyledButton } from '../Button';
@@ -65,8 +64,11 @@ export const inputStyles = css<StyledInputProps>`
     color: ${p => p.theme.colors.gray400};
   }
 
-  ${({ size = 'md', theme: { paddings, heights, fontSizes } }) =>
-    ({
+  ${({
+    size = 'md',
+    theme: { paddings, heights, fontSizes },
+  }: StyledInputProps & { theme: any }) => {
+    const inputSizeStyles = {
       sm: css`
         height: ${heights.sm};
         padding: 1px ${paddings.xs};
@@ -82,7 +84,10 @@ export const inputStyles = css<StyledInputProps>`
         padding: 6px ${paddings.xs};
         font-size: ${fontSizes.lg};
       `,
-    }[size])};
+    };
+
+    return inputSizeStyles[size];
+  }};
 
   ${p => p.theme.transition /* sc-declaration */};
 
@@ -91,7 +96,7 @@ export const inputStyles = css<StyledInputProps>`
   ${textAlign};
 `;
 
-export const StyledInput = styled<StyledInputProps, any>(tag.input)`
+export const StyledInput = styled(tag.input)<StyledInputProps>`
   ${inputStyles};
 `;
 
@@ -113,7 +118,7 @@ interface IInputLabel {
   suffix?: any;
 }
 
-const InputWrapper = styled<IInputLabel, 'div'>(tag.div)`
+const InputWrapper = styled(tag.div)<IInputLabel>`
   display: flex;
 
   ${p =>
@@ -197,19 +202,17 @@ const Input: FunctionComponent<IInputProps> = forwardRef(
   ) => {
     const inputRef = useRef<any>(null);
 
-    useImperativeMethods(ref, () => ({
+    // FIXME: wait for upstream: https://github.com/DefinitelyTyped/DefinitelyTyped/pull/32144
+    (React as any).useImperativeHandle(ref, () => ({
       focus: () => inputRef.current.focus(),
       blur: () => inputRef.current.blur(),
     }));
 
-    useEffect(
-      () => {
-        if (autoSelect && inputRef.current) {
-          inputRef.current.select();
-        }
-      },
-      [autoSelect]
-    );
+    useEffect(() => {
+      if (autoSelect && inputRef.current) {
+        inputRef.current.select();
+      }
+    }, [autoSelect]);
 
     const handleKeyPress = (event: KeyboardEvent<HTMLInputElement>) => {
       if (onKeyPress) {

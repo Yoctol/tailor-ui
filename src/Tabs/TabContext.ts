@@ -2,6 +2,8 @@ import { createContext } from 'react';
 
 export type Size = 'sm' | 'md' | 'lg';
 
+const defaultSize = 'md';
+
 const TabContext = createContext<{
   activeValue: string;
   setValue: (value: string) => void;
@@ -10,7 +12,7 @@ const TabContext = createContext<{
 }>({
   activeValue: '',
   setValue: () => {},
-  size: 'md',
+  size: defaultSize as Size,
   pills: false,
 });
 

@@ -1,15 +1,11 @@
 import React, { FunctionComponent } from 'react';
+import styled, { css } from 'styled-components';
 import { IconType as ReactIconsIconType } from 'react-icons';
 import { SpaceProps, style, space as styledSpace } from 'styled-system';
 
-import styled, { css } from 'utils/styled-components';
 import tag from 'utils/CleanTag';
 
-import * as icons from './icons';
-
-interface Icons {
-  [key: string]: any;
-}
+import { BuiltInIconKeys, icons } from './icons';
 
 const styledFill = style({
   prop: 'fill',
@@ -30,7 +26,7 @@ export type IconWrapperProps = SpaceProps & {
   fill?: string;
 };
 
-export const IconWrapper = styled<IconWrapperProps, 'i'>(tag.i)`
+export const IconWrapper = styled(tag.i)<IconWrapperProps>`
   display: inline-flex;
   line-height: 1;
   cursor: ${p => p.cursor};
@@ -49,7 +45,7 @@ export const IconWrapper = styled<IconWrapperProps, 'i'>(tag.i)`
   ${styledSpace};
 `;
 
-export type IconType = string | ReactIconsIconType;
+export type IconType = BuiltInIconKeys | ReactIconsIconType;
 
 export type IconProps = SpaceProps & {
   cursor?: string;
@@ -65,16 +61,20 @@ const Icon: FunctionComponent<IconProps> = ({
   size = 24,
   ...otherProps
 }) => {
-  let IconComponent = type;
+  let IconComponent: any;
 
   if (typeof type === 'string') {
-    const BuiltInIcon = (icons as Icons)[type];
+    const BuiltInIcon = icons[type];
 
     if (!BuiltInIcon) {
-      throw new Error('Built-in icon does not exists!');
+      console.error('Built-in icon does not exists!');
+
+      return null;
     }
 
     IconComponent = BuiltInIcon;
+  } else {
+    IconComponent = type;
   }
 
   return (

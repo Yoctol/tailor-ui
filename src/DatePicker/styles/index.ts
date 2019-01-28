@@ -1,4 +1,4 @@
-import { css } from 'utils/styled-components';
+import { css } from 'styled-components';
 
 import Calendar from './Calendar';
 import Common from './common';

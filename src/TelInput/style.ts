@@ -1,5 +1,5 @@
 // stylelint-disable
-import styled, { css } from 'utils/styled-components';
+import styled, { css } from 'styled-components';
 
 import { inputStyles } from '../Input';
 

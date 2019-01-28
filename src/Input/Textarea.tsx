@@ -1,7 +1,6 @@
 import React, { FunctionComponent } from 'react';
 import TextareaAutosize from 'react-textarea-autosize';
-
-import styled from 'utils/styled-components';
+import styled from 'styled-components';
 
 import { IInputProps, inputStyles } from './Input';
 
@@ -9,7 +8,7 @@ export type TextareaProps = IInputProps & {
   resize?: boolean;
 };
 
-export const StyledTextarea = styled<TextareaProps, any>(TextareaAutosize)`
+export const StyledTextarea = styled(TextareaAutosize)<TextareaProps>`
   word-wrap: break-word;
   transition: border 0.2s ease;
   resize: ${({ resize }) => (resize ? 'initial' : 'none')};

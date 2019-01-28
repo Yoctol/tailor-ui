@@ -1,4 +1,5 @@
 import React, { FunctionComponent } from 'react';
+import styled, { css } from 'styled-components';
 import {
   BorderRadiusProps,
   BordersProps,
@@ -8,7 +9,6 @@ import {
   space,
 } from 'styled-system';
 
-import styled, { css } from 'utils/styled-components';
 import tag from 'utils/CleanTag';
 
 import Icon, { IconType } from '../Icon';
@@ -19,7 +19,7 @@ export type StyledItemProps = SpaceProps &
     active?: boolean;
   };
 
-export const StyledItem = styled<StyledItemProps, 'button'>(tag.button)`
+export const StyledItem = styled(tag.button)<StyledItemProps>`
   display: inline-flex;
   align-items: center;
   width: 100%;

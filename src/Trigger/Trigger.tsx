@@ -1,8 +1,8 @@
 import React, {
   PureComponent,
-  ReactElement,
   ReactNode,
   cloneElement,
+  isValidElement,
 } from 'react';
 import observeRect from '@reach/observe-rect';
 import { Transition, config } from 'react-spring';
@@ -11,8 +11,9 @@ import { findDOMNode } from 'react-dom';
 import ClickOutside from '../utils/ClickOutside';
 import Portal from '../utils/Portal';
 
-import getPositionOffset, { Placement } from './getPositionOffset';
+import getPositionOffset from './getPositionOffset';
 import getTransitionStyles from './getTransitionStyles';
+import { Placement } from './type';
 
 export interface IPopupRenderProps {
   styles: {
@@ -39,9 +40,7 @@ export interface ITriggerProps {
   /**
    * The component which this Trigger show up
    */
-  children:
-    | ReactElement<any>
-    | ((renderProps: IChildrenRenderProps) => ReactNode);
+  children: ReactNode | ((renderProps: IChildrenRenderProps) => ReactNode);
   /**
    * The content in this Trigger component
    */
@@ -186,6 +185,7 @@ class Trigger extends PureComponent<ITriggerProps, ITriggerState> {
 
   renderChildren = () => {
     const { children, trigger } = this.props;
+
     const visible = this.getVisible();
 
     let bind = {
@@ -211,6 +211,13 @@ class Trigger extends PureComponent<ITriggerProps, ITriggerState> {
         bind,
         visible,
       });
+    }
+
+    if (!isValidElement<any>(children)) {
+      console.warn(
+        'The children of Trigger only support render-props or ReactElement'
+      );
+      return children;
     }
 
     return cloneElement(children, {

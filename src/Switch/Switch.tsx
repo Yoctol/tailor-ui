@@ -1,6 +1,5 @@
 import React, { FunctionComponent } from 'react';
-
-import styled from 'utils/styled-components';
+import styled from 'styled-components';
 
 const StyledSwitch = styled.label`
   display: inline-block;

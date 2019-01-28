@@ -1,7 +1,6 @@
 import styledNormalize from 'styled-normalize';
+import { createGlobalStyle } from 'styled-components';
 import { rem } from 'polished';
-
-import { createGlobalStyle } from 'utils/styled-components';
 
 import datePickerStyles from '../DatePicker/styles';
 

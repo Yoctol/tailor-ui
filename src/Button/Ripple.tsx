@@ -1,6 +1,6 @@
-import React, { MouseEvent, PureComponent } from 'react';
+import React, { PureComponent } from 'react';
+import styled, { css, keyframes } from 'styled-components';
 
-import styled, { css, keyframes } from 'utils/styled-components';
 import tag from 'utils/CleanTag';
 
 const rippleAnimation = keyframes`
@@ -10,7 +10,7 @@ const rippleAnimation = keyframes`
   }
 `;
 
-const StyledRipple = styled<{ rippling: boolean }, 'div'>(tag.div)`
+const StyledRipple = styled(tag.div)<{ rippling: boolean }>`
   position: absolute;
   border-radius: 50%;
   opacity: 1;
@@ -57,10 +57,7 @@ class Ripple extends PureComponent {
     });
   };
 
-  startRipple = (
-    { clientX, clientY }: MouseEvent,
-    buttonRef: HTMLButtonElement
-  ) => {
+  startRipple = ({ clientX, clientY }: any, buttonRef: HTMLButtonElement) => {
     const rippling = () => {
       this.rippling({ clientX, clientY }, buttonRef);
     };

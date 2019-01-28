@@ -1,8 +1,7 @@
 import React, { FunctionComponent, ReactNode, useContext } from 'react';
+import styled from 'styled-components';
 import { MdKeyboardArrowUp } from 'react-icons/md';
 import { Spring, animated } from 'react-spring';
-
-import styled from 'utils/styled-components';
 
 import Icon, { IconType } from '../Icon';
 

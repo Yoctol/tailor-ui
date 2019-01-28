@@ -1,12 +1,12 @@
 import React, { FunctionComponent, useState } from 'react';
+import styled from 'styled-components';
 
-import styled from 'utils/styled-components';
 import tag from 'utils/CleanTag';
 
 import Radio from './Radio';
 import RadioContext, { Direction } from './RadioContext';
 
-const RadioGroupFlex = styled<{ direction: Direction }, 'div'>(tag.div)`
+const RadioGroupFlex = styled(tag.div)<{ direction: Direction }>`
   display: ${p => (p.direction === 'horizontal' ? 'flex' : 'inline-flex')};
   flex-direction: ${p => (p.direction === 'horizontal' ? 'row' : 'column')};
 `;
@@ -43,7 +43,7 @@ const RadioGroup: FunctionComponent<IRadioGroupProps> = ({
   defaultValue,
   options = null,
   onChange,
-  direction = 'horizontal',
+  direction = 'horizontal' as Direction,
   children,
   ...otherProps
 }) => {

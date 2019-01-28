@@ -1,7 +1,6 @@
 import React, { FunctionComponent } from 'react';
+import styled from 'styled-components';
 import { Transition, animated, config } from 'react-spring';
-
-import styled from 'utils/styled-components';
 
 const StyledBackdrop = styled.div`
   position: fixed;

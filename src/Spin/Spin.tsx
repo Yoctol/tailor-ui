@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react';
+import styled, { css, keyframes } from 'styled-components';
 
-import styled, { css, keyframes } from 'utils/styled-components';
 import tag from 'utils/CleanTag';
 
 const spinAnimation = keyframes`
@@ -44,7 +44,7 @@ const SpinCube = styled(tag.div)`
   }
 `;
 
-const SpinCubeWrapper = styled<ISpinCubeWrapperProps>(tag.div)`
+const SpinCubeWrapper = styled(tag.div)<ISpinCubeWrapperProps>`
   position: relative;
   width: ${p => p.size}px;
   height: ${p => p.size}px;
@@ -79,7 +79,7 @@ interface ISpinWrapperProps {
   fullscreen: boolean;
 }
 
-const SpinWrapper = styled<ISpinWrapperProps>(tag.div)`
+const SpinWrapper = styled(tag.div)<ISpinWrapperProps>`
   display: flex;
   align-items: center;
   justify-content: center;

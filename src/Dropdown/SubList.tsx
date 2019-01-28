@@ -1,7 +1,7 @@
 import React, { FunctionComponent, useEffect, useRef, useState } from 'react';
+import styled from 'styled-components';
 import { MdKeyboardArrowRight } from 'react-icons/md';
 
-import styled from 'utils/styled-components';
 import tag from 'utils/CleanTag';
 
 import Icon from '../Icon';

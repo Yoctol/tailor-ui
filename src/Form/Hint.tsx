@@ -1,6 +1,6 @@
+import styled from 'styled-components';
 import { rem } from 'polished';
 
-import styled from 'utils/styled-components';
 import tag from 'utils/CleanTag';
 
 const Hint = styled(tag.div)`

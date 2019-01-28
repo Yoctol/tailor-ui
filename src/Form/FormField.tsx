@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react';
+import styled, { css } from 'styled-components';
 
-import styled, { css } from 'utils/styled-components';
 import tag from 'utils/CleanTag';
 
 import { StyledInput } from '../Input';
@@ -14,7 +14,7 @@ export interface IFormFieldProps {
   error?: boolean;
 }
 
-const StyledFormField = styled<IFormFieldProps, 'div'>(tag.div)`
+const StyledFormField = styled(tag.div)<IFormFieldProps>`
   position: relative;
   margin-bottom: ${p => p.theme.space[2]};
 
