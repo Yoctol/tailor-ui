@@ -2,9 +2,9 @@ import { createContext } from 'react';
 
 const MenuContext = createContext<{
   subMenuVisible: boolean;
-  activeSubId: string;
+  activeSubId: string | null;
   setActiveSubId: (subId: string | null) => void;
-  activeItemId: string;
+  activeItemId: string | null;
   setActiveItemId: (itemId: string) => void;
   subMenuContentSpringProps: any;
 }>({

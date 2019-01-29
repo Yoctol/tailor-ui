@@ -1,7 +1,7 @@
 import React, { FunctionComponent, useContext } from 'react';
 
-import Box from '../../Grid/Box';
-import Icon from '../../Icon';
+import Box from '../Grid/Box';
+import Icon from '../Icon';
 
 import MenuContenx from './MenuContext';
 import { StyledMenuItem } from './styles';

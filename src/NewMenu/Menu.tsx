@@ -1,21 +1,31 @@
 import React, { FunctionComponent, useRef, useState } from 'react';
-import { config, useChain, useSpring } from 'react-spring/hooks';
+import { config, useChain, useSpring } from 'react-spring/hooks.cjs';
 
-import Backdrop from '../../Backdrop';
-import Flex from '../../Grid/Flex';
+import Backdrop from '../Backdrop';
+import Flex from '../Grid/Flex';
 
 import MenuContext from './MenuContext';
+import MenuDivider from './MenuDivider';
+import MenuItem from './MenuItem';
+import SubMenu from './SubMenu';
 import { AnimatedSubMenuWrapper } from './styles';
 
 const spring = { ...config.stiff, precision: 0.1 };
 
-const Menu: FunctionComponent<any> = ({
-  children,
-  defaultActiveSubId = null,
-  defaultActiveItemId = null,
-}) => {
+export interface IMenuProps {
+  defaultActiveSubId?: string;
+  defaultActiveItemId?: string;
+}
+
+const Menu: FunctionComponent<IMenuProps> & {
+  SubMenu: typeof SubMenu;
+  Divider: typeof MenuDivider;
+  Item: typeof MenuItem;
+} = ({ children, defaultActiveSubId = null, defaultActiveItemId = null }) => {
   const [subMenuVisible, setSubMenuVisible] = useState(false);
-  const [activeSubId, setActiveSubId] = useState(defaultActiveSubId);
+  const [activeSubId, setActiveSubId] = useState<string | null>(
+    defaultActiveSubId
+  );
   const [activeItemId, setActiveItemId] = useState(defaultActiveItemId);
 
   const subMenuSpringRef = useRef(null);
@@ -81,5 +91,9 @@ const Menu: FunctionComponent<any> = ({
     </MenuContext.Provider>
   );
 };
+
+Menu.Divider = MenuDivider;
+Menu.SubMenu = SubMenu;
+Menu.Item = MenuItem;
 
 export default Menu;

@@ -5,9 +5,9 @@ import React, {
   useState,
 } from 'react';
 
-import Flex from '../../Grid/Flex';
-import Icon, { IconType } from '../../Icon';
-import Tooltip from '../../Tooltip';
+import Flex from '../Grid/Flex';
+import Icon, { IconType } from '../Icon';
+import Tooltip from '../Tooltip';
 
 import MenuContext from './MenuContext';
 import SubMenuContent from './SubMenuContent';

@@ -1,9 +1,9 @@
 import styled, { css } from 'styled-components';
-import { animated } from 'react-spring/hooks';
+import { animated } from 'react-spring/hooks.cjs';
 
 import tag from 'utils/CleanTag';
 
-import Box from '../../Grid/Box';
+import Box from '../Grid/Box';
 
 const SubMenuWrapper = styled(tag.div)`
   position: absolute;

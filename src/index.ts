@@ -17,6 +17,7 @@ export { default as Label } from './Form/Label';
 export { default as Menu } from './Menu';
 export { default as Mention } from './Mention';
 export { default as message } from './message';
+export { default as NewMenu } from './NewMenu';
 export { default as Modal } from './Modal';
 export { default as Popconfirm } from './Popconfirm';
 export { default as Popover } from './Popover';
