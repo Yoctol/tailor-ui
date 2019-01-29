@@ -1,3 +1,9 @@
+## [0.2.9](https://github.com/yoctol/tailor-ui/compare/v0.2.8...v0.2.9) (2019-01-29)
+
+### Bug Fixes
+
+- **menu:** use default export ([a310499](https://github.com/yoctol/tailor-ui/commit/a310499))
+
 ## [0.2.8](https://github.com/yoctol/tailor-ui/compare/v0.2.7...v0.2.8) (2019-01-25)
 
 ### Features
