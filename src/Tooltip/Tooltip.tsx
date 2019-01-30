@@ -43,6 +43,14 @@ export type ITooltipProps = Omit<TooltipContentProps, 'light'> & {
    * Decide how to trigger this tooltip
    */
   trigger?: 'click' | 'hover';
+  /**
+   * Delay in milliseconds, before tooltip is shown on mouse enter
+   */
+  mouseEnterDelay?: number;
+  /**
+   * Delay in milliseconds, before tooltip is hidden on mouse leave
+   */
+  mouseLeaveDelay?: number;
   components?: {
     ContentComponent: any;
     ArrowComponent: any;
@@ -56,6 +64,7 @@ class Tooltip extends PureComponent<ITooltipProps> {
 
   renderOverlay = ({
     styles,
+    handleOpen,
     handleClose,
     handlePopupRef,
   }: IPopupRenderProps) => {
@@ -74,8 +83,13 @@ class Tooltip extends PureComponent<ITooltipProps> {
     return (
       <animated.div style={styles} ref={handlePopupRef}>
         <ContentComponent
+          onMouseEnter={handleOpen}
+          onMouseLeave={handleClose}
           light={light}
-          {...omit(['onVisibleChange'], otherProps)}
+          {...omit(
+            ['onVisibleChange', 'mouseEnterDelay', 'mouseLeaveDelay'],
+            otherProps
+          )}
         >
           {content instanceof Function && trigger === 'click'
             ? content(handleClose)
@@ -94,6 +108,8 @@ class Tooltip extends PureComponent<ITooltipProps> {
       visible,
       onVisibleChange,
       children,
+      mouseEnterDelay,
+      mouseLeaveDelay,
     } = this.props;
 
     return (
@@ -108,6 +124,8 @@ class Tooltip extends PureComponent<ITooltipProps> {
         defaultVisible={defaultVisible}
         visible={visible}
         onVisibleChange={onVisibleChange}
+        mouseEnterDelay={mouseEnterDelay}
+        mouseLeaveDelay={mouseLeaveDelay}
       >
         {children}
       </Trigger>
