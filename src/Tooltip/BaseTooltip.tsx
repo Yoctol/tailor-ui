@@ -2,12 +2,10 @@ import styled, { css } from 'styled-components';
 import {
   BorderRadiusProps,
   ColorProps,
-  MinWidthProps,
   SpaceProps,
   TextAlignProps,
   borderRadius,
   color,
-  minWidth,
   space,
   textAlign,
 } from 'styled-system';
@@ -17,7 +15,6 @@ import tag from 'utils/CleanTag';
 import { Placement } from '../Trigger/type';
 
 export type TooltipContentProps = SpaceProps &
-  MinWidthProps &
   ColorProps &
   BorderRadiusProps &
   TextAlignProps & {
@@ -34,6 +31,7 @@ export const TooltipContent = styled(tag.div)<TooltipContentProps>`
   color: ${({ light, theme: { colors } }) =>
     light ? colors.gray700 : colors.light};
   font-size: ${p => p.theme.fontSizes.sm};
+  white-space: nowrap;
 
   ${({ light }) =>
     !light &&
@@ -42,15 +40,14 @@ export const TooltipContent = styled(tag.div)<TooltipContentProps>`
     `};
 
   ${space};
-  ${minWidth};
   ${color};
   ${borderRadius};
   ${textAlign};
 `;
 
 TooltipContent.defaultProps = {
-  minWidth: 120,
-  p: 1,
+  py: 1,
+  px: 2,
   textAlign: 'center',
   borderRadius: 'base',
 };

@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import { animated } from 'react-spring/hooks.cjs';
 
 import tag from 'utils/CleanTag';
@@ -11,6 +11,7 @@ const SubMenuWrapper = styled(tag.div)`
   flex-direction: column;
   height: 100%;
   background-color: ${p => p.theme.colors.primary};
+  box-shadow: 4px 0 6px 0 rgba(94, 94, 94, 0.5);
 `;
 
 export const AnimatedSubMenuWrapper = animated(SubMenuWrapper);
@@ -44,16 +45,12 @@ export const StyledSubMenu = styled(tag.div)<IStyledSubMenuProps>`
   box-sizing: border-box;
   width: 48px;
   height: 48px;
-  border-left: 3px solid transparent;
-  background-color: ${p => p.theme.colors.primaryDark};
+  border-right: 3px solid transparent;
+  border-left: 3px solid
+    ${p => (p.active ? p.theme.colors.secondaryLight : 'transparent')};
+  background-color: ${p =>
+    p.active ? p.theme.colors.primary : p.theme.colors.primaryDark};
   color: white;
-
-  ${p =>
-    p.active &&
-    css`
-      background-color: ${p.theme.colors.primary};
-      border-color: ${p.theme.colors.secondaryLight};
-    `}
 
   ${p => p.theme.transition};
 `;
@@ -68,17 +65,12 @@ export const StyledMenuItem = styled(tag.div)<IStyledMenuItemProps>`
   width: 100%;
   height: 48px;
   padding: 0 ${p => p.theme.space[3]};
-  color: ${p => p.theme.colors.light};
+  color: ${p =>
+    p.active ? p.theme.colors.secondaryLight : p.theme.colors.light};
   font-size: ${p => p.theme.fontSizes.base};
   cursor: pointer;
 
   &:hover {
     background-color: ${p => p.theme.colors.primaryLight};
   }
-
-  ${({ active }) =>
-    active &&
-    css`
-      color: ${p => p.theme.colors.secondaryLight};
-    `};
 `;

@@ -49,7 +49,6 @@ const SubMenu: FunctionComponent<ISubMenuProps> = ({
       light
       placement="right"
       content={title}
-      minWidth="60px"
       visible={!contentVisible && tooltipVisible}
       onVisibleChange={visible => {
         if (!contentVisible) {
