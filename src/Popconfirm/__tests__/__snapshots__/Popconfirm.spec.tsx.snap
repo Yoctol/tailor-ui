@@ -320,9 +320,12 @@ exports[`Popconfirm should render correctly 1`] = `
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   color: #ffffff;
   font-size: 0.875rem;
+  white-space: nowrap;
   opacity: 0.8;
-  padding: 0.25rem;
-  min-width: 120px;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
   border-radius: 0.25rem;
   text-align: center;
   padding: 0;

@@ -6,6 +6,7 @@ import React, {
   forwardRef,
   isValidElement,
   useEffect,
+  useImperativeMethods,
   useRef,
 } from 'react';
 import styled, { css } from 'styled-components';
@@ -203,7 +204,7 @@ const Input: FunctionComponent<IInputProps> = forwardRef(
     const inputRef = useRef<any>(null);
 
     // FIXME: wait for upstream: https://github.com/DefinitelyTyped/DefinitelyTyped/pull/32144
-    (React as any).useImperativeHandle(ref, () => ({
+    useImperativeMethods(ref, () => ({
       focus: () => inputRef.current.focus(),
       blur: () => inputRef.current.blur(),
     }));
