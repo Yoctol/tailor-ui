@@ -1,3 +1,5 @@
+## [0.2.10](https://github.com/yoctol/tailor-ui/compare/v0.2.9...v0.2.10) (2019-01-30)
+
 ## [0.2.9](https://github.com/yoctol/tailor-ui/compare/v0.2.8...v0.2.9) (2019-01-29)
 
 ### Bug Fixes
