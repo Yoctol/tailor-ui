@@ -2866,15 +2866,6 @@ clean-css@4.2.x:
   dependencies:
     source-map "~0.6.0"
 
-clean-tag@^2.0.2:
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/clean-tag/-/clean-tag-2.0.2.tgz#164ed3f661a45cb81cce5baaaa5d512492e0df05"
-  integrity sha512-VjfaE59B7Iq9CWQYeVahPRFks0rkHAmXb8n6HKDBMVtR3bYTuNnYZNFtlR4wg8HiAv0OGFoljIytcRxfqrzRew==
-  dependencies:
-    html-tags "^2.0.0"
-    react ">=16.0.0"
-    styled-system ">=2.0.0 || >=3.0.0"
-
 cli-cursor@^2.0.0, cli-cursor@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/cli-cursor/-/cli-cursor-2.1.0.tgz#b35dac376479facc3e94747d41d0d0f5238ffcb5"
@@ -10219,7 +10210,7 @@ react-transition-group@^2.2.1:
     prop-types "^15.6.2"
     react-lifecycles-compat "^3.0.4"
 
-react@>=16.0.0, react@^16.7.0:
+react@^16.7.0:
   version "16.7.0"
   resolved "https://registry.yarnpkg.com/react/-/react-16.7.0.tgz#b674ec396b0a5715873b350446f7ea0802ab6381"
   integrity sha512-StCz3QY8lxTb5cl2HJxjwLFOXPIFQp+p+hxQfc8WE0QiLfCtIlKj8/+5tjjKm8uSTlAW+fCPaavGFS06V9Ar3A==
@@ -11728,7 +11719,7 @@ styled-normalize@^8.0.4:
   resolved "https://registry.yarnpkg.com/styled-normalize/-/styled-normalize-8.0.4.tgz#6a0885dc16c61d88813dab8f5137da928fe0c947"
   integrity sha512-dXkKPnT+JcpqYnS0iQiBhUCOdheDz9xEm3H+ZARJV7l4WCXmRkwCx20ujkIYfESoYaiefbuX+F+rbtF6Ku5kvA==
 
-"styled-system@>=2.0.0 || >=3.0.0", styled-system@^3.2.1:
+styled-system@^3.2.1:
   version "3.2.1"
   resolved "https://registry.yarnpkg.com/styled-system/-/styled-system-3.2.1.tgz#491e1e6f88d7ee021f6f49376f12852cde8007cb"
   integrity sha512-ag0Yp7UeVHHc3t+1uM3jvlljaZYzwqpbJ8hMrFvpaKfUd8xsB9JeQXLwMpEsz8iLx8Lz/+9j0coWFZjmw8MogQ==
