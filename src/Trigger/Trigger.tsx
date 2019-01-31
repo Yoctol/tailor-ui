@@ -21,6 +21,7 @@ export interface IPopupRenderProps {
     left: number;
     [key: string]: any;
   };
+  handleOpen: () => void;
   handleClose: () => void;
   handlePopupRef: any;
 }
@@ -61,6 +62,8 @@ export interface ITriggerProps {
   defaultVisible?: boolean;
   visible?: boolean;
   zIndex?: string;
+  mouseEnterDelay?: number;
+  mouseLeaveDelay?: number;
 }
 
 interface ITriggerState {
@@ -75,11 +78,17 @@ class Trigger extends PureComponent<ITriggerProps, ITriggerState> {
     trigger: 'hover',
     animation: 'slide',
     defaultVisible: false,
+    mouseEnterDelay: 0,
+    mouseLeaveDelay: 200,
   };
 
   childrenDOM?: HTMLElement;
 
   rectObserver?: any;
+
+  enterDelayTimer?: any;
+
+  leaveDelayTimer?: any;
 
   offset: {
     top: number;
@@ -144,6 +153,21 @@ class Trigger extends PureComponent<ITriggerProps, ITriggerState> {
   };
 
   handleOpen = () => {
+    const { mouseEnterDelay, trigger } = this.props;
+
+    if (this.leaveDelayTimer) {
+      clearTimeout(this.leaveDelayTimer);
+      this.leaveDelayTimer = null;
+    }
+
+    if (this.props.mouseEnterDelay !== 0 && trigger === 'hover') {
+      this.enterDelayTimer = setTimeout(this.open, mouseEnterDelay);
+    } else {
+      this.open();
+    }
+  };
+
+  open = () => {
     const visible = this.getVisible();
 
     if (!visible) {
@@ -155,10 +179,28 @@ class Trigger extends PureComponent<ITriggerProps, ITriggerState> {
       if (onVisibleChange) {
         onVisibleChange(true);
       }
+
+      clearTimeout(this.enterDelayTimer);
+      this.enterDelayTimer = null;
     }
   };
 
   handleClose = () => {
+    const { mouseLeaveDelay, trigger } = this.props;
+
+    if (this.enterDelayTimer) {
+      clearTimeout(this.enterDelayTimer);
+      this.enterDelayTimer = null;
+    }
+
+    if (this.props.mouseLeaveDelay !== 0 && trigger === 'hover') {
+      this.leaveDelayTimer = setTimeout(this.close, mouseLeaveDelay);
+    } else {
+      this.close();
+    }
+  };
+
+  close = () => {
     const visible = this.getVisible();
 
     if (visible) {
@@ -170,6 +212,9 @@ class Trigger extends PureComponent<ITriggerProps, ITriggerState> {
       if (onVisibleChange) {
         onVisibleChange(false);
       }
+
+      clearTimeout(this.leaveDelayTimer);
+      this.leaveDelayTimer = null;
     }
   };
 
@@ -272,6 +317,7 @@ class Trigger extends PureComponent<ITriggerProps, ITriggerState> {
             const renderPopup = () =>
               popup({
                 styles,
+                handleOpen: this.handleOpen,
                 handleClose: this.handleClose,
                 handlePopupRef: this.handlePopupRef,
               });
