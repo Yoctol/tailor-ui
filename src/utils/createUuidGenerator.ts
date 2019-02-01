@@ -3,7 +3,7 @@ const createUuidGenerator = (name: string) => {
 
   return () => {
     seed += 1;
-    return `yoctol_ui_${name}_${Date.now()}_${seed}`;
+    return `tailor_${name}_${Date.now()}_${seed}`;
   };
 };
 
