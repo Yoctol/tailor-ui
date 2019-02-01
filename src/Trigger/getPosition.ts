@@ -32,7 +32,10 @@ const getPosition = (
     placement = placement.replace('top', 'bottom') as Placement;
   }
 
-  if (placement.includes('bottom') && TOP_OFFSET_BOTTOM > innerHeight) {
+  if (
+    placement.includes('bottom') &&
+    TOP_OFFSET_BOTTOM + offsetHeight > innerHeight
+  ) {
     placement = placement.replace('bottom', 'top') as Placement;
   }
 

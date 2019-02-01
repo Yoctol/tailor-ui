@@ -4,12 +4,12 @@ import React, {
   cloneElement,
   isValidElement,
 } from 'react';
-import observeRect from '@reach/observe-rect';
 import { Transition, config } from 'react-spring/renderprops.cjs';
 import { findDOMNode } from 'react-dom';
 
 import ClickOutside from '../utils/ClickOutside';
 import Portal from '../utils/Portal';
+import { createRectObserver } from '../utils/rect-observer';
 
 import getPosition from './getPosition';
 import getTransitionProps from './getTransitionProps';
@@ -107,26 +107,7 @@ class Trigger extends PureComponent<ITriggerProps, ITriggerState> {
     rect: null,
   };
 
-  componentDidMount() {
-    window.addEventListener('keydown', this.handleKeydown);
-
-    this.childrenDOM = findDOMNode(this) as HTMLElement;
-
-    this.rectObserver = observeRect(this.childrenDOM, (rect: DOMRect) => {
-      this.setState({ rect });
-    });
-
-    if (this.props.defaultVisible) {
-      this.rectObserver.observe();
-    }
-  }
-
-  componentWillUnmount() {
-    this.rectObserver.unobserve();
-    window.removeEventListener('keydown', this.handleKeydown);
-  }
-
-  getVisible() {
+  get visible() {
     const { visible } = this.props;
 
     if (typeof visible === 'boolean') {
@@ -136,19 +117,32 @@ class Trigger extends PureComponent<ITriggerProps, ITriggerState> {
     return this.state.visible;
   }
 
+  componentDidMount() {
+    this.childrenDOM = findDOMNode(this) as HTMLElement;
+
+    this.rectObserver = createRectObserver(this.childrenDOM, rect => {
+      this.setState(() => ({ rect }));
+    });
+
+    if (this.visible) {
+      this.rectObserver.observe();
+    }
+  }
+
+  componentWillUnmount() {
+    this.rectObserver.unobserve();
+  }
+
   handleKeydown = ({ keyCode }: KeyboardEvent) => {
-    const visible = this.getVisible();
     const { trigger } = this.props;
 
-    if (visible && trigger === 'click' && keyCode === 27) {
+    if (this.visible && trigger === 'click' && keyCode === 27) {
       this.handleClose();
     }
   };
 
   toggle = () => {
-    const visible = this.getVisible();
-
-    if (!visible) {
+    if (!this.visible) {
       this.handleOpen();
     } else {
       this.handleClose();
@@ -157,6 +151,10 @@ class Trigger extends PureComponent<ITriggerProps, ITriggerState> {
 
   handleOpen = () => {
     const { mouseEnterDelay, trigger } = this.props;
+
+    if (this.props.trigger === 'click') {
+      window.addEventListener('keydown', this.handleKeydown);
+    }
 
     if (this.leaveDelayTimer) {
       clearTimeout(this.leaveDelayTimer);
@@ -171,9 +169,7 @@ class Trigger extends PureComponent<ITriggerProps, ITriggerState> {
   };
 
   open = () => {
-    const visible = this.getVisible();
-
-    if (!visible) {
+    if (!this.visible) {
       const { onVisibleChange } = this.props;
 
       this.rectObserver.observe();
@@ -191,6 +187,10 @@ class Trigger extends PureComponent<ITriggerProps, ITriggerState> {
   handleClose = () => {
     const { mouseLeaveDelay, trigger } = this.props;
 
+    if (this.props.trigger === 'click') {
+      window.removeEventListener('keydown', this.handleKeydown);
+    }
+
     if (this.enterDelayTimer) {
       clearTimeout(this.enterDelayTimer);
       this.enterDelayTimer = null;
@@ -204,9 +204,7 @@ class Trigger extends PureComponent<ITriggerProps, ITriggerState> {
   };
 
   close = () => {
-    const visible = this.getVisible();
-
-    if (visible) {
+    if (this.visible) {
       const { onVisibleChange } = this.props;
 
       this.setState(() => ({ visible: false, rect: null }));
@@ -234,8 +232,6 @@ class Trigger extends PureComponent<ITriggerProps, ITriggerState> {
   renderChildren = () => {
     const { children, trigger } = this.props;
 
-    const visible = this.getVisible();
-
     let bind = {
       onMouseEnter: () => {},
       onMouseLeave: () => {},
@@ -257,7 +253,7 @@ class Trigger extends PureComponent<ITriggerProps, ITriggerState> {
       return children({
         toggle,
         bind,
-        visible,
+        visible: this.visible,
       });
     }
 
@@ -300,7 +296,6 @@ class Trigger extends PureComponent<ITriggerProps, ITriggerState> {
       animation,
     } = this.props;
     const { popupRef, rect } = this.state;
-    const visible = this.getVisible();
 
     if (!this.childrenDOM || this.childrenDOM instanceof Text) {
       return null;
@@ -317,7 +312,7 @@ class Trigger extends PureComponent<ITriggerProps, ITriggerState> {
       });
     }
 
-    if (visible && popupRef && rect) {
+    if (this.visible && popupRef && rect) {
       this.position = getPosition(rect, popupRef, originPlacement, offset);
     }
 
@@ -331,7 +326,7 @@ class Trigger extends PureComponent<ITriggerProps, ITriggerState> {
     return (
       <Transition
         native
-        items={visible}
+        items={this.visible}
         {...transitionProps}
         config={{
           ...config.stiff,

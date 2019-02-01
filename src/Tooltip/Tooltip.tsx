@@ -83,8 +83,16 @@ class Tooltip extends PureComponent<ITooltipProps> {
     return (
       <animated.div style={styles} ref={handlePopupRef}>
         <ContentComponent
-          onMouseEnter={handleOpen}
-          onMouseLeave={handleClose}
+          onMouseEnter={() => {
+            if (trigger === 'hover') {
+              handleOpen();
+            }
+          }}
+          onMouseLeave={() => {
+            if (trigger === 'hover') {
+              handleClose();
+            }
+          }}
           light={light}
           {...omit(
             ['onVisibleChange', 'mouseEnterDelay', 'mouseLeaveDelay'],
