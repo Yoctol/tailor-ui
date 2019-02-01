@@ -65,13 +65,13 @@ class Tooltip extends PureComponent<ITooltipProps> {
   renderOverlay = ({
     styles,
     handleOpen,
+    placement,
     handleClose,
     handlePopupRef,
   }: IPopupRenderProps) => {
     const {
       light = false,
       content,
-      placement = 'top',
       trigger = 'hover',
       components: {
         ContentComponent = TooltipContent,
