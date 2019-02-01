@@ -9,7 +9,7 @@ const getTransitionStyles = ({
 }) => {
   let transform = {
     enter: 'scale(1)',
-    leave: 'scale(0.3)',
+    leave: 'scale(0.8)',
   };
 
   let transformOrigin = 'initial';

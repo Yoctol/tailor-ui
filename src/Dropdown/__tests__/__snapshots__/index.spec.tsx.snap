@@ -291,12 +291,12 @@ exports[`Dropdown should render with diffrient placement 1`] = `
 }
 
 <div
-      style="position: absolute; top: 0px; left: 0px; transform: translate3d(0px, -5px, 0px);"
+      style="position: absolute; top: 0px; left: 0px; transform: translate3d(0px, 5px, 0px);"
     >
       <ul
         class="c0"
         data-testid="dropdown-overlay"
-        style="opacity: 0; transform: translate3d(0, 10px, 0);"
+        style="opacity: 0; transform: translate3d(0, -10px, 0);"
       >
         <li
           class="c1"

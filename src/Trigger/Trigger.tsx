@@ -11,8 +11,8 @@ import { findDOMNode } from 'react-dom';
 import ClickOutside from '../utils/ClickOutside';
 import Portal from '../utils/Portal';
 
-import getPositionOffset from './getPositionOffset';
-import getTransitionStyles from './getTransitionStyles';
+import getPosition from './getPosition';
+import getTransitionProps from './getTransitionProps';
 import { Placement } from './type';
 
 export interface IPopupRenderProps {
@@ -21,6 +21,7 @@ export interface IPopupRenderProps {
     left: number;
     [key: string]: any;
   };
+  placement: Placement;
   handleOpen: () => void;
   handleClose: () => void;
   handlePopupRef: any;
@@ -90,10 +91,12 @@ class Trigger extends PureComponent<ITriggerProps, ITriggerState> {
 
   leaveDelayTimer?: any;
 
-  offset: {
+  position: {
+    placement: Placement;
     top: number;
     left: number;
   } = {
+    placement: this.props.placement,
     top: 0,
     left: 0,
   };
@@ -289,7 +292,13 @@ class Trigger extends PureComponent<ITriggerProps, ITriggerState> {
   };
 
   renderPopup = () => {
-    const { popup, placement, trigger, offset, animation } = this.props;
+    const {
+      popup,
+      placement: originPlacement,
+      trigger,
+      offset,
+      animation,
+    } = this.props;
     const { popupRef, rect } = this.state;
     const visible = this.getVisible();
 
@@ -297,17 +306,33 @@ class Trigger extends PureComponent<ITriggerProps, ITriggerState> {
       return null;
     }
 
-    if (visible && popupRef && rect) {
-      this.offset = getPositionOffset(rect, popupRef, placement, offset);
+    if (!popupRef) {
+      // Pre-render for getting popupRef to calculate position
+      return popup({
+        styles: { top: 0, left: 0 },
+        placement: this.props.placement,
+        handleOpen: this.handleOpen,
+        handleClose: this.handleClose,
+        handlePopupRef: this.handlePopupRef,
+      });
     }
 
-    const transitionStyles = getTransitionStyles({ animation, placement });
+    if (visible && popupRef && rect) {
+      this.position = getPosition(rect, popupRef, originPlacement, offset);
+    }
+
+    const { placement, top, left } = this.position;
+
+    const transitionProps = getTransitionProps({
+      animation,
+      placement,
+    });
 
     return (
       <Transition
         native
         items={visible}
-        {...transitionStyles}
+        {...transitionProps}
         config={{
           ...config.stiff,
           precision: 0.1,
@@ -319,14 +344,13 @@ class Trigger extends PureComponent<ITriggerProps, ITriggerState> {
             const renderPopup = () =>
               popup({
                 styles,
+                placement,
                 handleOpen: this.handleOpen,
                 handleClose: this.handleClose,
                 handlePopupRef: this.handlePopupRef,
               });
 
-            const transform = `translate3d(${this.offset.left}px, ${
-              this.offset.top
-            }px, 0px)`;
+            const transform = `translate3d(${left}px, ${top}px, 0px)`;
 
             return (
               <div
