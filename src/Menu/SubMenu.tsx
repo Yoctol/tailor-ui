@@ -1,7 +1,9 @@
 import React, { FunctionComponent, ReactNode, useContext } from 'react';
 import styled from 'styled-components';
 import { MdKeyboardArrowUp } from 'react-icons/md';
-import { Spring, animated } from 'react-spring';
+import { animated, useSpring } from 'react-spring';
+
+import useMeasure from 'utils/useMeasure';
 
 import Icon, { IconType } from '../Icon';
 
@@ -35,8 +37,16 @@ const SubMenu: FunctionComponent<ISubMenuProps> = ({
   children,
   ...otherProps
 }) => {
+  const [bind, { height }] = useMeasure();
   const { openKeys, handleToggleOpenKeys } = useContext(MenuContext);
-  const menuOn = openKeys.has(id);
+  const menuOn = openKeys.indexOf(id) !== -1;
+
+  const { rotate } = useSpring({
+    rotate: menuOn ? 180 : 0,
+  });
+  const style = useSpring({
+    height: menuOn ? height : 0,
+  });
 
   return togglable ? (
     <>
@@ -46,35 +56,20 @@ const SubMenu: FunctionComponent<ISubMenuProps> = ({
         {...otherProps}
       >
         {title}
-        <Spring
-          native
-          from={{ rotate: menuOn ? 180 : 0 }}
-          to={{ rotate: menuOn ? 180 : 0 }}
+
+        <animated.div
+          style={{
+            pointerEvents: 'none',
+            marginLeft: 'auto',
+            transform: rotate.interpolate(r => `rotate(${r}deg)`),
+          }}
         >
-          {({ rotate }: { rotate: any }) => (
-            <animated.div
-              style={{
-                pointerEvents: 'none',
-                marginLeft: 'auto',
-                transform: rotate.interpolate((r: number) => `rotate(${r}deg)`),
-              }}
-            >
-              <Icon type={MdKeyboardArrowUp} size="20" fill="light" />
-            </animated.div>
-          )}
-        </Spring>
+          <Icon type={MdKeyboardArrowUp} size="20" fill="light" />
+        </animated.div>
       </Item>
-      <Spring
-        native
-        from={{ height: menuOn ? 'auto' : 0 }}
-        to={{ height: menuOn ? 'auto' : 0 }}
-      >
-        {style => (
-          <AnimatedSubMenuWrapper style={style}>
-            {children}
-          </AnimatedSubMenuWrapper>
-        )}
-      </Spring>
+      <AnimatedSubMenuWrapper style={style}>
+        <div {...bind}>{children}</div>
+      </AnimatedSubMenuWrapper>
     </>
   ) : (
     <>

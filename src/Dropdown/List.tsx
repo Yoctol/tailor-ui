@@ -10,7 +10,7 @@ import {
   overflow,
   textAlign,
 } from 'styled-system';
-import { animated } from 'react-spring';
+import { animated } from 'react-spring/renderprops.cjs';
 
 import tag from 'utils/CleanTag';
 

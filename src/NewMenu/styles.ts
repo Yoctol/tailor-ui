@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { animated } from 'react-spring/hooks.cjs';
+import { animated } from 'react-spring';
 
 import tag from 'utils/CleanTag';
 

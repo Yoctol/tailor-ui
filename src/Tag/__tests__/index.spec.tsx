@@ -47,12 +47,9 @@ describe('Tag', () => {
 
     fireEvent.click(closeIcon);
 
+    await wait(() => expect(onClosed).toBeCalled());
+
     const tagA = queryByText('Tag A');
-
-    await wait(() => {
-      expect(tagA).not.toBeVisible();
-    });
-
-    expect(onClosed).toBeCalled();
+    expect(tagA).not.toBeVisible();
   });
 });

@@ -1,10 +1,10 @@
 import { createContext } from 'react';
 
 const MenuContext = createContext<{
-  openKeys: Set<string>;
+  openKeys: string[];
   handleToggleOpenKeys: (key: string) => void;
 }>({
-  openKeys: new Set([]),
+  openKeys: [],
   handleToggleOpenKeys: () => {},
 });
 

@@ -15,23 +15,17 @@ const Menu: FunctionComponent<FlexProps & IMenuProps> & {
   SubMenu: typeof SubMenu;
   Item: typeof Item;
 } = ({ children, currentSubOnly, defaultSubKeys, ...props }) => {
-  const [openKeys, setOpenKeys] = useState<Set<string>>(
-    new Set(defaultSubKeys)
-  );
+  const [openKeys, setOpenKeys] = useState<string[]>(defaultSubKeys || []);
 
   return (
     <MenuContext.Provider
       value={{
         openKeys,
         handleToggleOpenKeys: key => {
-          if (openKeys.has(key)) {
-            openKeys.delete(key);
-            setOpenKeys(openKeys);
+          if (openKeys.indexOf(key) !== -1) {
+            setOpenKeys(openKeys.filter(openKey => openKey !== key));
           } else {
-            if (currentSubOnly) {
-              openKeys.clear();
-            }
-            setOpenKeys(openKeys.add(key));
+            setOpenKeys(currentSubOnly ? [key] : [...openKeys, key]);
           }
         },
       }}
