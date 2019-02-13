@@ -1,3 +1,16 @@
+## [0.2.11](https://github.com/yoctol/tailor-ui/compare/v0.2.10...v0.2.11) (2019-02-13)
+
+### Bug Fixes
+
+- **checkbox:** spread other props to correct component ([ebb02cb](https://github.com/yoctol/tailor-ui/commit/ebb02cb))
+- **radio:** spread other props to correct component ([706ffcb](https://github.com/yoctol/tailor-ui/commit/706ffcb))
+
+### Features
+
+- **tooltip:** add mouseEnterDelay and mouseLeaveDelay to Tooltip ([62773b2](https://github.com/yoctol/tailor-ui/commit/62773b2))
+- **trigger:** auto fix placement when popup overflow ([f212e16](https://github.com/yoctol/tailor-ui/commit/f212e16))
+- **trigger:** implement rect observer ([92f88e7](https://github.com/yoctol/tailor-ui/commit/92f88e7))
+
 ## [0.2.10](https://github.com/yoctol/tailor-ui/compare/v0.2.9...v0.2.10) (2019-01-30)
 
 ## [0.2.9](https://github.com/yoctol/tailor-ui/compare/v0.2.8...v0.2.9) (2019-01-29)
