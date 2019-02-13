@@ -132,7 +132,7 @@ const Radio: FunctionComponent<IRadioProps> & {
   const { _onChange, _isChecked, direction } = useContext(RadioContext);
 
   return (
-    <RadioLabel disabled={disabled} direction={direction} {...props}>
+    <RadioLabel disabled={disabled} direction={direction}>
       <RadioWrapper>
         <StyledRadio
           disabled={disabled}
@@ -146,6 +146,7 @@ const Radio: FunctionComponent<IRadioProps> & {
               _onChange(value);
             }
           }}
+          {...props}
         />
         <RadioInner />
       </RadioWrapper>

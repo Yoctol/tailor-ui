@@ -140,7 +140,7 @@ const Checkbox: FunctionComponent<ICheckboxProps> & {
   const { _onChange, _isChecked, direction } = useContext(CheckboxContext);
 
   return (
-    <CheckboxLabel disabled={disabled} direction={direction} {...props}>
+    <CheckboxLabel disabled={disabled} direction={direction}>
       <CheckboxWrapper>
         <StyledCheckbox
           disabled={disabled}
@@ -154,6 +154,7 @@ const Checkbox: FunctionComponent<ICheckboxProps> & {
               _onChange(event, value);
             }
           }}
+          {...props}
         />
         <CheckboxInner />
       </CheckboxWrapper>
