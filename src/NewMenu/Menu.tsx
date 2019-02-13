@@ -1,5 +1,5 @@
 import React, { FunctionComponent, useRef, useState } from 'react';
-import { config, useChain, useSpring } from 'react-spring/hooks.cjs';
+import { config, useChain, useSpring } from 'react-spring';
 
 import Backdrop from '../Backdrop';
 import Flex from '../Grid/Flex';

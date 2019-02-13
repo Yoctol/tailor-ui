@@ -160,6 +160,7 @@ import { Menu } from 'tailor-ui';
     return (
       <Menu>
         <Menu.SubMenu
+          id="understood"
           title="Understood"
           icon="understood"
           togglable={false}
@@ -172,7 +173,7 @@ import { Menu } from 'tailor-ui';
             Entity
           </Menu.Item>
         </Menu.SubMenu>
-        <Menu.SubMenu title="Kurator" icon="kurator">
+        <Menu.SubMenu id="kurator" title="Kurator" icon="kurator">
           <Menu.Item active={value === 'action'} onClick={() => setValue('action')}>
             Action
           </Menu.Item>

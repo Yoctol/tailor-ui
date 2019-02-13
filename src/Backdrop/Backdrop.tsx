@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react';
 import styled from 'styled-components';
-import { Transition, animated, config } from 'react-spring';
+import { animated, config, useTransition } from 'react-spring';
 
 const StyledBackdrop = styled.div`
   position: fixed;
@@ -19,27 +19,35 @@ export interface IBackdropProps {
   [key: string]: any;
 }
 
-const Backdrop: FunctionComponent<IBackdropProps> = ({ visible, ...props }) => (
-  <Transition
-    native
-    items={visible}
-    from={{
+const Backdrop: FunctionComponent<IBackdropProps> = ({
+  visible,
+  ...otherProps
+}) => {
+  const transition = useTransition(visible, null, {
+    from: {
       opacity: 0,
-    }}
-    enter={{
+    },
+    enter: {
       opacity: 1,
-    }}
-    leave={{
+    },
+    leave: {
       opacity: 0,
       pointerEvents: 'none',
-    }}
-    config={config.stiff}
-  >
-    {_visible =>
-      _visible &&
-      (styles => <AnimatedStyledBackdrop style={styles} {...props} />)
-    }
-  </Transition>
-);
+    },
+    config: config.stiff,
+  });
+
+  return (
+    // FIXME: react type
+    <>
+      {transition.map(
+        ({ item, key, props }) =>
+          item && (
+            <AnimatedStyledBackdrop key={key} style={props} {...otherProps} />
+          )
+      )}
+    </>
+  );
+};
 
 export default Backdrop;

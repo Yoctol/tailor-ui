@@ -1,6 +1,11 @@
-import React, { FunctionComponent, ReactNode, useEffect } from 'react';
+import React, {
+  Fragment,
+  FunctionComponent,
+  ReactNode,
+  useEffect,
+} from 'react';
 import styled, { css } from 'styled-components';
-import { Transition, animated, config } from 'react-spring';
+import { animated, config, useTransition } from 'react-spring';
 
 import Portal from 'utils/Portal';
 import tag from 'utils/CleanTag';
@@ -108,6 +113,22 @@ const Drawer: FunctionComponent<IDrawerProps> = ({
   const transformAxis = getTransformAxis(placement);
   const transformBreadth = getTransformBreadth({ placement, breadth });
 
+  const transition = useTransition(visible, null, {
+    from: {
+      offset: transformBreadth,
+    },
+    enter: {
+      offset: '0px',
+    },
+    leave: {
+      offset: transformBreadth,
+    },
+    config: {
+      ...config.default,
+      precision: 0.1,
+    },
+  });
+
   useKeydown({
     listening: visible,
     keyCode: ESC_KEY_CODE,
@@ -124,27 +145,10 @@ const Drawer: FunctionComponent<IDrawerProps> = ({
 
   return (
     <Portal appendFor="drawer">
-      <Transition
-        native
-        items={visible}
-        from={{
-          offset: transformBreadth,
-        }}
-        enter={{
-          offset: '0px',
-        }}
-        leave={{
-          offset: transformBreadth,
-        }}
-        config={{
-          ...config.default,
-          precision: 0.1,
-        }}
-      >
-        {_visible =>
-          _visible &&
-          ((props: { offset: any }) => (
-            <>
+      {transition.map(
+        ({ item, key, props }) =>
+          item && (
+            <Fragment key={key}>
               <Backdrop
                 visible={visible}
                 onClick={() => {
@@ -155,9 +159,11 @@ const Drawer: FunctionComponent<IDrawerProps> = ({
               />
               <animated.div
                 style={{
-                  transform: props.offset.interpolate(
-                    (offset: any) => `${transformAxis}(${offset})`
-                  ),
+                  transform:
+                    props.offset &&
+                    props.offset.interpolate(
+                      offset => `${transformAxis}(${offset})`
+                    ),
                 }}
               >
                 <DrawerWrapper placement={placement} breadth={breadth}>
@@ -172,10 +178,9 @@ const Drawer: FunctionComponent<IDrawerProps> = ({
                   {footer && <FooterWrapper>{footer}</FooterWrapper>}
                 </DrawerWrapper>
               </animated.div>
-            </>
-          ))
-        }
-      </Transition>
+            </Fragment>
+          )
+      )}
     </Portal>
   );
 };

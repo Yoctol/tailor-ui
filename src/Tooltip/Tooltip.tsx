@@ -1,5 +1,5 @@
 import React, { PureComponent, ReactElement } from 'react';
-import { animated } from 'react-spring';
+import { animated } from 'react-spring/renderprops.cjs';
 import { omit } from 'ramda';
 
 import Trigger, { IPopupRenderProps } from '../Trigger';

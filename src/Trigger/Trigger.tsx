@@ -5,7 +5,7 @@ import React, {
   isValidElement,
 } from 'react';
 import observeRect from '@reach/observe-rect';
-import { Transition, config } from 'react-spring';
+import { Transition, config } from 'react-spring/renderprops.cjs';
 import { findDOMNode } from 'react-dom';
 
 import ClickOutside from '../utils/ClickOutside';
@@ -301,11 +301,13 @@ class Trigger extends PureComponent<ITriggerProps, ITriggerState> {
       this.offset = getPositionOffset(rect, popupRef, placement, offset);
     }
 
+    const transitionStyles = getTransitionStyles({ animation, placement });
+
     return (
       <Transition
         native
         items={visible}
-        {...getTransitionStyles({ animation, placement })}
+        {...transitionStyles}
         config={{
           ...config.stiff,
           precision: 0.1,

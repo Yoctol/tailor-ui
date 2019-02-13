@@ -1,5 +1,7 @@
 import React, { FunctionComponent, useState } from 'react';
-import { Spring, animated, config } from 'react-spring';
+import { animated, config, useSpring } from 'react-spring';
+
+import useMeasure from 'utils/useMeasure';
 
 import BaseAlert, { IBaseAlertProps } from './BaseAlert';
 
@@ -11,41 +13,34 @@ const ClosableAlert: FunctionComponent<IAlertProps> = ({
   onClosed,
   ...props
 }) => {
+  const [bind, { height: boundHeight }] = useMeasure();
   const [visible, setVisible] = useState(true);
+  const { x, height } = useSpring({
+    x: visible ? 1 : 0,
+    height: visible ? boundHeight : 0,
+    onRest: (rest: any) => {
+      if (rest.x === 0 && onClosed) {
+        onClosed();
+      }
+    },
+    config: {
+      ...config.default,
+      precision: 0.1,
+    },
+  });
 
   return (
-    <Spring
-      native
-      onRest={({ x }: any) => {
-        if (x === 0 && onClosed) {
-          onClosed();
-        }
-      }}
-      from={{
-        x: 1,
-        height: 'auto',
-      }}
-      to={{
-        x: visible ? 1 : 0,
-        height: visible ? 'auto' : 0,
-      }}
-      config={{
-        ...config.default,
-        precision: 0.1,
+    <animated.div
+      style={{
+        transform: (x as any).interpolate((_x: number) => `scaleY(${_x})`),
+        opacity: x,
+        height,
       }}
     >
-      {({ x, height }: { x: any; height: any }) => (
-        <animated.div
-          style={{
-            transform: x.interpolate((_x: number) => `scaleY(${_x})`),
-            opacity: x,
-            height,
-          }}
-        >
-          <BaseAlert onClose={() => setVisible(false)} {...props} />
-        </animated.div>
-      )}
-    </Spring>
+      <div {...bind}>
+        <BaseAlert onClose={() => setVisible(false)} {...props} />
+      </div>
+    </animated.div>
   );
 };
 

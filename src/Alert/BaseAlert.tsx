@@ -1,4 +1,4 @@
-import React, { FunctionComponent, ReactNode } from 'react';
+import React, { ReactNode, forwardRef } from 'react';
 import styled from 'styled-components';
 import { MdClose } from 'react-icons/md';
 import { SpaceProps, space } from 'styled-system';
@@ -38,22 +38,21 @@ export interface IBaseAlertProps extends IAlertTypes {
   onClose?: () => void;
 }
 
-const BaseAlert: FunctionComponent<IBaseAlertProps> = ({
-  message,
-  type,
-  closable,
-  onClose,
-  ...props
-}) => (
-  <StyledAlert type={type} {...omit(['onClosed'], props)}>
-    <Flex flex="none">{getTypeIcon(type)}</Flex>
-    <Box flex="auto">{message}</Box>
-    {closable && (
-      <Flex flex="none">
-        <Icon size="16" cursor="pointer" type={MdClose} onClick={onClose} />
-      </Flex>
-    )}
-  </StyledAlert>
-);
+const BaseAlert = forwardRef<{}, IBaseAlertProps>(function BaseAlert(
+  { message, type, closable, onClose, ...props },
+  ref
+) {
+  return (
+    <StyledAlert type={type} ref={ref} {...omit(['onClosed'], props)}>
+      <Flex flex="none">{getTypeIcon(type)}</Flex>
+      <Box flex="auto">{message}</Box>
+      {closable && (
+        <Flex flex="none">
+          <Icon size="16" cursor="pointer" type={MdClose} onClick={onClose} />
+        </Flex>
+      )}
+    </StyledAlert>
+  );
+});
 
 export default BaseAlert;

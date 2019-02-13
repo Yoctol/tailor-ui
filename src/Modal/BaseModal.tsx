@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from 'react';
 import styled from 'styled-components';
-import { Transition, animated, config } from 'react-spring';
 import { WidthProps, width as styledWidth } from 'styled-system';
+import { animated, config, useTransition } from 'react-spring';
 
 import tag from 'utils/CleanTag';
 import useKeydown, { ESC_KEY_CODE } from 'utils/useKeydown';
@@ -45,6 +45,18 @@ const BaseModal: FunctionComponent<BaseModalProps> = ({
     keyCode: ESC_KEY_CODE,
     onKeydown: onCancel,
   });
+  const transitions = useTransition(visible, null, {
+    from: {
+      opacity: 0,
+    },
+    enter: {
+      opacity: 1,
+    },
+    leave: {
+      opacity: 0,
+    },
+    config: config.stiff,
+  });
 
   return (
     <>
@@ -56,29 +68,19 @@ const BaseModal: FunctionComponent<BaseModalProps> = ({
           }
         }}
       />
-      <Transition
-        native
-        items={visible}
-        from={{
-          opacity: 0,
-        }}
-        enter={{
-          opacity: 1,
-        }}
-        leave={{
-          opacity: 0,
-        }}
-        config={config.stiff}
-      >
-        {_visible =>
-          _visible &&
-          (style => (
-            <AnimatedModalContent width={width} style={style} {...otherProps}>
+      {transitions.map(
+        ({ item, key, props }) =>
+          item && (
+            <AnimatedModalContent
+              key={key}
+              width={width}
+              style={props}
+              {...otherProps}
+            >
               {children}
             </AnimatedModalContent>
-          ))
-        }
-      </Transition>
+          )
+      )}
     </>
   );
 };
