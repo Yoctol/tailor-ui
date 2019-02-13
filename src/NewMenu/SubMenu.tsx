@@ -50,6 +50,7 @@ const SubMenu: FunctionComponent<ISubMenuProps> = ({
       placement="right"
       content={title}
       visible={!contentVisible && tooltipVisible}
+      mouseEnterDelay={800}
       onVisibleChange={visible => {
         if (!contentVisible) {
           setTooltipVisible(visible);
