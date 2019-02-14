@@ -1,5 +1,5 @@
 /* eslint camelcase: "off" */
-import en_US from './en_US';
-import zh_TW from './zh_TW';
+import enUS from './en_US';
+import zhTW from './zh_TW';
 
-export default { en_US, zh_TW };
+export default { enUS, zhTW };

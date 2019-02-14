@@ -10,7 +10,7 @@ import Box from '../Grid/Box';
 
 import { SubMenuContentWrapper } from './styles';
 
-interface ISubMenuContentProps {
+interface SubMenuContentProps {
   active: boolean;
   title: string;
   placement: 'top' | 'bottom';
@@ -18,7 +18,7 @@ interface ISubMenuContentProps {
   subMenuContentSpringProps: any;
 }
 
-const SubMenuContent: FunctionComponent<ISubMenuContentProps> = ({
+const SubMenuContent: FunctionComponent<SubMenuContentProps> = ({
   active,
   title,
   header,

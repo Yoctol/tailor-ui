@@ -14,12 +14,12 @@ const StyledBackdrop = styled.div`
 
 const AnimatedStyledBackdrop = animated(StyledBackdrop);
 
-export interface IBackdropProps {
+export interface BackdropProps {
   visible: boolean;
   [key: string]: any;
 }
 
-const Backdrop: FunctionComponent<IBackdropProps> = ({
+const Backdrop: FunctionComponent<BackdropProps> = ({
   visible,
   ...otherProps
 }) => {

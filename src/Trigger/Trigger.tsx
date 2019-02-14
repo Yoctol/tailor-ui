@@ -15,7 +15,7 @@ import getPosition from './getPosition';
 import getTransitionProps from './getTransitionProps';
 import { Placement } from './type';
 
-export interface IPopupRenderProps {
+export interface PopupRenderProps {
   styles: {
     top: number;
     left: number;
@@ -27,7 +27,7 @@ export interface IPopupRenderProps {
   handlePopupRef: any;
 }
 
-export interface IChildrenRenderProps {
+export interface ChildrenRenderProps {
   toggle: () => void;
   bind:
     | {}
@@ -38,15 +38,15 @@ export interface IChildrenRenderProps {
   visible: boolean;
 }
 
-export interface ITriggerProps {
+export interface TriggerProps {
   /**
    * The component which this Trigger show up
    */
-  children: ReactNode | ((renderProps: IChildrenRenderProps) => ReactNode);
+  children: ReactNode | ((renderProps: ChildrenRenderProps) => ReactNode);
   /**
    * The content in this Trigger component
    */
-  popup: (renderProps: IPopupRenderProps) => ReactNode;
+  popup: (renderProps: PopupRenderProps) => ReactNode;
   /**
    * The position base on the children component
    */
@@ -67,13 +67,13 @@ export interface ITriggerProps {
   mouseLeaveDelay?: number;
 }
 
-interface ITriggerState {
+interface TriggerState {
   visible: boolean;
   rect: DOMRect | null;
   popupRef?: HTMLElement;
 }
 
-class Trigger extends PureComponent<ITriggerProps, ITriggerState> {
+class Trigger extends PureComponent<TriggerProps, TriggerState> {
   static defaultProps = {
     placement: 'bottomLeft',
     trigger: 'hover',

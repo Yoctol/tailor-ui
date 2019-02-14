@@ -1,15 +1,15 @@
 import { Component } from 'react';
 
-export interface IClickOutsideProps {
+export interface ClickOutsideProps {
   onClickOutside: (e: Event) => void;
   bindRef?: HTMLElement;
-  bindRefs?: Array<HTMLElement | undefined>;
+  bindRefs?: (HTMLElement | undefined)[];
   children:
     | ((renderProps: { bindRef: (ref: any) => void }) => React.ReactNode)
     | React.ReactNode;
 }
 
-class ClickOutside extends Component<IClickOutsideProps> {
+class ClickOutside extends Component<ClickOutsideProps> {
   isTouch = false;
 
   container?: HTMLElement = this.props.bindRef;

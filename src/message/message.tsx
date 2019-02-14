@@ -3,7 +3,7 @@ import { render } from 'react-dom';
 
 import { Types } from '../utils/getTypeIcon';
 
-import MessageHub, { IMessageOptions } from './MessageHub';
+import MessageHub, { MessageOptions } from './MessageHub';
 
 let messageInstance: Message;
 
@@ -19,7 +19,7 @@ class Message {
     render(<MessageHub ref={this.messageRef} />, this.el);
   }
 
-  message({ content, duration, type }: IMessageOptions) {
+  message({ content, duration, type }: MessageOptions) {
     if (this.messageRef.current) {
       return this.messageRef.current.add({ content, duration, type });
     }

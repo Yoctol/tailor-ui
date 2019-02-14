@@ -52,7 +52,7 @@ TooltipContent.defaultProps = {
   borderRadius: 'base',
 };
 
-export interface IArrowProps {
+export interface ArrowProps {
   light: boolean;
   placement: Placement;
 }
@@ -126,7 +126,7 @@ const arrowPlacementStyles = {
   `,
 };
 
-export const Arrow = styled(tag.div)<IArrowProps>`
+export const Arrow = styled(tag.div)<ArrowProps>`
   position: absolute;
   width: 0;
   height: 0;
@@ -142,7 +142,7 @@ export const Arrow = styled(tag.div)<IArrowProps>`
       opacity: 0.8;
     `};
 
-  ${({ placement }: IArrowProps) => arrowPlacementStyles[placement] || ''};
+  ${({ placement }: ArrowProps) => arrowPlacementStyles[placement] || ''};
 
   ${({ light, theme }) =>
     light &&

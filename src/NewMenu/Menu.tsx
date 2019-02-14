@@ -12,12 +12,12 @@ import { SubMenuWrapper } from './styles';
 
 const spring = { ...config.stiff, precision: 0.1 };
 
-export interface IMenuProps {
+export interface MenuProps {
   defaultActiveSubId?: string;
   defaultActiveItemId?: string;
 }
 
-const Menu: FunctionComponent<IMenuProps> & {
+const Menu: FunctionComponent<MenuProps> & {
   SubMenu: typeof SubMenu;
   Divider: typeof MenuDivider;
   Item: typeof MenuItem;

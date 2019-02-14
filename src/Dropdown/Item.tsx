@@ -42,7 +42,7 @@ const StyledListItem = styled(tag.li)<StyledItemProps>`
   ${space};
 `;
 
-export interface IItemProps {
+export interface ItemProps {
   /**
    * Disabled the item
    */
@@ -58,7 +58,7 @@ export interface IItemProps {
   children?: ReactNode;
 }
 
-const Item = forwardRef<any, IItemProps>(function Item(
+const Item = forwardRef<any, ItemProps>(function Item(
   { onClick, disabled, keep, ...props },
   ref: any
 ) {

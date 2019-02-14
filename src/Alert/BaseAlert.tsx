@@ -31,14 +31,14 @@ const StyledAlert = styled(tag.div)<IAlertTypes>`
   ${space};
 `;
 
-export interface IBaseAlertProps extends IAlertTypes {
+export interface BaseAlertProps extends IAlertTypes {
   closable: boolean;
   message: ReactNode;
   type: Types;
   onClose?: () => void;
 }
 
-const BaseAlert = forwardRef<{}, IBaseAlertProps>(function BaseAlert(
+const BaseAlert = forwardRef<{}, BaseAlertProps>(function BaseAlert(
   { message, type, closable, onClose, ...props },
   ref
 ) {

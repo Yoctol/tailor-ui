@@ -60,7 +60,7 @@ const getStyledSelect = (creatable: boolean) => {
   `;
 };
 
-export interface ISelectProps {
+export interface SelectProps {
   /**
    * delimiter string for multi-select value in text style mode
    */
@@ -118,7 +118,7 @@ const ValueContainer: FunctionComponent<any> = ({ children, ...props }) => (
   </components.ValueContainer>
 );
 
-const Select: FunctionComponent<ISelectProps> = props => {
+const Select: FunctionComponent<SelectProps> = props => {
   const { isMulti, delimiter, multiSelectMode, creatable = false } = props;
 
   const StyledSelect = getStyledSelect(creatable);

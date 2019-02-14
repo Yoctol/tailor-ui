@@ -11,7 +11,7 @@ const CheckboxGroupFlex = styled(tag.div)<{ direction: Direction }>`
   flex-direction: ${p => (p.direction === 'horizontal' ? 'row' : 'column')};
 `;
 
-export interface ICheckboxGroupProps {
+export interface CheckboxGroupProps {
   /**
    * to specify the direction of the step bar, `horizontal` and `vertical` are currently supported
    */
@@ -23,11 +23,11 @@ export interface ICheckboxGroupProps {
   /**
    * Specifies options
    */
-  options?: Array<{
+  options?: {
     label: string;
     value: string;
     disabled?: boolean;
-  }>;
+  }[];
 
   /**
    * Used for setting the currently selected value
@@ -39,7 +39,7 @@ export interface ICheckboxGroupProps {
   onChange?: (value: ReadonlyArray<string>) => void;
 }
 
-const CheckboxGroup: FunctionComponent<ICheckboxGroupProps> = ({
+const CheckboxGroup: FunctionComponent<CheckboxGroupProps> = ({
   value: controlledValue,
   defaultValue,
   options = null,

@@ -1,4 +1,4 @@
-const props: Array<keyof DOMRect> = [
+const props: (keyof DOMRect)[] = [
   'width',
   'height',
   'top',
@@ -15,12 +15,12 @@ const rectChanged = (a?: DOMRect, b?: DOMRect) => {
   return props.some(prop => a[prop] !== b[prop]);
 };
 
-interface IObservedNode {
+interface ObservedNode {
   rect?: DOMRect;
-  callbacks: Array<(rect: DOMRect) => void>;
+  callbacks: ((rect: DOMRect) => void)[];
 }
 
-const observedNodes = new Map<HTMLElement, IObservedNode>();
+const observedNodes = new Map<HTMLElement, ObservedNode>();
 
 let rafId: number;
 
@@ -47,7 +47,7 @@ function createRectObserver(node: HTMLElement, cb: (rect: DOMRect) => void) {
       const wasEmpty = observedNodes.size === 0;
 
       if (observedNodes.has(node)) {
-        (observedNodes.get(node) as IObservedNode).callbacks.push(cb);
+        (observedNodes.get(node) as ObservedNode).callbacks.push(cb);
       } else {
         observedNodes.set(node, {
           rect: undefined,

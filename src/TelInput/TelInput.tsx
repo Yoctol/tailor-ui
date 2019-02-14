@@ -3,7 +3,7 @@ import React, { FunctionComponent, MouseEventHandler } from 'react';
 
 import StyledTelInput from './style';
 
-interface ITelInputProps {
+interface TelInputProps {
   id?: string;
   name?: string;
   value?: string;
@@ -17,7 +17,7 @@ interface ITelInputProps {
   onBlur?: MouseEventHandler;
 }
 
-const TelInput: FunctionComponent<ITelInputProps> = ({
+const TelInput: FunctionComponent<TelInputProps> = ({
   id,
   name,
   onChange,

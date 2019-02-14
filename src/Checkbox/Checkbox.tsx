@@ -70,11 +70,11 @@ const StyledCheckbox = styled.input.attrs({
 const getMarginPosition = ({ direction }: { direction: Direction }) =>
   direction === 'horizontal' ? 'margin-left' : 'margin-top';
 
-interface IRadioLabelBaseProps {
+interface RadioLabelBaseProps {
   disabled: boolean;
 }
 
-const CheckboxLabelBase = styled(tag.label)<IRadioLabelBaseProps>`
+const CheckboxLabelBase = styled(tag.label)<RadioLabelBaseProps>`
   display: inline-flex;
   align-items: center;
   font-size: ${p => p.theme.fontSizes.base};
@@ -103,7 +103,7 @@ const CheckboxLabel = styled(CheckboxLabelBase)`
   }
 `;
 
-export interface ICheckboxProps {
+export interface CheckboxProps {
   /**
    * Specifies whether the checkbox is selected
    */
@@ -126,7 +126,7 @@ export interface ICheckboxProps {
   value?: string;
 }
 
-const Checkbox: FunctionComponent<ICheckboxProps> & {
+const Checkbox: FunctionComponent<CheckboxProps> & {
   Group: typeof CheckboxGroup;
 } = ({
   children,

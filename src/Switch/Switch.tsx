@@ -52,7 +52,7 @@ const StyledSwitch = styled.label`
   }
 `;
 
-export interface ISwitchProps {
+export interface SwitchProps {
   /**
    * determine whether the Switch is checked
    */
@@ -71,7 +71,7 @@ export interface ISwitchProps {
   onChange?: (checked: boolean) => void;
 }
 
-const Switch: FunctionComponent<ISwitchProps> = ({
+const Switch: FunctionComponent<SwitchProps> = ({
   defaultChecked,
   checked,
   onChange,

@@ -25,11 +25,10 @@
     "commit": "git-cz",
     "docz:build": "docz build",
     "docz:dev": "docz dev",
-    "lint": "npm run lint:es && npm run lint:ts && npm run lint:css",
+    "lint": "npm run lint:ts && npm run lint:css",
     "lint:css": "stylelint './src/**/*.tsx'",
-    "lint:es": "eslint src --ext=ts,tsx --fix",
     "lint:staged": "lint-staged && npm run type-check",
-    "lint:ts": "tslint -c tslint.json 'src/**/*.{ts,tsx}'",
+    "lint:ts": "eslint . --ext=ts,tsx --fix",
     "prepublishOnly": "npm run build",
     "test": "npm run lint && npm run testonly",
     "testonly": "jest",
@@ -88,6 +87,8 @@
     "@types/react-select": "^2.0.11",
     "@types/styled-components": "4.1.9",
     "@types/styled-system": "^3.2.1",
+    "@typescript-eslint/eslint-plugin": "^1.3.0",
+    "@typescript-eslint/parser": "^1.3.0",
     "babel-core": "^7.0.0-0",
     "babel-eslint": "^10.0.1",
     "babel-jest": "^24.1.0",
@@ -133,11 +134,7 @@
     "stylelint-config-yoctol": "^1.1.1",
     "stylelint-processor-styled-components": "^1.5.2",
     "ts-jest": "^23.10.5",
-    "tslint": "^5.12.1",
-    "tslint-config-prettier": "^1.18.0",
-    "tslint-plugin-prettier": "^2.0.1",
-    "typescript": "3.3.3",
-    "typescript-eslint-parser": "22.0.0"
+    "typescript": "3.3.3"
   },
   "husky": {
     "hooks": {

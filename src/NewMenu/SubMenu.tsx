@@ -15,7 +15,7 @@ import { StyledSubMenu, SubMenuBadge } from './styles';
 
 type Placement = 'top' | 'bottom';
 
-interface ISubMenuProps {
+interface SubMenuProps {
   icon: IconType;
   id: string;
   title: string;
@@ -24,7 +24,7 @@ interface ISubMenuProps {
   badge?: string;
 }
 
-const SubMenu: FunctionComponent<ISubMenuProps> = ({
+const SubMenu: FunctionComponent<SubMenuProps> = ({
   id,
   title,
   icon,

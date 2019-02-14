@@ -3,13 +3,13 @@ import { animated, config, useSpring } from 'react-spring';
 
 import useMeasure from 'utils/useMeasure';
 
-import BaseAlert, { IBaseAlertProps } from './BaseAlert';
+import BaseAlert, { BaseAlertProps } from './BaseAlert';
 
-export interface IAlertProps extends IBaseAlertProps {
+export interface AlertProps extends BaseAlertProps {
   onClosed?: () => void;
 }
 
-const ClosableAlert: FunctionComponent<IAlertProps> = ({
+const ClosableAlert: FunctionComponent<AlertProps> = ({
   onClosed,
   ...props
 }) => {

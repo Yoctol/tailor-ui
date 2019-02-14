@@ -75,7 +75,7 @@ const TextFieldField = styled<any>(FormField)`
   }
 `;
 
-export interface ITextFieldProps {
+export interface TextFieldProps {
   /**
    * The label text
    */
@@ -120,7 +120,7 @@ export interface ITextFieldProps {
   onPressEnter?: KeyboardEventHandler<HTMLInputElement>;
 }
 
-const TextField: FunctionComponent<ITextFieldProps> = ({
+const TextField: FunctionComponent<TextFieldProps> = ({
   label = null,
   value: controlledValue,
   defaultValue = '',

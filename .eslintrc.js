@@ -1,12 +1,13 @@
 module.exports = {
-  parser: 'typescript-eslint-parser',
-  extends: ['yoctol'],
-  plugins: ['prettier', 'typescript'],
+  parser: '@typescript-eslint/parser',
+  extends: ['yoctol', 'plugin:@typescript-eslint/recommended', 'prettier', 'prettier/@typescript-eslint'],
+  plugins: ['@typescript-eslint'],
   parserOptions: {
-    sourceType: 'module',
     ecmaFeatures: {
       jsx: true,
     },
+    "useJSXTextNode": true,
+    "project": "./tsconfig.json",
   },
   env: {
     browser: true,
@@ -20,10 +21,9 @@ module.exports = {
     'react/prop-types': 'off',
     'react/sort-comp': 'off',
     'react/no-find-dom-node': 'off',
-    'no-restricted-globals': 'off',
-    'no-undef': 'off',
-    'no-unused-vars': 'off',
-    'no-multi-str': 'off',
+
+    '@typescript-eslint/explicit-function-return-type': 'off',
+    '@typescript-eslint/explicit-member-accessibility': 'off',
   },
   settings: {
     'import/resolver': {

@@ -2,9 +2,9 @@ import React, { FunctionComponent } from 'react';
 import TextareaAutosize from 'react-textarea-autosize';
 import styled from 'styled-components';
 
-import { IInputProps, inputStyles } from './Input';
+import { InputProps, inputStyles } from './Input';
 
-export type TextareaProps = IInputProps & {
+export type TextareaProps = InputProps & {
   resize?: boolean;
 };
 

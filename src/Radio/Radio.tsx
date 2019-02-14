@@ -69,11 +69,11 @@ const StyledRadio = styled.input.attrs({
 const getMarginPosition = ({ direction }: { direction: Direction }) =>
   direction === 'horizontal' ? 'margin-left' : 'margin-top';
 
-interface IRadioLabelBaseProps {
+interface RadioLabelBaseProps {
   disabled?: boolean;
 }
 
-const RadioLabelBase = styled(tag.label)<IRadioLabelBaseProps>`
+const RadioLabelBase = styled(tag.label)<RadioLabelBaseProps>`
   display: inline-flex;
   align-items: center;
   font-size: ${p => p.theme.fontSizes.base};
@@ -98,7 +98,7 @@ const RadioLabel = styled(RadioLabelBase)`
   }
 `;
 
-export interface IRadioProps {
+export interface RadioProps {
   /**
    * Specifies whether the Radio is selected
    */
@@ -118,7 +118,7 @@ export interface IRadioProps {
   value?: string;
 }
 
-const Radio: FunctionComponent<IRadioProps> & {
+const Radio: FunctionComponent<RadioProps> & {
   Group: typeof RadioGroup;
 } = ({
   children,

@@ -12,11 +12,11 @@ import Footer from './Footer';
 
 export type ModalTypes = Types | 'confirm';
 
-export interface IModalComponentProps {
+export interface ModalComponentProps {
   type?: ModalTypes;
 }
 
-export interface IModalOptions {
+export interface ModalOptions {
   title?: string;
   content?: string;
   confirmText?: string;
@@ -25,7 +25,7 @@ export interface IModalOptions {
   onCancel?: () => void;
 }
 
-interface IModalComponentState {
+interface ModalComponentState {
   title?: string;
   content?: string;
   confirmText?: string;
@@ -37,10 +37,10 @@ interface IModalComponentState {
 }
 
 class ModalInstanceComponent extends PureComponent<
-  IModalComponentProps,
-  IModalComponentState
+  ModalComponentProps,
+  ModalComponentState
 > {
-  state: IModalComponentState = {
+  state: ModalComponentState = {
     visible: false,
     type: 'confirm',
     title: '',
@@ -56,7 +56,7 @@ class ModalInstanceComponent extends PureComponent<
     return getTypeIcon(type === 'confirm' ? 'warning' : type, 32);
   };
 
-  trigger = (options: IModalOptions, type: ModalTypes): Promise<boolean> =>
+  trigger = (options: ModalOptions, type: ModalTypes): Promise<boolean> =>
     new Promise(resolve =>
       this.setState(() => ({
         type,

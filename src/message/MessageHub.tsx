@@ -54,7 +54,7 @@ const AnimatedMessageBox = animated(MessageBox);
 
 const config = { tension: 125, friction: 20, precision: 0.1 };
 
-interface IMessage {
+interface Message {
   key: string;
   icon: JSX.Element;
   content: string;
@@ -62,18 +62,18 @@ interface IMessage {
   resolve: () => void;
 }
 
-export interface IMessageOptions {
+export interface MessageOptions {
   content: string;
   duration: number;
   type: Types;
 }
 
-export interface IMessageHubState {
-  messages: IMessage[];
+export interface MessageHubState {
+  messages: Message[];
 }
 
-class MessageHub extends PureComponent<{}, IMessageHubState> {
-  state: IMessageHubState = {
+class MessageHub extends PureComponent<{}, MessageHubState> {
+  state: MessageHubState = {
     messages: [],
   };
 
@@ -85,7 +85,7 @@ class MessageHub extends PureComponent<{}, IMessageHubState> {
     }));
   };
 
-  add = ({ content, duration, type }: IMessageOptions) =>
+  add = ({ content, duration, type }: MessageOptions) =>
     new Promise(resolve => {
       const key = getUuid();
       const icon = getTypeIcon(type);

@@ -35,14 +35,14 @@ const { Provider, Consumer } = createContext<{
   onCurrentChange: () => {},
 });
 
-interface IStepsItemProps {
+interface StepsItemProps {
   status: Status;
   direction: Direction;
   isLast: boolean;
   tailColor: Colors;
 }
 
-const StepsIconItem = styled(tag.div)<IStepsItemProps>`
+const StepsIconItem = styled(tag.div)<StepsItemProps>`
   display: flex;
   position: relative;
   align-items: center;
@@ -103,7 +103,7 @@ const StepsIconItem = styled(tag.div)<IStepsItemProps>`
   ${p => p.theme.transition /* sc-declaration */};
 `;
 
-const Title = styled(tag.div)<IStepsItemProps>`
+const Title = styled(tag.div)<StepsItemProps>`
   display: inline-block;
   position: relative;
   align-items: center;
@@ -144,12 +144,12 @@ const Title = styled(tag.div)<IStepsItemProps>`
   ${p => p.theme.transition /* sc-declaration */};
 `;
 
-interface IDescriptionProps {
+interface DescriptionProps {
   direction: Direction;
   status: Status;
 }
 
-const Description = styled(tag.div)<IDescriptionProps>`
+const Description = styled(tag.div)<DescriptionProps>`
   padding-bottom: ${p => p.direction === 'vertical' && '12px'};
   color: ${p => {
     switch (p.status) {
@@ -192,7 +192,7 @@ const getTailColor = ({
 }) => {
   const nextStep = steps[count + 1];
   if (
-    isValidElement<IStepProps>(nextStep) &&
+    isValidElement<StepProps>(nextStep) &&
     nextStep.props.status === 'error'
   ) {
     return 'error';
@@ -203,7 +203,7 @@ const getTailColor = ({
   return 'primary';
 };
 
-type StepIconProps = IStepsItemProps & {
+type StepIconProps = StepsItemProps & {
   count: number;
   onClick: () => void;
 };
@@ -241,13 +241,13 @@ const StepIcon: FunctionComponent<StepIconProps> = ({
   );
 };
 
-export interface IStepProps {
+export interface StepProps {
   title: string;
   description?: string;
   status?: Status;
 }
 
-export const Step: FunctionComponent<IStepProps> = ({
+export const Step: FunctionComponent<StepProps> = ({
   title,
   description = null,
 }) => (
@@ -292,14 +292,14 @@ export const Step: FunctionComponent<IStepProps> = ({
   </Consumer>
 );
 
-export interface IStepsProps {
+export interface StepsProps {
   current: number;
   direction?: Direction;
   onCurrentChange?: () => void;
-  children: Array<ReactElement<IStepProps>>;
+  children: ReactElement<StepProps>[];
 }
 
-const Steps: FunctionComponent<IStepsProps> & {
+const Steps: FunctionComponent<StepsProps> & {
   Step: typeof Step;
 } = ({
   children,
@@ -313,7 +313,7 @@ const Steps: FunctionComponent<IStepsProps> & {
   return (
     <Flex flexDirection={direction === 'horizontal' ? 'row' : 'column'}>
       {steps.map((step, count) => {
-        if (isValidElement<IStepProps>(step)) {
+        if (isValidElement<StepProps>(step)) {
           const status = step.props.status || getStatus({ current, count });
           const isLast = count === totalCount;
           const tailColor = getTailColor({ count, status, steps });

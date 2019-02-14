@@ -2,7 +2,7 @@ import React, { PureComponent, ReactElement } from 'react';
 import { animated } from 'react-spring/renderprops.cjs';
 import { omit } from 'ramda';
 
-import Trigger, { IPopupRenderProps } from '../Trigger';
+import Trigger, { PopupRenderProps } from '../Trigger';
 import { Omit } from '../utils/type';
 import { Placement } from '../Trigger/type';
 
@@ -68,7 +68,7 @@ class Tooltip extends PureComponent<ITooltipProps> {
     placement,
     handleClose,
     handlePopupRef,
-  }: IPopupRenderProps) => {
+  }: PopupRenderProps) => {
     const {
       light = false,
       content,
