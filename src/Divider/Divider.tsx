@@ -120,7 +120,7 @@ StyledDivider.defaultProps = {
   fontWeight: 500,
 };
 
-export interface IDividerProps {
+export interface DividerProps {
   /**
    * direction type of divider
    */
@@ -135,7 +135,7 @@ export interface IDividerProps {
   dashed?: boolean;
 }
 
-const Divider: FunctionComponent<IDividerProps> = ({
+const Divider: FunctionComponent<DividerProps> = ({
   type = 'horizontal',
   orientation,
   dashed,

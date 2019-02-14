@@ -1,17 +1,17 @@
 import React, { FunctionComponent, ReactNode } from 'react';
 
-import Trigger, { IChildrenRenderProps, IPopupRenderProps } from '../Trigger';
+import Trigger, { ChildrenRenderProps, PopupRenderProps } from '../Trigger';
 
 import Item from './Item';
 import List from './List';
 import SubList from './SubList';
 import { Placement, Provider } from './DropdownContext';
 
-export interface IDropdownProps {
+export interface DropdownProps {
   /**
    * The component which this dropdown show up
    */
-  children: (renderProps: IChildrenRenderProps) => ReactNode;
+  children: (renderProps: ChildrenRenderProps) => ReactNode;
   /**
    * The wrapper component's display style
    */
@@ -35,7 +35,7 @@ const renderOverlay = (overlay: ReactNode) => ({
   styles,
   handleClose,
   handlePopupRef,
-}: IPopupRenderProps) => (
+}: PopupRenderProps) => (
   <Provider
     value={{
       styles,
@@ -47,7 +47,7 @@ const renderOverlay = (overlay: ReactNode) => ({
   </Provider>
 );
 
-const Dropdown: FunctionComponent<IDropdownProps> & {
+const Dropdown: FunctionComponent<DropdownProps> & {
   List: typeof List;
   Item: typeof Item;
   SubList: typeof SubList;

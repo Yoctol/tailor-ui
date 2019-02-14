@@ -64,13 +64,13 @@ const getUploadIcon = ({
   return MdFileUpload;
 };
 
-interface IFileItemProps {
+interface FileItemProps {
   file: File;
   uploaded: boolean;
   onClear: (file: File) => void;
 }
 
-const FileItem: FunctionComponent<IFileItemProps> = ({
+const FileItem: FunctionComponent<FileItemProps> = ({
   file,
   uploaded,
   onClear,
@@ -101,7 +101,7 @@ const FileItem: FunctionComponent<IFileItemProps> = ({
   </Flex>
 );
 
-interface IUploadProps extends Omit<DropzoneProps, 'ref' | 'onSelect'> {
+interface UploadProps extends Omit<DropzoneProps, 'ref' | 'onSelect'> {
   onSelect: (files: File[]) => Promise<any>;
   onClear?: (file: File) => void;
   onBeforeSelect?: () => Promise<boolean> | boolean;
@@ -113,7 +113,7 @@ interface IUploadProps extends Omit<DropzoneProps, 'ref' | 'onSelect'> {
   };
 }
 
-const Upload: FunctionComponent<IUploadProps> = ({
+const Upload: FunctionComponent<UploadProps> = ({
   onBeforeSelect,
   onSelect,
   onClear,

@@ -6,13 +6,13 @@ import tag from 'utils/CleanTag';
 
 import TabContext, { Size } from './TabContext';
 
-interface IStyledTabProps {
+interface StyledTabProps {
   size: Size;
   pills: boolean;
   active: boolean;
 }
 
-const StyledTab = styled(tag.a)<IStyledTabProps>`
+const StyledTab = styled(tag.a)<StyledTabProps>`
   display: inline-flex;
   position: relative;
   align-items: center;
@@ -39,7 +39,7 @@ const StyledTab = styled(tag.a)<IStyledTabProps>`
   ${({
     size,
     theme: { heights, paddings, fontSizes },
-  }: IStyledTabProps & { theme: any }) =>
+  }: StyledTabProps & { theme: any }) =>
     ({
       sm: css`
         height: ${heights.sm};
@@ -89,7 +89,7 @@ const StyledTab = styled(tag.a)<IStyledTabProps>`
   ${styledSpace};
 `;
 
-export interface ITabProps {
+export interface TabProps {
   /**
    * label of tab
    */
@@ -104,7 +104,7 @@ export interface ITabProps {
   disabled?: boolean;
 }
 
-export const Tab: FunctionComponent<ITabProps> = ({
+export const Tab: FunctionComponent<TabProps> = ({
   label,
   value,
   ...props
@@ -124,7 +124,7 @@ export const Tab: FunctionComponent<ITabProps> = ({
   );
 };
 
-interface IStyledTabsProps {
+interface StyledTabsProps {
   /**
    * Make the tabs position to bottom of parent
    */
@@ -135,7 +135,7 @@ interface IStyledTabsProps {
   block?: boolean;
 }
 
-const StyledTabs = styled(tag.nav)<IStyledTabsProps>`
+const StyledTabs = styled(tag.nav)<StyledTabsProps>`
   display: flex;
 
   ${({ absolute }) =>
@@ -160,7 +160,7 @@ const StyledTabs = styled(tag.nav)<IStyledTabsProps>`
   ${styledSpace};
 `;
 
-type TabsProps = IStyledTabsProps & {
+type TabsProps = StyledTabsProps & {
   /**
    * Initial active Tab's value, if `activeValue` is not set.
    */

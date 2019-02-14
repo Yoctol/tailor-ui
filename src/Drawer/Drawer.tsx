@@ -16,12 +16,12 @@ import { FooterWrapper, ModalContent, ModalHeader } from '../Modal';
 
 type Placement = 'top' | 'right' | 'bottom' | 'left';
 
-interface IDrawerWrapperProps {
+interface DrawerWrapperProps {
   breadth: string;
   placement: Placement;
 }
 
-const DrawerWrapper = styled(tag.div)<IDrawerWrapperProps>`
+const DrawerWrapper = styled(tag.div)<DrawerWrapperProps>`
   display: flex;
   position: absolute;
   z-index: 10000;
@@ -84,7 +84,7 @@ const getWrapperBreadth = ({
   return formatBreadth(width);
 };
 
-export interface IDrawerProps {
+export interface DrawerProps {
   visible: boolean;
   onClose: () => void;
   title?: string;
@@ -96,7 +96,7 @@ export interface IDrawerProps {
   height?: string | number;
 }
 
-const Drawer: FunctionComponent<IDrawerProps> = ({
+const Drawer: FunctionComponent<DrawerProps> = ({
   visible,
   title,
   footer,

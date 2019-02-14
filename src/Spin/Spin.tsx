@@ -20,7 +20,7 @@ const spinAnimation = keyframes`
   }
 `;
 
-interface ISpinCubeWrapperProps {
+interface SpinCubeWrapperProps {
   size: number | string;
 }
 
@@ -44,7 +44,7 @@ const SpinCube = styled(tag.div)`
   }
 `;
 
-const SpinCubeWrapper = styled(tag.div)<ISpinCubeWrapperProps>`
+const SpinCubeWrapper = styled(tag.div)<SpinCubeWrapperProps>`
   position: relative;
   width: ${p => p.size}px;
   height: ${p => p.size}px;
@@ -75,11 +75,11 @@ const SpinCubeWrapper = styled(tag.div)<ISpinCubeWrapperProps>`
   }
 `;
 
-interface ISpinWrapperProps {
+interface SpinWrapperProps {
   fullscreen: boolean;
 }
 
-const SpinWrapper = styled(tag.div)<ISpinWrapperProps>`
+const SpinWrapper = styled(tag.div)<SpinWrapperProps>`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -96,12 +96,12 @@ const SpinWrapper = styled(tag.div)<ISpinWrapperProps>`
     `}
 `;
 
-interface ISpinProps {
+interface SpinProps {
   size?: number | string;
   fullscreen?: boolean;
 }
 
-const Spin: FunctionComponent<ISpinProps> = ({
+const Spin: FunctionComponent<SpinProps> = ({
   size = 40,
   fullscreen = false,
 }) => (

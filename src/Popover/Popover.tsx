@@ -1,5 +1,6 @@
 import React, { PureComponent, ReactNode } from 'react';
 import styled from 'styled-components';
+import { omit } from 'ramda';
 
 import Heading from '../Heading';
 import Tooltip, { ITooltipProps } from '../Tooltip';
@@ -69,13 +70,12 @@ class Popover extends PureComponent<PopoverProps> {
   };
 
   render() {
-    const { title, content, ...otherProps } = this.props;
     return (
       <Tooltip
         components={this.getComponents()}
         content={this.renderContent()}
         trigger="click"
-        {...otherProps}
+        {...omit(['title', 'content'], this.props)}
       />
     );
   }

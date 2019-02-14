@@ -8,13 +8,13 @@ import { StyledTextarea } from '../Input/Textarea';
 
 import Hint from './Hint';
 
-export interface IFormFieldProps {
+export interface FormFieldProps {
   success?: boolean;
   warning?: boolean;
   error?: boolean;
 }
 
-const StyledFormField = styled(tag.div)<IFormFieldProps>`
+const StyledFormField = styled(tag.div)<FormFieldProps>`
   position: relative;
   margin-bottom: ${p => p.theme.space[2]};
 
@@ -73,7 +73,7 @@ const StyledFormField = styled(tag.div)<IFormFieldProps>`
     `};
 `;
 
-const FormField: FunctionComponent<IFormFieldProps> = props => (
+const FormField: FunctionComponent<FormFieldProps> = props => (
   <StyledFormField {...props} />
 );
 

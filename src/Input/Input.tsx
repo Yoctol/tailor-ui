@@ -114,12 +114,12 @@ const InputLabel = styled.span`
   line-height: 1;
 `;
 
-interface IInputLabel {
+interface InputLabel {
   prefix?: any;
   suffix?: any;
 }
 
-const InputWrapper = styled(tag.div)<IInputLabel>`
+const InputWrapper = styled(tag.div)<InputLabel>`
   display: flex;
 
   ${p =>
@@ -162,7 +162,7 @@ const InputWrapper = styled(tag.div)<IInputLabel>`
   ${width};
 `;
 
-export interface IInputProps {
+export interface InputProps {
   /**
    * Auto select value of the input if true
    */
@@ -188,7 +188,7 @@ export interface IInputProps {
   [key: string]: any;
 }
 
-const Input: FunctionComponent<IInputProps> = forwardRef(
+const Input: FunctionComponent<InputProps> = forwardRef(
   (
     {
       prefix,

@@ -11,7 +11,7 @@ const RadioGroupFlex = styled(tag.div)<{ direction: Direction }>`
   flex-direction: ${p => (p.direction === 'horizontal' ? 'row' : 'column')};
 `;
 
-export interface IRadioGroupProps {
+export interface RadioGroupProps {
   /**
    * To set the initial value
    */
@@ -23,11 +23,11 @@ export interface IRadioGroupProps {
   /**
    * Specifies options
    */
-  options?: Array<{
+  options?: {
     label: string;
     value: string;
     disabled?: boolean;
-  }>;
+  }[];
   /**
    * Used for setting the currently selected value
    */
@@ -38,7 +38,7 @@ export interface IRadioGroupProps {
   onChange?: (value: string) => void;
 }
 
-const RadioGroup: FunctionComponent<IRadioGroupProps> = ({
+const RadioGroup: FunctionComponent<RadioGroupProps> = ({
   value: controlledValue,
   defaultValue,
   options = null,

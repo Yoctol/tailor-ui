@@ -27,7 +27,7 @@ type ButtonType =
   | 'warning'
   | 'danger';
 
-export interface IGetTypesStylesInterface {
+export interface GetTypesStylesInterface {
   type?: ButtonType;
   text?: boolean;
   outlined?: boolean;
@@ -38,7 +38,7 @@ const getTypeStyles = ({
   text,
   outlined,
   theme,
-}: IGetTypesStylesInterface & {
+}: GetTypesStylesInterface & {
   theme: any;
 }) => {
   const { colors } = theme;
@@ -82,14 +82,14 @@ const getTypeStyles = ({
   };
 };
 
-interface IGetLoadingInterface extends IGetTypesStylesInterface {
+interface GetLoadingInterface extends GetTypesStylesInterface {
   loading?: boolean;
 }
 
 const getLoading = ({
   loading,
   ...props
-}: IGetLoadingInterface & {
+}: GetLoadingInterface & {
   theme: any;
 }) =>
   loading &&
@@ -112,7 +112,7 @@ const getLoading = ({
 
 type ButtonSize = 'sm' | 'md' | 'lg';
 
-interface IGetSizeInterface {
+interface GetSizeInterface {
   size: ButtonSize;
   hasIcon?: boolean;
 }
@@ -122,7 +122,7 @@ const getSize = css`
     hasIcon,
     size,
     theme: { paddings, heights, fontSizes },
-  }: IGetSizeInterface & { theme: any }) => {
+  }: GetSizeInterface & { theme: any }) => {
     if (hasIcon) {
       return {
         sm: css`
@@ -160,21 +160,21 @@ const getSize = css`
   }};
 `;
 
-interface IBlockInterface {
+interface BlockInterface {
   block?: boolean;
 }
 
-const getBlock = ({ block }: IBlockInterface) =>
+const getBlock = ({ block }: BlockInterface) =>
   block &&
   css`
     width: 100%;
   `;
 
-interface IRoundedInterface {
+interface RoundedInterface {
   rounded?: boolean;
 }
 
-const getRounded = ({ rounded }: IRoundedInterface) =>
+const getRounded = ({ rounded }: RoundedInterface) =>
   rounded &&
   css`
     border-radius: 999px;
@@ -185,7 +185,7 @@ const getTypes = ({
   text = false,
   outlined = false,
   theme,
-}: IGetTypesStylesInterface & { theme: any }) => {
+}: GetTypesStylesInterface & { theme: any }) => {
   const styles = getTypeStyles({ type, text, outlined, theme });
 
   return css`
@@ -212,11 +212,11 @@ const getTypes = ({
   `;
 };
 
-type StyledButtonProps = IGetTypesStylesInterface &
-  IGetLoadingInterface &
-  IGetSizeInterface &
-  IBlockInterface &
-  IRoundedInterface &
+type StyledButtonProps = GetTypesStylesInterface &
+  GetLoadingInterface &
+  GetSizeInterface &
+  BlockInterface &
+  RoundedInterface &
   SpaceProps;
 
 export const StyledButton = styled(tag.button)<StyledButtonProps>`

@@ -2,7 +2,7 @@ import React, { RefObject, createRef } from 'react';
 import { render } from 'react-dom';
 
 import ModalInstanceComponent, {
-  IModalOptions,
+  ModalOptions,
   ModalTypes,
 } from './ModalInstanceComponent';
 
@@ -22,7 +22,7 @@ class Modal {
     render(<ModalInstanceComponent ref={this.ref} />, elementRoot);
   }
 
-  trigger = (options: IModalOptions, type: ModalTypes): Promise<boolean> => {
+  trigger = (options: ModalOptions, type: ModalTypes): Promise<boolean> => {
     if (this.ref.current) {
       return this.ref.current.trigger(options, type);
     }
@@ -38,16 +38,16 @@ const getModalInstance = () => {
   return modalInstance;
 };
 
-const triggerModal = (options: IModalOptions, type: ModalTypes) => {
+const triggerModal = (options: ModalOptions, type: ModalTypes) => {
   const instance = getModalInstance();
   return instance.trigger(options, type);
 };
 
-export const confirm = (options: IModalOptions) =>
+export const confirm = (options: ModalOptions) =>
   triggerModal(options, 'confirm');
-export const info = (options: IModalOptions) => triggerModal(options, 'info');
-export const success = (options: IModalOptions) =>
+export const info = (options: ModalOptions) => triggerModal(options, 'info');
+export const success = (options: ModalOptions) =>
   triggerModal(options, 'success');
-export const warning = (options: IModalOptions) =>
+export const warning = (options: ModalOptions) =>
   triggerModal(options, 'warning');
-export const error = (options: IModalOptions) => triggerModal(options, 'error');
+export const error = (options: ModalOptions) => triggerModal(options, 'error');

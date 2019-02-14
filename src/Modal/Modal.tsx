@@ -13,16 +13,16 @@ import { LocaleContext } from '../UIProvider';
 
 import BaseModal, { BaseModalProps } from './BaseModal';
 import CloseButton from './CloseButton';
-import Footer, { IFooterProps } from './Footer';
+import Footer, { FooterProps } from './Footer';
 import { confirm, error, info, success, warning } from './instance';
 
-interface IModalHeaderProps {
+interface ModalHeaderProps {
   title?: ReactNode;
   closable?: boolean;
   onCancel: () => void;
 }
 
-export const ModalHeader: FunctionComponent<IModalHeaderProps> = ({
+export const ModalHeader: FunctionComponent<ModalHeaderProps> = ({
   title,
   onCancel,
   closable,
@@ -60,11 +60,11 @@ export const FooterWrapper: FunctionComponent = props => (
   />
 );
 
-interface IModalFooterProps extends IFooterProps {
+interface ModalFooterProps extends FooterProps {
   footer?: ReactNode;
 }
 
-const ModalFooter: FunctionComponent<IModalFooterProps> = ({
+const ModalFooter: FunctionComponent<ModalFooterProps> = ({
   footer,
   cancelText,
   confirmText,
@@ -94,9 +94,9 @@ const ModalFooter: FunctionComponent<IModalFooterProps> = ({
 };
 
 export type ModalProps = BaseModalProps &
-  IFooterProps &
-  IModalHeaderProps &
-  IModalFooterProps;
+  FooterProps &
+  ModalHeaderProps &
+  ModalFooterProps;
 
 const Modal: FunctionComponent<ModalProps> & {
   confirm: typeof confirm;

@@ -4,7 +4,7 @@ import Box from '../Grid/Box';
 import Button, { ButtonProps } from '../Button';
 import Flex from '../Grid/Flex';
 
-export interface IFooterProps {
+export interface FooterProps {
   cancelText?: string | null;
   confirmText?: string;
   onConfirm?: () => void;
@@ -13,7 +13,7 @@ export interface IFooterProps {
   cancelButtonProps?: ButtonProps;
 }
 
-const Footer: FunctionComponent<IFooterProps> = ({
+const Footer: FunctionComponent<FooterProps> = ({
   cancelText,
   confirmText,
   onCancel,

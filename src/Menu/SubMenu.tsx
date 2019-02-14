@@ -21,7 +21,7 @@ const SubMenuWrapper = styled.div`
 
 const AnimatedSubMenuWrapper = animated(SubMenuWrapper);
 
-export interface ISubMenuProps {
+export interface SubMenuProps {
   id: string;
   initial?: boolean;
   title: ReactNode;
@@ -29,7 +29,7 @@ export interface ISubMenuProps {
   togglable?: boolean;
 }
 
-const SubMenu: FunctionComponent<ISubMenuProps> = ({
+const SubMenu: FunctionComponent<SubMenuProps> = ({
   togglable = true,
   id,
   icon,

@@ -6,7 +6,7 @@ import TimePickerPanel from 'rc-time-picker/lib/Panel';
 import Input from '../Input';
 import { LocaleContext } from '../UIProvider';
 
-export interface IDatePickerProps {
+export interface DatePickerProps {
   /**
    * a callback function, can be executed when the selected time is changing
    */
@@ -41,7 +41,7 @@ export interface IDatePickerProps {
   placeholder?: string;
 }
 
-const DatePicker: FunctionComponent<IDatePickerProps> = ({
+const DatePicker: FunctionComponent<DatePickerProps> = ({
   onChange,
   showTime,
   showSecond,

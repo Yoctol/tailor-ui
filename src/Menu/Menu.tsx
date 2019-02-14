@@ -6,12 +6,12 @@ import Item from './Item';
 import MenuContext from './MenuContext';
 import SubMenu from './SubMenu';
 
-interface IMenuProps {
+interface MenuProps {
   currentSubOnly?: boolean;
   defaultSubKeys?: string[];
 }
 
-const Menu: FunctionComponent<FlexProps & IMenuProps> & {
+const Menu: FunctionComponent<FlexProps & MenuProps> & {
   SubMenu: typeof SubMenu;
   Item: typeof Item;
 } = ({ children, currentSubOnly, defaultSubKeys, ...props }) => {

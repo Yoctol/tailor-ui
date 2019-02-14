@@ -39,16 +39,16 @@ const StyledSubItem = styled(Item)<any>`
   }
 `;
 
-export interface ISubItemProps extends StyledListProps {
+export interface SubItemProps extends StyledListProps {
   title: string;
   disabled?: boolean;
 }
 
-export interface ISubItemState {
+export interface SubItemState {
   subItemEl: HTMLElement | null;
 }
 
-const SubItem: FunctionComponent<ISubItemProps> = ({
+const SubItem: FunctionComponent<SubItemProps> = ({
   title,
   children,
   disabled,

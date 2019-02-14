@@ -9,22 +9,22 @@ import locales from '../locale';
 
 import LocaleContext, { LocaleType } from './LocaleContext';
 
-const { en_US } = locales;
+const { enUS } = locales;
 
 // eslint-disable-next-line import/no-mutable-exports
-let globalLocale: LocaleType = en_US;
+let globalLocale: LocaleType = enUS;
 
-export interface IUIProviderProps {
+export interface UIProviderProps {
   children: ReactNode;
   locale?: LocaleType;
   theme?: typeof defaultTheme;
   skipLocale?: boolean;
 }
 
-const UIProvider: FunctionComponent<IUIProviderProps> = ({
+const UIProvider: FunctionComponent<UIProviderProps> = ({
   children,
   theme = defaultTheme,
-  locale = en_US,
+  locale = enUS,
   skipLocale = false,
 }) => {
   if (!skipLocale) {

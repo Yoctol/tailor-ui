@@ -19,7 +19,7 @@ const components = {
   ContentComponent,
 };
 
-interface IPopconfirmContentProps {
+interface PopconfirmContentProps {
   /**
    * text of the Cancel button
    */
@@ -47,7 +47,7 @@ interface IPopconfirmContentProps {
 }
 
 const PopconfirmContent: FunctionComponent<
-  IPopconfirmContentProps & {
+  PopconfirmContentProps & {
     hideTooltip: () => void;
   }
 > = ({
@@ -105,7 +105,7 @@ const StyledContent = styled(Space)`
   white-space: nowrap;
 `;
 
-export type PopconfirmProps = ITooltipProps & IPopconfirmContentProps;
+export type PopconfirmProps = ITooltipProps & PopconfirmContentProps;
 
 const Popconfirm: FunctionComponent<PopconfirmProps> = ({
   type,

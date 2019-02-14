@@ -22,7 +22,7 @@ export const SubMenuContentWrapper = styled(animated.div)`
   width: 180px;
 `;
 
-interface IStyledSubMenuProps {
+interface StyledSubMenuProps {
   active?: boolean;
 }
 
@@ -35,7 +35,7 @@ export const SubMenuBadge = styled(Box)`
   border-radius: 50%;
 `;
 
-export const StyledSubMenu = styled(tag.div)<IStyledSubMenuProps>`
+export const StyledSubMenu = styled(tag.div)<StyledSubMenuProps>`
   display: flex;
   position: relative;
   box-sizing: border-box;
@@ -51,11 +51,11 @@ export const StyledSubMenu = styled(tag.div)<IStyledSubMenuProps>`
   ${p => p.theme.transition};
 `;
 
-interface IStyledMenuItemProps {
+interface StyledMenuItemProps {
   active?: boolean;
 }
 
-export const StyledMenuItem = styled(tag.div)<IStyledMenuItemProps>`
+export const StyledMenuItem = styled(tag.div)<StyledMenuItemProps>`
   display: flex;
   align-items: center;
   width: 100%;
