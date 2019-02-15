@@ -2,7 +2,7 @@ import React from 'react';
 import { ThemeProvider } from 'styled-components';
 import { render } from 'react-testing-library';
 
-import defaultTheme from '../src/theme';
+import defaultTheme from '../packages/tailor-ui/src/theme';
 
 const customRender = (node: any, ...options: any[]) =>
   render(

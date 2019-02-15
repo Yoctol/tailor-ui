@@ -28,14 +28,14 @@ jobs:
           command: |
             yarn config set cache-folder .yarn-cache
             yarn
+            yarn bootstrap
       - run:
           name: build
-          command: npm run build
+          command: cd packages/tailor-ui && yarn build
       - save_cache:
           key: node-10-cache-{{checksum "yarn.lock"}}
           paths:
             - .yarn-cache
-            - ./node_modules
       - persist_to_workspace:
           root: .
           paths:
@@ -66,9 +66,10 @@ jobs:
           command: |
             yarn config set cache-folder .yarn-cache
             yarn
+            yarn bootstrap
       - run:
           name: build
-          command: npm run build
+          command: cd packages/tailor-ui && yarn build
       - save_cache:
           key: node-8-cache-{{checksum "yarn.lock"}}
           paths:

@@ -1,0 +1,110 @@
+---
+name: Mention
+menu: Components
+route: /components/mention
+---
+
+import { PropsTable, Playground } from 'docz';
+import { FormField, Hint, Mention } from 'tailor-ui';
+
+# Mention
+
+Mention component.
+
+## When To Use
+
+When need to mention someone or something.
+
+## Examples
+
+```js
+import { Mention } from 'tailor-ui';
+```
+
+### Basic
+
+<Playground>
+  {() => {
+    const [value, setValue] = React.useState(Mention.toContentState('我想要一杯 @飲料'));
+
+    return (
+      <Mention
+        autoFocus
+        suggestions={['飲料', '食物']}
+        value={value}
+        onChange={contentState => {
+          setValue(contentState);
+          console.log('Raw value: ', Mention.toString(contentState));
+          console.log('Mentions: ', Mention.getMentions(contentState));
+        }}
+      />
+    );
+
+}}
+
+</Playground>
+
+### Textarea
+
+<Playground>
+  {() => {
+    const [value, setValue] = React.useState(Mention.toContentState(''));
+
+    return (
+      <Mention
+        suggestions={['drink', 'food']}
+        value={value}
+        onChange={setValue}
+        textarea
+      />
+    );
+
+}}
+
+</Playground>
+
+### Disabled
+
+<Playground>
+  {() => {
+    const [value, setValue] = React.useState(Mention.toContentState(''));
+
+    return (
+
+      <Mention
+        suggestions={['drink', 'food']}
+        value={value}
+        onChange={setValue}
+        disabled
+      />
+    );
+
+}}
+
+</Playground>
+
+### Error status
+
+<Playground>
+  {() => {
+    const [value, setValue] = React.useState(Mention.toContentState('I want a @food'));
+
+    return (
+      <FormField error>
+        <Mention
+          error
+          suggestions={['drink', 'food']}
+          value={value}
+          onChange={setValue}
+        />
+        <Hint>More than one must be selected!</Hint>
+      </FormField>
+    );
+
+}}
+
+</Playground>
+
+## API
+
+<PropsTable of={Mention} />

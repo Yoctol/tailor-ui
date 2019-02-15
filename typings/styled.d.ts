@@ -1,6 +1,6 @@
 import 'styled-components';
 
-import { ThemeType } from '../src/theme';
+import { ThemeType } from '../packages/tailor-ui/src/theme';
 
 declare module 'styled-components' {
   // tslint:disable-next-line

@@ -1,11 +1,11 @@
 module.exports = {
   port: 3030,
-  src: './src',
+  src: './document',
   title: 'Tailor UI',
   description: 'A bespoke UI collection for building web application.',
   typescript: true,
   codeSandbox: false,
-  wrapper: 'docz/DoczWrapper',
+  wrapper: 'document/DoczWrapper',
   htmlContext: {
     head: {
       raw: `
