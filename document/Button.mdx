@@ -1,0 +1,268 @@
+---
+name: Button
+menu: Components
+route: /components/button
+---
+
+import { PropsTable, Playground } from 'docz';
+import { MdCheck, MdDelete, MdClose, MdSearch } from 'react-icons/md';
+import { Button, Box, Icon } from 'tailor-ui';
+
+# Button
+
+To trigger an operation.
+
+## When To Use
+
+A button means an operation (or a series of operations). Clicking a button will trigger corresponding business logic.
+
+## Examples
+
+```js
+import { Button } from 'tailor-ui';
+```
+
+### Basic
+
+<Playground>
+  <Button>Basic Button</Button>
+  <Button text ml="2">
+    Text Button
+  </Button>
+</Playground>
+
+### Type
+
+<Playground>
+  <Button type="primary">Primary</Button>
+  <Button type="secondary" ml="2">
+    Secondary
+  </Button>
+  <Button type="info" ml="2">
+    Info
+  </Button>
+  <Button type="success" ml="2">
+    Success
+  </Button>
+  <Button type="warning" ml="2">
+    Warning
+  </Button>
+  <Button type="danger" ml="2">
+    Danger
+  </Button>
+</Playground>
+
+### Text
+
+<Playground>
+  <Button text type="primary">
+    Primary
+  </Button>
+  <Button text type="secondary" ml="2">
+    Secondary
+  </Button>
+  <Button text type="info" ml="2">
+    Info
+  </Button>
+  <Button text type="success" ml="2">
+    Success
+  </Button>
+  <Button text type="warning" ml="2">
+    Warning
+  </Button>
+  <Button text type="danger" ml="2">
+    Danger
+  </Button>
+</Playground>
+
+### Rounded
+
+<Playground>
+  <Button type="primary" rounded>
+    Primary
+  </Button>
+  <Button type="secondary" ml="2" rounded>
+    Secondary
+  </Button>
+  <Button type="info" ml="2" rounded>
+    Info
+  </Button>
+  <Button type="success" ml="2" rounded>
+    Success
+  </Button>
+  <Button type="warning" ml="2" rounded>
+    Warning
+  </Button>
+  <Button type="danger" ml="2" rounded>
+    Danger
+  </Button>
+</Playground>
+
+### Outlined
+
+<Playground>
+  <Button type="primary" outlined>
+    Primary
+  </Button>
+  <Button type="secondary" ml="2" outlined>
+    Secondary
+  </Button>
+  <Button type="info" ml="2" outlined>
+    Info
+  </Button>
+  <Button type="success" ml="2" outlined>
+    Success
+  </Button>
+  <Button type="warning" ml="2" outlined>
+    Warning
+  </Button>
+  <Button type="danger" ml="2" outlined>
+    Danger
+  </Button>
+</Playground>
+
+### Rounded & Outlined
+
+<Playground>
+  <Button type="primary" rounded outlined>
+    Primary
+  </Button>
+  <Button type="secondary" ml="2" rounded outlined>
+    Secondary
+  </Button>
+  <Button type="info" ml="2" rounded outlined>
+    Info
+  </Button>
+  <Button type="success" ml="2" rounded outlined>
+    Success
+  </Button>
+  <Button type="warning" ml="2" rounded outlined>
+    Warning
+  </Button>
+  <Button type="danger" ml="2" rounded outlined>
+    Danger
+  </Button>
+</Playground>
+
+### Icon
+
+```js
+import { MdCheck, MdDelete, MdClose, MdSearch } from 'react-icons/md';
+```
+
+<Playground>
+  <Button type="primary" icon={MdCheck}>
+    Confirm
+  </Button>
+  <Button type="danger" icon={MdDelete} ml="2">
+    Delete
+  </Button>
+  <Button type="info" icon={MdSearch} ml="2">
+    Search
+  </Button>
+  <br />
+  <br />
+  <Button type="primary" rounded icon={MdSearch} ml="2" />
+  <Button type="danger" rounded icon={MdDelete} ml="2" />
+  <Button type="info" rounded icon={MdSearch} ml="2" />
+  <br />
+  <br />
+  <Button>
+    <Icon type={MdCheck} fill="success" size="20" mr="2" />
+    Success
+  </Button>
+  <Button ml="2">
+    <Icon type={MdClose} fill="danger" size="20" mr="2" />
+    Danger
+  </Button>
+</Playground>
+
+### Disabled
+
+<Playground>
+  <Button type="primary" disabled>
+    Primary
+  </Button>
+  <Button type="secondary" ml="2" disabled>
+    Secondary
+  </Button>
+  <Button type="info" ml="2" disabled>
+    Info
+  </Button>
+  <Button type="success" ml="2" disabled>
+    Success
+  </Button>
+  <Button type="warning" ml="2" disabled>
+    Warning
+  </Button>
+  <Button type="danger" ml="2" disabled>
+    Danger
+  </Button>
+</Playground>
+
+### Loading
+
+<Playground>
+  <Button type="primary" loading>
+    Primary
+  </Button>
+  <Button type="secondary" ml="2" loading>
+    Secondary
+  </Button>
+  <Button type="info" ml="2" loading>
+    Info
+  </Button>
+  <Button type="success" ml="2" loading>
+    Success
+  </Button>
+  <Button type="warning" ml="2" loading>
+    Warning
+  </Button>
+  <Button type="danger" ml="2" loading>
+    Danger
+  </Button>
+</Playground>
+
+<Playground>
+  {() => {
+    const [loading, setLoading] = React.useState(false);
+
+    return (
+      <Button
+        loading={loading}
+        onClick={() => {
+          setLoading(true);
+          setTimeout(() => setLoading(false), 3000);
+        }}
+      >
+        Click me!
+      </Button>
+    )
+
+}}
+
+</Playground>
+
+### Sizes
+
+<Playground>
+  <Button size="sm">
+    Button sm
+  </Button>
+
+<Button ml={2}>Button md</Button>
+
+  <Button ml={2} size="lg">
+    Button lg
+  </Button>
+</Playground>
+
+### Block
+
+<Playground>
+  <Button block>Block Button</Button>
+</Playground>
+
+## API
+
+<PropsTable of={Button} />

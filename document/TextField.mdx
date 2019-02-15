@@ -1,0 +1,180 @@
+---
+name: TextField
+menu: Components
+route: /components/textfield
+---
+
+import { PropsTable, Playground, Link } from 'docz';
+import { Button, TextField } from 'tailor-ui';
+
+# TextField
+
+Text fields let users enter and edit text.
+
+## When to use
+
+When a maxLength and label needs to be provided.
+
+## Examples
+
+```js
+import { TextField } from 'tailor-ui';
+```
+
+### Basic
+
+<Playground>
+  <TextField
+    label="Text Field"
+    onChange={event => console.log(event.target.value)}
+  />
+  <TextField
+    label="Text Field"
+    onChange={event => console.log(event.target.value)}
+  />
+</Playground>
+
+### With maxLength
+
+<Playground>
+  <TextField
+    label="Text Field"
+    maxLength={12}
+    onChange={event => console.log(event.target.value)}
+  />
+</Playground>
+
+### With textarea
+
+<Playground>
+  <TextField
+    textarea
+    minRows={2}
+    maxRows={6}
+    label="Text Field(textarea)"
+    onChange={event => console.log(event.target.value)}
+  />
+</Playground>
+
+### With textarea & maxLength
+
+<Playground>
+  <TextField
+    textarea
+    minRows={2}
+    maxRows={6}
+    maxLength={100}
+    label="Text Field(textarea)"
+    onChange={event => console.log(event.target.value)}
+  />
+</Playground>
+
+### With textarea & error
+
+<Playground>
+  {() => {
+    const [value, setValue] = React.useState('')
+    const hasError = value === 'error';
+
+    return (
+      <TextField
+        textarea
+        minRows={2}
+        maxRows={6}
+        label="Please type 'error'"
+        error={hasError}
+        message="Just show error"
+        value={value}
+        onChange={event => setValue(event.target.value)}
+      />
+    );
+
+}}
+
+</Playground>
+
+### With maxLength & error
+
+<Playground>
+  {() => {
+    const [value, setValue] = React.useState('')
+    const hasError = value === 'error';
+
+    return (
+      <TextField
+        label="Please type 'error'"
+        maxLength={12}
+        error={hasError}
+        message="Just show error"
+        value={value}
+        onChange={event => setValue(event.target.value)}
+      />
+    );
+
+}}
+
+</Playground>
+
+### With status
+
+<Playground>
+  <TextField value="default" label="Text Field" />
+  <TextField
+    label="Text Field"
+    value="Success"
+    success
+    message="This is a success message"
+  />
+  <TextField
+    label="Text Field"
+    value="Warning"
+    warning
+    message="This is a warning message"
+  />
+  <TextField
+    label="Text Field"
+    value="Error"
+    error
+    message="This is a error message"
+  />
+</Playground>
+
+### With empty label
+
+<Playground>
+  <TextField
+    maxLength={30}
+    onChange={event => console.log(event.target.value)}
+  />
+</Playground>
+
+### With controlled value switch
+
+<Playground>
+  {() => {
+    const [on, setOn] = React.useState(false);
+
+    return (
+      <>
+        <Button onClick={() => setOn(!on)}>Toggle</Button>
+        <TextField
+          value={on ? 'toggle' : 'after toggle'}
+          maxLength={30}
+          onChange={event => console.log(event.target.value)}
+        />
+      </>
+    );
+
+}}
+
+</Playground>
+
+## API
+
+<PropsTable of={TextField} />
+
+<div>
+  If you are using `textarea` props, you can consult{' '}
+  <Link to="/components/input#api">Input's documentation</Link> to find more
+  `textarea` APIs.
+</div>

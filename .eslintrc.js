@@ -1,4 +1,7 @@
+const path = require('path');
+
 module.exports = {
+  root: true,
   parser: '@typescript-eslint/parser',
   extends: ['yoctol', 'plugin:@typescript-eslint/recommended', 'prettier', 'prettier/@typescript-eslint'],
   plugins: ['@typescript-eslint'],
@@ -6,8 +9,8 @@ module.exports = {
     ecmaFeatures: {
       jsx: true,
     },
-    "useJSXTextNode": true,
-    "project": "./tsconfig.json",
+    'useJSXTextNode': true,
+    'project': './tsconfig.json',
   },
   env: {
     browser: true,
@@ -32,7 +35,7 @@ module.exports = {
         extensions: ['.js', '.jsx', '.ts', '.tsx'],
       },
       jest: {
-        jestConfigFile: './jest.config.js',
+        jestConfigFile: path.join(__dirname, './jest.config.js'),
       },
     },
   },

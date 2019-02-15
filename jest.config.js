@@ -1,4 +1,5 @@
 module.exports = {
+  rootDir: __dirname,
   coverageDirectory: './coverage/',
   transformIgnorePatterns: ['/node_modules/'],
   testPathIgnorePatterns: ['/node_modules/', 'lib', '/test/'],

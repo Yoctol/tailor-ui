@@ -1,0 +1,32 @@
+---
+name: Space
+menu: Components
+route: /components/space
+---
+
+import { PropsTable, Playground, Link } from 'docz';
+import { Space } from 'tailor-ui';
+
+# Space
+
+## API
+
+<Link to="/components/grid#properties">Same as Grid</Link>
+
+## Examples
+
+```js
+import { Space } from 'tailor-ui';
+```
+
+<div>
+  The props converts same as <Link to="/components/grid#usage">Grid</Link>
+</div>
+
+### Basic
+
+<Playground>
+  <Space m={4} p={8} style={{ backgroundColor: '#ccc', textAlign: 'center' }}>
+    With margin & padding
+  </Space>
+</Playground>

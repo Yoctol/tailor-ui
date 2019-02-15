@@ -1,6 +1,7 @@
 {
-  "name": "tailor-ui",
-  "description": "A bespoke UI collection for building web application.",
+  "private": true,
+  "name": "@tailor-ui/workspace",
+  "description": "Tailor-UI's workspace package",
   "license": "MIT",
   "homepage": "https://tailor-ui.netlify.com",
   "repository": {
@@ -10,65 +11,28 @@
   "bugs": {
     "url": "https://github.com/yoctol/tailor-ui/issues"
   },
-  "version": "0.2.11",
-  "main": "lib/index.umd.js",
-  "module": "lib/index.js",
-  "files": [
-    "lib"
+  "workspaces": [
+    "packages/*"
   ],
   "scripts": {
-    "build": "npm run clean && npm run build:types && npm run build:js && npm run build:esm",
-    "build:esm": "rollup -c",
-    "build:js": "cross-env NODE_ENV=production babel src -d lib --extensions '.ts,.tsx' --ignore **/__tests__",
-    "build:types": "tsc --emitDeclarationOnly",
-    "clean": "rimraf lib",
-    "commit": "git-cz",
-    "docz:build": "docz build",
-    "docz:dev": "docz dev",
+    "bootstrap": "lerna bootstrap",
+    "docs:build": "docz build",
+    "docs:dev": "docz dev",
     "lint": "npm run lint:ts && npm run lint:css",
     "lint:css": "stylelint './src/**/*.tsx'",
     "lint:staged": "lint-staged && npm run type-check",
     "lint:ts": "eslint . --ext=ts,tsx --fix",
-    "prepublishOnly": "npm run build",
+    "start": "npm run docs:dev",
     "test": "npm run lint && npm run testonly",
     "testonly": "jest",
     "testonly:cov": "jest --coverage --runInBand",
     "testonly:watch": "jest --watch",
     "type-check": "tsc --noEmit",
-    "type-check:watch": "npm run type-check -- --watch",
-    "preversion": "npm test",
-    "version": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md"
-  },
-  "config": {
-    "commitizen": {
-      "path": "cz-conventional-changelog"
-    }
-  },
-  "dependencies": {
-    "@babel/runtime": "^7.3.1",
-    "html-tags": "^2.0.0",
-    "immutable": "3.7.4",
-    "moment": "^2.24.0",
-    "polished": "^2.3.3",
-    "prop-types": "^15.7.1",
-    "ramda": "^0.26.1",
-    "rc-calendar": "^9.10.8",
-    "rc-editor-mention": "1.1.7",
-    "rc-time-picker": "^3.6.2",
-    "react-dropzone": "7.0.1",
-    "react-html-attributes": "^1.4.3",
-    "react-intl-tel-input": "^6.1.0",
-    "react-select": "^2.3.0",
-    "react-textarea-autosize": "^7.1.0",
-    "resize-observer-polyfill": "^1.5.1",
-    "styled-normalize": "^8.0.6",
-    "styled-system": "^3.2.1"
+    "type-check:watch": "npm run type-check -- --watch"
   },
   "peerDependencies": {
     "react": ">=16.8.0",
     "react-dom": ">=16.8.0",
-    "react-icons": ">=3.2.0",
-    "react-spring": ">=8.0.0",
     "styled-components": ">=4.1.0"
   },
   "devDependencies": {
@@ -80,13 +44,13 @@
     "@babel/preset-env": "^7.3.1",
     "@babel/preset-react": "^7.0.0",
     "@babel/preset-typescript": "^7.1.0",
-    "@types/jest": "^24.0.3",
-    "@types/ramda": "^0.25.49",
-    "@types/react": "16.8.2",
-    "@types/react-dom": "^16.8.0",
-    "@types/react-select": "^2.0.11",
-    "@types/styled-components": "4.1.9",
-    "@types/styled-system": "^3.2.1",
+    "@types/jest": "^24.0.5",
+    "@types/ramda": "^0.25.50",
+    "@types/react": "16.8.3",
+    "@types/react-dom": "^16.8.1",
+    "@types/react-select": "^2.0.12",
+    "@types/styled-components": "4.1.10",
+    "@types/styled-system": "^3.2.2",
     "@typescript-eslint/eslint-plugin": "^1.3.0",
     "@typescript-eslint/parser": "^1.3.0",
     "babel-core": "^7.0.0-0",
@@ -96,10 +60,7 @@
     "babel-plugin-ramda": "^2.0.0",
     "babel-plugin-styled-components": "^1.10.0",
     "babel-plugin-typescript-to-proptypes": "^0.17.1",
-    "commitizen": "^3.0.5",
-    "conventional-changelog-cli": "^2.0.11",
     "cross-env": "^5.2.0",
-    "cz-conventional-changelog": "^2.1.0",
     "docz": "^0.13.7",
     "docz-theme-default": "^0.13.7",
     "eslint": "^5.13.0",
@@ -110,23 +71,31 @@
     "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-prettier": "^3.0.1",
     "eslint-plugin-react": "^7.12.4",
-    "eslint-plugin-react-hooks": "^1.0.1",
+    "eslint-plugin-react-hooks": "^1.0.2",
     "eslint-plugin-sort-imports-es6-autofix": "^0.3.0",
     "eslint-plugin-typescript": "^0.14.0",
     "husky": "^1.3.1",
     "jest": "^24.1.0",
     "jest-dom": "^3.1.1",
     "jest-styled-components": "^6.3.1",
-    "lint-staged": "^8.1.3",
+    "lerna": "^3.13.0",
+    "lint-staged": "^8.1.4",
+    "moment": "^2.24.0",
+    "polished": "^2.3.3",
     "prettier": "^1.16.4",
     "prettier-package-json": "^2.0.1",
-    "react": "^16.8.1",
-    "react-dom": "^16.8.1",
+    "react": "^16.8.2",
+    "react-dom": "^16.8.2",
     "react-icons": "^3.4.0",
     "react-spring": "^8.0.7",
     "react-testing-library": "^5.8.0",
     "rollup": "^1.1.2",
+    "rollup-plugin-babel": "^4.3.2",
     "rollup-plugin-commonjs": "^9.2.0",
+    "rollup-plugin-json": "^3.1.0",
+    "rollup-plugin-node-builtins": "^2.1.2",
+    "rollup-plugin-node-resolve": "^4.0.0",
+    "rollup-plugin-size-snapshot": "^0.8.0",
     "styled-components": "^4.1.3",
     "stylelint": "9.10.1",
     "stylelint-config-prettier": "^4.0.0",
@@ -140,6 +109,5 @@
     "hooks": {
       "pre-commit": "lint-staged"
     }
-  },
-  "typings": "lib/index.d.ts"
+  }
 }

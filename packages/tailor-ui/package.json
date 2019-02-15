@@ -1,0 +1,62 @@
+{
+  "name": "tailor-ui",
+  "description": "A bespoke UI collection for building web application.",
+  "license": "MIT",
+  "homepage": "https://tailor-ui.netlify.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yoctol/tailor-ui.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yoctol/tailor-ui/issues"
+  },
+  "version": "0.2.11",
+  "main": "lib/index.cjs.js",
+  "module": "lib/index.js",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "prebuild": "rimraf lib",
+    "build": "yarn build:types && yarn build:esm && yarn build:cjs && yarn build:umd",
+    "build:umd": "rollup -c",
+    "build:esm": "cross-env NODE_ENV=production babel --config-file ../../babel.config.js src --out-dir lib --extensions '.ts,.tsx' --ignore **/__tests__",
+    "build:cjs": "cross-env NODE_ENV=production BABEL_ENV=cjs babel --config-file ../../babel.config.js src --out-file ./lib/index.cjs.js --extensions '.ts,.tsx' --ignore **/__tests__",
+    "build:types": "tsc --emitDeclarationOnly",
+    "test": "yarn lint && yarn testonly",
+    "testonly": "jest",
+    "testonly:cov": "jest --coverage --runInBand",
+    "testonly:watch": "jest --watch",
+    "type-check": "tsc --noEmit",
+    "type-check:watch": "yarn type-check -- --watch",
+    "release": "yarn build && yarn publish"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.3.1",
+    "html-tags": "^2.0.0",
+    "immutable": "3.7.4",
+    "moment": "^2.24.0",
+    "polished": "^2.3.3",
+    "prop-types": "^15.7.1",
+    "ramda": "^0.26.1",
+    "rc-calendar": "^9.10.8",
+    "rc-editor-mention": "1.1.7",
+    "rc-time-picker": "^3.6.2",
+    "react-dropzone": "7.0.1",
+    "react-html-attributes": "^1.4.3",
+    "react-intl-tel-input": "^6.1.0",
+    "react-select": "^2.3.0",
+    "react-textarea-autosize": "^7.1.0",
+    "resize-observer-polyfill": "^1.5.1",
+    "styled-normalize": "^8.0.6",
+    "styled-system": "^3.2.1"
+  },
+  "peerDependencies": {
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0",
+    "react-icons": ">=3.2.0",
+    "react-spring": ">=8.0.0",
+    "styled-components": ">=4.1.0"
+  },
+  "typings": "lib/index.d.ts"
+}
