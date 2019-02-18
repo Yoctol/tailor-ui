@@ -39,6 +39,10 @@ const GlobalStyle = createGlobalStyle`
     cursor: pointer;
   }
 
+  svg {
+    pointer-events: none;
+  }
+
   ${datePickerStyles}
 `;
 
