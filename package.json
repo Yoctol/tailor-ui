@@ -21,7 +21,7 @@
     "lint": "npm run lint:ts && npm run lint:css",
     "lint:css": "stylelint './src/**/*.tsx'",
     "lint:staged": "lint-staged && npm run type-check",
-    "lint:ts": "eslint . --ext=ts,tsx --fix",
+    "lint:ts": "eslint . --ext=js,ts,tsx --fix",
     "start": "npm run docs:dev",
     "test": "npm run lint && npm run testonly",
     "testonly": "jest",

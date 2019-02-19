@@ -19,7 +19,7 @@
   "scripts": {
     "prebuild": "rimraf lib",
     "build": "yarn build:types && yarn build:esm && yarn build:cjs && yarn build:umd",
-    "build:umd": "rollup -c",
+    "build:umd": "rollup -c scripts/rollup.config.js",
     "build:esm": "cross-env NODE_ENV=production babel --config-file ../../babel.config.js src --out-dir lib --extensions '.ts,.tsx' --ignore **/__tests__",
     "build:cjs": "cross-env NODE_ENV=production BABEL_ENV=cjs babel --config-file ../../babel.config.js src --out-file ./lib/index.cjs.js --extensions '.ts,.tsx' --ignore **/__tests__",
     "build:types": "tsc --emitDeclarationOnly",
@@ -58,5 +58,12 @@
     "react-spring": ">=8.0.0",
     "styled-components": ">=4.1.0"
   },
-  "typings": "lib/index.d.ts"
+  "typings": "lib/index.d.ts",
+  "devDependencies": {
+    "rollup-plugin-babel": "^4.3.2",
+    "rollup-plugin-commonjs": "^9.2.0",
+    "rollup-plugin-json": "^3.1.0",
+    "rollup-plugin-node-resolve": "^4.0.0",
+    "rollup-plugin-size-snapshot": "^0.8.0"
+  }
 }
