@@ -5,9 +5,7 @@ import React, {
   useState,
 } from 'react';
 
-import Flex from '../Grid/Flex';
-import Icon, { IconType } from '../Icon';
-import Tooltip from '../Tooltip';
+import { Flex, Icon, IconType, Tooltip } from 'tailor-ui';
 
 import MenuContext from './MenuContext';
 import SubMenuContent from './SubMenuContent';

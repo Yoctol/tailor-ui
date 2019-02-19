@@ -1,8 +1,7 @@
 import styled from 'styled-components';
 import { animated } from 'react-spring';
 
-import Box from '../Grid/Box';
-import tag from '../utils/CleanTag';
+import { Box } from 'tailor-ui';
 
 export const SubMenuWrapper = styled(animated.div)`
   position: absolute;
@@ -34,7 +33,7 @@ export const SubMenuBadge = styled(Box)`
   border-radius: 50%;
 `;
 
-export const StyledSubMenu = styled(tag.div)<StyledSubMenuProps>`
+export const StyledSubMenu = styled('div')<StyledSubMenuProps>`
   display: flex;
   position: relative;
   box-sizing: border-box;
@@ -54,7 +53,7 @@ interface StyledMenuItemProps {
   active?: boolean;
 }
 
-export const StyledMenuItem = styled(tag.div)<StyledMenuItemProps>`
+export const StyledMenuItem = styled('div')<StyledMenuItemProps>`
   display: flex;
   align-items: center;
   width: 100%;

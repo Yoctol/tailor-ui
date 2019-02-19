@@ -35,7 +35,13 @@ module.exports = {
   },
   settings: {
     'import/resolver': {
-      'babel-module': {},
+      alias: {
+        map: [
+          ['tailor-ui', './packages/tailor-ui/src'],
+          ['@tailor-ui/lab', './packages/tailor-ui-lab/src'],
+        ],
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+      },
       node: {
         extensions: ['.js', '.jsx', '.ts', '.tsx'],
       },

@@ -28,10 +28,9 @@ jobs:
           command: |
             yarn config set cache-folder .yarn-cache
             yarn
-            yarn bootstrap
       - run:
           name: build
-          command: cd packages/tailor-ui && yarn build
+          command: yarn build
       - save_cache:
           key: node-10-cache-{{checksum "yarn.lock"}}
           paths:
@@ -66,7 +65,6 @@ jobs:
           command: |
             yarn config set cache-folder .yarn-cache
             yarn
-            yarn bootstrap
       - run:
           name: build
           command: cd packages/tailor-ui && yarn build

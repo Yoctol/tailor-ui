@@ -15,16 +15,6 @@ module.exports = {
     'babel-plugin-typescript-to-proptypes',
     'babel-plugin-styled-components',
     'ramda',
-    [
-      'module-resolver',
-      {
-        root: ['./'],
-        extensions: ['.js', '.jsx', '.ts', '.tsx'],
-        alias: {
-          'tailor-ui': './packages/tailor-ui/src',
-        },
-      },
-    ],
   ],
   env: {
     test: {
@@ -33,6 +23,18 @@ module.exports = {
           '@babel/preset-env',
           {
             modules: 'commonjs',
+          },
+        ],
+      ],
+      plugins: [
+        [
+          'module-resolver',
+          {
+            root: ['./'],
+            extensions: ['.js', '.jsx', '.ts', '.tsx'],
+            alias: {
+              'tailor-ui': './packages/tailor-ui/src',
+            },
           },
         ],
       ],
