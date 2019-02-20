@@ -47,6 +47,11 @@ Run below commands:
 ```bash
 cd tailor-ui
 yarn
-yarn bootstrap
 yanr start
+```
+
+Watch files changed and check type:
+
+```bash
+yarn watch
 ```
