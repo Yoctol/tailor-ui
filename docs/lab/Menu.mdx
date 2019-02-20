@@ -26,10 +26,10 @@ import { Menu } from '@tailor-ui/lab';
 <Playground>
   <div style={{ height: 600 }}>
     <Menu defaultActiveSubId="kurator">
-      <Menu.MenuDivider />
+      <Menu.Divider />
       <Menu.SubMenu id="kurator" icon="kurator" title="Kurator">
-        <Menu.MenuItem id="actions">Actions</Menu.MenuItem>
-        <Menu.MenuItem id="menu">Menu</Menu.MenuItem>
+        <Menu.Item id="actions">Actions</Menu.Item>
+        <Menu.Item id="menu">Menu</Menu.Item>
       </Menu.SubMenu>
       <Menu.SubMenu
         id="understood"
@@ -38,19 +38,19 @@ import { Menu } from '@tailor-ui/lab';
         badge="danger"
         header={<div style={{ padding: '4px 16px' }}>Something here</div>}
       >
-        <Menu.MenuItem id="intents">Intents</Menu.MenuItem>
-        <Menu.MenuItem id="entities">Entities</Menu.MenuItem>
-        <Menu.MenuItem id="understood_settings">Settings</Menu.MenuItem>
+        <Menu.Item id="intents">Intents</Menu.Item>
+        <Menu.Item id="entities">Entities</Menu.Item>
+        <Menu.Item id="understood_settings">Settings</Menu.Item>
       </Menu.SubMenu>
       <Menu.SubMenu id="settings" icon="settings" title="Settings">
-        <Menu.MenuItem id="settings">Settings</Menu.MenuItem>
+        <Menu.Item id="settings">Settings</Menu.Item>
       </Menu.SubMenu>
-      <Menu.MenuDivider />
+      <Menu.Divider />
       <Menu.SubMenu id="touch" icon="touch" title="Touch">
-        <Menu.MenuItem id="broadcasts">Broadcasts</Menu.MenuItem>
-        <Menu.MenuItem id="Replies">Replies</Menu.MenuItem>
+        <Menu.Item id="broadcasts">Broadcasts</Menu.Item>
+        <Menu.Item id="Replies">Replies</Menu.Item>
       </Menu.SubMenu>
-      <Menu.MenuDivider />
+      <Menu.Divider />
       <div style={{ flex: 'auto' }} />
       <Menu.SubMenu
         id="tutorial"
@@ -58,15 +58,15 @@ import { Menu } from '@tailor-ui/lab';
         title="Tutorial"
         placement="bottom"
       >
-        <Menu.MenuItem id="broadcasts" icon={MdOpenInNew}>
+        <Menu.Item id="broadcasts" icon={MdOpenInNew}>
           Tutorial
-        </Menu.MenuItem>
-        <Menu.MenuItem id="issue" icon={MdOpenInNew}>
+        </Menu.Item>
+        <Menu.Item id="issue" icon={MdOpenInNew}>
           Issue Report
-        </Menu.MenuItem>
-        <Menu.MenuItem id="group" icon={MdOpenInNew}>
+        </Menu.Item>
+        <Menu.Item id="group" icon={MdOpenInNew}>
           Group
-        </Menu.MenuItem>
+        </Menu.Item>
       </Menu.SubMenu>
       <Menu.SubMenu
         id="accounts"
@@ -74,12 +74,12 @@ import { Menu } from '@tailor-ui/lab';
         title="Accounts"
         placement="bottom"
       >
-        <Menu.MenuItem id="account_settings" icon={MdOpenInNew}>
+        <Menu.Item id="account_settings" icon={MdOpenInNew}>
           Account Settings
-        </Menu.MenuItem>
-        <Menu.MenuItem id="logout" icon={MdOpenInNew}>
+        </Menu.Item>
+        <Menu.Item id="logout" icon={MdOpenInNew}>
           Logout
-        </Menu.MenuItem>
+        </Menu.Item>
       </Menu.SubMenu>
     </Menu>
   </div>
