@@ -1,35 +1,34 @@
 {
   "name": "tailor-ui",
-  "description": "A bespoke UI collection for building web application.",
-  "license": "MIT",
-  "homepage": "https://tailor-ui.netlify.com",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/yoctol/tailor-ui.git"
-  },
-  "bugs": {
-    "url": "https://github.com/yoctol/tailor-ui/issues"
-  },
   "version": "0.2.11",
+  "description": "A bespoke UI collection for building web application.",
+  "author": "Yoctol Info SD Team",
+  "homepage": "https://tailor-ui.netlify.com",
+  "license": "MIT",
   "main": "lib/index.cjs.js",
   "module": "lib/index.js",
   "files": [
     "lib"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yoctol/tailor-ui.git"
+  },
   "scripts": {
     "prebuild": "rimraf lib",
     "build": "yarn build:types && yarn build:esm && yarn build:cjs && yarn build:umd",
-    "build:umd": "rollup -c scripts/rollup.config.js",
+    "build:types": "tsc --build",
     "build:esm": "cross-env NODE_ENV=production babel --config-file ../../babel.config.js src --out-dir lib --extensions '.ts,.tsx' --ignore **/__tests__",
     "build:cjs": "cross-env NODE_ENV=production BABEL_ENV=cjs babel --config-file ../../babel.config.js src --out-file ./lib/index.cjs.js --extensions '.ts,.tsx' --ignore **/__tests__",
-    "build:types": "tsc --emitDeclarationOnly",
+    "build:umd": "rollup -c scripts/rollup.config.js",
     "test": "yarn lint && yarn testonly",
     "testonly": "jest",
     "testonly:cov": "jest --coverage --runInBand",
     "testonly:watch": "jest --watch",
-    "type-check": "tsc --noEmit",
-    "type-check:watch": "yarn type-check -- --watch",
-    "release": "yarn build && yarn publish"
+    "type-check:watch": "yarn build:types -- --watch"
+  },
+  "bugs": {
+    "url": "https://github.com/yoctol/tailor-ui/issues"
   },
   "dependencies": {
     "@babel/runtime": "^7.3.1",

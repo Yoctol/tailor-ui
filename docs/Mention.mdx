@@ -32,7 +32,7 @@ import { Mention } from 'tailor-ui';
         autoFocus
         suggestions={['飲料', '食物']}
         value={value}
-        onChange={contentState => {
+        onChange={(contentState) => {
           setValue(contentState);
           console.log('Raw value: ', Mention.toString(contentState));
           console.log('Mentions: ', Mention.getMentions(contentState));
@@ -54,7 +54,7 @@ import { Mention } from 'tailor-ui';
       <Mention
         suggestions={['drink', 'food']}
         value={value}
-        onChange={setValue}
+        onChange={contentState => setValue(contentState)}
         textarea
       />
     );
@@ -74,7 +74,7 @@ import { Mention } from 'tailor-ui';
       <Mention
         suggestions={['drink', 'food']}
         value={value}
-        onChange={setValue}
+        onChange={contentState => setValue(contentState)}
         disabled
       />
     );
@@ -95,7 +95,7 @@ import { Mention } from 'tailor-ui';
           error
           suggestions={['drink', 'food']}
           value={value}
-          onChange={setValue}
+          onChange={contentState => setValue(contentState)}
         />
         <Hint>More than one must be selected!</Hint>
       </FormField>

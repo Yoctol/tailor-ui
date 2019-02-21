@@ -6,6 +6,21 @@ module.exports = {
   typescript: true,
   codeSandbox: false,
   wrapper: 'docs/DoczWrapper',
+  modifyBabelRc: babelrc => {
+    babelrc.plugins.push([
+      'module-resolver',
+      {
+        root: ['../'],
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+        alias: {
+          'tailor-ui': './packages/tailor-ui/src',
+          '@tailor-ui/lab': './packages/tailor-ui-lab/src',
+        },
+      },
+    ]);
+
+    return babelrc;
+  },
   htmlContext: {
     head: {
       raw: `

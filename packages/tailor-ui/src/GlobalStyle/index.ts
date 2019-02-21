@@ -25,8 +25,8 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     overflow-x: hidden;
-    background: ${p => p.theme.colors.light};
-    color: ${p => p.theme.colors.gray700};
+    background: ${(p: any) => p.theme.colors.light};
+    color: ${(p: any) => p.theme.colors.gray700};
     font-family: Roboto, 'PingFang TC', 'Microsoft JhengHei', 'Helvetica Neue',
       sans-serif;
     font-size: ${rem('14px')};
@@ -34,7 +34,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   a {
-    color: ${p => p.theme.colors.info};
+    color: ${(p: any) => p.theme.colors.info};
     text-decoration: none;
     cursor: pointer;
   }

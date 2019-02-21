@@ -1,6 +1,6 @@
 /* eslint-disable */
 import React from 'react';
-import { Flex, theme } from 'tailor-ui';
+import { Flex, theme } from '../packages/tailor-ui/src';
 import { readableColor } from 'polished';
 
 const { colors: themeColors } = theme;

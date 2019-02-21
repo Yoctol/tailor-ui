@@ -1,7 +1,6 @@
 import React, { FunctionComponent, useContext } from 'react';
 
-import Box from '../Grid/Box';
-import Icon from '../Icon';
+import { Box, Icon } from 'tailor-ui';
 
 import MenuContenx from './MenuContext';
 import { StyledMenuItem } from './styles';

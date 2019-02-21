@@ -1,8 +1,7 @@
 import React, { FunctionComponent, useRef, useState } from 'react';
 import { config, useChain, useSpring } from 'react-spring';
 
-import Backdrop from '../Backdrop';
-import Flex from '../Grid/Flex';
+import { Backdrop, Flex } from 'tailor-ui';
 
 import MenuContext from './MenuContext';
 import MenuDivider from './MenuDivider';

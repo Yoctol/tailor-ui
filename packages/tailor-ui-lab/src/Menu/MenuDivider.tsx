@@ -1,7 +1,6 @@
 import React from 'react';
 
-import Box from '../Grid/Box';
-import Flex from '../Grid/Flex';
+import { Box, Flex } from 'tailor-ui';
 
 const MenuDivider = () => (
   <Flex

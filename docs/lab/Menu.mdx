@@ -1,0 +1,86 @@
+---
+name: Menu
+menu: Lab
+route: /lab/menu
+---
+
+import { PropsTable, Playground } from 'docz';
+import { Menu } from '@tailor-ui/lab';
+import { IoMdBook } from 'react-icons/io';
+import { MdAccountCircle, MdOpenInNew } from 'react-icons/md';
+
+# Menu
+
+Menu list of Navigation.
+
+## When To Use
+
+Navigation menu is important for a website, it helps users jump from one site section to another quickly. Mostly, it includes top navigation and side navigation. Top navigation provides all the category and functions of the website. Side navigation provides the Multi-level structure of the website.
+
+## Examples
+
+```js
+import { Menu } from '@tailor-ui/lab';
+```
+
+<Playground>
+  <div style={{ height: 600 }}>
+    <Menu defaultActiveSubId="kurator">
+      <Menu.Divider />
+      <Menu.SubMenu id="kurator" icon="kurator" title="Kurator">
+        <Menu.Item id="actions">Actions</Menu.Item>
+        <Menu.Item id="menu">Menu</Menu.Item>
+      </Menu.SubMenu>
+      <Menu.SubMenu
+        id="understood"
+        icon="understood"
+        title="Understood"
+        badge="danger"
+        header={<div style={{ padding: '4px 16px' }}>Something here</div>}
+      >
+        <Menu.Item id="intents">Intents</Menu.Item>
+        <Menu.Item id="entities">Entities</Menu.Item>
+        <Menu.Item id="understood_settings">Settings</Menu.Item>
+      </Menu.SubMenu>
+      <Menu.SubMenu id="settings" icon="settings" title="Settings">
+        <Menu.Item id="settings">Settings</Menu.Item>
+      </Menu.SubMenu>
+      <Menu.Divider />
+      <Menu.SubMenu id="touch" icon="touch" title="Touch">
+        <Menu.Item id="broadcasts">Broadcasts</Menu.Item>
+        <Menu.Item id="Replies">Replies</Menu.Item>
+      </Menu.SubMenu>
+      <Menu.Divider />
+      <div style={{ flex: 'auto' }} />
+      <Menu.SubMenu
+        id="tutorial"
+        icon={IoMdBook}
+        title="Tutorial"
+        placement="bottom"
+      >
+        <Menu.Item id="broadcasts" icon={MdOpenInNew}>
+          Tutorial
+        </Menu.Item>
+        <Menu.Item id="issue" icon={MdOpenInNew}>
+          Issue Report
+        </Menu.Item>
+        <Menu.Item id="group" icon={MdOpenInNew}>
+          Group
+        </Menu.Item>
+      </Menu.SubMenu>
+      <Menu.SubMenu
+        id="accounts"
+        icon={MdAccountCircle}
+        title="Accounts"
+        placement="bottom"
+      >
+        <Menu.Item id="account_settings" icon={MdOpenInNew}>
+          Account Settings
+        </Menu.Item>
+        <Menu.Item id="logout" icon={MdOpenInNew}>
+          Logout
+        </Menu.Item>
+      </Menu.SubMenu>
+    </Menu>
+  </div>
+</Playground>

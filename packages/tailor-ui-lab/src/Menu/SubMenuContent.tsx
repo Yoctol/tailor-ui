@@ -6,7 +6,7 @@ import React, {
   useState,
 } from 'react';
 
-import Box from '../Grid/Box';
+import { Box } from 'tailor-ui';
 
 import { SubMenuContentWrapper } from './styles';
 

@@ -1,6 +1,6 @@
 /* eslint-disable */
 import React, { FunctionComponent, ReactNode } from 'react';
-import { UIProvider } from 'tailor-ui';
+import { UIProvider } from '../packages/tailor-ui/src';
 
 export interface WrapperProps {
   children: ReactNode;
