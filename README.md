@@ -47,7 +47,7 @@ Run below commands:
 ```bash
 cd tailor-ui
 yarn
-yanr start
+yarn start
 ```
 
 Watch files changed and check type:

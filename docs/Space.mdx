@@ -1,7 +1,7 @@
 ---
 name: Space
-menu: Components
-route: /components/space
+menu: Layout
+route: /layout/space
 ---
 
 import { PropsTable, Playground, Link } from 'docz';
@@ -9,19 +9,11 @@ import { Space } from 'tailor-ui';
 
 # Space
 
-## API
-
-<Link to="/components/grid#properties">Same as Grid</Link>
-
 ## Examples
 
 ```js
 import { Space } from 'tailor-ui';
 ```
-
-<div>
-  The props converts same as <Link to="/components/grid#usage">Grid</Link>
-</div>
 
 ### Basic
 
@@ -30,3 +22,33 @@ import { Space } from 'tailor-ui';
     With margin & padding
   </Space>
 </Playground>
+
+## API
+
+Properties of margin and padding follow a shorthand syntax for specifying direction.
+They can go with the values below:
+
+- Letter o and letter h
+- Numbers from 0 to 10
+- Number 12 and 16
+
+<Link to="/layout/spacing-scale">Learn more about the spacing scale</Link>
+
+### Table of Properties
+
+| Property | Description                                                   |
+| -------- | ------------------------------------------------------------- |
+| m        | the _margin_ CSS property                                     |
+| mt       | the _margin-top_ CSS property                                 |
+| mr       | the _margin-right_ CSS property                               |
+| mb       | the _margin-bottom_ CSS property                              |
+| ml       | the _margin-left_ CSS property                                |
+| mx       | the property that set both _margin-left_ and _margin-right_   |
+| my       | the property that set both _margin-top_ and _margin-bottom_   |
+| p        | the _padding_ CSS property                                    |
+| pt       | the _padding-top_ CSS property                                |
+| pr       | the _padding-right_ CSS property                              |
+| pb       | the _padding-bottom_ CSS property                             |
+| pl       | the _padding-left_ CSS property                               |
+| px       | the property that set both _padding-left_ and _padding-right_ |
+| py       | the property that set both _padding-top_ and _padding-bottom_ |
