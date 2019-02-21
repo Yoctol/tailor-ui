@@ -52,7 +52,7 @@ const commonjsOptions = {
       'OrderedSet',
       'Repeat',
     ],
-    '../../node_modules/immutable/dist/immutable.js': ['Map'],
+    'node_modules/immutable/dist/immutable.js': ['Map'],
     '../../node_modules/draft-js/lib/DraftOffsetKey.js': ['decode'],
   },
 };
