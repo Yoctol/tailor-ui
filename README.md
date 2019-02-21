@@ -48,5 +48,5 @@ Run below commands:
 cd tailor-ui
 yarn
 yarn bootstrap
-yanr start
+yarn start
 ```
