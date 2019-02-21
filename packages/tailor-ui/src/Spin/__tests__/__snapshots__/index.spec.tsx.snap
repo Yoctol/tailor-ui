@@ -89,7 +89,9 @@ exports[`Spin should render correctly 1`] = `
   style="height: 300px;"
 >
   <div
+    bg="gray100"
     class="c0"
+    style="opacity: 0.1;"
   >
     <div
       class="c1"
