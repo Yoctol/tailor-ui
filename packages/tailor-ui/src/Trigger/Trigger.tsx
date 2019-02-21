@@ -59,12 +59,13 @@ export interface TriggerProps {
   trigger?: 'hover' | 'click';
   animation: 'slide' | 'scale';
   appendFor?: string;
-  offset?: number;
+  offset: number;
   defaultVisible?: boolean;
   visible?: boolean;
   zIndex?: string;
   mouseEnterDelay?: number;
   mouseLeaveDelay?: number;
+  autoTransferPlacement: boolean;
 }
 
 interface TriggerState {
@@ -78,9 +79,11 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
     placement: 'bottomLeft',
     trigger: 'hover',
     animation: 'slide',
+    offset: 5,
     defaultVisible: false,
     mouseEnterDelay: 0,
     mouseLeaveDelay: 200,
+    autoTransferPlacement: true,
   };
 
   childrenDOM?: HTMLElement;
@@ -294,6 +297,7 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
       trigger,
       offset,
       animation,
+      autoTransferPlacement,
     } = this.props;
     const { popupRef, rect } = this.state;
 
@@ -313,7 +317,13 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
     }
 
     if (this.visible && popupRef && rect) {
-      this.position = getPosition(rect, popupRef, originPlacement, offset);
+      this.position = getPosition({
+        childrenRect: rect,
+        popupRef,
+        originPlacement,
+        offset,
+        autoTransferPlacement,
+      });
     }
 
     const { placement, top, left } = this.position;

@@ -51,6 +51,7 @@ export type ITooltipProps = Omit<TooltipContentProps, 'light'> & {
    * Delay in milliseconds, before tooltip is hidden on mouse leave
    */
   mouseLeaveDelay?: number;
+  autoTransferPlacement?: boolean;
   components?: {
     ContentComponent: any;
     ArrowComponent: any;
@@ -118,6 +119,7 @@ class Tooltip extends PureComponent<ITooltipProps> {
       children,
       mouseEnterDelay,
       mouseLeaveDelay,
+      autoTransferPlacement,
     } = this.props;
 
     return (
@@ -134,6 +136,7 @@ class Tooltip extends PureComponent<ITooltipProps> {
         onVisibleChange={onVisibleChange}
         mouseEnterDelay={mouseEnterDelay}
         mouseLeaveDelay={mouseLeaveDelay}
+        autoTransferPlacement={autoTransferPlacement}
       >
         {children}
       </Trigger>
