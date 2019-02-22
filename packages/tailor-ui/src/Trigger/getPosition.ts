@@ -1,12 +1,19 @@
 import { Placement } from './type';
 
-const getPosition = (
-  childrenRect: DOMRect,
-  popupOffsets: { offsetHeight: number; offsetWidth: number },
-  originPlacement: Placement = 'bottom',
-  offset = 5
-) => {
-  const { offsetHeight, offsetWidth } = popupOffsets;
+const getPosition = ({
+  childrenRect,
+  popupRef,
+  originPlacement,
+  offset,
+  autoTransferPlacement,
+}: {
+  childrenRect: DOMRect;
+  popupRef: { offsetHeight: number; offsetWidth: number };
+  originPlacement: Placement;
+  offset: number;
+  autoTransferPlacement: boolean;
+}) => {
+  const { offsetHeight, offsetWidth } = popupRef;
   const { innerHeight, innerWidth } =
     typeof window !== 'undefined' ? window : { innerHeight: 0, innerWidth: 0 };
 
@@ -28,26 +35,28 @@ const getPosition = (
 
   let placement = originPlacement;
 
-  if (placement.includes('top') && TOP_OFFSET_TOP < 0) {
-    placement = placement.replace('top', 'bottom') as Placement;
-  }
+  if (autoTransferPlacement) {
+    if (placement.includes('top') && TOP_OFFSET_TOP < 0) {
+      placement = placement.replace('top', 'bottom') as Placement;
+    }
 
-  if (
-    placement.includes('bottom') &&
-    TOP_OFFSET_BOTTOM + offsetHeight > innerHeight
-  ) {
-    placement = placement.replace('bottom', 'top') as Placement;
-  }
+    if (
+      placement.includes('bottom') &&
+      TOP_OFFSET_BOTTOM + offsetHeight > innerHeight
+    ) {
+      placement = placement.replace('bottom', 'top') as Placement;
+    }
 
-  if (placement.includes('left') && LEFT_OFFSET_LEFT < 0) {
-    placement = placement.replace('left', 'right') as Placement;
-  }
+    if (placement.includes('left') && LEFT_OFFSET_LEFT < 0) {
+      placement = placement.replace('left', 'right') as Placement;
+    }
 
-  if (
-    placement.includes('right') &&
-    LEFT_OFFSET_RIGHT + offsetWidth > innerWidth
-  ) {
-    placement = placement.replace('right', 'left') as Placement;
+    if (
+      placement.includes('right') &&
+      LEFT_OFFSET_RIGHT + offsetWidth > innerWidth
+    ) {
+      placement = placement.replace('right', 'left') as Placement;
+    }
   }
 
   switch (placement) {

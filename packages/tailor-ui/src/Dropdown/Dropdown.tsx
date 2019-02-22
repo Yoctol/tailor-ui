@@ -29,6 +29,7 @@ export interface DropdownProps {
    * a callback function takes an argument: visible, is executed when the visible state is changed
    */
   onVisibleChange?: (visible: boolean) => void;
+  autoTransferPlacement?: boolean;
 }
 
 const renderOverlay = (overlay: ReactNode) => ({
@@ -51,12 +52,19 @@ const Dropdown: FunctionComponent<DropdownProps> & {
   List: typeof List;
   Item: typeof Item;
   SubList: typeof SubList;
-} = ({ placement, onVisibleChange, overlay, children }) => (
+} = ({
+  placement,
+  onVisibleChange,
+  overlay,
+  autoTransferPlacement,
+  children,
+}) => (
   <Trigger
     trigger="click"
     appendFor="dropdown"
     placement={placement}
     onVisibleChange={onVisibleChange}
+    autoTransferPlacement={autoTransferPlacement}
     popup={renderOverlay(overlay)}
   >
     {children}
