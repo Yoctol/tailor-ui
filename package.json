@@ -25,7 +25,7 @@
     "lint:css": "stylelint './src/**/*.tsx'",
     "lint:staged": "lint-staged && yarn type-check",
     "lint:ts": "eslint . --ext=js,ts,tsx --fix",
-    "prerelease": "yarn lint && yarn testonly && yarn build",
+    "prerelease": "yarn clean && yarn && yarn lint && yarn testonly && yarn build",
     "release": "lerna publish --conventional-commits",
     "start": "yarn docs:dev",
     "test": "yarn lint && yarn testonly",
