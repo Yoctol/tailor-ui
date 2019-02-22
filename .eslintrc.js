@@ -14,8 +14,6 @@ module.exports = {
     ecmaFeatures: {
       jsx: true,
     },
-    useJSXTextNode: true,
-    project: './tsconfig.json',
   },
   env: {
     browser: true,

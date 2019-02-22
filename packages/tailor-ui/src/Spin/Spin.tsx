@@ -1,6 +1,9 @@
 import React, { FunctionComponent } from 'react';
 import styled, { css, keyframes } from 'styled-components';
+import { ColorProps, color } from 'styled-system';
+import { animated, useTransition } from 'react-spring';
 
+import Portal from '../utils/Portal';
 import tag from '../utils/CleanTag';
 
 const spinAnimation = keyframes`
@@ -75,11 +78,11 @@ const SpinCubeWrapper = styled(tag.div)<SpinCubeWrapperProps>`
   }
 `;
 
-interface SpinWrapperProps {
+type SpinWrapperProps = ColorProps & {
   fullscreen: boolean;
-}
+};
 
-const SpinWrapper = styled(tag.div)<SpinWrapperProps>`
+const SpinWrapper = styled(animated.div)<SpinWrapperProps>`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -90,29 +93,51 @@ const SpinWrapper = styled(tag.div)<SpinWrapperProps>`
     p.fullscreen &&
     css`
       position: fixed;
+      z-index: 10099;
       top: 0;
       left: 0;
-      background-color: rgba(0, 0, 0, 0.6);
+
+      ${color}
     `}
 `;
 
 interface SpinProps {
   size?: number | string;
   fullscreen?: boolean;
+  bg?: string;
 }
 
 const Spin: FunctionComponent<SpinProps> = ({
   size = 40,
   fullscreen = false,
-}) => (
-  <SpinWrapper fullscreen={fullscreen}>
-    <SpinCubeWrapper size={size}>
-      <SpinCube />
-      <SpinCube />
-      <SpinCube />
-      <SpinCube />
-    </SpinCubeWrapper>
-  </SpinWrapper>
-);
+  bg = 'gray100',
+}) => {
+  // only mount transition so destructure it
+  const [{ props }] = useTransition(true, null, {
+    from: {
+      opacity: 0.1,
+    },
+    enter: {
+      opacity: 0.9,
+    },
+  });
+
+  const spinComponent = (
+    <SpinWrapper fullscreen={fullscreen} bg={bg} style={props}>
+      <SpinCubeWrapper size={size}>
+        <SpinCube />
+        <SpinCube />
+        <SpinCube />
+        <SpinCube />
+      </SpinCubeWrapper>
+    </SpinWrapper>
+  );
+
+  if (fullscreen) {
+    return <Portal appendFor="spin">{spinComponent}</Portal>;
+  }
+
+  return spinComponent;
+};
 
 export default Spin;
