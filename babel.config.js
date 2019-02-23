@@ -40,7 +40,7 @@ module.exports = {
       ],
     },
     production: {
-      ignore: ['**/__tests__'],
+      ignore: ['**/__tests__', '**/**/__tests__'],
     },
   },
 };
