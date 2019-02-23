@@ -57,20 +57,34 @@ const commonjsOptions = {
   },
 };
 
-export default {
-  input,
-  output: {
-    file: `lib/${name}.umd.js`,
-    format: 'umd',
-    name,
-    globals,
+export default [
+  {
+    input,
+    output: [
+      {
+        file: 'lib/index.cjs.js',
+        format: 'umd',
+        name,
+        sourcemap: false,
+      },
+    ],
+    plugins: [commonjs()],
   },
-  external: Object.keys(globals),
-  plugins: [
-    json(),
-    nodeResolve(),
-    babel(babelOptions),
-    commonjs(commonjsOptions),
-    sizeSnapshot(),
-  ],
-};
+  {
+    input,
+    output: {
+      file: `lib/${name}.umd.js`,
+      format: 'umd',
+      name,
+      globals,
+    },
+    external: Object.keys(globals),
+    plugins: [
+      json(),
+      nodeResolve(),
+      babel(babelOptions),
+      commonjs(commonjsOptions),
+      sizeSnapshot(),
+    ],
+  },
+];
