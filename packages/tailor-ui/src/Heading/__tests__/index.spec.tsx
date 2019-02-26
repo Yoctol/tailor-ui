@@ -58,4 +58,24 @@ describe('Heading', () => {
 
     expect(container.firstChild).toMatchSnapshot();
   });
+
+  it('should support data-testid', () => {
+    const { getByTestId } = render(
+      <>
+        <Heading.h1 data-testid="h1">H1 Heading</Heading.h1>
+        <Heading.h2 data-testid="h2">H2 Heading</Heading.h2>
+        <Heading.h3 data-testid="h3">H3 Heading</Heading.h3>
+        <Heading.h4 data-testid="h4">H4 Heading</Heading.h4>
+        <Heading.h5 data-testid="h5">H5 Heading</Heading.h5>
+        <Heading.h6 data-testid="h6">H6 Heading</Heading.h6>
+      </>
+    );
+
+    expect(getByTestId('h1')).toHaveTextContent('H1 Heading');
+    expect(getByTestId('h2')).toHaveTextContent('H2 Heading');
+    expect(getByTestId('h3')).toHaveTextContent('H3 Heading');
+    expect(getByTestId('h4')).toHaveTextContent('H4 Heading');
+    expect(getByTestId('h5')).toHaveTextContent('H5 Heading');
+    expect(getByTestId('h6')).toHaveTextContent('H6 Heading');
+  });
 });
