@@ -44,6 +44,16 @@ describe('Radio', () => {
 
     expect(onChange).toBeCalled();
   });
+
+  it('should support data-testid', () => {
+    const { getByTestId } = render(
+      <Radio checked data-testid="my-radio">
+        Radio
+      </Radio>
+    );
+
+    expect(getByTestId('my-radio')).toHaveAttribute('checked');
+  });
 });
 
 describe('Radio.Group', () => {
