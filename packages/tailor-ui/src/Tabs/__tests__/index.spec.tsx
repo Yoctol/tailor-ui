@@ -64,4 +64,18 @@ describe('Tabs', () => {
 
     expect(container.firstChild).toMatchSnapshot();
   });
+
+  it('should support data-testid', () => {
+    const { getByTestId } = render(
+      <Tabs defaultActiveValue="1" onChange={() => {}}>
+        <Tabs.Tab value="1" label="Tab 1" data-testid="my-tab-1" />
+        <Tabs.Tab disabled value="2" label="Tab 2" data-testid="my-tab-2" />
+        <Tabs.Tab value="3" label="Tab 3" data-testid="my-tab-3" />
+      </Tabs>
+    );
+
+    expect(getByTestId('my-tab-1')).toHaveTextContent('Tab 1');
+    expect(getByTestId('my-tab-2')).toHaveTextContent('Tab 2');
+    expect(getByTestId('my-tab-3')).toHaveTextContent('Tab 3');
+  });
 });
