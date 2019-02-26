@@ -43,6 +43,16 @@ describe('Checkbox', () => {
 
     expect(onChange).toBeCalled();
   });
+
+  it('should support data-testid', () => {
+    const { getByTestId } = render(
+      <Checkbox checked data-testid="my-checkbox">
+        Checkbox
+      </Checkbox>
+    );
+
+    expect(getByTestId('my-checkbox')).toHaveAttribute('checked');
+  });
 });
 
 describe('Checkbox.Group', () => {
