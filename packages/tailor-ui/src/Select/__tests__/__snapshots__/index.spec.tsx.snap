@@ -1,0 +1,94 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Select should render correctly 1`] = `
+.c0 .yoctol-select__control {
+  min-width: 150px;
+  border-color: #e0e0e0;
+  background-color: #ffffff;
+  box-shadow: none;
+}
+
+.c0 .yoctol-select__control:hover {
+  border-color: #423b63;
+}
+
+.c0 .yoctol-select__control.yoctol-select__control--is-focused {
+  border-color: #191539;
+}
+
+.c0 .yoctol-select__control.yoctol-select__control-is-disabled .yoctol-select__indicators::before {
+  opacity: 0.5;
+}
+
+.c0 .yoctol-select__menu {
+  margin-top: 2px;
+}
+
+.c0 .yoctol-select__menu .yoctol-select__menu-list {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.c0 .yoctol-select__menu .yoctol-select__menu-list .yoctol-select__option {
+  background-color: #ffffff;
+  color: #373737;
+}
+
+.c0 .yoctol-select__menu .yoctol-select__menu-list .yoctol-select__option:not(:last-child) {
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.c0 .yoctol-select__menu .yoctol-select__menu-list .yoctol-select__option.yoctol-select__option--is-focused {
+  background-color: #191539;
+  color: #ffffff;
+}
+
+<div
+  class="css-10nd86i c0"
+>
+  <div
+    class="css-vj8t7z yoctol-select__control"
+  >
+    <div
+      class="css-1hwfws3 yoctol-select__value-container yoctol-select__value-container--has-value"
+    >
+      <div
+        class="css-xp4uvy yoctol-select__single-value"
+      >
+        Item 1
+      </div>
+      <input
+        class="css-14uuagi"
+        id="react-select-2-input"
+        readonly=""
+        tabindex="0"
+        value=""
+      />
+    </div>
+    <div
+      class="css-1wy0on6 yoctol-select__indicators"
+    >
+      <span
+        class="css-d8oujb yoctol-select__indicator-separator"
+      />
+      <div
+        aria-hidden="true"
+        class="css-1ep9fjw yoctol-select__indicator yoctol-select__dropdown-indicator"
+      >
+        <svg
+          aria-hidden="true"
+          class="css-19bqh2r"
+          focusable="false"
+          height="20"
+          viewBox="0 0 20 20"
+          width="20"
+        >
+          <path
+            d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z"
+          />
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+`;
