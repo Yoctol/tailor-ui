@@ -83,4 +83,12 @@ describe('Button', () => {
 
     expect(onClick).toBeCalled();
   });
+
+  it('should support data-testid', () => {
+    const { getByTestId } = render(
+      <Button data-testid="my-button">Text Button</Button>
+    );
+
+    expect(getByTestId('my-button')).toHaveTextContent('Text Button');
+  });
 });
