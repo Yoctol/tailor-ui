@@ -1,12 +1,11 @@
 import React, { FunctionComponent, PureComponent, useState } from 'react';
 import styled from 'styled-components';
 import { MdClose } from 'react-icons/md';
-import { animated, useSpring } from 'react-spring';
+import { animated, config, useSpring } from 'react-spring';
 import { omit } from 'ramda';
 
 import Icon from '../Icon';
 import tag from '../utils/CleanTag';
-import useMeasure from '../utils/useMeasure';
 
 const StyledTag = styled(tag.div)`
   display: inline-flex;
@@ -52,7 +51,6 @@ const ClosableTag: FunctionComponent<ClosableTagProps> = ({
   onClosed,
   ...props
 }) => {
-  const [bind, { width: boundWidth }] = useMeasure();
   const [on, setOn] = useState(true);
 
   const styles = useSpring({
@@ -61,15 +59,16 @@ const ClosableTag: FunctionComponent<ClosableTagProps> = ({
         onClosed();
       }
     },
-    transform: on ? 'scale(1)' : 'scale(0)',
+    immediate: on,
     opacity: on ? 1 : 0,
-    width: on ? boundWidth : 0,
+    width: on ? 'auto' : 0,
     marginLeft: on ? 8 : 0,
+    config: config.stiff,
   });
 
   return (
     <AnimatedStyledTagWrapper style={styles}>
-      <div style={{ display: 'inline-flex' }} {...bind}>
+      <div style={{ display: 'inline-flex' }}>
         <StyledTag {...props}>
           {children}
           <CloseIcon
