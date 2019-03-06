@@ -1,0 +1,43 @@
+---
+name: Mention
+menu: Lab
+route: /lab/mention
+---
+
+import { PropsTable, Playground } from 'docz';
+import { Mention } from '@tailor-ui/lab';
+
+# Mention
+
+Mention component.
+
+## When To Use
+
+When need to mention someone or something.
+
+## Examples
+
+```js
+import { Mention } from '@tailor-ui/lab';
+```
+
+### Basic
+
+<Playground>
+  <Mention
+    defaultValue="我想吃一份{{食物}}"
+    suggestions={['食物', '國家', '城市', '語言', '品牌']}
+    onChange={value => console.log(value)}
+  />
+</Playground>
+
+### Disabled
+
+<Playground>
+  <Mention
+    defaultValue="我想吃一份{{食物}}"
+    suggestions={['食物', '國家', '城市', '語言', '品牌']}
+    onChange={value => console.log(value)}
+    disabled
+  />
+</Playground>

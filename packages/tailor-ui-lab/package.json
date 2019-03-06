@@ -37,9 +37,12 @@
     "tailor-ui": "^0.2.11"
   },
   "devDependencies": {
-    "rollup-plugin-commonjs": "^9.2.0"
+    "rollup-plugin-commonjs": "^9.2.1"
   },
   "publishConfig": {
     "access": "public"
+  },
+  "dependencies": {
+    "polished": "^3.0.3"
   }
 }
