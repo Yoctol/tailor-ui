@@ -7,10 +7,10 @@ import React, {
   useReducer,
   useRef,
 } from 'react';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import { rgba } from 'polished';
 
-import { Textarea, inputStyles } from 'tailor-ui';
+import { Input, Textarea, inputStyles } from 'tailor-ui';
 
 import Suggestions from './Suggestions';
 import { OverlayPosition, getOverlayPosition } from './overlay-position';
@@ -261,7 +261,8 @@ interface MentionProps {
   defaultValue: string;
   suggestions: string[];
   disabled?: boolean;
-  creatable?: boolean;
+  creatable: boolean;
+  textarea: boolean;
   formatCreateText: FormatCreateText;
   onChange?: (value: string) => void;
   onMentionCreate: (newMention: string) => void;
@@ -275,10 +276,18 @@ const Mention: FunctionComponent<MentionProps> = ({
   onMentionCreate,
   disabled,
   creatable,
+  textarea,
   formatCreateText,
   ...props
 }) => {
-  const mentionRef = useRef<{ textarea: HTMLTextAreaElement }>(null);
+  const RenderComponent = textarea ? Textarea : Input;
+  const mentionRef = useRef<any>(null);
+  let mentionDom: any = null;
+
+  if (mentionRef.current) {
+    mentionDom = textarea ? mentionRef.current.textarea : mentionRef.current;
+  }
+
   const cursorMention = useRef<CursorMention>({
     mention: null,
     searchValue: null,
@@ -297,25 +306,22 @@ const Mention: FunctionComponent<MentionProps> = ({
   const value = valueFromProps || state.value;
 
   useEffect(() => {
-    if (mentionRef.current) {
+    if (mentionDom) {
       dispatch({
         type: 'updateHeight',
-        payload: mentionRef.current.textarea.offsetHeight,
+        payload: mentionDom.offsetHeight,
       });
     }
-  }, []);
+  }, [mentionDom]);
 
   useEffect(() => {
-    if (state.caretPos !== -1 && mentionRef.current) {
-      mentionRef.current.textarea.focus();
-      mentionRef.current.textarea.setSelectionRange(
-        state.caretPos,
-        state.caretPos
-      );
+    if (state.caretPos !== -1 && mentionDom) {
+      mentionDom.focus();
+      mentionDom.setSelectionRange(state.caretPos, state.caretPos);
 
       dispatch({ type: 'updateCaretPos', payload: -1 });
     }
-  }, [state.caretPos]);
+  }, [state.caretPos, mentionDom]);
 
   const resetDropdown = ({ currentTarget }: ResetDropdownType) => {
     const cursor = resetCursorMention(
@@ -451,49 +457,54 @@ const Mention: FunctionComponent<MentionProps> = ({
     }
   };
 
-  return (
-    <MentionWrapper disabled={disabled}>
-      <Highlights
-        style={{ height: state.height }}
-        dangerouslySetInnerHTML={{ __html: applyHighlights(value) }}
-      />
-      <Textarea
-        ref={mentionRef}
-        css={css`
-          position: absolute;
-          top: 0;
-          background-color: transparent;
-        `}
-        onKeyUp={handleKeyUp}
-        onKeyDown={handleKeyDown}
-        onResize={(event: ChangeEvent<HTMLTextAreaElement>) => {
+  const handleChange = (event: ChangeEvent<HTMLTextAreaElement>) => {
+    const { value: newValue } = event.currentTarget;
+
+    if (newValue !== value) {
+      dispatch({ type: 'updateValue', payload: newValue });
+
+      if (onChange) {
+        onChange(newValue);
+      }
+    }
+
+    resetDropdown(event);
+  };
+
+  const resizeHandler = textarea
+    ? {
+        onResize: (event: ChangeEvent<HTMLTextAreaElement>) =>
           // https://github.com/buildo/react-autosize-textarea/issues/109#issuecomment-430002058
           setTimeout(() =>
             dispatch({
               type: 'updateHeight',
               payload: event.target.offsetHeight,
             })
-          );
+          ),
+      }
+    : {};
+
+  return (
+    <MentionWrapper disabled={disabled}>
+      <Highlights
+        style={{ height: state.height }}
+        dangerouslySetInnerHTML={{ __html: applyHighlights(value) }}
+      />
+      <RenderComponent
+        ref={mentionRef}
+        style={{
+          position: 'absolute',
+          top: 0,
+          backgroundColor: 'transparent',
         }}
-        onBlur={() => {
-          dispatch({ type: 'closeDropdown' });
-        }}
+        onKeyUp={handleKeyUp}
+        onKeyDown={handleKeyDown}
+        onBlur={() => dispatch({ type: 'closeDropdown' })}
         value={value}
         onClick={resetDropdown}
-        onChange={(event: ChangeEvent<HTMLTextAreaElement>) => {
-          const { value: newValue } = event.currentTarget;
-
-          if (newValue !== value) {
-            dispatch({ type: 'updateValue', payload: newValue });
-
-            if (onChange) {
-              onChange(newValue);
-            }
-          }
-
-          resetDropdown(event);
-        }}
+        onChange={handleChange}
         disabled={disabled}
+        {...resizeHandler}
         {...props}
       />
       <Suggestions
@@ -512,6 +523,7 @@ Mention.defaultProps = {
   defaultValue: '',
   suggestions: [],
   creatable: false,
+  textarea: false,
   onMentionCreate: () => {},
   formatCreateText: createValue =>
     `Press Enter to create mention: ${createValue}`,

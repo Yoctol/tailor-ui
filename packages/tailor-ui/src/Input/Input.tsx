@@ -6,8 +6,6 @@ import React, {
   forwardRef,
   isValidElement,
   useEffect,
-  useImperativeHandle,
-  useRef,
 } from 'react';
 import styled, { css } from 'styled-components';
 import {
@@ -187,7 +185,10 @@ export interface InputProps {
   [key: string]: any;
 }
 
-const Input: FunctionComponent<InputProps> = forwardRef(
+const Input: FunctionComponent<InputProps> = forwardRef<
+  HTMLInputElement,
+  InputProps
+>(
   (
     {
       prefix,
@@ -200,18 +201,11 @@ const Input: FunctionComponent<InputProps> = forwardRef(
     },
     ref
   ) => {
-    const inputRef = useRef<any>(null);
-
-    useImperativeHandle(ref, () => ({
-      focus: () => inputRef.current.focus(),
-      blur: () => inputRef.current.blur(),
-    }));
-
     useEffect(() => {
-      if (autoSelect && inputRef.current) {
-        inputRef.current.select();
+      if (autoSelect && ref) {
+        (ref as any).select();
       }
-    }, [autoSelect]);
+    }, [autoSelect, ref]);
 
     const handleKeyPress = (event: KeyboardEvent<HTMLInputElement>) => {
       if (onKeyPress) {
@@ -225,7 +219,7 @@ const Input: FunctionComponent<InputProps> = forwardRef(
 
     const input = (
       <StyledInput
-        ref={inputRef}
+        ref={ref}
         onKeyPress={handleKeyPress}
         autoFocus={autoFocus || autoSelect}
         {...props}
