@@ -79,3 +79,5 @@ export { default as theme } from './theme';
 export * from './theme';
 export { default as locale } from './locale';
 export * from './locale';
+
+export { default as Portal } from './utils/Portal';

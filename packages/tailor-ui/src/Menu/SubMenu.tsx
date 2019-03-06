@@ -41,8 +41,9 @@ const SubMenu: FunctionComponent<SubMenuProps> = ({
   const menuOn = openKeys.indexOf(id) !== -1;
 
   const { rotate } = useSpring({
-    rotate: menuOn ? 180 : 0,
+    rotate: menuOn ? '180' : '0',
   });
+
   const style = useSpring({
     height: menuOn ? height : 0,
   });
