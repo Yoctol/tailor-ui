@@ -23,7 +23,7 @@ const useMeasure = () => {
     }
 
     return () => ro.disconnect();
-  }, []);
+  }, [ro]);
 
   return tuplify({ ref }, bounds);
 };

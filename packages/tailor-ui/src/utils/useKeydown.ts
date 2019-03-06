@@ -30,7 +30,7 @@ const useKeydown = ({
 
     window.removeEventListener('keydown', handleKeydown);
     return () => {};
-  }, [listening, targetKeyCode, onKeydown]);
+  }, [listening, targetKeyCode, onKeydown, handleKeydown]);
 
   return null;
 };

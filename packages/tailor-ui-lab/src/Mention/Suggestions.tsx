@@ -1,7 +1,8 @@
 import React, { FunctionComponent } from 'react';
 import styled, { css } from 'styled-components';
-import { Portal } from 'tailor-ui';
 import { animated, config, useTransition } from 'react-spring';
+
+import { Portal } from 'tailor-ui';
 
 const SuggestionsList = styled(animated.div)`
   display: flex;

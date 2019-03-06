@@ -8,8 +8,9 @@ import React, {
   useRef,
 } from 'react';
 import styled, { css } from 'styled-components';
-import { Textarea, inputStyles } from 'tailor-ui';
 import { rgba } from 'polished';
+
+import { Textarea, inputStyles } from 'tailor-ui';
 
 import Suggestions from './Suggestions';
 import { getCaretCoordinates } from './textarea-caret-position';
@@ -79,7 +80,7 @@ const getPosition = (value: string, selectionStart: number) => {
     };
   }
 
-  const endPos = positions[0] || startPos;
+  const endPos = positions[0] || selectionStart;
 
   return {
     startPos,
@@ -97,6 +98,7 @@ const resetCursorMention = (originValue: string, selectionStart: number) => {
   console.log({
     mention,
     searchValue,
+    selectionStart,
     startPos,
     endPos,
   });
