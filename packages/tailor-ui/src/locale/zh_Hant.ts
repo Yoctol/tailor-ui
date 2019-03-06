@@ -2,7 +2,7 @@ import DatePicker from 'rc-calendar/lib/locale/zh_TW';
 import 'moment/locale/zh-tw';
 
 export default {
-  locale: 'zh_TW',
+  locale: 'zh_Hant',
   momentLocale: 'zh-tw',
   DatePicker,
   Modal: {
