@@ -1,17 +1,17 @@
-/* eslint camelcase: "off" */
+/* eslint camelcase: off, @typescript-eslint/camelcase: off */
 import { createContext } from 'react';
 
 import locales from '../locale';
 
-const { enUS } = locales;
+const { en_US } = locales;
 
-export { enUS };
-export type LocaleType = typeof enUS;
+export { en_US };
+export type LocaleType = typeof en_US;
 
 const LocaleContext = createContext<{
   locale: LocaleType;
 }>({
-  locale: enUS,
+  locale: en_US,
 });
 
 export default LocaleContext;

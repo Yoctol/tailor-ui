@@ -1,4 +1,4 @@
-/* eslint camelcase: "off" */
+/* eslint camelcase: off */
 import React, { FunctionComponent, ReactNode } from 'react';
 import moment from 'moment';
 import { ThemeProvider } from 'styled-components';
@@ -9,10 +9,11 @@ import locales from '../locale';
 
 import LocaleContext, { LocaleType } from './LocaleContext';
 
-const { enUS } = locales;
+// eslint-disable-next-line @typescript-eslint/camelcase
+const { en_US } = locales;
 
-// eslint-disable-next-line import/no-mutable-exports
-let globalLocale: LocaleType = enUS;
+// eslint-disable-next-line import/no-mutable-exports, @typescript-eslint/camelcase
+let globalLocale: LocaleType = en_US;
 
 export interface UIProviderProps {
   children: ReactNode;
@@ -24,7 +25,7 @@ export interface UIProviderProps {
 const UIProvider: FunctionComponent<UIProviderProps> = ({
   children,
   theme = defaultTheme,
-  locale = enUS,
+  locale = en_US,
   skipLocale = false,
 }) => {
   if (!skipLocale) {
