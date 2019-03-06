@@ -13,6 +13,7 @@ import { rgba } from 'polished';
 import { Textarea, inputStyles } from 'tailor-ui';
 
 import Suggestions from './Suggestions';
+import { OverlayPosition, getOverlayPosition } from './overlay-position';
 import { getCaretCoordinates } from './textarea-caret-position';
 
 const MentionWrapper = styled.div<{ disabled?: boolean }>`
@@ -127,17 +128,23 @@ const resetCursorMention = (originValue: string, selectionStart: number) => {
   };
 };
 
+type FilteredSuggestionType = 'option' | 'create';
+
+export interface FilteredSuggestion {
+  type: FilteredSuggestionType;
+  value: string;
+}
+
+export type FilteredSuggestions = FilteredSuggestion[];
+
 interface MentionReducerState {
   value: string;
   height: number;
   activeIndex: number;
   caretPos: number;
   dropdownVisible: boolean;
-  filteredSuggestions: string[];
-  overlayPosition: {
-    top: number;
-    left: number;
-  };
+  filteredSuggestions: FilteredSuggestions;
+  overlayPosition: OverlayPosition;
 }
 
 interface CursorMention {
@@ -161,18 +168,21 @@ interface MentionReducerAction {
   payload?: any;
 }
 
-interface InitState {
-  initialValue: string;
+interface InitialState {
+  value: string;
   suggestions: string[];
 }
 
-const init = ({ initialValue, suggestions }: InitState) => ({
-  value: initialValue,
+const initialState = ({ value, suggestions }: InitialState) => ({
+  value,
   height: 0,
   activeIndex: -1,
   caretPos: -1,
   dropdownVisible: false,
-  filteredSuggestions: suggestions,
+  filteredSuggestions: suggestions.map(suggestion => ({
+    type: 'option' as FilteredSuggestionType,
+    value: suggestion,
+  })),
   overlayPosition: {
     top: 0,
     left: 0,
@@ -244,12 +254,17 @@ type ResetDropdownType =
   | KeyboardEvent<HTMLTextAreaElement>
   | ChangeEvent<HTMLTextAreaElement>;
 
+export type FormatCreateText = (text: string) => string;
+
 interface MentionProps {
   value?: string;
   defaultValue: string;
   suggestions: string[];
-  onChange?: (value: string) => void;
   disabled?: boolean;
+  creatable?: boolean;
+  formatCreateText: FormatCreateText;
+  onChange?: (value: string) => void;
+  onMentionCreate: (newMention: string) => void;
 }
 
 const Mention: FunctionComponent<MentionProps> = ({
@@ -257,7 +272,10 @@ const Mention: FunctionComponent<MentionProps> = ({
   defaultValue,
   suggestions,
   onChange,
+  onMentionCreate,
   disabled,
+  creatable,
+  formatCreateText,
   ...props
 }) => {
   const mentionRef = useRef<{ textarea: HTMLTextAreaElement }>(null);
@@ -268,36 +286,36 @@ const Mention: FunctionComponent<MentionProps> = ({
     endPos: -1,
   });
 
-  const [
-    {
-      value: valueFromLocal,
-      dropdownVisible,
-      overlayPosition,
-      filteredSuggestions,
-      activeIndex,
-      caretPos,
-      height,
-    },
-    dispatch,
-  ] = useReducer(
+  const [state, dispatch] = useReducer(
     reducer,
-    {
-      initialValue: defaultValue || valueFromProps || '',
+    initialState({
+      value: valueFromProps || defaultValue || '',
       suggestions,
-    },
-    init
+    })
   );
 
-  const value = valueFromProps || valueFromLocal;
+  const value = valueFromProps || state.value;
 
   useEffect(() => {
-    if (caretPos !== -1 && mentionRef.current) {
+    if (mentionRef.current) {
+      dispatch({
+        type: 'updateHeight',
+        payload: mentionRef.current.textarea.offsetHeight,
+      });
+    }
+  }, []);
+
+  useEffect(() => {
+    if (state.caretPos !== -1 && mentionRef.current) {
       mentionRef.current.textarea.focus();
-      mentionRef.current.textarea.setSelectionRange(caretPos, caretPos);
+      mentionRef.current.textarea.setSelectionRange(
+        state.caretPos,
+        state.caretPos
+      );
 
       dispatch({ type: 'updateCaretPos', payload: -1 });
     }
-  }, [caretPos]);
+  }, [state.caretPos]);
 
   const resetDropdown = ({ currentTarget }: ResetDropdownType) => {
     const cursor = resetCursorMention(
@@ -308,40 +326,57 @@ const Mention: FunctionComponent<MentionProps> = ({
     cursorMention.current = cursor;
 
     if (cursor.mention !== null) {
+      const filteredSuggestions = [
+        ...suggestions
+          .filter(suggestion => suggestion.includes(cursor.searchValue))
+          .map(suggestion => ({
+            type: 'option',
+            value: suggestion,
+          })),
+        ...(creatable &&
+        cursor.searchValue !== '' &&
+        !suggestions.includes(cursor.searchValue)
+          ? [{ type: 'create', value: cursor.searchValue }]
+          : []),
+      ];
+
+      if (filteredSuggestions.length === 0) {
+        if (state.dropdownVisible) {
+          dispatch({ type: 'closeDropdown' });
+        }
+
+        return;
+      }
+
       const coordinates = getCaretCoordinates(
         currentTarget,
-        currentTarget.selectionStart
+        cursor.startPos - 2
       );
+
       const mentionRect = currentTarget.getBoundingClientRect();
 
-      const top =
-        mentionRect.top +
-        coordinates.top -
-        currentTarget.scrollTop +
-        (placement === 'bottom' ? coordinates.height : 0);
-      const left =
-        mentionRect.left + coordinates.left - currentTarget.scrollLeft;
+      const overlayPosition = getOverlayPosition({
+        coordinates,
+        mentionRect,
+        target: currentTarget,
+        placement,
+      });
 
       dispatch({
         type: 'openDropdown',
         payload: {
-          overlayPosition: {
-            top,
-            left,
-          },
-          filteredSuggestions: suggestions.filter(suggestion =>
-            suggestion.includes(cursor.searchValue)
-          ),
+          overlayPosition,
+          filteredSuggestions,
         },
       });
-    } else {
+    } else if (state.dropdownVisible) {
       dispatch({ type: 'closeDropdown' });
     }
   };
 
-  const selectSuggestion = (suggestion: string) => {
+  const selectSuggestion = (suggestion: FilteredSuggestion) => {
     const { startPos, endPos } = cursorMention.current;
-    const insertValue = `{{${suggestion}}}`;
+    const insertValue = `{{${suggestion.value}}}`;
     const newValue = [
       value.slice(0, startPos - 2),
       insertValue,
@@ -355,6 +390,10 @@ const Mention: FunctionComponent<MentionProps> = ({
         value: newValue,
       },
     });
+
+    if (suggestion.type === 'create') {
+      onMentionCreate(suggestion.value);
+    }
 
     if (onChange) {
       onChange(newValue);
@@ -371,6 +410,7 @@ const Mention: FunctionComponent<MentionProps> = ({
   };
 
   const handleKeyDown = (event: KeyboardEvent<HTMLTextAreaElement>) => {
+    const { dropdownVisible, activeIndex, filteredSuggestions } = state;
     const { keyCode } = event;
 
     if (
@@ -414,7 +454,7 @@ const Mention: FunctionComponent<MentionProps> = ({
   return (
     <MentionWrapper disabled={disabled}>
       <Highlights
-        style={{ height }}
+        style={{ height: state.height }}
         dangerouslySetInnerHTML={{ __html: applyHighlights(value) }}
       />
       <Textarea
@@ -457,10 +497,11 @@ const Mention: FunctionComponent<MentionProps> = ({
         {...props}
       />
       <Suggestions
-        dropdownVisible={dropdownVisible}
-        overlayPosition={overlayPosition}
-        filteredSuggestions={filteredSuggestions}
-        activeIndex={activeIndex}
+        formatCreateText={formatCreateText}
+        dropdownVisible={state.dropdownVisible}
+        overlayPosition={state.overlayPosition}
+        filteredSuggestions={state.filteredSuggestions}
+        activeIndex={state.activeIndex}
         onSuggestionClick={selectSuggestion}
       />
     </MentionWrapper>
@@ -470,6 +511,10 @@ const Mention: FunctionComponent<MentionProps> = ({
 Mention.defaultProps = {
   defaultValue: '',
   suggestions: [],
+  creatable: false,
+  onMentionCreate: () => {},
+  formatCreateText: createValue =>
+    `Press Enter to create mention: ${createValue}`,
 };
 
 export default Mention;

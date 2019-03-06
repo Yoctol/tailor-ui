@@ -1,8 +1,15 @@
-import React, { FunctionComponent } from 'react';
+import React, { FunctionComponent, useEffect, useRef } from 'react';
 import styled, { css } from 'styled-components';
 import { animated, config, useTransition } from 'react-spring';
 
 import { Portal } from 'tailor-ui';
+
+import {
+  FilteredSuggestion,
+  FilteredSuggestions,
+  FormatCreateText,
+} from './Mention';
+import { OverlayPosition } from './overlay-position';
 
 const SuggestionsList = styled(animated.div)`
   display: flex;
@@ -25,6 +32,7 @@ const SuggestionsList = styled(animated.div)`
 
 const SuggestionItem = styled.div<{ active: boolean }>`
   display: inline-flex;
+  flex: none;
   align-items: center;
   height: ${p => p.theme.heights.base};
   padding: 0 ${p => p.theme.paddings.sm};
@@ -46,22 +54,22 @@ const SuggestionItem = styled.div<{ active: boolean }>`
 
 interface SuggestionsProps {
   dropdownVisible: boolean;
-  overlayPosition: {
-    top: number;
-    left: number;
-  };
-  filteredSuggestions: string[];
   activeIndex: number;
-  onSuggestionClick: (suggestion: string) => void;
+  formatCreateText: FormatCreateText;
+  overlayPosition: OverlayPosition;
+  filteredSuggestions: FilteredSuggestions;
+  onSuggestionClick: (suggestion: FilteredSuggestion) => void;
 }
 
 const Suggestions: FunctionComponent<SuggestionsProps> = ({
   dropdownVisible,
+  activeIndex,
+  formatCreateText,
   overlayPosition,
   filteredSuggestions,
-  activeIndex,
   onSuggestionClick,
 }) => {
+  const suggestionRef = useRef<HTMLDivElement>(null);
   const translations = useTransition(dropdownVisible, null, {
     from: {
       opacity: 0,
@@ -74,6 +82,22 @@ const Suggestions: FunctionComponent<SuggestionsProps> = ({
     },
     config: config.stiff,
   });
+
+  useEffect(() => {
+    if (suggestionRef.current) {
+      const activeItemScrollTop = 9 + activeIndex * 32;
+
+      if (
+        activeItemScrollTop + 32 >=
+        suggestionRef.current.scrollTop + suggestionRef.current.offsetHeight
+      ) {
+        suggestionRef.current.scrollTop =
+          activeItemScrollTop + 32 - suggestionRef.current.offsetHeight;
+      } else if (activeItemScrollTop <= suggestionRef.current.scrollTop) {
+        suggestionRef.current.scrollTop = activeItemScrollTop;
+      }
+    }
+  }, [activeIndex]);
 
   return (
     <Portal appendFor="mention">
@@ -92,14 +116,16 @@ const Suggestions: FunctionComponent<SuggestionsProps> = ({
                 }px, 0px)`,
               }}
             >
-              <SuggestionsList style={props}>
+              <SuggestionsList ref={suggestionRef} style={props}>
                 {filteredSuggestions.map((suggestion, index) => (
                   <SuggestionItem
-                    key={suggestion}
+                    key={suggestion.value}
                     active={index === activeIndex}
                     onClick={() => onSuggestionClick(suggestion)}
                   >
-                    {suggestion}
+                    {suggestion.type === 'create'
+                      ? formatCreateText(suggestion.value)
+                      : suggestion.value}
                   </SuggestionItem>
                 ))}
               </SuggestionsList>
