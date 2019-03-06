@@ -76,6 +76,7 @@ const Switch: FunctionComponent<SwitchProps> = ({
   checked,
   onChange,
   disabled,
+  ...props
 }) => (
   <StyledSwitch>
     <input
@@ -88,6 +89,7 @@ const Switch: FunctionComponent<SwitchProps> = ({
         }
       }}
       disabled={disabled}
+      {...props}
     />
     <span />
   </StyledSwitch>
