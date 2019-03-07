@@ -40,6 +40,7 @@ export const properties = [
 
   'letterSpacing',
   'wordSpacing',
+  'wordBreak',
 
   'tabSize',
   'MozTabSize',

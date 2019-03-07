@@ -8,10 +8,8 @@ import React, {
   useRef,
 } from 'react';
 
-import { Input, Textarea } from 'tailor-ui';
-
 import Suggestions from './Suggestions';
-import { Highlights, MentionWrapper } from './styles';
+import { Highlights, MentionWrapper, Textarea } from './styles';
 import { OverlayPosition, getMentionCursor, getOverlayPosition } from './utils';
 import { applyHighlights } from './highlight';
 import { getCaretCoordinates } from './textarea-caret-position';
@@ -160,7 +158,6 @@ interface MentionProps {
   suggestions: string[];
   disabled?: boolean;
   creatable: boolean;
-  textarea: boolean;
   highlightInvalid: boolean;
   formatCreateText: FormatCreateText;
   onChange?: (value: string) => void;
@@ -175,17 +172,15 @@ const Mention: FunctionComponent<MentionProps> = ({
   onMentionCreate,
   disabled,
   creatable,
-  textarea,
   highlightInvalid,
   formatCreateText,
   ...props
 }) => {
-  const RenderComponent = textarea ? Textarea : Input;
   const mentionRef = useRef<any>(null);
   let mentionDom: any = null;
 
   if (mentionRef.current) {
-    mentionDom = textarea ? mentionRef.current.textarea : mentionRef.current;
+    mentionDom = mentionRef.current.textarea;
   }
 
   const cursorMention = useRef<CursorMention>({
@@ -371,19 +366,6 @@ const Mention: FunctionComponent<MentionProps> = ({
     resetDropdown(event);
   };
 
-  const resizeHandler = textarea
-    ? {
-        onResize: (event: ChangeEvent<HTMLTextAreaElement>) =>
-          // https://github.com/buildo/react-autosize-textarea/issues/109#issuecomment-430002058
-          setTimeout(() =>
-            dispatch({
-              type: 'updateHeight',
-              payload: event.target.offsetHeight,
-            })
-          ),
-      }
-    : {};
-
   return (
     <MentionWrapper disabled={disabled}>
       <Highlights
@@ -392,13 +374,8 @@ const Mention: FunctionComponent<MentionProps> = ({
           __html: applyHighlights({ suggestions, value, highlightInvalid }),
         }}
       />
-      <RenderComponent
+      <Textarea
         ref={mentionRef}
-        style={{
-          position: 'absolute',
-          top: 0,
-          backgroundColor: 'transparent',
-        }}
         onKeyUp={handleKeyUp}
         onKeyDown={handleKeyDown}
         onBlur={() => dispatch({ type: 'closeDropdown' })}
@@ -406,7 +383,15 @@ const Mention: FunctionComponent<MentionProps> = ({
         onClick={resetDropdown}
         onChange={handleChange}
         disabled={disabled}
-        {...resizeHandler}
+        onResize={(event: ChangeEvent<HTMLTextAreaElement>) => {
+          // https://github.com/buildo/react-autosize-textarea/issues/109#issuecomment-430002058
+          setTimeout(() =>
+            dispatch({
+              type: 'updateHeight',
+              payload: event.target.offsetHeight,
+            })
+          );
+        }}
         {...props}
       />
       <Suggestions
@@ -426,7 +411,6 @@ Mention.defaultProps = {
   suggestions: [],
   creatable: false,
   highlightInvalid: false,
-  textarea: false,
   onMentionCreate: () => {},
   formatCreateText: createValue =>
     `Press Enter to create mention: ${createValue}`,

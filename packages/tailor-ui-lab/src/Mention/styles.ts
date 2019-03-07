@@ -2,7 +2,14 @@ import styled, { css } from 'styled-components';
 import { animated } from 'react-spring';
 import { rgba } from 'polished';
 
-import { inputStyles } from 'tailor-ui';
+import { Textarea as BaseTextarea, inputStyles } from 'tailor-ui';
+
+export const Textarea = styled(BaseTextarea)`
+  position: absolute;
+  top: 0;
+  background-color: transparent;
+  word-break: keep-all;
+`;
 
 export const MentionWrapper = styled.div<{ disabled?: boolean }>`
   position: relative;
@@ -29,6 +36,7 @@ export const Highlights = styled.div`
   border-color: transparent;
   color: transparent;
   word-wrap: break-word;
+  word-break: keep-all;
   white-space: pre-wrap;
 `;
 
