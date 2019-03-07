@@ -8,7 +8,7 @@ export const applyHighlights = ({
   highlightInvalid: boolean;
 }) => {
   const transformedValue = value.replace(/\n$/g, '\n\n');
-  const mentionRegexp = /\{{2}[^{}]+\}{2}/g;
+  const mentionRegexp = /\{{2}[^{}\n]+\}{2}/g;
   const allSuggestions = suggestions.join('|');
 
   const replacer = (match: string) => {
