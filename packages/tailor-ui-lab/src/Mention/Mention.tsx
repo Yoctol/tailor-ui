@@ -7,37 +7,13 @@ import React, {
   useReducer,
   useRef,
 } from 'react';
-import styled from 'styled-components';
-import { rgba } from 'polished';
 
-import { Input, Textarea, inputStyles } from 'tailor-ui';
+import { Input, Textarea } from 'tailor-ui';
 
 import Suggestions from './Suggestions';
+import { Highlights, MentionWrapper } from './styles';
 import { OverlayPosition, getOverlayPosition } from './overlay-position';
 import { getCaretCoordinates } from './textarea-caret-position';
-
-const MentionWrapper = styled.div<{ disabled?: boolean }>`
-  position: relative;
-
-  .mention-highlight {
-    display: inline-flex;
-    border-radius: ${p => p.theme.radii.base};
-    background-color: ${p =>
-      p.disabled ? p.theme.colors.gray400 : rgba(p.theme.colors.success, 0.3)};
-    line-height: 1.3;
-    text-decoration: none;
-  }
-`;
-
-const Highlights = styled.div`
-  ${inputStyles};
-
-  /* stylelint-disable-next-line order/properties-order */
-  border-color: transparent;
-  color: transparent;
-  word-wrap: break-word;
-  white-space: pre-wrap;
-`;
 
 const applyHighlights = (text: string) =>
   text
@@ -95,6 +71,8 @@ const resetCursorMention = (originValue: string, selectionStart: number) => {
   const { startPos, endPos } = getPosition(value, selectionStart);
   const mention = value.substring(startPos, endPos);
   const searchValue = value.substring(startPos, selectionStart);
+  const createValue =
+    mention.length > searchValue.length ? mention : searchValue;
 
   console.log({
     mention,
@@ -115,6 +93,7 @@ const resetCursorMention = (originValue: string, selectionStart: number) => {
     return {
       mention: null,
       searchValue: null,
+      createValue: null,
       startPos: -1,
       endPos: -1,
     };
@@ -123,6 +102,7 @@ const resetCursorMention = (originValue: string, selectionStart: number) => {
   return {
     mention,
     searchValue,
+    createValue,
     startPos,
     endPos,
   };
@@ -340,9 +320,9 @@ const Mention: FunctionComponent<MentionProps> = ({
             value: suggestion,
           })),
         ...(creatable &&
-        cursor.searchValue !== '' &&
-        !suggestions.includes(cursor.searchValue)
-          ? [{ type: 'create', value: cursor.searchValue }]
+        cursor.createValue !== '' &&
+        !suggestions.includes(cursor.createValue)
+          ? [{ type: 'create', value: cursor.createValue }]
           : []),
       ];
 
