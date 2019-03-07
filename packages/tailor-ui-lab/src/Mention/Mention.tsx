@@ -12,14 +12,12 @@ import { Input, Textarea } from 'tailor-ui';
 
 import Suggestions from './Suggestions';
 import { Highlights, MentionWrapper } from './styles';
-import { OverlayPosition, getOverlayPosition } from './overlay-position';
+import { OverlayPosition, getMentionCursor, getOverlayPosition } from './utils';
 import { applyHighlights } from './highlight';
 import { getCaretCoordinates } from './textarea-caret-position';
 
 const placement = 'bottom';
 
-const PREFIX = '{{';
-const SUFFIX = '}}';
 const LEFT_ARROW = 37;
 const RIGHT_ARROW = 39;
 const UP_ARROW = 38;
@@ -27,82 +25,6 @@ const DOWN_ARROW = 40;
 const ENTER = 13;
 const ESCAPE = 27;
 const TAB = 9;
-
-const getPosition = (value: string, selectionStart: number) => {
-  const startPos =
-    value.lastIndexOf(PREFIX, selectionStart) > -1
-      ? value.lastIndexOf(PREFIX, selectionStart) + 2
-      : -1;
-
-  const suffixPos = value.indexOf(SUFFIX, selectionStart);
-  const nextPrefixPos = value.indexOf(PREFIX, selectionStart);
-  const spacePos = value.indexOf(' ', selectionStart);
-
-  const positions = [suffixPos, nextPrefixPos, spacePos]
-    .filter(pos => pos !== -1)
-    .sort((a, b) => a - b);
-
-  if (
-    selectionStart === startPos &&
-    nextPrefixPos !== -1 &&
-    nextPrefixPos === positions[0]
-  ) {
-    return {
-      startPos,
-      endPos: startPos,
-    };
-  }
-
-  const endPos = positions[0] || selectionStart;
-
-  return {
-    startPos,
-    endPos,
-  };
-};
-
-const resetCursorMention = (originValue: string, selectionStart: number) => {
-  const value = originValue.replace(/[\r\n]/g, ' ');
-
-  const { startPos, endPos } = getPosition(value, selectionStart);
-  const mention = value.substring(startPos, endPos);
-  const searchValue = value.substring(startPos, selectionStart);
-  const createValue =
-    mention.length > searchValue.length ? mention : searchValue;
-
-  console.log({
-    mention,
-    searchValue,
-    selectionStart,
-    startPos,
-    endPos,
-  });
-
-  if (
-    startPos < 0 ||
-    endPos < 0 ||
-    mention.includes('{') ||
-    mention.includes('}') ||
-    selectionStart < startPos ||
-    selectionStart > endPos
-  ) {
-    return {
-      mention: null,
-      searchValue: null,
-      createValue: null,
-      startPos: -1,
-      endPos: -1,
-    };
-  }
-
-  return {
-    mention,
-    searchValue,
-    createValue,
-    startPos,
-    endPos,
-  };
-};
 
 type FilteredSuggestionType = 'option' | 'create';
 
@@ -302,7 +224,7 @@ const Mention: FunctionComponent<MentionProps> = ({
   }, [state.caretPos, mentionDom]);
 
   const resetDropdown = ({ currentTarget }: ResetDropdownType) => {
-    const cursor = resetCursorMention(
+    const cursor = getMentionCursor(
       currentTarget.value,
       currentTarget.selectionStart
     );

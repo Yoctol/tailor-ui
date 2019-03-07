@@ -16,7 +16,8 @@ export const MentionWrapper = styled.div<{ disabled?: boolean }>`
     text-decoration: none;
 
     &.invalid {
-      background-color: ${p => rgba(p.theme.colors.danger, 0.3)};
+      background-color: ${p =>
+        p.disabled ? p.theme.colors.gray400 : rgba(p.theme.colors.danger, 0.3)};
     }
   }
 `;

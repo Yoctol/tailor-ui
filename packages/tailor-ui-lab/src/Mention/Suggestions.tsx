@@ -8,7 +8,7 @@ import {
   FilteredSuggestions,
   FormatCreateText,
 } from './Mention';
-import { OverlayPosition } from './overlay-position';
+import { OverlayPosition } from './utils';
 import { SuggestionItem, SuggestionList } from './styles';
 
 interface SuggestionsProps {
