@@ -38,4 +38,10 @@ describe('Switch', () => {
 
     expect(onChange).toBeCalled();
   });
+
+  it('should support data-testid', () => {
+    const { getByTestId } = render(<Switch checked data-testid="my-switch" />);
+
+    expect(getByTestId('my-switch')).toHaveAttribute('checked');
+  });
 });
