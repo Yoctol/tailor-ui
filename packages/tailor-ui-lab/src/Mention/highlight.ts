@@ -19,9 +19,23 @@ export const applyHighlights = ({
       valid = validRegexp.test(match);
     }
 
-    return `<span class="mention-highlight ${
-      !valid ? 'invalid' : ''
-    }">${match}</span>`;
+    const formatText = (text: string, index: number) => {
+      const classNames = [
+        'mention-highlight',
+        !valid && 'invalid',
+        index === 0 && 'start',
+        index === match.length - 1 && 'end',
+      ]
+        .filter(Boolean)
+        .join(' ');
+
+      return `<span class="${classNames}">${text}</span>`;
+    };
+
+    return match
+      .split('')
+      .map(formatText)
+      .join('');
   };
 
   return transformedValue.replace(mentionRegexp, replacer);

@@ -8,7 +8,6 @@ export const Textarea = styled(BaseTextarea)`
   position: absolute;
   top: 0;
   background-color: transparent;
-  word-break: keep-all;
 `;
 
 export const MentionWrapper = styled.div<{ disabled?: boolean }>`
@@ -16,11 +15,20 @@ export const MentionWrapper = styled.div<{ disabled?: boolean }>`
 
   .mention-highlight {
     display: inline-flex;
-    border-radius: ${p => p.theme.radii.base};
     background-color: ${p =>
       p.disabled ? p.theme.colors.gray400 : rgba(p.theme.colors.success, 0.3)};
     line-height: 1.3;
     text-decoration: none;
+
+    &.start {
+      border-top-left-radius: ${p => p.theme.radii.base};
+      border-bottom-left-radius: ${p => p.theme.radii.base};
+    }
+
+    &.end {
+      border-top-right-radius: ${p => p.theme.radii.base};
+      border-bottom-right-radius: ${p => p.theme.radii.base};
+    }
 
     &.invalid {
       background-color: ${p =>
@@ -35,9 +43,7 @@ export const Highlights = styled.div`
   /* stylelint-disable-next-line order/properties-order */
   border-color: transparent;
   color: transparent;
-  word-wrap: break-word;
-  word-break: keep-all;
-  white-space: pre-wrap;
+  word-break: break-word;
 `;
 
 export const SuggestionList = styled(animated.div)`
