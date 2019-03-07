@@ -3,6 +3,7 @@ import React, {
   FunctionComponent,
   KeyboardEvent,
   Reducer,
+  UIEvent,
   useEffect,
   useReducer,
   useRef,
@@ -177,11 +178,7 @@ const Mention: FunctionComponent<MentionProps> = ({
   ...props
 }) => {
   const mentionRef = useRef<any>(null);
-  let mentionDom: any = null;
-
-  if (mentionRef.current) {
-    mentionDom = mentionRef.current.textarea;
-  }
+  const highlightRef = useRef<any>(null);
 
   const cursorMention = useRef<CursorMention>({
     mention: null,
@@ -201,22 +198,23 @@ const Mention: FunctionComponent<MentionProps> = ({
   const value = valueFromProps || state.value;
 
   useEffect(() => {
-    if (mentionDom) {
-      dispatch({
-        type: 'updateHeight',
-        payload: mentionDom.offsetHeight,
-      });
-    }
-  }, [mentionDom]);
+    dispatch({
+      type: 'updateHeight',
+      payload: mentionRef.current.textarea.offsetHeight,
+    });
+  }, []);
 
   useEffect(() => {
-    if (state.caretPos !== -1 && mentionDom) {
-      mentionDom.focus();
-      mentionDom.setSelectionRange(state.caretPos, state.caretPos);
+    if (state.caretPos !== -1 && mentionRef.current.textarea) {
+      mentionRef.current.textarea.focus();
+      mentionRef.current.textarea.setSelectionRange(
+        state.caretPos,
+        state.caretPos
+      );
 
       dispatch({ type: 'updateCaretPos', payload: -1 });
     }
-  }, [state.caretPos, mentionDom]);
+  }, [state.caretPos]);
 
   const resetDropdown = ({ currentTarget }: ResetDropdownType) => {
     const cursor = getMentionCursor(
@@ -369,6 +367,7 @@ const Mention: FunctionComponent<MentionProps> = ({
   return (
     <MentionWrapper disabled={disabled}>
       <Highlights
+        ref={highlightRef}
         style={{ height: state.height }}
         dangerouslySetInnerHTML={{
           __html: applyHighlights({ suggestions, value, highlightInvalid }),
@@ -383,6 +382,14 @@ const Mention: FunctionComponent<MentionProps> = ({
         onClick={resetDropdown}
         onChange={handleChange}
         disabled={disabled}
+        onScroll={(event: UIEvent<HTMLTextAreaElement>) => {
+          if (highlightRef.current) {
+            highlightRef.current.scrollTop = event.currentTarget.scrollTop;
+          }
+          if (state.dropdownVisible) {
+            dispatch({ type: 'closeDropdown' });
+          }
+        }}
         onResize={(event: ChangeEvent<HTMLTextAreaElement>) => {
           // https://github.com/buildo/react-autosize-textarea/issues/109#issuecomment-430002058
           setTimeout(() =>

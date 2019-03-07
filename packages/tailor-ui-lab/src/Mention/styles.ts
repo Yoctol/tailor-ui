@@ -41,6 +41,7 @@ export const Highlights = styled.div`
   ${inputStyles};
 
   /* stylelint-disable-next-line order/properties-order */
+  overflow-y: auto;
   border-color: transparent;
   color: transparent;
   word-break: break-word;
