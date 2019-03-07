@@ -44,6 +44,7 @@ export const Highlights = styled.div`
   border-color: transparent;
   color: transparent;
   word-break: break-word;
+  white-space: pre-wrap;
 `;
 
 export const SuggestionList = styled(animated.div)`
