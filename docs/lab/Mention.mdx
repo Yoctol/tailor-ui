@@ -59,6 +59,35 @@ import { Mention } from '@tailor-ui/lab';
 
 </Playground>
 
+### Creatable & Highlight Invalid
+
+<Playground>
+  {() => {
+    const [value, setValue] = React.useState('我想吃一份{{食物}}');
+    const [suggestions, setSuggestions] = React.useState([
+      '食物', '國家', '城市', '語言', '品牌'
+    ]);
+
+    return (
+      <Mention
+        creatable
+        highlightInvalid
+        value={value}
+        suggestions={suggestions}
+        onChange={value => {
+          setValue(value);
+          console.log(value);
+        }}
+        onMentionCreate={newMention => {
+          setSuggestions(prevSuggestions => [...prevSuggestions, newMention])
+        }}
+      />
+    )
+
+}}
+
+</Playground>
+
 ### Textarea
 
 <Playground>

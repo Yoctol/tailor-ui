@@ -13,12 +13,8 @@ import { Input, Textarea } from 'tailor-ui';
 import Suggestions from './Suggestions';
 import { Highlights, MentionWrapper } from './styles';
 import { OverlayPosition, getOverlayPosition } from './overlay-position';
+import { applyHighlights } from './highlight';
 import { getCaretCoordinates } from './textarea-caret-position';
-
-const applyHighlights = (text: string) =>
-  text
-    .replace(/\n$/g, '\n\n')
-    .replace(/\{{2}[^{}]+\}{2}/g, '<span class="mention-highlight">$&</span>');
 
 const placement = 'bottom';
 
@@ -243,6 +239,7 @@ interface MentionProps {
   disabled?: boolean;
   creatable: boolean;
   textarea: boolean;
+  highlightInvalid: boolean;
   formatCreateText: FormatCreateText;
   onChange?: (value: string) => void;
   onMentionCreate: (newMention: string) => void;
@@ -257,6 +254,7 @@ const Mention: FunctionComponent<MentionProps> = ({
   disabled,
   creatable,
   textarea,
+  highlightInvalid,
   formatCreateText,
   ...props
 }) => {
@@ -468,7 +466,9 @@ const Mention: FunctionComponent<MentionProps> = ({
     <MentionWrapper disabled={disabled}>
       <Highlights
         style={{ height: state.height }}
-        dangerouslySetInnerHTML={{ __html: applyHighlights(value) }}
+        dangerouslySetInnerHTML={{
+          __html: applyHighlights({ suggestions, value, highlightInvalid }),
+        }}
       />
       <RenderComponent
         ref={mentionRef}
@@ -503,6 +503,7 @@ Mention.defaultProps = {
   defaultValue: '',
   suggestions: [],
   creatable: false,
+  highlightInvalid: false,
   textarea: false,
   onMentionCreate: () => {},
   formatCreateText: createValue =>

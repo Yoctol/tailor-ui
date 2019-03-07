@@ -14,6 +14,10 @@ export const MentionWrapper = styled.div<{ disabled?: boolean }>`
       p.disabled ? p.theme.colors.gray400 : rgba(p.theme.colors.success, 0.3)};
     line-height: 1.3;
     text-decoration: none;
+
+    &.invalid {
+      background-color: ${p => rgba(p.theme.colors.danger, 0.3)};
+    }
   }
 `;
 
