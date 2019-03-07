@@ -28,7 +28,9 @@ export const applyHighlights = ({
         .filter(Boolean)
         .join(' ');
 
-      return `<span class="${classNames}">${text}</span>`;
+      const content = text === ' ' ? '&nbsp;' : text;
+
+      return `<span class="${classNames}">${content}</span>`;
     };
 
     return match
