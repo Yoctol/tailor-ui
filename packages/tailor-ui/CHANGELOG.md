@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.1](https://github.com/yoctol/tailor-ui/compare/tailor-ui@0.3.0...tailor-ui@0.3.1) (2019-03-08)
+
+### Bug Fixes
+
+- **textarea:** rows not working ([57bf6e0](https://github.com/yoctol/tailor-ui/commit/57bf6e0))
+
 # [0.3.0](https://github.com/yoctol/tailor-ui/compare/tailor-ui@0.2.15...tailor-ui@0.3.0) (2019-03-08)
 
 ### Bug Fixes
