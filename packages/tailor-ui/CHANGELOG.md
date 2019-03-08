@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0](https://github.com/yoctol/tailor-ui/compare/tailor-ui@0.2.15...tailor-ui@0.3.0) (2019-03-08)
+
+### Bug Fixes
+
+- i18n ([055646a](https://github.com/yoctol/tailor-ui/commit/055646a))
+- **switch:** spread props to input element ([2a7f04a](https://github.com/yoctol/tailor-ui/commit/2a7f04a))
+
+### Features
+
+- **mention:** add input support ([6a0ede4](https://github.com/yoctol/tailor-ui/commit/6a0ede4))
+- **Switch:** add testid tests for Switch ([9294c1f](https://github.com/yoctol/tailor-ui/commit/9294c1f))
+
 ## [0.2.15](https://github.com/yoctol/tailor-ui/compare/tailor-ui@0.2.14...tailor-ui@0.2.15) (2019-03-04)
 
 **Note:** Version bump only for package tailor-ui
