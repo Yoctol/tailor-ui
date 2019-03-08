@@ -3,8 +3,6 @@
 exports[`Textarea should render correctly 1`] = `
 .c0 {
   word-wrap: break-word;
-  -webkit-transition: border 0.2s ease;
-  transition: border 0.2s ease;
   resize: none;
   display: block;
   width: 100%;
@@ -25,6 +23,8 @@ exports[`Textarea should render correctly 1`] = `
   font-size: 1rem;
   -webkit-transition: all 200ms ease 0s;
   transition: all 200ms ease 0s;
+  -webkit-transition: border 0.2s ease;
+  transition: border 0.2s ease;
 }
 
 .c0:hover {
@@ -62,15 +62,14 @@ exports[`Textarea should render correctly 1`] = `
 <textarea
   class="c0"
   placeholder="placeholder"
-  style="height: 0px;"
+  rows="1"
+  style="overflow-x: hidden; word-wrap: break-word; overflow-y: hidden;"
 />
 `;
 
 exports[`Textarea should render correctly with minRows & maxRows 1`] = `
 .c0 {
   word-wrap: break-word;
-  -webkit-transition: border 0.2s ease;
-  transition: border 0.2s ease;
   resize: none;
   display: block;
   width: 100%;
@@ -91,6 +90,8 @@ exports[`Textarea should render correctly with minRows & maxRows 1`] = `
   font-size: 1rem;
   -webkit-transition: all 200ms ease 0s;
   transition: all 200ms ease 0s;
+  -webkit-transition: border 0.2s ease;
+  transition: border 0.2s ease;
 }
 
 .c0:hover {
@@ -128,7 +129,9 @@ exports[`Textarea should render correctly with minRows & maxRows 1`] = `
 <textarea
   class="c0"
   id="demo"
+  minrows="3"
   placeholder="placeholder"
-  style="height: 0px;"
+  rows="1"
+  style="line-height: 1.5em; max-height: 12px;"
 />
 `;

@@ -3,8 +3,6 @@
 exports[`TextField should render as textarea 1`] = `
 .c3 {
   word-wrap: break-word;
-  -webkit-transition: border 0.2s ease;
-  transition: border 0.2s ease;
   resize: none;
   display: block;
   width: 100%;
@@ -25,6 +23,8 @@ exports[`TextField should render as textarea 1`] = `
   font-size: 1rem;
   -webkit-transition: all 200ms ease 0s;
   transition: all 200ms ease 0s;
+  -webkit-transition: border 0.2s ease;
+  transition: border 0.2s ease;
 }
 
 .c3:hover {
@@ -117,7 +117,8 @@ exports[`TextField should render as textarea 1`] = `
   <textarea
     class="c2 c3"
     required=""
-    style="height: 0px;"
+    rows="1"
+    style="overflow-x: hidden; word-wrap: break-word; overflow-y: hidden;"
   />
   <label
     class="c4 c5"

@@ -1,0 +1,100 @@
+---
+name: Mention
+menu: Lab
+route: /lab/mention
+---
+
+import { PropsTable, Playground } from 'docz';
+import { Mention } from '@tailor-ui/lab';
+
+# Mention
+
+Mention component.
+
+## When To Use
+
+When need to mention someone or something.
+
+## Examples
+
+```js
+import { Mention } from '@tailor-ui/lab';
+```
+
+### Basic
+
+<Playground>
+  <Mention
+    defaultValue="我想吃一份{{食物}}"
+    suggestions={['食物', '國家', '城市', '語言', '品牌']}
+    onChange={value => console.log(value)}
+  />
+</Playground>
+
+### Creatable
+
+<Playground>
+  {() => {
+    const [value, setValue] = React.useState('我想吃一份{{食物}}');
+    const [suggestions, setSuggestions] = React.useState([
+      '食物', '國家', '城市', '語言', '品牌'
+    ]);
+
+    return (
+      <Mention
+        creatable
+        value={value}
+        suggestions={suggestions}
+        onChange={value => {
+          setValue(value);
+          console.log(value);
+        }}
+        onMentionCreate={newMention => {
+          setSuggestions(prevSuggestions => [...prevSuggestions, newMention])
+        }}
+      />
+    )
+
+}}
+
+</Playground>
+
+### Creatable & Highlight Invalid
+
+<Playground>
+  {() => {
+    const [value, setValue] = React.useState('我想吃一份{{食物}}');
+    const [suggestions, setSuggestions] = React.useState([
+      '食物', '國家', '城市', '語言', '品牌'
+    ]);
+
+    return (
+      <Mention
+        creatable
+        highlightInvalid
+        value={value}
+        suggestions={suggestions}
+        onChange={value => {
+          setValue(value);
+          console.log(value);
+        }}
+        onMentionCreate={newMention => {
+          setSuggestions(prevSuggestions => [...prevSuggestions, newMention])
+        }}
+      />
+    )
+
+}}
+
+</Playground>
+
+### Disabled
+
+<Playground>
+  <Mention
+    defaultValue="我想吃一份{{食物}}"
+    suggestions={['食物', '國家', '城市', '語言', '品牌']}
+    onChange={value => console.log(value)}
+    disabled
+  />
+</Playground>
