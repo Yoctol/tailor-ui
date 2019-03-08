@@ -16,6 +16,7 @@ export const StyledTextarea = styled(TextareaAutosize)<TextareaProps>`
   ${inputStyles};
 
   /* stylelint-disable-next-line order/properties-order */
+  height: auto;
   transition: border 0.2s ease;
 `;
 
