@@ -35,7 +35,7 @@ const Menu: FunctionComponent<FlexProps & MenuProps> & {
         justifyContent="start"
         height="100%"
         overflowY="auto"
-        bg="primary"
+        bg="primaryDark2"
         {...props}
       >
         {children}

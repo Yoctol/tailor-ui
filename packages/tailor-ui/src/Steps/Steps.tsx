@@ -57,7 +57,7 @@ const StepsIconItem = styled(tag.div)<StepsItemProps>`
       case 'finish':
         return p.theme.colors.primary;
       case 'error':
-        return p.theme.colors.error;
+        return p.theme.colors.danger;
       case 'wait':
       default:
         return p.theme.colors.gray500;
@@ -72,7 +72,7 @@ const StepsIconItem = styled(tag.div)<StepsItemProps>`
       case 'finish':
         return p.theme.colors.primary;
       case 'error':
-        return p.theme.colors.error;
+        return p.theme.colors.danger;
       case 'wait':
       default:
         return p.theme.colors.gray500;
@@ -113,7 +113,7 @@ const Title = styled(tag.div)<StepsItemProps>`
       case 'progress':
         return p.theme.colors.primary;
       case 'error':
-        return p.theme.colors.error;
+        return p.theme.colors.danger;
       case 'finish':
       case 'wait':
       default:
@@ -155,7 +155,7 @@ const Description = styled(tag.div)<DescriptionProps>`
       case 'progress':
         return p.theme.colors.primary;
       case 'error':
-        return p.theme.colors.error;
+        return p.theme.colors.danger;
       case 'finish':
       case 'wait':
       default:

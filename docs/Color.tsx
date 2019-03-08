@@ -18,6 +18,7 @@ const Color = ({
   width: string | number;
 }) => {
   const color = themeColors[colorKey];
+  console.log(color);
 
   return (
     <Flex

@@ -57,17 +57,17 @@ const StyledFormField = styled(tag.div)<FormFieldProps>`
     error &&
     css`
       & ${StyledInput /* sc-selector */} {
-        border-color: ${p => p.theme.colors.error};
+        border-color: ${p => p.theme.colors.danger};
       }
 
       /* stylelint-disable-next-line */
       & ${StyledTextarea /* sc-selector */} {
-        border-color: ${p => p.theme.colors.error};
+        border-color: ${p => p.theme.colors.danger};
       }
 
       /* stylelint-disable-next-line */
       & ${Hint /* sc-selector */} {
-        color: ${p => p.theme.colors.error};
+        color: ${p => p.theme.colors.danger};
       }
     `};
 `;

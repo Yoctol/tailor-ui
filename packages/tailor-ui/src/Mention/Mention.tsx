@@ -48,7 +48,7 @@ const MentionWrapper = styled(tag.div)<MentionWrapperProps>`
       ${p =>
         p.error &&
         css`
-          border-color: ${p.theme.colors.error};
+          border-color: ${p.theme.colors.danger};
         `};
 
       ${p =>

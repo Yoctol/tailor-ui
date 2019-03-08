@@ -14,7 +14,6 @@ const SubMenuWrapper = styled.div`
 
   ${StyledItem /* sc-selector */} {
     padding-left: 45px;
-    background-color: ${p => p.theme.colors.primaryDark};
   }
 `;
 

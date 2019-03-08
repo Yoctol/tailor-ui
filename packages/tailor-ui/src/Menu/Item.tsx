@@ -27,7 +27,7 @@ export const StyledItem = styled(tag.button)<StyledItemProps>`
   border: 0;
   border-left: 8px solid;
   border-left-color: transparent;
-  background-color: ${p => p.theme.colors.primary};
+  background-color: ${p => p.theme.colors.primaryDark2};
   color: rgba(255, 255, 255, 0.8);
   font-size: ${p => p.theme.fontSizes.base};
   transition: all 0.1s ease-in-out;
@@ -42,6 +42,7 @@ export const StyledItem = styled(tag.button)<StyledItemProps>`
 
   &:hover {
     border-left-color: ${p => p.theme.colors.secondary};
+    background-color: ${p => p.theme.colors.primaryDark};
   }
 
   &:focus {
