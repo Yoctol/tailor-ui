@@ -45,7 +45,7 @@ const Menu: FunctionComponent<FlexProps & MenuProps> & {
 };
 
 Menu.defaultProps = {
-  width: 180,
+  width: 240,
   currentSubOnly: false,
   defaultSubKeys: [],
 };

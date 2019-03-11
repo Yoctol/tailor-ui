@@ -6,15 +6,11 @@ import { animated, useSpring } from 'react-spring';
 import Icon, { IconType } from '../Icon';
 import useMeasure from '../utils/useMeasure';
 
-import Item, { StyledItem } from './Item';
 import MenuContext from './MenuContext';
+import { StyledSubMenu } from './styles';
 
 const SubMenuWrapper = styled.div`
   overflow: hidden;
-
-  ${StyledItem /* sc-selector */} {
-    padding-left: 45px;
-  }
 `;
 
 const AnimatedSubMenuWrapper = animated(SubMenuWrapper);
@@ -28,7 +24,6 @@ export interface SubMenuProps {
 }
 
 const SubMenu: FunctionComponent<SubMenuProps> = ({
-  togglable = true,
   id,
   icon,
   title,
@@ -47,35 +42,31 @@ const SubMenu: FunctionComponent<SubMenuProps> = ({
     height: menuOn ? height : 0,
   });
 
-  return togglable ? (
+  return (
     <>
-      <Item
-        icon={icon}
+      <StyledSubMenu
+        active={menuOn}
         onClick={() => handleToggleOpenKeys(id)}
         {...otherProps}
       >
+        {icon && <Icon type={icon} mr="12px" />}
+
         {title}
 
         <animated.div
           style={{
+            display: 'inline-flex',
             pointerEvents: 'none',
             marginLeft: 'auto',
             transform: rotate.interpolate(r => `rotate(${r}deg)`),
           }}
         >
-          <Icon type={MdKeyboardArrowUp} size="20" fill="light" />
+          <Icon type={MdKeyboardArrowUp} size="24" />
         </animated.div>
-      </Item>
+      </StyledSubMenu>
       <AnimatedSubMenuWrapper style={style}>
         <div {...bind}>{children}</div>
       </AnimatedSubMenuWrapper>
-    </>
-  ) : (
-    <>
-      <Item icon={icon} {...otherProps}>
-        {title}
-      </Item>
-      <SubMenuWrapper>{children}</SubMenuWrapper>
     </>
   );
 };

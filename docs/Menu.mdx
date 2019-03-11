@@ -29,32 +29,6 @@ import { Menu } from 'tailor-ui';
     const [value, setValue] = React.useState('1');
 
     return (
-      <Box height="600px">
-        <Menu onChange={console.log}>
-          {range(1, 10).map(key => (
-            <Menu.Item
-              key={key}
-              active={value === key}
-              onClick={() => setValue(key)}
-            >
-              Menu {key}
-            </Menu.Item>
-          ))}
-        </Menu>
-      </Box>
-    );
-
-}}
-
-</Playground>
-
-### Group
-
-<Playground>
-  {() => {
-    const [value, setValue] = React.useState('1');
-
-    return (
       <Menu>
         <Menu.SubMenu id="understood" title="Group 1" icon="understood">
           <Menu.Item active={value === '1'} onClick={() => setValue('1')}>
@@ -80,16 +54,6 @@ import { Menu } from 'tailor-ui';
             Item 6
           </Menu.Item>
         </Menu.SubMenu>
-        <Menu.Item id="tags" icon="tags" active={value === '7'} onClick={() => setValue('7')}>
-          Item 7
-        </Menu.Item>
-        <Menu.Item
-          icon="settings"
-          active={value === '8'}
-          onClick={() => setValue('8')}
-        >
-          Item 8
-        </Menu.Item>
       </Menu>
     );
 
@@ -127,53 +91,6 @@ import { Menu } from 'tailor-ui';
           </Menu.Item>
           <Menu.Item active={value === '6'} onClick={() => setValue('6')}>
             Item 6
-          </Menu.Item>
-        </Menu.SubMenu>
-        <Menu.Item id="tags" icon="tags" active={value === '7'} onClick={() => setValue('7')}>
-          Item 7
-        </Menu.Item>
-        <Menu.Item
-          icon="settings"
-          active={value === '8'}
-          onClick={() => setValue('8')}
-        >
-          Item 8
-        </Menu.Item>
-      </Menu>
-    );
-
-}}
-
-</Playground>
-
-### Disable togglable
-
-<Playground>
-  {() => {
-    const [value, setValue] = React.useState('1');
-
-    return (
-      <Menu>
-        <Menu.SubMenu
-          id="understood"
-          title="Understood"
-          icon="understood"
-          togglable={false}
-          onClick={() => console.log('click understood')}
-        >
-          <Menu.Item active={value === 'intent'} onClick={() => setValue('intent')}>
-            Intent
-          </Menu.Item>
-          <Menu.Item active={value === 'entity'} onClick={() => setValue('entity')}>
-            Entity
-          </Menu.Item>
-        </Menu.SubMenu>
-        <Menu.SubMenu id="kurator" title="Kurator" icon="kurator">
-          <Menu.Item active={value === 'action'} onClick={() => setValue('action')}>
-            Action
-          </Menu.Item>
-          <Menu.Item active={value === 'menu'} onClick={() => setValue('menu')}>
-            Menu
           </Menu.Item>
         </Menu.SubMenu>
       </Menu>
