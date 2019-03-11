@@ -82,7 +82,7 @@ type SpinWrapperProps = ColorProps & {
   fullscreen: boolean;
 };
 
-const SpinWrapper = styled(animated.div)<SpinWrapperProps>`
+const SpinWrapper = styled(tag.div)<SpinWrapperProps>`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -100,6 +100,8 @@ const SpinWrapper = styled(animated.div)<SpinWrapperProps>`
       ${color}
     `}
 `;
+
+const AnimatedSpinWrapper = animated(SpinWrapper);
 
 interface SpinProps {
   size?: number | string;
@@ -123,14 +125,14 @@ const Spin: FunctionComponent<SpinProps> = ({
   });
 
   const spinComponent = (
-    <SpinWrapper fullscreen={fullscreen} bg={bg} style={props}>
+    <AnimatedSpinWrapper fullscreen={fullscreen} bg={bg} style={props}>
       <SpinCubeWrapper size={size}>
         <SpinCube />
         <SpinCube />
         <SpinCube />
         <SpinCube />
       </SpinCubeWrapper>
-    </SpinWrapper>
+    </AnimatedSpinWrapper>
   );
 
   if (fullscreen) {
