@@ -81,7 +81,7 @@ const StyledTab = styled(tag.a)<StyledTabProps>`
 
           ${active &&
             css`
-              border-bottom-color: ${theme.colors.secondary};
+              border-bottom-color: ${theme.colors.primary};
             `};
         `};
 
