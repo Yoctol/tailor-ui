@@ -109,21 +109,16 @@ exports[`Upload should render correctly 1`] = `
   background-color: #f6f6f6;
 }
 
-.c4 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
 <div>
+  <input
+    autocomplete="off"
+    multiple=""
+    style="display: none;"
+    tabindex="-1"
+    type="file"
+  />
   <div
-    aria-disabled="false"
-    class=""
-    style="position: relative;"
+    tabindex="0"
   >
     <button
       class="c0"
@@ -141,6 +136,7 @@ exports[`Upload should render correctly 1`] = `
           stroke-width="0"
           viewBox="0 0 24 24"
           width="1em"
+          xmlns="http://www.w3.org/2000/svg"
         >
           <path
             d="M9 16h6v-6h4l-7-7-7 7h4zm-4 2h14v2H5z"
@@ -152,15 +148,6 @@ exports[`Upload should render correctly 1`] = `
         class="c3"
       />
     </button>
-    <input
-      autocomplete="off"
-      multiple=""
-      style="position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px; opacity: 0.00001; pointer-events: none;"
-      type="file"
-    />
   </div>
-  <div
-    class="c4"
-  />
 </div>
 `;

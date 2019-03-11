@@ -1,4 +1,9 @@
-import React, { FunctionComponent, MouseEvent, useRef } from 'react';
+import React, {
+  FunctionComponent,
+  MouseEvent,
+  MouseEventHandler,
+  useRef,
+} from 'react';
 import styled, { css, keyframes } from 'styled-components';
 import { SpaceProps, space as styledSpace } from 'styled-system';
 
@@ -276,7 +281,7 @@ export type ButtonProps = SpaceProps & {
   disabled?: boolean;
   icon?: IconType;
   size?: ButtonSize;
-  onClick?: (event: MouseEvent) => void;
+  onClick?: MouseEventHandler<any>;
 };
 
 const Button: FunctionComponent<ButtonProps> = ({

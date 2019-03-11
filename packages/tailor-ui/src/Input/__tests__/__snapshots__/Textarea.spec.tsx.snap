@@ -131,9 +131,8 @@ exports[`Textarea should render correctly with minRows & maxRows 1`] = `
 <textarea
   class="c0"
   id="demo"
-  minrows="3"
   placeholder="placeholder"
-  rows="1"
+  rows="3"
   style="line-height: 1.5em; max-height: 12px;"
 />
 `;

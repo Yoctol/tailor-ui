@@ -13,7 +13,7 @@ describe('Textarea', () => {
 
   it('should render correctly with minRows & maxRows', () => {
     const { container } = render(
-      <Textarea id="demo" placeholder="placeholder" minRows={3} maxRows={6} />
+      <Textarea id="demo" placeholder="placeholder" rows={3} maxRows={6} />
     );
 
     expect(container.firstChild).toMatchSnapshot();

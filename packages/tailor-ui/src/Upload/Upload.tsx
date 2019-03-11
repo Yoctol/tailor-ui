@@ -1,6 +1,6 @@
-import Dropzone, { DropzoneProps } from 'react-dropzone';
 import React, { FunctionComponent, useContext, useState } from 'react';
 import styled, { css } from 'styled-components';
+import { DropzoneProps, useDropzone } from 'react-dropzone';
 import { MdCheck, MdClose, MdFileUpload } from 'react-icons/md';
 
 import Box from '../Grid/Box';
@@ -8,7 +8,6 @@ import Button from '../Button';
 import Flex from '../Grid/Flex';
 import Icon from '../Icon';
 import { LocaleContext } from '../UIProvider';
-import { Omit } from '../utils/type';
 
 const FileList = styled.div`
   display: inline-flex;
@@ -101,7 +100,7 @@ const FileItem: FunctionComponent<FileItemProps> = ({
   </Flex>
 );
 
-interface UploadProps extends Omit<DropzoneProps, 'ref' | 'onSelect'> {
+interface UploadProps extends DropzoneProps {
   onSelect: (files: File[]) => Promise<any>;
   onClear?: (file: File) => void;
   onBeforeSelect?: () => Promise<boolean> | boolean;
@@ -130,6 +129,7 @@ const Upload: FunctionComponent<UploadProps> = ({
   const handleSelect = async (selectedFiles: File[]) => {
     setFiles(selectedFiles);
     setUploading(true);
+    setFailure(false);
 
     try {
       await onSelect(selectedFiles);
@@ -152,6 +152,7 @@ const Upload: FunctionComponent<UploadProps> = ({
     }
   };
 
+  const icon = getUploadIcon({ uploaded, failure });
   const text = getUploadText({
     uploading,
     uploaded,
@@ -161,56 +162,55 @@ const Upload: FunctionComponent<UploadProps> = ({
       ...texts,
     },
   });
-  const icon = getUploadIcon({ uploaded, failure });
+  const { getRootProps, getInputProps, open } = useDropzone({
+    onDrop: handleSelect,
+  });
 
   return (
     <div>
-      <Dropzone
-        disableClick
-        style={{ position: 'relative' }}
-        onDrop={handleSelect}
-        {...props}
-      >
-        {({ open }) => (
-          <Button
-            icon={icon}
-            loading={uploading}
-            disabled={disabled}
-            onClick={async () => {
-              if (onBeforeSelect) {
-                try {
-                  const success = await onBeforeSelect();
-                  if (!success) {
-                    return;
-                  }
-                } catch (error) {
-                  console.error(error);
-
+      <input {...getInputProps()} />
+      <div {...getRootProps()}>
+        <Button
+          icon={icon}
+          loading={uploading}
+          disabled={disabled}
+          onClick={async () => {
+            if (onBeforeSelect) {
+              try {
+                const success = await onBeforeSelect();
+                if (!success) {
                   return;
                 }
-              }
+              } catch (error) {
+                console.error(error);
 
-              if (uploaded) {
-                setUploaded(false);
+                return;
               }
+            }
 
-              open();
-            }}
-          >
-            {text}
-          </Button>
-        )}
-      </Dropzone>
-      <FileList>
-        {files.map(file => (
-          <FileItem
-            key={file.name}
-            file={file}
-            uploaded={uploaded}
-            onClear={handleClear}
-          />
-        ))}
-      </FileList>
+            if (uploaded) {
+              setUploaded(false);
+            }
+
+            open();
+          }}
+          {...props}
+        >
+          {text}
+        </Button>
+      </div>
+      {files.length > 0 && (
+        <FileList>
+          {files.map(file => (
+            <FileItem
+              key={file.name}
+              file={file}
+              uploaded={uploaded}
+              onClear={handleClear}
+            />
+          ))}
+        </FileList>
+      )}
     </div>
   );
 };
