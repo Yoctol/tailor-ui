@@ -12,14 +12,14 @@ exports[`Popconfirm should render correctly 1`] = `
 }
 
 .c6 svg {
-  fill: #423b63;
+  fill: #3c5ad0;
   vertical-align: middle;
   -webkit-transition: all 200ms ease 0s;
   transition: all 200ms ease 0s;
 }
 
 .c6.c6.c6 svg {
-  fill: #de8a15;
+  fill: #f6a700;
   width: 20px;
   height: 20px;
 }
@@ -106,7 +106,7 @@ exports[`Popconfirm should render correctly 1`] = `
 }
 
 .c0:hover {
-  border-color: #423b63;
+  border-color: #3c5ad0;
   background-color: #f6f6f6;
 }
 
@@ -183,7 +183,7 @@ exports[`Popconfirm should render correctly 1`] = `
 }
 
 .c8:hover {
-  border-color: #423b63;
+  border-color: #3c5ad0;
   background-color: #f6f6f6;
 }
 
@@ -217,8 +217,8 @@ exports[`Popconfirm should render correctly 1`] = `
   height: 1.5rem;
   padding: 0 0.75rem;
   font-size: 0.875rem;
-  border-color: #423b63;
-  background-color: #423b63;
+  border-color: #3c5ad0;
+  background-color: #3c5ad0;
   color: #ffffff;
   -webkit-transition: all 200ms ease 0s;
   transition: all 200ms ease 0s;
@@ -261,11 +261,11 @@ exports[`Popconfirm should render correctly 1`] = `
 
 .c9:hover {
   background-color: #ffffff;
-  color: #423b63;
+  color: #3c5ad0;
 }
 
 .c9:hover .c5 svg {
-  fill: #423b63;
+  fill: #3c5ad0;
 }
 
 .c4 {
@@ -293,7 +293,7 @@ exports[`Popconfirm should render correctly 1`] = `
   position: absolute;
   width: 0;
   height: 0;
-  border-top: 5px solid #191539;
+  border-top: 5px solid #184480;
   border-right: 5px solid transparent;
   border-left: 5px solid transparent;
   opacity: 0.8;
@@ -319,8 +319,8 @@ exports[`Popconfirm should render correctly 1`] = `
 
 .c2 {
   border: 1px solid;
-  border-color: #191539;
-  background-color: #191539;
+  border-color: #184480;
+  background-color: #184480;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   color: #ffffff;
   font-size: 0.875rem;

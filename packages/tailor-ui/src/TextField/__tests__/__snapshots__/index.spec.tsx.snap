@@ -33,7 +33,7 @@ exports[`TextField should render as textarea 1`] = `
 }
 
 .c3:focus {
-  border-color: #191539;
+  border-color: #184480;
 }
 
 .c3:disabled,
@@ -157,7 +157,7 @@ exports[`TextField should render correctly 1`] = `
 }
 
 .c3:focus {
-  border-color: #191539;
+  border-color: #184480;
 }
 
 .c3:disabled,
@@ -280,7 +280,7 @@ exports[`TextField should render correctly with defaultValue 1`] = `
 }
 
 .c3:focus {
-  border-color: #191539;
+  border-color: #184480;
 }
 
 .c3:disabled,
@@ -403,7 +403,7 @@ exports[`TextField should render with maxLength 1`] = `
 }
 
 .c3:focus {
-  border-color: #191539;
+  border-color: #184480;
 }
 
 .c3:disabled,
@@ -456,7 +456,7 @@ exports[`TextField should render with maxLength 1`] = `
   padding: 1px 5px;
   border: 1px solid;
   border-radius: 999px;
-  border-color: #423b63;
+  border-color: #3c5ad0;
   opacity: 0;
   background-color: #fff;
   font-size: 0.625rem;

@@ -57,8 +57,8 @@ exports[`Checkbox should render correctly 1`] = `
 }
 
 .c4:checked + .c5 {
-  border-color: #423b63;
-  background-color: #423b63;
+  border-color: #3c5ad0;
+  background-color: #3c5ad0;
 }
 
 .c4:checked + .c5::after {
@@ -86,7 +86,7 @@ exports[`Checkbox should render correctly 1`] = `
 }
 
 .c2:hover .c5 {
-  border-color: #423b63;
+  border-color: #3c5ad0;
 }
 
 .c2 + .c0 {
@@ -187,8 +187,8 @@ exports[`Checkbox.Group composition with Checkbox should render correctly 1`] = 
 }
 
 .c6:checked + .c7 {
-  border-color: #423b63;
-  background-color: #423b63;
+  border-color: #3c5ad0;
+  background-color: #3c5ad0;
 }
 
 .c6:checked + .c7::after {
@@ -216,7 +216,7 @@ exports[`Checkbox.Group composition with Checkbox should render correctly 1`] = 
 }
 
 .c4:hover .c7 {
-  border-color: #423b63;
+  border-color: #3c5ad0;
 }
 
 .c4 + .c2 {
@@ -244,7 +244,7 @@ exports[`Checkbox.Group composition with Checkbox should render correctly 1`] = 
 }
 
 .c12:hover .c7 {
-  border-color: #423b63;
+  border-color: #3c5ad0;
 }
 
 .c12 + .c2 {
@@ -400,8 +400,8 @@ exports[`Checkbox.Group should render vertical checkbox group 1`] = `
 }
 
 .c5:checked + .c6 {
-  border-color: #423b63;
-  background-color: #423b63;
+  border-color: #3c5ad0;
+  background-color: #3c5ad0;
 }
 
 .c5:checked + .c6::after {
@@ -416,7 +416,7 @@ exports[`Checkbox.Group should render vertical checkbox group 1`] = `
 }
 
 .c9:hover .c6 {
-  border-color: #423b63;
+  border-color: #3c5ad0;
 }
 
 .c9 + .c1 {
@@ -457,7 +457,7 @@ exports[`Checkbox.Group should render vertical checkbox group 1`] = `
 }
 
 .c3:hover .c6 {
-  border-color: #423b63;
+  border-color: #3c5ad0;
 }
 
 .c3 + .c1 {

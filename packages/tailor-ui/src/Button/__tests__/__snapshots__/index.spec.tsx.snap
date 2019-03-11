@@ -84,7 +84,7 @@ exports[`Button should render block button 1`] = `
 }
 
 .c0:hover {
-  border-color: #423b63;
+  border-color: #3c5ad0;
   background-color: #f6f6f6;
 }
 
@@ -111,7 +111,7 @@ exports[`Button should render button with specified icon 1`] = `
 }
 
 .c2 svg {
-  fill: #423b63;
+  fill: #3c5ad0;
   vertical-align: middle;
   -webkit-transition: all 200ms ease 0s;
   transition: all 200ms ease 0s;
@@ -214,8 +214,8 @@ exports[`Button should render button with specified icon 1`] = `
   height: 2rem;
   padding: 0 1rem;
   font-size: 1rem;
-  border-color: #e65541;
-  background-color: #e65541;
+  border-color: #fc5475;
+  background-color: #fc5475;
   color: #ffffff;
   -webkit-transition: all 200ms ease 0s;
   transition: all 200ms ease 0s;
@@ -257,11 +257,11 @@ exports[`Button should render button with specified icon 1`] = `
 
 .c0:hover {
   background-color: #ffffff;
-  color: #e65541;
+  color: #fc5475;
 }
 
 .c0:hover .c1 svg {
-  fill: #e65541;
+  fill: #fc5475;
 }
 
 <button
@@ -377,7 +377,7 @@ exports[`Button should render button with specified size 1`] = `
 }
 
 .c0:hover {
-  border-color: #423b63;
+  border-color: #3c5ad0;
   background-color: #f6f6f6;
 }
 
@@ -475,7 +475,7 @@ exports[`Button should render correctly 1`] = `
 }
 
 .c0:hover {
-  border-color: #423b63;
+  border-color: #3c5ad0;
   background-color: #f6f6f6;
 }
 
@@ -675,7 +675,7 @@ exports[`Button should render disabled button 1`] = `
 }
 
 .c0:hover {
-  border-color: #423b63;
+  border-color: #3c5ad0;
   background-color: #f6f6f6;
 }
 
@@ -777,7 +777,7 @@ exports[`Button should render loading button 1`] = `
 }
 
 .c0:hover {
-  border-color: #423b63;
+  border-color: #3c5ad0;
   background-color: #f6f6f6;
 }
 
@@ -887,7 +887,7 @@ exports[`Button should render outlined button 1`] = `
 }
 
 .c0:hover {
-  border-color: #423b63;
+  border-color: #3c5ad0;
   background-color: #f6f6f6;
 }
 
@@ -986,7 +986,7 @@ exports[`Button should render rounded button 1`] = `
 }
 
 .c0:hover {
-  border-color: #423b63;
+  border-color: #3c5ad0;
   background-color: #f6f6f6;
 }
 

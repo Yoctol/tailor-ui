@@ -30,7 +30,7 @@ exports[`Alert should render error alert correctly 1`] = `
 }
 
 .c2 svg {
-  fill: #423b63;
+  fill: #3c5ad0;
   vertical-align: middle;
   -webkit-transition: all 200ms ease 0s;
   transition: all 200ms ease 0s;
@@ -128,7 +128,7 @@ exports[`Alert should render info alert correctly 1`] = `
 }
 
 .c2 svg {
-  fill: #423b63;
+  fill: #3c5ad0;
   vertical-align: middle;
   -webkit-transition: all 200ms ease 0s;
   transition: all 200ms ease 0s;
@@ -226,14 +226,14 @@ exports[`Alert should render success alert correctly 1`] = `
 }
 
 .c2 svg {
-  fill: #423b63;
+  fill: #3c5ad0;
   vertical-align: middle;
   -webkit-transition: all 200ms ease 0s;
   transition: all 200ms ease 0s;
 }
 
 .c2.c2.c2 svg {
-  fill: #30be72;
+  fill: #40d064;
   width: 20px;
   height: 20px;
 }
@@ -251,8 +251,8 @@ exports[`Alert should render success alert correctly 1`] = `
   padding: 0.5rem 1rem;
   border: 1px solid;
   border-radius: 0.25rem;
-  border-color: #30be72;
-  background-color: rgba(48,190,114,0.1);
+  border-color: #40d064;
+  background-color: rgba(64,208,100,0.1);
   font-size: 0.875rem;
   -webkit-transform-origin: top;
   -ms-transform-origin: top;
@@ -324,14 +324,14 @@ exports[`Alert should render warning alert correctly 1`] = `
 }
 
 .c2 svg {
-  fill: #423b63;
+  fill: #3c5ad0;
   vertical-align: middle;
   -webkit-transition: all 200ms ease 0s;
   transition: all 200ms ease 0s;
 }
 
 .c2.c2.c2 svg {
-  fill: #de8a15;
+  fill: #f6a700;
   width: 20px;
   height: 20px;
 }
@@ -349,8 +349,8 @@ exports[`Alert should render warning alert correctly 1`] = `
   padding: 0.5rem 1rem;
   border: 1px solid;
   border-radius: 0.25rem;
-  border-color: #de8a15;
-  background-color: rgba(222,138,21,0.1);
+  border-color: #f6a700;
+  background-color: rgba(246,167,0,0.1);
   font-size: 0.875rem;
   -webkit-transform-origin: top;
   -ms-transform-origin: top;

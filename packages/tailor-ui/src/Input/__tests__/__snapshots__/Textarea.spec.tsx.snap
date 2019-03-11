@@ -33,7 +33,7 @@ exports[`Textarea should render correctly 1`] = `
 }
 
 .c0:focus {
-  border-color: #191539;
+  border-color: #184480;
 }
 
 .c0:disabled,
@@ -101,7 +101,7 @@ exports[`Textarea should render correctly with minRows & maxRows 1`] = `
 }
 
 .c0:focus {
-  border-color: #191539;
+  border-color: #184480;
 }
 
 .c0:disabled,

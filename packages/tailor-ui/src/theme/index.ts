@@ -1,13 +1,16 @@
 import { rem } from 'polished';
 
 const colors = {
-  primary: '#423b63',
-  primaryDark: '#191539',
-  primaryLight: '#6e6591',
+  primary: '#3c5ad0',
+  primaryDark: '#184480',
+  primaryDark2: '#001e40',
+  primaryLight: '#6B88c5',
+  primaryLight2: '#d5d8e8',
 
-  secondary: '#c0a382',
-  secondaryDark: '#8f7455',
-  secondaryLight: '#f3d4b2',
+  secondary: '#50d5ff',
+
+  surface: 'e8ecf5',
+  surface2: 'f8f8fc',
 
   dark: '#000000',
   light: '#ffffff',
@@ -20,14 +23,11 @@ const colors = {
   gray700: '#373737',
   gray800: '#1a1a1a',
 
-  success: '#30be72',
-  warning: '#de8a15',
-  error: '#e65541', // FIXME: remove this line later
-  danger: '#e65541',
+  success: '#40d064',
+  danger: '#fc5475',
+  warning: '#f6a700',
   info: '#4384f0',
-
-  code: '#e06870',
-  highlight: '#ffe9b3',
+  error: '#e65541', // FIXME: remove this line later
 
   // legacy gray
   gray: [

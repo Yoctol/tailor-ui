@@ -84,7 +84,7 @@ exports[`Card should render correctly with Button 1`] = `
 }
 
 .c3:hover {
-  border-color: #423b63;
+  border-color: #3c5ad0;
   background-color: #f6f6f6;
 }
 
