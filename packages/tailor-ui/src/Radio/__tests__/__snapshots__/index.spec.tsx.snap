@@ -37,7 +37,7 @@ exports[`Radio should render correctly 1`] = `
   height: 10px;
   border-radius: 50%;
   opacity: 0;
-  background-color: #423b63;
+  background-color: #3c5ad0;
   -webkit-transform: scale(0);
   -ms-transform: scale(0);
   transform: scale(0);
@@ -57,7 +57,7 @@ exports[`Radio should render correctly 1`] = `
 }
 
 .c3:checked + .c4 {
-  border-color: #423b63;
+  border-color: #3c5ad0;
 }
 
 .c3:checked + .c4::after {
@@ -81,7 +81,7 @@ exports[`Radio should render correctly 1`] = `
 }
 
 .c1:hover .c4 {
-  border-color: #423b63;
+  border-color: #3c5ad0;
 }
 
 .c1 + .c0 {
@@ -162,7 +162,7 @@ exports[`Radio.Group composition with Radio should render correctly 1`] = `
   height: 10px;
   border-radius: 50%;
   opacity: 0;
-  background-color: #423b63;
+  background-color: #3c5ad0;
   -webkit-transform: scale(0);
   -ms-transform: scale(0);
   transform: scale(0);
@@ -182,7 +182,7 @@ exports[`Radio.Group composition with Radio should render correctly 1`] = `
 }
 
 .c5:checked + .c6 {
-  border-color: #423b63;
+  border-color: #3c5ad0;
 }
 
 .c5:checked + .c6::after {
@@ -206,7 +206,7 @@ exports[`Radio.Group composition with Radio should render correctly 1`] = `
 }
 
 .c3:hover .c6 {
-  border-color: #423b63;
+  border-color: #3c5ad0;
 }
 
 .c3 + .c2 {
@@ -222,7 +222,7 @@ exports[`Radio.Group composition with Radio should render correctly 1`] = `
 }
 
 .c11:hover .c6 {
-  border-color: #423b63;
+  border-color: #3c5ad0;
 }
 
 .c11 + .c2 {
@@ -358,7 +358,7 @@ exports[`Radio.Group should render vertical radio group 1`] = `
   height: 10px;
   border-radius: 50%;
   opacity: 0;
-  background-color: #423b63;
+  background-color: #3c5ad0;
   -webkit-transform: scale(0);
   -ms-transform: scale(0);
   transform: scale(0);
@@ -378,7 +378,7 @@ exports[`Radio.Group should render vertical radio group 1`] = `
 }
 
 .c4:checked + .c5 {
-  border-color: #423b63;
+  border-color: #3c5ad0;
 }
 
 .c4:checked + .c5::after {
@@ -389,7 +389,7 @@ exports[`Radio.Group should render vertical radio group 1`] = `
 }
 
 .c8:hover .c5 {
-  border-color: #423b63;
+  border-color: #3c5ad0;
 }
 
 .c8 + .c1 {
@@ -418,7 +418,7 @@ exports[`Radio.Group should render vertical radio group 1`] = `
 }
 
 .c2:hover .c5 {
-  border-color: #423b63;
+  border-color: #3c5ad0;
 }
 
 .c2 + .c1 {

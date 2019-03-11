@@ -28,7 +28,7 @@ exports[`Input should render correctly 1`] = `
 }
 
 .c0:focus {
-  border-color: #191539;
+  border-color: #184480;
 }
 
 .c0:disabled,
@@ -102,8 +102,8 @@ exports[`Input should render correctly with Button suffix 1`] = `
   height: 2rem;
   padding: 0 1rem;
   font-size: 1rem;
-  border-color: #30be72;
-  background-color: #30be72;
+  border-color: #40d064;
+  background-color: #40d064;
   color: #ffffff;
   -webkit-transition: all 200ms ease 0s;
   transition: all 200ms ease 0s;
@@ -145,11 +145,11 @@ exports[`Input should render correctly with Button suffix 1`] = `
 
 .c4:hover {
   background-color: #ffffff;
-  color: #30be72;
+  color: #40d064;
 }
 
 .c4:hover .c7 svg {
-  fill: #30be72;
+  fill: #40d064;
 }
 
 .c2 {
@@ -179,7 +179,7 @@ exports[`Input should render correctly with Button suffix 1`] = `
 }
 
 .c2:focus {
-  border-color: #191539;
+  border-color: #184480;
 }
 
 .c2:disabled,
@@ -284,7 +284,7 @@ exports[`Input should render correctly with text prefix 1`] = `
 }
 
 .c4:focus {
-  border-color: #191539;
+  border-color: #184480;
 }
 
 .c4:disabled,
@@ -394,7 +394,7 @@ exports[`Input should render different input size 1`] = `
 }
 
 .c0:focus {
-  border-color: #191539;
+  border-color: #184480;
 }
 
 .c0:disabled,
@@ -455,7 +455,7 @@ exports[`Input should render disabled input 1`] = `
 }
 
 .c0:focus {
-  border-color: #191539;
+  border-color: #184480;
 }
 
 .c0:disabled,

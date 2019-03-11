@@ -12,7 +12,7 @@ exports[`Upload should render correctly 1`] = `
 }
 
 .c2 svg {
-  fill: #423b63;
+  fill: #3c5ad0;
   vertical-align: middle;
   -webkit-transition: all 200ms ease 0s;
   transition: all 200ms ease 0s;
@@ -105,7 +105,7 @@ exports[`Upload should render correctly 1`] = `
 }
 
 .c0:hover {
-  border-color: #423b63;
+  border-color: #3c5ad0;
   background-color: #f6f6f6;
 }
 

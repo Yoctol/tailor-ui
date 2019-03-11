@@ -20,7 +20,7 @@ exports[`Tabs should render correctly 1`] = `
   padding: 0 1rem;
   font-size: 1rem;
   border-bottom: 3px solid transparent;
-  border-bottom-color: #c0a382;
+  border-bottom-color: #3c5ad0;
   -webkit-transition: all 200ms ease 0s;
   transition: all 200ms ease 0s;
 }
@@ -128,7 +128,7 @@ exports[`Tabs should render with props absolute 1`] = `
   padding: 0 1rem;
   font-size: 1rem;
   border-bottom: 3px solid transparent;
-  border-bottom-color: #c0a382;
+  border-bottom-color: #3c5ad0;
   -webkit-transition: all 200ms ease 0s;
   transition: all 200ms ease 0s;
 }
@@ -239,7 +239,7 @@ exports[`Tabs should render with props pills 1`] = `
   font-size: 1rem;
   border-radius: 0.5rem;
   color: #5e5e5e;
-  background-color: #423b63;
+  background-color: #3c5ad0;
   color: #ffffff;
   -webkit-transition: all 200ms ease 0s;
   transition: all 200ms ease 0s;
@@ -354,7 +354,7 @@ exports[`Tabs should render with sizes 1`] = `
   padding: 0 1rem;
   font-size: 1rem;
   border-bottom: 3px solid transparent;
-  border-bottom-color: #c0a382;
+  border-bottom-color: #3c5ad0;
   -webkit-transition: all 200ms ease 0s;
   transition: all 200ms ease 0s;
 }
@@ -433,7 +433,7 @@ exports[`Tabs should render with sizes 1`] = `
   padding: 0 0.75rem;
   font-size: 0.875rem;
   border-bottom: 3px solid transparent;
-  border-bottom-color: #c0a382;
+  border-bottom-color: #3c5ad0;
   -webkit-transition: all 200ms ease 0s;
   transition: all 200ms ease 0s;
 }
@@ -512,7 +512,7 @@ exports[`Tabs should render with sizes 1`] = `
   padding: 0 1.5rem;
   font-size: 1.125rem;
   border-bottom: 3px solid transparent;
-  border-bottom-color: #c0a382;
+  border-bottom-color: #3c5ad0;
   -webkit-transition: all 200ms ease 0s;
   transition: all 200ms ease 0s;
 }
