@@ -8,6 +8,7 @@ export const Textarea = styled(BaseTextarea)`
   position: absolute;
   top: 0;
   background-color: transparent;
+  word-break: break-all;
 `;
 
 export const MentionWrapper = styled.div<{ disabled?: boolean }>`
