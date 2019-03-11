@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0](https://github.com/yoctol/tailor-ui/compare/tailor-ui@0.3.1...tailor-ui@0.4.0) (2019-03-11)
+
+### Bug Fixes
+
+- **upload:** usage logic ([3bd1f44](https://github.com/yoctol/tailor-ui/commit/3bd1f44))
+
+### Features
+
+- **icon:** update built-in icons ([8fd8b7e](https://github.com/yoctol/tailor-ui/commit/8fd8b7e))
+
 ## [0.3.1](https://github.com/yoctol/tailor-ui/compare/tailor-ui@0.3.0...tailor-ui@0.3.1) (2019-03-08)
 
 ### Bug Fixes
