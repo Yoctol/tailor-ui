@@ -1,7 +1,8 @@
 import styled, { css } from 'styled-components';
-import { Textarea as BaseTextarea, inputStyles } from 'tailor-ui';
 import { animated } from 'react-spring';
 import { rgba } from 'polished';
+
+import { Textarea as BaseTextarea, inputStyles } from 'tailor-ui';
 
 export const Textarea = styled(BaseTextarea)`
   position: absolute;

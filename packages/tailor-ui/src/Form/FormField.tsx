@@ -21,12 +21,12 @@ const StyledFormField = styled(tag.div)<FormFieldProps>`
     success &&
     css`
       & ${StyledInput /* sc-selector */} {
-        border-color: ${p => p.theme.colors.success};
+        border-color: ${p => p.theme.colors.success} !important;
       }
 
       /* stylelint-disable-next-line */
       & ${StyledTextarea /* sc-selector */} {
-        border-color: ${p => p.theme.colors.success};
+        border-color: ${p => p.theme.colors.success} !important;
       }
 
       /* stylelint-disable-next-line */
@@ -39,12 +39,12 @@ const StyledFormField = styled(tag.div)<FormFieldProps>`
     warning &&
     css`
       & ${StyledInput /* sc-selector */} {
-        border-color: ${p => p.theme.colors.warning};
+        border-color: ${p => p.theme.colors.warning} !important;
       }
 
       /* stylelint-disable-next-line */
       & ${StyledTextarea /* sc-selector */} {
-        border-color: ${p => p.theme.colors.warning};
+        border-color: ${p => p.theme.colors.warning} !important;
       }
 
       /* stylelint-disable-next-line */
@@ -57,12 +57,12 @@ const StyledFormField = styled(tag.div)<FormFieldProps>`
     error &&
     css`
       & ${StyledInput /* sc-selector */} {
-        border-color: ${p => p.theme.colors.danger};
+        border-color: ${p => p.theme.colors.danger} !important;
       }
 
       /* stylelint-disable-next-line */
       & ${StyledTextarea /* sc-selector */} {
-        border-color: ${p => p.theme.colors.danger};
+        border-color: ${p => p.theme.colors.danger} !important;
       }
 
       /* stylelint-disable-next-line */
