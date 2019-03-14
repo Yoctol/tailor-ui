@@ -34,7 +34,7 @@
     "react-dom": ">=16.8.0",
     "react-spring": ">=8.0.0",
     "styled-components": ">=4.1.0",
-    "tailor-ui": "^0.2.11"
+    "tailor-ui": ">=0.4.0"
   },
   "devDependencies": {
     "rollup-plugin-commonjs": "^9.2.1"
