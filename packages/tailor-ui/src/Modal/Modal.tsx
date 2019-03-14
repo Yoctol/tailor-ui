@@ -8,7 +8,7 @@ import React, {
 import Box from '../Grid/Box';
 import Flex from '../Grid/Flex';
 import Heading from '../Heading';
-import Portal from '../utils/Portal';
+import Portal from '../Portal';
 import { LocaleContext } from '../UIProvider';
 
 import BaseModal, { BaseModalProps } from './BaseModal';

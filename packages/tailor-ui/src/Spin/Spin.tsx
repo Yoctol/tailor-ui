@@ -3,7 +3,7 @@ import styled, { css, keyframes } from 'styled-components';
 import { ColorProps, color } from 'styled-system';
 import { animated, useTransition } from 'react-spring';
 
-import Portal from '../utils/Portal';
+import Portal from '../Portal';
 import tag from '../utils/CleanTag';
 
 const spinAnimation = keyframes`
