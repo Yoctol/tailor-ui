@@ -1,8 +1,7 @@
 import styled, { css } from 'styled-components';
+import { Textarea as BaseTextarea, inputStyles } from 'tailor-ui';
 import { animated } from 'react-spring';
 import { rgba } from 'polished';
-
-import { Textarea as BaseTextarea, inputStyles } from 'tailor-ui';
 
 export const Textarea = styled(BaseTextarea)`
   position: absolute;
@@ -46,6 +45,7 @@ export const Highlights = styled.div`
   color: transparent;
   word-break: break-word;
   white-space: pre-wrap;
+  transition: none;
 `;
 
 export const SuggestionList = styled(animated.div)`
