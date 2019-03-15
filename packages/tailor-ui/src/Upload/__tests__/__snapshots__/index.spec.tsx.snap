@@ -110,16 +110,18 @@ exports[`Upload should render correctly 1`] = `
 }
 
 <div>
-  <input
-    autocomplete="off"
-    multiple=""
-    style="display: none;"
-    tabindex="-1"
-    type="file"
-  />
   <div
+    role="button"
+    style="display: inline-flex;"
     tabindex="0"
   >
+    <input
+      autocomplete="off"
+      multiple=""
+      style="display: none;"
+      tabindex="-1"
+      type="file"
+    />
     <button
       class="c0"
       type="default"

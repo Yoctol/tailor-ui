@@ -62,9 +62,9 @@ describe('Upload', () => {
     setup({ handleSelect, expectFinalStateText });
   });
 
-  it('should show correctly text when uploaded failure', async () => {
+  it('should show correctly text when uploaded failed', async () => {
     const handleSelect = jest.fn().mockRejectedValue(true);
-    const expectFinalStateText = 'Upload Failure!';
+    const expectFinalStateText = 'Upload Failed!';
 
     setup({ handleSelect, expectFinalStateText });
   });

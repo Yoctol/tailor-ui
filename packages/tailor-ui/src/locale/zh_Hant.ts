@@ -17,6 +17,6 @@ export default {
     uploadText: '點擊上傳',
     uploadingText: '上傳中...',
     uploadedText: '上傳成功！',
-    failureText: '上傳失敗！',
+    failedText: '上傳失敗！',
   },
 };
