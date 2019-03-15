@@ -11,7 +11,7 @@ exports[`Icon should render correctly 1`] = `
 }
 
 .c0 svg {
-  fill: #3c5ad0;
+  fill: #8b8b8b;
   vertical-align: middle;
   -webkit-transition: all 200ms ease 0s;
   transition: all 200ms ease 0s;

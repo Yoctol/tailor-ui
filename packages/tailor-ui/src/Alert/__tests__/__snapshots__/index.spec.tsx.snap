@@ -30,7 +30,7 @@ exports[`Alert should render error alert correctly 1`] = `
 }
 
 .c2 svg {
-  fill: #3c5ad0;
+  fill: #8b8b8b;
   vertical-align: middle;
   -webkit-transition: all 200ms ease 0s;
   transition: all 200ms ease 0s;
@@ -128,7 +128,7 @@ exports[`Alert should render info alert correctly 1`] = `
 }
 
 .c2 svg {
-  fill: #3c5ad0;
+  fill: #8b8b8b;
   vertical-align: middle;
   -webkit-transition: all 200ms ease 0s;
   transition: all 200ms ease 0s;
@@ -226,7 +226,7 @@ exports[`Alert should render success alert correctly 1`] = `
 }
 
 .c2 svg {
-  fill: #3c5ad0;
+  fill: #8b8b8b;
   vertical-align: middle;
   -webkit-transition: all 200ms ease 0s;
   transition: all 200ms ease 0s;
@@ -324,7 +324,7 @@ exports[`Alert should render warning alert correctly 1`] = `
 }
 
 .c2 svg {
-  fill: #3c5ad0;
+  fill: #8b8b8b;
   vertical-align: middle;
   -webkit-transition: all 200ms ease 0s;
   transition: all 200ms ease 0s;

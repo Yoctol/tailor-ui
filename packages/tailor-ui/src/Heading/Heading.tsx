@@ -7,7 +7,6 @@ import tag from '../utils/CleanTag';
 
 export type HeadingBaseProps = SpaceProps &
   ColorProps & {
-    gray?: boolean;
     grayHint?: boolean;
     grayLight?: boolean;
     white?: boolean;
@@ -15,15 +14,9 @@ export type HeadingBaseProps = SpaceProps &
 
 const HeadingBase = styled(tag.p)<HeadingBaseProps>`
   margin: 0;
-  color: ${p => p.theme.colors.primaryDark};
+  color: ${p => p.theme.colors.gray700};
   font-weight: 500;
   line-height: 1.5;
-
-  ${({ gray }) =>
-    gray &&
-    css`
-      color: ${p => p.theme.colors.gray700};
-    `}
 
   ${({ grayLight }) =>
     grayLight &&
