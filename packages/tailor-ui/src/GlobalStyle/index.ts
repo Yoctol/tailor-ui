@@ -29,7 +29,7 @@ const GlobalStyle = createGlobalStyle`
     color: ${(p: any) => p.theme.colors.gray700};
     font-family: Roboto, 'PingFang TC', 'Microsoft JhengHei', 'Helvetica Neue',
       sans-serif;
-    font-size: ${rem('14px')};
+    font-size: ${rem('16px')};
     text-rendering: optimizeLegibility;
   }
 
