@@ -17,25 +17,25 @@ const FileList = styled.div`
 const getUploadText = ({
   uploading,
   uploaded,
-  failure,
+  failed,
   texts,
 }: {
   uploading: boolean;
   uploaded: boolean;
-  failure: boolean;
+  failed: boolean;
   texts: {
     uploadText: string;
     uploadingText: string;
     uploadedText: string;
-    failureText: string;
+    failedText: string;
   };
 }) => {
   if (uploading) {
     return texts.uploadingText;
   }
 
-  if (failure) {
-    return texts.failureText;
+  if (failed) {
+    return texts.failedText;
   }
 
   if (uploaded) {
@@ -47,16 +47,16 @@ const getUploadText = ({
 
 const getUploadIcon = ({
   uploaded,
-  failure,
+  failed,
 }: {
   uploaded: boolean;
-  failure: boolean;
+  failed: boolean;
 }) => {
   if (uploaded) {
     return MdCheck;
   }
 
-  if (failure) {
+  if (failed) {
     return MdClose;
   }
 
@@ -108,7 +108,7 @@ interface UploadProps extends DropzoneProps {
     uploadText?: string;
     uploadingText?: string;
     uploadedText?: string;
-    failureText?: string;
+    failedText?: string;
   };
 }
 
@@ -123,19 +123,19 @@ const Upload: FunctionComponent<UploadProps> = ({
   const { locale } = useContext(LocaleContext);
   const [uploading, setUploading] = useState(false);
   const [uploaded, setUploaded] = useState(false);
-  const [failure, setFailure] = useState(false);
+  const [failed, setFailed] = useState(false);
   const [files, setFiles] = useState<File[]>([]);
 
   const handleSelect = async (selectedFiles: File[]) => {
     setFiles(selectedFiles);
     setUploading(true);
-    setFailure(false);
+    setFailed(false);
 
     try {
       await onSelect(selectedFiles);
       setUploaded(true);
     } catch {
-      setFailure(true);
+      setFailed(true);
     }
 
     setUploading(false);
@@ -152,11 +152,11 @@ const Upload: FunctionComponent<UploadProps> = ({
     }
   };
 
-  const icon = getUploadIcon({ uploaded, failure });
+  const icon = getUploadIcon({ uploaded, failed });
   const text = getUploadText({
     uploading,
     uploaded,
-    failure,
+    failed,
     texts: {
       ...locale.Upload,
       ...texts,
@@ -168,13 +168,21 @@ const Upload: FunctionComponent<UploadProps> = ({
 
   return (
     <div>
-      <input {...getInputProps()} />
-      <div {...getRootProps()}>
+      <div
+        tabIndex={-1}
+        onKeyPress={() => {}}
+        role="button"
+        {...getRootProps()}
+        onClick={event => event.preventDefault()}
+      >
+        <input {...getInputProps()} />
         <Button
           icon={icon}
           loading={uploading}
           disabled={disabled}
-          onClick={async () => {
+          onClick={async event => {
+            event.preventDefault();
+
             if (onBeforeSelect) {
               try {
                 const success = await onBeforeSelect();

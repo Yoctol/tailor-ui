@@ -52,6 +52,30 @@ import { Upload } from 'tailor-ui';
   />
 </Playground>
 
+### failed and success
+
+<Playground>
+  {() => {
+    const [uploadFirstTime, setUploadFirstTime] = React.useState(true);
+
+    return (
+      <Upload
+        multiple
+        onSelect={() => new Promise((resolve, reject) => {
+          if (uploadFirstTime) {
+            setTimeout(reject, 1000);
+            setUploadFirstTime(false);
+          } else {
+            setTimeout(resolve, 1000);
+          }
+        })}
+      />
+    );
+
+}}
+
+</Playground>
+
 ## API
 
 This component is based on [react-dropzone](https://github.com/react-dropzone/react-dropzone), please check [it's documentation](https://react-dropzone.js.org/#proptypes) for more usage.

@@ -16,6 +16,6 @@ export default {
     uploadText: 'Click to Upload',
     uploadingText: 'Uploading...',
     uploadedText: 'Upload Completed!',
-    failureText: 'Upload Failed!',
+    failedText: 'Upload Failed!',
   },
 };
