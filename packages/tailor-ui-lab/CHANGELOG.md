@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.2](https://github.com/Yoctol/tailor-ui/compare/@tailor-ui/lab@0.1.1...@tailor-ui/lab@0.1.2) (2019-03-15)
+
+### Bug Fixes
+
+- **mention:** fix FormField not working on hover ([600f8f9](https://github.com/Yoctol/tailor-ui/commit/600f8f9))
+- **mention:** remove animation from highlight box ([05c3276](https://github.com/Yoctol/tailor-ui/commit/05c3276))
+
 ## [0.1.1](https://github.com/Yoctol/tailor-ui/compare/@tailor-ui/lab@0.1.0...@tailor-ui/lab@0.1.1) (2019-03-11)
 
 **Note:** Version bump only for package @tailor-ui/lab

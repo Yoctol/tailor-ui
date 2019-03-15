@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.1](https://github.com/yoctol/tailor-ui/compare/tailor-ui@0.4.0...tailor-ui@0.4.1) (2019-03-15)
+
+### Bug Fixes
+
+- **mention:** fix FormField not working on hover ([600f8f9](https://github.com/yoctol/tailor-ui/commit/600f8f9))
+
 # [0.4.0](https://github.com/yoctol/tailor-ui/compare/tailor-ui@0.3.1...tailor-ui@0.4.0) (2019-03-11)
 
 ### Bug Fixes
