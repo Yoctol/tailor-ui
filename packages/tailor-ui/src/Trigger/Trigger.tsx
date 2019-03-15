@@ -8,7 +8,7 @@ import { Transition, config } from 'react-spring/renderprops.cjs';
 import { findDOMNode } from 'react-dom';
 
 import ClickOutside from '../utils/ClickOutside';
-import Portal from '../utils/Portal';
+import Portal from '../Portal';
 import { createRectObserver } from '../utils/rect-observer';
 
 import getPosition from './getPosition';

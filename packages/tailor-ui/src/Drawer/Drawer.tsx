@@ -8,7 +8,7 @@ import styled, { css } from 'styled-components';
 import { animated, config, useTransition } from 'react-spring';
 
 import Backdrop from '../Backdrop';
-import Portal from '../utils/Portal';
+import Portal from '../Portal';
 import tag from '../utils/CleanTag';
 import useKeydown, { ESC_KEY_CODE } from '../utils/useKeydown';
 import { FooterWrapper, ModalContent, ModalHeader } from '../Modal';
