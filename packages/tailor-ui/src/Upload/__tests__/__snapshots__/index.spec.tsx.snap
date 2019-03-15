@@ -112,6 +112,7 @@ exports[`Upload should render correctly 1`] = `
 <div>
   <div
     role="button"
+    style="display: inline-flex;"
     tabindex="0"
   >
     <input

@@ -1,4 +1,9 @@
-import React, { FunctionComponent, useContext, useState } from 'react';
+import React, {
+  FunctionComponent,
+  Reducer,
+  useContext,
+  useReducer,
+} from 'react';
 import styled, { css } from 'styled-components';
 import { DropzoneProps, useDropzone } from 'react-dropzone';
 import { MdCheck, MdClose, MdFileUpload } from 'react-icons/md';
@@ -112,6 +117,58 @@ interface UploadProps extends DropzoneProps {
   };
 }
 
+const START_UPLOADING = 'START_UPLOADING';
+const UPLOAD_SUCCESS = 'UPLOAD_SUCCESS';
+const UPLOAD_FAILED = 'UPLOAD_FAILED';
+const CLEAR_FILES = 'CLEAR_FILES';
+
+interface ReducerAction {
+  type: 'START_UPLOADING' | 'UPLOAD_SUCCESS' | 'UPLOAD_FAILED' | 'CLEAR_FILES';
+  payload?: any;
+}
+
+interface ReducerState {
+  uploading: boolean;
+  uploaded: boolean;
+  failed: boolean;
+  files: File[];
+}
+
+const uploadReducer: Reducer<ReducerState, ReducerAction> = (state, action) => {
+  switch (action.type) {
+    case START_UPLOADING:
+      return {
+        ...state,
+        uploading: true,
+        uploaded: false,
+        failed: false,
+        files: action.payload,
+      };
+    case UPLOAD_SUCCESS:
+      return {
+        ...state,
+        uploading: false,
+        uploaded: true,
+        failed: false,
+      };
+    case UPLOAD_FAILED:
+      return {
+        ...state,
+        uploading: false,
+        uploaded: false,
+        failed: true,
+      };
+    case CLEAR_FILES:
+      return {
+        ...state,
+        uploaded: false,
+        files: state.files.filter(file => file.name !== action.payload),
+      };
+    default:
+      throw new Error();
+  }
+};
+
 const Upload: FunctionComponent<UploadProps> = ({
   onBeforeSelect,
   onSelect,
@@ -121,42 +178,38 @@ const Upload: FunctionComponent<UploadProps> = ({
   ...props
 }) => {
   const { locale } = useContext(LocaleContext);
-  const [uploading, setUploading] = useState(false);
-  const [uploaded, setUploaded] = useState(false);
-  const [failed, setFailed] = useState(false);
-  const [files, setFiles] = useState<File[]>([]);
+  const [state, dispatch] = useReducer(uploadReducer, {
+    uploading: false,
+    uploaded: false,
+    failed: false,
+    files: [],
+  });
 
   const handleSelect = async (selectedFiles: File[]) => {
-    setFiles(selectedFiles);
-    setUploading(true);
-    setFailed(false);
+    dispatch({
+      type: 'START_UPLOADING',
+      payload: selectedFiles,
+    });
 
     try {
       await onSelect(selectedFiles);
-      setUploaded(true);
+      dispatch({ type: 'UPLOAD_SUCCESS' });
     } catch {
-      setFailed(true);
+      dispatch({ type: 'UPLOAD_FAILED' });
     }
-
-    setUploading(false);
   };
 
   const handleClear = (clearFile: File) => {
-    setUploaded(false);
-    setFiles(prevFiles =>
-      prevFiles.filter(file => file.name !== clearFile.name)
-    );
+    dispatch({ type: 'CLEAR_FILES', payload: clearFile.name });
 
     if (onClear) {
       onClear(clearFile);
     }
   };
 
-  const icon = getUploadIcon({ uploaded, failed });
+  const icon = getUploadIcon(state);
   const text = getUploadText({
-    uploading,
-    uploaded,
-    failed,
+    ...state,
     texts: {
       ...locale.Upload,
       ...texts,
@@ -173,12 +226,13 @@ const Upload: FunctionComponent<UploadProps> = ({
         onKeyPress={() => {}}
         role="button"
         {...getRootProps()}
+        style={{ display: 'inline-flex' }}
         onClick={event => event.preventDefault()}
       >
         <input {...getInputProps()} />
         <Button
           icon={icon}
-          loading={uploading}
+          loading={state.uploading}
           disabled={disabled}
           onClick={async event => {
             event.preventDefault();
@@ -196,10 +250,6 @@ const Upload: FunctionComponent<UploadProps> = ({
               }
             }
 
-            if (uploaded) {
-              setUploaded(false);
-            }
-
             open();
           }}
           {...props}
@@ -207,13 +257,13 @@ const Upload: FunctionComponent<UploadProps> = ({
           {text}
         </Button>
       </div>
-      {files.length > 0 && (
+      {state.files.length > 0 && (
         <FileList>
-          {files.map(file => (
+          {state.files.map(file => (
             <FileItem
               key={file.name}
               file={file}
-              uploaded={uploaded}
+              uploaded={state.uploaded}
               onClear={handleClear}
             />
           ))}
