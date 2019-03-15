@@ -29,12 +29,6 @@ describe('Heading', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  it('should render gray heading', () => {
-    const { container } = render(<Heading.h1 gray>H1 Heading 28px</Heading.h1>);
-
-    expect(container.firstChild).toMatchSnapshot();
-  });
-
   it('should render grayLight heading', () => {
     const { container } = render(
       <Heading.h1 grayLight>H1 Heading 28px</Heading.h1>

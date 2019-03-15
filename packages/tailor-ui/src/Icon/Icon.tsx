@@ -32,7 +32,7 @@ export const IconWrapper = styled(tag.i)<IconWrapperProps>`
   cursor: ${p => p.cursor};
 
   svg {
-    fill: ${p => p.theme.colors.primary};
+    fill: ${p => p.theme.colors.gray500};
     vertical-align: middle;
     ${p => p.theme.transition /* sc-declaration */};
   }

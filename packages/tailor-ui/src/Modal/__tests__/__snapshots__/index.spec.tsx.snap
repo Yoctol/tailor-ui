@@ -82,7 +82,7 @@ exports[`Modal should render correctly 1`] = `
 
 .c5 {
   margin: 0;
-  color: #184480;
+  color: #373737;
   font-weight: 500;
   line-height: 1.5;
 }
@@ -439,7 +439,7 @@ exports[`Modal should render with props closable 1`] = `
 
 .c5 {
   margin: 0;
-  color: #184480;
+  color: #373737;
   font-weight: 500;
   line-height: 1.5;
 }
@@ -491,7 +491,7 @@ exports[`Modal should render with props closable 1`] = `
 }
 
 .c9 svg {
-  fill: #3c5ad0;
+  fill: #8b8b8b;
   vertical-align: middle;
   -webkit-transition: all 200ms ease 0s;
   transition: all 200ms ease 0s;
