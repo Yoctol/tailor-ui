@@ -293,7 +293,7 @@ exports[`Popconfirm should render correctly 1`] = `
   position: absolute;
   width: 0;
   height: 0;
-  border-top: 5px solid #184480;
+  border-top: 5px solid #001e40;
   border-right: 5px solid transparent;
   border-left: 5px solid transparent;
   opacity: 0.8;
@@ -319,8 +319,8 @@ exports[`Popconfirm should render correctly 1`] = `
 
 .c2 {
   border: 1px solid;
-  border-color: #184480;
-  background-color: #184480;
+  border-color: #001e40;
+  background-color: #001e40;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   color: #ffffff;
   font-size: 0.875rem;
