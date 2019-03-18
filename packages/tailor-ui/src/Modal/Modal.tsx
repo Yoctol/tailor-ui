@@ -36,7 +36,7 @@ export const ModalHeader: FunctionComponent<ModalHeaderProps> = ({
     borderColor="gray300"
   >
     <Box flex="auto">
-      <Heading.h3>{title}</Heading.h3>
+      <Heading.h4>{title}</Heading.h4>
     </Box>
     {closable && <CloseButton onCancel={onCancel} />}
   </Flex>

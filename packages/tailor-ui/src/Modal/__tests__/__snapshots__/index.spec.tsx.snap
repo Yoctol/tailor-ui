@@ -88,7 +88,7 @@ exports[`Modal should render correctly 1`] = `
 }
 
 .c4 {
-  font-size: 1.25rem;
+  font-size: 1.125rem;
 }
 
 .c0 {
@@ -309,7 +309,7 @@ exports[`Modal should render correctly 1`] = `
         <div
           class="c3"
         >
-          <h3
+          <h4
             class="c4 c5"
           />
         </div>
@@ -445,7 +445,7 @@ exports[`Modal should render with props closable 1`] = `
 }
 
 .c4 {
-  font-size: 1.25rem;
+  font-size: 1.125rem;
 }
 
 .c0 {
@@ -777,7 +777,7 @@ exports[`Modal should render with props closable 1`] = `
         <div
           class="c3"
         >
-          <h3
+          <h4
             class="c4 c5"
           />
         </div>
