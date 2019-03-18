@@ -21,39 +21,9 @@ module.exports = {
 
     return babelrc;
   },
-  htmlContext: {
-    head: {
-      raw: `
-        <style>
-          * {
-            box-sizing: border-box;
-          }
-          #root > div > div:first-of-type {
-            width: 350px;
-            min-width: 350px;
-          }
-          #root > div > div:first-of-type > div:first-of-type {
-            padding: 30px;
-            width: 350px;
-            min-width: 350px;
-          }
-          #root > div > div:first-of-type > div:first-of-type > div:last-of-type {
-            display: none;
-          }
-          #root > div > div:first-of-type > div:first-of-type > div:nth-child(2):before {
-            background: transparent;
-          }
-          #root > div > div:first-of-type > div:first-of-type > div:nth-child(2) h1 {
-            font-size: 2.5em;
-            font-weight: 100;
-          }
-        </style>
-      `,
-    },
-  },
   themeConfig: {
     colors: {
-      primary: '#423b63',
+      primary: '#3c5ad0',
       sidebarBg: '#fff',
     },
     styles: {

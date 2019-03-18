@@ -17,6 +17,7 @@ import {
   DatePicker,
   Upload,
   locale,
+  useModal,
 } from 'tailor-ui';
 
 ## Usage
@@ -40,6 +41,7 @@ const { zh_Hant } = locale;
   {() => {
     const [value, setValue] = React.useState('en_US');
     const [visible, setVisible] = React.useState(false);
+    const modal = useModal();
 
     return (
       <>
@@ -66,7 +68,7 @@ const { zh_Hant } = locale;
                 <Button
                   ml="2"
                   onClick={() => {
-                    Modal.confirm({
+                    modal.confirm({
                       title: 'Do you Want to delete these items?',
                       content: 'Some descriptions',
                       onConfirm: () => console.log('confirmed!'),
