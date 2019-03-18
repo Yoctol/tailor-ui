@@ -16,6 +16,7 @@ import { LocaleContext } from '../UIProvider';
 
 const FileList = styled.div`
   display: inline-flex;
+  flex: none;
   flex-direction: column;
 `;
 
@@ -226,7 +227,7 @@ const Upload: FunctionComponent<UploadProps> = ({
         onKeyPress={() => {}}
         role="button"
         {...getRootProps()}
-        style={{ display: 'inline-flex' }}
+        style={{ display: 'inline-flex', flex: 'none' }}
         onClick={event => event.preventDefault()}
       >
         <input {...getInputProps()} />
@@ -257,6 +258,7 @@ const Upload: FunctionComponent<UploadProps> = ({
           {text}
         </Button>
       </div>
+      <br />
       {state.files.length > 0 && (
         <FileList>
           {state.files.map(file => (

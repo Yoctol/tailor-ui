@@ -151,5 +151,6 @@ exports[`Upload should render correctly 1`] = `
       />
     </button>
   </div>
+  <br />
 </div>
 `;
