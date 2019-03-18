@@ -82,7 +82,7 @@ class Tooltip extends PureComponent<ITooltipProps> {
     } = this.props;
 
     return (
-      <animated.div style={styles} ref={handlePopupRef}>
+      <animated.div style={styles} ref={handlePopupRef as any}>
         <ContentComponent
           onMouseEnter={() => {
             if (trigger === 'hover') {

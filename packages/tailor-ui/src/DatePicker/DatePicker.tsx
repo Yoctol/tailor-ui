@@ -2,6 +2,7 @@ import RcCalendar from 'rc-calendar';
 import RcDatePicker from 'rc-calendar/lib/Picker';
 import React, { FunctionComponent, useContext } from 'react';
 import TimePickerPanel from 'rc-time-picker/lib/Panel';
+import { Moment } from 'moment';
 
 import Input from '../Input';
 import { LocaleContext } from '../UIProvider';
@@ -10,7 +11,7 @@ export interface DatePickerProps {
   /**
    * a callback function, can be executed when the selected time is changing
    */
-  onChange: (date: any, dateString: string) => void;
+  onChange: (date: Moment | null, dateString: string) => void;
   /**
    * to provide an additional time selection
    */
@@ -30,11 +31,11 @@ export interface DatePickerProps {
   /**
    * specify the date that cannot be selected
    */
-  disabledDate?: (current?: any) => boolean;
+  disabledDate?: (current?: Moment) => boolean;
   /**
    * to specify the time that cannot be selected
    */
-  disabledTime?: (current?: any, type?: 'start' | 'end') => boolean;
+  disabledTime?: (current?: Moment, type?: 'start' | 'end') => boolean;
   /**
    * placeholder of date input
    */
@@ -64,7 +65,7 @@ const DatePicker: FunctionComponent<DatePickerProps> = ({
   return (
     <RcDatePicker
       animation="slide-up"
-      onChange={(value: any) => {
+      onChange={(value: Moment) => {
         if (!value) {
           return onChange(null, '');
         }
@@ -92,7 +93,7 @@ const DatePicker: FunctionComponent<DatePickerProps> = ({
         />
       }
     >
-      {({ value }: { value: any }) => (
+      {({ value }: { value: Moment }) => (
         <Input
           readOnly
           width="253px"

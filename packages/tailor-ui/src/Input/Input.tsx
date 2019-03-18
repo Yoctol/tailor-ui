@@ -1,5 +1,6 @@
 import React, {
   FunctionComponent,
+  InputHTMLAttributes,
   KeyboardEvent,
   KeyboardEventHandler,
   ReactNode,
@@ -18,7 +19,9 @@ import {
 } from 'styled-system';
 
 import tag from '../utils/CleanTag';
+import { Omit } from '../utils/type';
 import { StyledButton } from '../Button';
+import { ThemeType } from '../theme';
 
 export type Size = 'sm' | 'md' | 'lg';
 
@@ -65,7 +68,7 @@ export const inputStyles = css<StyledInputProps>`
   ${({
     size = 'md',
     theme: { paddings, heights, fontSizes },
-  }: StyledInputProps & { theme: any }) => {
+  }: StyledInputProps & { theme: ThemeType }) => {
     const inputSizeStyles = {
       sm: css`
         height: ${heights.sm};
@@ -112,8 +115,8 @@ const InputLabel = styled.span`
 `;
 
 interface InputLabel {
-  prefix?: any;
-  suffix?: any;
+  prefix?: ReactNode;
+  suffix?: ReactNode;
 }
 
 const InputWrapper = styled(tag.div)<InputLabel>`
@@ -159,7 +162,8 @@ const InputWrapper = styled(tag.div)<InputLabel>`
   ${width};
 `;
 
-export interface InputProps {
+export interface InputProps
+  extends Omit<InputHTMLAttributes<HTMLInputElement>, 'size' | 'prefix'> {
   /**
    * Auto select value of the input if true
    */
@@ -181,8 +185,6 @@ export interface InputProps {
    */
   suffix?: ReactNode;
   onKeyPress?: KeyboardEventHandler<HTMLInputElement>;
-  required?: boolean;
-  [key: string]: any;
 }
 
 const Input: FunctionComponent<InputProps> = forwardRef<

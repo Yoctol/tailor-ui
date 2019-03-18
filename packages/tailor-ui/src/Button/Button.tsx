@@ -9,6 +9,7 @@ import { SpaceProps, space as styledSpace } from 'styled-system';
 
 import Icon, { IconType, IconWrapper } from '../Icon';
 import tag from '../utils/CleanTag';
+import { ThemeType } from '../theme';
 
 import Ripple from './Ripple';
 
@@ -94,7 +95,7 @@ const getLoading = ({
   loading,
   ...props
 }: GetLoadingInterface & {
-  theme: any;
+  theme: ThemeType;
 }) =>
   loading &&
   css`
@@ -126,7 +127,7 @@ const getSize = css`
     hasIcon,
     size,
     theme: { paddings, heights, fontSizes },
-  }: GetSizeInterface & { theme: any }) => {
+  }: GetSizeInterface & { theme: ThemeType }) => {
     if (hasIcon) {
       return {
         sm: css`
@@ -189,7 +190,7 @@ const getTypes = ({
   text = false,
   outlined = false,
   theme,
-}: GetTypesStylesInterface & { theme: any }) => {
+}: GetTypesStylesInterface & { theme: ThemeType }) => {
   const styles = getTypeStyles({ type, text, outlined, theme });
 
   return css`
@@ -281,7 +282,7 @@ export type ButtonProps = SpaceProps & {
   disabled?: boolean;
   icon?: IconType;
   size?: ButtonSize;
-  onClick?: MouseEventHandler<any>;
+  onClick?: MouseEventHandler<HTMLButtonElement>;
 };
 
 const Button: FunctionComponent<ButtonProps> = ({
@@ -293,7 +294,7 @@ const Button: FunctionComponent<ButtonProps> = ({
   ...props
 }) => {
   const rippleRef = useRef<Ripple>(null);
-  const buttonRef = useRef<any>(null);
+  const buttonRef = useRef<HTMLButtonElement>(null);
 
   const handleRippling = (event: MouseEvent) => {
     if (rippleRef.current && buttonRef.current) {

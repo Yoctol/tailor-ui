@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react';
+import React, { FunctionComponent, HTMLAttributes } from 'react';
 import styled from 'styled-components';
 import { animated, config, useTransition } from 'react-spring';
 
@@ -9,14 +9,13 @@ const StyledBackdrop = styled.div`
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.65);
 `;
 
 const AnimatedStyledBackdrop = animated(StyledBackdrop);
 
-export interface BackdropProps {
+export interface BackdropProps extends HTMLAttributes<HTMLDivElement> {
   visible: boolean;
-  [key: string]: any;
 }
 
 const Backdrop: FunctionComponent<BackdropProps> = ({

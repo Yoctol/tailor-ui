@@ -3,6 +3,7 @@ import { createGlobalStyle } from 'styled-components';
 import { rem } from 'polished';
 
 import datePickerStyles from '../DatePicker/styles';
+import { ThemeType } from '../theme';
 
 const GlobalStyle = createGlobalStyle`
   ${styledNormalize}
@@ -25,8 +26,8 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     overflow-x: hidden;
-    background: ${(p: any) => p.theme.colors.light};
-    color: ${(p: any) => p.theme.colors.gray700};
+    background: ${(p: { theme: ThemeType }) => p.theme.colors.light};
+    color: ${(p: { theme: ThemeType }) => p.theme.colors.gray700};
     font-family: Roboto, 'PingFang TC', 'Microsoft JhengHei', 'Helvetica Neue',
       sans-serif;
     font-size: ${rem('16px')};
@@ -34,7 +35,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   a {
-    color: ${(p: any) => p.theme.colors.info};
+    color: ${(p: { theme: ThemeType }) => p.theme.colors.info};
     text-decoration: none;
     cursor: pointer;
   }

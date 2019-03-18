@@ -3,6 +3,7 @@ import styled, { css } from 'styled-components';
 import { space as styledSpace } from 'styled-system';
 
 import tag from '../utils/CleanTag';
+import { ThemeType } from '../theme';
 
 import TabContext, { Size } from './TabContext';
 
@@ -39,7 +40,7 @@ const StyledTab = styled(tag.a)<StyledTabProps>`
   ${({
     size,
     theme: { heights, paddings, fontSizes },
-  }: StyledTabProps & { theme: any }) =>
+  }: StyledTabProps & { theme: ThemeType }) =>
     ({
       sm: css`
         height: ${heights.sm};

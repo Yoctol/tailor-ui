@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react';
+import React, { FunctionComponent, HTMLAttributes } from 'react';
 import styled, { css } from 'styled-components';
 import { IconType as ReactIconsIconType } from 'react-icons';
 import { SpaceProps, style, space as styledSpace } from 'styled-system';
@@ -47,13 +47,13 @@ export const IconWrapper = styled(tag.i)<IconWrapperProps>`
 
 export type IconType = BuiltInIconKeys | ReactIconsIconType;
 
-export type IconProps = SpaceProps & {
-  cursor?: string;
-  size?: Size;
-  fill?: string;
-  type: IconType;
-  [key: string]: any;
-};
+export type IconProps = SpaceProps &
+  HTMLAttributes<HTMLBaseElement> & {
+    cursor?: string;
+    size?: Size;
+    fill?: string;
+    type: IconType;
+  };
 
 const Icon: FunctionComponent<IconProps> = ({
   type,
@@ -61,7 +61,7 @@ const Icon: FunctionComponent<IconProps> = ({
   size = 24,
   ...otherProps
 }) => {
-  let IconComponent: any;
+  let IconComponent: FunctionComponent;
 
   if (typeof type === 'string') {
     const BuiltInIcon = icons[type];

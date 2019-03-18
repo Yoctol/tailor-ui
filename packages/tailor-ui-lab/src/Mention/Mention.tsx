@@ -177,8 +177,8 @@ const Mention: FunctionComponent<MentionProps> = ({
   formatCreateText,
   ...props
 }) => {
-  const mentionRef = useRef<any>(null);
-  const highlightRef = useRef<any>(null);
+  const mentionRef = useRef<{ textarea: HTMLTextAreaElement }>(null);
+  const highlightRef = useRef<HTMLDivElement>(null);
 
   const cursorMention = useRef<CursorMention>({
     mention: null,
@@ -198,14 +198,20 @@ const Mention: FunctionComponent<MentionProps> = ({
   const value = valueFromProps || state.value;
 
   useEffect(() => {
-    dispatch({
-      type: 'updateHeight',
-      payload: mentionRef.current.textarea.offsetHeight,
-    });
+    if (mentionRef.current) {
+      dispatch({
+        type: 'updateHeight',
+        payload: mentionRef.current.textarea.offsetHeight,
+      });
+    }
   }, []);
 
   useEffect(() => {
-    if (state.caretPos !== -1 && mentionRef.current.textarea) {
+    if (
+      state.caretPos !== -1 &&
+      mentionRef.current &&
+      mentionRef.current.textarea
+    ) {
       mentionRef.current.textarea.focus();
       mentionRef.current.textarea.setSelectionRange(
         state.caretPos,

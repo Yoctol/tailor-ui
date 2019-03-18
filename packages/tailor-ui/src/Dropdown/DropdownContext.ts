@@ -1,9 +1,9 @@
-import { createContext } from 'react';
+import { CSSProperties, createContext } from 'react';
 
 export type Placement = 'topRight' | 'topLeft' | 'bottomRight' | 'bottomLeft';
 
 const { Provider, Consumer } = createContext<{
-  styles: any;
+  styles: CSSProperties;
   handleClose: () => void;
   handleListRef: any;
 }>({

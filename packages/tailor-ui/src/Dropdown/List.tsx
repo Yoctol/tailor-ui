@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { HTMLAttributes, PureComponent } from 'react';
 import styled from 'styled-components';
 import {
   MaxHeightProps,
@@ -45,9 +45,8 @@ export const StyledList = styled(tag.ul)<StyledListProps>`
 const AnimatedStyledList = animated(StyledList);
 
 export type ListProps = MinWidthProps &
-  TextAlignProps & {
-    style?: any;
-  };
+  TextAlignProps &
+  HTMLAttributes<HTMLDivElement>;
 
 class List extends PureComponent<ListProps> {
   static defaultProps = {

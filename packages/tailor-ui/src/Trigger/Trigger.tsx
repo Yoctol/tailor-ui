@@ -1,4 +1,7 @@
 import React, {
+  CSSProperties,
+  MouseEvent,
+  MouseEventHandler,
   PureComponent,
   ReactNode,
   cloneElement,
@@ -16,15 +19,14 @@ import getTransitionProps from './getTransitionProps';
 import { Placement } from './type';
 
 export interface PopupRenderProps {
-  styles: {
+  styles: CSSProperties & {
     top: number;
     left: number;
-    [key: string]: any;
   };
   placement: Placement;
   handleOpen: () => void;
   handleClose: () => void;
-  handlePopupRef: any;
+  handlePopupRef: (ref: HTMLElement) => void;
 }
 
 export interface ChildrenRenderProps {
@@ -90,9 +92,9 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
 
   rectObserver?: any;
 
-  enterDelayTimer?: any;
+  enterDelayTimer?: number | null;
 
-  leaveDelayTimer?: any;
+  leaveDelayTimer?: number | null;
 
   position: {
     placement: Placement;
@@ -182,8 +184,10 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
         onVisibleChange(true);
       }
 
-      clearTimeout(this.enterDelayTimer);
-      this.enterDelayTimer = null;
+      if (this.enterDelayTimer) {
+        clearTimeout(this.enterDelayTimer);
+        this.enterDelayTimer = null;
+      }
     }
   };
 
@@ -217,12 +221,14 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
         onVisibleChange(false);
       }
 
-      clearTimeout(this.leaveDelayTimer);
-      this.leaveDelayTimer = null;
+      if (this.leaveDelayTimer) {
+        clearTimeout(this.leaveDelayTimer);
+        this.leaveDelayTimer = null;
+      }
     }
   };
 
-  handlePopupRef = (popupRef: any) => {
+  handlePopupRef = (popupRef: HTMLElement) => {
     const popupElement = findDOMNode(popupRef);
 
     if (popupElement instanceof HTMLElement) {
@@ -260,7 +266,13 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
       });
     }
 
-    if (!isValidElement<any>(children)) {
+    if (
+      !isValidElement<{
+        onClick?: MouseEventHandler;
+        onMouseEnter?: MouseEventHandler;
+        onMouseLeave?: MouseEventHandler;
+      }>(children)
+    ) {
       console.warn(
         'The children of Trigger only support render-props or ReactElement'
       );

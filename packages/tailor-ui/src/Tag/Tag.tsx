@@ -54,7 +54,7 @@ const ClosableTag: FunctionComponent<ClosableTagProps> = ({
   const [on, setOn] = useState(true);
 
   const styles = useSpring({
-    onRest: ({ width }: any) => {
+    onRest: ({ width }: { width: number }) => {
       if (width === 0 && onClosed) {
         onClosed();
       }

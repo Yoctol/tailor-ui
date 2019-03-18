@@ -1,5 +1,4 @@
 import React, {
-  ChangeEvent,
   ChangeEventHandler,
   FunctionComponent,
   KeyboardEventHandler,
@@ -144,7 +143,7 @@ const TextField: FunctionComponent<TextFieldProps> = ({
   const inputProps = {
     maxLength,
     value,
-    onChange: (event: ChangeEvent<HTMLInputElement>) => {
+    onChange: (event: any) => {
       setUncontrolledValue(event.target.value);
       if (onChange) {
         onChange(event);

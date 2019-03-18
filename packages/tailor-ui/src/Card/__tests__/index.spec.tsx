@@ -90,7 +90,7 @@ describe('Card', () => {
         <Card.Block p="1">
           <Button
             block
-            onClick={(event: any) => {
+            onClick={(event: MouseEvent) => {
               event.stopPropagation();
               onButtonClick();
             }}
