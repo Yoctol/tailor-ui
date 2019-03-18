@@ -116,7 +116,7 @@ class ModalInstanceComponent extends PureComponent<
             <Flex>
               {icon}
               <Box flex="auto" ml="1">
-                <Heading.h3>{title}</Heading.h3>
+                <Heading.h4>{title}</Heading.h4>
                 <Space my="3">{content}</Space>
               </Box>
             </Flex>

@@ -58,9 +58,9 @@ class Popover extends PureComponent<PopoverProps> {
     return (hideTooltip: () => void) => (
       <>
         <Header>
-          <Heading.h5>
+          <Heading.h6>
             {title instanceof Function ? title(hideTooltip) : title}
-          </Heading.h5>
+          </Heading.h6>
         </Header>
         <Content>
           {content instanceof Function ? content(hideTooltip) : content}
