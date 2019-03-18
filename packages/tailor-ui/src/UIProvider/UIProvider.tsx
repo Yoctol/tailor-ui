@@ -1,8 +1,9 @@
 /* eslint camelcase: off */
-import React, { FunctionComponent, ReactNode } from 'react';
-import moment from 'moment';
+import React, { FunctionComponent, ReactNode, useRef } from 'react';
 import { ThemeProvider } from 'styled-components';
 
+import EffectModal from '../Modal/EffectModal';
+import EffectModalContext from '../Modal/EffectModalContext';
 import GlobalStyle from '../GlobalStyle';
 import defaultTheme from '../theme';
 import locales from '../locale';
@@ -12,39 +13,32 @@ import LocaleContext, { LocaleType } from './LocaleContext';
 // eslint-disable-next-line @typescript-eslint/camelcase
 const { en_US } = locales;
 
-// eslint-disable-next-line import/no-mutable-exports, @typescript-eslint/camelcase
-let globalLocale: LocaleType = en_US;
-
 export interface UIProviderProps {
   children: ReactNode;
   locale?: LocaleType;
   theme?: typeof defaultTheme;
-  skipLocale?: boolean;
 }
 
 const UIProvider: FunctionComponent<UIProviderProps> = ({
   children,
   theme = defaultTheme,
   locale = en_US,
-  skipLocale = false,
 }) => {
-  if (!skipLocale) {
-    globalLocale = locale;
-    moment.locale(locale.momentLocale);
-  }
+  const triggerRef = useRef(() => Promise.resolve(false));
 
   return (
     <ThemeProvider theme={theme}>
       <>
         <GlobalStyle />
         <LocaleContext.Provider value={{ locale }}>
-          {children}
+          <EffectModalContext.Provider value={triggerRef}>
+            {children}
+          </EffectModalContext.Provider>
         </LocaleContext.Provider>
+        <EffectModal locale={locale} triggerRef={triggerRef} />
       </>
     </ThemeProvider>
   );
 };
-
-export { globalLocale };
 
 export default UIProvider;

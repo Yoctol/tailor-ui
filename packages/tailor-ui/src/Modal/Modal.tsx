@@ -14,7 +14,6 @@ import { LocaleContext } from '../UIProvider';
 import BaseModal, { BaseModalProps } from './BaseModal';
 import CloseButton from './CloseButton';
 import Footer, { FooterProps } from './Footer';
-import { confirm, error, info, success, warning } from './instance';
 
 interface ModalHeaderProps {
   title?: ReactNode;
@@ -98,13 +97,7 @@ export type ModalProps = BaseModalProps &
   ModalHeaderProps &
   ModalFooterProps;
 
-const Modal: FunctionComponent<ModalProps> & {
-  confirm: typeof confirm;
-  info: typeof info;
-  success: typeof success;
-  warning: typeof warning;
-  error: typeof error;
-} = ({
+const Modal: FunctionComponent<ModalProps> = ({
   title,
   onCancel,
   onConfirm,
@@ -117,7 +110,7 @@ const Modal: FunctionComponent<ModalProps> & {
   cancelButtonProps,
   ...props
 }) => (
-  <Portal>
+  <Portal appendFor="modal">
     <BaseModal onCancel={onCancel} {...props}>
       <ModalHeader title={title} onCancel={onCancel} closable={closable} />
       <ModalContent>{children}</ModalContent>
@@ -133,11 +126,5 @@ const Modal: FunctionComponent<ModalProps> & {
     </BaseModal>
   </Portal>
 );
-
-Modal.confirm = confirm;
-Modal.info = info;
-Modal.success = success;
-Modal.warning = warning;
-Modal.error = error;
 
 export default Modal;

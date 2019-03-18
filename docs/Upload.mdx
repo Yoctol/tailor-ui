@@ -5,7 +5,7 @@ route: /components/upload
 ---
 
 import { PropsTable, Playground } from 'docz';
-import { Modal, Upload } from 'tailor-ui';
+import { Upload, useModal } from 'tailor-ui';
 
 # Upload
 
@@ -32,15 +32,23 @@ import { Upload } from 'tailor-ui';
 ### before select
 
 <Playground>
-  <Upload
-    onBeforeSelect={() =>
-      Modal.confirm({
-        title: 'Do you want to override items?',
-        content: 'It can not fallback',
-      })
-    }
-    onSelect={() => new Promise(resolve => setTimeout(resolve, 2000))}
-  />
+  {() => {
+    const modal = useModal();
+
+    return (
+      <Upload
+        onBeforeSelect={() =>
+          modal.confirm({
+            title: 'Do you want to override items?',
+            content: 'It can not fallback',
+          })
+        }
+        onSelect={() => new Promise(resolve => setTimeout(resolve, 2000))}
+      />
+    );
+
+}}
+
 </Playground>
 
 ### Multiple

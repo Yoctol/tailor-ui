@@ -44,6 +44,7 @@ const BaseModal: FunctionComponent<BaseModalProps> = ({
     keyCode: ESC_KEY_CODE,
     onKeydown: onCancel,
   });
+
   const transitions = useTransition(visible, null, {
     from: {
       opacity: 0,
@@ -53,6 +54,7 @@ const BaseModal: FunctionComponent<BaseModalProps> = ({
     },
     leave: {
       opacity: 0,
+      pointerEvents: 'none',
     },
     config: config.stiff,
   });

@@ -356,21 +356,34 @@ exports[`Modal should render with props closable 1`] = `
 <body>
   <div
     style="position: fixed; top: 0px; left: 0px; z-index: 9999;"
-  />
-  <div />
-  .c3 {
+  >
+    .c0 {
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0,0,0,0.5);
+}
+
+<div
+      class="c0"
+      style="opacity: 0;"
+    />
+    .c2 {
   box-sizing: border-box;
   -webkit-flex: auto;
   -ms-flex: auto;
   flex: auto;
 }
 
-.c14 {
+.c13 {
   box-sizing: border-box;
   margin-left: auto;
 }
 
-.c2 {
+.c1 {
   box-sizing: border-box;
   padding-left: 1rem;
   padding-right: 1rem;
@@ -391,7 +404,7 @@ exports[`Modal should render with props closable 1`] = `
   align-items: center;
 }
 
-.c11 {
+.c10 {
   box-sizing: border-box;
   overflow-y: auto;
   padding: 1rem;
@@ -407,7 +420,7 @@ exports[`Modal should render with props closable 1`] = `
   flex-direction: column;
 }
 
-.c12 {
+.c11 {
   box-sizing: border-box;
   padding-left: 1rem;
   padding-right: 1rem;
@@ -428,7 +441,7 @@ exports[`Modal should render with props closable 1`] = `
   align-items: center;
 }
 
-.c13 {
+.c12 {
   box-sizing: border-box;
   width: 100%;
   display: -webkit-box;
@@ -437,28 +450,40 @@ exports[`Modal should render with props closable 1`] = `
   display: flex;
 }
 
-.c5 {
+.c4 {
   margin: 0;
   color: #373737;
   font-weight: bold;
   line-height: 1.5;
 }
 
-.c4 {
+.c3 {
   font-size: 1.125rem;
 }
 
-.c0 {
-  position: fixed;
-  z-index: -1;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-color: rgba(0,0,0,0.5);
+.c8 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  line-height: 1;
+  cursor: default;
+  margin-right: 0rem;
 }
 
-.c1 {
+.c8 svg {
+  fill: #8b8b8b;
+  vertical-align: middle;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+}
+
+.c8.c8.c8 svg {
+  width: 20px;
+  height: 20px;
+}
+
+.c0 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -481,28 +506,6 @@ exports[`Modal should render with props closable 1`] = `
 }
 
 .c9 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  line-height: 1;
-  cursor: default;
-  margin-right: 0rem;
-}
-
-.c9 svg {
-  fill: #8b8b8b;
-  vertical-align: middle;
-  -webkit-transition: all 200ms ease 0s;
-  transition: all 200ms ease 0s;
-}
-
-.c9.c9.c9 svg {
-  width: 20px;
-  height: 20px;
-}
-
-.c10 {
   position: absolute;
   border-radius: 50%;
   opacity: 1;
@@ -512,7 +515,7 @@ exports[`Modal should render with props closable 1`] = `
   transform: scale(0);
 }
 
-.c15 {
+.c14 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -549,18 +552,18 @@ exports[`Modal should render with props closable 1`] = `
   transition: all 200ms ease 0s;
 }
 
-.c15:focus {
+.c14:focus {
   outline: 0;
 }
 
-.c15:disabled,
-.c15[disabled] {
+.c14:disabled,
+.c14[disabled] {
   opacity: 0.7;
   cursor: default;
   pointer-events: none;
 }
 
-.c15::before {
+.c14::before {
   content: '';
   display: inline-block;
   position: relative;
@@ -575,20 +578,20 @@ exports[`Modal should render with props closable 1`] = `
   transition: all 200ms ease 0s;
 }
 
-.c15 .c8 {
+.c14 .c7 {
   cursor: pointer;
 }
 
-.c15 .c8 svg {
+.c14 .c7 svg {
   fill: #1a1a1a;
 }
 
-.c15:hover {
+.c14:hover {
   border-color: #3c5ad0;
   background-color: #f6f6f6;
 }
 
-.c16 {
+.c15 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -626,18 +629,18 @@ exports[`Modal should render with props closable 1`] = `
   margin-left: 0.5rem;
 }
 
-.c16:focus {
+.c15:focus {
   outline: 0;
 }
 
-.c16:disabled,
-.c16[disabled] {
+.c15:disabled,
+.c15[disabled] {
   opacity: 0.7;
   cursor: default;
   pointer-events: none;
 }
 
-.c16::before {
+.c15::before {
   content: '';
   display: inline-block;
   position: relative;
@@ -652,24 +655,24 @@ exports[`Modal should render with props closable 1`] = `
   transition: all 200ms ease 0s;
 }
 
-.c16 .c8 {
+.c15 .c7 {
   cursor: pointer;
 }
 
-.c16 .c8 svg {
+.c15 .c7 svg {
   fill: #ffffff;
 }
 
-.c16:hover {
+.c15:hover {
   background-color: #ffffff;
   color: #3c5ad0;
 }
 
-.c16:hover .c8 svg {
+.c15:hover .c7 svg {
   fill: #3c5ad0;
 }
 
-.c7 {
+.c6 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -706,18 +709,18 @@ exports[`Modal should render with props closable 1`] = `
   transition: all 200ms ease 0s;
 }
 
-.c7:focus {
+.c6:focus {
   outline: 0;
 }
 
-.c7:disabled,
-.c7[disabled] {
+.c6:disabled,
+.c6[disabled] {
   opacity: 0.7;
   cursor: default;
   pointer-events: none;
 }
 
-.c7::before {
+.c6::before {
   content: '';
   display: inline-block;
   position: relative;
@@ -732,20 +735,20 @@ exports[`Modal should render with props closable 1`] = `
   transition: all 200ms ease 0s;
 }
 
-.c7 .c8 {
+.c6 .c7 {
   cursor: pointer;
 }
 
-.c7 .c8 svg {
+.c6 .c7 svg {
   fill: #1a1a1a;
 }
 
-.c7:hover {
+.c6:hover {
   border-color: transparent;
   background-color: #e0e0e0;
 }
 
-.c6 {
+.c5 {
   background: transparent;
   -webkit-transform: rotate(0deg);
   -ms-transform: rotate(0deg);
@@ -754,42 +757,35 @@ exports[`Modal should render with props closable 1`] = `
   transition: all 0.2s ease-in;
 }
 
-.c6:hover {
+.c5:hover {
   -webkit-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
   transform: rotate(90deg);
 }
 
 <div
-    style="position: fixed; top: 0px; left: 0px; z-index: 9999;"
-  >
-    <div
       class="c0"
-      style="opacity: 0;"
-    />
-    <div
-      class="c1"
       style="opacity: 0;"
     >
       <div
-        class="c2"
+        class="c1"
       >
         <div
-          class="c3"
+          class="c2"
         >
           <h4
-            class="c4 c5"
+            class="c3 c4"
           />
         </div>
         <div
-          class="c6"
+          class="c5"
         >
           <button
-            class="c7"
+            class="c6"
             type="default"
           >
             <i
-              class="c8 c9"
+              class="c7 c8"
               cursor="default"
               style="pointer-events: none;"
             >
@@ -808,39 +804,39 @@ exports[`Modal should render with props closable 1`] = `
               </svg>
             </i>
             <div
-              class="c10"
+              class="c9"
             />
           </button>
         </div>
       </div>
       <div
-        class="c11"
+        class="c10"
       />
       <div
-        class="c12"
+        class="c11"
       >
         <div
-          class="c13"
+          class="c12"
         >
           <div
-            class="c14"
+            class="c13"
           >
             <button
-              class="c15"
+              class="c14"
               type="default"
             >
               Cancel
               <div
-                class="c10"
+                class="c9"
               />
             </button>
             <button
-              class="c16"
+              class="c15"
               type="primary"
             >
               Confirm
               <div
-                class="c10"
+                class="c9"
               />
             </button>
           </div>
@@ -848,5 +844,6 @@ exports[`Modal should render with props closable 1`] = `
       </div>
     </div>
   </div>
+  <div />
 </body>
 `;
