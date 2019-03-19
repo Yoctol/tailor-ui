@@ -9,8 +9,8 @@ const colors = {
 
   secondary: '#50d5ff',
 
-  surface: 'e8ecf5',
-  surface2: 'f8f8fc',
+  surface: '#e8ecf5',
+  surface2: '#f8f8fc',
 
   dark: '#000000',
   light: '#ffffff',
