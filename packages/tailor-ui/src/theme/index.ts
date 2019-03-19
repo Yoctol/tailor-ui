@@ -74,6 +74,7 @@ const radii = {
   sm: rem('2px'),
   base: rem('4px'),
   lg: rem('8px'),
+  xl: rem('16px'),
 };
 
 const borders = {
