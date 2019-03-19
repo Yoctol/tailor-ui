@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.5.0](https://github.com/yoctol/tailor-ui/compare/tailor-ui@0.4.2...tailor-ui@0.5.0) (2019-03-19)
+
+### Bug Fixes
+
+- modal and popover heading size ([#107](https://github.com/yoctol/tailor-ui/issues/107)) ([14f892f](https://github.com/yoctol/tailor-ui/commit/14f892f))
+- **upload:** filelist component position ([#106](https://github.com/yoctol/tailor-ui/issues/106)) ([17fa969](https://github.com/yoctol/tailor-ui/commit/17fa969))
+- **upload:** filelist component position ([#106](https://github.com/yoctol/tailor-ui/issues/106)) ([3ccf164](https://github.com/yoctol/tailor-ui/commit/3ccf164))
+
 ## [0.4.2](https://github.com/yoctol/tailor-ui/compare/tailor-ui@0.4.1...tailor-ui@0.4.2) (2019-03-15)
 
 ### Bug Fixes
