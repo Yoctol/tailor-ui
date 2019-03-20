@@ -1,6 +1,6 @@
 /* eslint-disable */
 import React from 'react';
-import { Flex, theme } from '../packages/tailor-ui/src';
+import { Flex, Box, Heading, theme } from '../packages/tailor-ui/src';
 import { readableColor } from 'polished';
 
 const { colors: themeColors } = theme;
@@ -18,20 +18,21 @@ const Color = ({
   width: string | number;
 }) => {
   const color = themeColors[colorKey];
+  const fontColor = readableColor(color as string);
 
   return (
     <Flex
       flexDirection="column"
       justifyContent="center"
       alignItems="center"
+      borderRadius="lg"
       width={width}
-      p={3}
-      mx={2}
+      p="3"
+      mx="2"
       bg={colorKey}
-      color={readableColor(color as string)}
     >
-      <div>{upperFirst(colorKey)}</div>
-      <div>{color}</div>
+      <Heading.h5 color={fontColor}>{colorKey}</Heading.h5>
+      <Heading.h4 color={fontColor}>{color}</Heading.h4>
     </Flex>
   );
 };

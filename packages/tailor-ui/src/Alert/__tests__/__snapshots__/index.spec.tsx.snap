@@ -37,7 +37,7 @@ exports[`Alert should render error alert correctly 1`] = `
 }
 
 .c2.c2.c2 svg {
-  fill: #e65541;
+  fill: #fc5475;
   width: 20px;
   height: 20px;
 }
@@ -55,8 +55,8 @@ exports[`Alert should render error alert correctly 1`] = `
   padding: 0.5rem 1rem;
   border: 1px solid;
   border-radius: 0.25rem;
-  border-color: #e65541;
-  background-color: rgba(230,85,65,0.1);
+  border-color: #fc5475;
+  background-color: rgba(252,84,117,0.1);
   font-size: 0.875rem;
   -webkit-transform-origin: top;
   -ms-transform-origin: top;
@@ -74,6 +74,7 @@ exports[`Alert should render error alert correctly 1`] = `
       class="c2"
       cursor="default"
       fill="error"
+      size="20"
     >
       <svg
         fill="currentColor"
@@ -172,6 +173,7 @@ exports[`Alert should render info alert correctly 1`] = `
       class="c2"
       cursor="default"
       fill="info"
+      size="20"
     >
       <svg
         fill="currentColor"
@@ -270,6 +272,7 @@ exports[`Alert should render success alert correctly 1`] = `
       class="c2"
       cursor="default"
       fill="success"
+      size="20"
     >
       <svg
         fill="currentColor"
@@ -368,6 +371,7 @@ exports[`Alert should render warning alert correctly 1`] = `
       class="c2"
       cursor="default"
       fill="warning"
+      size="20"
     >
       <svg
         fill="currentColor"

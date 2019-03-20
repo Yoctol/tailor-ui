@@ -15,10 +15,11 @@ exports[`Modal should render correctly 1`] = `
 
 .c2 {
   box-sizing: border-box;
-  padding-left: 1rem;
-  padding-right: 1rem;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border-color: #e0e0e0;
   border-bottom: 1px solid;
   border-color: #e0e0e0;
   -webkit-flex: none;
@@ -52,10 +53,11 @@ exports[`Modal should render correctly 1`] = `
 
 .c7 {
   box-sizing: border-box;
-  padding-left: 1rem;
-  padding-right: 1rem;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border-color: #e0e0e0;
   border-top: 1px solid;
   border-color: #e0e0e0;
   -webkit-flex: none;
@@ -305,6 +307,8 @@ exports[`Modal should render correctly 1`] = `
     >
       <div
         class="c2"
+        px="3"
+        py="2"
       >
         <div
           class="c3"
@@ -319,6 +323,8 @@ exports[`Modal should render correctly 1`] = `
       />
       <div
         class="c7"
+        px="3"
+        py="2"
       >
         <div
           class="c8"
@@ -385,10 +391,11 @@ exports[`Modal should render with props closable 1`] = `
 
 .c1 {
   box-sizing: border-box;
-  padding-left: 1rem;
-  padding-right: 1rem;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border-color: #e0e0e0;
   border-bottom: 1px solid;
   border-color: #e0e0e0;
   -webkit-flex: none;
@@ -422,10 +429,11 @@ exports[`Modal should render with props closable 1`] = `
 
 .c11 {
   box-sizing: border-box;
-  padding-left: 1rem;
-  padding-right: 1rem;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border-color: #e0e0e0;
   border-top: 1px solid;
   border-color: #e0e0e0;
   -webkit-flex: none;
@@ -769,6 +777,8 @@ exports[`Modal should render with props closable 1`] = `
     >
       <div
         class="c1"
+        px="3"
+        py="2"
       >
         <div
           class="c2"
@@ -787,6 +797,7 @@ exports[`Modal should render with props closable 1`] = `
             <i
               class="c7 c8"
               cursor="default"
+              size="20"
               style="pointer-events: none;"
             >
               <svg
@@ -814,6 +825,8 @@ exports[`Modal should render with props closable 1`] = `
       />
       <div
         class="c11"
+        px="3"
+        py="2"
       >
         <div
           class="c12"
