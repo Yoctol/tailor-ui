@@ -6,6 +6,7 @@ export const StyledTab = styled.a`
   display: inline-flex;
   position: relative;
   align-items: center;
+  font-weight: bold;
   text-align: center;
   text-decoration: none;
   cursor: pointer;
