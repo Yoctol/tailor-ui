@@ -1,0 +1,457 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tabs should render correctly 1`] = `
+.c2 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  position: relative;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  cursor: pointer;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+}
+
+.c4 {
+  position: absolute;
+  z-index: 2;
+  bottom: 0;
+  width: 100%;
+  height: 3px;
+  border-radius: 0.25rem;
+  background-color: rgba(24,68,128,0.5);
+}
+
+.c3 {
+  position: absolute;
+  z-index: 10;
+  bottom: 0;
+  height: 3px;
+  border-radius: 0.25rem;
+  background-color: #50d5ff;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+}
+
+.c0 .c1 {
+  background-color: transparent;
+  color: #e0e0e0;
+}
+
+.c0 .c1:hover {
+  color: #ffffff;
+}
+
+.c0 .c1:active {
+  color: #50d5ff;
+}
+
+.c0 .c1 {
+  height: 48px;
+  padding: 0 24px;
+  font-size: 1rem;
+}
+
+<nav
+  class="c0"
+  type="line"
+>
+  <a
+    class="active c1 c2"
+  >
+    Tab 1
+  </a>
+  <a
+    class="c1 c2"
+  >
+    Tab 2
+  </a>
+  <a
+    class="c1 c2"
+  >
+    Tab 3
+  </a>
+  <div
+    class="c3"
+    style="width: 0px; transform: translateX(0px);"
+  />
+  <div
+    class="c4"
+  />
+</nav>
+`;
+
+exports[`Tabs should render with props type 1`] = `
+.c2 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  position: relative;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  cursor: pointer;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+}
+
+.c3 .c1 {
+  background-color: transparent;
+  color: #e0e0e0;
+}
+
+.c3 .c1:hover {
+  color: #ffffff;
+}
+
+.c3 .c1:active {
+  color: #50d5ff;
+}
+
+.c3 .c1 {
+  height: 48px;
+  padding: 0 24px;
+  font-size: 1rem;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+}
+
+.c0 .c1 {
+  background-color: #d5d8e8;
+  color: #8b8b8b;
+}
+
+.c0 .c1:hover {
+  color: #6B88c5;
+}
+
+.c0 .c1:active {
+  color: #3c5ad0;
+}
+
+.c0 .c1:first-child {
+  border-top-left-radius: 1rem;
+}
+
+.c0 .c1:last-child {
+  border-top-right-radius: 1rem;
+}
+
+.c0 .c1.active {
+  z-index: 1;
+  background-color: #ffffff;
+  color: #6B88c5;
+  box-shadow: 0px -2px 4px -4px rgba(100,120,168,0.3),4px 0px 4px -4px rgba(100,120,168,0.3),-4px 0px 4px -4px rgba(100,120,168,0.3);
+}
+
+.c0 .c1:not(.active) + .c1:not(.active)::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 2px;
+  height: 1rem;
+  background-color: #8b8b8b;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+}
+
+.c0 .c1 {
+  height: 48px;
+  padding: 0 24px;
+  font-size: 1rem;
+}
+
+<nav
+  class="c0"
+  type="card"
+>
+  <a
+    class="active c1 c2"
+  >
+    Tab 1
+  </a>
+  <a
+    class="c1 c2"
+  >
+    Tab 2
+  </a>
+  <a
+    class="c1 c2"
+  >
+    Tab 3
+  </a>
+</nav>
+`;
+
+exports[`Tabs should render with sizes 1`] = `
+.c2 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  position: relative;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  cursor: pointer;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+}
+
+.c4 {
+  position: absolute;
+  z-index: 2;
+  bottom: 0;
+  width: 100%;
+  height: 3px;
+  border-radius: 0.25rem;
+  background-color: rgba(24,68,128,0.5);
+}
+
+.c3 {
+  position: absolute;
+  z-index: 10;
+  bottom: 0;
+  height: 3px;
+  border-radius: 0.25rem;
+  background-color: #50d5ff;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+}
+
+.c5 .c1 {
+  background-color: transparent;
+  color: #e0e0e0;
+}
+
+.c5 .c1:hover {
+  color: #ffffff;
+}
+
+.c5 .c1:active {
+  color: #50d5ff;
+}
+
+.c5 .c1 {
+  height: 48px;
+  padding: 0 24px;
+  font-size: 1rem;
+}
+
+.c7 .c1 {
+  background-color: #d5d8e8;
+  color: #8b8b8b;
+}
+
+.c7 .c1:hover {
+  color: #6B88c5;
+}
+
+.c7 .c1:active {
+  color: #3c5ad0;
+}
+
+.c7 .c1:first-child {
+  border-top-left-radius: 1rem;
+}
+
+.c7 .c1:last-child {
+  border-top-right-radius: 1rem;
+}
+
+.c7 .c1.active {
+  z-index: 1;
+  background-color: #ffffff;
+  color: #6B88c5;
+  box-shadow: 0px -2px 4px -4px rgba(100,120,168,0.3),4px 0px 4px -4px rgba(100,120,168,0.3),-4px 0px 4px -4px rgba(100,120,168,0.3);
+}
+
+.c7 .c1:not(.active) + .c1:not(.active)::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 2px;
+  height: 1rem;
+  background-color: #8b8b8b;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+}
+
+.c7 .c1 {
+  height: 48px;
+  padding: 0 24px;
+  font-size: 1rem;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+}
+
+.c0 .c1 {
+  background-color: transparent;
+  color: #e0e0e0;
+}
+
+.c0 .c1:hover {
+  color: #ffffff;
+}
+
+.c0 .c1:active {
+  color: #50d5ff;
+}
+
+.c0 .c1 {
+  height: 40px;
+  padding: 0 20px;
+  font-size: 0.875rem;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+}
+
+.c6 .c1 {
+  background-color: transparent;
+  color: #e0e0e0;
+}
+
+.c6 .c1:hover {
+  color: #ffffff;
+}
+
+.c6 .c1:active {
+  color: #50d5ff;
+}
+
+.c6 .c1 {
+  height: 56px;
+  padding: 0 28px;
+  font-size: 1.125rem;
+}
+
+<div>
+  <nav
+    class="c0"
+    type="line"
+  >
+    <a
+      class="active c1 c2"
+    >
+      Tab 1
+    </a>
+    <a
+      class="c1 c2"
+    >
+      Tab 2
+    </a>
+    <a
+      class="c1 c2"
+    >
+      Tab 3
+    </a>
+    <div
+      class="c3"
+      style="width: 0px; transform: translateX(0px);"
+    />
+    <div
+      class="c4"
+    />
+  </nav>
+  <nav
+    class="c5"
+    type="line"
+  >
+    <a
+      class="active c1 c2"
+    >
+      Tab 1
+    </a>
+    <a
+      class="c1 c2"
+    >
+      Tab 2
+    </a>
+    <a
+      class="c1 c2"
+    >
+      Tab 3
+    </a>
+    <div
+      class="c3"
+      style="width: 0px; transform: translateX(0px);"
+    />
+    <div
+      class="c4"
+    />
+  </nav>
+  <nav
+    class="c6"
+    type="line"
+  >
+    <a
+      class="active c1 c2"
+    >
+      Tab 1
+    </a>
+    <a
+      class="c1 c2"
+    >
+      Tab 2
+    </a>
+    <a
+      class="c1 c2"
+    >
+      Tab 3
+    </a>
+    <div
+      class="c3"
+      style="width: 0px; transform: translateX(0px);"
+    />
+    <div
+      class="c4"
+    />
+  </nav>
+</div>
+`;
