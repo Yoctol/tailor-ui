@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.2.0](https://github.com/Yoctol/tailor-ui/compare/@tailor-ui/lab@0.1.2...@tailor-ui/lab@0.2.0) (2019-03-20)
+
+### Features
+
+- **tabs:** implement new tabs ([#109](https://github.com/Yoctol/tailor-ui/issues/109)) ([a47a522](https://github.com/Yoctol/tailor-ui/commit/a47a522))
+
 ## [0.1.2](https://github.com/Yoctol/tailor-ui/compare/@tailor-ui/lab@0.1.1...@tailor-ui/lab@0.1.2) (2019-03-15)
 
 ### Bug Fixes
