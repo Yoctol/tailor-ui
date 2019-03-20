@@ -30,7 +30,7 @@
     "url": "https://github.com/yoctol/tailor-ui/issues"
   },
   "dependencies": {
-    "@babel/runtime": "^7.3.4",
+    "@babel/runtime": "^7.4.0",
     "html-tags": "^2.0.0",
     "immutable": "3.7.4",
     "moment": "^2.24.0",
@@ -48,7 +48,7 @@
     "react-textarea-autosize": "^7.1.0",
     "resize-observer-polyfill": "^1.5.1",
     "styled-normalize": "^8.0.6",
-    "styled-system": "^3.2.1"
+    "styled-system": "^4.0.5"
   },
   "peerDependencies": {
     "react": ">=16.8.0",

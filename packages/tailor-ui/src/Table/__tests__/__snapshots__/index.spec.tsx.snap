@@ -10,6 +10,7 @@ exports[`Table should render multiplication table correctly 1`] = `
 .c3 {
   padding: 0.5rem 0.75rem;
   border-color: #e0e0e0;
+  border-color: #e0e0e0;
 }
 
 .c1 {
@@ -783,10 +784,12 @@ exports[`Table should render week schedule 1`] = `
 .c3 {
   padding: 0.5rem 0.75rem;
   border-color: #e0e0e0;
+  border-color: #e0e0e0;
 }
 
 .c4 {
   padding: 0.5rem 0.75rem;
+  border-color: #e0e0e0;
   border-right: 1px solid;
   border-left: 1px solid;
   border-color: #e0e0e0;

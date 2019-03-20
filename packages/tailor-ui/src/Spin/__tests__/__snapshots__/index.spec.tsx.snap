@@ -94,6 +94,7 @@ exports[`Spin should render correctly 1`] = `
   >
     <div
       class="c1"
+      size="40"
     >
       <div
         class="c2 c3"

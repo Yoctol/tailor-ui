@@ -326,10 +326,10 @@ exports[`Popconfirm should render correctly 1`] = `
   font-size: 0.875rem;
   white-space: nowrap;
   opacity: 0.8;
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
   border-radius: 0.25rem;
   text-align: center;
   padding: 0;
@@ -370,6 +370,8 @@ exports[`Popconfirm should render correctly 1`] = `
         <div
           class="c2"
           placement="top"
+          px="2"
+          py="1"
         >
           <div
             class="c3"
@@ -381,6 +383,7 @@ exports[`Popconfirm should render correctly 1`] = `
                 class="c5 c6"
                 cursor="default"
                 fill="warning"
+                size="20"
               >
                 <svg
                   fill="currentColor"

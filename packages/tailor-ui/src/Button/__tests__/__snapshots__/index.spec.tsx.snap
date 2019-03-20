@@ -271,6 +271,7 @@ exports[`Button should render button with specified icon 1`] = `
   <i
     class="c1 c2"
     cursor="default"
+    size="20"
     style="pointer-events: none;"
   >
     <svg

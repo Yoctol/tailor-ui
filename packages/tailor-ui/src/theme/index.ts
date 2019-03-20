@@ -1,19 +1,25 @@
 import { rem } from 'polished';
 
 const colors = {
+  // primary
   primary: '#3c5ad0',
   primaryDark: '#184480',
   primaryDark2: '#001e40',
   primaryLight: '#6B88c5',
   primaryLight2: '#d5d8e8',
 
+  // secondary
   secondary: '#50d5ff',
+  secondaryDark: '#2db8de',
 
+  // surface
   surface: '#e8ecf5',
   surface2: '#f8f8fc',
 
   dark: '#000000',
   light: '#ffffff',
+
+  // gray
   gray100: '#fafafa',
   gray200: '#f6f6f6',
   gray300: '#e0e0e0',
@@ -23,25 +29,12 @@ const colors = {
   gray700: '#373737',
   gray800: '#1a1a1a',
 
+  // status
   success: '#40d064',
   danger: '#fc5475',
   warning: '#f6a700',
   info: '#4384f0',
-  error: '#e65541', // FIXME: remove this line later
-
-  // legacy gray
-  gray: [
-    '#1e1e1e', // 0
-    '#2b2b2b', // 1
-    '#373737', // 2
-    '#444444', // 3
-    '#5e5e5e', // 4
-    '#919191', // 5
-    '#aaaaaa', // 6
-    '#c3c3c3', // 7
-    '#e9e9e9', // 8
-    '#f7f7f7', // 9
-  ],
+  error: '#fc5475', // FIXME: remove this line later
 };
 
 const toRem = (px: number) => rem(`${px}px`);

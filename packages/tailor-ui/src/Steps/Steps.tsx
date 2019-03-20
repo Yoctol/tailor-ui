@@ -22,7 +22,7 @@ const { Provider, Consumer } = createContext<{
   count: number;
   status: Status;
   isLast: boolean;
-  tailColor: Colors;
+  tailColor: Colors | 'gray';
   direction: Direction;
   onCurrentChange?: (count: number) => void;
 }>({
@@ -38,7 +38,7 @@ interface StepsItemProps {
   status: Status;
   direction: Direction;
   isLast: boolean;
-  tailColor: Colors;
+  tailColor: Colors | 'gray';
 }
 
 const StepsIconItem = styled(tag.div)<StepsItemProps>`
