@@ -58,8 +58,8 @@ const paddings = {
 };
 
 const heights = {
-  base: rem('32px'),
   sm: rem('24px'),
+  base: rem('32px'),
   lg: rem('40px'),
 };
 
