@@ -22,11 +22,13 @@ const StyledFormField = styled(tag.div)<FormFieldProps>`
     css`
       & ${StyledInput /* sc-selector */} {
         border-color: ${p => p.theme.colors.success} !important;
+        box-shadow: none !important;
       }
 
       /* stylelint-disable-next-line */
       & ${StyledTextarea /* sc-selector */} {
         border-color: ${p => p.theme.colors.success} !important;
+        box-shadow: none !important;
       }
 
       /* stylelint-disable-next-line */
@@ -40,11 +42,13 @@ const StyledFormField = styled(tag.div)<FormFieldProps>`
     css`
       & ${StyledInput /* sc-selector */} {
         border-color: ${p => p.theme.colors.warning} !important;
+        box-shadow: none !important;
       }
 
       /* stylelint-disable-next-line */
       & ${StyledTextarea /* sc-selector */} {
         border-color: ${p => p.theme.colors.warning} !important;
+        box-shadow: none !important;
       }
 
       /* stylelint-disable-next-line */
@@ -58,11 +62,13 @@ const StyledFormField = styled(tag.div)<FormFieldProps>`
     css`
       & ${StyledInput /* sc-selector */} {
         border-color: ${p => p.theme.colors.danger} !important;
+        box-shadow: none !important;
       }
 
       /* stylelint-disable-next-line */
       & ${StyledTextarea /* sc-selector */} {
         border-color: ${p => p.theme.colors.danger} !important;
+        box-shadow: none !important;
       }
 
       /* stylelint-disable-next-line */

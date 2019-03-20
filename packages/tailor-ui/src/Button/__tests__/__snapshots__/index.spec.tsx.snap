@@ -39,7 +39,7 @@ exports[`Button should render block button 1`] = `
   -ms-user-select: none;
   user-select: none;
   width: 100%;
-  height: 2rem;
+  height: 2.25rem;
   padding: 0 1rem;
   font-size: 1rem;
   border-color: #e0e0e0;
@@ -211,7 +211,7 @@ exports[`Button should render button with specified icon 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  height: 2rem;
+  height: 2.25rem;
   padding: 0 1rem;
   font-size: 1rem;
   border-color: #fc5475;
@@ -333,7 +333,7 @@ exports[`Button should render button with specified size 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  height: 1.5rem;
+  height: 1.75rem;
   padding: 0 0.75rem;
   font-size: 0.875rem;
   border-color: #e0e0e0;
@@ -431,7 +431,7 @@ exports[`Button should render correctly 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  height: 2rem;
+  height: 2.25rem;
   padding: 0 1rem;
   font-size: 1rem;
   border-color: #e0e0e0;
@@ -529,7 +529,7 @@ exports[`Button should render different button type 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  height: 2rem;
+  height: 2.25rem;
   padding: 0 1rem;
   font-size: 1rem;
   border-color: #4384f0;
@@ -631,7 +631,7 @@ exports[`Button should render disabled button 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  height: 2rem;
+  height: 2.25rem;
   padding: 0 1rem;
   font-size: 1rem;
   border-color: #e0e0e0;
@@ -730,7 +730,7 @@ exports[`Button should render loading button 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  height: 2rem;
+  height: 2.25rem;
   padding: 0 1rem;
   font-size: 1rem;
   border-color: #e0e0e0;
@@ -843,7 +843,7 @@ exports[`Button should render outlined button 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  height: 2rem;
+  height: 2.25rem;
   padding: 0 1rem;
   font-size: 1rem;
   border-color: #e0e0e0;
@@ -942,7 +942,7 @@ exports[`Button should render rounded button 1`] = `
   -ms-user-select: none;
   user-select: none;
   border-radius: 999px;
-  height: 2rem;
+  height: 2.25rem;
   padding: 0 1rem;
   font-size: 1rem;
   border-color: #e0e0e0;
@@ -1040,7 +1040,7 @@ exports[`Button should render text button 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  height: 2rem;
+  height: 2.25rem;
   padding: 0 1rem;
   font-size: 1rem;
   border-color: transparent;

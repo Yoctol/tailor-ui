@@ -61,7 +61,7 @@ exports[`Popconfirm should render correctly 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  height: 2rem;
+  height: 2.25rem;
   padding: 0 1rem;
   font-size: 1rem;
   border-color: #e0e0e0;
@@ -137,7 +137,7 @@ exports[`Popconfirm should render correctly 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  height: 1.5rem;
+  height: 1.75rem;
   padding: 0 0.75rem;
   font-size: 0.875rem;
   border-color: #e0e0e0;
@@ -214,7 +214,7 @@ exports[`Popconfirm should render correctly 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  height: 1.5rem;
+  height: 1.75rem;
   padding: 0 0.75rem;
   font-size: 0.875rem;
   border-color: #3c5ad0;

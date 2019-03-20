@@ -162,7 +162,7 @@ exports[`Modal should render correctly 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  height: 2rem;
+  height: 2.25rem;
   padding: 0 1rem;
   font-size: 1rem;
   border-color: #e0e0e0;
@@ -238,7 +238,7 @@ exports[`Modal should render correctly 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  height: 2rem;
+  height: 2.25rem;
   padding: 0 1rem;
   font-size: 1rem;
   border-color: #3c5ad0;
@@ -550,7 +550,7 @@ exports[`Modal should render with props closable 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  height: 2rem;
+  height: 2.25rem;
   padding: 0 1rem;
   font-size: 1rem;
   border-color: #e0e0e0;
@@ -626,7 +626,7 @@ exports[`Modal should render with props closable 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  height: 2rem;
+  height: 2.25rem;
   padding: 0 1rem;
   font-size: 1rem;
   border-color: #3c5ad0;
@@ -708,8 +708,8 @@ exports[`Modal should render with props closable 1`] = `
   -ms-user-select: none;
   user-select: none;
   border-radius: 999px;
-  width: 2rem;
-  height: 2rem;
+  width: 2.25rem;
+  height: 2.25rem;
   border-color: transparent;
   background-color: transparent;
   color: #1a1a1a;

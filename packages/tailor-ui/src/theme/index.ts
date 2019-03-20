@@ -51,14 +51,14 @@ const paddings = {
 };
 
 const heights = {
-  sm: rem('24px'),
-  base: rem('32px'),
-  lg: rem('40px'),
+  sm: rem('28px'),
+  base: rem('36px'),
+  lg: rem('44px'),
 };
 
 const fontSizes = {
-  base: rem('16px'),
   sm: rem('14px'),
+  base: rem('16px'),
   lg: rem('18px'),
 };
 
