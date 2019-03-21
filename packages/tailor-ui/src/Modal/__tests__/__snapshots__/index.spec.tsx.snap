@@ -125,16 +125,6 @@ exports[`Modal should render correctly 1`] = `
   width: 416px;
 }
 
-.c11 {
-  position: absolute;
-  border-radius: 50%;
-  opacity: 1;
-  background: rgba(0,0,0,0.2);
-  -webkit-transform: scale(0);
-  -ms-transform: scale(0);
-  transform: scale(0);
-}
-
 .c10 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -151,7 +141,8 @@ exports[`Modal should render correctly 1`] = `
   justify-content: center;
   overflow: hidden;
   border: 1px solid;
-  border-radius: 0.25rem;
+  border-radius: 0.5rem;
+  border-color: transparent;
   line-height: 1.5;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -163,11 +154,11 @@ exports[`Modal should render correctly 1`] = `
   -ms-user-select: none;
   user-select: none;
   height: 2.25rem;
-  padding: 0 1rem;
+  padding: 0 0.75rem;
   font-size: 1rem;
   border-color: #e0e0e0;
   background-color: #ffffff;
-  color: #1a1a1a;
+  color: #373737;
   -webkit-transition: all 200ms ease 0s;
   transition: all 200ms ease 0s;
 }
@@ -178,9 +169,16 @@ exports[`Modal should render correctly 1`] = `
 
 .c10:disabled,
 .c10[disabled] {
-  opacity: 0.7;
+  opacity: 0.85;
+  background-color: #e0e0e0;
+  color: #8b8b8b;
   cursor: default;
   pointer-events: none;
+}
+
+.c10:disabled .c12 svg,
+.c10[disabled] .c12 svg {
+  fill: #8b8b8b;
 }
 
 .c10::before {
@@ -198,20 +196,28 @@ exports[`Modal should render correctly 1`] = `
   transition: all 200ms ease 0s;
 }
 
-.c10 .c13 {
-  cursor: pointer;
+.c10::before {
+  border-color: #373737;
 }
 
-.c10 .c13 svg {
-  fill: #1a1a1a;
+.c10 .c12 svg {
+  fill: #bfbfbf;
 }
 
 .c10:hover {
-  border-color: #3c5ad0;
-  background-color: #f6f6f6;
+  border-color: #6B88c5;
 }
 
-.c12 {
+.c10:active {
+  border-color: #3c5ad0;
+  color: #3c5ad0;
+}
+
+.c10:active .c12 svg {
+  fill: #3c5ad0;
+}
+
+.c11 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -227,7 +233,8 @@ exports[`Modal should render correctly 1`] = `
   justify-content: center;
   overflow: hidden;
   border: 1px solid;
-  border-radius: 0.25rem;
+  border-radius: 0.5rem;
+  border-color: transparent;
   line-height: 1.5;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -239,28 +246,35 @@ exports[`Modal should render correctly 1`] = `
   -ms-user-select: none;
   user-select: none;
   height: 2.25rem;
-  padding: 0 1rem;
+  padding: 0 0.75rem;
   font-size: 1rem;
-  border-color: #3c5ad0;
   background-color: #3c5ad0;
   color: #ffffff;
+  font-weight: bold;
   -webkit-transition: all 200ms ease 0s;
   transition: all 200ms ease 0s;
   margin-left: 0.5rem;
 }
 
-.c12:focus {
+.c11:focus {
   outline: 0;
 }
 
-.c12:disabled,
-.c12[disabled] {
-  opacity: 0.7;
+.c11:disabled,
+.c11[disabled] {
+  opacity: 0.85;
+  background-color: #e0e0e0;
+  color: #8b8b8b;
   cursor: default;
   pointer-events: none;
 }
 
-.c12::before {
+.c11:disabled .c12 svg,
+.c11[disabled] .c12 svg {
+  fill: #8b8b8b;
+}
+
+.c11::before {
   content: '';
   display: inline-block;
   position: relative;
@@ -275,21 +289,16 @@ exports[`Modal should render correctly 1`] = `
   transition: all 200ms ease 0s;
 }
 
-.c12 .c13 {
-  cursor: pointer;
-}
-
-.c12 .c13 svg {
+.c11 .c12 svg {
   fill: #ffffff;
 }
 
-.c12:hover {
-  background-color: #ffffff;
-  color: #3c5ad0;
+.c11:hover {
+  background-color: #516bd5;
 }
 
-.c12:hover .c13 svg {
-  fill: #3c5ad0;
+.c11:active {
+  background-color: #2f4dc3;
 }
 
 <body>
@@ -334,21 +343,14 @@ exports[`Modal should render correctly 1`] = `
           >
             <button
               class="c10"
-              type="default"
             >
               Cancel
-              <div
-                class="c11"
-              />
             </button>
             <button
-              class="c12"
+              class="c11"
               type="primary"
             >
               Confirm
-              <div
-                class="c11"
-              />
             </button>
           </div>
         </div>
@@ -384,7 +386,7 @@ exports[`Modal should render with props closable 1`] = `
   flex: auto;
 }
 
-.c13 {
+.c12 {
   box-sizing: border-box;
   margin-left: auto;
 }
@@ -411,7 +413,7 @@ exports[`Modal should render with props closable 1`] = `
   align-items: center;
 }
 
-.c10 {
+.c9 {
   box-sizing: border-box;
   overflow-y: auto;
   padding: 1rem;
@@ -427,7 +429,7 @@ exports[`Modal should render with props closable 1`] = `
   flex-direction: column;
 }
 
-.c11 {
+.c10 {
   box-sizing: border-box;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
@@ -449,7 +451,7 @@ exports[`Modal should render with props closable 1`] = `
   align-items: center;
 }
 
-.c12 {
+.c11 {
   box-sizing: border-box;
   width: 100%;
   display: -webkit-box;
@@ -487,8 +489,8 @@ exports[`Modal should render with props closable 1`] = `
 }
 
 .c8.c8.c8 svg {
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
 }
 
 .c0 {
@@ -513,14 +515,96 @@ exports[`Modal should render with props closable 1`] = `
   width: 416px;
 }
 
-.c9 {
-  position: absolute;
-  border-radius: 50%;
-  opacity: 1;
-  background: rgba(0,0,0,0.2);
-  -webkit-transform: scale(0);
-  -ms-transform: scale(0);
-  transform: scale(0);
+.c13 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  position: relative;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  overflow: hidden;
+  border: 1px solid;
+  border-radius: 0.5rem;
+  border-color: transparent;
+  line-height: 1.5;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  height: 2.25rem;
+  padding: 0 0.75rem;
+  font-size: 1rem;
+  border-color: #e0e0e0;
+  background-color: #ffffff;
+  color: #373737;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+}
+
+.c13:focus {
+  outline: 0;
+}
+
+.c13:disabled,
+.c13[disabled] {
+  opacity: 0.85;
+  background-color: #e0e0e0;
+  color: #8b8b8b;
+  cursor: default;
+  pointer-events: none;
+}
+
+.c13:disabled .c7 svg,
+.c13[disabled] .c7 svg {
+  fill: #8b8b8b;
+}
+
+.c13::before {
+  content: '';
+  display: inline-block;
+  position: relative;
+  left: 0;
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
+  width: 0;
+  height: 0;
+  margin-right: 0;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+}
+
+.c13::before {
+  border-color: #373737;
+}
+
+.c13 .c7 svg {
+  fill: #bfbfbf;
+}
+
+.c13:hover {
+  border-color: #6B88c5;
+}
+
+.c13:active {
+  border-color: #3c5ad0;
+  color: #3c5ad0;
+}
+
+.c13:active .c7 svg {
+  fill: #3c5ad0;
 }
 
 .c14 {
@@ -539,7 +623,8 @@ exports[`Modal should render with props closable 1`] = `
   justify-content: center;
   overflow: hidden;
   border: 1px solid;
-  border-radius: 0.25rem;
+  border-radius: 0.5rem;
+  border-color: transparent;
   line-height: 1.5;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -551,13 +636,14 @@ exports[`Modal should render with props closable 1`] = `
   -ms-user-select: none;
   user-select: none;
   height: 2.25rem;
-  padding: 0 1rem;
+  padding: 0 0.75rem;
   font-size: 1rem;
-  border-color: #e0e0e0;
-  background-color: #ffffff;
-  color: #1a1a1a;
+  background-color: #3c5ad0;
+  color: #ffffff;
+  font-weight: bold;
   -webkit-transition: all 200ms ease 0s;
   transition: all 200ms ease 0s;
+  margin-left: 0.5rem;
 }
 
 .c14:focus {
@@ -566,9 +652,16 @@ exports[`Modal should render with props closable 1`] = `
 
 .c14:disabled,
 .c14[disabled] {
-  opacity: 0.7;
+  opacity: 0.85;
+  background-color: #e0e0e0;
+  color: #8b8b8b;
   cursor: default;
   pointer-events: none;
+}
+
+.c14:disabled .c7 svg,
+.c14[disabled] .c7 svg {
+  fill: #8b8b8b;
 }
 
 .c14::before {
@@ -586,98 +679,16 @@ exports[`Modal should render with props closable 1`] = `
   transition: all 200ms ease 0s;
 }
 
-.c14 .c7 {
-  cursor: pointer;
-}
-
 .c14 .c7 svg {
-  fill: #1a1a1a;
-}
-
-.c14:hover {
-  border-color: #3c5ad0;
-  background-color: #f6f6f6;
-}
-
-.c15 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  position: relative;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  overflow: hidden;
-  border: 1px solid;
-  border-radius: 0.25rem;
-  line-height: 1.5;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  vertical-align: middle;
-  white-space: nowrap;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  height: 2.25rem;
-  padding: 0 1rem;
-  font-size: 1rem;
-  border-color: #3c5ad0;
-  background-color: #3c5ad0;
-  color: #ffffff;
-  -webkit-transition: all 200ms ease 0s;
-  transition: all 200ms ease 0s;
-  margin-left: 0.5rem;
-}
-
-.c15:focus {
-  outline: 0;
-}
-
-.c15:disabled,
-.c15[disabled] {
-  opacity: 0.7;
-  cursor: default;
-  pointer-events: none;
-}
-
-.c15::before {
-  content: '';
-  display: inline-block;
-  position: relative;
-  left: 0;
-  -webkit-flex: none;
-  -ms-flex: none;
-  flex: none;
-  width: 0;
-  height: 0;
-  margin-right: 0;
-  -webkit-transition: all 200ms ease 0s;
-  transition: all 200ms ease 0s;
-}
-
-.c15 .c7 {
-  cursor: pointer;
-}
-
-.c15 .c7 svg {
   fill: #ffffff;
 }
 
-.c15:hover {
-  background-color: #ffffff;
-  color: #3c5ad0;
+.c14:hover {
+  background-color: #516bd5;
 }
 
-.c15:hover .c7 svg {
-  fill: #3c5ad0;
+.c14:active {
+  background-color: #2f4dc3;
 }
 
 .c6 {
@@ -696,7 +707,8 @@ exports[`Modal should render with props closable 1`] = `
   justify-content: center;
   overflow: hidden;
   border: 1px solid;
-  border-radius: 0.25rem;
+  border-radius: 0.5rem;
+  border-color: transparent;
   line-height: 1.5;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -710,9 +722,9 @@ exports[`Modal should render with props closable 1`] = `
   border-radius: 999px;
   width: 2.25rem;
   height: 2.25rem;
-  border-color: transparent;
-  background-color: transparent;
-  color: #1a1a1a;
+  background-color: #e8ecf5;
+  color: #6B88c5;
+  font-weight: bold;
   -webkit-transition: all 200ms ease 0s;
   transition: all 200ms ease 0s;
 }
@@ -723,9 +735,16 @@ exports[`Modal should render with props closable 1`] = `
 
 .c6:disabled,
 .c6[disabled] {
-  opacity: 0.7;
+  opacity: 0.85;
+  background-color: #e0e0e0;
+  color: #8b8b8b;
   cursor: default;
   pointer-events: none;
+}
+
+.c6:disabled .c7 svg,
+.c6[disabled] .c7 svg {
+  fill: #8b8b8b;
 }
 
 .c6::before {
@@ -743,17 +762,16 @@ exports[`Modal should render with props closable 1`] = `
   transition: all 200ms ease 0s;
 }
 
-.c6 .c7 {
-  cursor: pointer;
-}
-
 .c6 .c7 svg {
-  fill: #1a1a1a;
+  fill: #6B88c5;
 }
 
 .c6:hover {
-  border-color: transparent;
-  background-color: #e0e0e0;
+  background-color: #fafbfd;
+}
+
+.c6:active {
+  background-color: #d6dded;
 }
 
 .c5 {
@@ -792,12 +810,12 @@ exports[`Modal should render with props closable 1`] = `
         >
           <button
             class="c6"
-            type="default"
+            type="normal"
           >
             <i
               class="c7 c8"
               cursor="default"
-              size="20"
+              size="24"
               style="pointer-events: none;"
             >
               <svg
@@ -814,43 +832,33 @@ exports[`Modal should render with props closable 1`] = `
                 />
               </svg>
             </i>
-            <div
-              class="c9"
-            />
           </button>
         </div>
       </div>
       <div
-        class="c10"
+        class="c9"
       />
       <div
-        class="c11"
+        class="c10"
         px="3"
         py="2"
       >
         <div
-          class="c12"
+          class="c11"
         >
           <div
-            class="c13"
+            class="c12"
           >
             <button
-              class="c14"
-              type="default"
+              class="c13"
             >
               Cancel
-              <div
-                class="c9"
-              />
             </button>
             <button
-              class="c15"
+              class="c14"
               type="primary"
             >
               Confirm
-              <div
-                class="c9"
-              />
             </button>
           </div>
         </div>

@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Popconfirm should render correctly 1`] = `
-.c6 {
+.c5 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -11,27 +11,17 @@ exports[`Popconfirm should render correctly 1`] = `
   margin-right: 0.5rem;
 }
 
-.c6 svg {
+.c5 svg {
   fill: #8b8b8b;
   vertical-align: middle;
   -webkit-transition: all 200ms ease 0s;
   transition: all 200ms ease 0s;
 }
 
-.c6.c6.c6 svg {
+.c5.c5.c5 svg {
   fill: #f6a700;
   width: 20px;
   height: 20px;
-}
-
-.c1 {
-  position: absolute;
-  border-radius: 50%;
-  opacity: 1;
-  background: rgba(0,0,0,0.2);
-  -webkit-transform: scale(0);
-  -ms-transform: scale(0);
-  transform: scale(0);
 }
 
 .c0 {
@@ -50,7 +40,8 @@ exports[`Popconfirm should render correctly 1`] = `
   justify-content: center;
   overflow: hidden;
   border: 1px solid;
-  border-radius: 0.25rem;
+  border-radius: 0.5rem;
+  border-color: transparent;
   line-height: 1.5;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -62,11 +53,11 @@ exports[`Popconfirm should render correctly 1`] = `
   -ms-user-select: none;
   user-select: none;
   height: 2.25rem;
-  padding: 0 1rem;
+  padding: 0 0.75rem;
   font-size: 1rem;
   border-color: #e0e0e0;
   background-color: #ffffff;
-  color: #1a1a1a;
+  color: #373737;
   -webkit-transition: all 200ms ease 0s;
   transition: all 200ms ease 0s;
 }
@@ -77,9 +68,16 @@ exports[`Popconfirm should render correctly 1`] = `
 
 .c0:disabled,
 .c0[disabled] {
-  opacity: 0.7;
+  opacity: 0.85;
+  background-color: #e0e0e0;
+  color: #8b8b8b;
   cursor: default;
   pointer-events: none;
+}
+
+.c0:disabled .c4 svg,
+.c0[disabled] .c4 svg {
+  fill: #8b8b8b;
 }
 
 .c0::before {
@@ -97,17 +95,118 @@ exports[`Popconfirm should render correctly 1`] = `
   transition: all 200ms ease 0s;
 }
 
-.c0 .c5 {
-  cursor: pointer;
+.c0::before {
+  border-color: #373737;
 }
 
-.c0 .c5 svg {
-  fill: #1a1a1a;
+.c0 .c4 svg {
+  fill: #bfbfbf;
 }
 
 .c0:hover {
+  border-color: #6B88c5;
+}
+
+.c0:active {
   border-color: #3c5ad0;
-  background-color: #f6f6f6;
+  color: #3c5ad0;
+}
+
+.c0:active .c4 svg {
+  fill: #3c5ad0;
+}
+
+.c7 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  position: relative;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  overflow: hidden;
+  border: 1px solid;
+  border-radius: 0.5rem;
+  border-color: transparent;
+  line-height: 1.5;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  height: 1.75rem;
+  padding: 0 0.5rem;
+  font-size: 0.875rem;
+  border-color: #e0e0e0;
+  background-color: #ffffff;
+  color: #373737;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+  margin-left: auto;
+}
+
+.c7:focus {
+  outline: 0;
+}
+
+.c7:disabled,
+.c7[disabled] {
+  opacity: 0.85;
+  background-color: #e0e0e0;
+  color: #8b8b8b;
+  cursor: default;
+  pointer-events: none;
+}
+
+.c7:disabled .c4 svg,
+.c7[disabled] .c4 svg {
+  fill: #8b8b8b;
+}
+
+.c7::before {
+  content: '';
+  display: inline-block;
+  position: relative;
+  left: 0;
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
+  width: 0;
+  height: 0;
+  margin-right: 0;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+}
+
+.c7::before {
+  border-color: #373737;
+}
+
+.c7 .c4 svg {
+  fill: #bfbfbf;
+}
+
+.c7:hover {
+  border-color: #6B88c5;
+}
+
+.c7:active {
+  border-color: #3c5ad0;
+  color: #3c5ad0;
+}
+
+.c7:active .c4 svg {
+  fill: #3c5ad0;
 }
 
 .c8 {
@@ -126,7 +225,8 @@ exports[`Popconfirm should render correctly 1`] = `
   justify-content: center;
   overflow: hidden;
   border: 1px solid;
-  border-radius: 0.25rem;
+  border-radius: 0.5rem;
+  border-color: transparent;
   line-height: 1.5;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -138,14 +238,14 @@ exports[`Popconfirm should render correctly 1`] = `
   -ms-user-select: none;
   user-select: none;
   height: 1.75rem;
-  padding: 0 0.75rem;
+  padding: 0 0.5rem;
   font-size: 0.875rem;
-  border-color: #e0e0e0;
-  background-color: #ffffff;
-  color: #1a1a1a;
+  background-color: #3c5ad0;
+  color: #ffffff;
+  font-weight: bold;
   -webkit-transition: all 200ms ease 0s;
   transition: all 200ms ease 0s;
-  margin-left: auto;
+  margin-left: 0.5rem;
 }
 
 .c8:focus {
@@ -154,9 +254,16 @@ exports[`Popconfirm should render correctly 1`] = `
 
 .c8:disabled,
 .c8[disabled] {
-  opacity: 0.7;
+  opacity: 0.85;
+  background-color: #e0e0e0;
+  color: #8b8b8b;
   cursor: default;
   pointer-events: none;
+}
+
+.c8:disabled .c4 svg,
+.c8[disabled] .c4 svg {
+  fill: #8b8b8b;
 }
 
 .c8::before {
@@ -174,101 +281,19 @@ exports[`Popconfirm should render correctly 1`] = `
   transition: all 200ms ease 0s;
 }
 
-.c8 .c5 {
-  cursor: pointer;
-}
-
-.c8 .c5 svg {
-  fill: #1a1a1a;
-}
-
-.c8:hover {
-  border-color: #3c5ad0;
-  background-color: #f6f6f6;
-}
-
-.c9 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  position: relative;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  overflow: hidden;
-  border: 1px solid;
-  border-radius: 0.25rem;
-  line-height: 1.5;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  vertical-align: middle;
-  white-space: nowrap;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  height: 1.75rem;
-  padding: 0 0.75rem;
-  font-size: 0.875rem;
-  border-color: #3c5ad0;
-  background-color: #3c5ad0;
-  color: #ffffff;
-  -webkit-transition: all 200ms ease 0s;
-  transition: all 200ms ease 0s;
-  margin-left: 0.5rem;
-}
-
-.c9:focus {
-  outline: 0;
-}
-
-.c9:disabled,
-.c9[disabled] {
-  opacity: 0.7;
-  cursor: default;
-  pointer-events: none;
-}
-
-.c9::before {
-  content: '';
-  display: inline-block;
-  position: relative;
-  left: 0;
-  -webkit-flex: none;
-  -ms-flex: none;
-  flex: none;
-  width: 0;
-  height: 0;
-  margin-right: 0;
-  -webkit-transition: all 200ms ease 0s;
-  transition: all 200ms ease 0s;
-}
-
-.c9 .c5 {
-  cursor: pointer;
-}
-
-.c9 .c5 svg {
+.c8 .c4 svg {
   fill: #ffffff;
 }
 
-.c9:hover {
-  background-color: #ffffff;
-  color: #3c5ad0;
+.c8:hover {
+  background-color: #516bd5;
 }
 
-.c9:hover .c5 svg {
-  fill: #3c5ad0;
+.c8:active {
+  background-color: #2f4dc3;
 }
 
-.c4 {
+.c3 {
   box-sizing: border-box;
   display: -webkit-box;
   display: -webkit-flex;
@@ -280,7 +305,7 @@ exports[`Popconfirm should render correctly 1`] = `
   align-items: center;
 }
 
-.c7 {
+.c6 {
   box-sizing: border-box;
   margin-top: 1rem;
   display: -webkit-box;
@@ -289,7 +314,7 @@ exports[`Popconfirm should render correctly 1`] = `
   display: flex;
 }
 
-.c10 {
+.c9 {
   position: absolute;
   width: 0;
   height: 0;
@@ -307,7 +332,7 @@ exports[`Popconfirm should render correctly 1`] = `
   opacity: 1;
 }
 
-.c10::after {
+.c9::after {
   content: '';
   position: absolute;
   top: -7px;
@@ -317,7 +342,7 @@ exports[`Popconfirm should render correctly 1`] = `
   border-left: 6px solid transparent;
 }
 
-.c2 {
+.c1 {
   border: 1px solid;
   border-color: #001e40;
   background-color: #001e40;
@@ -340,7 +365,7 @@ exports[`Popconfirm should render correctly 1`] = `
   text-align: left;
 }
 
-.c3 {
+.c2 {
   padding: 0.5rem;
   word-break: break-all;
   white-space: nowrap;
@@ -350,12 +375,8 @@ exports[`Popconfirm should render correctly 1`] = `
   <div>
     <button
       class="c0"
-      type="default"
     >
       Button
-      <div
-        class="c1"
-      />
     </button>
   </div>
   <div
@@ -368,19 +389,19 @@ exports[`Popconfirm should render correctly 1`] = `
         style="opacity: 0; transform: scale(0.8);"
       >
         <div
-          class="c2"
+          class="c1"
           placement="top"
           px="2"
           py="1"
         >
           <div
-            class="c3"
+            class="c2"
           >
             <div
-              class="c4"
+              class="c3"
             >
               <i
-                class="c5 c6"
+                class="c4 c5"
                 cursor="default"
                 fill="warning"
                 size="20"
@@ -402,31 +423,24 @@ exports[`Popconfirm should render correctly 1`] = `
               Test Popconfirm
             </div>
             <div
-              class="c7"
+              class="c6"
             >
               <button
-                class="c8"
-                type="default"
+                class="c7"
               >
                 Cancel
-                <div
-                  class="c1"
-                />
               </button>
               <button
-                class="c9"
+                class="c8"
                 type="primary"
               >
                 Confirm
-                <div
-                  class="c1"
-                />
               </button>
             </div>
           </div>
         </div>
         <div
-          class="c10"
+          class="c9"
           placement="bottom"
         />
       </div>

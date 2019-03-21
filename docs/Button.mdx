@@ -5,8 +5,8 @@ route: /components/button
 ---
 
 import { PropsTable, Playground } from 'docz';
-import { MdCheck, MdDelete, MdClose, MdSearch } from 'react-icons/md';
-import { Button, Box, Icon } from 'tailor-ui';
+import { MdArrowForward } from 'react-icons/md';
+import { Button } from 'tailor-ui';
 
 # Button
 
@@ -25,9 +25,15 @@ import { Button } from 'tailor-ui';
 ### Basic
 
 <Playground>
-  <Button>Basic Button</Button>
-  <Button text ml="2">
-    Text Button
+  <Button>Basic</Button>
+  <Button rounded ml="2">
+    Basic
+  </Button>
+  <Button disabled ml="2">
+    Basic
+  </Button>
+  <Button loading ml="2">
+    Basic
   </Button>
 </Playground>
 
@@ -35,191 +41,132 @@ import { Button } from 'tailor-ui';
 
 <Playground>
   <Button type="primary">Primary</Button>
-  <Button type="secondary" ml="2">
-    Secondary
+  <Button type="primary-invert" ml="2">
+    Primary Invert
   </Button>
-  <Button type="info" ml="2">
-    Info
+  <br />
+  <br />
+  <Button type="danger">Danger</Button>
+  <Button type="danger-invert" ml="2">
+    Danger Invert
   </Button>
-  <Button type="success" ml="2">
-    Success
-  </Button>
-  <Button type="warning" ml="2">
-    Warning
-  </Button>
-  <Button type="danger" ml="2">
-    Danger
-  </Button>
-</Playground>
-
-### Text
-
-<Playground>
-  <Button text type="primary">
-    Primary
-  </Button>
-  <Button text type="secondary" ml="2">
-    Secondary
-  </Button>
-  <Button text type="info" ml="2">
-    Info
-  </Button>
-  <Button text type="success" ml="2">
-    Success
-  </Button>
-  <Button text type="warning" ml="2">
-    Warning
-  </Button>
-  <Button text type="danger" ml="2">
-    Danger
+  <br />
+  <br />
+  <Button type="regular">Regular</Button>
+  <Button type="normal" ml="2">
+    Normal
   </Button>
 </Playground>
 
 ### Rounded
 
 <Playground>
-  <Button type="primary" rounded>
+  <Button rounded type="primary">
     Primary
   </Button>
-  <Button type="secondary" ml="2" rounded>
-    Secondary
+  <Button rounded type="primary-invert" ml="2">
+    Primary Invert
   </Button>
-  <Button type="info" ml="2" rounded>
-    Info
-  </Button>
-  <Button type="success" ml="2" rounded>
-    Success
-  </Button>
-  <Button type="warning" ml="2" rounded>
-    Warning
-  </Button>
-  <Button type="danger" ml="2" rounded>
+  <br />
+  <br />
+  <Button rounded type="danger">
     Danger
   </Button>
-</Playground>
-
-### Outlined
-
-<Playground>
-  <Button type="primary" outlined>
-    Primary
+  <Button rounded type="danger-invert" ml="2">
+    Danger Invert
   </Button>
-  <Button type="secondary" ml="2" outlined>
-    Secondary
+  <br />
+  <br />
+  <Button rounded type="regular">
+    Regular
   </Button>
-  <Button type="info" ml="2" outlined>
-    Info
-  </Button>
-  <Button type="success" ml="2" outlined>
-    Success
-  </Button>
-  <Button type="warning" ml="2" outlined>
-    Warning
-  </Button>
-  <Button type="danger" ml="2" outlined>
-    Danger
-  </Button>
-</Playground>
-
-### Rounded & Outlined
-
-<Playground>
-  <Button type="primary" rounded outlined>
-    Primary
-  </Button>
-  <Button type="secondary" ml="2" rounded outlined>
-    Secondary
-  </Button>
-  <Button type="info" ml="2" rounded outlined>
-    Info
-  </Button>
-  <Button type="success" ml="2" rounded outlined>
-    Success
-  </Button>
-  <Button type="warning" ml="2" rounded outlined>
-    Warning
-  </Button>
-  <Button type="danger" ml="2" rounded outlined>
-    Danger
+  <Button rounded type="normal" ml="2">
+    Normal
   </Button>
 </Playground>
 
 ### Icon
 
 ```js
-import { MdCheck, MdDelete, MdClose, MdSearch } from 'react-icons/md';
+import { MdArrowForward } from 'react-icons/md';
 ```
 
 <Playground>
-  <Button type="primary" icon={MdCheck}>
-    Confirm
+  <Button icon={MdArrowForward} type="primary">
+    Primary
   </Button>
-  <Button type="danger" icon={MdDelete} ml="2">
-    Delete
-  </Button>
-  <Button type="info" icon={MdSearch} ml="2">
-    Search
+  <Button icon={MdArrowForward} type="primary-invert" ml="2">
+    Primary Invert
   </Button>
   <br />
   <br />
-  <Button type="primary" rounded icon={MdSearch} ml="2" />
-  <Button type="danger" rounded icon={MdDelete} ml="2" />
-  <Button type="info" rounded icon={MdSearch} ml="2" />
-  <br />
-  <br />
-  <Button>
-    <Icon type={MdCheck} fill="success" size="20" mr="2" />
-    Success
-  </Button>
-  <Button ml="2">
-    <Icon type={MdClose} fill="danger" size="20" mr="2" />
+  <Button icon={MdArrowForward} type="danger">
     Danger
+  </Button>
+  <Button icon={MdArrowForward} type="danger-invert" ml="2">
+    Danger Invert
+  </Button>
+  <br />
+  <br />
+  <Button icon={MdArrowForward} type="regular">
+    Regular
+  </Button>
+  <Button icon={MdArrowForward} type="normal" ml="2">
+    Normal
   </Button>
 </Playground>
 
 ### Disabled
 
 <Playground>
-  <Button type="primary" disabled>
+  <Button disabled type="primary">
     Primary
   </Button>
-  <Button type="secondary" ml="2" disabled>
-    Secondary
+  <Button disabled type="primary-invert" ml="2">
+    Primary Invert
   </Button>
-  <Button type="info" ml="2" disabled>
-    Info
-  </Button>
-  <Button type="success" ml="2" disabled>
-    Success
-  </Button>
-  <Button type="warning" ml="2" disabled>
-    Warning
-  </Button>
-  <Button type="danger" ml="2" disabled>
+  <br />
+  <br />
+  <Button disabled type="danger">
     Danger
+  </Button>
+  <Button disabled type="danger-invert" ml="2">
+    Danger Invert
+  </Button>
+  <br />
+  <br />
+  <Button disabled type="regular">
+    Regular
+  </Button>
+  <Button disabled type="normal" ml="2">
+    Normal
   </Button>
 </Playground>
 
 ### Loading
 
 <Playground>
-  <Button type="primary" loading>
+  <Button loading type="primary">
     Primary
   </Button>
-  <Button type="secondary" ml="2" loading>
-    Secondary
+  <Button loading type="primary-invert" ml="2">
+    Primary Invert
   </Button>
-  <Button type="info" ml="2" loading>
-    Info
-  </Button>
-  <Button type="success" ml="2" loading>
-    Success
-  </Button>
-  <Button type="warning" ml="2" loading>
-    Warning
-  </Button>
-  <Button type="danger" ml="2" loading>
+  <br />
+  <br />
+  <Button loading type="danger">
     Danger
+  </Button>
+  <Button loading type="danger-invert" ml="2">
+    Danger Invert
+  </Button>
+  <br />
+  <br />
+  <Button loading type="regular">
+    Regular
+  </Button>
+  <Button loading type="normal" ml="2">
+    Normal
   </Button>
 </Playground>
 
@@ -255,12 +202,6 @@ import { MdCheck, MdDelete, MdClose, MdSearch } from 'react-icons/md';
   <Button ml={2} size="lg">
     Button lg
   </Button>
-</Playground>
-
-### Block
-
-<Playground>
-  <Button block>Block Button</Button>
 </Playground>
 
 ## API
