@@ -34,27 +34,27 @@ export const inputStyles = css<StyledInputProps>`
   max-width: 100%;
   border: ${p => p.theme.borders.base};
   border-radius: ${p => p.theme.radii.base};
-  border-color: ${p => p.theme.colors.gray300};
+  border-color: ${p => p.theme.colors.gray400};
   outline: none;
-  background: ${p => p.theme.colors.light};
-  background-image: none;
+  background-color: ${p => p.theme.colors.light};
   color: ${p => p.theme.colors.gray700};
   line-height: ${p => p.theme.lineHeight};
   appearance: none;
 
   &:hover {
-    border-color: ${p => p.theme.colors.gray500};
+    border-color: ${p => p.theme.colors.primary};
   }
 
   &:focus {
-    border-color: ${p => p.theme.colors.primaryDark};
+    border-color: ${p => p.theme.colors.primary};
+    box-shadow: inset 0 0 0 2px ${p => p.theme.colors.surface};
   }
 
   &:disabled,
   [disabled] {
-    border-color: ${p => p.theme.colors.gray500};
-    opacity: 0.5;
+    border-color: ${p => p.theme.colors.gray400};
     background-color: ${p => p.theme.colors.gray300};
+    color: ${p => p.theme.colors.gray500};
     cursor: not-allowed;
   }
 
@@ -74,12 +74,12 @@ export const inputStyles = css<StyledInputProps>`
       `,
       md: css`
         height: ${heights.base};
-        padding: 4px ${paddings.xs};
+        padding: 4px ${paddings.sm};
         font-size: ${fontSizes.base};
       `,
       lg: css`
         height: ${heights.lg};
-        padding: 6px ${paddings.xs};
+        padding: 6px ${paddings.md};
         font-size: ${fontSizes.lg};
       `,
     };

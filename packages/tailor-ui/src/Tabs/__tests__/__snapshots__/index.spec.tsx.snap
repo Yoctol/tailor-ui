@@ -16,7 +16,7 @@ exports[`Tabs should render correctly 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
-  height: 2rem;
+  height: 2.25rem;
   padding: 0 1rem;
   font-size: 1rem;
   border-bottom: 3px solid transparent;
@@ -56,7 +56,7 @@ exports[`Tabs should render correctly 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
-  height: 2rem;
+  height: 2.25rem;
   padding: 0 1rem;
   font-size: 1rem;
   border-bottom: 3px solid transparent;
@@ -124,7 +124,7 @@ exports[`Tabs should render with props absolute 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
-  height: 2rem;
+  height: 2.25rem;
   padding: 0 1rem;
   font-size: 1rem;
   border-bottom: 3px solid transparent;
@@ -164,7 +164,7 @@ exports[`Tabs should render with props absolute 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
-  height: 2rem;
+  height: 2.25rem;
   padding: 0 1rem;
   font-size: 1rem;
   border-bottom: 3px solid transparent;
@@ -234,7 +234,7 @@ exports[`Tabs should render with props pills 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
-  height: 2rem;
+  height: 2.25rem;
   padding: 0 1rem;
   font-size: 1rem;
   border-radius: 0.5rem;
@@ -276,7 +276,7 @@ exports[`Tabs should render with props pills 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
-  height: 2rem;
+  height: 2.25rem;
   padding: 0 1rem;
   font-size: 1rem;
   border-radius: 0.5rem;
@@ -350,7 +350,7 @@ exports[`Tabs should render with sizes 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
-  height: 2rem;
+  height: 2.25rem;
   padding: 0 1rem;
   font-size: 1rem;
   border-bottom: 3px solid transparent;
@@ -390,7 +390,7 @@ exports[`Tabs should render with sizes 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
-  height: 2rem;
+  height: 2.25rem;
   padding: 0 1rem;
   font-size: 1rem;
   border-bottom: 3px solid transparent;
@@ -429,7 +429,7 @@ exports[`Tabs should render with sizes 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
-  height: 1.5rem;
+  height: 1.75rem;
   padding: 0 0.75rem;
   font-size: 0.875rem;
   border-bottom: 3px solid transparent;
@@ -469,7 +469,7 @@ exports[`Tabs should render with sizes 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
-  height: 1.5rem;
+  height: 1.75rem;
   padding: 0 0.75rem;
   font-size: 0.875rem;
   border-bottom: 3px solid transparent;
@@ -508,7 +508,7 @@ exports[`Tabs should render with sizes 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
-  height: 2.5rem;
+  height: 2.75rem;
   padding: 0 1.5rem;
   font-size: 1.125rem;
   border-bottom: 3px solid transparent;
@@ -548,7 +548,7 @@ exports[`Tabs should render with sizes 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
-  height: 2.5rem;
+  height: 2.75rem;
   padding: 0 1.5rem;
   font-size: 1.125rem;
   border-bottom: 3px solid transparent;

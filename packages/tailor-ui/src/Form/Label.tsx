@@ -4,9 +4,9 @@ import tag from '../utils/CleanTag';
 
 const Label = styled(tag.label)`
   display: block;
-  padding-bottom: ${p => p.theme.space[2]};
-  font-size: ${p => p.theme.fontSizes.sm};
-  line-height: 1;
+  font-size: ${p => p.theme.fontSizes.base};
+  font-weight: 500;
+  letter-spacing: 0.2px;
 `;
 
 export default Label;
