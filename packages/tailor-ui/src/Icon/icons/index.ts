@@ -1,7 +1,6 @@
 import analytics from './analytics';
 import kurator from './kurator';
 import line from './line';
-import loading from './loading';
 import messenger from './messenger';
 import robot from './robot';
 import settings from './settings';
@@ -20,8 +19,7 @@ export type BuiltInIconKeys =
   | 'analytics'
   | 'tags'
   | 'tutorial'
-  | 'settings'
-  | 'loading';
+  | 'settings';
 
 export const icons = {
   line,
@@ -34,5 +32,4 @@ export const icons = {
   tags,
   settings,
   tutorial,
-  loading,
 };
