@@ -1,104 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Button should render block button 1`] = `
-.c1 {
-  position: absolute;
-  border-radius: 50%;
-  opacity: 1;
-  background: rgba(0,0,0,0.2);
-  -webkit-transform: scale(0);
-  -ms-transform: scale(0);
-  transform: scale(0);
-}
-
-.c0 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  position: relative;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  overflow: hidden;
-  border: 1px solid;
-  border-radius: 0.25rem;
-  line-height: 1.5;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  vertical-align: middle;
-  white-space: nowrap;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  width: 100%;
-  height: 2.25rem;
-  padding: 0 1rem;
-  font-size: 1rem;
-  border-color: #e0e0e0;
-  background-color: #ffffff;
-  color: #1a1a1a;
-  -webkit-transition: all 200ms ease 0s;
-  transition: all 200ms ease 0s;
-}
-
-.c0:focus {
-  outline: 0;
-}
-
-.c0:disabled,
-.c0[disabled] {
-  opacity: 0.7;
-  cursor: default;
-  pointer-events: none;
-}
-
-.c0::before {
-  content: '';
-  display: inline-block;
-  position: relative;
-  left: 0;
-  -webkit-flex: none;
-  -ms-flex: none;
-  flex: none;
-  width: 0;
-  height: 0;
-  margin-right: 0;
-  -webkit-transition: all 200ms ease 0s;
-  transition: all 200ms ease 0s;
-}
-
-.c0 .c2 {
-  cursor: pointer;
-}
-
-.c0 .c2 svg {
-  fill: #1a1a1a;
-}
-
-.c0:hover {
-  border-color: #3c5ad0;
-  background-color: #f6f6f6;
-}
-
-<button
-  class="c0"
-  type="default"
->
-  Text Button
-  <div
-    class="c1"
-  />
-</button>
-`;
-
 exports[`Button should render button with specified icon 1`] = `
 .c2 {
   display: -webkit-inline-box;
@@ -107,7 +8,7 @@ exports[`Button should render button with specified icon 1`] = `
   display: inline-flex;
   line-height: 1;
   cursor: default;
-  margin-right: 0.25rem;
+  margin-right: 4px;
 }
 
 .c2 svg {
@@ -118,70 +19,69 @@ exports[`Button should render button with specified icon 1`] = `
 }
 
 .c2.c2.c2 svg {
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
 }
 
-.c3 {
-  position: absolute;
-  border-radius: 50%;
-  opacity: 1;
-  background: rgba(0,0,0,0.2);
-  -webkit-transform: scale(0);
-  -ms-transform: scale(0);
-  transform: scale(0);
+.c3:disabled .c1 svg,
+.c3[disabled] .c1 svg {
+  fill: #8b8b8b;
 }
 
-.c4 .c1 {
-  cursor: pointer;
+.c3 .c1 svg {
+  fill: #bfbfbf;
+}
+
+.c3:active .c1 svg {
+  fill: #3c5ad0;
+}
+
+.c4:disabled .c1 svg,
+.c4[disabled] .c1 svg {
+  fill: #8b8b8b;
 }
 
 .c4 .c1 svg {
-  fill: #1a1a1a;
-}
-
-.c5 .c1 {
-  cursor: pointer;
-}
-
-.c5 .c1 svg {
-  fill: #1a1a1a;
-}
-
-.c6 .c1 {
-  cursor: pointer;
-}
-
-.c6 .c1 svg {
   fill: #ffffff;
 }
 
-.c6:hover .c1 svg {
-  fill: #4384f0;
+.c5:disabled .c1 svg,
+.c5[disabled] .c1 svg {
+  fill: #8b8b8b;
 }
 
-.c7 .c1 {
-  cursor: pointer;
+.c5 .c1 svg {
+  fill: #bfbfbf;
+}
+
+.c5:active .c1 svg {
+  fill: #3c5ad0;
+}
+
+.c6:disabled .c1 svg,
+.c6[disabled] .c1 svg {
+  fill: #8b8b8b;
+}
+
+.c6 .c1 svg {
+  fill: #bfbfbf;
+}
+
+.c6:active .c1 svg {
+  fill: #3c5ad0;
+}
+
+.c7:disabled .c1 svg,
+.c7[disabled] .c1 svg {
+  fill: #8b8b8b;
 }
 
 .c7 .c1 svg {
-  fill: #1a1a1a;
+  fill: #bfbfbf;
 }
 
-.c8 .c1 {
-  cursor: pointer;
-}
-
-.c8 .c1 svg {
-  fill: #1a1a1a;
-}
-
-.c9 .c1 {
-  cursor: pointer;
-}
-
-.c9 .c1 svg {
-  fill: #1a1a1a;
+.c7:active .c1 svg {
+  fill: #3c5ad0;
 }
 
 .c0 {
@@ -200,7 +100,8 @@ exports[`Button should render button with specified icon 1`] = `
   justify-content: center;
   overflow: hidden;
   border: 1px solid;
-  border-radius: 0.25rem;
+  border-radius: 0.5rem;
+  border-color: transparent;
   line-height: 1.5;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -212,11 +113,11 @@ exports[`Button should render button with specified icon 1`] = `
   -ms-user-select: none;
   user-select: none;
   height: 2.25rem;
-  padding: 0 1rem;
+  padding: 0 0.75rem;
   font-size: 1rem;
-  border-color: #fc5475;
   background-color: #fc5475;
   color: #ffffff;
+  font-weight: bold;
   -webkit-transition: all 200ms ease 0s;
   transition: all 200ms ease 0s;
 }
@@ -227,9 +128,16 @@ exports[`Button should render button with specified icon 1`] = `
 
 .c0:disabled,
 .c0[disabled] {
-  opacity: 0.7;
+  opacity: 0.85;
+  background-color: #e0e0e0;
+  color: #8b8b8b;
   cursor: default;
   pointer-events: none;
+}
+
+.c0:disabled .c1 svg,
+.c0[disabled] .c1 svg {
+  fill: #8b8b8b;
 }
 
 .c0::before {
@@ -247,21 +155,16 @@ exports[`Button should render button with specified icon 1`] = `
   transition: all 200ms ease 0s;
 }
 
-.c0 .c1 {
-  cursor: pointer;
-}
-
 .c0 .c1 svg {
   fill: #ffffff;
 }
 
 .c0:hover {
-  background-color: #ffffff;
-  color: #fc5475;
+  background-color: #fc6d89;
 }
 
-.c0:hover .c1 svg {
-  fill: #fc5475;
+.c0:active {
+  background-color: #fc3b61;
 }
 
 <button
@@ -271,7 +174,7 @@ exports[`Button should render button with specified icon 1`] = `
   <i
     class="c1 c2"
     cursor="default"
-    size="20"
+    size="24"
     style="pointer-events: none;"
   >
     <svg
@@ -289,23 +192,10 @@ exports[`Button should render button with specified icon 1`] = `
     </svg>
   </i>
   Delete
-  <div
-    class="c3"
-  />
 </button>
 `;
 
 exports[`Button should render button with specified size 1`] = `
-.c1 {
-  position: absolute;
-  border-radius: 50%;
-  opacity: 1;
-  background: rgba(0,0,0,0.2);
-  -webkit-transform: scale(0);
-  -ms-transform: scale(0);
-  transform: scale(0);
-}
-
 .c0 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -322,7 +212,8 @@ exports[`Button should render button with specified size 1`] = `
   justify-content: center;
   overflow: hidden;
   border: 1px solid;
-  border-radius: 0.25rem;
+  border-radius: 0.5rem;
+  border-color: transparent;
   line-height: 1.5;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -334,11 +225,11 @@ exports[`Button should render button with specified size 1`] = `
   -ms-user-select: none;
   user-select: none;
   height: 1.75rem;
-  padding: 0 0.75rem;
+  padding: 0 0.5rem;
   font-size: 0.875rem;
   border-color: #e0e0e0;
   background-color: #ffffff;
-  color: #1a1a1a;
+  color: #373737;
   -webkit-transition: all 200ms ease 0s;
   transition: all 200ms ease 0s;
 }
@@ -349,9 +240,16 @@ exports[`Button should render button with specified size 1`] = `
 
 .c0:disabled,
 .c0[disabled] {
-  opacity: 0.7;
+  opacity: 0.85;
+  background-color: #e0e0e0;
+  color: #8b8b8b;
   cursor: default;
   pointer-events: none;
+}
+
+.c0:disabled .c1 svg,
+.c0[disabled] .c1 svg {
+  fill: #8b8b8b;
 }
 
 .c0::before {
@@ -369,41 +267,35 @@ exports[`Button should render button with specified size 1`] = `
   transition: all 200ms ease 0s;
 }
 
-.c0 .c2 {
-  cursor: pointer;
+.c0::before {
+  border-color: #373737;
 }
 
-.c0 .c2 svg {
-  fill: #1a1a1a;
+.c0 .c1 svg {
+  fill: #bfbfbf;
 }
 
 .c0:hover {
+  border-color: #6B88c5;
+}
+
+.c0:active {
   border-color: #3c5ad0;
-  background-color: #f6f6f6;
+  color: #3c5ad0;
+}
+
+.c0:active .c1 svg {
+  fill: #3c5ad0;
 }
 
 <button
   class="c0"
-  type="default"
 >
   Text Button
-  <div
-    class="c1"
-  />
 </button>
 `;
 
 exports[`Button should render correctly 1`] = `
-.c1 {
-  position: absolute;
-  border-radius: 50%;
-  opacity: 1;
-  background: rgba(0,0,0,0.2);
-  -webkit-transform: scale(0);
-  -ms-transform: scale(0);
-  transform: scale(0);
-}
-
 .c0 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -420,7 +312,8 @@ exports[`Button should render correctly 1`] = `
   justify-content: center;
   overflow: hidden;
   border: 1px solid;
-  border-radius: 0.25rem;
+  border-radius: 0.5rem;
+  border-color: transparent;
   line-height: 1.5;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -432,11 +325,11 @@ exports[`Button should render correctly 1`] = `
   -ms-user-select: none;
   user-select: none;
   height: 2.25rem;
-  padding: 0 1rem;
+  padding: 0 0.75rem;
   font-size: 1rem;
   border-color: #e0e0e0;
   background-color: #ffffff;
-  color: #1a1a1a;
+  color: #373737;
   -webkit-transition: all 200ms ease 0s;
   transition: all 200ms ease 0s;
 }
@@ -447,9 +340,16 @@ exports[`Button should render correctly 1`] = `
 
 .c0:disabled,
 .c0[disabled] {
-  opacity: 0.7;
+  opacity: 0.85;
+  background-color: #e0e0e0;
+  color: #8b8b8b;
   cursor: default;
   pointer-events: none;
+}
+
+.c0:disabled .c1 svg,
+.c0[disabled] .c1 svg {
+  fill: #8b8b8b;
 }
 
 .c0::before {
@@ -467,41 +367,35 @@ exports[`Button should render correctly 1`] = `
   transition: all 200ms ease 0s;
 }
 
-.c0 .c2 {
-  cursor: pointer;
+.c0::before {
+  border-color: #373737;
 }
 
-.c0 .c2 svg {
-  fill: #1a1a1a;
+.c0 .c1 svg {
+  fill: #bfbfbf;
 }
 
 .c0:hover {
+  border-color: #6B88c5;
+}
+
+.c0:active {
   border-color: #3c5ad0;
-  background-color: #f6f6f6;
+  color: #3c5ad0;
+}
+
+.c0:active .c1 svg {
+  fill: #3c5ad0;
 }
 
 <button
   class="c0"
-  type="default"
 >
   Button
-  <div
-    class="c1"
-  />
 </button>
 `;
 
 exports[`Button should render different button type 1`] = `
-.c1 {
-  position: absolute;
-  border-radius: 50%;
-  opacity: 1;
-  background: rgba(0,0,0,0.2);
-  -webkit-transform: scale(0);
-  -ms-transform: scale(0);
-  transform: scale(0);
-}
-
 .c0 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -518,7 +412,8 @@ exports[`Button should render different button type 1`] = `
   justify-content: center;
   overflow: hidden;
   border: 1px solid;
-  border-radius: 0.25rem;
+  border-radius: 0.5rem;
+  border-color: transparent;
   line-height: 1.5;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -530,11 +425,11 @@ exports[`Button should render different button type 1`] = `
   -ms-user-select: none;
   user-select: none;
   height: 2.25rem;
-  padding: 0 1rem;
+  padding: 0 0.75rem;
   font-size: 1rem;
-  border-color: #4384f0;
-  background-color: #4384f0;
+  background-color: #3c5ad0;
   color: #ffffff;
+  font-weight: bold;
   -webkit-transition: all 200ms ease 0s;
   transition: all 200ms ease 0s;
 }
@@ -545,9 +440,16 @@ exports[`Button should render different button type 1`] = `
 
 .c0:disabled,
 .c0[disabled] {
-  opacity: 0.7;
+  opacity: 0.85;
+  background-color: #e0e0e0;
+  color: #8b8b8b;
   cursor: default;
   pointer-events: none;
+}
+
+.c0:disabled .c1 svg,
+.c0[disabled] .c1 svg {
+  fill: #8b8b8b;
 }
 
 .c0::before {
@@ -565,45 +467,27 @@ exports[`Button should render different button type 1`] = `
   transition: all 200ms ease 0s;
 }
 
-.c0 .c2 {
-  cursor: pointer;
-}
-
-.c0 .c2 svg {
+.c0 .c1 svg {
   fill: #ffffff;
 }
 
 .c0:hover {
-  background-color: #ffffff;
-  color: #4384f0;
+  background-color: #516bd5;
 }
 
-.c0:hover .c2 svg {
-  fill: #4384f0;
+.c0:active {
+  background-color: #2f4dc3;
 }
 
 <button
   class="c0"
-  type="info"
+  type="primary"
 >
   Text Button
-  <div
-    class="c1"
-  />
 </button>
 `;
 
 exports[`Button should render disabled button 1`] = `
-.c1 {
-  position: absolute;
-  border-radius: 50%;
-  opacity: 1;
-  background: rgba(0,0,0,0.2);
-  -webkit-transform: scale(0);
-  -ms-transform: scale(0);
-  transform: scale(0);
-}
-
 .c0 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -620,7 +504,8 @@ exports[`Button should render disabled button 1`] = `
   justify-content: center;
   overflow: hidden;
   border: 1px solid;
-  border-radius: 0.25rem;
+  border-radius: 0.5rem;
+  border-color: transparent;
   line-height: 1.5;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -632,11 +517,11 @@ exports[`Button should render disabled button 1`] = `
   -ms-user-select: none;
   user-select: none;
   height: 2.25rem;
-  padding: 0 1rem;
+  padding: 0 0.75rem;
   font-size: 1rem;
   border-color: #e0e0e0;
   background-color: #ffffff;
-  color: #1a1a1a;
+  color: #373737;
   -webkit-transition: all 200ms ease 0s;
   transition: all 200ms ease 0s;
 }
@@ -647,9 +532,16 @@ exports[`Button should render disabled button 1`] = `
 
 .c0:disabled,
 .c0[disabled] {
-  opacity: 0.7;
+  opacity: 0.85;
+  background-color: #e0e0e0;
+  color: #8b8b8b;
   cursor: default;
   pointer-events: none;
+}
+
+.c0:disabled .c1 svg,
+.c0[disabled] .c1 svg {
+  fill: #8b8b8b;
 }
 
 .c0::before {
@@ -667,42 +559,36 @@ exports[`Button should render disabled button 1`] = `
   transition: all 200ms ease 0s;
 }
 
-.c0 .c2 {
-  cursor: pointer;
+.c0::before {
+  border-color: #373737;
 }
 
-.c0 .c2 svg {
-  fill: #1a1a1a;
+.c0 .c1 svg {
+  fill: #bfbfbf;
 }
 
 .c0:hover {
+  border-color: #6B88c5;
+}
+
+.c0:active {
   border-color: #3c5ad0;
-  background-color: #f6f6f6;
+  color: #3c5ad0;
+}
+
+.c0:active .c1 svg {
+  fill: #3c5ad0;
 }
 
 <button
   class="c0"
   disabled=""
-  type="default"
 >
   Text Button
-  <div
-    class="c1"
-  />
 </button>
 `;
 
 exports[`Button should render loading button 1`] = `
-.c1 {
-  position: absolute;
-  border-radius: 50%;
-  opacity: 1;
-  background: rgba(0,0,0,0.2);
-  -webkit-transform: scale(0);
-  -ms-transform: scale(0);
-  transform: scale(0);
-}
-
 .c0 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -719,7 +605,8 @@ exports[`Button should render loading button 1`] = `
   justify-content: center;
   overflow: hidden;
   border: 1px solid;
-  border-radius: 0.25rem;
+  border-radius: 0.5rem;
+  border-color: transparent;
   line-height: 1.5;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -731,12 +618,12 @@ exports[`Button should render loading button 1`] = `
   -ms-user-select: none;
   user-select: none;
   height: 2.25rem;
-  padding: 0 1rem;
+  padding: 0 0.75rem;
   font-size: 1rem;
   border-color: #e0e0e0;
   background-color: #ffffff;
-  color: #1a1a1a;
-  opacity: 0.7;
+  color: #373737;
+  opacity: 0.5;
   cursor: default;
   pointer-events: none;
   -webkit-transition: all 200ms ease 0s;
@@ -749,9 +636,16 @@ exports[`Button should render loading button 1`] = `
 
 .c0:disabled,
 .c0[disabled] {
-  opacity: 0.7;
+  opacity: 0.85;
+  background-color: #e0e0e0;
+  color: #8b8b8b;
   cursor: default;
   pointer-events: none;
+}
+
+.c0:disabled .c1 svg,
+.c0[disabled] .c1 svg {
+  fill: #8b8b8b;
 }
 
 .c0::before {
@@ -769,24 +663,32 @@ exports[`Button should render loading button 1`] = `
   transition: all 200ms ease 0s;
 }
 
-.c0 .c2 {
-  cursor: pointer;
+.c0::before {
+  border-color: #373737;
 }
 
-.c0 .c2 svg {
-  fill: #1a1a1a;
+.c0 .c1 svg {
+  fill: #bfbfbf;
 }
 
 .c0:hover {
+  border-color: #6B88c5;
+}
+
+.c0:active {
   border-color: #3c5ad0;
-  background-color: #f6f6f6;
+  color: #3c5ad0;
+}
+
+.c0:active .c1 svg {
+  fill: #3c5ad0;
 }
 
 .c0::before {
   width: 1em;
   height: 1em;
   margin-right: 8px;
-  border: 1px solid #1a1a1a;
+  border: 1px solid;
   border-radius: 50%;
   border-top-color: transparent;
   border-right-color: transparent;
@@ -796,124 +698,12 @@ exports[`Button should render loading button 1`] = `
 
 <button
   class="c0"
-  type="default"
 >
   Text Button
-  <div
-    class="c1"
-  />
-</button>
-`;
-
-exports[`Button should render outlined button 1`] = `
-.c1 {
-  position: absolute;
-  border-radius: 50%;
-  opacity: 1;
-  background: rgba(0,0,0,0.2);
-  -webkit-transform: scale(0);
-  -ms-transform: scale(0);
-  transform: scale(0);
-}
-
-.c0 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  position: relative;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  overflow: hidden;
-  border: 1px solid;
-  border-radius: 0.25rem;
-  line-height: 1.5;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  vertical-align: middle;
-  white-space: nowrap;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  height: 2.25rem;
-  padding: 0 1rem;
-  font-size: 1rem;
-  border-color: #e0e0e0;
-  background-color: #ffffff;
-  color: #1a1a1a;
-  -webkit-transition: all 200ms ease 0s;
-  transition: all 200ms ease 0s;
-}
-
-.c0:focus {
-  outline: 0;
-}
-
-.c0:disabled,
-.c0[disabled] {
-  opacity: 0.7;
-  cursor: default;
-  pointer-events: none;
-}
-
-.c0::before {
-  content: '';
-  display: inline-block;
-  position: relative;
-  left: 0;
-  -webkit-flex: none;
-  -ms-flex: none;
-  flex: none;
-  width: 0;
-  height: 0;
-  margin-right: 0;
-  -webkit-transition: all 200ms ease 0s;
-  transition: all 200ms ease 0s;
-}
-
-.c0 .c2 {
-  cursor: pointer;
-}
-
-.c0 .c2 svg {
-  fill: #1a1a1a;
-}
-
-.c0:hover {
-  border-color: #3c5ad0;
-  background-color: #f6f6f6;
-}
-
-<button
-  class="c0"
-  type="default"
->
-  Text Button
-  <div
-    class="c1"
-  />
 </button>
 `;
 
 exports[`Button should render rounded button 1`] = `
-.c1 {
-  position: absolute;
-  border-radius: 50%;
-  opacity: 1;
-  background: rgba(0,0,0,0.2);
-  -webkit-transform: scale(0);
-  -ms-transform: scale(0);
-  transform: scale(0);
-}
-
 .c0 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -930,7 +720,8 @@ exports[`Button should render rounded button 1`] = `
   justify-content: center;
   overflow: hidden;
   border: 1px solid;
-  border-radius: 0.25rem;
+  border-radius: 0.5rem;
+  border-color: transparent;
   line-height: 1.5;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -943,11 +734,11 @@ exports[`Button should render rounded button 1`] = `
   user-select: none;
   border-radius: 999px;
   height: 2.25rem;
-  padding: 0 1rem;
+  padding: 0 0.75rem;
   font-size: 1rem;
   border-color: #e0e0e0;
   background-color: #ffffff;
-  color: #1a1a1a;
+  color: #373737;
   -webkit-transition: all 200ms ease 0s;
   transition: all 200ms ease 0s;
 }
@@ -958,9 +749,16 @@ exports[`Button should render rounded button 1`] = `
 
 .c0:disabled,
 .c0[disabled] {
-  opacity: 0.7;
+  opacity: 0.85;
+  background-color: #e0e0e0;
+  color: #8b8b8b;
   cursor: default;
   pointer-events: none;
+}
+
+.c0:disabled .c1 svg,
+.c0[disabled] .c1 svg {
+  fill: #8b8b8b;
 }
 
 .c0::before {
@@ -978,41 +776,35 @@ exports[`Button should render rounded button 1`] = `
   transition: all 200ms ease 0s;
 }
 
-.c0 .c2 {
-  cursor: pointer;
+.c0::before {
+  border-color: #373737;
 }
 
-.c0 .c2 svg {
-  fill: #1a1a1a;
+.c0 .c1 svg {
+  fill: #bfbfbf;
 }
 
 .c0:hover {
+  border-color: #6B88c5;
+}
+
+.c0:active {
   border-color: #3c5ad0;
-  background-color: #f6f6f6;
+  color: #3c5ad0;
+}
+
+.c0:active .c1 svg {
+  fill: #3c5ad0;
 }
 
 <button
   class="c0"
-  type="default"
 >
   Text Button
-  <div
-    class="c1"
-  />
 </button>
 `;
 
-exports[`Button should render text button 1`] = `
-.c1 {
-  position: absolute;
-  border-radius: 50%;
-  opacity: 1;
-  background: rgba(0,0,0,0.2);
-  -webkit-transform: scale(0);
-  -ms-transform: scale(0);
-  transform: scale(0);
-}
-
+exports[`Button should render width 100% button 1`] = `
 .c0 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -1029,7 +821,8 @@ exports[`Button should render text button 1`] = `
   justify-content: center;
   overflow: hidden;
   border: 1px solid;
-  border-radius: 0.25rem;
+  border-radius: 0.5rem;
+  border-color: transparent;
   line-height: 1.5;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -1041,13 +834,14 @@ exports[`Button should render text button 1`] = `
   -ms-user-select: none;
   user-select: none;
   height: 2.25rem;
-  padding: 0 1rem;
+  padding: 0 0.75rem;
   font-size: 1rem;
-  border-color: transparent;
-  background-color: transparent;
-  color: #1a1a1a;
+  border-color: #e0e0e0;
+  background-color: #ffffff;
+  color: #373737;
   -webkit-transition: all 200ms ease 0s;
   transition: all 200ms ease 0s;
+  width: 100%;
 }
 
 .c0:focus {
@@ -1056,9 +850,16 @@ exports[`Button should render text button 1`] = `
 
 .c0:disabled,
 .c0[disabled] {
-  opacity: 0.7;
+  opacity: 0.85;
+  background-color: #e0e0e0;
+  color: #8b8b8b;
   cursor: default;
   pointer-events: none;
+}
+
+.c0:disabled .c1 svg,
+.c0[disabled] .c1 svg {
+  fill: #8b8b8b;
 }
 
 .c0::before {
@@ -1076,26 +877,30 @@ exports[`Button should render text button 1`] = `
   transition: all 200ms ease 0s;
 }
 
-.c0 .c2 {
-  cursor: pointer;
+.c0::before {
+  border-color: #373737;
 }
 
-.c0 .c2 svg {
-  fill: #1a1a1a;
+.c0 .c1 svg {
+  fill: #bfbfbf;
 }
 
 .c0:hover {
-  border-color: transparent;
-  background-color: #e0e0e0;
+  border-color: #6B88c5;
+}
+
+.c0:active {
+  border-color: #3c5ad0;
+  color: #3c5ad0;
+}
+
+.c0:active .c1 svg {
+  fill: #3c5ad0;
 }
 
 <button
   class="c0"
-  type="default"
 >
   Text Button
-  <div
-    class="c1"
-  />
 </button>
 `;

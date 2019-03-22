@@ -62,16 +62,6 @@ exports[`Input should render correctly 1`] = `
 `;
 
 exports[`Input should render correctly with Button suffix 1`] = `
-.c5 {
-  position: absolute;
-  border-radius: 50%;
-  opacity: 1;
-  background: rgba(0,0,0,0.2);
-  -webkit-transform: scale(0);
-  -ms-transform: scale(0);
-  transform: scale(0);
-}
-
 .c4 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -88,7 +78,8 @@ exports[`Input should render correctly with Button suffix 1`] = `
   justify-content: center;
   overflow: hidden;
   border: 1px solid;
-  border-radius: 0.25rem;
+  border-radius: 0.5rem;
+  border-color: transparent;
   line-height: 1.5;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -100,11 +91,11 @@ exports[`Input should render correctly with Button suffix 1`] = `
   -ms-user-select: none;
   user-select: none;
   height: 2.25rem;
-  padding: 0 1rem;
+  padding: 0 0.75rem;
   font-size: 1rem;
-  border-color: #40d064;
-  background-color: #40d064;
-  color: #ffffff;
+  border-color: #e0e0e0;
+  background-color: #ffffff;
+  color: #373737;
   -webkit-transition: all 200ms ease 0s;
   transition: all 200ms ease 0s;
 }
@@ -115,9 +106,16 @@ exports[`Input should render correctly with Button suffix 1`] = `
 
 .c4:disabled,
 .c4[disabled] {
-  opacity: 0.7;
+  opacity: 0.85;
+  background-color: #e0e0e0;
+  color: #8b8b8b;
   cursor: default;
   pointer-events: none;
+}
+
+.c4:disabled .c6 svg,
+.c4[disabled] .c6 svg {
+  fill: #8b8b8b;
 }
 
 .c4::before {
@@ -135,21 +133,25 @@ exports[`Input should render correctly with Button suffix 1`] = `
   transition: all 200ms ease 0s;
 }
 
-.c4 .c7 {
-  cursor: pointer;
+.c4::before {
+  border-color: #373737;
 }
 
-.c4 .c7 svg {
-  fill: #ffffff;
+.c4 .c6 svg {
+  fill: #bfbfbf;
 }
 
 .c4:hover {
-  background-color: #ffffff;
-  color: #40d064;
+  border-color: #6B88c5;
 }
 
-.c4:hover .c7 svg {
-  fill: #40d064;
+.c4:active {
+  border-color: #3c5ad0;
+  color: #3c5ad0;
+}
+
+.c4:active .c6 svg {
+  fill: #3c5ad0;
 }
 
 .c2 {
@@ -206,7 +208,7 @@ exports[`Input should render correctly with Button suffix 1`] = `
   color: #bfbfbf;
 }
 
-.c6 .c1 {
+.c5 .c1 {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
 }
@@ -223,7 +225,7 @@ exports[`Input should render correctly with Button suffix 1`] = `
   border-bottom-right-radius: 0;
 }
 
-.c0 .c8:last-child {
+.c0 .c7:last-child {
   border-left: none;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
@@ -249,9 +251,6 @@ exports[`Input should render correctly with Button suffix 1`] = `
     type="success"
   >
     Send It
-    <div
-      class="c5"
-    />
   </button>
 </div>
 `;

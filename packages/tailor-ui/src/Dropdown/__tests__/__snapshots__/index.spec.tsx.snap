@@ -1,16 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Dropdown should render correctly 1`] = `
-.c1 {
-  position: absolute;
-  border-radius: 50%;
-  opacity: 1;
-  background: rgba(0,0,0,0.2);
-  -webkit-transform: scale(0);
-  -ms-transform: scale(0);
-  transform: scale(0);
-}
-
 .c0 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -27,7 +17,8 @@ exports[`Dropdown should render correctly 1`] = `
   justify-content: center;
   overflow: hidden;
   border: 1px solid;
-  border-radius: 0.25rem;
+  border-radius: 0.5rem;
+  border-color: transparent;
   line-height: 1.5;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -39,11 +30,11 @@ exports[`Dropdown should render correctly 1`] = `
   -ms-user-select: none;
   user-select: none;
   height: 2.25rem;
-  padding: 0 1rem;
+  padding: 0 0.75rem;
   font-size: 1rem;
-  border-color: transparent;
-  background-color: transparent;
-  color: #1a1a1a;
+  border-color: #e0e0e0;
+  background-color: #ffffff;
+  color: #373737;
   -webkit-transition: all 200ms ease 0s;
   transition: all 200ms ease 0s;
 }
@@ -54,9 +45,16 @@ exports[`Dropdown should render correctly 1`] = `
 
 .c0:disabled,
 .c0[disabled] {
-  opacity: 0.7;
+  opacity: 0.85;
+  background-color: #e0e0e0;
+  color: #8b8b8b;
   cursor: default;
   pointer-events: none;
+}
+
+.c0:disabled .c4 svg,
+.c0[disabled] .c4 svg {
+  fill: #8b8b8b;
 }
 
 .c0::before {
@@ -74,20 +72,28 @@ exports[`Dropdown should render correctly 1`] = `
   transition: all 200ms ease 0s;
 }
 
-.c0 .c5 {
-  cursor: pointer;
+.c0::before {
+  border-color: #373737;
 }
 
-.c0 .c5 svg {
-  fill: #1a1a1a;
+.c0 .c4 svg {
+  fill: #bfbfbf;
 }
 
 .c0:hover {
-  border-color: transparent;
-  background-color: #e0e0e0;
+  border-color: #6B88c5;
 }
 
-.c3 {
+.c0:active {
+  border-color: #3c5ad0;
+  color: #3c5ad0;
+}
+
+.c0:active .c4 svg {
+  fill: #3c5ad0;
+}
+
+.c2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -111,11 +117,11 @@ exports[`Dropdown should render correctly 1`] = `
   transition: all 200ms ease 0s;
 }
 
-.c3:hover {
+.c2:hover {
   background-color: #e0e0e0;
 }
 
-.c4 {
+.c3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -142,11 +148,11 @@ exports[`Dropdown should render correctly 1`] = `
   transition: all 200ms ease 0s;
 }
 
-.c4:hover {
+.c3:hover {
   background-color: #e0e0e0;
 }
 
-.c2 {
+.c1 {
   display: block;
   margin: 0;
   padding: 0.25rem 0;
@@ -160,7 +166,7 @@ exports[`Dropdown should render correctly 1`] = `
   text-align: left;
 }
 
-.c2:focus {
+.c1:focus {
   outline: 0;
 }
 
@@ -168,12 +174,8 @@ exports[`Dropdown should render correctly 1`] = `
   <div>
     <button
       class="c0"
-      type="default"
     >
       Toggle
-      <div
-        class="c1"
-      />
     </button>
   </div>
   <div
@@ -183,22 +185,22 @@ exports[`Dropdown should render correctly 1`] = `
       style="position: absolute; top: 0px; left: 0px; transform: translate3d(0px, 5px, 0px);"
     >
       <ul
-        class="c2"
+        class="c1"
         data-testid="dropdown-overlay"
         style="opacity: 0; transform: translate3d(0, -10px, 0);"
       >
         <li
-          class="c3"
+          class="c2"
         >
           Basic Item
         </li>
         <li
-          class="c4"
+          class="c3"
         >
           Disibled Item
         </li>
         <li
-          class="c3"
+          class="c2"
         >
           Keep Item
         </li>
@@ -316,17 +318,7 @@ exports[`Dropdown should render with diffrient placement 1`] = `
       </ul>
     </div>
   </div>
-  .c1 {
-  position: absolute;
-  border-radius: 50%;
-  opacity: 1;
-  background: rgba(0,0,0,0.2);
-  -webkit-transform: scale(0);
-  -ms-transform: scale(0);
-  transform: scale(0);
-}
-
-.c0 {
+  .c0 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -342,7 +334,8 @@ exports[`Dropdown should render with diffrient placement 1`] = `
   justify-content: center;
   overflow: hidden;
   border: 1px solid;
-  border-radius: 0.25rem;
+  border-radius: 0.5rem;
+  border-color: transparent;
   line-height: 1.5;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -354,11 +347,11 @@ exports[`Dropdown should render with diffrient placement 1`] = `
   -ms-user-select: none;
   user-select: none;
   height: 2.25rem;
-  padding: 0 1rem;
+  padding: 0 0.75rem;
   font-size: 1rem;
-  border-color: transparent;
-  background-color: transparent;
-  color: #1a1a1a;
+  border-color: #e0e0e0;
+  background-color: #ffffff;
+  color: #373737;
   -webkit-transition: all 200ms ease 0s;
   transition: all 200ms ease 0s;
 }
@@ -369,9 +362,16 @@ exports[`Dropdown should render with diffrient placement 1`] = `
 
 .c0:disabled,
 .c0[disabled] {
-  opacity: 0.7;
+  opacity: 0.85;
+  background-color: #e0e0e0;
+  color: #8b8b8b;
   cursor: default;
   pointer-events: none;
+}
+
+.c0:disabled .c1 svg,
+.c0[disabled] .c1 svg {
+  fill: #8b8b8b;
 }
 
 .c0::before {
@@ -389,28 +389,32 @@ exports[`Dropdown should render with diffrient placement 1`] = `
   transition: all 200ms ease 0s;
 }
 
-.c0 .c2 {
-  cursor: pointer;
+.c0::before {
+  border-color: #373737;
 }
 
-.c0 .c2 svg {
-  fill: #1a1a1a;
+.c0 .c1 svg {
+  fill: #bfbfbf;
 }
 
 .c0:hover {
-  border-color: transparent;
-  background-color: #e0e0e0;
+  border-color: #6B88c5;
+}
+
+.c0:active {
+  border-color: #3c5ad0;
+  color: #3c5ad0;
+}
+
+.c0:active .c1 svg {
+  fill: #3c5ad0;
 }
 
 <div>
     <button
       class="c0"
-      type="default"
     >
       Toggle
-      <div
-        class="c1"
-      />
     </button>
   </div>
 </body>

@@ -12,26 +12,14 @@ describe('Button', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  it('should render text button', () => {
-    const { container } = render(<Button text>Text Button</Button>);
-
-    expect(container.firstChild).toMatchSnapshot();
-  });
-
   it('should render different button type', () => {
-    const { container } = render(<Button type="info">Text Button</Button>);
+    const { container } = render(<Button type="primary">Text Button</Button>);
 
     expect(container.firstChild).toMatchSnapshot();
   });
 
   it('should render rounded button', () => {
     const { container } = render(<Button rounded>Text Button</Button>);
-
-    expect(container.firstChild).toMatchSnapshot();
-  });
-
-  it('should render outlined button', () => {
-    const { container } = render(<Button outlined>Text Button</Button>);
 
     expect(container.firstChild).toMatchSnapshot();
   });
@@ -48,8 +36,8 @@ describe('Button', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  it('should render block button', () => {
-    const { container } = render(<Button block>Text Button</Button>);
+  it('should render width 100% button', () => {
+    const { container } = render(<Button width="100%">Text Button</Button>);
 
     expect(container.firstChild).toMatchSnapshot();
   });
