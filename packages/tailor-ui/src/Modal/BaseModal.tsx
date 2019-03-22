@@ -1,46 +1,48 @@
 import React, { FunctionComponent } from 'react';
 import styled from 'styled-components';
-import { WidthProps, width as styledWidth } from 'styled-system';
 import { animated, config, useTransition } from 'react-spring';
 
 import Backdrop from '../Backdrop';
 import tag from '../utils/CleanTag';
 import useKeydown, { ESC_KEY_CODE } from '../utils/useKeydown';
 
-const ModalContent = styled(tag.div)<WidthProps>`
+type Size = 'md' | 'lg';
+
+const ModalContent = styled(tag.div)<{ type: Size }>`
   display: flex;
   position: fixed;
   z-index: 10001;
   top: 50%;
   left: 50%;
   flex-direction: column;
-  max-height: 90vh;
-  border-radius: ${p => p.theme.radii.base};
+  width: ${p => ({ md: 516, lg: 786 }[p.size as Size] || 516)}px;
+  min-height: 220px;
+  max-height: 75vh;
+  padding: 24px ${p => p.theme.space[3]} ${p => p.theme.space[3]};
+  border-radius: ${p => p.theme.radii.xl};
   background-color: #fff;
-  box-shadow: 0 10px 30px 0 rgba(17, 17, 17, 0.2);
   transform: translate(-50%, -50%);
-
-  ${styledWidth};
 `;
 
 const AnimatedModalContent = animated(ModalContent);
 
-export type BaseModalProps = WidthProps & {
+export interface BaseModalProps {
   onCancel: () => void;
-  clickOutsite?: boolean;
+  size?: Size;
+  cancelable?: boolean;
   visible: boolean;
-};
+}
 
 const BaseModal: FunctionComponent<BaseModalProps> = ({
   children = '',
   visible,
   onCancel,
-  clickOutsite = true,
-  width = 416,
+  cancelable = true,
+  size = 'md',
   ...otherProps
 }) => {
   useKeydown({
-    listening: visible,
+    listening: cancelable ? visible : false,
     keyCode: ESC_KEY_CODE,
     onKeydown: onCancel,
   });
@@ -64,7 +66,7 @@ const BaseModal: FunctionComponent<BaseModalProps> = ({
       <Backdrop
         visible={visible}
         onClick={() => {
-          if (clickOutsite) {
+          if (cancelable) {
             onCancel();
           }
         }}
@@ -74,7 +76,7 @@ const BaseModal: FunctionComponent<BaseModalProps> = ({
           item && (
             <AnimatedModalContent
               key={key}
-              width={width}
+              size={size}
               style={props}
               {...otherProps}
             >

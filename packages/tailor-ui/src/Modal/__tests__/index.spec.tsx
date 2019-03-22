@@ -11,6 +11,14 @@ describe('Modal', () => {
     expect(baseElement).toMatchSnapshot();
   });
 
+  it('should render correctly with lg size', () => {
+    const { baseElement } = render(
+      <Modal size="lg" visible onCancel={() => {}} />
+    );
+
+    expect(baseElement).toMatchSnapshot();
+  });
+
   it('should render with props closable', () => {
     const { baseElement } = render(
       <Modal visible closable onCancel={() => {}} />
@@ -18,4 +26,6 @@ describe('Modal', () => {
 
     expect(baseElement).toMatchSnapshot();
   });
+
+  // TODO: Add useModal tests
 });

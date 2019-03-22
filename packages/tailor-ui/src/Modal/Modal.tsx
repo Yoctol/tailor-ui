@@ -5,7 +5,6 @@ import React, {
   useContext,
 } from 'react';
 
-import Box from '../Grid/Box';
 import Flex from '../Grid/Flex';
 import Heading from '../Heading';
 import Portal from '../Portal';
@@ -17,32 +16,28 @@ import Footer, { FooterProps } from './Footer';
 
 interface ModalHeaderProps {
   title?: ReactNode;
+  icon?: JSX.Element | null;
   closable?: boolean;
   onCancel: () => void;
 }
 
 export const ModalHeader: FunctionComponent<ModalHeaderProps> = ({
   title,
+  icon,
   onCancel,
   closable,
 }) => (
-  <Flex
-    flex="none"
-    alignItems="center"
-    px="3"
-    py="2"
-    borderBottom="base"
-    borderColor="gray300"
-  >
-    <Box flex="auto">
-      <Heading.h4>{title}</Heading.h4>
-    </Box>
+  <Flex flex="none" alignItems="center" mb="3" mx="3">
+    {icon && <Flex mr="2">{icon}</Flex>}
+    <Flex flex="auto">
+      <Heading.h3>{title}</Heading.h3>
+    </Flex>
     {closable && <CloseButton onCancel={onCancel} />}
   </Flex>
 );
 
 export const ModalContent: FunctionComponent = ({ children }) => (
-  <Flex flex="auto" flexDirection="column" p="3" overflowY="auto">
+  <Flex flex="auto" flexDirection="column" overflowY="auto" px="3">
     {children}
   </Flex>
 );
@@ -51,8 +46,9 @@ export const FooterWrapper: FunctionComponent = props => (
   <Flex
     flex="none"
     alignItems="center"
-    px="3"
-    py="2"
+    mt="24px"
+    mx="3"
+    pt="3"
     borderTop="base"
     borderColor="gray300"
     {...props}
