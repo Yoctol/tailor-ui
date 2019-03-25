@@ -161,6 +161,7 @@ interface MentionProps {
   creatable: boolean;
   highlightInvalid: boolean;
   formatCreateText: FormatCreateText;
+  onBlur?: (value: string) => void;
   onChange?: (value: string) => void;
   onMentionCreate: (newMention: string) => void;
 }
@@ -169,6 +170,7 @@ const Mention: FunctionComponent<MentionProps> = ({
   value: valueFromProps,
   defaultValue,
   suggestions,
+  onBlur,
   onChange,
   onMentionCreate,
   disabled,
@@ -350,6 +352,16 @@ const Mention: FunctionComponent<MentionProps> = ({
     }
   };
 
+  const handleOnBlur = (event: ChangeEvent<HTMLTextAreaElement>) => {
+    const { value: newValue } = event.currentTarget;
+
+    dispatch({ type: 'closeDropdown' });
+
+    if (onBlur) {
+      onBlur(newValue);
+    }
+  };
+
   const handleChange = (event: ChangeEvent<HTMLTextAreaElement>) => {
     const { value: newValue } = event.currentTarget;
 
@@ -377,9 +389,9 @@ const Mention: FunctionComponent<MentionProps> = ({
         ref={mentionRef}
         onKeyUp={handleKeyUp}
         onKeyDown={handleKeyDown}
-        onBlur={() => dispatch({ type: 'closeDropdown' })}
         value={value}
         onClick={resetDropdown}
+        onBlur={handleOnBlur}
         onChange={handleChange}
         disabled={disabled}
         onScroll={(event: UIEvent<HTMLTextAreaElement>) => {
