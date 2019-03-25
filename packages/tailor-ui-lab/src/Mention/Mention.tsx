@@ -11,7 +11,12 @@ import React, {
 
 import Suggestions from './Suggestions';
 import { Highlights, MentionWrapper, Textarea } from './styles';
-import { OverlayPosition, getMentionCursor, getOverlayPosition } from './utils';
+import {
+  OverlayPosition,
+  getMentionCursor,
+  getOverlayPosition,
+  mergeEventProps,
+} from './utils';
 import { applyHighlights } from './highlight';
 import { getCaretCoordinates } from './textarea-caret-position';
 
@@ -364,6 +369,31 @@ const Mention: FunctionComponent<MentionProps> = ({
     resetDropdown(event);
   };
 
+  const composedProps = mergeEventProps(props, {
+    onKeyUp: handleKeyUp,
+    onKeyDown: handleKeyDown,
+    onBlur: () => dispatch({ type: 'closeDropdown' }),
+    onClick: resetDropdown,
+    onChange: handleChange,
+    onScroll: (event: UIEvent<HTMLTextAreaElement>) => {
+      if (highlightRef.current) {
+        highlightRef.current.scrollTop = event.currentTarget.scrollTop;
+      }
+      if (state.dropdownVisible) {
+        dispatch({ type: 'closeDropdown' });
+      }
+    },
+    onResize: (event: ChangeEvent<HTMLTextAreaElement>) => {
+      // https://github.com/buildo/react-autosize-textarea/issues/109#issuecomment-430002058
+      setTimeout(() =>
+        dispatch({
+          type: 'updateHeight',
+          payload: event.target.offsetHeight,
+        })
+      );
+    },
+  });
+
   return (
     <MentionWrapper disabled={disabled}>
       <Highlights
@@ -375,31 +405,9 @@ const Mention: FunctionComponent<MentionProps> = ({
       />
       <Textarea
         ref={mentionRef}
-        onKeyUp={handleKeyUp}
-        onKeyDown={handleKeyDown}
-        onBlur={() => dispatch({ type: 'closeDropdown' })}
         value={value}
-        onClick={resetDropdown}
-        onChange={handleChange}
         disabled={disabled}
-        onScroll={(event: UIEvent<HTMLTextAreaElement>) => {
-          if (highlightRef.current) {
-            highlightRef.current.scrollTop = event.currentTarget.scrollTop;
-          }
-          if (state.dropdownVisible) {
-            dispatch({ type: 'closeDropdown' });
-          }
-        }}
-        onResize={(event: ChangeEvent<HTMLTextAreaElement>) => {
-          // https://github.com/buildo/react-autosize-textarea/issues/109#issuecomment-430002058
-          setTimeout(() =>
-            dispatch({
-              type: 'updateHeight',
-              payload: event.target.offsetHeight,
-            })
-          );
-        }}
-        {...props}
+        {...composedProps}
       />
       <Suggestions
         formatCreateText={formatCreateText}
