@@ -24,11 +24,14 @@ const useKeydown = ({
 
   useEffect(() => {
     if (listening) {
-      window.addEventListener('keydown', handleKeydown);
-      return () => window.removeEventListener('keydown', handleKeydown);
+      document.body.addEventListener('keydown', handleKeydown);
+
+      return () => {
+        document.body.removeEventListener('keydown', handleKeydown, false);
+      };
     }
 
-    window.removeEventListener('keydown', handleKeydown);
+    document.body.removeEventListener('keydown', handleKeydown, false);
     return () => {};
   }, [listening, targetKeyCode, onKeydown, handleKeydown]);
 
