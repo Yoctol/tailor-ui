@@ -10,7 +10,7 @@ export const StyledSubMenu = styled(tag.div)<StyledItemProps>`
   display: inline-flex;
   align-items: center;
   width: 100%;
-  height: 64px;
+  height: 56px;
   padding: 16px 14px;
   background-color: ${p => p.theme.colors.primaryDark2};
   color: ${p => p.theme.colors.primaryLight};
@@ -70,9 +70,10 @@ export const StyledItemBadge = styled(tag.div)`
 
 export const StyledItemBox = styled(tag.div)`
   display: flex;
-  height: 48px;
+  height: 40px;
   padding: 0 8px;
   background-color: ${p => p.theme.colors.primaryDark2};
+  font-size: ${p => p.theme.fontSizes.base};
 
   ${({ active }) =>
     active &&
