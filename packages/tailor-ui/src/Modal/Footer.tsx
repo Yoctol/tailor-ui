@@ -5,6 +5,7 @@ import Button, { ButtonProps } from '../Button';
 import Flex from '../Grid/Flex';
 
 export interface FooterProps {
+  cancelable?: boolean;
   cancelText?: string | null;
   confirmText?: string;
   onConfirm?: () => void;
@@ -14,6 +15,7 @@ export interface FooterProps {
 }
 
 const Footer: FunctionComponent<FooterProps> = ({
+  cancelable = true,
   cancelText,
   confirmText,
   onCancel,
@@ -23,12 +25,12 @@ const Footer: FunctionComponent<FooterProps> = ({
 }) => (
   <Flex width="100%">
     <Box ml="auto">
-      {cancelText !== null && (
-        <Button onClick={onCancel} {...cancelButtonProps}>
+      {cancelable && (
+        <Button type="normal" onClick={onCancel} {...cancelButtonProps}>
           {cancelText}
         </Button>
       )}
-      <Button ml="2" type="primary" onClick={onConfirm} {...confirmButtonProps}>
+      <Button ml="3" type="primary" onClick={onConfirm} {...confirmButtonProps}>
         {confirmText}
       </Button>
     </Box>

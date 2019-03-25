@@ -5,16 +5,13 @@ import React, {
   useState,
 } from 'react';
 
-import Box from '../Grid/Box';
-import Flex from '../Grid/Flex';
-import Heading from '../Heading';
 import Portal from '../Portal';
-import Space from '../Grid/Space';
 import getTypeIcon, { Types } from '../utils/getTypeIcon';
 import { LocaleType } from '../UIProvider/LocaleContext';
 
 import BaseModal from './BaseModal';
 import Footer from './Footer';
+import { FooterWrapper, ModalContent, ModalHeader } from './Modal';
 
 export type ModalTypes = Types | 'confirm';
 
@@ -25,6 +22,7 @@ export interface ModalOptions {
   cancelText?: string;
   onConfirm?: () => void;
   onCancel?: () => void;
+  cancelable?: boolean;
 }
 
 export type Trigger = (
@@ -44,6 +42,7 @@ interface ModalOptionsState {
   cancelText?: string | null;
   onConfirm: () => void;
   onCancel: () => void;
+  cancelable: boolean;
   type: ModalTypes;
 }
 
@@ -54,6 +53,7 @@ const EffectModal: FunctionComponent<EffectModalProps> = ({
   const [visible, setVisible] = useState(false);
   const [modalOptions, setModalOptions] = useState<ModalOptionsState>({
     type: 'confirm',
+    cancelable: true,
     title: '',
     content: '',
     confirmText: '',
@@ -64,35 +64,53 @@ const EffectModal: FunctionComponent<EffectModalProps> = ({
 
   const getIcon = () => {
     const { type } = modalOptions;
-    return getTypeIcon(type === 'confirm' ? 'warning' : type, 32);
+
+    if (type === 'confirm') {
+      return null;
+    }
+
+    return getTypeIcon(type, 32);
   };
 
   const trigger = (options: ModalOptions, type: ModalTypes): Promise<boolean> =>
     new Promise(resolve => {
+      const {
+        cancelable = type === 'confirm',
+        title = '',
+        content = '',
+        confirmText = locale.Modal.confirmText,
+        cancelText = locale.Modal.cancelText,
+        onConfirm,
+        onCancel,
+      } = options;
+
       setModalOptions({
         type,
-        title: options.title || '',
-        content: options.content || '',
-        confirmText: options.confirmText || locale.Modal.confirmText,
-        cancelText:
-          type === 'confirm'
-            ? options.cancelText || locale.Modal.cancelText
-            : null,
+        cancelable,
+        title,
+        content,
+        confirmText,
+        cancelText,
         onConfirm: () => {
-          if (options.onConfirm) {
-            options.onConfirm();
+          setVisible(false);
+
+          if (onConfirm) {
+            onConfirm();
           } else {
             resolve(true);
           }
         },
         onCancel: () => {
-          if (options.onCancel) {
-            options.onCancel();
+          setVisible(false);
+
+          if (onCancel) {
+            onCancel();
           } else {
             resolve(false);
           }
         },
       });
+
       setVisible(true);
     });
 
@@ -106,6 +124,7 @@ const EffectModal: FunctionComponent<EffectModalProps> = ({
 
   const {
     title,
+    cancelable,
     content,
     cancelText,
     confirmText,
@@ -116,32 +135,26 @@ const EffectModal: FunctionComponent<EffectModalProps> = ({
 
   return (
     <Portal appendFor="effect-modal">
-      <BaseModal
-        clickOutsite={type === 'confirm'}
-        visible={visible}
-        onCancel={onCancel}
-      >
-        <Space p="3">
-          <Flex>
-            {icon}
-            <Box flex="auto" ml="1">
-              <Heading.h3>{title}</Heading.h3>
-              <Space my="3">{content}</Space>
-            </Box>
-          </Flex>
+      <BaseModal cancelable={cancelable} visible={visible} onCancel={onCancel}>
+        <ModalHeader
+          icon={icon}
+          title={title}
+          closable={cancelable}
+          onCancel={onCancel}
+        />
+        <ModalContent>{content}</ModalContent>
+        <FooterWrapper>
           <Footer
+            cancelable={cancelable}
             cancelText={cancelText}
             confirmText={confirmText}
-            onCancel={() => {
-              onCancel();
-              setVisible(false);
-            }}
-            onConfirm={() => {
-              onConfirm();
-              setVisible(false);
+            onCancel={onCancel}
+            onConfirm={onConfirm}
+            confirmButtonProps={{
+              type: type === 'error' ? 'danger' : 'primary',
             }}
           />
-        </Space>
+        </FooterWrapper>
       </BaseModal>
     </Portal>
   );

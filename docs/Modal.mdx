@@ -48,6 +48,34 @@ import { Modal, useModal } from 'tailor-ui';
 
 </Playground>
 
+### Large size
+
+<Playground>
+  {() => {
+    const [visible, setVisible] = React.useState(false);
+
+    return (
+      <>
+        <Modal
+          title="This is a Modal"
+          size="lg"
+          visible={visible}
+          closable
+          onConfirm={() => setVisible(false)}
+          onCancel={() => setVisible(false)}
+        >
+          {Array.from({ length: 100 }).map((_, index) => (
+            <div key={index}>This is the long content of Large Modal</div>
+          ))}
+        </Modal>
+        <Button onClick={() => setVisible(true)}>Open Modal</Button>
+      </>
+    )
+
+}}
+
+</Playground>
+
 ### Customize footer
 
 <Playground>
@@ -185,8 +213,8 @@ You can use the `useModal` hooks to display Modal without render `Modal` compone
       <Button
         onClick={async function() {
           const confirmed = await modal.confirm({
-            title: 'Do you want to delete these items?',
-            content: 'Some descriptions',
+            title: 'Confirm',
+            content: 'Modal windows are sometimes called heavy windows or modal dialogs because they often display a dialog box. User interfaces typically use modal windows to command user awareness and to display emergency states, though interaction designers argue they are ineffective for that use.',
           });
 
           if (confirmed) {
@@ -204,7 +232,7 @@ You can use the `useModal` hooks to display Modal without render `Modal` compone
 
 </Playground>
 
-#### Status
+#### With other status
 
 <Playground>
 
@@ -216,8 +244,8 @@ const modal = useModal();
         <Button
           onClick={() => {
             modal.info({
-              title: 'This is a info modal',
-              content: 'Some descriptions',
+              title: 'Info',
+              content: 'Modal windows are sometimes called heavy windows or modal dialogs because they often display a dialog box. User interfaces typically use modal windows to command user awareness and to display emergency states, though interaction designers argue they are ineffective for that use.',
               onConfirm: () => console.log('info confirm'),
             })
           }}
@@ -228,8 +256,8 @@ const modal = useModal();
           ml="2"
           onClick={async function() {
             const confirmed = await modal.success({
-              title: 'This is a success modal',
-              content: 'Some descriptions',
+              title: 'Success',
+              content: 'Modal windows are sometimes called heavy windows or modal dialogs because they often display a dialog box. User interfaces typically use modal windows to command user awareness and to display emergency states, though interaction designers argue they are ineffective for that use.',
             });
 
             if (confirmed) {
@@ -243,8 +271,8 @@ const modal = useModal();
           ml="2"
           onClick={() => {
             modal.warning({
-              title: 'This is a warning modal',
-              content: 'Some descriptions',
+              title: 'Warning',
+              content: 'Modal windows are sometimes called heavy windows or modal dialogs because they often display a dialog box. User interfaces typically use modal windows to command user awareness and to display emergency states, though interaction designers argue they are ineffective for that use.',
             })
           }}
         >
@@ -254,14 +282,45 @@ const modal = useModal();
           ml="2"
           onClick={() => {
             modal.error({
-              title: 'This is a error modal',
-              content: 'Some descriptions',
+              title: 'Danger',
+              content: 'Modal windows are sometimes called heavy windows or modal dialogs because they often display a dialog box. User interfaces typically use modal windows to command user awareness and to display emergency states, though interaction designers argue they are ineffective for that use.',
             })
           }}
         >
           Error
         </Button>
       </>
+    );
+
+}}
+
+</Playground>
+
+##### Set cancelable to true
+
+<Playground>
+  {() => {
+    const modal = useModal();
+
+    return (
+      <Button
+        onClick={async function() {
+          const confirmed = await modal.error({
+            cancelable: true,
+            title: 'Danger',
+            content: 'Modal windows are sometimes called heavy windows or modal dialogs because they often display a dialog box. User interfaces typically use modal windows to command user awareness and to display emergency states, though interaction designers argue they are ineffective for that use.',
+            confirmText: 'Delete',
+          });
+
+          if (confirmed) {
+            console.log('confirmed!');
+          } else {
+            console.log('canceled!');
+          }
+        }}
+      >
+        Click Me
+      </Button>
     );
 
 }}
@@ -288,11 +347,12 @@ const modal = useModal();
 
 ### `options`
 
-| Property    | Type                | Default | Description                                                                                                                                                                    |
-| ----------- | ------------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| cancelText  | string              | Cancel  | Text of the Cancel button                                                                                                                                                      |
-| confirmText | string              | Conrim  | Text of the Conrim button                                                                                                                                                      |
-| onCancel    | function            | -       | Specify a function that will be called when the user clicks the Cancel button. The parameter of this function is a function whose execution should include closing the dialog. |
-| onConfirm   | function            | -       | Specify a function that will be called when the user clicks the OK button. The parameter of this function is a function whose execution should include closing the dialog.     |
-| title       | string \| ReactNode | -       | Title                                                                                                                                                                          |
-| content     | string \| ReactNode | -       | content of the message                                                                                                                                                         |
+| Property    | Type                | Default                                                   | Description                                                                                                                                                                    |
+| ----------- | ------------------- | --------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| cancelable  | boolean             | `true` if call `model.confirm`, otherwise will be `false` | Show cancel button or not                                                                                                                                                      |
+| cancelText  | string              | Cancel                                                    | Text of the Cancel button                                                                                                                                                      |
+| confirmText | string              | Conrim                                                    | Text of the Conrim button                                                                                                                                                      |
+| onCancel    | function            | -                                                         | Specify a function that will be called when the user clicks the Cancel button. The parameter of this function is a function whose execution should include closing the dialog. |
+| onConfirm   | function            | -                                                         | Specify a function that will be called when the user clicks the OK button. The parameter of this function is a function whose execution should include closing the dialog.     |
+| title       | string \| ReactNode | -                                                         | Title                                                                                                                                                                          |
+| content     | string \| ReactNode | -                                                         | content of the message                                                                                                                                                         |
