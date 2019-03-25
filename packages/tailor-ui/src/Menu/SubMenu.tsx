@@ -10,7 +10,7 @@ import MenuContext from './MenuContext';
 import { StyledSubMenu } from './styles';
 
 const SubMenuWrapper = styled.div`
-  overflow: hidden;
+  overflow: scroll;
 `;
 
 const AnimatedSubMenuWrapper = animated(SubMenuWrapper);
