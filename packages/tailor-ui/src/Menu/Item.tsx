@@ -5,7 +5,7 @@ import { IconType } from '../Icon';
 import { StyledItem, StyledItemBadge, StyledItemBox } from './styles';
 
 export interface ItemProps {
-  active: boolean;
+  active?: boolean;
   icon?: IconType;
   onClick?: () => void;
 }

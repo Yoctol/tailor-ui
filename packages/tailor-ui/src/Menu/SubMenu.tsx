@@ -40,6 +40,7 @@ const SubMenu: FunctionComponent<SubMenuProps> = ({
 
   const style = useSpring({
     height: menuOn ? height : 0,
+    opacity: menuOn ? 1 : 0,
   });
 
   return (
