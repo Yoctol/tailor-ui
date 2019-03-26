@@ -9,6 +9,8 @@ import React, {
   useRef,
 } from 'react';
 
+import { useClickOutside } from 'tailor-ui';
+
 import Suggestions from './Suggestions';
 import { Highlights, MentionWrapper, Textarea } from './styles';
 import {
@@ -40,6 +42,7 @@ export interface FilteredSuggestion {
 export type FilteredSuggestions = FilteredSuggestion[];
 
 interface MentionReducerState {
+  isFocus: boolean;
   value: string;
   height: number;
   activeIndex: number;
@@ -66,7 +69,9 @@ interface MentionReducerAction {
     | 'setSpecfiedItemActive'
     | 'updateValue'
     | 'updateHeight'
-    | 'updateCaretPos';
+    | 'updateCaretPos'
+    | 'onFocus'
+    | 'onBlur';
   payload?: any;
 }
 
@@ -77,6 +82,7 @@ interface InitialState {
 
 const initialState = ({ value, suggestions }: InitialState) => ({
   value,
+  isFocus: false,
   height: 0,
   activeIndex: -1,
   caretPos: -1,
@@ -147,6 +153,16 @@ const reducer: Reducer<MentionReducerState, MentionReducerAction> = (
         ...state,
         caretPos: action.payload,
       };
+    case 'onFocus':
+      return {
+        ...state,
+        isFocus: true,
+      };
+    case 'onBlur':
+      return {
+        ...state,
+        isFocus: false,
+      };
     default:
       throw new Error();
   }
@@ -166,6 +182,7 @@ interface MentionProps {
   creatable: boolean;
   highlightInvalid: boolean;
   formatCreateText: FormatCreateText;
+  onBlur?: () => void;
   onChange?: (value: string) => void;
   onMentionCreate: (newMention: string) => void;
 }
@@ -174,6 +191,7 @@ const Mention: FunctionComponent<MentionProps> = ({
   value: valueFromProps,
   defaultValue,
   suggestions,
+  onBlur,
   onChange,
   onMentionCreate,
   disabled,
@@ -184,6 +202,7 @@ const Mention: FunctionComponent<MentionProps> = ({
 }) => {
   const mentionRef = useRef<HTMLTextAreaElement>(null);
   const highlightRef = useRef<HTMLDivElement>(null);
+  const suggestionsRef = useRef<HTMLDivElement>(null);
 
   const cursorMention = useRef<CursorMention>({
     mention: null,
@@ -219,6 +238,18 @@ const Mention: FunctionComponent<MentionProps> = ({
       dispatch({ type: 'updateCaretPos', payload: -1 });
     }
   }, [state.caretPos]);
+
+  useClickOutside({
+    listening: state.isFocus,
+    refs: [suggestionsRef, mentionRef],
+    onClickOutside: () => {
+      if (onBlur) {
+        onBlur();
+      }
+
+      dispatch({ type: 'onBlur' });
+    },
+  });
 
   const resetDropdown = ({ currentTarget }: ResetDropdownType) => {
     const cursor = getMentionCursor(
@@ -368,10 +399,13 @@ const Mention: FunctionComponent<MentionProps> = ({
     resetDropdown(event);
   };
 
+  const handleOnFocus = (event: ChangeEvent<HTMLTextAreaElement>) => {
+    dispatch({ type: 'onFocus' });
+  };
+
   const composedProps = mergeEventProps(props, {
     onKeyUp: handleKeyUp,
     onKeyDown: handleKeyDown,
-    onBlur: () => dispatch({ type: 'closeDropdown' }),
     onClick: resetDropdown,
     onChange: handleChange,
     onScroll: (event: UIEvent<HTMLTextAreaElement>) => {
@@ -391,6 +425,7 @@ const Mention: FunctionComponent<MentionProps> = ({
         })
       );
     },
+    onFocus: handleOnFocus,
   });
 
   return (
@@ -407,8 +442,15 @@ const Mention: FunctionComponent<MentionProps> = ({
         value={value}
         disabled={disabled}
         {...composedProps}
+        onBlur={(event: ChangeEvent<HTMLTextAreaElement>) => {
+          event.preventDefault();
+          event.stopPropagation();
+
+          dispatch({ type: 'closeDropdown' });
+        }}
       />
       <Suggestions
+        ref={suggestionsRef}
         formatCreateText={formatCreateText}
         dropdownVisible={state.dropdownVisible}
         overlayPosition={state.overlayPosition}

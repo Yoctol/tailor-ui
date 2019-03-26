@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useEffect, useRef } from 'react';
+import React, { FunctionComponent, forwardRef, useEffect, useRef } from 'react';
 import { config, useTransition } from 'react-spring';
 
 import { Portal } from 'tailor-ui';
@@ -20,15 +20,17 @@ interface SuggestionsProps {
   onSuggestionClick: (suggestion: FilteredSuggestion) => void;
 }
 
-const Suggestions: FunctionComponent<SuggestionsProps> = ({
-  dropdownVisible,
-  activeIndex,
-  formatCreateText,
-  overlayPosition,
-  filteredSuggestions,
-  onSuggestionClick,
-}) => {
-  const suggestionRef = useRef<HTMLDivElement>(null);
+const Suggestions = forwardRef<any, SuggestionsProps>(function Suggestions(
+  {
+    dropdownVisible,
+    activeIndex,
+    formatCreateText,
+    overlayPosition,
+    filteredSuggestions,
+    onSuggestionClick,
+  },
+  suggestionRef
+) {
   const translations = useTransition(dropdownVisible, null, {
     from: {
       opacity: 0,
@@ -56,7 +58,7 @@ const Suggestions: FunctionComponent<SuggestionsProps> = ({
         suggestionRef.current.scrollTop = activeItemScrollTop;
       }
     }
-  }, [activeIndex]);
+  }, [activeIndex, suggestionRef]);
 
   return (
     <Portal appendFor="mention">
@@ -93,6 +95,6 @@ const Suggestions: FunctionComponent<SuggestionsProps> = ({
       )}
     </Portal>
   );
-};
+});
 
 export default Suggestions;
