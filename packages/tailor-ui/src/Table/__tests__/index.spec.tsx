@@ -9,22 +9,24 @@ function range(start: number, end: number) {
 }
 
 describe('Table', () => {
-  it('should render multiplication table correctly', () => {
+  it('should render table correctly', () => {
     const { container } = render(
       <Table>
         <Table.Head>
-          {range(2, 10).map(x => (
-            <Table.HeadColumn key={x}>{x}</Table.HeadColumn>
-          ))}
+          <Table.HeadColumn>Name</Table.HeadColumn>
+          <Table.HeadColumn>Platform</Table.HeadColumn>
+          <Table.HeadColumn>People</Table.HeadColumn>
+          <Table.HeadColumn>Ammount</Table.HeadColumn>
+          <Table.HeadColumn>Action</Table.HeadColumn>
         </Table.Head>
         <Table.Body>
-          {range(1, 10).map(x => (
-            <Table.Row key={x}>
-              {range(2, 10).map(y => (
-                <Table.Column key={y}>
-                  {y} * {x} = {x * y}
-                </Table.Column>
-              ))}
+          {range(1, 4).map(value => (
+            <Table.Row key={value}>
+              <Table.Column>Name {value}</Table.Column>
+              <Table.Column>Platform {value}</Table.Column>
+              <Table.Column>10,000</Table.Column>
+              <Table.Column>1,000 NTD</Table.Column>
+              <Table.Column>Action</Table.Column>
             </Table.Row>
           ))}
         </Table.Body>
@@ -34,70 +36,26 @@ describe('Table', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  it('should render week schedule', () => {
+  it('should render table correctly with header and footer', () => {
     const { container } = render(
-      <Table textAlign="center">
+      <Table header="Header" footer="Footer">
         <Table.Head>
-          <Table.HeadColumn colSpan={8}>Time</Table.HeadColumn>
+          <Table.HeadColumn>Name</Table.HeadColumn>
+          <Table.HeadColumn>Platform</Table.HeadColumn>
+          <Table.HeadColumn>People</Table.HeadColumn>
+          <Table.HeadColumn>Ammount</Table.HeadColumn>
+          <Table.HeadColumn>Action</Table.HeadColumn>
         </Table.Head>
         <Table.Body>
-          <Table.Row>
-            <Table.Column />
-            <Table.Column>Sun</Table.Column>
-            <Table.Column>Mon</Table.Column>
-            <Table.Column>Tue</Table.Column>
-            <Table.Column>Wed</Table.Column>
-            <Table.Column>Thu</Table.Column>
-            <Table.Column>Fri</Table.Column>
-            <Table.Column>Sat</Table.Column>
-          </Table.Row>
-          <Table.Row>
-            <Table.Column>
-              Morning
-              <br />
-              10:00-13:00
-            </Table.Column>
-            <Table.Column
-              rowSpan={3}
-              borderColor="gray300"
-              borderLeft="base"
-              borderRight="base"
-            >
-              Day off
-            </Table.Column>
-            {range(1, 7).map(key => (
-              <Table.Column key={key}>
-                <div>Master {key}</div>
-                <div>Slave {key}</div>
-              </Table.Column>
-            ))}
-          </Table.Row>
-          <Table.Row>
-            <Table.Column>
-              Afternoon
-              <br />
-              14:00-18:00
-            </Table.Column>
-            {range(1, 7).map(key => (
-              <Table.Column key={key}>
-                <div>Master {key}</div>
-                <div>Slave {key}</div>
-              </Table.Column>
-            ))}
-          </Table.Row>
-          <Table.Row>
-            <Table.Column>
-              Night
-              <br />
-              19:00-22:00
-            </Table.Column>
-            {range(1, 7).map(key => (
-              <Table.Column key={key}>
-                <div>Master {key}</div>
-                <div>Slave {key}</div>
-              </Table.Column>
-            ))}
-          </Table.Row>
+          {range(1, 4).map(value => (
+            <Table.Row key={value}>
+              <Table.Column>Name {value}</Table.Column>
+              <Table.Column>Platform {value}</Table.Column>
+              <Table.Column>10,000</Table.Column>
+              <Table.Column>1,000 NTD</Table.Column>
+              <Table.Column>Action</Table.Column>
+            </Table.Row>
+          ))}
         </Table.Body>
       </Table>
     );
