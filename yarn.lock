@@ -2367,6 +2367,18 @@
   dependencies:
     "@types/jest-diff" "*"
 
+"@types/lodash.debounce@^4.0.6":
+  version "4.0.6"
+  resolved "https://registry.yarnpkg.com/@types/lodash.debounce/-/lodash.debounce-4.0.6.tgz#c5a2326cd3efc46566c47e4c0aa248dc0ee57d60"
+  integrity sha512-4WTmnnhCfDvvuLMaF3KV4Qfki93KebocUF45msxhYyjMttZDQYzHkO639ohhk8+oco2cluAFL3t5+Jn4mleylQ==
+  dependencies:
+    "@types/lodash" "*"
+
+"@types/lodash@*":
+  version "4.14.123"
+  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.123.tgz#39be5d211478c8dd3bdae98ee75bb7efe4abfe4d"
+  integrity sha512-pQvPkc4Nltyx7G1Ww45OjVqUsJP4UsZm+GWJpigXgkikZqJgRm4c48g027o6tdgubWHwFRF15iFd+Y4Pmqv6+Q==
+
 "@types/node@*":
   version "10.12.18"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-10.12.18.tgz#1d3ca764718915584fcd9f6344621b7672665c67"
@@ -11987,10 +11999,10 @@ react-sizes@^1.0.4:
     lodash.throttle "^4.1.1"
     prop-types "^15.6.0"
 
-react-spring@^8.0.17:
-  version "8.0.17"
-  resolved "https://registry.yarnpkg.com/react-spring/-/react-spring-8.0.17.tgz#f415f8476c2354e3193e8b8495d7977d08dcd96a"
-  integrity sha512-VZ9pFoozbEQExh0MQZnOQoVUHgTcxfKj3Gg0jhHmGun1zSS8hyL37skslJXmB+gYC/7GmNU00TpDQr8vMIpexw==
+react-spring@^8.0.18:
+  version "8.0.18"
+  resolved "https://registry.yarnpkg.com/react-spring/-/react-spring-8.0.18.tgz#f6fa09ab5acdeb37618c0e340d59830171b95c33"
+  integrity sha512-gb1Rtsnez2gxIHtbrbwQsAjE4ir/62m+gI+eT+1E0Uky5L1PbLccbywRIdIpK3W5jiNmU6OlEazVk0tfI8pZrA==
   dependencies:
     "@babel/runtime" "^7.3.1"
 
@@ -13716,6 +13728,14 @@ styled-system@^4.0.5:
   version "4.0.5"
   resolved "https://registry.yarnpkg.com/styled-system/-/styled-system-4.0.5.tgz#40adb6039d698ad786ecfce32eb93fdd77bee78b"
   integrity sha512-9oTFHe5Wrtxw7+vOzano0hXZiRDh6JW5fH025kxCvw7r4YHyrV6HXw8qjcK2MxjrqF+p7ayVhzU7OIy6x8Dj1w==
+  dependencies:
+    "@babel/runtime" "^7.3.4"
+    prop-types "^15.7.2"
+
+styled-system@^4.0.6:
+  version "4.0.6"
+  resolved "https://registry.yarnpkg.com/styled-system/-/styled-system-4.0.6.tgz#53f95cd0134fc7ffdb263af720cd826c352bf5b8"
+  integrity sha512-QkZKB2CnmSWe6o/qVHFT3pkKTNzvK2nRKOHPGV4CrlSK3mWyL8VtMEy0RsIzMNjNPtF9d4EEQ/HwkpMJfWpWHg==
   dependencies:
     "@babel/runtime" "^7.3.4"
     prop-types "^15.7.2"

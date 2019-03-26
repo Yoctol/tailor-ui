@@ -3,3 +3,7 @@ export * from './Mention';
 
 export { default as Tabs } from './Tabs';
 export * from './Tabs';
+
+export { default as Tooltip } from './Tooltip';
+export { default as Popover } from './Popover';
+export { default as Popconfirm } from './Popconfirm';

@@ -81,3 +81,8 @@ export { default as locale } from './locale';
 export * from './locale';
 
 export { default as Portal } from './Portal';
+export * from './constants';
+export { default as Positioner } from './Positioner';
+export { default as useClickOutside } from './utils/useClickOutside';
+export { default as useKeydown } from './utils/useKeydown';
+export { default as getTypeIcon } from './utils/getTypeIcon';
