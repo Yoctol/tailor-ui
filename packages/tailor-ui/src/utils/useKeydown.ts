@@ -1,6 +1,6 @@
 import { useCallback, useEffect } from 'react';
 
-export interface KeydownProps {
+export interface Keydown {
   listening?: boolean;
   onKeydown?: () => void;
   keyCode: number;
@@ -12,7 +12,7 @@ const useKeydown = ({
   listening = true,
   keyCode: targetKeyCode,
   onKeydown,
-}: KeydownProps) => {
+}: Keydown) => {
   const handleKeydown = useCallback(
     (event: KeyboardEvent) => {
       if (event.keyCode === targetKeyCode && onKeydown) {

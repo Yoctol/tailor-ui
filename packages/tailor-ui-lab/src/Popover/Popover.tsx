@@ -6,6 +6,7 @@ import React, {
   cloneElement,
   forwardRef,
   isValidElement,
+  memo,
   useRef,
   useState,
 } from 'react';
@@ -29,8 +30,8 @@ interface PopoverPopup {
   handleClose: () => void;
 }
 
-const PopoverPopup = forwardRef<HTMLDivElement, PopoverPopup>(
-  function PopoverPopup(
+const PopoverPopup = memo(
+  forwardRef<HTMLDivElement, PopoverPopup>(function PopoverPopup(
     { style, title, content, handleClose, ...otherProps },
     ref
   ) {
@@ -50,7 +51,7 @@ const PopoverPopup = forwardRef<HTMLDivElement, PopoverPopup>(
         </StyledPopover>
       </animated.div>
     );
-  }
+  })
 );
 
 export interface PopoverProps {

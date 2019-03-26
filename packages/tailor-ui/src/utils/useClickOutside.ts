@@ -1,6 +1,6 @@
 import { RefObject, useCallback, useEffect } from 'react';
 
-export interface KeydownProps {
+export interface ClickOutside {
   listening?: boolean;
   onClickOutside: () => void;
   refs: RefObject<HTMLElement>[];
@@ -10,7 +10,7 @@ const useClickOutside = ({
   listening = true,
   onClickOutside,
   refs,
-}: KeydownProps) => {
+}: ClickOutside) => {
   const handleClick = useCallback(
     (event: MouseEvent) => {
       const clickInside = refs.some(ref => {

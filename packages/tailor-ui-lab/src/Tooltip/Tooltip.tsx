@@ -6,6 +6,7 @@ import React, {
   cloneElement,
   forwardRef,
   isValidElement,
+  memo,
   useRef,
   useState,
 } from 'react';
@@ -23,8 +24,8 @@ interface TooltipPopup {
   handleClose: () => void;
 }
 
-const TooltipPopup = forwardRef<HTMLDivElement, TooltipPopup>(
-  function TooltipPopup(
+const TooltipPopup = memo(
+  forwardRef<HTMLDivElement, TooltipPopup>(function TooltipPopup(
     { style, content, handleOpen, handleClose, ...otherProps },
     ref
   ) {
@@ -39,7 +40,7 @@ const TooltipPopup = forwardRef<HTMLDivElement, TooltipPopup>(
         </StyledTooltip>
       </animated.div>
     );
-  }
+  })
 );
 
 export type TooltipProps = StyledTooltipProps & {
