@@ -1,26 +1,45 @@
-import React, { FunctionComponent } from 'react';
+import React, { FunctionComponent, RefObject, memo } from 'react';
+
+import { RenderPropsPositioner } from './Positioner';
 
 interface PositionWrapperProps {
   left: number | null;
   top: number | null;
+  transformOrigin: string | null;
+  style: any;
+  positioner: RenderPropsPositioner;
+  positionerRef: RefObject<HTMLElement>;
 }
 
-const PositionWrapper: FunctionComponent<PositionWrapperProps> = ({
-  left,
-  top,
-  children,
-}) => (
-  <div
-    style={{
-      position: 'absolute',
-      top: 0,
-      left: 0,
-      willChange: 'transform',
-      transform: `translate3d(${left}px, ${top}px, 0px)`,
-    }}
-  >
-    {children}
-  </div>
+const areEqual = (
+  prevProps: PositionWrapperProps,
+  nextProps: PositionWrapperProps
+) =>
+  prevProps.top === nextProps.top &&
+  prevProps.left === nextProps.left &&
+  prevProps.transformOrigin === nextProps.transformOrigin;
+
+const PositionWrapper: FunctionComponent<PositionWrapperProps> = memo(
+  ({ left, top, transformOrigin, style, positioner, positionerRef }) => (
+    <div
+      style={{
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        willChange: 'transform',
+        transform: `translate3d(${left}px, ${top}px, 0px)`,
+      }}
+    >
+      {positioner({
+        ref: positionerRef,
+        style: {
+          ...style,
+          transformOrigin: transformOrigin || undefined,
+        },
+      })}
+    </div>
+  ),
+  areEqual
 );
 
 export default PositionWrapper;
