@@ -37,14 +37,14 @@
     "tailor-ui": ">=0.4.0"
   },
   "devDependencies": {
-    "rollup-plugin-commonjs": "^9.2.1"
+    "rollup-plugin-commonjs": "^9.2.2"
   },
   "publishConfig": {
     "access": "public"
   },
   "dependencies": {
     "lodash.debounce": "^4.0.8",
-    "polished": "^3.0.3",
-    "styled-system": "^4.0.6"
+    "polished": "^3.1.0",
+    "styled-system": "^4.0.8"
   }
 }

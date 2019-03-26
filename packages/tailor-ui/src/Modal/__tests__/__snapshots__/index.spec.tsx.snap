@@ -58,8 +58,8 @@ exports[`Modal should render correctly 1`] = `
   margin-left: 1rem;
   margin-right: 1rem;
   padding-top: 1rem;
-  border-color: #e0e0e0;
   border-top: 1px solid;
+  border-color: #e0e0e0;
   border-color: #e0e0e0;
   -webkit-flex: none;
   -ms-flex: none;
@@ -429,8 +429,8 @@ exports[`Modal should render correctly with lg size 1`] = `
   margin-left: 1rem;
   margin-right: 1rem;
   padding-top: 1rem;
-  border-color: #e0e0e0;
   border-top: 1px solid;
+  border-color: #e0e0e0;
   border-color: #e0e0e0;
   -webkit-flex: none;
   -ms-flex: none;
@@ -782,8 +782,8 @@ exports[`Modal should render with props closable 1`] = `
   margin-left: 1rem;
   margin-right: 1rem;
   padding-top: 1rem;
-  border-color: #e0e0e0;
   border-top: 1px solid;
+  border-color: #e0e0e0;
   border-color: #e0e0e0;
   -webkit-flex: none;
   -ms-flex: none;
