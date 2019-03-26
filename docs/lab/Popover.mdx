@@ -1,0 +1,82 @@
+---
+name: Popover
+menu: Lab
+route: /lab/popover
+---
+
+import { PropsTable, Playground, Link } from 'docz';
+import { Button, Position } from 'tailor-ui';
+import { Popover } from '@tailor-ui/lab';
+
+# Popover
+
+The floating card popped by clicking or hovering.
+
+## When To Use
+
+A simple popup menu to provide extra information or operations.
+
+Comparing with `Tooltip`, besides information `Popover` card can also provide action elements like links and buttons.
+
+## Examples
+
+```js
+import { Popover } from 'tailor-ui';
+```
+
+### Basic
+
+<Playground>
+  <Popover title="Popover Title" content="Popover Content">
+    <Button>Button</Button>
+  </Popover>
+</Playground>
+
+### With position right
+
+<Playground>
+  <Popover
+    position={Position.RIGHT}
+    title="Popover Title"
+    content="Popover Content"
+  >
+    <Button>Button</Button>
+  </Popover>
+</Playground>
+
+### With content hide
+
+<Playground>
+  <Popover
+    position={Position.RIGHT}
+    title="Title"
+    content={hide => (
+      <div>
+        Popover Content
+        <br />
+        <Button size="sm" onClick={hide}>
+          Hide Popover
+        </Button>
+      </div>
+    )}
+  >
+    <Button>Button</Button>
+  </Popover>
+</Playground>
+
+### With onVisibleChange
+
+<Playground>
+  <Popover
+    position={Position.RIGHT}
+    title="Title"
+    content="Popover content"
+    onVisibleChange={console.log}
+  >
+    <Button>Button</Button>
+  </Popover>
+</Playground>
+
+## API
+
+<PropsTable of={Popover} />

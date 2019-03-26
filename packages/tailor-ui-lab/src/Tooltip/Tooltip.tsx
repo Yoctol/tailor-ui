@@ -91,14 +91,16 @@ const Tooltip: FunctionComponent<TooltipProps> = ({
   const cancelLeaveDebounce = useRef<null | (() => void)>();
   const [visibleFromSelf, setVisibleFromSelf] = useState(defaultVisible);
 
-  const hanVisibleFromProps = typeof visibleFromProps !== 'undefined';
+  const hasVisibleFromProps = typeof visibleFromProps !== 'undefined';
 
-  const visible = hanVisibleFromProps ? visibleFromProps : visibleFromSelf;
+  const visible = hasVisibleFromProps ? visibleFromProps : visibleFromSelf;
 
   const open = () => {
     if (onVisibleChange) {
       onVisibleChange(true);
-    } else {
+    }
+
+    if (!hasVisibleFromProps) {
       setVisibleFromSelf(true);
     }
   };
@@ -106,7 +108,9 @@ const Tooltip: FunctionComponent<TooltipProps> = ({
   const close = () => {
     if (onVisibleChange) {
       onVisibleChange(false);
-    } else {
+    }
+
+    if (!hasVisibleFromProps) {
       setVisibleFromSelf(false);
     }
   };
