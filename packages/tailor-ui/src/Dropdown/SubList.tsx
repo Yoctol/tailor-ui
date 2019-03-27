@@ -60,7 +60,7 @@ const SubItem: FunctionComponent<SubItemProps> = ({
     if (subItemRef.current) {
       setLeft(subItemRef.current.offsetWidth);
     }
-  });
+  }, []);
 
   return (
     <StyledSubItem disabled={disabled} ref={subItemRef}>
