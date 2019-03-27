@@ -54,7 +54,6 @@ const BaseModal: FunctionComponent<BaseModalProps> = ({
   });
 
   const transitions = useTransition(visible, null, {
-    unique: true,
     from: {
       opacity: 0,
       transform: 'scale(0.9)',
