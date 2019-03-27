@@ -22,7 +22,7 @@ const Menu: FunctionComponent<FlexProps & MenuProps> & {
       value={{
         openKeys,
         handleToggleOpenKeys: key => {
-          if (openKeys.indexOf(key) !== -1) {
+          if (openKeys.includes(key)) {
             setOpenKeys(openKeys.filter(openKey => openKey !== key));
           } else {
             setOpenKeys(currentSubOnly ? [key] : [...openKeys, key]);

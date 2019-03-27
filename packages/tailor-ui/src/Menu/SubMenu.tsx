@@ -32,7 +32,7 @@ const SubMenu: FunctionComponent<SubMenuProps> = ({
 }) => {
   const [bind, { height }] = useMeasure();
   const { openKeys, handleToggleOpenKeys } = useContext(MenuContext);
-  const menuOn = openKeys.indexOf(id) !== -1;
+  const menuOn = openKeys.includes(id);
 
   const { rotate } = useSpring({
     rotate: menuOn ? '180' : '0',
