@@ -22,7 +22,6 @@ module.exports = {
     jasmine: true,
   },
   rules: {
-    'react/destructuring-assignment': 'off',
     'react/jsx-filename-extension': 'off',
     'react/prop-types': 'off',
     'react/sort-comp': 'off',

@@ -5,6 +5,7 @@ import React, {
   memo,
   useContext,
 } from 'react';
+
 import { Button, Flex, LocaleContext, getTypeIcon } from 'tailor-ui';
 
 import Popover from '../Popover';
