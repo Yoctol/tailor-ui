@@ -258,7 +258,6 @@ const Mention: FunctionComponent<MentionProps> = ({
     );
 
     cursorMention.current = cursor;
-
     if (cursor.mention !== null) {
       const filteredSuggestions = [
         ...suggestions
