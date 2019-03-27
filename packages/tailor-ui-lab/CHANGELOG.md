@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.3](https://github.com/Yoctol/tailor-ui/compare/@tailor-ui/lab@0.2.2...@tailor-ui/lab@0.2.3) (2019-03-27)
+
+### Bug Fixes
+
+- **mention:** fix mention type ([ee650b8](https://github.com/Yoctol/tailor-ui/commit/ee650b8))
+
+### Features
+
+- improve positioner usage performance ([c032592](https://github.com/Yoctol/tailor-ui/commit/c032592))
+- **mention:** use useClickOutside to handle onBlur event ([2830512](https://github.com/Yoctol/tailor-ui/commit/2830512))
+- **popconfirm:** implement new popconfirm with positioner ([06becab](https://github.com/Yoctol/tailor-ui/commit/06becab))
+- **popover:** implement new popover with positioner ([c86e711](https://github.com/Yoctol/tailor-ui/commit/c86e711))
+- **tooltip:** re-implement new tooltip with positioner ([07bc232](https://github.com/Yoctol/tailor-ui/commit/07bc232))
+
 ## [0.2.2](https://github.com/Yoctol/tailor-ui/compare/@tailor-ui/lab@0.2.1...@tailor-ui/lab@0.2.2) (2019-03-26)
 
 ### Features

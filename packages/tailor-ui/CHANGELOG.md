@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.4](https://github.com/yoctol/tailor-ui/compare/tailor-ui@0.5.3...tailor-ui@0.5.4) (2019-03-27)
+
+### Features
+
+- **popconfirm:** implement new popconfirm with positioner ([06becab](https://github.com/yoctol/tailor-ui/commit/06becab))
+- **positioner:** implement positioner ([640de09](https://github.com/yoctol/tailor-ui/commit/640de09))
+- improve positioner usage performance ([c032592](https://github.com/yoctol/tailor-ui/commit/c032592))
+- **table:** update styles and add header/footer usage ([1bd695b](https://github.com/yoctol/tailor-ui/commit/1bd695b))
+
 ## [0.5.3](https://github.com/yoctol/tailor-ui/compare/tailor-ui@0.5.2...tailor-ui@0.5.3) (2019-03-26)
 
 **Note:** Version bump only for package tailor-ui
