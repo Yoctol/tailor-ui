@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.5](https://github.com/yoctol/tailor-ui/compare/tailor-ui@0.5.4...tailor-ui@0.5.5) (2019-03-27)
+
+### Bug Fixes
+
+- **modal:** remove unique from useTransition to prevent style override ([480cebd](https://github.com/yoctol/tailor-ui/commit/480cebd))
+
 ## [0.5.4](https://github.com/yoctol/tailor-ui/compare/tailor-ui@0.5.3...tailor-ui@0.5.4) (2019-03-27)
 
 ### Features
