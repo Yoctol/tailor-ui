@@ -258,6 +258,7 @@ const Mention: FunctionComponent<MentionProps> = ({
     );
 
     cursorMention.current = cursor;
+
     if (cursor.mention !== null) {
       const filteredSuggestions = [
         ...suggestions
@@ -398,7 +399,7 @@ const Mention: FunctionComponent<MentionProps> = ({
     resetDropdown(event);
   };
 
-  const handleOnFocus = (event: ChangeEvent<HTMLTextAreaElement>) => {
+  const handleOnFocus = () => {
     dispatch({ type: 'onFocus' });
   };
 
