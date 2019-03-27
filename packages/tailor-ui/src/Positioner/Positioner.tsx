@@ -21,7 +21,7 @@ type RenderPropsChildren = ({
   ref: RefObject<HTMLElement>;
 }) => ReactNode;
 
-type RenderPropsPositioner = ({
+export type RenderPropsPositioner = ({
   ref,
   style,
 }: {
@@ -119,14 +119,11 @@ const Positioner: FunctionComponent<PositionerProps> = ({
       top: rect.top,
       transformOrigin,
     });
-  };
 
-  useEffect(() => {
     laf.current = requestAnimationFrame(() => {
-      update();
+      update(height, width);
     });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [state]);
+  };
 
   useEffect(() => {
     if (visible) {
@@ -136,6 +133,7 @@ const Positioner: FunctionComponent<PositionerProps> = ({
   }, [visible]);
 
   const transitions = useTransition(visible, null, {
+    unique: true,
     from: {
       opacity: 0,
       transform: 'scale(0.9)',
@@ -152,14 +150,14 @@ const Positioner: FunctionComponent<PositionerProps> = ({
       if (item && currentState === 'update') {
         entered.current = item;
       }
-      if (item && currentState === 'leave') {
-        entered.current = false;
-        setState({
-          top: null,
-          left: null,
-          transformOrigin: null,
-        });
-      }
+    },
+    onDestroyed: () => {
+      entered.current = false;
+      setState({
+        top: null,
+        left: null,
+        transformOrigin: null,
+      });
     },
     config: config.stiff,
   });
@@ -174,15 +172,15 @@ const Positioner: FunctionComponent<PositionerProps> = ({
           }
 
           return (
-            <PositionerWrapper key={key} left={state.left} top={state.top}>
-              {positioner({
-                ref: positionerRef,
-                style: {
-                  ...props,
-                  transformOrigin: state.transformOrigin || undefined,
-                },
-              })}
-            </PositionerWrapper>
+            <PositionerWrapper
+              key={key}
+              left={state.left}
+              top={state.top}
+              transformOrigin={state.transformOrigin}
+              style={props}
+              positioner={positioner}
+              positionerRef={positionerRef}
+            />
           );
         })}
       </Portal>
