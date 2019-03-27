@@ -1,7 +1,397 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Modal should render correctly 1`] = `
+.c10 {
+  box-sizing: border-box;
+  margin-left: auto;
+}
+
+.c3 {
+  box-sizing: border-box;
+  margin-bottom: 1rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c4 {
+  box-sizing: border-box;
+  -webkit-flex: auto;
+  -ms-flex: auto;
+  flex: auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c7 {
+  box-sizing: border-box;
+  overflow-y: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  -webkit-flex: auto;
+  -ms-flex: auto;
+  flex: auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c8 {
+  box-sizing: border-box;
+  margin-top: 24px;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid;
+  border-color: #e0e0e0;
+  border-color: #e0e0e0;
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
 .c9 {
+  box-sizing: border-box;
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c6 {
+  margin: 0;
+  color: #373737;
+  font-weight: bold;
+  line-height: 1.5;
+}
+
+.c5 {
+  font-size: 1.25rem;
+}
+
+.c0 {
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0,0,0,0.65);
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: fixed;
+  z-index: 10001;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 516px;
+  min-height: 220px;
+  max-height: 75vh;
+  padding: 24px 1rem 1rem;
+  border-radius: 1rem;
+  background-color: #fff;
+}
+
+.c11 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  position: relative;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  overflow: hidden;
+  border: 1px solid;
+  border-radius: 0.5rem;
+  border-color: transparent;
+  line-height: 1.5;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  height: 2.25rem;
+  padding: 0 0.75rem;
+  font-size: 1rem;
+  background-color: #e8ecf5;
+  color: #6B88c5;
+  font-weight: bold;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+}
+
+.c11:focus {
+  outline: 0;
+}
+
+.c11:disabled,
+.c11[disabled] {
+  opacity: 0.85;
+  background-color: #e0e0e0;
+  color: #8b8b8b;
+  cursor: default;
+  pointer-events: none;
+}
+
+.c11:disabled .c13 svg,
+.c11[disabled] .c13 svg {
+  fill: #8b8b8b;
+}
+
+.c11::before {
+  content: '';
+  display: inline-block;
+  position: relative;
+  left: 0;
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
+  width: 0;
+  height: 0;
+  margin-right: 0;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+}
+
+.c11 .c13 svg {
+  fill: #6B88c5;
+}
+
+.c11:hover {
+  background-color: #fafbfd;
+}
+
+.c11:active {
+  background-color: #d6dded;
+}
+
+.c12 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  position: relative;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  overflow: hidden;
+  border: 1px solid;
+  border-radius: 0.5rem;
+  border-color: transparent;
+  line-height: 1.5;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  height: 2.25rem;
+  padding: 0 0.75rem;
+  font-size: 1rem;
+  background-color: #3c5ad0;
+  color: #ffffff;
+  font-weight: bold;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+  margin-left: 1rem;
+}
+
+.c12:focus {
+  outline: 0;
+}
+
+.c12:disabled,
+.c12[disabled] {
+  opacity: 0.85;
+  background-color: #e0e0e0;
+  color: #8b8b8b;
+  cursor: default;
+  pointer-events: none;
+}
+
+.c12:disabled .c13 svg,
+.c12[disabled] .c13 svg {
+  fill: #8b8b8b;
+}
+
+.c12::before {
+  content: '';
+  display: inline-block;
+  position: relative;
+  left: 0;
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
+  width: 0;
+  height: 0;
+  margin-right: 0;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+}
+
+.c12 .c13 svg {
+  fill: #ffffff;
+}
+
+.c12:hover {
+  background-color: #516bd5;
+}
+
+.c12:active {
+  background-color: #2f4dc3;
+}
+
+<body>
+  <div />
+  <div
+    style="position: fixed; top: 0px; left: 0px; z-index: 9999;"
+  >
+    <div
+      class="c0"
+      style="opacity: 0;"
+    />
+    <div
+      class="c1"
+      style="opacity: 0; transform: scale(0.9);"
+    >
+      <div
+        class="c2"
+      >
+        <div
+          class="c3"
+          mx="3"
+        >
+          <div
+            class="c4"
+          >
+            <h3
+              class="c5 c6"
+            />
+          </div>
+        </div>
+        <div
+          class="c7"
+          px="3"
+        />
+        <div
+          class="c8"
+          mx="3"
+        >
+          <div
+            class="c9"
+          >
+            <div
+              class="c10"
+            >
+              <button
+                class="c11"
+                type="normal"
+              >
+                Cancel
+              </button>
+              <button
+                class="c12"
+                type="primary"
+              >
+                Confirm
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Modal should render correctly with lg size 1`] = `
+<body>
+  <div
+    style="position: fixed; top: 0px; left: 0px; z-index: 9999;"
+  >
+    .c0 {
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0,0,0,0.65);
+}
+
+<div
+      class="c0"
+      style="opacity: 0;"
+    />
+    .c9 {
   box-sizing: border-box;
   margin-left: auto;
 }
@@ -95,13 +485,25 @@ exports[`Modal should render correctly 1`] = `
 }
 
 .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   position: fixed;
-  z-index: -1;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-color: rgba(0,0,0,0.65);
+  z-index: 10001;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
 }
 
 .c1 {
@@ -109,22 +511,15 @@ exports[`Modal should render correctly 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  position: fixed;
-  z-index: 10001;
-  top: 50%;
-  left: 50%;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  width: 516px;
+  width: 786px;
   min-height: 220px;
   max-height: 75vh;
   padding: 24px 1rem 1rem;
   border-radius: 1rem;
   background-color: #fff;
-  -webkit-transform: translate(-50%,-50%);
-  -ms-transform: translate(-50%,-50%);
-  transform: translate(-50%,-50%);
 }
 
 .c10 {
@@ -294,409 +689,52 @@ exports[`Modal should render correctly 1`] = `
   background-color: #2f4dc3;
 }
 
-<body>
-  <div />
-  <div
-    style="position: fixed; top: 0px; left: 0px; z-index: 9999;"
-  >
-    <div
-      class="c0"
-      style="opacity: 0;"
-    />
-    <div
-      class="c1"
-      style="opacity: 0;"
-    >
-      <div
-        class="c2"
-        mx="3"
-      >
-        <div
-          class="c3"
-        >
-          <h3
-            class="c4 c5"
-          />
-        </div>
-      </div>
-      <div
-        class="c6"
-        px="3"
-      />
-      <div
-        class="c7"
-        mx="3"
-      >
-        <div
-          class="c8"
-        >
-          <div
-            class="c9"
-          >
-            <button
-              class="c10"
-              type="normal"
-            >
-              Cancel
-            </button>
-            <button
-              class="c11"
-              type="primary"
-            >
-              Confirm
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</body>
-`;
-
-exports[`Modal should render correctly with lg size 1`] = `
-<body>
-  <div
-    style="position: fixed; top: 0px; left: 0px; z-index: 9999;"
-  >
-    .c0 {
-  position: fixed;
-  z-index: -1;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-color: rgba(0,0,0,0.65);
-}
-
 <div
       class="c0"
-      style="opacity: 0;"
-    />
-    .c8 {
-  box-sizing: border-box;
-  margin-left: auto;
-}
-
-.c1 {
-  box-sizing: border-box;
-  margin-bottom: 1rem;
-  margin-left: 1rem;
-  margin-right: 1rem;
-  -webkit-flex: none;
-  -ms-flex: none;
-  flex: none;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c2 {
-  box-sizing: border-box;
-  -webkit-flex: auto;
-  -ms-flex: auto;
-  flex: auto;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.c5 {
-  box-sizing: border-box;
-  overflow-y: auto;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  -webkit-flex: auto;
-  -ms-flex: auto;
-  flex: auto;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c6 {
-  box-sizing: border-box;
-  margin-top: 24px;
-  margin-left: 1rem;
-  margin-right: 1rem;
-  padding-top: 1rem;
-  border-top: 1px solid;
-  border-color: #e0e0e0;
-  border-color: #e0e0e0;
-  -webkit-flex: none;
-  -ms-flex: none;
-  flex: none;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c7 {
-  box-sizing: border-box;
-  width: 100%;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.c4 {
-  margin: 0;
-  color: #373737;
-  font-weight: bold;
-  line-height: 1.5;
-}
-
-.c3 {
-  font-size: 1.25rem;
-}
-
-.c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  position: fixed;
-  z-index: 10001;
-  top: 50%;
-  left: 50%;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  width: 786px;
-  min-height: 220px;
-  max-height: 75vh;
-  padding: 24px 1rem 1rem;
-  border-radius: 1rem;
-  background-color: #fff;
-  -webkit-transform: translate(-50%,-50%);
-  -ms-transform: translate(-50%,-50%);
-  transform: translate(-50%,-50%);
-}
-
-.c9 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  position: relative;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  overflow: hidden;
-  border: 1px solid;
-  border-radius: 0.5rem;
-  border-color: transparent;
-  line-height: 1.5;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  vertical-align: middle;
-  white-space: nowrap;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  height: 2.25rem;
-  padding: 0 0.75rem;
-  font-size: 1rem;
-  background-color: #e8ecf5;
-  color: #6B88c5;
-  font-weight: bold;
-  -webkit-transition: all 200ms ease 0s;
-  transition: all 200ms ease 0s;
-}
-
-.c9:focus {
-  outline: 0;
-}
-
-.c9:disabled,
-.c9[disabled] {
-  opacity: 0.85;
-  background-color: #e0e0e0;
-  color: #8b8b8b;
-  cursor: default;
-  pointer-events: none;
-}
-
-.c9:disabled .c11 svg,
-.c9[disabled] .c11 svg {
-  fill: #8b8b8b;
-}
-
-.c9::before {
-  content: '';
-  display: inline-block;
-  position: relative;
-  left: 0;
-  -webkit-flex: none;
-  -ms-flex: none;
-  flex: none;
-  width: 0;
-  height: 0;
-  margin-right: 0;
-  -webkit-transition: all 200ms ease 0s;
-  transition: all 200ms ease 0s;
-}
-
-.c9 .c11 svg {
-  fill: #6B88c5;
-}
-
-.c9:hover {
-  background-color: #fafbfd;
-}
-
-.c9:active {
-  background-color: #d6dded;
-}
-
-.c10 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  position: relative;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  overflow: hidden;
-  border: 1px solid;
-  border-radius: 0.5rem;
-  border-color: transparent;
-  line-height: 1.5;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  vertical-align: middle;
-  white-space: nowrap;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  height: 2.25rem;
-  padding: 0 0.75rem;
-  font-size: 1rem;
-  background-color: #3c5ad0;
-  color: #ffffff;
-  font-weight: bold;
-  -webkit-transition: all 200ms ease 0s;
-  transition: all 200ms ease 0s;
-  margin-left: 1rem;
-}
-
-.c10:focus {
-  outline: 0;
-}
-
-.c10:disabled,
-.c10[disabled] {
-  opacity: 0.85;
-  background-color: #e0e0e0;
-  color: #8b8b8b;
-  cursor: default;
-  pointer-events: none;
-}
-
-.c10:disabled .c11 svg,
-.c10[disabled] .c11 svg {
-  fill: #8b8b8b;
-}
-
-.c10::before {
-  content: '';
-  display: inline-block;
-  position: relative;
-  left: 0;
-  -webkit-flex: none;
-  -ms-flex: none;
-  flex: none;
-  width: 0;
-  height: 0;
-  margin-right: 0;
-  -webkit-transition: all 200ms ease 0s;
-  transition: all 200ms ease 0s;
-}
-
-.c10 .c11 svg {
-  fill: #ffffff;
-}
-
-.c10:hover {
-  background-color: #516bd5;
-}
-
-.c10:active {
-  background-color: #2f4dc3;
-}
-
-<div
-      class="c0"
-      style="opacity: 0;"
+      style="opacity: 0; transform: scale(0.9);"
     >
       <div
         class="c1"
-        mx="3"
       >
         <div
           class="c2"
+          mx="3"
         >
-          <h3
-            class="c3 c4"
-          />
+          <div
+            class="c3"
+          >
+            <h3
+              class="c4 c5"
+            />
+          </div>
         </div>
-      </div>
-      <div
-        class="c5"
-        px="3"
-      />
-      <div
-        class="c6"
-        mx="3"
-      >
+        <div
+          class="c6"
+          px="3"
+        />
         <div
           class="c7"
+          mx="3"
         >
           <div
             class="c8"
           >
-            <button
+            <div
               class="c9"
-              type="normal"
             >
-              Cancel
-            </button>
-            <button
-              class="c10"
-              type="primary"
-            >
-              Confirm
-            </button>
+              <button
+                class="c10"
+                type="normal"
+              >
+                Cancel
+              </button>
+              <button
+                class="c11"
+                type="primary"
+              >
+                Confirm
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -725,12 +763,12 @@ exports[`Modal should render with props closable 1`] = `
       class="c0"
       style="opacity: 0;"
     />
-    .c12 {
+    .c13 {
   box-sizing: border-box;
   margin-left: auto;
 }
 
-.c1 {
+.c2 {
   box-sizing: border-box;
   margin-bottom: 1rem;
   margin-left: 1rem;
@@ -748,7 +786,7 @@ exports[`Modal should render with props closable 1`] = `
   align-items: center;
 }
 
-.c2 {
+.c3 {
   box-sizing: border-box;
   -webkit-flex: auto;
   -ms-flex: auto;
@@ -759,7 +797,7 @@ exports[`Modal should render with props closable 1`] = `
   display: flex;
 }
 
-.c9 {
+.c10 {
   box-sizing: border-box;
   overflow-y: auto;
   padding-left: 1rem;
@@ -776,7 +814,7 @@ exports[`Modal should render with props closable 1`] = `
   flex-direction: column;
 }
 
-.c10 {
+.c11 {
   box-sizing: border-box;
   margin-top: 24px;
   margin-left: 1rem;
@@ -798,7 +836,7 @@ exports[`Modal should render with props closable 1`] = `
   align-items: center;
 }
 
-.c11 {
+.c12 {
   box-sizing: border-box;
   width: 100%;
   display: -webkit-box;
@@ -807,18 +845,18 @@ exports[`Modal should render with props closable 1`] = `
   display: flex;
 }
 
-.c4 {
+.c5 {
   margin: 0;
   color: #373737;
   font-weight: bold;
   line-height: 1.5;
 }
 
-.c3 {
+.c4 {
   font-size: 1.25rem;
 }
 
-.c8 {
+.c9 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -828,14 +866,14 @@ exports[`Modal should render with props closable 1`] = `
   margin-right: 0rem;
 }
 
-.c8 svg {
+.c9 svg {
   fill: #8b8b8b;
   vertical-align: middle;
   -webkit-transition: all 200ms ease 0s;
   transition: all 200ms ease 0s;
 }
 
-.c8.c8.c8 svg {
+.c9.c9.c9 svg {
   width: 24px;
   height: 24px;
 }
@@ -847,8 +885,26 @@ exports[`Modal should render with props closable 1`] = `
   display: flex;
   position: fixed;
   z-index: 10001;
-  top: 50%;
-  left: 50%;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -858,92 +914,6 @@ exports[`Modal should render with props closable 1`] = `
   padding: 24px 1rem 1rem;
   border-radius: 1rem;
   background-color: #fff;
-  -webkit-transform: translate(-50%,-50%);
-  -ms-transform: translate(-50%,-50%);
-  transform: translate(-50%,-50%);
-}
-
-.c13 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  position: relative;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  overflow: hidden;
-  border: 1px solid;
-  border-radius: 0.5rem;
-  border-color: transparent;
-  line-height: 1.5;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  vertical-align: middle;
-  white-space: nowrap;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  height: 2.25rem;
-  padding: 0 0.75rem;
-  font-size: 1rem;
-  background-color: #e8ecf5;
-  color: #6B88c5;
-  font-weight: bold;
-  -webkit-transition: all 200ms ease 0s;
-  transition: all 200ms ease 0s;
-}
-
-.c13:focus {
-  outline: 0;
-}
-
-.c13:disabled,
-.c13[disabled] {
-  opacity: 0.85;
-  background-color: #e0e0e0;
-  color: #8b8b8b;
-  cursor: default;
-  pointer-events: none;
-}
-
-.c13:disabled .c7 svg,
-.c13[disabled] .c7 svg {
-  fill: #8b8b8b;
-}
-
-.c13::before {
-  content: '';
-  display: inline-block;
-  position: relative;
-  left: 0;
-  -webkit-flex: none;
-  -ms-flex: none;
-  flex: none;
-  width: 0;
-  height: 0;
-  margin-right: 0;
-  -webkit-transition: all 200ms ease 0s;
-  transition: all 200ms ease 0s;
-}
-
-.c13 .c7 svg {
-  fill: #6B88c5;
-}
-
-.c13:hover {
-  background-color: #fafbfd;
-}
-
-.c13:active {
-  background-color: #d6dded;
 }
 
 .c14 {
@@ -977,12 +947,11 @@ exports[`Modal should render with props closable 1`] = `
   height: 2.25rem;
   padding: 0 0.75rem;
   font-size: 1rem;
-  background-color: #3c5ad0;
-  color: #ffffff;
+  background-color: #e8ecf5;
+  color: #6B88c5;
   font-weight: bold;
   -webkit-transition: all 200ms ease 0s;
   transition: all 200ms ease 0s;
-  margin-left: 1rem;
 }
 
 .c14:focus {
@@ -998,8 +967,8 @@ exports[`Modal should render with props closable 1`] = `
   pointer-events: none;
 }
 
-.c14:disabled .c7 svg,
-.c14[disabled] .c7 svg {
+.c14:disabled .c8 svg,
+.c14[disabled] .c8 svg {
   fill: #8b8b8b;
 }
 
@@ -1018,19 +987,103 @@ exports[`Modal should render with props closable 1`] = `
   transition: all 200ms ease 0s;
 }
 
-.c14 .c7 svg {
-  fill: #ffffff;
+.c14 .c8 svg {
+  fill: #6B88c5;
 }
 
 .c14:hover {
-  background-color: #516bd5;
+  background-color: #fafbfd;
 }
 
 .c14:active {
+  background-color: #d6dded;
+}
+
+.c15 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  position: relative;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  overflow: hidden;
+  border: 1px solid;
+  border-radius: 0.5rem;
+  border-color: transparent;
+  line-height: 1.5;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  height: 2.25rem;
+  padding: 0 0.75rem;
+  font-size: 1rem;
+  background-color: #3c5ad0;
+  color: #ffffff;
+  font-weight: bold;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+  margin-left: 1rem;
+}
+
+.c15:focus {
+  outline: 0;
+}
+
+.c15:disabled,
+.c15[disabled] {
+  opacity: 0.85;
+  background-color: #e0e0e0;
+  color: #8b8b8b;
+  cursor: default;
+  pointer-events: none;
+}
+
+.c15:disabled .c8 svg,
+.c15[disabled] .c8 svg {
+  fill: #8b8b8b;
+}
+
+.c15::before {
+  content: '';
+  display: inline-block;
+  position: relative;
+  left: 0;
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
+  width: 0;
+  height: 0;
+  margin-right: 0;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+}
+
+.c15 .c8 svg {
+  fill: #ffffff;
+}
+
+.c15:hover {
+  background-color: #516bd5;
+}
+
+.c15:active {
   background-color: #2f4dc3;
 }
 
-.c6 {
+.c7 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -1068,12 +1121,12 @@ exports[`Modal should render with props closable 1`] = `
   transition: all 200ms ease 0s;
 }
 
-.c6:focus {
+.c7:focus {
   outline: 0;
 }
 
-.c6:disabled,
-.c6[disabled] {
+.c7:disabled,
+.c7[disabled] {
   opacity: 0.85;
   background-color: #e0e0e0;
   color: #8b8b8b;
@@ -1081,12 +1134,12 @@ exports[`Modal should render with props closable 1`] = `
   pointer-events: none;
 }
 
-.c6:disabled .c7 svg,
-.c6[disabled] .c7 svg {
+.c7:disabled .c8 svg,
+.c7[disabled] .c8 svg {
   fill: #8b8b8b;
 }
 
-.c6::before {
+.c7::before {
   content: '';
   display: inline-block;
   position: relative;
@@ -1101,19 +1154,19 @@ exports[`Modal should render with props closable 1`] = `
   transition: all 200ms ease 0s;
 }
 
-.c6 .c7 svg {
+.c7 .c8 svg {
   fill: #6B88c5;
 }
 
-.c6:hover {
+.c7:hover {
   background-color: #fafbfd;
 }
 
-.c6:active {
+.c7:active {
   background-color: #d6dded;
 }
 
-.c5 {
+.c6 {
   background: transparent;
   -webkit-transform: rotate(0deg);
   -ms-transform: rotate(0deg);
@@ -1122,7 +1175,7 @@ exports[`Modal should render with props closable 1`] = `
   transition: all 0.2s ease-in;
 }
 
-.c5:hover {
+.c6:hover {
   -webkit-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
   transform: rotate(90deg);
@@ -1130,75 +1183,79 @@ exports[`Modal should render with props closable 1`] = `
 
 <div
       class="c0"
-      style="opacity: 0;"
+      style="opacity: 0; transform: scale(0.9);"
     >
       <div
         class="c1"
-        mx="3"
       >
         <div
           class="c2"
+          mx="3"
         >
-          <h3
-            class="c3 c4"
-          />
+          <div
+            class="c3"
+          >
+            <h3
+              class="c4 c5"
+            />
+          </div>
+          <div
+            class="c6"
+          >
+            <button
+              class="c7"
+              type="normal"
+            >
+              <i
+                class="c8 c9"
+                cursor="default"
+                size="24"
+                style="pointer-events: none;"
+              >
+                <svg
+                  fill="currentColor"
+                  height="1em"
+                  stroke="currentColor"
+                  stroke-width="0"
+                  viewBox="0 0 24 24"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+                  />
+                </svg>
+              </i>
+            </button>
+          </div>
         </div>
         <div
-          class="c5"
-        >
-          <button
-            class="c6"
-            type="normal"
-          >
-            <i
-              class="c7 c8"
-              cursor="default"
-              size="24"
-              style="pointer-events: none;"
-            >
-              <svg
-                fill="currentColor"
-                height="1em"
-                stroke="currentColor"
-                stroke-width="0"
-                viewBox="0 0 24 24"
-                width="1em"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
-                />
-              </svg>
-            </i>
-          </button>
-        </div>
-      </div>
-      <div
-        class="c9"
-        px="3"
-      />
-      <div
-        class="c10"
-        mx="3"
-      >
+          class="c10"
+          px="3"
+        />
         <div
           class="c11"
+          mx="3"
         >
           <div
             class="c12"
           >
-            <button
+            <div
               class="c13"
-              type="normal"
             >
-              Cancel
-            </button>
-            <button
-              class="c14"
-              type="primary"
-            >
-              Confirm
-            </button>
+              <button
+                class="c14"
+                type="normal"
+              >
+                Cancel
+              </button>
+              <button
+                class="c15"
+                type="primary"
+              >
+                Confirm
+              </button>
+            </div>
           </div>
         </div>
       </div>
