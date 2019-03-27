@@ -8,12 +8,21 @@ import useKeydown, { ESC_KEY_CODE } from '../utils/useKeydown';
 
 type Size = 'md' | 'lg';
 
-const ModalContent = styled(tag.div)<{ type: Size }>`
+const ModalWrapper = styled.div`
   display: flex;
   position: fixed;
   z-index: 10001;
-  top: 50%;
-  left: 50%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+`;
+
+const AnimatedModalWrapper = animated(ModalWrapper);
+
+const ModalContent = styled(tag.div)<{ type: Size }>`
+  display: flex;
   flex-direction: column;
   width: ${p => ({ md: 516, lg: 786 }[p.size as Size] || 516)}px;
   min-height: 220px;
@@ -21,10 +30,7 @@ const ModalContent = styled(tag.div)<{ type: Size }>`
   padding: 24px ${p => p.theme.space[3]} ${p => p.theme.space[3]};
   border-radius: ${p => p.theme.radii.xl};
   background-color: #fff;
-  transform: translate(-50%, -50%);
 `;
-
-const AnimatedModalContent = animated(ModalContent);
 
 export interface BaseModalProps {
   onCancel: () => void;
@@ -48,14 +54,18 @@ const BaseModal: FunctionComponent<BaseModalProps> = ({
   });
 
   const transitions = useTransition(visible, null, {
+    unique: true,
     from: {
       opacity: 0,
+      transform: 'scale(0.9)',
     },
     enter: {
       opacity: 1,
+      transform: 'scale(1)',
     },
     leave: {
       opacity: 0,
+      transform: 'scale(0.9)',
       pointerEvents: 'none',
     },
     config: config.stiff,
@@ -74,14 +84,11 @@ const BaseModal: FunctionComponent<BaseModalProps> = ({
       {transitions.map(
         ({ item, key, props }) =>
           item && (
-            <AnimatedModalContent
-              key={key}
-              size={size}
-              style={props}
-              {...otherProps}
-            >
-              {children}
-            </AnimatedModalContent>
+            <AnimatedModalWrapper key={key} style={props}>
+              <ModalContent size={size} {...otherProps}>
+                {children}
+              </ModalContent>
+            </AnimatedModalWrapper>
           )
       )}
     </>
