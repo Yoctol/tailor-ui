@@ -22,7 +22,7 @@ import {
   useKeydown,
 } from 'tailor-ui';
 
-import { PopoverContent, PopoverHeader, StyledPopover } from './styles';
+import { PopoverHeader, StyledPopover, StyledPopoverProps } from './styles';
 
 interface PopoverPopup {
   style: CSSProperties;
@@ -46,16 +46,14 @@ const PopoverPopup = memo(
               </Heading.h6>
             </PopoverHeader>
           )}
-          <PopoverContent>
-            {content instanceof Function ? content(handleClose) : content}
-          </PopoverContent>
+          {content instanceof Function ? content(handleClose) : content}
         </StyledPopover>
       </animated.div>
     );
   })
 );
 
-export interface PopoverProps {
+export type PopoverProps = StyledPopoverProps & {
   /**
    * Whether the floating popover card is visible by default. Only support when the trigger is `click`
    */
@@ -72,6 +70,11 @@ export interface PopoverProps {
    * The position base on the children component
    */
   position?: Positions;
+  /**
+   * A string or react component inside this popover.
+   * If you are using click to trigger, it can be a
+   * function that with `hide` callback as first argument
+   */
   title?: ReactNode | ((handleClose: () => void) => ReactNode);
   /**
    * A string or react component inside this popover.
@@ -79,7 +82,7 @@ export interface PopoverProps {
    * function that with `hide` callback as first argument
    */
   content: ReactNode | ((handleClose: () => void) => ReactNode);
-}
+};
 
 const Popover: FunctionComponent<PopoverProps> = ({
   children,
@@ -89,14 +92,19 @@ const Popover: FunctionComponent<PopoverProps> = ({
   defaultVisible = false,
   visible: visibleFromProps,
   onVisibleChange,
+  ...otherProps
 }) => {
-  const childrenRef = useRef(null);
+  const childrenRefFromSelf = useRef(null);
   const popupRef = useRef(null);
   const [visibleFromSelf, setVisibleFromSelf] = useState(defaultVisible);
 
   const hasVisibleFromProps = typeof visibleFromProps !== 'undefined';
 
   const visible = hasVisibleFromProps ? visibleFromProps : visibleFromSelf;
+  const childrenRef =
+    children && (children as any).ref
+      ? (children as any).ref
+      : childrenRefFromSelf;
 
   const handleOpen = () => {
     if (onVisibleChange) {
@@ -174,6 +182,7 @@ const Popover: FunctionComponent<PopoverProps> = ({
           title={title}
           content={content}
           handleClose={handleClose}
+          {...otherProps}
         />
       )}
     >

@@ -42,8 +42,12 @@
   },
   "dependencies": {
     "@tailor-ui/utils": "^0.1.1",
+    "downshift": "^3.2.7",
+    "fuzzaldrin-plus": "^0.6.0",
     "lodash.debounce": "^4.0.8",
     "polished": "^3.2.0",
+    "react-icons": "^3.5.0",
+    "react-tiny-virtual-list": "^2.2.0",
     "styled-system": "^4.1.0"
   }
 }
