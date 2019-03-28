@@ -10,6 +10,9 @@ import React, {
   useRef,
   useState,
 } from 'react';
+import { animated } from 'react-spring';
+import { mergeEventProps } from '@tailor-ui/utils';
+
 import {
   Heading,
   Position,
@@ -18,8 +21,6 @@ import {
   useClickOutside,
   useKeydown,
 } from 'tailor-ui';
-import { animated } from 'react-spring';
-import { mergeEventProps } from '@tailor-ui/utils';
 
 import { PopoverContent, PopoverHeader, StyledPopover } from './styles';
 

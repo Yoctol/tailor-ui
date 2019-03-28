@@ -11,9 +11,10 @@ import React, {
   useState,
 } from 'react';
 import debounce from 'lodash.debounce';
-import { Position, Positioner, Positions } from 'tailor-ui';
 import { animated } from 'react-spring';
 import { mergeEventProps } from '@tailor-ui/utils';
+
+import { Position, Positioner, Positions } from 'tailor-ui';
 
 import { StyledTooltip, StyledTooltipProps } from './styles';
 
