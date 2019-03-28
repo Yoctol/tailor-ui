@@ -10,8 +10,6 @@ import React, {
   useRef,
   useState,
 } from 'react';
-import { animated } from 'react-spring';
-
 import {
   Heading,
   Position,
@@ -20,6 +18,8 @@ import {
   useClickOutside,
   useKeydown,
 } from 'tailor-ui';
+import { animated } from 'react-spring';
+import { mergeEventProps } from '@tailor-ui/utils';
 
 import { PopoverContent, PopoverHeader, StyledPopover } from './styles';
 
@@ -137,14 +137,14 @@ const Popover: FunctionComponent<PopoverProps> = ({
     onKeydown: handleClose,
   });
 
-  // TODO: compose events
   const renderChildren = ({ ref }: { ref: RefObject<HTMLElement> }) => {
     if (children instanceof Function) {
       return children({
         ref,
-        bind: {
-          onClick: toggle,
-        },
+        bind: (props: any) =>
+          mergeEventProps(props, {
+            onClick: toggle,
+          }),
       });
     }
 
@@ -154,7 +154,9 @@ const Popover: FunctionComponent<PopoverProps> = ({
 
     return cloneElement(children, {
       ref,
-      onClick: toggle,
+      ...mergeEventProps(children.props, {
+        onClick: toggle,
+      }),
     });
   };
 
