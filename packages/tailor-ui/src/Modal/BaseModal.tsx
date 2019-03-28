@@ -9,14 +9,11 @@ import useKeydown, { ESC_KEY_CODE } from '../utils/useKeydown';
 type Size = 'md' | 'lg';
 
 const ModalWrapper = styled.div`
-  display: flex;
   position: fixed;
   z-index: 10001;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 `;
 
 const AnimatedModalWrapper = animated(ModalWrapper);
@@ -31,6 +28,8 @@ const ModalContent = styled(tag.div)<{ type: Size }>`
   border-radius: ${p => p.theme.radii.xl};
   background-color: #fff;
 `;
+
+const AnimatedModalContent = animated(ModalContent);
 
 export interface BaseModalProps {
   onCancel: () => void;
@@ -83,10 +82,13 @@ const BaseModal: FunctionComponent<BaseModalProps> = ({
       {transitions.map(
         ({ item, key, props }) =>
           item && (
-            <AnimatedModalWrapper key={key} style={props}>
-              <ModalContent size={size} {...otherProps}>
+            <AnimatedModalWrapper
+              key={key}
+              style={{ pointerEvents: props.pointerEvents }}
+            >
+              <AnimatedModalContent size={size} style={props} {...otherProps}>
                 {children}
-              </ModalContent>
+              </AnimatedModalContent>
             </AnimatedModalWrapper>
           )
       )}
