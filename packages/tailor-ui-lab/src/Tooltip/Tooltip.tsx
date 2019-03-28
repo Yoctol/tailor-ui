@@ -12,6 +12,7 @@ import React, {
 } from 'react';
 import debounce from 'lodash.debounce';
 import { animated } from 'react-spring';
+import { mergeEventProps } from '@tailor-ui/utils';
 
 import { Position, Positioner, Positions } from 'tailor-ui';
 
@@ -146,15 +147,15 @@ const Tooltip: FunctionComponent<TooltipProps> = ({
     }
   };
 
-  // TODO: compose events
   const renderChildren = ({ ref }: { ref: RefObject<HTMLElement> }) => {
     if (children instanceof Function) {
       return children({
         ref,
-        bind: {
-          onMouseEnter: handleOpen,
-          onMouseLeave: handleClose,
-        },
+        bind: (props: any) =>
+          mergeEventProps(props, {
+            onMouseEnter: handleOpen,
+            onMouseLeave: handleClose,
+          }),
       });
     }
 
@@ -164,8 +165,10 @@ const Tooltip: FunctionComponent<TooltipProps> = ({
 
     return cloneElement(children, {
       ref,
-      onMouseEnter: handleOpen,
-      onMouseLeave: handleClose,
+      ...mergeEventProps(children.props, {
+        onMouseEnter: handleOpen,
+        onMouseLeave: handleClose,
+      }),
     });
   };
 
