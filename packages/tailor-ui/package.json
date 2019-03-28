@@ -7,6 +7,7 @@
   "license": "MIT",
   "main": "lib/index.cjs.js",
   "module": "lib/index.js",
+  "typings": "lib/index.d.ts",
   "files": [
     "lib"
   ],
@@ -57,7 +58,6 @@
     "react-spring": ">=8.0.0",
     "styled-components": ">=4.1.0"
   },
-  "typings": "lib/index.d.ts",
   "devDependencies": {
     "rollup-plugin-commonjs": "^9.2.2"
   }

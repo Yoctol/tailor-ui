@@ -8,17 +8,13 @@ import React, {
   useReducer,
   useRef,
 } from 'react';
+import { mergeEventProps } from '@tailor-ui/utils';
 
 import { useClickOutside } from 'tailor-ui';
 
 import Suggestions from './Suggestions';
 import { Highlights, MentionWrapper, Textarea } from './styles';
-import {
-  OverlayPosition,
-  getMentionCursor,
-  getOverlayPosition,
-  mergeEventProps,
-} from './utils';
+import { OverlayPosition, getMentionCursor, getOverlayPosition } from './utils';
 import { applyHighlights } from './highlight';
 import { getCaretCoordinates } from './textarea-caret-position';
 

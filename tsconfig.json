@@ -1,5 +1,4 @@
 {
-  "references": [{ "path": "./packages/tailor-ui" }],
   "compilerOptions": {
     "skipLibCheck": true, // https://stackoverflow.com/questions/52399839/typescript-duplicate-identifier-librarymanagedattributes/52404148#52404148
     "target": "es2017",

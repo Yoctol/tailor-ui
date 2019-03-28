@@ -36,6 +36,7 @@ module.exports = {
         map: [
           ['tailor-ui', './packages/tailor-ui/src'],
           ['@tailor-ui/lab', './packages/tailor-ui-lab/src'],
+          ['@tailor-ui/utils', './packages/tailor-ui-utils/src'],
         ],
         extensions: ['.js', '.jsx', '.ts', '.tsx'],
       },

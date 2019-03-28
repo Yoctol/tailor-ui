@@ -1,8 +1,8 @@
 {
-  "name": "@tailor-ui/lab",
-  "version": "0.2.3",
-  "description": "Incubator for Tailor-UI React components.",
-  "author": "Yoctol Info SD Team",
+  "name": "@tailor-ui/utils",
+  "version": "0.0.0",
+  "description": "Tailor-UI Utils - Utility functions for Tailor-UI.",
+  "author": "jigsawye <jigsaw.ye@gmail.com>",
   "homepage": "https://tailor-ui.netlify.com/",
   "license": "MIT",
   "main": "lib/index.cjs.js",
@@ -20,7 +20,7 @@
     "build": "yarn build:types && yarn build:cjs && yarn build:esm",
     "build:types": "tsc --build",
     "build:cjs": "rollup -c scripts/rollup.config.js",
-    "build:esm": "cross-env NODE_ENV=production babel --config-file ../../babel.config.js ./src --out-dir ./lib --extensions '.ts,.tsx' --ignore **/__tests__,**/**/__tests__",
+    "build:esm": "cross-env NODE_ENV=production babel --config-file ../../babel.config.js ./src --out-dir ./lib --extensions '.ts' --ignore **/__tests__,**/**/__tests__",
     "test": "yarn lint && yarn testonly",
     "testonly": "jest",
     "testonly:cov": "jest --coverage --runInBand",
@@ -30,23 +30,10 @@
   "bugs": {
     "url": "https://github.com/Yoctol/tailor-ui/issues"
   },
-  "peerDependencies": {
-    "react": ">=16.8.0",
-    "react-dom": ">=16.8.0",
-    "react-spring": ">=8.0.0",
-    "styled-components": ">=4.1.0",
-    "tailor-ui": ">=0.4.0"
-  },
-  "devDependencies": {
-    "rollup-plugin-commonjs": "^9.2.2"
-  },
   "publishConfig": {
     "access": "public"
   },
-  "dependencies": {
-    "@tailor-ui/utils": "^0.0.0",
-    "lodash.debounce": "^4.0.8",
-    "polished": "^3.1.0",
-    "styled-system": "^4.0.8"
+  "devDependencies": {
+    "rollup-plugin-commonjs": "^9.2.2"
   }
 }
