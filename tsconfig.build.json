@@ -6,6 +6,7 @@
   "include": [],
   "references": [
     { "path": "./packages/tailor-ui" },
-    { "path": "./packages/tailor-ui-lab" }
+    { "path": "./packages/tailor-ui-lab" },
+    { "path": "./packages/tailor-ui-utils" }
   ]
 }

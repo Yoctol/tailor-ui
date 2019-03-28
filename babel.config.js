@@ -34,6 +34,7 @@ module.exports = {
             extensions: ['.js', '.jsx', '.ts', '.tsx'],
             alias: {
               'tailor-ui': './packages/tailor-ui/src',
+              '@tailor-ui/utils': './packages/tailor-ui-utils/src',
             },
           },
         ],
