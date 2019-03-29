@@ -1,12 +1,10 @@
 import React, { FunctionComponent, useState } from 'react';
 import styled from 'styled-components';
 
-import tag from '../utils/CleanTag';
-
 import Radio from './Radio';
 import RadioContext, { Direction } from './RadioContext';
 
-const RadioGroupFlex = styled(tag.div)<{ direction: Direction }>`
+const RadioGroupFlex = styled.div<{ direction: Direction }>`
   display: ${p => (p.direction === 'horizontal' ? 'flex' : 'inline-flex')};
   flex-direction: ${p => (p.direction === 'horizontal' ? 'row' : 'column')};
 `;

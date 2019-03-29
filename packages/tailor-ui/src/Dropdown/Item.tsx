@@ -7,13 +7,11 @@ import React, {
 import styled, { css } from 'styled-components';
 import { SpaceProps, space } from 'styled-system';
 
-import tag from '../utils/CleanTag';
-
 import { Consumer } from './DropdownContext';
 
 type StyledItemProps = SpaceProps & { disabled?: boolean };
 
-const StyledListItem = styled(tag.li)<StyledItemProps>`
+const StyledListItem = styled.li<StyledItemProps>`
   display: flex;
   flex-direction: column;
   justify-content: center;

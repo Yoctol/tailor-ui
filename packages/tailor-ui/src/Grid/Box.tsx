@@ -1,8 +1,6 @@
 import styled from 'styled-components';
 import * as system from 'styled-system';
 
-import tag from '../utils/CleanTag';
-
 const overflow = system.style({
   prop: 'overflow',
   cssProperty: 'overflow',
@@ -48,7 +46,7 @@ export type BoxProps = system.PositionProps &
     overflowY?: string;
   };
 
-const Box = styled(tag.div)<BoxProps>`
+const Box = styled.div<BoxProps>`
   box-sizing: border-box;
 
   ${system.position /* sc-declaration */}

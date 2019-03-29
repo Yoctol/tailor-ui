@@ -3,12 +3,11 @@ import styled from 'styled-components';
 import { MdKeyboardArrowRight } from 'react-icons/md';
 
 import Icon from '../Icon';
-import tag from '../utils/CleanTag';
 
 import Item from './Item';
 import { StyledList, StyledListProps } from './List';
 
-const SubListWrapper = styled(tag.div)`
+const SubListWrapper = styled.div`
   position: absolute;
   top: calc(-${p => p.theme.space[2]} - ${p => p.theme.space[1]});
   padding: ${p => p.theme.space[2]};

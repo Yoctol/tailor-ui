@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import { animated, config, useTransition } from 'react-spring';
 
 import Backdrop from '../Backdrop';
-import tag from '../utils/CleanTag';
 import useKeydown, { ESC_KEY_CODE } from '../utils/useKeydown';
 
 type Size = 'md' | 'lg';
@@ -18,7 +17,7 @@ const ModalWrapper = styled.div`
 
 const AnimatedModalWrapper = animated(ModalWrapper);
 
-const ModalContent = styled(tag.div)<{ type: Size }>`
+const ModalContent = styled.div<{ size: Size }>`
   display: flex;
   flex-direction: column;
   width: ${p => ({ md: 516, lg: 786 }[p.size as Size] || 516)}px;

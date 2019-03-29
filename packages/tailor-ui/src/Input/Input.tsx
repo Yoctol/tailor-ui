@@ -1,5 +1,6 @@
 import React, {
   FunctionComponent,
+  InputHTMLAttributes,
   KeyboardEvent,
   KeyboardEventHandler,
   ReactNode,
@@ -17,7 +18,7 @@ import {
   width,
 } from 'styled-system';
 
-import tag from '../utils/CleanTag';
+import { Omit } from '../utils/type';
 import { StyledButton } from '../Button';
 
 export type Size = 'sm' | 'md' | 'lg';
@@ -62,10 +63,7 @@ export const inputStyles = css<StyledInputProps>`
     color: ${p => p.theme.colors.gray400};
   }
 
-  ${({
-    size = 'md',
-    theme: { paddings, heights, fontSizes },
-  }: StyledInputProps & { theme: any }) => {
+  ${({ size = 'md', theme: { paddings, heights, fontSizes } }) => {
     const inputSizeStyles = {
       sm: css`
         height: ${heights.sm};
@@ -94,7 +92,7 @@ export const inputStyles = css<StyledInputProps>`
   ${textAlign};
 `;
 
-export const StyledInput = styled(tag.input)<StyledInputProps>`
+export const StyledInput = styled.input`
   ${inputStyles};
 `;
 
@@ -116,7 +114,7 @@ interface InputLabel {
   suffix?: any;
 }
 
-const InputWrapper = styled(tag.div)<InputLabel>`
+const InputWrapper = styled.div<InputLabel>`
   display: flex;
 
   ${p =>
@@ -159,7 +157,7 @@ const InputWrapper = styled(tag.div)<InputLabel>`
   ${width};
 `;
 
-export interface InputProps {
+export type InputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'size'> & {
   /**
    * Auto select value of the input if true
    */
@@ -182,8 +180,7 @@ export interface InputProps {
   suffix?: ReactNode;
   onKeyPress?: KeyboardEventHandler<HTMLInputElement>;
   required?: boolean;
-  [key: string]: any;
-}
+};
 
 const Input: FunctionComponent<InputProps> = forwardRef<
   HTMLInputElement,
@@ -193,6 +190,7 @@ const Input: FunctionComponent<InputProps> = forwardRef<
     {
       prefix,
       suffix,
+      size = 'md',
       onPressEnter,
       onKeyPress,
       autoSelect,
@@ -220,6 +218,7 @@ const Input: FunctionComponent<InputProps> = forwardRef<
     const input = (
       <StyledInput
         ref={ref}
+        size={size as any}
         onKeyPress={handleKeyPress}
         autoFocus={autoFocus || autoSelect}
         {...props}

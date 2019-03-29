@@ -10,7 +10,6 @@ import {
   textAlign,
 } from 'styled-system';
 
-import tag from '../utils/CleanTag';
 import { Placement } from '../Trigger/type';
 
 export type TooltipContentProps = SpaceProps &
@@ -20,7 +19,7 @@ export type TooltipContentProps = SpaceProps &
     light: boolean;
   };
 
-export const TooltipContent = styled(tag.div)<TooltipContentProps>`
+export const TooltipContent = styled.div<TooltipContentProps>`
   border: ${p => p.theme.borders.base};
   border-color: ${({ light, theme: { colors } }) =>
     light ? colors.gray400 : colors.primaryDark2};
@@ -125,7 +124,7 @@ const arrowPlacementStyles = {
   `,
 };
 
-export const Arrow = styled(tag.div)<ArrowProps>`
+export const Arrow = styled.div<ArrowProps>`
   position: absolute;
   width: 0;
   height: 0;

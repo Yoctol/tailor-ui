@@ -1,6 +1,8 @@
 import React, {
   ChangeEvent,
   ChangeEventHandler,
+  FormEvent,
+  FormEventHandler,
   FunctionComponent,
   KeyboardEventHandler,
   useState,
@@ -42,7 +44,7 @@ const MaxLength = styled.div`
   line-height: 1;
 `;
 
-const TextFieldField = styled<any>(FormField)`
+const TextFieldField = styled(FormField)`
   margin-top: 10px;
 
   ${StyledInput /* sc-selector */}:invalid, ${StyledTextarea /* sc-selector */}:invalid {
@@ -116,7 +118,9 @@ export interface TextFieldProps {
    * Disabled the TextField
    */
   disabled?: boolean;
-  onChange?: ChangeEventHandler<HTMLInputElement>;
+  onChange?:
+    | ChangeEventHandler<HTMLInputElement>
+    | FormEventHandler<HTMLTextAreaElement>;
   onPressEnter?: KeyboardEventHandler<HTMLInputElement>;
 }
 
@@ -144,10 +148,12 @@ const TextField: FunctionComponent<TextFieldProps> = ({
   const inputProps = {
     maxLength,
     value,
-    onChange: (event: ChangeEvent<HTMLInputElement>) => {
-      setUncontrolledValue(event.target.value);
+    onChange: (
+      event: ChangeEvent<HTMLInputElement> | FormEvent<HTMLTextAreaElement>
+    ) => {
+      setUncontrolledValue(event.currentTarget.value);
       if (onChange) {
-        onChange(event);
+        onChange(event as any);
       }
     },
     ...(textarea ? omit(['onPressEnter'], props) : props),

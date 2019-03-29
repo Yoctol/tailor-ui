@@ -60,13 +60,10 @@ exports[`Drawer should render correctly 1`] = `
       style="transform: translateX(400px);"
     >
       <div
-        breadth="400px"
         class="c1"
-        placement="right"
       >
         <div
           class="c2"
-          px="3"
         />
       </div>
     </div>
@@ -133,13 +130,10 @@ exports[`Drawer should render with props closable 1`] = `
       style="transform: translateX(400px);"
     >
       <div
-        breadth="400px"
         class="c0"
-        placement="right"
       >
         <div
           class="c1"
-          px="3"
         />
       </div>
     </div>

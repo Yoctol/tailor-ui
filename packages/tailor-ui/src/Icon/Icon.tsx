@@ -3,8 +3,6 @@ import styled, { css } from 'styled-components';
 import { IconType as ReactIconsIconType } from 'react-icons';
 import { SpaceProps, style, space as styledSpace } from 'styled-system';
 
-import tag from '../utils/CleanTag';
-
 import { BuiltInIconKeys, icons } from './icons';
 
 const styledFill = style({
@@ -23,11 +21,11 @@ const styledSize = css<{ size: Size }>`
 export type IconWrapperProps = SpaceProps & {
   cursor?: string;
   pointerEvents?: string;
-  size?: Size;
+  size: Size;
   fill?: string;
 };
 
-export const IconWrapper = styled(tag.i)<IconWrapperProps>`
+export const IconWrapper = styled.i<IconWrapperProps>`
   display: inline-flex;
   line-height: 1;
   cursor: ${p => p.cursor};
@@ -50,7 +48,11 @@ export const IconWrapper = styled(tag.i)<IconWrapperProps>`
 export type IconType = BuiltInIconKeys | ReactIconsIconType;
 
 export type IconProps = HTMLAttributes<HTMLDivElement> &
-  IconWrapperProps & {
+  SpaceProps & {
+    cursor?: string;
+    pointerEvents?: string;
+    size?: Size;
+    fill?: string;
     type: IconType;
   };
 

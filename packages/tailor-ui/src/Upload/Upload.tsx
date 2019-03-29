@@ -4,9 +4,9 @@ import React, {
   useContext,
   useReducer,
 } from 'react';
-import styled, { css } from 'styled-components';
-import { DropzoneProps, useDropzone } from 'react-dropzone';
+import styled from 'styled-components';
 import { MdCheck, MdClose, MdFileUpload } from 'react-icons/md';
+import { useDropzone } from 'react-dropzone';
 
 import Box from '../Grid/Box';
 import Button from '../Button';
@@ -75,22 +75,18 @@ interface FileItemProps {
   onClear: (file: File) => void;
 }
 
+const StyledFileItem = styled(Flex)`
+  &:hover {
+    background-color: ${p => p.theme.colors.gray200};
+  }
+`;
+
 const FileItem: FunctionComponent<FileItemProps> = ({
   file,
   uploaded,
   onClear,
 }) => (
-  <Flex
-    alignItems="center"
-    mt="1"
-    p="1"
-    borderRadius="base"
-    css={css`
-      &:hover {
-        background-color: ${p => p.theme.colors.gray200};
-      }
-    `}
-  >
+  <StyledFileItem alignItems="center" mt="1" p="1" borderRadius="base">
     {uploaded && (
       <Icon
         type={MdClose}
@@ -103,10 +99,11 @@ const FileItem: FunctionComponent<FileItemProps> = ({
     <Box color="gray600" fontSize="sm">
       {file.name}
     </Box>
-  </Flex>
+  </StyledFileItem>
 );
 
-interface UploadProps extends DropzoneProps {
+interface UploadProps {
+  disabled?: boolean;
   onSelect: (files: File[]) => Promise<any>;
   onClear?: (file: File) => void;
   onBeforeSelect?: () => Promise<boolean> | boolean;

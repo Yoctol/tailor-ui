@@ -1,15 +1,21 @@
-import React, { MouseEventHandler, ReactNode, forwardRef } from 'react';
+import React, { ButtonHTMLAttributes, forwardRef } from 'react';
+import { SpaceProps, WidthProps } from 'styled-system';
 
 import { IconType } from '../Icon';
 
 import ButtonIcon from './ButtonIcon';
-import { StyledButton, StyledButtonProps } from './styles';
+import { ButtonSize, ButtonType, StyledButton } from './styles';
 
-export type ButtonProps = StyledButtonProps & {
-  icon?: IconType;
-  onClick?: MouseEventHandler;
-  children?: ReactNode;
-};
+export type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> &
+  SpaceProps &
+  WidthProps & {
+    loading?: boolean;
+    size?: ButtonSize;
+    type?: ButtonType;
+    rounded?: boolean;
+    disabled?: boolean;
+    icon?: IconType;
+  };
 
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(
   { children, icon, loading = false, size = 'md', ...props },

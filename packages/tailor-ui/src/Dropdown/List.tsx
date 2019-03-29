@@ -12,8 +12,6 @@ import {
 } from 'styled-system';
 import { animated } from 'react-spring/renderprops.cjs';
 
-import tag from '../utils/CleanTag';
-
 import { Consumer } from './DropdownContext';
 
 export type StyledListProps = MinWidthProps &
@@ -21,7 +19,7 @@ export type StyledListProps = MinWidthProps &
   TextAlignProps &
   OverflowProps;
 
-export const StyledList = styled(tag.ul)<StyledListProps>`
+export const StyledList = styled.ul<StyledListProps>`
   display: block;
   margin: 0;
   padding: ${p => p.theme.space[1]} 0;

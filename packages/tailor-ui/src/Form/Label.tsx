@@ -1,8 +1,6 @@
 import styled from 'styled-components';
 
-import tag from '../utils/CleanTag';
-
-const Label = styled(tag.label)`
+const Label = styled.label`
   display: block;
   font-size: ${p => p.theme.fontSizes.base};
   font-weight: 500;

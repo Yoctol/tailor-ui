@@ -105,7 +105,6 @@ exports[`Radio should render correctly 1`] = `
   </span>
   <div
     class="c6"
-    px="2"
   >
     Radio
   </div>
@@ -254,7 +253,6 @@ exports[`Radio.Group composition with Radio should render correctly 1`] = `
       </span>
       <div
         class="c8"
-        px="2"
       >
         Radio 1
       </div>
@@ -280,7 +278,6 @@ exports[`Radio.Group composition with Radio should render correctly 1`] = `
       </span>
       <div
         class="c8"
-        px="2"
       >
         Radio 2
       </div>
@@ -306,7 +303,6 @@ exports[`Radio.Group composition with Radio should render correctly 1`] = `
       </span>
       <div
         class="c8"
-        px="2"
       >
         Radio 3
       </div>
@@ -450,7 +446,6 @@ exports[`Radio.Group should render vertical radio group 1`] = `
     </span>
     <div
       class="c7"
-      px="2"
     >
       radio 1
     </div>
@@ -472,7 +467,6 @@ exports[`Radio.Group should render vertical radio group 1`] = `
     </span>
     <div
       class="c7"
-      px="2"
     >
       radio 2
     </div>
@@ -494,7 +488,6 @@ exports[`Radio.Group should render vertical radio group 1`] = `
     </span>
     <div
       class="c7"
-      px="2"
     >
       radio 3
     </div>
