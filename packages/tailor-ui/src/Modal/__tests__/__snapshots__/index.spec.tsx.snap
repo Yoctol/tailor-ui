@@ -109,9 +109,6 @@ exports[`Modal should render correctly 1`] = `
   z-index: 10001;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%,-50%);
-  -ms-transform: translate(-50%,-50%);
-  transform: translate(-50%,-50%);
 }
 
 .c2 {
@@ -308,10 +305,10 @@ exports[`Modal should render correctly 1`] = `
     />
     <div
       class="c1"
+      style="opacity: 0; transform: translate(-50%, -50%) scale(0.9);"
     >
       <div
         class="c2"
-        style="opacity: 0; transform: scale(0.9);"
       >
         <div
           class="c3"
@@ -475,9 +472,6 @@ exports[`Modal should render correctly with lg size 1`] = `
   z-index: 10001;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%,-50%);
-  -ms-transform: translate(-50%,-50%);
-  transform: translate(-50%,-50%);
 }
 
 .c1 {
@@ -665,10 +659,10 @@ exports[`Modal should render correctly with lg size 1`] = `
 
 <div
       class="c0"
+      style="opacity: 0; transform: translate(-50%, -50%) scale(0.9);"
     >
       <div
         class="c1"
-        style="opacity: 0; transform: scale(0.9);"
       >
         <div
           class="c2"
@@ -855,9 +849,6 @@ exports[`Modal should render with props closable 1`] = `
   z-index: 10001;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%,-50%);
-  -ms-transform: translate(-50%,-50%);
-  transform: translate(-50%,-50%);
 }
 
 .c1 {
@@ -1143,10 +1134,10 @@ exports[`Modal should render with props closable 1`] = `
 
 <div
       class="c0"
+      style="opacity: 0; transform: translate(-50%, -50%) scale(0.9);"
     >
       <div
         class="c1"
-        style="opacity: 0; transform: scale(0.9);"
       >
         <div
           class="c2"

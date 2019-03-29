@@ -1,9 +1,16 @@
-import React, { FunctionComponent } from 'react';
+import React, { FunctionComponent, useRef } from 'react';
 import styled from 'styled-components';
-import { animated, config, useTransition } from 'react-spring';
+import {
+  animated,
+  config,
+  useChain,
+  useSpring,
+  useTransition,
+} from 'react-spring';
 
 import Backdrop from '../Backdrop';
 import useKeydown, { ESC_KEY_CODE } from '../utils/useKeydown';
+import { Types } from '../utils/getTypeIcon';
 
 type Size = 'md' | 'lg';
 
@@ -12,10 +19,34 @@ const ModalWrapper = styled.div`
   z-index: 10001;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
 `;
 
 const AnimatedModalWrapper = animated(ModalWrapper);
+
+const ModalStatusBar = styled.div<{ statusBar: Types | null }>`
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  width: 100%;
+  height: 48px;
+  border-radius: ${p => p.theme.radii.xl};
+  background-color: ${p => {
+    switch (p.statusBar) {
+      case 'info':
+        return p.theme.colors.primary;
+      case 'success':
+        return p.theme.colors.success;
+      case 'warning':
+        return p.theme.colors.warning;
+      case 'error':
+        return p.theme.colors.danger;
+      default:
+        return '';
+    }
+  }};
+`;
+
+const AnimatedModalStatusBar = animated(ModalStatusBar);
 
 const ModalContent = styled.div<{ size: Size }>`
   display: flex;
@@ -28,12 +59,11 @@ const ModalContent = styled.div<{ size: Size }>`
   background-color: #fff;
 `;
 
-const AnimatedModalContent = animated(ModalContent);
-
 export interface BaseModalProps {
   onCancel: () => void;
   size?: Size;
   cancelable?: boolean;
+  statusBar?: Types | null;
   visible: boolean;
 }
 
@@ -43,8 +73,12 @@ const BaseModal: FunctionComponent<BaseModalProps> = ({
   onCancel,
   cancelable = true,
   size = 'md',
+  statusBar = null,
   ...otherProps
 }) => {
+  const transRef = useRef(null);
+  const springRef = useRef(null);
+
   useKeydown({
     listening: cancelable ? visible : false,
     keyCode: ESC_KEY_CODE,
@@ -52,21 +86,33 @@ const BaseModal: FunctionComponent<BaseModalProps> = ({
   });
 
   const transitions = useTransition(visible, null, {
+    ref: transRef,
     from: {
       opacity: 0,
-      transform: 'scale(0.9)',
+      transform: 'translate(-50%, -50%) scale(0.9)',
     },
     enter: {
       opacity: 1,
-      transform: 'scale(1)',
+      transform: 'translate(-50%, -50%) scale(1)',
     },
     leave: {
       opacity: 0,
-      transform: 'scale(0.9)',
+      transform: 'translate(-50%, -50%) scale(0.9)',
       pointerEvents: 'none',
     },
     config: config.stiff,
   });
+
+  const statusProps = useSpring({
+    ref: springRef,
+    opacity: visible ? 1 : 0,
+    top: visible ? -10 : 0,
+  });
+
+  useChain(visible ? [transRef, springRef] : [springRef, transRef], [
+    0,
+    visible ? 0.15 : 0,
+  ]);
 
   return (
     <>
@@ -81,13 +127,16 @@ const BaseModal: FunctionComponent<BaseModalProps> = ({
       {transitions.map(
         ({ item, key, props }) =>
           item && (
-            <AnimatedModalWrapper
-              key={key}
-              style={{ pointerEvents: props.pointerEvents }}
-            >
-              <AnimatedModalContent size={size} style={props} {...otherProps}>
+            <AnimatedModalWrapper key={key} style={props}>
+              {statusBar && (
+                <AnimatedModalStatusBar
+                  statusBar={statusBar}
+                  style={statusProps}
+                />
+              )}
+              <ModalContent size={size} {...otherProps}>
                 {children}
-              </AnimatedModalContent>
+              </ModalContent>
             </AnimatedModalWrapper>
           )
       )}
