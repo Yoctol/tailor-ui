@@ -29,14 +29,14 @@ exports[`Card should render correctly with Button 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
   height: 2.25rem;
   padding: 0 0.75rem;
   font-size: 1rem;
   border-color: #e0e0e0;
   background-color: #ffffff;
   color: #373737;
-  -webkit-transition: all 200ms ease 0s;
-  transition: all 200ms ease 0s;
 }
 
 .c3:focus {
@@ -146,6 +146,7 @@ exports[`Card should render correctly with Button 1`] = `
 
 <div
   class="c0"
+  width="400px"
 >
   <div
     class="c1"
@@ -211,6 +212,7 @@ exports[`Card should render correctly with Card.Block 1`] = `
 
 <div
   class="c0"
+  width="400px"
 >
   <div
     class="c1"
@@ -283,6 +285,7 @@ exports[`Card should render correctly with Card.Image 1`] = `
 
 <div
   class="c0"
+  width="400px"
 >
   <div
     class="c1 c2"
@@ -347,6 +350,7 @@ exports[`Card should render hoverable Card 1`] = `
 
 <div
   class="c0"
+  width="400px"
 >
   <div
     class="c1"

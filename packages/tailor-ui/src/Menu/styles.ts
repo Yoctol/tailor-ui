@@ -1,12 +1,10 @@
 import styled, { css } from 'styled-components';
 
-import tag from '../utils/CleanTag';
-
 export interface StyledItemProps {
   active?: boolean;
 }
 
-export const StyledSubMenu = styled(tag.div)<StyledItemProps>`
+export const StyledSubMenu = styled.div<StyledItemProps>`
   display: inline-flex;
   align-items: center;
   width: 100%;
@@ -42,7 +40,7 @@ export const StyledSubMenu = styled(tag.div)<StyledItemProps>`
   ${p => p.theme.transition};
 `;
 
-export const StyledItem = styled(tag.div)`
+export const StyledItem = styled.div`
   display: inline-flex;
   flex: auto;
   align-items: center;
@@ -57,7 +55,7 @@ export const StyledItem = styled(tag.div)`
   ${p => p.theme.transition};
 `;
 
-export const StyledItemBadge = styled(tag.div)`
+export const StyledItemBadge = styled.div`
   width: 8px;
   height: 100%;
   margin-right: 22px;
@@ -68,7 +66,7 @@ export const StyledItemBadge = styled(tag.div)`
   ${p => p.theme.transition};
 `;
 
-export const StyledItemBox = styled(tag.div)`
+export const StyledItemBox = styled.div<{ active: boolean }>`
   display: flex;
   height: 40px;
   padding: 0 8px;

@@ -3,11 +3,9 @@ import styled from 'styled-components';
 import { ColorProps, SpaceProps, color, space } from 'styled-system';
 import { rem } from 'polished';
 
-import tag from '../utils/CleanTag';
-
 export type HeadingBaseProps = SpaceProps & ColorProps;
 
-const HeadingBase = styled(tag.p)<HeadingBaseProps>`
+const HeadingBase = styled.p<HeadingBaseProps>`
   margin: 0;
   color: ${p => p.theme.colors.gray700};
   font-weight: bold;
@@ -17,43 +15,43 @@ const HeadingBase = styled(tag.p)<HeadingBaseProps>`
   ${color};
 `;
 
-const hero = styled((props: any) => <HeadingBase as={tag.h1} {...props} />)<
+const hero = styled((props: any) => <HeadingBase as="h1" {...props} />)<
   HeadingBaseProps
 >`
   font-size: ${rem('32px')};
 `;
 
-const h1 = styled((props: any) => <HeadingBase as={tag.h1} {...props} />)<
+const h1 = styled((props: any) => <HeadingBase as="h1" {...props} />)<
   HeadingBaseProps
 >`
   font-size: ${rem('28px')};
 `;
 
-const h2 = styled((props: any) => <HeadingBase as={tag.h2} {...props} />)<
+const h2 = styled((props: any) => <HeadingBase as="h2" {...props} />)<
   HeadingBaseProps
 >`
   font-size: ${rem('24px')};
 `;
 
-const h3 = styled((props: any) => <HeadingBase as={tag.h3} {...props} />)<
+const h3 = styled((props: any) => <HeadingBase as="h3" {...props} />)<
   HeadingBaseProps
 >`
   font-size: ${rem('20px')};
 `;
 
-const h4 = styled((props: any) => <HeadingBase as={tag.h4} {...props} />)<
+const h4 = styled((props: any) => <HeadingBase as="h4" {...props} />)<
   HeadingBaseProps
 >`
   font-size: ${rem('18px')};
 `;
 
-const h5 = styled((props: any) => <HeadingBase as={tag.h5} {...props} />)<
+const h5 = styled((props: any) => <HeadingBase as="h5" {...props} />)<
   HeadingBaseProps
 >`
   font-size: ${rem('16px')};
 `;
 
-const h6 = styled((props: any) => <HeadingBase as={tag.h6} {...props} />)<
+const h6 = styled((props: any) => <HeadingBase as="h6" {...props} />)<
   HeadingBaseProps
 >`
   font-size: ${rem('14px')};

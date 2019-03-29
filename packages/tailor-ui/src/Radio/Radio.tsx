@@ -2,7 +2,6 @@ import React, { ChangeEvent, FunctionComponent, useContext } from 'react';
 import styled, { css } from 'styled-components';
 
 import Space from '../Grid/Space';
-import tag from '../utils/CleanTag';
 
 import RadioContext, { Direction } from './RadioContext';
 import RadioGroup from './RadioGroup';
@@ -65,14 +64,11 @@ const StyledRadio = styled.input.attrs({
   }
 `;
 
-const getMarginPosition = ({ direction }: { direction: Direction }) =>
-  direction === 'horizontal' ? 'margin-left' : 'margin-top';
-
 interface RadioLabelBaseProps {
   disabled?: boolean;
 }
 
-const RadioLabelBase = styled(tag.label)<RadioLabelBaseProps>`
+const RadioLabelBase = styled.label<RadioLabelBaseProps>`
   display: inline-flex;
   align-items: center;
   font-size: ${p => p.theme.fontSizes.base};
@@ -90,10 +86,13 @@ const RadioLabelBase = styled(tag.label)<RadioLabelBaseProps>`
         `};
 `;
 
-const RadioLabel = styled(RadioLabelBase)`
+const RadioLabel = styled(RadioLabelBase)<{ direction: Direction }>`
   /* stylelint-disable-next-line no-descending-specificity */
   & + ${RadioLabelBase /* sc-selector */} {
-    ${getMarginPosition /* sc-prop */}: ${p => p.theme.space[2]};
+    ${({ direction }) =>
+      direction === 'horizontal'
+        ? 'margin-left'
+        : 'margin-top' /* sc-prop */}: ${p => p.theme.space[2]};
   }
 `;
 

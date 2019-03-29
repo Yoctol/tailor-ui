@@ -1,20 +1,18 @@
 import styled, { css } from 'styled-components';
 import { TextAlignProps, WidthProps, textAlign, width } from 'styled-system';
 
-import tag from '../utils/CleanTag';
-
-export const HeadColumn = styled(tag.th)<WidthProps>`
+export const HeadColumn = styled.th<WidthProps>`
   padding: ${p => p.theme.paddings.sm};
   font-weight: bold;
 
   ${width};
 `;
 
-export const Column = styled(tag.td)`
+export const Column = styled.td`
   padding: ${p => p.theme.paddings.md} ${p => p.theme.paddings.sm};
 `;
 
-export const Row = styled(tag.tr)`
+export const Row = styled.tr`
   border-bottom: ${p => p.theme.borders.base} ${p => p.theme.colors.gray300};
 
   ${p => p.theme.transition};
@@ -22,7 +20,7 @@ export const Row = styled(tag.tr)`
 
 export type StyledTableProps = TextAlignProps & WidthProps;
 
-export const StyledTable = styled(tag.table)<StyledTableProps>`
+export const StyledTable = styled.table<StyledTableProps>`
   overflow: hidden;
   border-spacing: 0;
   border-collapse: collapse;

@@ -187,6 +187,8 @@ exports[`Menu should render correctly 1`] = `
 
 <div
   class="c0"
+  height="100%"
+  width="240"
 >
   <div
     class="c1"

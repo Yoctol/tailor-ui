@@ -109,8 +109,9 @@ exports[`Divider should render correct with orientation 1`] = `
 <div>
   <div
     class="c0"
-    mx="0"
-    my="2"
+    color="gray400"
+    font-size="sm"
+    font-weight="500"
     orientation="left"
     type="horizontal"
   >
@@ -125,8 +126,9 @@ exports[`Divider should render correct with orientation 1`] = `
   </p>
   <div
     class="c3"
-    mx="0"
-    my="2"
+    color="gray400"
+    font-size="sm"
+    font-weight="500"
     orientation="right"
     type="horizontal"
   >
@@ -164,8 +166,9 @@ exports[`Divider should render correct with type vertical 1`] = `
   Text
   <div
     class="c0"
-    mx="2"
-    my="0"
+    color="gray400"
+    font-size="sm"
+    font-weight="500"
     type="vertical"
   />
   <a
@@ -175,8 +178,9 @@ exports[`Divider should render correct with type vertical 1`] = `
   </a>
   <div
     class="c0"
-    mx="2"
-    my="0"
+    color="gray400"
+    font-size="sm"
+    font-weight="500"
     type="vertical"
   />
   <a
@@ -269,15 +273,17 @@ exports[`Divider should render correctly 1`] = `
   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nonne merninisti licere mihi ista probare, quae sunt a te dicta? Refert tamen, quo modo.
   <div
     class="c0"
-    mx="0"
-    my="2"
+    color="gray400"
+    font-size="sm"
+    font-weight="500"
     type="horizontal"
   />
   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nonne merninisti licere mihi ista probare, quae sunt a te dicta? Refert tamen, quo modo.
   <div
     class="c1"
-    mx="0"
-    my="2"
+    color="gray400"
+    font-size="sm"
+    font-weight="500"
     type="horizontal"
   >
     <span
@@ -289,8 +295,9 @@ exports[`Divider should render correctly 1`] = `
   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nonne merninisti licere mihi ista probare, quae sunt a te dicta? Refert tamen, quo modo.
   <div
     class="c3"
-    mx="0"
-    my="2"
+    color="gray400"
+    font-size="sm"
+    font-weight="500"
     type="horizontal"
   />
   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nonne merninisti licere mihi ista probare, quae sunt a te dicta? Refert tamen, quo modo.

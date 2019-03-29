@@ -97,6 +97,7 @@ exports[`Tabs should render correctly 1`] = `
   </a>
   <a
     class="c2"
+    disabled=""
   >
     Tab 2
   </a>
@@ -207,6 +208,7 @@ exports[`Tabs should render with props absolute 1`] = `
   </a>
   <a
     class="c2"
+    disabled=""
   >
     Tab 2
   </a>
@@ -323,6 +325,7 @@ exports[`Tabs should render with props pills 1`] = `
   </a>
   <a
     class="c2"
+    disabled=""
   >
     Tab 2
   </a>

@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react';
+import React, { FunctionComponent, HTMLAttributes } from 'react';
 import styled, { css } from 'styled-components';
 import {
   BorderColorProps,
@@ -15,12 +15,11 @@ import {
   width,
 } from 'styled-system';
 
-import tag from '../utils/CleanTag';
-
 import CardBlock from './CardBlock';
 import CardImage, { StyledImage } from './CardImage';
 
-export type CardProps = SpaceProps &
+export type CardProps = HTMLAttributes<HTMLDivElement> &
+  SpaceProps &
   HeightProps &
   WidthProps &
   ColorProps &
@@ -28,10 +27,9 @@ export type CardProps = SpaceProps &
   BorderRadiusProps & {
     clickable?: boolean;
     hoverable?: boolean;
-    onClick?: (event: MouseEvent) => void;
   };
 
-const CardWrapper = styled(tag.div)<CardProps>`
+const CardWrapper = styled.div<CardProps>`
   display: flex;
   flex-direction: column;
   border: ${p => p.theme.borders.base};

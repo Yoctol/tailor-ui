@@ -110,7 +110,6 @@ exports[`Checkbox should render correctly 1`] = `
   </span>
   <div
     class="c7"
-    px="2"
   >
     Checkbox
   </div>
@@ -276,7 +275,6 @@ exports[`Checkbox.Group composition with Checkbox should render correctly 1`] = 
       </span>
       <div
         class="c9"
-        px="2"
       >
         checkbox 1
       </div>
@@ -302,7 +300,6 @@ exports[`Checkbox.Group composition with Checkbox should render correctly 1`] = 
       </span>
       <div
         class="c9"
-        px="2"
       >
         checkbox 2
       </div>
@@ -328,7 +325,6 @@ exports[`Checkbox.Group composition with Checkbox should render correctly 1`] = 
       </span>
       <div
         class="c9"
-        px="2"
       >
         checkbox 3
       </div>
@@ -489,7 +485,6 @@ exports[`Checkbox.Group should render vertical checkbox group 1`] = `
     </span>
     <div
       class="c8"
-      px="2"
     >
       checkbox 1
     </div>
@@ -511,7 +506,6 @@ exports[`Checkbox.Group should render vertical checkbox group 1`] = `
     </span>
     <div
       class="c8"
-      px="2"
     >
       checkbox 2
     </div>
@@ -533,7 +527,6 @@ exports[`Checkbox.Group should render vertical checkbox group 1`] = `
     </span>
     <div
       class="c8"
-      px="2"
     >
       checkbox 3
     </div>

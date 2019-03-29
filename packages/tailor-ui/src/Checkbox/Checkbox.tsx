@@ -2,7 +2,6 @@ import React, { ChangeEvent, FunctionComponent, useContext } from 'react';
 import styled, { css } from 'styled-components';
 
 import Space from '../Grid/Space';
-import tag from '../utils/CleanTag';
 
 import CheckboxContext, { Direction } from './CheckboxContext';
 import CheckboxGroup from './CheckboxGroup';
@@ -66,21 +65,22 @@ const StyledCheckbox = styled.input.attrs({
   }
 `;
 
-const getMarginPosition = ({ direction }: { direction: Direction }) =>
-  direction === 'horizontal' ? 'margin-left' : 'margin-top';
-
 interface RadioLabelBaseProps {
   disabled: boolean;
+  direction: Direction;
 }
 
-const CheckboxLabelBase = styled(tag.label)<RadioLabelBaseProps>`
+const CheckboxLabelBase = styled.label<RadioLabelBaseProps>`
   display: inline-flex;
   align-items: center;
   font-size: ${p => p.theme.fontSizes.base};
   cursor: ${p => (p.disabled ? 'not-allowed' : 'pointer')};
 
   & + & {
-    ${getMarginPosition /* sc-prop */}: ${p => p.theme.space[2]};
+    ${({ direction }) =>
+      direction === 'horizontal'
+        ? 'margin-left'
+        : 'margin-top' /* sc-prop */}: ${p => p.theme.space[2]};
   }
 
   ${p =>
@@ -95,10 +95,13 @@ const CheckboxLabelBase = styled(tag.label)<RadioLabelBaseProps>`
         `};
 `;
 
-const CheckboxLabel = styled(CheckboxLabelBase)`
+const CheckboxLabel = styled(CheckboxLabelBase)<{ direction: Direction }>`
   /* stylelint-disable-next-line no-descending-specificity */
   & + ${CheckboxLabelBase /* sc-selector */} {
-    ${getMarginPosition /* sc-prop */}: ${p => p.theme.space[2]};
+    ${({ direction }) =>
+      direction === 'horizontal'
+        ? 'margin-left'
+        : 'margin-top' /* sc-prop */}: ${p => p.theme.space[2]};
   }
 `;
 

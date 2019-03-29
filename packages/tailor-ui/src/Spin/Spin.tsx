@@ -4,7 +4,6 @@ import { ColorProps, color } from 'styled-system';
 import { animated, useTransition } from 'react-spring';
 
 import Portal from '../Portal';
-import tag from '../utils/CleanTag';
 
 const spinAnimation = keyframes`
   0%, 10% {
@@ -27,7 +26,7 @@ interface SpinCubeWrapperProps {
   size: number | string;
 }
 
-const SpinCube = styled(tag.div)`
+const SpinCube = styled.div`
   position: relative;
   width: 50%;
   height: 50%;
@@ -47,7 +46,7 @@ const SpinCube = styled(tag.div)`
   }
 `;
 
-const SpinCubeWrapper = styled(tag.div)<SpinCubeWrapperProps>`
+const SpinCubeWrapper = styled.div<SpinCubeWrapperProps>`
   position: relative;
   width: ${p => p.size}px;
   height: ${p => p.size}px;
@@ -82,7 +81,7 @@ type SpinWrapperProps = ColorProps & {
   fullscreen: boolean;
 };
 
-const SpinWrapper = styled(tag.div)<SpinWrapperProps>`
+const SpinWrapper = styled.div<SpinWrapperProps>`
   display: flex;
   align-items: center;
   justify-content: center;

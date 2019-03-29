@@ -5,9 +5,8 @@ import { animated, config, useSpring } from 'react-spring';
 import { omit } from 'ramda';
 
 import Icon from '../Icon';
-import tag from '../utils/CleanTag';
 
-const StyledTag = styled(tag.div)`
+const StyledTag = styled.div`
   display: inline-flex;
   align-items: center;
   height: ${p => p.theme.heights.sm};

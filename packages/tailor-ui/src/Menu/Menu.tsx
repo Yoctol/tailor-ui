@@ -1,17 +1,18 @@
 import React, { FunctionComponent, useState } from 'react';
 
-import Flex, { FlexProps } from '../Grid/Flex';
+import Flex from '../Grid/Flex';
 
 import Item from './Item';
 import MenuContext from './MenuContext';
 import SubMenu from './SubMenu';
 
 interface MenuProps {
+  width: number;
   currentSubOnly?: boolean;
   defaultSubKeys?: string[];
 }
 
-const Menu: FunctionComponent<FlexProps & MenuProps> & {
+const Menu: FunctionComponent<MenuProps> & {
   SubMenu: typeof SubMenu;
   Item: typeof Item;
 } = ({ children, currentSubOnly, defaultSubKeys, ...props }) => {

@@ -158,14 +158,14 @@ exports[`Modal should render correctly 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
   height: 2.25rem;
   padding: 0 0.75rem;
   font-size: 1rem;
   background-color: #e8ecf5;
   color: #6B88c5;
   font-weight: bold;
-  -webkit-transition: all 200ms ease 0s;
-  transition: all 200ms ease 0s;
 }
 
 .c11:focus {
@@ -241,14 +241,14 @@ exports[`Modal should render correctly 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
   height: 2.25rem;
   padding: 0 0.75rem;
   font-size: 1rem;
   background-color: #3c5ad0;
   color: #ffffff;
   font-weight: bold;
-  -webkit-transition: all 200ms ease 0s;
-  transition: all 200ms ease 0s;
   margin-left: 1rem;
 }
 
@@ -315,7 +315,6 @@ exports[`Modal should render correctly 1`] = `
       >
         <div
           class="c3"
-          mx="3"
         >
           <div
             class="c4"
@@ -327,14 +326,13 @@ exports[`Modal should render correctly 1`] = `
         </div>
         <div
           class="c7"
-          px="3"
         />
         <div
           class="c8"
-          mx="3"
         >
           <div
             class="c9"
+            width="100%"
           >
             <div
               class="c10"
@@ -526,14 +524,14 @@ exports[`Modal should render correctly with lg size 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
   height: 2.25rem;
   padding: 0 0.75rem;
   font-size: 1rem;
   background-color: #e8ecf5;
   color: #6B88c5;
   font-weight: bold;
-  -webkit-transition: all 200ms ease 0s;
-  transition: all 200ms ease 0s;
 }
 
 .c10:focus {
@@ -609,14 +607,14 @@ exports[`Modal should render correctly with lg size 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
   height: 2.25rem;
   padding: 0 0.75rem;
   font-size: 1rem;
   background-color: #3c5ad0;
   color: #ffffff;
   font-weight: bold;
-  -webkit-transition: all 200ms ease 0s;
-  transition: all 200ms ease 0s;
   margin-left: 1rem;
 }
 
@@ -674,7 +672,6 @@ exports[`Modal should render correctly with lg size 1`] = `
       >
         <div
           class="c2"
-          mx="3"
         >
           <div
             class="c3"
@@ -686,14 +683,13 @@ exports[`Modal should render correctly with lg size 1`] = `
         </div>
         <div
           class="c6"
-          px="3"
         />
         <div
           class="c7"
-          mx="3"
         >
           <div
             class="c8"
+            width="100%"
           >
             <div
               class="c9"
@@ -908,14 +904,14 @@ exports[`Modal should render with props closable 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
   height: 2.25rem;
   padding: 0 0.75rem;
   font-size: 1rem;
   background-color: #e8ecf5;
   color: #6B88c5;
   font-weight: bold;
-  -webkit-transition: all 200ms ease 0s;
-  transition: all 200ms ease 0s;
 }
 
 .c14:focus {
@@ -991,14 +987,14 @@ exports[`Modal should render with props closable 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
   height: 2.25rem;
   padding: 0 0.75rem;
   font-size: 1rem;
   background-color: #3c5ad0;
   color: #ffffff;
   font-weight: bold;
-  -webkit-transition: all 200ms ease 0s;
-  transition: all 200ms ease 0s;
   margin-left: 1rem;
 }
 
@@ -1076,13 +1072,13 @@ exports[`Modal should render with props closable 1`] = `
   -ms-user-select: none;
   user-select: none;
   border-radius: 999px;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
   width: 2.25rem;
   height: 2.25rem;
   background-color: #e8ecf5;
   color: #6B88c5;
   font-weight: bold;
-  -webkit-transition: all 200ms ease 0s;
-  transition: all 200ms ease 0s;
 }
 
 .c7:focus {
@@ -1154,7 +1150,6 @@ exports[`Modal should render with props closable 1`] = `
       >
         <div
           class="c2"
-          mx="3"
         >
           <div
             class="c3"
@@ -1195,14 +1190,13 @@ exports[`Modal should render with props closable 1`] = `
         </div>
         <div
           class="c10"
-          px="3"
         />
         <div
           class="c11"
-          mx="3"
         >
           <div
             class="c12"
+            width="100%"
           >
             <div
               class="c13"

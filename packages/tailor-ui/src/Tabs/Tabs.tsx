@@ -2,8 +2,6 @@ import React, { FunctionComponent, useContext, useState } from 'react';
 import styled, { css } from 'styled-components';
 import { space as styledSpace } from 'styled-system';
 
-import tag from '../utils/CleanTag';
-
 import TabContext, { Size } from './TabContext';
 
 interface StyledTabProps {
@@ -12,7 +10,7 @@ interface StyledTabProps {
   active: boolean;
 }
 
-const StyledTab = styled(tag.a)<StyledTabProps>`
+const StyledTab = styled.a<StyledTabProps>`
   display: inline-flex;
   position: relative;
   align-items: center;
@@ -135,7 +133,7 @@ interface StyledTabsProps {
   block?: boolean;
 }
 
-const StyledTabs = styled(tag.nav)<StyledTabsProps>`
+const StyledTabs = styled.nav<StyledTabsProps>`
   display: flex;
 
   ${({ absolute }) =>

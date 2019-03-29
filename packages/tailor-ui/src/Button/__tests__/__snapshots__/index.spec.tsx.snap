@@ -112,14 +112,14 @@ exports[`Button should render button with specified icon 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
   height: 2.25rem;
   padding: 0 0.75rem;
   font-size: 1rem;
   background-color: #fc5475;
   color: #ffffff;
   font-weight: bold;
-  -webkit-transition: all 200ms ease 0s;
-  transition: all 200ms ease 0s;
 }
 
 .c0:focus {
@@ -224,14 +224,14 @@ exports[`Button should render button with specified size 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
   height: 1.75rem;
   padding: 0 0.5rem;
   font-size: 0.875rem;
   border-color: #e0e0e0;
   background-color: #ffffff;
   color: #373737;
-  -webkit-transition: all 200ms ease 0s;
-  transition: all 200ms ease 0s;
 }
 
 .c0:focus {
@@ -324,14 +324,14 @@ exports[`Button should render correctly 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
   height: 2.25rem;
   padding: 0 0.75rem;
   font-size: 1rem;
   border-color: #e0e0e0;
   background-color: #ffffff;
   color: #373737;
-  -webkit-transition: all 200ms ease 0s;
-  transition: all 200ms ease 0s;
 }
 
 .c0:focus {
@@ -424,14 +424,14 @@ exports[`Button should render different button type 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
   height: 2.25rem;
   padding: 0 0.75rem;
   font-size: 1rem;
   background-color: #3c5ad0;
   color: #ffffff;
   font-weight: bold;
-  -webkit-transition: all 200ms ease 0s;
-  transition: all 200ms ease 0s;
 }
 
 .c0:focus {
@@ -516,14 +516,14 @@ exports[`Button should render disabled button 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
   height: 2.25rem;
   padding: 0 0.75rem;
   font-size: 1rem;
   border-color: #e0e0e0;
   background-color: #ffffff;
   color: #373737;
-  -webkit-transition: all 200ms ease 0s;
-  transition: all 200ms ease 0s;
 }
 
 .c0:focus {
@@ -617,6 +617,8 @@ exports[`Button should render loading button 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
   height: 2.25rem;
   padding: 0 0.75rem;
   font-size: 1rem;
@@ -626,8 +628,6 @@ exports[`Button should render loading button 1`] = `
   opacity: 0.5;
   cursor: default;
   pointer-events: none;
-  -webkit-transition: all 200ms ease 0s;
-  transition: all 200ms ease 0s;
 }
 
 .c0:focus {
@@ -733,14 +733,14 @@ exports[`Button should render rounded button 1`] = `
   -ms-user-select: none;
   user-select: none;
   border-radius: 999px;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
   height: 2.25rem;
   padding: 0 0.75rem;
   font-size: 1rem;
   border-color: #e0e0e0;
   background-color: #ffffff;
   color: #373737;
-  -webkit-transition: all 200ms ease 0s;
-  transition: all 200ms ease 0s;
 }
 
 .c0:focus {
@@ -833,14 +833,14 @@ exports[`Button should render width 100% button 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
   height: 2.25rem;
   padding: 0 0.75rem;
   font-size: 1rem;
   border-color: #e0e0e0;
   background-color: #ffffff;
   color: #373737;
-  -webkit-transition: all 200ms ease 0s;
-  transition: all 200ms ease 0s;
   width: 100%;
 }
 
@@ -900,6 +900,7 @@ exports[`Button should render width 100% button 1`] = `
 
 <button
   class="c0"
+  width="100%"
 >
   Text Button
 </button>

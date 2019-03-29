@@ -1,7 +1,5 @@
-import React, { FunctionComponent } from 'react';
 import styled, { css } from 'styled-components';
 
-import tag from '../utils/CleanTag';
 import { StyledInput } from '../Input';
 import { StyledTextarea } from '../Input/Textarea';
 
@@ -13,7 +11,7 @@ export interface FormFieldProps {
   error?: boolean;
 }
 
-const StyledFormField = styled(tag.div)<FormFieldProps>`
+const FormField = styled.div<FormFieldProps>`
   position: relative;
   margin-bottom: ${p => p.theme.space[2]};
 
@@ -77,9 +75,5 @@ const StyledFormField = styled(tag.div)<FormFieldProps>`
       }
     `};
 `;
-
-const FormField: FunctionComponent<FormFieldProps> = props => (
-  <StyledFormField {...props} />
-);
 
 export default FormField;

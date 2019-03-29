@@ -2,9 +2,7 @@ import styled, { css, keyframes } from 'styled-components';
 import { SpaceProps, WidthProps, space, width } from 'styled-system';
 import { darken, lighten } from 'polished';
 
-import tag from '../utils/CleanTag';
 import { IconWrapper } from '../Icon';
-import { ThemeType } from '../theme';
 
 export const spin = keyframes`
   0% {
@@ -46,15 +44,11 @@ export type ButtonType =
   | 'regular'
   | 'normal';
 
-const buttonSize = css`
-  ${({
-    hasIcon,
-    size,
-    theme: { paddings, heights, fontSizes },
-  }: {
-    size: ButtonSize;
-    hasIcon?: boolean;
-  } & { theme: ThemeType }) => {
+const buttonSize = css<{
+  size: ButtonSize;
+  hasIcon: boolean;
+}>`
+  ${({ hasIcon, size = 'md', theme: { paddings, heights, fontSizes } }) => {
     if (hasIcon) {
       return {
         sm: css`
@@ -92,7 +86,7 @@ const buttonSize = css`
   }};
 `;
 
-export const buttonType = ({ type }: { type: ButtonType }) => {
+export const buttonType = ({ type }: { type?: ButtonType }) => {
   switch (type) {
     default:
       return css`
@@ -266,14 +260,15 @@ export const buttonType = ({ type }: { type: ButtonType }) => {
 
 export type StyledButtonProps = SpaceProps &
   WidthProps & {
-    loading?: boolean;
-    size?: ButtonSize;
+    loading: boolean;
+    hasIcon: boolean;
+    size: ButtonSize;
     type?: ButtonType;
     rounded?: boolean;
     disabled?: boolean;
   };
 
-export const StyledButton = styled(tag.button)<StyledButtonProps>`
+export const StyledButton = styled.button<StyledButtonProps>`
   display: inline-flex;
   position: relative;
   align-items: center;
@@ -324,11 +319,11 @@ export const StyledButton = styled(tag.button)<StyledButtonProps>`
       border-radius: 999px;
     `};
 
+  ${p => p.theme.transition /* sc-declaration */};
   ${buttonSize /* sc-declaration */}
   ${buttonType /* sc-declaration */}
   ${buttonLoading /* sc-declaration */};
 
-  ${p => p.theme.transition /* sc-declaration */};
   ${space};
   ${width};
 `;

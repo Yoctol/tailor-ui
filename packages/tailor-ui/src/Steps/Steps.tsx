@@ -11,7 +11,6 @@ import { MdClose, MdDone } from 'react-icons/md';
 
 import Flex from '../Grid/Flex';
 import Icon from '../Icon';
-import tag from '../utils/CleanTag';
 import theme from '../theme';
 
 type Status = 'finish' | 'progress' | 'wait' | 'error';
@@ -41,7 +40,7 @@ interface StepsItemProps {
   tailColor: Colors | 'gray';
 }
 
-const StepsIconItem = styled(tag.div)<StepsItemProps>`
+const StepsIconItem = styled.div<StepsItemProps>`
   display: flex;
   position: relative;
   align-items: center;
@@ -102,7 +101,7 @@ const StepsIconItem = styled(tag.div)<StepsItemProps>`
   ${p => p.theme.transition /* sc-declaration */};
 `;
 
-const Title = styled(tag.div)<StepsItemProps>`
+const Title = styled.div<StepsItemProps>`
   display: inline-block;
   position: relative;
   align-items: center;
@@ -148,7 +147,7 @@ interface DescriptionProps {
   status: Status;
 }
 
-const Description = styled(tag.div)<DescriptionProps>`
+const Description = styled.div<DescriptionProps>`
   padding-bottom: ${p => p.direction === 'vertical' && '12px'};
   color: ${p => {
     switch (p.status) {

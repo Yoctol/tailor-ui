@@ -9,13 +9,12 @@ import Box from '../Grid/Box';
 import Flex from '../Grid/Flex';
 import Icon from '../Icon';
 import getTypeIcon, { Types } from '../utils/getTypeIcon';
-import tag from '../utils/CleanTag';
 
 export type IAlertTypes = SpaceProps & {
   type: Types;
 };
 
-const StyledAlert = styled(tag.div)<IAlertTypes>`
+const StyledAlert = styled.div<IAlertTypes>`
   display: flex;
   align-items: center;
   margin-bottom: ${p => p.theme.space[3]};
@@ -37,7 +36,7 @@ export interface BaseAlertProps extends IAlertTypes {
   onClose?: () => void;
 }
 
-const BaseAlert = forwardRef<{}, BaseAlertProps>(function BaseAlert(
+const BaseAlert = forwardRef<HTMLDivElement, BaseAlertProps>(function BaseAlert(
   { message, type, closable, onClose, ...props },
   ref
 ) {

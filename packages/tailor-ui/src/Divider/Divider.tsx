@@ -11,8 +11,6 @@ import {
   space,
 } from 'styled-system';
 
-import tag from '../utils/CleanTag';
-
 type IStyledDividerProps = SpaceProps &
   ColorProps &
   FontSizeProps &
@@ -23,12 +21,12 @@ type IStyledDividerProps = SpaceProps &
     withText: boolean;
   };
 
-const StyledInnerText = styled(tag.span)`
+const StyledInnerText = styled.span`
   display: inline-block;
   padding: 0 ${p => p.theme.space[3]};
 `;
 
-const StyledDivider = styled(tag.div)<IStyledDividerProps>`
+const StyledDivider = styled.div<IStyledDividerProps>`
   background-color: ${p => p.theme.colors.gray300};
 
   ${p => {

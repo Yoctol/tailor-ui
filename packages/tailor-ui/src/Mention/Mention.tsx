@@ -13,7 +13,6 @@ import React, {
 } from 'react';
 import styled, { css } from 'styled-components';
 
-import tag from '../utils/CleanTag';
 import { Size, inputStyles } from '../Input';
 
 export interface MentionWrapperProps {
@@ -23,7 +22,7 @@ export interface MentionWrapperProps {
   size: Size;
 }
 
-const MentionWrapper = styled(tag.div)<MentionWrapperProps>`
+const MentionWrapper = styled.div<MentionWrapperProps>`
   position: relative;
 
   .yoctol-ui-mention-wrapper {
