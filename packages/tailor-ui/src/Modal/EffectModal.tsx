@@ -135,7 +135,12 @@ const EffectModal: FunctionComponent<EffectModalProps> = ({
 
   return (
     <Portal appendFor="effect-modal">
-      <BaseModal cancelable={cancelable} visible={visible} onCancel={onCancel}>
+      <BaseModal
+        cancelable={cancelable}
+        statusBar={type !== 'confirm' ? type : null}
+        visible={visible}
+        onCancel={onCancel}
+      >
         <ModalHeader
           icon={icon}
           title={title}
