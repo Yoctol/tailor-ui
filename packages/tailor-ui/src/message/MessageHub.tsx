@@ -6,10 +6,10 @@ import { Transition, animated } from 'react-spring/renderprops.cjs';
 import Box from '../Grid/Box';
 import Icon from '../Icon';
 import UIProvider from '../UIProvider';
-import createUuidGenerator from '../utils/createUuidGenerator';
+import createUIDGenerator from '../utils/createUIDGenerator';
 import getTypeIcon, { Types } from '../utils/getTypeIcon';
 
-const getUuid = createUuidGenerator('message');
+const getUID = createUIDGenerator('message');
 
 const MessageContainer = styled.div`
   display: flex;
@@ -87,7 +87,7 @@ class MessageHub extends PureComponent<{}, MessageHubState> {
 
   add = ({ content, duration, type }: MessageOptions) =>
     new Promise(resolve => {
-      const key = getUuid();
+      const key = getUID();
       const icon = getTypeIcon(type);
 
       const newMessage = {

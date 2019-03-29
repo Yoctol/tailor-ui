@@ -20,19 +20,16 @@ export { default as DatePicker } from './DatePicker';
 export * from './DatePicker';
 export { default as Flex } from './Grid/Flex';
 export * from './Grid/Flex';
-export { default as FormField } from './Form/FormField';
-export * from './Form/FormField';
 export { default as Heading } from './Heading';
 export * from './Heading';
-export { default as Hint } from './Form/Hint';
-export * from './Form/Hint';
 export { default as Icon } from './Icon';
 export * from './Icon';
-export * from './Icon';
+
+export { default as FormField } from './FormField';
+
 export { default as Input } from './Input';
-export * from './Input';
-export { default as Label } from './Form/Label';
-export * from './Form/Label';
+export { inputStyles } from './Input/styles';
+
 export { default as Menu } from './Menu';
 export * from './Menu';
 export { default as message } from './message';

@@ -11,10 +11,8 @@ import {
   Flex,
   FormField,
   Heading,
-  Hint,
   Icon,
   Input,
-  Label,
   Menu,
   Modal,
   Popconfirm,
@@ -53,10 +51,8 @@ describe('index', () => {
     expect(Flex).toBeDefined();
     expect(FormField).toBeDefined();
     expect(Heading).toBeDefined();
-    expect(Hint).toBeDefined();
     expect(Icon).toBeDefined();
     expect(Input).toBeDefined();
-    expect(Label).toBeDefined();
     expect(Menu).toBeDefined();
     expect(message).toBeDefined();
     expect(Modal).toBeDefined();

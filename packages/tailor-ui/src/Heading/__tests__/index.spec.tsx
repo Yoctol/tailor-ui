@@ -29,25 +29,9 @@ describe('Heading', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  it('should render grayLight heading', () => {
+  it('should render different color heading', () => {
     const { container } = render(
-      <Heading.h1 grayLight>H1 Heading 28px</Heading.h1>
-    );
-
-    expect(container.firstChild).toMatchSnapshot();
-  });
-
-  it('should render grayHint heading', () => {
-    const { container } = render(
-      <Heading.h1 grayHint>H1 Heading 28px</Heading.h1>
-    );
-
-    expect(container.firstChild).toMatchSnapshot();
-  });
-
-  it('should render white heading', () => {
-    const { container } = render(
-      <Heading.h1 white>H1 Heading 28px</Heading.h1>
+      <Heading.h1 color="gray400">H1 Heading</Heading.h1>
     );
 
     expect(container.firstChild).toMatchSnapshot();

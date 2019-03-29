@@ -1,0 +1,91 @@
+---
+name: FormField
+menu: Components
+route: /components/form-field
+---
+
+import { PropsTable, Playground } from 'docz';
+import { Input, FormField } from 'tailor-ui';
+
+# FormField
+
+## Examples
+
+```js
+import { Input, FormField } from 'tailor-ui';
+```
+
+### validationMessage
+
+<Playground>
+  <FormField
+    required
+    label="With Error"
+    validationMessage="Something went wrong!"
+  >
+    <Input placeholder="Placeholder" />
+  </FormField>
+  <FormField
+    required
+    label="With Error"
+    validationMessage="Something went wrong!"
+  >
+    <Input placeholder="Placeholder" />
+  </FormField>
+</Playground>
+
+### function validator
+
+<Playground>
+  <FormField
+    required
+    label="Please Type `error`"
+    validator={value => (value === 'error' ? 'Something went wrong!' : null)}
+  >
+    <Input placeholder="Placeholder" />
+  </FormField>
+  <FormField
+    required
+    label="Please Type `error`"
+    validator={value => (value === 'error' ? 'Something went wrong!' : null)}
+  >
+    <Input placeholder="Placeholder" />
+  </FormField>
+</Playground>
+
+### function of array validator
+
+<Playground>
+  <FormField
+    required
+    label="Please Type `error1` or `error2`"
+    validator={[
+      {
+        rule: value => value === 'error1',
+        message: 'error message',
+      },
+      {
+        rule: value => value === 'error2',
+        message: 'another error message',
+      },
+    ]}
+  >
+    <Input placeholder="Placeholder" />
+  </FormField>
+  <FormField
+    required
+    label="Please Type `error1` or `error2`"
+    validator={[
+      {
+        rule: value => value === 'error1',
+        message: 'error message',
+      },
+      {
+        rule: value => value === 'error2',
+        message: 'another error message',
+      },
+    ]}
+  >
+    <Input placeholder="Placeholder" />
+  </FormField>
+</Playground>

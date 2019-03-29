@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Mention should render correctly 1`] = `
-.c2 {
+.c3 {
   word-wrap: break-word;
   resize: none;
   display: block;
@@ -25,44 +25,47 @@ exports[`Mention should render correctly 1`] = `
   height: auto;
   -webkit-transition: border 0.2s ease;
   transition: border 0.2s ease;
-  position: absolute;
-  top: 0;
-  background-color: transparent;
-  color: transparent;
-  caret-color: #373737;
 }
 
-.c2:hover {
+.c3:hover {
   border-color: #3c5ad0;
 }
 
-.c2:focus {
+.c3:focus {
   border-color: #3c5ad0;
   box-shadow: inset 0 0 0 2px #e8ecf5;
 }
 
-.c2:disabled,
-.c2 [disabled] {
+.c3:disabled,
+.c3 [disabled] {
   border-color: #bfbfbf;
   background-color: #e0e0e0;
   color: #8b8b8b;
   cursor: not-allowed;
 }
 
-.c2::-webkit-input-placeholder {
+.c3::-webkit-input-placeholder {
   color: #bfbfbf;
 }
 
-.c2::-moz-placeholder {
+.c3::-moz-placeholder {
   color: #bfbfbf;
 }
 
-.c2:-ms-input-placeholder {
+.c3:-ms-input-placeholder {
   color: #bfbfbf;
 }
 
-.c2::placeholder {
+.c3::placeholder {
   color: #bfbfbf;
+}
+
+.c2 {
+  position: absolute;
+  top: 0;
+  background-color: transparent;
+  color: transparent;
+  caret-color: #373737;
 }
 
 .c0 {
@@ -153,7 +156,7 @@ exports[`Mention should render correctly 1`] = `
     style="height: 0px;"
   />
   <textarea
-    class="c2"
+    class="c2 c3"
     rows="1"
     style="overflow-x: hidden; word-wrap: break-word; overflow-y: hidden;"
   />

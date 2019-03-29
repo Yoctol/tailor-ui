@@ -11,24 +11,10 @@ import styled from 'styled-components';
 import { omit } from 'ramda';
 import { rem } from 'polished';
 
-import FormField from '../Form/FormField';
-import Hint from '../Form/Hint';
-import Input, { StyledInput } from '../Input';
+import FormField from '../FormField';
+import Input from '../Input';
 import Textarea, { StyledTextarea } from '../Input/Textarea';
-
-const TextFieldLabel = styled.label`
-  position: absolute;
-  top: -7px;
-  left: 7px;
-  padding: 0 2px;
-  background-color: #fff;
-  color: ${p => p.theme.colors.gray700};
-  font-size: 0.75rem;
-  line-height: 1;
-  pointer-events: none;
-
-  ${p => p.theme.transition};
-`;
+import { StyledInput } from '../Input/styles';
 
 const MaxLength = styled.div`
   position: absolute;
@@ -45,12 +31,30 @@ const MaxLength = styled.div`
 `;
 
 const TextFieldField = styled(FormField)`
+  position: relative;
   margin-top: 10px;
+
+  ${StyledInput /* sc-selector */}, ${StyledTextarea /* sc-selector */} {
+    & ~ label {
+      position: absolute;
+      top: -7px;
+      left: 7px;
+      padding: 0 2px;
+      background-color: #fff;
+      color: ${p =>
+        p.validationMessage ? p.theme.colors.danger : p.theme.colors.primary};
+      font-size: 0.75rem;
+      line-height: 1;
+      pointer-events: none;
+
+      ${p => p.theme.transition};
+    }
+  }
 
   ${StyledInput /* sc-selector */}:invalid, ${StyledTextarea /* sc-selector */}:invalid {
     box-shadow: none;
 
-    & ~ ${TextFieldLabel /* sc-selector */} {
+    & ~ label {
       top: 9px;
       left: 1px;
       padding: 0 ${p => p.theme.paddings.xs};
@@ -61,12 +65,13 @@ const TextFieldField = styled(FormField)`
 
   /* stylelint-disable-next-line no-descending-specificity */
   ${StyledInput /* sc-selector */}:focus, ${StyledTextarea /* sc-selector */}:focus {
-    & ~ ${TextFieldLabel /* sc-selector */} {
+    & ~ label {
       top: -7px;
       left: 7px;
       padding: 0 2px;
       background-color: #fff;
-      color: ${p => p.theme.colors.gray700};
+      color: ${p =>
+        p.validationMessage ? p.theme.colors.danger : p.theme.colors.primary};
       font-size: 0.75rem;
     }
 
@@ -90,14 +95,6 @@ export interface TextFieldProps {
    * defaultValue of the TextField
    */
   defaultValue?: string;
-  /**
-   * Set the textfield status to success
-   */
-  success?: boolean;
-  /**
-   * Set the textfield status to warning
-   */
-  warning?: boolean;
   /**
    * Set the textfield status to error
    */
@@ -128,8 +125,6 @@ const TextField: FunctionComponent<TextFieldProps> = ({
   label = null,
   value: controlledValue,
   defaultValue = '',
-  success = false,
-  warning = false,
   error = false,
   message = null,
   maxLength,
@@ -143,7 +138,6 @@ const TextField: FunctionComponent<TextFieldProps> = ({
     controlledValue || controlledValue === ''
       ? controlledValue
       : uncontrolledValue;
-  const hasHint = success || warning || error;
   const RenderComponent = textarea ? Textarea : Input;
   const inputProps = {
     maxLength,
@@ -160,13 +154,11 @@ const TextField: FunctionComponent<TextFieldProps> = ({
   };
 
   return (
-    <TextFieldField success={success} warning={warning} error={error}>
+    <TextFieldField validationMessage={error ? message : null}>
       <RenderComponent {...inputProps} required />
-      {maxLength && !hasHint && (
-        <MaxLength>{maxLength - value.length}</MaxLength>
-      )}
-      {label && <TextFieldLabel>{label}</TextFieldLabel>}
-      {hasHint && <Hint>{message}</Hint>}
+      {maxLength && !error && <MaxLength>{maxLength - value.length}</MaxLength>}
+      {/* eslint-disable-next-line */}
+      {label && <label>{label}</label>}
     </TextFieldField>
   );
 };

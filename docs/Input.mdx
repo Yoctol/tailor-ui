@@ -5,16 +5,7 @@ route: /components/input
 ---
 
 import { PropsTable, Playground } from 'docz';
-import {
-  Button,
-  Textarea,
-  Label,
-  FormField,
-  Hint,
-  Icon,
-  Space,
-  Input,
-} from 'tailor-ui';
+import { Button, Textarea, FormField, Icon, Space, Input } from 'tailor-ui';
 import { MdAccountCircle } from 'react-icons/md';
 
 # Input
@@ -29,7 +20,7 @@ A basic widget for getting the user input is a text field. Keyboard and mouse ca
 ## Examples
 
 ```js
-import { Input, Textarea, FormField, Hint } from 'tailor-ui';
+import { Input, Textarea, FormField } from 'tailor-ui';
 ```
 
 ### Input
@@ -59,32 +50,11 @@ import { Input, Textarea, FormField, Hint } from 'tailor-ui';
   </FormField>
 </Playground>
 
-#### With status
+#### With errors
 
 <Playground>
-  <FormField>
-    <Label htmlFor="default">With none:</Label>
-    <Input id="none" placeholder="none status" />
-  </FormField>
-  <FormField>
-    <Label htmlFor="default">With default:</Label>
-    <Input id="default" placeholder="default status" />
-    <Hint>default status</Hint>
-  </FormField>
-  <FormField success>
-    <Label htmlFor="success">With Success:</Label>
-    <Input id="success" placeholder="has success" />
-    <Hint>has success</Hint>
-  </FormField>
-  <FormField warning>
-    <Label htmlFor="warning">With Warning:</Label>
-    <Input id="warning" placeholder="has warning" />
-    <Hint>has warning</Hint>
-  </FormField>
-  <FormField error>
-    <Label htmlFor="error">With Error:</Label>
-    <Input id="error" placeholder="has error" />
-    <Hint>has error</Hint>
+  <FormField label="With Error" validationMessage="Something went wrong!">
+    <Input placeholder="none status" />
   </FormField>
 </Playground>
 

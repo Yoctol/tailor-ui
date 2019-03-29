@@ -49,7 +49,7 @@ import { TextField } from 'tailor-ui';
 <Playground>
   <TextField
     textarea
-    minRows={2}
+    rows={2}
     maxRows={6}
     label="Text Field(textarea)"
     onChange={event => console.log(event.target.value)}
@@ -61,7 +61,7 @@ import { TextField } from 'tailor-ui';
 <Playground>
   <TextField
     textarea
-    minRows={2}
+    rows={2}
     maxRows={6}
     maxLength={100}
     label="Text Field(textarea)"
@@ -79,7 +79,7 @@ import { TextField } from 'tailor-ui';
     return (
       <TextField
         textarea
-        minRows={2}
+        rows={2}
         maxRows={6}
         label="Please type 'error'"
         error={hasError}
@@ -113,30 +113,6 @@ import { TextField } from 'tailor-ui';
 
 }}
 
-</Playground>
-
-### With status
-
-<Playground>
-  <TextField value="default" label="Text Field" />
-  <TextField
-    label="Text Field"
-    value="Success"
-    success
-    message="This is a success message"
-  />
-  <TextField
-    label="Text Field"
-    value="Warning"
-    warning
-    message="This is a warning message"
-  />
-  <TextField
-    label="Text Field"
-    value="Error"
-    error
-    message="This is a error message"
-  />
 </Playground>
 
 ### With empty label
