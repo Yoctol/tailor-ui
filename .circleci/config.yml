@@ -1,13 +1,7 @@
 version: 2
 # Reference variables.
 references:
-  docker_default: &docker_8
-    working_directory: /tmp/app
-    docker:
-      - image: node:8
-    environment:
-      TZ: "/usr/share/zoneinfo/Asia/Taipei"
-  docker_default2: &docker_10
+  docker_default: &docker_10
     working_directory: /tmp/app
     docker:
       - image: node:10
@@ -52,34 +46,8 @@ jobs:
       - store_artifacts:
           path: coverage
           prefix: coverage
-  build-node-8:
-    <<: *docker_8
-    steps:
-      - checkout
-      - restore_cache:
-          keys:
-            - node-8-cache-{{checksum "yarn.lock"}}
-            - node-8-cache
-      - run:
-          name: install dependencies
-          command: |
-            yarn config set cache-folder .yarn-cache
-            yarn
-      - run:
-          name: build
-          command: cd packages/tailor-ui && yarn build
-      - save_cache:
-          key: node-8-cache-{{checksum "yarn.lock"}}
-          paths:
-            - .yarn-cache
-            - ./node_modules
-      - persist_to_workspace:
-          root: .
-          paths:
-            - node_modules
-            - lib
-  lint-node-8:
-    <<: *docker_8
+  lint-node-10:
+    <<: *docker_10
     steps:
       - checkout
       - attach_workspace:
@@ -87,8 +55,8 @@ jobs:
       - run:
           name: run lint
           command: npm run lint
-  type-check-node-8:
-    <<: *docker_8
+  type-check-node-10:
+    <<: *docker_10
     steps:
       - checkout
       - attach_workspace:
@@ -96,34 +64,18 @@ jobs:
       - run:
           name: run type-check
           command: npm run type-check
-  test-node-8:
-    <<: *docker_8
-    steps:
-      - checkout
-      - attach_workspace:
-          at: .
-      - run:
-          name: run test
-          command: npm run testonly:cov -- --no-cache --colors
-      - store_artifacts:
-          path: coverage
-          prefix: coverage
 
 workflows:
   version: 2
-  test-on-node-8-and-10:
+  test-on-node-10:
     jobs:
       - build-node-10
       - test-node-10:
           requires:
             - build-node-10
-      - build-node-8
-      - lint-node-8:
+      - lint-node-10:
           requires:
-            - build-node-8
-      - type-check-node-8:
+            - build-node-10
+      - type-check-node-10:
           requires:
-            - build-node-8
-      - test-node-8:
-          requires:
-            - build-node-8
+            - build-node-10
