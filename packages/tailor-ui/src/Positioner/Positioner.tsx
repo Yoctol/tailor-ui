@@ -137,27 +137,26 @@ const Positioner: FunctionComponent<PositionerProps> = ({
     from: {
       opacity: 0,
       transform: 'scale(0.9)',
-    } as any,
+    },
     enter: {
       opacity: 1,
       transform: 'scale(1)',
-    } as any,
+    },
     leave: {
       opacity: 0,
       transform: 'scale(1)',
-    } as any,
-    onRest: (item: boolean, currentState: 'leave' | 'update') => {
-      if (item && currentState === 'update') {
-        entered.current = item;
-      }
     },
-    onDestroyed: () => {
-      entered.current = false;
-      setState({
-        top: null,
-        left: null,
-        transformOrigin: null,
-      });
+    onDestroyed: isDestroyed => {
+      if (isDestroyed) {
+        entered.current = false;
+        setState({
+          top: null,
+          left: null,
+          transformOrigin: null,
+        });
+      } else {
+        entered.current = true;
+      }
     },
     config: config.stiff,
   });
