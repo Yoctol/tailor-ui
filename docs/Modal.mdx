@@ -172,6 +172,37 @@ import { Modal, useModal } from 'tailor-ui';
 
 </Playground>
 
+### onOpenComplete & onCloseComplete
+
+<Playground>
+  {() => {
+    const [visible, setVisible] = React.useState(false);
+
+    return (
+      <>
+        <Modal
+          title="This is a Modal"
+          visible={visible}
+          closable
+          onConfirm={() => setVisible(false)}
+          onCancel={() => setVisible(false)}
+          onOpenComplete={() => alert('modal opened!')}
+          onCloseComplete={() => alert('modal closed!')}
+        >
+          <div>This is the content of Modal</div>
+          <div>This is the content of Modal</div>
+          <div>This is the content of Modal</div>
+          <div>This is the content of Modal</div>
+          <div>This is the content of Modal</div>
+        </Modal>
+        <Button onClick={() => setVisible(true)}>Open Modal</Button>
+      </>
+    );
+
+}}
+
+</Playground>
+
 ### useModal Hooks
 
 You can use the `useModal` hooks to display Modal without render `Modal` component in your component.

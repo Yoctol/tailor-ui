@@ -22,6 +22,8 @@ export interface ModalOptions {
   cancelText?: string;
   onConfirm?: () => void;
   onCancel?: () => void;
+  onOpenComplete?: () => void;
+  onCloseComplete?: () => void;
   cancelable?: boolean;
 }
 
@@ -42,6 +44,8 @@ interface ModalOptionsState {
   cancelText?: string | null;
   onConfirm: () => void;
   onCancel: () => void;
+  onOpenComplete?: () => void;
+  onCloseComplete?: () => void;
   cancelable: boolean;
   type: ModalTypes;
 }
@@ -60,6 +64,8 @@ const EffectModal: FunctionComponent<EffectModalProps> = ({
     cancelText: '',
     onConfirm: () => {},
     onCancel: () => {},
+    onOpenComplete: () => {},
+    onCloseComplete: () => {},
   });
 
   const getIcon = () => {
@@ -82,6 +88,8 @@ const EffectModal: FunctionComponent<EffectModalProps> = ({
         cancelText = locale.Modal.cancelText,
         onConfirm,
         onCancel,
+        onOpenComplete,
+        onCloseComplete,
       } = options;
 
       setModalOptions({
@@ -109,6 +117,8 @@ const EffectModal: FunctionComponent<EffectModalProps> = ({
             resolve(false);
           }
         },
+        onOpenComplete,
+        onCloseComplete,
       });
 
       setVisible(true);
