@@ -61,6 +61,8 @@ const ModalContent = styled.div<{ size: Size }>`
 
 export interface BaseModalProps {
   onCancel: () => void;
+  onOpenComplete?: () => void;
+  onCloseComplete?: () => void;
   size?: Size;
   cancelable?: boolean;
   statusBar?: Types | null;
@@ -71,6 +73,8 @@ const BaseModal: FunctionComponent<BaseModalProps> = ({
   children = '',
   visible,
   onCancel,
+  onOpenComplete,
+  onCloseComplete,
   cancelable = true,
   size = 'md',
   statusBar = null,
@@ -99,6 +103,13 @@ const BaseModal: FunctionComponent<BaseModalProps> = ({
       opacity: 0,
       transform: 'translate(-50%, -50%) scale(0.9)',
       pointerEvents: 'none',
+    },
+    onDestroyed: isDestroyed => {
+      if (isDestroyed && onCloseComplete) {
+        onCloseComplete();
+      } else if (!isDestroyed && onOpenComplete) {
+        onOpenComplete();
+      }
     },
     config: config.stiff,
   });
