@@ -7,7 +7,7 @@ import React, {
   useRef,
   useState,
 } from 'react';
-import { config, useTransition } from 'react-spring';
+import { useTransition } from 'react-spring';
 
 import Portal from '../Portal';
 import { Position, Positions } from '../constants';
@@ -159,7 +159,10 @@ const Positioner: FunctionComponent<PositionerProps> = ({
         transformOrigin: null,
       });
     },
-    config: config.stiff,
+    config: {
+      tension: 320,
+      friction: 24,
+    },
   });
 
   return (
