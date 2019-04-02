@@ -1,15 +1,11 @@
-import React, {
-  Fragment,
-  FunctionComponent,
-  ReactNode,
-  useEffect,
-} from 'react';
+import React, { Fragment, FunctionComponent, ReactNode } from 'react';
 import styled, { css } from 'styled-components';
 import { animated, config, useTransition } from 'react-spring';
 
 import Backdrop from '../Backdrop';
 import Portal from '../Portal';
 import useKeydown, { ESC_KEY_CODE } from '../utils/useKeydown';
+import usePreventBodyScroll from '../utils/usePreventBodyScroll';
 import { FooterWrapper, ModalContent, ModalHeader } from '../Modal';
 
 type Placement = 'top' | 'right' | 'bottom' | 'left';
@@ -24,6 +20,7 @@ const DrawerWrapper = styled.div<DrawerWrapperProps>`
   position: absolute;
   z-index: 10000;
   flex-direction: column;
+  padding: ${p => p.theme.space[3]};
   background-color: #fff;
 
   ${p =>
@@ -111,6 +108,8 @@ const Drawer: FunctionComponent<DrawerProps> = ({
   const transformAxis = getTransformAxis(placement);
   const transformBreadth = getTransformBreadth({ placement, breadth });
 
+  usePreventBodyScroll(visible);
+
   const transition = useTransition(visible, null, {
     from: {
       offset: transformBreadth,
@@ -132,14 +131,6 @@ const Drawer: FunctionComponent<DrawerProps> = ({
     keyCode: ESC_KEY_CODE,
     onKeydown: onClose,
   });
-
-  useEffect(() => {
-    document.body.style.overflow = visible ? 'hidden' : '';
-
-    return () => {
-      document.body.style.overflow = '';
-    };
-  }, [visible]);
 
   return (
     <Portal appendFor="drawer">
