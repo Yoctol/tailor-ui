@@ -4,14 +4,14 @@ import { SpaceProps, WidthProps } from 'styled-system';
 import { IconType } from '../Icon';
 
 import ButtonIcon from './ButtonIcon';
-import { ButtonSize, ButtonType, StyledButton } from './styles';
+import { ButtonSize, ButtonVariant, StyledButton } from './styles';
 
 export type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> &
   SpaceProps &
   WidthProps & {
     loading?: boolean;
     size?: ButtonSize;
-    type?: ButtonType;
+    variant?: ButtonVariant;
     rounded?: boolean;
     disabled?: boolean;
     icon?: IconType;

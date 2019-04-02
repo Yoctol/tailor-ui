@@ -31,25 +31,25 @@
     "url": "https://github.com/yoctol/tailor-ui/issues"
   },
   "dependencies": {
-    "@babel/runtime": "^7.4.2",
+    "@babel/runtime": "^7.4.3",
     "html-tags": "^2.0.0",
     "immutable": "3.7.4",
     "moment": "^2.24.0",
-    "polished": "^3.1.0",
+    "polished": "^3.2.0",
     "prop-types": "^15.7.1",
     "ramda": "^0.26.1",
     "rc-calendar": "^9.10.8",
     "rc-editor-mention": "1.1.7",
     "rc-time-picker": "^3.6.2",
     "react-autosize-textarea": "^7.0.0",
-    "react-dropzone": "10.0.6",
+    "react-dropzone": "10.1.0",
     "react-html-attributes": "^1.4.3",
     "react-intl-tel-input": "^7.0.1",
     "react-select": "^2.4.2",
     "react-textarea-autosize": "^7.1.0",
     "resize-observer-polyfill": "^1.5.1",
     "styled-normalize": "^8.0.6",
-    "styled-system": "^4.0.8"
+    "styled-system": "^4.1.0"
   },
   "peerDependencies": {
     "react": ">=16.8.0",
@@ -59,6 +59,6 @@
     "styled-components": ">=4.1.0"
   },
   "devDependencies": {
-    "rollup-plugin-commonjs": "^9.2.2"
+    "rollup-plugin-commonjs": "^9.2.3"
   }
 }

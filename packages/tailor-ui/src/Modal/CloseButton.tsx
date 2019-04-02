@@ -20,7 +20,7 @@ export interface CloseButtonProps {
 
 const CloseButton: FunctionComponent<CloseButtonProps> = ({ onCancel }) => (
   <CloseButtonWrapper>
-    <Button type="normal" rounded icon={MdClose} onClick={onCancel} />
+    <Button variant="normal" rounded icon={MdClose} onClick={onCancel} />
   </CloseButtonWrapper>
 );
 

@@ -166,7 +166,7 @@ const EffectModal: FunctionComponent<EffectModalProps> = ({
             onCancel={onCancel}
             onConfirm={onConfirm}
             confirmButtonProps={{
-              type: type === 'error' ? 'danger' : 'primary',
+              variant: type === 'error' ? 'danger' : 'primary',
             }}
           />
         </FooterWrapper>

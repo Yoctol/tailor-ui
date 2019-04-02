@@ -26,11 +26,16 @@ const Footer: FunctionComponent<FooterProps> = ({
   <Flex width="100%">
     <Box ml="auto">
       {cancelable && (
-        <Button type="normal" onClick={onCancel} {...cancelButtonProps}>
+        <Button variant="normal" onClick={onCancel} {...cancelButtonProps}>
           {cancelText}
         </Button>
       )}
-      <Button ml="3" type="primary" onClick={onConfirm} {...confirmButtonProps}>
+      <Button
+        ml="3"
+        variant="primary"
+        onClick={onConfirm}
+        {...confirmButtonProps}
+      >
         {confirmText}
       </Button>
     </Box>
