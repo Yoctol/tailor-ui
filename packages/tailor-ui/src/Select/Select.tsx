@@ -4,7 +4,6 @@ import React, { FunctionComponent } from 'react';
 import styled from 'styled-components';
 import { MdSearch } from 'react-icons/md';
 
-import Box from '../Grid/Box';
 import Flex from '../Grid/Flex';
 import Icon from '../Icon';
 
@@ -111,9 +110,9 @@ const ValueContainer: FunctionComponent<any> = ({ children, ...props }) => (
   <components.ValueContainer {...props}>
     <Flex width="100%" alignItems="center">
       <Icon type={MdSearch} size="20" mr="2" />
-      <Box flex="auto" position="relative">
+      <Flex flex="auto" position="relative">
         {children}
-      </Box>
+      </Flex>
     </Flex>
   </components.ValueContainer>
 );
