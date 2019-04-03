@@ -38,6 +38,7 @@ exports[`Drawer should render correctly 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  padding: 1rem;
   background-color: #fff;
   left: calc(100vw - 400px);
   width: 400px;
@@ -46,7 +47,7 @@ exports[`Drawer should render correctly 1`] = `
 }
 
 <body
-  style="overflow: hidden;"
+  style="overflow: hidden; padding-right: 0px;"
 >
   <div />
   <div
@@ -73,7 +74,7 @@ exports[`Drawer should render correctly 1`] = `
 
 exports[`Drawer should render with props closable 1`] = `
 <body
-  style="overflow: hidden;"
+  style="padding-right: 0px; overflow: hidden;"
 >
   <div
     style="position: fixed; top: 0px; left: 0px; z-index: 9999;"
@@ -119,6 +120,7 @@ exports[`Drawer should render with props closable 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  padding: 1rem;
   background-color: #fff;
   left: calc(100vw - 400px);
   width: 400px;
