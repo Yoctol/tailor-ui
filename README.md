@@ -49,7 +49,7 @@ Run below commands:
 ```bash
 cd tailor-ui
 yarn
-yarn start
+yarn docs:dev
 ```
 
 Watch files changed and check type:

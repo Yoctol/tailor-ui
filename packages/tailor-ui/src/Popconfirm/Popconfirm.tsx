@@ -84,7 +84,7 @@ const PopconfirmContent: FunctionComponent<
         <Button
           ml="2"
           size="sm"
-          type="primary"
+          variant="primary"
           onClick={(event: MouseEvent) => {
             hideTooltip();
             if (onConfirm) {

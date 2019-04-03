@@ -427,7 +427,6 @@ exports[`Popconfirm should render correctly 1`] = `
               </button>
               <button
                 class="c8"
-                type="primary"
               >
                 Confirm
               </button>

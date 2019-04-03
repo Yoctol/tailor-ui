@@ -35,7 +35,7 @@ const buttonLoading = ({ loading }: { loading: boolean }) =>
 
 export type ButtonSize = 'sm' | 'md' | 'lg';
 
-export type ButtonType =
+export type ButtonVariant =
   | 'basic'
   | 'primary'
   | 'primary-invert'
@@ -86,8 +86,8 @@ const buttonSize = css<{
   }};
 `;
 
-export const buttonType = ({ type }: { type?: ButtonType }) => {
-  switch (type) {
+export const buttonVariant = ({ variant }: { variant?: ButtonVariant }) => {
+  switch (variant) {
     default:
       return css`
         border-color: ${p => p.theme.colors.gray300};
@@ -263,7 +263,7 @@ export type StyledButtonProps = SpaceProps &
     loading: boolean;
     hasIcon: boolean;
     size: ButtonSize;
-    type?: ButtonType;
+    variant?: ButtonVariant;
     rounded?: boolean;
     disabled?: boolean;
   };
@@ -321,7 +321,7 @@ export const StyledButton = styled.button<StyledButtonProps>`
 
   ${p => p.theme.transition /* sc-declaration */};
   ${buttonSize /* sc-declaration */}
-  ${buttonType /* sc-declaration */}
+  ${buttonVariant /* sc-declaration */}
   ${buttonLoading /* sc-declaration */};
 
   ${space};

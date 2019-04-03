@@ -126,11 +126,11 @@ When the task is complicated or has a certain sequence in the series of subtasks
         </Flex>
 
         {step < steps.length - 1 && (
-          <Button type="primary" onClick={() => setStep(step + 1)}>Next</Button>
+          <Button variant="primary" onClick={() => setStep(step + 1)}>Next</Button>
         )}
         {step === steps.length - 1 && (
           <Button
-            type="primary"
+            variant="primary"
             onClick={() => message.success('Processing complete!')}
           >
             Done
