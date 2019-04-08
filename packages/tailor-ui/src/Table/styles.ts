@@ -1,7 +1,7 @@
-import styled, { css } from 'styled-components';
+import styled, { StyledComponent, css } from 'styled-components';
 import { TextAlignProps, WidthProps, textAlign, width } from 'styled-system';
 
-export const HeadColumn = styled.th<WidthProps>`
+export const HeadColumn: StyledComponent<'th', any, WidthProps> = styled.th`
   padding: ${p => p.theme.paddings.sm};
   font-weight: bold;
 
