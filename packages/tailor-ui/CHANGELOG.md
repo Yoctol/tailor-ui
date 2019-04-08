@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.6.0](https://github.com/yoctol/tailor-ui/compare/tailor-ui@0.5.6...tailor-ui@0.6.0) (2019-04-08)
+
+### Bug Fixes
+
+- **drawer:** add padding to drawer and add usePreventBodyScroll hooks ([90261a5](https://github.com/yoctol/tailor-ui/commit/90261a5))
+- **select:** prevent searchable break selected options ([0540a6b](https://github.com/yoctol/tailor-ui/commit/0540a6b))
+
+### Features
+
+- **icon:** add forwardRef to Icon component ([6eb02dd](https://github.com/yoctol/tailor-ui/commit/6eb02dd))
+- **modal:** add onOpenComplete & onCloseComplete ([d4f2371](https://github.com/yoctol/tailor-ui/commit/d4f2371))
+
 ## [0.5.6](https://github.com/yoctol/tailor-ui/compare/tailor-ui@0.5.5...tailor-ui@0.5.6) (2019-03-29)
 
 ### Bug Fixes
