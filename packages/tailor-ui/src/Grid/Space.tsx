@@ -1,7 +1,7 @@
-import styled from 'styled-components';
+import styled, { StyledComponent } from 'styled-components';
 import { SpaceProps, space } from 'styled-system';
 
-const Space = styled.div<SpaceProps>`
+const Space: StyledComponent<'div', any, SpaceProps> = styled.div`
   ${space};
 `;
 

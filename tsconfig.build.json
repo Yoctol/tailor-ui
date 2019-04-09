@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
-    "composite": true
+    "composite": true,
+    "incremental": true
   },
   "files": [],
   "include": [],
