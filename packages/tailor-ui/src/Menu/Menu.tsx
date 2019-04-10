@@ -9,14 +9,28 @@ import SubMenu from './SubMenu';
 interface MenuProps {
   width: number;
   currentSubOnly?: boolean;
+  subKeys?: string[];
   defaultSubKeys?: string[];
+  onUpdateSubKeys?: (keys: string[]) => void;
 }
 
 const Menu: FunctionComponent<MenuProps> & {
   SubMenu: typeof SubMenu;
   Item: typeof Item;
-} = ({ children, currentSubOnly, defaultSubKeys, ...props }) => {
-  const [openKeys, setOpenKeys] = useState<string[]>(defaultSubKeys || []);
+} = ({
+  children,
+  currentSubOnly,
+  subKeys,
+  onUpdateSubKeys,
+  defaultSubKeys,
+  ...props
+}) => {
+  const [ownOpenKeys, setOwnOpenKeys] = useState<string[]>(
+    defaultSubKeys || []
+  );
+
+  const openKeys = subKeys || ownOpenKeys;
+  const setOpenKeys = onUpdateSubKeys || setOwnOpenKeys;
 
   return (
     <MenuContext.Provider
