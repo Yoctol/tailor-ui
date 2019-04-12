@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.7.0](https://github.com/yoctol/tailor-ui/compare/tailor-ui@0.6.0...tailor-ui@0.7.0) (2019-04-12)
+
+### Bug Fixes
+
+- **date-picker:** i18n ([5e390e8](https://github.com/yoctol/tailor-ui/commit/5e390e8))
+
+### Features
+
+- **menu:** add controlled usage ([bf0abfe](https://github.com/yoctol/tailor-ui/commit/bf0abfe))
+
 # [0.6.0](https://github.com/yoctol/tailor-ui/compare/tailor-ui@0.5.6...tailor-ui@0.6.0) (2019-04-08)
 
 ### Bug Fixes

@@ -1,6 +1,6 @@
 {
   "name": "tailor-ui",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "description": "A bespoke UI collection for building web application.",
   "author": "Yoctol Info SD Team",
   "homepage": "https://tailor-ui.netlify.com",
@@ -32,7 +32,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.4.3",
-    "@tailor-ui/utils": "^0.1.0",
+    "@tailor-ui/utils": "^0.1.1",
     "html-tags": "^2.0.0",
     "immutable": "3.7.4",
     "moment": "^2.24.0",
