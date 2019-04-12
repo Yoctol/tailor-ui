@@ -46,30 +46,28 @@ const DatePicker: FunctionComponent<DatePickerProps> = ({
   showTime,
   showSecond,
   minuteStep,
-  format: propsFormat,
+  format: formatFromProps,
   disabledDate,
   disabledTime,
   placeholder,
   ...props
 }) => {
   const { locale } = useContext(LocaleContext);
-  let format = propsFormat;
-
-  if (!format) {
-    format = `YYYY-MM-DD${showTime ? ' HH:mm' : ''}${
+  const format =
+    formatFromProps ||
+    `YYYY-MM-DD${showTime ? ' HH:mm' : ''}${
       showTime && showSecond ? ':ss' : ''
     }`;
-  }
 
   return (
     <RcDatePicker
       animation="slide-up"
       onChange={(value: any) => {
         if (!value) {
-          return onChange(null, '');
+          onChange(null, '');
+        } else {
+          onChange(value, value.format(format));
         }
-
-        return onChange(value, value.format(format));
       }}
       {...props}
       calendar={

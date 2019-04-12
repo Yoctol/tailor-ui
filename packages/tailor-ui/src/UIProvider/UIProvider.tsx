@@ -1,5 +1,6 @@
 /* eslint camelcase: off */
-import React, { FunctionComponent, ReactNode, useRef } from 'react';
+import React, { FunctionComponent, ReactNode, useEffect, useRef } from 'react';
+import moment from 'moment';
 import { ThemeProvider } from 'styled-components';
 
 import EffectModal from '../Modal/EffectModal';
@@ -25,6 +26,10 @@ const UIProvider: FunctionComponent<UIProviderProps> = ({
   locale = en_US,
 }) => {
   const triggerRef = useRef(() => Promise.resolve(false));
+
+  useEffect(() => {
+    moment.locale(locale.momentLocale);
+  }, [locale.locale, locale.momentLocale]);
 
   return (
     <ThemeProvider theme={theme}>
