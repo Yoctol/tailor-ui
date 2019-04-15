@@ -1,6 +1,5 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import { animated } from 'react-spring';
-import { rgba } from 'polished';
 
 import { Textarea as BaseTextarea, inputStyles } from 'tailor-ui';
 
@@ -8,6 +7,8 @@ export const Textarea = styled(BaseTextarea)`
   position: absolute;
   top: 0;
   background-color: transparent;
+  color: transparent;
+  caret-color: ${p => p.theme.colors.gray700};
 `;
 
 export const MentionWrapper = styled.div<{ disabled?: boolean }>`
@@ -15,24 +16,14 @@ export const MentionWrapper = styled.div<{ disabled?: boolean }>`
 
   .mention-highlight {
     display: inline-flex;
-    background-color: ${p =>
-      p.disabled ? p.theme.colors.gray400 : rgba(p.theme.colors.success, 0.3)};
+    color: ${p =>
+      p.disabled ? p.theme.colors.gray400 : p.theme.colors.primaryLight};
     line-height: 1.3;
     text-decoration: none;
 
-    &.start {
-      border-top-left-radius: ${p => p.theme.radii.base};
-      border-bottom-left-radius: ${p => p.theme.radii.base};
-    }
-
-    &.end {
-      border-top-right-radius: ${p => p.theme.radii.base};
-      border-bottom-right-radius: ${p => p.theme.radii.base};
-    }
-
     &.invalid {
-      background-color: ${p =>
-        p.disabled ? p.theme.colors.gray400 : rgba(p.theme.colors.danger, 0.3)};
+      color: ${p =>
+        p.disabled ? p.theme.colors.gray400 : p.theme.colors.danger};
     }
   }
 `;
@@ -43,7 +34,7 @@ export const Highlights = styled.div`
   /* stylelint-disable-next-line order/properties-order */
   overflow-y: auto;
   border-color: transparent;
-  color: transparent;
+  color: ${p => p.theme.colors.gray700};
   word-break: break-word;
   white-space: pre-wrap;
   transition: none;
@@ -55,37 +46,32 @@ export const SuggestionList = styled(animated.div)`
   box-sizing: border-box;
   flex-direction: column;
   min-width: 120px;
-  max-height: 200px;
-  margin-top: ${p => p.theme.space[1]};
-  padding: ${p => p.theme.space[2]} 0;
+  max-height: 180px;
   overflow-y: auto;
   border: ${p => p.theme.borders.base};
-  border-radius: ${p => p.theme.radii.base};
+  border-radius: ${p => p.theme.radii.lg};
   border-color: ${p => p.theme.colors.gray300};
-  outline: none;
   background-color: ${p => p.theme.colors.light};
-  box-shadow: ${p => p.theme.shadows.lg};
+  box-shadow: 0 2px 4px 0 rgba(100, 120, 168, 0.3);
+  color: ${p => p.theme.colors.gray700};
+  font-size: ${p => p.theme.fontSizes.sm};
+  text-align: left;
+  white-space: nowrap;
   cursor: pointer;
 `;
 
 export const SuggestionItem = styled.div<{ active: boolean }>`
-  display: inline-flex;
-  flex: none;
+  display: flex;
   align-items: center;
-  height: ${p => p.theme.heights.base};
-  padding: 0 ${p => p.theme.paddings.sm};
-  font-size: ${p => p.theme.fontSizes.base};
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  transition: background-color 0.4s cubic-bezier(0.27, 1.27, 0.48, 0.56);
+  height: 36px;
+  padding: 0 16px;
+  background-color: ${p =>
+    p.active ? p.theme.colors.primaryLight : p.theme.colors.light};
+  color: ${p => (p.active ? p.theme.colors.light : p.theme.colors.gray700)};
+  cursor: pointer;
 
   &:hover {
-    background-color: #cce7ff;
+    background-color: ${p => p.theme.colors.primaryLight};
+    color: ${p => p.theme.colors.light};
   }
-
-  ${({ active }) =>
-    active &&
-    css`
-      background-color: #e6f3ff;
-    `}
 `;
