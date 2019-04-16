@@ -14,7 +14,7 @@ const SubListWrapper = styled.div`
   padding-left: ${p => p.theme.space[1]};
   opacity: 0;
   transform: scale(0.3);
-  transform-origin: 0 ${p => p.theme.space[3]};
+  transform-origin: 0 ${p => p.theme.space[4]};
   cursor: pointer;
 
   ${p => p.theme.transition};

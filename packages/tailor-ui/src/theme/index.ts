@@ -41,7 +41,7 @@ const toRem = (px: number) => rem(`${px}px`);
 
 const breakpoints = ['40em', '52em', '64em'];
 
-const space = [0, 4, 8, 16, 32, 64, 128, 256].map(toRem);
+const space = [0, 4, 8, 12, 16, 24, 32, 48, 64].map(toRem);
 
 const paddings = {
   lg: rem('24px'),

@@ -17,8 +17,8 @@ export type IAlertTypes = SpaceProps & {
 const StyledAlert = styled.div<IAlertTypes>`
   display: flex;
   align-items: center;
-  margin-bottom: ${p => p.theme.space[3]};
-  padding: ${p => p.theme.space[2]} ${p => p.theme.space[3]};
+  margin-bottom: ${p => p.theme.space[4]};
+  padding: ${p => p.theme.space[2]} ${p => p.theme.space[4]};
   border: ${p => p.theme.borders.base};
   border-radius: ${p => p.theme.radii.base};
   border-color: ${p => p.theme.colors[p.type]};

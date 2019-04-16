@@ -31,7 +31,7 @@ const Footer: FunctionComponent<FooterProps> = ({
         </Button>
       )}
       <Button
-        ml="3"
+        ml="4"
         variant="primary"
         onClick={onConfirm}
         {...confirmButtonProps}

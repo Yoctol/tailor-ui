@@ -32,7 +32,7 @@ const MessageContent = styled.div`
   display: flex;
   position: relative;
   margin-top: ${p => p.theme.space[2]};
-  padding: ${p => p.theme.space[3]};
+  padding: ${p => p.theme.space[4]};
   overflow: hidden;
   border-radius: ${p => p.theme.radii.base};
   background-color: ${p => p.theme.colors.primaryDark};

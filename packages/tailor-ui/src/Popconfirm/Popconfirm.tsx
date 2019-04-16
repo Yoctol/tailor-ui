@@ -68,7 +68,7 @@ const PopconfirmContent: FunctionComponent<
         {icon}
         {content}
       </Flex>
-      <Flex mt="3">
+      <Flex mt="4">
         <Button
           ml="auto"
           size="sm"
