@@ -7,7 +7,6 @@ import React, {
 
 import Flex from '../Grid/Flex';
 import Heading from '../Heading';
-import Portal from '../Portal';
 import { LocaleContext } from '../UIProvider';
 
 import BaseModal, { BaseModalProps } from './BaseModal';
@@ -106,21 +105,19 @@ const Modal: FunctionComponent<ModalProps> = ({
   cancelButtonProps,
   ...props
 }) => (
-  <Portal appendFor="modal">
-    <BaseModal onCancel={onCancel} {...props}>
-      <ModalHeader title={title} onCancel={onCancel} closable={closable} />
-      <ModalContent>{children}</ModalContent>
-      <ModalFooter
-        footer={footer}
-        cancelText={cancelText}
-        confirmText={confirmText}
-        onCancel={onCancel}
-        onConfirm={onConfirm}
-        confirmButtonProps={confirmButtonProps}
-        cancelButtonProps={cancelButtonProps}
-      />
-    </BaseModal>
-  </Portal>
+  <BaseModal onCancel={onCancel} {...props}>
+    <ModalHeader title={title} onCancel={onCancel} closable={closable} />
+    <ModalContent>{children}</ModalContent>
+    <ModalFooter
+      footer={footer}
+      cancelText={cancelText}
+      confirmText={confirmText}
+      onCancel={onCancel}
+      onConfirm={onConfirm}
+      confirmButtonProps={confirmButtonProps}
+      cancelButtonProps={cancelButtonProps}
+    />
+  </BaseModal>
 );
 
 export default Modal;

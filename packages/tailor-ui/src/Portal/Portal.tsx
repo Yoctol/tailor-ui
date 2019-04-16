@@ -1,64 +1,63 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import { createPortal } from 'react-dom';
 
-const elements: {
-  [key: string]: HTMLElement;
-} = {};
+let portalContainer: HTMLDivElement;
 
-class Portal extends PureComponent<{
-  appendFor?: string;
+const canUseDom = () =>
+  !!(
+    typeof window !== 'undefined' &&
+    window.document &&
+    window.document.createElement
+  );
+
+const createMountNode = (zIndex: string) => {
+  const element = document.createElement('div');
+
+  element.style.position = 'fixed';
+  element.style.top = '0';
+  element.style.left = '0';
+  element.style.zIndex = zIndex;
+
+  return element;
+};
+
+interface PortalProps {
   zIndex?: string;
-}> {
+}
+
+class Portal extends Component<PortalProps> {
   element?: HTMLElement;
 
-  canUseDOM = () =>
-    !!(
-      typeof window !== 'undefined' &&
-      window.document &&
-      window.document.createElement
-    );
+  constructor(props: PortalProps) {
+    super(props);
 
-  createMountElement = () => {
-    const element = document.createElement('div');
-
-    element.style.position = 'fixed';
-    element.style.top = '0';
-    element.style.left = '0';
-    element.style.zIndex = this.props.zIndex || '9999';
-
-    document.body.appendChild(element);
-
-    return element;
-  };
-
-  getPortalElement = () => {
-    const { appendFor } = this.props;
-
-    if (appendFor && elements[appendFor]) {
-      return elements[appendFor];
+    // This fixes SSR
+    if (!canUseDom()) {
+      return;
     }
 
+    if (!portalContainer) {
+      portalContainer = document.createElement('div');
+      portalContainer.setAttribute('portal-container', '');
+      document.body.append(portalContainer);
+    }
+
+    this.element = createMountNode(props.zIndex || '9999');
+    portalContainer.append(this.element);
+  }
+
+  componentWillUnmount() {
     if (this.element) {
-      return this.element;
+      portalContainer.removeChild(this.element);
     }
-
-    const element = this.createMountElement();
-
-    if (appendFor) {
-      elements[appendFor] = element;
-    } else {
-      this.element = element;
-    }
-
-    return element;
-  };
+  }
 
   render() {
-    if (!this.canUseDOM()) {
+    if (!(canUseDom() && this.element)) {
       return <></>;
     }
 
-    return createPortal(this.props.children, this.getPortalElement());
+    return createPortal(this.props.children, this.element);
   }
 }
 

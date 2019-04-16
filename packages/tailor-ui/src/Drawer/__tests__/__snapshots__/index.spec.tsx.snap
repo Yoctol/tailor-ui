@@ -51,21 +51,29 @@ exports[`Drawer should render correctly 1`] = `
 >
   <div />
   <div
-    style="position: fixed; top: 0px; left: 0px; z-index: 9999;"
+    portal-container=""
   >
     <div
-      class="c0"
-      style="opacity: 0;"
-    />
-    <div
-      style="transform: translateX(400px);"
+      style="position: fixed; top: 0px; left: 0px; z-index: 9999;"
     >
       <div
-        class="c1"
+        class="c0"
+        style="opacity: 0;"
+      />
+    </div>
+    <div
+      style="position: fixed; top: 0px; left: 0px; z-index: 9999;"
+    >
+      <div
+        style="transform: translateX(400px);"
       >
         <div
-          class="c2"
-        />
+          class="c1"
+        >
+          <div
+            class="c2"
+          />
+        </div>
       </div>
     </div>
   </div>
@@ -77,7 +85,7 @@ exports[`Drawer should render with props closable 1`] = `
   style="padding-right: 0px; overflow: hidden;"
 >
   <div
-    style="position: fixed; top: 0px; left: 0px; z-index: 9999;"
+    portal-container=""
   >
     .c0 {
   position: fixed;
@@ -90,9 +98,13 @@ exports[`Drawer should render with props closable 1`] = `
 }
 
 <div
-      class="c0"
-      style="opacity: 0;"
-    />
+      style="position: fixed; top: 0px; left: 0px; z-index: 9999;"
+    >
+      <div
+        class="c0"
+        style="opacity: 0;"
+      />
+    </div>
     .c1 {
   box-sizing: border-box;
   overflow-y: auto;
@@ -129,14 +141,18 @@ exports[`Drawer should render with props closable 1`] = `
 }
 
 <div
-      style="transform: translateX(400px);"
+      style="position: fixed; top: 0px; left: 0px; z-index: 9999;"
     >
       <div
-        class="c0"
+        style="transform: translateX(400px);"
       >
         <div
-          class="c1"
-        />
+          class="c0"
+        >
+          <div
+            class="c1"
+          />
+        </div>
       </div>
     </div>
   </div>

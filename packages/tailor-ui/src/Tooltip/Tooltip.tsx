@@ -125,7 +125,6 @@ class Tooltip extends PureComponent<ITooltipProps> {
     return (
       <Trigger
         zIndex="10000"
-        appendFor="tooltip"
         offset={10}
         animation="scale"
         trigger={trigger}

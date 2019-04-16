@@ -179,33 +179,37 @@ exports[`Dropdown should render correctly 1`] = `
     </button>
   </div>
   <div
-    style="position: fixed; top: 0px; left: 0px; z-index: 9999;"
+    portal-container=""
   >
     <div
-      style="position: absolute; top: 0px; left: 0px; transform: translate3d(0px, 5px, 0px);"
+      style="position: fixed; top: 0px; left: 0px; z-index: 9999;"
     >
-      <ul
-        class="c1"
-        data-testid="dropdown-overlay"
-        style="opacity: 0; transform: translate3d(0, -10px, 0);"
+      <div
+        style="position: absolute; top: 0px; left: 0px; transform: translate3d(0px, 5px, 0px);"
       >
-        <li
-          class="c2"
+        <ul
+          class="c1"
+          data-testid="dropdown-overlay"
+          style="opacity: 0; transform: translate3d(0, -10px, 0);"
         >
-          Basic Item
-        </li>
-        <li
-          class="c3"
-          disabled=""
-        >
-          Disibled Item
-        </li>
-        <li
-          class="c2"
-        >
-          Keep Item
-        </li>
-      </ul>
+          <li
+            class="c2"
+          >
+            Basic Item
+          </li>
+          <li
+            class="c3"
+            disabled=""
+          >
+            Disibled Item
+          </li>
+          <li
+            class="c2"
+          >
+            Keep Item
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </body>
@@ -214,7 +218,7 @@ exports[`Dropdown should render correctly 1`] = `
 exports[`Dropdown should render with diffrient placement 1`] = `
 <body>
   <div
-    style="position: fixed; top: 0px; left: 0px; z-index: 9999;"
+    portal-container=""
   >
     .c1 {
   display: -webkit-box;
@@ -294,30 +298,34 @@ exports[`Dropdown should render with diffrient placement 1`] = `
 }
 
 <div
-      style="position: absolute; top: 0px; left: 0px; transform: translate3d(0px, 5px, 0px);"
+      style="position: fixed; top: 0px; left: 0px; z-index: 9999;"
     >
-      <ul
-        class="c0"
-        data-testid="dropdown-overlay"
-        style="opacity: 0; transform: translate3d(0, -10px, 0);"
+      <div
+        style="position: absolute; top: 0px; left: 0px; transform: translate3d(0px, 5px, 0px);"
       >
-        <li
-          class="c1"
+        <ul
+          class="c0"
+          data-testid="dropdown-overlay"
+          style="opacity: 0; transform: translate3d(0, -10px, 0);"
         >
-          Basic Item
-        </li>
-        <li
-          class="c2"
-          disabled=""
-        >
-          Disibled Item
-        </li>
-        <li
-          class="c1"
-        >
-          Keep Item
-        </li>
-      </ul>
+          <li
+            class="c1"
+          >
+            Basic Item
+          </li>
+          <li
+            class="c2"
+            disabled=""
+          >
+            Disibled Item
+          </li>
+          <li
+            class="c1"
+          >
+            Keep Item
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
   .c0 {

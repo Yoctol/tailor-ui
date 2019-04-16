@@ -1,6 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Backdrop should not render backdrop 1`] = `null`;
+exports[`Backdrop should not render backdrop 1`] = `
+<body>
+  <div
+    portal-container=""
+  />
+  <div />
+</body>
+`;
 
 exports[`Backdrop should render backdrop correctly 1`] = `
 .c0 {
@@ -13,8 +20,19 @@ exports[`Backdrop should render backdrop correctly 1`] = `
   background-color: rgba(0,0,0,0.65);
 }
 
-<div
-  class="c0"
-  style="opacity: 1;"
-/>
+<body>
+  <div />
+  <div
+    portal-container=""
+  >
+    <div
+      style="position: fixed; top: 0px; left: 0px; z-index: 9999;"
+    >
+      <div
+        class="c0"
+        style="opacity: 0;"
+      />
+    </div>
+  </div>
+</body>
 `;

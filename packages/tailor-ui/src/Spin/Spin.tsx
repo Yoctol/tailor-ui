@@ -135,7 +135,7 @@ const Spin: FunctionComponent<SpinProps> = ({
   );
 
   if (fullscreen) {
-    return <Portal appendFor="spin">{spinComponent}</Portal>;
+    return <Portal>{spinComponent}</Portal>;
   }
 
   return spinComponent;

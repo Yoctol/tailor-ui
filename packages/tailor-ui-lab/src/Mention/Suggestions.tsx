@@ -63,39 +63,37 @@ const Suggestions = forwardRef<HTMLDivElement, SuggestionsProps>(
     }, [activeIndex, suggestionRef]);
 
     return (
-      <Portal appendFor="mention">
+      <>
         {translations.map(
           ({ key, item, props }) =>
             item && (
-              <div
-                key={key}
-                style={{
-                  position: 'absolute',
-                  top: 0,
-                  left: 0,
-                  willChange: 'transform',
-                  transform: `translate3d(${overlayPosition.left}px, ${
-                    overlayPosition.top
-                  }px, 0px)`,
-                }}
-              >
-                <SuggestionList ref={suggestionRef} style={props}>
-                  {filteredSuggestions.map((suggestion, index) => (
-                    <SuggestionItem
-                      key={suggestion.value}
-                      active={index === activeIndex}
-                      onClick={() => onSuggestionClick(suggestion)}
-                    >
-                      {suggestion.type === 'create'
-                        ? formatCreateText(suggestion.value)
-                        : suggestion.value}
-                    </SuggestionItem>
-                  ))}
-                </SuggestionList>
-              </div>
+              <Portal key={key}>
+                <div
+                  style={{
+                    willChange: 'transform',
+                    transform: `translate3d(${overlayPosition.left}px, ${
+                      overlayPosition.top
+                    }px, 0px)`,
+                  }}
+                >
+                  <SuggestionList ref={suggestionRef} style={props}>
+                    {filteredSuggestions.map((suggestion, index) => (
+                      <SuggestionItem
+                        key={suggestion.value}
+                        active={index === activeIndex}
+                        onClick={() => onSuggestionClick(suggestion)}
+                      >
+                        {suggestion.type === 'create'
+                          ? formatCreateText(suggestion.value)
+                          : suggestion.value}
+                      </SuggestionItem>
+                    ))}
+                  </SuggestionList>
+                </div>
+              </Portal>
             )
         )}
-      </Portal>
+      </>
     );
   }
 );

@@ -58,7 +58,6 @@ export interface TriggerProps {
   onVisibleChange?: (visible: boolean) => void;
   trigger?: 'hover' | 'click';
   animation: 'slide' | 'scale';
-  appendFor?: string;
   offset: number;
   defaultVisible?: boolean;
   visible?: boolean;
@@ -386,14 +385,12 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
   };
 
   render() {
-    const { appendFor, zIndex } = this.props;
+    const { zIndex } = this.props;
 
     return (
       <>
         {this.renderChildren()}
-        <Portal appendFor={appendFor} zIndex={zIndex}>
-          {this.renderPopup()}
-        </Portal>
+        <Portal zIndex={zIndex}>{this.renderPopup()}</Portal>
       </>
     );
   }
