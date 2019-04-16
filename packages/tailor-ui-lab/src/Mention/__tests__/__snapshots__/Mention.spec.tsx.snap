@@ -28,6 +28,8 @@ exports[`Mention should render correctly 1`] = `
   position: absolute;
   top: 0;
   background-color: transparent;
+  color: transparent;
+  caret-color: #373737;
 }
 
 .c2:hover {
@@ -72,24 +74,14 @@ exports[`Mention should render correctly 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  background-color: rgba(64,208,100,0.3);
+  color: #6B88c5;
   line-height: 1.3;
   -webkit-text-decoration: none;
   text-decoration: none;
 }
 
-.c0 .mention-highlight.start {
-  border-top-left-radius: 0.25rem;
-  border-bottom-left-radius: 0.25rem;
-}
-
-.c0 .mention-highlight.end {
-  border-top-right-radius: 0.25rem;
-  border-bottom-right-radius: 0.25rem;
-}
-
 .c0 .mention-highlight.invalid {
-  background-color: rgba(252,84,117,0.3);
+  color: #fc5475;
 }
 
 .c1 {
@@ -113,7 +105,7 @@ exports[`Mention should render correctly 1`] = `
   transition: all 200ms ease 0s;
   overflow-y: auto;
   border-color: transparent;
-  color: transparent;
+  color: #373737;
   word-break: break-word;
   white-space: pre-wrap;
   -webkit-transition: none;
