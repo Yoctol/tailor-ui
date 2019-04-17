@@ -114,11 +114,17 @@ const Positioner: FunctionComponent<PositionerProps> = ({
       viewportOffset: bodyOffset,
     });
 
-    setState({
-      left: rect.left,
-      top: rect.top,
-      transformOrigin,
-    });
+    if (
+      state.left !== rect.left ||
+      state.top !== rect.left ||
+      state.transformOrigin !== transformOrigin
+    ) {
+      setState({
+        left: rect.left,
+        top: rect.top,
+        transformOrigin,
+      });
+    }
 
     laf.current = requestAnimationFrame(() => {
       update(height, width);
@@ -133,7 +139,6 @@ const Positioner: FunctionComponent<PositionerProps> = ({
   }, [visible]);
 
   const transitions = useTransition(visible, null, {
-    unique: true,
     from: {
       opacity: 0,
       transform: 'scale(0.9)',
@@ -145,6 +150,7 @@ const Positioner: FunctionComponent<PositionerProps> = ({
     leave: {
       opacity: 0,
       transform: 'scale(1)',
+      pointerEvents: 'none',
     },
     onDestroyed: isDestroyed => {
       if (isDestroyed) {

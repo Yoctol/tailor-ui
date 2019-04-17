@@ -17,7 +17,9 @@ const areEqual = (
 ) =>
   prevProps.top === nextProps.top &&
   prevProps.left === nextProps.left &&
-  prevProps.transformOrigin === nextProps.transformOrigin;
+  prevProps.transformOrigin === nextProps.transformOrigin &&
+  prevProps.positioner === nextProps.positioner &&
+  prevProps.positionerRef === nextProps.positionerRef;
 
 const PositionWrapper: FunctionComponent<PositionWrapperProps> = memo(
   ({ left, top, transformOrigin, style, positioner, positionerRef }) => (

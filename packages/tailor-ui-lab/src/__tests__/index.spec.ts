@@ -1,4 +1,4 @@
-import { Mention, Popconfirm, Popover, Tabs, Tooltip } from '..';
+import { Mention, Popconfirm, Popover, Select, Tabs, Tooltip } from '..';
 
 describe('index', () => {
   it('should export all components', () => {
@@ -7,5 +7,6 @@ describe('index', () => {
     expect(Popover).toBeDefined();
     expect(Tabs).toBeDefined();
     expect(Tooltip).toBeDefined();
+    expect(Select).toBeDefined();
   });
 });
