@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0](https://github.com/Yoctol/tailor-ui/compare/@tailor-ui/lab@0.2.6...@tailor-ui/lab@0.3.0) (2019-04-19)
+
+### Features
+
+- **select:** implement new Select ([c80f5fa](https://github.com/Yoctol/tailor-ui/commit/c80f5fa))
+
 ## [0.2.6](https://github.com/Yoctol/tailor-ui/compare/@tailor-ui/lab@0.2.5...@tailor-ui/lab@0.2.6) (2019-04-12)
 
 **Note:** Version bump only for package @tailor-ui/lab
