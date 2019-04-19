@@ -1,16 +1,13 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
 import commonjs from 'rollup-plugin-commonjs';
 
-const input = 'lib/index.js';
-const name = '@tailor-ui/utils';
-
 export default {
-  input,
+  input: 'lib/index.js',
   output: [
     {
       file: 'lib/index.cjs.js',
       format: 'umd',
-      name,
+      name: '@tailor-ui/utils',
       sourcemap: false,
     },
   ],
