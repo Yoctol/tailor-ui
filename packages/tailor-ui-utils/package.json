@@ -16,16 +16,13 @@
     "url": "git+https://github.com/Yoctol/tailor-ui.git"
   },
   "scripts": {
-    "prebuild": "rimraf lib",
-    "build": "yarn build:types && yarn build:cjs && yarn build:esm",
-    "build:types": "tsc --build",
+    "build": "yarn build:esm && yarn build:cjs",
     "build:cjs": "rollup -c scripts/rollup.config.js",
     "build:esm": "cross-env NODE_ENV=production babel --config-file ../../babel.config.js ./src --out-dir ./lib --extensions '.ts' --ignore **/__tests__,**/**/__tests__",
     "test": "yarn lint && yarn testonly",
     "testonly": "jest",
     "testonly:cov": "jest --coverage --runInBand",
-    "testonly:watch": "jest --watch",
-    "type-check:watch": "yarn build:types -- --watch"
+    "testonly:watch": "jest --watch"
   },
   "bugs": {
     "url": "https://github.com/Yoctol/tailor-ui/issues"

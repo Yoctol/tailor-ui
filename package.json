@@ -16,8 +16,8 @@
   ],
   "scripts": {
     "bootstrap": "lerna bootstrap",
-    "build": "lerna run build",
-    "clean": "yarn clean:lib && yarn clean:modules",
+    "build": "yarn type-check && lerna run build",
+    "clean": "yarn clean:typeinfo && yarn clean:lib && yarn clean:modules",
     "clean:lib": "git clean -dfqX -- **/lib/",
     "clean:modules": "git clean -dfqX -- ./node_modules **/node_modules/",
     "clean:typeinfo": "git clean -dfqX -- **/*.tsbuildinfo",
