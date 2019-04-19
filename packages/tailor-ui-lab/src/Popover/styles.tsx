@@ -11,7 +11,6 @@ import {
 export type StyledPopoverProps = SpaceProps & MinWidthProps & MinHeightProps;
 
 export const StyledPopover = styled.div<StyledPopoverProps>`
-  overflow: hidden;
   border: ${p => p.theme.borders.base};
   border-radius: ${p => p.theme.radii.lg};
   border-color: ${p => p.theme.colors.gray300};
