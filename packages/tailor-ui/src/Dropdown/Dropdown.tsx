@@ -61,7 +61,6 @@ const Dropdown: FunctionComponent<DropdownProps> & {
 }) => (
   <Trigger
     trigger="click"
-    appendFor="dropdown"
     placement={placement}
     onVisibleChange={onVisibleChange}
     autoTransferPlacement={autoTransferPlacement}

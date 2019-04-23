@@ -9,6 +9,7 @@ import {
 } from 'react-spring';
 
 import Backdrop from '../Backdrop';
+import Portal from '../Portal';
 import useKeydown, { ESC_KEY_CODE } from '../utils/useKeydown';
 import { Types } from '../utils/getTypeIcon';
 
@@ -94,10 +95,12 @@ const BaseModal: FunctionComponent<BaseModalProps> = ({
     from: {
       opacity: 0,
       transform: 'translate(-50%, -50%) scale(0.9)',
+      pointerEvents: 'auto',
     },
     enter: {
       opacity: 1,
       transform: 'translate(-50%, -50%) scale(1)',
+      pointerEvents: 'auto',
     },
     leave: {
       opacity: 0,
@@ -138,17 +141,19 @@ const BaseModal: FunctionComponent<BaseModalProps> = ({
       {transitions.map(
         ({ item, key, props }) =>
           item && (
-            <AnimatedModalWrapper key={key} style={props}>
-              {statusBar && (
-                <AnimatedModalStatusBar
-                  statusBar={statusBar}
-                  style={statusProps}
-                />
-              )}
-              <ModalContent size={size} {...otherProps}>
-                {children}
-              </ModalContent>
-            </AnimatedModalWrapper>
+            <Portal key={key}>
+              <AnimatedModalWrapper style={props}>
+                {statusBar && (
+                  <AnimatedModalStatusBar
+                    statusBar={statusBar}
+                    style={statusProps}
+                  />
+                )}
+                <ModalContent size={size} {...otherProps}>
+                  {children}
+                </ModalContent>
+              </AnimatedModalWrapper>
+            </Portal>
           )
       )}
     </>

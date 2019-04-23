@@ -173,15 +173,14 @@ const Positioner: FunctionComponent<PositionerProps> = ({
   return (
     <>
       {children instanceof Function ? children({ ref: targetRef }) : children}
-      <Portal>
-        {transitions.map(({ key, item, props }) => {
-          if (!item) {
-            return null;
-          }
+      {transitions.map(({ key, item, props }) => {
+        if (!item) {
+          return null;
+        }
 
-          return (
+        return (
+          <Portal key={key}>
             <PositionerWrapper
-              key={key}
               left={state.left}
               top={state.top}
               transformOrigin={state.transformOrigin}
@@ -189,9 +188,9 @@ const Positioner: FunctionComponent<PositionerProps> = ({
               positioner={positioner}
               positionerRef={positionerRef}
             />
-          );
-        })}
-      </Portal>
+          </Portal>
+        );
+      })}
     </>
   );
 };

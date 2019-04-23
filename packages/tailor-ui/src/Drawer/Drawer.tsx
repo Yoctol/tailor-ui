@@ -1,4 +1,4 @@
-import React, { Fragment, FunctionComponent, ReactNode } from 'react';
+import React, { FunctionComponent, ReactNode } from 'react';
 import styled, { css } from 'styled-components';
 import { animated, config, useTransition } from 'react-spring';
 
@@ -133,19 +133,19 @@ const Drawer: FunctionComponent<DrawerProps> = ({
   });
 
   return (
-    <Portal appendFor="drawer">
+    <>
+      <Backdrop
+        visible={visible}
+        onClick={() => {
+          if (maskClosable) {
+            onClose();
+          }
+        }}
+      />
       {transition.map(
         ({ item, key, props }) =>
           item && (
-            <Fragment key={key}>
-              <Backdrop
-                visible={visible}
-                onClick={() => {
-                  if (maskClosable) {
-                    onClose();
-                  }
-                }}
-              />
+            <Portal key={key}>
               <animated.div
                 style={{
                   transform:
@@ -167,10 +167,10 @@ const Drawer: FunctionComponent<DrawerProps> = ({
                   {footer && <FooterWrapper>{footer}</FooterWrapper>}
                 </DrawerWrapper>
               </animated.div>
-            </Fragment>
+            </Portal>
           )
       )}
-    </Portal>
+    </>
   );
 };
 

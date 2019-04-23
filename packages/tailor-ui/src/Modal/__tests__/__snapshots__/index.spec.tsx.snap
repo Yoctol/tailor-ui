@@ -297,53 +297,61 @@ exports[`Modal should render correctly 1`] = `
 <body>
   <div />
   <div
-    style="position: fixed; top: 0px; left: 0px; z-index: 9999;"
+    portal-container=""
   >
     <div
-      class="c0"
-      style="opacity: 0;"
-    />
-    <div
-      class="c1"
-      style="opacity: 0; transform: translate(-50%, -50%) scale(0.9);"
+      style="position: fixed; top: 0px; left: 0px; z-index: 9999;"
     >
       <div
-        class="c2"
+        class="c0"
+        style="opacity: 0;"
+      />
+    </div>
+    <div
+      style="position: fixed; top: 0px; left: 0px; z-index: 9999;"
+    >
+      <div
+        class="c1"
+        style="opacity: 0; transform: translate(-50%, -50%) scale(0.9); pointer-events: auto;"
       >
         <div
-          class="c3"
+          class="c2"
         >
           <div
-            class="c4"
-          >
-            <h3
-              class="c5 c6"
-            />
-          </div>
-        </div>
-        <div
-          class="c7"
-        />
-        <div
-          class="c8"
-        >
-          <div
-            class="c9"
-            width="100%"
+            class="c3"
           >
             <div
-              class="c10"
+              class="c4"
             >
-              <button
-                class="c11"
+              <h3
+                class="c5 c6"
+              />
+            </div>
+          </div>
+          <div
+            class="c7"
+          />
+          <div
+            class="c8"
+          >
+            <div
+              class="c9"
+              width="100%"
+            >
+              <div
+                class="c10"
               >
-                Cancel
-              </button>
-              <button
-                class="c12"
-              >
-                Confirm
-              </button>
+                <button
+                  class="c11"
+                >
+                  Cancel
+                </button>
+                <button
+                  class="c12"
+                >
+                  Confirm
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -356,7 +364,7 @@ exports[`Modal should render correctly 1`] = `
 exports[`Modal should render correctly with lg size 1`] = `
 <body>
   <div
-    style="position: fixed; top: 0px; left: 0px; z-index: 9999;"
+    portal-container=""
   >
     .c0 {
   position: fixed;
@@ -369,9 +377,13 @@ exports[`Modal should render correctly with lg size 1`] = `
 }
 
 <div
-      class="c0"
-      style="opacity: 0;"
-    />
+      style="position: fixed; top: 0px; left: 0px; z-index: 9999;"
+    >
+      <div
+        class="c0"
+        style="opacity: 0;"
+      />
+    </div>
     .c9 {
   box-sizing: border-box;
   margin-left: auto;
@@ -656,46 +668,50 @@ exports[`Modal should render correctly with lg size 1`] = `
 }
 
 <div
-      class="c0"
-      style="opacity: 0; transform: translate(-50%, -50%) scale(0.9);"
+      style="position: fixed; top: 0px; left: 0px; z-index: 9999;"
     >
       <div
-        class="c1"
+        class="c0"
+        style="opacity: 0; transform: translate(-50%, -50%) scale(0.9); pointer-events: auto;"
       >
         <div
-          class="c2"
+          class="c1"
         >
           <div
-            class="c3"
-          >
-            <h3
-              class="c4 c5"
-            />
-          </div>
-        </div>
-        <div
-          class="c6"
-        />
-        <div
-          class="c7"
-        >
-          <div
-            class="c8"
-            width="100%"
+            class="c2"
           >
             <div
-              class="c9"
+              class="c3"
             >
-              <button
-                class="c10"
+              <h3
+                class="c4 c5"
+              />
+            </div>
+          </div>
+          <div
+            class="c6"
+          />
+          <div
+            class="c7"
+          >
+            <div
+              class="c8"
+              width="100%"
+            >
+              <div
+                class="c9"
               >
-                Cancel
-              </button>
-              <button
-                class="c11"
-              >
-                Confirm
-              </button>
+                <button
+                  class="c10"
+                >
+                  Cancel
+                </button>
+                <button
+                  class="c11"
+                >
+                  Confirm
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -709,7 +725,7 @@ exports[`Modal should render correctly with lg size 1`] = `
 exports[`Modal should render with props closable 1`] = `
 <body>
   <div
-    style="position: fixed; top: 0px; left: 0px; z-index: 9999;"
+    portal-container=""
   >
     .c0 {
   position: fixed;
@@ -722,9 +738,13 @@ exports[`Modal should render with props closable 1`] = `
 }
 
 <div
-      class="c0"
-      style="opacity: 0;"
-    />
+      style="position: fixed; top: 0px; left: 0px; z-index: 9999;"
+    >
+      <div
+        class="c0"
+        style="opacity: 0;"
+      />
+    </div>
     .c13 {
   box-sizing: border-box;
   margin-left: auto;
@@ -1129,74 +1149,78 @@ exports[`Modal should render with props closable 1`] = `
 }
 
 <div
-      class="c0"
-      style="opacity: 0; transform: translate(-50%, -50%) scale(0.9);"
+      style="position: fixed; top: 0px; left: 0px; z-index: 9999;"
     >
       <div
-        class="c1"
+        class="c0"
+        style="opacity: 0; transform: translate(-50%, -50%) scale(0.9); pointer-events: auto;"
       >
         <div
-          class="c2"
+          class="c1"
         >
           <div
-            class="c3"
-          >
-            <h3
-              class="c4 c5"
-            />
-          </div>
-          <div
-            class="c6"
-          >
-            <button
-              class="c7"
-            >
-              <i
-                class="c8 c9"
-                cursor="default"
-                size="24"
-                style="pointer-events: none;"
-              >
-                <svg
-                  fill="currentColor"
-                  height="1em"
-                  stroke="currentColor"
-                  stroke-width="0"
-                  viewBox="0 0 24 24"
-                  width="1em"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
-                  />
-                </svg>
-              </i>
-            </button>
-          </div>
-        </div>
-        <div
-          class="c10"
-        />
-        <div
-          class="c11"
-        >
-          <div
-            class="c12"
-            width="100%"
+            class="c2"
           >
             <div
-              class="c13"
+              class="c3"
+            >
+              <h3
+                class="c4 c5"
+              />
+            </div>
+            <div
+              class="c6"
             >
               <button
-                class="c14"
+                class="c7"
               >
-                Cancel
+                <i
+                  class="c8 c9"
+                  cursor="default"
+                  size="24"
+                  style="pointer-events: none;"
+                >
+                  <svg
+                    fill="currentColor"
+                    height="1em"
+                    stroke="currentColor"
+                    stroke-width="0"
+                    viewBox="0 0 24 24"
+                    width="1em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+                    />
+                  </svg>
+                </i>
               </button>
-              <button
-                class="c15"
+            </div>
+          </div>
+          <div
+            class="c10"
+          />
+          <div
+            class="c11"
+          >
+            <div
+              class="c12"
+              width="100%"
+            >
+              <div
+                class="c13"
               >
-                Confirm
-              </button>
+                <button
+                  class="c14"
+                >
+                  Cancel
+                </button>
+                <button
+                  class="c15"
+                >
+                  Confirm
+                </button>
+              </div>
             </div>
           </div>
         </div>

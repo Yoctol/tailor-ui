@@ -5,7 +5,6 @@ import React, {
   useState,
 } from 'react';
 
-import Portal from '../Portal';
 import getTypeIcon, { Types } from '../utils/getTypeIcon';
 import { LocaleType } from '../UIProvider/LocaleContext';
 
@@ -144,34 +143,32 @@ const EffectModal: FunctionComponent<EffectModalProps> = ({
   } = modalOptions;
 
   return (
-    <Portal appendFor="effect-modal">
-      <BaseModal
-        cancelable={cancelable}
-        statusBar={type !== 'confirm' ? type : null}
-        visible={visible}
+    <BaseModal
+      cancelable={cancelable}
+      statusBar={type !== 'confirm' ? type : null}
+      visible={visible}
+      onCancel={onCancel}
+    >
+      <ModalHeader
+        icon={icon}
+        title={title}
+        closable={cancelable}
         onCancel={onCancel}
-      >
-        <ModalHeader
-          icon={icon}
-          title={title}
-          closable={cancelable}
+      />
+      <ModalContent>{content}</ModalContent>
+      <FooterWrapper>
+        <Footer
+          cancelable={cancelable}
+          cancelText={cancelText}
+          confirmText={confirmText}
           onCancel={onCancel}
+          onConfirm={onConfirm}
+          confirmButtonProps={{
+            variant: type === 'error' ? 'danger' : 'primary',
+          }}
         />
-        <ModalContent>{content}</ModalContent>
-        <FooterWrapper>
-          <Footer
-            cancelable={cancelable}
-            cancelText={cancelText}
-            confirmText={confirmText}
-            onCancel={onCancel}
-            onConfirm={onConfirm}
-            confirmButtonProps={{
-              variant: type === 'error' ? 'danger' : 'primary',
-            }}
-          />
-        </FooterWrapper>
-      </BaseModal>
-    </Portal>
+      </FooterWrapper>
+    </BaseModal>
   );
 };
 
