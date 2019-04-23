@@ -383,7 +383,7 @@ exports[`Popconfirm should render correctly 1`] = `
     portal-container=""
   >
     <div
-      style="position: fixed; top: 0px; left: 0px; z-index: 10000;"
+      style="position: fixed; top: 0px; left: 0px; z-index: 10;"
     >
       <div
         style="position: absolute; top: 0px; left: 0px; transform: translate3d(0px, 10px, 0px);"

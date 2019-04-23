@@ -61,7 +61,7 @@ export interface TriggerProps {
   offset: number;
   defaultVisible?: boolean;
   visible?: boolean;
-  zIndex?: string;
+  zIndex?: number;
   mouseEnterDelay?: number;
   mouseLeaveDelay?: number;
   autoTransferPlacement: boolean;

@@ -10,19 +10,19 @@ const canUseDom = () =>
     window.document.createElement
   );
 
-const createMountNode = (zIndex: string) => {
+const createMountNode = (zIndex: number) => {
   const element = document.createElement('div');
 
   element.style.position = 'fixed';
   element.style.top = '0';
   element.style.left = '0';
-  element.style.zIndex = zIndex;
+  element.style.zIndex = String(zIndex);
 
   return element;
 };
 
 interface PortalProps {
-  zIndex?: string;
+  zIndex?: number;
 }
 
 class Portal extends Component<PortalProps> {
@@ -42,7 +42,7 @@ class Portal extends Component<PortalProps> {
       document.body.append(portalContainer);
     }
 
-    this.element = createMountNode(props.zIndex || '9999');
+    this.element = createMountNode(props.zIndex || 5);
     portalContainer.append(this.element);
   }
 

@@ -1,4 +1,9 @@
-import React, { FunctionComponent, RefObject, memo } from 'react';
+import React, {
+  CSSProperties,
+  FunctionComponent,
+  RefObject,
+  memo,
+} from 'react';
 
 import { RenderPropsPositioner } from './Positioner';
 
@@ -6,7 +11,7 @@ interface PositionWrapperProps {
   left: number | null;
   top: number | null;
   transformOrigin: string | null;
-  style: any;
+  style: CSSProperties;
   positioner: RenderPropsPositioner;
   positionerRef: RefObject<HTMLElement>;
 }
