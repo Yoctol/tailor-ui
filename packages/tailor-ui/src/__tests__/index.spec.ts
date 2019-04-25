@@ -15,7 +15,6 @@ import {
   Icon,
   Input,
   Label,
-  Mention,
   Menu,
   Modal,
   Popconfirm,
@@ -59,7 +58,6 @@ describe('index', () => {
     expect(Input).toBeDefined();
     expect(Label).toBeDefined();
     expect(Menu).toBeDefined();
-    expect(Mention).toBeDefined();
     expect(message).toBeDefined();
     expect(Modal).toBeDefined();
     expect(Popconfirm).toBeDefined();
