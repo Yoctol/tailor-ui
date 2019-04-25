@@ -135,7 +135,6 @@ const Select: FunctionComponent<SelectProps> = ({
         getToggleButtonProps,
         highlightedIndex,
         selectedItem,
-        selectItemAtIndex,
         clearSelection,
       }) => (
         <SelectWrapper width={width} {...getRootProps()}>
@@ -168,7 +167,6 @@ const Select: FunctionComponent<SelectProps> = ({
                 menu={menu}
                 highlightedIndex={highlightedIndex}
                 selectedItem={selectedItem}
-                selectItemAtIndex={selectItemAtIndex}
                 noOptionsMessage={noOptionsMessage}
                 formatCreateLabel={formatCreateLabel}
                 isValidNewOption={isValidNewOption}

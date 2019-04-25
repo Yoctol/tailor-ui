@@ -44,7 +44,6 @@ interface SelectOptionsProps {
   menu?: ReactNode;
   highlightedIndex: number | null;
   selectedItem: null | Option;
-  selectItemAtIndex: (index: number) => void;
   noOptionsMessage?: () => ReactNode;
   formatCreateLabel?: (createText: string) => ReactNode;
   isValidNewOption?: (value: string) => boolean;
@@ -62,7 +61,6 @@ const SelectOptions: FunctionComponent<SelectOptionsProps> = ({
   menu,
   highlightedIndex,
   selectedItem,
-  selectItemAtIndex,
   noOptionsMessage = () => <DefaultNoOptionsMessage />,
   formatCreateLabel = value => `Create new option: ${value}`,
   isValidNewOption = value => value.trim() !== '',
@@ -115,7 +113,7 @@ const SelectOptions: FunctionComponent<SelectOptionsProps> = ({
         renderItem={({ index, style }) => {
           const option = items[index];
           const optionString = itemToString(option);
-          const hovered = highlightedIndex === index;
+          const hovered = visible && highlightedIndex === index;
           const active = selectedItem
             ? itemToString(selectedItem) === optionString
             : false;
@@ -130,9 +128,6 @@ const SelectOptions: FunctionComponent<SelectOptionsProps> = ({
               active={active}
               hovered={hovered}
               style={style}
-              onMouseUp={() => {
-                selectItemAtIndex(index);
-              }}
               {...getItemProps({
                 index,
                 item: option,
