@@ -1,5 +1,6 @@
-import { preventBodyScroll } from '@tailor-ui/utils';
 import { useEffect } from 'react';
+
+import { preventBodyScroll } from '@tailor-ui/utils';
 
 const usePreventBodyScroll = (preventScroll: boolean) => {
   useEffect(() => {
