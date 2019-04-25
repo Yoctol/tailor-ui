@@ -35,8 +35,6 @@ export { default as Label } from './Form/Label';
 export * from './Form/Label';
 export { default as Menu } from './Menu';
 export * from './Menu';
-export { default as Mention } from './Mention';
-export * from './Mention';
 export { default as message } from './message';
 export * from './message';
 export { default as Modal } from './Modal';
