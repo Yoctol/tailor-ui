@@ -2,16 +2,11 @@ import React, {
   CSSProperties,
   FunctionComponent,
   ReactNode,
-  RefObject,
-  cloneElement,
   forwardRef,
-  isValidElement,
   memo,
   useRef,
-  useState,
 } from 'react';
 import { animated } from 'react-spring';
-import { mergeEventProps } from '@tailor-ui/utils';
 
 import {
   Heading,
@@ -21,6 +16,9 @@ import {
   useClickOutside,
   useKeydown,
 } from 'tailor-ui';
+
+import useRenderChildren from '../hooks/useRenderChildren';
+import useToggleTrigger from '../hooks/useToggleTrigger';
 
 import { PopoverHeader, StyledPopover, StyledPopoverProps } from './styles';
 
@@ -96,43 +94,17 @@ const Popover: FunctionComponent<PopoverProps> = ({
 }) => {
   const childrenRefFromSelf = useRef(null);
   const popupRef = useRef(null);
-  const [visibleFromSelf, setVisibleFromSelf] = useState(defaultVisible);
 
-  const hasVisibleFromProps = typeof visibleFromProps !== 'undefined';
+  const { visible, handleClose, toggle } = useToggleTrigger({
+    visible: visibleFromProps,
+    defaultVisible,
+    onVisibleChange,
+  });
 
-  const visible = hasVisibleFromProps ? visibleFromProps : visibleFromSelf;
   const childrenRef =
     children && (children as any).ref
       ? (children as any).ref
       : childrenRefFromSelf;
-
-  const handleOpen = () => {
-    if (onVisibleChange) {
-      onVisibleChange(true);
-    }
-
-    if (!hasVisibleFromProps) {
-      setVisibleFromSelf(true);
-    }
-  };
-
-  const handleClose = () => {
-    if (onVisibleChange) {
-      onVisibleChange(false);
-    }
-
-    if (!hasVisibleFromProps) {
-      setVisibleFromSelf(false);
-    }
-  };
-
-  const toggle = () => {
-    if (visible) {
-      handleClose();
-    } else {
-      handleOpen();
-    }
-  };
 
   useClickOutside({
     listening: visible,
@@ -146,28 +118,13 @@ const Popover: FunctionComponent<PopoverProps> = ({
     onKeydown: handleClose,
   });
 
-  const renderChildren = ({ ref }: { ref: RefObject<HTMLElement> }) => {
-    if (children instanceof Function) {
-      return children({
-        ref,
-        bind: (props: any) =>
-          mergeEventProps(props, {
-            onClick: toggle,
-          }),
-      });
-    }
-
-    if (!isValidElement<any>(children)) {
-      return children;
-    }
-
-    return cloneElement(children, {
-      ref,
-      ...mergeEventProps(children.props, {
-        onClick: toggle,
-      }),
-    });
-  };
+  const renderChildren = useRenderChildren({
+    ref: childrenRef,
+    children,
+    mergeProps: {
+      onClick: toggle,
+    },
+  });
 
   return (
     <Positioner
