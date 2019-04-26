@@ -4,9 +4,11 @@ import { animated, config, useTransition } from 'react-spring';
 
 import Backdrop from '../Backdrop';
 import Portal from '../Portal';
+import Stack from '../Stack';
 import useKeydown, { ESC_KEY_CODE } from '../utils/useKeydown';
 import usePreventBodyScroll from '../utils/usePreventBodyScroll';
 import { FooterWrapper, ModalContent, ModalHeader } from '../Modal';
+import { StackingOrder } from '../constants';
 
 type Placement = 'top' | 'right' | 'bottom' | 'left';
 
@@ -133,44 +135,44 @@ const Drawer: FunctionComponent<DrawerProps> = ({
   });
 
   return (
-    <>
-      <Backdrop
-        visible={visible}
-        onClick={() => {
-          if (maskClosable) {
-            onClose();
-          }
-        }}
-      />
-      {transition.map(
-        ({ item, key, props }) =>
-          item && (
-            <Portal key={key}>
-              <animated.div
-                style={{
-                  transform:
-                    props.offset &&
-                    props.offset.interpolate(
-                      offset => `${transformAxis}(${offset})`
-                    ),
-                }}
-              >
-                <DrawerWrapper placement={placement} breadth={breadth}>
-                  {title && (
-                    <ModalHeader
-                      title={title}
-                      onCancel={onClose}
-                      closable={closable}
-                    />
-                  )}
-                  <ModalContent {...otherProps}>{children}</ModalContent>
-                  {footer && <FooterWrapper>{footer}</FooterWrapper>}
-                </DrawerWrapper>
-              </animated.div>
-            </Portal>
-          )
+    <Stack defaultOrder={StackingOrder.OVERLAY}>
+      {stackingOrder => (
+        <>
+          <Backdrop
+            visible={visible}
+            onClick={() => maskClosable && onClose()}
+          />
+          {transition.map(
+            ({ item, key, props }) =>
+              item && (
+                <Portal key={key} zIndex={stackingOrder}>
+                  <animated.div
+                    style={{
+                      transform:
+                        props.offset &&
+                        props.offset.interpolate(
+                          offset => `${transformAxis}(${offset})`
+                        ),
+                    }}
+                  >
+                    <DrawerWrapper placement={placement} breadth={breadth}>
+                      {title && (
+                        <ModalHeader
+                          title={title}
+                          onCancel={onClose}
+                          closable={closable}
+                        />
+                      )}
+                      <ModalContent {...otherProps}>{children}</ModalContent>
+                      {footer && <FooterWrapper>{footer}</FooterWrapper>}
+                    </DrawerWrapper>
+                  </animated.div>
+                </Portal>
+              )
+          )}
+        </>
       )}
-    </>
+    </Stack>
   );
 };
 

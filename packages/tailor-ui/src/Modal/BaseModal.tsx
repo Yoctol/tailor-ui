@@ -10,7 +10,9 @@ import {
 
 import Backdrop from '../Backdrop';
 import Portal from '../Portal';
+import Stack from '../Stack';
 import useKeydown, { ESC_KEY_CODE } from '../utils/useKeydown';
+import { StackingOrder } from '../constants';
 import { Types } from '../utils/getTypeIcon';
 
 type Size = 'md' | 'lg';
@@ -129,34 +131,34 @@ const BaseModal: FunctionComponent<BaseModalProps> = ({
   ]);
 
   return (
-    <>
-      <Backdrop
-        visible={visible}
-        onClick={() => {
-          if (cancelable) {
-            onCancel();
-          }
-        }}
-      />
-      {transitions.map(
-        ({ item, key, props }) =>
-          item && (
-            <Portal key={key}>
-              <AnimatedModalWrapper style={props}>
-                {statusBar && (
-                  <AnimatedModalStatusBar
-                    statusBar={statusBar}
-                    style={statusProps}
-                  />
-                )}
-                <ModalContent size={size} {...otherProps}>
-                  {children}
-                </ModalContent>
-              </AnimatedModalWrapper>
-            </Portal>
-          )
+    <Stack defaultOrder={StackingOrder.OVERLAY}>
+      {stackingOrder => (
+        <>
+          <Backdrop
+            visible={visible}
+            onClick={() => cancelable && onCancel()}
+          />
+          {transitions.map(
+            ({ item, key, props }) =>
+              item && (
+                <Portal key={key} zIndex={stackingOrder}>
+                  <AnimatedModalWrapper style={props}>
+                    {statusBar && (
+                      <AnimatedModalStatusBar
+                        statusBar={statusBar}
+                        style={statusProps}
+                      />
+                    )}
+                    <ModalContent size={size} {...otherProps}>
+                      {children}
+                    </ModalContent>
+                  </AnimatedModalWrapper>
+                </Portal>
+              )
+          )}
+        </>
       )}
-    </>
+    </Stack>
   );
 };
 

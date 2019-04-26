@@ -10,7 +10,8 @@ import React, {
 import { useTransition } from 'react-spring';
 
 import Portal from '../Portal';
-import { Position, Positions } from '../constants';
+import Stack from '../Stack';
+import { Position, Positions, StackingOrder } from '../constants';
 
 import PositionerWrapper from './PositionerWrapper';
 import getPosition from './getPosition';
@@ -171,27 +172,33 @@ const Positioner: FunctionComponent<PositionerProps> = ({
   });
 
   return (
-    <>
-      {children instanceof Function ? children({ ref: targetRef }) : children}
-      {transitions.map(({ key, item, props }) => {
-        if (!item) {
-          return null;
-        }
+    <Stack defaultOrder={StackingOrder.POSITIONER}>
+      {stackingOrder => (
+        <>
+          {children instanceof Function
+            ? children({ ref: targetRef })
+            : children}
+          {transitions.map(({ key, item, props }) => {
+            if (!item) {
+              return null;
+            }
 
-        return (
-          <Portal key={key}>
-            <PositionerWrapper
-              left={state.left}
-              top={state.top}
-              transformOrigin={state.transformOrigin}
-              style={props}
-              positioner={positioner}
-              positionerRef={positionerRef}
-            />
-          </Portal>
-        );
-      })}
-    </>
+            return (
+              <Portal key={key} zIndex={stackingOrder}>
+                <PositionerWrapper
+                  left={state.left}
+                  top={state.top}
+                  transformOrigin={state.transformOrigin}
+                  style={props}
+                  positioner={positioner}
+                  positionerRef={positionerRef}
+                />
+              </Portal>
+            );
+          })}
+        </>
+      )}
+    </Stack>
   );
 };
 

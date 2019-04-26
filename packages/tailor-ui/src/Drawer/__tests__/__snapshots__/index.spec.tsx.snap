@@ -54,7 +54,7 @@ exports[`Drawer should render correctly 1`] = `
     portal-container=""
   >
     <div
-      style="position: fixed; top: 0px; left: 0px; z-index: 9999;"
+      style="position: fixed; top: 0px; left: 0px; z-index: 5;"
     >
       <div
         class="c0"
@@ -62,7 +62,7 @@ exports[`Drawer should render correctly 1`] = `
       />
     </div>
     <div
-      style="position: fixed; top: 0px; left: 0px; z-index: 9999;"
+      style="position: fixed; top: 0px; left: 0px; z-index: 20;"
     >
       <div
         style="transform: translateX(400px);"
@@ -98,7 +98,7 @@ exports[`Drawer should render with props closable 1`] = `
 }
 
 <div
-      style="position: fixed; top: 0px; left: 0px; z-index: 9999;"
+      style="position: fixed; top: 0px; left: 0px; z-index: 5;"
     >
       <div
         class="c0"
@@ -141,7 +141,7 @@ exports[`Drawer should render with props closable 1`] = `
 }
 
 <div
-      style="position: fixed; top: 0px; left: 0px; z-index: 9999;"
+      style="position: fixed; top: 0px; left: 0px; z-index: 20;"
     >
       <div
         style="transform: translateX(400px);"
