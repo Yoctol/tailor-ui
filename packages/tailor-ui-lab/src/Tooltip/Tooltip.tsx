@@ -2,19 +2,16 @@ import React, {
   CSSProperties,
   FunctionComponent,
   ReactNode,
-  RefObject,
-  cloneElement,
   forwardRef,
-  isValidElement,
   memo,
   useRef,
-  useState,
 } from 'react';
-import debounce from 'lodash.debounce';
 import { animated } from 'react-spring';
-import { mergeEventProps } from '@tailor-ui/utils';
 
 import { Position, Positioner, Positions } from 'tailor-ui';
+
+import useHoverTrigger from '../hooks/useHoverTrigger';
+import useRenderChildren from '../hooks/useRenderChildren';
 
 import { StyledTooltip, StyledTooltipProps } from './styles';
 
@@ -89,88 +86,23 @@ const Tooltip: FunctionComponent<TooltipProps> = ({
 }) => {
   const childrenRef = useRef(null);
   const popupRef = useRef(null);
-  const cancelEnterDebounce = useRef<null | (() => void)>();
-  const cancelLeaveDebounce = useRef<null | (() => void)>();
-  const [visibleFromSelf, setVisibleFromSelf] = useState(defaultVisible);
 
-  const hasVisibleFromProps = typeof visibleFromProps !== 'undefined';
+  const { visible, handleOpen, handleClose } = useHoverTrigger({
+    visible: visibleFromProps,
+    defaultVisible,
+    onVisibleChange,
+    mouseEnterDelay,
+    mouseLeaveDelay,
+  });
 
-  const visible = hasVisibleFromProps ? visibleFromProps : visibleFromSelf;
-
-  const open = () => {
-    if (onVisibleChange) {
-      onVisibleChange(true);
-    }
-
-    if (!hasVisibleFromProps) {
-      setVisibleFromSelf(true);
-    }
-  };
-
-  const close = () => {
-    if (onVisibleChange) {
-      onVisibleChange(false);
-    }
-
-    if (!hasVisibleFromProps) {
-      setVisibleFromSelf(false);
-    }
-  };
-
-  const handleOpen = () => {
-    if (cancelLeaveDebounce.current) {
-      cancelLeaveDebounce.current();
-      cancelLeaveDebounce.current = null;
-    }
-
-    if (mouseEnterDelay === 0) {
-      open();
-    } else {
-      const debounced = debounce(open, mouseEnterDelay);
-      debounced();
-      cancelEnterDebounce.current = debounced.cancel;
-    }
-  };
-
-  const handleClose = () => {
-    if (cancelEnterDebounce.current) {
-      cancelEnterDebounce.current();
-      cancelEnterDebounce.current = null;
-    }
-
-    if (mouseLeaveDelay === 0) {
-      close();
-    } else {
-      const debounced = debounce(close, mouseLeaveDelay);
-      debounced();
-      cancelLeaveDebounce.current = debounced.cancel;
-    }
-  };
-
-  const renderChildren = ({ ref }: { ref: RefObject<HTMLElement> }) => {
-    if (children instanceof Function) {
-      return children({
-        ref,
-        bind: (props: any) =>
-          mergeEventProps(props, {
-            onMouseEnter: handleOpen,
-            onMouseLeave: handleClose,
-          }),
-      });
-    }
-
-    if (!isValidElement<any>(children)) {
-      return children;
-    }
-
-    return cloneElement(children, {
-      ref,
-      ...mergeEventProps(children.props, {
-        onMouseEnter: handleOpen,
-        onMouseLeave: handleClose,
-      }),
-    });
-  };
+  const renderChildren = useRenderChildren({
+    ref: childrenRef,
+    children,
+    mergeProps: {
+      onMouseEnter: handleOpen,
+      onMouseLeave: handleClose,
+    },
+  });
 
   return (
     <Positioner
