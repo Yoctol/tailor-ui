@@ -2,9 +2,12 @@ import React, {
   CSSProperties,
   FunctionComponent,
   ReactNode,
+  createContext,
   forwardRef,
   memo,
+  useContext,
   useRef,
+  useState,
 } from 'react';
 import { animated } from 'react-spring';
 
@@ -82,6 +85,12 @@ export type PopoverProps = StyledPopoverProps & {
   content: ReactNode | ((handleClose: () => void) => ReactNode);
 };
 
+const ClickOutsideContext = createContext<{
+  setHasChild: (hasChild: boolean) => void;
+}>({
+  setHasChild: () => {},
+});
+
 const Popover: FunctionComponent<PopoverProps> = ({
   children,
   position = Position.TOP,
@@ -95,10 +104,20 @@ const Popover: FunctionComponent<PopoverProps> = ({
   const childrenRefFromSelf = useRef(null);
   const popupRef = useRef(null);
 
+  const { setHasChild: setHasChildFromContext } = useContext(
+    ClickOutsideContext
+  );
+  const [hasChild, setHasChild] = useState(false);
+
   const { visible, handleClose, toggle } = useToggleTrigger({
     visible: visibleFromProps,
     defaultVisible,
-    onVisibleChange,
+    onVisibleChange: newVisible => {
+      setHasChildFromContext(newVisible);
+      if (onVisibleChange) {
+        onVisibleChange(newVisible);
+      }
+    },
   });
 
   const childrenRef =
@@ -107,7 +126,7 @@ const Popover: FunctionComponent<PopoverProps> = ({
       : childrenRefFromSelf;
 
   useClickOutside({
-    listening: visible,
+    listening: hasChild ? false : visible,
     refs: [childrenRef, popupRef],
     onClickOutside: handleClose,
   });
@@ -127,24 +146,26 @@ const Popover: FunctionComponent<PopoverProps> = ({
   });
 
   return (
-    <Positioner
-      positionerRef={popupRef}
-      targetRef={childrenRef}
-      visible={visible}
-      position={position}
-      positioner={({ style }) => (
-        <PopoverPopup
-          ref={popupRef}
-          style={style}
-          title={title}
-          content={content}
-          handleClose={handleClose}
-          {...otherProps}
-        />
-      )}
-    >
-      {renderChildren}
-    </Positioner>
+    <ClickOutsideContext.Provider value={{ setHasChild }}>
+      <Positioner
+        positionerRef={popupRef}
+        targetRef={childrenRef}
+        visible={visible}
+        position={position}
+        positioner={({ style }) => (
+          <PopoverPopup
+            ref={popupRef}
+            style={style}
+            title={title}
+            content={content}
+            handleClose={handleClose}
+            {...otherProps}
+          />
+        )}
+      >
+        {renderChildren}
+      </Positioner>
+    </ClickOutsideContext.Provider>
   );
 };
 
