@@ -196,11 +196,11 @@ const Select: FunctionComponent<SelectProps> = ({
                   {...(visible && (searchable || creatable)
                     ? (getInputProps({
                         placeholder: selectedItem
-                          ? selectedItem.value
+                          ? itemToString(selectedItem)
                           : placeholder,
                       }) as any)
                     : {
-                        value: selectedItem ? selectedItem.value : '',
+                        value: itemToString(selectedItem),
                         placeholder,
                         onChange: () => {},
                       })}
