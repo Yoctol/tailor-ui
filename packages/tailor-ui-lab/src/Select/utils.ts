@@ -24,5 +24,5 @@ export const itemToString = (item: Option | null) => {
     return '';
   }
 
-  return typeof item === 'object' ? String(item.value) : String(item);
+  return typeof item === 'object' ? String(item.label) : String(item);
 };

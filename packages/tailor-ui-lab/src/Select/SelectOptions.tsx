@@ -8,7 +8,7 @@ import VirtualList from 'react-tiny-virtual-list';
 import { GetItemPropsOptions } from 'downshift';
 import { MdHighlightOff } from 'react-icons/md';
 
-import { Flex, Heading, Icon } from 'tailor-ui';
+import { Box, Flex, Heading, Icon } from 'tailor-ui';
 
 import { StyledSelectOption } from './styles';
 import { fuzzyFilter, itemToString } from './utils';
@@ -101,7 +101,7 @@ const SelectOptions: FunctionComponent<SelectOptionsProps> = ({
   }
 
   return (
-    <>
+    <Box borderRadius="lg" overflow="hidden">
       <VirtualList
         width="100%"
         height={Math.min(items.length * itemSize, optionsMaxHeight)}
@@ -139,7 +139,7 @@ const SelectOptions: FunctionComponent<SelectOptionsProps> = ({
         }}
       />
       {menu}
-    </>
+    </Box>
   );
 };
 
