@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0](https://github.com/Yoctol/tailor-ui/compare/@tailor-ui/lab@0.3.0...@tailor-ui/lab@0.4.0) (2019-04-30)
+
+### Bug Fixes
+
+- **select:** remove hover effect when select is close ([181b579](https://github.com/Yoctol/tailor-ui/commit/181b579))
+
+### Features
+
+- **popover:** add nested usage ([47d0644](https://github.com/Yoctol/tailor-ui/commit/47d0644))
+
 # [0.3.0](https://github.com/Yoctol/tailor-ui/compare/@tailor-ui/lab@0.2.6...@tailor-ui/lab@0.3.0) (2019-04-19)
 
 ### Features

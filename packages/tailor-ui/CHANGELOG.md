@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.9.0](https://github.com/yoctol/tailor-ui/compare/tailor-ui@0.8.0...tailor-ui@0.9.0) (2019-04-30)
+
+### Features
+
+- **stack:** impelment stack system ([a1b9175](https://github.com/yoctol/tailor-ui/commit/a1b9175))
+- **stack:** impelment stack system ([#171](https://github.com/yoctol/tailor-ui/issues/171)) ([54ae405](https://github.com/yoctol/tailor-ui/commit/54ae405))
+
 # [0.8.0](https://github.com/yoctol/tailor-ui/compare/tailor-ui@0.7.0...tailor-ui@0.8.0) (2019-04-19)
 
 ### Features
