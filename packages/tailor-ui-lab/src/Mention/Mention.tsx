@@ -8,8 +8,8 @@ import React, {
   useReducer,
   useRef,
 } from 'react';
-import { mergeEventProps } from '@tailor-ui/utils';
 
+import { mergeEventProps } from '@tailor-ui/utils';
 import { useClickOutside } from 'tailor-ui';
 
 import Suggestions from './Suggestions';

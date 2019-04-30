@@ -5,6 +5,7 @@ import {
   isValidElement,
   useCallback,
 } from 'react';
+
 import { mergeEventProps } from '@tailor-ui/utils';
 
 const useRenderChildren = ({
