@@ -1,0 +1,84 @@
+---
+name: Dropdown
+menu: Lab
+route: /lab/dropdown
+---
+
+import { PropsTable, Playground } from 'docz';
+import { range } from 'ramda';
+
+import { Button, Box, Flex, Position } from 'tailor-ui';
+import { Dropdown } from '@tailor-ui/lab';
+
+# Dropdown
+
+A dropdown list.
+
+## When To Use
+
+If there are too many operations to display, you can wrap them in a `Dropdown`. By clicking/hovering on the trigger, a dropdown menu should appear, which allows you to choose one option and execute relevant actions.
+
+## Examples
+
+```js
+import { Dropdown } from '@tailor-ui/lab';
+```
+
+### Basic usage
+
+<Playground>
+  <Dropdown
+    overlay={
+      <Dropdown.List>
+        <Dropdown.Item>close when click</Dropdown.Item>
+        <Dropdown.Item keep>keep dropdown when click</Dropdown.Item>
+        <Dropdown.Divider />
+        <Dropdown.Item disabled>disabled</Dropdown.Item>
+        <Dropdown.Item color="danger">delete</Dropdown.Item>
+      </Dropdown.List>
+    }
+  >
+    <Button>Toggle</Button>
+  </Dropdown>
+</Playground>
+
+### Cascading menu
+
+<Playground>
+  <Dropdown
+    overlay={
+      <Dropdown.List>
+        <Dropdown.Item>Rename</Dropdown.Item>
+        <Dropdown.SubList title="Move">
+          {range(1, 20).map(key => (
+            <Dropdown.Item
+              key={key}
+              onClick={() => console.log(`move to Group ${key}`)}
+            >
+              Group {key}
+            </Dropdown.Item>
+          ))}
+        </Dropdown.SubList>
+        <Dropdown.Divider />
+        <Dropdown.SubList title="Share">
+          <Dropdown.Item onClick={() => console.log('share to facebook')}>
+            Share to Facebook
+          </Dropdown.Item>
+          <Dropdown.Item onClick={() => console.log('share to twitter')}>
+            Share to Twitter
+          </Dropdown.Item>
+        </Dropdown.SubList>
+        <Dropdown.Divider />
+        <Dropdown.Item>Delete</Dropdown.Item>
+      </Dropdown.List>
+    }
+  >
+    <Button>Toggle</Button>
+  </Dropdown>
+</Playground>
+
+## API
+
+### Dropdown
+
+<PropsTable of={Dropdown} />
