@@ -1,47 +1,15 @@
-import React, {
-  CSSProperties,
-  FunctionComponent,
-  ReactNode,
-  forwardRef,
-  memo,
-  useRef,
-} from 'react';
-import { animated } from 'react-spring';
+import React, { FunctionComponent, ReactNode, useRef } from 'react';
 
 import { Position, Positioner, Positions } from 'tailor-ui';
 
 import useHoverTrigger from '../hooks/useHoverTrigger';
 import useRenderChildren from '../hooks/useRenderChildren';
 
-import { StyledTooltip, StyledTooltipProps } from './styles';
-
-interface TooltipPopup {
-  style: CSSProperties;
-  content: ReactNode;
-  handleOpen: () => void;
-  handleClose: () => void;
-}
-
-const TooltipPopup = memo(
-  forwardRef<HTMLDivElement, TooltipPopup>(function TooltipPopup(
-    { style, content, handleOpen, handleClose, ...otherProps },
-    ref
-  ) {
-    return (
-      <animated.div style={style} ref={ref}>
-        <StyledTooltip
-          onMouseEnter={handleOpen}
-          onMouseLeave={handleClose}
-          {...otherProps}
-        >
-          {content}
-        </StyledTooltip>
-      </animated.div>
-    );
-  })
-);
+import TooltipPopup from './TooltipPopup';
+import { StyledTooltipProps } from './styles';
 
 export type TooltipProps = StyledTooltipProps & {
+  Wrapper?: FunctionComponent;
   /**
    * Whether the floating tooltip card is visible by default. Only support when the trigger is `click`
    */
@@ -76,6 +44,7 @@ export type TooltipProps = StyledTooltipProps & {
 
 const Tooltip: FunctionComponent<TooltipProps> = ({
   children,
+  Wrapper,
   position = Position.TOP,
   content,
   defaultVisible = false,
@@ -114,6 +83,7 @@ const Tooltip: FunctionComponent<TooltipProps> = ({
         <TooltipPopup
           ref={popupRef}
           style={style}
+          Wrapper={Wrapper}
           content={content}
           handleOpen={handleOpen}
           handleClose={handleClose}
