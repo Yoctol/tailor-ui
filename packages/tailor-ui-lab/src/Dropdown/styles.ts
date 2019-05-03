@@ -13,7 +13,7 @@ export const Item = styled.li<{ disabled: boolean }>`
   display: flex;
   align-items: center;
   height: ${p => p.theme.heights.base};
-  padding: 0 ${p => p.theme.space[3]};
+  padding: 0 24px;
   background-color: ${p => p.theme.colors.light};
   font-size: ${p => p.theme.fontSizes.sm};
   cursor: pointer;
