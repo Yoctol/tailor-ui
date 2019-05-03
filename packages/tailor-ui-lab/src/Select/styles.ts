@@ -76,6 +76,7 @@ export const StyledSelect = styled.div<StyledSelectProps>`
     `}
 
   input {
+    flex: 1;
     width: 100%;
     border: none;
     outline: none;
@@ -90,7 +91,7 @@ export const StyledSelect = styled.div<StyledSelectProps>`
   ${({ size = 'md', theme: { paddings, heights, fontSizes } }) => {
     const inputSizeStyles = {
       sm: css`
-        height: ${heights.sm};
+        min-height: ${heights.sm};
         padding: 1px ${paddings.xs};
 
         input {
@@ -98,7 +99,7 @@ export const StyledSelect = styled.div<StyledSelectProps>`
         }
       `,
       md: css`
-        height: ${heights.base};
+        min-height: ${heights.base};
         padding: 4px ${paddings.sm};
 
         input {
@@ -106,7 +107,7 @@ export const StyledSelect = styled.div<StyledSelectProps>`
         }
       `,
       lg: css`
-        height: ${heights.lg};
+        min-height: ${heights.lg};
         padding: 6px ${paddings.md};
 
         input {
@@ -119,6 +120,28 @@ export const StyledSelect = styled.div<StyledSelectProps>`
   }};
 
   ${p => p.theme.transition /* sc-declaration */};
+`;
+
+export const StyledSelectedOption = styled.div`
+  display: inline-flex;
+  align-items: center;
+  height: 28px;
+  margin: 2px 8px 2px 0;
+  padding: 0 8px;
+  border: ${p => p.theme.borders.base};
+  border-radius: ${p => p.theme.radii.base};
+  border-color: ${p => p.theme.colors.primaryLight};
+  background-color: ${p => p.theme.colors.surface2};
+  color: ${p => p.theme.colors.primaryLight};
+  font-size: ${p => p.theme.fontSizes.sm};
+
+  svg {
+    fill: ${p => p.theme.colors.primaryLight2};
+  }
+
+  &:hover svg {
+    fill: ${p => p.theme.colors.primaryLight};
+  }
 `;
 
 const spin = keyframes`

@@ -12,8 +12,11 @@ import { Flex, Position } from 'tailor-ui';
 import Popover from '../Popover';
 
 import ClearIcon from './ClearIcon';
+import MultiDownshift from './MultiDownshift';
 import SelectArrow from './SelectArrow';
+import SelectInput from './SelectInput';
 import SelectOptions, { ObjectOption, Option } from './SelectOptions';
+import SelectedOption from './SelectedOption';
 import { Loading, SelectWrapper, StyledSelect } from './styles';
 import { itemToString } from './utils';
 
@@ -50,8 +53,7 @@ const Select: FunctionComponent<SelectProps> = ({
   clearable = false,
   disabled = false,
   loading = false,
-  // TODO: impelment multiple usage
-  // multiple = false,
+  multiple = false,
   searchable = false,
   options,
   value,
@@ -79,7 +81,7 @@ const Select: FunctionComponent<SelectProps> = ({
   }, []);
 
   const handleChange = (selection: Option) => {
-    if (inputRef.current) {
+    if (inputRef.current && !multiple) {
       inputRef.current.blur();
     }
 
@@ -94,16 +96,23 @@ const Select: FunctionComponent<SelectProps> = ({
       onChange(isCreate ? null : selection);
     }
 
-    setVisible(false);
+    if (!multiple) {
+      setVisible(false);
+    } else {
+      setInputValue('');
+    }
   };
 
-  const defaultHighlightedIndex =
-    options.findIndex(
-      option => itemToString(option) === itemToString(value || defaultValue)
-    ) || null;
+  const defaultHighlightedIndex = multiple
+    ? null
+    : options.findIndex(
+        option => itemToString(option) === itemToString(value || defaultValue)
+      ) || null;
+
+  const RenderComponent = multiple ? MultiDownshift : Downshift;
 
   return (
-    <Downshift
+    <RenderComponent
       selectedItem={value}
       isOpen={visible}
       initialSelectedItem={defaultValue}
@@ -122,7 +131,11 @@ const Select: FunctionComponent<SelectProps> = ({
       }}
       itemToString={itemToString}
       inputValue={inputValue}
-      onInputValueChange={newInputValue => setInputValue(newInputValue)}
+      onInputValueChange={newInputValue => {
+        if (!multiple) {
+          setInputValue(newInputValue);
+        }
+      }}
       onChange={handleChange}
       {...{
         scrollIntoView: () => {},
@@ -130,13 +143,16 @@ const Select: FunctionComponent<SelectProps> = ({
     >
       {({
         getRootProps,
-        getInputProps,
         getItemProps,
         getToggleButtonProps,
         highlightedIndex,
         selectedItem,
         clearSelection,
-      }) => (
+
+        selectedItems = [],
+        getRemoveButtonProps,
+        removeItem,
+      }: any) => (
         <SelectWrapper width={width} {...getRootProps()}>
           <Popover
             visible={visible}
@@ -159,6 +175,7 @@ const Select: FunctionComponent<SelectProps> = ({
                 visible={visible}
                 creatable={creatable}
                 searchable={searchable}
+                multiple={multiple}
                 itemSize={itemSize}
                 optionsMaxHeight={optionsMaxHeight}
                 getItemProps={getItemProps}
@@ -167,6 +184,7 @@ const Select: FunctionComponent<SelectProps> = ({
                 menu={menu}
                 highlightedIndex={highlightedIndex}
                 selectedItem={selectedItem}
+                selectedItems={selectedItems}
                 noOptionsMessage={noOptionsMessage}
                 formatCreateLabel={formatCreateLabel}
                 isValidNewOption={isValidNewOption}
@@ -180,9 +198,10 @@ const Select: FunctionComponent<SelectProps> = ({
               {...getToggleButtonProps({
                 disabled: disabled || loading,
                 onClick: () => {
-                  if (!visible && (searchable || creatable)) {
-                    setInputValue('');
-
+                  if (!visible) {
+                    if (searchable || creatable || multiple) {
+                      setInputValue('');
+                    }
                     if (inputRef.current) {
                       inputRef.current.focus();
                     }
@@ -190,20 +209,35 @@ const Select: FunctionComponent<SelectProps> = ({
                 },
               })}
             >
-              <Flex flex="auto">
-                <input
-                  ref={inputRef}
-                  {...(visible && (searchable || creatable)
-                    ? (getInputProps({
-                        placeholder: selectedItem
-                          ? itemToString(selectedItem)
-                          : placeholder,
-                      }) as any)
-                    : {
-                        value: itemToString(selectedItem),
-                        placeholder,
-                        onChange: () => {},
+              <Flex flex="auto" flexWrap="wrap" alignItems="center">
+                {multiple &&
+                  selectedItems.map((item: Option) => (
+                    <SelectedOption
+                      key={itemToString(item)}
+                      {...getRemoveButtonProps({
+                        item,
+                        onClick: () => {
+                          if (inputRef.current) {
+                            inputRef.current.focus();
+                          }
+                        },
                       })}
+                    >
+                      {itemToString(item)}
+                    </SelectedOption>
+                  ))}
+                <SelectInput
+                  ref={inputRef}
+                  visible={visible}
+                  searchable={searchable}
+                  creatable={creatable}
+                  multiple={multiple}
+                  inputValue={inputValue}
+                  placeholder={placeholder}
+                  selectedItem={selectedItem}
+                  selectedItems={selectedItems}
+                  removeItem={removeItem}
+                  onChange={event => setInputValue(event.currentTarget.value)}
                 />
               </Flex>
               {loading && <Loading />}
@@ -215,7 +249,7 @@ const Select: FunctionComponent<SelectProps> = ({
           </Popover>
         </SelectWrapper>
       )}
-    </Downshift>
+    </RenderComponent>
   );
 };
 
