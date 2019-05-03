@@ -16,7 +16,7 @@ export interface StyledSelectOptionProps {
 export const StyledSelectOption = styled.div<StyledSelectOptionProps>`
   display: flex;
   align-items: center;
-  padding: 0 16px;
+  padding: 0 24px;
   background-color: ${p =>
     p.hovered ? p.theme.colors.primaryLight : p.theme.colors.light};
   color: ${p => {

@@ -64,7 +64,7 @@ export const SuggestionItem = styled.div<{ active: boolean }>`
   display: flex;
   align-items: center;
   height: 36px;
-  padding: 0 16px;
+  padding: 0 24px;
   background-color: ${p =>
     p.active ? p.theme.colors.primaryLight : p.theme.colors.light};
   color: ${p => (p.active ? p.theme.colors.light : p.theme.colors.gray700)};
