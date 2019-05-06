@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.5.0](https://github.com/Yoctol/tailor-ui/compare/@tailor-ui/lab@0.4.0...@tailor-ui/lab@0.5.0) (2019-05-06)
+
+### Bug Fixes
+
+- **select:** display corrent label ([27c9ac7](https://github.com/Yoctol/tailor-ui/commit/27c9ac7))
+
+### Features
+
+- **dropdown:** implement new dropdown ([7d6da1a](https://github.com/Yoctol/tailor-ui/commit/7d6da1a))
+- **dropdown:** implement new dropdown ([#178](https://github.com/Yoctol/tailor-ui/issues/178)) ([a135f58](https://github.com/Yoctol/tailor-ui/commit/a135f58))
+- **select:** implement multiple usage ([0d72077](https://github.com/Yoctol/tailor-ui/commit/0d72077))
+- **tag:** imeplement new tag ([247843d](https://github.com/Yoctol/tailor-ui/commit/247843d))
+- **tag:** imeplement new tag ([#183](https://github.com/Yoctol/tailor-ui/issues/183)) ([fcb3d05](https://github.com/Yoctol/tailor-ui/commit/fcb3d05))
+
 # [0.4.0](https://github.com/Yoctol/tailor-ui/compare/@tailor-ui/lab@0.3.0...@tailor-ui/lab@0.4.0) (2019-04-30)
 
 ### Bug Fixes

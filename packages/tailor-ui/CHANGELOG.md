@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.10.0](https://github.com/yoctol/tailor-ui/compare/tailor-ui@0.9.0...tailor-ui@0.10.0) (2019-05-06)
+
+### Features
+
+- **tag:** imeplement new tag ([247843d](https://github.com/yoctol/tailor-ui/commit/247843d))
+
 # [0.9.0](https://github.com/yoctol/tailor-ui/compare/tailor-ui@0.8.0...tailor-ui@0.9.0) (2019-04-30)
 
 ### Features
