@@ -1,5 +1,8 @@
-import Downshift from 'downshift';
-import React, { Component } from 'react';
+import Downshift, {
+  ControllerStateAndHelpers,
+  DownshiftInterface,
+} from 'downshift';
+import React, { Component, ReactNode } from 'react';
 
 import { itemToString } from './utils';
 
@@ -11,11 +14,18 @@ type Option =
   | string
   | number;
 
-interface MultiDownshiftProps {
-  onSelect: (options: Option[], stateAndHelpers: any) => void;
-  onChange: (options: Option[], stateAndHelpers: any) => void;
-  children: (downshift: any) => any;
-}
+type MultiDownshiftProps = DownshiftInterface<Option> & {
+  selectedItem: Option[];
+  onSelect?: (
+    options: Option[],
+    stateAndHelpers: ControllerStateAndHelpers<Option>
+  ) => void;
+  onChange?: (
+    options: Option[],
+    stateAndHelpers: ControllerStateAndHelpers<Option>
+  ) => void;
+  children: (options: ControllerStateAndHelpers<Option>) => ReactNode;
+};
 
 interface MultiDownshiftState {
   selectedItems: Option[];
@@ -26,12 +36,15 @@ class MultiDownshift extends Component<
   MultiDownshiftState
 > {
   state: MultiDownshiftState = {
-    selectedItems: [],
+    selectedItems: this.props.selectedItem || [],
   };
 
   stateReducer = (state: any, changes: any) => {
     switch (changes.type) {
+      case Downshift.stateChangeTypes.blurButton:
+        return {};
       case Downshift.stateChangeTypes.keyDownEnter:
+      case Downshift.stateChangeTypes.mouseUp:
       case Downshift.stateChangeTypes.clickItem:
         return {
           ...changes,
@@ -70,7 +83,9 @@ class MultiDownshift extends Component<
   removeItem = (item: Option, cb?: () => void) => {
     this.setState(({ selectedItems }) => {
       return {
-        selectedItems: selectedItems.filter(i => i !== item),
+        selectedItems: selectedItems.filter(
+          i => itemToString(i) !== itemToString(item)
+        ),
       };
     }, cb);
   };
@@ -105,7 +120,7 @@ class MultiDownshift extends Component<
     };
   };
 
-  getStateAndHelpers(downshift: any) {
+  getStateAndHelpers(downshift: ControllerStateAndHelpers<any>) {
     const { selectedItems } = this.state;
     const { getRemoveButtonProps, removeItem } = this;
     return {

@@ -6,7 +6,7 @@ import React, {
 } from 'react';
 import VirtualList from 'react-tiny-virtual-list';
 import { GetItemPropsOptions } from 'downshift';
-import { MdHighlightOff } from 'react-icons/md';
+import { MdCheck, MdHighlightOff } from 'react-icons/md';
 
 import { Box, Flex, Heading, Icon } from 'tailor-ui';
 
@@ -36,6 +36,7 @@ interface SelectOptionsProps {
   visible: boolean;
   creatable: boolean;
   searchable: boolean;
+  multiple: boolean;
   itemSize: number;
   optionsMaxHeight: number;
   getItemProps: (option: GetItemPropsOptions<Option>) => any;
@@ -44,6 +45,7 @@ interface SelectOptionsProps {
   menu?: ReactNode;
   highlightedIndex: number | null;
   selectedItem: null | Option;
+  selectedItems: Option[];
   noOptionsMessage?: () => ReactNode;
   formatCreateLabel?: (createText: string) => ReactNode;
   isValidNewOption?: (value: string) => boolean;
@@ -53,6 +55,7 @@ const SelectOptions: FunctionComponent<SelectOptionsProps> = ({
   visible,
   creatable,
   searchable,
+  multiple,
   itemSize,
   optionsMaxHeight,
   getItemProps,
@@ -61,6 +64,7 @@ const SelectOptions: FunctionComponent<SelectOptionsProps> = ({
   menu,
   highlightedIndex,
   selectedItem,
+  selectedItems,
   noOptionsMessage = () => <DefaultNoOptionsMessage />,
   formatCreateLabel = value => `Create new option: ${value}`,
   isValidNewOption = value => value.trim() !== '',
@@ -76,8 +80,8 @@ const SelectOptions: FunctionComponent<SelectOptionsProps> = ({
 
   let items = options;
 
-  // filter options when searchable or creatable
-  if (searchable || creatable) {
+  // filter options when searchable or creatable or multiple
+  if (searchable || creatable || multiple) {
     const filter = fuzzyFilter(itemToString);
     items =
       prevSearchValue.trim() === ''
@@ -114,9 +118,9 @@ const SelectOptions: FunctionComponent<SelectOptionsProps> = ({
           const option = items[index];
           const optionString = itemToString(option);
           const hovered = visible && highlightedIndex === index;
-          const active = selectedItem
-            ? itemToString(selectedItem) === optionString
-            : false;
+          const active = multiple
+            ? selectedItems.map(itemToString).includes(optionString)
+            : itemToString(selectedItem) === optionString;
           const content =
             (option as ObjectOption).label === 'CREATE_OPTION'
               ? formatCreateLabel((option as ObjectOption).value)
@@ -133,6 +137,17 @@ const SelectOptions: FunctionComponent<SelectOptionsProps> = ({
                 item: option,
               })}
             >
+              {multiple &&
+                (active ? (
+                  <Icon
+                    type={MdCheck}
+                    fill={hovered ? 'light' : 'primaryLight'}
+                    size="16"
+                    mr="8px"
+                  />
+                ) : (
+                  <Box width="16px" mr="8px" />
+                ))}
               {content}
             </StyledSelectOption>
           );

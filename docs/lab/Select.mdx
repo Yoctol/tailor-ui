@@ -240,6 +240,33 @@ import { Select } from '@tailor-ui/lab';
 
 </Playground>
 
+### Multiple
+
+<Playground>
+  {() => {
+    const [value, setValue] = React.useState([
+      { label: 'Orange', value: 'orange' },
+    ]);
+
+    return (
+      <Select
+        width="360px"
+        multiple
+        value={value}
+        onChange={newValue => setValue(newValue)}
+        options={[
+          { label: 'Banana', value: 'banana' },
+          { label: 'Orange', value: 'orange' },
+          { label: 'Apple', value: 'apple' },
+          { label: 'Mango', value: 'mango' },
+        ]}
+      />
+    );
+
+}}
+
+</Playground>
+
 ## API
 
 <PropsTable of={Select} />
