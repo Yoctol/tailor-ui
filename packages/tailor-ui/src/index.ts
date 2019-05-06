@@ -83,4 +83,6 @@ export * from './constants';
 export { default as Positioner } from './Positioner';
 export { default as useClickOutside } from './utils/useClickOutside';
 export { default as useKeydown } from './utils/useKeydown';
+export { default as useMeasure } from './utils/useMeasure';
+export { default as usePrevious } from './utils/usePrevious';
 export { default as getTypeIcon } from './utils/getTypeIcon';
