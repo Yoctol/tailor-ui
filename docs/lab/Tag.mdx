@@ -1,0 +1,130 @@
+---
+name: Tag
+menu: Lab
+route: /lab/tag
+---
+
+import { PropsTable, Playground } from 'docz';
+import { Input, Button, Flex, Box } from 'tailor-ui';
+import { Tag } from '@tailor-ui/lab';
+
+# Tag
+
+Tag for categorizing or markup.
+
+## When To Use
+
+- It can be used to tag by dimension or property.
+- When categorizing.
+
+## Examples
+
+```js
+import { Tag } from '@tailor-ui/lab';
+```
+
+### Basic
+
+<Playground>
+  <Tag>Content</Tag>
+  <Tag invalid>Content</Tag>
+</Playground>
+
+### Use prefix
+
+<Playground>
+  <Tag prefix="10">Content</Tag>
+  <Tag prefix="20" invalid closable>
+    Content
+  </Tag>
+</Playground>
+
+### Editable
+
+<Playground>
+  <Tag prefix="10" editable onChange={console.log}>
+    Content
+  </Tag>
+  <Tag prefix="20" editable closable onChange={console.log}>
+    Content
+  </Tag>
+</Playground>
+
+### Closable
+
+<Playground>
+  <Tag closable>Content</Tag>
+  <Tag closable>Content</Tag>
+  <Tag closable>Content</Tag>
+  <Tag closable>Content</Tag>
+</Playground>
+
+### Add & Remove Dynamically
+
+<Playground>
+  {() => {
+    const [values, setValues] = React.useState(['tag 1', 'tag 2', 'tag 3']);
+    const [editing, setEditing] = React.useState(false);
+
+    return (
+      <Flex flexWrap="wrap">
+        {values.map((value, index) => {
+          const invalid = values.filter((_, i) => i !== index).includes(value);
+
+          return (
+            <Flex flexDirection="column">
+              <Tag
+                key={value}
+                closable
+                editable
+                invalid={invalid}
+                onClosed={() => setValues(values.filter(v => v !== value))}
+                onChange={(prevValue, value) => {
+                  if (value.trim() !== '') {
+                    setValues(prevValues =>
+                      prevValues.map((originalValue, id) =>
+                        originalValue === prevValue && id === index ? value : originalValue
+                      )
+                    );
+                    setEditing(false);
+                  }
+                }}
+              >
+                {value}
+              </Tag>
+              {invalid && <Box mt="1" mr="1" color="danger" fontSize="sm">duplicate tag!</Box>}
+            </Flex>
+          );
+        })}
+        {values.length === new Set(values).size && (
+          editing ? (
+            <Tag
+              editable
+              initialEditing
+              onChange={(_ , value) => {
+                if (value.trim() !== '') {
+                  setValues(prevValues => ([...prevValues, value]));
+                }
+                setEditing(false);
+              }}
+            />
+          ) : (
+            <Button
+              size="sm"
+              variant="regular"
+              onClick={() => setEditing(true)}
+            >
+              + Add Tag
+            </Button>
+          )
+        )}
+      </Flex>
+    );
+
+}}
+
+</Playground>
+
+## API
+
+<PropsTable of={Tag} />

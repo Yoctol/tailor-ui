@@ -23,7 +23,8 @@ const useMeasure = () => {
     }
 
     return () => ro.disconnect();
-  }, [ro]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return tuplify({ ref }, bounds);
 };
