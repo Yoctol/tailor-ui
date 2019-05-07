@@ -51,6 +51,7 @@ export const StyledTabs = styled.nav<StyledTabsProps>`
           ${StyledTab} {
             background-color: ${p.theme.colors.primaryLight2};
             color: ${p.theme.colors.gray500};
+            border-top: ${p.theme.borders.base} transparent;
 
             &:hover {
               color: ${p.theme.colors.primaryLight};
@@ -62,16 +63,19 @@ export const StyledTabs = styled.nav<StyledTabsProps>`
 
             &:first-child {
               border-top-left-radius: ${p.theme.radii.xl};
+              border-left: ${p.theme.borders.base} transparent;
             }
 
             &:last-child {
               border-top-right-radius: ${p.theme.radii.xl};
+              border-right: ${p.theme.borders.base} transparent;
             }
 
             &.active {
               z-index: 1;
               background-color: ${p.theme.colors.light};
               color: ${p.theme.colors.primaryLight};
+              border-color: ${p.theme.colors.primaryLight2};
               box-shadow: 0px -2px 4px -4px rgba(100, 120, 168, 0.3),
                 4px 0px 4px -4px rgba(100, 120, 168, 0.3),
                 -4px 0px 4px -4px rgba(100, 120, 168, 0.3);
@@ -82,11 +86,9 @@ export const StyledTabs = styled.nav<StyledTabsProps>`
             content: '';
             position: absolute;
             left: 0;
-            width: 2px;
+            width: 1px;
             height: ${p.theme.fontSizes[p.size === 'md' ? 'base' : p.size]};
             background-color: ${p.theme.colors.gray500};
-
-            ${p.theme.transition}
           }
         `
       : css`
@@ -124,4 +126,6 @@ export const StyledTabs = styled.nav<StyledTabsProps>`
         `,
       }[p.size])};
   }
+
+  ${p => p.theme.transition}
 `;
