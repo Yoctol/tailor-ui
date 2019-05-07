@@ -13,12 +13,13 @@ import {
   Radio,
   Space,
   Flex,
-  Popconfirm,
   DatePicker,
+  Position,
   Upload,
   locale,
   useModal,
 } from 'tailor-ui';
+import { Popconfirm } from '@tailor-ui/lab';
 
 ## Usage
 
@@ -81,7 +82,7 @@ const { zh_Hant } = locale;
 
                 <Space ml="2">
                   <Popconfirm
-                    placement="bottom"
+                    position={Position.BOTTOM}
                     content="Are you sure to delete this todo?"
                     onConfirm={() => console.log('confirm')}
                     onCancel={() => console.log('cancel')}
