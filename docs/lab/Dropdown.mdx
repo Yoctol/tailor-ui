@@ -42,6 +42,33 @@ import { Dropdown } from '@tailor-ui/lab';
   </Dropdown>
 </Playground>
 
+### Get visible
+
+<Playground>
+  {() => {
+    const [visible, setVisible] = React.useState(false);
+
+    return (
+      <Dropdown
+        onVisibleChange={setVisible}
+        overlay={
+          <Dropdown.List>
+            <Dropdown.Item>close when click</Dropdown.Item>
+            <Dropdown.Item keep>keep dropdown when click</Dropdown.Item>
+            <Dropdown.Divider />
+            <Dropdown.Item disabled>disabled</Dropdown.Item>
+            <Dropdown.Item color="danger">delete</Dropdown.Item>
+          </Dropdown.List>
+        }
+      >
+        <Button variant={visible ? 'primary' : 'regular'}>Toggle</Button>
+      </Dropdown>
+    );
+
+}}
+
+</Playground>
+
 ### Cascading menu
 
 <Playground>

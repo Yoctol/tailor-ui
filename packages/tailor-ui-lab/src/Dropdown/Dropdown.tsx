@@ -1,16 +1,15 @@
 import React, { FunctionComponent, ReactNode } from 'react';
 
-import { Position, Positions } from 'tailor-ui';
+import { Position } from 'tailor-ui';
 
-import Popover from '../Popover';
+import Popover, { PopoverProps } from '../Popover';
 
 import DropdownContext from './DropdownContext';
 import DropdownItem from './DropdownItem';
 import DropdownSubList from './DropdownSubList';
 import { Divider, List } from './styles';
 
-interface DropdownProps {
-  position: Positions;
+interface DropdownProps extends PopoverProps {
   overlay: ReactNode;
 }
 
@@ -19,7 +18,7 @@ const Dropdown: FunctionComponent<DropdownProps> & {
   SubList: typeof DropdownSubList;
   Item: typeof DropdownItem;
   Divider: typeof Divider;
-} = ({ children, position = Position.BOTTOM_LEFT, overlay }) => {
+} = ({ children, position = Position.BOTTOM_LEFT, overlay, ...props }) => {
   return (
     <Popover
       p="0"
@@ -29,6 +28,7 @@ const Dropdown: FunctionComponent<DropdownProps> & {
           {overlay}
         </DropdownContext.Provider>
       )}
+      {...props}
     >
       {children}
     </Popover>
