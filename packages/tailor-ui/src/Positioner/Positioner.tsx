@@ -55,6 +55,7 @@ const Positioner: FunctionComponent<PositionerProps> = ({
   const positionerRefFromSelf = useRef<HTMLElement>(null);
   const laf = useRef<number>();
   const entered = useRef<boolean>(false);
+  const prevDimensions = useRef({ height: 0, width: 0 });
   const [state, setState] = useState<{
     top: number | null;
     left: number | null;
@@ -77,15 +78,10 @@ const Positioner: FunctionComponent<PositionerProps> = ({
     []
   );
 
-  const update = (prevHeight = 0, prevWidth = 0) => {
+  const update = () => {
     if (!visible || !targetRef.current || !positionerRef.current) {
       return;
     }
-
-    const targetRect = targetRef.current.getBoundingClientRect();
-
-    const viewportHeight = document.documentElement.clientHeight;
-    const viewportWidth = document.documentElement.clientWidth;
 
     let height: number;
     let width: number;
@@ -96,9 +92,15 @@ const Positioner: FunctionComponent<PositionerProps> = ({
       height = Math.round(positionerRect.height);
       width = Math.round(positionerRect.width);
     } else {
+      const { height: prevHeight, width: prevWidth } = prevDimensions.current;
+
       height = Math.max(positionerRef.current.offsetHeight, prevHeight);
       width = Math.max(positionerRef.current.offsetWidth, prevWidth);
     }
+
+    const targetRect = targetRef.current.getBoundingClientRect();
+    const viewportHeight = document.documentElement.clientHeight;
+    const viewportWidth = document.documentElement.clientWidth;
 
     const { rect, transformOrigin } = getPosition({
       position,
@@ -115,22 +117,24 @@ const Positioner: FunctionComponent<PositionerProps> = ({
       viewportOffset: bodyOffset,
     });
 
-    if (
-      state.left !== rect.left ||
-      state.top !== rect.left ||
-      state.transformOrigin !== transformOrigin
-    ) {
-      setState({
-        left: rect.left,
-        top: rect.top,
-        transformOrigin,
-      });
-    }
-
-    laf.current = requestAnimationFrame(() => {
-      update(height, width);
+    setState({
+      left: rect.left,
+      top: rect.top,
+      transformOrigin,
     });
+
+    prevDimensions.current = {
+      height,
+      width,
+    };
   };
+
+  useEffect(() => {
+    if (![state.top, state.left, state.transformOrigin].includes(null)) {
+      laf.current = requestAnimationFrame(update);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [state]);
 
   useEffect(() => {
     if (visible) {
@@ -156,6 +160,8 @@ const Positioner: FunctionComponent<PositionerProps> = ({
     onDestroyed: isDestroyed => {
       if (isDestroyed) {
         entered.current = false;
+        prevDimensions.current = { height: 0, width: 0 };
+
         setState({
           top: null,
           left: null,
