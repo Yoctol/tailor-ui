@@ -5,7 +5,7 @@ route: /lab/mention
 ---
 
 import { PropsTable, Playground } from 'docz';
-import { FormField, Hint } from 'tailor-ui';
+import { FormField } from 'tailor-ui';
 import { Mention } from '@tailor-ui/lab';
 
 # Mention
@@ -105,14 +105,15 @@ import { Mention } from '@tailor-ui/lab';
     const [value, setValue] = React.useState('I want a {{food}}');
 
     return (
-      <FormField error>
+      <FormField
+        label="With Error:"
+        validationMessage="Something went wrong!"
+      >
         <Mention
-          error
           suggestions={['drink', 'food']}
           value={value}
           onChange={setValue}
         />
-        <Hint>More than one must be selected!</Hint>
       </FormField>
     );
 

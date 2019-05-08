@@ -1,7 +1,7 @@
 // stylelint-disable
 import styled, { css } from 'styled-components';
 
-import { inputStyles } from '../Input';
+import { inputStyles } from '../Input/styles';
 
 import flags from './flags';
 import flags2 from './flags@2x';

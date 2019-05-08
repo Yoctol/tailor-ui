@@ -66,12 +66,13 @@ exports[`Heading should render correctly 1`] = `
 </div>
 `;
 
-exports[`Heading should render grayHint heading 1`] = `
+exports[`Heading should render different color heading 1`] = `
 .c1 {
   margin: 0;
   color: #373737;
   font-weight: bold;
   line-height: 1.5;
+  color: #bfbfbf;
 }
 
 .c0 {
@@ -80,45 +81,8 @@ exports[`Heading should render grayHint heading 1`] = `
 
 <h1
   class="c0 c1"
+  color="gray400"
 >
-  H1 Heading 28px
-</h1>
-`;
-
-exports[`Heading should render grayLight heading 1`] = `
-.c1 {
-  margin: 0;
-  color: #373737;
-  font-weight: bold;
-  line-height: 1.5;
-}
-
-.c0 {
-  font-size: 1.75rem;
-}
-
-<h1
-  class="c0 c1"
->
-  H1 Heading 28px
-</h1>
-`;
-
-exports[`Heading should render white heading 1`] = `
-.c1 {
-  margin: 0;
-  color: #373737;
-  font-weight: bold;
-  line-height: 1.5;
-}
-
-.c0 {
-  font-size: 1.75rem;
-}
-
-<h1
-  class="c0 c1"
->
-  H1 Heading 28px
+  H1 Heading
 </h1>
 `;

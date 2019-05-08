@@ -1,8 +1,18 @@
+import React, {
+  ChangeEvent,
+  FunctionComponent,
+  TextareaHTMLAttributes,
+  forwardRef,
+} from 'react';
 import TextareaAutosize from 'react-autosize-textarea';
 import styled from 'styled-components';
-import { TextareaHTMLAttributes } from 'react';
 
-import { InputProps, inputStyles } from './Input';
+import { mergeEventProps } from '@tailor-ui/utils';
+
+import useFormField from '../FormField/useFormField';
+
+import { InputProps } from './Input';
+import { inputStyles } from './styles';
 
 export type TextareaProps = InputProps &
   TextareaHTMLAttributes<any> & {
@@ -20,4 +30,28 @@ export const StyledTextarea = styled(TextareaAutosize)<TextareaProps>`
   transition: border 0.2s ease;
 `;
 
-export default StyledTextarea;
+const Textarea: FunctionComponent<TextareaProps> = forwardRef<
+  HTMLInputElement,
+  InputProps
+>(({ id, ...props }, ref) => {
+  const [invalid, labelId, setValue] = useFormField({
+    id,
+    value: props.value,
+    defaultValue: props.defaultValue,
+  });
+
+  return (
+    <StyledTextarea
+      ref={ref}
+      id={labelId}
+      invalid={invalid}
+      {...mergeEventProps(props, {
+        onChange: (event: ChangeEvent<HTMLTextAreaElement>) => {
+          setValue(event.currentTarget.value);
+        },
+      })}
+    />
+  );
+});
+
+export default Textarea;

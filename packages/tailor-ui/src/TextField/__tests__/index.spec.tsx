@@ -1,8 +1,12 @@
+// eslint-disable-next-line import/no-extraneous-dependencies
+import MockDate from 'mockdate';
 import React from 'react';
 
 import { fireEvent, render } from 'test/test-utils';
 
 import TextField from '../TextField';
+
+MockDate.set(0);
 
 describe('TextField', () => {
   it('should render correctly', () => {
