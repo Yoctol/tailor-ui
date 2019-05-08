@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.11.0](https://github.com/yoctol/tailor-ui/compare/tailor-ui@0.10.0...tailor-ui@0.11.0) (2019-05-08)
+
+### Features
+
+- **form-field:** implement new FormField ([c7e1a62](https://github.com/yoctol/tailor-ui/commit/c7e1a62))
+- **form-field:** implement new FormField ([#150](https://github.com/yoctol/tailor-ui/issues/150)) ([672eaaf](https://github.com/yoctol/tailor-ui/commit/672eaaf))
+
 # [0.10.0](https://github.com/yoctol/tailor-ui/compare/tailor-ui@0.9.0...tailor-ui@0.10.0) (2019-05-06)
 
 ### Features

@@ -1,6 +1,6 @@
 {
   "name": "@tailor-ui/lab",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "Incubator for Tailor-UI React components.",
   "author": "Yoctol Info SD Team",
   "homepage": "https://tailor-ui.netlify.com/",
@@ -38,7 +38,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@tailor-ui/utils": "^0.1.2",
+    "@tailor-ui/utils": "^0.1.3",
     "downshift": "^3.2.10",
     "fuzzaldrin-plus": "^0.6.0",
     "lodash.debounce": "^4.0.8",

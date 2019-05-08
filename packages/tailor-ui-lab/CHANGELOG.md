@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.6.0](https://github.com/Yoctol/tailor-ui/compare/@tailor-ui/lab@0.5.0...@tailor-ui/lab@0.6.0) (2019-05-08)
+
+### Bug Fixes
+
+- **dropdown:** spread other props to popover ([76c1fcd](https://github.com/Yoctol/tailor-ui/commit/76c1fcd))
+- **mention:** suggestion height ([8475d79](https://github.com/Yoctol/tailor-ui/commit/8475d79))
+- **mention:** suggestion height ([#193](https://github.com/Yoctol/tailor-ui/issues/193)) ([ee9397d](https://github.com/Yoctol/tailor-ui/commit/ee9397d))
+- **select:** prevent call onChange when create and improve formatCreateLabel & multiple create ([b7dc519](https://github.com/Yoctol/tailor-ui/commit/b7dc519))
+
+### Features
+
+- **form-field:** implement new FormField ([c7e1a62](https://github.com/Yoctol/tailor-ui/commit/c7e1a62))
+- **form-field:** implement new FormField ([#150](https://github.com/Yoctol/tailor-ui/issues/150)) ([672eaaf](https://github.com/Yoctol/tailor-ui/commit/672eaaf))
+
 # [0.5.0](https://github.com/Yoctol/tailor-ui/compare/@tailor-ui/lab@0.4.0...@tailor-ui/lab@0.5.0) (2019-05-06)
 
 ### Bug Fixes
