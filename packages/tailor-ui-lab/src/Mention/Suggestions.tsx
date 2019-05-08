@@ -49,13 +49,13 @@ const Suggestions = forwardRef<HTMLDivElement, SuggestionsProps>(
       const { current } = suggestionRef as RefObject<HTMLInputElement>;
 
       if (current) {
-        const activeItemScrollTop = 9 + activeIndex * 32;
+        const activeItemScrollTop = activeIndex * 36;
 
         if (
-          activeItemScrollTop + 32 >=
+          activeItemScrollTop + 36 >=
           current.scrollTop + current.offsetHeight
         ) {
-          current.scrollTop = activeItemScrollTop + 32 - current.offsetHeight;
+          current.scrollTop = activeItemScrollTop + 36 - current.offsetHeight;
         } else if (activeItemScrollTop <= current.scrollTop) {
           current.scrollTop = activeItemScrollTop;
         }

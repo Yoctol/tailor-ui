@@ -62,6 +62,7 @@ export const SuggestionList = styled(animated.div)`
 
 export const SuggestionItem = styled.div<{ active: boolean }>`
   display: flex;
+  flex: none;
   align-items: center;
   height: 36px;
   padding: 0 24px;
