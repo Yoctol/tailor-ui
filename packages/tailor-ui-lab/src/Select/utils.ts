@@ -19,7 +19,7 @@ export const fuzzyFilter = (itemToString: (item: Option) => string) => {
   return (items: Option[], input: string) => fuzzaldrin.filter(items, input);
 };
 
-export const itemToString = (item: Option | null) => {
+export const itemToString = (item?: Option) => {
   if (!item) {
     return '';
   }

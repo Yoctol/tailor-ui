@@ -1,7 +1,4 @@
-import Downshift, {
-  ControllerStateAndHelpers,
-  DownshiftInterface,
-} from 'downshift';
+import Downshift, { DownshiftInterface } from 'downshift';
 import React, { Component, ReactNode } from 'react';
 
 import { itemToString } from './utils';
@@ -15,16 +12,11 @@ type Option =
   | number;
 
 type MultiDownshiftProps = DownshiftInterface<Option> & {
-  selectedItem: Option[];
-  onSelect?: (
-    options: Option[],
-    stateAndHelpers: ControllerStateAndHelpers<Option>
-  ) => void;
-  onChange?: (
-    options: Option[],
-    stateAndHelpers: ControllerStateAndHelpers<Option>
-  ) => void;
-  children: (options: ControllerStateAndHelpers<Option>) => ReactNode;
+  selectedItem?: Option[];
+  initialSelectedItem?: Option[];
+  onSelect?: (options: Option | Option[]) => void;
+  onChange?: (options: Option | Option[]) => void;
+  children: (options: any) => ReactNode;
 };
 
 interface MultiDownshiftState {
@@ -36,8 +28,19 @@ class MultiDownshift extends Component<
   MultiDownshiftState
 > {
   state: MultiDownshiftState = {
-    selectedItems: this.props.selectedItem || [],
+    selectedItems:
+      this.props.initialSelectedItem || this.props.selectedItem || [],
   };
+
+  get selectedItems() {
+    const { selectedItem } = this.props;
+
+    if (selectedItem) {
+      return selectedItem;
+    }
+
+    return this.state.selectedItems;
+  }
 
   stateReducer = (state: any, changes: any) => {
     switch (changes.type) {
@@ -57,45 +60,60 @@ class MultiDownshift extends Component<
     }
   };
 
-  handleSelection = (selectedItem: Option, downshift: any) => {
-    const callOnChange = () => {
-      const { onSelect, onChange } = this.props;
-      const { selectedItems } = this.state;
+  handleChange = () => {
+    const { onSelect, onChange } = this.props;
+    const { selectedItems } = this.state;
+
+    if (onSelect) {
+      onSelect(selectedItems);
+    }
+    if (onChange) {
+      onChange(selectedItems);
+    }
+  };
+
+  handleSelection = (selectedItem: Option) => {
+    const { onSelect, onChange } = this.props;
+
+    if ((selectedItem as any).label === 'CREATE_OPTION') {
       if (onSelect) {
-        onSelect(selectedItems, this.getStateAndHelpers(downshift));
+        onSelect(selectedItem);
       }
       if (onChange) {
-        onChange(selectedItems, this.getStateAndHelpers(downshift));
+        onChange(selectedItem);
       }
-    };
+
+      return;
+    }
 
     if (
       this.state.selectedItems
         .map(itemToString)
         .includes(itemToString(selectedItem))
     ) {
-      this.removeItem(selectedItem, callOnChange);
+      this.removeItem(selectedItem);
     } else {
-      this.addSelectedItem(selectedItem, callOnChange);
+      this.addSelectedItem(selectedItem);
     }
   };
 
-  removeItem = (item: Option, cb?: () => void) => {
-    this.setState(({ selectedItems }) => {
-      return {
-        selectedItems: selectedItems.filter(
+  removeItem = (item: Option) => {
+    this.setState(
+      {
+        selectedItems: this.selectedItems.filter(
           i => itemToString(i) !== itemToString(item)
         ),
-      };
-    }, cb);
+      },
+      this.handleChange
+    );
   };
 
-  addSelectedItem(item: Option, cb: () => void) {
+  addSelectedItem(item: Option) {
     this.setState(
-      ({ selectedItems }) => ({
-        selectedItems: [...selectedItems, item],
-      }),
-      cb
+      {
+        selectedItems: [...this.selectedItems, item],
+      },
+      this.handleChange
     );
   }
 
@@ -120,17 +138,6 @@ class MultiDownshift extends Component<
     };
   };
 
-  getStateAndHelpers(downshift: ControllerStateAndHelpers<any>) {
-    const { selectedItems } = this.state;
-    const { getRemoveButtonProps, removeItem } = this;
-    return {
-      getRemoveButtonProps,
-      removeItem,
-      selectedItems,
-      ...downshift,
-    };
-  }
-
   render() {
     const { children, ...props } = this.props;
     // TODO: compose together props (rather than overwriting them) like downshift does
@@ -141,7 +148,14 @@ class MultiDownshift extends Component<
         onChange={this.handleSelection}
         selectedItem={null}
       >
-        {downshift => children(this.getStateAndHelpers(downshift))}
+        {downshift =>
+          children({
+            getRemoveButtonProps: this.getRemoveButtonProps,
+            removeItem: this.removeItem,
+            selectedItems: this.selectedItems,
+            ...downshift,
+          })
+        }
       </Downshift>
     );
   }
