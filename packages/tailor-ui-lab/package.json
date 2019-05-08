@@ -42,9 +42,9 @@
     "downshift": "^3.2.10",
     "fuzzaldrin-plus": "^0.6.0",
     "lodash.debounce": "^4.0.8",
-    "polished": "^3.2.0",
+    "polished": "^3.3.0",
     "react-icons": "^3.6.1",
     "react-tiny-virtual-list": "^2.2.0",
-    "styled-system": "^4.1.0"
+    "styled-system": "^4.2.1"
   }
 }
