@@ -32,7 +32,7 @@
     "@tailor-ui/utils": "^0.1.2",
     "html-tags": "^3.0.0",
     "moment": "^2.24.0",
-    "polished": "^3.2.0",
+    "polished": "^3.3.0",
     "prop-types": "^15.7.1",
     "ramda": "^0.26.1",
     "rc-calendar": "^9.10.8",
@@ -45,7 +45,7 @@
     "react-textarea-autosize": "^7.1.0",
     "resize-observer-polyfill": "^1.5.1",
     "styled-normalize": "^8.0.6",
-    "styled-system": "^4.1.0"
+    "styled-system": "^4.2.1"
   },
   "peerDependencies": {
     "react": ">=16.8.0",
