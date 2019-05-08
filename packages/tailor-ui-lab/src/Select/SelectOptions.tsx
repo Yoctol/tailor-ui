@@ -47,7 +47,11 @@ interface SelectOptionsProps {
   selectedItem: null | Option;
   selectedItems: Option[];
   noOptionsMessage?: () => ReactNode;
-  formatCreateLabel?: (createText: string) => ReactNode;
+  formatCreateLabel?: (labelInfo: {
+    value: string;
+    active: boolean;
+    hovered: boolean;
+  }) => ReactNode;
   isValidNewOption?: (value: string) => boolean;
 }
 
@@ -66,7 +70,7 @@ const SelectOptions: FunctionComponent<SelectOptionsProps> = ({
   selectedItem,
   selectedItems,
   noOptionsMessage = () => <DefaultNoOptionsMessage />,
-  formatCreateLabel = value => `Create new option: ${value}`,
+  formatCreateLabel = ({ value }) => `Create new option: ${value}`,
   isValidNewOption = value => value.trim() !== '',
 }) => {
   const [prevSearchValue, setPrevSearchValue] = useState(inputValue);
@@ -90,15 +94,17 @@ const SelectOptions: FunctionComponent<SelectOptionsProps> = ({
   }
 
   // if creatable is true, append create option to options
-  if (visible && creatable && isValidNewOption(inputValue)) {
+  if (creatable && isValidNewOption(visible ? inputValue : prevSearchValue)) {
     items = [
       ...items,
       {
         label: 'CREATE_OPTION',
-        value: inputValue,
+        value: visible ? inputValue : prevSearchValue,
       },
     ];
   }
+
+  console.log(inputValue, prevSearchValue, items);
 
   if (items.length === 0) {
     return <>{noOptionsMessage()}</>;
@@ -123,7 +129,11 @@ const SelectOptions: FunctionComponent<SelectOptionsProps> = ({
             : itemToString(selectedItem) === optionString;
           const content =
             (option as ObjectOption).label === 'CREATE_OPTION'
-              ? formatCreateLabel((option as ObjectOption).value)
+              ? formatCreateLabel({
+                  value: (option as ObjectOption).value,
+                  active,
+                  hovered,
+                })
               : optionString;
 
           return (

@@ -151,7 +151,7 @@ import { Select } from '@tailor-ui/lab';
             setOptions([...options, newOption]);
             setValue(newOption);
             setLoading(false);
-          }, 3000)
+          }, 1000)
         }
       }
       />
@@ -244,22 +244,38 @@ import { Select } from '@tailor-ui/lab';
 
 <Playground>
   {() => {
+    const [loading, setLoading] = React.useState(false);
     const [value, setValue] = React.useState([
+      { label: 'Banana', value: 'banana' }
+    ]);
+    const [options, setOptions] = React.useState([
+      { label: 'Banana', value: 'banana' },
       { label: 'Orange', value: 'orange' },
+      { label: 'Apple', value: 'apple' },
+      { label: 'Mango', value: 'mango' },
     ]);
 
     return (
       <Select
+        creatable
+        loading={loading}
         width="360px"
         multiple
         value={value}
         onChange={newValue => setValue(newValue)}
-        options={[
-          { label: 'Banana', value: 'banana' },
-          { label: 'Orange', value: 'orange' },
-          { label: 'Apple', value: 'apple' },
-          { label: 'Mango', value: 'mango' },
-        ]}
+        options={options}
+        isValidNewOption={name =>
+          !options.map(option => option.value).includes(name) && name.trim() !== ''
+        }
+        onCreateOption={name => {
+          const newOption = { label: name, value: name };
+          setLoading(true);
+          setTimeout(() => {
+            setOptions([...options, newOption]);
+            setValue(prevValue => [...prevValue, newOption]);
+            setLoading(false);
+          }, 1000);
+        }}
       />
     );
 

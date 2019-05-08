@@ -32,6 +32,28 @@ export const StyledSelectOption = styled.div<StyledSelectOptionProps>`
   cursor: pointer;
 `;
 
+export const StyledSelectedOption = styled.div`
+  display: inline-flex;
+  align-items: center;
+  height: 28px;
+  margin: 2px 8px 2px 0;
+  padding: 0 8px;
+  border: ${p => p.theme.borders.base};
+  border-radius: ${p => p.theme.radii.base};
+  border-color: ${p => p.theme.colors.primaryLight};
+  background-color: ${p => p.theme.colors.surface2};
+  color: ${p => p.theme.colors.primaryLight};
+  font-size: ${p => p.theme.fontSizes.sm};
+
+  svg {
+    fill: ${p => p.theme.colors.primaryLight2};
+  }
+
+  &:hover svg {
+    fill: ${p => p.theme.colors.primaryLight};
+  }
+`;
+
 export interface StyledSelectProps {
   focused: boolean;
   disabled: boolean;
@@ -72,6 +94,13 @@ export const StyledSelect = styled.div<StyledSelectProps>`
 
       input {
         color: ${p.theme.colors.gray500};
+      }
+
+      ${StyledSelectedOption} {
+        border-color: ${p.theme.colors.gray400};
+        background-color: ${p.theme.colors.gray200};
+        color: ${p.theme.colors.gray400};
+        pointer-events: none;
       }
     `}
 
@@ -120,28 +149,6 @@ export const StyledSelect = styled.div<StyledSelectProps>`
   }};
 
   ${p => p.theme.transition /* sc-declaration */};
-`;
-
-export const StyledSelectedOption = styled.div`
-  display: inline-flex;
-  align-items: center;
-  height: 28px;
-  margin: 2px 8px 2px 0;
-  padding: 0 8px;
-  border: ${p => p.theme.borders.base};
-  border-radius: ${p => p.theme.radii.base};
-  border-color: ${p => p.theme.colors.primaryLight};
-  background-color: ${p => p.theme.colors.surface2};
-  color: ${p => p.theme.colors.primaryLight};
-  font-size: ${p => p.theme.fontSizes.sm};
-
-  svg {
-    fill: ${p => p.theme.colors.primaryLight2};
-  }
-
-  &:hover svg {
-    fill: ${p => p.theme.colors.primaryLight};
-  }
 `;
 
 const spin = keyframes`

@@ -41,7 +41,11 @@ interface SelectProps {
   optionsMaxHeight?: number;
   onChange?: (option: Option) => void;
   noOptionsMessage?: () => ReactNode;
-  formatCreateLabel?: (createText: string) => ReactNode;
+  formatCreateLabel?: (labelInfo: {
+    value: string;
+    active: boolean;
+    hovered: boolean;
+  }) => ReactNode;
   isValidNewOption?: (value: string) => boolean;
   onCreateOption?: (value: string) => void;
 }
@@ -57,7 +61,7 @@ const Select: FunctionComponent<SelectProps> = ({
   searchable = false,
   options,
   value,
-  defaultValue = null,
+  defaultValue,
   placeholder = '',
   menu,
   itemSize = 36,
@@ -88,15 +92,15 @@ const Select: FunctionComponent<SelectProps> = ({
     const isCreate =
       selection && (selection as ObjectOption).label === 'CREATE_OPTION';
 
-    if (onCreateOption && isCreate) {
+    if (isCreate && onCreateOption) {
       onCreateOption((selection as ObjectOption).value);
     }
 
-    if (onChange) {
-      onChange(isCreate ? null : selection);
+    if (!isCreate && onChange) {
+      onChange(selection);
     }
 
-    if (!multiple) {
+    if (!multiple || isCreate) {
       setVisible(false);
     } else {
       setInputValue('');
@@ -132,7 +136,7 @@ const Select: FunctionComponent<SelectProps> = ({
       itemToString={itemToString}
       inputValue={inputValue}
       onInputValueChange={newInputValue => {
-        if (!multiple) {
+        if (!multiple && newInputValue !== 'CREATE_OPTION') {
           setInputValue(newInputValue);
         }
       }}
