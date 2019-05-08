@@ -20,8 +20,6 @@ import { getCaretCoordinates } from './textarea-caret-position';
 
 const placement = 'bottom';
 
-const LEFT_ARROW = 37;
-const RIGHT_ARROW = 39;
 const UP_ARROW = 38;
 const DOWN_ARROW = 40;
 const ENTER = 13;
@@ -107,7 +105,7 @@ const reducer: Reducer<MentionReducerState, MentionReducerAction> = (
     case 'openDropdown':
       return {
         ...state,
-        activeIndex: 0,
+        activeIndex: state.activeIndex === -1 ? 0 : state.activeIndex,
         dropdownVisible: true,
         ...action.payload,
       };
@@ -164,10 +162,6 @@ const reducer: Reducer<MentionReducerState, MentionReducerAction> = (
   }
 };
 
-type ResetDropdownType =
-  | KeyboardEvent<HTMLTextAreaElement>
-  | ChangeEvent<HTMLTextAreaElement>;
-
 export type FormatCreateText = (text: string) => string;
 
 interface MentionProps {
@@ -199,6 +193,7 @@ const Mention: FunctionComponent<MentionProps> = ({
   const mentionRef = useRef<HTMLTextAreaElement>(null);
   const highlightRef = useRef<HTMLDivElement>(null);
   const suggestionsRef = useRef<HTMLDivElement>(null);
+  const laf = useRef<number>();
 
   const cursorMention = useRef<CursorMention>({
     mention: null,
@@ -247,10 +242,22 @@ const Mention: FunctionComponent<MentionProps> = ({
     },
   });
 
-  const resetDropdown = ({ currentTarget }: ResetDropdownType) => {
+  const closeDropdown = () => {
+    if (laf.current) {
+      cancelAnimationFrame(laf.current);
+    }
+
+    dispatch({ type: 'closeDropdown' });
+  };
+
+  const resetDropdown = () => {
+    if (!mentionRef.current) {
+      return;
+    }
+
     const cursor = getMentionCursor(
-      currentTarget.value,
-      currentTarget.selectionStart
+      mentionRef.current.value,
+      mentionRef.current.selectionStart
     );
 
     cursorMention.current = cursor;
@@ -271,24 +278,22 @@ const Mention: FunctionComponent<MentionProps> = ({
       ];
 
       if (filteredSuggestions.length === 0) {
-        if (state.dropdownVisible) {
-          dispatch({ type: 'closeDropdown' });
-        }
+        closeDropdown();
 
         return;
       }
 
       const coordinates = getCaretCoordinates(
-        currentTarget,
+        mentionRef.current,
         cursor.startPos - 2
       );
 
-      const mentionRect = currentTarget.getBoundingClientRect();
+      const mentionRect = mentionRef.current.getBoundingClientRect();
 
       const overlayPosition = getOverlayPosition({
         coordinates,
         mentionRect,
-        target: currentTarget,
+        target: mentionRef.current,
         placement,
       });
 
@@ -299,8 +304,10 @@ const Mention: FunctionComponent<MentionProps> = ({
           filteredSuggestions,
         },
       });
-    } else if (state.dropdownVisible) {
-      dispatch({ type: 'closeDropdown' });
+
+      laf.current = requestAnimationFrame(resetDropdown);
+    } else {
+      closeDropdown();
     }
   };
 
@@ -330,15 +337,6 @@ const Mention: FunctionComponent<MentionProps> = ({
     }
   };
 
-  const handleKeyUp = (event: KeyboardEvent<HTMLTextAreaElement>) => {
-    const { keyCode } = event;
-
-    if (keyCode === LEFT_ARROW || keyCode === RIGHT_ARROW) {
-      event.stopPropagation();
-      resetDropdown(event);
-    }
-  };
-
   const handleKeyDown = (event: KeyboardEvent<HTMLTextAreaElement>) => {
     const { dropdownVisible, activeIndex, filteredSuggestions } = state;
     const { keyCode } = event;
@@ -359,7 +357,7 @@ const Mention: FunctionComponent<MentionProps> = ({
     }
 
     if (dropdownVisible && [TAB, ESCAPE].includes(keyCode)) {
-      dispatch({ type: 'closeDropdown' });
+      closeDropdown();
 
       return;
     }
@@ -391,8 +389,6 @@ const Mention: FunctionComponent<MentionProps> = ({
         onChange(newValue);
       }
     }
-
-    resetDropdown(event);
   };
 
   const handleOnFocus = () => {
@@ -400,10 +396,13 @@ const Mention: FunctionComponent<MentionProps> = ({
   };
 
   const composedProps = mergeEventProps(props, {
-    onKeyUp: handleKeyUp,
     onKeyDown: handleKeyDown,
-    onClick: resetDropdown,
     onChange: handleChange,
+    onSelect: () => {
+      if (!state.dropdownVisible) {
+        resetDropdown();
+      }
+    },
     onScroll: (event: UIEvent<HTMLTextAreaElement>) => {
       if (highlightRef.current) {
         highlightRef.current.scrollTop = event.currentTarget.scrollTop;
