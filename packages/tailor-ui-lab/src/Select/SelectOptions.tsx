@@ -104,8 +104,6 @@ const SelectOptions: FunctionComponent<SelectOptionsProps> = ({
     ];
   }
 
-  console.log(inputValue, prevSearchValue, items);
-
   if (items.length === 0) {
     return <>{noOptionsMessage()}</>;
   }
