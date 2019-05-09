@@ -44,7 +44,7 @@ const Textarea: FunctionComponent<TextareaProps> = forwardRef<
     <StyledTextarea
       ref={ref}
       id={labelId}
-      invalid={invalid}
+      invalid={invalid || undefined}
       {...mergeEventProps(props, {
         onChange: (event: ChangeEvent<HTMLTextAreaElement>) => {
           setValue(event.currentTarget.value);
