@@ -101,6 +101,7 @@ import { Tag } from '@tailor-ui/lab';
             <Tag
               editable
               initialEditing
+              onBlur={() => setEditing(false)}
               onChange={(_ , value) => {
                 if (value.trim() !== '') {
                   setValues(prevValues => ([...prevValues, value]));
