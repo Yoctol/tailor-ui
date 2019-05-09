@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.6.1](https://github.com/Yoctol/tailor-ui/compare/@tailor-ui/lab@0.6.0...@tailor-ui/lab@0.6.1) (2019-05-09)
+
+### Bug Fixes
+
+- **select:** console.log ([8bf5407](https://github.com/Yoctol/tailor-ui/commit/8bf5407))
+
 # [0.6.0](https://github.com/Yoctol/tailor-ui/compare/@tailor-ui/lab@0.5.0...@tailor-ui/lab@0.6.0) (2019-05-08)
 
 ### Bug Fixes
