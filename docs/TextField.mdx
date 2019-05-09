@@ -74,7 +74,6 @@ import { TextField } from 'tailor-ui';
 <Playground>
   {() => {
     const [value, setValue] = React.useState('')
-    const hasError = value === 'error';
 
     return (
       <TextField
@@ -82,8 +81,7 @@ import { TextField } from 'tailor-ui';
         rows={2}
         maxRows={6}
         label="Please type 'error'"
-        error={hasError}
-        message="Just show error"
+        validationMessage={value === 'error' ? 'Just show error' : null}
         value={value}
         onChange={event => setValue(event.target.value)}
       />

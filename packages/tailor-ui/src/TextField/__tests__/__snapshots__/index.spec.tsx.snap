@@ -434,20 +434,6 @@ exports[`TextField should render with maxLength 1`] = `
   color: #bfbfbf;
 }
 
-.c5 {
-  position: absolute;
-  right: -1px;
-  bottom: -2px;
-  padding: 1px 5px;
-  border: 1px solid;
-  border-radius: 999px;
-  border-color: #3c5ad0;
-  opacity: 0;
-  background-color: #fff;
-  font-size: 0.625rem;
-  line-height: 1;
-}
-
 .c0 {
   position: relative;
   margin-top: 10px;
@@ -507,11 +493,6 @@ exports[`TextField should render with maxLength 1`] = `
     required=""
     value=""
   />
-  <div
-    class="c4 c5"
-  >
-    20
-  </div>
   <label>
     placeholder
   </label>

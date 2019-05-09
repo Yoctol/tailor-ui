@@ -6,14 +6,14 @@ import createUIDGenerator from '../utils/createUIDGenerator';
 import FormFieldContext from './FormFieldContext';
 import { Label, ValidationMessage } from './styles';
 
-type Validator =
+export type Validator =
   | ((value: any) => string)
   | ({
       rule: (value: any) => boolean;
       message: string;
     })[];
 
-interface Validate {
+export interface Validate {
   value: any;
   validator?: Validator;
 }

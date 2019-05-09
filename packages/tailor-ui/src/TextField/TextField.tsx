@@ -5,6 +5,7 @@ import React, {
   FormEventHandler,
   FunctionComponent,
   KeyboardEventHandler,
+  ReactNode,
   useState,
 } from 'react';
 import styled from 'styled-components';
@@ -30,7 +31,7 @@ const MaxLength = styled.div`
   line-height: 1;
 `;
 
-const TextFieldField = styled(FormField)`
+const TextFieldContainer = styled(FormField)`
   position: relative;
   margin-top: 10px;
 
@@ -96,13 +97,9 @@ export interface TextFieldProps {
    */
   defaultValue?: string;
   /**
-   * Set the textfield status to error
-   */
-  error?: boolean;
-  /**
    * The message will show when success or warning or error is true
    */
-  message?: string;
+  validationMessage?: ReactNode;
   /**
    * The content max length of textfield
    */
@@ -125,8 +122,7 @@ const TextField: FunctionComponent<TextFieldProps> = ({
   label = null,
   value: controlledValue,
   defaultValue = '',
-  error = false,
-  message = null,
+  validationMessage,
   maxLength,
   textarea = false,
   onChange = null,
@@ -154,12 +150,14 @@ const TextField: FunctionComponent<TextFieldProps> = ({
   };
 
   return (
-    <TextFieldField validationMessage={error ? message : null}>
+    <TextFieldContainer validationMessage={validationMessage}>
       <RenderComponent {...inputProps} required />
-      {maxLength && !error && <MaxLength>{maxLength - value.length}</MaxLength>}
+      {maxLength && Boolean(validationMessage) && (
+        <MaxLength>{maxLength - value.length}</MaxLength>
+      )}
       {/* eslint-disable-next-line */}
       {label && <label>{label}</label>}
-    </TextFieldField>
+    </TextFieldContainer>
   );
 };
 
