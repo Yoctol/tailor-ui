@@ -40,8 +40,12 @@ const SelectInput = forwardRef<HTMLInputElement, SelectInputProps>(
           ? {
               value: inputValue,
               onChange,
-              onKeyUp(event) {
-                if (multiple && event.key === 'Backspace' && !inputValue) {
+              onKeyDown(event) {
+                if (
+                  multiple &&
+                  event.key === 'Backspace' &&
+                  !event.currentTarget.value
+                ) {
                   removeItem(selectedItems[selectedItems.length - 1]);
                 }
               },
