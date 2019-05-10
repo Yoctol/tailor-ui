@@ -6,6 +6,7 @@ import React, {
 } from 'react';
 import TextareaAutosize from 'react-autosize-textarea';
 import styled from 'styled-components';
+import { omit } from 'ramda';
 
 import { mergeEventProps } from '@tailor-ui/utils';
 
@@ -19,7 +20,9 @@ export type TextareaProps = InputProps &
     resize?: boolean;
   };
 
-export const StyledTextarea = styled(TextareaAutosize)<TextareaProps>`
+export const StyledTextarea = styled(props => (
+  <TextareaAutosize {...omit(['invalid'], props)} />
+))<TextareaProps>`
   word-wrap: break-word;
   resize: ${({ resize }) => (resize ? 'initial' : 'none')};
 
