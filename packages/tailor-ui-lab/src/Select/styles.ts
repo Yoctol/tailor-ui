@@ -16,7 +16,6 @@ export interface StyledSelectOptionProps {
 export const StyledSelectOption = styled.div<StyledSelectOptionProps>`
   display: flex;
   align-items: center;
-  padding: 0 24px;
   background-color: ${p =>
     p.hovered ? p.theme.colors.primaryLight : p.theme.colors.light};
   color: ${p => {
@@ -30,11 +29,19 @@ export const StyledSelectOption = styled.div<StyledSelectOptionProps>`
   }};
   font-size: ${p => p.theme.fontSizes.sm};
   cursor: pointer;
+
+  > div {
+    padding: 0 24px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
 `;
 
 export const StyledSelectedOption = styled.div`
   display: inline-flex;
   align-items: center;
+  max-width: 100%;
   height: 28px;
   margin: 2px 8px 2px 0;
   padding: 0 8px;
@@ -44,6 +51,12 @@ export const StyledSelectedOption = styled.div`
   background-color: ${p => p.theme.colors.surface2};
   color: ${p => p.theme.colors.primaryLight};
   font-size: ${p => p.theme.fontSizes.sm};
+
+  > span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
 
   svg {
     fill: ${p => p.theme.colors.primaryLight2};
@@ -107,9 +120,12 @@ export const StyledSelect = styled.div<StyledSelectProps>`
   input {
     flex: 1;
     width: 100%;
+    min-width: 50px;
+    overflow: hidden;
     border: none;
     outline: none;
     background-color: transparent;
+    text-overflow: ellipsis;
     pointer-events: none;
 
     &::placeholder {
@@ -165,7 +181,6 @@ export const Loading = styled.div`
   flex: none;
   width: 1em;
   height: 1em;
-  margin-right: 8px;
   border: ${p => p.theme.borders.base};
   border-radius: 50%;
   border-top-color: transparent;

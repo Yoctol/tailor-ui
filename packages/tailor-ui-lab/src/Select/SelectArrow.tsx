@@ -17,7 +17,6 @@ const SelectArrow: FunctionComponent<{ on: boolean }> = ({ on }) => {
         flex: 'none',
         pointerEvents: 'none',
         display: 'inline-flex',
-        marginRight: -4,
       }}
     >
       <Icon type={MdKeyboardArrowUp} fill="gray400" />
