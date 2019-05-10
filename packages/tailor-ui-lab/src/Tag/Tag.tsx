@@ -130,6 +130,11 @@ const Tag: FunctionComponent<TagProps> = ({
                 handleUpdate(event);
               }
             }}
+            onKeyDown={event => {
+              if (event.key === 'Escape') {
+                setEditing(false);
+              }
+            }}
           />
         ) : (
           children
