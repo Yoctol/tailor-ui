@@ -32,18 +32,15 @@ describe('Tag', () => {
     );
 
     const tagText = queryByText('Foo');
-
     fireEvent.click(tagText);
 
     const input = container.querySelector('input');
 
-    await wait(() => {
-      fireEvent.change(input, { target: { value: 'Foo Bar' } });
-      fireEvent.keyPress(input, { key: 'Enter', code: 13, charCode: 13 });
-    });
-
+    fireEvent.change(input, { target: { value: 'Foo Bar' } });
     expect(input.value).toBe('Foo Bar');
-    expect(onChange).toBeCalled();
+
+    fireEvent.keyPress(input, { key: 'Enter', code: 13, charCode: 13 });
+    expect(onChange).toBeCalledWith('Foo', 'Foo Bar');
   });
 
   it('should render closable tag', async () => {
