@@ -1,0 +1,74 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Popover should render correctly 1`] = `
+.c3 {
+  margin: 0;
+  color: #373737;
+  font-weight: bold;
+  line-height: 1.5;
+}
+
+.c2 {
+  font-size: 0.875rem;
+}
+
+.c0 {
+  border: 1px solid;
+  border-radius: 0.5rem;
+  border-color: #e0e0e0;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(100,120,168,0.3);
+  color: #373737;
+  font-size: 0.875rem;
+  text-align: left;
+  white-space: nowrap;
+  padding: 0.5rem;
+}
+
+.c1 {
+  margin-bottom: 0.25rem;
+  padding-bottom: 0.25rem;
+  border-bottom: 1px solid;
+  border-color: #e0e0e0;
+}
+
+<body>
+  <div>
+    <button
+      type="button"
+    >
+      button
+    </button>
+  </div>
+  <div
+    portal-container=""
+  >
+    <div
+      style="position: fixed; top: 0px; left: 0px; z-index: 10;"
+    >
+      <div
+        style="position: absolute; top: 0px; left: 0px; transform: translate3d(-6px, -6px, 0px);"
+      >
+        <div
+          style="opacity: 0; transform: scale(0.9);"
+        >
+          <div
+            class="c0"
+          >
+            <div
+              class="c1"
+            >
+              <h6
+                class="c2 c3"
+              >
+                Popover Title
+              </h6>
+            </div>
+            Popover Content
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;

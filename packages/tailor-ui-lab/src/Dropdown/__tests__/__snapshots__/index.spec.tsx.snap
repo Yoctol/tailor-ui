@@ -1,0 +1,94 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Dropdown should render correctly 1`] = `
+.c0 {
+  border: 1px solid;
+  border-radius: 0.5rem;
+  border-color: #e0e0e0;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(100,120,168,0.3);
+  color: #373737;
+  font-size: 0.875rem;
+  text-align: left;
+  white-space: nowrap;
+  padding: 0rem;
+}
+
+.c1 {
+  max-height: 240px;
+  padding: 0.5rem 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  border-radius: 0.5rem;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 2.25rem;
+  padding: 0 24px;
+  background-color: #ffffff;
+  font-size: 0.875rem;
+  cursor: pointer;
+}
+
+.c2[disabled],
+.c2:disabled {
+  color: #8b8b8b;
+  cursor: not-allowed;
+}
+
+.c2[disabled]:hover,
+.c2:disabled:hover {
+  background-color: #ffffff;
+}
+
+.c2:hover {
+  background-color: #f6f6f6;
+}
+
+<body>
+  <div>
+    <button
+      type="button"
+    >
+      button
+    </button>
+  </div>
+  <div
+    portal-container=""
+  >
+    <div
+      style="position: fixed; top: 0px; left: 0px; z-index: 10;"
+    >
+      <div
+        style="position: absolute; top: 0px; left: 0px; transform: translate3d(-6px, -6px, 0px);"
+      >
+        <div
+          style="opacity: 0; transform: scale(0.9);"
+        >
+          <div
+            class="c0"
+          >
+            <div
+              class="c1"
+            >
+              <li
+                class="c2"
+              >
+                item
+              </li>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
