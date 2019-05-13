@@ -44,9 +44,8 @@ import { Input, Textarea, FormField } from 'tailor-ui';
 #### With FormField & Label
 
 <Playground>
-  <FormField>
-    <Label htmlFor="demo">With Default:</Label>
-    <Input id="demo" placeholder="placeholder" />
+  <FormField label="Label">
+    <Input placeholder="placeholder" />
   </FormField>
 </Playground>
 
@@ -61,24 +60,22 @@ import { Input, Textarea, FormField } from 'tailor-ui';
 #### With disabled
 
 <Playground>
-  <Label htmlFor="demo">With Disabled:</Label>
-  <Input id="demo" placeholder="placeholder" disabled />
+  <FormField label="Disabled">
+    <Input placeholder="placeholder" disabled />
+  </FormField>
 </Playground>
 
 #### With size
 
 <Playground>
-  <FormField>
-    <Label htmlFor="demo_sm">With sm:</Label>
-    <Input id="demo_sm" size="sm" placeholder="placeholder" />
+  <FormField label="sm">
+    <Input size="sm" placeholder="placeholder" />
   </FormField>
-  <FormField>
-    <Label htmlFor="demo_md">With md:</Label>
-    <Input id="demo_md" size="md" placeholder="placeholder" />
+  <FormField label="md (default)">
+    <Input size="md" placeholder="placeholder" />
   </FormField>
-  <FormField>
-    <Label htmlFor="demo_lg">With lg:</Label>
-    <Input id="demo_lg" size="lg" placeholder="placeholder" />
+  <FormField label="lg">
+    <Input size="lg" placeholder="placeholder" />
   </FormField>
 </Playground>
 
@@ -139,18 +136,16 @@ import { Input, Textarea, FormField } from 'tailor-ui';
 #### Basic
 
 <Playground>
-  <FormField>
-    <Label htmlFor="demo">Basic Textarea</Label>
-    <Textarea id="demo" placeholder="placeholder" />
+  <FormField label="demo">
+    <Textarea placeholder="placeholder" />
   </FormField>
 </Playground>
 
 #### With rows & maxRows
 
 <Playground>
-  <FormField>
-    <Label htmlFor="demo">With rows & maxRows:</Label>
-    <Textarea id="demo" placeholder="placeholder" rows={3} maxRows={6} />
+  <FormField label="With rows & maxRows:">
+    <Textarea placeholder="placeholder" rows={3} maxRows={6} />
   </FormField>
 </Playground>
 

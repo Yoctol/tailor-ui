@@ -34,7 +34,7 @@ export interface CheckboxGroupProps {
   /**
    * The callback function that is triggered when the state changes
    */
-  onChange?: (value: ReadonlyArray<string>) => void;
+  onChange?: (value: string[]) => void;
 }
 
 const CheckboxGroup: FunctionComponent<CheckboxGroupProps> = ({
