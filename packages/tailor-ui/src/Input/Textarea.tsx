@@ -1,3 +1,4 @@
+/* eslint react/no-multi-comp: off */
 import React, {
   ChangeEvent,
   FunctionComponent,
@@ -16,13 +17,15 @@ import { InputProps } from './Input';
 import { inputStyles } from './styles';
 
 export type TextareaProps = InputProps &
-  TextareaHTMLAttributes<any> & {
+  TextareaHTMLAttributes<HTMLTextAreaElement> & {
     resize?: boolean;
   };
 
-export const StyledTextarea = styled(props => (
-  <TextareaAutosize {...omit(['invalid'], props)} />
-))<TextareaProps>`
+export const StyledTextarea = styled(
+  forwardRef<HTMLTextAreaElement>(function StyledTextarea(props, ref) {
+    return <TextareaAutosize ref={ref} {...omit(['invalid'], props)} />;
+  })
+)<TextareaProps>`
   word-wrap: break-word;
   resize: ${({ resize }) => (resize ? 'initial' : 'none')};
 
@@ -34,9 +37,9 @@ export const StyledTextarea = styled(props => (
 `;
 
 const Textarea: FunctionComponent<TextareaProps> = forwardRef<
-  HTMLInputElement,
-  InputProps
->(({ id, ...props }, ref) => {
+  HTMLTextAreaElement,
+  TextareaProps
+>(function Textarea({ id, ...props }, ref) {
   const [invalid, labelId, setValue] = useFormField({
     id,
     value: props.value,
