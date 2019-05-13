@@ -5,7 +5,7 @@ route: /components/textfield
 ---
 
 import { PropsTable, Playground, Link } from 'docz';
-import { Button, TextField } from 'tailor-ui';
+import { Button, FormField, TextField } from 'tailor-ui';
 
 # TextField
 
@@ -76,15 +76,16 @@ import { TextField } from 'tailor-ui';
     const [value, setValue] = React.useState('')
 
     return (
-      <TextField
-        textarea
-        rows={2}
-        maxRows={6}
-        label="Please type 'error'"
-        validationMessage={value === 'error' ? 'Just show error' : null}
-        value={value}
-        onChange={event => setValue(event.target.value)}
-      />
+      <FormField validationMessage={value === 'error' ? 'Just show error' : null}>
+        <TextField
+          textarea
+          rows={2}
+          maxRows={6}
+          label="Please type 'error'"
+          value={value}
+          onChange={event => setValue(event.target.value)}
+        />
+      </FormField>
     );
 
 }}
@@ -96,17 +97,27 @@ import { TextField } from 'tailor-ui';
 <Playground>
   {() => {
     const [value, setValue] = React.useState('')
-    const hasError = value === 'error';
 
     return (
-      <TextField
-        label="Please type 'error'"
-        maxLength={12}
-        error={hasError}
-        message="Just show error"
-        value={value}
-        onChange={event => setValue(event.target.value)}
-      />
+      <FormField
+        validator={[
+          {
+            rule: value => value === 'error1',
+            message: 'error message',
+          },
+          {
+            rule: value => value === 'error2',
+            message: 'another error message',
+          },
+        ]}
+      >
+        <TextField
+          label="Please type 'error1' or 'error2'"
+          maxLength={12}
+          value={value}
+          onChange={event => setValue(event.target.value)}
+        />
+      </FormField>
     );
 
 }}

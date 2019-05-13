@@ -15,33 +15,56 @@ export type Validator =
 
 export interface Validate {
   value: any;
+  validationMessage?: ReactNode;
   validator?: Validator;
 }
 
-const validate = ({ value, validator }: Validate) => {
+export const validate = ({ value, validator, validationMessage }: Validate) => {
+  if (validationMessage) {
+    return {
+      invalid: true,
+      message: validationMessage,
+    };
+  }
+
   if (!validator) {
-    return null;
+    return {
+      invalid: false,
+      message: null,
+    };
   }
 
   if (validator instanceof Function) {
-    return validator(value);
+    const message = validator(value);
+    return {
+      invalid: Boolean(message),
+      message,
+    };
   }
 
   if (Array.isArray(validator)) {
-    let validationMessage = null;
+    let returnMessage = null;
+    let invalid = false;
 
     validator.some(({ rule, message }) => {
       if (rule(value)) {
-        validationMessage = message;
+        returnMessage = message;
+        invalid = true;
         return true;
       }
       return false;
     });
 
-    return validationMessage;
+    return {
+      invalid,
+      message: returnMessage,
+    };
   }
 
-  return null;
+  return {
+    invalid: false,
+    message: null,
+  };
 };
 
 export interface FormFieldProps {
@@ -64,11 +87,15 @@ const FormField: FunctionComponent<FormFieldProps> = ({
   const [labelId, setLabelId] = useState(getUID());
   const [value, setValue] = useState('');
 
-  const message = validate({ value, validator }) || validationMessage;
+  const { invalid, message } = validate({
+    value,
+    validator,
+    validationMessage,
+  });
 
   return (
     <FormFieldContext.Provider
-      value={{ invalid: Boolean(message), setValue, setLabelId, labelId }}
+      value={{ invalid, setValue, setLabelId, labelId }}
     >
       <Space mb="16px" {...props}>
         {label && (
@@ -78,7 +105,7 @@ const FormField: FunctionComponent<FormFieldProps> = ({
         )}
 
         {children}
-        {message && <ValidationMessage>{message}</ValidationMessage>}
+        {invalid && <ValidationMessage>{message}</ValidationMessage>}
       </Space>
     </FormFieldContext.Provider>
   );
