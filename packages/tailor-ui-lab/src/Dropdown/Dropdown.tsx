@@ -9,7 +9,9 @@ import DropdownItem from './DropdownItem';
 import DropdownSubList from './DropdownSubList';
 import { Divider, List } from './styles';
 
-interface DropdownProps extends PopoverProps {
+type Omit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>;
+
+interface DropdownProps extends Omit<PopoverProps, 'content'> {
   overlay: ReactNode;
 }
 

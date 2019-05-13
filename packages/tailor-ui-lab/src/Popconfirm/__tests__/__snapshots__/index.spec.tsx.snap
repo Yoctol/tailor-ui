@@ -1,0 +1,304 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Popconfirm should render correctly 1`] = `
+.c1 {
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c4 {
+  box-sizing: border-box;
+  margin-top: 1rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c3 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  line-height: 1;
+  cursor: default;
+  margin-right: 0.5rem;
+}
+
+.c3 svg {
+  fill: #8b8b8b;
+  vertical-align: middle;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+}
+
+.c3.c3.c3 svg {
+  fill: #f6a700;
+  width: 20px;
+  height: 20px;
+}
+
+.c5 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  position: relative;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  overflow: hidden;
+  border: 1px solid;
+  border-radius: 0.5rem;
+  border-color: transparent;
+  line-height: 1.5;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+  height: 1.75rem;
+  padding: 0 0.5rem;
+  font-size: 0.875rem;
+  border-color: #e0e0e0;
+  background-color: #ffffff;
+  color: #373737;
+  margin-left: auto;
+}
+
+.c5:focus {
+  outline: 0;
+}
+
+.c5:disabled,
+.c5[disabled] {
+  opacity: 0.85;
+  background-color: #e0e0e0;
+  color: #8b8b8b;
+  cursor: default;
+  pointer-events: none;
+}
+
+.c5:disabled .c2 svg,
+.c5[disabled] .c2 svg {
+  fill: #8b8b8b;
+}
+
+.c5::before {
+  content: '';
+  display: inline-block;
+  position: relative;
+  left: 0;
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
+  width: 0;
+  height: 0;
+  margin-right: 0;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+}
+
+.c5::before {
+  border-color: #373737;
+}
+
+.c5 .c2 svg {
+  fill: #bfbfbf;
+}
+
+.c5:hover {
+  border-color: #6B88c5;
+}
+
+.c5:active {
+  border-color: #3c5ad0;
+  color: #3c5ad0;
+}
+
+.c5:active .c2 svg {
+  fill: #3c5ad0;
+}
+
+.c6 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  position: relative;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  overflow: hidden;
+  border: 1px solid;
+  border-radius: 0.5rem;
+  border-color: transparent;
+  line-height: 1.5;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+  height: 1.75rem;
+  padding: 0 0.5rem;
+  font-size: 0.875rem;
+  background-color: #3c5ad0;
+  color: #ffffff;
+  font-weight: bold;
+  margin-left: 0.5rem;
+}
+
+.c6:focus {
+  outline: 0;
+}
+
+.c6:disabled,
+.c6[disabled] {
+  opacity: 0.85;
+  background-color: #e0e0e0;
+  color: #8b8b8b;
+  cursor: default;
+  pointer-events: none;
+}
+
+.c6:disabled .c2 svg,
+.c6[disabled] .c2 svg {
+  fill: #8b8b8b;
+}
+
+.c6::before {
+  content: '';
+  display: inline-block;
+  position: relative;
+  left: 0;
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
+  width: 0;
+  height: 0;
+  margin-right: 0;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+}
+
+.c6 .c2 svg {
+  fill: #ffffff;
+}
+
+.c6:hover {
+  background-color: #516bd5;
+}
+
+.c6:active {
+  background-color: #2f4dc3;
+}
+
+.c0 {
+  border: 1px solid;
+  border-radius: 0.5rem;
+  border-color: #e0e0e0;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(100,120,168,0.3);
+  color: #373737;
+  font-size: 0.875rem;
+  text-align: left;
+  white-space: nowrap;
+  padding: 0.5rem;
+}
+
+<body>
+  <div>
+    <button
+      type="button"
+    >
+      button
+    </button>
+  </div>
+  <div
+    portal-container=""
+  >
+    <div
+      style="position: fixed; top: 0px; left: 0px; z-index: 10;"
+    >
+      <div
+        style="position: absolute; top: 0px; left: 0px; transform: translate3d(-6px, -6px, 0px);"
+      >
+        <div
+          style="opacity: 0; transform: scale(0.9);"
+        >
+          <div
+            class="c0"
+          >
+            <div
+              class="c1"
+            >
+              <i
+                class="c2 c3"
+                cursor="default"
+                fill="warning"
+                size="20"
+              >
+                <svg
+                  height="32"
+                  viewBox="0 0 32 32"
+                  width="32"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M20.566 3.47l7.964 7.964c1.587 1.588 1.998 2.329 2.268 3.22.27.89.27 1.801 0 2.692-.27.891-.68 1.632-2.268 3.22l-7.964 7.964c-1.588 1.587-2.329 1.998-3.22 2.268-.89.27-1.801.27-2.692 0-.891-.27-1.632-.68-3.22-2.268L3.47 20.566c-1.587-1.588-1.998-2.329-2.268-3.22a4.577 4.577 0 0 1 0-2.692c.27-.891.68-1.632 2.268-3.22l7.964-7.964c1.588-1.587 2.329-1.998 3.22-2.268.89-.27 1.801-.27 2.692 0 .891.27 1.632.68 3.22 2.268zM14 7v10.215c0 .503.07.773.2 1.018.131.244.323.436.567.567.245.13.515.2 1.018.2h.43c.503 0 .773-.07 1.018-.2.244-.131.436-.323.567-.567.13-.245.2-.515.2-1.018V7h-4zm1.785 14c-.503 0-.773.07-1.018.2-.244.131-.436.323-.567.567-.13.245-.2.515-.2 1.018v.43c0 .503.07.773.2 1.018.131.244.323.436.567.567.245.13.515.2 1.018.2h.43c.503 0 .773-.07 1.018-.2.244-.131.436-.323.567-.567.13-.245.2-.515.2-1.018v-.43c0-.503-.07-.773-.2-1.018a1.363 1.363 0 0 0-.567-.567c-.245-.13-.515-.2-1.018-.2h-.43z"
+                    fill-rule="nonzero"
+                  />
+                </svg>
+              </i>
+              Content
+            </div>
+            <div
+              class="c4"
+            >
+              <button
+                class="c5"
+              >
+                Cancel
+              </button>
+              <button
+                class="c6"
+              >
+                Confirm
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;

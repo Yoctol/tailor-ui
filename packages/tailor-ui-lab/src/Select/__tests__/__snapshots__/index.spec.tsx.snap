@@ -1,0 +1,177 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Select should render correctly 1`] = `
+.c2 {
+  box-sizing: border-box;
+  overflow: hidden;
+  -webkit-flex: auto;
+  -ms-flex: auto;
+  flex: auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.c3 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  line-height: 1;
+  cursor: default;
+}
+
+.c3 svg {
+  fill: #8b8b8b;
+  vertical-align: middle;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+}
+
+.c3.c3.c3 svg {
+  fill: #bfbfbf;
+  width: 24px;
+  height: 24px;
+}
+
+.c0 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  cursor: pointer;
+  width: 240px;
+}
+
+.c1 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  max-width: 100%;
+  border: 1px solid;
+  border-radius: 0.25rem;
+  border-color: #bfbfbf;
+  outline: none;
+  background-color: #ffffff;
+  color: #373737;
+  line-height: 1.5;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  min-height: 2.25rem;
+  padding: 4px 0.75rem;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+}
+
+.c1:hover {
+  border-color: #3c5ad0;
+}
+
+.c1 input {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  width: 100%;
+  min-width: 50px;
+  overflow: hidden;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  text-overflow: ellipsis;
+  pointer-events: none;
+}
+
+.c1 input::-webkit-input-placeholder {
+  color: #bfbfbf;
+}
+
+.c1 input::-moz-placeholder {
+  color: #bfbfbf;
+}
+
+.c1 input:-ms-input-placeholder {
+  color: #bfbfbf;
+}
+
+.c1 input::placeholder {
+  color: #bfbfbf;
+}
+
+.c1 input {
+  font-size: 1rem;
+}
+
+<body>
+  <div>
+    <div
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      aria-labelledby="downshift-0-label"
+      class="c0"
+      role="combobox"
+      width="240"
+    >
+      <div
+        aria-haspopup="true"
+        aria-label="open menu"
+        class="c1"
+        data-toggle="true"
+        role="button"
+        type="button"
+      >
+        <div
+          class="c2"
+          overflow="hidden"
+        >
+          <input
+            autocomplete="off"
+            placeholder=""
+            readonly=""
+            value=""
+          />
+        </div>
+        <i
+          style="transform: rotate(180deg); pointer-events: none; display: inline-flex;"
+        >
+          <i
+            class="c3"
+            cursor="default"
+            fill="gray400"
+            size="24"
+          >
+            <svg
+              fill="currentColor"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="0"
+              viewBox="0 0 24 24"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"
+              />
+            </svg>
+          </i>
+        </i>
+      </div>
+    </div>
+  </div>
+</body>
+`;

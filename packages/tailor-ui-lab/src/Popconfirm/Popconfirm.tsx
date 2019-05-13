@@ -8,9 +8,9 @@ import React, {
 
 import { Button, Flex, LocaleContext, getTypeIcon } from 'tailor-ui';
 
-import Popover from '../Popover';
+import Popover, { PopoverProps } from '../Popover';
 
-interface PopconfirmContentProps {
+interface PopconfirmContentProps extends PopoverProps {
   /**
    * text of the Cancel button
    */
