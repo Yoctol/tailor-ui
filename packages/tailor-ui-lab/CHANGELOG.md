@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.6.2](https://github.com/Yoctol/tailor-ui/compare/@tailor-ui/lab@0.6.1...@tailor-ui/lab@0.6.2) (2019-05-13)
+
+### Bug Fixes
+
+- **input:** add assertion in change input test ([d5cb71d](https://github.com/Yoctol/tailor-ui/commit/d5cb71d))
+- **select:** content overflow ([ff4848f](https://github.com/Yoctol/tailor-ui/commit/ff4848f))
+- **select:** content overflow ([#201](https://github.com/Yoctol/tailor-ui/issues/201)) ([4832777](https://github.com/Yoctol/tailor-ui/commit/4832777))
+- **select:** should not remove item when keyup ([e806591](https://github.com/Yoctol/tailor-ui/commit/e806591))
+- **Tag:** escape editable tag ([b505c3b](https://github.com/Yoctol/tailor-ui/commit/b505c3b))
+
 ## [0.6.1](https://github.com/Yoctol/tailor-ui/compare/@tailor-ui/lab@0.6.0...@tailor-ui/lab@0.6.1) (2019-05-09)
 
 ### Bug Fixes

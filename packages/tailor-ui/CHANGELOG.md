@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.11.2](https://github.com/yoctol/tailor-ui/compare/tailor-ui@0.11.1...tailor-ui@0.11.2) (2019-05-13)
+
+### Bug Fixes
+
+- **input:** add assertion in change input test ([d5cb71d](https://github.com/yoctol/tailor-ui/commit/d5cb71d))
+- **textarea:** prevent pass invalid to textarea component ([f5665f9](https://github.com/yoctol/tailor-ui/commit/f5665f9))
+
 ## [0.11.1](https://github.com/yoctol/tailor-ui/compare/tailor-ui@0.11.0...tailor-ui@0.11.1) (2019-05-09)
 
 ### Bug Fixes
