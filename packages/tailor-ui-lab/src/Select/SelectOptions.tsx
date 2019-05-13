@@ -2,6 +2,7 @@ import React, {
   FunctionComponent,
   ReactNode,
   useEffect,
+  useRef,
   useState,
 } from 'react';
 import VirtualList from 'react-tiny-virtual-list';
@@ -74,11 +75,21 @@ const SelectOptions: FunctionComponent<SelectOptionsProps> = ({
   isValidNewOption = value => value.trim() !== '',
 }) => {
   const [prevSearchValue, setPrevSearchValue] = useState(inputValue);
+  const [createOptionWidth, setCreateOptionWidth] = useState<
+    number | undefined
+  >(undefined);
+  const createOptionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     // save previous inputValue to prevent options reset when options animating fade out
     if (visible) {
       setPrevSearchValue(inputValue);
+    } else {
+      setCreateOptionWidth(undefined);
+    }
+
+    if (createOptionRef.current) {
+      setCreateOptionWidth(createOptionRef.current.scrollWidth + 10);
     }
   }, [inputValue, visible]);
 
@@ -109,7 +120,13 @@ const SelectOptions: FunctionComponent<SelectOptionsProps> = ({
   }
 
   return (
-    <Box borderRadius="lg" overflow="hidden">
+    <Box
+      borderRadius="lg"
+      overflow="hidden"
+      style={{
+        minWidth: createOptionWidth,
+      }}
+    >
       <VirtualList
         width="100%"
         height={Math.min(items.length * itemSize, optionsMaxHeight)}
@@ -120,19 +137,20 @@ const SelectOptions: FunctionComponent<SelectOptionsProps> = ({
         scrollToAlignment={'auto' as any}
         renderItem={({ index, style }) => {
           const option = items[index];
+          const isCreateOption =
+            (option as ObjectOption).label === 'CREATE_OPTION';
           const optionString = itemToString(option);
           const hovered = visible && highlightedIndex === index;
           const active = multiple
             ? selectedItems.map(itemToString).includes(optionString)
             : itemToString(selectedItem) === optionString;
-          const content =
-            (option as ObjectOption).label === 'CREATE_OPTION'
-              ? formatCreateLabel({
-                  value: (option as ObjectOption).value,
-                  active,
-                  hovered,
-                })
-              : optionString;
+          const content = isCreateOption
+            ? formatCreateLabel({
+                value: (option as ObjectOption).value,
+                active,
+                hovered,
+              })
+            : optionString;
 
           return (
             <StyledSelectOption
@@ -145,18 +163,23 @@ const SelectOptions: FunctionComponent<SelectOptionsProps> = ({
                 item: option,
               })}
             >
-              {multiple &&
-                (active ? (
-                  <Icon
-                    type={MdCheck}
-                    fill={hovered ? 'light' : 'primaryLight'}
-                    size="16"
-                    mr="8px"
-                  />
-                ) : (
-                  <Box width="16px" mr="8px" />
-                ))}
-              {content}
+              <div
+                ref={isCreateOption ? createOptionRef : undefined}
+                title={String(content)}
+              >
+                {multiple &&
+                  (active ? (
+                    <Icon
+                      type={MdCheck}
+                      fill={hovered ? 'light' : 'primaryLight'}
+                      size="16"
+                      mr="8px"
+                    />
+                  ) : (
+                    <Box width="16px" mr="8px" />
+                  ))}
+                {content}
+              </div>
             </StyledSelectOption>
           );
         }}

@@ -160,7 +160,7 @@ const Select: FunctionComponent<SelectProps> = ({
         <SelectWrapper width={width} {...getRootProps()}>
           <Popover
             visible={visible}
-            position={Position.BOTTOM}
+            position={Position.BOTTOM_LEFT}
             minWidth={selectWidth}
             onVisibleChange={newVisible => {
               if (disabled || loading) {
@@ -213,7 +213,12 @@ const Select: FunctionComponent<SelectProps> = ({
                 },
               })}
             >
-              <Flex flex="auto" flexWrap="wrap" alignItems="center">
+              <Flex
+                flex="auto"
+                flexWrap="wrap"
+                alignItems="center"
+                overflow="hidden"
+              >
                 {multiple &&
                   selectedItems.map((item: Option) => (
                     <SelectedOption
@@ -227,7 +232,7 @@ const Select: FunctionComponent<SelectProps> = ({
                         },
                       })}
                     >
-                      {itemToString(item)}
+                      <span>{itemToString(item)}</span>
                     </SelectedOption>
                   ))}
                 <SelectInput
@@ -244,11 +249,10 @@ const Select: FunctionComponent<SelectProps> = ({
                   onChange={event => setInputValue(event.currentTarget.value)}
                 />
               </Flex>
-              {loading && <Loading />}
               {clearable && selectedItem && (
                 <ClearIcon clearSelection={clearSelection} />
               )}
-              <SelectArrow on={visible} />
+              {loading ? <Loading /> : <SelectArrow on={visible} />}
             </StyledSelect>
           </Popover>
         </SelectWrapper>
