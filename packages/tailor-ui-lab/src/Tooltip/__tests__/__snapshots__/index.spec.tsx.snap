@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tooltip should render tooltip correctly 1`] = `
+.c0 {
+  border-radius: 0.5rem;
+  background-color: rgba(26,26,26,0.9);
+  color: #ffffff;
+  font-size: 0.875rem;
+  white-space: nowrap;
+  padding: 0.5rem;
+}
+
+<body>
+  <div>
+    <span>
+      target
+    </span>
+  </div>
+  <div
+    portal-container=""
+  >
+    <div
+      style="position: fixed; top: 0px; left: 0px; z-index: 10;"
+    >
+      <div
+        style="position: absolute; top: 0px; left: 0px; transform: translate3d(-6px, -6px, 0px);"
+      >
+        <div
+          style="opacity: 0; transform: scale(0.9);"
+        >
+          <div
+            class="c0"
+          >
+            Content
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
