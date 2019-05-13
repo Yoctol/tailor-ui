@@ -52,6 +52,7 @@ describe('Input', () => {
     });
 
     expect(input.value).toBe('change input');
+    expect(onChange).toBeCalled();
   });
 
   it('should auto select on input when pass autoSelect', () => {

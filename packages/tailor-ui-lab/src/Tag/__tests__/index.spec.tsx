@@ -5,19 +5,42 @@ import { fireEvent, render, wait } from 'test/test-utils';
 import Tag from '../Tag';
 
 describe('Tag', () => {
-  it('should render tags correctly', () => {
-    const { queryByText } = render(
-      <div>
-        <Tag>Tag A</Tag>
-        <Tag>Tag B</Tag>
-      </div>
+  it('should render tag', () => {
+    const { container } = render(<Tag>Tailor UI</Tag>);
+
+    expect(container).toMatchSnapshot();
+  });
+
+  it('should render tag with prefix', () => {
+    const { container } = render(<Tag prefix="1">Tailor UI</Tag>);
+
+    expect(container).toMatchSnapshot();
+  });
+
+  it('should render invalid style tag', () => {
+    const { container } = render(<Tag invalid>Tailor UI</Tag>);
+
+    expect(container).toMatchSnapshot();
+  });
+
+  it('should render editable tag and call onChange', async () => {
+    const onChange = jest.fn();
+    const { container, queryByText } = render(
+      <Tag editable onChange={onChange}>
+        Foo
+      </Tag>
     );
 
-    const tagA = queryByText('Tag A');
-    const tagB = queryByText('Tag B');
+    const tagText = queryByText('Foo');
+    fireEvent.click(tagText);
 
-    expect(tagA).toBeInTheDocument();
-    expect(tagB).toBeInTheDocument();
+    const input = container.querySelector('input');
+
+    fireEvent.change(input, { target: { value: 'Foo Bar' } });
+    expect(input.value).toBe('Foo Bar');
+
+    fireEvent.keyPress(input, { key: 'Enter', code: 13, charCode: 13 });
+    expect(onChange).toBeCalledWith('Foo', 'Foo Bar');
   });
 
   it('should render closable tag', async () => {
