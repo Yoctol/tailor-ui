@@ -24,6 +24,7 @@ export { default as Icon } from './Icon';
 export * from './Icon';
 
 export { default as FormField } from './FormField';
+export { default as useFormField } from './FormField/useFormField';
 
 export { default as Input } from './Input';
 export { inputStyles } from './Input/styles';

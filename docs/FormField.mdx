@@ -6,6 +6,7 @@ route: /components/form-field
 
 import { PropsTable, Playground } from 'docz';
 import { Input, FormField } from 'tailor-ui';
+import { Select } from '@tailor-ui/lab';
 
 # FormField
 
@@ -13,47 +14,51 @@ import { Input, FormField } from 'tailor-ui';
 
 ```js
 import { Input, FormField } from 'tailor-ui';
+import { Select } from '@tailor-ui/lab';
 ```
 
-### validationMessage
+### Use validationMessage with Input
 
 <Playground>
-  <FormField
-    required
-    label="With Error"
-    validationMessage="Something went wrong!"
-  >
+  <FormField label="Input" validationMessage="Error Message">
     <Input placeholder="Placeholder" />
   </FormField>
-  <FormField
-    required
-    label="With Error"
-    validationMessage="Something went wrong!"
-  >
+  <FormField required label="Required Input" validationMessage="Error Message">
     <Input placeholder="Placeholder" />
   </FormField>
 </Playground>
 
-### function validator
+### Use validationMessage with Select
+
+<Playground>
+  <FormField required label="Select" validationMessage="Error Message">
+    <Select
+      defaultValue="Banana"
+      options={['Banana', 'Orange', 'Apple', 'Mango']}
+    />
+  </FormField>
+</Playground>
+
+### use function validator with Input
 
 <Playground>
   <FormField
     required
     label="Please Type `error`"
-    validator={value => (value === 'error' ? 'Something went wrong!' : null)}
+    validator={value => (value === 'error' ? 'Error Message' : null)}
   >
     <Input placeholder="Placeholder" />
   </FormField>
   <FormField
     required
     label="Please Type `error`"
-    validator={value => (value === 'error' ? 'Something went wrong!' : null)}
+    validator={value => (value === 'error' ? 'Error Message' : null)}
   >
     <Input placeholder="Placeholder" />
   </FormField>
 </Playground>
 
-### function of array validator
+### Use function of array validator with Input
 
 <Playground>
   <FormField

@@ -70,6 +70,7 @@ export const StyledSelectedOption = styled.div`
 export interface StyledSelectProps {
   focused: boolean;
   disabled: boolean;
+  invalid: boolean;
   size?: 'sm' | 'md' | 'lg';
 }
 
@@ -98,12 +99,22 @@ export const StyledSelect = styled.div<StyledSelectProps>`
       border-color: ${p.theme.colors.primary};
     `}
 
+    ${p =>
+      p.invalid &&
+      css`
+        border-color: ${p.theme.colors.danger} !important;
+      `}
+
   ${p =>
     p.disabled &&
     css`
-      border-color: ${p.theme.colors.gray400} !important;
+      border-color: ${p.theme.colors.gray400};
       background-color: ${p.theme.colors.gray300};
       cursor: not-allowed;
+
+      &:hover {
+        border-color: ${p.theme.colors.gray400};
+      }
 
       input {
         color: ${p.theme.colors.gray500};
