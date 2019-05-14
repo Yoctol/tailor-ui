@@ -75,4 +75,23 @@ describe('Tag', () => {
     const tagA = queryByText('Tag A');
     expect(tagA).not.toBeVisible();
   });
+
+  it('should call canClose when close icon is clicked', () => {
+    const canClose = jest.fn().mockResolvedValue(false);
+
+    const { container, queryByText } = render(
+      <Tag closable canClose={canClose}>
+        Tailor UI
+      </Tag>
+    );
+
+    const closeIcon = container.querySelector('i');
+
+    fireEvent.click(closeIcon);
+
+    const tag = queryByText('Tailor UI');
+
+    expect(canClose).toBeCalled();
+    expect(tag).toBeVisible();
+  });
 });
