@@ -7,7 +7,7 @@ import React, {
   useState,
 } from 'react';
 
-import { Flex, Position } from 'tailor-ui';
+import { Flex, Position, useFormField } from 'tailor-ui';
 
 import Popover from '../Popover';
 
@@ -51,6 +51,7 @@ interface SelectProps {
 }
 
 const Select: FunctionComponent<SelectProps> = ({
+  id,
   width = 240,
   size = 'md',
   creatable = false,
@@ -72,6 +73,11 @@ const Select: FunctionComponent<SelectProps> = ({
   isValidNewOption,
   onCreateOption,
 }) => {
+  const [invalid, labelId, setValue] = useFormField({
+    id,
+    value,
+    defaultValue,
+  });
   const containerRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const [visible, setVisible] = useState(false);
@@ -98,6 +104,7 @@ const Select: FunctionComponent<SelectProps> = ({
 
     if (!isCreate && onChange) {
       onChange(selection);
+      setValue(selection);
     }
 
     if (!multiple || isCreate) {
@@ -117,6 +124,7 @@ const Select: FunctionComponent<SelectProps> = ({
 
   return (
     <RenderComponent
+      id={labelId}
       selectedItem={value}
       isOpen={visible}
       initialSelectedItem={defaultValue}
@@ -197,6 +205,7 @@ const Select: FunctionComponent<SelectProps> = ({
           >
             <StyledSelect
               ref={containerRef}
+              invalid={invalid}
               size={size}
               focused={visible}
               {...getToggleButtonProps({
