@@ -55,6 +55,7 @@ export interface TagProps {
    * Callback executed when close animation is completed
    */
   onClosed?: () => void;
+  canClose?: () => boolean;
   onChange?: (previousValue: string, value: string) => void;
   children?: string;
   initialEditing?: boolean;
@@ -69,6 +70,7 @@ const Tag: FunctionComponent<TagProps> = ({
   closable,
   invalid = false,
   onClosed,
+  canClose,
   prefix,
   onChange,
   ...otherProps
@@ -142,8 +144,13 @@ const Tag: FunctionComponent<TagProps> = ({
         {closable && (
           <CloseIcon
             invalid={invalid}
-            onClick={e => {
-              e.stopPropagation();
+            onClick={async event => {
+              event.stopPropagation();
+
+              if (canClose && (await !canClose())) {
+                return;
+              }
+
               setOn(!on);
             }}
           />
