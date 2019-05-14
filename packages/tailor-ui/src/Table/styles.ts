@@ -2,14 +2,14 @@ import styled, { StyledComponent, css } from 'styled-components';
 import { TextAlignProps, WidthProps, textAlign, width } from 'styled-system';
 
 export const HeadColumn: StyledComponent<'th', any, WidthProps> = styled.th`
-  padding: ${p => p.theme.paddings.sm};
+  padding: ${p => p.theme.paddings.xs} ${p => p.theme.paddings.sm};
   font-weight: bold;
 
   ${width};
 `;
 
 export const Column = styled.td`
-  padding: ${p => p.theme.paddings.md} ${p => p.theme.paddings.sm};
+  padding: ${p => p.theme.paddings.xs} ${p => p.theme.paddings.sm};
 `;
 
 export const Row = styled.tr`
