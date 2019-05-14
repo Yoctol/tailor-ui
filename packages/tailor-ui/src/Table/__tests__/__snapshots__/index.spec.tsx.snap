@@ -2,12 +2,12 @@
 
 exports[`Table should render table correctly 1`] = `
 .c3 {
-  padding: 0.75rem;
+  padding: 0.5rem 0.75rem;
   font-weight: bold;
 }
 
 .c4 {
-  padding: 1rem 0.75rem;
+  padding: 0.5rem 0.75rem;
 }
 
 .c2 {
@@ -175,12 +175,12 @@ exports[`Table should render table correctly 1`] = `
 
 exports[`Table should render table correctly with header and footer 1`] = `
 .c5 {
-  padding: 0.75rem;
+  padding: 0.5rem 0.75rem;
   font-weight: bold;
 }
 
 .c6 {
-  padding: 1rem 0.75rem;
+  padding: 0.5rem 0.75rem;
 }
 
 .c4 {
