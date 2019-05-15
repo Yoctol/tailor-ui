@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.7.0](https://github.com/Yoctol/tailor-ui/compare/@tailor-ui/lab@0.6.2...@tailor-ui/lab@0.7.0) (2019-05-15)
+
+### Bug Fixes
+
+- **mention:** update position ([146ec31](https://github.com/Yoctol/tailor-ui/commit/146ec31))
+- **popover:** cannot click outside when use nested popover with controlled visible ([ee3d4c7](https://github.com/Yoctol/tailor-ui/commit/ee3d4c7))
+- **popover:** cannot click outside when use nested popover with controlled visible ([#210](https://github.com/Yoctol/tailor-ui/issues/210)) ([285568a](https://github.com/Yoctol/tailor-ui/commit/285568a))
+- **select:** add form field supported ([fb2bdc2](https://github.com/Yoctol/tailor-ui/commit/fb2bdc2))
+- **select:** add form field supported ([#209](https://github.com/Yoctol/tailor-ui/issues/209)) ([f967998](https://github.com/Yoctol/tailor-ui/commit/f967998))
+
+### Features
+
+- **Tag:** add canClose ([a0e5d8d](https://github.com/Yoctol/tailor-ui/commit/a0e5d8d))
+- **Tag:** add canClose ([#207](https://github.com/Yoctol/tailor-ui/issues/207)) ([52473cb](https://github.com/Yoctol/tailor-ui/commit/52473cb))
+
 ## [0.6.2](https://github.com/Yoctol/tailor-ui/compare/@tailor-ui/lab@0.6.1...@tailor-ui/lab@0.6.2) (2019-05-13)
 
 ### Bug Fixes
