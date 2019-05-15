@@ -6,7 +6,7 @@ route: /lab/popover
 
 import { PropsTable, Playground, Link } from 'docz';
 import { Button, Box, Flex, Position } from 'tailor-ui';
-import { Popover } from '@tailor-ui/lab';
+import { Popover, Select } from '@tailor-ui/lab';
 
 # Popover
 
@@ -172,6 +172,31 @@ import { Popover } from 'tailor-ui';
   >
     <Button>Button</Button>
   </Popover>
+</Playground>
+
+### Popover with Select
+
+<Playground>
+  {() => {
+    const [value, setValue] = React.useState('Banana');
+
+    return (
+      <Popover
+        position={Position.RIGHT}
+        content={
+          <Select
+            value={value}
+            onChange={setValue}
+            options={['Banana', 'Orange', 'Apple', 'Mango']}
+          />
+        }
+      >
+        <Button>Button</Button>
+      </Popover>
+    );
+
+}}
+
 </Playground>
 
 ### Nested Usage
