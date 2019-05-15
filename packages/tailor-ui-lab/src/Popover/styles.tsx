@@ -11,6 +11,7 @@ import {
 export type StyledPopoverProps = SpaceProps & MinWidthProps & MinHeightProps;
 
 export const StyledPopover = styled.div<StyledPopoverProps>`
+  padding: ${p => p.theme.space[2]} ${p => p.theme.space[3]};
   border: ${p => p.theme.borders.base};
   border-radius: ${p => p.theme.radii.lg};
   border-color: ${p => p.theme.colors.gray300};
@@ -26,13 +27,6 @@ export const StyledPopover = styled.div<StyledPopoverProps>`
   ${minHeight}
 `;
 
-StyledPopover.defaultProps = {
-  p: 2,
-};
-
 export const PopoverHeader = styled.div`
-  margin-bottom: ${p => p.theme.space[1]};
-  padding-bottom: ${p => p.theme.space[1]};
-  border-bottom: ${p => p.theme.borders.base};
-  border-color: ${p => p.theme.colors.gray300};
+  margin-bottom: ${p => p.theme.space[2]};
 `;
