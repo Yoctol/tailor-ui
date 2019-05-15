@@ -223,6 +223,7 @@ exports[`Popconfirm should render correctly 1`] = `
 }
 
 .c0 {
+  padding: 0.5rem 1rem;
   border: 1px solid;
   border-radius: 0.5rem;
   border-color: #e0e0e0;
@@ -232,7 +233,6 @@ exports[`Popconfirm should render correctly 1`] = `
   font-size: 0.875rem;
   text-align: left;
   white-space: nowrap;
-  padding: 0.5rem;
 }
 
 <body>
