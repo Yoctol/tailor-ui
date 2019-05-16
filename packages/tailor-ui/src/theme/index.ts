@@ -39,7 +39,11 @@ const colors = {
 
 const toRem = (px: number) => rem(`${px}px`);
 
-const breakpoints = ['40em', '52em', '64em'];
+const breakpoints = [toRem(576), toRem(768), toRem(992), toRem(1200)];
+(breakpoints as any).sm = breakpoints[0];
+(breakpoints as any).md = breakpoints[1];
+(breakpoints as any).lg = breakpoints[2];
+(breakpoints as any).xl = breakpoints[3];
 
 const space = [0, 4, 8, 16, 32, 64, 128, 256].map(toRem);
 
