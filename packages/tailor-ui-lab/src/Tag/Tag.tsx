@@ -147,7 +147,7 @@ const Tag: FunctionComponent<TagProps> = ({
             onClick={async event => {
               event.stopPropagation();
 
-              if (canClose && (await !canClose())) {
+              if (canClose && !(await canClose())) {
                 return;
               }
 
