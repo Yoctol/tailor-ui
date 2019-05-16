@@ -39,6 +39,8 @@ interface PositionerProps {
   bodyOffset?: number;
   positioner: RenderPropsPositioner;
   children: ReactNode | RenderPropsChildren;
+  onOpenComplete?: () => void;
+  onCloseComplete?: () => void;
 }
 
 const Positioner: FunctionComponent<PositionerProps> = ({
@@ -50,6 +52,8 @@ const Positioner: FunctionComponent<PositionerProps> = ({
   bodyOffset = 6,
   children,
   positioner,
+  onOpenComplete,
+  onCloseComplete,
 }) => {
   const targetRefFromSelf = useRef<HTMLElement>(null);
   const positionerRefFromSelf = useRef<HTMLElement>(null);
@@ -167,8 +171,16 @@ const Positioner: FunctionComponent<PositionerProps> = ({
           left: null,
           transformOrigin: null,
         });
+
+        if (!visible && onCloseComplete) {
+          onCloseComplete();
+        }
       } else {
         entered.current = true;
+
+        if (visible && onOpenComplete) {
+          onOpenComplete();
+        }
       }
     },
     config: {
