@@ -408,7 +408,7 @@ const Mention: FunctionComponent<MentionProps> = ({
         highlightRef.current.scrollTop = event.currentTarget.scrollTop;
       }
       if (state.dropdownVisible) {
-        dispatch({ type: 'closeDropdown' });
+        closeDropdown();
       }
     },
     onResize: (event: ChangeEvent<HTMLTextAreaElement>) => {
@@ -441,7 +441,7 @@ const Mention: FunctionComponent<MentionProps> = ({
           event.preventDefault();
           event.stopPropagation();
 
-          dispatch({ type: 'closeDropdown' });
+          closeDropdown();
         }}
       />
       <Suggestions
