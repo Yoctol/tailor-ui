@@ -21,6 +21,7 @@ import {
 } from 'tailor-ui';
 
 import useRenderChildren from '../hooks/useRenderChildren';
+import useTargetRef from '../hooks/useTargetRef';
 import useToggleTrigger from '../hooks/useToggleTrigger';
 
 import { PopoverHeader, StyledPopover, StyledPopoverProps } from './styles';
@@ -101,7 +102,9 @@ const Popover: FunctionComponent<PopoverProps> = ({
   onVisibleChange,
   ...otherProps
 }) => {
-  const childrenRefFromSelf = useRef(null);
+  const targetRef = useTargetRef({
+    children,
+  });
   const popupRef = useRef(null);
 
   const { setHasChild: setHasChildFromContext } = useContext(
@@ -120,14 +123,9 @@ const Popover: FunctionComponent<PopoverProps> = ({
     },
   });
 
-  const childrenRef =
-    children && (children as any).ref
-      ? (children as any).ref
-      : childrenRefFromSelf;
-
   useClickOutside({
     listening: hasChild ? false : visible,
-    refs: [childrenRef, popupRef],
+    refs: [targetRef, popupRef],
     onClickOutside: handleClose,
   });
 
@@ -138,7 +136,7 @@ const Popover: FunctionComponent<PopoverProps> = ({
   });
 
   const renderChildren = useRenderChildren({
-    ref: childrenRef,
+    targetRef,
     children,
     mergeProps: {
       onClick: toggle,
@@ -149,7 +147,7 @@ const Popover: FunctionComponent<PopoverProps> = ({
     <ClickOutsideContext.Provider value={{ setHasChild }}>
       <Positioner
         positionerRef={popupRef}
-        targetRef={childrenRef}
+        targetRef={targetRef}
         visible={visible}
         position={position}
         positioner={({ style }) => (

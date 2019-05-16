@@ -184,6 +184,7 @@ const Positioner: FunctionComponent<PositionerProps> = ({
           {children instanceof Function
             ? children({ ref: targetRef })
             : children}
+
           {transitions.map(({ key, item, props }) => {
             if (!item) {
               return null;

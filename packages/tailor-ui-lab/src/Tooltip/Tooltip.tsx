@@ -4,6 +4,7 @@ import { Position, Positioner, Positions } from 'tailor-ui';
 
 import useHoverTrigger from '../hooks/useHoverTrigger';
 import useRenderChildren from '../hooks/useRenderChildren';
+import useTargetRef from '../hooks/useTargetRef';
 
 import TooltipPopup from './TooltipPopup';
 import { StyledTooltipProps } from './styles';
@@ -53,7 +54,9 @@ const Tooltip: FunctionComponent<TooltipProps> = ({
   mouseEnterDelay = 0,
   mouseLeaveDelay = 200,
 }) => {
-  const childrenRef = useRef(null);
+  const targetRef = useTargetRef({
+    children,
+  });
   const popupRef = useRef(null);
 
   const { visible, handleOpen, handleClose } = useHoverTrigger({
@@ -65,7 +68,7 @@ const Tooltip: FunctionComponent<TooltipProps> = ({
   });
 
   const renderChildren = useRenderChildren({
-    ref: childrenRef,
+    targetRef,
     children,
     mergeProps: {
       onMouseEnter: handleOpen,
@@ -76,7 +79,7 @@ const Tooltip: FunctionComponent<TooltipProps> = ({
   return (
     <Positioner
       positionerRef={popupRef}
-      targetRef={childrenRef}
+      targetRef={targetRef}
       visible={visible}
       position={position}
       positioner={({ style }) => (
