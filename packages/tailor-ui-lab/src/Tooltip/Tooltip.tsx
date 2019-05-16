@@ -41,6 +41,8 @@ export type TooltipProps = StyledTooltipProps & {
    * Delay in milliseconds, before tooltip is hidden on mouse leave
    */
   mouseLeaveDelay?: number;
+  onOpenComplete?: () => void;
+  onCloseComplete?: () => void;
 };
 
 const Tooltip: FunctionComponent<TooltipProps> = ({
@@ -53,6 +55,9 @@ const Tooltip: FunctionComponent<TooltipProps> = ({
   onVisibleChange,
   mouseEnterDelay = 0,
   mouseLeaveDelay = 200,
+  onOpenComplete,
+  onCloseComplete,
+  ...otherProps
 }) => {
   const targetRef = useTargetRef({
     children,
@@ -81,6 +86,8 @@ const Tooltip: FunctionComponent<TooltipProps> = ({
       positionerRef={popupRef}
       targetRef={targetRef}
       visible={visible}
+      onOpenComplete={onOpenComplete}
+      onCloseComplete={onCloseComplete}
       position={position}
       positioner={({ style }) => (
         <TooltipPopup
@@ -90,6 +97,7 @@ const Tooltip: FunctionComponent<TooltipProps> = ({
           content={content}
           handleOpen={handleOpen}
           handleClose={handleClose}
+          {...otherProps}
         />
       )}
     >
