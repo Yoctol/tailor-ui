@@ -10,17 +10,17 @@ import { mergeEventProps } from '@tailor-ui/utils';
 
 const useRenderChildren = ({
   children,
-  ref,
+  targetRef,
   mergeProps,
 }: {
-  children: ReactNode;
-  ref: RefObject<HTMLElement>;
+  children?: ReactNode;
+  targetRef: RefObject<HTMLElement>;
   mergeProps: object;
-}) =>
-  useCallback(() => {
+}) => {
+  const renderChildren = useCallback(() => {
     if (children instanceof Function) {
       return children({
-        ref,
+        ref: targetRef,
         bind: (props: any) => mergeEventProps(props, mergeProps),
       });
     }
@@ -30,9 +30,12 @@ const useRenderChildren = ({
     }
 
     return cloneElement(children, {
-      ref,
+      ref: targetRef,
       ...mergeEventProps(children.props, mergeProps),
     });
-  }, [children, mergeProps, ref]);
+  }, [children, mergeProps, targetRef]);
+
+  return renderChildren;
+};
 
 export default useRenderChildren;
