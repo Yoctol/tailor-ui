@@ -186,8 +186,8 @@ import { Modal, useModal } from 'tailor-ui';
           closable
           onConfirm={() => setVisible(false)}
           onCancel={() => setVisible(false)}
-          onOpenComplete={() => alert('modal opened!')}
-          onCloseComplete={() => alert('modal closed!')}
+          onOpenComplete={() => console.log('modal opened!')}
+          onCloseComplete={() => console.log('modal closed!')}
         >
           <div>This is the content of Modal</div>
           <div>This is the content of Modal</div>

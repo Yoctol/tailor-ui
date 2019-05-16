@@ -110,9 +110,9 @@ const BaseModal: FunctionComponent<BaseModalProps> = ({
       pointerEvents: 'none',
     },
     onDestroyed: isDestroyed => {
-      if (isDestroyed && onCloseComplete) {
+      if (isDestroyed && onCloseComplete && !visible) {
         onCloseComplete();
-      } else if (!isDestroyed && onOpenComplete) {
+      } else if (!isDestroyed && onOpenComplete && visible) {
         onOpenComplete();
       }
     },
