@@ -12,6 +12,7 @@ import {
   Heading,
   Icon,
   Input,
+  Mention,
   Menu,
   Modal,
   Radio,
@@ -48,6 +49,7 @@ describe('index', () => {
     expect(Heading).toBeDefined();
     expect(Icon).toBeDefined();
     expect(Input).toBeDefined();
+    expect(Mention).toBeDefined();
     expect(Menu).toBeDefined();
     expect(message).toBeDefined();
     expect(Modal).toBeDefined();

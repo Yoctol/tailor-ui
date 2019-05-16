@@ -29,6 +29,9 @@ export { default as useFormField } from './FormField/useFormField';
 export { default as Input } from './Input';
 export { inputStyles } from './Input/styles';
 
+export { default as Mention } from './Mention';
+export * from './Mention';
+
 export { default as Menu } from './Menu';
 export * from './Menu';
 export { default as message } from './message';
