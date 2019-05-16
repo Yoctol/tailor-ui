@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.7.1](https://github.com/Yoctol/tailor-ui/compare/@tailor-ui/lab@0.7.0...@tailor-ui/lab@0.7.1) (2019-05-16)
+
+### Bug Fixes
+
+- **mention:** close dropdown correct when blur ([e532749](https://github.com/Yoctol/tailor-ui/commit/e532749))
+
 # [0.7.0](https://github.com/Yoctol/tailor-ui/compare/@tailor-ui/lab@0.6.2...@tailor-ui/lab@0.7.0) (2019-05-15)
 
 ### Bug Fixes
