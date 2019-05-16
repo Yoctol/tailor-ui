@@ -89,6 +89,8 @@ import { Tag } from '@tailor-ui/lab';
     const [values, setValues] = React.useState(['tag 1', 'tag 2', 'tag 3']);
     const [editing, setEditing] = React.useState(false);
 
+    const modal = useModal();
+
     return (
       <Flex flexWrap="wrap">
         {values.map((value, index) => {
@@ -101,6 +103,13 @@ import { Tag } from '@tailor-ui/lab';
                 closable
                 editable
                 invalid={invalid}
+                canClose={() =>
+                  modal.error({
+                    cancelable: true,
+                    title: 'Delete this tag?',
+                    content: 'Are you sure? it can not be rollback!',
+                  })
+                }
                 onClosed={() => setValues(values.filter(v => v !== value))}
                 onChange={(prevValue, value) => {
                   if (value.trim() !== '') {
