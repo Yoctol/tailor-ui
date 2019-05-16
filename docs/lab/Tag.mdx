@@ -5,7 +5,7 @@ route: /lab/tag
 ---
 
 import { PropsTable, Playground } from 'docz';
-import { Input, Button, Flex, Box } from 'tailor-ui';
+import { Input, Button, Flex, Box, useModal } from 'tailor-ui';
 import { Tag } from '@tailor-ui/lab';
 
 # Tag
@@ -59,6 +59,29 @@ import { Tag } from '@tailor-ui/lab';
   <Tag closable>Content</Tag>
 </Playground>
 
+### Use with canClose
+
+<Playground>
+  {() => {
+    const modal = useModal();
+
+    return (
+      <Tag
+        closable
+        canClose={() => modal.error({
+          cancelable: true,
+          title: 'Delete this tag?',
+          content: 'Are you sure? it can not be rollback!',
+        })}
+      >
+        DELETE ME
+      </Tag>
+    );
+
+}}
+
+</Playground>
+
 ### Add & Remove Dynamically
 
 <Playground>
@@ -72,7 +95,7 @@ import { Tag } from '@tailor-ui/lab';
           const invalid = values.filter((_, i) => i !== index).includes(value);
 
           return (
-            <Flex flexDirection="column">
+            <Flex key={value} flexDirection="column">
               <Tag
                 key={value}
                 closable
