@@ -84,6 +84,8 @@ export type PopoverProps = StyledPopoverProps & {
    * function that with `hide` callback as first argument
    */
   content: ReactNode | ((handleClose: () => void) => ReactNode);
+  onOpenComplete?: () => void;
+  onCloseComplete?: () => void;
 };
 
 const ClickOutsideContext = createContext<{
@@ -100,6 +102,8 @@ const Popover: FunctionComponent<PopoverProps> = ({
   defaultVisible = false,
   visible: visibleFromProps,
   onVisibleChange,
+  onOpenComplete,
+  onCloseComplete,
   ...otherProps
 }) => {
   const targetRef = useTargetRef({
@@ -149,6 +153,8 @@ const Popover: FunctionComponent<PopoverProps> = ({
         positionerRef={popupRef}
         targetRef={targetRef}
         visible={visible}
+        onOpenComplete={onOpenComplete}
+        onCloseComplete={onCloseComplete}
         position={position}
         positioner={({ style }) => (
           <PopoverPopup

@@ -35,6 +35,8 @@ interface PopconfirmContentProps extends PopoverProps {
    * callback of confirmation
    */
   onConfirm?: (event: MouseEvent) => void;
+  onOpenComplete?: () => void;
+  onCloseComplete?: () => void;
 }
 
 const PopconfirmContent: FunctionComponent<
