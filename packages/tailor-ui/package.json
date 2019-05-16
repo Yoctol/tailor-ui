@@ -35,7 +35,7 @@
     "polished": "^3.3.0",
     "prop-types": "^15.7.1",
     "ramda": "^0.26.1",
-    "rc-calendar": "^9.13.3",
+    "rc-calendar": "^9.13.4",
     "rc-time-picker": "^3.6.4",
     "react-autosize-textarea": "^7.0.0",
     "react-dropzone": "10.1.4",
