@@ -21,11 +21,11 @@ const useRenderChildren = ({
     if (children instanceof Function) {
       return children({
         ref: targetRef,
-        bind: (props: any) => mergeEventProps(props, mergeProps),
+        bind: (props: object) => mergeEventProps(props, mergeProps),
       });
     }
 
-    if (!isValidElement<any>(children)) {
+    if (!isValidElement(children)) {
       return children;
     }
 

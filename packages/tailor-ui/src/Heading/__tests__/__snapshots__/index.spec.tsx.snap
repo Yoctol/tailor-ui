@@ -1,65 +1,82 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Heading should render correctly 1`] = `
-.c1 {
+.c0 {
+  font-size: 1.75rem;
   margin: 0;
   color: #373737;
   font-weight: bold;
   line-height: 1.5;
 }
 
-.c0 {
-  font-size: 1.75rem;
+.c1 {
+  font-size: 1.5rem;
+  margin: 0;
+  color: #373737;
+  font-weight: bold;
+  line-height: 1.5;
 }
 
 .c2 {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
+  margin: 0;
+  color: #373737;
+  font-weight: bold;
+  line-height: 1.5;
 }
 
 .c3 {
-  font-size: 1.25rem;
+  font-size: 1.125rem;
+  margin: 0;
+  color: #373737;
+  font-weight: bold;
+  line-height: 1.5;
 }
 
 .c4 {
-  font-size: 1.125rem;
+  font-size: 1rem;
+  margin: 0;
+  color: #373737;
+  font-weight: bold;
+  line-height: 1.5;
 }
 
 .c5 {
-  font-size: 1rem;
-}
-
-.c6 {
   font-size: 0.875rem;
+  margin: 0;
+  color: #373737;
+  font-weight: bold;
+  line-height: 1.5;
 }
 
 <div>
   <h1
-    class="c0 c1"
+    class="c0"
   >
     H1 Heading 28px
   </h1>
   <h2
-    class="c2 c1"
+    class="c1"
   >
     H2 Heading 26px
   </h2>
   <h3
-    class="c3 c1"
+    class="c2"
   >
     H3 Heading 18px
   </h3>
   <h4
-    class="c4 c1"
+    class="c3"
   >
     H4 Heading 16px
   </h4>
   <h5
-    class="c5 c1"
+    class="c4"
   >
     H5 Heading 14px
   </h5>
   <h6
-    class="c6 c1"
+    class="c5"
   >
     H6 Heading 12px
   </h6>
@@ -67,7 +84,8 @@ exports[`Heading should render correctly 1`] = `
 `;
 
 exports[`Heading should render different color heading 1`] = `
-.c1 {
+.c0 {
+  font-size: 1.75rem;
   margin: 0;
   color: #373737;
   font-weight: bold;
@@ -75,12 +93,8 @@ exports[`Heading should render different color heading 1`] = `
   color: #bfbfbf;
 }
 
-.c0 {
-  font-size: 1.75rem;
-}
-
 <h1
-  class="c0 c1"
+  class="c0"
   color="gray400"
 >
   H1 Heading
