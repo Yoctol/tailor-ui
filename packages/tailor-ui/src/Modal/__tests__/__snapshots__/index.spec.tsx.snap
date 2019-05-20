@@ -7,6 +7,10 @@ exports[`Modal should render correctly 1`] = `
 }
 
 .c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   box-sizing: border-box;
   margin-bottom: 1rem;
   margin-left: 1rem;
@@ -14,10 +18,6 @@ exports[`Modal should render correctly 1`] = `
   -webkit-flex: none;
   -ms-flex: none;
   flex: none;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -25,17 +25,21 @@ exports[`Modal should render correctly 1`] = `
 }
 
 .c4 {
-  box-sizing: border-box;
-  -webkit-flex: auto;
-  -ms-flex: auto;
-  flex: auto;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  box-sizing: border-box;
+  -webkit-flex: auto;
+  -ms-flex: auto;
+  flex: auto;
 }
 
 .c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   box-sizing: border-box;
   overflow-y: auto;
   padding-left: 1rem;
@@ -43,16 +47,16 @@ exports[`Modal should render correctly 1`] = `
   -webkit-flex: auto;
   -ms-flex: auto;
   flex: auto;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   box-sizing: border-box;
   margin-top: 24px;
   margin-left: 1rem;
@@ -60,14 +64,9 @@ exports[`Modal should render correctly 1`] = `
   padding-top: 1rem;
   border-top: 1px solid;
   border-color: #e0e0e0;
-  border-color: #e0e0e0;
   -webkit-flex: none;
   -ms-flex: none;
   flex: none;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -75,12 +74,12 @@ exports[`Modal should render correctly 1`] = `
 }
 
 .c8 {
-  box-sizing: border-box;
-  width: 100%;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  box-sizing: border-box;
+  width: 100%;
 }
 
 .c5 {
@@ -387,6 +386,10 @@ exports[`Modal should render correctly with lg size 1`] = `
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   box-sizing: border-box;
   margin-bottom: 1rem;
   margin-left: 1rem;
@@ -394,10 +397,6 @@ exports[`Modal should render correctly with lg size 1`] = `
   -webkit-flex: none;
   -ms-flex: none;
   flex: none;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -405,17 +404,21 @@ exports[`Modal should render correctly with lg size 1`] = `
 }
 
 .c3 {
-  box-sizing: border-box;
-  -webkit-flex: auto;
-  -ms-flex: auto;
-  flex: auto;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  box-sizing: border-box;
+  -webkit-flex: auto;
+  -ms-flex: auto;
+  flex: auto;
 }
 
 .c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   box-sizing: border-box;
   overflow-y: auto;
   padding-left: 1rem;
@@ -423,16 +426,16 @@ exports[`Modal should render correctly with lg size 1`] = `
   -webkit-flex: auto;
   -ms-flex: auto;
   flex: auto;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   box-sizing: border-box;
   margin-top: 24px;
   margin-left: 1rem;
@@ -440,14 +443,9 @@ exports[`Modal should render correctly with lg size 1`] = `
   padding-top: 1rem;
   border-top: 1px solid;
   border-color: #e0e0e0;
-  border-color: #e0e0e0;
   -webkit-flex: none;
   -ms-flex: none;
   flex: none;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -455,12 +453,12 @@ exports[`Modal should render correctly with lg size 1`] = `
 }
 
 .c7 {
-  box-sizing: border-box;
-  width: 100%;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  box-sizing: border-box;
+  width: 100%;
 }
 
 .c4 {
@@ -745,6 +743,10 @@ exports[`Modal should render with props closable 1`] = `
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   box-sizing: border-box;
   margin-bottom: 1rem;
   margin-left: 1rem;
@@ -752,10 +754,6 @@ exports[`Modal should render with props closable 1`] = `
   -webkit-flex: none;
   -ms-flex: none;
   flex: none;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -763,17 +761,21 @@ exports[`Modal should render with props closable 1`] = `
 }
 
 .c3 {
-  box-sizing: border-box;
-  -webkit-flex: auto;
-  -ms-flex: auto;
-  flex: auto;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  box-sizing: border-box;
+  -webkit-flex: auto;
+  -ms-flex: auto;
+  flex: auto;
 }
 
 .c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   box-sizing: border-box;
   overflow-y: auto;
   padding-left: 1rem;
@@ -781,16 +783,16 @@ exports[`Modal should render with props closable 1`] = `
   -webkit-flex: auto;
   -ms-flex: auto;
   flex: auto;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .c10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   box-sizing: border-box;
   margin-top: 24px;
   margin-left: 1rem;
@@ -798,14 +800,9 @@ exports[`Modal should render with props closable 1`] = `
   padding-top: 1rem;
   border-top: 1px solid;
   border-color: #e0e0e0;
-  border-color: #e0e0e0;
   -webkit-flex: none;
   -ms-flex: none;
   flex: none;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -813,12 +810,12 @@ exports[`Modal should render with props closable 1`] = `
 }
 
 .c11 {
-  box-sizing: border-box;
-  width: 100%;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  box-sizing: border-box;
+  width: 100%;
 }
 
 .c4 {

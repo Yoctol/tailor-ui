@@ -1,8 +1,8 @@
 import React, { FunctionComponent } from 'react';
 
-import Box from '../Grid/Box';
+import Box from '../Layout/Box';
 import Button, { ButtonProps } from '../Button';
-import Flex from '../Grid/Flex';
+import Flex from '../Layout/Flex';
 
 export interface FooterProps {
   cancelable?: boolean;

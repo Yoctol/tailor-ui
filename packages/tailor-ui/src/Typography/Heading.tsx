@@ -1,8 +1,15 @@
 import styled, { css } from 'styled-components';
-import { ColorProps, SpaceProps, color, space } from 'styled-system';
+import { SpaceProps, compose, space } from 'styled-system';
 import { rem } from 'polished';
 
-export type HeadingBaseProps = SpaceProps & ColorProps;
+import { TextProps, text } from './Text';
+
+export type HeadingBaseProps = SpaceProps & TextProps;
+
+const heading = compose(
+  text,
+  space
+);
 
 const headingStyles = css`
   margin: 0;
@@ -10,8 +17,7 @@ const headingStyles = css`
   font-weight: bold;
   line-height: 1.5;
 
-  ${space};
-  ${color};
+  ${heading};
 `;
 
 const hero = styled.h1<HeadingBaseProps>`

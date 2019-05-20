@@ -2,7 +2,7 @@ import React from 'react';
 
 import { fireEvent, render } from 'test/test-utils';
 
-import Box from '../../Grid/Box';
+import { Box } from '../../Layout';
 
 import Radio from '..';
 

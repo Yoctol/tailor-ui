@@ -1,6 +1,6 @@
 import React, { FunctionComponent, ReactNode, useState } from 'react';
 
-import Space from '../Grid/Space';
+import Box from '../Layout/Box';
 import createUIDGenerator from '../utils/createUIDGenerator';
 
 import FormFieldContext from './FormFieldContext';
@@ -97,7 +97,7 @@ const FormField: FunctionComponent<FormFieldProps> = ({
     <FormFieldContext.Provider
       value={{ invalid, setValue, setLabelId, labelId }}
     >
-      <Space mb="16px" {...props}>
+      <Box mb="16px" {...props}>
         {label && (
           <Label required={required} htmlFor={labelId}>
             {label}
@@ -106,7 +106,7 @@ const FormField: FunctionComponent<FormFieldProps> = ({
 
         {children}
         {invalid && <ValidationMessage>{message}</ValidationMessage>}
-      </Space>
+      </Box>
     </FormFieldContext.Provider>
   );
 };

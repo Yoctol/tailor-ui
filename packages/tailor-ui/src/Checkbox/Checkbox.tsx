@@ -1,7 +1,7 @@
 import React, { ChangeEvent, FunctionComponent, useContext } from 'react';
 import styled, { css } from 'styled-components';
 
-import Space from '../Grid/Space';
+import Box from '../Layout/Box';
 
 import CheckboxContext, { Direction } from './CheckboxContext';
 import CheckboxGroup from './CheckboxGroup';
@@ -160,7 +160,7 @@ const Checkbox: FunctionComponent<CheckboxProps> & {
         />
         <CheckboxInner />
       </CheckboxWrapper>
-      <Space px="2">{children}</Space>
+      <Box px="2">{children}</Box>
     </CheckboxLabel>
   );
 };

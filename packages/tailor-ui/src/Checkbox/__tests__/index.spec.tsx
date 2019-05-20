@@ -2,8 +2,8 @@ import React from 'react';
 
 import { fireEvent, render } from 'test/test-utils';
 
-import Box from '../../Grid/Box';
 import Checkbox from '../Checkbox';
+import { Box } from '../../Layout';
 
 describe('Checkbox', () => {
   it('should render correctly', () => {

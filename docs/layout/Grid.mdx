@@ -1,0 +1,29 @@
+---
+name: Grid
+menu: Layout
+route: /layout/Grid
+---
+
+import { PropsTable, Playground } from 'docz';
+import { Grid, Box } from 'tailor-ui';
+
+# Grid
+
+## Example
+
+### Usage
+
+<Playground>
+  <Grid
+    gridGap="10px"
+    gridTemplateColumns="auto auto auto"
+    gridTemplateRows="100px 100px"
+  >
+    <Box width="100%" height="100%" bg="primaryDark" />
+    <Box width="100%" height="100%" bg="primaryDark" />
+    <Box width="100%" height="100%" bg="primaryDark" />
+    <Box width="100%" height="100%" bg="primaryDark" />
+    <Box width="100%" height="100%" bg="primaryDark" />
+    <Box width="100%" height="100%" bg="primaryDark" />
+  </Grid>
+</Playground>

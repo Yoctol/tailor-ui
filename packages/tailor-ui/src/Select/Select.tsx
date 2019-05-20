@@ -4,7 +4,7 @@ import React, { FunctionComponent } from 'react';
 import styled from 'styled-components';
 import { MdSearch } from 'react-icons/md';
 
-import Flex from '../Grid/Flex';
+import Flex from '../Layout/Flex';
 import Icon from '../Icon';
 
 const getStyledSelect = (creatable: boolean) => {

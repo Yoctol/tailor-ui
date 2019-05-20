@@ -8,9 +8,9 @@ import styled from 'styled-components';
 import { MdCheck, MdClose, MdFileUpload } from 'react-icons/md';
 import { useDropzone } from 'react-dropzone';
 
-import Box from '../Grid/Box';
+import Box from '../Layout/Box';
 import Button from '../Button';
-import Flex from '../Grid/Flex';
+import Flex from '../Layout/Flex';
 import Icon from '../Icon';
 import { LocaleContext } from '../UIProvider';
 

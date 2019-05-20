@@ -5,8 +5,8 @@ import React, {
   useContext,
 } from 'react';
 
-import Flex from '../Grid/Flex';
-import Heading from '../Heading';
+import Flex from '../Layout/Flex';
+import { Heading } from '../Typography';
 import { LocaleContext } from '../UIProvider';
 
 import BaseModal, { BaseModalProps } from './BaseModal';

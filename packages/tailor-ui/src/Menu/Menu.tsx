@@ -1,6 +1,6 @@
 import React, { FunctionComponent, useState } from 'react';
 
-import Flex from '../Grid/Flex';
+import Flex from '../Layout/Flex';
 
 import Item from './Item';
 import MenuContext from './MenuContext';

@@ -17,7 +17,6 @@ import {
   Modal,
   Radio,
   Select,
-  Space,
   Spin,
   Steps,
   Switch,
@@ -56,7 +55,6 @@ describe('index', () => {
     expect(Radio).toBeDefined();
     expect(Radio.Group).toBeDefined();
     expect(Select).toBeDefined();
-    expect(Space).toBeDefined();
     expect(Spin).toBeDefined();
     expect(Steps).toBeDefined();
     expect(Switch).toBeDefined();

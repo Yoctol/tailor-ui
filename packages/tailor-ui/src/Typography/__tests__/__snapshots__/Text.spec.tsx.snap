@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Text should render correctly 1`] = `
+.c0 {
+  margin: 0;
+  color: #184480;
+  -webkit-letter-spacing: 1.5px;
+  -moz-letter-spacing: 1.5px;
+  -ms-letter-spacing: 1.5px;
+  letter-spacing: 1.5px;
+  line-height: 2;
+  text-align: center;
+}
+
+<p
+  class="c0"
+  color="primaryDark"
+  letter-spacing="1.5"
+>
+  Some Text
+</p>
+`;
