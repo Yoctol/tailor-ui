@@ -2,6 +2,7 @@
 
 exports[`Checkbox should render correctly 1`] = `
 .c7 {
+  box-sizing: border-box;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
 }
@@ -117,13 +118,14 @@ exports[`Checkbox should render correctly 1`] = `
 `;
 
 exports[`Checkbox.Group composition with Checkbox should render correctly 1`] = `
-.c1 {
-  box-sizing: border-box;
-}
-
 .c9 {
+  box-sizing: border-box;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
+}
+
+.c1 {
+  box-sizing: border-box;
 }
 
 .c0 {
@@ -335,6 +337,7 @@ exports[`Checkbox.Group composition with Checkbox should render correctly 1`] = 
 
 exports[`Checkbox.Group should render vertical checkbox group 1`] = `
 .c8 {
+  box-sizing: border-box;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
 }

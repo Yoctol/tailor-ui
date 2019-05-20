@@ -12,6 +12,10 @@ exports[`Drawer should render correctly 1`] = `
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   box-sizing: border-box;
   overflow-y: auto;
   padding-left: 1rem;
@@ -19,10 +23,6 @@ exports[`Drawer should render correctly 1`] = `
   -webkit-flex: auto;
   -ms-flex: auto;
   flex: auto;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -106,6 +106,10 @@ exports[`Drawer should render with props closable 1`] = `
       />
     </div>
     .c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   box-sizing: border-box;
   overflow-y: auto;
   padding-left: 1rem;
@@ -113,10 +117,6 @@ exports[`Drawer should render with props closable 1`] = `
   -webkit-flex: auto;
   -ms-flex: auto;
   flex: auto;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;

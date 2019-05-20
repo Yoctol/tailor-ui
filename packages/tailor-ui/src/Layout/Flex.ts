@@ -5,12 +5,13 @@ import {
   FlexWrapProps,
   JustifyContentProps,
   alignItems,
+  compose,
   flexDirection,
   flexWrap,
   justifyContent,
 } from 'styled-system';
 
-import Box, { BoxProps } from './Box';
+import { BoxProps, box } from './Box';
 
 export type FlexProps = BoxProps &
   AlignItemsProps &
@@ -18,13 +19,20 @@ export type FlexProps = BoxProps &
   FlexWrapProps &
   JustifyContentProps;
 
-const Flex = styled(Box)<FlexProps>`
-  display: flex;
+const flex = compose(
+  box,
+  alignItems,
+  flexDirection,
+  justifyContent,
+  flexWrap
+);
 
-  ${alignItems};
-  ${flexDirection};
-  ${justifyContent};
-  ${flexWrap};
-`;
+const Flex = styled('div')<FlexProps>(
+  {
+    display: 'flex',
+    boxSizing: 'border-box',
+  },
+  flex
+);
 
 export default Flex;

@@ -5,7 +5,7 @@ route: /components/input
 ---
 
 import { PropsTable, Playground } from 'docz';
-import { Button, Textarea, FormField, Icon, Space, Input } from 'tailor-ui';
+import { Button, Textarea, FormField, Icon, Box, Input } from 'tailor-ui';
 import { MdAccountCircle } from 'react-icons/md';
 
 # Input
@@ -84,19 +84,19 @@ import { Input, Textarea, FormField } from 'tailor-ui';
 <Playground>
   <Input prefix="Prefix" defaultValue="" />
 
-<Space mt="2">
+<Box mt="2">
   <Input suffix="Suffix" defaultValue="" />
-</Space>
+</Box>
 
-<Space mt="2">
+<Box mt="2">
   <Input suffix={<Button type="success">Send It</Button>} defaultValue="" />
-</Space>
+</Box>
 
-<Space mt="2">
+<Box mt="2">
   <Input prefix="https://" suffix=".com" defaultValue="yoctol" />
-</Space>
+</Box>
 
-  <Space mt="2">
+  <Box mt="2">
     <Input
       prefix={
         <>
@@ -106,7 +106,7 @@ import { Input, Textarea, FormField } from 'tailor-ui';
       }
       defaultValue="yoctol"
     />
-  </Space>
+  </Box>
 </Playground>
 
 #### focus and blur with ref

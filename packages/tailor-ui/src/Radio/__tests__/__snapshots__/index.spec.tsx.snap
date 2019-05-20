@@ -2,6 +2,7 @@
 
 exports[`Radio should render correctly 1`] = `
 .c6 {
+  box-sizing: border-box;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
 }
@@ -112,13 +113,14 @@ exports[`Radio should render correctly 1`] = `
 `;
 
 exports[`Radio.Group composition with Radio should render correctly 1`] = `
-.c1 {
-  box-sizing: border-box;
-}
-
 .c8 {
+  box-sizing: border-box;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
+}
+
+.c1 {
+  box-sizing: border-box;
 }
 
 .c0 {
@@ -313,6 +315,7 @@ exports[`Radio.Group composition with Radio should render correctly 1`] = `
 
 exports[`Radio.Group should render vertical radio group 1`] = `
 .c7 {
+  box-sizing: border-box;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
 }

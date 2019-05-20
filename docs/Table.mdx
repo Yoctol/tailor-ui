@@ -6,7 +6,7 @@ route: /components/table
 
 import { PropsTable, Playground } from 'docz';
 import { range } from 'ramda';
-import { Box, Button, Flex, Heading, Table, Space } from 'tailor-ui';
+import { Box, Button, Flex, Heading, Table } from 'tailor-ui';
 
 # Table
 
@@ -58,14 +58,14 @@ import { Table } from 'tailor-ui';
   <Box width="100%" height="100%" borderRadius="xl" bg="#eef0f5" p="4">
     <Table
       header={
-        <Space py="24px" px="4">
+        <Box py="24px" px="4">
           <Heading.h4>Text Here</Heading.h4>
-        </Space>
+        </Box>
       }
       footer={
-        <Space py="24px" px="4">
+        <Box py="24px" px="4">
           <Button variant="regular">+ Button</Button>
-        </Space>
+        </Box>
       }
     >
       <Table.Head>
@@ -105,10 +105,10 @@ import { Table } from 'tailor-ui';
             height="80px"
             px="4"
           >
-            <Space>
+            <div>
               <Heading.h3>Text Here</Heading.h3>
               <Heading.h3>Text Here</Heading.h3>
-            </Space>
+            </div>
           </Flex>
           <Flex
             bg="primary"

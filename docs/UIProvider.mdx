@@ -11,7 +11,7 @@ import {
   Modal,
   Button,
   Radio,
-  Space,
+  Box,
   Flex,
   DatePicker,
   Position,
@@ -51,7 +51,7 @@ const { zh_Hant } = locale;
           <Radio value="zh_Hant">正體中文</Radio>
         </Radio.Group>
 
-        <Space mt="3">
+        <Box mt="3">
           <UIProvider locale={locale[value]}>
             <>
               <Flex>
@@ -80,7 +80,7 @@ const { zh_Hant } = locale;
                   Confirm Modal
                 </Button>
 
-                <Space ml="2">
+                <Box ml="2">
                   <Popconfirm
                     position={Position.BOTTOM}
                     content="Are you sure to delete this todo?"
@@ -89,26 +89,26 @@ const { zh_Hant } = locale;
                   >
                     <Button>Popconfirm</Button>
                   </Popconfirm>
-                </Space>
+                </Box>
               </Flex>
-              <Space mt="3">
+              <Box mt="3">
                 <DatePicker onChange={() => {}}/>
-              </Space>
-              <Space mt="3">
+              </Box>
+              <Box mt="3">
                 <Flex>
-                  <Space mr="2">With Success:</Space>
+                  <Box mr="2">With Success:</Box>
                   <Upload onSelect={() => new Promise(resolve => setTimeout(resolve, 2000))} />
                 </Flex>
-              </Space>
-              <Space mt="1">
+              </Box>
+              <Box mt="1">
                 <Flex>
-                  <Space mr="2">With Failed:</Space>
+                  <Box mr="2">With Failed:</Box>
                   <Upload onSelect={() => new Promise((resolve, reject) => setTimeout(reject, 2000))} />
                 </Flex>
-              </Space>
+              </Box>
             </>
           </UIProvider>
-        </Space>
+        </Box>
       </>
     );
 

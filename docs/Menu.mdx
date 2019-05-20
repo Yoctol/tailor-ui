@@ -6,7 +6,7 @@ route: /components/menu
 
 import { PropsTable, Playground } from 'docz';
 import { range } from 'ramda';
-import { Menu, Flex, Space, Button } from 'tailor-ui';
+import { Menu, Flex, Box, Button } from 'tailor-ui';
 
 # Menu
 
@@ -72,7 +72,7 @@ import { Menu } from 'tailor-ui';
       <>
         <Flex mb="3">
           <Button onClick={() => setSubKeys([])}>Close All</Button>
-          <Space mx="1" />
+          <Box mx="1" />
           <Button onClick={() => setSubKeys(['understood', 'kurator', 'touch'])}>Open All</Button>
         </Flex>
         <Menu subKeys={subKeys} onUpdateSubKeys={setSubKeys}>

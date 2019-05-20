@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { MdClose } from 'react-icons/md';
 import { Transition, animated } from 'react-spring/renderprops.cjs';
 
-import Box from '../Grid/Box';
+import Box from '../Layout/Box';
 import Icon from '../Icon';
 import UIProvider from '../UIProvider';
 import createUIDGenerator from '../utils/createUIDGenerator';

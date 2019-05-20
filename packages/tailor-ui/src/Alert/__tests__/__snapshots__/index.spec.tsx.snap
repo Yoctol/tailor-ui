@@ -9,14 +9,14 @@ exports[`Alert should render error alert correctly 1`] = `
 }
 
 .c1 {
-  box-sizing: border-box;
-  -webkit-flex: none;
-  -ms-flex: none;
-  flex: none;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  box-sizing: border-box;
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
 }
 
 .c2 {
@@ -106,14 +106,14 @@ exports[`Alert should render info alert correctly 1`] = `
 }
 
 .c1 {
-  box-sizing: border-box;
-  -webkit-flex: none;
-  -ms-flex: none;
-  flex: none;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  box-sizing: border-box;
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
 }
 
 .c2 {
@@ -203,14 +203,14 @@ exports[`Alert should render success alert correctly 1`] = `
 }
 
 .c1 {
-  box-sizing: border-box;
-  -webkit-flex: none;
-  -ms-flex: none;
-  flex: none;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  box-sizing: border-box;
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
 }
 
 .c2 {
@@ -300,14 +300,14 @@ exports[`Alert should render warning alert correctly 1`] = `
 }
 
 .c1 {
-  box-sizing: border-box;
-  -webkit-flex: none;
-  -ms-flex: none;
-  flex: none;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  box-sizing: border-box;
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
 }
 
 .c2 {

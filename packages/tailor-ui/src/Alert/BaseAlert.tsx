@@ -5,8 +5,8 @@ import { SpaceProps, space } from 'styled-system';
 import { omit } from 'ramda';
 import { rgba } from 'polished';
 
-import Box from '../Grid/Box';
-import Flex from '../Grid/Flex';
+import Box from '../Layout/Box';
+import Flex from '../Layout/Flex';
 import Icon from '../Icon';
 import getTypeIcon, { Types } from '../utils/getTypeIcon';
 
