@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.8.0](https://github.com/Yoctol/tailor-ui/compare/@tailor-ui/lab@0.7.2...@tailor-ui/lab@0.8.0) (2019-05-20)
+
+### Features
+
+- add grid ([eb6b9a4](https://github.com/Yoctol/tailor-ui/commit/eb6b9a4))
+- add onOpenComplete & onCloseComplete to Popover/Tooltip/Popconfirm/Dropdown ([3252255](https://github.com/Yoctol/tailor-ui/commit/3252255))
+
 ## [0.7.2](https://github.com/Yoctol/tailor-ui/compare/@tailor-ui/lab@0.7.1...@tailor-ui/lab@0.7.2) (2019-05-16)
 
 ### Bug Fixes

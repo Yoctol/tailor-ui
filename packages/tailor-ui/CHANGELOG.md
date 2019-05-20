@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.12.0](https://github.com/yoctol/tailor-ui/compare/tailor-ui@0.11.4...tailor-ui@0.12.0) (2019-05-20)
+
+### Features
+
+- add grid ([eb6b9a4](https://github.com/yoctol/tailor-ui/commit/eb6b9a4))
+- **positioner:** add onOpenComplete & onCloseComplete ([b444637](https://github.com/yoctol/tailor-ui/commit/b444637))
+
 ## [0.11.4](https://github.com/yoctol/tailor-ui/compare/tailor-ui@0.11.3...tailor-ui@0.11.4) (2019-05-16)
 
 **Note:** Version bump only for package tailor-ui
