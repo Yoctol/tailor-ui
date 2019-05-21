@@ -13,6 +13,7 @@ export const Column = styled.td`
 `;
 
 export const Row = styled.tr`
+  height: 56px;
   border-bottom: ${p => p.theme.borders.base} ${p => p.theme.colors.gray300};
 
   ${p => p.theme.transition};

@@ -11,6 +11,7 @@ exports[`Table should render table correctly 1`] = `
 }
 
 .c2 {
+  height: 56px;
   border-bottom: 1px solid #e0e0e0;
   -webkit-transition: all 200ms ease 0s;
   transition: all 200ms ease 0s;
@@ -184,6 +185,7 @@ exports[`Table should render table correctly with header and footer 1`] = `
 }
 
 .c4 {
+  height: 56px;
   border-bottom: 1px solid #e0e0e0;
   -webkit-transition: all 200ms ease 0s;
   transition: all 200ms ease 0s;
