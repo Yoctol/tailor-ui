@@ -1,11 +1,8 @@
 import styled, { css, keyframes } from 'styled-components';
-import { WidthProps, width } from 'styled-system';
 
-export const SelectWrapper: any = styled.div<WidthProps>`
+export const SelectWrapper = styled.div`
   display: inline-flex;
   cursor: pointer;
-
-  ${width}
 `;
 
 export interface StyledSelectOptionProps {

@@ -1,11 +1,5 @@
 import Downshift from 'downshift';
-import React, {
-  FunctionComponent,
-  ReactNode,
-  useEffect,
-  useRef,
-  useState,
-} from 'react';
+import React, { FunctionComponent, ReactNode, useRef, useState } from 'react';
 
 import { Flex, Position, useFormField } from 'tailor-ui';
 
@@ -78,17 +72,9 @@ const Select: FunctionComponent<SelectProps> = ({
     value,
     defaultValue,
   });
-  const containerRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const [visible, setVisible] = useState(false);
-  const [selectWidth, setSelectWidth] = useState<number | string>('auto');
   const [inputValue, setInputValue] = useState('');
-
-  useEffect(() => {
-    if (containerRef.current) {
-      setSelectWidth(containerRef.current.offsetWidth);
-    }
-  }, []);
 
   const handleChange = (selection: Option) => {
     if (inputRef.current && !multiple) {
@@ -165,11 +151,11 @@ const Select: FunctionComponent<SelectProps> = ({
         getRemoveButtonProps,
         removeItem,
       }: any) => (
-        <SelectWrapper width={width} {...getRootProps()}>
+        <SelectWrapper {...getRootProps({ style: { width } })}>
           <Popover
             visible={visible}
             position={Position.BOTTOM_LEFT}
-            minWidth={selectWidth}
+            minWidth={width}
             onVisibleChange={newVisible => {
               if (disabled || loading) {
                 return;
@@ -204,7 +190,6 @@ const Select: FunctionComponent<SelectProps> = ({
             }
           >
             <StyledSelect
-              ref={containerRef}
               invalid={invalid}
               size={size}
               focused={visible}
