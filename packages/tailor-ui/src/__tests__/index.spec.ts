@@ -28,8 +28,9 @@ import {
   Textarea,
   UIProvider,
   Upload,
-  message,
   theme,
+  useMessage,
+  useModal,
 } from '..';
 
 describe('index', () => {
@@ -50,7 +51,6 @@ describe('index', () => {
     expect(Input).toBeDefined();
     expect(Mention).toBeDefined();
     expect(Menu).toBeDefined();
-    expect(message).toBeDefined();
     expect(Modal).toBeDefined();
     expect(Radio).toBeDefined();
     expect(Radio.Group).toBeDefined();
@@ -67,5 +67,7 @@ describe('index', () => {
     expect(theme).toBeDefined();
     expect(UIProvider).toBeDefined();
     expect(Upload).toBeDefined();
+    expect(useMessage).toBeDefined();
+    expect(useModal).toBeDefined();
   });
 });

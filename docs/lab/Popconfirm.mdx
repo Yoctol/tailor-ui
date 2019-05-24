@@ -5,7 +5,7 @@ route: /lab/popconfirm
 ---
 
 import { PropsTable, Playground } from 'docz';
-import { Button, Position, message, useModal } from 'tailor-ui';
+import { Button, Position, useMessage, useModal } from 'tailor-ui';
 import { Popconfirm } from '@tailor-ui/lab';
 
 # Popconfirm
@@ -40,6 +40,7 @@ import { Popconfirm } from 'tailor-ui';
 <Playground>
   {() => {
     const modal = useModal();
+    const message = useMessage();
 
     return (
       <Popconfirm

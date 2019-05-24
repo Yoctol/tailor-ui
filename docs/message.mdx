@@ -5,7 +5,7 @@ route: /components/message
 ---
 
 import { PropsTable, Playground } from 'docz';
-import { Button, message } from 'tailor-ui';
+import { Button, useMessage } from 'tailor-ui';
 
 # Message
 
@@ -19,55 +19,81 @@ Display global messages as feedback in response to user operations.
 ## Examples
 
 ```js
-import { message } from 'tailor-ui';
+import { useMessage } from 'tailor-ui';
 ```
 
 ### Basic
 
 <Playground>
-  <Button onClick={() => message.info('This is a info message!')}>
-    Info
-  </Button>
+  {() => {
+    const message = useMessage();
 
-<Button onClick={() => message.success('This is a success message!')} ml={2}>
-  Success
-</Button>
+    return (
+      <>
+        <Button onClick={() => message.info('This is a info message!')}>
+          Info
+        </Button>
 
-<Button onClick={() => message.warning('This is a warning message!')} ml={2}>
-  Warning
-</Button>
+        <Button onClick={() => message.success('This is a success message!')} ml={2}>
+          Success
+        </Button>
 
-  <Button onClick={() => message.error('This is a error message!')} ml={2}>
-    Error
-  </Button>
+        <Button onClick={() => message.warning('This is a warning message!')} ml={2}>
+          Warning
+        </Button>
+
+        <Button onClick={() => message.error('This is a error message!')} ml={2}>
+          Error
+        </Button>
+      </>
+    );
+
+}}
+
 </Playground>
 
 ### Customize duration
 
 <Playground>
-  <Button
-    onClick={() => {
-      message.info(
-        'This is a prompt message for success, and it will disappear in 10 seconds',
-        10000
-      );
-    }}
-  >
-    Customized display duration
-  </Button>
+  {() => {
+    const message = useMessage();
+
+    return (
+      <Button
+        onClick={() => {
+          message.info(
+            'This is a prompt message for success, and it will disappear in 10 seconds',
+            10000
+          );
+        }}
+      >
+        Customized display duration
+      </Button>
+    );
+
+}}
+
 </Playground>
 
 ### Handle Promise
 
 <Playground>
-  <Button
-    onClick={async function() {
-      await message.info('This is a info message!');
-      message.success('Previous message has been resolve!');
-    }}
-  >
-    Show a message
-  </Button>
+  {() => {
+    const message = useMessage();
+
+    return (
+      <Button
+        onClick={async function() {
+          await message.info('This is a info message!');
+          message.success('Previous message has been resolve!');
+        }}
+      >
+        Show a message
+      </Button>
+    );
+
+}}
+
 </Playground>
 
 ## API

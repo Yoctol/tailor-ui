@@ -40,8 +40,7 @@ export * from './Mention';
 export { default as Menu } from './Menu';
 export * from './Menu';
 
-export { default as message } from './message';
-export * from './message';
+export { useMessage } from './message';
 
 export { default as Modal } from './Modal';
 export * from './Modal';
