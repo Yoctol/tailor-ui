@@ -48,7 +48,6 @@ exports[`Select should render correctly 1`] = `
   display: -ms-inline-flexbox;
   display: inline-flex;
   cursor: pointer;
-  width: 240px;
 }
 
 .c1 {
@@ -125,7 +124,7 @@ exports[`Select should render correctly 1`] = `
       aria-labelledby="downshift-0-label"
       class="c0"
       role="combobox"
-      width="240"
+      style="width: 240px;"
     >
       <div
         aria-haspopup="true"
