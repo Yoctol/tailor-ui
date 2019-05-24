@@ -3,6 +3,8 @@ import React, { FunctionComponent, ReactNode, useEffect, useRef } from 'react';
 import moment from 'moment';
 import { ThemeProvider } from 'styled-components';
 
+import EffectMessage from '../message/EffectMessage';
+import EffectMessageContext from '../message/EffectMessageContext';
 import EffectModal from '../Modal/EffectModal';
 import EffectModalContext from '../Modal/EffectModalContext';
 import GlobalStyle from '../GlobalStyle';
@@ -25,7 +27,8 @@ const UIProvider: FunctionComponent<UIProviderProps> = ({
   theme = defaultTheme,
   locale = en_US,
 }) => {
-  const triggerRef = useRef(() => Promise.resolve(false));
+  const modalTriggerRef = useRef(() => Promise.resolve(false));
+  const messageTriggerRef = useRef(() => Promise.resolve(false));
 
   useEffect(() => {
     moment.locale(locale.momentLocale);
@@ -36,11 +39,14 @@ const UIProvider: FunctionComponent<UIProviderProps> = ({
       <>
         <GlobalStyle />
         <LocaleContext.Provider value={{ locale }}>
-          <EffectModalContext.Provider value={triggerRef}>
-            {children}
+          <EffectModalContext.Provider value={modalTriggerRef}>
+            <EffectMessageContext.Provider value={messageTriggerRef}>
+              {children}
+            </EffectMessageContext.Provider>
           </EffectModalContext.Provider>
         </LocaleContext.Provider>
-        <EffectModal locale={locale} triggerRef={triggerRef} />
+        <EffectModal locale={locale} triggerRef={modalTriggerRef} />
+        <EffectMessage triggerRef={messageTriggerRef} />
       </>
     </ThemeProvider>
   );

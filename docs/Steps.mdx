@@ -5,7 +5,7 @@ route: /components/steps
 ---
 
 import { PropsTable, Playground } from 'docz';
-import { Button, Flex, Steps, message } from 'tailor-ui';
+import { Button, Flex, Steps, useMessage } from 'tailor-ui';
 
 # Steps
 
@@ -93,6 +93,7 @@ When the task is complicated or has a certain sequence in the series of subtasks
 
 <Playground>
   {() => {
+    const message = useMessage();
     const [step, setStep] = React.useState(0);
 
     const steps = [{

@@ -1,11 +1,10 @@
-import React, { PureComponent } from 'react';
+import React, { MutableRefObject, PureComponent } from 'react';
 import styled from 'styled-components';
 import { MdClose } from 'react-icons/md';
 import { Transition, animated } from 'react-spring/renderprops.cjs';
 
 import Box from '../Layout/Box';
 import Icon from '../Icon';
-import UIProvider from '../UIProvider';
 import createUIDGenerator from '../utils/createUIDGenerator';
 import getTypeIcon, { Types } from '../utils/getTypeIcon';
 
@@ -35,7 +34,7 @@ const MessageContent = styled.div`
   padding: ${p => p.theme.space[3]};
   overflow: hidden;
   border-radius: ${p => p.theme.radii.base};
-  background-color: ${p => p.theme.colors.primaryDark};
+  background-color: ${p => p.theme.colors.primaryDark2};
   color: ${p => p.theme.colors.light};
   font-size: ${p => p.theme.fontSizes.sm};
 `;
@@ -65,19 +64,34 @@ interface Message {
 export interface MessageOptions {
   content: string;
   duration: number;
-  type: Types;
 }
 
-export interface MessageHubState {
+export type Trigger = (
+  options: MessageOptions,
+  type: Types
+) => Promise<boolean>;
+
+export interface EffectMessageProps {
+  triggerRef: MutableRefObject<Trigger>;
+}
+
+export interface EffectMessageState {
   messages: Message[];
 }
 
-class MessageHub extends PureComponent<{}, MessageHubState> {
-  state: MessageHubState = {
+class EffectMessage extends PureComponent<
+  EffectMessageProps,
+  EffectMessageState
+> {
+  state: EffectMessageState = {
     messages: [],
   };
 
   cancelMap = new WeakMap();
+
+  componentDidMount() {
+    this.props.triggerRef.current = this.add;
+  }
 
   remove = ({ key }: any) => {
     this.setState(({ messages }) => ({
@@ -85,8 +99,8 @@ class MessageHub extends PureComponent<{}, MessageHubState> {
     }));
   };
 
-  add = ({ content, duration, type }: MessageOptions) =>
-    new Promise(resolve => {
+  add = ({ content, duration }: MessageOptions, type: Types) =>
+    new Promise<boolean>(resolve => {
       const key = getUID();
       const icon = getTypeIcon(type);
 
@@ -125,46 +139,44 @@ class MessageHub extends PureComponent<{}, MessageHubState> {
     const { messages } = this.state;
 
     return (
-      <UIProvider>
-        <MessageContainer>
-          <Transition
-            native
-            keys={message => message.key}
-            items={messages}
-            from={{
-              opacity: 0,
-              height: 0,
-              life: '100%',
-            }}
-            enter={{
-              opacity: 1,
-              height: 'auto',
-            }}
-            leave={this.leave}
-            onRest={this.remove}
-            config={this.config as any}
-          >
-            {(message: any) => ({ life, ...props }) => (
-              <AnimatedMessageBox style={props}>
-                <MessageContent>
-                  {message.icon}
-                  <Box flex="auto">{message.content}</Box>
-                  <Icon
-                    type={MdClose}
-                    fill="light"
-                    size="16"
-                    cursor="pointer"
-                    onClick={() => this.cancel(message)}
-                  />
-                </MessageContent>
-                <Life style={{ right: life }} />
-              </AnimatedMessageBox>
-            )}
-          </Transition>
-        </MessageContainer>
-      </UIProvider>
+      <MessageContainer>
+        <Transition
+          native
+          keys={message => message.key}
+          items={messages}
+          from={{
+            opacity: 0,
+            height: 0,
+            life: '100%',
+          }}
+          enter={{
+            opacity: 1,
+            height: 'auto',
+          }}
+          leave={this.leave}
+          onRest={this.remove}
+          config={this.config as any}
+        >
+          {(message: any) => ({ life, ...props }) => (
+            <AnimatedMessageBox style={props}>
+              <MessageContent>
+                {message.icon}
+                <Box flex="auto">{message.content}</Box>
+                <Icon
+                  type={MdClose}
+                  fill="light"
+                  size="16"
+                  cursor="pointer"
+                  onClick={() => this.cancel(message)}
+                />
+              </MessageContent>
+              <Life style={{ right: life }} />
+            </AnimatedMessageBox>
+          )}
+        </Transition>
+      </MessageContainer>
     );
   }
 }
 
-export default MessageHub;
+export default EffectMessage;
