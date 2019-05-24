@@ -131,7 +131,6 @@ export const StyledSelect = styled.div<StyledSelectProps>`
   input {
     flex: 1;
     width: 100%;
-    min-width: 50px;
     overflow: hidden;
     border: none;
     outline: none;
@@ -190,8 +189,9 @@ const spin = keyframes`
 
 export const Loading = styled.div`
   flex: none;
-  width: 1em;
-  height: 1em;
+  width: 24px;
+  height: 24px;
+  margin: 4px;
   border: ${p => p.theme.borders.base};
   border-radius: 50%;
   border-top-color: transparent;

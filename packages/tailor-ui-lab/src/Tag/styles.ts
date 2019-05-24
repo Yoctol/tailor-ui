@@ -1,9 +1,13 @@
 import styled from 'styled-components';
 
-export const StyledTag = styled.div<{
+import AutoSizeInput from '../AutoSizeInput';
+
+export interface StyledTagProps {
   editable: boolean;
   invalid: boolean;
-}>`
+}
+
+export const StyledTag = styled.div<StyledTagProps>`
   display: inline-flex;
   align-items: center;
   height: 28px;
@@ -19,6 +23,11 @@ export const StyledTag = styled.div<{
   font-size: ${p => p.theme.fontSizes.sm};
   white-space: nowrap;
   cursor: ${p => (p.editable ? 'pointer' : 'auto')};
+
+  input {
+    color: ${p =>
+      p.invalid ? p.theme.colors.danger : p.theme.colors.primaryLight};
+  }
 `;
 
 export const StyledTagPrefix = styled.span<{ invalid: boolean }>`
@@ -35,14 +44,12 @@ export const StyledTagPrefix = styled.span<{ invalid: boolean }>`
   font-size: ${p => p.theme.fontSizes.sm};
 `;
 
-export const StyledTagInput = styled.input<{ invalid: boolean }>`
+export const StyledTagInput = styled(AutoSizeInput)`
   display: inline-flex;
-  max-width: 80px;
+  margin: 0;
+  padding: 0;
   border: none;
   outline: none;
-  background-color: ${p =>
-    p.invalid ? p.theme.colors.light : p.theme.colors.surface2};
-  color: ${p =>
-    p.invalid ? p.theme.colors.danger : p.theme.colors.primaryLight};
+  background-color: transparent;
   font-size: ${p => p.theme.fontSizes.sm};
 `;
