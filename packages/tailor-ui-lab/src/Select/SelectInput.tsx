@@ -1,5 +1,7 @@
 import React, { ChangeEventHandler, forwardRef } from 'react';
 
+import AutoSizeInput from '../AutoSizeInput';
+
 import { Option } from './SelectOptions';
 import { itemToString } from './utils';
 
@@ -33,8 +35,9 @@ const SelectInput = forwardRef<HTMLInputElement, SelectInputProps>(
     ref
   ) {
     return (
-      <input
+      <AutoSizeInput
         ref={ref}
+        fontSize={16}
         autoComplete="off"
         {...(visible && (searchable || creatable || multiple)
           ? {

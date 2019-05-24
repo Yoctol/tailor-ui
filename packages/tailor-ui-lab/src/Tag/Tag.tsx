@@ -124,7 +124,6 @@ const Tag: FunctionComponent<TagProps> = ({
         {editing ? (
           <StyledTagInput
             autoFocus
-            invalid={invalid}
             defaultValue={children}
             onBlur={handleUpdate}
             onKeyPress={event => {
