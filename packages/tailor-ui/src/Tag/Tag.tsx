@@ -1,4 +1,4 @@
-import React, { FunctionComponent, PureComponent, useState } from 'react';
+import React, { FunctionComponent, useState } from 'react';
 import styled from 'styled-components';
 import { MdClose } from 'react-icons/md';
 import { animated, config, useSpring } from 'react-spring';
@@ -47,7 +47,7 @@ interface ClosableTagProps {
 
 const ClosableTag: FunctionComponent<ClosableTagProps> = ({
   children,
-  onClosed,
+  onClosed = () => {},
   ...props
 }) => {
   const [on, setOn] = useState(true);
@@ -101,18 +101,14 @@ export interface TagProps {
   onClosed?: () => void;
 }
 
-class Tag extends PureComponent<TagProps> {
-  static defaultProps = {
-    closable: false,
-    onClosed: () => {},
-  };
+const Tag: FunctionComponent<TagProps> = ({
+  closable = false,
+  children,
+  ...props
+}) => {
+  const RenderComponent = closable ? ClosableTag : BaseTag;
 
-  render() {
-    const { closable, children, ...props } = this.props;
-    const RenderComponent = closable ? ClosableTag : BaseTag;
-
-    return <RenderComponent {...props}>{children}</RenderComponent>;
-  }
-}
+  return <RenderComponent {...props}>{children}</RenderComponent>;
+};
 
 export default Tag;
