@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.12.1](https://github.com/yoctol/tailor-ui/compare/tailor-ui@0.12.0...tailor-ui@0.12.1) (2019-05-24)
+
+**Note:** Version bump only for package tailor-ui
+
 # [0.12.0](https://github.com/yoctol/tailor-ui/compare/tailor-ui@0.11.4...tailor-ui@0.12.0) (2019-05-20)
 
 ### Features

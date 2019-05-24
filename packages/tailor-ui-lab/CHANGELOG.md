@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.8.1](https://github.com/Yoctol/tailor-ui/compare/@tailor-ui/lab@0.8.0...@tailor-ui/lab@0.8.1) (2019-05-24)
+
+### Bug Fixes
+
+- **select:** popover width ([6f1d704](https://github.com/Yoctol/tailor-ui/commit/6f1d704))
+
 # [0.8.0](https://github.com/Yoctol/tailor-ui/compare/@tailor-ui/lab@0.7.2...@tailor-ui/lab@0.8.0) (2019-05-20)
 
 ### Features
