@@ -1,7 +1,7 @@
 import React, { FunctionComponent, useState } from 'react';
 import { animated, config, useSpring } from 'react-spring';
 
-import useMeasure from '../utils/useMeasure';
+import { useMeasure } from '@tailor-ui/hooks';
 
 import BaseAlert, { BaseAlertProps } from './BaseAlert';
 

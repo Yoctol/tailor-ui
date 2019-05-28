@@ -1,6 +1,6 @@
 import { useContext, useEffect } from 'react';
 
-import { tuplify } from '../utils/type';
+import { tuplify } from '@tailor-ui/utils';
 
 import FormFieldContext from './FormFieldContext';
 

@@ -2,11 +2,15 @@ import React, { FunctionComponent, ReactNode } from 'react';
 import styled, { css } from 'styled-components';
 import { animated, config, useTransition } from 'react-spring';
 
+import {
+  ESC_KEY_CODE,
+  useKeydown,
+  usePreventBodyScroll,
+} from '@tailor-ui/hooks';
+
 import Backdrop from '../Backdrop';
 import Portal from '../Portal';
 import Stack from '../Stack';
-import useKeydown, { ESC_KEY_CODE } from '../utils/useKeydown';
-import usePreventBodyScroll from '../utils/usePreventBodyScroll';
 import { FooterWrapper, ModalContent, ModalHeader } from '../Modal';
 import { StackingOrder } from '../constants';
 

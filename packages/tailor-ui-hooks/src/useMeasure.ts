@@ -1,7 +1,7 @@
 import ResizeObserver from 'resize-observer-polyfill';
 import { useEffect, useRef, useState } from 'react';
 
-import { tuplify } from './type';
+import { tuplify } from '@tailor-ui/utils';
 
 const useMeasure = () => {
   const ref = useRef<any>(null);

@@ -10,7 +10,8 @@ import styled from 'styled-components';
 import { MdClose } from 'react-icons/md';
 import { animated, useSpring } from 'react-spring';
 
-import { Icon, useMeasure, usePrevious } from 'tailor-ui';
+import { Icon } from 'tailor-ui';
+import { useMeasure, usePrevious } from '@tailor-ui/hooks';
 
 import { StyledTag, StyledTagInput, StyledTagPrefix } from './styles';
 

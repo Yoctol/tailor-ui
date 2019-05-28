@@ -3,8 +3,9 @@ import styled from 'styled-components';
 import { MdKeyboardArrowUp } from 'react-icons/md';
 import { animated, useSpring } from 'react-spring';
 
+import { useMeasure } from '@tailor-ui/hooks';
+
 import Icon, { IconType } from '../Icon';
-import useMeasure from '../utils/useMeasure';
 
 import MenuContext from './MenuContext';
 import { StyledSubMenu } from './styles';

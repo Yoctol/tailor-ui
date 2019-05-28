@@ -8,10 +8,11 @@ import {
   useTransition,
 } from 'react-spring';
 
+import { ESC_KEY_CODE, useKeydown } from '@tailor-ui/hooks';
+
 import Backdrop from '../Backdrop';
 import Portal from '../Portal';
 import Stack from '../Stack';
-import useKeydown, { ESC_KEY_CODE } from '../utils/useKeydown';
 import { StackingOrder } from '../constants';
 import { Types } from '../utils/getTypeIcon';
 
