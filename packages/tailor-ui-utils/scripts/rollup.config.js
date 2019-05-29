@@ -1,5 +1,6 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
+/* eslint import/no-extraneous-dependencies: off */
 import commonjs from 'rollup-plugin-commonjs';
+import { sizeSnapshot } from 'rollup-plugin-size-snapshot';
 
 export default {
   input: 'lib/index.js',
@@ -11,5 +12,5 @@ export default {
       sourcemap: false,
     },
   ],
-  plugins: [commonjs()],
+  plugins: [sizeSnapshot(), commonjs()],
 };
