@@ -2,6 +2,13 @@
 
 exports[`Tooltip should render tooltip correctly 1`] = `
 .c0 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  will-change: transform;
+}
+
+.c1 {
   border-radius: 0.5rem;
   background-color: rgba(26,26,26,0.9);
   color: #ffffff;
@@ -23,13 +30,14 @@ exports[`Tooltip should render tooltip correctly 1`] = `
       style="position: fixed; top: 0px; left: 0px; z-index: 10;"
     >
       <div
-        style="position: absolute; top: 0px; left: 0px; transform: translate3d(-6px, -6px, 0px);"
+        class="c0"
+        style="transform: translate3d(-6px, -6px, 0px);"
       >
         <div
           style="opacity: 0; transform: scale(0.9);"
         >
           <div
-            class="c0"
+            class="c1"
           >
             Content
           </div>
