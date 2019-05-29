@@ -1,10 +1,13 @@
 import React, { FunctionComponent, ReactNode, useRef } from 'react';
 
-import { Position, Positioner, Positions } from 'tailor-ui';
+import {
+  useHoverTrigger,
+  useRenderChildren,
+  useTargetRef,
+} from '@tailor-ui/hooks';
 
-import useHoverTrigger from '../hooks/useHoverTrigger';
-import useRenderChildren from '../hooks/useRenderChildren';
-import useTargetRef from '../hooks/useTargetRef';
+import Positioner from '../Positioner';
+import { Position, Positions } from '../constants';
 
 import TooltipPopup from './TooltipPopup';
 import { StyledTooltipProps } from './styles';

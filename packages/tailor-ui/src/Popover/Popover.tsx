@@ -12,17 +12,16 @@ import React, {
 import { animated } from 'react-spring';
 
 import {
-  Heading,
-  Position,
-  Positioner,
-  Positions,
   useClickOutside,
   useKeydown,
-} from 'tailor-ui';
+  useRenderChildren,
+  useTargetRef,
+  useToggleTrigger,
+} from '@tailor-ui/hooks';
 
-import useRenderChildren from '../hooks/useRenderChildren';
-import useTargetRef from '../hooks/useTargetRef';
-import useToggleTrigger from '../hooks/useToggleTrigger';
+import Positioner from '../Positioner';
+import { Heading } from '../Typography';
+import { Position, Positions } from '../constants';
 
 import { PopoverHeader, StyledPopover, StyledPopoverProps } from './styles';
 

@@ -7,6 +7,7 @@ import {
   DatePicker,
   Divider,
   Drawer,
+  Dropdown,
   Flex,
   FormField,
   Heading,
@@ -15,6 +16,8 @@ import {
   Mention,
   Menu,
   Modal,
+  Popconfirm,
+  Popover,
   Radio,
   Select,
   Spin,
@@ -26,6 +29,7 @@ import {
   TelInput,
   TextField,
   Textarea,
+  Tooltip,
   UIProvider,
   Upload,
   theme,
@@ -44,6 +48,7 @@ describe('index', () => {
     expect(DatePicker).toBeDefined();
     expect(Divider).toBeDefined();
     expect(Drawer).toBeDefined();
+    expect(Dropdown).toBeDefined();
     expect(Flex).toBeDefined();
     expect(FormField).toBeDefined();
     expect(Heading).toBeDefined();
@@ -52,6 +57,8 @@ describe('index', () => {
     expect(Mention).toBeDefined();
     expect(Menu).toBeDefined();
     expect(Modal).toBeDefined();
+    expect(Popconfirm).toBeDefined();
+    expect(Popover).toBeDefined();
     expect(Radio).toBeDefined();
     expect(Radio.Group).toBeDefined();
     expect(Select).toBeDefined();
@@ -65,6 +72,7 @@ describe('index', () => {
     expect(TelInput).toBeDefined();
     expect(TextField).toBeDefined();
     expect(theme).toBeDefined();
+    expect(Tooltip).toBeDefined();
     expect(UIProvider).toBeDefined();
     expect(Upload).toBeDefined();
     expect(useMessage).toBeDefined();

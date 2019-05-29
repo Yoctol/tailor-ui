@@ -1,9 +1,7 @@
 import Downshift from 'downshift';
 import React, { FunctionComponent, ReactNode, useRef, useState } from 'react';
 
-import { Flex, Position, useFormField } from 'tailor-ui';
-
-import Popover from '../Popover';
+import { Flex, Popover, Position, useFormField } from 'tailor-ui';
 
 import ClearIcon from './ClearIcon';
 import MultiDownshift from './MultiDownshift';

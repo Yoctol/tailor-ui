@@ -10,10 +10,9 @@ import React, {
   useEffect,
 } from 'react';
 
-import { mergeEventProps } from '@tailor-ui/utils';
+import { Omit, mergeEventProps } from '@tailor-ui/utils';
 
 import useFormField from '../FormField/useFormField';
-import { Omit } from '../utils/type';
 
 import { InputLabel, InputWrapper, Size, StyledInput } from './styles';
 

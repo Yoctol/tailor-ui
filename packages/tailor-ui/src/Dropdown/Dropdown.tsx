@@ -1,17 +1,16 @@
 import React, { FunctionComponent, ReactNode } from 'react';
 
-import { Position } from 'tailor-ui';
+import { Omit } from '@tailor-ui/utils';
 
 import Popover, { PopoverProps } from '../Popover';
+import { Position } from '../constants';
 
 import DropdownContext from './DropdownContext';
 import DropdownItem from './DropdownItem';
 import DropdownSubList from './DropdownSubList';
 import { Divider, List } from './styles';
 
-type Omit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>;
-
-interface DropdownProps extends Omit<PopoverProps, 'content'> {
+export interface DropdownProps extends Omit<PopoverProps, 'content'> {
   overlay: ReactNode;
 }
 

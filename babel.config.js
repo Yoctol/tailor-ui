@@ -35,6 +35,7 @@ module.exports = {
             alias: {
               'tailor-ui': './packages/tailor-ui/src',
               '@tailor-ui/utils': './packages/tailor-ui-utils/src',
+              '@tailor-ui/hooks': './packages/tailor-ui-hooks/src',
             },
           },
         ],

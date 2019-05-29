@@ -6,9 +6,11 @@ import React, {
   useContext,
 } from 'react';
 
-import { Button, Flex, LocaleContext, getTypeIcon } from 'tailor-ui';
-
+import Button from '../Button';
 import Popover, { PopoverProps } from '../Popover';
+import getTypeIcon from '../utils/getTypeIcon';
+import { Flex } from '../Layout';
+import { LocaleContext } from '../UIProvider';
 
 interface PopconfirmContentProps extends PopoverProps {
   /**

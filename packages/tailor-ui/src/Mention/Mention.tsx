@@ -10,8 +10,7 @@ import React, {
 } from 'react';
 
 import { mergeEventProps } from '@tailor-ui/utils';
-
-import useClickOutside from '../utils/useClickOutside';
+import { useClickOutside } from '@tailor-ui/hooks';
 
 import Suggestions from './Suggestions';
 import { Highlights, MentionWrapper, Textarea } from './styles';
