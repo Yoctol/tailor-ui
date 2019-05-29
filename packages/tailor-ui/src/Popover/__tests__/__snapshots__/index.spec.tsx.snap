@@ -1,7 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Popover should render correctly 1`] = `
-.c2 {
+.c0 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  will-change: transform;
+}
+
+.c3 {
   font-size: 0.875rem;
   margin: 0;
   color: #373737;
@@ -9,7 +16,7 @@ exports[`Popover should render correctly 1`] = `
   line-height: 1.5;
 }
 
-.c0 {
+.c1 {
   padding: 0.5rem 1rem;
   border: 1px solid;
   border-radius: 0.5rem;
@@ -22,7 +29,7 @@ exports[`Popover should render correctly 1`] = `
   white-space: nowrap;
 }
 
-.c1 {
+.c2 {
   margin-bottom: 0.5rem;
 }
 
@@ -41,19 +48,20 @@ exports[`Popover should render correctly 1`] = `
       style="position: fixed; top: 0px; left: 0px; z-index: 10;"
     >
       <div
-        style="position: absolute; top: 0px; left: 0px; transform: translate3d(-6px, -6px, 0px);"
+        class="c0"
+        style="transform: translate3d(-6px, -6px, 0px);"
       >
         <div
           style="opacity: 0; transform: scale(0.9);"
         >
           <div
-            class="c0"
+            class="c1"
           >
             <div
-              class="c1"
+              class="c2"
             >
               <h6
-                class="c2"
+                class="c3"
               >
                 Popover Title
               </h6>

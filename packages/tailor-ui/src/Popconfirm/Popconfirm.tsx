@@ -45,57 +45,55 @@ const PopconfirmContent: FunctionComponent<
   PopconfirmContentProps & {
     hideTooltip: () => void;
   }
-> = memo(
-  ({
-    type,
-    content,
-    confirmText,
-    cancelText,
-    onConfirm,
-    onCancel,
-    hideTooltip,
-  }) => {
-    const { locale } = useContext(LocaleContext);
+> = memo(function PopconfirmContent({
+  type,
+  content,
+  confirmText,
+  cancelText,
+  onConfirm,
+  onCancel,
+  hideTooltip,
+}) {
+  const { locale } = useContext(LocaleContext);
 
-    const icon = getTypeIcon(type);
+  const icon = getTypeIcon(type);
 
-    return (
-      <>
-        <Flex alignItems="center">
-          {icon}
-          {content}
-        </Flex>
-        <Flex mt="3">
-          <Button
-            ml="auto"
-            size="sm"
-            onClick={(event: MouseEvent) => {
-              hideTooltip();
-              if (onCancel) {
-                onCancel(event);
-              }
-            }}
-          >
-            {cancelText || locale.Popconfirm.cancelText}
-          </Button>
-          <Button
-            ml="2"
-            size="sm"
-            variant="primary"
-            onClick={(event: MouseEvent) => {
-              hideTooltip();
-              if (onConfirm) {
-                onConfirm(event);
-              }
-            }}
-          >
-            {confirmText || locale.Popconfirm.confirmText}
-          </Button>
-        </Flex>
-      </>
-    );
-  }
-);
+  return (
+    <>
+      <Flex alignItems="center">
+        {icon}
+        {content}
+      </Flex>
+      <Flex mt="3">
+        <Button
+          ml="auto"
+          size="sm"
+          onClick={(event: MouseEvent) => {
+            hideTooltip();
+            if (onCancel) {
+              onCancel(event);
+            }
+          }}
+        >
+          {cancelText || locale.Popconfirm.cancelText}
+        </Button>
+        <Button
+          ml="2"
+          size="sm"
+          variant="primary"
+          onClick={(event: MouseEvent) => {
+            hideTooltip();
+            if (onConfirm) {
+              onConfirm(event);
+            }
+          }}
+        >
+          {confirmText || locale.Popconfirm.confirmText}
+        </Button>
+      </Flex>
+    </>
+  );
+});
 
 const Popconfirm: FunctionComponent<PopconfirmContentProps> = ({
   type,

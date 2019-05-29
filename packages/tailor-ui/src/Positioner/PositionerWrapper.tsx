@@ -4,6 +4,7 @@ import React, {
   RefObject,
   memo,
 } from 'react';
+import styled from 'styled-components';
 
 import { RenderPropsPositioner } from './Positioner';
 
@@ -16,6 +17,13 @@ interface PositionWrapperProps {
   positionerRef: RefObject<HTMLElement>;
 }
 
+const StyledPositionerWrapper = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  will-change: transform;
+`;
+
 const areEqual = (
   prevProps: PositionWrapperProps,
   nextProps: PositionWrapperProps
@@ -27,25 +35,28 @@ const areEqual = (
   prevProps.positionerRef === nextProps.positionerRef;
 
 const PositionWrapper: FunctionComponent<PositionWrapperProps> = memo(
-  ({ left, top, transformOrigin, style, positioner, positionerRef }) => (
-    <div
-      style={{
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        willChange: 'transform',
-        transform: `translate3d(${left}px, ${top}px, 0px)`,
-      }}
-    >
-      {positioner({
-        ref: positionerRef,
-        style: {
-          ...style,
-          transformOrigin: transformOrigin || undefined,
-        },
-      })}
-    </div>
-  ),
+  function PositionWrapper({
+    left,
+    top,
+    transformOrigin,
+    style,
+    positioner,
+    positionerRef,
+  }) {
+    const transform = `translate3d(${left}px, ${top}px, 0px)`;
+
+    return (
+      <StyledPositionerWrapper style={{ transform }}>
+        {positioner({
+          ref: positionerRef,
+          style: {
+            ...style,
+            transformOrigin: transformOrigin || undefined,
+          },
+        })}
+      </StyledPositionerWrapper>
+    );
+  },
   areEqual
 );
 

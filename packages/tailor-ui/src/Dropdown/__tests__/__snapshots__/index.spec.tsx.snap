@@ -2,6 +2,13 @@
 
 exports[`Dropdown should render correctly 1`] = `
 .c0 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  will-change: transform;
+}
+
+.c1 {
   padding: 0.5rem 1rem;
   border: 1px solid;
   border-radius: 0.5rem;
@@ -15,7 +22,7 @@ exports[`Dropdown should render correctly 1`] = `
   padding: 0rem;
 }
 
-.c1 {
+.c2 {
   max-height: 240px;
   padding: 0.5rem 0;
   overflow-x: hidden;
@@ -23,7 +30,7 @@ exports[`Dropdown should render correctly 1`] = `
   border-radius: 0.5rem;
 }
 
-.c2 {
+.c3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -39,18 +46,18 @@ exports[`Dropdown should render correctly 1`] = `
   cursor: pointer;
 }
 
-.c2[disabled],
-.c2:disabled {
+.c3[disabled],
+.c3:disabled {
   color: #8b8b8b;
   cursor: not-allowed;
 }
 
-.c2[disabled]:hover,
-.c2:disabled:hover {
+.c3[disabled]:hover,
+.c3:disabled:hover {
   background-color: #ffffff;
 }
 
-.c2:hover {
+.c3:hover {
   background-color: #f6f6f6;
 }
 
@@ -69,19 +76,20 @@ exports[`Dropdown should render correctly 1`] = `
       style="position: fixed; top: 0px; left: 0px; z-index: 10;"
     >
       <div
-        style="position: absolute; top: 0px; left: 0px; transform: translate3d(-6px, -6px, 0px);"
+        class="c0"
+        style="transform: translate3d(-6px, -6px, 0px);"
       >
         <div
           style="opacity: 0; transform: scale(0.9);"
         >
           <div
-            class="c0"
+            class="c1"
           >
             <div
-              class="c1"
+              class="c2"
             >
               <li
-                class="c2"
+                class="c3"
               >
                 item
               </li>
