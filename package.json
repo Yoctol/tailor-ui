@@ -113,7 +113,6 @@
     "stylelint-config-styled-components": "^0.1.1",
     "stylelint-config-yoctol": "^1.1.1",
     "stylelint-processor-styled-components": "^1.8.0",
-    "ts-jest": "^24.0.2",
     "typescript": "3.4.5"
   },
   "husky": {
