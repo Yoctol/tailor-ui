@@ -22,9 +22,9 @@
     "baseUrl": "./",
     "paths": {
       "*": ["./types/*"],
+      "test/test-utils": ["./test/test-utils"],
       "rc-time-picker/*": ["./types/rc-time-picker"]
     },
-    "typeRoots": ["./types", "node_modules/@types"],
     "types": ["node", "jest"],
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,

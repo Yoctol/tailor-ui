@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.9.0](https://github.com/Yoctol/tailor-ui/compare/@tailor-ui/lab@0.8.1...@tailor-ui/lab@0.9.0) (2019-05-30)
+
+### Features
+
+- add @tailor-ui/hooks ([ca501c5](https://github.com/Yoctol/tailor-ui/commit/ca501c5))
+- implement AutoWidthInput ([8d1c1e6](https://github.com/Yoctol/tailor-ui/commit/8d1c1e6))
+- implement AutoWidthInput ([#225](https://github.com/Yoctol/tailor-ui/issues/225)) ([2bfee59](https://github.com/Yoctol/tailor-ui/commit/2bfee59))
+
 ## [0.8.1](https://github.com/Yoctol/tailor-ui/compare/@tailor-ui/lab@0.8.0...@tailor-ui/lab@0.8.1) (2019-05-24)
 
 ### Bug Fixes

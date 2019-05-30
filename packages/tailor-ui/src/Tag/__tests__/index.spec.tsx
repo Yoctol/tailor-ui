@@ -23,7 +23,7 @@ describe('Tag', () => {
   it('should render closable tag', async () => {
     const { container, queryByText } = render(<Tag closable>Tag A</Tag>);
 
-    const closeIcon = container.querySelector('i');
+    const closeIcon = container.querySelector('i') as HTMLElement;
 
     fireEvent.click(closeIcon);
 
@@ -43,7 +43,7 @@ describe('Tag', () => {
       </Tag>
     );
 
-    const closeIcon = container.querySelector('i');
+    const closeIcon = container.querySelector('i') as HTMLElement;
 
     fireEvent.click(closeIcon);
 

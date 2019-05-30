@@ -32,7 +32,9 @@ describe('Switch', () => {
 
     const { container } = render(<Switch checked onChange={onChange} />);
 
-    const switchInput = container.querySelector('input[type=checkbox]');
+    const switchInput = container.querySelector(
+      'input[type=checkbox]'
+    ) as HTMLInputElement;
 
     fireEvent.click(switchInput);
 

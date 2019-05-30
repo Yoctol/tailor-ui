@@ -24,7 +24,7 @@ describe('Card', () => {
         <Card.Block>Title</Card.Block>
         <Card.Block>Content</Card.Block>
         <Card.Block p="1">
-          <Button block>With Button</Button>
+          <Button width="100%">With Button</Button>
         </Card.Block>
       </Card>
     );
@@ -54,7 +54,7 @@ describe('Card', () => {
       </Card>
     );
 
-    fireEvent.click(container.firstChild);
+    fireEvent.click(container.firstChild as HTMLDivElement);
 
     expect(onClick).toBeCalled();
   });
@@ -67,7 +67,7 @@ describe('Card', () => {
         <Card.Block>Title</Card.Block>
         <Card.Block>Content</Card.Block>
         <Card.Block p="1">
-          <Button block>With Button</Button>
+          <Button width="100%">With Button</Button>
         </Card.Block>
       </Card>
     );
@@ -89,7 +89,7 @@ describe('Card', () => {
         <Card.Block>Content</Card.Block>
         <Card.Block p="1">
           <Button
-            block
+            width="100%"
             onClick={(event: any) => {
               event.stopPropagation();
               onButtonClick();
@@ -116,7 +116,7 @@ describe('Card', () => {
       </Card>
     );
 
-    fireEvent.mouseEnter(container.firstChild);
+    fireEvent.mouseEnter(container.firstChild as HTMLDivElement);
 
     expect(container.firstChild).toMatchSnapshot();
   });

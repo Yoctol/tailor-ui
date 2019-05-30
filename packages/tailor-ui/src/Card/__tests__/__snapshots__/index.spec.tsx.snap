@@ -37,6 +37,7 @@ exports[`Card should render correctly with Button 1`] = `
   border-color: #e0e0e0;
   background-color: #ffffff;
   color: #373737;
+  width: 100%;
 }
 
 .c3:focus {
@@ -163,6 +164,7 @@ exports[`Card should render correctly with Button 1`] = `
   >
     <button
       class="c3"
+      width="100%"
     >
       With Button
     </button>

@@ -6,9 +6,9 @@
   "files": [],
   "include": [],
   "references": [
-    { "path": "./packages/tailor-ui" },
-    { "path": "./packages/tailor-ui-lab" },
-    { "path": "./packages/tailor-ui-utils" },
-    { "path": "./packages/tailor-ui-hooks" }
+    { "path": "./packages/tailor-ui/config" },
+    { "path": "./packages/tailor-ui-lab/config" },
+    { "path": "./packages/tailor-ui-utils/config" },
+    { "path": "./packages/tailor-ui-hooks/config" }
   ]
 }

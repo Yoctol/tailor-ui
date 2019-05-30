@@ -1,6 +1,6 @@
 {
   "name": "@tailor-ui/lab",
-  "version": "0.8.1",
+  "version": "0.9.0",
   "description": "Incubator for Tailor-UI React components.",
   "author": "Yoctol Info SD Team",
   "homepage": "https://tailor-ui.netlify.com/",
@@ -18,7 +18,7 @@
   "scripts": {
     "build": "yarn build:esm && yarn build:cjs",
     "build:esm": "cross-env NODE_ENV=production babel --config-file ../../babel.config.js ./src --out-dir ./lib --extensions '.ts,.tsx' --ignore **/__tests__,**/**/__tests__",
-    "build:cjs": "rollup -c scripts/rollup.config.js",
+    "build:cjs": "rollup -c ./config/rollup.config.js",
     "test": "yarn lint && yarn testonly",
     "testonly": "jest",
     "testonly:cov": "jest --coverage --runInBand",
@@ -38,7 +38,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@tailor-ui/utils": "^0.1.3",
+    "@tailor-ui/utils": "^0.2.0",
     "downshift": "^3.2.10",
     "fuzzaldrin-plus": "^0.6.0",
     "lodash.debounce": "^4.0.8",

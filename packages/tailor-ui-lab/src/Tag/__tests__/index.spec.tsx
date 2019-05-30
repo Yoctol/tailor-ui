@@ -25,16 +25,16 @@ describe('Tag', () => {
 
   it('should render editable tag and call onChange', async () => {
     const onChange = jest.fn();
-    const { container, queryByText } = render(
+    const { container, getByText } = render(
       <Tag editable onChange={onChange}>
         Foo
       </Tag>
     );
 
-    const tagText = queryByText('Foo');
+    const tagText = getByText('Foo');
     fireEvent.click(tagText);
 
-    const input = container.querySelector('input');
+    const input = container.querySelector('input') as HTMLInputElement;
 
     fireEvent.change(input, { target: { value: 'Foo Bar' } });
     expect(input.value).toBe('Foo Bar');
@@ -48,7 +48,7 @@ describe('Tag', () => {
 
     const closeIcon = container.querySelector('i');
 
-    fireEvent.click(closeIcon);
+    fireEvent.click(closeIcon as HTMLElement);
 
     const tagA = queryByText('Tag A');
 
@@ -68,7 +68,7 @@ describe('Tag', () => {
 
     const closeIcon = container.querySelector('i');
 
-    fireEvent.click(closeIcon);
+    fireEvent.click(closeIcon as HTMLElement);
 
     await wait(() => expect(onClosed).toBeCalled());
 
@@ -87,7 +87,7 @@ describe('Tag', () => {
 
     const closeIcon = container.querySelector('i');
 
-    fireEvent.click(closeIcon);
+    fireEvent.click(closeIcon as HTMLElement);
 
     const tag = queryByText('Tailor UI');
 
@@ -106,7 +106,7 @@ describe('Tag', () => {
 
     const closeIcon = container.querySelector('i');
 
-    fireEvent.click(closeIcon);
+    fireEvent.click(closeIcon as HTMLElement);
 
     const tag = queryByText('Tailor UI');
 

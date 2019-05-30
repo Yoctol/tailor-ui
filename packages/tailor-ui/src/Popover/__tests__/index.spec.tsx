@@ -98,7 +98,7 @@ describe('Popover', () => {
   });
 
   it('should close latest one when nested usage', async () => {
-    const { getByText, debug } = render(
+    const { getByText } = render(
       <div>
         <Popover
           title="popover1"

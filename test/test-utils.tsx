@@ -4,7 +4,7 @@ import { render } from 'react-testing-library';
 
 import defaultTheme from '../packages/tailor-ui/src/theme';
 
-const customRender = (node: ReactChild, options: object) =>
+const customRender = (node: ReactChild, options?: object) =>
   render(<ThemeProvider theme={defaultTheme}>{node}</ThemeProvider>, options);
 
 // re-export everything
