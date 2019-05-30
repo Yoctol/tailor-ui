@@ -31,6 +31,6 @@ export const text = compose(
   textAlign
 );
 
-const Text = styled('p')({ margin: 0 }, text);
+const Text = styled('p')<TextProps>({ margin: 0 }, text);
 
 export default Text;

@@ -16,11 +16,10 @@
   ],
   "scripts": {
     "bootstrap": "lerna bootstrap",
-    "build": "yarn type-check && lerna run build",
-    "clean": "yarn clean:typeinfo && yarn clean:lib && yarn clean:modules",
-    "clean:lib": "git clean -dfqX -- **/lib/",
+    "build": "yarn type-check && yarn clean:lib && lerna run build",
+    "clean": "yarn clean:lib && yarn clean:modules",
+    "clean:lib": "git clean -dfqX -- **/lib/ **/*.tsbuildinfo",
     "clean:modules": "git clean -dfqX -- ./node_modules **/node_modules/",
-    "clean:typeinfo": "git clean -dfqX -- **/*.tsbuildinfo",
     "docs:build": "docz build",
     "docs:dev": "docz dev",
     "postinstall": "yarn bootstrap",
@@ -36,7 +35,7 @@
     "testonly": "jest",
     "testonly:cov": "jest --coverage --runInBand",
     "testonly:watch": "jest --watch",
-    "type-check": "tsc --build tsconfig.build.json",
+    "type-check": "yarn clean:lib && tsc --build tsconfig.build.json",
     "watch": "yarn type-check --watch"
   },
   "peerDependencies": {
@@ -56,6 +55,7 @@
     "@types/fuzzaldrin-plus": "^0.6.0",
     "@types/jest": "^24.0.13",
     "@types/lodash.debounce": "^4.0.6",
+    "@types/mockdate": "^2.0.0",
     "@types/ramda": "^0.26.9",
     "@types/react": "16.8.19",
     "@types/react-dom": "^16.8.4",

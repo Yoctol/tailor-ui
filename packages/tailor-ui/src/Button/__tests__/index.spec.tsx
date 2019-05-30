@@ -13,7 +13,9 @@ describe('Button', () => {
   });
 
   it('should render different button type', () => {
-    const { container } = render(<Button type="primary">Text Button</Button>);
+    const { container } = render(
+      <Button variant="primary">Text Button</Button>
+    );
 
     expect(container.firstChild).toMatchSnapshot();
   });
@@ -44,7 +46,7 @@ describe('Button', () => {
 
   it('should render button with specified icon', () => {
     const { container } = render(
-      <Button type="danger" icon={MdDelete}>
+      <Button variant="danger" icon={MdDelete}>
         Delete
       </Button>
     );

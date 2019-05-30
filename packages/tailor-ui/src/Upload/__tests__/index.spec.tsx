@@ -19,7 +19,9 @@ const setup = async ({
 
   const { container, getByText } = renderer;
 
-  const uploadInput = container.querySelector('input[type=file]');
+  const uploadInput = container.querySelector(
+    'input[type=file]'
+  ) as HTMLInputElement;
 
   const file = new File(['example'], 'example.json', {
     type: 'application/json',
@@ -77,7 +79,7 @@ describe('Upload', () => {
       expectFinalStateText,
     });
 
-    const clearIcon = container.querySelector('i[cursor=pointer]');
+    const clearIcon = container.querySelector('i[cursor=pointer]') as Element;
 
     fireEvent.click(clearIcon);
 

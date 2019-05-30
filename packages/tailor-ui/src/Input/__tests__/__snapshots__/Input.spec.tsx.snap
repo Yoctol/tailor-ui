@@ -247,7 +247,6 @@ exports[`Input should render correctly with Button suffix 1`] = `
   />
   <button
     class="c3 c4"
-    type="success"
   >
     Send It
   </button>

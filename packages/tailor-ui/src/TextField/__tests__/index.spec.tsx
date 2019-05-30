@@ -44,7 +44,7 @@ describe('TextField', () => {
 
     const { container } = render(<TextField onChange={onChange} />);
 
-    const textfield = container.querySelector('input');
+    const textfield = container.querySelector('input') as HTMLInputElement;
 
     fireEvent.change(textfield, {
       target: {
@@ -60,7 +60,7 @@ describe('TextField', () => {
 
     const { container } = render(<TextField onPressEnter={onPressEnter} />);
 
-    const textfield = container.querySelector('input');
+    const textfield = container.querySelector('input') as HTMLInputElement;
 
     fireEvent.keyPress(textfield, {
       key: 'Enter',
@@ -78,7 +78,9 @@ describe('TextField', () => {
       <TextField textarea onPressEnter={onPressEnter} />
     );
 
-    const textfield = container.querySelector('textarea');
+    const textfield = container.querySelector(
+      'textarea'
+    ) as HTMLTextAreaElement;
 
     fireEvent.keyPress(textfield, {
       key: 'Enter',

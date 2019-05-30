@@ -21,7 +21,7 @@ describe('Menu', () => {
   });
 
   it('should hide current submenu when click another submenu', async () => {
-    const { queryByText, getByText } = render(
+    const { getByText } = render(
       <Menu currentSubOnly defaultSubKeys={['menu1']}>
         <Menu.SubMenu id="menu1" title="Menu 1">
           <Menu.Item onClick={() => {}}>Item 1</Menu.Item>
@@ -32,7 +32,7 @@ describe('Menu', () => {
       </Menu>
     );
 
-    const subMenu2 = queryByText('Menu 2');
+    const subMenu2 = getByText('Menu 2');
 
     fireEvent.click(subMenu2);
 

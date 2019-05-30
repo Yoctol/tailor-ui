@@ -23,6 +23,67 @@ exports[`Button should render button with specified icon 1`] = `
   height: 24px;
 }
 
+.c3:disabled .c1 svg,
+.c3[disabled] .c1 svg {
+  fill: #8b8b8b;
+}
+
+.c3 .c1 svg {
+  fill: #bfbfbf;
+}
+
+.c3:active .c1 svg {
+  fill: #3c5ad0;
+}
+
+.c4:disabled .c1 svg,
+.c4[disabled] .c1 svg {
+  fill: #8b8b8b;
+}
+
+.c4 .c1 svg {
+  fill: #ffffff;
+}
+
+.c5:disabled .c1 svg,
+.c5[disabled] .c1 svg {
+  fill: #8b8b8b;
+}
+
+.c5 .c1 svg {
+  fill: #bfbfbf;
+}
+
+.c5:active .c1 svg {
+  fill: #3c5ad0;
+}
+
+.c6:disabled .c1 svg,
+.c6[disabled] .c1 svg {
+  fill: #8b8b8b;
+}
+
+.c6 .c1 svg {
+  fill: #bfbfbf;
+}
+
+.c6:active .c1 svg {
+  fill: #3c5ad0;
+}
+
+.c7:disabled .c1 svg,
+.c7[disabled] .c1 svg {
+  fill: #8b8b8b;
+}
+
+.c7 .c1 svg {
+  fill: #bfbfbf;
+}
+
+.c7:active .c1 svg {
+  fill: #3c5ad0;
+}
+
 .c0 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -56,9 +117,9 @@ exports[`Button should render button with specified icon 1`] = `
   height: 2.25rem;
   padding: 0 0.75rem;
   font-size: 1rem;
-  border-color: #e0e0e0;
-  background-color: #ffffff;
-  color: #373737;
+  background-color: #fc5475;
+  color: #ffffff;
+  font-weight: bold;
 }
 
 .c0:focus {
@@ -94,69 +155,20 @@ exports[`Button should render button with specified icon 1`] = `
   transition: all 200ms ease 0s;
 }
 
-.c0::before {
-  border-color: #373737;
-}
-
 .c0 .c1 svg {
-  fill: #bfbfbf;
+  fill: #ffffff;
 }
 
 .c0:hover {
-  border-color: #6B88c5;
+  background-color: #fc6d89;
 }
 
 .c0:active {
-  border-color: #3c5ad0;
-  color: #3c5ad0;
-}
-
-.c0:active .c1 svg {
-  fill: #3c5ad0;
-}
-
-.c3:disabled .c1 svg,
-.c3[disabled] .c1 svg {
-  fill: #8b8b8b;
-}
-
-.c3 .c1 svg {
-  fill: #bfbfbf;
-}
-
-.c3:active .c1 svg {
-  fill: #3c5ad0;
-}
-
-.c4:disabled .c1 svg,
-.c4[disabled] .c1 svg {
-  fill: #8b8b8b;
-}
-
-.c4 .c1 svg {
-  fill: #bfbfbf;
-}
-
-.c4:active .c1 svg {
-  fill: #3c5ad0;
-}
-
-.c5:disabled .c1 svg,
-.c5[disabled] .c1 svg {
-  fill: #8b8b8b;
-}
-
-.c5 .c1 svg {
-  fill: #bfbfbf;
-}
-
-.c5:active .c1 svg {
-  fill: #3c5ad0;
+  background-color: #fc3b61;
 }
 
 <button
   class="c0"
-  type="danger"
 >
   <i
     class="c1 c2"
@@ -416,9 +428,9 @@ exports[`Button should render different button type 1`] = `
   height: 2.25rem;
   padding: 0 0.75rem;
   font-size: 1rem;
-  border-color: #e0e0e0;
-  background-color: #ffffff;
-  color: #373737;
+  background-color: #3c5ad0;
+  color: #ffffff;
+  font-weight: bold;
 }
 
 .c0:focus {
@@ -454,30 +466,20 @@ exports[`Button should render different button type 1`] = `
   transition: all 200ms ease 0s;
 }
 
-.c0::before {
-  border-color: #373737;
-}
-
 .c0 .c1 svg {
-  fill: #bfbfbf;
+  fill: #ffffff;
 }
 
 .c0:hover {
-  border-color: #6B88c5;
+  background-color: #516bd5;
 }
 
 .c0:active {
-  border-color: #3c5ad0;
-  color: #3c5ad0;
-}
-
-.c0:active .c1 svg {
-  fill: #3c5ad0;
+  background-color: #2f4dc3;
 }
 
 <button
   class="c0"
-  type="primary"
 >
   Text Button
 </button>

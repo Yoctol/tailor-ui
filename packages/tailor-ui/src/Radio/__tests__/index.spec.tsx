@@ -38,7 +38,9 @@ describe('Radio', () => {
       </Radio>
     );
 
-    const radio = container.querySelector('input[type=radio]');
+    const radio = container.querySelector(
+      'input[type=radio]'
+    ) as HTMLInputElement;
 
     fireEvent.click(radio);
 
@@ -94,7 +96,9 @@ describe('Radio.Group', () => {
       />
     );
 
-    const radio1 = container.querySelector('input[type=radio]');
+    const radio1 = container.querySelector(
+      'input[type=radio]'
+    ) as HTMLInputElement;
 
     fireEvent.click(radio1);
 
@@ -153,7 +157,9 @@ describe('Radio.Group', () => {
         </Radio.Group>
       );
 
-      const radio1 = container.querySelector('input[type=radio]');
+      const radio1 = container.querySelector(
+        'input[type=radio]'
+      ) as HTMLInputElement;
 
       fireEvent.click(radio1);
 

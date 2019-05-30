@@ -37,7 +37,9 @@ describe('Checkbox', () => {
       </Checkbox>
     );
 
-    const checkbox = container.querySelector('input[type=checkbox]');
+    const checkbox = container.querySelector(
+      'input[type=checkbox]'
+    ) as HTMLInputElement;
 
     fireEvent.click(checkbox);
 
@@ -93,7 +95,9 @@ describe('Checkbox.Group', () => {
       />
     );
 
-    const checkbox = container.querySelector('input[type=checkbox]');
+    const checkbox = container.querySelector(
+      'input[type=checkbox]'
+    ) as HTMLInputElement;
 
     fireEvent.click(checkbox);
 
@@ -152,7 +156,9 @@ describe('Checkbox.Group', () => {
         </Checkbox.Group>
       );
 
-      const checkbox = container.querySelector('input[type=checkbox]');
+      const checkbox = container.querySelector(
+        'input[type=checkbox]'
+      ) as HTMLInputElement;
 
       fireEvent.click(checkbox);
 

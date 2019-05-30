@@ -31,9 +31,7 @@ describe('Input', () => {
   });
 
   it('should render correctly with Button suffix', () => {
-    const { container } = render(
-      <Input suffix={<Button type="success">Send It</Button>} />
-    );
+    const { container } = render(<Input suffix={<Button>Send It</Button>} />);
 
     expect(container.firstChild).toMatchSnapshot();
   });
@@ -43,7 +41,7 @@ describe('Input', () => {
 
     const { container } = render(<Input onChange={onChange} />);
 
-    const input = container.querySelector('input');
+    const input = container.querySelector('input') as HTMLInputElement;
 
     fireEvent.change(input, {
       target: {
@@ -75,7 +73,7 @@ describe('Input', () => {
 
     const { container } = render(<Input onPressEnter={onPressEnter} />);
 
-    const input = container.querySelector('input');
+    const input = container.querySelector('input') as HTMLInputElement;
 
     fireEvent.keyPress(input, {
       key: 'Enter',
