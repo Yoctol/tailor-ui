@@ -12,7 +12,7 @@ import { MdCheck, MdHighlightOff } from 'react-icons/md';
 import { Box, Flex, Heading, Icon } from 'tailor-ui';
 
 import { StyledSelectOption } from './styles';
-import { fuzzyFilter, itemToString } from './utils';
+import { fuzzyFilter, getDataTestId, itemToString } from './utils';
 
 export interface ObjectOption {
   label: string;
@@ -40,6 +40,7 @@ interface SelectOptionsProps {
   multiple: boolean;
   itemSize: number;
   optionsMaxHeight: number;
+  getMenuProps: () => any;
   getItemProps: (option: GetItemPropsOptions<Option>) => any;
   options: Option[];
   inputValue: string;
@@ -54,6 +55,7 @@ interface SelectOptionsProps {
     hovered: boolean;
   }) => ReactNode;
   isValidNewOption?: (value: string) => boolean;
+  'data-testid'?: string;
 }
 
 const SelectOptions: FunctionComponent<SelectOptionsProps> = ({
@@ -63,6 +65,7 @@ const SelectOptions: FunctionComponent<SelectOptionsProps> = ({
   multiple,
   itemSize,
   optionsMaxHeight,
+  getMenuProps,
   getItemProps,
   options,
   inputValue,
@@ -73,6 +76,7 @@ const SelectOptions: FunctionComponent<SelectOptionsProps> = ({
   noOptionsMessage = () => <DefaultNoOptionsMessage />,
   formatCreateLabel = ({ value }) => `Create new option: ${value}`,
   isValidNewOption = value => value.trim() !== '',
+  ...props
 }) => {
   const [prevSearchValue, setPrevSearchValue] = useState(inputValue);
   const [createOptionWidth, setCreateOptionWidth] = useState<
@@ -126,6 +130,8 @@ const SelectOptions: FunctionComponent<SelectOptionsProps> = ({
       style={{
         minWidth: createOptionWidth,
       }}
+      {...getDataTestId(props, 'menu')}
+      {...getMenuProps()}
     >
       <VirtualList
         width="100%"
@@ -158,6 +164,7 @@ const SelectOptions: FunctionComponent<SelectOptionsProps> = ({
               active={active}
               hovered={hovered}
               style={style}
+              {...getDataTestId(props, `item-${index}`)}
               {...getItemProps({
                 index,
                 item: option,
