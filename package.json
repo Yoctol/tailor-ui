@@ -52,6 +52,7 @@
     "@babel/preset-env": "^7.4.5",
     "@babel/preset-react": "^7.0.0",
     "@babel/preset-typescript": "^7.3.3",
+    "@testing-library/react": "^8.0.1",
     "@types/fuzzaldrin-plus": "^0.6.0",
     "@types/jest": "^24.0.13",
     "@types/lodash.debounce": "^4.0.6",
@@ -75,7 +76,7 @@
     "docz": "^0.13.7",
     "docz-theme-default": "^0.13.7",
     "eslint": "^5.16.0",
-    "eslint-config-yoctol": "^0.21.1",
+    "eslint-config-yoctol": "^0.22.1",
     "eslint-import-resolver-alias": "^1.1.2",
     "eslint-import-resolver-jest": "^2.1.1",
     "eslint-plugin-import": "^2.17.3",
@@ -100,8 +101,7 @@
     "react-dom": "^16.8.6",
     "react-icons": "^3.7.0",
     "react-spring": "^8.0.20",
-    "react-testing-library": "^7.0.1",
-    "rollup": "^1.12.4",
+    "rollup": "^1.12.5",
     "rollup-plugin-babel": "^4.3.2",
     "rollup-plugin-commonjs": "^10.0.0",
     "rollup-plugin-node-builtins": "^2.1.2",
@@ -111,9 +111,9 @@
     "stylelint": "10.0.1",
     "stylelint-config-prettier": "^5.2.0",
     "stylelint-config-styled-components": "^0.1.1",
-    "stylelint-config-yoctol": "^1.1.1",
+    "stylelint-config-yoctol": "^2.0.0",
     "stylelint-processor-styled-components": "^1.8.0",
-    "typescript": "3.4.5"
+    "typescript": "3.5.1"
   },
   "husky": {
     "hooks": {
