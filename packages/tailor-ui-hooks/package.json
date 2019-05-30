@@ -2,7 +2,7 @@
   "name": "@tailor-ui/hooks",
   "version": "0.1.1",
   "description": "Tailor-UI Hooks - React Hooks for Tailor-UI.",
-  "author": "jigsawye <jigsaw.ye@gmail.com>",
+  "author": "dev@yoctol.com",
   "homepage": "https://tailor-ui.netlify.com/",
   "license": "MIT",
   "main": "lib/index.cjs.js",

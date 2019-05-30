@@ -2,7 +2,7 @@
   "name": "tailor-ui",
   "version": "0.13.1",
   "description": "A bespoke UI collection for building web application.",
-  "author": "Yoctol Info SD Team",
+  "author": "dev@yoctol.com",
   "homepage": "https://tailor-ui.netlify.com",
   "license": "MIT",
   "main": "lib/index.cjs.js",

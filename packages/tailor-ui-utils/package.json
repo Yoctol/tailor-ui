@@ -2,7 +2,7 @@
   "name": "@tailor-ui/utils",
   "version": "0.2.1",
   "description": "Tailor-UI Utils - Utility functions for Tailor-UI.",
-  "author": "jigsawye <jigsaw.ye@gmail.com>",
+  "author": "dev@yoctol.com",
   "homepage": "https://tailor-ui.netlify.com/",
   "license": "MIT",
   "main": "lib/index.cjs.js",
