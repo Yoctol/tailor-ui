@@ -16,9 +16,8 @@
     "url": "git+https://github.com/Yoctol/tailor-ui.git"
   },
   "scripts": {
-    "build": "yarn build:esm && yarn build:cjs",
-    "build:cjs": "rollup -c ./config/rollup.config.js",
-    "build:esm": "cross-env NODE_ENV=production babel --config-file ../../babel.config.js ./src --out-dir ./lib --extensions '.ts' --ignore **/__tests__,**/**/__tests__",
+    "build": "cross-env NODE_ENV=production babel --config-file ../../babel.config.js ./src --out-dir ./lib --extensions '.ts'",
+    "postbuild": "rollup -c ./config/rollup.config.js",
     "test": "yarn lint && yarn testonly",
     "testonly": "jest",
     "testonly:cov": "jest --coverage --runInBand",

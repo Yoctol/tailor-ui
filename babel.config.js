@@ -3,7 +3,7 @@ module.exports = {
     [
       '@babel/preset-env',
       {
-        modules: process.env.BABEL_ENV === 'cjs' ? 'commonjs' : false,
+        modules: false,
       },
     ],
     '@babel/preset-react',
