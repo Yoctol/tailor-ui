@@ -48,8 +48,8 @@ Run below commands:
 
 ```bash
 cd tailor-ui
-yarn
-yarn docs:dev
+yarn bootstrap
+yarn start
 ```
 
 Watch files changed and check type:
