@@ -32,7 +32,6 @@ import {
   Tooltip,
   UIProvider,
   Upload,
-  theme,
   useMessage,
   useModal,
 } from '..';
@@ -71,7 +70,6 @@ describe('index', () => {
     expect(Textarea).toBeDefined();
     expect(TelInput).toBeDefined();
     expect(TextField).toBeDefined();
-    expect(theme).toBeDefined();
     expect(Tooltip).toBeDefined();
     expect(UIProvider).toBeDefined();
     expect(Upload).toBeDefined();

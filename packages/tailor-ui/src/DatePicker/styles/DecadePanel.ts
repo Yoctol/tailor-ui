@@ -1,8 +1,6 @@
 // stylelint-disable
 import { css } from 'styled-components';
 
-import theme from '../../theme';
-
 import { prefixClass } from './prefix';
 
 export default css`
@@ -40,7 +38,7 @@ export default css`
 
       &:hover {
         cursor: pointer;
-        color: ${theme.colors.primary};
+        color: ${p => p.theme.colors.primary};
       }
     }
   }
@@ -90,7 +88,7 @@ export default css`
   ${prefixClass}-decade-panel-decade {
     display: block;
     margin: 0 auto;
-    color: ${theme.colors.gray700};
+    color: ${p => p.theme.colors.gray700};
     border-radius: 4px 4px;
     height: 36px;
     padding: 0;
@@ -99,17 +97,17 @@ export default css`
     text-align: center;
 
     &:hover {
-      background: ${theme.colors.gray300};
+      background: ${p => p.theme.colors.gray300};
       cursor: pointer;
     }
   }
 
   ${prefixClass}-decade-panel-selected-cell ${prefixClass}-decade-panel-decade {
-    background: ${theme.colors.primary};
+    background: ${p => p.theme.colors.primary};
     color: #fff;
 
     &:hover {
-      background: ${theme.colors.primary};
+      background: ${p => p.theme.colors.primary};
       color: #fff;
     }
   }

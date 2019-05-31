@@ -84,9 +84,6 @@ export * from './UIProvider';
 export { default as Upload } from './Upload';
 export * from './Upload';
 
-export { default as theme } from './theme';
-export * from './theme';
-
 export { default as locale } from './locale';
 export * from './locale';
 

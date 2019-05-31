@@ -1,14 +1,12 @@
 /* eslint-disable */
 import React from 'react';
-import { Flex, Box, Heading, theme } from '../packages/tailor-ui/src';
+import { Flex, Heading } from '../packages/tailor-ui/src';
+import { theme } from '../packages/tailor-ui-theme/src';
 import { readableColor } from 'polished';
 
 const { colors: themeColors } = theme;
 
 type ColorKeys = keyof typeof themeColors;
-
-const upperFirst = (string: string) =>
-  string.charAt(0).toUpperCase() + string.slice(1);
 
 const Color = ({
   colorKey,

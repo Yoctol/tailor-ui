@@ -1,8 +1,6 @@
 // stylelint-disable
 import { css } from 'styled-components';
 
-import theme from '../../theme';
-
 import { prefixClass } from './prefix';
 
 export default css`
@@ -69,11 +67,11 @@ export default css`
   }
 
   ${prefixClass}-time-panel-selected-cell ${prefixClass}-time-panel-time {
-    background: ${theme.colors.primary};
+    background: ${p => p.theme.colors.primary};
     color: #fff;
 
     &:hover {
-      background: ${theme.colors.primary};
+      background: ${p => p.theme.colors.primary};
       color: #fff;
     }
   }

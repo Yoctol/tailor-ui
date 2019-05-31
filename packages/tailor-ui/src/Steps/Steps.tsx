@@ -9,9 +9,10 @@ import React, {
 import styled, { css } from 'styled-components';
 import { MdClose, MdDone } from 'react-icons/md';
 
+import { theme } from '@tailor-ui/theme';
+
 import Flex from '../Layout/Flex';
 import Icon from '../Icon';
-import theme from '../theme';
 
 type Status = 'finish' | 'progress' | 'wait' | 'error';
 type Direction = 'horizontal' | 'vertical';
