@@ -7,6 +7,7 @@
   "include": [],
   "references": [
     { "path": "./packages/tailor-ui/config" },
+    { "path": "./packages/tailor-ui-theme/config" },
     { "path": "./packages/tailor-ui-lab/config" },
     { "path": "./packages/tailor-ui-utils/config" },
     { "path": "./packages/tailor-ui-hooks/config" }

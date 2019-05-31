@@ -1,7 +1,6 @@
 // stylelint-disable
 import { css } from 'styled-components';
 
-import theme from '../../../theme';
 import { prefixClass, timePickerClass } from '../prefix';
 
 export default css`
@@ -78,7 +77,7 @@ export default css`
 
     &-input {
       width: 100%;
-      color: ${theme.colors.gray700};
+      color: ${p => p.theme.colors.gray700};
       border: 1px solid transparent;
       border-radius: 4px;
       cursor: text;
@@ -88,11 +87,11 @@ export default css`
       height: 22px;
 
       &-invalid {
-        border-color: ${theme.colors.danger};
+        border-color: ${p => p.theme.colors.danger};
       }
 
       &::placeholder {
-        color: ${theme.colors.gray400};
+        color: ${p => p.theme.colors.gray400};
       }
     }
 
@@ -113,7 +112,7 @@ export default css`
     &-clear-btn:after {
       content: 'x';
       font-size: 12px;
-      color: ${theme.colors.gray400};
+      color: ${p => p.theme.colors.gray400};
       display: inline-block;
       line-height: 1;
       width: 20px;
@@ -121,7 +120,7 @@ export default css`
     }
 
     &-clear-btn:hover:after {
-      color: ${theme.colors.gray700};
+      color: ${p => p.theme.colors.gray700};
     }
   }
 `;

@@ -1,7 +1,6 @@
 // stylelint-disable
 import { css } from 'styled-components';
 
-import theme from '../../../theme';
 import { timePickerClass } from '../prefix';
 
 export default css`
@@ -59,12 +58,12 @@ export default css`
       user-select: none;
 
       &:hover {
-        background: ${theme.colors.gray300};
+        background: ${p => p.theme.colors.gray300};
       }
     }
 
     li&-option-selected {
-      background: ${theme.colors.gray200};
+      background: ${p => p.theme.colors.gray200};
       font-weight: bold;
     }
 

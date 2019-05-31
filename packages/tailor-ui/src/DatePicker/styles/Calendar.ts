@@ -1,8 +1,6 @@
 // stylelint-disable
 import { css } from 'styled-components';
 
-import theme from '../../theme';
-
 import { prefixClass, timePickerClass } from './prefix';
 
 export default css`
@@ -14,7 +12,7 @@ export default css`
     outline: none;
     background-clip: padding-box;
     background-color: #fff;
-    box-shadow: ${theme.shadows.xl};
+    box-shadow: ${p => p.theme.shadows.xl};
     font-size: 14px;
     line-height: 1.5;
     list-style: none;
@@ -37,7 +35,7 @@ export default css`
     &-header {
       height: 34px;
       padding: 0 10px;
-      border-bottom: 1px solid ${theme.colors.gray300};
+      border-bottom: 1px solid ${p => p.theme.colors.gray300};
       line-height: 30px;
       text-align: center;
       user-select: none;
@@ -52,7 +50,7 @@ export default css`
 
         &:hover {
           cursor: pointer;
-          color: ${theme.colors.gray200};
+          color: ${p => p.theme.colors.gray200};
         }
       }
 
@@ -81,18 +79,18 @@ export default css`
       display: inline-block;
       font-size: 14px;
       font-weight: bold;
-      color: ${theme.colors.gray600};
+      color: ${p => p.theme.colors.gray600};
       padding: 0 8px;
       line-height: 34px;
 
       &:hover {
         cursor: pointer;
-        color: ${theme.colors.primary};
+        color: ${p => p.theme.colors.primary};
       }
 
       &${prefixClass}-time-status:hover {
         cursor: pointer;
-        color: ${theme.colors.gray600};
+        color: ${p => p.theme.colors.gray600};
       }
     }
 
@@ -103,14 +101,14 @@ export default css`
       position: absolute;
       top: 0;
       cursor: pointer;
-      color: ${theme.colors.gray600};
+      color: ${p => p.theme.colors.gray600};
       padding: 0 5px;
       font-size: 18px;
       display: inline-block;
       line-height: 34px;
 
       &:hover {
-        color: ${theme.colors.primary};
+        color: ${p => p.theme.colors.primary};
       }
     }
 
@@ -178,7 +176,7 @@ export default css`
     &-date {
       display: block;
       margin: 0 auto;
-      color: ${theme.colors.gray700};
+      color: ${p => p.theme.colors.gray700};
       border-radius: 4px 4px;
       width: 26px;
       height: 26px;
@@ -188,38 +186,38 @@ export default css`
       text-align: center;
 
       &:hover {
-        background: ${theme.colors.gray300};
+        background: ${p => p.theme.colors.gray300};
         cursor: pointer;
       }
     }
 
     &-selected-day &-date {
       color: #fff;
-      background: ${theme.colors.primaryLight};
+      background: ${p => p.theme.colors.primaryLight};
     }
 
     &-selected-date &-date {
-      background: ${theme.colors.primary};
+      background: ${p => p.theme.colors.primary};
       color: #fff;
       &:hover {
-        background: ${theme.colors.primary};
+        background: ${p => p.theme.colors.primary};
       }
     }
 
     &-today &-date {
-      border: 1px solid ${theme.colors.primary};
+      border: 1px solid ${p => p.theme.colors.primary};
     }
 
     &-disabled-cell &-date {
       cursor: not-allowed;
-      color: ${theme.colors.gray400};
-      border-color: ${theme.colors.gray400};
-      background: ${theme.colors.gray200};
+      color: ${p => p.theme.colors.gray400};
+      border-color: ${p => p.theme.colors.gray400};
+      background: ${p => p.theme.colors.gray200};
       border-radius: 0;
       width: auto;
 
       &:hover {
-        background: ${theme.colors.gray200};
+        background: ${p => p.theme.colors.gray200};
       }
     }
 
@@ -239,7 +237,7 @@ export default css`
     }
 
     &-footer {
-      border-top: 1px solid ${theme.colors.gray300};
+      border-top: 1px solid ${p => p.theme.colors.gray300};
       padding: 10px 0;
       text-align: center;
       position: relative;
@@ -290,11 +288,11 @@ export default css`
     &-time-picker-btn {
       display: inline-block;
       text-align: center;
-      color: ${theme.colors.info};
+      color: ${p => p.theme.colors.info};
 
       &:hover {
         cursor: pointer;
-        color: ${theme.colors.primary};
+        color: ${p => p.theme.colors.primary};
       }
 
       &-disabled {

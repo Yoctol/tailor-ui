@@ -1,7 +1,7 @@
 {
-  "name": "@tailor-ui/lab",
-  "version": "0.9.1",
-  "description": "Incubator for Tailor-UI React components.",
+  "name": "@tailor-ui/theme",
+  "version": "0.0.1",
+  "description": "Tailor-UI THeme - Theme for Tailor-UI.",
   "author": "dev@yoctol.com",
   "homepage": "https://tailor-ui.netlify.com/",
   "license": "MIT",
@@ -16,7 +16,7 @@
     "url": "git+https://github.com/Yoctol/tailor-ui.git"
   },
   "scripts": {
-    "build": "cross-env NODE_ENV=production babel --config-file ../../babel.config.js ./src --out-dir ./lib --extensions '.ts,.tsx'",
+    "build": "cross-env NODE_ENV=production babel --config-file ../../babel.config.js ./src --out-dir ./lib --extensions '.ts'",
     "postbuild": "rollup -c ./config/rollup.config.js",
     "test": "yarn lint && yarn testonly",
     "testonly": "jest",
@@ -26,24 +26,14 @@
   "bugs": {
     "url": "https://github.com/Yoctol/tailor-ui/issues"
   },
-  "peerDependencies": {
-    "react": ">=16.8.0",
-    "react-dom": ">=16.8.0",
-    "react-spring": ">=8.0.0",
-    "styled-components": ">=4.2.0",
-    "tailor-ui": ">=0.13.0"
-  },
   "publishConfig": {
     "access": "public"
   },
   "dependencies": {
-    "@tailor-ui/utils": "^0.2.1",
-    "downshift": "^3.2.10",
-    "fuzzaldrin-plus": "^0.6.0",
-    "lodash.debounce": "^4.0.8",
     "polished": "^3.4.0",
-    "react-icons": "^3.7.0",
-    "react-tiny-virtual-list": "^2.2.0",
-    "styled-system": "^4.2.4"
+    "styled-normalize": "^8.0.6"
+  },
+  "peerDependencies": {
+    "styled-components": ">=4.2.0"
   }
 }
