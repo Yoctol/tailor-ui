@@ -26,3 +26,16 @@ export const itemToString = (item?: Option) => {
 
   return typeof item === 'object' ? String(item.label) : String(item);
 };
+
+export const getDataTestId = (
+  props: { 'data-testid'?: string },
+  suffix: string = ''
+) => {
+  if (!props['data-testid']) {
+    return {};
+  }
+
+  return {
+    'data-testid': `${props['data-testid']}${suffix ? `-${suffix}` : ''}`,
+  };
+};

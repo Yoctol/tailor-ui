@@ -142,7 +142,7 @@ import { Select } from '@tailor-ui/lab';
         onChange={newValue => setValue(newValue)}
         options={options}
         isValidNewOption={name =>
-          !options.map(option => option.value).includes(name) && name.trim() !== ''
+          !options.map(option => option.label).includes(name) && name.trim() !== ''
         }
         onCreateOption={name => {
           const newOption = { label: name, value: name };
@@ -265,7 +265,7 @@ import { Select } from '@tailor-ui/lab';
         onChange={newValue => setValue(newValue)}
         options={options}
         isValidNewOption={name =>
-          !options.map(option => option.value).includes(name) && name.trim() !== ''
+          !options.map(option => option.label).includes(name) && name.trim() !== ''
         }
         onCreateOption={name => {
           const newOption = { label: name, value: name };

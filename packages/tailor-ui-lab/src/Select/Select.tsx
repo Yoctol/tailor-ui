@@ -10,7 +10,7 @@ import SelectInput from './SelectInput';
 import SelectOptions, { ObjectOption, Option } from './SelectOptions';
 import SelectedOption from './SelectedOption';
 import { Loading, SelectWrapper, StyledSelect } from './styles';
-import { itemToString } from './utils';
+import { getDataTestId, itemToString } from './utils';
 
 interface SelectProps {
   id?: string;
@@ -40,6 +40,7 @@ interface SelectProps {
   }) => ReactNode;
   isValidNewOption?: (value: string) => boolean;
   onCreateOption?: (value: string) => void;
+  'data-testid'?: string;
 }
 
 const Select: FunctionComponent<SelectProps> = ({
@@ -64,6 +65,7 @@ const Select: FunctionComponent<SelectProps> = ({
   formatCreateLabel,
   isValidNewOption,
   onCreateOption,
+  ...props
 }) => {
   const [invalid, labelId, setValue] = useFormField({
     id,
@@ -138,9 +140,12 @@ const Select: FunctionComponent<SelectProps> = ({
       } as any}
     >
       {({
+        id: downshiftId,
+
         getRootProps,
+        getMenuProps,
         getItemProps,
-        getToggleButtonProps,
+        getInputProps,
         highlightedIndex,
         selectedItem,
         clearSelection,
@@ -149,7 +154,11 @@ const Select: FunctionComponent<SelectProps> = ({
         getRemoveButtonProps,
         removeItem,
       }: any) => (
-        <SelectWrapper {...getRootProps({ style: { width } })}>
+        <SelectWrapper
+          {...getRootProps({
+            style: { width },
+          })}
+        >
           <Popover
             visible={visible}
             position={Position.BOTTOM_LEFT}
@@ -174,6 +183,7 @@ const Select: FunctionComponent<SelectProps> = ({
                 multiple={multiple}
                 itemSize={itemSize}
                 optionsMaxHeight={optionsMaxHeight}
+                getMenuProps={getMenuProps}
                 getItemProps={getItemProps}
                 options={options}
                 inputValue={inputValue}
@@ -184,26 +194,27 @@ const Select: FunctionComponent<SelectProps> = ({
                 noOptionsMessage={noOptionsMessage}
                 formatCreateLabel={formatCreateLabel}
                 isValidNewOption={isValidNewOption}
+                data-testid={props['data-testid']}
               />
             }
           >
             <StyledSelect
+              id={downshiftId}
+              {...getDataTestId(props)}
               invalid={invalid}
               size={size}
               focused={visible}
-              {...getToggleButtonProps({
-                disabled: disabled || loading,
-                onClick: () => {
-                  if (!visible) {
-                    if (searchable || creatable || multiple) {
-                      setInputValue('');
-                    }
-                    if (inputRef.current) {
-                      inputRef.current.focus();
-                    }
+              disabled={disabled || loading}
+              onClick={() => {
+                if (!visible) {
+                  if (searchable || creatable || multiple) {
+                    setInputValue('');
                   }
-                },
-              })}
+                  if (inputRef.current) {
+                    inputRef.current.focus();
+                  }
+                }
+              }}
             >
               <Flex
                 flex="auto"
@@ -239,12 +250,18 @@ const Select: FunctionComponent<SelectProps> = ({
                   selectedItems={selectedItems}
                   removeItem={removeItem}
                   onChange={event => setInputValue(event.currentTarget.value)}
+                  getInputProps={getInputProps}
+                  data-testid={props['data-testid']}
                 />
               </Flex>
               {clearable && selectedItem && (
                 <ClearIcon clearSelection={clearSelection} />
               )}
-              {loading ? <Loading /> : <SelectArrow on={visible} />}
+              {loading ? (
+                <Loading title="loading" />
+              ) : (
+                <SelectArrow on={visible} />
+              )}
             </StyledSelect>
           </Popover>
         </SelectWrapper>
