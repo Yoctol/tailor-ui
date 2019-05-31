@@ -1,0 +1,282 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FormField should render correctly 1`] = `
+.c0 {
+  box-sizing: border-box;
+  margin-bottom: 16px;
+}
+
+.c1 {
+  display: block;
+  margin-bottom: 2px;
+  padding-left: 2px;
+  color: #373737;
+  font-size: 1rem;
+  -webkit-letter-spacing: 0.2px;
+  -moz-letter-spacing: 0.2px;
+  -ms-letter-spacing: 0.2px;
+  letter-spacing: 0.2px;
+}
+
+.c2 {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  border: 1px solid;
+  border-radius: 0.25rem;
+  border-color: #bfbfbf;
+  outline: none;
+  background-color: #ffffff;
+  color: #373737;
+  line-height: 1.5;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  height: 2.25rem;
+  padding: 4px 0.75rem;
+  font-size: 1rem;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+}
+
+.c2:hover {
+  border-color: #3c5ad0;
+}
+
+.c2:focus {
+  border-color: #3c5ad0;
+  box-shadow: inset 0 0 0 2px #e8ecf5;
+}
+
+.c2:disabled,
+.c2 [disabled] {
+  border-color: #bfbfbf;
+  background-color: #e0e0e0;
+  color: #8b8b8b;
+  cursor: not-allowed;
+}
+
+.c2::-webkit-input-placeholder {
+  color: #bfbfbf;
+}
+
+.c2::-moz-placeholder {
+  color: #bfbfbf;
+}
+
+.c2:-ms-input-placeholder {
+  color: #bfbfbf;
+}
+
+.c2::placeholder {
+  color: #bfbfbf;
+}
+
+<div
+  class="c0"
+>
+  <label
+    class="c1"
+    for="input-id"
+  >
+    Input
+  </label>
+  <input
+    class="c2"
+    id="input-id"
+    placeholder="Placeholder"
+  />
+</div>
+`;
+
+exports[`FormField should render generated id correctly 1`] = `
+.c0 {
+  box-sizing: border-box;
+  margin-bottom: 16px;
+}
+
+.c1 {
+  display: block;
+  margin-bottom: 2px;
+  padding-left: 2px;
+  color: #373737;
+  font-size: 1rem;
+  -webkit-letter-spacing: 0.2px;
+  -moz-letter-spacing: 0.2px;
+  -ms-letter-spacing: 0.2px;
+  letter-spacing: 0.2px;
+}
+
+.c2 {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  border: 1px solid;
+  border-radius: 0.25rem;
+  border-color: #bfbfbf;
+  outline: none;
+  background-color: #ffffff;
+  color: #373737;
+  line-height: 1.5;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  height: 2.25rem;
+  padding: 4px 0.75rem;
+  font-size: 1rem;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+}
+
+.c2:hover {
+  border-color: #3c5ad0;
+}
+
+.c2:focus {
+  border-color: #3c5ad0;
+  box-shadow: inset 0 0 0 2px #e8ecf5;
+}
+
+.c2:disabled,
+.c2 [disabled] {
+  border-color: #bfbfbf;
+  background-color: #e0e0e0;
+  color: #8b8b8b;
+  cursor: not-allowed;
+}
+
+.c2::-webkit-input-placeholder {
+  color: #bfbfbf;
+}
+
+.c2::-moz-placeholder {
+  color: #bfbfbf;
+}
+
+.c2:-ms-input-placeholder {
+  color: #bfbfbf;
+}
+
+.c2::placeholder {
+  color: #bfbfbf;
+}
+
+<div
+  class="c0"
+>
+  <label
+    class="c1"
+    for="tailor_form-field_xx"
+  >
+    Input
+  </label>
+  <input
+    class="c2"
+    id="tailor_form-field_xx"
+    placeholder="Placeholder"
+  />
+</div>
+`;
+
+exports[`FormField validationMessage should render FormField with error message correctly 1`] = `
+.c0 {
+  box-sizing: border-box;
+  margin-bottom: 16px;
+}
+
+.c1 {
+  display: block;
+  margin-bottom: 2px;
+  padding-left: 2px;
+  color: #373737;
+  font-size: 1rem;
+  -webkit-letter-spacing: 0.2px;
+  -moz-letter-spacing: 0.2px;
+  -ms-letter-spacing: 0.2px;
+  letter-spacing: 0.2px;
+}
+
+.c3 {
+  margin-top: 2px;
+  padding-left: 2px;
+  color: #fc5475;
+  font-size: 0.875rem;
+}
+
+.c2 {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  border: 1px solid;
+  border-radius: 0.25rem;
+  border-color: #bfbfbf;
+  outline: none;
+  background-color: #ffffff;
+  color: #373737;
+  line-height: 1.5;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-color: #fc5475 !important;
+  box-shadow: none !important;
+  height: 2.25rem;
+  padding: 4px 0.75rem;
+  font-size: 1rem;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+}
+
+.c2:hover {
+  border-color: #3c5ad0;
+}
+
+.c2:focus {
+  border-color: #3c5ad0;
+  box-shadow: inset 0 0 0 2px #e8ecf5;
+}
+
+.c2:disabled,
+.c2 [disabled] {
+  border-color: #bfbfbf;
+  background-color: #e0e0e0;
+  color: #8b8b8b;
+  cursor: not-allowed;
+}
+
+.c2::-webkit-input-placeholder {
+  color: #bfbfbf;
+}
+
+.c2::-moz-placeholder {
+  color: #bfbfbf;
+}
+
+.c2:-ms-input-placeholder {
+  color: #bfbfbf;
+}
+
+.c2::placeholder {
+  color: #bfbfbf;
+}
+
+<div
+  class="c0"
+>
+  <label
+    class="c1"
+    for="tailor_form-field_xx"
+  >
+    Input
+  </label>
+  <input
+    class="c2"
+    id="tailor_form-field_xx"
+    placeholder="Placeholder"
+  />
+  <div
+    class="c3"
+  >
+    Error Message
+  </div>
+</div>
+`;
