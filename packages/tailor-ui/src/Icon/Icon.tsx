@@ -58,6 +58,7 @@ export type IconProps = HTMLAttributes<HTMLDivElement> &
     pointerEvents?: string;
     size?: Size;
     fill?: string;
+    alt?: string;
     type: IconType;
   };
 

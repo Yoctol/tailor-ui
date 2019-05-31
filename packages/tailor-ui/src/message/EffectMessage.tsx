@@ -85,6 +85,8 @@ class EffectMessage extends PureComponent<
   EffectMessageProps,
   EffectMessageState
 > {
+  mounted = false;
+
   state: EffectMessageState = {
     messages: [],
   };
@@ -101,8 +103,12 @@ class EffectMessage extends PureComponent<
     }));
   };
 
-  add = ({ content, duration }: MessageOptions, type: Types) =>
-    new Promise<boolean>(resolve => {
+  add = ({ content, duration }: MessageOptions, type: Types) => {
+    if (!this.mounted) {
+      this.mounted = true;
+    }
+
+    return new Promise<boolean>(resolve => {
       const key = getUID();
       const icon = getTypeIcon(type);
 
@@ -118,6 +124,7 @@ class EffectMessage extends PureComponent<
         messages: [...messages, newMessage],
       }));
     });
+  };
 
   cancel = (item: Message) =>
     this.cancelMap.has(item) && this.cancelMap.get(item)();
@@ -142,46 +149,49 @@ class EffectMessage extends PureComponent<
 
     return (
       <Stack defaultOrder={StackingOrder.MESSAGE}>
-        {stackingOrder => (
-          <Portal zIndex={stackingOrder}>
-            <MessageContainer>
-              <Transition
-                native
-                keys={message => message.key}
-                items={messages}
-                from={{
-                  opacity: 0,
-                  height: 0,
-                  life: '100%',
-                }}
-                enter={{
-                  opacity: 1,
-                  height: 'auto',
-                }}
-                leave={this.leave}
-                onRest={this.remove}
-                config={this.config as any}
-              >
-                {message => ({ life, ...props }) => (
-                  <AnimatedMessageBox style={props}>
-                    <MessageContent>
-                      {message.icon}
-                      <Box flex="auto">{message.content}</Box>
-                      <Icon
-                        type={MdClose}
-                        fill="light"
-                        size="16"
-                        cursor="pointer"
-                        onClick={() => this.cancel(message)}
-                      />
-                      <Life style={{ right: life }} />
-                    </MessageContent>
-                  </AnimatedMessageBox>
-                )}
-              </Transition>
-            </MessageContainer>
-          </Portal>
-        )}
+        {stackingOrder =>
+          this.mounted ? (
+            <Portal zIndex={stackingOrder}>
+              <MessageContainer>
+                <Transition
+                  native
+                  keys={message => message.key}
+                  items={messages}
+                  from={{
+                    opacity: 0,
+                    height: 0,
+                    life: '100%',
+                  }}
+                  enter={{
+                    opacity: 1,
+                    height: 'auto',
+                  }}
+                  leave={this.leave}
+                  onRest={this.remove}
+                  config={this.config as any}
+                >
+                  {message => ({ life, ...props }) => (
+                    <AnimatedMessageBox style={props}>
+                      <MessageContent>
+                        {message.icon}
+                        <Box flex="auto">{message.content}</Box>
+                        <Icon
+                          type={MdClose}
+                          fill="light"
+                          size="16"
+                          role="button"
+                          cursor="pointer"
+                          onClick={() => this.cancel(message)}
+                        />
+                        <Life style={{ right: life }} />
+                      </MessageContent>
+                    </AnimatedMessageBox>
+                  )}
+                </Transition>
+              </MessageContainer>
+            </Portal>
+          ) : null
+        }
       </Stack>
     );
   }

@@ -1,19 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Popover should render correctly 1`] = `
-.c0 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  will-change: transform;
-}
-
 .c3 {
   font-size: 0.875rem;
   margin: 0;
   color: #373737;
   font-weight: bold;
   line-height: 1.5;
+}
+
+.c0 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  will-change: transform;
 }
 
 .c1 {
