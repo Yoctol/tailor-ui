@@ -201,26 +201,6 @@ exports[`Popconfirm should render correctly 1`] = `
   background-color: #2f4dc3;
 }
 
-.c0 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  will-change: transform;
-}
-
-.c1 {
-  padding: 0.5rem 1rem;
-  border: 1px solid;
-  border-radius: 0.5rem;
-  border-color: #e0e0e0;
-  background-color: #ffffff;
-  box-shadow: 0 2px 4px rgba(100,120,168,0.3);
-  color: #373737;
-  font-size: 0.875rem;
-  text-align: left;
-  white-space: nowrap;
-}
-
 .c2 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -240,6 +220,26 @@ exports[`Popconfirm should render correctly 1`] = `
   display: flex;
   box-sizing: border-box;
   margin-top: 1rem;
+}
+
+.c0 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  will-change: transform;
+}
+
+.c1 {
+  padding: 0.5rem 1rem;
+  border: 1px solid;
+  border-radius: 0.5rem;
+  border-color: #e0e0e0;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(100,120,168,0.3);
+  color: #373737;
+  font-size: 0.875rem;
+  text-align: left;
+  white-space: nowrap;
 }
 
 <body>

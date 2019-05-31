@@ -6,90 +6,6 @@ exports[`Modal should render correctly 1`] = `
   margin-left: auto;
 }
 
-.c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  margin-bottom: 1rem;
-  margin-left: 1rem;
-  margin-right: 1rem;
-  -webkit-flex: none;
-  -ms-flex: none;
-  flex: none;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  -webkit-flex: auto;
-  -ms-flex: auto;
-  flex: auto;
-}
-
-.c6 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  overflow-y: auto;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  -webkit-flex: auto;
-  -ms-flex: auto;
-  flex: auto;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c7 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  margin-top: 24px;
-  margin-left: 1rem;
-  margin-right: 1rem;
-  padding-top: 1rem;
-  border-top: 1px solid;
-  border-color: #e0e0e0;
-  -webkit-flex: none;
-  -ms-flex: none;
-  flex: none;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c8 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  width: 100%;
-}
-
-.c5 {
-  font-size: 1.25rem;
-  margin: 0;
-  color: #373737;
-  font-weight: bold;
-  line-height: 1.5;
-}
-
 .c0 {
   position: fixed;
   z-index: -1;
@@ -290,6 +206,90 @@ exports[`Modal should render correctly 1`] = `
   background-color: #2f4dc3;
 }
 
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  margin-bottom: 1rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  -webkit-flex: auto;
+  -ms-flex: auto;
+  flex: auto;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  overflow-y: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  -webkit-flex: auto;
+  -ms-flex: auto;
+  flex: auto;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  margin-top: 24px;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid;
+  border-color: #e0e0e0;
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.c5 {
+  font-size: 1.25rem;
+  margin: 0;
+  color: #373737;
+  font-weight: bold;
+  line-height: 1.5;
+}
+
 <body>
   <div />
   <div
@@ -383,90 +383,6 @@ exports[`Modal should render correctly with lg size 1`] = `
     .c8 {
   box-sizing: border-box;
   margin-left: auto;
-}
-
-.c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  margin-bottom: 1rem;
-  margin-left: 1rem;
-  margin-right: 1rem;
-  -webkit-flex: none;
-  -ms-flex: none;
-  flex: none;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  -webkit-flex: auto;
-  -ms-flex: auto;
-  flex: auto;
-}
-
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  overflow-y: auto;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  -webkit-flex: auto;
-  -ms-flex: auto;
-  flex: auto;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c6 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  margin-top: 24px;
-  margin-left: 1rem;
-  margin-right: 1rem;
-  padding-top: 1rem;
-  border-top: 1px solid;
-  border-color: #e0e0e0;
-  -webkit-flex: none;
-  -ms-flex: none;
-  flex: none;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c7 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  width: 100%;
-}
-
-.c4 {
-  font-size: 1.25rem;
-  margin: 0;
-  color: #373737;
-  font-weight: bold;
-  line-height: 1.5;
 }
 
 .c0 {
@@ -659,6 +575,90 @@ exports[`Modal should render correctly with lg size 1`] = `
   background-color: #2f4dc3;
 }
 
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  margin-bottom: 1rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  -webkit-flex: auto;
+  -ms-flex: auto;
+  flex: auto;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  overflow-y: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  -webkit-flex: auto;
+  -ms-flex: auto;
+  flex: auto;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  margin-top: 24px;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid;
+  border-color: #e0e0e0;
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.c4 {
+  font-size: 1.25rem;
+  margin: 0;
+  color: #373737;
+  font-weight: bold;
+  line-height: 1.5;
+}
+
 <div
       style="position: fixed; top: 0px; left: 0px; z-index: 20;"
     >
@@ -740,90 +740,6 @@ exports[`Modal should render with props closable 1`] = `
     .c12 {
   box-sizing: border-box;
   margin-left: auto;
-}
-
-.c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  margin-bottom: 1rem;
-  margin-left: 1rem;
-  margin-right: 1rem;
-  -webkit-flex: none;
-  -ms-flex: none;
-  flex: none;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  -webkit-flex: auto;
-  -ms-flex: auto;
-  flex: auto;
-}
-
-.c9 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  overflow-y: auto;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  -webkit-flex: auto;
-  -ms-flex: auto;
-  flex: auto;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c10 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  margin-top: 24px;
-  margin-left: 1rem;
-  margin-right: 1rem;
-  padding-top: 1rem;
-  border-top: 1px solid;
-  border-color: #e0e0e0;
-  -webkit-flex: none;
-  -ms-flex: none;
-  flex: none;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c11 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  width: 100%;
-}
-
-.c4 {
-  font-size: 1.25rem;
-  margin: 0;
-  color: #373737;
-  font-weight: bold;
-  line-height: 1.5;
 }
 
 .c8 {
@@ -1119,6 +1035,90 @@ exports[`Modal should render with props closable 1`] = `
 
 .c6:active {
   background-color: #d6dded;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  margin-bottom: 1rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  -webkit-flex: auto;
+  -ms-flex: auto;
+  flex: auto;
+}
+
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  overflow-y: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  -webkit-flex: auto;
+  -ms-flex: auto;
+  flex: auto;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  margin-top: 24px;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid;
+  border-color: #e0e0e0;
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c11 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.c4 {
+  font-size: 1.25rem;
+  margin: 0;
+  color: #373737;
+  font-weight: bold;
+  line-height: 1.5;
 }
 
 .c5 {

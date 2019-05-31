@@ -1,6 +1,49 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Menu should render correctly 1`] = `
+.c2 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  line-height: 1;
+  cursor: default;
+  margin-right: 12px;
+}
+
+.c2 svg {
+  fill: #8b8b8b;
+  vertical-align: middle;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+}
+
+.c2.c2.c2 svg {
+  width: 24px;
+  height: 24px;
+}
+
+.c3 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  line-height: 1;
+  cursor: default;
+}
+
+.c3 svg {
+  fill: #8b8b8b;
+  vertical-align: middle;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+}
+
+.c3.c3.c3 svg {
+  width: 24px;
+  height: 24px;
+}
+
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -136,49 +179,6 @@ exports[`Menu should render correctly 1`] = `
 
 .c10:hover .c8 {
   background-color: #184480;
-}
-
-.c2 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  line-height: 1;
-  cursor: default;
-  margin-right: 12px;
-}
-
-.c2 svg {
-  fill: #8b8b8b;
-  vertical-align: middle;
-  -webkit-transition: all 200ms ease 0s;
-  transition: all 200ms ease 0s;
-}
-
-.c2.c2.c2 svg {
-  width: 24px;
-  height: 24px;
-}
-
-.c3 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  line-height: 1;
-  cursor: default;
-}
-
-.c3 svg {
-  fill: #8b8b8b;
-  vertical-align: middle;
-  -webkit-transition: all 200ms ease 0s;
-  transition: all 200ms ease 0s;
-}
-
-.c3.c3.c3 svg {
-  width: 24px;
-  height: 24px;
 }
 
 .c4 {
