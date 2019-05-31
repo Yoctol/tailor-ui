@@ -1,19 +1,21 @@
 import React, { MutableRefObject, PureComponent } from 'react';
 import styled from 'styled-components';
 import { MdClose } from 'react-icons/md';
-import { Transition, animated } from 'react-spring/renderprops.cjs';
+import { State, Transition, animated } from 'react-spring/renderprops.cjs';
 
 import Box from '../Layout/Box';
 import Icon from '../Icon';
+import Portal from '../Portal';
+import Stack from '../Stack';
 import createUIDGenerator from '../utils/createUIDGenerator';
 import getTypeIcon, { Types } from '../utils/getTypeIcon';
+import { StackingOrder } from '../constants';
 
 const getUID = createUIDGenerator('message');
 
 const MessageContainer = styled.div`
   display: flex;
   position: fixed;
-  z-index: 30;
   right: 10px;
   bottom: 10px;
   flex-direction: column;
@@ -33,7 +35,7 @@ const MessageContent = styled.div`
   margin-top: ${p => p.theme.space[2]};
   padding: ${p => p.theme.space[3]};
   overflow: hidden;
-  border-radius: ${p => p.theme.radii.base};
+  border-radius: ${p => p.theme.radii.lg};
   background-color: ${p => p.theme.colors.primaryDark2};
   color: ${p => p.theme.colors.light};
   font-size: ${p => p.theme.fontSizes.sm};
@@ -46,7 +48,7 @@ const Life = styled(animated.div)`
   left: 0;
   width: auto;
   height: 3px;
-  background-color: ${p => p.theme.colors.gray400};
+  background-color: ${p => p.theme.colors.primaryLight};
 `;
 
 const AnimatedMessageBox = animated(MessageBox);
@@ -117,10 +119,10 @@ class EffectMessage extends PureComponent<
       }));
     });
 
-  cancel = (item: any) =>
+  cancel = (item: Message) =>
     this.cancelMap.has(item) && this.cancelMap.get(item)();
 
-  leave = (item: any) => async (next: any, cancel: any) => {
+  leave = (item: Message) => async (next: any, cancel: any) => {
     this.cancelMap.set(item, () => {
       cancel();
       item.resolve();
@@ -132,49 +134,55 @@ class EffectMessage extends PureComponent<
     await next({ height: 0 }, true);
   };
 
-  config = (item: any, state: any) =>
+  config = (item: Message, state: State) =>
     state === 'leave' ? [{ duration: item.duration }, config, config] : config;
 
   render() {
     const { messages } = this.state;
 
     return (
-      <MessageContainer>
-        <Transition
-          native
-          keys={message => message.key}
-          items={messages}
-          from={{
-            opacity: 0,
-            height: 0,
-            life: '100%',
-          }}
-          enter={{
-            opacity: 1,
-            height: 'auto',
-          }}
-          leave={this.leave}
-          onRest={this.remove}
-          config={this.config as any}
-        >
-          {(message: any) => ({ life, ...props }) => (
-            <AnimatedMessageBox style={props}>
-              <MessageContent>
-                {message.icon}
-                <Box flex="auto">{message.content}</Box>
-                <Icon
-                  type={MdClose}
-                  fill="light"
-                  size="16"
-                  cursor="pointer"
-                  onClick={() => this.cancel(message)}
-                />
-              </MessageContent>
-              <Life style={{ right: life }} />
-            </AnimatedMessageBox>
-          )}
-        </Transition>
-      </MessageContainer>
+      <Stack defaultOrder={StackingOrder.MESSAGE}>
+        {stackingOrder => (
+          <Portal zIndex={stackingOrder}>
+            <MessageContainer>
+              <Transition
+                native
+                keys={message => message.key}
+                items={messages}
+                from={{
+                  opacity: 0,
+                  height: 0,
+                  life: '100%',
+                }}
+                enter={{
+                  opacity: 1,
+                  height: 'auto',
+                }}
+                leave={this.leave}
+                onRest={this.remove}
+                config={this.config as any}
+              >
+                {message => ({ life, ...props }) => (
+                  <AnimatedMessageBox style={props}>
+                    <MessageContent>
+                      {message.icon}
+                      <Box flex="auto">{message.content}</Box>
+                      <Icon
+                        type={MdClose}
+                        fill="light"
+                        size="16"
+                        cursor="pointer"
+                        onClick={() => this.cancel(message)}
+                      />
+                      <Life style={{ right: life }} />
+                    </MessageContent>
+                  </AnimatedMessageBox>
+                )}
+              </Transition>
+            </MessageContainer>
+          </Portal>
+        )}
+      </Stack>
     );
   }
 }
