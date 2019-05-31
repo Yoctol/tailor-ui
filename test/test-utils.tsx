@@ -1,6 +1,6 @@
 import React, { ReactChild } from 'react';
 import { ThemeProvider } from 'styled-components';
-import { render } from 'react-testing-library';
+import { render } from '@testing-library/react';
 
 import defaultTheme from '../packages/tailor-ui/src/theme';
 
@@ -8,7 +8,7 @@ const customRender = (node: ReactChild, options?: object) =>
   render(<ThemeProvider theme={defaultTheme}>{node}</ThemeProvider>, options);
 
 // re-export everything
-export * from 'react-testing-library';
+export * from '@testing-library/react';
 
 // override render method
 export { customRender as render };
