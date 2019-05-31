@@ -19,7 +19,7 @@ export interface ObjectOption {
   value: string;
 }
 
-export type Option = ObjectOption | string | number | null;
+export type Option = ObjectOption | string | number;
 
 const DefaultNoOptionsMessage: FunctionComponent = () => (
   <Flex
@@ -46,7 +46,7 @@ interface SelectOptionsProps {
   inputValue: string;
   menu?: ReactNode;
   highlightedIndex: number | null;
-  selectedItem: null | Option;
+  selectedItem: Option;
   selectedItems: Option[];
   noOptionsMessage?: () => ReactNode;
   formatCreateLabel?: (labelInfo: {

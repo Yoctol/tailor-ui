@@ -3,18 +3,18 @@ import React, { FunctionComponent, ReactNode, useState } from 'react';
 import Box from '../Layout/Box';
 import createUIDGenerator from '../utils/createUIDGenerator';
 
-import FormFieldContext from './FormFieldContext';
+import FormFieldContext, { Value } from './FormFieldContext';
 import { Label, ValidationMessage } from './styles';
 
 export type Validator =
-  | ((value: any) => string)
+  | ((value?: Value) => string | null)
   | ({
-      rule: (value: any) => boolean;
+      rule: (value?: Value) => boolean;
       message: string;
     })[];
 
 export interface Validate {
-  value: any;
+  value?: Value;
   validationMessage?: ReactNode;
   validator?: Validator;
 }
@@ -85,7 +85,7 @@ const FormField: FunctionComponent<FormFieldProps> = ({
   ...props
 }) => {
   const [labelId, setLabelId] = useState(getUID());
-  const [value, setValue] = useState('');
+  const [value, setValue] = useState<Value>();
 
   const { invalid, message } = validate({
     value,

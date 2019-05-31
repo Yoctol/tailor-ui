@@ -4,9 +4,7 @@ const createUIDGenerator = (name: string) => {
   return () => {
     seed += 1;
 
-    const timestamp = Date.now();
-
-    return `tailor_${name}_${timestamp}_${seed}`;
+    return `tailor_${name}_${seed}`;
   };
 };
 
