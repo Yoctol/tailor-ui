@@ -18,4 +18,4 @@ const mergeEventProps = (...objEvents: any[]) => {
   });
 };
 
-export default mergeEventProps;
+export { mergeEventProps };
