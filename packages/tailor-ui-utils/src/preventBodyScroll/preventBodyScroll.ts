@@ -1,6 +1,9 @@
 // Reference: https://github.com/segmentio/evergreen/blob/master/src/lib/prevent-body-scroll.js
-let previousOverflow: string;
-let previousPaddingRight: string;
+
+// eslint-disable-next-line import/no-mutable-exports
+export let previousOverflow: string;
+// eslint-disable-next-line import/no-mutable-exports
+export let previousPaddingRight: string;
 
 /**
  * Toggle the body scroll / overflow and additional styling
@@ -32,4 +35,4 @@ const preventBodyScroll = (preventScroll: boolean) => {
   }
 };
 
-export default preventBodyScroll;
+export { preventBodyScroll };
