@@ -1,7 +1,5 @@
 import React, { FunctionComponent, ReactNode } from 'react';
 
-import { Omit } from '@tailor-ui/utils';
-
 import Popover, { PopoverProps } from '../Popover';
 import { Position } from '../constants';
 
