@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.13.4](https://github.com/yoctol/tailor-ui/compare/tailor-ui@0.13.3...tailor-ui@0.13.4) (2019-06-03)
+
+
+### Bug Fixes
+
+* **form-field:** try to fix UID not equal between client and server ([428534c](https://github.com/yoctol/tailor-ui/commit/428534c))
+* **table:** add flex:none to prevent shrink ([6fa29f0](https://github.com/yoctol/tailor-ui/commit/6fa29f0))
+
+
+
+
+
 ## [0.13.3](https://github.com/yoctol/tailor-ui/compare/tailor-ui@0.13.2...tailor-ui@0.13.3) (2019-05-31)
 
 **Note:** Version bump only for package tailor-ui

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.9.4](https://github.com/Yoctol/tailor-ui/compare/@tailor-ui/lab@0.9.3...@tailor-ui/lab@0.9.4) (2019-06-03)
+
+
+### Bug Fixes
+
+* **form-field:** try to fix UID not equal between client and server ([428534c](https://github.com/Yoctol/tailor-ui/commit/428534c))
+
+
+
+
+
 ## [0.9.3](https://github.com/Yoctol/tailor-ui/compare/@tailor-ui/lab@0.9.2...@tailor-ui/lab@0.9.3) (2019-05-31)
 
 **Note:** Version bump only for package @tailor-ui/lab
