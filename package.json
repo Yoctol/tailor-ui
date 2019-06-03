@@ -24,7 +24,6 @@
     "lint": "yarn lint:ts && yarn lint:css",
     "lint:css": "stylelint './**/*.tsx'",
     "lint:fix": "yarn lint:ts --fix && yarn lint:css",
-    "lint:staged": "lint-staged && yarn type-check",
     "lint:ts": "eslint . --ext=js,ts,tsx",
     "prepack": "yarn build",
     "prepublishOnly": "yarn clean && yarn && yarn test",
