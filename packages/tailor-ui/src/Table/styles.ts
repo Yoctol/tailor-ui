@@ -22,6 +22,7 @@ export const Row = styled.tr`
 export type StyledTableProps = TextAlignProps & WidthProps;
 
 export const StyledTable = styled.table<StyledTableProps>`
+  flex: none;
   overflow: hidden;
   border-spacing: 0;
   border-collapse: collapse;
@@ -52,6 +53,7 @@ export type TableWrapperProps = WidthProps & {
 };
 
 export const TableWrapper = styled.div<TableWrapperProps>`
+  flex: none;
   overflow: hidden;
   border-radius: ${p => p.theme.radii.xl};
   background-color: ${p => p.theme.colors.light};

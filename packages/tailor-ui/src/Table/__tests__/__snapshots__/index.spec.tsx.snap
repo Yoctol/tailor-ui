@@ -18,6 +18,9 @@ exports[`Table should render table correctly 1`] = `
 }
 
 .c0 {
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
   overflow: hidden;
   border-spacing: 0;
   border-collapse: collapse;
@@ -192,6 +195,9 @@ exports[`Table should render table correctly with header and footer 1`] = `
 }
 
 .c2 {
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
   overflow: hidden;
   border-spacing: 0;
   border-collapse: collapse;
@@ -216,6 +222,9 @@ exports[`Table should render table correctly with header and footer 1`] = `
 }
 
 .c0 {
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
   overflow: hidden;
   border-radius: 1rem;
   background-color: #ffffff;
