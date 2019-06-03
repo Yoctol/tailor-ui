@@ -2,7 +2,7 @@ import styledNormalize from 'styled-normalize';
 import { css } from 'styled-components';
 import { rem } from 'polished';
 
-const globalStyle = css`
+export const globalStyle = css`
   ${styledNormalize}
 
   @import url('https://fonts.googleapis.com/css?family=Roboto');
@@ -41,5 +41,3 @@ const globalStyle = css`
     pointer-events: none;
   }
 `;
-
-export default globalStyle;

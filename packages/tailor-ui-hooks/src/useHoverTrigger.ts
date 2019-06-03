@@ -79,4 +79,4 @@ const useHoverTrigger = ({
   };
 };
 
-export default useHoverTrigger;
+export { useHoverTrigger };

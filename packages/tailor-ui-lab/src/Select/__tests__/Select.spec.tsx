@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import { fireEvent, render, waitForElement } from 'test/test-utils';
 
-import Select from '../Select';
+import { Select } from '../Select';
 
 const DEFAULT_OPTIONS = [
   { label: 'Banana', value: 'banana' },

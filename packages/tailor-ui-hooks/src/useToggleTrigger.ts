@@ -61,4 +61,4 @@ const useToggleTrigger = ({
   };
 };
 
-export default useToggleTrigger;
+export { useToggleTrigger };

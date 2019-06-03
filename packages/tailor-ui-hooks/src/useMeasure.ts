@@ -29,4 +29,4 @@ const useMeasure = () => {
   return tuplify({ ref }, bounds);
 };
 
-export default useMeasure;
+export { useMeasure };

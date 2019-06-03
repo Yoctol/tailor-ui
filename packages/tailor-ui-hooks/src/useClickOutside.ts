@@ -44,4 +44,4 @@ const useClickOutside = ({
   return null;
 };
 
-export default useClickOutside;
+export { useClickOutside };

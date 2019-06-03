@@ -38,4 +38,4 @@ const useKeydown = ({
   return null;
 };
 
-export default useKeydown;
+export { useKeydown };

@@ -38,4 +38,4 @@ const useRenderChildren = ({
   return renderChildren;
 };
 
-export default useRenderChildren;
+export { useRenderChildren };
