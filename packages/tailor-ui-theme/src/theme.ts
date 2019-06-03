@@ -87,7 +87,7 @@ const shadows = {
   xl: '0 2px 6px 0 rgba(94, 94, 94, 0.5)',
 };
 
-const theme = {
+export const theme = {
   breakpoints,
   colors,
   space,
@@ -102,5 +102,3 @@ const theme = {
 };
 
 export type ThemeType = typeof theme;
-
-export default theme;

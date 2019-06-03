@@ -270,4 +270,4 @@ const Select: FunctionComponent<SelectProps> = ({
   );
 };
 
-export default Select;
+export { Select };

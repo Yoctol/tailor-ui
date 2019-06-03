@@ -2,7 +2,7 @@ import React from 'react';
 
 import { fireEvent, render, wait } from 'test/test-utils';
 
-import Tag from '../Tag';
+import { Tag } from '../Tag';
 
 describe('Tag', () => {
   it('should render tag', () => {

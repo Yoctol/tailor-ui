@@ -11,4 +11,4 @@ const useTargetRef = ({ children }: { children?: ReactNode }) => {
   return targetRef;
 };
 
-export default useTargetRef;
+export { useTargetRef };

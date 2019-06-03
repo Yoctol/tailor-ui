@@ -145,4 +145,4 @@ Tabs.defaultProps = {
 
 Tabs.Tab = Tab;
 
-export default Tabs;
+export { Tabs };

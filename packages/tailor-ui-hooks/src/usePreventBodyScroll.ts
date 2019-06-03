@@ -10,4 +10,4 @@ const usePreventBodyScroll = (preventScroll: boolean) => {
   }, [preventScroll]);
 };
 
-export default usePreventBodyScroll;
+export { usePreventBodyScroll };

@@ -160,4 +160,4 @@ const Tag: FunctionComponent<TagProps> = ({
   );
 };
 
-export default Tag;
+export { Tag };
