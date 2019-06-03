@@ -10,7 +10,7 @@ import React, {
   useEffect,
 } from 'react';
 
-import { Omit, mergeEventProps } from '@tailor-ui/utils';
+import { mergeEventProps } from '@tailor-ui/utils';
 
 import useFormField from '../FormField/useFormField';
 
