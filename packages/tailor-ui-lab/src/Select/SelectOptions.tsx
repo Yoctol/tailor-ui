@@ -46,8 +46,8 @@ interface SelectOptionsProps {
   inputValue: string;
   menu?: ReactNode;
   highlightedIndex: number | null;
-  selectedItem: Option;
-  selectedItems: Option[];
+  selectedItem?: Option;
+  selectedItems?: Option[];
   noOptionsMessage?: () => ReactNode;
   formatCreateLabel?: (labelInfo: {
     value: string;
@@ -148,7 +148,9 @@ const SelectOptions: FunctionComponent<SelectOptionsProps> = ({
           const optionString = itemToString(option);
           const hovered = visible && highlightedIndex === index;
           const active = multiple
-            ? selectedItems.map(itemToString).includes(optionString)
+            ? (selectedItems as Option[])
+                .map(itemToString)
+                .includes(optionString)
             : itemToString(selectedItem) === optionString;
           const content = isCreateOption
             ? formatCreateLabel({
