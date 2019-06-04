@@ -1,7 +1,7 @@
 import React, { RefObject, forwardRef, useEffect } from 'react';
 import { config, useTransition } from 'react-spring';
 
-import Portal from '../Portal';
+import { Portal } from '../Portal';
 
 import {
   FilteredSuggestion,

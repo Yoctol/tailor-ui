@@ -1,7 +1,7 @@
 import React, { FunctionComponent, ReactNode, useState } from 'react';
 
-import Box from '../Layout/Box';
-import createUIDGenerator from '../utils/createUIDGenerator';
+import { Box } from '../Layout';
+import { createUIDGenerator } from '../utils/createUIDGenerator';
 
 import FormFieldContext, { Value } from './FormFieldContext';
 import { Label, ValidationMessage } from './styles';
@@ -111,4 +111,4 @@ const FormField: FunctionComponent<FormFieldProps> = ({
   );
 };
 
-export default FormField;
+export { FormField };

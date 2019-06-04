@@ -1,0 +1,161 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Drawer should render correctly 1`] = `
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  overflow-y: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  -webkit-flex: auto;
+  -ms-flex: auto;
+  flex: auto;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c0 {
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0,0,0,0.65);
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  z-index: 10000;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 1rem;
+  background-color: #fff;
+  left: calc(100vw - 400px);
+  width: 400px;
+  height: 100vh;
+  box-shadow: -2px 0 8px rgba(0,0,0,0.15);
+}
+
+<body
+  style="overflow: hidden; padding-right: 0px;"
+>
+  <div />
+  <div
+    portal-container=""
+  >
+    <div
+      style="position: fixed; top: 0px; left: 0px; z-index: 5;"
+    >
+      <div
+        class="c0"
+        style="opacity: 0;"
+      />
+    </div>
+    <div
+      style="position: fixed; top: 0px; left: 0px; z-index: 20;"
+    >
+      <div
+        style="transform: translateX(400px);"
+      >
+        <div
+          class="c1"
+        >
+          <div
+            class="c2"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Drawer should render with props closable 1`] = `
+<body
+  style="padding-right: 0px; overflow: hidden;"
+>
+  <div
+    portal-container=""
+  >
+    .c0 {
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0,0,0,0.65);
+}
+
+<div
+      style="position: fixed; top: 0px; left: 0px; z-index: 5;"
+    >
+      <div
+        class="c0"
+        style="opacity: 0;"
+      />
+    </div>
+    .c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  overflow-y: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  -webkit-flex: auto;
+  -ms-flex: auto;
+  flex: auto;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  z-index: 10000;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 1rem;
+  background-color: #fff;
+  left: calc(100vw - 400px);
+  width: 400px;
+  height: 100vh;
+  box-shadow: -2px 0 8px rgba(0,0,0,0.15);
+}
+
+<div
+      style="position: fixed; top: 0px; left: 0px; z-index: 20;"
+    >
+      <div
+        style="transform: translateX(400px);"
+      >
+        <div
+          class="c0"
+        >
+          <div
+            class="c1"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div />
+</body>
+`;

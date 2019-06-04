@@ -9,9 +9,9 @@ import React, {
 } from 'react';
 import { useTransition } from 'react-spring';
 
-import Portal from '../Portal';
-import Stack from '../Stack';
+import { Portal } from '../Portal';
 import { Position, Positions, StackingOrder } from '../constants';
+import { Stack } from '../Stack';
 
 import PositionerWrapper from './PositionerWrapper';
 import getPosition from './getPosition';
@@ -221,4 +221,4 @@ const Positioner: FunctionComponent<PositionerProps> = ({
   );
 };
 
-export default Positioner;
+export { Positioner };

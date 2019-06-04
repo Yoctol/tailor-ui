@@ -84,4 +84,4 @@ const Box = styled('div')<BoxProps>(
   box
 );
 
-export default Box;
+export { Box };

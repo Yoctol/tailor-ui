@@ -1,13 +1,13 @@
 import React, { FunctionComponent, useState } from 'react';
 
-import Flex from '../Layout/Flex';
+import { Flex } from '../Layout';
 
 import Item from './Item';
 import MenuContext from './MenuContext';
 import SubMenu from './SubMenu';
 
 interface MenuProps {
-  width: number;
+  width?: number;
   currentSubOnly?: boolean;
   subKeys?: string[];
   defaultSubKeys?: string[];
@@ -68,4 +68,4 @@ Menu.defaultProps = {
 Menu.SubMenu = SubMenu;
 Menu.Item = Item;
 
-export default Menu;
+export { Menu };

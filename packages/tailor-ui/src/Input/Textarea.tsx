@@ -11,7 +11,7 @@ import { omit } from 'ramda';
 
 import { mergeEventProps } from '@tailor-ui/utils';
 
-import useFormField from '../FormField/useFormField';
+import { useFormField } from '../FormField';
 
 import { InputProps } from './Input';
 import { inputStyles } from './styles';
@@ -60,4 +60,4 @@ const Textarea: FunctionComponent<TextareaProps> = forwardRef<
   );
 });
 
-export default Textarea;
+export { Textarea };

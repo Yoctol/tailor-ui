@@ -10,4 +10,4 @@ const CheckboxContext = createContext<{
   direction: 'horizontal',
 });
 
-export default CheckboxContext;
+export { CheckboxContext };

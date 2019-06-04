@@ -8,10 +8,10 @@ import {
   usePreventBodyScroll,
 } from '@tailor-ui/hooks';
 
-import Backdrop from '../Backdrop';
-import Portal from '../Portal';
-import Stack from '../Stack';
+import { Backdrop } from '../Backdrop';
 import { FooterWrapper, ModalContent, ModalHeader } from '../Modal';
+import { Portal } from '../Portal';
+import { Stack } from '../Stack';
 import { StackingOrder } from '../constants';
 
 type Placement = 'top' | 'right' | 'bottom' | 'left';
@@ -180,4 +180,4 @@ const Drawer: FunctionComponent<DrawerProps> = ({
   );
 };
 
-export default Drawer;
+export { Drawer };

@@ -33,4 +33,4 @@ export const text = compose(
 
 const Text = styled('p')<TextProps>({ margin: 0 }, text);
 
-export default Text;
+export { Text };

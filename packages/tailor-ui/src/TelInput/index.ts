@@ -1,1 +1,1 @@
-export { default } from './TelInput';
+export * from './TelInput';

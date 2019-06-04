@@ -6,11 +6,11 @@ import React, {
   useContext,
 } from 'react';
 
-import Button from '../Button';
-import Popover, { PopoverProps } from '../Popover';
-import getTypeIcon from '../utils/getTypeIcon';
+import { Button } from '../Button';
 import { Flex } from '../Layout';
 import { LocaleContext } from '../UIProvider';
+import { Popover, PopoverProps } from '../Popover';
+import { getTypeIcon } from '../utils/getTypeIcon';
 
 interface PopconfirmContentProps extends PopoverProps {
   /**
@@ -127,4 +127,4 @@ Popconfirm.defaultProps = {
   onCancel: () => {},
 };
 
-export default Popconfirm;
+export { Popconfirm };

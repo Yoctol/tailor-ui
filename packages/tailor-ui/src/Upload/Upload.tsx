@@ -8,10 +8,9 @@ import styled from 'styled-components';
 import { MdCheck, MdClose, MdFileUpload } from 'react-icons/md';
 import { useDropzone } from 'react-dropzone';
 
-import Box from '../Layout/Box';
-import Button from '../Button';
-import Flex from '../Layout/Flex';
-import Icon from '../Icon';
+import { Box, Flex } from '../Layout';
+import { Button } from '../Button';
+import { Icon } from '../Icon';
 import { LocaleContext } from '../UIProvider';
 
 const FileList = styled.div`
@@ -272,4 +271,4 @@ const Upload: FunctionComponent<UploadProps> = ({
   );
 };
 
-export default Upload;
+export { Upload };

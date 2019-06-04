@@ -5,8 +5,8 @@ import React, {
   useState,
 } from 'react';
 
-import getTypeIcon, { Types } from '../utils/getTypeIcon';
 import { LocaleType } from '../UIProvider/LocaleContext';
+import { Types, getTypeIcon } from '../utils/getTypeIcon';
 
 import BaseModal from './BaseModal';
 import Footer from './Footer';

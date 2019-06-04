@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Icon, { IconType } from '../Icon';
+import { Icon, IconType } from '../Icon';
 
 export type Types = 'info' | 'success' | 'error' | 'warning';
 
@@ -19,4 +19,4 @@ const getTypeIcon: (type?: Types, size?: string | number) => JSX.Element = (
   return <Icon size={size} type={iconType as IconType} mr="2" fill={type} />;
 };
 
-export default getTypeIcon;
+export { getTypeIcon };

@@ -153,4 +153,4 @@ const Divider: FunctionComponent<DividerProps> = ({
   </StyledDivider>
 );
 
-export default Divider;
+export { Divider };

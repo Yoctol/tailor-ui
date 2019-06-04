@@ -467,4 +467,4 @@ Mention.defaultProps = {
     `Press Enter to create mention: ${createValue}`,
 };
 
-export default Mention;
+export { Mention };

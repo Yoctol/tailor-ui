@@ -61,4 +61,4 @@ class Portal extends Component<PortalProps> {
   }
 }
 
-export default Portal;
+export { Portal };

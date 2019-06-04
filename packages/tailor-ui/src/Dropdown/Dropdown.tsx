@@ -1,6 +1,6 @@
 import React, { FunctionComponent, ReactNode } from 'react';
 
-import Popover, { PopoverProps } from '../Popover';
+import { Popover, PopoverProps } from '../Popover';
 import { Position } from '../constants';
 
 import DropdownContext from './DropdownContext';
@@ -39,4 +39,4 @@ Dropdown.SubList = DropdownSubList;
 Dropdown.Item = DropdownItem;
 Dropdown.Divider = Divider;
 
-export default Dropdown;
+export { Dropdown };

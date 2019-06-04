@@ -16,4 +16,4 @@ Card.defaultProps = {
   borderColor: 'gray300',
 };
 
-export default Card;
+export { Card };

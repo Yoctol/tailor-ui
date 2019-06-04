@@ -1,10 +1,10 @@
 import React, { ChangeEvent, FunctionComponent, useContext } from 'react';
 import styled, { css } from 'styled-components';
 
-import Box from '../Layout/Box';
+import { Box } from '../Layout';
 
-import CheckboxContext, { Direction } from './CheckboxContext';
-import CheckboxGroup from './CheckboxGroup';
+import { CheckboxContext, Direction } from './CheckboxContext';
+import { CheckboxGroup } from './CheckboxGroup';
 
 const CheckboxWrapper = styled.span`
   display: inline-block;
@@ -167,4 +167,4 @@ const Checkbox: FunctionComponent<CheckboxProps> & {
 
 Checkbox.Group = CheckboxGroup;
 
-export default Checkbox;
+export { Checkbox };

@@ -28,4 +28,4 @@ const Position: {
   RIGHT: 'right',
 };
 
-export default Position;
+export { Position };

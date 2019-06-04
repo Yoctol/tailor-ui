@@ -1,7 +1,7 @@
 import React, { ReactChild } from 'react';
 import { render } from '@testing-library/react';
 
-import UIProvider from '../packages/tailor-ui/src/UIProvider';
+import { UIProvider } from '../packages/tailor-ui/src';
 
 const customRender = (node: ReactChild, options?: object) =>
   render(<UIProvider>{node}</UIProvider>, options);

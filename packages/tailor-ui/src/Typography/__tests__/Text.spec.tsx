@@ -2,7 +2,7 @@ import React from 'react';
 
 import { render } from 'test/test-utils';
 
-import Text from '../Text';
+import { Text } from '../Text';
 
 describe('Text', () => {
   it('should render correctly', () => {

@@ -3,7 +3,7 @@ import styled, { css, keyframes } from 'styled-components';
 import { ColorProps, color } from 'styled-system';
 import { animated, useTransition } from 'react-spring';
 
-import Portal from '../Portal';
+import { Portal } from '../Portal';
 
 const spinAnimation = keyframes`
   0%, 10% {
@@ -141,4 +141,4 @@ const Spin: FunctionComponent<SpinProps> = ({
   return spinComponent;
 };
 
-export default Spin;
+export { Spin };

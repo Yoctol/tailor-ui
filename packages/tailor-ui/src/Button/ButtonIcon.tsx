@@ -1,6 +1,6 @@
 import React, { FunctionComponent, ReactNode } from 'react';
 
-import Icon, { IconType } from '../Icon';
+import { Icon, IconType } from '../Icon';
 
 import { ButtonSize } from './styles';
 

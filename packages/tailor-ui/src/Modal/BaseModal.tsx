@@ -10,9 +10,9 @@ import {
 
 import { ESC_KEY_CODE, useKeydown } from '@tailor-ui/hooks';
 
-import Backdrop from '../Backdrop';
-import Portal from '../Portal';
-import Stack from '../Stack';
+import { Backdrop } from '../Backdrop';
+import { Portal } from '../Portal';
+import { Stack } from '../Stack';
 import { StackingOrder } from '../constants';
 import { Types } from '../utils/getTypeIcon';
 

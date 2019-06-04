@@ -1,7 +1,7 @@
 import React, { ChangeEventHandler, forwardRef } from 'react';
 import { pick } from 'ramda';
 
-import AutoSizeInput from '../AutoSizeInput';
+import { AutoSizeInput } from '../AutoSizeInput';
 
 import { Option } from './SelectOptions';
 import { getDataTestId, itemToString } from './utils';

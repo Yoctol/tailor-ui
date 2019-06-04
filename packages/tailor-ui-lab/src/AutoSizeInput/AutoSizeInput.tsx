@@ -61,4 +61,4 @@ const AutoSizeInput = forwardRef<
   );
 });
 
-export default AutoSizeInput;
+export { AutoSizeInput };

@@ -4,4 +4,4 @@ import { globalStyle } from '@tailor-ui/theme';
 
 const GlobalStyle = createGlobalStyle`${globalStyle}`;
 
-export default GlobalStyle;
+export { GlobalStyle };

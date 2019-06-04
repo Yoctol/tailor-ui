@@ -35,4 +35,4 @@ const Flex = styled('div')<FlexProps>(
   flex
 );
 
-export default Flex;
+export { Flex };

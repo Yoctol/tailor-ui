@@ -8,6 +8,7 @@
   "main": "lib/index.cjs.js",
   "module": "lib/index.js",
   "typings": "lib/index.d.ts",
+  "sideEffects": false,
   "files": [
     "lib"
   ],

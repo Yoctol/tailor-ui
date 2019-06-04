@@ -9,8 +9,8 @@ import EffectMessage from '../message/EffectMessage';
 import EffectMessageContext from '../message/EffectMessageContext';
 import EffectModal from '../Modal/EffectModal';
 import EffectModalContext from '../Modal/EffectModalContext';
-import GlobalStyle from '../GlobalStyle';
 import locales from '../locale';
+import { GlobalStyle } from '../GlobalStyle';
 
 import LocaleContext, { LocaleType } from './LocaleContext';
 
@@ -53,4 +53,4 @@ const UIProvider: FunctionComponent<UIProviderProps> = ({
   );
 };
 
-export default UIProvider;
+export { UIProvider };

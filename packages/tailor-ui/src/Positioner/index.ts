@@ -1,1 +1,1 @@
-export { default } from './Positioner';
+export * from './Positioner';

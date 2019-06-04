@@ -5,7 +5,7 @@ import React, {
   useContext,
 } from 'react';
 
-import Flex from '../Layout/Flex';
+import { Flex } from '../Layout';
 import { Heading } from '../Typography';
 import { LocaleContext } from '../UIProvider';
 
@@ -120,4 +120,4 @@ const Modal: FunctionComponent<ModalProps> = ({
   </BaseModal>
 );
 
-export default Modal;
+export { Modal };

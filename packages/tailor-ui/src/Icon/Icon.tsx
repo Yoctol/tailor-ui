@@ -89,4 +89,4 @@ const Icon: ForwardRefExoticComponent<IconProps> = forwardRef<
   );
 });
 
-export default Icon;
+export { Icon };

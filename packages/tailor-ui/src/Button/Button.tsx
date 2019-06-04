@@ -47,4 +47,4 @@ const Button: ForwardRefExoticComponent<ButtonProps> = forwardRef<
   );
 });
 
-export default Button;
+export { Button };

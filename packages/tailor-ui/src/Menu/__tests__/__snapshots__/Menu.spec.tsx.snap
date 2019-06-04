@@ -1,0 +1,299 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Menu should render correctly 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  overflow-y: auto;
+  background-color: #001e40;
+  width: 240px;
+  height: 100%;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: start;
+  -webkit-justify-content: start;
+  -ms-flex-pack: start;
+  justify-content: start;
+}
+
+.c2 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  line-height: 1;
+  cursor: default;
+  margin-right: 12px;
+}
+
+.c2 svg {
+  fill: #8b8b8b;
+  vertical-align: middle;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+}
+
+.c2.c2.c2 svg {
+  width: 24px;
+  height: 24px;
+}
+
+.c3 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  line-height: 1;
+  cursor: default;
+}
+
+.c3 svg {
+  fill: #8b8b8b;
+  vertical-align: middle;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+}
+
+.c3.c3.c3 svg {
+  width: 24px;
+  height: 24px;
+}
+
+.c1 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  height: 56px;
+  padding: 16px 14px;
+  background-color: #001e40;
+  color: #6B88c5;
+  font-size: 1.125rem;
+  cursor: pointer;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+}
+
+.c1 svg {
+  fill: #6B88c5;
+}
+
+.c1:hover {
+  color: #ffffff;
+}
+
+.c1:hover svg {
+  fill: #ffffff;
+}
+
+.c7 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex: auto;
+  -ms-flex: auto;
+  flex: auto;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 12px;
+  border-radius: 16px;
+  background-color: #001e40;
+  color: #ffffff;
+  font-size: 1rem;
+  -webkit-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+  cursor: pointer;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+}
+
+.c9 {
+  width: 8px;
+  height: 100%;
+  margin-right: 22px;
+  border-radius: 16px;
+  background-color: #001e40;
+  list-style: none;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 40px;
+  padding: 0 8px;
+  background-color: #001e40;
+  font-size: 1rem;
+  color: #50d5ff;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+}
+
+.c5 .c6 {
+  color: #50d5ff;
+}
+
+.c5 .c8 {
+  background-color: #50d5ff;
+}
+
+.c5:hover .c6 {
+  background-color: #184480;
+}
+
+.c5:hover .c8 {
+  background-color: #50d5ff;
+}
+
+.c10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 40px;
+  padding: 0 8px;
+  background-color: #001e40;
+  font-size: 1rem;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+}
+
+.c10:hover .c6 {
+  background-color: #184480;
+}
+
+.c10:hover .c8 {
+  background-color: #184480;
+}
+
+.c4 {
+  overflow: hidden;
+}
+
+<div
+  class="c0"
+  height="100%"
+  width="240"
+>
+  <div
+    class="c1"
+  >
+    <i
+      class="c2"
+      cursor="default"
+      size="24"
+    >
+      <svg
+        viewBox="0 0 48 48"
+        xmlns="https://www.w3.org/2000/svg"
+        xmlns:xlink="https://www.w3.org/1999/xlink"
+      >
+        <title>
+          Understood Icon
+        </title>
+        <defs>
+          <path
+            d="M44.19 27.947l-3.358-6.718c-.175-11.063-10.26-19.586-21.619-17.38-7.11 1.382-12.775 7.101-14.096 14.232-.93 5.02.187 10.013 3.144 14.059 2.415 3.303 3.744 7.266 3.745 11.159 0 .663.537 1.201 1.2 1.201h16.817c.664 0 1.201-.538 1.201-1.201v-3.14c0-.344.28-.624.625-.624h5.381a3.608 3.608 0 0 0 3.604-3.604v-3.603h.65c1.056 0 2.019-.537 2.574-1.436.556-.899.605-2 .133-2.945zm-2.175 1.682a.616.616 0 0 1-.532.297h-1.85c-.664 0-1.201.537-1.201 1.2v4.806c0 .662-.54 1.2-1.202 1.2h-5.38a3.03 3.03 0 0 0-3.028 3.028v1.938H14.371c-.245-4.004-1.704-8.002-4.17-11.376-2.564-3.507-3.53-7.84-2.722-12.203 1.143-6.169 6.043-11.116 12.192-12.31 9.86-1.916 18.76 5.51 18.76 15.308 0 .187.044.37.127.537l3.484 6.968a.616.616 0 0 1-.027.607zM22.816 10.707c-5.96 0-10.81 4.85-10.81 10.81 0 5.961 4.85 10.811 10.81 10.811 5.961 0 10.81-4.85 10.81-10.81 0-5.962-4.849-10.811-10.81-10.811zm0 19.219c-4.636 0-8.408-3.772-8.408-8.409 0-4.636 3.772-8.408 8.408-8.408 4.636 0 8.408 3.772 8.408 8.408 0 4.637-3.772 8.409-8.408 8.409zm5.654-11.66a1.2 1.2 0 0 0-1.698 0l-5.157 5.156-2.754-2.754a1.201 1.201 0 1 0-1.699 1.699l3.604 3.603a1.197 1.197 0 0 0 1.698 0l6.006-6.006c.47-.469.47-1.23 0-1.698z"
+            id="understood_a"
+          />
+        </defs>
+        <g
+          fill-rule="evenodd"
+        >
+          <mask
+            fill="#fff"
+            id="understood_b"
+          >
+            <use
+              xlink:href="#understood_a"
+            />
+          </mask>
+          <use
+            fill="#000"
+            fill-rule="nonzero"
+            xlink:href="#understood_a"
+          />
+          <g
+            mask="url(#understood_b)"
+            stroke="#0C0D19"
+          >
+            <path
+              d="M-.5-.5h49v49h-49z"
+            />
+          </g>
+        </g>
+      </svg>
+    </i>
+    Group 1
+    <div
+      style="display: inline-flex; pointer-events: none; margin-left: auto; transform: rotate(0deg);"
+    >
+      <i
+        class="c3"
+        cursor="default"
+        size="24"
+      >
+        <svg
+          fill="currentColor"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="0"
+          viewBox="0 0 24 24"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"
+          />
+        </svg>
+      </i>
+    </div>
+  </div>
+  <div
+    class="c4"
+    style="height: 0px; opacity: 0;"
+  >
+    <div>
+      <div
+        class="c5"
+      >
+        <div
+          class="c6 c7"
+        >
+          <div
+            class="c8 c9"
+          />
+          Item 1
+        </div>
+      </div>
+      <div
+        class="c10"
+      >
+        <div
+          class="c6 c7"
+        >
+          <div
+            class="c8 c9"
+          />
+          Item 2
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

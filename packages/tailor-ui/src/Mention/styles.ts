@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { animated } from 'react-spring';
 
-import BaseTextarea from '../Input/Textarea';
+import { Textarea as BaseTextarea } from '../Input/Textarea';
 import { inputStyles } from '../Input/styles';
 
 export const Textarea = styled(BaseTextarea)`
