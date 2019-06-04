@@ -31,4 +31,4 @@ const useFormField = ({
   return tuplify(invalid, id || labelId, setValue);
 };
 
-export default useFormField;
+export { useFormField };

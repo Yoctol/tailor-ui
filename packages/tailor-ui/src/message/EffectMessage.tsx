@@ -3,13 +3,13 @@ import styled from 'styled-components';
 import { MdClose } from 'react-icons/md';
 import { State, Transition, animated } from 'react-spring/renderprops.cjs';
 
-import Box from '../Layout/Box';
-import Icon from '../Icon';
-import Portal from '../Portal';
-import Stack from '../Stack';
-import createUIDGenerator from '../utils/createUIDGenerator';
-import getTypeIcon, { Types } from '../utils/getTypeIcon';
+import { Box } from '../Layout';
+import { Icon } from '../Icon';
+import { Portal } from '../Portal';
+import { Stack } from '../Stack';
 import { StackingOrder } from '../constants';
+import { Types, getTypeIcon } from '../utils/getTypeIcon';
+import { createUIDGenerator } from '../utils/createUIDGenerator';
 
 const getUID = createUIDGenerator('message');
 

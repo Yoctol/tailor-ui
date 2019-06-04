@@ -24,4 +24,4 @@ const Alert: FunctionComponent<AlertProps> = ({
   return <RenderComponent type={type} closable={closable} {...props} />;
 };
 
-export default Alert;
+export { Alert };

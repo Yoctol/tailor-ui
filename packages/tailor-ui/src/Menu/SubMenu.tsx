@@ -5,7 +5,7 @@ import { animated, useSpring } from 'react-spring';
 
 import { useMeasure } from '@tailor-ui/hooks';
 
-import Icon, { IconType } from '../Icon';
+import { Icon, IconType } from '../Icon';
 
 import MenuContext from './MenuContext';
 import { StyledSubMenu } from './styles';

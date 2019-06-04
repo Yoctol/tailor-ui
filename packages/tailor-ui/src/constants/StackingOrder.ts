@@ -24,4 +24,4 @@ const StackingOrder = {
   MESSAGE: 30,
 };
 
-export default StackingOrder;
+export { StackingOrder };

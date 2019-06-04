@@ -2,7 +2,7 @@ import React, { FunctionComponent } from 'react';
 import styled from 'styled-components';
 import { MdClose } from 'react-icons/md';
 
-import Button from '../Button';
+import { Button } from '../Button';
 
 const CloseButtonWrapper = styled.div`
   background: transparent;

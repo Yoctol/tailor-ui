@@ -37,4 +37,4 @@ const TelInput: FunctionComponent<TelInputProps> = ({
   </StyledTelInput>
 );
 
-export default TelInput;
+export { TelInput };

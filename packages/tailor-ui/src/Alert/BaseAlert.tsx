@@ -5,10 +5,9 @@ import { SpaceProps, space } from 'styled-system';
 import { omit } from 'ramda';
 import { rgba } from 'polished';
 
-import Box from '../Layout/Box';
-import Flex from '../Layout/Flex';
-import Icon from '../Icon';
-import getTypeIcon, { Types } from '../utils/getTypeIcon';
+import { Box, Flex } from '../Layout';
+import { Icon } from '../Icon';
+import { Types, getTypeIcon } from '../utils/getTypeIcon';
 
 export type IAlertTypes = SpaceProps & {
   type: Types;

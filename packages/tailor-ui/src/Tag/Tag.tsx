@@ -4,7 +4,7 @@ import { MdClose } from 'react-icons/md';
 import { animated, config, useSpring } from 'react-spring';
 import { omit } from 'ramda';
 
-import Icon from '../Icon';
+import { Icon } from '../Icon';
 
 const StyledTag = styled.div`
   display: inline-flex;
@@ -111,4 +111,4 @@ const Tag: FunctionComponent<TagProps> = ({
   return <RenderComponent {...props}>{children}</RenderComponent>;
 };
 
-export default Tag;
+export { Tag };

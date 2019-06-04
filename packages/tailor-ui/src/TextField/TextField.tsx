@@ -11,8 +11,7 @@ import React, {
 import { omit } from 'ramda';
 
 import FormFieldContext from '../FormField/FormFieldContext';
-import Input from '../Input';
-import Textarea from '../Input/Textarea';
+import { Input, Textarea } from '../Input';
 
 import { MaxLength, TextFieldContainer } from './styles';
 
@@ -90,4 +89,4 @@ const TextField: FunctionComponent<TextFieldProps> = ({
   );
 };
 
-export default TextField;
+export { TextField };

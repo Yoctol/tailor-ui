@@ -219,4 +219,4 @@ const Tabs: FunctionComponent<TabsProps> & {
 
 Tabs.Tab = Tab;
 
-export default Tabs;
+export { Tabs };

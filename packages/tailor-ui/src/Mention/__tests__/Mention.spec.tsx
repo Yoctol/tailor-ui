@@ -2,7 +2,7 @@ import React from 'react';
 
 import { fireEvent, render, waitForElement } from 'test/test-utils';
 
-import Mention from '../Mention';
+import { Mention } from '../Mention';
 
 it('should be defined', () => {
   expect(Mention).toBeDefined();

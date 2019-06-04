@@ -12,7 +12,7 @@ import React, {
 
 import { mergeEventProps } from '@tailor-ui/utils';
 
-import useFormField from '../FormField/useFormField';
+import { useFormField } from '../FormField';
 
 import { InputLabel, InputWrapper, Size, StyledInput } from './styles';
 
@@ -116,4 +116,4 @@ const Input: FunctionComponent<InputProps> = forwardRef<
   }
 );
 
-export default Input;
+export { Input };

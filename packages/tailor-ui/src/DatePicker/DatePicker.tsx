@@ -3,7 +3,7 @@ import RcDatePicker from 'rc-calendar/lib/Picker';
 import React, { FunctionComponent, useContext } from 'react';
 import TimePickerPanel from 'rc-time-picker/lib/Panel';
 
-import Input from '../Input';
+import { Input } from '../Input';
 import { LocaleContext } from '../UIProvider';
 
 import DatePickerStyle from './styles';
@@ -107,4 +107,4 @@ const DatePicker: FunctionComponent<DatePickerProps> = ({
   );
 };
 
-export default DatePicker;
+export { DatePicker };

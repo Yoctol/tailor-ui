@@ -25,4 +25,4 @@ const Stack: FunctionComponent<StackProps> = ({
   );
 };
 
-export default Stack;
+export { Stack };

@@ -1,8 +1,8 @@
 import React, { FunctionComponent, useState } from 'react';
 import styled from 'styled-components';
 
-import Radio from './Radio';
-import RadioContext, { Direction } from './RadioContext';
+import { Direction, RadioContext } from './RadioContext';
+import { Radio } from './Radio';
 
 const RadioGroupFlex = styled.div<{ direction: Direction }>`
   display: ${p => (p.direction === 'horizontal' ? 'flex' : 'inline-flex')};

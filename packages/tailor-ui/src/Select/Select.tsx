@@ -4,8 +4,8 @@ import React, { FunctionComponent } from 'react';
 import styled from 'styled-components';
 import { MdSearch } from 'react-icons/md';
 
-import Flex from '../Layout/Flex';
-import Icon from '../Icon';
+import { Flex } from '../Layout';
+import { Icon } from '../Icon';
 
 const getStyledSelect = (creatable: boolean) => {
   const SelectComponent = creatable ? CreatableSelect : BaseSelect;
@@ -175,4 +175,4 @@ Select.defaultProps = {
   placeholder: '',
 };
 
-export default Select;
+export { Select };

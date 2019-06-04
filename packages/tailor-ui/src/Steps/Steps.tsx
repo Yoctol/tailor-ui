@@ -11,8 +11,8 @@ import { MdClose, MdDone } from 'react-icons/md';
 
 import { theme } from '@tailor-ui/theme';
 
-import Flex from '../Layout/Flex';
-import Icon from '../Icon';
+import { Flex } from '../Layout';
+import { Icon } from '../Icon';
 
 type Status = 'finish' | 'progress' | 'wait' | 'error';
 type Direction = 'horizontal' | 'vertical';
@@ -342,4 +342,4 @@ const Steps: FunctionComponent<StepsProps> & {
 
 Steps.Step = Step;
 
-export default Steps;
+export { Steps };

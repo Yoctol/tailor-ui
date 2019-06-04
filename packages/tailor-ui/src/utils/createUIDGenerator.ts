@@ -8,4 +8,4 @@ const createUIDGenerator = (name: string) => {
   };
 };
 
-export default createUIDGenerator;
+export { createUIDGenerator };

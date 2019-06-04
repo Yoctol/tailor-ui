@@ -2,7 +2,7 @@ import React, { FunctionComponent } from 'react';
 import styled from 'styled-components';
 import { animated, config, useTransition } from 'react-spring';
 
-import Portal from '../Portal';
+import { Portal } from '../Portal';
 
 const StyledBackdrop = styled.div`
   position: fixed;
@@ -54,4 +54,4 @@ const Backdrop: FunctionComponent<BackdropProps> = ({
   );
 };
 
-export default Backdrop;
+export { Backdrop };

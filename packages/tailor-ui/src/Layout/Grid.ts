@@ -57,4 +57,4 @@ const grid = compose(
 
 const Grid = styled('div')<GridProps>({ display: 'grid' }, grid);
 
-export default Grid;
+export { Grid };

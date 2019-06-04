@@ -2,7 +2,7 @@ import React from 'react';
 
 import { render } from 'test/test-utils';
 
-import Icon from '../Icon';
+import { Icon } from '../Icon';
 
 describe('Icon', () => {
   it('should render correctly', () => {

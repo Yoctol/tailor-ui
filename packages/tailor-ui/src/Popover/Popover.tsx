@@ -19,9 +19,9 @@ import {
   useToggleTrigger,
 } from '@tailor-ui/hooks';
 
-import Positioner from '../Positioner';
 import { Heading } from '../Typography';
 import { Position, Positions } from '../constants';
+import { Positioner } from '../Positioner';
 
 import { PopoverHeader, StyledPopover, StyledPopoverProps } from './styles';
 
@@ -172,4 +172,4 @@ const Popover: FunctionComponent<PopoverProps> = ({
   );
 };
 
-export default Popover;
+export { Popover };

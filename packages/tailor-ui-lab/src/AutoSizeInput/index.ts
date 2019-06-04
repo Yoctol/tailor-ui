@@ -1,1 +1,1 @@
-export { default } from './AutoSizeInput';
+export * from './AutoSizeInput';

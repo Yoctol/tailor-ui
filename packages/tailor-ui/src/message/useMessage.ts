@@ -2,7 +2,7 @@ import { useContext } from 'react';
 
 import EffectMessageContext from './EffectMessageContext';
 
-const useModal = () => {
+const useMessage = () => {
   const triggerRef = useContext(EffectMessageContext);
 
   return {
@@ -17,4 +17,4 @@ const useModal = () => {
   };
 };
 
-export default useModal;
+export { useMessage };

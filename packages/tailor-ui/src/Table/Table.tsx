@@ -59,4 +59,4 @@ Table.defaultProps = {
   textAlign: 'center',
 };
 
-export default Table;
+export { Table };

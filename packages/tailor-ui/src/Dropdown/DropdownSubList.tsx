@@ -1,11 +1,11 @@
 import React, { FunctionComponent, useState } from 'react';
 import { MdKeyboardArrowRight } from 'react-icons/md';
 
-import Icon from '../Icon';
-import Tooltip from '../Tooltip';
 import { Box } from '../Layout';
+import { Icon } from '../Icon';
 import { Position } from '../constants';
 import { StyledPopover } from '../Popover/styles';
+import { Tooltip } from '../Tooltip';
 
 import { Item, List } from './styles';
 

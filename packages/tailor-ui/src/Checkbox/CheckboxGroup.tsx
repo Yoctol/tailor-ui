@@ -1,8 +1,8 @@
 import React, { FunctionComponent, useState } from 'react';
 import styled from 'styled-components';
 
-import Checkbox from './Checkbox';
-import CheckboxContext, { Direction } from './CheckboxContext';
+import { Checkbox } from './Checkbox';
+import { CheckboxContext, Direction } from './CheckboxContext';
 
 const CheckboxGroupFlex = styled.div<{ direction: Direction }>`
   display: ${p => (p.direction === 'horizontal' ? 'flex' : 'inline-flex')};
@@ -99,4 +99,4 @@ const CheckboxGroup: FunctionComponent<CheckboxGroupProps> = ({
 
 CheckboxGroup.displayName = 'Checkbox.Group';
 
-export default CheckboxGroup;
+export { CheckboxGroup };

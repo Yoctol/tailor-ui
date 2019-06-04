@@ -6,8 +6,8 @@ import {
   useTargetRef,
 } from '@tailor-ui/hooks';
 
-import Positioner from '../Positioner';
 import { Position, Positions } from '../constants';
+import { Positioner } from '../Positioner';
 
 import TooltipPopup from './TooltipPopup';
 import { StyledTooltipProps } from './styles';
@@ -109,4 +109,4 @@ const Tooltip: FunctionComponent<TooltipProps> = ({
   );
 };
 
-export default Tooltip;
+export { Tooltip };

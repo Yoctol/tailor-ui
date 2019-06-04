@@ -100,4 +100,4 @@ Switch.defaultProps = {
   onChange: () => {},
 };
 
-export default Switch;
+export { Switch };

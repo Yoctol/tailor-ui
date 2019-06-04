@@ -10,4 +10,4 @@ const RadioContext = createContext<{
   direction: 'horizontal',
 });
 
-export default RadioContext;
+export { RadioContext };

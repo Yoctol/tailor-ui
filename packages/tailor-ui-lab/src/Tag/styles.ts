@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import AutoSizeInput from '../AutoSizeInput';
+import { AutoSizeInput } from '../AutoSizeInput';
 
 export interface StyledTagProps {
   editable: boolean;
