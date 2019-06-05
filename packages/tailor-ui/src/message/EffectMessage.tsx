@@ -8,10 +8,8 @@ import { Icon } from '../Icon';
 import { Portal } from '../Portal';
 import { Stack } from '../Stack';
 import { StackingOrder } from '../constants';
-import { Types, getTypeIcon } from '../utils/getTypeIcon';
-import { createUIDGenerator } from '../utils/createUIDGenerator';
-
-const getUID = createUIDGenerator('message');
+import { StatusType } from '../types';
+import { UIDContext } from '../UIProvider/UIDContext';
 
 const MessageContainer = styled.div`
   display: flex;
@@ -70,7 +68,7 @@ export interface MessageOptions {
 
 export type Trigger = (
   options: MessageOptions,
-  type: Types
+  type: StatusType
 ) => Promise<boolean>;
 
 export interface EffectMessageProps {
@@ -85,6 +83,8 @@ class EffectMessage extends PureComponent<
   EffectMessageProps,
   EffectMessageState
 > {
+  static contextType = UIDContext;
+
   mounted = false;
 
   state: EffectMessageState = {
@@ -103,14 +103,14 @@ class EffectMessage extends PureComponent<
     }));
   };
 
-  add = ({ content, duration }: MessageOptions, type: Types) => {
+  add = ({ content, duration }: MessageOptions, type: StatusType) => {
     if (!this.mounted) {
       this.mounted = true;
     }
 
     return new Promise<boolean>(resolve => {
-      const key = getUID();
-      const icon = getTypeIcon(type);
+      const key = this.context();
+      const icon = <Icon type={type} fill={type} size="20" mr="2" />;
 
       const newMessage = {
         key,

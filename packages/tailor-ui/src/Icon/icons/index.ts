@@ -20,6 +20,7 @@ export type BuiltInIconKeys =
   | 'success'
   | 'warning'
   | 'danger'
+  | 'error'
   | 'robot'
   | 'understood'
   | 'kurator'
@@ -36,6 +37,7 @@ export const icons = {
   success,
   warning,
   danger,
+  error: danger,
   robot,
   understood,
   kurator,

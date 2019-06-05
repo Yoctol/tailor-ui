@@ -166,13 +166,13 @@ exports[`FormField should render generated id correctly 1`] = `
 >
   <label
     class="c1"
-    for="tailor_form-field_xx"
+    for="tailor_uid_1"
   >
     Input
   </label>
   <input
     class="c2"
-    id="tailor_form-field_xx"
+    id="tailor_uid_1"
     placeholder="Placeholder"
   />
 </div>
@@ -264,13 +264,13 @@ exports[`FormField validationMessage should render FormField with error message 
 >
   <label
     class="c1"
-    for="tailor_form-field_xx"
+    for="tailor_uid_1"
   >
     Input
   </label>
   <input
     class="c2"
-    id="tailor_form-field_xx"
+    id="tailor_uid_1"
     placeholder="Placeholder"
   />
   <div

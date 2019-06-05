@@ -43,5 +43,3 @@ export { Tooltip } from './Tooltip';
 export { Popover } from './Popover';
 export { Popconfirm } from './Popconfirm';
 export { Dropdown } from './Dropdown';
-
-export { getTypeIcon } from './utils/getTypeIcon';

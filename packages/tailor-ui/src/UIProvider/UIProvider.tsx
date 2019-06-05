@@ -13,6 +13,7 @@ import locales from '../locale';
 import { GlobalStyle } from '../GlobalStyle';
 
 import LocaleContext, { LocaleType } from './LocaleContext';
+import { UIDProvider } from './UIDContext';
 
 // eslint-disable-next-line @typescript-eslint/camelcase
 const { en_US } = locales;
@@ -37,18 +38,18 @@ const UIProvider: FunctionComponent<UIProviderProps> = ({
 
   return (
     <ThemeProvider theme={theme}>
-      <>
-        <GlobalStyle />
+      <UIDProvider>
         <LocaleContext.Provider value={{ locale }}>
+          <GlobalStyle />
           <EffectModalContext.Provider value={modalTriggerRef}>
             <EffectMessageContext.Provider value={messageTriggerRef}>
               {children}
             </EffectMessageContext.Provider>
           </EffectModalContext.Provider>
+          <EffectModal locale={locale} triggerRef={modalTriggerRef} />
+          <EffectMessage triggerRef={messageTriggerRef} />
         </LocaleContext.Provider>
-        <EffectModal locale={locale} triggerRef={modalTriggerRef} />
-        <EffectMessage triggerRef={messageTriggerRef} />
-      </>
+      </UIDProvider>
     </ThemeProvider>
   );
 };

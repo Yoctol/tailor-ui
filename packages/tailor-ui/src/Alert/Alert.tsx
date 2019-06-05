@@ -1,6 +1,6 @@
 import React, { FunctionComponent, ReactNode } from 'react';
 
-import { Types } from '../utils/getTypeIcon';
+import { StatusType } from '../types';
 
 import BaseAlert from './BaseAlert';
 import ClosableAlert from './ClosableAlert';
@@ -8,15 +8,13 @@ import ClosableAlert from './ClosableAlert';
 interface AlertProps {
   closable?: boolean;
   message: ReactNode;
-  type?: Types;
+  type?: StatusType;
   onClose?: () => void;
   onClosed?: () => void;
 }
 
-const defaultType = 'info';
-
 const Alert: FunctionComponent<AlertProps> = ({
-  type = defaultType as Types,
+  type = 'info',
   closable = false,
   ...props
 }) => {

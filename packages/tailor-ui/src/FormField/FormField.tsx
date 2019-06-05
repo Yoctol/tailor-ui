@@ -1,7 +1,7 @@
 import React, { FunctionComponent, ReactNode, useState } from 'react';
 
 import { Box } from '../Layout';
-import { createUIDGenerator } from '../utils/createUIDGenerator';
+import { useUID } from '../UIProvider/UIDContext';
 
 import FormFieldContext, { Value } from './FormFieldContext';
 import { Label, ValidationMessage } from './styles';
@@ -74,8 +74,6 @@ export interface FormFieldProps {
   validationMessage?: ReactNode;
 }
 
-const getUID = createUIDGenerator('form-field');
-
 const FormField: FunctionComponent<FormFieldProps> = ({
   label,
   required = false,
@@ -84,7 +82,8 @@ const FormField: FunctionComponent<FormFieldProps> = ({
   children,
   ...props
 }) => {
-  const [labelId, setLabelId] = useState(getUID());
+  const getUID = useUID();
+  const [labelId, setLabelId] = useState(() => getUID());
   const [value, setValue] = useState<Value>();
 
   const { invalid, message } = validate({
