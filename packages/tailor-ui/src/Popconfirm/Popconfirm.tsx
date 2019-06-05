@@ -1,17 +1,11 @@
-import React, {
-  FunctionComponent,
-  MouseEvent,
-  ReactNode,
-  memo,
-  useContext,
-} from 'react';
+import React, { FunctionComponent, MouseEvent, ReactNode, memo } from 'react';
 
 import { Button } from '../Button';
 import { Flex } from '../Layout';
 import { Icon } from '../Icon';
-import { LocaleContext } from '../UIProvider';
 import { Popover, PopoverProps } from '../Popover';
 import { StatusType } from '../types';
+import { useLocale } from '../locale';
 
 interface PopconfirmContentProps extends PopoverProps {
   /**
@@ -55,7 +49,7 @@ const PopconfirmContent = memo<
   onCancel,
   hideTooltip,
 }) {
-  const { locale } = useContext(LocaleContext);
+  const { locale } = useLocale();
 
   return (
     <>

@@ -1,9 +1,4 @@
-import React, {
-  FunctionComponent,
-  Reducer,
-  useContext,
-  useReducer,
-} from 'react';
+import React, { FunctionComponent, Reducer, useReducer } from 'react';
 import styled from 'styled-components';
 import { MdCheck, MdClose, MdFileUpload } from 'react-icons/md';
 import { useDropzone } from 'react-dropzone';
@@ -11,7 +6,7 @@ import { useDropzone } from 'react-dropzone';
 import { Box, Flex } from '../Layout';
 import { Button } from '../Button';
 import { Icon } from '../Icon';
-import { LocaleContext } from '../UIProvider';
+import { useLocale } from '../locale';
 
 const FileList = styled.div`
   display: inline-flex;
@@ -174,7 +169,7 @@ const Upload: FunctionComponent<UploadProps> = ({
   texts = {},
   ...props
 }) => {
-  const { locale } = useContext(LocaleContext);
+  const { locale } = useLocale();
   const [state, dispatch] = useReducer(uploadReducer, {
     uploading: false,
     uploaded: false,

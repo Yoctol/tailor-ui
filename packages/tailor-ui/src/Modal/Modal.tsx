@@ -1,13 +1,8 @@
-import React, {
-  FunctionComponent,
-  ReactNode,
-  isValidElement,
-  useContext,
-} from 'react';
+import React, { FunctionComponent, ReactNode, isValidElement } from 'react';
 
 import { Flex } from '../Layout';
 import { Heading } from '../Typography';
-import { LocaleContext } from '../UIProvider';
+import { useLocale } from '../locale';
 
 import BaseModal, { BaseModalProps } from './BaseModal';
 import CloseButton from './CloseButton';
@@ -67,7 +62,7 @@ const ModalFooter: FunctionComponent<ModalFooterProps> = ({
   confirmButtonProps,
   cancelButtonProps,
 }) => {
-  const { locale } = useContext(LocaleContext);
+  const { locale } = useLocale();
 
   return footer === null ? null : (
     <FooterWrapper>

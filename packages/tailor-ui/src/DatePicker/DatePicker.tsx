@@ -1,10 +1,10 @@
 import RcCalendar from 'rc-calendar';
 import RcDatePicker from 'rc-calendar/lib/Picker';
-import React, { FunctionComponent, useContext } from 'react';
+import React, { FunctionComponent } from 'react';
 import TimePickerPanel from 'rc-time-picker/lib/Panel';
 
 import { Input } from '../Input';
-import { LocaleContext } from '../UIProvider';
+import { useLocale } from '../locale';
 
 import DatePickerStyle from './styles';
 
@@ -54,7 +54,7 @@ const DatePicker: FunctionComponent<DatePickerProps> = ({
   placeholder,
   ...props
 }) => {
-  const { locale } = useContext(LocaleContext);
+  const { locale } = useLocale();
   const format =
     formatFromProps ||
     `YYYY-MM-DD${showTime ? ' HH:mm' : ''}${

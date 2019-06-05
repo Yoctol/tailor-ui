@@ -1,5 +1,8 @@
-/* eslint @typescript-eslint/camelcase: off, camelcase: "off" */
-import en_US from './en_US';
-import zh_Hant from './zh_Hant';
+import locales, { LocaleType } from './locales';
 
-export default { en_US, zh_Hant };
+export { useLocale } from './useLocale';
+export { LocaleProvider } from './LocaleProvider';
+
+export { locales };
+
+export type LocaleType = LocaleType;
