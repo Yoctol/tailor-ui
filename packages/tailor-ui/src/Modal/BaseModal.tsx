@@ -14,7 +14,7 @@ import { Backdrop } from '../Backdrop';
 import { Portal } from '../Portal';
 import { Stack } from '../Stack';
 import { StackingOrder } from '../constants';
-import { Types } from '../utils/getTypeIcon';
+import { StatusType } from '../types';
 
 type Size = 'md' | 'lg';
 
@@ -27,7 +27,7 @@ const ModalWrapper = styled.div`
 
 const AnimatedModalWrapper = animated(ModalWrapper);
 
-const ModalStatusBar = styled.div<{ statusBar: Types | null }>`
+const ModalStatusBar = styled.div<{ statusBar: StatusType | null }>`
   position: absolute;
   z-index: -1;
   top: 0;
@@ -69,7 +69,7 @@ export interface BaseModalProps {
   onCloseComplete?: () => void;
   size?: Size;
   cancelable?: boolean;
-  statusBar?: Types | null;
+  statusBar?: StatusType | null;
   visible: boolean;
 }
 

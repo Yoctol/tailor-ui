@@ -8,9 +8,10 @@ import React, {
 
 import { Button } from '../Button';
 import { Flex } from '../Layout';
+import { Icon } from '../Icon';
 import { LocaleContext } from '../UIProvider';
 import { Popover, PopoverProps } from '../Popover';
-import { getTypeIcon } from '../utils/getTypeIcon';
+import { StatusType } from '../types';
 
 interface PopconfirmContentProps extends PopoverProps {
   /**
@@ -28,7 +29,7 @@ interface PopconfirmContentProps extends PopoverProps {
   /**
    * customize icon of confirmation
    */
-  type?: 'info' | 'success' | 'warning' | 'error';
+  type?: StatusType;
   /**
    * callback of cancel
    */
@@ -41,12 +42,12 @@ interface PopconfirmContentProps extends PopoverProps {
   onCloseComplete?: () => void;
 }
 
-const PopconfirmContent: FunctionComponent<
+const PopconfirmContent = memo<
   PopconfirmContentProps & {
     hideTooltip: () => void;
   }
-> = memo(function PopconfirmContent({
-  type,
+>(function PopconfirmContent({
+  type = 'warning',
   content,
   confirmText,
   cancelText,
@@ -56,12 +57,10 @@ const PopconfirmContent: FunctionComponent<
 }) {
   const { locale } = useContext(LocaleContext);
 
-  const icon = getTypeIcon(type);
-
   return (
     <>
       <Flex alignItems="center">
-        {icon}
+        <Icon type={type} fill={type} size="20" mr="2" />
         {content}
       </Flex>
       <Flex mt="3">
@@ -122,7 +121,6 @@ const Popconfirm: FunctionComponent<PopconfirmContentProps> = ({
 
 Popconfirm.defaultProps = {
   content: '',
-  type: 'warning',
   onConfirm: () => {},
   onCancel: () => {},
 };

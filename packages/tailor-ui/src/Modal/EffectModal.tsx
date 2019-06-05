@@ -5,14 +5,15 @@ import React, {
   useState,
 } from 'react';
 
+import { Icon } from '../Icon';
 import { LocaleType } from '../UIProvider/LocaleContext';
-import { Types, getTypeIcon } from '../utils/getTypeIcon';
+import { StatusType } from '../types';
 
 import BaseModal from './BaseModal';
 import Footer from './Footer';
 import { FooterWrapper, ModalContent, ModalHeader } from './Modal';
 
-export type ModalTypes = Types | 'confirm';
+export type ModalTypes = StatusType | 'confirm';
 
 export interface ModalOptions {
   title?: string;
@@ -74,7 +75,7 @@ const EffectModal: FunctionComponent<EffectModalProps> = ({
       return null;
     }
 
-    return getTypeIcon(type, 32);
+    return <Icon type={type} fill={type} size="32" mr="2" />;
   };
 
   const trigger = (options: ModalOptions, type: ModalTypes): Promise<boolean> =>

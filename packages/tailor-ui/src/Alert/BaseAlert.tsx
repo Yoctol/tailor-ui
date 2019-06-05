@@ -7,10 +7,10 @@ import { rgba } from 'polished';
 
 import { Box, Flex } from '../Layout';
 import { Icon } from '../Icon';
-import { Types, getTypeIcon } from '../utils/getTypeIcon';
+import { StatusType } from '../types';
 
 export type IAlertTypes = SpaceProps & {
-  type: Types;
+  type: StatusType;
 };
 
 const StyledAlert = styled.div<IAlertTypes>`
@@ -31,7 +31,7 @@ const StyledAlert = styled.div<IAlertTypes>`
 export interface BaseAlertProps extends IAlertTypes {
   closable: boolean;
   message: ReactNode;
-  type: Types;
+  type: StatusType;
   onClose?: () => void;
 }
 
@@ -41,7 +41,9 @@ const BaseAlert = forwardRef<HTMLDivElement, BaseAlertProps>(function BaseAlert(
 ) {
   return (
     <StyledAlert type={type} ref={ref} {...omit(['onClosed'], props)}>
-      <Flex flex="none">{getTypeIcon(type)}</Flex>
+      <Flex flex="none">
+        <Icon size="20" type={type} mr="2" fill={type} />
+      </Flex>
       <Box flex="auto">{message}</Box>
       {closable && (
         <Flex flex="none">

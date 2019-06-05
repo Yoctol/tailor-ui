@@ -5,10 +5,6 @@ import { fireEvent, render } from 'test/test-utils';
 import { FormField } from '../FormField';
 import { Input } from '../../Input';
 
-jest.mock('../../utils/createUIDGenerator', () => ({
-  createUIDGenerator: () => () => 'tailor_form-field_xx',
-}));
-
 describe('FormField', () => {
   it('should render correctly', () => {
     const { container, getByLabelText } = render(
@@ -31,11 +27,9 @@ describe('FormField', () => {
     );
 
     expect(getByLabelText('Input')).toBeInTheDocument();
+    expect(container.querySelector('#tailor_uid_1')).toBeInTheDocument();
     expect(
-      container.querySelector('#tailor_form-field_xx')
-    ).toBeInTheDocument();
-    expect(
-      container.querySelector('label[for=tailor_form-field_xx]')
+      container.querySelector('label[for=tailor_uid_1]')
     ).toBeInTheDocument();
     expect(container.firstChild).toMatchSnapshot();
   });
