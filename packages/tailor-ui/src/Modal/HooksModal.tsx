@@ -6,8 +6,8 @@ import React, {
 } from 'react';
 
 import { Icon } from '../Icon';
-import { LocaleType } from '../UIProvider/LocaleContext';
 import { StatusType } from '../types';
+import { useLocale } from '../locale';
 
 import BaseModal from './BaseModal';
 import Footer from './Footer';
@@ -33,7 +33,6 @@ export type Trigger = (
 ) => Promise<boolean>;
 
 interface EffectModalProps {
-  locale: LocaleType;
   triggerRef: MutableRefObject<Trigger>;
 }
 
@@ -50,10 +49,8 @@ interface ModalOptionsState {
   type: ModalTypes;
 }
 
-const EffectModal: FunctionComponent<EffectModalProps> = ({
-  locale,
-  triggerRef,
-}) => {
+const EffectModal: FunctionComponent<EffectModalProps> = ({ triggerRef }) => {
+  const { locale } = useLocale();
   const [visible, setVisible] = useState(false);
   const [modalOptions, setModalOptions] = useState<ModalOptionsState>({
     type: 'confirm',

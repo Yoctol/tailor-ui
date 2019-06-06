@@ -17,7 +17,7 @@ import {
   Popconfirm,
   Position,
   Upload,
-  locale,
+  locales,
   useModal,
 } from 'tailor-ui';
 
@@ -26,9 +26,9 @@ import {
 `UIProvider` provides theme to components, and provides a uniform localization support for built-in text of components.
 
 ```js
-import { UIProvider, locale } from 'tailor-ui';
+import { UIProvider, locales } from 'tailor-ui';
 
-const { zh_Hant } = locale;
+const { zh_Hant } = locales;
 ...
 
 <UIProvider locale={zh_Hant}>

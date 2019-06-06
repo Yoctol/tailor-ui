@@ -1,9 +1,9 @@
 import { useContext } from 'react';
 
-import EffectMessageContext from './EffectMessageContext';
+import { HooksMessageContext } from './HooksMessageProvider';
 
 const useMessage = () => {
-  const triggerRef = useContext(EffectMessageContext);
+  const triggerRef = useContext(HooksMessageContext);
 
   return {
     info: (content: string, duration = 3000) =>

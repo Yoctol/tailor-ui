@@ -1,10 +1,10 @@
 import { useContext } from 'react';
 
-import EffectModalContext from './EffectModalContext';
-import { ModalOptions } from './EffectModal';
+import { HooksModalContext } from './HooksModalProvider';
+import { ModalOptions } from './HooksModal';
 
 const useModal = () => {
-  const triggerRef = useContext(EffectModalContext);
+  const triggerRef = useContext(HooksModalContext);
 
   return {
     confirm: (options: ModalOptions) => triggerRef.current(options, 'confirm'),
