@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.9.5](https://github.com/Yoctol/tailor-ui/compare/@tailor-ui/lab@0.9.4...@tailor-ui/lab@0.9.5) (2019-06-06)
+
+
+### Bug Fixes
+
+* **select:** SelectOption type ([5f36e68](https://github.com/Yoctol/tailor-ui/commit/5f36e68))
+
+
+
+
+
 ## [0.9.4](https://github.com/Yoctol/tailor-ui/compare/@tailor-ui/lab@0.9.3...@tailor-ui/lab@0.9.4) (2019-06-03)
 
 
