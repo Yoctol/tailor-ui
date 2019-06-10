@@ -71,9 +71,7 @@ const Suggestions = forwardRef<HTMLDivElement, SuggestionsProps>(
                 <div
                   style={{
                     willChange: 'transform',
-                    transform: `translate3d(${overlayPosition.left}px, ${
-                      overlayPosition.top
-                    }px, 0px)`,
+                    transform: `translate3d(${overlayPosition.left}px, ${overlayPosition.top}px, 0px)`,
                   }}
                 >
                   <SuggestionList ref={suggestionRef} style={props}>

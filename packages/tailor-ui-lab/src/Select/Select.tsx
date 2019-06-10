@@ -135,9 +135,9 @@ const Select: FunctionComponent<SelectProps> = ({
         }
       }}
       onChange={handleChange}
-      {...{
+      {...({
         scrollIntoView: () => {},
-      } as any}
+      } as any)}
     >
       {({
         id: downshiftId,
