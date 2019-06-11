@@ -4,8 +4,11 @@ import { MdClose } from 'react-icons/md';
 
 import { Icon } from 'tailor-ui';
 
+import { getDataTestId } from './utils';
+
 interface ClearIconProps {
   clearSelection: () => void;
+  'data-testid'?: string;
 }
 
 const ClearIconWrapper = styled.div`
@@ -17,7 +20,10 @@ const ClearIconWrapper = styled.div`
   }
 `;
 
-const ClearIcon: FunctionComponent<ClearIconProps> = ({ clearSelection }) => (
+const ClearIcon: FunctionComponent<ClearIconProps> = ({
+  clearSelection,
+  ...props
+}) => (
   <ClearIconWrapper>
     <Icon
       type={MdClose}
@@ -28,6 +34,7 @@ const ClearIcon: FunctionComponent<ClearIconProps> = ({ clearSelection }) => (
         e.stopPropagation();
         clearSelection();
       }}
+      {...getDataTestId(props, 'clear-icon')}
     />
   </ClearIconWrapper>
 );

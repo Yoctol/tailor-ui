@@ -14,12 +14,18 @@ import { Box, Flex, Heading, Icon } from 'tailor-ui';
 import { StyledSelectOption } from './styles';
 import { fuzzyFilter, getDataTestId, itemToString } from './utils';
 
-export interface ObjectOption {
-  label: string;
+export type Option =
+  | {
+      label: string;
+      value: string;
+    }
+  | string
+  | number;
+
+export interface CreateOption {
+  label: 'CREATE_OPTION';
   value: string;
 }
-
-export type Option = ObjectOption | string | number;
 
 const DefaultNoOptionsMessage: FunctionComponent = () => (
   <Flex
@@ -144,7 +150,7 @@ const SelectOptions: FunctionComponent<SelectOptionsProps> = ({
         renderItem={({ index, style }) => {
           const option = items[index];
           const isCreateOption =
-            (option as ObjectOption).label === 'CREATE_OPTION';
+            (option as CreateOption).label === 'CREATE_OPTION';
           const optionString = itemToString(option);
           const hovered = visible && highlightedIndex === index;
           const active = multiple
@@ -154,7 +160,7 @@ const SelectOptions: FunctionComponent<SelectOptionsProps> = ({
             : itemToString(selectedItem) === optionString;
           const content = isCreateOption
             ? formatCreateLabel({
-                value: (option as ObjectOption).value,
+                value: (option as CreateOption).value,
                 active,
                 hovered,
               })

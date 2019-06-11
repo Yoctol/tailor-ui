@@ -7,7 +7,7 @@ import ClearIcon from './ClearIcon';
 import MultiDownshift from './MultiDownshift';
 import SelectArrow from './SelectArrow';
 import SelectInput from './SelectInput';
-import SelectOptions, { ObjectOption, Option } from './SelectOptions';
+import SelectOptions, { CreateOption, Option } from './SelectOptions';
 import SelectedOption from './SelectedOption';
 import { Loading, SelectWrapper, StyledSelect } from './styles';
 import { getDataTestId, itemToString } from './utils';
@@ -76,21 +76,21 @@ const Select: FunctionComponent<SelectProps> = ({
   const [visible, setVisible] = useState(false);
   const [inputValue, setInputValue] = useState('');
 
-  const handleChange = (selection: Option) => {
+  const handleChange = (selection: Option | CreateOption) => {
     if (inputRef.current && !multiple) {
       inputRef.current.blur();
     }
 
     const isCreate =
-      selection && (selection as ObjectOption).label === 'CREATE_OPTION';
+      selection && (selection as CreateOption).label === 'CREATE_OPTION';
 
     if (isCreate && onCreateOption) {
-      onCreateOption((selection as ObjectOption).value);
+      onCreateOption((selection as CreateOption).value);
     }
 
     if (!isCreate && onChange) {
-      onChange(selection);
-      setValue(selection);
+      onChange(selection as Option);
+      setValue(selection as Option);
     }
 
     if (!multiple || isCreate) {
@@ -223,9 +223,11 @@ const Select: FunctionComponent<SelectProps> = ({
                 overflow="hidden"
               >
                 {multiple &&
-                  selectedItems.map((item: Option) => (
+                  (selectedItems as Option[]).map((item, index) => (
                     <SelectedOption
                       key={itemToString(item)}
+                      index={index}
+                      data-testid={props['data-testid']}
                       {...getRemoveButtonProps({
                         item,
                         onClick: () => {
@@ -255,7 +257,10 @@ const Select: FunctionComponent<SelectProps> = ({
                 />
               </Flex>
               {clearable && selectedItem && (
-                <ClearIcon clearSelection={clearSelection} />
+                <ClearIcon
+                  clearSelection={clearSelection}
+                  data-testid={props['data-testid']}
+                />
               )}
               {loading ? (
                 <Loading title="loading" />

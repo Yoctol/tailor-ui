@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { fireEvent, render, waitForElement } from 'test/test-utils';
+import { fireEvent, render, wait, waitForElement } from 'test/test-utils';
 
 import { Select } from '../Select';
 
@@ -72,52 +72,195 @@ describe('Select', () => {
     expect(input.value).toBe('Orange');
   });
 
-  it('should search correctly when change select input', async () => {
-    const { getByTestId, queryByTestId, queryByText } = render(
-      <ControlSelect searchable data-testid="select" />
-    );
+  describe('searchable', () => {
+    it('should search correctly when change select input', async () => {
+      const { getByTestId, queryByTestId, queryByText } = render(
+        <ControlSelect searchable data-testid="select" />
+      );
 
-    const input = getByTestId('select-input') as HTMLInputElement;
-    expect(input.value).toBe('Banana');
+      const input = getByTestId('select-input') as HTMLInputElement;
+      expect(input.value).toBe('Banana');
 
-    const select = getByTestId('select');
-    fireEvent.click(select);
+      const select = getByTestId('select');
+      fireEvent.click(select);
 
-    await waitForElement(() => getByTestId('select-menu'));
+      await waitForElement(() => getByTestId('select-menu'));
 
-    expect(input.value).toBe('');
-    expect(input.placeholder).toBe('Banana');
+      expect(input.value).toBe('');
+      expect(input.placeholder).toBe('Banana');
 
-    fireEvent.change(input, {
-      target: {
-        value: 'Orange',
-      },
+      fireEvent.change(input, {
+        target: {
+          value: 'Orange',
+        },
+      });
+
+      const orange = getByTestId('select-item-0');
+      fireEvent.click(orange);
+
+      expect(getByTestId('select-item-0')).toHaveTextContent('Orange');
+      expect(queryByTestId('select-item-1')).not.toBeInTheDocument();
+      expect(queryByText('Banana')).not.toBeInTheDocument();
     });
-
-    const orange = getByTestId('select-item-0');
-    fireEvent.click(orange);
-
-    expect(getByTestId('select-item-0')).toHaveTextContent('Orange');
-    expect(queryByTestId('select-item-1')).not.toBeInTheDocument();
-    expect(queryByText('Banana')).not.toBeInTheDocument();
   });
 
-  it('should create successfully when pass creatable', async () => {
-    const CreatableSelect = () => {
+  describe('creatable', () => {
+    it('should create successfully when pass creatable', async () => {
+      const CreatableSelect = () => {
+        const [loading, setLoading] = useState(false);
+        const [value, setValue] = useState<any>(DEFAULT_SELECT_OPTION);
+        const [options, setOptions] = useState(DEFAULT_OPTIONS);
+
+        return (
+          <Select
+            creatable
+            data-testid="select"
+            loading={loading}
+            value={value}
+            onChange={newValue => setValue(newValue)}
+            options={options}
+            isValidNewOption={name =>
+              !options.map(option => option.value).includes(name) &&
+              name.trim() !== ''
+            }
+            onCreateOption={name => {
+              const newOption = { label: name, value: name };
+              setLoading(true);
+              setTimeout(() => {
+                setOptions([...options, newOption]);
+                setValue(newOption);
+                setLoading(false);
+              }, 1000);
+            }}
+          />
+        );
+      };
+
+      jest.useFakeTimers();
+
+      const { getByTestId, queryByTitle, getByText, getByTitle } = render(
+        <CreatableSelect />
+      );
+
+      const input = getByTestId('select-input') as HTMLInputElement;
+      expect(input.value).toBe('Banana');
+
+      const select = getByTestId('select');
+      fireEvent.click(select);
+
+      await waitForElement(() => getByTestId('select-menu'));
+
+      fireEvent.change(input, {
+        target: {
+          value: 'XXXXXX',
+        },
+      });
+
+      const newOption = getByText('Create new option: XXXXXX');
+      expect(newOption).toBeInTheDocument();
+      fireEvent.click(newOption);
+
+      expect(getByTitle('loading')).toBeInTheDocument();
+
+      jest.runAllTimers();
+
+      expect(queryByTitle('loading')).not.toBeInTheDocument();
+      expect(input.value).toBe('XXXXXX');
+
+      jest.useRealTimers();
+    });
+
+    it('should not creatable when option is not valid', async () => {
+      const CreatableSelect = () => {
+        const [value, setValue] = useState<any>(DEFAULT_SELECT_OPTION);
+
+        return (
+          <Select
+            creatable
+            data-testid="select"
+            value={value}
+            onChange={newValue => setValue(newValue)}
+            options={DEFAULT_OPTIONS}
+            isValidNewOption={name => name === 'NOT_VALID'}
+          />
+        );
+      };
+
+      const { getByTestId, queryByText } = render(<CreatableSelect />);
+
+      const input = getByTestId('select-input') as HTMLInputElement;
+      expect(input.value).toBe('Banana');
+
+      const select = getByTestId('select');
+      fireEvent.click(select);
+
+      await waitForElement(() => getByTestId('select-menu'));
+
+      fireEvent.change(input, {
+        target: {
+          value: 'NOT_VALID',
+        },
+      });
+
+      const newOption = queryByText('Create new option: NOT_VALID');
+      expect(newOption).toBeInTheDocument();
+    });
+  });
+
+  describe('clearable', () => {
+    it('should clear value when click clear icon', async () => {
+      const ClearableSelect = () => {
+        const [value, setValue] = useState<any>(DEFAULT_SELECT_OPTION);
+
+        return (
+          <Select
+            clearable
+            data-testid="select"
+            value={value}
+            onChange={newValue => setValue(newValue)}
+            options={DEFAULT_OPTIONS}
+          />
+        );
+      };
+
+      const { getByTestId } = render(<ClearableSelect />);
+
+      const input = getByTestId('select-input') as HTMLInputElement;
+      expect(input.value).toBe('Banana');
+
+      const clearIcon = getByTestId('select-clear-icon');
+      fireEvent.click(clearIcon);
+
+      expect(input.value).toBe('');
+    });
+  });
+
+  describe('multiple', () => {
+    const MultipleSelect = () => {
       const [loading, setLoading] = useState(false);
-      const [value, setValue] = useState<any>(DEFAULT_SELECT_OPTION);
-      const [options, setOptions] = useState(DEFAULT_OPTIONS);
+      const [value, setValue] = useState([
+        { label: 'Banana', value: 'banana' },
+        { label: 'Orange', value: 'orange' },
+      ]);
+      const [options, setOptions] = useState([
+        { label: 'Banana', value: 'banana' },
+        { label: 'Orange', value: 'orange' },
+        { label: 'Apple', value: 'apple' },
+        { label: 'Mango', value: 'mango' },
+      ]);
 
       return (
         <Select
           creatable
           data-testid="select"
           loading={loading}
+          width="360px"
+          multiple
           value={value}
-          onChange={newValue => setValue(newValue)}
+          onChange={newValue => setValue(newValue as any)}
           options={options}
           isValidNewOption={name =>
-            !options.map(option => option.value).includes(name) &&
+            !options.map(option => option.label).includes(name) &&
             name.trim() !== ''
           }
           onCreateOption={name => {
@@ -125,7 +268,7 @@ describe('Select', () => {
             setLoading(true);
             setTimeout(() => {
               setOptions([...options, newOption]);
-              setValue(newOption);
+              setValue(prevValue => [...prevValue, newOption]);
               setLoading(false);
             }, 1000);
           }}
@@ -133,71 +276,74 @@ describe('Select', () => {
       );
     };
 
-    jest.useFakeTimers();
+    it('should display multi option', () => {
+      const { getByText, baseElement } = render(<MultipleSelect />);
 
-    const { getByTestId, queryByTitle, getByText, getByTitle } = render(
-      <CreatableSelect />
-    );
+      expect(baseElement).toMatchSnapshot();
 
-    const input = getByTestId('select-input') as HTMLInputElement;
-    expect(input.value).toBe('Banana');
-
-    const select = getByTestId('select');
-    fireEvent.click(select);
-
-    await waitForElement(() => getByTestId('select-menu'));
-
-    fireEvent.change(input, {
-      target: {
-        value: 'XXXXXX',
-      },
+      expect(getByText('Banana')).toBeInTheDocument();
+      expect(getByText('Orange')).toBeInTheDocument();
     });
 
-    const newOption = getByText('Create new option: XXXXXX');
-    expect(newOption).toBeInTheDocument();
-    fireEvent.click(newOption);
-
-    expect(getByTitle('loading')).toBeInTheDocument();
-
-    jest.runAllTimers();
-
-    expect(queryByTitle('loading')).not.toBeInTheDocument();
-    expect(input.value).toBe('XXXXXX');
-  });
-
-  it('should not creatable when option is not valid', async () => {
-    const CreatableSelect = () => {
-      const [value, setValue] = useState<any>(DEFAULT_SELECT_OPTION);
-
-      return (
-        <Select
-          creatable
-          data-testid="select"
-          value={value}
-          onChange={newValue => setValue(newValue)}
-          options={DEFAULT_OPTIONS}
-          isValidNewOption={name => name === 'NOT_VALID'}
-        />
+    it('should add selected option when click other option', async () => {
+      const { getByTestId, getByText, queryByTestId } = render(
+        <MultipleSelect />
       );
-    };
 
-    const { getByTestId, queryByText } = render(<CreatableSelect />);
+      const select = getByTestId('select');
+      fireEvent.click(select);
 
-    const input = getByTestId('select-input') as HTMLInputElement;
-    expect(input.value).toBe('Banana');
+      await waitForElement(() => getByTestId('select-menu'));
 
-    const select = getByTestId('select');
-    fireEvent.click(select);
+      fireEvent.click(getByText('Apple'));
 
-    await waitForElement(() => getByTestId('select-menu'));
+      expect(getByTestId('select-menu')).toBeInTheDocument();
 
-    fireEvent.change(input, {
-      target: {
-        value: 'NOT_VALID',
-      },
+      fireEvent.click(getByText('Mango'));
+
+      fireEvent.click(select);
+
+      await wait(() =>
+        expect(queryByTestId('select-menu')).not.toBeInTheDocument()
+      );
+      expect(getByText('Apple')).toBeInTheDocument();
+      expect(getByText('Mango')).toBeInTheDocument();
     });
 
-    const newOption = queryByText('Create new option: NOT_VALID');
-    expect(newOption).toBeInTheDocument();
+    it('should remove selected option when click clear ', async () => {
+      const { getByTestId, queryByText } = render(<MultipleSelect />);
+
+      fireEvent.click(getByTestId('select-selected-option-1-clear-icon'));
+      fireEvent.click(getByTestId('select-selected-option-0-clear-icon'));
+
+      expect(queryByText('Banana')).not.toBeInTheDocument();
+      expect(queryByText('Orange')).not.toBeInTheDocument();
+    });
+
+    it('should remove last selected option when press backspace ', async () => {
+      const { getByTestId, queryByText, getByText, queryByTestId } = render(
+        <MultipleSelect />
+      );
+
+      const select = getByTestId('select');
+      fireEvent.click(select);
+
+      const input = getByTestId('select-input') as HTMLInputElement;
+      fireEvent.keyDown(input, {
+        key: 'Backspace',
+        currentTarget: {
+          value: '',
+        },
+      });
+
+      fireEvent.click(select);
+
+      await wait(() =>
+        expect(queryByTestId('select-menu')).not.toBeInTheDocument()
+      );
+
+      expect(getByText('Banana')).toBeInTheDocument();
+      expect(queryByText('Orange')).not.toBeInTheDocument();
+    });
   });
 });

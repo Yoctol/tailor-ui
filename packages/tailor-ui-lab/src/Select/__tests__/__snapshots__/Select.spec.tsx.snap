@@ -1,5 +1,321 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Select multiple should display multi option 1`] = `
+<body>
+  <div
+    portal-container=""
+  />
+  <div
+    aria-live="polite"
+    aria-relevant="additions text"
+    id="a11y-status-message"
+    role="status"
+    style="border: 0px; height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px;"
+  />
+  .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  overflow: hidden;
+  -webkit-flex: auto;
+  -ms-flex: auto;
+  flex: auto;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.c7 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  line-height: 1;
+  cursor: default;
+}
+
+.c7 svg {
+  fill: #8b8b8b;
+  vertical-align: middle;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+}
+
+.c7.c7.c7 svg {
+  fill: #bfbfbf;
+  width: 24px;
+  height: 24px;
+}
+
+.c5 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  line-height: 1;
+  cursor: pointer;
+  margin-left: 0.25rem;
+}
+
+.c5 svg {
+  fill: #8b8b8b;
+  vertical-align: middle;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+}
+
+.c5.c5.c5 svg {
+  width: 16px;
+  height: 16px;
+}
+
+.c6 {
+  visibility: hidden;
+  position: absolute;
+  pointer-events: none;
+}
+
+.c0 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  cursor: pointer;
+}
+
+.c4 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  max-width: 100%;
+  height: 28px;
+  margin: 2px 8px 2px 0;
+  padding: 0 8px;
+  border: 1px solid;
+  border-radius: 0.25rem;
+  border-color: #6B88c5;
+  background-color: #f8f8fc;
+  color: #6B88c5;
+  font-size: 0.875rem;
+}
+
+.c4 > span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c4 svg {
+  fill: #d5d8e8;
+}
+
+.c4:hover svg {
+  fill: #6B88c5;
+}
+
+.c1 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  max-width: 100%;
+  border: 1px solid;
+  border-radius: 0.25rem;
+  border-color: #bfbfbf;
+  outline: none;
+  background-color: #ffffff;
+  color: #373737;
+  line-height: 1.5;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  min-height: 2.25rem;
+  padding: 4px 0.75rem;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+}
+
+.c1:hover {
+  border-color: #3c5ad0;
+}
+
+.c1 input {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  width: 100%;
+  overflow: hidden;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  text-overflow: ellipsis;
+  pointer-events: none;
+}
+
+.c1 input::-webkit-input-placeholder {
+  color: #bfbfbf;
+}
+
+.c1 input::-moz-placeholder {
+  color: #bfbfbf;
+}
+
+.c1 input:-ms-input-placeholder {
+  color: #bfbfbf;
+}
+
+.c1 input::placeholder {
+  color: #bfbfbf;
+}
+
+.c1 input {
+  font-size: 1rem;
+}
+
+.c8 .c3 {
+  border-color: #bfbfbf;
+  background-color: #f6f6f6;
+  color: #bfbfbf;
+  pointer-events: none;
+}
+
+<div>
+    <div
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      aria-labelledby="downshift-8-label"
+      class="c0"
+      role="combobox"
+      style="width: 360px;"
+    >
+      <div
+        class="c1"
+        data-testid="select"
+        id="downshift-8"
+      >
+        <div
+          class="c2"
+          overflow="hidden"
+        >
+          <div
+            class="c3 c4"
+            data-testid="select-selected-option-0"
+          >
+            <span>
+              Banana
+            </span>
+            <i
+              class="c5"
+              cursor="pointer"
+              data-testid="select-selected-option-0-clear-icon"
+              size="16"
+            >
+              <svg
+                fill="currentColor"
+                height="1em"
+                stroke="currentColor"
+                stroke-width="0"
+                viewBox="0 0 24 24"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+                />
+              </svg>
+            </i>
+          </div>
+          <div
+            class="c3 c4"
+            data-testid="select-selected-option-1"
+          >
+            <span>
+              Orange
+            </span>
+            <i
+              class="c5"
+              cursor="pointer"
+              data-testid="select-selected-option-1-clear-icon"
+              size="16"
+            >
+              <svg
+                fill="currentColor"
+                height="1em"
+                stroke="currentColor"
+                stroke-width="0"
+                viewBox="0 0 24 24"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+                />
+              </svg>
+            </i>
+          </div>
+          <input
+            aria-autocomplete="list"
+            aria-labelledby="downshift-8-label"
+            autocomplete="off"
+            data-testid="select-input"
+            id="downshift-8-input"
+            placeholder=""
+            readonly=""
+            style="width: 18px; box-sizing: content-box;"
+            value=""
+          />
+          <span
+            class="c6"
+            style="font-size: 16px;"
+          />
+        </div>
+        <i
+          style="transform: rotate(180deg); pointer-events: none; display: inline-flex;"
+        >
+          <i
+            class="c7"
+            cursor="default"
+            fill="gray400"
+            size="24"
+          >
+            <svg
+              fill="currentColor"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="0"
+              viewBox="0 0 24 24"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"
+              />
+            </svg>
+          </i>
+        </i>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
 exports[`Select should render correctly 1`] = `
 .c2 {
   display: -webkit-box;
