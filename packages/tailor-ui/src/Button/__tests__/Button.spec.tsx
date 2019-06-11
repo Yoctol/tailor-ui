@@ -1,5 +1,5 @@
 import React from 'react';
-import { MdDelete } from 'react-icons/md';
+import { MdCheck, MdDelete } from 'react-icons/md';
 
 import { fireEvent, render } from 'test/test-utils';
 
@@ -14,26 +14,96 @@ describe('Button', () => {
 
   it('should render different button type', () => {
     const { container } = render(
-      <Button variant="primary">Text Button</Button>
+      <>
+        <Button variant="primary">Primary</Button>
+        <Button variant="primary-invert">Primary Invert</Button>
+        <Button variant="danger">Danger</Button>
+        <Button variant="danger-invert">Danger Invert</Button>
+        <Button variant="regular">Regular</Button>
+        <Button variant="normal">Normal</Button>
+      </>
     );
 
     expect(container.firstChild).toMatchSnapshot();
   });
 
   it('should render rounded button', () => {
-    const { container } = render(<Button rounded>Text Button</Button>);
+    const { container } = render(
+      <>
+        <Button variant="primary" rounded>
+          Primary
+        </Button>
+        <Button variant="primary-invert" rounded>
+          Primary Invert
+        </Button>
+        <Button variant="danger" rounded>
+          Danger
+        </Button>
+        <Button variant="danger-invert" rounded>
+          Danger Invert
+        </Button>
+        <Button variant="regular" rounded>
+          Regular
+        </Button>
+        <Button variant="normal" rounded>
+          Normal
+        </Button>
+      </>
+    );
 
     expect(container.firstChild).toMatchSnapshot();
   });
 
   it('should render loading button', () => {
-    const { container } = render(<Button loading>Text Button</Button>);
+    const { container } = render(
+      <>
+        <Button variant="primary" loading>
+          Primary
+        </Button>
+        <Button variant="primary-invert" loading>
+          Primary Invert
+        </Button>
+        <Button variant="danger" loading>
+          Danger
+        </Button>
+        <Button variant="danger-invert" loading>
+          Danger Invert
+        </Button>
+        <Button variant="regular" loading>
+          Regular
+        </Button>
+        <Button variant="normal" loading>
+          Normal
+        </Button>
+      </>
+    );
 
     expect(container.firstChild).toMatchSnapshot();
   });
 
   it('should render disabled button', () => {
-    const { container } = render(<Button disabled>Text Button</Button>);
+    const { container } = render(
+      <>
+        <Button variant="primary" disabled>
+          Primary
+        </Button>
+        <Button variant="primary-invert" disabled>
+          Primary Invert
+        </Button>
+        <Button variant="danger" disabled>
+          Danger
+        </Button>
+        <Button variant="danger-invert" disabled>
+          Danger Invert
+        </Button>
+        <Button variant="regular" disabled>
+          Regular
+        </Button>
+        <Button variant="normal" disabled>
+          Normal
+        </Button>
+      </>
+    );
 
     expect(container.firstChild).toMatchSnapshot();
   });
@@ -49,6 +119,21 @@ describe('Button', () => {
       <Button variant="danger" icon={MdDelete}>
         Delete
       </Button>
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  it('should render rounded icon button', () => {
+    const { container } = render(
+      <>
+        <Button icon={MdCheck} variant="primary" rounded />
+        <Button icon={MdCheck} variant="primary-invert" rounded />
+        <Button icon={MdCheck} variant="danger" rounded />
+        <Button icon={MdCheck} variant="danger-invert" rounded />
+        <Button icon={MdCheck} variant="regular" rounded />
+        <Button icon={MdCheck} variant="normal" rounded />
+      </>
     );
 
     expect(container.firstChild).toMatchSnapshot();

@@ -5,7 +5,7 @@ route: /components/button
 ---
 
 import { PropsTable, Playground } from 'docz';
-import { MdArrowForward } from 'react-icons/md';
+import { MdArrowForward, MdCheck } from 'react-icons/md';
 import { Button } from 'tailor-ui';
 
 # Button
@@ -114,6 +114,19 @@ import { MdArrowForward } from 'react-icons/md';
   <Button icon={MdArrowForward} variant="normal" ml="2">
     Normal
   </Button>
+</Playground>
+
+```js
+import { MdCheck } from 'react-icons/md';
+```
+
+<Playground>
+  <Button icon={MdCheck} variant="primary" rounded />
+  <Button icon={MdCheck} variant="primary-invert" rounded ml="2" />
+  <Button icon={MdCheck} variant="danger" rounded ml="2" />
+  <Button icon={MdCheck} variant="danger-invert" rounded ml="2" />
+  <Button icon={MdCheck} variant="regular" rounded ml="2" />
+  <Button icon={MdCheck} variant="normal" rounded ml="2" />
 </Playground>
 
 ### Disabled
