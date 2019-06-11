@@ -1,6 +1,6 @@
 import fuzzaldrin from 'fuzzaldrin-plus';
 
-import { Option } from './SelectOptions';
+import { CreateOption, Option } from './SelectOptions';
 
 export const fuzzyFilter = (itemToString: (item: Option) => string) => {
   if (itemToString) {
@@ -19,7 +19,7 @@ export const fuzzyFilter = (itemToString: (item: Option) => string) => {
   return (items: Option[], input: string) => fuzzaldrin.filter(items, input);
 };
 
-export const itemToString = (item?: Option) => {
+export const itemToString = (item?: Option | CreateOption) => {
   if (!item) {
     return '';
   }
