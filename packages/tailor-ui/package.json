@@ -32,7 +32,6 @@
     "@tailor-ui/hooks": "^0.1.4",
     "@tailor-ui/theme": "^0.0.4",
     "@tailor-ui/utils": "^0.2.4",
-    "html-tags": "^3.0.0",
     "moment": "^2.24.0",
     "polished": "^3.4.0",
     "prop-types": "^15.7.1",
@@ -41,10 +40,8 @@
     "rc-time-picker": "^3.6.6",
     "react-autosize-textarea": "^7.0.0",
     "react-dropzone": "10.1.5",
-    "react-html-attributes": "^1.4.6",
     "react-intl-tel-input": "^7.0.1",
     "react-select": "^2.4.3",
-    "react-textarea-autosize": "^7.1.0",
     "styled-normalize": "^8.0.6",
     "styled-system": "^4.2.4"
   },
