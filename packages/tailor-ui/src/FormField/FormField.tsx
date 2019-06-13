@@ -5,6 +5,7 @@ import React, {
   useEffect,
   useState,
 } from 'react';
+import { animated, useTransition } from 'react-spring';
 
 import { Box } from '../Layout';
 import { useUID } from '../UIProvider/UIDContext';
@@ -26,7 +27,7 @@ const FormField: FunctionComponent<FormFieldProps> = ({
   validator,
   validationMessage,
   children,
-  ...props
+  ...otherProps
 }) => {
   const getUID = useUID();
   const [labelId, setLabelId] = useState(() => getUID());
@@ -52,11 +53,30 @@ const FormField: FunctionComponent<FormFieldProps> = ({
     handleValidation();
   }, [handleValidation]);
 
+  const transitions = useTransition(invalid, null, {
+    from: {
+      height: 0,
+      opacity: 0,
+    },
+    enter: {
+      height: 22,
+      opacity: 1,
+    },
+    leave: {
+      height: 0,
+      opacity: 0,
+    },
+    config: {
+      tension: 320,
+      friction: 24,
+    },
+  });
+
   return (
     <FormFieldContext.Provider
       value={{ invalid, setValue, setLabelId, labelId }}
     >
-      <Box mb="16px" {...props}>
+      <Box mb="16px" {...otherProps}>
         {label && (
           <Label required={required} htmlFor={labelId}>
             {label}
@@ -64,7 +84,15 @@ const FormField: FunctionComponent<FormFieldProps> = ({
         )}
 
         {children}
-        {invalid && <ValidationMessage>{message}</ValidationMessage>}
+
+        {transitions.map(
+          ({ key, item, props }) =>
+            item && (
+              <animated.div key={key} style={props}>
+                <ValidationMessage>{message}</ValidationMessage>
+              </animated.div>
+            )
+        )}
       </Box>
     </FormFieldContext.Provider>
   );

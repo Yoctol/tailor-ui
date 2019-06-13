@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { string } from 'yup';
 
-import { fireEvent, render } from 'test/test-utils';
+import { fireEvent, render, wait } from 'test/test-utils';
 
 import { FormField } from '../FormField';
 import { Input } from '../../Input';
@@ -46,7 +46,9 @@ describe('FormField', () => {
 
       const message = await findByText('Error Message');
 
-      expect(message).toBeInTheDocument();
+      await wait(() =>
+        expect(message.parentElement).toHaveStyle('opacity: 1; height: 22px')
+      );
       expect(container.firstChild).toMatchSnapshot();
     });
 
@@ -71,6 +73,7 @@ describe('FormField', () => {
       const { getByTestId, findByText, queryByText } = render(<TextInput />);
 
       expect(queryByText('Error Message')).not.toBeInTheDocument();
+
       fireEvent.change(getByTestId('input'), {
         target: {
           value: 'error',
