@@ -1,71 +1,17 @@
-import React, { FunctionComponent, ReactNode, useState } from 'react';
+import React, {
+  FunctionComponent,
+  ReactNode,
+  useCallback,
+  useEffect,
+  useState,
+} from 'react';
 
 import { Box } from '../Layout';
 import { useUID } from '../UIProvider/UIDContext';
 
 import FormFieldContext, { Value } from './FormFieldContext';
 import { Label, ValidationMessage } from './styles';
-
-export type Validator =
-  | ((value?: Value) => string | null)
-  | ({
-      rule: (value?: Value) => boolean;
-      message: string;
-    })[];
-
-export interface Validate {
-  value?: Value;
-  validationMessage?: ReactNode;
-  validator?: Validator;
-}
-
-export const validate = ({ value, validator, validationMessage }: Validate) => {
-  if (validationMessage) {
-    return {
-      invalid: true,
-      message: validationMessage,
-    };
-  }
-
-  if (!validator) {
-    return {
-      invalid: false,
-      message: null,
-    };
-  }
-
-  if (validator instanceof Function) {
-    const message = validator(value);
-    return {
-      invalid: Boolean(message),
-      message,
-    };
-  }
-
-  if (Array.isArray(validator)) {
-    let returnMessage = null;
-    let invalid = false;
-
-    validator.some(({ rule, message }) => {
-      if (rule(value)) {
-        returnMessage = message;
-        invalid = true;
-        return true;
-      }
-      return false;
-    });
-
-    return {
-      invalid,
-      message: returnMessage,
-    };
-  }
-
-  return {
-    invalid: false,
-    message: null,
-  };
-};
+import { Validator, validate } from './validate';
 
 export interface FormFieldProps {
   label?: string;
@@ -85,12 +31,26 @@ const FormField: FunctionComponent<FormFieldProps> = ({
   const getUID = useUID();
   const [labelId, setLabelId] = useState(() => getUID());
   const [value, setValue] = useState<Value>();
-
-  const { invalid, message } = validate({
-    value,
-    validator,
-    validationMessage,
+  const [{ invalid, message }, setValidationResult] = useState({
+    invalid: false,
+    message: null,
   });
+
+  const handleValidation = useCallback(async () => {
+    if (value !== undefined) {
+      const result = await validate({
+        value,
+        validator,
+        validationMessage,
+      });
+
+      setValidationResult(result);
+    }
+  }, [validationMessage, validator, value]);
+
+  useEffect(() => {
+    handleValidation();
+  }, [handleValidation]);
 
   return (
     <FormFieldContext.Provider

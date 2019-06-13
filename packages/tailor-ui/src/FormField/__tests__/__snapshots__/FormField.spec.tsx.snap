@@ -85,6 +85,7 @@ exports[`FormField should render correctly 1`] = `
     class="c2"
     id="input-id"
     placeholder="Placeholder"
+    value=""
   />
 </div>
 `;
@@ -174,6 +175,7 @@ exports[`FormField should render generated id correctly 1`] = `
     class="c2"
     id="tailor_uid_1"
     placeholder="Placeholder"
+    value=""
   />
 </div>
 `;
@@ -272,6 +274,7 @@ exports[`FormField validationMessage should render FormField with error message 
     class="c2"
     id="tailor_uid_1"
     placeholder="Placeholder"
+    value=""
   />
   <div
     class="c3"

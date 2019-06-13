@@ -7,6 +7,7 @@ route: /components/form-field
 import { PropsTable, Playground } from 'docz';
 import { Input, FormField } from 'tailor-ui';
 import { Select } from '@tailor-ui/lab';
+import { string } from 'yup';
 
 # FormField
 
@@ -21,10 +22,10 @@ import { Select } from '@tailor-ui/lab';
 
 <Playground>
   <FormField label="Input" validationMessage="Error Message">
-    <Input placeholder="Placeholder" />
+    <Input placeholder="Placeholder" defaultValue="" />
   </FormField>
   <FormField required label="Required Input" validationMessage="Error Message">
-    <Input placeholder="Placeholder" />
+    <Input placeholder="Placeholder" defaultValue="" />
   </FormField>
 </Playground>
 
@@ -39,6 +40,24 @@ import { Select } from '@tailor-ui/lab';
   </FormField>
 </Playground>
 
+### Use yup validator with Input
+
+<Playground>
+  <FormField
+    label="Please Type `error`"
+    validator={string().test(
+      'is-error',
+      'Error Message',
+      value => value !== 'error'
+    )}
+  >
+    <Input defaultValue="valid input" placeholder="Placeholder" />
+  </FormField>
+  <FormField required label="Required Input" validator={string().required()}>
+    <Input placeholder="Placeholder" defaultValue="" />
+  </FormField>
+</Playground>
+
 ### use function validator with Input
 
 <Playground>
@@ -47,14 +66,14 @@ import { Select } from '@tailor-ui/lab';
     label="Please Type `error`"
     validator={value => (value === 'error' ? 'Error Message' : null)}
   >
-    <Input placeholder="Placeholder" />
+    <Input placeholder="Placeholder" defaultValue="" />
   </FormField>
   <FormField
     required
     label="Please Type `error`"
     validator={value => (value === 'error' ? 'Error Message' : null)}
   >
-    <Input placeholder="Placeholder" />
+    <Input placeholder="Placeholder" defaultValue="" />
   </FormField>
 </Playground>
 
@@ -75,7 +94,7 @@ import { Select } from '@tailor-ui/lab';
       },
     ]}
   >
-    <Input placeholder="Placeholder" />
+    <Input placeholder="Placeholder" defaultValue="" />
   </FormField>
   <FormField
     required
@@ -91,6 +110,6 @@ import { Select } from '@tailor-ui/lab';
       },
     ]}
   >
-    <Input placeholder="Placeholder" />
+    <Input placeholder="Placeholder" defaultValue="" />
   </FormField>
 </Playground>
