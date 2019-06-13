@@ -1,16 +1,5 @@
-/* eslint import/no-extraneous-dependencies: off */
-import commonjs from 'rollup-plugin-commonjs';
-import { sizeSnapshot } from 'rollup-plugin-size-snapshot';
+import { rollup } from '../../../config/rollup.config';
 
-export default {
-  input: 'lib/index.js',
-  output: [
-    {
-      file: 'lib/index.cjs.js',
-      format: 'umd',
-      name: '@tailor-ui/theme',
-      sourcemap: false,
-    },
-  ],
-  plugins: [sizeSnapshot(), commonjs()],
-};
+export default rollup({
+  name: '@tailor-ui/theme',
+});
