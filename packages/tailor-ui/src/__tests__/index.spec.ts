@@ -4,6 +4,7 @@ import {
   Button,
   Card,
   Checkbox,
+  Container,
   DatePicker,
   Divider,
   Drawer,
@@ -44,6 +45,7 @@ describe('index', () => {
     expect(Card).toBeDefined();
     expect(Checkbox).toBeDefined();
     expect(Checkbox.Group).toBeDefined();
+    expect(Container).toBeDefined();
     expect(DatePicker).toBeDefined();
     expect(Divider).toBeDefined();
     expect(Drawer).toBeDefined();
