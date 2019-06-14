@@ -1,0 +1,104 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Container should render correctly 1`] = `
+.c1 {
+  padding: 24px 32px 32px;
+  border-radius: 1rem;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px 0 #cbd1e0;
+  color: #373737;
+  font-size: 1rem;
+}
+
+.c1 + .c0 {
+  margin-top: 16px;
+}
+
+.c2 {
+  font-size: 1.125rem;
+  margin: 0;
+  color: #373737;
+  font-weight: bold;
+  line-height: 1.5;
+  margin-bottom: 24px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid;
+  border-color: #d5d8e8;
+}
+
+.c4 + .c3 {
+  margin-top: 32px;
+}
+
+.c5 {
+  font-size: 1rem;
+  margin: 0;
+  color: #373737;
+  font-weight: bold;
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+
+<div>
+  <div>
+    <article
+      class="c0 c1"
+    >
+      <h4
+        class="c2"
+      >
+        Title A
+      </h4>
+      <section
+        class="c3 c4"
+      >
+        <h5
+          class="c5"
+        >
+          Subtitle #1
+        </h5>
+        Subtitles are text derived from either a transcript or screenplay of the dialog or commentary in films.
+      </section>
+      <section
+        class="c3 c4"
+      >
+        <h5
+          class="c5"
+        >
+          Subtitle #2
+        </h5>
+        Subtitles are text derived from either a transcript or screenplay of the dialog or commentary in films.
+      </section>
+    </article>
+    <article
+      class="c0 c1"
+    >
+      <h4
+        class="c2"
+      >
+        Title B
+      </h4>
+      <section
+        class="c3 c4"
+      >
+        <h5
+          class="c5"
+        >
+          Subtitle #1
+        </h5>
+        Subtitles are text derived from either a transcript or screenplay of the dialog or commentary in films.
+      </section>
+      <section
+        class="c3 c4"
+      >
+        <h5
+          class="c5"
+        >
+          Subtitle #2
+        </h5>
+        Subtitles are text derived from either a transcript or screenplay of the dialog or commentary in films.
+      </section>
+    </article>
+  </div>
+</div>
+`;
