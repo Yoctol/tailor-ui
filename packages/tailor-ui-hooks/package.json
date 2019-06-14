@@ -1,6 +1,6 @@
 {
   "name": "@tailor-ui/hooks",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Tailor-UI Hooks - React Hooks for Tailor-UI.",
   "author": "dev@yoctol.com",
   "homepage": "https://tailor-ui.netlify.com/",
@@ -35,7 +35,7 @@
     "react-dom": ">=16.8.0"
   },
   "dependencies": {
-    "@tailor-ui/utils": "^0.2.4",
+    "@tailor-ui/utils": "^0.2.5",
     "lodash.debounce": "^4.0.8",
     "resize-observer-polyfill": "^1.5.1"
   }

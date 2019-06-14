@@ -1,6 +1,6 @@
 {
   "name": "tailor-ui",
-  "version": "0.13.5",
+  "version": "0.14.0",
   "description": "A bespoke UI collection for building web application.",
   "author": "dev@yoctol.com",
   "homepage": "https://tailor-ui.netlify.com",
@@ -29,9 +29,9 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.4.5",
-    "@tailor-ui/hooks": "^0.1.4",
-    "@tailor-ui/theme": "^0.0.4",
-    "@tailor-ui/utils": "^0.2.4",
+    "@tailor-ui/hooks": "^0.1.5",
+    "@tailor-ui/theme": "^0.0.5",
+    "@tailor-ui/utils": "^0.2.5",
     "moment": "^2.24.0",
     "polished": "^3.4.0",
     "prop-types": "^15.7.1",
