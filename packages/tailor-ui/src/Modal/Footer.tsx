@@ -4,7 +4,7 @@ import { Box, Flex } from '../Layout';
 import { Button, ButtonProps } from '../Button';
 
 export interface FooterProps {
-  cancelable?: boolean;
+  closable?: boolean;
   cancelText?: string | null;
   confirmText?: string;
   onConfirm?: () => void;
@@ -14,7 +14,7 @@ export interface FooterProps {
 }
 
 const Footer: FunctionComponent<FooterProps> = ({
-  cancelable = true,
+  closable = true,
   cancelText,
   confirmText,
   onCancel,
@@ -24,7 +24,7 @@ const Footer: FunctionComponent<FooterProps> = ({
 }) => (
   <Flex width="100%">
     <Box ml="auto">
-      {cancelable && (
+      {closable && (
         <Button variant="normal" onClick={onCancel} {...cancelButtonProps}>
           {cancelText}
         </Button>

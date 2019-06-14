@@ -327,7 +327,7 @@ const modal = useModal();
 
 </Playground>
 
-##### Set cancelable to true
+##### Set closable to true
 
 <Playground>
   {() => {
@@ -337,7 +337,7 @@ const modal = useModal();
       <Button
         onClick={async function() {
           const confirmed = await modal.error({
-            cancelable: true,
+            closable: true,
             title: 'Danger',
             content: 'Modal windows are sometimes called heavy windows or modal dialogs because they often display a dialog box. User interfaces typically use modal windows to command user awareness and to display emergency states, though interaction designers argue they are ineffective for that use.',
             confirmText: 'Delete',
@@ -380,7 +380,7 @@ const modal = useModal();
 
 | Property    | Type                | Default                                                   | Description                                                                                                                                                                    |
 | ----------- | ------------------- | --------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| cancelable  | boolean             | `true` if call `model.confirm`, otherwise will be `false` | Show cancel button or not                                                                                                                                                      |
+| closable    | boolean             | `true` if call `model.confirm`, otherwise will be `false` | Show cancel button or not                                                                                                                                                      |
 | cancelText  | string              | Cancel                                                    | Text of the Cancel button                                                                                                                                                      |
 | confirmText | string              | Conrim                                                    | Text of the Conrim button                                                                                                                                                      |
 | onCancel    | function            | -                                                         | Specify a function that will be called when the user clicks the Cancel button. The parameter of this function is a function whose execution should include closing the dialog. |

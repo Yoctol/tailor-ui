@@ -55,6 +55,7 @@ interface ModalFooterProps extends FooterProps {
 
 const ModalFooter: FunctionComponent<ModalFooterProps> = ({
   footer,
+  closable,
   cancelText,
   confirmText,
   onCancel,
@@ -70,6 +71,7 @@ const ModalFooter: FunctionComponent<ModalFooterProps> = ({
         footer
       ) : (
         <Footer
+          closable={closable}
           cancelText={cancelText || locale.Modal.cancelText}
           confirmText={confirmText || locale.Modal.confirmText}
           onCancel={onCancel}
@@ -105,6 +107,7 @@ const Modal: FunctionComponent<ModalProps> = ({
     <ModalContent>{children}</ModalContent>
     <ModalFooter
       footer={footer}
+      closable={closable}
       cancelText={cancelText}
       confirmText={confirmText}
       onCancel={onCancel}
