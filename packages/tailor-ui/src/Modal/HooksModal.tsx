@@ -24,7 +24,7 @@ export interface ModalOptions {
   onCancel?: () => void;
   onOpenComplete?: () => void;
   onCloseComplete?: () => void;
-  cancelable?: boolean;
+  closable?: boolean;
 }
 
 export type Trigger = (
@@ -45,7 +45,7 @@ interface ModalOptionsState {
   onCancel: () => void;
   onOpenComplete?: () => void;
   onCloseComplete?: () => void;
-  cancelable: boolean;
+  closable: boolean;
   type: ModalTypes;
 }
 
@@ -54,7 +54,7 @@ const EffectModal: FunctionComponent<EffectModalProps> = ({ triggerRef }) => {
   const [visible, setVisible] = useState(false);
   const [modalOptions, setModalOptions] = useState<ModalOptionsState>({
     type: 'confirm',
-    cancelable: true,
+    closable: true,
     title: '',
     content: '',
     confirmText: '',
@@ -78,7 +78,7 @@ const EffectModal: FunctionComponent<EffectModalProps> = ({ triggerRef }) => {
   const trigger = (options: ModalOptions, type: ModalTypes): Promise<boolean> =>
     new Promise(resolve => {
       const {
-        cancelable = type === 'confirm',
+        closable = type === 'confirm',
         title = '',
         content = '',
         confirmText = locale.Modal.confirmText,
@@ -91,7 +91,7 @@ const EffectModal: FunctionComponent<EffectModalProps> = ({ triggerRef }) => {
 
       setModalOptions({
         type,
-        cancelable,
+        closable,
         title,
         content,
         confirmText,
@@ -131,7 +131,7 @@ const EffectModal: FunctionComponent<EffectModalProps> = ({ triggerRef }) => {
 
   const {
     title,
-    cancelable,
+    closable,
     content,
     cancelText,
     confirmText,
@@ -142,7 +142,7 @@ const EffectModal: FunctionComponent<EffectModalProps> = ({ triggerRef }) => {
 
   return (
     <BaseModal
-      cancelable={cancelable}
+      closable={closable}
       statusBar={type !== 'confirm' ? type : null}
       visible={visible}
       onCancel={onCancel}
@@ -150,13 +150,13 @@ const EffectModal: FunctionComponent<EffectModalProps> = ({ triggerRef }) => {
       <ModalHeader
         icon={icon}
         title={title}
-        closable={cancelable}
+        closable={closable}
         onCancel={onCancel}
       />
       <ModalContent>{content}</ModalContent>
       <FooterWrapper>
         <Footer
-          cancelable={cancelable}
+          closable={closable}
           cancelText={cancelText}
           confirmText={confirmText}
           onCancel={onCancel}

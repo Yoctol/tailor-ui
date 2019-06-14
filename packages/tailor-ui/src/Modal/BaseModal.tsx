@@ -68,7 +68,7 @@ export interface BaseModalProps {
   onOpenComplete?: () => void;
   onCloseComplete?: () => void;
   size?: Size;
-  cancelable?: boolean;
+  closable?: boolean;
   statusBar?: StatusType | null;
   visible: boolean;
 }
@@ -79,7 +79,7 @@ const BaseModal: FunctionComponent<BaseModalProps> = ({
   onCancel,
   onOpenComplete,
   onCloseComplete,
-  cancelable = true,
+  closable = true,
   size = 'md',
   statusBar = null,
   ...otherProps
@@ -88,7 +88,7 @@ const BaseModal: FunctionComponent<BaseModalProps> = ({
   const springRef = useRef(null);
 
   useKeydown({
-    listening: cancelable ? visible : false,
+    listening: closable ? visible : false,
     keyCode: ESC_KEY_CODE,
     onKeydown: onCancel,
   });
@@ -135,10 +135,7 @@ const BaseModal: FunctionComponent<BaseModalProps> = ({
     <Stack defaultOrder={StackingOrder.OVERLAY}>
       {stackingOrder => (
         <>
-          <Backdrop
-            visible={visible}
-            onClick={() => cancelable && onCancel()}
-          />
+          <Backdrop visible={visible} onClick={() => closable && onCancel()} />
           {transitions.map(
             ({ item, key, props }) =>
               item && (
