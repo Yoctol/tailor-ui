@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react';
+import React, { FunctionComponent, ReactNode } from 'react';
 
 import {
   StyledContainer,
@@ -8,7 +8,7 @@ import {
 } from './styles';
 
 export interface SectionProps {
-  title?: string;
+  title?: ReactNode;
 }
 
 const Section: FunctionComponent<SectionProps> = ({
@@ -25,7 +25,7 @@ const Section: FunctionComponent<SectionProps> = ({
 };
 
 export interface ContainerProps {
-  title?: string;
+  title?: ReactNode;
 }
 
 const Container: FunctionComponent<ContainerProps> & {
