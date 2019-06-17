@@ -1,5 +1,7 @@
 import React, {
   FunctionComponent,
+  KeyboardEventHandler,
+  MouseEventHandler,
   MutableRefObject,
   useEffect,
   useState,
@@ -20,8 +22,8 @@ export interface ModalOptions {
   content?: string;
   confirmText?: string;
   cancelText?: string;
-  onConfirm?: () => void;
-  onCancel?: () => void;
+  onConfirm?: MouseEventHandler;
+  onCancel?: MouseEventHandler | KeyboardEventHandler;
   onOpenComplete?: () => void;
   onCloseComplete?: () => void;
   closable?: boolean;
@@ -41,8 +43,8 @@ interface ModalOptionsState {
   content?: string;
   confirmText?: string;
   cancelText?: string | null;
-  onConfirm: () => void;
-  onCancel: () => void;
+  onConfirm: MouseEventHandler;
+  onCancel: MouseEventHandler | KeyboardEventHandler;
   onOpenComplete?: () => void;
   onCloseComplete?: () => void;
   closable: boolean;
@@ -96,20 +98,20 @@ const EffectModal: FunctionComponent<EffectModalProps> = ({ triggerRef }) => {
         content,
         confirmText,
         cancelText,
-        onConfirm: () => {
+        onConfirm: event => {
           setVisible(false);
 
           if (onConfirm) {
-            onConfirm();
+            onConfirm(event);
           } else {
             resolve(true);
           }
         },
-        onCancel: () => {
+        onCancel: (event: any) => {
           setVisible(false);
 
           if (onCancel) {
-            onCancel();
+            onCancel(event);
           } else {
             resolve(false);
           }
@@ -151,7 +153,7 @@ const EffectModal: FunctionComponent<EffectModalProps> = ({ triggerRef }) => {
         icon={icon}
         title={title}
         closable={closable}
-        onCancel={onCancel}
+        onCancel={onCancel as MouseEventHandler}
       />
       <ModalContent>{content}</ModalContent>
       <FooterWrapper>
@@ -159,7 +161,7 @@ const EffectModal: FunctionComponent<EffectModalProps> = ({ triggerRef }) => {
           closable={closable}
           cancelText={cancelText}
           confirmText={confirmText}
-          onCancel={onCancel}
+          onCancel={onCancel as MouseEventHandler}
           onConfirm={onConfirm}
           confirmButtonProps={{
             variant: type === 'error' ? 'danger' : 'primary',

@@ -1,4 +1,9 @@
-import React, { FunctionComponent, useRef } from 'react';
+import React, {
+  FunctionComponent,
+  KeyboardEventHandler,
+  MouseEventHandler,
+  useRef,
+} from 'react';
 import styled from 'styled-components';
 import {
   animated,
@@ -64,7 +69,7 @@ const ModalContent = styled.div<{ size: Size }>`
 `;
 
 export interface BaseModalProps {
-  onCancel: () => void;
+  onCancel: MouseEventHandler | KeyboardEventHandler;
   onOpenComplete?: () => void;
   onCloseComplete?: () => void;
   size?: Size;
@@ -90,7 +95,7 @@ const BaseModal: FunctionComponent<BaseModalProps> = ({
   useKeydown({
     listening: closable ? visible : false,
     keyCode: ESC_KEY_CODE,
-    onKeydown: onCancel,
+    onKeydown: onCancel as any,
   });
 
   const transitions = useTransition(visible, null, {
@@ -135,7 +140,14 @@ const BaseModal: FunctionComponent<BaseModalProps> = ({
     <Stack defaultOrder={StackingOrder.OVERLAY}>
       {stackingOrder => (
         <>
-          <Backdrop visible={visible} onClick={() => closable && onCancel()} />
+          <Backdrop
+            visible={visible}
+            onClick={event => {
+              if (closable) {
+                onCancel(event as any);
+              }
+            }}
+          />
           {transitions.map(
             ({ item, key, props }) =>
               item && (
