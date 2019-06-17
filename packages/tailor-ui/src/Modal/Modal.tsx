@@ -1,4 +1,9 @@
-import React, { FunctionComponent, ReactNode, isValidElement } from 'react';
+import React, {
+  FunctionComponent,
+  MouseEventHandler,
+  ReactNode,
+  isValidElement,
+} from 'react';
 
 import { Flex } from '../Layout';
 import { Heading } from '../Typography';
@@ -12,7 +17,7 @@ interface ModalHeaderProps {
   title?: ReactNode;
   icon?: JSX.Element | null;
   closable?: boolean;
-  onCancel: () => void;
+  onCancel: MouseEventHandler;
 }
 
 export const ModalHeader: FunctionComponent<ModalHeaderProps> = ({

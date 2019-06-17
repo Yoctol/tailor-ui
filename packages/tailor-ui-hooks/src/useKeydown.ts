@@ -1,8 +1,13 @@
-import { useCallback, useEffect } from 'react';
+import {
+  KeyboardEvent,
+  KeyboardEventHandler,
+  useCallback,
+  useEffect,
+} from 'react';
 
 export interface Keydown {
   listening?: boolean;
-  onKeydown?: () => void;
+  onKeydown?: KeyboardEventHandler;
   keyCode: number;
 }
 
@@ -16,7 +21,7 @@ const useKeydown = ({
   const handleKeydown = useCallback(
     (event: KeyboardEvent) => {
       if (event.keyCode === targetKeyCode && onKeydown) {
-        onKeydown();
+        onKeydown(event);
       }
     },
     [targetKeyCode, onKeydown]
@@ -24,14 +29,25 @@ const useKeydown = ({
 
   useEffect(() => {
     if (listening) {
-      document.body.addEventListener('keydown', handleKeydown);
+      document.body.addEventListener<'keydown'>(
+        'keydown',
+        handleKeydown as any
+      );
 
       return () => {
-        document.body.removeEventListener('keydown', handleKeydown, false);
+        document.body.removeEventListener<'keydown'>(
+          'keydown',
+          handleKeydown as any,
+          false
+        );
       };
     }
 
-    document.body.removeEventListener('keydown', handleKeydown, false);
+    document.body.removeEventListener<'keydown'>(
+      'keydown',
+      handleKeydown as any,
+      false
+    );
     return () => {};
   }, [listening, targetKeyCode, onKeydown, handleKeydown]);
 
