@@ -39,49 +39,230 @@ const colors = {
 
 const toRem = (px: number) => rem(`${px}px`);
 
-const breakpoints = [toRem(576), toRem(768), toRem(992), toRem(1200)];
-(breakpoints as any).sm = breakpoints[0];
-(breakpoints as any).md = breakpoints[1];
-(breakpoints as any).lg = breakpoints[2];
-(breakpoints as any).xl = breakpoints[3];
+export interface BreakpointsType {
+  /**
+   * 576px
+   */
+  0: string;
+  /**
+   * 768px
+   */
+  1: string;
+  /**
+   * 992px
+   */
+  2: string;
+  /**
+   * 1200px
+   */
+  3: string;
+  /**
+   * 576px
+   */
+  sm: string;
+  /**
+   * 768px
+   */
+  md: string;
+  /**
+   * 992px
+   */
+  lg: string;
+  /**
+   * 1200px
+   */
+  xl: string;
+}
 
-const space = [0, 4, 8, 16, 32, 64, 128, 256].map(toRem);
-
-const paddings = {
-  lg: rem('24px'),
-  md: rem('16px'),
-  sm: rem('12px'),
-  xs: rem('8px'),
+const breakpoints: BreakpointsType = {
+  0: toRem(576),
+  1: toRem(768),
+  2: toRem(992),
+  3: toRem(1200),
+  sm: toRem(576),
+  md: toRem(768),
+  lg: toRem(992),
+  xl: toRem(1200),
 };
 
-const heights = {
+export interface SpaceType {
+  /**
+   * 0px
+   */
+  0: string;
+  /**
+   * 4px
+   */
+  1: string;
+  /**
+   * 8px
+   */
+  2: string;
+  /**
+   * 16px
+   */
+  3: string;
+  /**
+   * 32px
+   */
+  4: string;
+  /**
+   * 64px
+   */
+  5: string;
+  /**
+   * 128px
+   */
+  6: string;
+  /**
+   * 256px
+   */
+  7: string;
+}
+
+const space: SpaceType = {
+  0: toRem(0),
+  1: toRem(4),
+  2: toRem(8),
+  3: toRem(16),
+  4: toRem(32),
+  5: toRem(64),
+  6: toRem(128),
+  7: toRem(256),
+};
+
+export interface PaddingsType {
+  /**
+   * 8px
+   */
+  xs: string;
+  /**
+   * 12px
+   */
+  sm: string;
+  /**
+   * 16px
+   */
+  md: string;
+  /**
+   * 24px
+   */
+  lg: string;
+}
+
+const paddings: PaddingsType = {
+  xs: rem('8px'),
+  sm: rem('12px'),
+  md: rem('16px'),
+  lg: rem('24px'),
+};
+
+export interface HeightsType {
+  /**
+   * 28px
+   */
+  sm: string;
+  /**
+   * 36px
+   */
+  base: string;
+  /**
+   * 44px
+   */
+  lg: string;
+}
+
+const heights: HeightsType = {
   sm: rem('28px'),
   base: rem('36px'),
   lg: rem('44px'),
 };
 
-const fontSizes = {
+interface FontSizeType {
+  /**
+   * 14px
+   */
+  sm: string;
+  /**
+   * 16px
+   */
+  base: string;
+  /**
+   * 18px
+   */
+  lg: string;
+}
+
+const fontSizes: FontSizeType = {
   sm: rem('14px'),
   base: rem('16px'),
   lg: rem('18px'),
 };
 
+export interface RadiiType {
+  /**
+   * 2px
+   */
+  sm: string;
+  /**
+   * 4px
+   */
+  base: string;
+  /**
+   * 8px
+   */
+  lg: string;
+  /**
+   * 16px
+   */
+  xl: string;
+}
+
 // border-radius
-const radii = {
+const radii: RadiiType = {
   sm: rem('2px'),
   base: rem('4px'),
   lg: rem('8px'),
   xl: rem('16px'),
 };
 
-const borders = {
+export interface BordersType {
+  /**
+   * 1px solid
+   */
+  base: string;
+
+  /**
+   * 1px dashed
+   */
+  dashed: string;
+}
+
+const borders: BordersType = {
   base: '1px solid',
   dashed: '1px dashed',
 };
 
 const transition = 'transition: all 200ms ease 0s';
 
-const shadows = {
+export interface ShadowsType {
+  /**
+   * '0 1px 4px 0 rgba(191, 191, 191, 0.5)'
+   */
+  base: string;
+
+  /**
+   * '0 4px 6px 0 rgba(191, 191, 191, 0.5)'
+   */
+  lg: string;
+
+  /**
+   * '0 2px 6px 0 rgba(94, 94, 94, 0.5)'
+   */
+  xl: string;
+}
+
+const shadows: ShadowsType = {
   base: '0 1px 4px 0 rgba(191, 191, 191, 0.5)',
   lg: '0 4px 6px 0 rgba(191, 191, 191, 0.5)',
   xl: '0 2px 6px 0 rgba(94, 94, 94, 0.5)',
