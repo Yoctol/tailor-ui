@@ -10,7 +10,7 @@ import { animated, useTransition } from 'react-spring';
 import { Box } from '../Layout';
 import { useUID } from '../UIProvider/UIDContext';
 
-import FormFieldContext, { Value } from './FormFieldContext';
+import FormFieldContext from './FormFieldContext';
 import { Label, ValidationMessage } from './styles';
 import { Validator, validate } from './validate';
 
@@ -31,7 +31,7 @@ const FormField: FunctionComponent<FormFieldProps> = ({
 }) => {
   const getUID = useUID();
   const [labelId, setLabelId] = useState(() => getUID());
-  const [value, setValue] = useState<Value>();
+  const [value, setValue] = useState<any>();
   const [{ invalid, message }, setValidationResult] = useState({
     invalid: false,
     message: null,

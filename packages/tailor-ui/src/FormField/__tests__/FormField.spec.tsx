@@ -214,6 +214,23 @@ describe('FormField', () => {
       const { findByText } = render(
         <FormField
           label="Input"
+          validator={{
+            rule: value => value === 'error1',
+            message: 'error message',
+          }}
+        >
+          <Input defaultValue="error1" placeholder="Placeholder" />
+        </FormField>
+      );
+
+      const message = await findByText('error message');
+      expect(message).toBeInTheDocument();
+    });
+
+    it('should render error message when input is invalid value', async () => {
+      const { findByText } = render(
+        <FormField
+          label="Input"
           validator={[
             {
               rule: value => value === 'error1',

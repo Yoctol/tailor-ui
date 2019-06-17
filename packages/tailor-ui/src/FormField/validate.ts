@@ -2,23 +2,26 @@ import { ReactNode } from 'react';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { Schema } from 'yup';
 
-import { Value } from './FormFieldContext';
+export type FunctionValidator = (value?: any) => string | null;
+
+export interface ObjectValidator {
+  rule: (value?: any) => boolean;
+  message: string;
+}
 
 export type Validator =
-  | ((value?: Value) => string | null)
-  | Schema<Value>
-  | ({
-      rule: (value?: Value) => boolean;
-      message: string;
-    })[];
+  | FunctionValidator
+  | Schema<any>
+  | ObjectValidator
+  | ObjectValidator[];
 
 export interface Validate {
-  value?: Value;
+  value?: any;
   validationMessage?: ReactNode;
   validator?: Validator;
 }
 
-const isSchema = (obj: any): obj is Schema<Value> => obj && obj.__isYupSchema__;
+const isSchema = (obj: any): obj is Schema<any> => obj && obj.__isYupSchema__;
 
 export const validate = async ({
   value,
@@ -60,6 +63,14 @@ export const validate = async ({
     return {
       invalid: Boolean(message),
       message,
+    };
+  }
+
+  if (validator instanceof Object && !Array.isArray(validator)) {
+    const invalid = validator.rule(value);
+    return {
+      invalid,
+      message: invalid ? validator.message : null,
     };
   }
 
