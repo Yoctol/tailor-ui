@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.15.0](https://github.com/yoctol/tailor-ui/compare/tailor-ui@0.14.0...tailor-ui@0.15.0) (2019-06-18)
+
+
+### Bug Fixes
+
+* **container:** update title type ([bd986c8](https://github.com/yoctol/tailor-ui/commit/bd986c8))
+* **modal:** pass closable to footer ([937f2c7](https://github.com/yoctol/tailor-ui/commit/937f2c7))
+* **modal:** use correct event types ([824b6f3](https://github.com/yoctol/tailor-ui/commit/824b6f3))
+
+
+### BREAKING CHANGES
+
+* **modal:** renamed `cancelable` to `closable`
+
+
+
+
+
 # [0.14.0](https://github.com/yoctol/tailor-ui/compare/tailor-ui@0.13.5...tailor-ui@0.14.0) (2019-06-14)
 
 

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.2.0](https://github.com/Yoctol/tailor-ui/compare/@tailor-ui/hooks@0.1.5...@tailor-ui/hooks@0.2.0) (2019-06-18)
+
+
+### Bug Fixes
+
+* **modal:** use correct event types ([824b6f3](https://github.com/Yoctol/tailor-ui/commit/824b6f3))
+
+
+
+
+
 ## [0.1.5](https://github.com/Yoctol/tailor-ui/compare/@tailor-ui/hooks@0.1.4...@tailor-ui/hooks@0.1.5) (2019-06-14)
 
 **Note:** Version bump only for package @tailor-ui/hooks

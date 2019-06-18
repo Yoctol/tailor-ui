@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.10.0](https://github.com/Yoctol/tailor-ui/compare/@tailor-ui/lab@0.9.6...@tailor-ui/lab@0.10.0) (2019-06-18)
+
+**Note:** Version bump only for package @tailor-ui/lab
+
+
+
+
+
 ## [0.9.6](https://github.com/Yoctol/tailor-ui/compare/@tailor-ui/lab@0.9.5...@tailor-ui/lab@0.9.6) (2019-06-14)
 
 **Note:** Version bump only for package @tailor-ui/lab
