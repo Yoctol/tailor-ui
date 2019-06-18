@@ -26,7 +26,7 @@ const DrawerWrapper = styled.div<DrawerWrapperProps>`
   position: absolute;
   z-index: 10000;
   flex-direction: column;
-  padding: ${p => p.theme.space[3]};
+  padding: ${p => p.theme.space[4]};
   background-color: #fff;
 
   ${p =>

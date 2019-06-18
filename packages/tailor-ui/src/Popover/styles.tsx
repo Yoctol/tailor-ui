@@ -11,7 +11,7 @@ import {
 export type StyledPopoverProps = SpaceProps & MinWidthProps & MinHeightProps;
 
 export const StyledPopover = styled.div<StyledPopoverProps>`
-  padding: ${p => p.theme.space[2]} ${p => p.theme.space[3]};
+  padding: ${p => p.theme.space[2]} ${p => p.theme.space[4]};
   border: ${p => p.theme.borders.base};
   border-radius: ${p => p.theme.radii.lg};
   border-color: ${p => p.theme.colors.gray300};

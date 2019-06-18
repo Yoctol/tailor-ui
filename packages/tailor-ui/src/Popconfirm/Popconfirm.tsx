@@ -57,7 +57,7 @@ const PopconfirmContent = memo<
         <Icon type={type} fill={type} size="20" mr="2" />
         {content}
       </Flex>
-      <Flex mt="3">
+      <Flex mt="4">
         <Button
           ml="auto"
           size="sm"

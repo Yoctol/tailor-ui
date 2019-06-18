@@ -47,7 +47,7 @@ export const StyledBlock: StyledComponent<
 `;
 
 StyledBlock.defaultProps = {
-  p: 3,
+  p: 4,
 };
 
 export type CardProps = HTMLAttributes<HTMLDivElement> &

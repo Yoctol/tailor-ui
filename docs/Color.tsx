@@ -25,7 +25,7 @@ const Color = ({
       alignItems="center"
       borderRadius="lg"
       width={width}
-      p="3"
+      p="4"
       mx="2"
       bg={colorKey}
     >
@@ -36,7 +36,7 @@ const Color = ({
 };
 
 const Colors = ({ colors }: { colors: ColorKeys[] }) => (
-  <Flex mb={4}>
+  <Flex mb="6">
     {colors.map(color => (
       <Color key={color} colorKey={color} width={1 / colors.length} />
     ))}

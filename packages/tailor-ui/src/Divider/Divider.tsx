@@ -23,7 +23,7 @@ type IStyledDividerProps = SpaceProps &
 
 const StyledInnerText = styled.span`
   display: inline-block;
-  padding: 0 ${p => p.theme.space[3]};
+  padding: 0 ${p => p.theme.space[4]};
 `;
 
 const StyledDivider = styled.div<IStyledDividerProps>`
@@ -55,7 +55,7 @@ const StyledDivider = styled.div<IStyledDividerProps>`
       width: 100%;
       min-width: 100%;
       height: 1px;
-      margin: ${p.theme.space[3]} 0;
+      margin: ${p.theme.space[4]} 0;
       clear: both;
 
       ${p.withText &&

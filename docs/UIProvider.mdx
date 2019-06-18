@@ -51,7 +51,7 @@ const { zh_Hant } = locales;
           <Radio value="zh_Hant">正體中文</Radio>
         </Radio.Group>
 
-        <Box mt="3">
+        <Box mt="4">
           <UIProvider locale={locales[value]}>
             <>
               <Flex>
@@ -91,10 +91,10 @@ const { zh_Hant } = locales;
                   </Popconfirm>
                 </Box>
               </Flex>
-              <Box mt="3">
+              <Box mt="4">
                 <DatePicker onChange={() => {}}/>
               </Box>
-              <Box mt="3">
+              <Box mt="4">
                 <Flex>
                   <Box mr="2">With Success:</Box>
                   <Upload onSelect={() => new Promise(resolve => setTimeout(resolve, 2000))} />

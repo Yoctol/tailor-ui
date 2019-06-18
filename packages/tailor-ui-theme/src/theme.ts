@@ -99,36 +99,41 @@ export interface SpaceType {
    */
   2: string;
   /**
-   * 16px
+   * 12px
    */
   3: string;
   /**
-   * 32px
+   * 16px
    */
   4: string;
   /**
-   * 64px
+   * 24px
    */
   5: string;
   /**
-   * 128px
+   * 32px
    */
   6: string;
   /**
-   * 256px
+   * 48px
    */
   7: string;
+  /**
+   * 64px
+   */
+  8: string;
 }
 
 const space: SpaceType = {
   0: toRem(0),
   1: toRem(4),
   2: toRem(8),
-  3: toRem(16),
-  4: toRem(32),
-  5: toRem(64),
-  6: toRem(128),
-  7: toRem(256),
+  3: toRem(12),
+  4: toRem(16),
+  5: toRem(24),
+  6: toRem(32),
+  7: toRem(48),
+  8: toRem(64),
 };
 
 export interface PaddingsType {

@@ -63,7 +63,7 @@ const ModalContent = styled.div<{ size: Size }>`
   width: ${p => ({ md: 516, lg: 786 }[p.size as Size] || 516)}px;
   min-height: 220px;
   max-height: 75vh;
-  padding: 24px ${p => p.theme.space[3]} ${p => p.theme.space[3]};
+  padding: 24px ${p => p.theme.space[4]} ${p => p.theme.space[4]};
   border-radius: ${p => p.theme.radii.xl};
   background-color: #fff;
 `;

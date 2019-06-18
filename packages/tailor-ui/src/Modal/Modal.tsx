@@ -26,7 +26,7 @@ export const ModalHeader: FunctionComponent<ModalHeaderProps> = ({
   onCancel,
   closable,
 }) => (
-  <Flex flex="none" alignItems="center" mb="3" mx="3">
+  <Flex flex="none" alignItems="center" mb="4" mx="4">
     {icon && <Flex mr="2">{icon}</Flex>}
     <Flex flex="auto">
       <Heading.h3>{title}</Heading.h3>
@@ -36,7 +36,7 @@ export const ModalHeader: FunctionComponent<ModalHeaderProps> = ({
 );
 
 export const ModalContent: FunctionComponent = ({ children }) => (
-  <Flex flex="auto" flexDirection="column" overflowY="auto" px="3">
+  <Flex flex="auto" flexDirection="column" overflowY="auto" px="4">
     {children}
   </Flex>
 );
@@ -46,8 +46,8 @@ export const FooterWrapper: FunctionComponent = props => (
     flex="none"
     alignItems="center"
     mt="24px"
-    mx="3"
-    pt="3"
+    mx="4"
+    pt="4"
     borderTop="base"
     borderColor="gray300"
     {...props}
