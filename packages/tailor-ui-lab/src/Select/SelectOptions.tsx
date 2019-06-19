@@ -180,7 +180,7 @@ const SelectOptions: FunctionComponent<SelectOptionsProps> = ({
             >
               <div
                 ref={isCreateOption ? createOptionRef : undefined}
-                title={String(content)}
+                title={isCreateOption ? undefined : String(content)}
               >
                 {multiple &&
                   (active ? (
