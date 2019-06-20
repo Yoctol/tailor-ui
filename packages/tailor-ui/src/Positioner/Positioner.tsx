@@ -185,7 +185,7 @@ const Positioner: FunctionComponent<PositionerProps> = ({
     },
     config: {
       tension: 320,
-      friction: 24,
+      friction: 32,
     },
   });
 
