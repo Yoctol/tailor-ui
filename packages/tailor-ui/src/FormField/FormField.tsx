@@ -30,16 +30,24 @@ const FormField: FunctionComponent<FormFieldProps> = ({
   ...otherProps
 }) => {
   const getUID = useUID();
+  const [mounted, setMounted] = useState(false);
   const [labelId, setLabelId] = useState(() => getUID());
   const [value, setValue] = useState<any>();
-  const [{ invalid, message }, setValidationResult] = useState({
-    invalid: false,
-    message: null,
-  });
+  const [{ invalid, message }, setValidationResult] = useState(() =>
+    validate({
+      value,
+      validator,
+      validationMessage,
+    })
+  );
 
-  const handleValidation = useCallback(async () => {
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const handleValidation = useCallback(() => {
     if (value !== undefined) {
-      const result = await validate({
+      const result = validate({
         value,
         validator,
         validationMessage,
@@ -54,6 +62,7 @@ const FormField: FunctionComponent<FormFieldProps> = ({
   }, [handleValidation]);
 
   const transitions = useTransition(invalid, null, {
+    immediate: !mounted,
     from: {
       height: 0,
       opacity: 0,
@@ -68,7 +77,7 @@ const FormField: FunctionComponent<FormFieldProps> = ({
     },
     config: {
       tension: 320,
-      friction: 24,
+      friction: 32,
     },
   });
 

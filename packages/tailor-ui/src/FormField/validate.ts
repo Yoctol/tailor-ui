@@ -23,11 +23,7 @@ export interface Validate {
 
 const isSchema = (obj: any): obj is Schema<any> => obj && obj.__isYupSchema__;
 
-export const validate = async ({
-  value,
-  validator,
-  validationMessage,
-}: Validate) => {
+export const validate = ({ value, validator, validationMessage }: Validate) => {
   if (validationMessage) {
     return {
       invalid: true,
@@ -44,7 +40,7 @@ export const validate = async ({
 
   if (isSchema(validator)) {
     try {
-      await validator.validate(value);
+      validator.validateSync(value);
 
       return {
         invalid: false,
