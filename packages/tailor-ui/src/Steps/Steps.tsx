@@ -3,168 +3,13 @@ import React, {
   FunctionComponent,
   ReactElement,
   ReactNode,
-  createContext,
   isValidElement,
 } from 'react';
-import styled, { css } from 'styled-components';
-import { MdClose, MdDone } from 'react-icons/md';
-
-import { theme } from '@tailor-ui/theme';
 
 import { Flex } from '../Layout';
-import { Icon } from '../Icon';
 
-type Status = 'finish' | 'progress' | 'wait' | 'error';
-type Direction = 'horizontal' | 'vertical';
-type Colors = keyof typeof theme.colors;
-
-const { Provider, Consumer } = createContext<{
-  count: number;
-  status: Status;
-  isLast: boolean;
-  tailColor: Colors | 'gray';
-  direction: Direction;
-  onCurrentChange?: (count: number) => void;
-}>({
-  count: 0,
-  status: 'wait',
-  isLast: false,
-  tailColor: 'gray',
-  direction: 'horizontal',
-  onCurrentChange: () => {},
-});
-
-interface StepsItemProps {
-  status: Status;
-  direction: Direction;
-  isLast: boolean;
-  tailColor: Colors | 'gray';
-}
-
-const StepsIconItem = styled.div<StepsItemProps>`
-  display: flex;
-  position: relative;
-  align-items: center;
-  justify-content: center;
-  width: 32px;
-  height: 32px;
-  margin-right: 8px;
-  border: ${p => p.theme.borders.base};
-  border-radius: 50%;
-  border-color: ${p => {
-    switch (p.status) {
-      case 'progress':
-      case 'finish':
-        return p.theme.colors.primary;
-      case 'error':
-        return p.theme.colors.danger;
-      case 'wait':
-      default:
-        return p.theme.colors.gray500;
-    }
-  }};
-  background-color: ${p =>
-    p.status === 'progress' ? p.theme.colors.primary : p.theme.colors.light};
-  color: ${p => {
-    switch (p.status) {
-      case 'progress':
-        return p.theme.colors.light;
-      case 'finish':
-        return p.theme.colors.primary;
-      case 'error':
-        return p.theme.colors.danger;
-      case 'wait':
-      default:
-        return p.theme.colors.gray500;
-    }
-  }};
-  cursor: pointer;
-
-  ${p =>
-    !p.isLast &&
-    p.direction === 'vertical' &&
-    css`
-      &::before {
-        content: '';
-        display: block;
-        position: absolute;
-        top: 100%;
-        left: 50%;
-        width: 1px;
-        height: 100%;
-        margin-top: 6px;
-        background: ${p.tailColor === 'gray'
-          ? p.theme.colors.gray500
-          : p.theme.colors[p.tailColor]};
-      }
-    `};
-
-  ${p => p.theme.transition /* sc-declaration */};
-`;
-
-const Title = styled.div<StepsItemProps>`
-  display: inline-block;
-  position: relative;
-  align-items: center;
-  height: 32px;
-  padding-right: 16px;
-  color: ${p => {
-    switch (p.status) {
-      case 'progress':
-        return p.theme.colors.primary;
-      case 'error':
-        return p.theme.colors.danger;
-      case 'finish':
-      case 'wait':
-      default:
-        return p.theme.colors.gray500;
-    }
-  }};
-  line-height: 32px;
-
-  ${p =>
-    !p.isLast &&
-    p.direction === 'horizontal' &&
-    css`
-      &::after {
-        content: '';
-        display: block;
-        position: absolute;
-        top: 16px;
-        left: 100%;
-        width: 9999px;
-        height: 1px;
-        background: ${p.tailColor === 'gray'
-          ? p.theme.colors.gray500
-          : p.theme.colors[p.tailColor]};
-      }
-    `};
-
-  ${p => p.theme.transition /* sc-declaration */};
-`;
-
-interface DescriptionProps {
-  direction: Direction;
-  status: Status;
-}
-
-const Description = styled.div<DescriptionProps>`
-  padding-bottom: ${p => p.direction === 'vertical' && '12px'};
-  color: ${p => {
-    switch (p.status) {
-      case 'progress':
-        return p.theme.colors.primary;
-      case 'error':
-        return p.theme.colors.danger;
-      case 'finish':
-      case 'wait':
-      default:
-        return p.theme.colors.gray500;
-    }
-  }};
-  font-size: ${p => p.theme.fontSizes.sm};
-  ${p => p.theme.transition /* sc-declaration */};
-`;
+import Step, { StepProps } from './Step';
+import StepContext, { Direction, Status } from './StepContext';
 
 const getStatus = ({ current, count }: { current: number; count: number }) => {
   if (current === count) {
@@ -196,100 +41,13 @@ const getTailColor = ({
   ) {
     return 'error';
   }
+
   if (status === 'progress' || status === 'wait') {
     return 'gray';
   }
+
   return 'primary';
 };
-
-type StepIconProps = StepsItemProps & {
-  count: number;
-  onClick: () => void;
-};
-
-const StepIcon: FunctionComponent<StepIconProps> = ({
-  status,
-  count,
-  isLast,
-  direction,
-  tailColor,
-  onClick,
-}) => {
-  const isFinish = status === 'finish';
-  const renderIcon = ['finish', 'error'].includes(status);
-
-  return (
-    <StepsIconItem
-      status={status}
-      isLast={isLast}
-      direction={direction}
-      tailColor={tailColor}
-      onClick={onClick}
-    >
-      {renderIcon ? (
-        <Icon
-          size="20"
-          type={isFinish ? MdDone : MdClose}
-          fill={isFinish ? 'primary' : 'error'}
-          style={{ pointerEvents: 'none' }}
-        />
-      ) : (
-        count + 1
-      )}
-    </StepsIconItem>
-  );
-};
-
-export interface StepProps {
-  title: string;
-  description?: string;
-  status?: Status;
-}
-
-export const Step: FunctionComponent<StepProps> = ({
-  title,
-  description = null,
-}) => (
-  <Consumer>
-    {({ count, status, isLast, tailColor, direction, onCurrentChange }) => (
-      <Flex
-        flex={isLast ? 'none' : 'auto'}
-        mr="16px"
-        mb={direction === 'vertical' ? '6px' : 0}
-        overflow="hidden"
-        minHeight={direction === 'vertical' ? '64px' : 'auto'}
-      >
-        <StepIcon
-          status={status}
-          count={count}
-          isLast={isLast}
-          direction={direction}
-          tailColor={tailColor}
-          onClick={() => {
-            if (onCurrentChange) {
-              onCurrentChange(count);
-            }
-          }}
-        />
-        <div>
-          <Title
-            status={status}
-            direction={direction}
-            isLast={isLast}
-            tailColor={tailColor}
-          >
-            {title}
-          </Title>
-          {description && (
-            <Description status={status} direction={direction}>
-              {description}
-            </Description>
-          )}
-        </div>
-      </Flex>
-    )}
-  </Consumer>
-);
 
 export interface StepsProps {
   current: number;
@@ -318,7 +76,7 @@ const Steps: FunctionComponent<StepsProps> & {
           const tailColor = getTailColor({ count, status, steps });
 
           return (
-            <Provider
+            <StepContext.Provider
               key={step.key || count}
               value={{
                 count,
@@ -330,7 +88,7 @@ const Steps: FunctionComponent<StepsProps> & {
               }}
             >
               {step}
-            </Provider>
+            </StepContext.Provider>
           );
         }
 
