@@ -8,3 +8,4 @@ jest-report
 lib
 .docz
 *.tsbuildinfo
+.next

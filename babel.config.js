@@ -43,6 +43,33 @@ module.exports = {
         ],
       ],
     },
+    docs: {
+      presets: ['next/babel', '@zeit/next-typescript/babel'],
+      plugins: [
+        [
+          'module-resolver',
+          {
+            root: ['./'],
+            extensions: ['.js', '.mdx', '.jsx', '.ts', '.tsx'],
+            alias: {
+              'tailor-ui': './packages/tailor-ui/src',
+              '@tailor-ui/lab': './packages/tailor-ui-lab/src',
+              '@tailor-ui/theme': './packages/tailor-ui-theme/src',
+              '@tailor-ui/utils': './packages/tailor-ui-utils/src',
+              '@tailor-ui/hooks': './packages/tailor-ui-hooks/src',
+            },
+          },
+        ],
+        [
+          'styled-components',
+          {
+            ssr: true,
+            displayName: true,
+            preprocess: false,
+          },
+        ],
+      ],
+    },
     production: {
       ignore: ['**/__tests__', '**/**/__tests__'],
     },

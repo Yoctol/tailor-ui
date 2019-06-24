@@ -1,0 +1,47 @@
+import { Alert } from 'tailor-ui';
+import theme from './theme.js';
+import LiveEdit from './components/LiveEdit';
+import CodeBlock from './components/CodeBlock.js';
+
+# Alert
+
+Alert component for feedback.
+
+## When To Use
+
+- When you need to show alert messages to users.
+- When you need a persistent static container which is closable by user actions.
+
+## Examples
+
+<CodeBlock
+  code="import { Alert } from 'tailor-ui';"
+  language="javascript"
+  theme={theme}
+/>
+
+### Basic
+
+<LiveEdit
+  code={`
+  <Alert message="test" />
+`.trim()}
+  scope={{ Alert }}
+  theme={theme}
+  language="jsx"
+/>
+
+### With Type
+
+<LiveEdit
+  code={`<div>
+  <Alert message="Info Text" type="info" />
+  <Alert message="Success Text" type="success" />
+  <Alert message="Warning Text" type="warning" />
+  <Alert message="Error Text" type="error" />
+</div>
+  `.trim()}
+  scope={{ Alert }}
+  theme={theme}
+  language="jsx"
+/>
