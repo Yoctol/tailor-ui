@@ -57,6 +57,7 @@ module.exports = {
               '@tailor-ui/theme': './packages/tailor-ui-theme/src',
               '@tailor-ui/utils': './packages/tailor-ui-utils/src',
               '@tailor-ui/hooks': './packages/tailor-ui-hooks/src',
+              docs: './docs',
             },
           },
         ],
@@ -64,8 +65,6 @@ module.exports = {
           'styled-components',
           {
             ssr: true,
-            displayName: true,
-            preprocess: false,
           },
         ],
       ],
