@@ -1,4 +1,5 @@
 import React from 'react';
+import Router, { withRouter } from 'next/router';
 import styled from 'styled-components';
 
 import { Tabs } from 'tailor-ui';
@@ -42,16 +43,29 @@ const MainWrapper = styled.div`
   justify-content: center;
 `;
 
-const Layout = ({ children }) => {
-  const [value, setValue] = React.useState();
+const Layout = ({ children, router: { pathname } }) => {
+  let activeValue = '1';
+  if (pathname.includes('components')) activeValue = '2';
 
   return (
     <LayoutWrapper>
       <TopNav>
         <Title>Tailor UI</Title>
-        <StyledTabs activeValue={value} onChange={setValue} size="lg">
-          <Tabs.Tab value="1" label="Home" />
-          <Tabs.Tab value="2" label="Components" />
+        <StyledTabs activeValue={activeValue} size="lg">
+          <Tabs.Tab
+            value="1"
+            label="Home"
+            onClick={() => {
+              Router.push('/');
+            }}
+          />
+          <Tabs.Tab
+            value="2"
+            label="Components"
+            onClick={() => {
+              Router.push('/components');
+            }}
+          />
         </StyledTabs>
       </TopNav>
       <MainWrapper>
@@ -111,4 +125,4 @@ const Layout = ({ children }) => {
   );
 };
 
-export default Layout;
+export default withRouter(Layout);

@@ -90,6 +90,7 @@ const Components = () => {
       <StyledSection>
         <SectionTitle>Layouts</SectionTitle>
         <ComponentGroup>
+          <SectionDivider>DISPLAY STYLES</SectionDivider>
           <ComponentCard title="Box" href="components/layout/box">
             <h1>Box?</h1>
           </ComponentCard>
@@ -99,6 +100,7 @@ const Components = () => {
           <ComponentCard title="Grid" href="components/layout/grid">
             <h1>Grid?</h1>
           </ComponentCard>
+          <SectionDivider>OTHER STYLES</SectionDivider>
           <ComponentCard
             title="Responsive Styles"
             href="components/layout/responsive"
