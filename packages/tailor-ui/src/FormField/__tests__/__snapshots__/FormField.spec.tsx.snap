@@ -11,7 +11,7 @@ exports[`FormField should render correctly 1`] = `
   margin-bottom: 2px;
   padding-left: 2px;
   color: #373737;
-  font-size: 1rem;
+  font-size: 0.875rem;
   -webkit-letter-spacing: 0.2px;
   -moz-letter-spacing: 0.2px;
   -ms-letter-spacing: 0.2px;
@@ -85,6 +85,7 @@ exports[`FormField should render correctly 1`] = `
     class="c2"
     id="input-id"
     placeholder="Placeholder"
+    value=""
   />
 </div>
 `;
@@ -100,7 +101,7 @@ exports[`FormField should render generated id correctly 1`] = `
   margin-bottom: 2px;
   padding-left: 2px;
   color: #373737;
-  font-size: 1rem;
+  font-size: 0.875rem;
   -webkit-letter-spacing: 0.2px;
   -moz-letter-spacing: 0.2px;
   -ms-letter-spacing: 0.2px;
@@ -174,6 +175,7 @@ exports[`FormField should render generated id correctly 1`] = `
     class="c2"
     id="tailor_uid_1"
     placeholder="Placeholder"
+    value=""
   />
 </div>
 `;
@@ -189,7 +191,7 @@ exports[`FormField validationMessage should render FormField with error message 
   margin-bottom: 2px;
   padding-left: 2px;
   color: #373737;
-  font-size: 1rem;
+  font-size: 0.875rem;
   -webkit-letter-spacing: 0.2px;
   -moz-letter-spacing: 0.2px;
   -ms-letter-spacing: 0.2px;
@@ -272,11 +274,16 @@ exports[`FormField validationMessage should render FormField with error message 
     class="c2"
     id="tailor_uid_1"
     placeholder="Placeholder"
+    value=""
   />
   <div
-    class="c3"
+    style="height: 22px; opacity: 1;"
   >
-    Error Message
+    <div
+      class="c3"
+    >
+      Error Message
+    </div>
   </div>
 </div>
 `;

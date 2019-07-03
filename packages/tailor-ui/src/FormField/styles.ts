@@ -5,7 +5,7 @@ export const Label = styled.label<{ required: boolean }>`
   margin-bottom: 2px;
   padding-left: 2px;
   color: ${p => p.theme.colors.gray700};
-  font-size: ${p => p.theme.fontSizes.base};
+  font-size: ${p => p.theme.fontSizes.sm};
   letter-spacing: 0.2px;
 
   ${p =>

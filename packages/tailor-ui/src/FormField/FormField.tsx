@@ -1,71 +1,18 @@
-import React, { FunctionComponent, ReactNode, useState } from 'react';
+import React, {
+  FunctionComponent,
+  ReactNode,
+  useCallback,
+  useEffect,
+  useState,
+} from 'react';
+import { animated, useTransition } from 'react-spring';
 
 import { Box } from '../Layout';
 import { useUID } from '../UIProvider/UIDContext';
 
-import FormFieldContext, { Value } from './FormFieldContext';
+import FormFieldContext from './FormFieldContext';
 import { Label, ValidationMessage } from './styles';
-
-export type Validator =
-  | ((value?: Value) => string | null)
-  | ({
-      rule: (value?: Value) => boolean;
-      message: string;
-    })[];
-
-export interface Validate {
-  value?: Value;
-  validationMessage?: ReactNode;
-  validator?: Validator;
-}
-
-export const validate = ({ value, validator, validationMessage }: Validate) => {
-  if (validationMessage) {
-    return {
-      invalid: true,
-      message: validationMessage,
-    };
-  }
-
-  if (!validator) {
-    return {
-      invalid: false,
-      message: null,
-    };
-  }
-
-  if (validator instanceof Function) {
-    const message = validator(value);
-    return {
-      invalid: Boolean(message),
-      message,
-    };
-  }
-
-  if (Array.isArray(validator)) {
-    let returnMessage = null;
-    let invalid = false;
-
-    validator.some(({ rule, message }) => {
-      if (rule(value)) {
-        returnMessage = message;
-        invalid = true;
-        return true;
-      }
-      return false;
-    });
-
-    return {
-      invalid,
-      message: returnMessage,
-    };
-  }
-
-  return {
-    invalid: false,
-    message: null,
-  };
-};
+import { Validator, validate } from './validate';
 
 export interface FormFieldProps {
   label?: string;
@@ -80,23 +27,65 @@ const FormField: FunctionComponent<FormFieldProps> = ({
   validator,
   validationMessage,
   children,
-  ...props
+  ...otherProps
 }) => {
   const getUID = useUID();
+  const [mounted, setMounted] = useState(false);
   const [labelId, setLabelId] = useState(() => getUID());
-  const [value, setValue] = useState<Value>();
+  const [value, setValue] = useState<any>();
+  const [{ invalid, message }, setValidationResult] = useState(() =>
+    validate({
+      value,
+      validator,
+      validationMessage,
+    })
+  );
 
-  const { invalid, message } = validate({
-    value,
-    validator,
-    validationMessage,
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const handleValidation = useCallback(() => {
+    if (value !== undefined) {
+      const result = validate({
+        value,
+        validator,
+        validationMessage,
+      });
+
+      setValidationResult(result);
+    }
+  }, [validationMessage, validator, value]);
+
+  useEffect(() => {
+    handleValidation();
+  }, [handleValidation]);
+
+  const transitions = useTransition(invalid, null, {
+    immediate: !mounted,
+    from: {
+      height: 0,
+      opacity: 0,
+    },
+    enter: {
+      height: 22,
+      opacity: 1,
+    },
+    leave: {
+      height: 0,
+      opacity: 0,
+    },
+    config: {
+      tension: 320,
+      friction: 32,
+    },
   });
 
   return (
     <FormFieldContext.Provider
       value={{ invalid, setValue, setLabelId, labelId }}
     >
-      <Box mb="16px" {...props}>
+      <Box mb="16px" {...otherProps}>
         {label && (
           <Label required={required} htmlFor={labelId}>
             {label}
@@ -104,7 +93,15 @@ const FormField: FunctionComponent<FormFieldProps> = ({
         )}
 
         {children}
-        {invalid && <ValidationMessage>{message}</ValidationMessage>}
+
+        {transitions.map(
+          ({ key, item, props }) =>
+            item && (
+              <animated.div key={key} style={props}>
+                <ValidationMessage>{message}</ValidationMessage>
+              </animated.div>
+            )
+        )}
       </Box>
     </FormFieldContext.Provider>
   );

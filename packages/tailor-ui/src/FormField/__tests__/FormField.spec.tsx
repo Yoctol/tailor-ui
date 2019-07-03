@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import { string } from 'yup';
 
-import { fireEvent, render } from 'test/test-utils';
+import { fireEvent, render, wait } from 'test/test-utils';
 
 import { FormField } from '../FormField';
 import { Input } from '../../Input';
@@ -9,7 +11,7 @@ describe('FormField', () => {
   it('should render correctly', () => {
     const { container, getByLabelText } = render(
       <FormField label="Input">
-        <Input id="input-id" placeholder="Placeholder" />
+        <Input id="input-id" placeholder="Placeholder" defaultValue="" />
       </FormField>
     );
 
@@ -22,7 +24,7 @@ describe('FormField', () => {
   it('should render generated id correctly', () => {
     const { container, getByLabelText } = render(
       <FormField label="Input">
-        <Input placeholder="Placeholder" />
+        <Input placeholder="Placeholder" defaultValue="" />
       </FormField>
     );
 
@@ -35,18 +37,22 @@ describe('FormField', () => {
   });
 
   describe('validationMessage', () => {
-    it('should render FormField with error message correctly', () => {
-      const { container, getByText } = render(
+    it('should render FormField with error message correctly', async () => {
+      const { container, findByText } = render(
         <FormField label="Input" validationMessage="Error Message">
-          <Input placeholder="Placeholder" />
+          <Input placeholder="Placeholder" defaultValue="" />
         </FormField>
       );
 
-      expect(getByText('Error Message')).toBeInTheDocument();
+      const message = await findByText('Error Message');
+
+      await wait(() =>
+        expect(message.parentElement).toHaveStyle('opacity: 1; height: 22px')
+      );
       expect(container.firstChild).toMatchSnapshot();
     });
 
-    it('should render FormField with error message correctly when change input value', () => {
+    it('should render FormField with error message correctly when change input value', async () => {
       const TextInput = () => {
         const [value, setValue] = useState('');
 
@@ -64,7 +70,76 @@ describe('FormField', () => {
         );
       };
 
-      const { getByTestId, getByText, queryByText } = render(<TextInput />);
+      const { getByTestId, findByText, queryByText } = render(<TextInput />);
+
+      expect(queryByText('Error Message')).not.toBeInTheDocument();
+
+      fireEvent.change(getByTestId('input'), {
+        target: {
+          value: 'error',
+        },
+      });
+
+      const message = await findByText('Error Message');
+
+      expect(message).toBeInTheDocument();
+    });
+  });
+
+  describe('yup schema validator', () => {
+    it('should render error message when input is invalid value', async () => {
+      const { findByText } = render(
+        <FormField
+          label="Input"
+          validator={string().test(
+            'is-error',
+            'Error Message',
+            value => value !== 'error'
+          )}
+        >
+          <Input defaultValue="error" placeholder="Placeholder" />
+        </FormField>
+      );
+
+      const message = await findByText('Error Message');
+
+      expect(message).toBeInTheDocument();
+    });
+
+    it('should not render error message when input is valid value', () => {
+      const { queryByText } = render(
+        <FormField
+          label="Input"
+          validator={string().test(
+            'is-error',
+            'Error Message',
+            value => value !== 'error'
+          )}
+        >
+          <Input defaultValue="valid input" placeholder="Placeholder" />
+        </FormField>
+      );
+
+      expect(queryByText('Error Message')).not.toBeInTheDocument();
+    });
+
+    it('should render FormField with error message correctly when change input value', async () => {
+      const { getByTestId, findByText, queryByText } = render(
+        <FormField
+          label="Input"
+          validator={string().test(
+            'is-error',
+            'Error Message',
+            value => value !== 'error'
+          )}
+        >
+          <Input
+            data-testid="input"
+            defaultValue="valid input"
+            placeholder="Placeholder"
+          />
+        </FormField>
+      );
 
       expect(queryByText('Error Message')).not.toBeInTheDocument();
       fireEvent.change(getByTestId('input'), {
@@ -73,13 +148,14 @@ describe('FormField', () => {
         },
       });
 
-      expect(getByText('Error Message')).toBeInTheDocument();
+      const message = await findByText('Error Message');
+      expect(message).toBeInTheDocument();
     });
   });
 
   describe('function validator', () => {
-    it('should render error message when input is invalid value', () => {
-      const { getByText } = render(
+    it('should render error message when input is invalid value', async () => {
+      const { findByText } = render(
         <FormField
           label="Input"
           validator={value => (value === 'error' ? 'Error Message' : null)}
@@ -88,7 +164,9 @@ describe('FormField', () => {
         </FormField>
       );
 
-      expect(getByText('Error Message')).toBeInTheDocument();
+      const message = await findByText('Error Message');
+
+      expect(message).toBeInTheDocument();
     });
 
     it('should not render error message when input is valid value', () => {
@@ -104,8 +182,8 @@ describe('FormField', () => {
       expect(queryByText('Error Message')).not.toBeInTheDocument();
     });
 
-    it('should render FormField with error message correctly when change input value', () => {
-      const { getByTestId, getByText, queryByText } = render(
+    it('should render FormField with error message correctly when change input value', async () => {
+      const { getByTestId, findByText, queryByText } = render(
         <FormField
           label="Input"
           validator={value => (value === 'error' ? 'Error Message' : null)}
@@ -125,13 +203,32 @@ describe('FormField', () => {
         },
       });
 
-      expect(getByText('Error Message')).toBeInTheDocument();
+      const message = await findByText('Error Message');
+
+      expect(message).toBeInTheDocument();
     });
   });
 
   describe('object validator', () => {
-    it('should render error message when input is invalid value', () => {
-      const { getByText } = render(
+    it('should render error message when input is invalid value', async () => {
+      const { findByText } = render(
+        <FormField
+          label="Input"
+          validator={{
+            rule: value => value === 'error1',
+            message: 'error message',
+          }}
+        >
+          <Input defaultValue="error1" placeholder="Placeholder" />
+        </FormField>
+      );
+
+      const message = await findByText('error message');
+      expect(message).toBeInTheDocument();
+    });
+
+    it('should render error message when input is invalid value', async () => {
+      const { findByText } = render(
         <FormField
           label="Input"
           validator={[
@@ -149,11 +246,12 @@ describe('FormField', () => {
         </FormField>
       );
 
-      expect(getByText('error message')).toBeInTheDocument();
+      const message = await findByText('error message');
+      expect(message).toBeInTheDocument();
     });
 
-    it('should render error message when input is another invalid value', () => {
-      const { getByText } = render(
+    it('should render error message when input is another invalid value', async () => {
+      const { findByText } = render(
         <FormField
           label="Input"
           validator={[
@@ -171,7 +269,8 @@ describe('FormField', () => {
         </FormField>
       );
 
-      expect(getByText('another error message')).toBeInTheDocument();
+      const message = await findByText('another error message');
+      expect(message).toBeInTheDocument();
     });
 
     it('should not render error message when input is valid', () => {
@@ -197,8 +296,8 @@ describe('FormField', () => {
       expect(queryByText('another error message')).not.toBeInTheDocument();
     });
 
-    it('should render FormField with error message correctly when change input value', () => {
-      const { getByTestId, getByText, queryByText } = render(
+    it('should render FormField with error message correctly when change input value', async () => {
+      const { getByTestId, findByText, queryByText } = render(
         <FormField
           label="Input"
           validator={[
@@ -227,14 +326,18 @@ describe('FormField', () => {
           value: 'error1',
         },
       });
-      expect(getByText('error message')).toBeInTheDocument();
+
+      const message = await findByText('error message');
+      expect(message).toBeInTheDocument();
 
       fireEvent.change(getByTestId('input'), {
         target: {
           value: 'error2',
         },
       });
-      expect(getByText('another error message')).toBeInTheDocument();
+
+      const message2 = await findByText('another error message');
+      expect(message2).toBeInTheDocument();
     });
   });
 });
