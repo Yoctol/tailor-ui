@@ -209,6 +209,7 @@ const Upload: FunctionComponent<UploadProps> = ({
   });
   const { getRootProps, getInputProps, open } = useDropzone({
     onDrop: handleSelect,
+    ...props,
   });
 
   return (
@@ -244,7 +245,6 @@ const Upload: FunctionComponent<UploadProps> = ({
 
             open();
           }}
-          {...props}
         >
           {text}
         </Button>
