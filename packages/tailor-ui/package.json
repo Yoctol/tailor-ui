@@ -1,21 +1,22 @@
 {
   "name": "tailor-ui",
-  "version": "0.15.0",
   "description": "A bespoke UI collection for building web application.",
+  "license": "MIT",
   "author": "dev@yoctol.com",
   "homepage": "https://tailor-ui.netlify.com",
-  "license": "MIT",
-  "main": "lib/index.cjs.js",
-  "module": "lib/index.js",
-  "typings": "lib/index.d.ts",
-  "sideEffects": false,
-  "files": [
-    "lib"
-  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/yoctol/tailor-ui.git"
   },
+  "bugs": {
+    "url": "https://github.com/yoctol/tailor-ui/issues"
+  },
+  "version": "0.15.0",
+  "main": "lib/index.cjs.js",
+  "module": "lib/index.js",
+  "files": [
+    "lib"
+  ],
   "scripts": {
     "build": "cross-env NODE_ENV=production babel --config-file ../../babel.config.js ./src --out-dir ./lib --extensions '.ts,.tsx'",
     "postbuild": "rollup -c ./config/rollup.config.js",
@@ -24,9 +25,7 @@
     "testonly:cov": "jest --coverage --runInBand",
     "testonly:watch": "jest --watch"
   },
-  "bugs": {
-    "url": "https://github.com/yoctol/tailor-ui/issues"
-  },
+  "typings": "lib/index.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.4.5",
     "@tailor-ui/hooks": "^0.2.0",
@@ -36,7 +35,7 @@
     "polished": "^3.4.1",
     "prop-types": "^15.7.1",
     "ramda": "^0.26.1",
-    "rc-calendar": "^9.15.0",
+    "rc-calendar": "^9.15.3",
     "rc-time-picker": "^3.7.1",
     "react-autosize-textarea": "^7.0.0",
     "react-dropzone": "10.1.5",
@@ -51,5 +50,6 @@
     "react-icons": ">=3.2.0",
     "react-spring": ">=8.0.0",
     "styled-components": ">=4.2.0"
-  }
+  },
+  "sideEffects": false
 }
