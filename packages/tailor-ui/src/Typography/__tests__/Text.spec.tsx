@@ -12,6 +12,7 @@ describe('Text', () => {
         letterSpacing={1.5}
         lineHeight="2"
         textAlign="center"
+        fontSize="lg"
       >
         Some Text
       </Text>

@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import {
   ColorProps,
   FontFamilyProps,
+  FontSizeProps,
   FontWeightProps,
   LetterSpacingProps,
   LineHeightProps,
@@ -9,6 +10,7 @@ import {
   color,
   compose,
   fontFamily,
+  fontSize,
   fontWeight,
   letterSpacing,
   lineHeight,
@@ -17,6 +19,7 @@ import {
 
 export type TextProps = ColorProps &
   FontFamilyProps &
+  FontSizeProps &
   FontWeightProps &
   LetterSpacingProps &
   LineHeightProps &
@@ -25,12 +28,13 @@ export type TextProps = ColorProps &
 export const text = compose(
   color,
   fontFamily,
+  fontSize,
   fontWeight,
   letterSpacing,
   lineHeight,
   textAlign
 );
 
-const Text = styled('p')<TextProps>({ margin: 0 }, text);
+const Text = styled('span')<TextProps>(text);
 
 export { Text };
