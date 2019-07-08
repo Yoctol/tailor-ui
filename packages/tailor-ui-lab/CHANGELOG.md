@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.10.1](https://github.com/Yoctol/tailor-ui/compare/@tailor-ui/lab@0.10.0...@tailor-ui/lab@0.10.1) (2019-07-08)
+
+
+### Bug Fixes
+
+* **select:** set correct highlight index when click item ([9f3235d](https://github.com/Yoctol/tailor-ui/commit/9f3235d))
+* **Select:** render select option title ([5673702](https://github.com/Yoctol/tailor-ui/commit/5673702))
+
+
+
+
+
 # [0.10.0](https://github.com/Yoctol/tailor-ui/compare/@tailor-ui/lab@0.9.6...@tailor-ui/lab@0.10.0) (2019-06-18)
 
 **Note:** Version bump only for package @tailor-ui/lab

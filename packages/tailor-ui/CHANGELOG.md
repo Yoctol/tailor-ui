@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.16.0](https://github.com/yoctol/tailor-ui/compare/tailor-ui@0.15.0...tailor-ui@0.16.0) (2019-07-08)
+
+
+### Bug Fixes
+
+* **form-field:** prevent animation on initial ([bab560d](https://github.com/yoctol/tailor-ui/commit/bab560d))
+* **positioner:** prevent spring ([dd6c0b7](https://github.com/yoctol/tailor-ui/commit/dd6c0b7))
+* **upload:** spread props to useDropzone ([9671415](https://github.com/yoctol/tailor-ui/commit/9671415))
+
+
+### Features
+
+* **form-field:** add animation ([126e444](https://github.com/yoctol/tailor-ui/commit/126e444))
+* **form-field:** add single object validator support ([fa8b2d0](https://github.com/yoctol/tailor-ui/commit/fa8b2d0))
+* **form-field:** add yup supported ([2142d20](https://github.com/yoctol/tailor-ui/commit/2142d20))
+
+
+
+
+
 # [0.15.0](https://github.com/yoctol/tailor-ui/compare/tailor-ui@0.14.0...tailor-ui@0.15.0) (2019-06-18)
 
 
