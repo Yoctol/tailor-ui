@@ -1,5 +1,11 @@
 import Downshift from 'downshift';
-import React, { FunctionComponent, ReactNode, useRef, useState } from 'react';
+import React, {
+  FunctionComponent,
+  ReactNode,
+  useCallback,
+  useRef,
+  useState,
+} from 'react';
 
 import { Flex, Popover, Position, useFormField } from 'tailor-ui';
 
@@ -76,35 +82,51 @@ const Select: FunctionComponent<SelectProps> = ({
   const [visible, setVisible] = useState(false);
   const [inputValue, setInputValue] = useState('');
 
-  const handleChange = (selection: Option | CreateOption) => {
-    if (inputRef.current && !multiple) {
-      inputRef.current.blur();
-    }
+  const handleChange = useCallback(
+    (selection: Option | CreateOption) => {
+      if (inputRef.current && !multiple) {
+        inputRef.current.blur();
+      }
 
-    const isCreate =
-      selection && (selection as CreateOption).label === 'CREATE_OPTION';
+      const isCreate =
+        selection && (selection as CreateOption).label === 'CREATE_OPTION';
 
-    if (isCreate && onCreateOption) {
-      onCreateOption((selection as CreateOption).value);
-    }
+      if (isCreate && onCreateOption) {
+        onCreateOption((selection as CreateOption).value);
+      }
 
-    if (!isCreate && onChange) {
-      onChange(selection as Option);
-      setValue(selection as Option);
-    }
+      if (!isCreate && onChange) {
+        onChange(selection as Option);
+        setValue(selection as Option);
+      }
 
-    if (!multiple || isCreate) {
-      setVisible(false);
-    } else {
-      setInputValue('');
-    }
-  };
+      if (!multiple || isCreate) {
+        setVisible(false);
+      } else {
+        setInputValue('');
+      }
+    },
+    [multiple, onChange, onCreateOption, setValue]
+  );
 
-  const defaultHighlightedIndex = multiple
-    ? null
-    : options.findIndex(
-        option => itemToString(option) === itemToString(value || defaultValue)
-      ) || null;
+  const getHighlightedIndex = useCallback(
+    (item: Option) => {
+      if (multiple) {
+        return null;
+      }
+
+      const index = options.findIndex(
+        option => itemToString(option) === itemToString(item)
+      );
+
+      if (index === null) {
+        return null;
+      }
+
+      return index;
+    },
+    [multiple, options]
+  );
 
   const RenderComponent = multiple ? MultiDownshift : Downshift;
 
@@ -114,15 +136,19 @@ const Select: FunctionComponent<SelectProps> = ({
       selectedItem={value}
       isOpen={visible}
       initialSelectedItem={defaultValue}
-      defaultHighlightedIndex={defaultHighlightedIndex}
+      defaultHighlightedIndex={getHighlightedIndex((value ||
+        defaultValue) as Option)}
       stateReducer={(state, changes) => {
         // if the user is opening the menu, then let's make sure
         // that the highlighted index is set to the selected index
         if (
           typeof changes === 'object' &&
-          changes.type === Downshift.stateChangeTypes.mouseUp
+          changes.type === Downshift.stateChangeTypes.clickItem
         ) {
-          return {};
+          return {
+            ...changes,
+            highlightedIndex: getHighlightedIndex(changes.selectedItem),
+          };
         }
 
         return changes;
