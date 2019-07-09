@@ -28,6 +28,19 @@ import { DatePicker } from 'tailor-ui';
   <DatePicker defaultValue={moment()} onChange={console.log} />
 </Playground>
 
+### Customize input
+
+<Playground>
+  <DatePicker
+    defaultValue={moment()}
+    onChange={console.log}
+    inputProps={{
+      size: 'sm',
+      width: 150,
+    }}
+  />
+</Playground>
+
 ### Choose Time
 
 <Playground>
