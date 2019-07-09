@@ -4,7 +4,6 @@ import { css } from 'styled-components';
 import { prefixClass } from '../prefix';
 
 import Calendar from './Calendar';
-import Picker from './Picker';
 
 export default css`
   ${prefixClass} {
@@ -19,5 +18,4 @@ export default css`
   }
 
   ${Calendar};
-  ${Picker};
 `;

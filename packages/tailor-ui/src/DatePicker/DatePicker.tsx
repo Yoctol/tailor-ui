@@ -1,14 +1,27 @@
 import RcCalendar from 'rc-calendar';
-import RcDatePicker from 'rc-calendar/lib/Picker';
-import React, { FunctionComponent } from 'react';
+import React, { FunctionComponent, useState } from 'react';
 import TimePickerPanel from 'rc-time-picker/lib/Panel';
 
-import { Input } from '../Input';
+import { Input, InputProps } from '../Input';
+import { Popover } from '../Popover';
+import { Position } from '../constants';
 import { useLocale } from '../locale';
 
 import DatePickerStyle from './styles';
 
 export interface DatePickerProps {
+  /**
+   * to set date
+   */
+  value?: any;
+  /**
+   * to set default date, if start time or end time is null or undefined, the date range will be an open interval
+   */
+  defaultValue?: any;
+  /**
+   * The props of datepicker input
+   */
+  inputProps?: InputProps;
   /**
    * a callback function, can be executed when the selected time is changing
    */
@@ -45,16 +58,18 @@ export interface DatePickerProps {
 
 const DatePicker: FunctionComponent<DatePickerProps> = ({
   onChange,
-  showTime,
+  showTime = false,
   showSecond,
   minuteStep,
   format: formatFromProps,
   disabledDate,
   disabledTime,
   placeholder,
+  inputProps = {},
   ...props
 }) => {
   const { locale } = useLocale();
+  const [val, setVal] = useState(() => props.value || props.defaultValue);
   const format =
     formatFromProps ||
     `YYYY-MM-DD${showTime ? ' HH:mm' : ''}${
@@ -64,45 +79,49 @@ const DatePicker: FunctionComponent<DatePickerProps> = ({
   return (
     <>
       <DatePickerStyle />
-      <RcDatePicker
-        animation="slide-up"
-        onChange={(value: any) => {
-          if (!value) {
-            onChange(null, '');
-          } else {
-            onChange(value, value.format(format));
-          }
-        }}
-        {...props}
-        calendar={
+      <Popover
+        position={Position.BOTTOM_LEFT}
+        p="0"
+        content={handleClose => (
           <RcCalendar
+            showWeekNumber={false}
+            showDateInput={false}
+            showOk
             format={format}
             disabledDate={disabledDate}
             disabledTime={disabledTime}
             locale={locale.DatePicker}
-            showWeekNumber={false}
             dateInputPlaceholder={placeholder}
-            showOk
+            onOk={handleClose}
             timePicker={
-              showTime && (
+              showTime ? (
                 <TimePickerPanel
                   minuteStep={minuteStep}
                   showSecond={showSecond}
                 />
-              )
+              ) : null
             }
-          />
-        }
-      >
-        {({ value }: { value: any }) => (
-          <Input
-            readOnly
-            width="253px"
-            value={value ? value.format(format) : ''}
-            placeholder={placeholder}
+            {...props}
+            onChange={(value: any) => {
+              if (!value) {
+                onChange(null, '');
+                setVal(null);
+              } else {
+                onChange(value, value.format(format));
+                setVal(value);
+              }
+            }}
           />
         )}
-      </RcDatePicker>
+      >
+        <Input
+          readOnly
+          width="251px"
+          value={val ? val.format(format) : ''}
+          placeholder={placeholder}
+          {...inputProps}
+        />
+      </Popover>
     </>
   );
 };

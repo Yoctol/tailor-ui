@@ -7,12 +7,10 @@ export default css`
   ${prefixClass} {
     position: relative;
     width: 253px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
     outline: none;
+    border-radius: ${p => p.theme.radii.lg};
     background-clip: padding-box;
     background-color: #fff;
-    box-shadow: ${p => p.theme.shadows.xl};
     font-size: 14px;
     line-height: 1.5;
     list-style: none;

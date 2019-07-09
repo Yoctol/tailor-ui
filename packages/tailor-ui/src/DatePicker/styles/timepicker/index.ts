@@ -56,6 +56,7 @@ export default css`
       text-align: left;
       cursor: pointer;
       user-select: none;
+      outline: none;
 
       &:hover {
         background: ${p => p.theme.colors.gray300};
