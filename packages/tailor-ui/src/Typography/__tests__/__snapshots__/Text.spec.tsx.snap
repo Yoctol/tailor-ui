@@ -2,8 +2,8 @@
 
 exports[`Text should render correctly 1`] = `
 .c0 {
-  margin: 0;
   color: #184480;
+  font-size: 1.125rem;
   -webkit-letter-spacing: 1.5px;
   -moz-letter-spacing: 1.5px;
   -ms-letter-spacing: 1.5px;
@@ -12,11 +12,12 @@ exports[`Text should render correctly 1`] = `
   text-align: center;
 }
 
-<p
+<span
   class="c0"
   color="primaryDark"
+  font-size="lg"
   letter-spacing="1.5"
 >
   Some Text
-</p>
+</span>
 `;
