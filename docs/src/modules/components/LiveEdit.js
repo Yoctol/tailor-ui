@@ -1,5 +1,4 @@
 import React from 'react';
-import reactElementToJSXString from 'react-element-to-jsx-string';
 import styled from 'styled-components';
 import { LiveEditor, LiveError, LivePreview, LiveProvider } from 'react-live';
 
