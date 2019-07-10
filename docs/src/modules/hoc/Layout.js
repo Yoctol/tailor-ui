@@ -33,7 +33,7 @@ const ChildrenWrapper = styled.div`
   width: 70%;
   min-width: 936px;
   margin: auto;
-  overflow: scroll;
+  overflow: auto;
 `;
 
 const MainWrapper = styled.div`
@@ -76,49 +76,6 @@ const Layout = ({ children, router: { pathname } }) => {
           box-sizing: border-box;
           margin: 0;
           padding: 0;
-        }
-
-        .MDXH1 {
-          font-size: 70px;
-          position: relative;
-          display: table;
-          font-family: Roboto;
-          font-weight: 700;
-          letter-spacing: -0.02em;
-          margin: 10px 0px 20px;
-        }
-        .MDXH1:before {
-          position: absolute;
-          content: '';
-          bottom: 5%;
-          left: 0px;
-          width: 35%;
-          height: 2px;
-          background: rgb(60, 90, 208);
-        }
-
-        .MDXH2 {
-          position: relative;
-          padding-bottom: 5px;
-          line-height: 1.2em;
-          font-family: Roboto;
-          font-weight: 400;
-          font-size: 32px;
-          letter-spacing: -0.02em;
-          border-bottom: 1px dashed rgb(206, 212, 222);
-          margin: 40px 0px 20px;
-        }
-
-        .MDXUl {
-          list-style: none;
-          padding: 0;
-        }
-
-        .MDXLi::before {
-          content: '● ';
-          color: rgb(206, 212, 222);
-          font-weight: bold;
-          margin-right: 5px;
         }
       `}</style>
     </LayoutWrapper>

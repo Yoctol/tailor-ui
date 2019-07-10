@@ -7,13 +7,7 @@ import { LiveEdit, CodeBlock, GoBackButton } from 'docs/src/modules/components';
 
 # Button
 
-To trigger an operation.
-
-## When To Use
-
-A button means an operation (or a series of operations). Clicking a button will trigger corresponding business logic.
-
-## Examples
+### To trigger an operation.
 
 <CodeBlock
   code="import { Button } from 'tailor-ui';"
@@ -21,10 +15,18 @@ A button means an operation (or a series of operations). Clicking a button will 
   theme={theme}
 />
 
-### Basic
+## When To Use
+
+A button means an operation (or a series of operations). Clicking a button will trigger corresponding business logic.
+
+## Basic Buttons
 
 <LiveEdit
-  code={`<div>
+  scope={{ Button }}
+  theme={theme}
+  language="jsx"
+  code={`
+<div>
   <Button>Basic</Button>
   <Button rounded ml="2">
     Basic
@@ -36,72 +38,88 @@ A button means an operation (or a series of operations). Clicking a button will 
     Basic
   </Button>
 </div>
-`.trim()}
-  scope={{ Button }}
-  theme={theme}
-  language="jsx"
-/>
+`}
+></LiveEdit>
 
 ### Variant
 
 <LiveEdit
-  code={`<div>
-  <Button variant="primary">Primary</Button>
-  <Button variant="primary-invert" ml="2">
-    Primary Invert
-  </Button>
-  <br />
-  <br />
-  <Button variant="danger">Danger</Button>
-  <Button variant="danger-invert" ml="2">
-    Danger Invert
-  </Button>
-  <br />
-  <br />
-  <Button variant="regular">Regular</Button>
-  <Button variant="normal" ml="2">
-    Normal
-  </Button>
-</div>
-`.trim()}
   scope={{ Button }}
   theme={theme}
   language="jsx"
-/>
+  code={`
+<div>
+  <Button variant="primary" ml="2">
+    Primary
+  </Button>
+  <Button variant="danger" ml="2">
+    Danger
+  </Button>
+  <Button variant="regular" ml="2">
+    Regular
+  </Button>
+  <Button variant="normal" ml="2">
+    Normal
+  </Button>
+  <br />
+  <br />
+  <Button variant="primary-invert" ml="2">
+    Primary
+  </Button>
+  <Button variant="danger-invert" ml="2">
+    Danger
+  </Button>
+  <Button variant="regular-invert" ml="2">
+    Regular
+  </Button>
+  <Button variant="normal-invert" ml="2">
+    Normal
+  </Button>
+</div>
+`}
+></LiveEdit>
 
 ### Rounded
 
 <LiveEdit
-  code={`<div>
-  <Button rounded variant="primary">
+  scope={{ Button }}
+  theme={theme}
+  language="jsx"
+  code={`
+<div>
+  <Button rounded variant="primary" ml="2">
     Primary
   </Button>
-  <Button rounded variant="primary-invert" ml="2">
-    Primary Invert
-  </Button>
-  <br />
-  <br />
-  <Button rounded variant="danger">
+  <Button rounded variant="danger" ml="2">
     Danger
   </Button>
-  <Button rounded variant="danger-invert" ml="2">
-    Danger Invert
-  </Button>
-  <br />
-  <br />
-  <Button rounded variant="regular">
+  <Button rounded variant="regular" ml="2">
     Regular
   </Button>
   <Button rounded variant="normal" ml="2">
     Normal
   </Button>
-</div>`}
-  scope={{ Button }}
-  theme={theme}
-  language="jsx"
-/>
+  <br />
+  <br />
+  <Button rounded variant="primary-invert" ml="2">
+    Primary
+  </Button>
+  <Button rounded variant="danger-invert" ml="2">
+    Danger
+  </Button>
+  <Button rounded variant="regular-invert" ml="2">
+    Regular
+  </Button>
+  <Button rounded variant="normal-invert" ml="2">
+    Normal
+  </Button>
+</div>
+`}
+></LiveEdit>
 
-### Icon
+### Icon Buttons
+
+Icon With Text Buttons
 
 <CodeBlock
   code="import { MdArrowForward } from 'react-icons/md';"
@@ -110,35 +128,42 @@ A button means an operation (or a series of operations). Clicking a button will 
 />
 
 <LiveEdit
-  code={`<div>
-  <Button icon={MdArrowForward} variant="primary">
+  scope={{ Button, MdArrowForward }}
+  theme={theme}
+  language="jsx"
+  code={`
+<div>
+  <Button icon={MdArrowForward} variant="primary" ml="2">
     Primary
   </Button>
-  <Button icon={MdArrowForward} variant="primary-invert" ml="2">
-    Primary Invert
-  </Button>
-  <br />
-  <br />
-  <Button icon={MdArrowForward} variant="danger">
+  <Button icon={MdArrowForward} variant="danger" ml="2">
     Danger
   </Button>
-  <Button icon={MdArrowForward} variant="danger-invert" ml="2">
-    Danger Invert
-  </Button>
-  <br />
-  <br />
-  <Button icon={MdArrowForward} variant="regular">
+  <Button icon={MdArrowForward} variant="regular" ml="2">
     Regular
   </Button>
   <Button icon={MdArrowForward} variant="normal" ml="2">
     Normal
   </Button>
+  <br />
+  <br />
+  <Button icon={MdArrowForward} variant="primary-invert" ml="2">
+    Primary
+  </Button>
+  <Button icon={MdArrowForward} variant="danger-invert" ml="2">
+    Danger
+  </Button>
+  <Button icon={MdArrowForward} variant="regular-invert" ml="2">
+    Regular
+  </Button>
+  <Button icon={MdArrowForward} variant="normal-invert" ml="2">
+    Normal
+  </Button>
 </div>
 `}
-  scope={{ Button, MdArrowForward }}
-  theme={theme}
-  language="jsx"
-/>
+></LiveEdit>
+
+Icon Only Buttons
 
 <CodeBlock
   code="import { MdCheck } from 'react-icons/md';"
@@ -147,85 +172,91 @@ A button means an operation (or a series of operations). Clicking a button will 
 />
 
 <LiveEdit
-  code={`<div>
+  scope={{ Button, MdCheck }}
+  theme={theme}
+  language="jsx"
+  code={`
+<div>
   <Button icon={MdCheck} variant="primary" rounded />
   <Button icon={MdCheck} variant="primary-invert" rounded ml="2" />
   <Button icon={MdCheck} variant="danger" rounded ml="2" />
   <Button icon={MdCheck} variant="danger-invert" rounded ml="2" />
   <Button icon={MdCheck} variant="regular" rounded ml="2" />
   <Button icon={MdCheck} variant="normal" rounded ml="2" />
-</div>`}
-  scope={{ Button, MdCheck }}
-  theme={theme}
-  language="jsx"
-/>
+</div>
+`}
+></LiveEdit>
 
 ### Disabled
 
 <LiveEdit
-  code={`<div>
-  <Button disabled variant="primary">
+  scope={{ Button }}
+  theme={theme}
+  language="jsx"
+  code={`
+<div>
+  <Button disabled variant="primary" ml="2">
     Primary
   </Button>
-  <Button disabled variant="primary-invert" ml="2">
-    Primary Invert
-  </Button>
-  <br />
-  <br />
-  <Button disabled variant="danger">
+  <Button disabled variant="danger" ml="2">
     Danger
   </Button>
-  <Button disabled variant="danger-invert" ml="2">
-    Danger Invert
-  </Button>
-  <br />
-  <br />
-  <Button disabled variant="regular">
+  <Button disabled variant="regular" ml="2">
     Regular
   </Button>
   <Button disabled variant="normal" ml="2">
     Normal
   </Button>
-</div>`}
-  scope={{ Button }}
-  theme={theme}
-  language="jsx"
-/>
+</div>
+`}
+></LiveEdit>
 
 ### Loading
 
 <LiveEdit
-  code={`<div>
-  <Button loading variant="primary">
+  scope={{ Button }}
+  theme={theme}
+  language="jsx"
+  code={`
+<div>
+  <Button loading variant="primary" ml="2">
     Primary
   </Button>
-  <Button loading variant="primary-invert" ml="2">
-    Primary Invert
-  </Button>
-  <br />
-  <br />
-  <Button loading variant="danger">
+  <Button loading variant="danger" ml="2">
     Danger
-  </Button>
-  <Button loading variant="danger-invert" ml="2">
-    Danger Invert
-  </Button>
-  <br />
-  <br />
-  <Button loading variant="regular">
-    Regular
   </Button>
   <Button loading variant="normal" ml="2">
     Normal
   </Button>
-</div>`}
-  scope={{ Button }}
-  theme={theme}
-  language="jsx"
-/>
+  <Button loading variant="regular" ml="2">
+    Regular
+  </Button>
+  <br />
+  <br />
+  <Button loading variant="primary-invert" ml="2">
+    Primary
+  </Button>
+  <Button loading variant="danger-invert" ml="2">
+    Danger
+  </Button>
+  <Button loading variant="normal-invert" ml="2">
+    Normal
+  </Button>
+  <Button loading variant="regular-invert" ml="2">
+    Regular
+  </Button>
+</div>
+`}
+></LiveEdit>
+
+### Stated Button Example
 
 <LiveEdit
-  code={`() => {
+  scope={{ Button }}
+  theme={theme}
+  language={'jsx'}
+  code={`
+() => {
   const [loading, setLoading] = React.useState(false);
   return (
     <Button
@@ -237,31 +268,27 @@ A button means an operation (or a series of operations). Clicking a button will 
     >
       Click me!
     </Button>
-  )
-}`.trim()}
-  scope={{ Button }}
-  theme={theme}
-  language={'jsx'}
-/>
+  );
+}
+`}
+></LiveEdit>
 
 ### Sizes
 
-<LiveEdit
-  code={`<div>
+<LiveEdit scope={{ Button }} theme={theme} language="jsx" code={`
+<div>
   <Button size="sm">
     Button sm
   </Button>
 
 <Button ml={2}>Button md</Button>
 
-  <Button ml={2} size="lg">
-    Button lg
-  </Button>
+<Button ml={2} size="lg">
+  Button lg
+</Button>
+
 </div>
-`}
-  scope={{ Button }}
-  theme={theme}
-  language="jsx"
-/>
+`}>
+</LiveEdit>
 
 ## API

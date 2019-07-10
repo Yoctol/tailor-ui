@@ -58,6 +58,7 @@ const ComponentGroup = styled.div`
 
 const SectionTitle = styled.h1`
   margin: 15px calc(8% / 6);
+  margin-bottom: 0;
   color: #626262;
   font-weight: 200;
 `;

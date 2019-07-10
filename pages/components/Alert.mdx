@@ -6,14 +6,7 @@ import { LiveEdit, CodeBlock, GoBackButton } from 'docs/src/modules/components';
 
 # Alert
 
-Alert component for feedback.
-
-## When To Use
-
-- When you need to show alert messages to users.
-- When you need a persistent static container which is closable by user actions.
-
-## Examples
+### Alert component used as feedback.
 
 <CodeBlock
   code="import { Alert } from 'tailor-ui';"
@@ -21,28 +14,31 @@ Alert component for feedback.
   theme={theme}
 />
 
-### Basic
+## When To Use
+
+- When you need to show alert messages to users.
+- When you need a persistent static container which is closable by user actions.
+
+### Basic Alerts
 
 <LiveEdit
-  code={`
-  <Alert message="test" />
-`.trim()}
   scope={{ Alert }}
   theme={theme}
   language="jsx"
-/>
+  code={`<Alert message="test" />`}
+></LiveEdit>
 
 ### With Type
 
 <LiveEdit
-  code={`<div>
+  scope={{ Alert }}
+  theme={theme}
+  language="jsx"
+  code={`
+<div>
   <Alert message="Info Text" type="info" />
   <Alert message="Success Text" type="success" />
   <Alert message="Warning Text" type="warning" />
   <Alert message="Error Text" type="error" />
-</div>
-  `.trim()}
-  scope={{ Alert }}
-  theme={theme}
-  language="jsx"
-/>
+</div>`}
+></LiveEdit>

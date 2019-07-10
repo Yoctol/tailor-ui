@@ -6,8 +6,8 @@ import Router from 'next/router';
 import { MDXProvider } from '@mdx-js/tag';
 import { ThemeProvider } from 'styled-components';
 
-import { H1, H2, Li, Ul } from 'docs/src/modules/components';
 import { Layout } from 'docs/src/modules/hoc';
+import { MDXComponents } from 'docs/src/modules/components';
 import { UIProvider } from 'tailor-ui';
 
 const theme = {
@@ -22,11 +22,11 @@ Router.events.on('routeChangeError', NProgress.done);
 
 export default class MyApp extends App {
   render() {
-    const { Component, pageProps, route } = this.props;
+    const { Component, pageProps } = this.props;
     return (
       <Container>
         <ThemeProvider theme={theme}>
-          <MDXProvider components={{ h1: H1, h2: H2, ul: Ul, li: Li }}>
+          <MDXProvider components={MDXComponents}>
             <Head>
               <title>Tailor UI</title>
             </Head>
