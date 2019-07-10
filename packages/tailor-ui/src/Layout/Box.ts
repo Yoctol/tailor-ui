@@ -17,6 +17,7 @@ export type BoxProps = system.PositionProps &
   system.BottomProps &
   system.LeftProps &
   system.OverflowProps &
+  system.GridAreaProps &
   system.ZIndexProps &
   system.DisplayProps &
   system.SpaceProps &
@@ -50,6 +51,8 @@ export const box = system.compose(
   system.overflow,
   overflowX as any,
   overflowY as any,
+
+  system.gridArea,
 
   system.zIndex,
   system.display,

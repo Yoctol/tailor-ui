@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import {
-  GridAreaProps,
   GridAutoColumnsProps,
   GridAutoFlowProps,
   GridAutoRowsProps,
@@ -13,7 +12,6 @@ import {
   GridTemplateRowsProps,
   GridTemplatesAreasProps,
   compose,
-  gridArea,
   gridAutoColumns,
   gridAutoFlow,
   gridAutoRows,
@@ -27,7 +25,10 @@ import {
   gridTemplateRows,
 } from 'styled-system';
 
-export type GridProps = GridGapProps &
+import { BoxProps, box } from './Box';
+
+export type GridProps = BoxProps &
+  GridGapProps &
   GridColumnGapProps &
   GridRowGapProps &
   GridColumnProps &
@@ -37,8 +38,7 @@ export type GridProps = GridGapProps &
   GridAutoRowsProps &
   GridTemplateColumnsProps &
   GridTemplateRowsProps &
-  GridTemplatesAreasProps &
-  GridAreaProps;
+  GridTemplatesAreasProps;
 
 const grid = compose(
   gridGap,
@@ -52,7 +52,7 @@ const grid = compose(
   gridTemplateColumns,
   gridTemplateRows,
   gridTemplateAreas,
-  gridArea
+  box
 );
 
 const Grid = styled('div')<GridProps>({ display: 'grid' }, grid);
