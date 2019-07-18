@@ -3,6 +3,7 @@ import React, {
   KeyboardEventHandler,
   MouseEventHandler,
   MutableRefObject,
+  ReactNode,
   useEffect,
   useState,
 } from 'react';
@@ -18,8 +19,8 @@ import { FooterWrapper, ModalContent, ModalHeader } from './Modal';
 export type ModalTypes = StatusType | 'confirm';
 
 export interface ModalOptions {
-  title?: string;
-  content?: string;
+  title?: ReactNode;
+  content?: ReactNode;
   confirmText?: string;
   cancelText?: string;
   onConfirm?: MouseEventHandler;
@@ -39,8 +40,8 @@ interface EffectModalProps {
 }
 
 interface ModalOptionsState {
-  title?: string;
-  content?: string;
+  title?: ReactNode;
+  content?: ReactNode;
   confirmText?: string;
   cancelText?: string | null;
   onConfirm: MouseEventHandler;
