@@ -21,6 +21,7 @@ export { useMessage } from './message';
 export { Modal, useModal } from './Modal';
 export { Radio } from './Radio';
 export { Select } from './Select';
+export { Slider } from './Slider';
 export { Spin } from './Spin';
 export { Steps } from './Steps';
 export { Switch } from './Switch';
