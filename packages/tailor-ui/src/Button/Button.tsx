@@ -33,7 +33,7 @@ const Button: ForwardRefExoticComponent<ButtonProps> = forwardRef<
       ref={ref}
       hasIcon={Boolean(icon && !children)}
       size={size}
-      loading={loading}
+      isLoading={loading}
       {...props}
     >
       <ButtonIcon
