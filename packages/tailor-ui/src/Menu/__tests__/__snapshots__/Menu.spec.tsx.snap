@@ -182,6 +182,9 @@ exports[`Menu should render correctly 1`] = `
 }
 
 .c4 {
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
   overflow: hidden;
 }
 

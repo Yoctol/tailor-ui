@@ -11,6 +11,7 @@ import MenuContext from './MenuContext';
 import { StyledSubMenu } from './styles';
 
 const SubMenuWrapper = styled.div`
+  flex: none;
   overflow: hidden;
 `;
 
