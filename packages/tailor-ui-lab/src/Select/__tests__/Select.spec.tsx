@@ -1,6 +1,13 @@
 import React, { useState } from 'react';
 
-import { fireEvent, render, wait, waitForElement } from 'test/test-utils';
+import {
+  fireEvent,
+  render,
+  getByText as utilsGetByText,
+  queryByText as utilsQueryByText,
+  wait,
+  waitForElement,
+} from 'test/test-utils';
 
 import { Select } from '../Select';
 
@@ -162,9 +169,9 @@ describe('Select', () => {
 
       expect(getByTitle('loading')).toBeInTheDocument();
 
-      jest.runAllTimers();
+      jest.runOnlyPendingTimers();
 
-      expect(queryByTitle('loading')).not.toBeInTheDocument();
+      await wait(() => expect(queryByTitle('loading')).not.toBeInTheDocument());
       expect(input.value).toBe('XXXXXX');
 
       jest.useRealTimers();
@@ -277,12 +284,13 @@ describe('Select', () => {
     };
 
     it('should display multi option', () => {
-      const { getByText, baseElement } = render(<MultipleSelect />);
+      const { getByTestId, baseElement } = render(<MultipleSelect />);
 
       expect(baseElement).toMatchSnapshot();
+      const select = getByTestId('select');
 
-      expect(getByText('Banana')).toBeInTheDocument();
-      expect(getByText('Orange')).toBeInTheDocument();
+      expect(utilsGetByText(select, 'Banana')).toBeInTheDocument();
+      expect(utilsGetByText(select, 'Orange')).toBeInTheDocument();
     });
 
     it('should add selected option when click other option', async () => {
@@ -311,17 +319,19 @@ describe('Select', () => {
     });
 
     it('should remove selected option when click clear ', async () => {
-      const { getByTestId, queryByText } = render(<MultipleSelect />);
+      const { getByTestId } = render(<MultipleSelect />);
 
       fireEvent.click(getByTestId('select-selected-option-1-clear-icon'));
       fireEvent.click(getByTestId('select-selected-option-0-clear-icon'));
 
-      expect(queryByText('Banana')).not.toBeInTheDocument();
-      expect(queryByText('Orange')).not.toBeInTheDocument();
+      const select = getByTestId('select');
+
+      expect(utilsQueryByText(select, 'Banana')).not.toBeInTheDocument();
+      expect(utilsQueryByText(select, 'Orange')).not.toBeInTheDocument();
     });
 
     it('should remove last selected option when press backspace ', async () => {
-      const { getByTestId, queryByText, getByText, queryByTestId } = render(
+      const { getByTestId, queryByText, queryByTestId } = render(
         <MultipleSelect />
       );
 
@@ -342,7 +352,7 @@ describe('Select', () => {
         expect(queryByTestId('select-menu')).not.toBeInTheDocument()
       );
 
-      expect(getByText('Banana')).toBeInTheDocument();
+      expect(utilsGetByText(select, 'Banana')).toBeInTheDocument();
       expect(queryByText('Orange')).not.toBeInTheDocument();
     });
   });
