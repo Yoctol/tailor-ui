@@ -14,8 +14,8 @@ export const spin = keyframes`
   }
 `;
 
-const buttonLoading = ({ loading }: { loading: boolean }) =>
-  loading &&
+const buttonLoading = ({ isLoading }: { isLoading: boolean }) =>
+  isLoading &&
   css`
     opacity: 0.5;
     cursor: default;
@@ -260,7 +260,7 @@ export const buttonVariant = ({ variant }: { variant?: ButtonVariant }) => {
 
 export type StyledButtonProps = SpaceProps &
   WidthProps & {
-    loading: boolean;
+    isLoading: boolean;
     hasIcon: boolean;
     size: ButtonSize;
     variant?: ButtonVariant;
