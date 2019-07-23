@@ -31,7 +31,7 @@ describe('useMessage', () => {
   });
 
   it('should remove message when click close button', async () => {
-    const { getByTestId, getByText, getByRole, queryByText } = render(
+    const { getByTestId, getByText, queryByText, baseElement } = render(
       <Message />
     );
 
@@ -40,8 +40,8 @@ describe('useMessage', () => {
 
     await waitForElement(() => getByText('Success'));
 
-    const closeButton = getByRole('button');
-    fireEvent.click(closeButton);
+    const closeButton = baseElement.querySelector('i[role=button]');
+    fireEvent.click(closeButton as Element);
 
     await wait(() => expect(queryByText('Success')).not.toBeInTheDocument());
   });
