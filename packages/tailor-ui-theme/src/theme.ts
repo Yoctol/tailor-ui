@@ -10,6 +10,7 @@ const colors = {
 
   // secondary
   secondary: '#50d5ff',
+  secondaryLight: '#63a9f5',
   secondaryDark: '#2db8de',
 
   // surface
@@ -233,6 +234,11 @@ export interface BordersType {
   base: string;
 
   /**
+   * 2px solid
+   */
+  lg: string;
+
+  /**
    * 1px dashed
    */
   dashed: string;
@@ -240,6 +246,7 @@ export interface BordersType {
 
 const borders: BordersType = {
   base: '1px solid',
+  lg: '2px solid',
   dashed: '1px dashed',
 };
 
