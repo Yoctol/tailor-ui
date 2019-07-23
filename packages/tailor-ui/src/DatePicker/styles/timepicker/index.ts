@@ -64,7 +64,7 @@ export default css`
     }
 
     li&-option-selected {
-      background: ${p => p.theme.colors.gray200};
+      background: ${p => p.theme.colors.primaryLight2};
       font-weight: bold;
     }
 

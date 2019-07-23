@@ -1,6 +1,8 @@
 import RcCalendar from 'rc-calendar';
-import React, { FunctionComponent, useState } from 'react';
+import RcRangeCalendar from 'rc-calendar/lib/RangeCalendar';
+import React, { FunctionComponent, useEffect, useMemo, useState } from 'react';
 import TimePickerPanel from 'rc-time-picker/lib/Panel';
+import { Moment } from 'moment';
 
 import { Input, InputProps } from '../Input';
 import { Popover } from '../Popover';
@@ -10,14 +12,15 @@ import { useLocale } from '../locale';
 import DatePickerStyle from './styles';
 
 export interface DatePickerProps {
+  range?: boolean;
   /**
    * to set date
    */
-  value?: any;
+  value?: Moment | Moment[];
   /**
    * to set default date, if start time or end time is null or undefined, the date range will be an open interval
    */
-  defaultValue?: any;
+  defaultValue?: Moment | Moment[];
   /**
    * The props of datepicker input
    */
@@ -25,7 +28,7 @@ export interface DatePickerProps {
   /**
    * a callback function, can be executed when the selected time is changing
    */
-  onChange: (date: any, dateString: string) => void;
+  onChange?: (date: Moment | Moment[]) => void;
   /**
    * to provide an additional time selection
    */
@@ -45,11 +48,11 @@ export interface DatePickerProps {
   /**
    * specify the date that cannot be selected
    */
-  disabledDate?: (current?: any) => boolean;
+  disabledDate?: (current: Moment) => boolean;
   /**
    * to specify the time that cannot be selected
    */
-  disabledTime?: (current?: any, type?: 'start' | 'end') => boolean;
+  disabledTime?: (current: Moment, type: 'start' | 'end') => boolean;
   /**
    * placeholder of date input
    */
@@ -59,6 +62,7 @@ export interface DatePickerProps {
 const DatePicker: FunctionComponent<DatePickerProps> = ({
   onChange,
   showTime = false,
+  range = false,
   showSecond,
   minuteStep,
   format: formatFromProps,
@@ -69,12 +73,58 @@ const DatePicker: FunctionComponent<DatePickerProps> = ({
   ...props
 }) => {
   const { locale } = useLocale();
-  const [val, setVal] = useState(() => props.value || props.defaultValue);
-  const format =
-    formatFromProps ||
-    `YYYY-MM-DD${showTime ? ' HH:mm' : ''}${
-      showTime && showSecond ? ':ss' : ''
-    }`;
+  const [ownValue, setOwnValue] = useState(
+    () => props.value || props.defaultValue
+  );
+  const format = useMemo(
+    () =>
+      formatFromProps ||
+      `YYYY-MM-DD${showTime ? ' HH:mm' : ''}${
+        showTime && showSecond ? ':ss' : ''
+      }`,
+    [formatFromProps, showSecond, showTime]
+  );
+
+  const RenderCalendar = useMemo(() => (range ? RcRangeCalendar : RcCalendar), [
+    range,
+  ]);
+
+  const handleChange = (value: Moment | Moment[]) => {
+    setOwnValue(value);
+    if (onChange) {
+      onChange(value);
+    }
+  };
+
+  useEffect(() => {
+    if (props.value && !props.defaultValue) {
+      setOwnValue(props.value);
+    }
+  }, [props.defaultValue, props.value]);
+
+  const valueProps = useMemo(
+    () =>
+      range
+        ? {
+            selectedValue: ownValue,
+          }
+        : {
+            value: ownValue,
+          },
+    [ownValue, range]
+  );
+
+  const displayValue = useMemo(() => {
+    if (!ownValue) {
+      return '';
+    }
+
+    if (Array.isArray(ownValue)) {
+      return ownValue.map(value => value.format(format)).join(' ~ ');
+    }
+
+    return ownValue.format(format);
+  }, [format, ownValue]);
 
   return (
     <>
@@ -83,7 +133,7 @@ const DatePicker: FunctionComponent<DatePickerProps> = ({
         position={Position.BOTTOM_LEFT}
         p="0"
         content={handleClose => (
-          <RcCalendar
+          <RenderCalendar
             showWeekNumber={false}
             showDateInput={false}
             showOk
@@ -91,7 +141,6 @@ const DatePicker: FunctionComponent<DatePickerProps> = ({
             disabledDate={disabledDate}
             disabledTime={disabledTime}
             locale={locale.DatePicker}
-            dateInputPlaceholder={placeholder}
             onOk={handleClose}
             timePicker={
               showTime ? (
@@ -102,22 +151,15 @@ const DatePicker: FunctionComponent<DatePickerProps> = ({
               ) : null
             }
             {...props}
-            onChange={(value: any) => {
-              if (!value) {
-                onChange(null, '');
-                setVal(null);
-              } else {
-                onChange(value, value.format(format));
-                setVal(value);
-              }
-            }}
+            {...valueProps}
+            onChange={handleChange}
           />
         )}
       >
         <Input
           readOnly
-          width="251px"
-          value={val ? val.format(format) : ''}
+          width={range ? '320px' : '255px'}
+          value={displayValue}
           placeholder={placeholder}
           {...inputProps}
         />

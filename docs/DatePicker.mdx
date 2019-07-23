@@ -5,7 +5,7 @@ route: /components/date-picker
 ---
 
 import { PropsTable, Playground } from 'docz';
-import { DatePicker, Input } from 'tailor-ui';
+import { DatePicker, Button, Input } from 'tailor-ui';
 import moment from 'moment';
 
 # DatePicker
@@ -24,11 +24,30 @@ import { DatePicker } from 'tailor-ui';
 
 ### Date picker
 
+#### Basic usage
+
 <Playground>
   <DatePicker defaultValue={moment()} onChange={console.log} />
 </Playground>
 
-### Customize input
+#### Controlled usage
+
+<Playground>
+  {() => {
+    const [value, setValue] = React.useState(() => moment());
+
+    return (
+      <>
+        <DatePicker value={value} onChange={setValue} />
+        <Button mt="2" onClick={() => setValue(moment().subtract(3, 'days'))}>Set to 3 days ago</Button>
+      </>
+    )
+
+}}
+
+</Playground>
+
+#### Customize input
 
 <Playground>
   <DatePicker
@@ -41,7 +60,7 @@ import { DatePicker } from 'tailor-ui';
   />
 </Playground>
 
-### Choose Time
+#### Choose Time
 
 <Playground>
   <DatePicker
@@ -52,7 +71,7 @@ import { DatePicker } from 'tailor-ui';
   />
 </Playground>
 
-### Choose Time & with minute step
+#### Choose Time & with minute step
 
 <Playground>
   <DatePicker
@@ -63,23 +82,32 @@ import { DatePicker } from 'tailor-ui';
   />
 </Playground>
 
-### Disabled Specified Date
+#### Disabled Specified Date
 
 <Playground>
   <DatePicker
     disabledDate={current => {
-      if (!current) {
-        return false;
-      }
-
       const date = moment({ hour: 0, minute: 0, second: 0 });
-
       return current.isBefore(date);
     }}
     onChange={console.log}
 
 />
 
+</Playground>
+
+### Ranger picker
+
+#### Basic usage
+
+<Playground>
+  <DatePicker range defaultValue={[moment(), moment()]} />
+</Playground>
+
+#### With time picker
+
+<Playground>
+  <DatePicker range showTime defaultValue={[moment(), moment()]} />
 </Playground>
 
 ## API
