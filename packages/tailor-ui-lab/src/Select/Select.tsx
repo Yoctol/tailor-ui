@@ -31,8 +31,8 @@ interface SelectProps {
   multiple?: boolean;
   searchable?: boolean;
   options: Option[];
-  value?: Option;
-  defaultValue?: Option;
+  value?: Option | Option[];
+  defaultValue?: Option | Option[];
   placeholder?: string;
   menu?: ReactNode;
   itemSize?: number;
