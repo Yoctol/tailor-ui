@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.2.0](https://github.com/Yoctol/tailor-ui/compare/@tailor-ui/theme@0.1.1...@tailor-ui/theme@0.2.0) (2019-07-24)
+
+
+### Features
+
+* **slider:** implement slider ([58a0aff](https://github.com/Yoctol/tailor-ui/commit/58a0aff))
+
+
+
+
+
 ## [0.1.1](https://github.com/Yoctol/tailor-ui/compare/@tailor-ui/theme@0.1.0...@tailor-ui/theme@0.1.1) (2019-07-09)
 
 **Note:** Version bump only for package @tailor-ui/theme

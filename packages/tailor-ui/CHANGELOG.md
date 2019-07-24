@@ -3,6 +3,29 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.17.0](https://github.com/yoctol/tailor-ui/compare/tailor-ui@0.16.1...tailor-ui@0.17.0) (2019-07-24)
+
+
+### Bug Fixes
+
+* **button:** map loading to isLoading to prevent loading boolean error ([85ab422](https://github.com/yoctol/tailor-ui/commit/85ab422))
+* **layout:** move grid-area to box ([0956c8e](https://github.com/yoctol/tailor-ui/commit/0956c8e))
+* **menu:** sub menu overflow ([395e4d6](https://github.com/yoctol/tailor-ui/commit/395e4d6))
+* **menu:** sub menu overflow ([#290](https://github.com/yoctol/tailor-ui/issues/290)) ([944fb93](https://github.com/yoctol/tailor-ui/commit/944fb93))
+* **modal:** content type ([91c7329](https://github.com/yoctol/tailor-ui/commit/91c7329))
+
+
+### Features
+
+* **date-picker:** add range picker ([020aaa5](https://github.com/yoctol/tailor-ui/commit/020aaa5))
+* **date-picker:** add range picker ([#292](https://github.com/yoctol/tailor-ui/issues/292)) ([be6d66c](https://github.com/yoctol/tailor-ui/commit/be6d66c))
+* **slider:** implement slider ([58a0aff](https://github.com/yoctol/tailor-ui/commit/58a0aff))
+* **slider:** implement slider ([#289](https://github.com/yoctol/tailor-ui/issues/289)) ([283042b](https://github.com/yoctol/tailor-ui/commit/283042b))
+
+
+
+
+
 ## [0.16.1](https://github.com/yoctol/tailor-ui/compare/tailor-ui@0.16.0...tailor-ui@0.16.1) (2019-07-09)
 
 **Note:** Version bump only for package tailor-ui
