@@ -88,7 +88,7 @@ const getWrapperBreadth = ({
 export interface DrawerProps {
   visible: boolean;
   onClose: () => void;
-  title?: string;
+  title?: ReactNode;
   footer?: ReactNode;
   placement?: Placement;
   closable?: boolean;
