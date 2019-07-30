@@ -3,6 +3,7 @@ import {
   useHoverTrigger,
   useKeydown,
   useMeasure,
+  useOwnValue,
   usePreventBodyScroll,
   usePrevious,
   useRenderChildren,
@@ -16,6 +17,7 @@ describe('index', () => {
     expect(useHoverTrigger).toBeDefined();
     expect(useKeydown).toBeDefined();
     expect(useMeasure).toBeDefined();
+    expect(useOwnValue).toBeDefined();
     expect(usePreventBodyScroll).toBeDefined();
     expect(usePrevious).toBeDefined();
     expect(useRenderChildren).toBeDefined();
