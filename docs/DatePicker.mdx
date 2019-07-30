@@ -34,12 +34,30 @@ import { DatePicker } from 'tailor-ui';
 
 <Playground>
   {() => {
-    const [value, setValue] = React.useState(() => moment());
+    const [value, setValue] = React.useState(moment());
 
     return (
       <>
         <DatePicker value={value} onChange={setValue} />
         <Button mt="2" onClick={() => setValue(moment().subtract(3, 'days'))}>Set to 3 days ago</Button>
+      </>
+    )
+
+}}
+
+</Playground>
+
+#### Clearable
+
+<Playground>
+  {() => {
+    const [value, setValue] = React.useState(moment());
+
+    return (
+      <>
+        <DatePicker value={value} onChange={setValue} clearable />
+        <br />
+        <DatePicker defaultValue={moment()} onChange={console.log} clearable />
       </>
     )
 
@@ -101,13 +119,43 @@ import { DatePicker } from 'tailor-ui';
 #### Basic usage
 
 <Playground>
-  <DatePicker range defaultValue={[moment(), moment()]} />
+  {() => {
+    const [value, setValue] = React.useState([]);
+
+    return (
+      <>
+        <DatePicker range defaultValue={[]} />
+        <br />
+        <DatePicker range value={value} onChange={setValue} />
+      </>
+    );
+
+}}
+
 </Playground>
 
 #### With time picker
 
 <Playground>
   <DatePicker range showTime defaultValue={[moment(), moment()]} />
+</Playground>
+
+#### Clearable
+
+<Playground>
+  {() => {
+    const [value, setValue] = React.useState([]);
+
+    return (
+      <>
+        <DatePicker range value={value} onChange={setValue} clearable />
+        <br />
+        <DatePicker range defaultValue={[]} onChange={console.log} clearable />
+      </>
+    )
+
+}}
+
 </Playground>
 
 ## API

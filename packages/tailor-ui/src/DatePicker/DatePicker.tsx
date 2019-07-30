@@ -1,18 +1,24 @@
 import RcCalendar from 'rc-calendar';
 import RcRangeCalendar from 'rc-calendar/lib/RangeCalendar';
-import React, { FunctionComponent, useEffect, useMemo, useState } from 'react';
+import React, { FunctionComponent, useCallback, useMemo } from 'react';
 import TimePickerPanel from 'rc-time-picker/lib/Panel';
 import { Moment } from 'moment';
 
+import { useOwnValue } from '@tailor-ui/hooks';
+
+import { Box, Flex } from '../Layout';
 import { Input, InputProps } from '../Input';
 import { Popover } from '../Popover';
 import { Position } from '../constants';
 import { useLocale } from '../locale';
 
+import ClearIcon from './ClearIcon';
 import DatePickerStyle from './styles';
 
 export interface DatePickerProps {
+  clearable?: boolean;
   range?: boolean;
+  width?: string | number;
   /**
    * to set date
    */
@@ -60,9 +66,13 @@ export interface DatePickerProps {
 }
 
 const DatePicker: FunctionComponent<DatePickerProps> = ({
+  defaultValue,
+  value,
   onChange,
+  width,
   showTime = false,
   range = false,
+  clearable = false,
   showSecond,
   minuteStep,
   format: formatFromProps,
@@ -73,9 +83,17 @@ const DatePicker: FunctionComponent<DatePickerProps> = ({
   ...props
 }) => {
   const { locale } = useLocale();
-  const [ownValue, setOwnValue] = useState(
-    () => props.value || props.defaultValue
+  const [ownValue, handleChange] = useOwnValue(
+    {
+      value,
+      defaultValue,
+      onChange,
+    },
+    {
+      fallbackValue: range ? [] : null,
+    }
   );
+
   const format = useMemo(
     () =>
       formatFromProps ||
@@ -89,30 +107,16 @@ const DatePicker: FunctionComponent<DatePickerProps> = ({
     range,
   ]);
 
-  const handleChange = (value: Moment | Moment[]) => {
-    setOwnValue(value);
-    if (onChange) {
-      onChange(value);
-    }
-  };
+  const handleClear = useCallback(() => {
+    handleChange(range ? [] : null);
+  }, [handleChange, range]);
 
-  useEffect(() => {
-    if (props.value && !props.defaultValue) {
-      setOwnValue(props.value);
-    }
-  }, [props.defaultValue, props.value]);
-
-  const valueProps = useMemo(
-    () =>
-      range
-        ? {
-            selectedValue: ownValue,
-          }
-        : {
-            value: ownValue,
-          },
-    [ownValue, range]
-  );
+  const valueProps = useMemo(() => {
+    const key = range ? 'selectedValue' : 'value';
+    return {
+      [key]: ownValue,
+    };
+  }, [ownValue, range]);
 
   const displayValue = useMemo(() => {
     if (!ownValue) {
@@ -120,7 +124,7 @@ const DatePicker: FunctionComponent<DatePickerProps> = ({
     }
 
     if (Array.isArray(ownValue)) {
-      return ownValue.map(value => value.format(format)).join(' ~ ');
+      return ownValue.map(val => val.format(format)).join(' ~ ');
     }
 
     return ownValue.format(format);
@@ -156,13 +160,24 @@ const DatePicker: FunctionComponent<DatePickerProps> = ({
           />
         )}
       >
-        <Input
-          readOnly
-          width={range ? '320px' : '255px'}
-          value={displayValue}
-          placeholder={placeholder}
-          {...inputProps}
-        />
+        <Flex position="relative" width={width || range ? '320px' : '255px'}>
+          <Input
+            readOnly
+            value={displayValue}
+            placeholder={placeholder}
+            {...inputProps}
+          />
+          {clearable && (
+            <Box
+              position="absolute"
+              display="inline-flex"
+              alignSelf="center"
+              right="8px"
+            >
+              <ClearIcon onClick={handleClear} />
+            </Box>
+          )}
+        </Flex>
       </Popover>
     </>
   );
