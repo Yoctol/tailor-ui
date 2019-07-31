@@ -69,9 +69,9 @@ const DatePicker: FunctionComponent<DatePickerProps> = ({
   defaultValue,
   value,
   onChange,
-  width,
   showTime = false,
   range = false,
+  width = range ? '320px' : '255px',
   clearable = false,
   showSecond,
   minuteStep,
@@ -107,16 +107,17 @@ const DatePicker: FunctionComponent<DatePickerProps> = ({
     range,
   ]);
 
-  const handleClear = useCallback(() => {
-    handleChange(range ? [] : null);
-  }, [handleChange, range]);
+  const handleClear = useCallback(() => handleChange(range ? [] : null), [
+    handleChange,
+    range,
+  ]);
 
-  const valueProps = useMemo(() => {
-    const key = range ? 'selectedValue' : 'value';
-    return {
-      [key]: ownValue,
-    };
-  }, [ownValue, range]);
+  const valueProps = useMemo(
+    () => ({
+      [range ? 'selectedValue' : 'value']: ownValue,
+    }),
+    [ownValue, range]
+  );
 
   const displayValue = useMemo(() => {
     if (!ownValue) {
@@ -160,7 +161,7 @@ const DatePicker: FunctionComponent<DatePickerProps> = ({
           />
         )}
       >
-        <Flex position="relative" width={width || range ? '320px' : '255px'}>
+        <Flex position="relative" width={width}>
           <Input
             readOnly
             value={displayValue}
