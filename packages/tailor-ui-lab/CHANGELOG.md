@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.10.4](https://github.com/Yoctol/tailor-ui/compare/@tailor-ui/lab@0.10.3...@tailor-ui/lab@0.10.4) (2019-07-31)
+
+
+### Bug Fixes
+
+* some types ([cd94a90](https://github.com/Yoctol/tailor-ui/commit/cd94a90))
+* **date-picker:** add clearable and fix empty value usage ([5d908f2](https://github.com/Yoctol/tailor-ui/commit/5d908f2))
+
+
+
+
+
 ## [0.10.3](https://github.com/Yoctol/tailor-ui/compare/@tailor-ui/lab@0.10.2...@tailor-ui/lab@0.10.3) (2019-07-24)
 
 **Note:** Version bump only for package @tailor-ui/lab
