@@ -7,7 +7,7 @@ import {
   StyledSlider,
   StyledSliderActiveBar,
   StyledSliderBar,
-  StyledSliderConteinr,
+  StyledSliderContainer,
 } from './styles';
 
 export interface SliderProps {
@@ -160,7 +160,7 @@ const Slider: FunctionComponent<SliderProps> = ({
   };
 
   return (
-    <StyledSliderConteinr min={min} max={max}>
+    <StyledSliderContainer min={min} max={max}>
       <StyledSlider
         ref={sliderRef}
         disabled={disabled}
@@ -186,7 +186,7 @@ const Slider: FunctionComponent<SliderProps> = ({
           valuePercentage={valuePercentage}
         />
       </StyledSlider>
-    </StyledSliderConteinr>
+    </StyledSliderContainer>
   );
 };
 
