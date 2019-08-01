@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.17.2](https://github.com/yoctol/tailor-ui/compare/tailor-ui@0.17.1...tailor-ui@0.17.2) (2019-08-01)
+
+
+### Bug Fixes
+
+* **date-picker:** width props ([909dde1](https://github.com/yoctol/tailor-ui/commit/909dde1))
+* **slider:** fix typo ([67e2f11](https://github.com/yoctol/tailor-ui/commit/67e2f11))
+* **slider:** fix typo ([#299](https://github.com/yoctol/tailor-ui/issues/299)) ([3894062](https://github.com/yoctol/tailor-ui/commit/3894062))
+
+
+
+
+
 ## [0.17.1](https://github.com/yoctol/tailor-ui/compare/tailor-ui@0.17.0...tailor-ui@0.17.1) (2019-07-31)
 
 
