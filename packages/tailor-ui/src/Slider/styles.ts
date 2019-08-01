@@ -21,7 +21,7 @@ export const StyledSliderActiveBar = styled.div`
   user-select: none;
 `;
 
-export const StyledSliderConteinr = styled.div<{
+export const StyledSliderContainer = styled.div<{
   min: number;
   max: number;
 }>`
