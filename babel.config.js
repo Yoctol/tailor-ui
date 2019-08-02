@@ -13,8 +13,14 @@ module.exports = {
     '@babel/plugin-transform-runtime',
     '@babel/plugin-proposal-class-properties',
     'babel-plugin-typescript-to-proptypes',
-    'babel-plugin-styled-components',
     'ramda',
+    [
+      'babel-plugin-styled-components',
+      {
+        displayName: false,
+        fileName: false,
+      },
+    ],
   ],
   env: {
     test: {

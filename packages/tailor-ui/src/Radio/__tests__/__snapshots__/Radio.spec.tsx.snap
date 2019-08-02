@@ -1,20 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Radio should render correctly 1`] = `
-.c6 {
+.c5 {
   box-sizing: border-box;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
 }
 
-.c2 {
+.c1 {
   display: inline-block;
   position: relative;
   margin-bottom: 1px;
   line-height: 1;
 }
 
-.c5 {
+.c4 {
   display: block;
   position: relative;
   width: 16px;
@@ -29,7 +29,7 @@ exports[`Radio should render correctly 1`] = `
   transition: all 200ms ease 0s;
 }
 
-.c5::after {
+.c4::after {
   content: '';
   position: absolute;
   top: 2px;
@@ -46,7 +46,7 @@ exports[`Radio should render correctly 1`] = `
   transition: all 200ms ease 0s;
 }
 
-.c3 {
+.c2 {
   position: absolute;
   top: 0;
   right: 0;
@@ -57,18 +57,18 @@ exports[`Radio should render correctly 1`] = `
   opacity: 0;
 }
 
-.c3:checked + .c4 {
+.c2:checked + .c3 {
   border-color: #3c5ad0;
 }
 
-.c3:checked + .c4::after {
+.c2:checked + .c3::after {
   opacity: 1;
   -webkit-transform: scale(1);
   -ms-transform: scale(1);
   transform: scale(1);
 }
 
-.c1 {
+.c0 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -81,31 +81,31 @@ exports[`Radio should render correctly 1`] = `
   cursor: pointer;
 }
 
-.c1:hover .c4 {
+.c0:hover .c3 {
   border-color: #3c5ad0;
 }
 
-.c1 + .c0 {
+.c0 + .x4p6rg-3 {
   margin-left: 0.5rem;
 }
 
 <label
-  class="c0 c1"
+  class="x4p6rg-3 c0"
   direction="horizontal"
 >
   <span
-    class="c2"
+    class="c1"
   >
     <input
-      class="c3"
+      class="c2"
       type="radio"
     />
     <span
-      class="c4 c5"
+      class="c3 c4"
     />
   </span>
   <div
-    class="c6"
+    class="c5"
   >
     Radio
   </div>

@@ -22,8 +22,8 @@ exports[`Spin should render correctly 1`] = `
   -webkit-transform-origin: 100% 100%;
   -ms-transform-origin: 100% 100%;
   transform-origin: 100% 100%;
-  -webkit-animation: cVunQU 2.4s infinite linear both;
-  animation: cVunQU 2.4s infinite linear both;
+  -webkit-animation: fnfAt 2.4s infinite linear both;
+  animation: fnfAt 2.4s infinite linear both;
 }
 
 .c1 {
