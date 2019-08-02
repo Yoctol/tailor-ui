@@ -177,7 +177,7 @@ exports[`Slider should render customize min & max slider correctly 1`] = `
 `;
 
 exports[`Slider should render disabled slider correctly 1`] = `
-.c3 {
+.c2 {
   position: absolute;
   z-index: 0;
   width: 100%;
@@ -192,7 +192,7 @@ exports[`Slider should render disabled slider correctly 1`] = `
   user-select: none;
 }
 
-.c5 {
+.c4 {
   position: absolute;
   z-index: 1;
   height: 4px;
@@ -243,7 +243,7 @@ exports[`Slider should render disabled slider correctly 1`] = `
   letter-spacing: 0.2px;
 }
 
-.c9 {
+.c7 {
   position: absolute;
   z-index: 2;
   width: 12px;
@@ -262,7 +262,7 @@ exports[`Slider should render disabled slider correctly 1`] = `
   user-select: none;
 }
 
-.c10 {
+.c8 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -282,7 +282,7 @@ exports[`Slider should render disabled slider correctly 1`] = `
   pointer-events: none;
 }
 
-.c7 {
+.c5 {
   position: absolute;
   z-index: 2;
   width: 16px;
@@ -290,22 +290,6 @@ exports[`Slider should render disabled slider correctly 1`] = `
   -webkit-transform: translate3d(-8px,-6px,0);
   -ms-transform: translate3d(-8px,-6px,0);
   transform: translate3d(-8px,-6px,0);
-}
-
-.c11:hover .c2 {
-  background-color: #e0e0e0;
-}
-
-.c11:hover .c4 {
-  background-color: #3c5ad0;
-}
-
-.c11 .c6:hover .c8 {
-  width: 16px;
-  height: 16px;
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
 }
 
 .c1 {
@@ -321,11 +305,11 @@ exports[`Slider should render disabled slider correctly 1`] = `
   cursor: not-allowed;
 }
 
-.c1 .c4 {
+.c1 .c3 {
   background-color: #e0e0e0;
 }
 
-.c1 .c8 {
+.c1 .c6 {
   background-color: #e0e0e0;
   cursor: not-allowed;
 }
@@ -340,21 +324,21 @@ exports[`Slider should render disabled slider correctly 1`] = `
     disabled=""
   >
     <div
-      class="c2 c3"
+      class="c2"
     />
     <div
-      class="c4 c5"
+      class="c3 c4"
       style="left: 0px; width: 30%;"
     />
     <div
-      class="c6 c7"
+      class="c5"
       style="left: 30%;"
     >
       <span
-        class="c8 c9"
+        class="c6 c7"
       />
       <span
-        class="c10"
+        class="c8"
       >
         30
       </span>

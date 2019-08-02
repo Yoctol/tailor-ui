@@ -33,29 +33,7 @@ exports[`Select multiple should display multi option 1`] = `
   flex-wrap: wrap;
 }
 
-.c7 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  line-height: 1;
-  cursor: default;
-}
-
-.c7 svg {
-  fill: #8b8b8b;
-  vertical-align: middle;
-  -webkit-transition: all 200ms ease 0s;
-  transition: all 200ms ease 0s;
-}
-
-.c7.c7.c7 svg {
-  fill: #bfbfbf;
-  width: 24px;
-  height: 24px;
-}
-
-.c5 {
+.c4 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -65,19 +43,41 @@ exports[`Select multiple should display multi option 1`] = `
   margin-left: 0.25rem;
 }
 
-.c5 svg {
+.c4 svg {
   fill: #8b8b8b;
   vertical-align: middle;
   -webkit-transition: all 200ms ease 0s;
   transition: all 200ms ease 0s;
 }
 
-.c5.c5.c5 svg {
+.c4.c4.c4 svg {
   width: 16px;
   height: 16px;
 }
 
 .c6 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  line-height: 1;
+  cursor: default;
+}
+
+.c6 svg {
+  fill: #8b8b8b;
+  vertical-align: middle;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+}
+
+.c6.c6.c6 svg {
+  fill: #bfbfbf;
+  width: 24px;
+  height: 24px;
+}
+
+.c5 {
   visibility: hidden;
   position: absolute;
   pointer-events: none;
@@ -91,7 +91,7 @@ exports[`Select multiple should display multi option 1`] = `
   cursor: pointer;
 }
 
-.c4 {
+.c3 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -112,17 +112,17 @@ exports[`Select multiple should display multi option 1`] = `
   font-size: 0.875rem;
 }
 
-.c4 > span {
+.c3 > span {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
-.c4 svg {
+.c3 svg {
   fill: #d5d8e8;
 }
 
-.c4:hover svg {
+.c3:hover svg {
   fill: #6B88c5;
 }
 
@@ -191,13 +191,6 @@ exports[`Select multiple should display multi option 1`] = `
   font-size: 1rem;
 }
 
-.c8 .c3 {
-  border-color: #bfbfbf;
-  background-color: #f6f6f6;
-  color: #bfbfbf;
-  pointer-events: none;
-}
-
 <div>
     <div
       aria-expanded="false"
@@ -217,14 +210,14 @@ exports[`Select multiple should display multi option 1`] = `
           overflow="hidden"
         >
           <div
-            class="c3 c4"
+            class="c3"
             data-testid="select-selected-option-0"
           >
             <span>
               Banana
             </span>
             <i
-              class="c5"
+              class="c4"
               cursor="pointer"
               data-testid="select-selected-option-0-clear-icon"
               size="16"
@@ -245,14 +238,14 @@ exports[`Select multiple should display multi option 1`] = `
             </i>
           </div>
           <div
-            class="c3 c4"
+            class="c3"
             data-testid="select-selected-option-1"
           >
             <span>
               Orange
             </span>
             <i
-              class="c5"
+              class="c4"
               cursor="pointer"
               data-testid="select-selected-option-1-clear-icon"
               size="16"
@@ -284,7 +277,7 @@ exports[`Select multiple should display multi option 1`] = `
             value=""
           />
           <span
-            class="c6"
+            class="c5"
             style="font-size: 16px;"
           />
         </div>
@@ -292,7 +285,7 @@ exports[`Select multiple should display multi option 1`] = `
           style="transform: rotate(180deg); pointer-events: none; display: inline-flex;"
         >
           <i
-            class="c7"
+            class="c6"
             cursor="default"
             fill="gray400"
             size="24"

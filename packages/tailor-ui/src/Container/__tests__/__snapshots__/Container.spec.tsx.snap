@@ -45,7 +45,7 @@ exports[`Container should render correctly 1`] = `
       class="c0 c1"
     >
       <h4
-        class="c2"
+        class="dh6qcl-4 c2"
       >
         Title A
       </h4>
@@ -53,7 +53,7 @@ exports[`Container should render correctly 1`] = `
         class="c3 c4"
       >
         <h5
-          class="c5"
+          class="dh6qcl-5 c5"
         >
           Subtitle #1
         </h5>
@@ -63,7 +63,7 @@ exports[`Container should render correctly 1`] = `
         class="c3 c4"
       >
         <h5
-          class="c5"
+          class="dh6qcl-5 c5"
         >
           Subtitle #2
         </h5>
@@ -74,7 +74,7 @@ exports[`Container should render correctly 1`] = `
       class="c0 c1"
     >
       <h4
-        class="c2"
+        class="dh6qcl-4 c2"
       >
         Title B
       </h4>
@@ -82,7 +82,7 @@ exports[`Container should render correctly 1`] = `
         class="c3 c4"
       >
         <h5
-          class="c5"
+          class="dh6qcl-5 c5"
         >
           Subtitle #1
         </h5>
@@ -92,7 +92,7 @@ exports[`Container should render correctly 1`] = `
         class="c3 c4"
       >
         <h5
-          class="c5"
+          class="dh6qcl-5 c5"
         >
           Subtitle #2
         </h5>

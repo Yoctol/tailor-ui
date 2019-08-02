@@ -1,20 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Checkbox should render correctly 1`] = `
-.c7 {
+.c6 {
   box-sizing: border-box;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
 }
 
-.c3 {
+.c2 {
   display: inline-block;
   position: relative;
   margin-bottom: 1px;
   line-height: 1;
 }
 
-.c6 {
+.c5 {
   display: block;
   position: relative;
   width: 16px;
@@ -29,7 +29,7 @@ exports[`Checkbox should render correctly 1`] = `
   transition: all 200ms ease 0s;
 }
 
-.c6::after {
+.c5::after {
   content: '';
   position: absolute;
   top: 1px;
@@ -46,7 +46,7 @@ exports[`Checkbox should render correctly 1`] = `
   transition: all 200ms ease 0s;
 }
 
-.c4 {
+.c3 {
   position: absolute;
   top: 0;
   right: 0;
@@ -57,19 +57,19 @@ exports[`Checkbox should render correctly 1`] = `
   opacity: 0;
 }
 
-.c4:checked + .c5 {
+.c3:checked + .c4 {
   border-color: #3c5ad0;
   background-color: #3c5ad0;
 }
 
-.c4:checked + .c5::after {
+.c3:checked + .c4::after {
   opacity: 1;
   -webkit-transform: rotate(45deg) scale(1);
   -ms-transform: rotate(45deg) scale(1);
   transform: rotate(45deg) scale(1);
 }
 
-.c2 {
+.c1 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -82,35 +82,35 @@ exports[`Checkbox should render correctly 1`] = `
   cursor: pointer;
 }
 
-.c2 + .c1 {
+.c1 + .c0 {
   margin-left: 0.5rem;
 }
 
-.c2:hover .c5 {
+.c1:hover .c4 {
   border-color: #3c5ad0;
 }
 
-.c2 + .c0 {
+.c1 + .sc-1vrq1pk-3 {
   margin-left: 0.5rem;
 }
 
 <label
-  class="c0 c1 c2"
+  class="sc-1vrq1pk-3 c0 c1"
   direction="horizontal"
 >
   <span
-    class="c3"
+    class="c2"
   >
     <input
-      class="c4"
+      class="c3"
       type="checkbox"
     />
     <span
-      class="c5 c6"
+      class="c4 c5"
     />
   </span>
   <div
-    class="c7"
+    class="c6"
   >
     Checkbox
   </div>

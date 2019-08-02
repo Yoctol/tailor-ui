@@ -65,7 +65,7 @@ exports[`TextField should render as textarea 1`] = `
   margin-top: 10px;
 }
 
-.c0 .c4 ~ label,
+.c0 .rdis26-0 ~ label,
 .c0 .c1 ~ label {
   position: absolute;
   line-height: 1;
@@ -79,7 +79,7 @@ exports[`TextField should render as textarea 1`] = `
   transition: all 200ms ease 0s;
 }
 
-.c0 .c4:focus ~ label,
+.c0 .rdis26-0:focus ~ label,
 .c0 .c1:focus ~ label {
   top: -7px;
   left: 7px;
@@ -89,38 +89,8 @@ exports[`TextField should render as textarea 1`] = `
   font-size: 0.75rem;
 }
 
-.c0 .c4:focus ~ .c5,
-.c0 .c1:focus ~ .c5 {
-  opacity: 1;
-}
-
-.c3 .c4 ~ label,
-.c3 .c1 ~ label {
-  position: absolute;
-  line-height: 1;
-  pointer-events: none;
-  top: -7px;
-  left: 7px;
-  padding: 0 2px;
-  background-color: #fff;
-  color: #3c5ad0;
-  font-size: 0.75rem;
-  -webkit-transition: all 200ms ease 0s;
-  transition: all 200ms ease 0s;
-}
-
-.c3 .c4:focus ~ label,
-.c3 .c1:focus ~ label {
-  top: -7px;
-  left: 7px;
-  padding: 0 2px;
-  background-color: #fff;
-  color: #3c5ad0;
-  font-size: 0.75rem;
-}
-
-.c3 .c4:focus ~ .c5,
-.c3 .c1:focus ~ .c5 {
+.c0 .rdis26-0:focus ~ .sc-53lxod-0,
+.c0 .c1:focus ~ .sc-53lxod-0 {
   opacity: 1;
 }
 
@@ -199,7 +169,7 @@ exports[`TextField should render correctly 1`] = `
 }
 
 .c0 .c1 ~ label,
-.c0 .Textarea__StyledTextarea-vlcri7-0 ~ label {
+.c0 .vlcri7-0 ~ label {
   position: absolute;
   line-height: 1;
   pointer-events: none;
@@ -213,7 +183,7 @@ exports[`TextField should render correctly 1`] = `
 }
 
 .c0 .c1:focus ~ label,
-.c0 .Textarea__StyledTextarea-vlcri7-0:focus ~ label {
+.c0 .vlcri7-0:focus ~ label {
   top: -7px;
   left: 7px;
   padding: 0 2px;
@@ -222,8 +192,8 @@ exports[`TextField should render correctly 1`] = `
   font-size: 0.75rem;
 }
 
-.c0 .c1:focus ~ .c3,
-.c0 .Textarea__StyledTextarea-vlcri7-0:focus ~ .c3 {
+.c0 .c1:focus ~ .sc-53lxod-0,
+.c0 .vlcri7-0:focus ~ .sc-53lxod-0 {
   opacity: 1;
 }
 
@@ -295,42 +265,13 @@ exports[`TextField should render correctly with defaultValue 1`] = `
   color: #bfbfbf;
 }
 
-.c3 .c1 ~ label,
-.c3 .Textarea__StyledTextarea-vlcri7-0 ~ label {
-  position: absolute;
-  line-height: 1;
-  pointer-events: none;
-  top: 9px;
-  left: 1px;
-  padding: 0 0.5rem;
-  color: #bfbfbf;
-  font-size: 1rem;
-  -webkit-transition: all 200ms ease 0s;
-  transition: all 200ms ease 0s;
-}
-
-.c3 .c1:focus ~ label,
-.c3 .Textarea__StyledTextarea-vlcri7-0:focus ~ label {
-  top: -7px;
-  left: 7px;
-  padding: 0 2px;
-  background-color: #fff;
-  color: #3c5ad0;
-  font-size: 0.75rem;
-}
-
-.c3 .c1:focus ~ .c4,
-.c3 .Textarea__StyledTextarea-vlcri7-0:focus ~ .c4 {
-  opacity: 1;
-}
-
 .c0 {
   position: relative;
   margin-top: 10px;
 }
 
 .c0 .c1 ~ label,
-.c0 .Textarea__StyledTextarea-vlcri7-0 ~ label {
+.c0 .vlcri7-0 ~ label {
   position: absolute;
   line-height: 1;
   pointer-events: none;
@@ -345,7 +286,7 @@ exports[`TextField should render correctly with defaultValue 1`] = `
 }
 
 .c0 .c1:focus ~ label,
-.c0 .Textarea__StyledTextarea-vlcri7-0:focus ~ label {
+.c0 .vlcri7-0:focus ~ label {
   top: -7px;
   left: 7px;
   padding: 0 2px;
@@ -354,8 +295,8 @@ exports[`TextField should render correctly with defaultValue 1`] = `
   font-size: 0.75rem;
 }
 
-.c0 .c1:focus ~ .c4,
-.c0 .Textarea__StyledTextarea-vlcri7-0:focus ~ .c4 {
+.c0 .c1:focus ~ .sc-53lxod-0,
+.c0 .vlcri7-0:focus ~ .sc-53lxod-0 {
   opacity: 1;
 }
 
@@ -447,7 +388,7 @@ exports[`TextField should render with maxLength 1`] = `
 }
 
 .c0 .c1 ~ label,
-.c0 .Textarea__StyledTextarea-vlcri7-0 ~ label {
+.c0 .vlcri7-0 ~ label {
   position: absolute;
   line-height: 1;
   pointer-events: none;
@@ -461,7 +402,7 @@ exports[`TextField should render with maxLength 1`] = `
 }
 
 .c0 .c1:focus ~ label,
-.c0 .Textarea__StyledTextarea-vlcri7-0:focus ~ label {
+.c0 .vlcri7-0:focus ~ label {
   top: -7px;
   left: 7px;
   padding: 0 2px;
@@ -471,37 +412,7 @@ exports[`TextField should render with maxLength 1`] = `
 }
 
 .c0 .c1:focus ~ .c3,
-.c0 .Textarea__StyledTextarea-vlcri7-0:focus ~ .c3 {
-  opacity: 1;
-}
-
-.c5 .c1 ~ label,
-.c5 .Textarea__StyledTextarea-vlcri7-0 ~ label {
-  position: absolute;
-  line-height: 1;
-  pointer-events: none;
-  top: -7px;
-  left: 7px;
-  padding: 0 2px;
-  background-color: #fff;
-  color: #3c5ad0;
-  font-size: 0.75rem;
-  -webkit-transition: all 200ms ease 0s;
-  transition: all 200ms ease 0s;
-}
-
-.c5 .c1:focus ~ label,
-.c5 .Textarea__StyledTextarea-vlcri7-0:focus ~ label {
-  top: -7px;
-  left: 7px;
-  padding: 0 2px;
-  background-color: #fff;
-  color: #3c5ad0;
-  font-size: 0.75rem;
-}
-
-.c5 .c1:focus ~ .c3,
-.c5 .Textarea__StyledTextarea-vlcri7-0:focus ~ .c3 {
+.c0 .vlcri7-0:focus ~ .c3 {
   opacity: 1;
 }
 
