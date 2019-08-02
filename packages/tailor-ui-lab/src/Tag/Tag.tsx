@@ -4,6 +4,7 @@ import React, {
   KeyboardEvent,
   MouseEventHandler,
   ReactNode,
+  useCallback,
   useState,
 } from 'react';
 import styled from 'styled-components';
@@ -57,6 +58,7 @@ export interface TagProps {
    */
   onClosed?: () => void;
   canClose?: () => boolean;
+  onClick?: MouseEventHandler;
   onChange?: (previousValue: string, value: string) => void;
   children?: string;
   initialEditing?: boolean;
@@ -74,6 +76,7 @@ const Tag: FunctionComponent<TagProps> = ({
   canClose,
   prefix,
   onChange,
+  onClick,
   ...otherProps
 }) => {
   const [on, setOn] = useState(true);
@@ -92,17 +95,18 @@ const Tag: FunctionComponent<TagProps> = ({
     },
   });
 
-  const handleUpdate = (
-    event: FocusEvent<HTMLInputElement> | KeyboardEvent<HTMLInputElement>
-  ) => {
-    const { value } = event.currentTarget;
+  const handleUpdate = useCallback(
+    (event: FocusEvent<HTMLInputElement> | KeyboardEvent<HTMLInputElement>) => {
+      const { value } = event.currentTarget;
 
-    setEditing(false);
+      setEditing(false);
 
-    if (onChange && children !== value) {
-      onChange(children, value);
-    }
-  };
+      if (onChange && children !== value) {
+        onChange(children, value);
+      }
+    },
+    [children, onChange]
+  );
 
   return (
     <AnimatedStyledTagWrapper
@@ -111,10 +115,14 @@ const Tag: FunctionComponent<TagProps> = ({
     >
       <StyledTag
         editable={editable}
+        clickable={Boolean(onClick)}
         invalid={invalid}
-        onClick={() => {
+        onClick={event => {
           if (editable) {
             setEditing(true);
+          }
+          if (onClick) {
+            onClick(event);
           }
         }}
         {...otherProps}
