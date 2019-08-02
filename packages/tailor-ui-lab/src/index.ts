@@ -1,4 +1,4 @@
-export { Tabs } from './Tabs';
-export { Select } from './Select';
-export { Tag } from './Tag';
-export { AutoSizeInput } from './AutoSizeInput';
+export * from './Tabs';
+export * from './Select';
+export * from './Tag';
+export * from './AutoSizeInput';

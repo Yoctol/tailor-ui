@@ -1,3 +1,3 @@
-export { mergeEventProps } from './mergeEventProps';
-export { preventBodyScroll } from './preventBodyScroll';
-export { tuplify } from './types/types';
+export * from './mergeEventProps';
+export * from './preventBodyScroll';
+export * from './types/types';
