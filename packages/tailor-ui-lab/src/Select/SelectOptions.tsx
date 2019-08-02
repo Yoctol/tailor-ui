@@ -2,6 +2,7 @@ import React, {
   FunctionComponent,
   ReactNode,
   useEffect,
+  useMemo,
   useRef,
   useState,
 } from 'react';
@@ -103,27 +104,36 @@ const SelectOptions: FunctionComponent<SelectOptionsProps> = ({
     }
   }, [inputValue, visible]);
 
-  let items = options;
+  const filteredItems = useMemo(() => {
+    // filter options when searchable or creatable or multiple
+    if (searchable || creatable || multiple) {
+      const filter = fuzzyFilter(itemToString);
 
-  // filter options when searchable or creatable or multiple
-  if (searchable || creatable || multiple) {
-    const filter = fuzzyFilter(itemToString);
-    items =
-      prevSearchValue.trim() === ''
+      return prevSearchValue.trim() === ''
         ? options
         : filter(options, prevSearchValue);
-  }
+    }
 
-  // if creatable is true, append create option to options
-  if (creatable && isValidNewOption(visible ? inputValue : prevSearchValue)) {
-    items = [
-      ...items,
-      {
-        label: 'CREATE_OPTION',
-        value: visible ? inputValue : prevSearchValue,
-      },
-    ];
-  }
+    return options;
+  }, [creatable, multiple, options, prevSearchValue, searchable]);
+
+  const additionItems = useMemo(() => {
+    // if creatable is true, append create option to options
+    if (creatable && isValidNewOption(visible ? inputValue : prevSearchValue)) {
+      return [
+        {
+          label: 'CREATE_OPTION',
+          value: visible ? inputValue : prevSearchValue,
+        },
+      ];
+    }
+    return [];
+  }, [creatable, inputValue, isValidNewOption, prevSearchValue, visible]);
+
+  const items = useMemo(() => [...filteredItems, ...additionItems], [
+    additionItems,
+    filteredItems,
+  ]);
 
   if (items.length === 0) {
     return <>{noOptionsMessage()}</>;

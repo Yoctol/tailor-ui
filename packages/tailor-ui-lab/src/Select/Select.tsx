@@ -3,6 +3,8 @@ import React, {
   FunctionComponent,
   ReactNode,
   useCallback,
+  useEffect,
+  useMemo,
   useRef,
   useState,
 } from 'react';
@@ -78,9 +80,17 @@ const Select: FunctionComponent<SelectProps> = ({
     value,
     defaultValue,
   });
+  const wrapperRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+  const [selectWidth, setSelectWidth] = useState(0);
   const [visible, setVisible] = useState(false);
   const [inputValue, setInputValue] = useState('');
+
+  useEffect(() => {
+    if (visible && wrapperRef.current) {
+      setSelectWidth(wrapperRef.current.offsetWidth);
+    }
+  }, [visible]);
 
   const handleChange = useCallback(
     (selection: Option | CreateOption) => {
@@ -128,7 +138,10 @@ const Select: FunctionComponent<SelectProps> = ({
     [multiple, options]
   );
 
-  const RenderComponent = multiple ? MultiDownshift : Downshift;
+  const RenderComponent = useMemo(
+    () => (multiple ? MultiDownshift : Downshift),
+    [multiple]
+  );
 
   return (
     <RenderComponent
@@ -182,13 +195,14 @@ const Select: FunctionComponent<SelectProps> = ({
       }: any) => (
         <SelectWrapper
           {...getRootProps({
+            ref: wrapperRef,
             style: { width },
           })}
         >
           <Popover
             visible={visible}
             position={Position.BOTTOM_LEFT}
-            minWidth={width}
+            minWidth={selectWidth}
             onVisibleChange={newVisible => {
               if (disabled || loading) {
                 return;
