@@ -4,6 +4,7 @@ import { AutoSizeInput } from '../AutoSizeInput';
 
 export interface StyledTagProps {
   editable: boolean;
+  clickable: boolean;
   invalid: boolean;
 }
 
@@ -22,7 +23,7 @@ export const StyledTag = styled.div<StyledTagProps>`
     p.invalid ? p.theme.colors.danger : p.theme.colors.primaryLight};
   font-size: ${p => p.theme.fontSizes.sm};
   white-space: nowrap;
-  cursor: ${p => (p.editable ? 'pointer' : 'auto')};
+  cursor: ${p => (p.editable || p.clickable ? 'pointer' : 'auto')};
 
   input {
     color: ${p =>
