@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useState } from 'react';
+import React, { FC, useState } from 'react';
 import styled from 'styled-components';
 
 import { Direction, RadioContext } from './RadioContext';
@@ -36,7 +36,7 @@ export interface RadioGroupProps {
   onChange?: (value: string) => void;
 }
 
-const RadioGroup: FunctionComponent<RadioGroupProps> = ({
+const RadioGroup: FC<RadioGroupProps> = ({
   value: controlledValue,
   defaultValue,
   options = null,

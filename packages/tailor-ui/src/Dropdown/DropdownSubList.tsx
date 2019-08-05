@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useState } from 'react';
+import React, { FC, useState } from 'react';
 import { MdKeyboardArrowRight } from 'react-icons/md';
 
 import { Box } from '../Layout';
@@ -17,11 +17,9 @@ interface DropdownSubListProps {
   disabled?: boolean;
 }
 
-const DropdownSubListWrapper: FunctionComponent = props => (
-  <StyledPopover p="0" {...props} />
-);
+const DropdownSubListWrapper: FC = props => <StyledPopover p="0" {...props} />;
 
-const DropdownSubList: FunctionComponent<DropdownSubListProps> = ({
+const DropdownSubList: FC<DropdownSubListProps> = ({
   disabled = false,
   title,
   children,

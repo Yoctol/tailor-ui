@@ -1,6 +1,6 @@
 import RcCalendar from 'rc-calendar';
 import RcRangeCalendar from 'rc-calendar/lib/RangeCalendar';
-import React, { FunctionComponent, useCallback, useMemo } from 'react';
+import React, { FC, useCallback, useMemo } from 'react';
 import TimePickerPanel from 'rc-time-picker/lib/Panel';
 import { Moment } from 'moment';
 
@@ -65,7 +65,7 @@ export interface DatePickerProps {
   placeholder?: string;
 }
 
-const DatePicker: FunctionComponent<DatePickerProps> = ({
+const DatePicker: FC<DatePickerProps> = ({
   defaultValue,
   value,
   onChange,

@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react';
+import React, { FC } from 'react';
 import styled from 'styled-components';
 import { MdClose } from 'react-icons/md';
 
@@ -20,10 +20,7 @@ const ClearIconWrapper = styled.div`
   }
 `;
 
-const ClearIcon: FunctionComponent<ClearIconProps> = ({
-  clearSelection,
-  ...props
-}) => (
+const ClearIcon: FC<ClearIconProps> = ({ clearSelection, ...props }) => (
   <ClearIconWrapper>
     <Icon
       type={MdClose}

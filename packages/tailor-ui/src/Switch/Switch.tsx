@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react';
+import React, { FC } from 'react';
 import styled from 'styled-components';
 
 const StyledSwitch = styled.label`
@@ -71,7 +71,7 @@ export interface SwitchProps {
   onChange?: (checked: boolean) => void;
 }
 
-const Switch: FunctionComponent<SwitchProps> = ({
+const Switch: FC<SwitchProps> = ({
   defaultChecked,
   checked,
   onChange,

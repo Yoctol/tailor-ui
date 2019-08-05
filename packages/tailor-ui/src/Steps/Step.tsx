@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useContext } from 'react';
+import React, { FC, useContext } from 'react';
 import { MdClose, MdDone } from 'react-icons/md';
 
 import { Flex } from '../Layout';
@@ -12,7 +12,7 @@ type StepIconProps = StepsItemProps & {
   onClick: () => void;
 };
 
-const StepIcon: FunctionComponent<StepIconProps> = ({
+const StepIcon: FC<StepIconProps> = ({
   status,
   count,
   isLast,
@@ -51,7 +51,7 @@ export interface StepProps {
   status?: Status;
 }
 
-const Step: FunctionComponent<StepProps> = ({ title, description = null }) => {
+const Step: FC<StepProps> = ({ title, description = null }) => {
   const {
     count,
     status,

@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useEffect, useRef, useState } from 'react';
+import React, { FC, useEffect, useRef, useState } from 'react';
 import { clamp, minBy } from 'ramda';
 
 import SliderDot from './SliderDot';
@@ -21,7 +21,7 @@ export interface SliderProps {
   onChange?: (value: Value) => void;
 }
 
-const Slider: FunctionComponent<SliderProps> = ({
+const Slider: FC<SliderProps> = ({
   min = 0,
   max = 100,
   step = 1,

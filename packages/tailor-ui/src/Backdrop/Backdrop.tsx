@@ -1,4 +1,4 @@
-import React, { FunctionComponent, HTMLAttributes } from 'react';
+import React, { FC, HTMLAttributes } from 'react';
 import styled from 'styled-components';
 import { animated, config, useTransition } from 'react-spring';
 
@@ -20,10 +20,7 @@ export interface BackdropProps extends HTMLAttributes<HTMLDivElement> {
   visible: boolean;
 }
 
-const Backdrop: FunctionComponent<BackdropProps> = ({
-  visible,
-  ...otherProps
-}) => {
+const Backdrop: FC<BackdropProps> = ({ visible, ...otherProps }) => {
   const transition = useTransition(visible, null, {
     from: {
       opacity: 0,

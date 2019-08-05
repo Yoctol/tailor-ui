@@ -1,6 +1,6 @@
-import React, { FunctionComponent } from 'react';
+import React, { FC } from 'react';
 
-const DangerIcon: FunctionComponent = () => (
+const DangerIcon: FC = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="32"

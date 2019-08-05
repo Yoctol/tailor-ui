@@ -1,4 +1,4 @@
-import React, { FunctionComponent, Reducer, useReducer } from 'react';
+import React, { FC, Reducer, useReducer } from 'react';
 import styled from 'styled-components';
 import { MdCheck, MdClose, MdFileUpload } from 'react-icons/md';
 import { useDropzone } from 'react-dropzone';
@@ -75,11 +75,7 @@ const StyledFileItem = styled(Flex)`
   }
 `;
 
-const FileItem: FunctionComponent<FileItemProps> = ({
-  file,
-  uploaded,
-  onClear,
-}) => (
+const FileItem: FC<FileItemProps> = ({ file, uploaded, onClear }) => (
   <StyledFileItem alignItems="center" mt="1" p="1" borderRadius="base">
     {uploaded && (
       <Icon
@@ -161,7 +157,7 @@ const uploadReducer: Reducer<ReducerState, ReducerAction> = (state, action) => {
   }
 };
 
-const Upload: FunctionComponent<UploadProps> = ({
+const Upload: FC<UploadProps> = ({
   onBeforeSelect,
   onSelect,
   onClear,

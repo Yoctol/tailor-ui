@@ -1,10 +1,4 @@
-import React, {
-  FunctionComponent,
-  useContext,
-  useEffect,
-  useRef,
-  useState,
-} from 'react';
+import React, { FC, useContext, useEffect, useRef, useState } from 'react';
 import { useSpring } from 'react-spring';
 
 import TabContext from './TabContext';
@@ -24,11 +18,7 @@ export interface TabProps {
   value: string;
 }
 
-export const Tab: FunctionComponent<TabProps> = ({
-  children,
-  value,
-  ...props
-}) => {
+export const Tab: FC<TabProps> = ({ children, value, ...props }) => {
   const { activeTabRef, activeValue, setValue } = useContext(TabContext);
 
   const isActive = activeValue === value;
@@ -68,7 +58,7 @@ export interface TabsProps {
   type?: Type;
 }
 
-const Tabs: FunctionComponent<TabsProps> & {
+const Tabs: FC<TabsProps> & {
   Tab: typeof Tab;
 } = ({
   size = 'md',

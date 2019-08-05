@@ -1,5 +1,5 @@
 import React, {
-  FunctionComponent,
+  FC,
   ReactNode,
   useEffect,
   useMemo,
@@ -28,7 +28,7 @@ export interface CreateOption {
   value: string;
 }
 
-const DefaultNoOptionsMessage: FunctionComponent = () => (
+const DefaultNoOptionsMessage: FC = () => (
   <Flex
     py="3"
     alignItems="center"
@@ -65,7 +65,7 @@ interface SelectOptionsProps {
   'data-testid'?: string;
 }
 
-const SelectOptions: FunctionComponent<SelectOptionsProps> = ({
+const SelectOptions: FC<SelectOptionsProps> = ({
   visible,
   creatable,
   searchable,

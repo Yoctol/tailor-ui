@@ -1,5 +1,5 @@
 /* eslint camelcase: off, @typescript-eslint/camelcase: off */
-import React, { FunctionComponent, createContext, useEffect } from 'react';
+import React, { FC, createContext, useEffect } from 'react';
 import moment from 'moment';
 
 import { LocaleType, en_US } from './locales';
@@ -10,10 +10,7 @@ const LocaleContext = createContext<{
   locale: en_US,
 });
 
-const LocaleProvider: FunctionComponent<{ locale: LocaleType }> = ({
-  children,
-  locale,
-}) => {
+const LocaleProvider: FC<{ locale: LocaleType }> = ({ children, locale }) => {
   useEffect(() => {
     moment.locale(locale.momentLocale);
   }, [locale.locale, locale.momentLocale]);

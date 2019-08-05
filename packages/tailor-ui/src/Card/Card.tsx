@@ -1,8 +1,8 @@
-import React, { FunctionComponent } from 'react';
+import React, { FC } from 'react';
 
 import { CardProps, CardWrapper, StyledBlock, StyledImage } from './styles';
 
-const Card: FunctionComponent<CardProps> & {
+const Card: FC<CardProps> & {
   Block: typeof StyledBlock;
   Image: typeof StyledImage;
 } = props => <CardWrapper clickable={!!props.onClick} {...props} />;

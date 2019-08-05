@@ -1,6 +1,6 @@
 import React, {
+  FC,
   ForwardRefExoticComponent,
-  FunctionComponent,
   HTMLAttributes,
   forwardRef,
 } from 'react';
@@ -66,7 +66,7 @@ const Icon: ForwardRefExoticComponent<IconProps> = forwardRef<
   HTMLElement,
   IconProps
 >(function Icon({ type, cursor = 'default', size = 24, ...otherProps }, ref) {
-  let IconComponent: FunctionComponent;
+  let IconComponent: FC;
 
   if (typeof type === 'string') {
     const BuiltInIcon = icons[type];

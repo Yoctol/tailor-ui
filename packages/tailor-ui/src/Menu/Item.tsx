@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react';
+import React, { FC } from 'react';
 
 import { IconType } from '../Icon';
 
@@ -10,7 +10,7 @@ export interface ItemProps {
   onClick?: () => void;
 }
 
-const Item: FunctionComponent<ItemProps> = ({
+const Item: FC<ItemProps> = ({
   children,
   active = false,
   onClick,

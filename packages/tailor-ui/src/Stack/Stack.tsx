@@ -1,5 +1,5 @@
 // Reference: https://github.com/segmentio/evergreen/blob/master/src/stack/src/Stack.js
-import React, { FunctionComponent, ReactNode, useContext } from 'react';
+import React, { FC, ReactNode, useContext } from 'react';
 
 import { StackingOrder } from '../constants';
 
@@ -10,7 +10,7 @@ interface StackProps {
   children: (currentValue: number) => ReactNode;
 }
 
-const Stack: FunctionComponent<StackProps> = ({
+const Stack: FC<StackProps> = ({
   defaultOrder = StackingOrder.STACKING_CONTEXT,
   children,
 }) => {

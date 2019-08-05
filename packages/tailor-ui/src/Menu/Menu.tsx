@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useState } from 'react';
+import React, { FC, useState } from 'react';
 
 import { Flex } from '../Layout';
 
@@ -14,7 +14,7 @@ interface MenuProps {
   onUpdateSubKeys?: (keys: string[]) => void;
 }
 
-const Menu: FunctionComponent<MenuProps> & {
+const Menu: FC<MenuProps> & {
   SubMenu: typeof SubMenu;
   Item: typeof Item;
 } = ({

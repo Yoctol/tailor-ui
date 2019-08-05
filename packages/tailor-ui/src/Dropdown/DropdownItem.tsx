@@ -1,9 +1,4 @@
-import React, {
-  FunctionComponent,
-  MouseEvent,
-  MouseEventHandler,
-  useContext,
-} from 'react';
+import React, { FC, MouseEvent, MouseEventHandler, useContext } from 'react';
 
 import DropdownContext from './DropdownContext';
 import { Item } from './styles';
@@ -23,7 +18,7 @@ interface DropdownItemProps {
   keep?: boolean;
 }
 
-const DropdownItem: FunctionComponent<DropdownItemProps> = ({
+const DropdownItem: FC<DropdownItemProps> = ({
   keep = false,
   disabled = false,
   onClick,

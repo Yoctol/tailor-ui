@@ -1,7 +1,7 @@
 /* eslint react/no-multi-comp: off */
 import React, {
   ChangeEvent,
-  FunctionComponent,
+  FC,
   TextareaHTMLAttributes,
   forwardRef,
 } from 'react';
@@ -36,7 +36,7 @@ export const StyledTextarea = styled(
   transition: border 0.2s ease;
 `;
 
-const Textarea: FunctionComponent<TextareaProps> = forwardRef<
+const Textarea: FC<TextareaProps> = forwardRef<
   HTMLTextAreaElement,
   TextareaProps
 >(function Textarea({ id, ...props }, ref) {

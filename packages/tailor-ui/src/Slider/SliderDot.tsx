@@ -1,4 +1,4 @@
-import React, { CSSProperties, FunctionComponent } from 'react';
+import React, { CSSProperties, FC } from 'react';
 
 import { RangeValue, Value } from './utils';
 import {
@@ -13,7 +13,7 @@ export interface DotProps {
   style: CSSProperties;
 }
 
-const Dot: FunctionComponent<DotProps> = ({ active, value, style }) => {
+const Dot: FC<DotProps> = ({ active, value, style }) => {
   return (
     <StyledDotContainer style={style} active={active}>
       <StyledSliderDot />
@@ -32,7 +32,7 @@ export interface SliderDotProps {
   value: Value;
 }
 
-const SliderDot: FunctionComponent<SliderDotProps> = ({
+const SliderDot: FC<SliderDotProps> = ({
   range,
   value,
   active,

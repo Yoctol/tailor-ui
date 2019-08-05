@@ -1,6 +1,6 @@
 import BaseSelect, { components } from 'react-select';
 import CreatableSelect from 'react-select/lib/Creatable';
-import React, { FunctionComponent } from 'react';
+import React, { FC } from 'react';
 import styled from 'styled-components';
 import { MdSearch } from 'react-icons/md';
 
@@ -106,7 +106,7 @@ export interface SelectProps {
   onChange?: (option: number | string | object) => void;
 }
 
-const ValueContainer: FunctionComponent<any> = ({ children, ...props }) => (
+const ValueContainer: FC<any> = ({ children, ...props }) => (
   <components.ValueContainer {...props}>
     <Flex width="100%" alignItems="center">
       <Icon type={MdSearch} size="20" mr="2" />
@@ -117,7 +117,7 @@ const ValueContainer: FunctionComponent<any> = ({ children, ...props }) => (
   </components.ValueContainer>
 );
 
-const Select: FunctionComponent<SelectProps> = props => {
+const Select: FC<SelectProps> = props => {
   const { isMulti, delimiter, multiSelectMode, creatable = false } = props;
 
   const StyledSelect = getStyledSelect(creatable);
@@ -137,7 +137,7 @@ const Select: FunctionComponent<SelectProps> = props => {
 
   if (isMulti) {
     if (multiSelectMode === 'text') {
-      const Option: FunctionComponent<any> = _props => (
+      const Option: FC<any> = _props => (
         <components.Option {..._props} isFocused={_props.isSelected} />
       );
 

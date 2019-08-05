@@ -1,4 +1,4 @@
-import React, { FunctionComponent, MouseEventHandler } from 'react';
+import React, { FC, MouseEventHandler } from 'react';
 
 import { Box, Flex } from '../Layout';
 import { Button, ButtonProps } from '../Button';
@@ -13,7 +13,7 @@ export interface FooterProps {
   cancelButtonProps?: ButtonProps;
 }
 
-const Footer: FunctionComponent<FooterProps> = ({
+const Footer: FC<FooterProps> = ({
   closable = true,
   cancelText,
   confirmText,

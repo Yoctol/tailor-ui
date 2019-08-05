@@ -1,4 +1,4 @@
-import React, { FunctionComponent, ReactNode } from 'react';
+import React, { FC, ReactNode } from 'react';
 
 import {
   StyledContainer,
@@ -11,11 +11,7 @@ export interface SectionProps {
   title?: ReactNode;
 }
 
-const Section: FunctionComponent<SectionProps> = ({
-  title,
-  children,
-  ...props
-}) => {
+const Section: FC<SectionProps> = ({ title, children, ...props }) => {
   return (
     <StyledSection {...props}>
       {title && <StyledSectionTitle>{title}</StyledSectionTitle>}
@@ -28,7 +24,7 @@ export interface ContainerProps {
   title?: ReactNode;
 }
 
-const Container: FunctionComponent<ContainerProps> & {
+const Container: FC<ContainerProps> & {
   Section: typeof Section;
 } = ({ title, children, ...props }) => {
   return (

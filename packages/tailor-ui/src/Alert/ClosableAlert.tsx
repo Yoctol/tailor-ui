@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useState } from 'react';
+import React, { FC, useState } from 'react';
 import { animated, config, useSpring } from 'react-spring';
 
 import { useMeasure } from '@tailor-ui/hooks';
@@ -9,10 +9,7 @@ export interface AlertProps extends BaseAlertProps {
   onClosed?: () => void;
 }
 
-const ClosableAlert: FunctionComponent<AlertProps> = ({
-  onClosed,
-  ...props
-}) => {
+const ClosableAlert: FC<AlertProps> = ({ onClosed, ...props }) => {
   const [bind, { height: boundHeight }] = useMeasure();
   const [visible, setVisible] = useState(true);
   const { x, height } = useSpring({

@@ -1,10 +1,10 @@
-import React, { FunctionComponent } from 'react';
+import React, { FC } from 'react';
 import { MdKeyboardArrowUp } from 'react-icons/md';
 import { animated, config, useSpring } from 'react-spring';
 
 import { Icon } from 'tailor-ui';
 
-const SelectArrow: FunctionComponent<{ on: boolean }> = ({ on }) => {
+const SelectArrow: FC<{ on: boolean }> = ({ on }) => {
   const { deg } = useSpring({
     deg: on ? 0 : 180,
     config: config.stiff,

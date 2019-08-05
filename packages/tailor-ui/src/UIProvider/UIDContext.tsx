@@ -1,13 +1,8 @@
-import React, {
-  FunctionComponent,
-  createContext,
-  useContext,
-  useRef,
-} from 'react';
+import React, { FC, createContext, useContext, useRef } from 'react';
 
 const UIDContext = createContext<() => string>(() => 'tailor_uid_0');
 
-const UIDProvider: FunctionComponent = ({ children }) => {
+const UIDProvider: FC = ({ children }) => {
   const UID = useRef(0);
 
   const getUID = () => {

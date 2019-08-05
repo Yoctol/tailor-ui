@@ -1,10 +1,4 @@
-import React, {
-  FunctionComponent,
-  ReactNode,
-  useCallback,
-  useEffect,
-  useState,
-} from 'react';
+import React, { FC, ReactNode, useCallback, useEffect, useState } from 'react';
 import { animated, useTransition } from 'react-spring';
 
 import { Box } from '../Layout';
@@ -21,7 +15,7 @@ export interface FormFieldProps {
   validationMessage?: ReactNode;
 }
 
-const FormField: FunctionComponent<FormFieldProps> = ({
+const FormField: FC<FormFieldProps> = ({
   label,
   required = false,
   validator,

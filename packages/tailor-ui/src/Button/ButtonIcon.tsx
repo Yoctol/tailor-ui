@@ -1,4 +1,4 @@
-import React, { FunctionComponent, ReactNode } from 'react';
+import React, { FC, ReactNode } from 'react';
 
 import { Icon, IconType } from '../Icon';
 
@@ -16,7 +16,7 @@ const iconMargins = {
   lg: '8px',
 };
 
-const ButtonIcon: FunctionComponent<{
+const ButtonIcon: FC<{
   loading: boolean;
   size: ButtonSize;
   icon?: IconType;

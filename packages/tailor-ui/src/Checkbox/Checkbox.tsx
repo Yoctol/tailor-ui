@@ -1,4 +1,4 @@
-import React, { ChangeEvent, FunctionComponent, useContext } from 'react';
+import React, { ChangeEvent, FC, useContext } from 'react';
 import styled, { css } from 'styled-components';
 
 import { Box } from '../Layout';
@@ -128,7 +128,7 @@ export interface CheckboxProps {
   value?: string;
 }
 
-const Checkbox: FunctionComponent<CheckboxProps> & {
+const Checkbox: FC<CheckboxProps> & {
   Group: typeof CheckboxGroup;
 } = ({
   children,
