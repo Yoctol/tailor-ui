@@ -1,9 +1,4 @@
-import React, {
-  FunctionComponent,
-  MouseEventHandler,
-  ReactNode,
-  isValidElement,
-} from 'react';
+import React, { FC, MouseEventHandler, ReactNode, isValidElement } from 'react';
 
 import { Flex } from '../Layout';
 import { Heading } from '../Typography';
@@ -20,7 +15,7 @@ interface ModalHeaderProps {
   onCancel: MouseEventHandler;
 }
 
-export const ModalHeader: FunctionComponent<ModalHeaderProps> = ({
+export const ModalHeader: FC<ModalHeaderProps> = ({
   title,
   icon,
   onCancel,
@@ -35,13 +30,13 @@ export const ModalHeader: FunctionComponent<ModalHeaderProps> = ({
   </Flex>
 );
 
-export const ModalContent: FunctionComponent = ({ children }) => (
+export const ModalContent: FC = ({ children }) => (
   <Flex flex="auto" flexDirection="column" overflowY="auto" px="3">
     {children}
   </Flex>
 );
 
-export const FooterWrapper: FunctionComponent = props => (
+export const FooterWrapper: FC = props => (
   <Flex
     flex="none"
     alignItems="center"
@@ -58,7 +53,7 @@ interface ModalFooterProps extends FooterProps {
   footer?: ReactNode;
 }
 
-const ModalFooter: FunctionComponent<ModalFooterProps> = ({
+const ModalFooter: FC<ModalFooterProps> = ({
   footer,
   closable,
   cancelText,
@@ -94,7 +89,7 @@ export type ModalProps = BaseModalProps &
   ModalHeaderProps &
   ModalFooterProps;
 
-const Modal: FunctionComponent<ModalProps> = ({
+const Modal: FC<ModalProps> = ({
   title,
   onCancel,
   onConfirm,

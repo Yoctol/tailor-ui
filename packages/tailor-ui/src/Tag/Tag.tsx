@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useState } from 'react';
+import React, { FC, useState } from 'react';
 import styled from 'styled-components';
 import { MdClose } from 'react-icons/md';
 import { animated, config, useSpring } from 'react-spring';
@@ -45,7 +45,7 @@ interface ClosableTagProps {
   onClosed?: () => void;
 }
 
-const ClosableTag: FunctionComponent<ClosableTagProps> = ({
+const ClosableTag: FC<ClosableTagProps> = ({
   children,
   onClosed = () => {},
   ...props
@@ -84,7 +84,7 @@ const ClosableTag: FunctionComponent<ClosableTagProps> = ({
   );
 };
 
-const BaseTag: FunctionComponent = ({ children, ...props }) => (
+const BaseTag: FC = ({ children, ...props }) => (
   <StyledTagWrapper>
     <StyledTag {...omit(['onClosed'], props)}>{children}</StyledTag>
   </StyledTagWrapper>
@@ -101,11 +101,7 @@ export interface TagProps {
   onClosed?: () => void;
 }
 
-const Tag: FunctionComponent<TagProps> = ({
-  closable = false,
-  children,
-  ...props
-}) => {
+const Tag: FC<TagProps> = ({ closable = false, children, ...props }) => {
   const RenderComponent = closable ? ClosableTag : BaseTag;
 
   return <RenderComponent {...props}>{children}</RenderComponent>;

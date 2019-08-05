@@ -1,4 +1,4 @@
-import React, { FunctionComponent, ReactNode } from 'react';
+import React, { FC, ReactNode } from 'react';
 
 import { StatusType } from '../types';
 
@@ -13,7 +13,7 @@ interface AlertProps {
   onClosed?: () => void;
 }
 
-const Alert: FunctionComponent<AlertProps> = ({
+const Alert: FC<AlertProps> = ({
   type = 'info',
   closable = false,
   ...props

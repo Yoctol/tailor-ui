@@ -1,5 +1,5 @@
 /* eslint camelcase: off */
-import React, { FunctionComponent, ReactNode } from 'react';
+import React, { FC, ReactNode } from 'react';
 import { ThemeProvider } from 'styled-components';
 
 import { ThemeType, theme as defaultTheme } from '@tailor-ui/theme';
@@ -21,7 +21,7 @@ export interface UIProviderProps {
   theme?: ThemeType;
 }
 
-const UIProvider: FunctionComponent<UIProviderProps> = ({
+const UIProvider: FC<UIProviderProps> = ({
   children,
   theme = defaultTheme,
   locale = en_US,

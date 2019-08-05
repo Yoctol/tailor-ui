@@ -1,6 +1,6 @@
 import React, {
   ChangeEvent,
-  FunctionComponent,
+  FC,
   KeyboardEvent,
   Reducer,
   UIEvent,
@@ -177,7 +177,7 @@ interface MentionProps {
   onMentionCreate: (newMention: string) => void;
 }
 
-const Mention: FunctionComponent<MentionProps> = ({
+const Mention: FC<MentionProps> = ({
   value: valueFromProps,
   defaultValue,
   suggestions,

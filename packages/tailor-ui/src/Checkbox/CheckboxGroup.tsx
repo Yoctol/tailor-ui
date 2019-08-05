@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useState } from 'react';
+import React, { FC, useState } from 'react';
 import styled from 'styled-components';
 
 import { Checkbox } from './Checkbox';
@@ -37,7 +37,7 @@ export interface CheckboxGroupProps {
   onChange?: (value: string[]) => void;
 }
 
-const CheckboxGroup: FunctionComponent<CheckboxGroupProps> = ({
+const CheckboxGroup: FC<CheckboxGroupProps> = ({
   value: controlledValue,
   defaultValue,
   options = null,

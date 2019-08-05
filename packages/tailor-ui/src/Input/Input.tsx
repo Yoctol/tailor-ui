@@ -1,6 +1,6 @@
 import React, {
   ChangeEvent,
-  FunctionComponent,
+  FC,
   InputHTMLAttributes,
   KeyboardEvent,
   KeyboardEventHandler,
@@ -41,10 +41,7 @@ export type InputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'size'> & {
   required?: boolean;
 };
 
-const Input: FunctionComponent<InputProps> = forwardRef<
-  HTMLInputElement,
-  InputProps
->(
+const Input: FC<InputProps> = forwardRef<HTMLInputElement, InputProps>(
   (
     {
       id,

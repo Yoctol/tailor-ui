@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react';
+import React, { FC } from 'react';
 import styled, { css } from 'styled-components';
 import {
   ColorProps,
@@ -133,7 +133,7 @@ export interface DividerProps {
   dashed?: boolean;
 }
 
-const Divider: FunctionComponent<DividerProps> = ({
+const Divider: FC<DividerProps> = ({
   type = 'horizontal',
   orientation,
   dashed,

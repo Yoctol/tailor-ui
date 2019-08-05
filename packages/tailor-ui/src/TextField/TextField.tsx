@@ -1,9 +1,9 @@
 import React, {
   ChangeEvent,
   ChangeEventHandler,
+  FC,
   FormEvent,
   FormEventHandler,
-  FunctionComponent,
   KeyboardEventHandler,
   useContext,
   useState,
@@ -46,7 +46,7 @@ export interface TextFieldProps {
   onPressEnter?: KeyboardEventHandler<HTMLInputElement>;
 }
 
-const TextField: FunctionComponent<TextFieldProps> = ({
+const TextField: FC<TextFieldProps> = ({
   label = null,
   value: controlledValue,
   defaultValue = '',

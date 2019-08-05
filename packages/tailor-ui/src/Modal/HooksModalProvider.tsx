@@ -1,9 +1,4 @@
-import React, {
-  FunctionComponent,
-  MutableRefObject,
-  createContext,
-  useRef,
-} from 'react';
+import React, { FC, MutableRefObject, createContext, useRef } from 'react';
 
 import HooksModal, { Trigger } from './HooksModal';
 
@@ -11,7 +6,7 @@ const HooksModalContext = createContext<MutableRefObject<Trigger>>({
   current: () => Promise.resolve(false),
 });
 
-const HooksModalProvider: FunctionComponent = ({ children }) => {
+const HooksModalProvider: FC = ({ children }) => {
   const modalTriggerRef = useRef(() => Promise.resolve(false));
 
   return (

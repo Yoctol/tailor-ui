@@ -1,4 +1,4 @@
-import React, { FunctionComponent, ReactNode } from 'react';
+import React, { FC, ReactNode } from 'react';
 
 import { Popover, PopoverProps } from '../Popover';
 import { Position } from '../constants';
@@ -12,7 +12,7 @@ export interface DropdownProps extends Omit<PopoverProps, 'content'> {
   overlay: ReactNode;
 }
 
-const Dropdown: FunctionComponent<DropdownProps> & {
+const Dropdown: FC<DropdownProps> & {
   List: typeof List;
   SubList: typeof DropdownSubList;
   Item: typeof DropdownItem;

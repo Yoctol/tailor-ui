@@ -1,4 +1,4 @@
-import React, { FunctionComponent, ReactNode, useRef } from 'react';
+import React, { FC, ReactNode, useRef } from 'react';
 
 import {
   useHoverTrigger,
@@ -13,7 +13,7 @@ import TooltipPopup from './TooltipPopup';
 import { StyledTooltipProps } from './styles';
 
 export type TooltipProps = StyledTooltipProps & {
-  Wrapper?: FunctionComponent;
+  Wrapper?: FC;
   /**
    * Whether the floating tooltip card is visible by default. Only support when the trigger is `click`
    */
@@ -48,7 +48,7 @@ export type TooltipProps = StyledTooltipProps & {
   onCloseComplete?: () => void;
 };
 
-const Tooltip: FunctionComponent<TooltipProps> = ({
+const Tooltip: FC<TooltipProps> = ({
   children,
   Wrapper,
   position = Position.TOP,

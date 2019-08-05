@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useContext, useState } from 'react';
+import React, { FC, useContext, useState } from 'react';
 import styled, { css } from 'styled-components';
 import { space as styledSpace } from 'styled-system';
 
@@ -102,11 +102,7 @@ export interface TabProps {
   disabled?: boolean;
 }
 
-export const Tab: FunctionComponent<TabProps> = ({
-  label,
-  value,
-  ...props
-}) => {
+export const Tab: FC<TabProps> = ({ label, value, ...props }) => {
   const { size, pills, activeValue, setValue } = useContext(TabContext);
 
   return (
@@ -181,7 +177,7 @@ type TabsProps = StyledTabsProps & {
   size?: Size;
 };
 
-const Tabs: FunctionComponent<TabsProps> & {
+const Tabs: FC<TabsProps> & {
   Tab: typeof Tab;
 } = ({
   absolute = false,

@@ -1,4 +1,4 @@
-import React, { FunctionComponent, MouseEvent, ReactNode, memo } from 'react';
+import React, { FC, MouseEvent, ReactNode, memo } from 'react';
 
 import { Button } from '../Button';
 import { Flex } from '../Layout';
@@ -88,7 +88,7 @@ const PopconfirmContent = memo<
   );
 });
 
-const Popconfirm: FunctionComponent<PopconfirmContentProps> = ({
+const Popconfirm: FC<PopconfirmContentProps> = ({
   type,
   content,
   confirmText,

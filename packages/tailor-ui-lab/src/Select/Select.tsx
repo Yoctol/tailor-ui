@@ -1,6 +1,6 @@
 import Downshift from 'downshift';
 import React, {
-  FunctionComponent,
+  FC,
   ReactNode,
   useCallback,
   useEffect,
@@ -51,7 +51,7 @@ interface SelectProps {
   'data-testid'?: string;
 }
 
-const Select: FunctionComponent<SelectProps> = ({
+const Select: FC<SelectProps> = ({
   id,
   width = 240,
   size = 'md',

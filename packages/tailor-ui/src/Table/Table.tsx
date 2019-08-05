@@ -1,4 +1,4 @@
-import React, { FunctionComponent, ReactNode } from 'react';
+import React, { FC, ReactNode } from 'react';
 
 import {
   Column,
@@ -9,20 +9,20 @@ import {
   TableWrapper,
 } from './styles';
 
-const Head: FunctionComponent = ({ children }) => (
+const Head: FC = ({ children }) => (
   <thead>
     <Row>{children}</Row>
   </thead>
 );
 
-const Body: FunctionComponent = ({ children }) => <tbody>{children}</tbody>;
+const Body: FC = ({ children }) => <tbody>{children}</tbody>;
 
 export type TableProps = StyledTableProps & {
   header?: ReactNode;
   footer?: ReactNode;
 };
 
-const Table: FunctionComponent<TableProps> & {
+const Table: FC<TableProps> & {
   Head: typeof Head;
   HeadColumn: typeof HeadColumn;
   Body: typeof Body;

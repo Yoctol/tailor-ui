@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react';
+import React, { FC } from 'react';
 import styled, { css, keyframes } from 'styled-components';
 import { ColorProps, color } from 'styled-system';
 import { animated, useTransition } from 'react-spring';
@@ -108,7 +108,7 @@ interface SpinProps {
   bg?: string;
 }
 
-const Spin: FunctionComponent<SpinProps> = ({
+const Spin: FC<SpinProps> = ({
   size = 40,
   fullscreen = false,
   bg = 'gray100',

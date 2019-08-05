@@ -1,4 +1,4 @@
-import React, { FunctionComponent, MouseEventHandler } from 'react';
+import React, { FC, MouseEventHandler } from 'react';
 import styled from 'styled-components';
 import { MdClose } from 'react-icons/md';
 
@@ -18,7 +18,7 @@ export interface CloseButtonProps {
   onCancel?: MouseEventHandler;
 }
 
-const CloseButton: FunctionComponent<CloseButtonProps> = ({ onCancel }) => (
+const CloseButton: FC<CloseButtonProps> = ({ onCancel }) => (
   <CloseButtonWrapper>
     <Button variant="normal" rounded icon={MdClose} onClick={onCancel} />
   </CloseButtonWrapper>

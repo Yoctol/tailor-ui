@@ -1,6 +1,6 @@
 import React, {
   CSSProperties,
-  FunctionComponent,
+  FC,
   ReactNode,
   RefObject,
   useEffect,
@@ -43,7 +43,7 @@ interface PositionerProps {
   onCloseComplete?: () => void;
 }
 
-const Positioner: FunctionComponent<PositionerProps> = ({
+const Positioner: FC<PositionerProps> = ({
   visible,
   targetRef: targetRefFromProps,
   positionerRef: positionerRefFromProps,

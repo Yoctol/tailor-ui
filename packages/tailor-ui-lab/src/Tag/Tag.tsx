@@ -1,6 +1,6 @@
 import React, {
+  FC,
   FocusEvent,
-  FunctionComponent,
   KeyboardEvent,
   MouseEventHandler,
   ReactNode,
@@ -33,7 +33,7 @@ const StyledCloseIcon = styled(Icon)`
   }
 `;
 
-const CloseIcon: FunctionComponent<{
+const CloseIcon: FC<{
   onClick: MouseEventHandler;
   invalid: boolean;
 }> = ({ onClick, invalid }) => (
@@ -66,7 +66,7 @@ export interface TagProps {
   prefix?: ReactNode;
 }
 
-const Tag: FunctionComponent<TagProps> = ({
+const Tag: FC<TagProps> = ({
   children = '',
   editable = false,
   initialEditing = false,

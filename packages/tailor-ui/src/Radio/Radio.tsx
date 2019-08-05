@@ -1,4 +1,4 @@
-import React, { ChangeEvent, FunctionComponent, useContext } from 'react';
+import React, { ChangeEvent, FC, useContext } from 'react';
 import styled, { css } from 'styled-components';
 
 import { Box } from '../Layout';
@@ -116,7 +116,7 @@ export interface RadioProps {
   value?: string;
 }
 
-const Radio: FunctionComponent<RadioProps> & {
+const Radio: FC<RadioProps> & {
   Group: typeof RadioGroup;
 } = ({
   children,

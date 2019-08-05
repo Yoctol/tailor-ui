@@ -1,5 +1,5 @@
 import React, {
-  FunctionComponent,
+  FC,
   KeyboardEventHandler,
   MouseEventHandler,
   useRef,
@@ -78,7 +78,7 @@ export interface BaseModalProps {
   visible: boolean;
 }
 
-const BaseModal: FunctionComponent<BaseModalProps> = ({
+const BaseModal: FC<BaseModalProps> = ({
   children = '',
   visible,
   onCancel,

@@ -1,5 +1,5 @@
 import IntlTelInput from 'react-intl-tel-input';
-import React, { FunctionComponent, MouseEventHandler } from 'react';
+import React, { FC, MouseEventHandler } from 'react';
 
 import StyledTelInput from './style';
 
@@ -17,7 +17,7 @@ interface TelInputProps {
   onBlur?: MouseEventHandler;
 }
 
-const TelInput: FunctionComponent<TelInputProps> = ({
+const TelInput: FC<TelInputProps> = ({
   id,
   name,
   onChange,

@@ -1,9 +1,4 @@
-import React, {
-  FunctionComponent,
-  MutableRefObject,
-  createContext,
-  useRef,
-} from 'react';
+import React, { FC, MutableRefObject, createContext, useRef } from 'react';
 
 import HooksMessage, { Trigger } from './HooksMessage';
 
@@ -11,7 +6,7 @@ const HooksMessageContext = createContext<MutableRefObject<Trigger>>({
   current: () => Promise.resolve(false),
 });
 
-const HooksMessageProvider: FunctionComponent = ({ children }) => {
+const HooksMessageProvider: FC = ({ children }) => {
   const messageTriggerRef = useRef(() => Promise.resolve(false));
 
   return (

@@ -1,4 +1,4 @@
-import React, { FunctionComponent, ReactNode, useContext } from 'react';
+import React, { FC, ReactNode, useContext } from 'react';
 import styled from 'styled-components';
 import { MdKeyboardArrowUp } from 'react-icons/md';
 import { animated, useSpring } from 'react-spring';
@@ -25,7 +25,7 @@ export interface SubMenuProps {
   togglable?: boolean;
 }
 
-const SubMenu: FunctionComponent<SubMenuProps> = ({
+const SubMenu: FC<SubMenuProps> = ({
   id,
   icon,
   title,

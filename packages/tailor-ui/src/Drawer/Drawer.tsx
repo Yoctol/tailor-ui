@@ -1,4 +1,4 @@
-import React, { FunctionComponent, ReactNode } from 'react';
+import React, { FC, ReactNode } from 'react';
 import styled, { css } from 'styled-components';
 import { animated, config, useTransition } from 'react-spring';
 
@@ -97,7 +97,7 @@ export interface DrawerProps {
   height?: string | number;
 }
 
-const Drawer: FunctionComponent<DrawerProps> = ({
+const Drawer: FC<DrawerProps> = ({
   visible,
   title,
   footer,

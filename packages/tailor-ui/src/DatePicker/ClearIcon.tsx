@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react';
+import React, { FC } from 'react';
 import styled from 'styled-components';
 import { MdClose } from 'react-icons/md';
 
@@ -18,7 +18,7 @@ const ClearIconWrapper = styled.div`
 `;
 
 // FIXME: refactor with ClearIcon from lab/select
-const ClearIcon: FunctionComponent<ClearIconProps> = ({ onClick }) => (
+const ClearIcon: FC<ClearIconProps> = ({ onClick }) => (
   <ClearIconWrapper>
     <Icon
       type={MdClose}

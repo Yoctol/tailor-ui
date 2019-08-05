@@ -1,9 +1,4 @@
-import React, {
-  CSSProperties,
-  FunctionComponent,
-  RefObject,
-  memo,
-} from 'react';
+import React, { CSSProperties, FC, RefObject, memo } from 'react';
 import styled from 'styled-components';
 
 import { RenderPropsPositioner } from './Positioner';
@@ -34,7 +29,7 @@ const areEqual = (
   prevProps.positioner === nextProps.positioner &&
   prevProps.positionerRef === nextProps.positionerRef;
 
-const PositionWrapper: FunctionComponent<PositionWrapperProps> = memo(
+const PositionWrapper: FC<PositionWrapperProps> = memo(
   function PositionWrapper({
     left,
     top,

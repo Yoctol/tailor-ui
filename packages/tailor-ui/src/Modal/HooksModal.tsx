@@ -1,5 +1,5 @@
 import React, {
-  FunctionComponent,
+  FC,
   KeyboardEventHandler,
   MouseEventHandler,
   MutableRefObject,
@@ -52,7 +52,7 @@ interface ModalOptionsState {
   type: ModalTypes;
 }
 
-const EffectModal: FunctionComponent<EffectModalProps> = ({ triggerRef }) => {
+const EffectModal: FC<EffectModalProps> = ({ triggerRef }) => {
   const { locale } = useLocale();
   const [visible, setVisible] = useState(false);
   const [modalOptions, setModalOptions] = useState<ModalOptionsState>({

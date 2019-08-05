@@ -1,6 +1,6 @@
-import React, { FunctionComponent } from 'react';
+import React, { FC } from 'react';
 
-const AnalyticsIcon: FunctionComponent = () => (
+const AnalyticsIcon: FC = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="24"

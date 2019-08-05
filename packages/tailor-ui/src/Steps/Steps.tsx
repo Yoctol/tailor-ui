@@ -1,6 +1,6 @@
 import React, {
   Children,
-  FunctionComponent,
+  FC,
   ReactElement,
   ReactNode,
   isValidElement,
@@ -56,7 +56,7 @@ export interface StepsProps {
   children: ReactElement<StepProps>[];
 }
 
-const Steps: FunctionComponent<StepsProps> & {
+const Steps: FC<StepsProps> & {
   Step: typeof Step;
 } = ({
   children,

@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react';
+import React, { FC } from 'react';
 import { MdClose } from 'react-icons/md';
 
 import { Icon } from 'tailor-ui';
@@ -11,11 +11,7 @@ export interface SelectedOption {
   'data-testid'?: string;
 }
 
-const SelectedOption: FunctionComponent<SelectedOption> = ({
-  children,
-  index,
-  ...props
-}) => {
+const SelectedOption: FC<SelectedOption> = ({ children, index, ...props }) => {
   return (
     <StyledSelectedOption {...getDataTestId(props, `selected-option-${index}`)}>
       {children}

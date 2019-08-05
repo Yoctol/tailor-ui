@@ -1,6 +1,6 @@
 import React, {
   CSSProperties,
-  FunctionComponent,
+  FC,
   ReactNode,
   createContext,
   forwardRef,
@@ -93,7 +93,7 @@ const ClickOutsideContext = createContext<{
   setHasChild: () => {},
 });
 
-const Popover: FunctionComponent<PopoverProps> = ({
+const Popover: FC<PopoverProps> = ({
   children,
   position = Position.TOP,
   title,
