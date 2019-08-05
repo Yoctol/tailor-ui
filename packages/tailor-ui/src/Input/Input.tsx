@@ -7,7 +7,9 @@ import React, {
   ReactNode,
   forwardRef,
   isValidElement,
+  useCallback,
   useEffect,
+  useMemo,
 } from 'react';
 
 import { mergeEventProps } from '@tailor-ui/utils';
@@ -68,30 +70,46 @@ const Input: FC<InputProps> = forwardRef<HTMLInputElement, InputProps>(
       }
     }, [autoSelect, ref]);
 
-    const handleKeyPress = (event: KeyboardEvent<HTMLInputElement>) => {
-      if (onKeyPress) {
-        onKeyPress(event);
-      }
+    const handleKeyPress = useCallback(
+      (event: KeyboardEvent<HTMLInputElement>) => {
+        if (onKeyPress) {
+          onKeyPress(event);
+        }
 
-      if (onPressEnter && event.key === 'Enter') {
-        onPressEnter(event);
-      }
-    };
+        if (onPressEnter && event.key === 'Enter') {
+          onPressEnter(event);
+        }
+      },
+      [onKeyPress, onPressEnter]
+    );
 
-    const input = (
-      <StyledInput
-        ref={ref}
-        id={labelId}
-        invalid={invalid}
-        size={size as any}
-        onKeyPress={handleKeyPress}
-        autoFocus={autoFocus || autoSelect}
-        {...mergeEventProps(props, {
-          onChange: (event: ChangeEvent<HTMLInputElement>) => {
-            setValue(event.currentTarget.value);
-          },
-        })}
-      />
+    const input = useMemo(
+      () => (
+        <StyledInput
+          ref={ref}
+          id={labelId}
+          invalid={invalid}
+          size={size as any}
+          onKeyPress={handleKeyPress}
+          autoFocus={autoFocus || autoSelect}
+          {...mergeEventProps(props, {
+            onChange: (event: ChangeEvent<HTMLInputElement>) => {
+              setValue(event.currentTarget.value);
+            },
+          })}
+        />
+      ),
+      [
+        autoFocus,
+        autoSelect,
+        handleKeyPress,
+        invalid,
+        labelId,
+        props,
+        ref,
+        setValue,
+        size,
+      ]
     );
 
     if (prefix || suffix) {

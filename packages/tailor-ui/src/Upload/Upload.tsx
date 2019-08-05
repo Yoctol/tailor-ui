@@ -1,4 +1,4 @@
-import React, { FC, Reducer, useReducer } from 'react';
+import React, { FC, Reducer, useCallback, useMemo, useReducer } from 'react';
 import styled from 'styled-components';
 import { MdCheck, MdClose, MdFileUpload } from 'react-icons/md';
 import { useDropzone } from 'react-dropzone';
@@ -173,36 +173,46 @@ const Upload: FC<UploadProps> = ({
     files: [],
   });
 
-  const handleSelect = async (selectedFiles: File[]) => {
-    dispatch({
-      type: 'START_UPLOADING',
-      payload: selectedFiles,
-    });
+  const handleSelect = useCallback(
+    async (selectedFiles: File[]) => {
+      dispatch({
+        type: 'START_UPLOADING',
+        payload: selectedFiles,
+      });
 
-    try {
-      await onSelect(selectedFiles);
-      dispatch({ type: 'UPLOAD_SUCCESS' });
-    } catch {
-      dispatch({ type: 'UPLOAD_FAILED' });
-    }
-  };
-
-  const handleClear = (clearFile: File) => {
-    dispatch({ type: 'CLEAR_FILES', payload: clearFile.name });
-
-    if (onClear) {
-      onClear(clearFile);
-    }
-  };
-
-  const icon = getUploadIcon(state);
-  const text = getUploadText({
-    ...state,
-    texts: {
-      ...locale.Upload,
-      ...texts,
+      try {
+        await onSelect(selectedFiles);
+        dispatch({ type: 'UPLOAD_SUCCESS' });
+      } catch {
+        dispatch({ type: 'UPLOAD_FAILED' });
+      }
     },
-  });
+    [onSelect]
+  );
+
+  const handleClear = useCallback(
+    (clearFile: File) => {
+      dispatch({ type: 'CLEAR_FILES', payload: clearFile.name });
+
+      if (onClear) {
+        onClear(clearFile);
+      }
+    },
+    [onClear]
+  );
+
+  const icon = useMemo(() => getUploadIcon(state), [state]);
+  const text = useMemo(
+    () =>
+      getUploadText({
+        ...state,
+        texts: {
+          ...locale.Upload,
+          ...texts,
+        },
+      }),
+    [locale.Upload, state, texts]
+  );
   const { getRootProps, getInputProps, open } = useDropzone({
     onDrop: handleSelect,
     ...props,

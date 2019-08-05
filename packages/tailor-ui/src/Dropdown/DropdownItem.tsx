@@ -1,4 +1,10 @@
-import React, { FC, MouseEvent, MouseEventHandler, useContext } from 'react';
+import React, {
+  FC,
+  MouseEvent,
+  MouseEventHandler,
+  useCallback,
+  useContext,
+} from 'react';
 
 import DropdownContext from './DropdownContext';
 import { Item } from './styles';
@@ -26,19 +32,22 @@ const DropdownItem: FC<DropdownItemProps> = ({
 }) => {
   const { close } = useContext(DropdownContext);
 
-  const handleClick = (event: MouseEvent) => {
-    if (disabled) {
-      return;
-    }
+  const handleClick = useCallback(
+    (event: MouseEvent) => {
+      if (disabled) {
+        return;
+      }
 
-    if (onClick) {
-      onClick(event);
-    }
+      if (onClick) {
+        onClick(event);
+      }
 
-    if (!keep) {
-      close();
-    }
-  };
+      if (!keep) {
+        close();
+      }
+    },
+    [close, disabled, keep, onClick]
+  );
 
   return <Item onClick={handleClick} disabled={disabled} {...otherProps} />;
 };

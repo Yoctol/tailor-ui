@@ -90,11 +90,11 @@ const PopconfirmContent = memo<
 
 const Popconfirm: FC<PopconfirmContentProps> = ({
   type,
-  content,
+  content = '',
   confirmText,
   cancelText,
-  onConfirm,
-  onCancel,
+  onConfirm = () => {},
+  onCancel = () => {},
   ...props
 }) => (
   <Popover
@@ -112,11 +112,5 @@ const Popconfirm: FC<PopconfirmContentProps> = ({
     {...props}
   />
 );
-
-Popconfirm.defaultProps = {
-  content: '',
-  onConfirm: () => {},
-  onCancel: () => {},
-};
 
 export { Popconfirm };

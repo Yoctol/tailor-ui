@@ -75,7 +75,7 @@ const Switch: FC<SwitchProps> = ({
   defaultChecked,
   checked,
   onChange,
-  disabled,
+  disabled = false,
   ...props
 }) => (
   <StyledSwitch>
@@ -94,10 +94,5 @@ const Switch: FC<SwitchProps> = ({
     <span />
   </StyledSwitch>
 );
-
-Switch.defaultProps = {
-  disabled: false,
-  onChange: () => {},
-};
 
 export { Switch };

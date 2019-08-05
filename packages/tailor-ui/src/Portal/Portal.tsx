@@ -1,13 +1,13 @@
-import React, { Component } from 'react';
+import { FC, useCallback, useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
 
 let portalContainer: HTMLDivElement;
 
 const canUseDom = () =>
-  !!(
+  Boolean(
     typeof window !== 'undefined' &&
-    window.document &&
-    window.document.createElement
+      window.document &&
+      window.document.createElement
   );
 
 const createMountNode = (zIndex: number) => {
@@ -25,15 +25,26 @@ interface PortalProps {
   zIndex?: number;
 }
 
-class Portal extends Component<PortalProps> {
-  element?: HTMLElement;
+const Portal: FC<PortalProps> = ({ zIndex, children }) => {
+  const elementRef = useRef<HTMLElement>();
 
-  constructor(props: PortalProps) {
-    super(props);
+  useEffect(
+    () => () => {
+      if (elementRef.current) {
+        portalContainer.removeChild(elementRef.current);
+      }
+    },
+    []
+  );
+
+  const getElement = useCallback(() => {
+    if (elementRef.current) {
+      return elementRef.current;
+    }
 
     // This fixes SSR
     if (!canUseDom()) {
-      return;
+      return null;
     }
 
     if (!portalContainer) {
@@ -42,23 +53,19 @@ class Portal extends Component<PortalProps> {
       document.body.append(portalContainer);
     }
 
-    this.element = createMountNode(props.zIndex || 5);
-    portalContainer.append(this.element);
+    elementRef.current = createMountNode(zIndex || 5);
+    portalContainer.append(elementRef.current);
+
+    return elementRef.current;
+  }, [zIndex]);
+
+  const element = getElement();
+
+  if (!(canUseDom() && element)) {
+    return null;
   }
 
-  componentWillUnmount() {
-    if (this.element) {
-      portalContainer.removeChild(this.element);
-    }
-  }
-
-  render() {
-    if (!(canUseDom() && this.element)) {
-      return <></>;
-    }
-
-    return createPortal(this.props.children, this.element);
-  }
-}
+  return createPortal(children, element);
+};
 
 export { Portal };
