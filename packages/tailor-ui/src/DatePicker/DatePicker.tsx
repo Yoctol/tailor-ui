@@ -6,18 +6,18 @@ import { Moment } from 'moment';
 
 import { useOwnValue } from '@tailor-ui/hooks';
 
-import { Box, Flex } from '../Layout';
-import { Input, InputProps } from '../Input';
+import { InputProps } from '../Input';
 import { Popover } from '../Popover';
 import { Position } from '../constants';
 import { useLocale } from '../locale';
 
-import ClearIcon from './ClearIcon';
-import DatePickerStyle from './styles';
+import DatePickerInput from './DatePickerInput';
+import DatePresets, { Presets } from './DatePresets';
 
 export interface DatePickerProps {
   clearable?: boolean;
   range?: boolean;
+  presets?: Presets;
   width?: string | number;
   /**
    * to set date
@@ -34,7 +34,7 @@ export interface DatePickerProps {
   /**
    * a callback function, can be executed when the selected time is changing
    */
-  onChange?: (date: Moment | Moment[]) => void;
+  onChange?: (date: Moment | Moment[] | null) => void;
   /**
    * to provide an additional time selection
    */
@@ -71,7 +71,7 @@ const DatePicker: FunctionComponent<DatePickerProps> = ({
   onChange,
   showTime = false,
   range = false,
-  width = range ? '320px' : '255px',
+  width = range ? '380px' : '240px',
   clearable = false,
   showSecond,
   minuteStep,
@@ -80,6 +80,7 @@ const DatePicker: FunctionComponent<DatePickerProps> = ({
   disabledTime,
   placeholder,
   inputProps = {},
+  presets,
   ...props
 }) => {
   const { locale } = useLocale();
@@ -132,55 +133,55 @@ const DatePicker: FunctionComponent<DatePickerProps> = ({
   }, [format, ownValue]);
 
   return (
-    <>
-      <DatePickerStyle />
-      <Popover
-        position={Position.BOTTOM_LEFT}
-        p="0"
-        content={handleClose => (
-          <RenderCalendar
-            showWeekNumber={false}
-            showDateInput={false}
-            showOk
-            format={format}
-            disabledDate={disabledDate}
-            disabledTime={disabledTime}
-            locale={locale.DatePicker}
-            onOk={handleClose}
-            timePicker={
-              showTime ? (
-                <TimePickerPanel
-                  minuteStep={minuteStep}
-                  showSecond={showSecond}
-                />
-              ) : null
-            }
-            {...props}
-            {...valueProps}
-            onChange={handleChange}
-          />
-        )}
-      >
-        <Flex position="relative" width={width}>
-          <Input
-            readOnly
-            value={displayValue}
-            placeholder={placeholder}
-            {...inputProps}
-          />
-          {clearable && (
-            <Box
-              position="absolute"
-              display="inline-flex"
-              alignSelf="center"
-              right="8px"
-            >
-              <ClearIcon onClick={handleClear} />
-            </Box>
+    <Popover
+      position={Position.BOTTOM_LEFT}
+      p="0"
+      content={handleClose => (
+        <RenderCalendar
+          showWeekNumber={false}
+          showDateInput={false}
+          showOk={showTime}
+          format={format}
+          disabledDate={disabledDate}
+          disabledTime={disabledTime}
+          locale={locale.DatePicker}
+          onOk={handleClose}
+          timePicker={
+            showTime ? (
+              <TimePickerPanel
+                minuteStep={minuteStep}
+                showSecond={showSecond}
+              />
+            ) : null
+          }
+          renderSidebar={() => (
+            <DatePresets
+              key="sidebar"
+              presets={presets}
+              onDateClick={handleChange}
+            />
           )}
-        </Flex>
-      </Popover>
-    </>
+          {...props}
+          {...valueProps}
+          onChange={(newValue: Moment | Moment[]) => {
+            if (range && (newValue as Moment[]).length !== 2) {
+              return;
+            }
+
+            handleChange(newValue);
+          }}
+        />
+      )}
+    >
+      <DatePickerInput
+        width={width}
+        value={displayValue}
+        inputProps={inputProps}
+        clearable={clearable}
+        placeholder={placeholder}
+        handleClear={handleClear}
+      />
+    </Popover>
   );
 };
 

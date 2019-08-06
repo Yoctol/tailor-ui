@@ -13,7 +13,6 @@ export default css`
   }
 
   ${timePickerClass}-panel-select {
-    float: left;
     font-size: 14px;
     border: 1px solid #e9e9e9;
     border-width: 0 1px;
@@ -22,7 +21,7 @@ export default css`
     width: 56px;
     max-height: 144px;
     overflow-y: auto;
-    position: relative; // Fix chrome weird render bug
+    position: relative;
 
     &-active {
       overflow-y: auto;
@@ -53,6 +52,7 @@ export default css`
       width: 100%;
       height: 24px;
       line-height: 24px;
+      font-size: 16px;
       text-align: left;
       cursor: pointer;
       user-select: none;
@@ -64,7 +64,7 @@ export default css`
     }
 
     li&-option-selected {
-      background: ${p => p.theme.colors.primaryLight2};
+      background-color: ${p => p.theme.colors.surface};
       font-weight: bold;
     }
 
@@ -74,29 +74,6 @@ export default css`
         background: transparent;
         cursor: not-allowed;
       }
-    }
-  }
-  ${timePickerClass}-input {
-    width: 100%;
-    position: relative;
-    display: inline-block;
-    padding: 4px 7px;
-    height: 28px;
-    cursor: text;
-    font-size: 14px;
-    line-height: 1.5;
-    color: #666;
-    background-color: #fff;
-    background-image: none;
-    border: 1px solid #d9d9d9;
-    border-radius: 4px;
-    transition: border 0.2s cubic-bezier(0.645, 0.045, 0.355, 1),
-      background 0.2s cubic-bezier(0.645, 0.045, 0.355, 1),
-      box-shadow 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
-    &[disabled] {
-      color: #ccc;
-      background: #f7f7f7;
-      cursor: not-allowed;
     }
   }
 

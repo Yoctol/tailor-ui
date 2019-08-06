@@ -71,9 +71,24 @@ import { DatePicker } from 'tailor-ui';
   <DatePicker
     defaultValue={moment()}
     onChange={console.log}
+    width="150px"
     inputProps={{
       size: 'sm',
-      width: 150,
+    }}
+  />
+</Playground>
+
+#### Date presets
+
+<Playground>
+  <DatePicker
+    defaultValue={moment()}
+    onChange={console.log}
+    presets={{
+      '3 Days ago': moment().subtract(3, 'days'),
+      Yesterday: moment().subtract(1, 'days'),
+      Tomorrow: moment().add(1, 'days'),
+      'End of this month': moment().endOf('month'),
     }}
   />
 </Playground>

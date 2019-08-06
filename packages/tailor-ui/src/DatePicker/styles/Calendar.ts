@@ -1,12 +1,13 @@
 // stylelint-disable
 import { css } from 'styled-components';
 
+import { calendarPanelHeader } from './utils';
 import { prefixClass, timePickerClass } from './prefix';
 
 export default css`
   ${prefixClass} {
-    position: relative;
-    width: 253px;
+    display: flex;
+    flex-direction: row-reverse;
     outline: none;
     border-radius: ${p => p.theme.radii.lg};
     background-clip: padding-box;
@@ -18,7 +19,8 @@ export default css`
 
     &-date-panel,
     &-panel {
-      position: relative;
+      width: 100%;
+      min-width: 264px;
       outline: none;
     }
 
@@ -31,104 +33,7 @@ export default css`
     }
 
     &-header {
-      height: 34px;
-      padding: 0 10px;
-      border-bottom: 1px solid ${p => p.theme.colors.gray300};
-      line-height: 30px;
-      text-align: center;
-      user-select: none;
-
-      > a {
-        display: inline-block;
-        width: 30px;
-        padding: 0px 5px;
-        font-weight: bold;
-        line-height: 34px;
-        text-align: center;
-
-        &:hover {
-          cursor: pointer;
-          color: ${p => p.theme.colors.gray200};
-        }
-      }
-
-      ${prefixClass}-prev-month-btn {
-        position: absolute;
-        left: 25px;
-
-        &:after {
-          content: '‹';
-        }
-      }
-
-      ${prefixClass}-next-month-btn {
-        position: absolute;
-        right: 25px;
-
-        &:after {
-          content: '›';
-        }
-      }
-    }
-
-    &-year-select,
-    &-month-select,
-    &-day-select {
-      display: inline-block;
-      font-size: 14px;
-      font-weight: bold;
-      color: ${p => p.theme.colors.gray600};
-      padding: 0 8px;
-      line-height: 34px;
-
-      &:hover {
-        cursor: pointer;
-        color: ${p => p.theme.colors.primary};
-      }
-
-      &${prefixClass}-time-status:hover {
-        cursor: pointer;
-        color: ${p => p.theme.colors.gray600};
-      }
-    }
-
-    &-prev-month-btn,
-    &-next-month-btn,
-    &-prev-year-btn,
-    &-next-year-btn {
-      position: absolute;
-      top: 0;
-      cursor: pointer;
-      color: ${p => p.theme.colors.gray600};
-      padding: 0 5px;
-      font-size: 18px;
-      display: inline-block;
-      line-height: 34px;
-
-      &:hover {
-        color: ${p => p.theme.colors.primary};
-      }
-    }
-
-    &-next-year-btn {
-      right: 0;
-
-      &:after {
-        content: '»';
-      }
-    }
-
-    &-prev-year-btn {
-      left: 0;
-
-      &:after {
-        content: '«';
-      }
-    }
-
-    &-body {
-      padding: 9px 10px 10px;
-      height: 217px;
+      ${calendarPanelHeader(prefixClass)}
     }
 
     table {
@@ -139,10 +44,35 @@ export default css`
     }
 
     table,
-    td,
     th,
     td {
+      text-align: center;
       border: none;
+    }
+
+    tr {
+      &:first-child ${prefixClass}-cell {
+        padding-top: 12px;
+      }
+      &:last-child ${prefixClass}-cell {
+        padding-bottom: 12px;
+      }
+      ${prefixClass}-cell:first-child {
+        padding-left: 10px;
+      }
+      ${prefixClass}-cell:last-child {
+        padding-right: 10px;
+      }
+    }
+
+    thead {
+      margin: 2px 10px 4px;
+      border-bottom: 1px solid ${p => p.theme.colors.gray300};
+    }
+
+    &-calendar-table {
+      margin-bottom: 0;
+      border-spacing: 0;
     }
 
     &-table {
@@ -151,12 +81,23 @@ export default css`
     }
 
     &-column-header {
-      line-height: 18px;
-      padding: 6px 0;
-      width: 33px;
       text-align: center;
+      padding-top: 2px;
+      padding-bottom: 4px;
+
+      &:first-child {
+        padding-left: 10px;
+      }
+      &:last-child {
+        padding-right: 10px;
+      }
+
       ${prefixClass}-column-header-inner {
         display: block;
+        width: 28px;
+        height: 28px;
+        margin: 0 auto;
+        line-height: 28px;
         font-weight: normal;
       }
     }
@@ -168,30 +109,30 @@ export default css`
     }
 
     &-cell {
-      padding: 1px 0;
+      padding: 4px 0;
     }
 
     &-date {
-      display: block;
+      color: ${p => p.theme.colors.gray500};
+      border-radius: ${p => p.theme.radii.lg};
       margin: 0 auto;
-      color: ${p => p.theme.colors.gray700};
-      border-radius: 4px 4px;
-      width: 26px;
-      height: 26px;
-      padding: 0;
+      width: 28px;
+      height: 28px;
       background: transparent;
-      line-height: 26px;
+      line-height: 28px;
       text-align: center;
+      transition: background 0.3s ease;
 
       &:hover {
-        background: ${p => p.theme.colors.gray300};
+        color: ${p => p.theme.colors.gray700};
+        background-color: ${p => p.theme.colors.gray200};
         cursor: pointer;
       }
     }
 
     &-selected-day &-date {
-      color: #fff;
-      background: ${p => p.theme.colors.primaryLight};
+      color: ${p => p.theme.colors.light};
+      background-color: ${p => p.theme.colors.primary};
     }
 
     &-selected-date &-date {
@@ -208,30 +149,25 @@ export default css`
 
     &-disabled-cell &-date {
       cursor: not-allowed;
-      color: ${p => p.theme.colors.gray400};
-      border-color: ${p => p.theme.colors.gray400};
-      background: ${p => p.theme.colors.gray200};
+      color: ${p => p.theme.colors.gray500};
+      background-color: ${p => p.theme.colors.gray300};
       border-radius: 0;
       width: auto;
-
-      &:hover {
-        background: ${p => p.theme.colors.gray200};
-      }
     }
 
     &-disabled-cell-first-of-row &-date {
-      border-top-left-radius: 4px;
-      border-bottom-left-radius: 4px;
+      border-top-left-radius: ${p => p.theme.radii.lg};
+      border-bottom-left-radius: ${p => p.theme.radii.lg};
     }
 
     &-disabled-cell-last-of-row &-date {
-      border-top-right-radius: 4px;
-      border-bottom-right-radius: 4px;
+      border-top-right-radius: ${p => p.theme.radii.lg};
+      border-bottom-right-radius: ${p => p.theme.radii.lg};
     }
 
     &-last-month-cell &-date,
     &-next-month-btn-day &-date {
-      color: #bbb;
+      color: ${p => p.theme.colors.gray400};
     }
 
     &-footer {
@@ -286,7 +222,7 @@ export default css`
     &-time-picker-btn {
       display: inline-block;
       text-align: center;
-      color: ${p => p.theme.colors.info};
+      color: ${p => p.theme.colors.primary};
 
       &:hover {
         cursor: pointer;
