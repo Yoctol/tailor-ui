@@ -21,6 +21,7 @@ export interface Validate {
   validator?: Validator;
 }
 
+// eslint-disable-next-line no-underscore-dangle
 const isSchema = (obj: any): obj is Schema<any> => obj && obj.__isYupSchema__;
 
 export const validate = ({ value, validator, validationMessage }: Validate) => {
