@@ -1,16 +1,21 @@
 import { useCallback, useMemo, useState } from 'react';
 
-interface UseOwnValueProps {
-  value?: any;
-  defaultValue?: any;
-  onChange?: (value: any) => void;
+import { tuplify } from '@tailor-ui/utils';
+
+interface UseOwnValueProps<V> {
+  value?: V;
+  defaultValue?: V;
+  onChange?: (value: V) => void;
 }
 
-interface UseOwnValueOptions {
-  fallbackValue: any;
+interface UseOwnValueOptions<V> {
+  fallbackValue: V;
 }
 
-const useOwnValue = (props: UseOwnValueProps, options: UseOwnValueOptions) => {
+const useOwnValue = <V>(
+  props: UseOwnValueProps<V>,
+  options: UseOwnValueOptions<V>
+) => {
   const [ownValue, setOwnValue] = useState(
     () => props.value || props.defaultValue || options.fallbackValue
   );
@@ -23,7 +28,7 @@ const useOwnValue = (props: UseOwnValueProps, options: UseOwnValueOptions) => {
   ]);
 
   const onChange = useCallback(
-    (newValue: any) => {
+    (newValue: V) => {
       setOwnValue(newValue);
 
       if (props.onChange) {
@@ -33,7 +38,7 @@ const useOwnValue = (props: UseOwnValueProps, options: UseOwnValueOptions) => {
     [props]
   );
 
-  return [value, onChange];
+  return tuplify(value, onChange);
 };
 
 export { useOwnValue };
