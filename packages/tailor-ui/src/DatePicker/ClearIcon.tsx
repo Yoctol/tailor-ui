@@ -13,7 +13,7 @@ const ClearIconWrapper = styled.div`
   flex: none;
 
   &:hover svg {
-    fill: ${p => p.theme.colors.gray700} !important;
+    fill: ${p => p.theme.colors.primary} !important;
   }
 `;
 
@@ -23,7 +23,7 @@ const ClearIcon: FC<ClearIconProps> = ({ onClick }) => (
     <Icon
       type={MdClose}
       fill="gray400"
-      size="16"
+      size="20"
       cursor="pointer"
       onClick={e => {
         e.stopPropagation();

@@ -1,16 +1,18 @@
 // stylelint-disable
 import { css } from 'styled-components';
 
-import { prefixClass, timePickerClass } from './prefix';
+import { prefixClass } from './prefix';
 
 export default css`
 ${prefixClass}-range {
-  width: 502px;
-  overflow: hidden;
+  width: 529px;
+
+  ${prefixClass}-date-panel {
+    display: flex;
+  }
 
   &-part {
-    width: 250px;
-    position: relative;
+    width: 50%;
 
     ${prefixClass}-time-picker {
       top: 34px;
@@ -23,7 +25,6 @@ ${prefixClass}-range {
   }
 
   &-left {
-    float: left;
     ${prefixClass}-time-picker-panel {
       &-select:last-child {
         border-right: 1px solid #e9e9e9;
@@ -33,7 +34,8 @@ ${prefixClass}-range {
   }
 
   &-right {
-    float: right;
+    border-left: ${p => p.theme.borders.base};
+    border-color: ${p => p.theme.colors.gray200};
     ${prefixClass}-time-picker-panel {
       left: 21px;
 
@@ -44,27 +46,7 @@ ${prefixClass}-range {
   }
 
   &-middle {
-    position: absolute;
-    margin-left: -10px;
-    text-align: center;
-    height: 36px;
-    line-height: 36px;
-  }
-  ${prefixClass}-date-panel::after {
-    content:".";
-    display:block;
-    height:0;
-    clear:both;
-    visibility:hidden;
-  }
-
-  ${prefixClass}-input-wrap {
-    height: 36px;
-  }
-  ${prefixClass}-input,
-${timePickerClass}-input {
-    padding: 1px 7px;
-    height: 22px;
+    display: none;
   }
 
   ${prefixClass}-body,
@@ -111,8 +93,9 @@ ${timePickerClass}-input {
     height: 198px;
   }
 
-  ${prefixClass}-in-range-cell {
-    background: #ebf4f8;
+  ${prefixClass}-in-range-cell ${prefixClass}-date {
+    background: ${p => p.theme.colors.surface};
+    width: auto;
     border-radius: 0;
   }
 
@@ -126,9 +109,6 @@ ${timePickerClass}-input {
     &-btn {
       padding: 10px 12px 10px 0;
     }
-  }
-  ${prefixClass}-ok-btn {
-    position: static;
   }
   ${prefixClass}-today-btn {
     float: left;

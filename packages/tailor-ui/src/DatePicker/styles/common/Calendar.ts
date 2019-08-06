@@ -5,26 +5,14 @@ import { prefixClass, timePickerClass } from '../prefix';
 
 export default css`
   ${prefixClass} {
-    &-input-wrap {
-      position: relative;
-      padding: 6px;
-      border-bottom: 1px solid #e9e9e9;
-      &::after {
-        content: '';
-        clear: both;
-      }
-    }
-
-    &-date-input-wrap {
-      overflow: hidden;
-    }
-
     &-time-picker {
       position: absolute;
-      top: 34px;
-      width: 100%;
-      height: 217px;
+      top: 44px;
+      width: 264px;
+      height: 267px;
       background-color: white;
+      border-top: ${p => p.theme.borders.base};
+      border-color: ${p => p.theme.colors.gray200};
 
       &-panel {
         position: relative;
@@ -45,10 +33,11 @@ export default css`
           &-select {
             flex: auto;
             width: 84px;
-            min-height: 217px;
-            max-height: 217px;
+            min-height: 267px;
+            max-height: 267px;
             li {
-              padding: 0;
+              padding: 4px 0;
+              line-height: 28px;
               text-align: center;
             }
           }
@@ -56,7 +45,6 @@ export default css`
       }
     }
     &-time-picker-wrap {
-      float: left;
       width: 100%;
 
       ${timePickerClass} {
@@ -73,54 +61,6 @@ export default css`
           display: none;
         }
       }
-    }
-
-    &-input {
-      width: 100%;
-      color: ${p => p.theme.colors.gray700};
-      border: 1px solid transparent;
-      border-radius: 4px;
-      cursor: text;
-      font-size: 16px;
-      line-height: 1.5;
-      outline: 0;
-      height: 22px;
-
-      &-invalid {
-        border-color: ${p => p.theme.colors.danger};
-      }
-
-      &::placeholder {
-        color: ${p => p.theme.colors.gray400};
-      }
-    }
-
-    &-clear-btn {
-      z-index: 9999;
-      position: absolute;
-      right: 6px;
-      cursor: pointer;
-      overflow: hidden;
-      width: 20px;
-      height: 20px;
-      text-align: center;
-      line-height: 20px;
-      top: 6px;
-      margin: 0;
-    }
-
-    &-clear-btn:after {
-      content: 'x';
-      font-size: 12px;
-      color: ${p => p.theme.colors.gray400};
-      display: inline-block;
-      line-height: 1;
-      width: 20px;
-      transition: color 0.3s ease;
-    }
-
-    &-clear-btn:hover:after {
-      color: ${p => p.theme.colors.gray700};
     }
   }
 `;

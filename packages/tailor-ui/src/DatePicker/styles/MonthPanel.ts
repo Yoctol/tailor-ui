@@ -1,139 +1,92 @@
-// stylelint-disable
 import { css } from 'styled-components';
 
+import { calendarPanelHeader } from './utils';
 import { prefixClass } from './prefix';
 
 export default css`
-  ${prefixClass}-month-panel {
-    left: 0;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    background: #ffffff;
+  ${prefixClass /* sc-sel */}-month-panel {
+    position: absolute;
     z-index: 10;
-    position: absolute;
-    outline: none;
-  }
-
-  ${prefixClass}-month-panel-hidden {
-    display: none;
-  }
-
-  ${prefixClass}-month-panel-header {
-    padding: 0 10px;
-    height: 34px;
-    line-height: 30px;
-    position: relative;
-    text-align: center;
-    user-select: none;
-    border-bottom: 1px solid #ccc;
-
-    > a {
-      font-weight: bold;
-      display: inline-block;
-      padding: 4px 5px;
-      text-align: center;
-      width: 30px;
-
-      &:hover {
-        cursor: pointer;
-        color: ${p => p.theme.colors.primary};
-      }
-    }
-  }
-
-  ${prefixClass}-month-panel-prev-year-btn, ${prefixClass}-month-panel-next-year-btn {
-    position: absolute;
     top: 0;
-  }
-
-  ${prefixClass}-month-panel-next-year-btn {
-    &:after {
-      content: '»';
-    }
-  }
-
-  ${prefixClass}-month-panel-prev-year-btn {
-    user-select: none;
+    right: 0;
+    bottom: 0;
     left: 0;
+    border-radius: ${p => p.theme.radii.lg};
+    outline: none;
+    background-color: ${p => p.theme.colors.light};
 
-    &:after {
-      content: '«';
+    > div {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
     }
   }
 
-  ${prefixClass}-month-panel ${prefixClass}-month-panel-year-select {
-    width: 180px;
-  }
-
-  ${prefixClass}-month-panel-year-select-arrow {
+  ${prefixClass /* sc-sel */}-month-panel-hidden {
     display: none;
   }
 
-  ${prefixClass}-month-panel-next-year-btn {
-    user-select: none;
-    right: 0;
+  ${prefixClass /* sc-sel */}-month-panel-header {
+    ${calendarPanelHeader(`${prefixClass}-month-panel`)}
   }
 
-  ${prefixClass}-month-panel-body {
-    padding: 9px 10px 10px;
-    position: absolute;
-    top: 34px;
-    bottom: 0;
+  ${prefixClass /* sc-sel */}-month-panel-body {
+    flex: 1;
   }
 
-  ${prefixClass}-month-panel-table {
-    table-layout: fixed;
+  ${prefixClass /* sc-sel */}-month-panel-footer {
+    border-top: ${p => p.theme.borders.base} ${p => p.theme.colors.gray200};
+    ${prefixClass /* sc-sel */}-footer-extra {
+      padding: 0 12px;
+    }
+  }
+
+  ${prefixClass /* sc-sel */}-month-panel-table {
     width: 100%;
     height: 100%;
+    table-layout: fixed;
     border-collapse: separate;
   }
 
-  ${prefixClass}-month-panel-cell {
-    text-align: center;
-
-    ${prefixClass}-month-panel-month {
-      display: block;
-      width: 46px;
-      margin: 0 auto;
-      color: ${p => p.theme.colors.gray700};
-      border-radius: 4px 4px;
-      height: 36px;
-      padding: 0;
-      background: transparent;
-      line-height: 36px;
-      text-align: center;
-
-      &:hover {
-        background: ${p => p.theme.colors.gray300};
-        cursor: pointer;
-      }
-    }
-
-    &-disabled {
-      ${prefixClass}-month-panel-month {
-        color: #bfbfbf;
-
-        &:hover {
-          background: white;
-          cursor: not-allowed;
-        }
-      }
-    }
-  }
-
-  ${prefixClass}-month-panel-selected-cell ${prefixClass}-month-panel-month {
-    background: ${p => p.theme.colors.primary};
-    color: #fff;
+  ${prefixClass /* sc-sel */}-month-panel-selected-cell ${prefixClass /* sc-sel */}-month-panel-month {
+    background-color: ${p => p.theme.colors.primary};
+    color: ${p => p.theme.colors.light};
 
     &:hover {
-      background: ${p => p.theme.colors.primary};
-      color: #fff;
+      background-color: ${p => p.theme.colors.primary};
+      color: ${p => p.theme.colors.light};
     }
   }
 
-  ${prefixClass}-month-header-wrap {
-    position: relative;
-    height: 308px;
+  ${prefixClass /* sc-sel */}-month-panel-cell {
+    text-align: center;
+
+    &-disabled ${prefixClass /* sc-sel */}-month-panel-month {
+      &,
+      &:hover {
+        background-color: ${p => p.theme.colors.gray500};
+        color: ${p => p.theme.colors.gray400};
+        cursor: not-allowed;
+      }
+    }
+  }
+
+  ${prefixClass /* sc-sel */}-month-panel-month {
+    display: inline-block;
+    height: 28px;
+    margin: 0 auto;
+    padding: 0 12px;
+    border-radius: ${p => p.theme.radii.lg};
+    background-color: transparent;
+    color: ${p => p.theme.colors.gray500};
+    font-weight: 600;
+    line-height: 28px;
+    text-align: center;
+    transition: background 0.3s ease;
+
+    &:hover {
+      background-color: ${p => p.theme.colors.gray200};
+      cursor: pointer;
+    }
   }
 `;
