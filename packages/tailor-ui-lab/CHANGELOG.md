@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.11.0](https://github.com/Yoctol/tailor-ui/compare/@tailor-ui/lab@0.10.5...@tailor-ui/lab@0.11.0) (2019-08-06)
+
+
+### Bug Fixes
+
+* **select:** add string width support ([f0b582a](https://github.com/Yoctol/tailor-ui/commit/f0b582a))
+
+
+### Features
+
+* **tag:** add clickable support ([65fac5d](https://github.com/Yoctol/tailor-ui/commit/65fac5d))
+* **tag:** add clickable support ([#302](https://github.com/Yoctol/tailor-ui/issues/302)) ([9289029](https://github.com/Yoctol/tailor-ui/commit/9289029))
+* use FC instead of FunctionComponent ([3dfc438](https://github.com/Yoctol/tailor-ui/commit/3dfc438))
+
+
+
+
+
 ## [0.10.5](https://github.com/Yoctol/tailor-ui/compare/@tailor-ui/lab@0.10.4...@tailor-ui/lab@0.10.5) (2019-08-01)
 
 **Note:** Version bump only for package @tailor-ui/lab

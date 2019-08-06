@@ -11,7 +11,7 @@
   "bugs": {
     "url": "https://github.com/yoctol/tailor-ui/issues"
   },
-  "version": "0.17.2",
+  "version": "0.18.0",
   "main": "lib/index.cjs.js",
   "module": "lib/index.js",
   "files": [
@@ -28,9 +28,9 @@
   "typings": "lib/index.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.5.5",
-    "@tailor-ui/hooks": "^0.3.1",
-    "@tailor-ui/theme": "^0.2.0",
-    "@tailor-ui/utils": "^0.2.7",
+    "@tailor-ui/hooks": "^0.4.0",
+    "@tailor-ui/theme": "^0.2.1",
+    "@tailor-ui/utils": "^0.2.8",
     "moment": "^2.24.0",
     "polished": "^3.4.1",
     "prop-types": "^15.7.1",

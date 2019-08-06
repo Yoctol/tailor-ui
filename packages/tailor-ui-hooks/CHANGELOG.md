@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0](https://github.com/Yoctol/tailor-ui/compare/@tailor-ui/hooks@0.3.1...@tailor-ui/hooks@0.4.0) (2019-08-06)
+
+
+### Features
+
+* **hooks:** add generic support to useOwnValue ([829494f](https://github.com/Yoctol/tailor-ui/commit/829494f))
+
+
+
+
+
 ## [0.3.1](https://github.com/Yoctol/tailor-ui/compare/@tailor-ui/hooks@0.3.0...@tailor-ui/hooks@0.3.1) (2019-08-01)
 
 **Note:** Version bump only for package @tailor-ui/hooks

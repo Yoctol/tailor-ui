@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.18.0](https://github.com/yoctol/tailor-ui/compare/tailor-ui@0.17.2...tailor-ui@0.18.0) (2019-08-06)
+
+
+### Features
+
+* use FC instead of FunctionComponent ([3dfc438](https://github.com/yoctol/tailor-ui/commit/3dfc438))
+* **date-picker:** add presets support and apply new design ([0161392](https://github.com/yoctol/tailor-ui/commit/0161392))
+* **date-picker:** add presets support and apply new design ([#307](https://github.com/yoctol/tailor-ui/issues/307)) ([b9a8381](https://github.com/yoctol/tailor-ui/commit/b9a8381))
+
+
+
+
+
 ## [0.17.2](https://github.com/yoctol/tailor-ui/compare/tailor-ui@0.17.1...tailor-ui@0.17.2) (2019-08-01)
 
 
