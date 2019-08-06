@@ -289,7 +289,7 @@ exports[`Select multiple should display multi option 1`] = `
           />
         </div>
         <i
-          style="transform: rotate(180deg); pointer-events: none; display: inline-flex;"
+          style="transform: rotate(180deg); flex: 0 0 auto; pointer-events: none; display: inline-flex;"
         >
           <i
             class="c7"
@@ -473,7 +473,7 @@ exports[`Select should render correctly 1`] = `
           />
         </div>
         <i
-          style="transform: rotate(180deg); pointer-events: none; display: inline-flex;"
+          style="transform: rotate(180deg); flex: 0 0 auto; pointer-events: none; display: inline-flex;"
         >
           <i
             class="c4"

@@ -51,6 +51,7 @@ const isBrowser = typeof window !== 'undefined';
 // tslint:disable-next-line:no-any
 const isFirefox = isBrowser && (window as any).mozInnerScreenX != null;
 
+// eslint-disable-next-line no-underscore-dangle
 const _parseInt = (str: string) => parseInt(str, 10);
 
 export function createDebugEle(

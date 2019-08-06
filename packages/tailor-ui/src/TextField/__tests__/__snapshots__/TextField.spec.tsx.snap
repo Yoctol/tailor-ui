@@ -199,7 +199,7 @@ exports[`TextField should render correctly 1`] = `
 }
 
 .c0 .c1 ~ label,
-.c0 .Textarea__StyledTextarea-vlcri7-0 ~ label {
+.c0 .vlcri7-0 ~ label {
   position: absolute;
   line-height: 1;
   pointer-events: none;
@@ -213,7 +213,7 @@ exports[`TextField should render correctly 1`] = `
 }
 
 .c0 .c1:focus ~ label,
-.c0 .Textarea__StyledTextarea-vlcri7-0:focus ~ label {
+.c0 .vlcri7-0:focus ~ label {
   top: -7px;
   left: 7px;
   padding: 0 2px;
@@ -223,7 +223,7 @@ exports[`TextField should render correctly 1`] = `
 }
 
 .c0 .c1:focus ~ .c3,
-.c0 .Textarea__StyledTextarea-vlcri7-0:focus ~ .c3 {
+.c0 .vlcri7-0:focus ~ .c3 {
   opacity: 1;
 }
 
@@ -296,7 +296,7 @@ exports[`TextField should render correctly with defaultValue 1`] = `
 }
 
 .c3 .c1 ~ label,
-.c3 .Textarea__StyledTextarea-vlcri7-0 ~ label {
+.c3 .vlcri7-0 ~ label {
   position: absolute;
   line-height: 1;
   pointer-events: none;
@@ -310,7 +310,7 @@ exports[`TextField should render correctly with defaultValue 1`] = `
 }
 
 .c3 .c1:focus ~ label,
-.c3 .Textarea__StyledTextarea-vlcri7-0:focus ~ label {
+.c3 .vlcri7-0:focus ~ label {
   top: -7px;
   left: 7px;
   padding: 0 2px;
@@ -320,7 +320,7 @@ exports[`TextField should render correctly with defaultValue 1`] = `
 }
 
 .c3 .c1:focus ~ .c4,
-.c3 .Textarea__StyledTextarea-vlcri7-0:focus ~ .c4 {
+.c3 .vlcri7-0:focus ~ .c4 {
   opacity: 1;
 }
 
@@ -330,7 +330,7 @@ exports[`TextField should render correctly with defaultValue 1`] = `
 }
 
 .c0 .c1 ~ label,
-.c0 .Textarea__StyledTextarea-vlcri7-0 ~ label {
+.c0 .vlcri7-0 ~ label {
   position: absolute;
   line-height: 1;
   pointer-events: none;
@@ -345,7 +345,7 @@ exports[`TextField should render correctly with defaultValue 1`] = `
 }
 
 .c0 .c1:focus ~ label,
-.c0 .Textarea__StyledTextarea-vlcri7-0:focus ~ label {
+.c0 .vlcri7-0:focus ~ label {
   top: -7px;
   left: 7px;
   padding: 0 2px;
@@ -355,7 +355,7 @@ exports[`TextField should render correctly with defaultValue 1`] = `
 }
 
 .c0 .c1:focus ~ .c4,
-.c0 .Textarea__StyledTextarea-vlcri7-0:focus ~ .c4 {
+.c0 .vlcri7-0:focus ~ .c4 {
   opacity: 1;
 }
 
@@ -447,7 +447,7 @@ exports[`TextField should render with maxLength 1`] = `
 }
 
 .c0 .c1 ~ label,
-.c0 .Textarea__StyledTextarea-vlcri7-0 ~ label {
+.c0 .vlcri7-0 ~ label {
   position: absolute;
   line-height: 1;
   pointer-events: none;
@@ -461,7 +461,7 @@ exports[`TextField should render with maxLength 1`] = `
 }
 
 .c0 .c1:focus ~ label,
-.c0 .Textarea__StyledTextarea-vlcri7-0:focus ~ label {
+.c0 .vlcri7-0:focus ~ label {
   top: -7px;
   left: 7px;
   padding: 0 2px;
@@ -471,12 +471,12 @@ exports[`TextField should render with maxLength 1`] = `
 }
 
 .c0 .c1:focus ~ .c3,
-.c0 .Textarea__StyledTextarea-vlcri7-0:focus ~ .c3 {
+.c0 .vlcri7-0:focus ~ .c3 {
   opacity: 1;
 }
 
 .c5 .c1 ~ label,
-.c5 .Textarea__StyledTextarea-vlcri7-0 ~ label {
+.c5 .vlcri7-0 ~ label {
   position: absolute;
   line-height: 1;
   pointer-events: none;
@@ -491,7 +491,7 @@ exports[`TextField should render with maxLength 1`] = `
 }
 
 .c5 .c1:focus ~ label,
-.c5 .Textarea__StyledTextarea-vlcri7-0:focus ~ label {
+.c5 .vlcri7-0:focus ~ label {
   top: -7px;
   left: 7px;
   padding: 0 2px;
@@ -501,7 +501,7 @@ exports[`TextField should render with maxLength 1`] = `
 }
 
 .c5 .c1:focus ~ .c3,
-.c5 .Textarea__StyledTextarea-vlcri7-0:focus ~ .c3 {
+.c5 .vlcri7-0:focus ~ .c3 {
   opacity: 1;
 }
 
