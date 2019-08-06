@@ -1,4 +1,4 @@
-import React, { FC, ReactNode } from 'react';
+import React, { FC, ReactNode, useMemo } from 'react';
 import styled, { css } from 'styled-components';
 import { animated, config, useTransition } from 'react-spring';
 
@@ -110,9 +110,15 @@ const Drawer: FC<DrawerProps> = ({
   children,
   ...otherProps
 }) => {
-  const breadth = getWrapperBreadth({ placement, width, height });
-  const transformAxis = getTransformAxis(placement);
-  const transformBreadth = getTransformBreadth({ placement, breadth });
+  const breadth = useMemo(
+    () => getWrapperBreadth({ placement, width, height }),
+    [height, placement, width]
+  );
+  const transformAxis = useMemo(() => getTransformAxis(placement), [placement]);
+  const transformBreadth = useMemo(
+    () => getTransformBreadth({ placement, breadth }),
+    [breadth, placement]
+  );
 
   usePreventBodyScroll(visible);
 

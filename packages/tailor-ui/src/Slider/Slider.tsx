@@ -1,4 +1,11 @@
-import React, { FC, useEffect, useRef, useState } from 'react';
+import React, {
+  FC,
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from 'react';
 import { clamp, minBy } from 'ramda';
 
 import SliderDot from './SliderDot';
@@ -47,13 +54,16 @@ const Slider: FC<SliderProps> = ({
   const value = (valueFromProps || defaultValue) as Value;
   const denominator = max - min;
 
-  const handleChange = (newValue: Value) => {
-    if (onChange) {
-      onChange(newValue);
-    } else {
-      setDefaultValue(newValue);
-    }
-  };
+  const handleChange = useCallback(
+    (newValue: Value) => {
+      if (onChange) {
+        onChange(newValue);
+      } else {
+        setDefaultValue(newValue);
+      }
+    },
+    [onChange]
+  );
 
   useEffect(() => {
     if (sliderRef.current) {
@@ -110,54 +120,61 @@ const Slider: FC<SliderProps> = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dragStart]);
 
-  const valuePercentage = `${((range
-    ? (value as RangeValue)[1] - (value as RangeValue)[0]
-    : (value as number) - min) /
-    denominator) *
-    100}%`;
+  const valuePercentage = useMemo(
+    () =>
+      `${((range
+        ? (value as RangeValue)[1] - (value as RangeValue)[0]
+        : (value as number) - min) /
+        denominator) *
+        100}%`,
+    [denominator, min, range, value]
+  );
 
-  const handleSlideStart = (event: React.MouseEvent | React.TouchEvent) => {
-    if (disabled) {
-      return;
-    }
+  const handleSlideStart = useCallback(
+    (event: React.MouseEvent | React.TouchEvent) => {
+      if (disabled) {
+        return;
+      }
 
-    const isTouchEvent = 'touches' in event;
+      const isTouchEvent = 'touches' in event;
 
-    if (isTouchEvent) {
-      event.stopPropagation();
-    }
+      if (isTouchEvent) {
+        event.stopPropagation();
+      }
 
-    const { left } = event.currentTarget.getBoundingClientRect();
-    const movedX = getPageX({ event });
-    const offsetX = movedX - left;
-    const offsetValue = Math.round(offsetX / stepOffset) * step + min;
-    const newValue = clamp(min, max, offsetValue);
+      const { left } = event.currentTarget.getBoundingClientRect();
+      const movedX = getPageX({ event });
+      const offsetX = movedX - left;
+      const offsetValue = Math.round(offsetX / stepOffset) * step + min;
+      const newValue = clamp(min, max, offsetValue);
 
-    if (range) {
-      const replaceValue = minBy(
-        v => Math.abs(newValue - v),
-        ...(value as RangeValue)
-      );
+      if (range) {
+        const replaceValue = minBy(
+          v => Math.abs(newValue - v),
+          ...(value as RangeValue)
+        );
 
-      const updatedValue = updateRangeValues({
-        value: value as RangeValue,
-        replaceValue,
-        newValue,
+        const updatedValue = updateRangeValues({
+          value: value as RangeValue,
+          replaceValue,
+          newValue,
+        });
+
+        setChangedValue(newValue);
+        handleChange(updatedValue);
+      } else {
+        handleChange(newValue);
+      }
+
+      setActive(true);
+      setDragStart({
+        x: movedX,
+        value: newValue,
+        touch: isTouchEvent,
       });
-
-      setChangedValue(newValue);
-      handleChange(updatedValue);
-    } else {
-      handleChange(newValue);
-    }
-
-    setActive(true);
-    setDragStart({
-      x: movedX,
-      value: newValue,
-      touch: isTouchEvent,
-    });
-  };
+    },
+    [disabled, handleChange, max, min, range, step, stepOffset, value]
+  );
 
   return (
     <StyledSliderContainer min={min} max={max}>

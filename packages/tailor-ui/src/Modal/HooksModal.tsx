@@ -4,6 +4,7 @@ import React, {
   MouseEventHandler,
   MutableRefObject,
   ReactNode,
+  useCallback,
   useEffect,
   useState,
 } from 'react';
@@ -68,7 +69,7 @@ const EffectModal: FC<EffectModalProps> = ({ triggerRef }) => {
     onCloseComplete: () => {},
   });
 
-  const getIcon = () => {
+  const getIcon = useCallback(() => {
     const { type } = modalOptions;
 
     if (type === 'confirm') {
@@ -76,53 +77,56 @@ const EffectModal: FC<EffectModalProps> = ({ triggerRef }) => {
     }
 
     return <Icon type={type} fill={type} size="32" mr="2" />;
-  };
+  }, [modalOptions]);
 
-  const trigger = (options: ModalOptions, type: ModalTypes): Promise<boolean> =>
-    new Promise(resolve => {
-      const {
-        closable = type === 'confirm',
-        title = '',
-        content = '',
-        confirmText = locale.Modal.confirmText,
-        cancelText = locale.Modal.cancelText,
-        onConfirm,
-        onCancel,
-        onOpenComplete,
-        onCloseComplete,
-      } = options;
+  const trigger = useCallback(
+    (options: ModalOptions, type: ModalTypes): Promise<boolean> =>
+      new Promise(resolve => {
+        const {
+          closable = type === 'confirm',
+          title = '',
+          content = '',
+          confirmText = locale.Modal.confirmText,
+          cancelText = locale.Modal.cancelText,
+          onConfirm,
+          onCancel,
+          onOpenComplete,
+          onCloseComplete,
+        } = options;
 
-      setModalOptions({
-        type,
-        closable,
-        title,
-        content,
-        confirmText,
-        cancelText,
-        onConfirm: event => {
-          setVisible(false);
+        setModalOptions({
+          type,
+          closable,
+          title,
+          content,
+          confirmText,
+          cancelText,
+          onConfirm: event => {
+            setVisible(false);
 
-          if (onConfirm) {
-            onConfirm(event);
-          } else {
-            resolve(true);
-          }
-        },
-        onCancel: (event: any) => {
-          setVisible(false);
+            if (onConfirm) {
+              onConfirm(event);
+            } else {
+              resolve(true);
+            }
+          },
+          onCancel: (event: any) => {
+            setVisible(false);
 
-          if (onCancel) {
-            onCancel(event);
-          } else {
-            resolve(false);
-          }
-        },
-        onOpenComplete,
-        onCloseComplete,
-      });
+            if (onCancel) {
+              onCancel(event);
+            } else {
+              resolve(false);
+            }
+          },
+          onOpenComplete,
+          onCloseComplete,
+        });
 
-      setVisible(true);
-    });
+        setVisible(true);
+      }),
+    [locale.Modal.cancelText, locale.Modal.confirmText]
+  );
 
   useEffect(() => {
     // eslint-disable-next-line no-param-reassign

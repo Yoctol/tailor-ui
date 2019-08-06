@@ -4,6 +4,7 @@ import React, {
   KeyboardEvent,
   Reducer,
   UIEvent,
+  useCallback,
   useEffect,
   useReducer,
   useRef,
@@ -242,15 +243,15 @@ const Mention: FC<MentionProps> = ({
     },
   });
 
-  const closeDropdown = () => {
+  const closeDropdown = useCallback(() => {
     if (laf.current) {
       cancelAnimationFrame(laf.current);
     }
 
     dispatch({ type: 'closeDropdown' });
-  };
+  }, []);
 
-  const resetDropdown = () => {
+  const resetDropdown = useCallback(() => {
     if (!mentionRef.current) {
       return;
     }
@@ -309,91 +310,100 @@ const Mention: FC<MentionProps> = ({
     } else {
       closeDropdown();
     }
-  };
+  }, [closeDropdown, creatable, suggestions]);
 
-  const selectSuggestion = (suggestion: FilteredSuggestion) => {
-    const { startPos, endPos } = cursorMention.current;
-    const insertValue = `{{${suggestion.value}}}`;
-    const newValue = [
-      value.slice(0, startPos - 2),
-      insertValue,
-      value.slice(endPos + (value[endPos] === '}' ? 2 : 0), value.length),
-    ].join('');
+  const selectSuggestion = useCallback(
+    (suggestion: FilteredSuggestion) => {
+      const { startPos, endPos } = cursorMention.current;
+      const insertValue = `{{${suggestion.value}}}`;
+      const newValue = [
+        value.slice(0, startPos - 2),
+        insertValue,
+        value.slice(endPos + (value[endPos] === '}' ? 2 : 0), value.length),
+      ].join('');
 
-    dispatch({
-      type: 'selectSuggestion',
-      payload: {
-        caretPos: startPos - 2 + insertValue.length,
-        value: newValue,
-      },
-    });
+      dispatch({
+        type: 'selectSuggestion',
+        payload: {
+          caretPos: startPos - 2 + insertValue.length,
+          value: newValue,
+        },
+      });
 
-    if (suggestion.type === 'create') {
-      onMentionCreate(suggestion.value);
-    }
-
-    if (onChange) {
-      onChange(newValue);
-    }
-  };
-
-  const handleKeyDown = (event: KeyboardEvent<HTMLTextAreaElement>) => {
-    const { dropdownVisible, activeIndex, filteredSuggestions } = state;
-    const { keyCode } = event;
-
-    if (
-      dropdownVisible &&
-      keyCode === ENTER &&
-      activeIndex !== -1 &&
-      filteredSuggestions.length &&
-      cursorMention.current
-    ) {
-      event.preventDefault();
-      event.stopPropagation();
-
-      selectSuggestion(filteredSuggestions[activeIndex]);
-
-      return;
-    }
-
-    if (dropdownVisible && [TAB, ESCAPE].includes(keyCode)) {
-      closeDropdown();
-
-      return;
-    }
-
-    if (dropdownVisible && keyCode === UP_ARROW) {
-      event.preventDefault();
-      event.stopPropagation();
-
-      dispatch({ type: 'setPreviousItemActive' });
-
-      return;
-    }
-
-    if (dropdownVisible && keyCode === DOWN_ARROW) {
-      event.preventDefault();
-      event.stopPropagation();
-
-      dispatch({ type: 'setNextItemActive' });
-    }
-  };
-
-  const handleChange = (event: ChangeEvent<HTMLTextAreaElement>) => {
-    const { value: newValue } = event.currentTarget;
-
-    if (newValue !== value) {
-      dispatch({ type: 'updateValue', payload: newValue });
+      if (suggestion.type === 'create') {
+        onMentionCreate(suggestion.value);
+      }
 
       if (onChange) {
         onChange(newValue);
       }
-    }
-  };
+    },
+    [onChange, onMentionCreate, value]
+  );
 
-  const handleOnFocus = () => {
+  const handleKeyDown = useCallback(
+    (event: KeyboardEvent<HTMLTextAreaElement>) => {
+      const { dropdownVisible, activeIndex, filteredSuggestions } = state;
+      const { keyCode } = event;
+
+      if (
+        dropdownVisible &&
+        keyCode === ENTER &&
+        activeIndex !== -1 &&
+        filteredSuggestions.length &&
+        cursorMention.current
+      ) {
+        event.preventDefault();
+        event.stopPropagation();
+
+        selectSuggestion(filteredSuggestions[activeIndex]);
+
+        return;
+      }
+
+      if (dropdownVisible && [TAB, ESCAPE].includes(keyCode)) {
+        closeDropdown();
+
+        return;
+      }
+
+      if (dropdownVisible && keyCode === UP_ARROW) {
+        event.preventDefault();
+        event.stopPropagation();
+
+        dispatch({ type: 'setPreviousItemActive' });
+
+        return;
+      }
+
+      if (dropdownVisible && keyCode === DOWN_ARROW) {
+        event.preventDefault();
+        event.stopPropagation();
+
+        dispatch({ type: 'setNextItemActive' });
+      }
+    },
+    [closeDropdown, selectSuggestion, state]
+  );
+
+  const handleChange = useCallback(
+    (event: ChangeEvent<HTMLTextAreaElement>) => {
+      const { value: newValue } = event.currentTarget;
+
+      if (newValue !== value) {
+        dispatch({ type: 'updateValue', payload: newValue });
+
+        if (onChange) {
+          onChange(newValue);
+        }
+      }
+    },
+    [onChange, value]
+  );
+
+  const handleOnFocus = useCallback(() => {
     dispatch({ type: 'onFocus' });
-  };
+  }, []);
 
   const composedProps = mergeEventProps(props, {
     onKeyDown: handleKeyDown,
