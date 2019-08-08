@@ -1,6 +1,7 @@
 import React, {
   FC,
   FocusEvent,
+  HTMLAttributes,
   KeyboardEvent,
   MouseEventHandler,
   ReactNode,
@@ -47,7 +48,8 @@ const CloseIcon: FC<{
   />
 );
 
-export interface TagProps {
+export interface TagProps
+  extends Omit<HTMLAttributes<HTMLDivElement>, 'prefix' | 'onChange'> {
   /**
    * Whether the Tag can be closed
    */
@@ -57,8 +59,7 @@ export interface TagProps {
    * Callback executed when close animation is completed
    */
   onClosed?: () => void;
-  canClose?: () => boolean;
-  onClick?: MouseEventHandler;
+  canClose?: () => boolean | (() => Promise<boolean>);
   onChange?: (previousValue: string, value: string) => void;
   children?: string;
   initialEditing?: boolean;
