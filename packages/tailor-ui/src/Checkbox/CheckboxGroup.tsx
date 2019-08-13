@@ -1,13 +1,12 @@
-import React, { FC, useState } from 'react';
-import styled from 'styled-components';
+import React, { FC, useCallback, useMemo } from 'react';
+
+import { useOwnValue } from '@tailor-ui/hooks';
+
+import { useFormField } from '../FormField';
 
 import { Checkbox } from './Checkbox';
 import { CheckboxContext, Direction } from './CheckboxContext';
-
-const CheckboxGroupFlex = styled.div<{ direction: Direction }>`
-  display: ${p => (p.direction === 'horizontal' ? 'flex' : 'inline-flex')};
-  flex-direction: ${p => (p.direction === 'horizontal' ? 'row' : 'column')};
-`;
+import { CheckboxGroupFlex } from './styles';
 
 export interface CheckboxGroupProps {
   /**
@@ -38,61 +37,78 @@ export interface CheckboxGroupProps {
 }
 
 const CheckboxGroup: FC<CheckboxGroupProps> = ({
-  value: controlledValue,
+  value,
   defaultValue,
-  options = null,
   onChange,
-  direction = 'horizontal' as Direction,
+  options = null,
+  direction = 'horizontal',
   children,
   ...otherProps
 }) => {
-  const [uncontrolledValue, setUncontrolledValue] = useState(defaultValue);
+  const [ownValue, setOwnValue] = useOwnValue(
+    {
+      value,
+      defaultValue,
+      onChange,
+    },
+    {
+      fallbackValue: [],
+    }
+  );
+
+  const [, , setValue] = useFormField({
+    value: ownValue,
+  });
+
+  const handleChange = useCallback(
+    (event, newValue) => {
+      const { checked } = event.target;
+      let nextValue = ownValue;
+
+      if (ownValue.includes(newValue) && !checked) {
+        nextValue = ownValue.filter(val => val !== newValue);
+      }
+
+      if (!ownValue.includes(newValue) && checked) {
+        nextValue = [...ownValue, newValue];
+      }
+
+      setOwnValue(nextValue);
+      setValue(nextValue);
+    },
+    [ownValue, setOwnValue, setValue]
+  );
+
+  const isChecked = useCallback(_value => ownValue.includes(_value), [
+    ownValue,
+  ]);
+
+  const checkBoxes = useMemo(
+    () =>
+      options
+        ? options.map(({ label, value: optionValue, disabled = false }) => (
+            <Checkbox
+              key={label}
+              value={optionValue}
+              disabled={disabled}
+              {...otherProps}
+            >
+              {label}
+            </Checkbox>
+          ))
+        : children,
+    [children, options, otherProps]
+  );
 
   return (
     <CheckboxContext.Provider
       value={{
         direction,
-        _onChange: (event, _value) => {
-          const { checked } = event.target;
-          const targetValue = controlledValue || uncontrolledValue || [];
-          let nextValue = targetValue;
-
-          if (targetValue.includes(_value) && !checked) {
-            nextValue = targetValue.filter(val => val !== _value);
-          }
-
-          if (!targetValue.includes(_value) && checked) {
-            nextValue = [...targetValue, _value];
-          }
-
-          if (!controlledValue) {
-            setUncontrolledValue(nextValue);
-          }
-
-          if (onChange) {
-            onChange(nextValue);
-          }
-        },
-        _isChecked: _value => {
-          const targetValue = controlledValue || uncontrolledValue || [];
-          return targetValue.includes(_value);
-        },
+        handleChange,
+        isChecked,
       }}
     >
-      <CheckboxGroupFlex direction={direction}>
-        {options
-          ? options.map(({ label, value: optionValue, disabled = false }) => (
-              <Checkbox
-                key={label}
-                value={optionValue}
-                disabled={disabled}
-                {...otherProps}
-              >
-                {label}
-              </Checkbox>
-            ))
-          : children}
-      </CheckboxGroupFlex>
+      <CheckboxGroupFlex direction={direction}>{checkBoxes}</CheckboxGroupFlex>
     </CheckboxContext.Provider>
   );
 };

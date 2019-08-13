@@ -20,12 +20,10 @@ const useOwnValue = <V>(
     () => props.value || props.defaultValue || options.fallbackValue
   );
 
-  const hasValueProps = useMemo(() => props.value !== undefined, [props.value]);
-  const value = useMemo(() => (hasValueProps ? props.value : ownValue), [
-    hasValueProps,
-    ownValue,
-    props.value,
-  ]);
+  const value = useMemo(
+    () => (props.value !== undefined ? props.value : ownValue),
+    [ownValue, props.value]
+  );
 
   const onChange = useCallback(
     (newValue: V) => {

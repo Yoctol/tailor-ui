@@ -11,16 +11,6 @@ exports[`Checkbox.Group composition with Checkbox should render correctly 1`] = 
   box-sizing: border-box;
 }
 
-.c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-}
-
 .c5 {
   display: inline-block;
   position: relative;
@@ -128,6 +118,16 @@ exports[`Checkbox.Group composition with Checkbox should render correctly 1`] = 
   margin-left: 0.5rem;
 }
 
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
 <div
   class="c0"
   direction="horizontal"
@@ -215,16 +215,6 @@ exports[`Checkbox.Group should render vertical checkbox group 1`] = `
   box-sizing: border-box;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
-}
-
-.c0 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
 }
 
 .c4 {
@@ -320,6 +310,16 @@ exports[`Checkbox.Group should render vertical checkbox group 1`] = `
 
 .c3 + .c1 {
   margin-top: 0.5rem;
+}
+
+.c0 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
 <div

@@ -1,109 +1,16 @@
-import React, { ChangeEvent, FC, useContext } from 'react';
-import styled, { css } from 'styled-components';
+import React, { ChangeEvent, FC, useContext, useMemo } from 'react';
 
 import { Box } from '../Layout';
+import { useFormField } from '../FormField';
 
-import { CheckboxContext, Direction } from './CheckboxContext';
+import { CheckboxContext } from './CheckboxContext';
 import { CheckboxGroup } from './CheckboxGroup';
-
-const CheckboxWrapper = styled.span`
-  display: inline-block;
-  position: relative;
-  margin-bottom: 1px;
-  line-height: 1;
-`;
-
-const CheckboxInner = styled.span`
-  display: block;
-  position: relative;
-  width: 16px;
-  height: 16px;
-  padding: 0;
-  border: ${p => p.theme.borders.base};
-  border-radius: 2px;
-  border-color: ${p => p.theme.colors.gray400};
-  background-color: ${p => p.theme.colors.light};
-  color: ${p => p.theme.colors.gray700};
-
-  ${p => p.theme.transition};
-
-  &::after {
-    content: '';
-    position: absolute;
-    top: 1px;
-    left: 5px;
-    width: 5px;
-    height: 10px;
-    border: solid white;
-    border-width: 0 2px 2px 0;
-    opacity: 0;
-    transform: rotate(45deg) scale(0);
-    ${p => p.theme.transition};
-  }
-`;
-
-const StyledCheckbox = styled.input.attrs({
-  type: 'checkbox',
-})`
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-
-  &:checked + ${CheckboxInner /* sc-selector */} {
-    border-color: ${p => p.theme.colors.primary};
-    background-color: ${p => p.theme.colors.primary};
-  }
-
-  &:checked + ${CheckboxInner /* sc-selector */}::after {
-    opacity: 1;
-    transform: rotate(45deg) scale(1);
-  }
-`;
-
-interface RadioLabelBaseProps {
-  disabled: boolean;
-  direction: Direction;
-}
-
-const CheckboxLabelBase = styled.label<RadioLabelBaseProps>`
-  display: inline-flex;
-  align-items: center;
-  font-size: ${p => p.theme.fontSizes.base};
-  cursor: ${p => (p.disabled ? 'not-allowed' : 'pointer')};
-
-  & + & {
-    ${({ direction }) =>
-      direction === 'horizontal'
-        ? 'margin-left'
-        : 'margin-top' /* sc-prop */}: ${p => p.theme.space[2]};
-  }
-
-  ${p =>
-    p.disabled
-      ? css`
-          opacity: 0.5;
-        `
-      : css`
-          &:hover ${CheckboxInner /* sc-selector */} {
-            border-color: ${p.theme.colors.primary};
-          }
-        `};
-`;
-
-const CheckboxLabel = styled(CheckboxLabelBase)<{ direction: Direction }>`
-  /* stylelint-disable-next-line no-descending-specificity */
-  & + ${CheckboxLabelBase /* sc-selector */} {
-    ${({ direction }) =>
-      direction === 'horizontal'
-        ? 'margin-left'
-        : 'margin-top' /* sc-prop */}: ${p => p.theme.space[2]};
-  }
-`;
+import {
+  CheckboxInner,
+  CheckboxLabel,
+  CheckboxWrapper,
+  StyledCheckbox,
+} from './styles';
 
 export interface CheckboxProps {
   /**
@@ -126,6 +33,7 @@ export interface CheckboxProps {
    * The value of checkbox
    */
   value?: string;
+  id?: string;
 }
 
 const Checkbox: FC<CheckboxProps> & {
@@ -137,23 +45,41 @@ const Checkbox: FC<CheckboxProps> & {
   defaultChecked,
   onChange,
   value,
+  id,
   ...props
 }) => {
-  const { _onChange, _isChecked, direction } = useContext(CheckboxContext);
+  const { handleChange, isChecked, direction } = useContext(CheckboxContext);
+
+  const inGroup = Boolean(handleChange);
+
+  const boxChecked = useMemo(
+    () => (isChecked && value ? isChecked(value) : checked),
+    [checked, isChecked, value]
+  );
+
+  const [, labelId, setValue] = useFormField({
+    id,
+    value: checked,
+    defaultValue: defaultChecked,
+  });
 
   return (
     <CheckboxLabel disabled={disabled} direction={direction}>
       <CheckboxWrapper>
         <StyledCheckbox
+          id={inGroup ? undefined : labelId}
           disabled={disabled}
-          checked={_isChecked && value ? _isChecked(value) : checked}
+          checked={boxChecked}
           defaultChecked={defaultChecked}
           onChange={event => {
             if (onChange) {
               onChange(event);
             }
-            if (_onChange && value) {
-              _onChange(event, value);
+            if (handleChange && value) {
+              handleChange(event, value);
+            }
+            if (!inGroup) {
+              setValue(event.target.checked);
             }
           }}
           {...props}
