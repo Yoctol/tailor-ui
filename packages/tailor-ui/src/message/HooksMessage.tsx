@@ -83,8 +83,6 @@ class EffectMessage extends PureComponent<
   EffectMessageProps,
   EffectMessageState
 > {
-  static contextType = UIDContext;
-
   mounted = false;
 
   state: EffectMessageState = {
@@ -196,5 +194,7 @@ class EffectMessage extends PureComponent<
     );
   }
 }
+
+EffectMessage.contextType = UIDContext;
 
 export default EffectMessage;

@@ -1,21 +1,22 @@
 {
   "name": "@tailor-ui/lab",
-  "version": "0.11.0",
   "description": "Incubator for Tailor-UI React components.",
+  "license": "MIT",
   "author": "dev@yoctol.com",
   "homepage": "https://tailor-ui.netlify.com/",
-  "license": "MIT",
-  "main": "lib/index.cjs.js",
-  "module": "lib/index.js",
-  "typings": "lib/index.d.ts",
-  "sideEffects": false,
-  "files": [
-    "lib"
-  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Yoctol/tailor-ui.git"
   },
+  "bugs": {
+    "url": "https://github.com/Yoctol/tailor-ui/issues"
+  },
+  "version": "0.11.0",
+  "main": "lib/index.cjs.js",
+  "module": "lib/index.js",
+  "files": [
+    "lib"
+  ],
   "scripts": {
     "build": "cross-env NODE_ENV=production babel --config-file ../../babel.config.js ./src --out-dir ./lib --extensions '.ts,.tsx'",
     "postbuild": "rollup -c ./config/rollup.config.js",
@@ -24,8 +25,17 @@
     "testonly:cov": "jest --coverage --runInBand",
     "testonly:watch": "jest --watch"
   },
-  "bugs": {
-    "url": "https://github.com/Yoctol/tailor-ui/issues"
+  "typings": "lib/index.d.ts",
+  "dependencies": {
+    "@tailor-ui/utils": "^0.2.8",
+    "downshift": "^3.2.12",
+    "fuzzaldrin-plus": "^0.6.0",
+    "lodash.debounce": "^4.0.8",
+    "polished": "^3.4.1",
+    "ramda": "^0.26.1",
+    "react-icons": "^3.7.0",
+    "react-tiny-virtual-list": "^2.2.0",
+    "styled-system": "^4.2.4"
   },
   "peerDependencies": {
     "react": ">=16.8.0",
@@ -37,15 +47,5 @@
   "publishConfig": {
     "access": "public"
   },
-  "dependencies": {
-    "@tailor-ui/utils": "^0.2.8",
-    "downshift": "^3.2.10",
-    "fuzzaldrin-plus": "^0.6.0",
-    "lodash.debounce": "^4.0.8",
-    "polished": "^3.4.1",
-    "ramda": "^0.26.1",
-    "react-icons": "^3.7.0",
-    "react-tiny-virtual-list": "^2.2.0",
-    "styled-system": "^4.2.4"
-  }
+  "sideEffects": false
 }
