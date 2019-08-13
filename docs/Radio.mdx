@@ -5,7 +5,8 @@ route: /components/radio
 ---
 
 import { PropsTable, Playground } from 'docz';
-import { Button, Box, Radio } from 'tailor-ui';
+import { boolean } from 'yup';
+import { Button, Box, Radio, FormField } from 'tailor-ui';
 
 # Radio
 
@@ -30,6 +31,20 @@ import { Radio } from 'tailor-ui';
   <Radio>Radio</Radio>
   <br />
   <Radio defaultChecked>Radio</Radio>
+</Playground>
+
+#### Use with FormField
+
+<Playground>
+  <FormField
+    required
+    label="Checked Required"
+    validator={boolean()
+      .oneOf([true])
+      .required()}
+  >
+    <Radio>Click Me</Radio>
+  </FormField>
 </Playground>
 
 #### Disabled
@@ -99,7 +114,7 @@ import { Radio } from 'tailor-ui';
           onChange={setValue}
         />
         <br />
-        <Button onClick={() => set('radio-d')}>Check last one</Button>
+        <Button onClick={() => setValue('radio-d')}>Check last one</Button>
       </>
     );
 
@@ -173,6 +188,21 @@ import { Radio } from 'tailor-ui';
 
 }}
 
+</Playground>
+
+#### Use with FormField
+
+<Playground>
+  <FormField
+    required
+    label="Yes or No?"
+    validator={value => (value !== 'yes' ? 'Should press yes' : null)}
+  >
+    <Radio.Group
+      defaultValue="no"
+      options={[{ label: 'Yes', value: 'yes' }, { label: 'No', value: 'no' }]}
+    />
+  </FormField>
 </Playground>
 
 ## API
