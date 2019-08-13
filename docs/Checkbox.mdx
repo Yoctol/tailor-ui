@@ -5,8 +5,8 @@ route: /components/checkbox
 ---
 
 import { PropsTable, Playground } from 'docz';
-
-import { Button, Box, Checkbox } from 'tailor-ui';
+import { boolean } from 'yup';
+import { Button, Box, Checkbox, FormField } from 'tailor-ui';
 
 # Checkbox
 
@@ -43,6 +43,14 @@ import { Checkbox } from 'tailor-ui';
 
 }}
 
+</Playground>
+
+#### Use with FormField
+
+<Playground>
+  <FormField required label="Checked Required" validator={boolean().oneOf([true]).required()}>
+    <Checkbox>Click Me</Checkbox>
+  </FormField>
 </Playground>
 
 #### Disabled
@@ -192,6 +200,26 @@ import { Checkbox } from 'tailor-ui';
 
 }}
 
+</Playground>
+
+#### Use with FormField
+
+<Playground>
+  <FormField
+    required
+    label="All Checked Required"
+    validator={value => value && value.length !== 4 ? 'Should checked all check box' : null}
+  >
+    <Checkbox.Group
+      defaultValue={['check_1']}
+      options={[
+        { label: 'checkbox 1', value: 'check_1' },
+        { label: 'checkbox 2', value: 'check_2' },
+        { label: 'checkbox 3', value: 'check_3' },
+        { label: 'checkbox 4', value: 'check_4' },
+      ]}
+    />
+  </FormField>
 </Playground>
 
 ## API

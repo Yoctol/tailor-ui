@@ -10,8 +10,8 @@ const useFormField = ({
   defaultValue,
 }: {
   id?: string;
-  value: any;
-  defaultValue: any;
+  value?: any;
+  defaultValue?: any;
 }) => {
   const { invalid, setValue, setLabelId, labelId } = useContext(
     FormFieldContext
@@ -24,7 +24,11 @@ const useFormField = ({
   }, [id, setLabelId]);
 
   useEffect(() => {
-    setValue(value || defaultValue);
+    const fieldValue = value || defaultValue;
+
+    if (fieldValue) {
+      setValue(fieldValue);
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
