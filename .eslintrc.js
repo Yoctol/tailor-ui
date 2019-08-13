@@ -25,7 +25,7 @@ module.exports = {
     'react/jsx-filename-extension': 'off',
     'react/prop-types': 'off',
     'react/sort-comp': 'off',
-    'react/no-find-dom-node': 'off',
+    'react/jsx-props-no-spreading': 'off',
 
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/explicit-member-accessibility': 'off',
