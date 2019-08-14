@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.5.0](https://github.com/Yoctol/tailor-ui/compare/@tailor-ui/hooks@0.4.0...@tailor-ui/hooks@0.5.0) (2019-08-14)
+
+
+### Features
+
+* **checkbox:** support FormField ([168b82a](https://github.com/Yoctol/tailor-ui/commit/168b82a))
+
+
+
+
+
 # [0.4.0](https://github.com/Yoctol/tailor-ui/compare/@tailor-ui/hooks@0.3.1...@tailor-ui/hooks@0.4.0) (2019-08-06)
 
 

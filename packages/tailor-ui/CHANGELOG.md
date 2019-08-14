@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.19.0](https://github.com/yoctol/tailor-ui/compare/tailor-ui@0.18.0...tailor-ui@0.19.0) (2019-08-14)
+
+
+### Features
+
+* **checkbox:** support FormField ([168b82a](https://github.com/yoctol/tailor-ui/commit/168b82a))
+* **radio:** support FormField ([a12b394](https://github.com/yoctol/tailor-ui/commit/a12b394))
+
+
+
+
+
 # [0.18.0](https://github.com/yoctol/tailor-ui/compare/tailor-ui@0.17.2...tailor-ui@0.18.0) (2019-08-06)
 
 
