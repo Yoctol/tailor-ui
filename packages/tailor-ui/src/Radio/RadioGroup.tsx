@@ -1,13 +1,12 @@
-import React, { FC, useState } from 'react';
-import styled from 'styled-components';
+import React, { FC, useCallback, useMemo } from 'react';
+
+import { useOwnValue } from '@tailor-ui/hooks';
+
+import { useFormField } from '../FormField';
 
 import { Direction, RadioContext } from './RadioContext';
 import { Radio } from './Radio';
-
-const RadioGroupFlex = styled.div<{ direction: Direction }>`
-  display: ${p => (p.direction === 'horizontal' ? 'flex' : 'inline-flex')};
-  flex-direction: ${p => (p.direction === 'horizontal' ? 'row' : 'column')};
-`;
+import { RadioGroupFlex } from './styles';
 
 export interface RadioGroupProps {
   /**
@@ -37,49 +36,63 @@ export interface RadioGroupProps {
 }
 
 const RadioGroup: FC<RadioGroupProps> = ({
-  value: controlledValue,
+  value,
   defaultValue,
   options = null,
   onChange,
-  direction = 'horizontal' as Direction,
+  direction = 'horizontal',
   children,
   ...otherProps
 }) => {
-  const [uncontrolledValue, setUncontrolledValue] = useState(defaultValue);
+  const [ownValue, setOwnValue] = useOwnValue(
+    {
+      value,
+      defaultValue,
+      onChange,
+    },
+    { fallbackValue: '' }
+  );
+
+  const [, , setValue] = useFormField({
+    value: ownValue,
+  });
+
+  const handleChange = useCallback(
+    newValue => {
+      setOwnValue(newValue);
+      setValue(newValue);
+    },
+    [setOwnValue, setValue]
+  );
+
+  const isChecked = useCallback(_value => ownValue === _value, [ownValue]);
+
+  const radioButtons = useMemo(
+    () =>
+      options
+        ? options.map(({ label, value: optionValue, disabled = false }) => (
+            <Radio
+              key={label}
+              value={optionValue}
+              disabled={disabled}
+              {...otherProps}
+            >
+              {label}
+            </Radio>
+          ))
+        : children,
+    [children, options, otherProps]
+  );
 
   return (
     <RadioContext.Provider
       value={{
         direction,
-        _onChange: _value => {
-          if (uncontrolledValue) {
-            setUncontrolledValue(_value);
-          }
-
-          if (onChange) {
-            onChange(_value);
-          }
-        },
-        _isChecked: _value =>
-          controlledValue
-            ? controlledValue === _value
-            : uncontrolledValue === _value,
+        handleChange,
+        isChecked,
       }}
     >
-      <RadioGroupFlex direction={direction}>
-        {options
-          ? options.map(({ label, value: optionValue, disabled = false }) => (
-              <Radio
-                key={label}
-                value={optionValue}
-                disabled={disabled}
-                {...otherProps}
-              >
-                {label}
-              </Radio>
-            ))
-          : children}
-      </RadioGroupFlex>
+      <RadioGroupFlex direction={direction}>{radioButtons}</RadioGroupFlex>
     </RadioContext.Provider>
   );
 };
