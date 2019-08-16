@@ -29,7 +29,7 @@ export const itemToString = (item?: Option | CreateOption) => {
 
 export const getDataTestId = (
   props: { 'data-testid'?: string },
-  suffix: string = ''
+  suffix = ''
 ) => {
   if (!props['data-testid']) {
     return {};
