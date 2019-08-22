@@ -1,6 +1,6 @@
 import RcCalendar from 'rc-calendar';
 import RcRangeCalendar from 'rc-calendar/lib/RangeCalendar';
-import React, { FC, useCallback, useMemo } from 'react';
+import React, { FC, useCallback, useMemo, useState } from 'react';
 import TimePickerPanel from 'rc-time-picker/lib/Panel';
 import { Moment } from 'moment';
 
@@ -84,7 +84,7 @@ const DatePicker: FC<DatePickerProps> = ({
   ...props
 }) => {
   const { locale } = useLocale();
-  const [ownValue, handleChange] = useOwnValue(
+  const [ownValue, handleOwnValueChange] = useOwnValue(
     {
       value,
       defaultValue,
@@ -93,6 +93,16 @@ const DatePicker: FC<DatePickerProps> = ({
     {
       fallbackValue: range ? [] : null,
     }
+  );
+
+  const [displayDate, setDisplayDate] = useState(ownValue);
+
+  const handleChange = useCallback(
+    newValue => {
+      handleOwnValueChange(newValue);
+      setDisplayDate(newValue);
+    },
+    [handleOwnValueChange]
   );
 
   const format = useMemo(
@@ -113,12 +123,14 @@ const DatePicker: FC<DatePickerProps> = ({
     range,
   ]);
 
-  const valueProps = useMemo(
-    () => ({
-      [range ? 'selectedValue' : 'value']: ownValue,
-    }),
-    [ownValue, range]
-  );
+  const valueProps = range
+    ? {
+        selectedValue: displayDate,
+      }
+    : {
+        value: displayDate,
+        selectedValue: displayDate,
+      };
 
   const displayValue = useMemo(() => {
     if (!ownValue) {
@@ -163,12 +175,13 @@ const DatePicker: FC<DatePickerProps> = ({
           )}
           {...props}
           {...valueProps}
-          onChange={(newValue: Moment | Moment[]) => {
-            if (range && (newValue as Moment[]).length !== 2) {
-              return;
-            }
-
+          onChange={setDisplayDate}
+          onSelect={(newValue: Moment | Moment[]) => {
             handleChange(newValue);
+
+            if (!showTime) {
+              handleClose();
+            }
           }}
         />
       )}
