@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.19.1](https://github.com/yoctol/tailor-ui/compare/tailor-ui@0.19.0...tailor-ui@0.19.1) (2019-08-26)
+
+
+### Bug Fixes
+
+* **date-picker:** only call onChange when select date ([415e6b6](https://github.com/yoctol/tailor-ui/commit/415e6b6))
+
+
+
+
+
 # [0.19.0](https://github.com/yoctol/tailor-ui/compare/tailor-ui@0.18.0...tailor-ui@0.19.0) (2019-08-14)
 
 
