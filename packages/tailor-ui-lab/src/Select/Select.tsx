@@ -20,7 +20,7 @@ import SelectedOption from './SelectedOption';
 import { Loading, SelectWrapper, StyledSelect } from './styles';
 import { getDataTestId, itemToString } from './utils';
 
-interface SelectProps {
+export interface SelectProps {
   id?: string;
   name?: string;
   className?: string;
@@ -39,7 +39,7 @@ interface SelectProps {
   menu?: ReactNode;
   itemSize?: number;
   optionsMaxHeight?: number;
-  onChange?: (option: Option) => void;
+  onChange?: (option: Option | Option[]) => void;
   noOptionsMessage?: () => ReactNode;
   formatCreateLabel?: (labelInfo: {
     value: string;
