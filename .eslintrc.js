@@ -26,6 +26,7 @@ module.exports = {
     'react/prop-types': 'off',
     'react/sort-comp': 'off',
     'react/jsx-props-no-spreading': 'off',
+    'react/state-in-constructor': 'off',
 
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/explicit-member-accessibility': 'off',
