@@ -1,6 +1,6 @@
 import BaseSelect, { components } from 'react-select';
 import CreatableSelect from 'react-select/lib/Creatable';
-import React, { FC } from 'react';
+import React, { FC, useEffect } from 'react';
 import styled from 'styled-components';
 import { MdSearch } from 'react-icons/md';
 
@@ -119,6 +119,12 @@ const ValueContainer: FC<any> = ({ children, ...props }) => (
 
 const Select: FC<SelectProps> = props => {
   const { isMulti, delimiter, multiSelectMode, creatable = false } = props;
+
+  useEffect(() => {
+    console.warn(
+      '[tailor-ui: Select] Select component is deprecated. Please use the @tailor-ui/lab version instead.'
+    );
+  }, []);
 
   const StyledSelect = getStyledSelect(creatable);
 
