@@ -183,6 +183,7 @@ const Slider: FC<SliderProps> = ({
         disabled={disabled}
         onMouseDown={handleSlideStart}
         onTouchStart={handleSlideStart}
+        onTouchEnd={e => e.preventDefault()}
       >
         <StyledSliderBar />
         <StyledSliderActiveBar
