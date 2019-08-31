@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { MdClose } from 'react-icons/md';
 import { animated, config, useSpring } from 'react-spring';
@@ -103,6 +103,12 @@ export interface TagProps {
 
 const Tag: FC<TagProps> = ({ closable = false, children, ...props }) => {
   const RenderComponent = closable ? ClosableTag : BaseTag;
+
+  useEffect(() => {
+    console.warn(
+      '[tailor-ui: Tag] Tag component is deprecated. Please use the @tailor-ui/lab version instead.'
+    );
+  }, []);
 
   return <RenderComponent {...props}>{children}</RenderComponent>;
 };
