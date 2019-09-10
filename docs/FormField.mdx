@@ -5,7 +5,7 @@ route: /components/form-field
 ---
 
 import { PropsTable, Playground } from 'docz';
-import { Input, FormField } from 'tailor-ui';
+import { Button, Input, FormField } from 'tailor-ui';
 import { Select } from '@tailor-ui/lab';
 import { string } from 'yup';
 
@@ -27,6 +27,28 @@ import { Select } from '@tailor-ui/lab';
   <FormField required label="Required Input" validationMessage="Error Message">
     <Input placeholder="Placeholder" defaultValue="" />
   </FormField>
+</Playground>
+
+### Use validationMessage with controlled props
+
+<Playground>
+  {() => {
+    const [hasError, setHasError] = React.useState(false);
+
+    return (
+      <>
+        <Button onClick={() => setHasError(prev => !prev)}>
+          {hasError ? 'Hide' : 'Show'} error on below input
+        </Button>
+        <br />
+        <FormField label="Input" validationMessage={hasError ? 'Error Message' : null}>
+          <Input placeholder="Placeholder" defaultValue="" />
+        </FormField>
+      </>
+    );
+
+}}
+
 </Playground>
 
 ### Use validationMessage with Select
