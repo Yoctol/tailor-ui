@@ -4,6 +4,7 @@ import { string } from 'yup';
 
 import { fireEvent, render, wait } from 'test/test-utils';
 
+import { Button } from '../../Button';
 import { FormField } from '../FormField';
 import { Input } from '../../Input';
 
@@ -79,6 +80,36 @@ describe('FormField', () => {
           value: 'error',
         },
       });
+
+      const message = await findByText('Error Message');
+
+      expect(message).toBeInTheDocument();
+    });
+
+    it('should render FormField with error message correctly when change validationMessage props', async () => {
+      const TextInput = () => {
+        const [hasError, setHasError] = useState(false);
+
+        return (
+          <>
+            <Button data-testid="button" onClick={() => setHasError(true)}>
+              Show Error
+            </Button>
+            <FormField
+              label="Input"
+              validationMessage={hasError ? 'Error Message' : null}
+            >
+              <Input data-testid="input" defaultValue="" />
+            </FormField>
+          </>
+        );
+      };
+
+      const { getByTestId, findByText, queryByText } = render(<TextInput />);
+
+      expect(queryByText('Error Message')).not.toBeInTheDocument();
+
+      fireEvent.click(getByTestId('button'));
 
       const message = await findByText('Error Message');
 

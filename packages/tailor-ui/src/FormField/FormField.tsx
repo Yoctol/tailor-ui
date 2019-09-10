@@ -39,6 +39,14 @@ const FormField: FC<FormFieldProps> = ({
     setMounted(true);
   }, []);
 
+  useEffect(() => {
+    setValidationResult(
+      validate({
+        validationMessage,
+      })
+    );
+  }, [validationMessage]);
+
   const handleValidation = useCallback(() => {
     if (value !== undefined) {
       const result = validate({
