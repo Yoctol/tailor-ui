@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.19.2](https://github.com/yoctol/tailor-ui/compare/tailor-ui@0.19.1...tailor-ui@0.19.2) (2019-09-10)
+
+
+### Bug Fixes
+
+* **form-field:** update error message with controlled validationMessage ([f172c2b](https://github.com/yoctol/tailor-ui/commit/f172c2b))
+* **slider:** fix slider touch event ([910649a](https://github.com/yoctol/tailor-ui/commit/910649a))
+
+
+
+
+
 ## [0.19.1](https://github.com/yoctol/tailor-ui/compare/tailor-ui@0.19.0...tailor-ui@0.19.1) (2019-08-26)
 
 
