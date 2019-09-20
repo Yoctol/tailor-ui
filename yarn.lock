@@ -2472,6 +2472,22 @@
     "@svgr/plugin-svgo" "^4.3.1"
     loader-utils "^1.2.3"
 
+"@tailor-ui/hooks@file:packages/tailor-ui-hooks":
+  version "0.5.0"
+  dependencies:
+    "@tailor-ui/utils" "file:../../../Library/Caches/Yarn/v4/npm-@tailor-ui-hooks-0.5.0-3ee03d5c-d436-4edf-942f-ccee6060dab1-1568963079758/node_modules/@tailor-ui/tailor-ui-utils"
+    lodash.debounce "^4.0.8"
+    resize-observer-polyfill "^1.5.1"
+
+"@tailor-ui/theme@file:packages/tailor-ui-theme":
+  version "0.2.1"
+  dependencies:
+    polished "^3.4.1"
+    styled-normalize "^8.0.6"
+
+"@tailor-ui/utils@file:packages/tailor-ui-utils":
+  version "0.2.8"
+
 "@testing-library/dom@^6.1.0":
   version "6.2.0"
   resolved "https://registry.yarnpkg.com/@testing-library/dom/-/dom-6.2.0.tgz#6eeee738af12a2f02e74dc8cbadeaed1fc4223e5"
