@@ -4,7 +4,7 @@ import { MdCheck, MdClose, MdFileUpload } from 'react-icons/md';
 import { useDropzone } from 'react-dropzone';
 
 import { Box, Flex } from '../Layout';
-import { Button } from '../Button';
+import { Button, ButtonProps } from '../Button';
 import { Icon } from '../Icon';
 import { useLocale } from '../locale';
 
@@ -103,6 +103,7 @@ interface UploadProps {
     uploadedText?: string;
     failedText?: string;
   };
+  buttonProps: ButtonProps;
 }
 
 const START_UPLOADING = 'START_UPLOADING';
@@ -163,6 +164,7 @@ const Upload: FC<UploadProps> = ({
   onClear,
   disabled,
   texts = {},
+  buttonProps,
   ...props
 }) => {
   const { locale } = useLocale();
@@ -251,6 +253,7 @@ const Upload: FC<UploadProps> = ({
 
             open();
           }}
+          {...buttonProps}
         >
           {text}
         </Button>
