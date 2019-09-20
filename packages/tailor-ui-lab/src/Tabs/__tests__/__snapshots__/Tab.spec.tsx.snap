@@ -73,7 +73,7 @@ exports[`Tabs should render correctly 1`] = `
   type="line"
 >
   <a
-    class="active c1 c2"
+    class="c1 c2 active"
   >
     Tab 1
   </a>
@@ -198,7 +198,7 @@ exports[`Tabs should render with props type 1`] = `
   type="card"
 >
   <a
-    class="active c1 c2"
+    class="c1 c2 active"
   >
     Tab 1
   </a>
@@ -394,7 +394,7 @@ exports[`Tabs should render with sizes 1`] = `
     type="line"
   >
     <a
-      class="active c1 c2"
+      class="c1 c2 active"
     >
       Tab 1
     </a>
@@ -421,7 +421,7 @@ exports[`Tabs should render with sizes 1`] = `
     type="line"
   >
     <a
-      class="active c1 c2"
+      class="c1 c2 active"
     >
       Tab 1
     </a>
@@ -448,7 +448,7 @@ exports[`Tabs should render with sizes 1`] = `
     type="line"
   >
     <a
-      class="active c1 c2"
+      class="c1 c2 active"
     >
       Tab 1
     </a>

@@ -49,7 +49,7 @@ describe('Alert', () => {
     );
 
     // first one icon is type icon
-    const [, closeIcon] = container.querySelectorAll('i') as any;
+    const [, closeIcon] = Array.from(container.querySelectorAll('i'));
 
     fireEvent.click(closeIcon);
 
