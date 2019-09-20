@@ -27,7 +27,7 @@
   },
   "typings": "lib/index.d.ts",
   "dependencies": {
-    "@tailor-ui/utils": "^0.2.8",
+    "@tailor-ui/utils": "file:../tailor-ui-utils",
     "downshift": "3.2.12",
     "fuzzaldrin-plus": "^0.6.0",
     "lodash.debounce": "^4.0.8",

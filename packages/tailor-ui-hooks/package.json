@@ -1,21 +1,22 @@
 {
   "name": "@tailor-ui/hooks",
-  "version": "0.5.0",
   "description": "Tailor-UI Hooks - React Hooks for Tailor-UI.",
+  "license": "MIT",
   "author": "dev@yoctol.com",
   "homepage": "https://tailor-ui.netlify.com/",
-  "license": "MIT",
-  "main": "lib/index.cjs.js",
-  "module": "lib/index.js",
-  "typings": "lib/index.d.ts",
-  "sideEffects": false,
-  "files": [
-    "lib"
-  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Yoctol/tailor-ui.git"
   },
+  "bugs": {
+    "url": "https://github.com/Yoctol/tailor-ui/issues"
+  },
+  "version": "0.5.0",
+  "main": "lib/index.cjs.js",
+  "module": "lib/index.js",
+  "files": [
+    "lib"
+  ],
   "scripts": {
     "build": "cross-env NODE_ENV=production babel --config-file ../../babel.config.js ./src --out-dir ./lib --extensions '.ts'",
     "postbuild": "rollup -c ./config/rollup.config.js",
@@ -24,19 +25,18 @@
     "testonly:cov": "jest --coverage --runInBand",
     "testonly:watch": "jest --watch"
   },
-  "bugs": {
-    "url": "https://github.com/Yoctol/tailor-ui/issues"
-  },
-  "publishConfig": {
-    "access": "public"
+  "typings": "lib/index.d.ts",
+  "dependencies": {
+    "@tailor-ui/utils": "file:../tailor-ui-utils",
+    "lodash.debounce": "^4.0.8",
+    "resize-observer-polyfill": "^1.5.1"
   },
   "peerDependencies": {
     "react": ">=16.8.0",
     "react-dom": ">=16.8.0"
   },
-  "dependencies": {
-    "@tailor-ui/utils": "^0.2.8",
-    "lodash.debounce": "^4.0.8",
-    "resize-observer-polyfill": "^1.5.1"
-  }
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": false
 }
