@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import { ReactNode } from 'react';
 import {
   SpaceProps,
   TextAlignProps,
@@ -107,8 +108,8 @@ export const InputLabel = styled.span`
 `;
 
 interface InputWrapperProps {
-  prefix?: any;
-  suffix?: any;
+  prefix?: ReactNode;
+  suffix?: ReactNode;
 }
 
 export const InputWrapper = styled.div<InputWrapperProps>`

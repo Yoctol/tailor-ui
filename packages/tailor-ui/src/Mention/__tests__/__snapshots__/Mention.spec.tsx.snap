@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Mention should render correctly 1`] = `
-.c3 {
+.c2 {
   word-wrap: break-word;
   resize: none;
   display: block;
@@ -27,40 +27,40 @@ exports[`Mention should render correctly 1`] = `
   transition: border 0.2s ease;
 }
 
-.c3:hover {
+.c2:hover {
   border-color: #3c5ad0;
 }
 
-.c3:focus {
+.c2:focus {
   border-color: #3c5ad0;
   box-shadow: inset 0 0 0 2px #e8ecf5;
 }
 
-.c3:disabled,
-.c3 [disabled] {
+.c2:disabled,
+.c2 [disabled] {
   border-color: #bfbfbf;
   background-color: #e0e0e0;
   color: #8b8b8b;
   cursor: not-allowed;
 }
 
-.c3::-webkit-input-placeholder {
+.c2::-webkit-input-placeholder {
   color: #bfbfbf;
 }
 
-.c3::-moz-placeholder {
+.c2::-moz-placeholder {
   color: #bfbfbf;
 }
 
-.c3:-ms-input-placeholder {
+.c2:-ms-input-placeholder {
   color: #bfbfbf;
 }
 
-.c3::placeholder {
+.c2::placeholder {
   color: #bfbfbf;
 }
 
-.c2 {
+.c3 {
   position: absolute;
   top: 0;
   background-color: transparent;

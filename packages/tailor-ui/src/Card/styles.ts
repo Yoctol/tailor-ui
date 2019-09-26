@@ -1,4 +1,4 @@
-import styled, { StyledComponent, css } from 'styled-components';
+import styled, { css } from 'styled-components';
 import {
   BorderColorProps,
   BorderRadiusProps,
@@ -15,7 +15,7 @@ import {
 } from 'styled-system';
 import { HTMLAttributes } from 'react';
 
-export const StyledImage: StyledComponent<'div', any, SpaceProps> = styled.div`
+export const StyledImage = styled.div<SpaceProps>`
   overflow: hidden;
 
   img {
@@ -28,11 +28,7 @@ export const StyledImage: StyledComponent<'div', any, SpaceProps> = styled.div`
   ${space};
 `;
 
-export const StyledBlock: StyledComponent<
-  'div',
-  any,
-  SpaceProps & HeightProps
-> = styled.div`
+export const StyledBlock = styled.div<SpaceProps & HeightProps>`
   position: relative;
   border-bottom: ${p => p.theme.borders.base};
   border-color: ${p => p.theme.colors.gray300};

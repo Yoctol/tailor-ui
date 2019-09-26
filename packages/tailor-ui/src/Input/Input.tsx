@@ -89,7 +89,7 @@ const Input: FC<InputProps> = forwardRef<HTMLInputElement, InputProps>(
           ref={ref}
           id={labelId}
           invalid={invalid}
-          size={size as any}
+          size={size}
           onKeyPress={handleKeyPress}
           autoFocus={autoFocus || autoSelect}
           {...mergeEventProps(props, {

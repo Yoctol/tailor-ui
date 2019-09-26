@@ -15,7 +15,7 @@ const ClosableAlert: FC<AlertProps> = ({ onClosed, ...props }) => {
   const { x, height } = useSpring({
     x: visible ? 1 : 0,
     height: visible ? boundHeight : 0,
-    onRest: (rest: any) => {
+    onRest: rest => {
       if (rest.x === 0 && onClosed) {
         onClosed();
       }
@@ -29,7 +29,7 @@ const ClosableAlert: FC<AlertProps> = ({ onClosed, ...props }) => {
   return (
     <animated.div
       style={{
-        transform: (x as any).interpolate((_x: number) => `scaleY(${_x})`),
+        transform: x.interpolate(_x => `scaleY(${_x})`),
         opacity: x,
         height,
       }}
