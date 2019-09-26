@@ -1,6 +1,6 @@
 import React, { FC, ReactNode, useContext } from 'react';
 import styled from 'styled-components';
-import { MdKeyboardArrowUp } from 'react-icons/md';
+import { MdKeyboardArrowDown } from 'react-icons/md';
 import { animated, useSpring } from 'react-spring';
 
 import { useMeasure } from '@tailor-ui/hooks';
@@ -64,7 +64,7 @@ const SubMenu: FC<SubMenuProps> = ({
             transform: rotate.interpolate(r => `rotate(${r}deg)`),
           }}
         >
-          <Icon type={MdKeyboardArrowUp} size="24" />
+          <Icon type={MdKeyboardArrowDown} size="24" />
         </animated.div>
       </StyledSubMenu>
       <AnimatedSubMenuWrapper style={style}>
