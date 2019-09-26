@@ -19,7 +19,7 @@ export const StyledContainerTitle = styled(Heading.h4)`
   margin-bottom: 24px;
   padding-bottom: 8px;
   border-bottom: ${p => p.theme.borders.base};
-  border-color: ${p => p.theme.colors.primaryLight2};
+  border-color: ${p => p.theme.colors.gray300};
 `;
 
 export const StyledSection = styled.section`

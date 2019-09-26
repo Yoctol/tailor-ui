@@ -23,7 +23,7 @@ exports[`Container should render correctly 1`] = `
   margin-bottom: 24px;
   padding-bottom: 8px;
   border-bottom: 1px solid;
-  border-color: #d5d8e8;
+  border-color: #e0e0e0;
 }
 
 .c4 + .c3 {
