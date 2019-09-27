@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.20.0](https://github.com/yoctol/tailor-ui/compare/tailor-ui@0.19.2...tailor-ui@0.20.0) (2019-09-27)
+
+
+### Bug Fixes
+
+* some any type ([06da65a](https://github.com/yoctol/tailor-ui/commit/06da65a))
+
+
+### Features
+
+* **upload:** add props in Button for custom style ([f92eed0](https://github.com/yoctol/tailor-ui/commit/f92eed0))
+
+
+
+
+
 ## [0.19.2](https://github.com/yoctol/tailor-ui/compare/tailor-ui@0.19.1...tailor-ui@0.19.2) (2019-09-10)
 
 
