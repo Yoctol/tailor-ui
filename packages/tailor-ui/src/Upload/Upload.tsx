@@ -103,7 +103,7 @@ interface UploadProps {
     uploadedText?: string;
     failedText?: string;
   };
-  buttonProps: ButtonProps;
+  buttonProps?: ButtonProps;
 }
 
 const START_UPLOADING = 'START_UPLOADING';
@@ -164,7 +164,7 @@ const Upload: FC<UploadProps> = ({
   onClear,
   disabled,
   texts = {},
-  buttonProps,
+  buttonProps = {},
   ...props
 }) => {
   const { locale } = useLocale();
