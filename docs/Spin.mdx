@@ -5,7 +5,7 @@ route: /components/spin
 ---
 
 import { PropsTable, Playground } from 'docz';
-import { Spin, Button } from 'tailor-ui';
+import { Spin } from 'tailor-ui';
 
 # Spin
 
@@ -27,26 +27,4 @@ import { Spin } from 'tailor-ui';
   <div style={{ height: '300px' }}>
     <Spin />
   </div>
-</Playground>
-
-### fullscreen usage
-
-<Playground>
-  {() => {
-    const [loading, setLoading] = React.useState(false);
-
-    return (
-      <>
-        {loading && <Spin fullscreen />}
-        <Button onClick={() => {
-          setLoading(true);
-          setTimeout(() => setLoading(false), 3000);
-        }}>
-          Show 3s
-        </Button>
-      </>
-    );
-
-}}
-
 </Playground>
