@@ -35,7 +35,7 @@
     "polished": "^3.4.1",
     "prop-types": "^15.7.1",
     "ramda": "^0.26.1",
-    "rc-calendar": "^9.15.5",
+    "rc-calendar": "^9.15.6",
     "rc-time-picker": "^3.7.2",
     "react-autosize-textarea": "^7.0.0",
     "react-dropzone": "10.1.9",
@@ -45,11 +45,11 @@
     "styled-system": "^4.2.4"
   },
   "peerDependencies": {
-    "react": ">=16.8.0",
-    "react-dom": ">=16.8.0",
+    "react": ">=16.10.0",
+    "react-dom": ">=16.10.0",
     "react-icons": ">=3.2.0",
     "react-spring": ">=8.0.0",
-    "styled-components": ">=4.2.0"
+    "styled-components": ">=4.4.0"
   },
   "sideEffects": false
 }
