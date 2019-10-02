@@ -27,7 +27,7 @@
   },
   "typings": "lib/index.d.ts",
   "dependencies": {
-    "@tailor-ui/utils": "file:../tailor-ui-utils",
+    "@tailor-ui/utils": "^0.2.8",
     "lodash.debounce": "^4.0.8",
     "resize-observer-polyfill": "^1.5.1"
   },
