@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.21.0](https://github.com/yoctol/tailor-ui/compare/tailor-ui@0.20.0...tailor-ui@0.21.0) (2019-10-02)
+
+
+### Bug Fixes
+
+* **upload:** button props is optional ([cf1bc2d](https://github.com/yoctol/tailor-ui/commit/cf1bc2d))
+
+
+### Features
+
+* **spin:** new style ([bc6cb1a](https://github.com/yoctol/tailor-ui/commit/bc6cb1a))
+
+
+
+
+
 # [0.20.0](https://github.com/yoctol/tailor-ui/compare/tailor-ui@0.19.2...tailor-ui@0.20.0) (2019-09-27)
 
 
