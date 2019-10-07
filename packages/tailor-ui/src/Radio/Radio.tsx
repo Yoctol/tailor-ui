@@ -1,4 +1,4 @@
-import React, { ChangeEvent, FC, useContext, useMemo } from 'react';
+import React, { ChangeEventHandler, FC, useContext, useMemo } from 'react';
 
 import { Box } from '../Layout';
 import { useFormField } from '../FormField';
@@ -23,7 +23,7 @@ export interface RadioProps {
   /**
    * The callback function that is triggered when the state changes
    */
-  onChange?: (event: ChangeEvent) => void;
+  onChange?: ChangeEventHandler<HTMLInputElement>;
   value?: string;
 }
 
