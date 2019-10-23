@@ -1,0 +1,186 @@
+---
+name: PageHeader
+menu: Components
+route: /components/page-header
+---
+
+import { PropsTable, Playground } from 'docz';
+import { PageHeader, Box } from 'tailor-ui';
+
+# PageHeader
+
+The header can be used to declare the page topic, display important information about the page that the user is interested in, and carry the action items related to the current page (including page-level operations, inter-page navigation, etc.)
+
+## When To Use
+
+It can also be used as inter-page navigation when it is needed to make the user quickly understand what the current page is and to facilitate the user to use the page function.
+
+## Examples
+
+```js
+import { PageHeader } from 'tailor-ui';
+```
+
+### Basic
+
+<Playground>
+  <div
+    style={{
+      boxShadow: '0 2px 10px 0 #dee5ef',
+    }}
+  >
+    <PageHeader
+      title="Project Name"
+      breadcrumb={[
+        {
+          key: 'dashboard',
+          name: 'Dashboard',
+          onClick: () => {},
+        },
+      ]}
+    />
+  </div>
+</Playground>
+
+### with Breadcrumb
+
+<Playground>
+  <div
+    style={{
+      boxShadow: '0 2px 10px 0 #dee5ef',
+    }}
+  >
+    <PageHeader
+      title="Project Name"
+      breadcrumb={[
+        {
+          key: '1',
+          name: 'Page 1',
+          onClick: () => {},
+        },
+        {
+          key: '2',
+          name: 'Page 2',
+          onClick: () => {},
+        },
+      ]}
+    />
+  </div>
+</Playground>
+
+### with onBack
+
+<Playground>
+  <div
+    style={{
+      boxShadow: '0 2px 10px 0 #dee5ef',
+    }}
+  >
+    <PageHeader
+      title="Project Name"
+      onBack={() => {}}
+      breadcrumb={[
+        {
+          key: '1',
+          name: 'Page 1',
+          onClick: () => {},
+        },
+        {
+          key: '2',
+          name: 'Page 2',
+          onClick: () => {},
+        },
+      ]}
+    />
+  </div>
+</Playground>
+
+### with extra
+
+<Playground>
+  <div
+    style={{
+      boxShadow: '0 2px 10px 0 #dee5ef',
+    }}
+  >
+    <PageHeader
+      onBack={() => {}}
+      breadcrumb={[
+        {
+          key: 'list',
+          name: 'Project List',
+          onClick: () => {},
+        },
+        {
+          key: 'create',
+          name: 'Create Project',
+          onClick: () => {},
+        },
+      ]}
+      extra={<Box bg="gray200">This is Search Bar</Box>}
+    />
+  </div>
+</Playground>
+
+### overflow effect
+
+<Playground>
+  <div
+    style={{
+      boxShadow: '0 2px 10px 0 #dee5ef',
+    }}
+  >
+    <PageHeader
+      title="Project Name is too long long long long long long long long"
+      onBack={() => {}}
+      breadcrumb={[
+        {
+          key: '1',
+          name: 'Page 1 is too too long long long long long long long long',
+          onClick: () => {},
+        },
+        {
+          key: '2',
+          name: 'Page 2 is too too long long long long long long long long',
+          onClick: () => {},
+        },
+        {
+          key: '3',
+          name: 'Page 3 is too too long long long long long long long long',
+          onClick: () => {},
+        },
+        {
+          key: '4',
+          name: 'Page 4 is too too long long long long long long long long',
+          onClick: () => {},
+        },
+      ]}
+    />
+  </div>
+</Playground>
+
+### No lock breadcrumb item width
+
+<Playground>
+  <div
+    style={{
+      boxShadow: '0 2px 10px 0 #dee5ef',
+    }}
+  >
+    <PageHeader
+      title="Project Name"
+      onBack={() => {}}
+      breadcrumb={[
+        {
+          key: '1',
+          name: 'Choose your plan to continue with all powerful features',
+          onClick: () => {},
+        },
+      ]}
+    />
+  </div>
+</Playground>
+
+## API
+
+<PropsTable of={PageHeader} />
