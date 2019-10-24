@@ -114,7 +114,7 @@ const PageHeader: FC<PageHeaderProps> = ({
   );
 
   return (
-    <Flex alignItems="center" height="56px" px="32px">
+    <Flex flex="auto" alignItems="center" height="56px" px="32px">
       <Flex alignItems="center" flex="auto" overflow="hidden">
         {onBack && (
           <Button
@@ -127,79 +127,82 @@ const PageHeader: FC<PageHeaderProps> = ({
           />
         )}
         {title && (
-          <Box
-            pr="12px"
-            mr="12px"
-            maxWidth="240px"
-            borderRight="base"
-            borderColor="gray300"
-          >
+          <Box maxWidth="240px">
             <Heading.h5 letterSpacing="0.2px" color="gray500">
               <Ellipsis>{title}</Ellipsis>
             </Heading.h5>
           </Box>
         )}
-        <Flex
-          ref={breadcrumbRef}
-          flex="auto"
-          alignItems="center"
-          overflow="hidden"
-          style={{
-            opacity: measured ? 1 : 0,
-            transition: 'transition: all 200ms ease 0s',
-          }}
-        >
-          {hiddenBreadcrumb.length > 0 && (
-            <>
-              <Dropdown
-                position={Position.BOTTOM}
-                overlay={
-                  <Dropdown.List>
-                    {hiddenBreadcrumb.map(({ key, name, onClick }) => (
-                      <Dropdown.Item key={key} onClick={onClick}>
-                        {name}
-                      </Dropdown.Item>
-                    ))}
-                  </Dropdown.List>
-                }
-              >
-                <MoreIcon type={MdMoreHoriz} fill="gray400" cursor="pointer" />
-              </Dropdown>
-              <Icon type={MdKeyboardArrowRight} fill="gray400" />
-            </>
-          )}
-          {visibleBreadcrumb.map(({ key, name, onClick }, index) => {
-            const active = index === visibleBreadcrumb.length - 1;
-            const arrow = index !== 0 && (
-              <Icon type={MdKeyboardArrowRight} fill="gray400" />
-            );
+        {title && breadcrumb.length > 0 && (
+          <Box mx="12px" width="1px" height="16px" bg="gray300" />
+        )}
+        {breadcrumb.length > 0 && (
+          <Flex
+            ref={breadcrumbRef}
+            flex="auto"
+            alignItems="center"
+            overflow="hidden"
+            style={{
+              opacity: measured ? 1 : 0,
+              transition: 'transition: all 200ms ease 0s',
+            }}
+          >
+            {hiddenBreadcrumb.length > 0 && (
+              <>
+                <Dropdown
+                  position={Position.BOTTOM}
+                  overlay={
+                    <Dropdown.List>
+                      {hiddenBreadcrumb.map(({ key, name, onClick }) => (
+                        <Dropdown.Item key={key} onClick={onClick}>
+                          {name}
+                        </Dropdown.Item>
+                      ))}
+                    </Dropdown.List>
+                  }
+                >
+                  <MoreIcon
+                    type={MdMoreHoriz}
+                    fill="gray400"
+                    cursor="pointer"
+                  />
+                </Dropdown>
+                <Icon type={MdKeyboardArrowRight} fill="gray400" />
+              </>
+            )}
+            {visibleBreadcrumb.map(({ key, name, onClick }, index) => {
+              const active = index === visibleBreadcrumb.length - 1;
+              const arrow = index !== 0 && (
+                <Icon type={MdKeyboardArrowRight} fill="gray400" />
+              );
 
-            return (
-              <Fragment key={key}>
-                {arrow}
-                <BreadcrumbLink
-                  active={active}
-                  name={name}
-                  lockWidth={breadcrumb.length !== 1}
-                  onMeasure={width => {
-                    if (
-                      !breadcrumbsWidth[index] ||
-                      breadcrumbsWidth[index].width !== width
-                    ) {
-                      setBreadcrumbsWidth(prev => {
-                        const clonePrev = [...prev];
-                        clonePrev[index] = { key, width };
+              return (
+                <Fragment key={key}>
+                  {arrow}
+                  <BreadcrumbLink
+                    active={active}
+                    name={name}
+                    lockWidth={breadcrumb.length !== 1}
+                    onMeasure={width => {
+                      if (
+                        !breadcrumbsWidth[index] ||
+                        breadcrumbsWidth[index].width !== width
+                      ) {
+                        setBreadcrumbsWidth(prev => {
+                          const clonePrev = [...prev];
+                          clonePrev[index] = { key, width };
 
-                        return clonePrev;
-                      });
-                    }
-                  }}
-                  onClick={onClick}
-                />
-              </Fragment>
-            );
-          })}
-        </Flex>
+                          return clonePrev;
+                        });
+                      }
+                    }}
+                    onClick={onClick}
+                  />
+                </Fragment>
+              );
+            })}
+          </Flex>
+        )}
       </Flex>
       {extra && (
         <Flex alignItems="center" flex="none">
