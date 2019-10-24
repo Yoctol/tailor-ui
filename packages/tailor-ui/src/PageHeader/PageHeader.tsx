@@ -114,7 +114,7 @@ const PageHeader: FC<PageHeaderProps> = ({
   );
 
   return (
-    <Flex alignItems="center" height="56px" px="32px" bg="light">
+    <Flex alignItems="center" height="56px" px="32px">
       <Flex alignItems="center" flex="auto" overflow="hidden">
         {onBack && (
           <Button
