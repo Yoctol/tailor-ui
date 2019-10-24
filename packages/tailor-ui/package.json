@@ -27,7 +27,7 @@
   },
   "typings": "lib/index.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.6.2",
+    "@babel/runtime": "^7.6.3",
     "@tailor-ui/hooks": "^0.5.2",
     "@tailor-ui/theme": "^0.2.2",
     "@tailor-ui/utils": "^0.2.8",
@@ -38,8 +38,8 @@
     "rc-calendar": "^9.15.6",
     "rc-time-picker": "^3.7.2",
     "react-autosize-textarea": "^7.0.0",
-    "react-dropzone": "10.1.9",
-    "react-intl-tel-input": "^7.0.1",
+    "react-dropzone": "10.1.10",
+    "react-intl-tel-input": "^7.1.0",
     "react-select": "^2.4.3",
     "styled-normalize": "^8.0.6",
     "styled-system": "^4.2.4"
