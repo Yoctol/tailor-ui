@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.22.0](https://github.com/yoctol/tailor-ui/compare/tailor-ui@0.21.0...tailor-ui@0.22.0) (2019-10-24)
+
+
+### Bug Fixes
+
+* checkbox & radio types ([c1279a0](https://github.com/yoctol/tailor-ui/commit/c1279a087255fdbb4e754a9225d64f7f5eb4084a))
+
+
+### Features
+
+* **page-header:** implement PageHeader & Ellipsis ([d005d57](https://github.com/yoctol/tailor-ui/commit/d005d57753f93ab18a4fbe2deb44f397ce8fee13))
+
+
+
+
+
 # [0.21.0](https://github.com/yoctol/tailor-ui/compare/tailor-ui@0.20.0...tailor-ui@0.21.0) (2019-10-02)
 
 
