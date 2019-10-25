@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.23.0](https://github.com/yoctol/tailor-ui/compare/tailor-ui@0.22.1...tailor-ui@0.23.0) (2019-10-25)
+
+
+### Features
+
+* **breadcrumb:** move breadcrumb out from page header ([aff7e0e](https://github.com/yoctol/tailor-ui/commit/aff7e0eba3cd965b052ebd42b4b3b8611d213c6c))
+
+
+
+
+
 ## [0.22.1](https://github.com/yoctol/tailor-ui/compare/tailor-ui@0.22.0...tailor-ui@0.22.1) (2019-10-24)
 
 **Note:** Version bump only for package tailor-ui
