@@ -1,6 +1,7 @@
 export * from './constants';
 
 export * from './Alert';
+export * from './Breadcrumb';
 export * from './Button';
 export * from './Backdrop';
 export * from './Card';
