@@ -1,4 +1,8 @@
-import React, { ChangeEventHandler, forwardRef } from 'react';
+import React, {
+  ChangeEventHandler,
+  FocusEventHandler,
+  forwardRef,
+} from 'react';
 import { pick } from 'ramda';
 
 import { AutoSizeInput } from '../AutoSizeInput';
@@ -13,6 +17,7 @@ export interface SelectInputProps {
   multiple: boolean;
   inputValue: string;
   onChange: ChangeEventHandler<HTMLInputElement>;
+  onBlur?: FocusEventHandler<HTMLInputElement>;
   selectedItem: Option;
   selectedItems: Option[];
   removeItem: (item: Option) => void;
@@ -35,6 +40,7 @@ const SelectInput = forwardRef<HTMLInputElement, SelectInputProps>(
       removeItem,
       placeholder,
       getInputProps,
+      onBlur,
       ...props
     },
     ref
@@ -44,6 +50,7 @@ const SelectInput = forwardRef<HTMLInputElement, SelectInputProps>(
         ref={ref}
         {...getDataTestId(props, 'input')}
         fontSize={16}
+        onBlur={onBlur}
         autoComplete="off"
         {...pick(
           [

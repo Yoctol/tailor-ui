@@ -13,13 +13,11 @@ import { mergeEventProps } from '@tailor-ui/utils';
 
 import { useFormField } from '../FormField';
 
-import { InputProps } from './Input';
 import { inputStyles } from './styles';
 
-export type TextareaProps = InputProps &
-  TextareaHTMLAttributes<HTMLTextAreaElement> & {
-    resize?: boolean;
-  };
+export type TextareaProps = TextareaHTMLAttributes<HTMLTextAreaElement> & {
+  resize?: boolean;
+};
 
 export const StyledTextarea = styled(
   forwardRef<HTMLTextAreaElement>(function StyledTextarea(props, ref) {

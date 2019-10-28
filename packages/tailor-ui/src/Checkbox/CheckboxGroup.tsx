@@ -4,11 +4,12 @@ import { useOwnValue } from '@tailor-ui/hooks';
 
 import { useFormField } from '../FormField';
 
-import { Checkbox } from './Checkbox';
+import { Checkbox, CheckboxProps } from './Checkbox';
 import { CheckboxContext, Direction } from './CheckboxContext';
 import { CheckboxGroupFlex } from './styles';
 
-export interface CheckboxGroupProps {
+export interface CheckboxGroupProps
+  extends Omit<CheckboxProps, 'onChange' | 'value'> {
   /**
    * to specify the direction of the step bar, `horizontal` and `vertical` are currently supported
    */

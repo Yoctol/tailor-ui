@@ -18,6 +18,7 @@ module.exports = {
           '@tailor-ui/theme': './packages/tailor-ui-theme/src',
           '@tailor-ui/utils': './packages/tailor-ui-utils/src',
           '@tailor-ui/hooks': './packages/tailor-ui-hooks/src',
+          '@tailor-ui/formik': './packages/tailor-ui-formik/src',
         },
       },
     ]);
