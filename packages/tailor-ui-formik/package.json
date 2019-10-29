@@ -25,6 +25,7 @@
     "testonly:cov": "jest --coverage --runInBand",
     "testonly:watch": "jest --watch"
   },
+  "typings": "lib/index.d.ts",
   "peerDependencies": {
     "formik": ">=2.0.0",
     "react": ">=16.10.0",
