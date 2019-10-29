@@ -5,10 +5,10 @@ import { useOwnValue } from '@tailor-ui/hooks';
 import { useFormField } from '../FormField';
 
 import { Direction, RadioContext } from './RadioContext';
-import { Radio } from './Radio';
+import { Radio, RadioProps } from './Radio';
 import { RadioGroupFlex } from './styles';
 
-export interface RadioGroupProps {
+export interface RadioGroupProps extends Omit<RadioProps, 'onChange'> {
   /**
    * To set the initial value
    */
@@ -97,4 +97,4 @@ const RadioGroup: FC<RadioGroupProps> = ({
   );
 };
 
-export default RadioGroup;
+export { RadioGroup };

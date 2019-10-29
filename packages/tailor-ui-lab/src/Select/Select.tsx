@@ -1,6 +1,7 @@
 import Downshift from 'downshift';
 import React, {
   FC,
+  FocusEventHandler,
   ReactNode,
   useCallback,
   useEffect,
@@ -40,6 +41,7 @@ export interface SelectProps {
   itemSize?: number;
   optionsMaxHeight?: number;
   onChange?: (option: Option | Option[]) => void;
+  onBlur?: FocusEventHandler<HTMLInputElement>;
   noOptionsMessage?: () => ReactNode;
   formatCreateLabel?: (labelInfo: {
     value: string;
@@ -73,6 +75,7 @@ const Select: FC<SelectProps> = ({
   formatCreateLabel,
   isValidNewOption,
   onCreateOption,
+  onBlur,
   ...props
 }) => {
   const [invalid, labelId, setValue] = useFormField({
@@ -292,6 +295,7 @@ const Select: FC<SelectProps> = ({
                   selectedItems={selectedItems}
                   removeItem={removeItem}
                   onChange={event => setInputValue(event.currentTarget.value)}
+                  onBlur={onBlur}
                   getInputProps={getInputProps}
                   data-testid={props['data-testid']}
                 />

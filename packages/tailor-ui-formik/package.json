@@ -1,0 +1,38 @@
+{
+  "name": "@tailor-ui/formik",
+  "description": "Formik components for Tailor-UI React components.",
+  "license": "MIT",
+  "author": "dev@yoctol.com",
+  "homepage": "https://tailor-ui.netlify.com/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Yoctol/tailor-ui.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Yoctol/tailor-ui/issues"
+  },
+  "version": "0.0.1",
+  "main": "lib/index.cjs.js",
+  "module": "lib/index.js",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "build": "cross-env NODE_ENV=production babel --config-file ../../babel.config.js ./src --out-dir ./lib --extensions '.ts,.tsx'",
+    "postbuild": "rollup -c ./config/rollup.config.js",
+    "test": "yarn lint && yarn testonly",
+    "testonly": "jest",
+    "testonly:cov": "jest --coverage --runInBand",
+    "testonly:watch": "jest --watch"
+  },
+  "peerDependencies": {
+    "formik": ">=2.0.0",
+    "react": ">=16.10.0",
+    "react-dom": ">=16.10.0",
+    "tailor-ui": ">=0.20.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": false
+}

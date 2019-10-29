@@ -1,16 +1,24 @@
-import React, { ChangeEventHandler, FC, useContext, useMemo } from 'react';
+import React, {
+  ChangeEventHandler,
+  FC,
+  FocusEventHandler,
+  useContext,
+  useMemo,
+} from 'react';
 
 import { Box } from '../Layout';
 import { useFormField } from '../FormField';
 
 import { CheckboxContext } from './CheckboxContext';
-import { CheckboxGroup } from './CheckboxGroup';
+import { CheckboxGroup, CheckboxGroupProps } from './CheckboxGroup';
 import {
   CheckboxInner,
   CheckboxLabel,
   CheckboxWrapper,
   StyledCheckbox,
 } from './styles';
+
+export type CheckboxGroupProps = CheckboxGroupProps;
 
 export interface CheckboxProps {
   /**
@@ -34,6 +42,8 @@ export interface CheckboxProps {
    */
   value?: string;
   id?: string;
+  onFocus?: FocusEventHandler<HTMLInputElement>;
+  onBlur?: FocusEventHandler<HTMLInputElement>;
 }
 
 const Checkbox: FC<CheckboxProps> & {

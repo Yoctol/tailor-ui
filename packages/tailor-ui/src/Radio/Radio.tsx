@@ -1,11 +1,19 @@
-import React, { ChangeEventHandler, FC, useContext, useMemo } from 'react';
+import React, {
+  ChangeEventHandler,
+  FC,
+  FocusEventHandler,
+  useContext,
+  useMemo,
+} from 'react';
 
 import { Box } from '../Layout';
 import { useFormField } from '../FormField';
 
-import RadioGroup from './RadioGroup';
 import { RadioContext } from './RadioContext';
+import { RadioGroup, RadioGroupProps } from './RadioGroup';
 import { RadioInner, RadioLabel, RadioWrapper, StyledRadio } from './styles';
+
+export type RadioGroupProps = RadioGroupProps;
 
 export interface RadioProps {
   /**
@@ -25,6 +33,8 @@ export interface RadioProps {
    */
   onChange?: ChangeEventHandler<HTMLInputElement>;
   value?: string;
+  onFocus?: FocusEventHandler<HTMLInputElement>;
+  onBlur?: FocusEventHandler<HTMLInputElement>;
 }
 
 const Radio: FC<RadioProps> & {
