@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.24.0](https://github.com/yoctol/tailor-ui/compare/tailor-ui@0.23.0...tailor-ui@0.24.0) (2019-10-29)
+
+
+### Features
+
+* implement @tailor-ui/formik ([7bdef68](https://github.com/yoctol/tailor-ui/commit/7bdef685b3c74b2444095449379e98cf2ae366b1))
+
+
+
+
+
 # [0.23.0](https://github.com/yoctol/tailor-ui/compare/tailor-ui@0.22.1...tailor-ui@0.23.0) (2019-10-25)
 
 
