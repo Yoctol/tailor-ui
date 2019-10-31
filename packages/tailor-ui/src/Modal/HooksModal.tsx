@@ -34,7 +34,11 @@ export interface ModalOptions {
 export type Trigger = (
   options: ModalOptions,
   type: ModalTypes
-) => Promise<boolean>;
+) => {
+  confirmation: Promise<boolean>;
+  close: () => void;
+  update: (options: Omit<ModalOptions, 'onConfirm' | 'onCancel'>) => void;
+};
 
 interface EffectModalProps {
   triggerRef: MutableRefObject<Trigger>;
@@ -80,51 +84,75 @@ const EffectModal: FC<EffectModalProps> = ({ triggerRef }) => {
   }, [modalOptions]);
 
   const trigger = useCallback(
-    (options: ModalOptions, type: ModalTypes): Promise<boolean> =>
-      new Promise(resolve => {
-        const {
-          closable = type === 'confirm',
-          title = '',
-          content = '',
-          confirmText = locale.Modal.confirmText,
-          cancelText = locale.Modal.cancelText,
-          onConfirm,
-          onCancel,
-          onOpenComplete,
-          onCloseComplete,
-        } = options;
+    (options: ModalOptions, type: ModalTypes) => {
+      const {
+        closable = type === 'confirm',
+        title = '',
+        content = '',
+        confirmText = locale.Modal.confirmText,
+        cancelText = locale.Modal.cancelText,
+        onConfirm,
+        onCancel,
+        onOpenComplete,
+        onCloseComplete,
+      } = options;
 
-        setModalOptions({
-          type,
-          closable,
-          title,
-          content,
-          confirmText,
-          cancelText,
-          onConfirm: event => {
-            setVisible(false);
+      let resolveFn: (value: boolean) => void = () => {};
 
-            if (onConfirm) {
-              onConfirm(event);
-            } else {
-              resolve(true);
-            }
-          },
-          onCancel: (event: any) => {
-            setVisible(false);
+      const confirmation = new Promise<boolean>(resolve => {
+        resolveFn = resolve;
+      });
 
-            if (onCancel) {
-              onCancel(event);
-            } else {
-              resolve(false);
-            }
-          },
-          onOpenComplete,
-          onCloseComplete,
-        });
+      const handleConfirm = (event: any) => {
+        setVisible(false);
 
-        setVisible(true);
-      }),
+        if (onConfirm) {
+          onConfirm(event);
+        } else {
+          resolveFn(true);
+        }
+      };
+
+      const handleCancel = (event?: any) => {
+        setVisible(false);
+
+        if (onCancel) {
+          onCancel(event);
+        } else {
+          resolveFn(false);
+        }
+      };
+
+      const handleClose = () => handleCancel();
+
+      const handleUpdate = (
+        updateOptions: Omit<ModalOptions, 'onConfirm' | 'onCancel'>
+      ) => setModalOptions(prev => ({ ...prev, ...updateOptions }));
+
+      setModalOptions({
+        type,
+        closable,
+        title,
+        content,
+        confirmText,
+        cancelText,
+        onConfirm: handleConfirm,
+        onCancel: handleCancel,
+        onOpenComplete,
+        onCloseComplete,
+      });
+
+      setVisible(true);
+
+      return {
+        0: confirmation,
+        1: handleClose,
+        2: handleUpdate,
+        confirmation,
+        close: handleClose,
+        update: handleUpdate,
+      };
+    },
     [locale.Modal.cancelText, locale.Modal.confirmText]
   );
 

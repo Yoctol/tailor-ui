@@ -242,17 +242,19 @@ You can use the `useModal` hooks to display Modal without render `Modal` compone
 
     return (
       <Button
-        onClick={async function() {
-          const confirmed = await modal.confirm({
+        onClick={() => {
+          const [confirmation] = modal.confirm({
             title: 'Confirm',
             content: 'Modal windows are sometimes called heavy windows or modal dialogs because they often display a dialog box. User interfaces typically use modal windows to command user awareness and to display emergency states, though interaction designers argue they are ineffective for that use.',
           });
 
-          if (confirmed) {
-            console.log('confirmed!');
-          } else {
-            console.log('canceled!');
-          }
+          confirmation.then(confirmed => {
+            if (confirmed) {
+              console.log('confirmed!');
+            } else {
+              console.log('canceled!');
+            }
+          });
         }}
       >
         Confirm
@@ -285,15 +287,17 @@ const modal = useModal();
         </Button>
         <Button
           ml="2"
-          onClick={async function() {
-            const confirmed = await modal.success({
+          onClick={() => {
+            const [confirmation] = modal.success({
               title: 'Success',
               content: 'Modal windows are sometimes called heavy windows or modal dialogs because they often display a dialog box. User interfaces typically use modal windows to command user awareness and to display emergency states, though interaction designers argue they are ineffective for that use.',
             });
 
-            if (confirmed) {
-              console.log('success confirm');
-            }
+            confirmation.then(confirmed => {
+              if (confirmed) {
+                console.log('success confirm');
+              }
+            });
           }}>
           Success
 
@@ -335,22 +339,71 @@ const modal = useModal();
 
     return (
       <Button
-        onClick={async function() {
-          const confirmed = await modal.error({
+        onClick={() => {
+          const [confirmation] = modal.error({
             closable: true,
             title: 'Danger',
             content: 'Modal windows are sometimes called heavy windows or modal dialogs because they often display a dialog box. User interfaces typically use modal windows to command user awareness and to display emergency states, though interaction designers argue they are ineffective for that use.',
             confirmText: 'Delete',
           });
 
-          if (confirmed) {
-            console.log('confirmed!');
-          } else {
-            console.log('canceled!');
-          }
+          confirmation.then(confirmed => {
+            if (confirmed) {
+              console.log('confirmed!');
+            } else {
+              console.log('canceled!');
+            }
+          });
         }}
       >
         Click Me
+      </Button>
+    );
+
+}}
+
+</Playground>
+
+##### Manual to update and close
+
+<Playground>
+  {() => {
+    const modal = useModal();
+
+    return (
+      <Button
+        onClick={() => {
+          let secondsToGo = 5;
+
+          const { confirmation, close, update } = modal.confirm({
+            title: 'This is a notification message',
+            content: `This modal will be destroyed after ${secondsToGo} second.`,
+          });
+
+          const countdownTimer = setInterval(() => {
+            secondsToGo -= 1;
+            update({
+              content: `This modal will be destroyed after ${secondsToGo} second.`,
+            });
+          }, 1000);
+
+          const closeTimer = setTimeout(() => {
+            clearInterval(countdownTimer);
+            close();
+          }, secondsToGo * 1000);
+
+          confirmation.then(confirmed => {
+            clearInterval(countdownTimer);
+            clearTimeout(closeTimer)
+            if (confirmed) {
+              console.log('confirmed!');
+            } else {
+              console.log('canceled!');
+            }
+          });
+        }}
+      >
+        Confirm
       </Button>
     );
 
@@ -370,11 +423,21 @@ const modal = useModal();
 const modal = useModal();
 ```
 
-- `modal.confirm(options) => Promise`
-- `modal.info(options) => Promise`
-- `modal.success(options) => Promise`
-- `modal.warning(options) => Promise`
-- `modal.error(options) => Promise`
+- `modal.confirm(options) => ReturnValue`
+- `modal.info(options) => ReturnValue`
+- `modal.success(options) => ReturnValue`
+- `modal.warning(options) => ReturnValue`
+- `modal.error(options) => ReturnValue`
+
+The `ReturnValue` can destructing by array or object:
+- `[confirmation, close, update]`
+- `{ confirmation, close, update }`
+
+Below is the type of `ReturnValue`:
+- `confirmation: Promise<boolean>`
+- `close: () =>void`
+- `update: (options) => void`
+
 
 ### `options`
 
@@ -387,3 +450,5 @@ const modal = useModal();
 | onConfirm   | function            | -                                                         | Specify a function that will be called when the user clicks the OK button. The parameter of this function is a function whose execution should include closing the dialog.     |
 | title       | string \| ReactNode | -                                                         | Title                                                                                                                                                                          |
 | content     | string \| ReactNode | -                                                         | content of the message                                                                                                                                                         |
+
+> The options of update function does not accept onConfirm & onCancel.
