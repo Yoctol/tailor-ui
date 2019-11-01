@@ -3,11 +3,19 @@ import React, { FC, MutableRefObject, createContext, useRef } from 'react';
 import HooksModal, { Trigger } from './HooksModal';
 
 const HooksModalContext = createContext<MutableRefObject<Trigger>>({
-  current: () => Promise.resolve(false),
+  current: () => ({
+    confirmation: Promise.resolve(false),
+    close: () => {},
+    update: () => {},
+  }),
 });
 
 const HooksModalProvider: FC = ({ children }) => {
-  const modalTriggerRef = useRef(() => Promise.resolve(false));
+  const modalTriggerRef = useRef(() => ({
+    confirmation: Promise.resolve(false),
+    close: () => {},
+    update: () => {},
+  }));
 
   return (
     <HooksModalContext.Provider value={modalTriggerRef}>
