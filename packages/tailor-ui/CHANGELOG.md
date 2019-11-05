@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.25.1](https://github.com/yoctol/tailor-ui/compare/tailor-ui@0.25.0...tailor-ui@0.25.1) (2019-11-05)
+
+
+### Bug Fixes
+
+* **modal:** useModal types ([ca55150](https://github.com/yoctol/tailor-ui/commit/ca5515057ad05c4c15e25799d7d48e935b3d037d))
+
+
+
+
+
 # [0.25.0](https://github.com/yoctol/tailor-ui/compare/tailor-ui@0.24.0...tailor-ui@0.25.0) (2019-11-05)
 
 
