@@ -31,14 +31,20 @@ export interface ModalOptions {
   closable?: boolean;
 }
 
+export type UpdateFunction = (
+  options: Omit<ModalOptions, 'onConfirm' | 'onCancel'>
+) => void;
+
+export type TriggerResponse = [Promise<boolean>, () => void, UpdateFunction] & {
+  confirmation: Promise<boolean>;
+  close: () => void;
+  update: UpdateFunction;
+};
+
 export type Trigger = (
   options: ModalOptions,
   type: ModalTypes
-) => {
-  confirmation: Promise<boolean>;
-  close: () => void;
-  update: (options: Omit<ModalOptions, 'onConfirm' | 'onCancel'>) => void;
-};
+) => TriggerResponse;
 
 interface EffectModalProps {
   triggerRef: MutableRefObject<Trigger>;
@@ -144,14 +150,13 @@ const EffectModal: FC<EffectModalProps> = ({ triggerRef }) => {
 
       setVisible(true);
 
-      return {
-        0: confirmation,
-        1: handleClose,
-        2: handleUpdate,
-        confirmation,
-        close: handleClose,
-        update: handleUpdate,
-      };
+      const rtn = [confirmation, handleClose, handleUpdate];
+
+      (rtn as TriggerResponse).confirmation = confirmation;
+      (rtn as TriggerResponse).close = handleClose;
+      (rtn as TriggerResponse).update = handleUpdate;
+
+      return rtn as TriggerResponse;
     },
     [locale.Modal.cancelText, locale.Modal.confirmText]
   );
