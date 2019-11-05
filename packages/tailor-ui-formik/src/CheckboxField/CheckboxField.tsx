@@ -2,6 +2,7 @@ import React, { FC } from 'react';
 import { useField, useFormikContext } from 'formik';
 
 import { Checkbox, CheckboxGroupProps, FormField } from 'tailor-ui';
+import { mergeEventProps } from '@tailor-ui/utils';
 
 export interface CheckboxFieldProps extends CheckboxGroupProps {
   name: string;
@@ -18,7 +19,7 @@ const CheckboxField: FC<CheckboxFieldProps> = ({
   ...otherProps
 }) => {
   const [field, meta] = useField<string[]>(name);
-  const { setFieldValue, setFieldTouched } = useFormikContext<any>();
+  const { setFieldValue } = useFormikContext<any>();
 
   return (
     <FormField
@@ -29,10 +30,10 @@ const CheckboxField: FC<CheckboxFieldProps> = ({
       <Checkbox.Group
         direction={direction}
         value={field.value}
-        onChange={value => setFieldValue(name, value)}
-        onFocus={() => setFieldTouched(name)}
         options={options}
-        {...otherProps}
+        {...mergeEventProps(otherProps, {
+          onChange: (value: string[]) => setFieldValue(name, value),
+        })}
       />
     </FormField>
   );

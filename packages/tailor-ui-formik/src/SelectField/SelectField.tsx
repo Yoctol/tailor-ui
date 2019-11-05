@@ -2,7 +2,8 @@ import React, { FC } from 'react';
 import { useField, useFormikContext } from 'formik';
 
 import { FormField } from 'tailor-ui';
-import { Select, SelectProps } from '@tailor-ui/lab';
+import { Option, Select, SelectProps } from '@tailor-ui/lab';
+import { mergeEventProps } from '@tailor-ui/utils';
 
 export interface SelectFieldProps extends SelectProps {
   name: string;
@@ -37,26 +38,27 @@ const SelectField: FC<SelectFieldProps> = ({
         options={options}
         name={name}
         value={selectedValue}
-        onBlur={field.onBlur}
-        onChange={selectedOption => {
-          if (!selectedOption) {
-            setFieldValue(name, null);
-            return;
-          }
+        {...mergeEventProps(otherProps, {
+          onBlur: field.onBlur,
+          onChange: (selectedOption: Option | Option[]) => {
+            if (!selectedOption) {
+              setFieldValue(name, null);
+              return;
+            }
 
-          if (Array.isArray(selectedOption)) {
-            setFieldValue(name, selectedOption);
-            return;
-          }
+            if (Array.isArray(selectedOption)) {
+              setFieldValue(name, selectedOption);
+              return;
+            }
 
-          const changedValue =
-            typeof selectedOption === 'object'
-              ? selectedOption.value
-              : selectedOption;
+            const changedValue =
+              typeof selectedOption === 'object'
+                ? selectedOption.value
+                : selectedOption;
 
-          setFieldValue(name, changedValue);
-        }}
-        {...otherProps}
+            setFieldValue(name, changedValue);
+          },
+        })}
       />
     </FormField>
   );

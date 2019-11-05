@@ -1,7 +1,8 @@
-import React, { FC } from 'react';
+import React, { FC, FocusEvent } from 'react';
 import { useField, useFormikContext } from 'formik';
 
 import { FormField, Textarea, TextareaProps } from 'tailor-ui';
+import { mergeEventProps } from '@tailor-ui/utils';
 
 export interface TextareaFieldProps extends TextareaProps {
   name: string;
@@ -28,11 +29,12 @@ const TextareaField: FC<TextareaFieldProps> = ({
       <Textarea
         {...field}
         id={id}
-        onBlur={event => {
-          setFieldValue(name, event.target.value.trim());
-          field.onBlur(event);
-        }}
-        {...otherProps}
+        {...mergeEventProps(otherProps, {
+          onBlur: (event: FocusEvent<HTMLTextAreaElement>) => {
+            setFieldValue(name, event.target.value.trim());
+            field.onBlur(event);
+          },
+        })}
       />
     </FormField>
   );

@@ -2,6 +2,7 @@ import React, { FC } from 'react';
 import { useField, useFormikContext } from 'formik';
 
 import { FormField, Radio, RadioGroupProps } from 'tailor-ui';
+import { mergeEventProps } from '@tailor-ui/utils';
 
 export interface RadioProps extends RadioGroupProps {
   name: string;
@@ -18,7 +19,7 @@ const RadioField: FC<RadioProps> = ({
   ...otherProps
 }) => {
   const [field, meta] = useField(name);
-  const { setFieldValue, setFieldTouched } = useFormikContext<any>();
+  const { setFieldValue } = useFormikContext<any>();
 
   return (
     <FormField
@@ -29,10 +30,10 @@ const RadioField: FC<RadioProps> = ({
       <Radio.Group
         direction={direction}
         value={field.value}
-        onChange={value => setFieldValue(name, value)}
-        onFocus={() => setFieldTouched(name)}
         options={options}
-        {...otherProps}
+        {...mergeEventProps(otherProps, {
+          onChange: (value: string) => setFieldValue(name, value),
+        })}
       />
     </FormField>
   );
