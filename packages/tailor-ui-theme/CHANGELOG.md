@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0](https://github.com/Yoctol/tailor-ui/compare/@tailor-ui/theme@0.2.3...@tailor-ui/theme@0.3.0) (2019-11-05)
+
+**Note:** Version bump only for package @tailor-ui/theme
+
+
+
+
+
 ## [0.2.3](https://github.com/Yoctol/tailor-ui/compare/@tailor-ui/theme@0.2.2...@tailor-ui/theme@0.2.3) (2019-10-24)
 
 **Note:** Version bump only for package @tailor-ui/theme

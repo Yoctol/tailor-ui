@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.25.0](https://github.com/yoctol/tailor-ui/compare/tailor-ui@0.24.0...tailor-ui@0.25.0) (2019-11-05)
+
+
+### Features
+
+* **modal:** add close & update to hooks modal ([25c8560](https://github.com/yoctol/tailor-ui/commit/25c8560543bfa5d0348723b0e1c02e5422c3969c))
+
+
+### BREAKING CHANGES
+
+* **modal:** The hooks modal now return an object that contains confirmation, close and update function
+
+
+
+
+
 # [0.24.0](https://github.com/yoctol/tailor-ui/compare/tailor-ui@0.23.0...tailor-ui@0.24.0) (2019-10-29)
 
 
