@@ -50,11 +50,11 @@ const Portal: FC<PortalProps> = ({ zIndex, children }) => {
     if (!portalContainer) {
       portalContainer = document.createElement('div');
       portalContainer.setAttribute('portal-container', '');
-      document.body.append(portalContainer);
+      document.body.appendChild(portalContainer);
     }
 
     elementRef.current = createMountNode(zIndex || 5);
-    portalContainer.append(elementRef.current);
+    portalContainer.appendChild(elementRef.current);
 
     return elementRef.current;
   }, [zIndex]);
