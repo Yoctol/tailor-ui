@@ -1,7 +1,8 @@
-import React, { FC } from 'react';
+import React, { FC, FocusEvent } from 'react';
 import { useField, useFormikContext } from 'formik';
 
 import { FormField, Input, InputProps } from 'tailor-ui';
+import { mergeEventProps } from '@tailor-ui/utils';
 
 export interface InputFieldProps extends InputProps {
   name: string;
@@ -28,11 +29,12 @@ const InputField: FC<InputFieldProps> = ({
       <Input
         {...field}
         id={id}
-        onBlur={event => {
-          setFieldValue(name, event.target.value.trim());
-          field.onBlur(event);
-        }}
-        {...otherProps}
+        {...mergeEventProps(otherProps, {
+          onBlur: (event: FocusEvent<HTMLInputElement>) => {
+            setFieldValue(name, event.target.value.trim());
+            field.onBlur(event);
+          },
+        })}
       />
     </FormField>
   );
