@@ -1,15 +1,12 @@
 import React, {
-  CSSProperties,
+  ComponentType,
   FC,
   ReactNode,
   createContext,
-  forwardRef,
-  memo,
   useContext,
   useRef,
   useState,
 } from 'react';
-import { animated } from 'react-spring';
 
 import {
   useClickOutside,
@@ -19,42 +16,14 @@ import {
   useToggleTrigger,
 } from '@tailor-ui/hooks';
 
-import { Heading } from '../Typography';
 import { Position, Positions } from '../constants';
 import { Positioner } from '../Positioner';
 
-import { PopoverHeader, StyledPopover, StyledPopoverProps } from './styles';
-
-interface PopoverPopup {
-  style: CSSProperties;
-  title: ReactNode | ((handleClose: () => void) => ReactNode);
-  content: ReactNode | ((handleClose: () => void) => ReactNode);
-  handleClose: () => void;
-}
-
-const PopoverPopup = memo(
-  forwardRef<HTMLDivElement, PopoverPopup>(function PopoverPopup(
-    { style, title, content, handleClose, ...otherProps },
-    ref
-  ) {
-    return (
-      <animated.div style={style} ref={ref}>
-        <StyledPopover {...otherProps}>
-          {title && (
-            <PopoverHeader>
-              <Heading.h6>
-                {title instanceof Function ? title(handleClose) : title}
-              </Heading.h6>
-            </PopoverHeader>
-          )}
-          {content instanceof Function ? content(handleClose) : content}
-        </StyledPopover>
-      </animated.div>
-    );
-  })
-);
+import PopoverPopup from './PopoverPopup';
+import { StyledPopoverProps } from './styles';
 
 export type PopoverProps = StyledPopoverProps & {
+  Wrapper?: ComponentType;
   /**
    * Whether the floating popover card is visible by default. Only support when the trigger is `click`
    */
@@ -103,6 +72,7 @@ const Popover: FC<PopoverProps> = ({
   onVisibleChange,
   onOpenComplete,
   onCloseComplete,
+  Wrapper,
   ...otherProps
 }) => {
   const targetRef = useTargetRef({
@@ -162,6 +132,7 @@ const Popover: FC<PopoverProps> = ({
             title={title}
             content={content}
             handleClose={handleClose}
+            Wrapper={Wrapper}
             {...otherProps}
           />
         )}
