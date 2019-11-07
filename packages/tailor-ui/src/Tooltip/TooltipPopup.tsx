@@ -1,11 +1,17 @@
-import React, { CSSProperties, ReactNode, forwardRef, memo } from 'react';
+import React, {
+  CSSProperties,
+  ComponentType,
+  ReactNode,
+  forwardRef,
+  memo,
+} from 'react';
 import { animated } from 'react-spring';
 
 import { StyledTooltip } from './styles';
 
 interface TooltipPopup {
   style: CSSProperties;
-  Wrapper?: ReactNode;
+  Wrapper?: ComponentType;
   content: ReactNode;
   handleOpen: () => void;
   handleClose: () => void;
