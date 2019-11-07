@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.25.2](https://github.com/yoctol/tailor-ui/compare/tailor-ui@0.25.1...tailor-ui@0.25.2) (2019-11-07)
+
+
+### Bug Fixes
+
+* **portal:** use appendChild instead of append ([c5e415b](https://github.com/yoctol/tailor-ui/commit/c5e415b2156b504c93e35b58feeed96dceaa72ee))
+
+
+### Features
+
+* **popover:** add Wrapper usage to Popover ([2989808](https://github.com/yoctol/tailor-ui/commit/2989808230c128c58402bf2151cfebf5b0ad3a7e))
+
+
+
+
+
 ## [0.25.1](https://github.com/yoctol/tailor-ui/compare/tailor-ui@0.25.0...tailor-ui@0.25.1) (2019-11-05)
 
 
