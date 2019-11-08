@@ -1,4 +1,4 @@
-import { Option } from './SelectOptions';
+import { Option as _Option } from './SelectOptions';
 
 export * from './Select';
-export type Option = Option;
+export type Option = _Option;

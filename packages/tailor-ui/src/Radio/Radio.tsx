@@ -10,10 +10,10 @@ import { Box } from '../Layout';
 import { useFormField } from '../FormField';
 
 import { RadioContext } from './RadioContext';
-import { RadioGroup, RadioGroupProps } from './RadioGroup';
+import { RadioGroup, RadioGroupProps as _RadioGroupProps } from './RadioGroup';
 import { RadioInner, RadioLabel, RadioWrapper, StyledRadio } from './styles';
 
-export type RadioGroupProps = RadioGroupProps;
+export type RadioGroupProps = _RadioGroupProps;
 
 export interface RadioProps {
   /**

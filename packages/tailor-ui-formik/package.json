@@ -27,6 +27,7 @@
   },
   "typings": "lib/index.d.ts",
   "dependencies": {
+    "@tailor-ui/lab": "^0.13.0",
     "@tailor-ui/utils": "^0.2.9",
     "tailor-ui": "^0.25.2"
   },

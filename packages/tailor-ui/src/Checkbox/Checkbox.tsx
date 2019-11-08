@@ -10,7 +10,10 @@ import { Box } from '../Layout';
 import { useFormField } from '../FormField';
 
 import { CheckboxContext } from './CheckboxContext';
-import { CheckboxGroup, CheckboxGroupProps } from './CheckboxGroup';
+import {
+  CheckboxGroup,
+  CheckboxGroupProps as _CheckboxGroupProps,
+} from './CheckboxGroup';
 import {
   CheckboxInner,
   CheckboxLabel,
@@ -18,7 +21,7 @@ import {
   StyledCheckbox,
 } from './styles';
 
-export type CheckboxGroupProps = CheckboxGroupProps;
+export type CheckboxGroupProps = _CheckboxGroupProps;
 
 export interface CheckboxProps {
   /**
