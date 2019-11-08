@@ -1,3 +1,3 @@
-import { StatusType } from './ststus';
+import { StatusType as _StatusType } from './status';
 
-export type StatusType = StatusType;
+export type StatusType = _StatusType;
