@@ -228,6 +228,7 @@ exports[`Table should render table correctly with header and footer 1`] = `
   overflow: hidden;
   border-radius: 1rem;
   background-color: #ffffff;
+  box-shadow: 0 2px 4px 0 rgba(100,120,168,0.3);
   width: 100%;
 }
 

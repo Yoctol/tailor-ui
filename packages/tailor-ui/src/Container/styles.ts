@@ -6,7 +6,7 @@ export const StyledContainer = styled.article`
   padding: 24px 32px 32px;
   border-radius: ${p => p.theme.radii.xl};
   background-color: ${p => p.theme.colors.light};
-  box-shadow: 0 2px 4px 0 #cbd1e0;
+  box-shadow: 0 2px 4px 0 rgba(100, 120, 168, 0.3);
   color: ${p => p.theme.colors.gray700};
   font-size: ${p => p.theme.fontSizes.base};
 
