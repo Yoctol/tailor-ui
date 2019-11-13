@@ -57,6 +57,7 @@ export const TableWrapper = styled.div<TableWrapperProps>`
   overflow: hidden;
   border-radius: ${p => p.theme.radii.xl};
   background-color: ${p => p.theme.colors.light};
+  box-shadow: 0 2px 4px 0 rgba(100, 120, 168, 0.3);
 
   /* stylelint-disable-next-line no-descending-specificity */
   & > ${StyledTable} {
