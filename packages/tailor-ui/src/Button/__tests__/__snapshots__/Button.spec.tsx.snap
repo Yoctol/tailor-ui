@@ -14,6 +14,7 @@ exports[`Button should render button with specified icon 1`] = `
 .c2 svg {
   fill: #8b8b8b;
   vertical-align: middle;
+  pointer-events: none;
   -webkit-transition: all 200ms ease 0s;
   transition: all 200ms ease 0s;
 }
@@ -955,6 +956,7 @@ exports[`Button should render rounded icon button 1`] = `
 .c2 svg {
   fill: #8b8b8b;
   vertical-align: middle;
+  pointer-events: none;
   -webkit-transition: all 200ms ease 0s;
   transition: all 200ms ease 0s;
 }

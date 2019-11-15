@@ -21,6 +21,7 @@ exports[`useMessage should render message correctly 1`] = `
 .c3 svg {
   fill: #8b8b8b;
   vertical-align: middle;
+  pointer-events: none;
   -webkit-transition: all 200ms ease 0s;
   transition: all 200ms ease 0s;
 }
@@ -43,6 +44,7 @@ exports[`useMessage should render message correctly 1`] = `
 .c5 svg {
   fill: #8b8b8b;
   vertical-align: middle;
+  pointer-events: none;
   -webkit-transition: all 200ms ease 0s;
   transition: all 200ms ease 0s;
 }
