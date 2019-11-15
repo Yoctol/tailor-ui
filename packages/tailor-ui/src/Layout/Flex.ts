@@ -19,13 +19,7 @@ export type FlexProps = BoxProps &
   FlexWrapProps &
   JustifyContentProps;
 
-const flex = compose(
-  box,
-  alignItems,
-  flexDirection,
-  justifyContent,
-  flexWrap
-);
+const flex = compose(box, alignItems, flexDirection, justifyContent, flexWrap);
 
 const Flex = styled('div')<FlexProps>(
   {

@@ -104,19 +104,16 @@ const Breadcrumb: FC<BreadcrumbProps> = ({ breadcrumb = [] }) => {
     ) {
       let containerWidth = breadcrumbRef.current.offsetWidth - 48;
 
-      const keys = breadcrumbsWidth.reverse().reduce(
-        (prev, curr, index) => {
-          const hasArrow = index !== 0;
-          containerWidth -= curr.width + (hasArrow ? 24 : 0);
+      const keys = breadcrumbsWidth.reverse().reduce((prev, curr, index) => {
+        const hasArrow = index !== 0;
+        containerWidth -= curr.width + (hasArrow ? 24 : 0);
 
-          if (containerWidth < 0 && !prev.includes(curr.key)) {
-            return [...prev, curr.key];
-          }
+        if (containerWidth < 0 && !prev.includes(curr.key)) {
+          return [...prev, curr.key];
+        }
 
-          return prev;
-        },
-        [] as string[]
-      );
+        return prev;
+      }, [] as string[]);
 
       setBreadcrumbsWidth([]);
       setHiddenKeys(keys);
