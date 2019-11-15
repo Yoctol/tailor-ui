@@ -36,8 +36,4 @@ export const globalStyle = css`
     text-decoration: none;
     cursor: pointer;
   }
-
-  svg {
-    pointer-events: none;
-  }
 `;

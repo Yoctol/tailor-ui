@@ -39,6 +39,7 @@ export const IconWrapper = styled.i<IconWrapperProps>`
   svg {
     fill: ${p => p.theme.colors.gray500};
     vertical-align: middle;
+    pointer-events: none;
     ${p => p.theme.transition /* sc-declaration */};
   }
 
