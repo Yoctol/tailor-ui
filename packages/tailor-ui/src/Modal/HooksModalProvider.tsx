@@ -4,7 +4,11 @@ import { tuplify } from '@tailor-ui/utils';
 
 import HooksModal, { Trigger } from './HooksModal';
 
-const defaultTrigger = tuplify(Promise.resolve(false), () => {}, () => {});
+const defaultTrigger = tuplify(
+  Promise.resolve(false),
+  () => {},
+  () => {}
+);
 
 (defaultTrigger as any).confirmation = Promise.resolve(false);
 (defaultTrigger as any).close = () => {};

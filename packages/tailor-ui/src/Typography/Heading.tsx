@@ -6,10 +6,7 @@ import { TextProps, text } from './Text';
 
 export type HeadingBaseProps = SpaceProps & TextProps;
 
-const heading = compose(
-  text,
-  space
-);
+const heading = compose(text, space);
 
 const headingStyles = css`
   margin: 0;

@@ -152,8 +152,9 @@ const Select: FC<SelectProps> = ({
       selectedItem={value}
       isOpen={visible}
       initialSelectedItem={defaultValue}
-      defaultHighlightedIndex={getHighlightedIndex((value ||
-        defaultValue) as Option)}
+      defaultHighlightedIndex={getHighlightedIndex(
+        (value || defaultValue) as Option
+      )}
       stateReducer={(state, changes) => {
         // if the user is opening the menu, then let's make sure
         // that the highlighted index is set to the selected index
