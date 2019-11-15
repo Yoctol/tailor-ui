@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.13.1](https://github.com/Yoctol/tailor-ui/compare/@tailor-ui/lab@0.13.0...@tailor-ui/lab@0.13.1) (2019-11-15)
+
+
+### Bug Fixes
+
+* **theme:** remove global svg pointer-events: none ([a58983c](https://github.com/Yoctol/tailor-ui/commit/a58983c5f85a17b0821651f0116ed7a74af4f07e))
+
+
+
+
+
 # [0.13.0](https://github.com/Yoctol/tailor-ui/compare/@tailor-ui/lab@0.12.0...@tailor-ui/lab@0.13.0) (2019-11-05)
 
 **Note:** Version bump only for package @tailor-ui/lab

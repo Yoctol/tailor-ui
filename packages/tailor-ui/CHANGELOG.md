@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.25.3](https://github.com/yoctol/tailor-ui/compare/tailor-ui@0.25.2...tailor-ui@0.25.3) (2019-11-15)
+
+
+### Bug Fixes
+
+* **theme:** remove global svg pointer-events: none ([a58983c](https://github.com/yoctol/tailor-ui/commit/a58983c5f85a17b0821651f0116ed7a74af4f07e))
+
+
+### Features
+
+* add shadows to table when it used with header/footer ([c5efbba](https://github.com/yoctol/tailor-ui/commit/c5efbbae597482e36956951bd7aac5c85c2b475c))
+
+
+
+
+
 ## [0.25.2](https://github.com/yoctol/tailor-ui/compare/tailor-ui@0.25.1...tailor-ui@0.25.2) (2019-11-07)
 
 
