@@ -29,6 +29,7 @@ export type BoxProps = system.PositionProps &
   system.BordersProps &
   system.BorderColorProps &
   system.BorderRadiusProps &
+  system.BoxShadowProps &
   system.WidthProps &
   system.MinWidthProps &
   system.MaxWidthProps &
@@ -66,6 +67,7 @@ export const box = system.compose(
   system.borders,
   system.borderColor,
   system.borderRadius,
+  system.boxShadow,
 
   system.width,
   system.minWidth,
