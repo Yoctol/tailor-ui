@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.4](https://github.com/Yoctol/tailor-ui/compare/@tailor-ui/formik@0.2.3...@tailor-ui/formik@0.2.4) (2019-11-21)
+
+
+### Bug Fixes
+
+* **formik:** prevent return previous value when click clear button ([297dbda](https://github.com/Yoctol/tailor-ui/commit/297dbdaae30e9a44247f921095249c5915f3b216))
+
+
+
+
+
 ## [0.2.3](https://github.com/Yoctol/tailor-ui/compare/@tailor-ui/formik@0.2.2...@tailor-ui/formik@0.2.3) (2019-11-15)
 
 **Note:** Version bump only for package @tailor-ui/formik

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.25.4](https://github.com/yoctol/tailor-ui/compare/tailor-ui@0.25.3...tailor-ui@0.25.4) (2019-11-21)
+
+
+### Features
+
+* **layout:** add shadow support ([0b927ce](https://github.com/yoctol/tailor-ui/commit/0b927cee73f09a548435acaccc413f2e6cf64087))
+
+
+
+
+
 ## [0.25.3](https://github.com/yoctol/tailor-ui/compare/tailor-ui@0.25.2...tailor-ui@0.25.3) (2019-11-15)
 
 
