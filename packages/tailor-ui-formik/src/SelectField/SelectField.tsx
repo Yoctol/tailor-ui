@@ -15,17 +15,11 @@ const SelectField: FC<SelectFieldProps> = ({
   required,
   label,
   name,
-  options,
   ...otherProps
 }) => {
   const [field, meta] = useField(name);
   const { setFieldValue } = useFormikContext<any>();
   const id = `select-${name}`;
-
-  const selectedValue = options.find(
-    option =>
-      (typeof option === 'object' ? option.value : option) === field.value
-  );
 
   return (
     <FormField
@@ -35,9 +29,8 @@ const SelectField: FC<SelectFieldProps> = ({
     >
       <Select
         id={id}
-        options={options}
         name={name}
-        value={selectedValue}
+        value={field.value}
         {...mergeEventProps(otherProps, {
           onBlur: field.onBlur,
           onChange: (selectedOption: Option | Option[]) => {
