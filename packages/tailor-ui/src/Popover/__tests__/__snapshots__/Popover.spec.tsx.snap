@@ -22,7 +22,7 @@ exports[`Popover should render correctly 1`] = `
   border-radius: 0.5rem;
   border-color: #e0e0e0;
   background-color: #ffffff;
-  box-shadow: 0 2px 4px rgba(100,120,168,0.3);
+  box-shadow: 0 2px 4px 0 #e0e0e0;
   color: #373737;
   font-size: 0.875rem;
   text-align: left;
