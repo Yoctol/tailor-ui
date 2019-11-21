@@ -254,25 +254,31 @@ const transition = 'transition: all 200ms ease 0s';
 
 export interface ShadowsType {
   /**
-   * '0 1px 4px 0 rgba(191, 191, 191, 0.5)'
+   * 0 1px 3px 0 #e0e0e0
+   */
+  sm: string;
+
+  /**
+   * 0 2px 4px 0 #e0e0e0
    */
   base: string;
 
   /**
-   * '0 4px 6px 0 rgba(191, 191, 191, 0.5)'
+   * 0 2px 6px 0 #e0e0e0
    */
   lg: string;
 
   /**
-   * '0 2px 6px 0 rgba(94, 94, 94, 0.5)'
+   * 0 5px 10px 0 #e0e0e0
    */
   xl: string;
 }
 
 const shadows: ShadowsType = {
-  base: '0 1px 4px 0 rgba(191, 191, 191, 0.5)',
-  lg: '0 4px 6px 0 rgba(191, 191, 191, 0.5)',
-  xl: '0 2px 6px 0 rgba(94, 94, 94, 0.5)',
+  sm: '0 1px 3px 0 #e0e0e0',
+  base: '0 2px 4px 0 #e0e0e0',
+  lg: '0 2px 6px 0 #e0e0e0',
+  xl: '0 5px 10px 0 #e0e0e0',
 };
 
 export const theme = {

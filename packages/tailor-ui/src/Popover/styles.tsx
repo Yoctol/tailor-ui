@@ -16,7 +16,7 @@ export const StyledPopover = styled.div<StyledPopoverProps>`
   border-radius: ${p => p.theme.radii.lg};
   border-color: ${p => p.theme.colors.gray300};
   background-color: ${p => p.theme.colors.light};
-  box-shadow: 0 2px 4px rgba(100, 120, 168, 0.3);
+  box-shadow: ${p => p.theme.shadows.base};
   color: ${p => p.theme.colors.gray700};
   font-size: ${p => p.theme.fontSizes.sm};
   text-align: left;

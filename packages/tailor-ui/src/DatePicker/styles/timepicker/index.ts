@@ -96,7 +96,7 @@ export default css`
       text-align: left;
       background-color: #fff;
       border-radius: 4px;
-      box-shadow: 0 1px 5px #ccc;
+      box-shadow: ${p => p.theme.shadows.sm};
       background-clip: padding-box;
       border: 1px solid #ccc;
       line-height: 1.5;
