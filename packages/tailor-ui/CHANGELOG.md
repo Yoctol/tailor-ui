@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.25.5](https://github.com/yoctol/tailor-ui/compare/tailor-ui@0.25.4...tailor-ui@0.25.5) (2019-11-28)
+
+
+### Bug Fixes
+
+* **modal:** adjust width for small device ([144f8dd](https://github.com/yoctol/tailor-ui/commit/144f8dda9d6f4551b8e1f05faee5e51e47fc1475))
+
+
+
+
+
 ## [0.25.4](https://github.com/yoctol/tailor-ui/compare/tailor-ui@0.25.3...tailor-ui@0.25.4) (2019-11-21)
 
 
