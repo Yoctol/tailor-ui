@@ -61,6 +61,7 @@ const ModalContent = styled.div<{ size: Size }>`
   display: flex;
   flex-direction: column;
   width: ${p => ({ md: 516, lg: 786 }[p.size as Size] || 516)}px;
+  max-width: 90vw;
   min-height: 220px;
   max-height: 75vh;
   padding: 24px ${p => p.theme.space[3]} ${p => p.theme.space[3]};
