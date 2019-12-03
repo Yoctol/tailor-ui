@@ -10,7 +10,9 @@ import VirtualList from 'react-tiny-virtual-list';
 import { GetItemPropsOptions } from 'downshift';
 import { MdCheck, MdHighlightOff } from 'react-icons/md';
 
-import { Box, Flex, Heading, Icon } from 'tailor-ui';
+import { Box, Flex } from '../Layout';
+import { Heading } from '../Typography';
+import { Icon } from '../Icon';
 
 import { StyledSelectOption } from './styles';
 import { fuzzyFilter, getDataTestId, itemToString } from './utils';

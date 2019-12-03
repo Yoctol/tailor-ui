@@ -1,8 +1,7 @@
 import React, { FC } from 'react';
 import { useField, useFormikContext } from 'formik';
 
-import { FormField } from 'tailor-ui';
-import { Option, Select, SelectProps } from '@tailor-ui/lab';
+import { FormField, Option, Select, SelectProps } from 'tailor-ui';
 import { mergeEventProps } from '@tailor-ui/utils';
 
 export interface SelectFieldProps extends SelectProps {

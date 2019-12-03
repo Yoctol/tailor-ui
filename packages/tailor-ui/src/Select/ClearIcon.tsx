@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import styled from 'styled-components';
 import { MdClose } from 'react-icons/md';
 
-import { Icon } from 'tailor-ui';
+import { Icon } from '../Icon';
 
 import { getDataTestId } from './utils';
 

@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import { MdKeyboardArrowUp } from 'react-icons/md';
 import { animated, config, useSpring } from 'react-spring';
 
-import { Icon } from 'tailor-ui';
+import { Icon } from '../Icon';
 
 const SelectArrow: FC<{ on: boolean }> = ({ on }) => {
   const { deg } = useSpring({

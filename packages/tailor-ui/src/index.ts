@@ -1,6 +1,7 @@
 export * from './constants';
 
 export * from './Alert';
+export * from './AutoSizeInput';
 export * from './Breadcrumb';
 export * from './Button';
 export * from './Backdrop';
