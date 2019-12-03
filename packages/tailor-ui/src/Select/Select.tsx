@@ -1,184 +1,326 @@
-import BaseSelect, { components } from 'react-select';
-import CreatableSelect from 'react-select/lib/Creatable';
-import React, { FC, useEffect } from 'react';
-import styled from 'styled-components';
-import { MdSearch } from 'react-icons/md';
+import Downshift from 'downshift';
+import React, {
+  FC,
+  FocusEventHandler,
+  ReactNode,
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from 'react';
 
 import { Flex } from '../Layout';
-import { Icon } from '../Icon';
+import { Popover } from '../Popover';
+import { Position } from '../constants';
+import { useFormField } from '../FormField';
 
-const getStyledSelect = (creatable: boolean) => {
-  const SelectComponent = creatable ? CreatableSelect : BaseSelect;
-
-  return styled(SelectComponent)`
-    & .yoctol-select__control {
-      min-width: 150px;
-      border-color: ${p => p.theme.colors.gray300};
-      background-color: ${p => p.theme.colors.light};
-      box-shadow: none;
-
-      &:hover {
-        border-color: ${p => p.theme.colors.primary};
-      }
-
-      &.yoctol-select__control--is-focused {
-        border-color: ${p => p.theme.colors.primaryDark};
-      }
-
-      &.yoctol-select__control-is-disabled {
-        & .yoctol-select__indicators {
-          &::before {
-            opacity: 0.5;
-          }
-        }
-      }
-    }
-
-    & .yoctol-select__menu {
-      margin-top: 2px;
-
-      .yoctol-select__menu-list {
-        padding-top: 0;
-        padding-bottom: 0;
-
-        .yoctol-select__option {
-          &:not(:last-child) {
-            border-bottom: ${p => p.theme.borders.base}
-              ${p => p.theme.colors.gray300};
-          }
-          background-color: ${p => p.theme.colors.light};
-          color: ${p => p.theme.colors.gray700};
-
-          &.yoctol-select__option--is-focused {
-            background-color: ${p => p.theme.colors.primaryDark};
-            color: ${p => p.theme.colors.light};
-          }
-        }
-      }
-    }
-  `;
-};
+import ClearIcon from './ClearIcon';
+import MultiDownshift from './MultiDownshift';
+import SelectArrow from './SelectArrow';
+import SelectInput from './SelectInput';
+import SelectOptions, { CreateOption, Option } from './SelectOptions';
+import SelectedOption from './SelectedOption';
+import { Loading, SelectWrapper, StyledSelect } from './styles';
+import { getDataTestId, itemToString } from './utils';
 
 export interface SelectProps {
-  /**
-   * delimiter string for multi-select value in text style mode
-   */
-  delimiter?: string;
-  /**
-   * Is the select value clearable
-   */
-  isClearable?: boolean;
-  /**
-   * Allow create new option
-   */
+  id?: string;
+  name?: string;
+  className?: string;
+  width?: string | number;
+  size?: 'sm' | 'md' | 'lg';
   creatable?: boolean;
-  /**
-   * Disable the control
-   */
-  isDisabled?: boolean;
-  /**
-   * Allow user to select multiple options
-   */
-  isMulti?: boolean;
-  /**
-   * Allow the user to search for matching options
-   */
-  isSearchable?: boolean;
-  /**
-   * Choose tag or text style in multi-select (options: "tag", "text")
-   */
-  multiSelectMode?: string;
-  /**
-   * Specify the options the user can select from
-   */
-  options?: number[] | string[] | object[];
-  /**
-   * Change the text displayed when no option is selected
-   */
+  clearable?: boolean;
+  disabled?: boolean;
+  loading?: boolean;
+  multiple?: boolean;
+  searchable?: boolean;
+  options: Option[];
+  value?: Option | Option[];
+  defaultValue?: Option | Option[];
   placeholder?: string;
-  /**
-   * One of options
-   */
-  value?: number | string | object | object[];
-  /**
-   * Subscribe to change events
-   */
-  onChange?: (option: number | string | object) => void;
+  menu?: ReactNode;
+  itemSize?: number;
+  optionsMaxHeight?: number;
+  onChange?: (option: Option | Option[]) => void;
+  onBlur?: FocusEventHandler<HTMLInputElement>;
+  noOptionsMessage?: () => ReactNode;
+  formatCreateLabel?: (labelInfo: {
+    value: string;
+    active: boolean;
+    hovered: boolean;
+  }) => ReactNode;
+  isValidNewOption?: (value: string) => boolean;
+  onCreateOption?: (value: string) => void;
+  'data-testid'?: string;
 }
 
-const ValueContainer: FC<any> = ({ children, ...props }) => (
-  <components.ValueContainer {...props}>
-    <Flex width="100%" alignItems="center">
-      <Icon type={MdSearch} size="20" mr="2" />
-      <Flex flex="auto" position="relative">
-        {children}
-      </Flex>
-    </Flex>
-  </components.ValueContainer>
-);
-
-const Select: FC<SelectProps> = props => {
-  const { isMulti, delimiter, multiSelectMode, creatable = false } = props;
+const Select: FC<SelectProps> = ({
+  id,
+  width = 240,
+  size = 'md',
+  creatable = false,
+  clearable = false,
+  disabled = false,
+  loading = false,
+  multiple = false,
+  searchable = false,
+  options,
+  value,
+  defaultValue,
+  placeholder = '',
+  menu,
+  itemSize = 36,
+  optionsMaxHeight = 180,
+  onChange,
+  noOptionsMessage,
+  formatCreateLabel,
+  isValidNewOption,
+  onCreateOption,
+  onBlur,
+  ...props
+}) => {
+  const [invalid, labelId, setValue] = useFormField({
+    id,
+    value,
+    defaultValue,
+  });
+  const wrapperRef = useRef<HTMLDivElement>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
+  const [selectWidth, setSelectWidth] = useState(0);
+  const [visible, setVisible] = useState(false);
+  const [inputValue, setInputValue] = useState('');
 
   useEffect(() => {
-    console.warn(
-      '[tailor-ui: Select] Select component is deprecated. Please use the @tailor-ui/lab version instead.'
-    );
-  }, []);
+    if (visible && wrapperRef.current) {
+      setSelectWidth(wrapperRef.current.offsetWidth);
+    }
+  }, [visible]);
 
-  const StyledSelect = getStyledSelect(creatable);
+  const handleChange = useCallback(
+    (selection: Option | CreateOption) => {
+      if (inputRef.current && !multiple) {
+        inputRef.current.blur();
+      }
 
-  const isSearchable = creatable || props.isSearchable;
+      const isCreate =
+        selection && (selection as CreateOption).label === 'CREATE_OPTION';
 
-  let selectProps: any = {
-    classNamePrefix: 'yoctol-select',
-    createOptionPosition: 'first',
-    ...props,
-    isSearchable,
-  };
+      if (isCreate && onCreateOption) {
+        onCreateOption((selection as CreateOption).value);
+      }
 
-  if (isSearchable) {
-    selectProps.components = { ValueContainer };
-  }
+      if (!isCreate && onChange) {
+        onChange(selection as Option);
+        setValue(selection as Option);
+      }
 
-  if (isMulti) {
-    if (multiSelectMode === 'text') {
-      const Option: FC<any> = _props => (
-        <components.Option {..._props} isFocused={_props.isSelected} />
+      if (!multiple || isCreate) {
+        setVisible(false);
+      } else {
+        setInputValue('');
+      }
+    },
+    [multiple, onChange, onCreateOption, setValue]
+  );
+
+  const getHighlightedIndex = useCallback(
+    (item: Option) => {
+      if (multiple) {
+        return null;
+      }
+
+      const index = options.findIndex(
+        option => itemToString(option) === itemToString(item)
       );
 
-      const MultiValue = ({
-        selectProps: {
-          value: [{ value: firstValue }],
-        },
-        data: { value: dataValue, label: dataLabel },
-      }: any) => `${firstValue !== dataValue ? delimiter : ''}${dataLabel}`;
+      if (index === null) {
+        return null;
+      }
 
-      selectProps = {
-        ...selectProps,
-        components: {
-          ...selectProps.components,
-          Option,
-          MultiValue,
-        },
-        closeMenuOnSelect: false,
-        hideSelectedOptions: false,
-      };
-    }
-  }
+      return index;
+    },
+    [multiple, options]
+  );
 
-  return <StyledSelect {...selectProps} />;
-};
+  const RenderComponent = useMemo(
+    () => (multiple ? MultiDownshift : Downshift),
+    [multiple]
+  );
 
-Select.defaultProps = {
-  delimiter: ',',
-  isClearable: false,
-  creatable: false,
-  isDisabled: false,
-  isMulti: false,
-  isSearchable: false,
-  multiSelectMode: 'tag',
-  placeholder: '',
+  return (
+    <RenderComponent
+      id={labelId}
+      selectedItem={value}
+      isOpen={visible}
+      initialSelectedItem={defaultValue}
+      defaultHighlightedIndex={getHighlightedIndex(
+        (value || defaultValue) as Option
+      )}
+      stateReducer={(state, changes) => {
+        // if the user is opening the menu, then let's make sure
+        // that the highlighted index is set to the selected index
+        if (
+          typeof changes === 'object' &&
+          changes.type === Downshift.stateChangeTypes.clickItem
+        ) {
+          return {
+            ...changes,
+            highlightedIndex: getHighlightedIndex(changes.selectedItem),
+          };
+        }
+
+        return changes;
+      }}
+      itemToString={itemToString}
+      inputValue={inputValue}
+      onInputValueChange={newInputValue => {
+        if (!multiple && newInputValue !== 'CREATE_OPTION') {
+          setInputValue(newInputValue);
+        }
+      }}
+      onChange={handleChange}
+      {...({
+        scrollIntoView: () => {},
+      } as any)}
+    >
+      {({
+        id: downshiftId,
+
+        getRootProps,
+        getMenuProps,
+        getItemProps,
+        getInputProps,
+        highlightedIndex,
+        selectedItem,
+        clearSelection,
+
+        selectedItems = [],
+        getRemoveButtonProps,
+        removeItem,
+      }: any) => (
+        <SelectWrapper
+          {...getRootProps({
+            ref: wrapperRef,
+            style: { width },
+          })}
+        >
+          <Popover
+            visible={visible}
+            position={Position.BOTTOM_LEFT}
+            minWidth={selectWidth}
+            onVisibleChange={newVisible => {
+              if (disabled || loading) {
+                return;
+              }
+
+              if (!newVisible && inputRef.current) {
+                inputRef.current.blur();
+              }
+
+              setVisible(newVisible);
+            }}
+            p="0"
+            content={
+              <SelectOptions
+                visible={visible}
+                creatable={creatable}
+                searchable={searchable}
+                multiple={multiple}
+                itemSize={itemSize}
+                optionsMaxHeight={optionsMaxHeight}
+                getMenuProps={getMenuProps}
+                getItemProps={getItemProps}
+                options={options}
+                inputValue={inputValue}
+                menu={menu}
+                highlightedIndex={highlightedIndex}
+                selectedItem={selectedItem}
+                selectedItems={selectedItems}
+                noOptionsMessage={noOptionsMessage}
+                formatCreateLabel={formatCreateLabel}
+                isValidNewOption={isValidNewOption}
+                data-testid={props['data-testid']}
+              />
+            }
+          >
+            <StyledSelect
+              id={downshiftId}
+              {...getDataTestId(props)}
+              invalid={invalid}
+              size={size}
+              focused={visible}
+              disabled={disabled || loading}
+              onClick={() => {
+                if (!visible) {
+                  if (searchable || creatable || multiple) {
+                    setInputValue('');
+                  }
+                  if (inputRef.current) {
+                    inputRef.current.focus();
+                  }
+                }
+              }}
+            >
+              <Flex
+                flex="auto"
+                flexWrap="wrap"
+                alignItems="center"
+                overflow="hidden"
+              >
+                {multiple &&
+                  (selectedItems as Option[]).map((item, index) => (
+                    <SelectedOption
+                      key={itemToString(item)}
+                      index={index}
+                      data-testid={props['data-testid']}
+                      {...getRemoveButtonProps({
+                        item,
+                        onClick: () => {
+                          if (inputRef.current) {
+                            inputRef.current.focus();
+                          }
+                        },
+                      })}
+                    >
+                      <span>{itemToString(item)}</span>
+                    </SelectedOption>
+                  ))}
+                <SelectInput
+                  ref={inputRef}
+                  visible={visible}
+                  searchable={searchable}
+                  creatable={creatable}
+                  multiple={multiple}
+                  inputValue={inputValue}
+                  placeholder={placeholder}
+                  selectedItem={selectedItem}
+                  selectedItems={selectedItems}
+                  removeItem={removeItem}
+                  onChange={event => setInputValue(event.currentTarget.value)}
+                  onBlur={onBlur}
+                  getInputProps={getInputProps}
+                  data-testid={props['data-testid']}
+                />
+              </Flex>
+              {clearable && selectedItem && (
+                <ClearIcon
+                  clearSelection={clearSelection}
+                  data-testid={props['data-testid']}
+                />
+              )}
+              {loading ? (
+                <Loading title="loading" />
+              ) : (
+                <SelectArrow on={visible} />
+              )}
+            </StyledSelect>
+          </Popover>
+        </SelectWrapper>
+      )}
+    </RenderComponent>
+  );
 };
 
 export { Select };

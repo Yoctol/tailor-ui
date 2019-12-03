@@ -1,7 +1,7 @@
 {
   "lib/index.cjs.js": {
-    "bundled": 54441,
-    "minified": 27803,
-    "gzipped": 7930
+    "bundled": 8000,
+    "minified": 4756,
+    "gzipped": 1768
   }
 }

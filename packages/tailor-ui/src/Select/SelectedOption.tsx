@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { MdClose } from 'react-icons/md';
 
-import { Icon } from 'tailor-ui';
+import { Icon } from '../Icon';
 
 import { StyledSelectedOption } from './styles';
 import { getDataTestId } from './utils';

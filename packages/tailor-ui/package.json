@@ -31,6 +31,8 @@
     "@tailor-ui/hooks": "^0.5.3",
     "@tailor-ui/theme": "^0.3.2",
     "@tailor-ui/utils": "^0.2.9",
+    "downshift": "3.2.12",
+    "fuzzaldrin-plus": "^0.6.0",
     "moment": "^2.24.0",
     "polished": "^3.4.2",
     "prop-types": "^15.7.1",
@@ -40,7 +42,7 @@
     "react-autosize-textarea": "^7.0.0",
     "react-dropzone": "10.1.10",
     "react-intl-tel-input": "^7.1.0",
-    "react-select": "^2.4.3",
+    "react-tiny-virtual-list": "^2.2.0",
     "styled-normalize": "^8.0.6",
     "styled-system": "^4.2.4"
   },
