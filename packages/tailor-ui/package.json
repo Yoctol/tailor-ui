@@ -27,7 +27,7 @@
   },
   "typings": "lib/index.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.7.2",
+    "@babel/runtime": "^7.7.4",
     "@tailor-ui/hooks": "^0.5.3",
     "@tailor-ui/theme": "^0.3.2",
     "@tailor-ui/utils": "^0.2.9",
