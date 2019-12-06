@@ -18,6 +18,7 @@ export interface SelectInputProps {
   inputValue: string;
   onChange: ChangeEventHandler<HTMLInputElement>;
   onBlur?: FocusEventHandler<HTMLInputElement>;
+  options: Option[];
   selectedItem: Option;
   selectedItems: Option[];
   removeItem: (item: Option) => void;
@@ -35,6 +36,7 @@ const SelectInput = forwardRef<HTMLInputElement, SelectInputProps>(
       multiple,
       inputValue,
       onChange,
+      options,
       selectedItem,
       selectedItems,
       removeItem,
@@ -81,7 +83,15 @@ const SelectInput = forwardRef<HTMLInputElement, SelectInputProps>(
                   : placeholder,
             }
           : {
-              value: itemToString(selectedItem),
+              value: itemToString(
+                typeof selectedItem !== 'object' &&
+                  options.every(option => typeof option === 'object')
+                  ? options.find(
+                      option =>
+                        (option as Record<string, any>).value === selectedItem
+                    )
+                  : selectedItem
+              ),
               readOnly: true,
               placeholder,
             })}

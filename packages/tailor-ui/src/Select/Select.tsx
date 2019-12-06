@@ -295,6 +295,7 @@ const Select: FC<SelectProps> = ({
                   multiple={multiple}
                   inputValue={inputValue}
                   placeholder={placeholder}
+                  options={options}
                   selectedItem={selectedItem}
                   selectedItems={selectedItems}
                   removeItem={removeItem}
