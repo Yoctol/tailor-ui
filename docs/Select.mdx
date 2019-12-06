@@ -27,33 +27,92 @@ import { Select } from 'tailor-ui';
 
 <Playground>
   {() => {
-    const [value, setValue] = React.useState({ label: 'Item 1', value: 1 });
+    const [value, setValue] = React.useState({ label: 'Banana', value: 'banana' });
 
     return (
       <Select
         value={value}
-        onChange={setValue}
+        onChange={newValue => setValue(newValue)}
         options={[
-          {
-            label: 'Item 1',
-            value: 1,
-          },
-          {
-            label: 'Item 2',
-            value: 2,
-          },
-          {
-            label: 'Item 3',
-            value: 3,
-          },
-          {
-            label: 'Item 4',
-            value: 4,
-          },
-          {
-            label: 'Item 5',
-            value: 5,
-          },
+          { label: 'Banana', value: 'banana' },
+          { label: 'Orange', value: 'orange' },
+          { label: 'Apple', value: 'apple' },
+          { label: 'Mango', value: 'mango' },
+        ]}
+      />
+    );
+
+}}
+
+</Playground>
+
+### other sizes
+
+<Playground>
+  {() => {
+    const [value, setValue] = React.useState({ label: 'Banana', value: 'banana' });
+
+    return (
+      <div>
+        <Select
+          size="sm"
+          value={value}
+          onChange={newValue => setValue(newValue)}
+          options={[
+            { label: 'Banana', value: 'banana' },
+            { label: 'Orange', value: 'orange' },
+            { label: 'Apple', value: 'apple' },
+            { label: 'Mango', value: 'mango' },
+          ]}
+        />
+        <br />
+        <br />
+        <Select
+          value={value}
+          onChange={newValue => setValue(newValue)}
+          options={[
+            { label: 'Banana', value: 'banana' },
+            { label: 'Orange', value: 'orange' },
+            { label: 'Apple', value: 'apple' },
+            { label: 'Mango', value: 'mango' },
+          ]}
+        />
+        <br />
+        <br />
+        <Select
+          size="lg"
+          value={value}
+          onChange={newValue => setValue(newValue)}
+          options={[
+            { label: 'Banana', value: 'banana' },
+            { label: 'Orange', value: 'orange' },
+            { label: 'Apple', value: 'apple' },
+            { label: 'Mango', value: 'mango' },
+          ]}
+        />
+      </div>
+    );
+
+}}
+
+</Playground>
+
+### Searchable
+
+<Playground>
+  {() => {
+    const [value, setValue] = React.useState({ label: 'Banana', value: 'banana' });
+
+    return (
+      <Select
+        searchable
+        value={value}
+        onChange={newValue => setValue(newValue)}
+        options={[
+          { label: 'Banana', value: 'banana' },
+          { label: 'Orange', value: 'orange' },
+          { label: 'Apple', value: 'apple' },
+          { label: 'Mango', value: 'mango' },
         ]}
       />
     );
@@ -67,25 +126,24 @@ import { Select } from 'tailor-ui';
 <Playground>
   {() => {
     const [loading, setLoading] = React.useState(false);
-    const [value, setValue] = React.useState({ label: 'Item 1', value: 'Item 1' });
+    const [value, setValue] = React.useState({ label: 'Banana', value: 'banana' });
     const [options, setOptions] = React.useState([
-      {
-        label: 'Item 1',
-        value: 'Item 1',
-      },
-      {
-        label: 'Item 2',
-        value: 'Item 2',
-      },
+      { label: 'Banana', value: 'banana' },
+      { label: 'Orange', value: 'orange' },
+      { label: 'Apple', value: 'apple' },
+      { label: 'Mango', value: 'mango' },
     ]);
 
     return (
       <Select
         creatable
-        isLoading={loading}
+        loading={loading}
         value={value}
-        onChange={setValue}
+        onChange={newValue => setValue(newValue)}
         options={options}
+        isValidNewOption={name =>
+          !options.map(option => option.label).includes(name) && name.trim() !== ''
+        }
         onCreateOption={name => {
           const newOption = { label: name, value: name };
           setLoading(true);
@@ -93,7 +151,7 @@ import { Select } from 'tailor-ui';
             setOptions([...options, newOption]);
             setValue(newOption);
             setLoading(false);
-          }, 3000)
+          }, 1000)
         }
       }
       />
@@ -103,38 +161,22 @@ import { Select } from 'tailor-ui';
 
 </Playground>
 
-### isDisabled
+### disabled
 
 <Playground>
   {() => {
-    const [value, setValue] = React.useState({ label: 'Item 1', value: 1 });
+    const [value, setValue] = React.useState({ label: 'Banana', value: 'banana' });
 
     return (
       <Select
-        isDisabled
+        disabled
         value={value}
-        onChange={setValue}
+        onChange={newValue => setValue(newValue)}
         options={[
-          {
-            label: 'Item 1',
-            value: 1,
-          },
-          {
-            label: 'Item 2',
-            value: 2,
-          },
-          {
-            label: 'Item 3',
-            value: 3,
-          },
-          {
-            label: 'Item 4',
-            value: 4,
-          },
-          {
-            label: 'Item 5',
-            value: 5,
-          },
+          { label: 'Banana', value: 'banana' },
+          { label: 'Orange', value: 'orange' },
+          { label: 'Apple', value: 'apple' },
+          { label: 'Mango', value: 'mango' },
         ]}
       />
     );
@@ -143,39 +185,23 @@ import { Select } from 'tailor-ui';
 
 </Playground>
 
-### With placeholder & isClearable
+### With placeholder & clearable
 
 <Playground>
   {() => {
-    const [value, setValue] = React.useState();
+    const [value, setValue] = React.useState(null);
 
     return (
       <Select
-        isClearable
+        clearable
         placeholder="どれ"
         value={value}
-        onChange={setValue}
+        onChange={newValue => setValue(newValue)}
         options={[
-          {
-            label: 'Item 1',
-            value: 1,
-          },
-          {
-            label: 'Item 2',
-            value: 2,
-          },
-          {
-            label: 'Item 3',
-            value: 3,
-          },
-          {
-            label: 'Item 4',
-            value: 4,
-          },
-          {
-            label: 'Item 5',
-            value: 5,
-          },
+          { label: 'Banana', value: 'banana' },
+          { label: 'Orange', value: 'orange' },
+          { label: 'Apple', value: 'apple' },
+          { label: 'Mango', value: 'mango' },
         ]}
       />
     );
@@ -184,32 +210,29 @@ import { Select } from 'tailor-ui';
 
 </Playground>
 
-### Default Multiple Selection
+### Large items & custom menu
 
 <Playground>
   {() => {
-    const [value, setValue] = React.useState();
+    const defaultItems = Array
+      .from({ length: 9999 })
+      .fill(0)
+      .map((_, index) => ({
+        label: `item #${index}`,
+        value: String(index)
+      }));
+
+    const [value, setValue] = React.useState({ label: 'item #9527', value: '9527' });
 
     return (
       <Select
-        isMulti
-        placeholder="choose the flags"
         value={value}
-        onChange={setValue}
-        options={[
-          {
-            label: 'apple',
-            value: 'apple',
-          },
-          {
-            label: 'banana',
-            value: 'banana',
-          },
-          {
-            label: 'guava',
-            value: 'guava',
-          },
-        ]}
+        menu={<div style={{ padding: 8, borderTop: '1px solid #efefef' }}>I am cutsom menu!</div>}
+        onChange={newValue => {
+          console.log(newValue)
+          setValue(newValue)
+        }}
+        options={defaultItems}
       />
     );
 
@@ -217,42 +240,42 @@ import { Select } from 'tailor-ui';
 
 </Playground>
 
-### Multiple Selection with Text Style and No Delimiter
+### Multiple
 
 <Playground>
   {() => {
-    const [value, setValue] = React.useState();
+    const [loading, setLoading] = React.useState(false);
+    const [value, setValue] = React.useState([
+      { label: 'Banana', value: 'banana' }
+    ]);
+    const [options, setOptions] = React.useState([
+      { label: 'Banana', value: 'banana' },
+      { label: 'Orange', value: 'orange' },
+      { label: 'Apple', value: 'apple' },
+      { label: 'Mango', value: 'mango' },
+    ]);
 
     return (
       <Select
-        isMulti
-        multiSelectMode="text"
-        delimiter=""
-        placeholder="choose the flags"
+        creatable
+        loading={loading}
+        width="360px"
+        multiple
         value={value}
-        onChange={setValue}
-        options={[
-          {
-            label: 'i',
-            value: 'i',
-          },
-          {
-            label: 'g',
-            value: 'g',
-          },
-          {
-            label: 'm',
-            value: 'm',
-          },
-          {
-            label: 'u',
-            value: 'u',
-          },
-          {
-            label: 'y',
-            value: 'y',
-          },
-        ]}
+        onChange={newValue => setValue(newValue)}
+        options={options}
+        isValidNewOption={name =>
+          !options.map(option => option.label).includes(name) && name.trim() !== ''
+        }
+        onCreateOption={name => {
+          const newOption = { label: name, value: name };
+          setLoading(true);
+          setTimeout(() => {
+            setOptions([...options, newOption]);
+            setValue(prevValue => [...prevValue, newOption]);
+            setLoading(false);
+          }, 1000);
+        }}
       />
     );
 
