@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0](https://github.com/Yoctol/tailor-ui/compare/@tailor-ui/formik@0.2.5...@tailor-ui/formik@0.3.0) (2019-12-06)
+
+
+### chore
+
+* deprecate select & tag ([32d41fc](https://github.com/Yoctol/tailor-ui/commit/32d41fcd5c158672dd73f3568dae77a80d353270))
+
+
+### BREAKING CHANGES
+
+* remove deprecated select & tag and move new implement from lab to core
+
+
+
+
+
 ## [0.2.5](https://github.com/Yoctol/tailor-ui/compare/@tailor-ui/formik@0.2.4...@tailor-ui/formik@0.2.5) (2019-11-28)
 
 **Note:** Version bump only for package @tailor-ui/formik

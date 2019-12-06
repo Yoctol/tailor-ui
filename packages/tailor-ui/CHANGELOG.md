@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.26.0](https://github.com/yoctol/tailor-ui/compare/tailor-ui@0.25.5...tailor-ui@0.26.0) (2019-12-06)
+
+
+### Bug Fixes
+
+* **select:** display correct label when pass string or number as value ([0d1118d](https://github.com/yoctol/tailor-ui/commit/0d1118d0295ff626f78f44d324858feff5b51a85))
+
+
+### chore
+
+* deprecate select & tag ([32d41fc](https://github.com/yoctol/tailor-ui/commit/32d41fcd5c158672dd73f3568dae77a80d353270))
+
+
+### BREAKING CHANGES
+
+* remove deprecated select & tag and move new implement from lab to core
+
+
+
+
+
 ## [0.25.5](https://github.com/yoctol/tailor-ui/compare/tailor-ui@0.25.4...tailor-ui@0.25.5) (2019-11-28)
 
 
