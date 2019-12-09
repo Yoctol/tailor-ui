@@ -184,8 +184,9 @@ const Positioner: FC<PositionerProps> = ({
       }
     },
     config: {
-      tension: 320,
-      friction: 32,
+      mass: 1,
+      tension: 500,
+      friction: 40,
     },
   });
 

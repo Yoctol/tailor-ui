@@ -18,9 +18,10 @@
     "bootstrap": "npx lerna bootstrap",
     "build": "yarn type-check && lerna run build",
     "clean": "yarn clean:lib && npx lerna clean",
-    "clean:lib": "git clean -dfqX -- **/lib/ **/*.tsbuildinfo",
-    "docs:build": "docz build",
-    "docs:dev": "docz dev",
+    "clean:lib": "rimraf packages/**/{lib,*.tsbuildinfo}",
+    "deploy": "docusaurus deploy",
+    "docs:build": "docusaurus build",
+    "docusaurus": "docusaurus",
     "lint": "yarn lint:ts && yarn lint:css",
     "lint:css": "stylelint './packages/**/*.tsx'",
     "lint:fix": "yarn lint:ts --fix && yarn lint:css",
@@ -28,7 +29,8 @@
     "prepack": "yarn build",
     "prepublishOnly": "yarn clean && yarn && yarn test",
     "release": "lerna publish --no-commit-hooks --conventional-commits",
-    "start": "yarn docs:dev",
+    "start": "docusaurus start",
+    "swizzle": "docusaurus swizzle",
     "test": "yarn lint && yarn testonly",
     "testonly": "jest packages",
     "testonly:cov": "jest --coverage --runInBand",
@@ -50,6 +52,9 @@
     "@babel/preset-env": "^7.7.4",
     "@babel/preset-react": "^7.7.4",
     "@babel/preset-typescript": "^7.7.4",
+    "@docusaurus/core": "^2.0.0-alpha.39",
+    "@docusaurus/preset-classic": "^2.0.0-alpha.39",
+    "@docusaurus/theme-live-codeblock": "^2.0.0-alpha.39",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.1",
     "@types/fuzzaldrin-plus": "^0.6.0",
@@ -70,9 +75,8 @@
     "babel-plugin-ramda": "^2.0.0",
     "babel-plugin-styled-components": "^1.10.6",
     "babel-plugin-typescript-to-proptypes": "^1.1.0",
+    "classnames": "^2.2.6",
     "cross-env": "^6.0.3",
-    "docz": "^0.13.7",
-    "docz-theme-default": "^0.13.7",
     "eslint": "^6.7.2",
     "eslint-config-yoctol": "^0.23.3",
     "eslint-import-resolver-alias": "^1.1.2",
@@ -98,6 +102,7 @@
     "react-dom": "^16.12.0",
     "react-icons": "^3.8.0",
     "react-spring": "^8.0.27",
+    "rimraf": "^3.0.0",
     "rollup": "^1.27.8",
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-size-snapshot": "^0.10.0",
@@ -107,8 +112,21 @@
     "stylelint-config-styled-components": "^0.1.1",
     "stylelint-config-yoctol": "^2.0.0",
     "stylelint-processor-styled-components": "^1.8.0",
+    "ts-loader": "^6.2.1",
     "typescript": "3.7.2",
     "yup": "^0.27.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   },
   "husky": {
     "hooks": {
