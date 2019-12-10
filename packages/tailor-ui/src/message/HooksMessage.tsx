@@ -34,7 +34,7 @@ const MessageContent = styled.div`
   padding: ${p => p.theme.space[3]};
   overflow: hidden;
   border-radius: ${p => p.theme.radii.lg};
-  background-color: ${p => p.theme.colors.primaryDark2};
+  background-color: ${p => p.theme.colors.gray800};
   color: ${p => p.theme.colors.light};
   font-size: ${p => p.theme.fontSizes.sm};
 `;

@@ -88,7 +88,7 @@ exports[`useMessage should render message correctly 1`] = `
   padding: 1rem;
   overflow: hidden;
   border-radius: 0.5rem;
-  background-color: #001e40;
+  background-color: #1a1a1a;
   color: #ffffff;
   font-size: 0.875rem;
 }
