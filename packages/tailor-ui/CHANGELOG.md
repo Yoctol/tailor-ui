@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.26.1](https://github.com/yoctol/tailor-ui/compare/tailor-ui@0.26.0...tailor-ui@0.26.1) (2019-12-11)
+
+
+### Bug Fixes
+
+* **checkbox:** use checkbox value as key ([428f8a6](https://github.com/yoctol/tailor-ui/commit/428f8a682c32b7cb518b621412b36dc9502cbf51))
+* **radio:** use radio value as key ([6da77a6](https://github.com/yoctol/tailor-ui/commit/6da77a64cbc2b533a52defe9e9540f59f0d58edf))
+* use value as key ([#368](https://github.com/yoctol/tailor-ui/issues/368)) ([e99a07c](https://github.com/yoctol/tailor-ui/commit/e99a07c3cc9435f364cf434c624c81660c06f376))
+* **select:** keyboard usage & multiple height ([079b0ae](https://github.com/yoctol/tailor-ui/commit/079b0ae53870c5513d1e5e07b2a4749b0c109bae))
+
+
+
+
+
 # [0.26.0](https://github.com/yoctol/tailor-ui/compare/tailor-ui@0.25.5...tailor-ui@0.26.0) (2019-12-06)
 
 
