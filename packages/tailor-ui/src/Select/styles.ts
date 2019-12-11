@@ -39,8 +39,8 @@ export const StyledSelectedOption = styled.div`
   display: inline-flex;
   align-items: center;
   max-width: 100%;
-  height: 28px;
-  margin: 2px 8px 2px 0;
+  height: 26px;
+  margin-right: 8px;
   padding: 0 8px;
   border: ${p => p.theme.borders.base};
   border-radius: ${p => p.theme.radii.base};
