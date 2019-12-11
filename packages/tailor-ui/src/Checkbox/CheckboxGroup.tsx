@@ -1,4 +1,4 @@
-import React, { FC, useCallback, useMemo } from 'react';
+import React, { FC, ReactNode, useCallback, useMemo } from 'react';
 
 import { useOwnValue } from '@tailor-ui/hooks';
 
@@ -22,7 +22,7 @@ export interface CheckboxGroupProps
    * Specifies options
    */
   options?: {
-    label: string;
+    label: ReactNode;
     value: string;
     disabled?: boolean;
   }[];
@@ -89,7 +89,7 @@ const CheckboxGroup: FC<CheckboxGroupProps> = ({
       options
         ? options.map(({ label, value: optionValue, disabled = false }) => (
             <Checkbox
-              key={label}
+              key={optionValue}
               value={optionValue}
               disabled={disabled}
               {...otherProps}
