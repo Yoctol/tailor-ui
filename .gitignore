@@ -6,5 +6,6 @@ lerna-debug.log
 coverage
 jest-report
 lib
-.docz
+build
+.docusaurus
 *.tsbuildinfo
