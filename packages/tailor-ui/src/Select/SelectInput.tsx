@@ -47,6 +47,8 @@ const SelectInput = forwardRef<HTMLInputElement, SelectInputProps>(
     },
     ref
   ) {
+    const inputProps = getInputProps();
+
     return (
       <AutoSizeInput
         ref={ref}
@@ -60,15 +62,17 @@ const SelectInput = forwardRef<HTMLInputElement, SelectInputProps>(
             'aria-activedescendant',
             'aria-controls',
             'aria-labelledby',
+            'onBlur',
             'id',
           ],
-          getInputProps()
+          inputProps
         )}
         {...(visible && (searchable || creatable || multiple)
           ? {
               value: inputValue,
               onChange,
               onKeyDown(event) {
+                inputProps.onKeyDown(event);
                 if (
                   multiple &&
                   event.key === 'Backspace' &&
@@ -92,7 +96,7 @@ const SelectInput = forwardRef<HTMLInputElement, SelectInputProps>(
                     )
                   : selectedItem
               ),
-              readOnly: true,
+              onKeyDown: inputProps.onKeyDown,
               placeholder,
             })}
       />
