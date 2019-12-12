@@ -34,6 +34,43 @@ const scope = {
   moment,
 };
 
+function LiveCode({ defaultShowCode, refreshPreview }) {
+  const [showCode, setShowCode] = useState(defaultShowCode);
+
+  return (
+    <div className={styles.playground}>
+      <div className={styles.playgroundPreview}>
+        <LivePreview />
+      </div>
+      {showCode && (
+        <div className={styles.playgroundCode}>
+          <LiveEditor />
+          <LiveError />
+        </div>
+      )}
+      <TailorUI.Grid gridTemplateColumns="auto auto" gridColumnGap="8px">
+        <TailorUI.Button
+          icon={ReactIconsMd.MdRefresh}
+          className={styles.playgroundButton}
+          width="100%"
+          onClick={refreshPreview}
+        >
+          REFRESH
+        </TailorUI.Button>
+        <TailorUI.Button
+          icon={ReactIconsMd.MdCode}
+          className={styles.playgroundButton}
+          variant={showCode ? 'regular' : 'normal'}
+          width="100%"
+          onClick={() => setShowCode(prevShowCode => !prevShowCode)}
+        >
+          {showCode ? 'HIDE' : 'SHOW'} CODE
+        </TailorUI.Button>
+      </TailorUI.Grid>
+    </div>
+  );
+}
+
 function Playground({
   children,
   theme,
@@ -41,7 +78,7 @@ function Playground({
   showCode: defaultShowCode = false,
   ...props
 }) {
-  const [showCode, setShowCode] = useState(defaultShowCode);
+  const [, setCount] = useState(0);
 
   return (
     <LiveProvider
@@ -51,25 +88,10 @@ function Playground({
       {...props}
       scope={scope}
     >
-      <div className={styles.playground}>
-        <div className={styles.playgroundPreview}>
-          <LivePreview />
-        </div>
-        {showCode && (
-          <div className={styles.playgroundCode}>
-            <LiveEditor />
-            <LiveError />
-          </div>
-        )}
-        <TailorUI.Button
-          className={styles.playgroundButton}
-          variant={showCode ? 'regular' : 'normal'}
-          width="100%"
-          onClick={() => setShowCode(prevShowCode => !prevShowCode)}
-        >
-          {showCode ? 'HIDE' : 'SHOW'} CODE
-        </TailorUI.Button>
-      </div>
+      <LiveCode
+        defaultShowCode={defaultShowCode}
+        refreshPreview={() => setCount(prev => prev + 1)}
+      />
     </LiveProvider>
   );
 }
