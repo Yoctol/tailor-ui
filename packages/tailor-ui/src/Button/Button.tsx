@@ -1,8 +1,4 @@
-import React, {
-  ButtonHTMLAttributes,
-  ForwardRefExoticComponent,
-  forwardRef,
-} from 'react';
+import React, { ButtonHTMLAttributes, forwardRef } from 'react';
 import { SpaceProps, WidthProps } from 'styled-system';
 
 import { IconType } from '../Icon';
@@ -21,10 +17,7 @@ export type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> &
     icon?: IconType;
   };
 
-const Button: ForwardRefExoticComponent<ButtonProps> = forwardRef<
-  HTMLButtonElement,
-  ButtonProps
->(function Button(
+const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(
   { children, icon, loading = false, size = 'md', ...props },
   ref
 ) {

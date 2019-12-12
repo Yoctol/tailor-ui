@@ -35,7 +35,7 @@
     "testonly": "jest packages",
     "testonly:cov": "jest --coverage --runInBand",
     "testonly:watch": "jest --watch",
-    "type-check": "yarn clean:lib && tsc --build tsconfig.build.json",
+    "type-check": "tsc --build tsconfig.build.json",
     "watch": "yarn type-check --watch"
   },
   "peerDependencies": {
