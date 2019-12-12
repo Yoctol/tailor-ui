@@ -7,34 +7,14 @@
  */
 
 import React, { useState } from 'react';
-import moment from 'moment';
 import { LiveEditor, LiveError, LivePreview, LiveProvider } from 'react-live';
-import * as Formik from 'formik';
-import * as ReactIconsMd from 'react-icons/md';
-import * as ReactIconsTi from 'react-icons/ti';
-import * as Yup from 'yup';
-import * as ramda from 'ramda';
+import { MdCode, MdRefresh } from 'react-icons/md';
 
-import * as TailorUI from 'tailor-ui';
-import * as TailorUIFormik from '@tailor-ui/formik';
-import * as TailorUILab from '@tailor-ui/lab';
+import { Button, Grid } from 'tailor-ui';
 
 import styles from './styles.module.css';
 
-const scope = {
-  ...React,
-  ...TailorUI,
-  ...TailorUILab,
-  ...TailorUIFormik,
-  ...Yup,
-  ...Formik,
-  ...ReactIconsMd,
-  ...ReactIconsTi,
-  ...ramda,
-  moment,
-};
-
-function LiveCode({ defaultShowCode, refreshPreview }) {
+function LiveCode({ defaultShowCode, refreshPreview, onChangeCode }) {
   const [showCode, setShowCode] = useState(defaultShowCode);
 
   return (
@@ -44,53 +24,54 @@ function LiveCode({ defaultShowCode, refreshPreview }) {
       </div>
       {showCode && (
         <div className={styles.playgroundCode}>
-          <LiveEditor />
+          <LiveEditor onChange={onChangeCode} />
           <LiveError />
         </div>
       )}
-      <TailorUI.Grid gridTemplateColumns="auto auto" gridColumnGap="8px">
-        <TailorUI.Button
-          icon={ReactIconsMd.MdRefresh}
+      <Grid gridTemplateColumns="auto auto" gridColumnGap="8px">
+        <Button
+          icon={MdRefresh}
           className={styles.playgroundButton}
           width="100%"
           onClick={refreshPreview}
         >
           REFRESH
-        </TailorUI.Button>
-        <TailorUI.Button
-          icon={ReactIconsMd.MdCode}
+        </Button>
+        <Button
+          icon={MdCode}
           className={styles.playgroundButton}
           variant={showCode ? 'regular' : 'normal'}
           width="100%"
           onClick={() => setShowCode(prevShowCode => !prevShowCode)}
         >
           {showCode ? 'HIDE' : 'SHOW'} CODE
-        </TailorUI.Button>
-      </TailorUI.Grid>
+        </Button>
+      </Grid>
     </div>
   );
 }
 
 function Playground({
-  children,
+  code: defaultCode,
   theme,
   transformCode,
   showCode: defaultShowCode = false,
   ...props
 }) {
   const [, setCount] = useState(0);
+  const [code, setCode] = useState(defaultCode);
 
   return (
     <LiveProvider
-      code={children}
-      transformCode={transformCode || (code => `${code};`)}
+      transformCode={transformCode || (codeString => `${codeString};`)}
       theme={theme}
+      code={code}
       {...props}
-      scope={scope}
     >
       <LiveCode
         defaultShowCode={defaultShowCode}
         refreshPreview={() => setCount(prev => prev + 1)}
+        onChangeCode={newCode => setCode(newCode)}
       />
     </LiveProvider>
   );

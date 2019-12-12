@@ -13,12 +13,35 @@ import Playground from '@theme/Playground';
 import React, { useEffect, useRef, useState } from 'react';
 import classnames from 'classnames';
 import defaultTheme from 'prism-react-renderer/themes/palenight';
+import moment from 'moment';
 import rangeParser from 'parse-numeric-range';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import * as Formik from 'formik';
+import * as ReactIconsMd from 'react-icons/md';
+import * as ReactIconsTi from 'react-icons/ti';
+import * as Yup from 'yup';
+import * as ramda from 'ramda';
+
+import * as TailorUI from 'tailor-ui';
+import * as TailorUIFormik from '@tailor-ui/formik';
+import * as TailorUILab from '@tailor-ui/lab';
 
 import styles from './styles.module.css';
 
 const highlightLinesRangeRegex = /{([\d,-]+)}/;
+
+const scope = {
+  ...React,
+  ...TailorUI,
+  ...TailorUILab,
+  ...TailorUIFormik,
+  ...Yup,
+  ...Formik,
+  ...ReactIconsMd,
+  ...ReactIconsTi,
+  ...ramda,
+  moment,
+};
 
 export default ({
   children,
@@ -61,7 +84,7 @@ export default ({
   if (live) {
     return (
       <Playground
-        scope={{ ...React }}
+        scope={scope}
         code={children.trim()}
         theme={prism.theme || defaultTheme}
         {...props}
