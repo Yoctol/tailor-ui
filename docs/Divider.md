@@ -59,3 +59,9 @@ import { Divider } from 'tailor-ui';
 ```
 
 ## API
+
+| Property      | Description                      | Type                           | Default        |
+| ------------- | -------------------------------- | ------------------------------ | -------------- |
+| `type`        | direction type of divider        | `'horizontal'` \| `'vertical'` | `'horizontal'` |
+| `orientation` | position of title inside divider | `'left'` \| `'right'`          |                |
+| `dashed`      | whether line is dashed           | `boolean`                      |                |

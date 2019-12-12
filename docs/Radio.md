@@ -201,4 +201,24 @@ import { Radio } from 'tailor-ui';
 
 ### Radio
 
+
+| Property         | Description                                                       | Type                           | Default |
+|------------------|-------------------------------------------------------------------|--------------------------------|---------|
+| `checked`        | Specifies whether the Radio is selected                           | `boolean`                      |         |
+| `defaultChecked` | Specifies the initial state: whether or not the Radio is selected | `boolean`                      |         |
+| `disabled`       | Disable Radio                                                     | `boolean`                      | false   |
+| `onChange`       | The callback function that is triggered when the state changes    | `(event: ChangeEvent) => void` |         |
+| `value`          | The value of radio                                                | `string`                       |         |
+| `id`             | The id of radio                                                   | `string`                       |         |
+| `onFocus`        |                                                                   | `(event: FocusEvent) => void`  |         |
+| `onBlur`         |                                                                   | `(event: FocusEvent) => void`  |         |
+
 ### Radio.Group
+
+| Property       | Description                                                    | Type                                                         | Default |
+|----------------|----------------------------------------------------------------|--------------------------------------------------------------|---------|
+| `direction`    | to specify the direction of the step bar                       | `'horizontal'` `'vertical'`                                  |         |
+| `defaultValue` | To set the initial value                                       | `string[]`                                                   |         |
+| `options`      | Specifies options                                              | `{ label: ReactNode; value: string; disabled?: boolean; }[]` |         |
+| `value`        | Used for setting the currently selected value                  | `string[]`                                                   |         |
+| `onChange`     | The callback function that is triggered when the state changes | `(value: string[]) => void`                                  |         |

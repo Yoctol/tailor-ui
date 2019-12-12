@@ -22,7 +22,7 @@ const Color = ({ colorKey, width }) => {
       bg={colorKey}
     >
       <Heading.h5 color={fontColor}>{colorKey}</Heading.h5>
-      <Heading.h4 color={fontColor}>{color}</Heading.h4>
+      <Heading.h5 color={fontColor}>{color}</Heading.h5>
     </Flex>
   );
 };

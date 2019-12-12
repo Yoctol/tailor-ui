@@ -16,21 +16,9 @@ import { RadioInner, RadioLabel, RadioWrapper, StyledRadio } from './styles';
 export type RadioGroupProps = _RadioGroupProps;
 
 export interface RadioProps {
-  /**
-   * Specifies whether the Radio is selected
-   */
   checked?: boolean;
-  /**
-   * Specifies the initial state: whether or not the Radio is selected.
-   */
   defaultChecked?: boolean;
-  /**
-   * Disable Radio
-   */
   disabled?: boolean;
-  /**
-   * The callback function that is triggered when the state changes
-   */
   onChange?: ChangeEventHandler<HTMLInputElement>;
   value?: string;
   onFocus?: FocusEventHandler<HTMLInputElement>;

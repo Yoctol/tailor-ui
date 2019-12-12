@@ -24,33 +24,11 @@ import { StyledPopoverProps } from './styles';
 
 export type PopoverProps = StyledPopoverProps & {
   Wrapper?: ComponentType;
-  /**
-   * Whether the floating popover card is visible by default. Only support when the trigger is `click`
-   */
   defaultVisible?: boolean;
-  /**
-   * Whether the floating popover card is visible. Only support when the trigger is `click`
-   */
   visible?: boolean;
-  /**
-   * 	Callback executed when visibility of the popover card is changed
-   */
   onVisibleChange?: (visible: boolean) => void;
-  /**
-   * The position base on the children component
-   */
   position?: Positions;
-  /**
-   * A string or react component inside this popover.
-   * If you are using click to trigger, it can be a
-   * function that with `hide` callback as first argument
-   */
   title?: ReactNode | ((handleClose: () => void) => ReactNode);
-  /**
-   * A string or react component inside this popover.
-   * If you are using click to trigger, it can be a
-   * function that with `hide` callback as first argument
-   */
   content: ReactNode | ((handleClose: () => void) => ReactNode);
   onOpenComplete?: () => void;
   onCloseComplete?: () => void;

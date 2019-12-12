@@ -18,25 +18,10 @@ import { useFormField } from '../FormField';
 import { InputLabel, InputWrapper, Size, StyledInput } from './styles';
 
 export type InputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'size'> & {
-  /**
-   * Auto select value of the input if true
-   */
   autoSelect?: boolean;
-  /**
-   * The size of the input box
-   */
   size?: Size;
-  /**
-   * The callback function that is triggered when Enter key is pressed
-   */
   onPressEnter?: KeyboardEventHandler<HTMLInputElement>;
-  /**
-   * The label text displayed before (on the right side of) the input field.
-   */
   prefix?: ReactNode;
-  /**
-   * The label text displayed after (on the right side of) the input field.
-   */
   suffix?: ReactNode;
   onKeyPress?: KeyboardEventHandler<HTMLInputElement>;
   required?: boolean;

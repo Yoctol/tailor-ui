@@ -9,29 +9,14 @@ import { Radio, RadioProps } from './Radio';
 import { RadioGroupFlex } from './styles';
 
 export interface RadioGroupProps extends Omit<RadioProps, 'onChange'> {
-  /**
-   * To set the initial value
-   */
   defaultValue?: string;
-  /**
-   * to specify the direction of the step bar, `horizontal` and `vertical` are currently supported
-   */
   direction?: Direction;
-  /**
-   * Specifies options
-   */
   options?: {
     label: ReactNode;
     value: string;
     disabled?: boolean;
   }[];
-  /**
-   * Used for setting the currently selected value
-   */
   value?: string;
-  /**
-   * The callback function that is triggered when the state changes
-   */
   onChange?: (value: string) => void;
 }
 

@@ -62,3 +62,14 @@ import { Popconfirm } from 'tailor-ui';
 ```
 
 ## API
+
+| Property          | Description                                    | Type                                                | Default     |
+|-------------------|------------------------------------------------|-----------------------------------------------------|-------------|
+| `content`         | content of the confirmation box                | `ReactNode`                                         |             |
+| `type`            | customize icon of confirmation                 | `'info'` \| `'success'` \| `'error'` \| `'warning'` | `'warning'` |
+| `cancelText`      | text of the Cancel button                      | `string`                                            |    Cancel         |
+| `confirmText`     | text of the Confirm button                     | `string`                                            |     Confirm        |
+| `onCancel`        | callback of cancel                             | `(event: MouseEvent) => void`                       |             |
+| `onConfirm`       | callback of confirmation                       | `(event: MouseEvent) => void`                       |             |
+
+Consult [Popover's documentation](Popover.md#api) to find more APIs.

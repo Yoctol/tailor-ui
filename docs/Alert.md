@@ -40,3 +40,11 @@ import { Alert } from 'tailor-ui';
 ```
 
 ## API
+
+| Property   | Description | Type                                                | Default  |
+| ---------- | ----------- | --------------------------------------------------- | -------- |
+| `closable` |             | `boolean`                                           | `false`  |
+| `type`     |             | `'info'` \| `'success'` \| `'error'` \| `'warning'` | `'info'` |
+| `message`  |             | `ReactNode`                                         |          |
+| `onClose`  |             | `() => void`                                        |          |
+| `onClosed` |             | `() => void`                                        |          |

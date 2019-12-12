@@ -10,17 +10,8 @@ import DropdownContext from './DropdownContext';
 import { Item } from './styles';
 
 interface DropdownItemProps {
-  /**
-   * Disabled the item
-   */
   disabled?: boolean;
-  /**
-   * Callback for click
-   */
   onClick?: MouseEventHandler;
-  /**
-   * Keep the dropdown after click item
-   */
   keep?: boolean;
 }
 

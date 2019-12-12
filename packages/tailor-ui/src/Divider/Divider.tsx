@@ -119,17 +119,8 @@ StyledDivider.defaultProps = {
 };
 
 export interface DividerProps {
-  /**
-   * direction type of divider
-   */
   type?: 'horizontal' | 'vertical';
-  /**
-   * position of title inside divider
-   */
   orientation?: 'left' | 'right';
-  /**
-   * 	whether line is dashed
-   */
   dashed?: boolean;
 }
 

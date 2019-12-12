@@ -7,7 +7,7 @@
 
 module.exports = {
   docs: {
-    'Get Started': ['get-started', 'ui-provider'],
+    'Get Started': ['get-started', 'ui-provider', 'colors'],
     Components: [
       'alert',
       'button',
@@ -41,6 +41,7 @@ module.exports = {
       'tooltip',
       'upload',
     ],
+    Typography: ['typography/heading', 'typography/text'],
     Layout: [
       'layout/box',
       'layout/flex',
@@ -57,6 +58,5 @@ module.exports = {
       'formik/select-field',
     ],
     Lab: ['lab/tabs'],
-    Typography: ['typography/heading', 'typography/text'],
   },
 };

@@ -24,25 +24,10 @@ import {
 export type CheckboxGroupProps = _CheckboxGroupProps;
 
 export interface CheckboxProps {
-  /**
-   * Specifies whether the checkbox is selected
-   */
   checked?: boolean;
-  /**
-   * Specifies the initial state: whether or not the checkbox is selected.
-   */
   defaultChecked?: boolean;
-  /**
-   * Disable Checkbox
-   */
   disabled?: boolean;
-  /**
-   * The callback function that is triggered when the state changes
-   */
   onChange?: ChangeEventHandler<HTMLInputElement>;
-  /**
-   * The value of checkbox
-   */
   value?: string;
   id?: string;
   onFocus?: FocusEventHandler<HTMLInputElement>;

@@ -135,3 +135,12 @@ import { Select, Input, FormField } from 'tailor-ui';
   </FormField>
 </>
 ```
+
+## API
+
+| Property            | Description                                                                                      | Type        | Default |
+| ------------------- | ------------------------------------------------------------------------------------------------ | ----------- | ------- |
+| `label`             | The label of field                                                                               | `string`    |         |
+| `required`          | Show the `*` after the field label                                                               | `boolean`   | `false` |
+| `validator`         | validator can be function / object array / yup schema, see above examples to learn how to use it | `Validator` |         |
+| `validationMessage` | display message on field                                                                         | `ReactNode` |         |

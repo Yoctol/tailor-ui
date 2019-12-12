@@ -150,4 +150,26 @@ import { Input, Textarea, FormField } from 'tailor-ui';
 
 ### Input
 
+| Property       | Description                                                             | Type                             | Default |
+|----------------|-------------------------------------------------------------------------|----------------------------------|---------|
+| `autoSelect`   | Auto select value of the input if true                                  | `boolean`                        |         |
+| `size`         | The size of the input box                                               | `'sm'` `'md'` `'lg'`             | `'md'`  |
+| `prefix`       | The label text displayed before (on the right side of) the input field. | `ReactNode`                      |         |
+| `suffix`       | The label text displayed after (on the right side of) the input field.  | `ReactNode`                      |         |
+| `id`           | The ID for input                                                        | `string`                         |         |
+| `value`        | The input content value                                                 | `string`                         |         |
+| `defaultValue` | The initial input content                                               | `string`                         |         |
+| `onChange`     | callback when user input                                                | `(event: ChangeEvent) => void`   |         |
+| `onPressEnter` | The callback function that is triggered when Enter key is pressed       | `(event: KeyboardEvent) => void` |         |
+| `disabled`     | Whether the input is disabled.                                          | `boolean`                        | `false` |
+
 ### Textarea
+
+| Property       | Description                          | Type                           | Default |
+|----------------|--------------------------------------|--------------------------------|---------|
+| `onResize`     | Called whenever the textarea resizes | `(event: Event) => void`       |         |
+| `rows`         | Minimum number of visible rows       | `number`                       |         |
+| `maxRows`      | Maximum number of visible rows       | `number`                       |         |
+| `value`        | The input content value              | `string`                       |         |
+| `defaultValue` | The initial input content            | `string`                       |         |
+| `onChange`     | callback when user input             | `(event: ChangeEvent) => void` |         |
