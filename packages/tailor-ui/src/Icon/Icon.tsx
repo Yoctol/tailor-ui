@@ -1,9 +1,4 @@
-import React, {
-  FC,
-  ForwardRefExoticComponent,
-  HTMLAttributes,
-  forwardRef,
-} from 'react';
+import React, { FC, HTMLAttributes, forwardRef } from 'react';
 import styled, { css } from 'styled-components';
 import { IconType as ReactIconsIconType } from 'react-icons';
 import { SpaceProps, style, space as styledSpace } from 'styled-system';
@@ -63,10 +58,10 @@ export type IconProps = HTMLAttributes<HTMLDivElement> &
     type: IconType;
   };
 
-const Icon: ForwardRefExoticComponent<IconProps> = forwardRef<
-  HTMLElement,
-  IconProps
->(function Icon({ type, cursor = 'default', size = 24, ...otherProps }, ref) {
+const Icon = forwardRef<HTMLElement, IconProps>(function Icon(
+  { type, cursor = 'default', size = 24, ...otherProps },
+  ref
+) {
   let IconComponent: FC;
 
   if (typeof type === 'string') {
