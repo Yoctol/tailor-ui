@@ -296,3 +296,15 @@ import { Popover } from 'tailor-ui';
 ```
 
 ## API
+
+| Property          | Description                                                                                                                                          | Type                                                    | Default        |
+|-------------------|------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------|----------------|
+| `defaultVisible`  | Whether the floating popover card is visible by default                                                                                              | `boolean`                                               |                |
+| `visible`         | Whether the floating popover card is visible                                                                                                         | `boolean`                                               |                |
+| `onVisibleChange` | Callback executed when visibility of the popover card is changed                                                                                     | `(visible: boolean) => void`                            |                |
+| `position`        | The position base on the children component                                                                                                          | `Positions`                                             | `Position.TOP` |
+| `title`           | A string or react component inside this popover. If you are using click to trigger, it can be a function that with `hide` callback as first argument | `ReactNode` \| `(handleClose: () => void) => ReactNode` |                |
+| `content`         | A string or react component inside this popover. If you are using click to trigger, it can be a function that with `hide` callback as first argument | `ReactNode` \| `(handleClose: () => void) => ReactNode` |                |
+| `onOpenComplete`  | Whether to mount child components on onClose                                                                                                         | `() => void`                                            |                |
+| `onCloseComplete` | Whether to unmount child components on onClose                                                                                                       | `() => void`                                            |                |
+| `Wrapper`         | The wrapper of popover content                                                                                                                       | `ComponentType`                                         |                |

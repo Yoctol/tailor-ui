@@ -221,3 +221,15 @@ import { MdCheck } from 'react-icons/md';
   </Button>
 </>
 ```
+
+## API
+
+| Property   | Description | Type                                                                               | Default |
+| ---------- | ----------- | ---------------------------------------------------------------------------------- | ------- |
+| `variant`  |             | `'primary'` `'primary-invert'` `'danger'` `'danger-invert'` `'regular'` `'normal'` |         |
+| `size`     |             | `'sm'` \| `'md'` \| `'lg'`                                                         | `'md'`  |
+| `loading`  |             | `boolean`                                                                          | `false` |
+| `rounded`  |             | `boolean`                                                                          | `false` |
+| `disabled` |             | `boolean`                                                                          | `false` |
+| `icon`     |             | `IconType`                                                                         |         |
+| `onClick`  |             | `(event: MouseEvent) => void`                                                      |         |

@@ -96,3 +96,22 @@ import { Dropdown } from 'tailor-ui';
 ## API
 
 ### Dropdown
+
+| Property  | Description | Type        | Default |
+| --------- | ----------- | ----------- | ------- |
+| `overlay` |             | `ReactNode` |         |
+
+### Dropdown.Item
+
+| Property   | Description                        | Type                          | Default |
+| ---------- | ---------------------------------- | ----------------------------- | ------- |
+| `onClick`  | Callback for click                 | `(event: MouseEvent) => void` |         |
+| `disabled` | Disabled the item                  | `boolean`                     | `false` |
+| `keep`     | Keep the dropdown after click item | `boolean`                     | `false` |
+
+### Dropdown.SubList
+
+| Property   | Description       | Type      | Default |
+| ---------- | ----------------- | --------- | ------- |
+| `title`    |                   | `string`  |         |
+| `disabled` | Disabled the item | `boolean` | `false` |

@@ -42,3 +42,17 @@ import { Container, Box } from 'tailor-ui';
   </Container>
 </Box>
 ```
+
+## API
+
+### Container
+
+| Property | Description | Type        | Default |
+| -------- | ----------- | ----------- | ------- |
+| `title`  |             | `ReactNode` |         |
+
+### Container.Section
+
+| Property | Description | Type        | Default |
+| -------- | ----------- | ----------- | ------- |
+| `title`  |             | `ReactNode` |         |

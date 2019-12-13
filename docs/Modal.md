@@ -392,6 +392,22 @@ You can use the `useModal` hooks to display Modal without render `Modal` compone
 
 ### Modal
 
+| Property             | Description                                                                                                | Type                          | Default               |
+|----------------------|------------------------------------------------------------------------------------------------------------|-------------------------------|-----------------------|
+| `title`              | The modal dialog's title                                                                                   | `ReactNode`                   |                       |
+| `visible`            | Whether the modal dialog is visible or not                                                                 | `boolean`                     |                       |
+| `closable`           | Call onCancel when click  the close (x) button or modal mask                                               | `boolean`                     | `true`                |
+| `size`               | The size of modal                                                                                          | `'md'` \| `'lg'`              | `'md'`                |
+| `footer`             | Footer content, set as `footer={null}` when you don't need default buttons                                 | `ReactNode` \| `null`         | Confirm and Cancel buttons |
+| `onOpenComplete`     | Whether to mount child components on onClose                                                               | `() => void`                  |                       |
+| `onCloseComplete`    | Whether to unmount child components on onClose                                                             | `() => void`                  |                       |
+| `confirmText`        | Text of the Confirm button                                                                                 | `string`                      | Confirm               |
+| `cancelText`         | Text of the Cancel button                                                                                  | `string`                      | Cancel                |
+| `onConfirm`          | Specify a function that will be called when a user clicks the Confrim button                               | `(event: MouseEvent) => void` |                       |
+| `onCancel`           | Specify a function that will be called when a user clicks mask, close button on top right or Cancel button | `(event: MouseEvent) => void` |                       |
+| `confirmButtonProps` | The confirm button props                                                                                   | `ButtonProps`                 |                       |
+| `cancelButtonProps`  | The cancel button props                                                                                    | `ButtonProps`                 |                       |
+
 ### Hooks
 
 ```js
@@ -417,14 +433,14 @@ Below is the type of `ReturnValue`:
 
 ### `options`
 
-| Property    | Type                | Default                                                   | Description                                                                                                                                                                    |
-| ----------- | ------------------- | --------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| closable    | boolean             | `true` if call `model.confirm`, otherwise will be `false` | Show cancel button or not                                                                                                                                                      |
-| cancelText  | string              | Cancel                                                    | Text of the Cancel button                                                                                                                                                      |
-| confirmText | string              | Conrim                                                    | Text of the Conrim button                                                                                                                                                      |
-| onCancel    | function            | -                                                         | Specify a function that will be called when the user clicks the Cancel button. The parameter of this function is a function whose execution should include closing the dialog. |
-| onConfirm   | function            | -                                                         | Specify a function that will be called when the user clicks the OK button. The parameter of this function is a function whose execution should include closing the dialog.     |
-| title       | string \| ReactNode | -                                                         | Title                                                                                                                                                                          |
-| content     | string \| ReactNode | -                                                         | content of the message                                                                                                                                                         |
+| Property      | Description                                                                                                                                                                    | Type         | Default                                                   |
+|---------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------|-----------------------------------------------------------|
+| `closable`    | Show cancel button or not                                                                                                                                                      | `boolean`    | `true` if call `model.confirm`, otherwise will be `false` |
+| `cancelText`  | Text of the Cancel button                                                                                                                                                      | `string`     | `Cancel`                                                  |
+| `confirmText` | Text of the Confirm button                                                                                                                                                     | `string`     | `Confirm`                                                 |
+| `onCancel`    | Specify a function that will be called when the user clicks the Cancel button. The parameter of this function is a function whose execution should include closing the dialog. | `() => void` |                                                           |
+| `onConfirm`   | Specify a function that will be called when the user clicks the OK button. The parameter of this function is a function whose execution should include closing the dialog.     | `() => void` |                                                           |
+| `title`       | Title                                                                                                                                                                          | `ReactNode`  |                                                           |
+| `content`     | content of the message                                                                                                                                                         | `ReactNode`  |                                                           |
 
 > The options of update function does not accept onConfirm & onCancel.

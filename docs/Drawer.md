@@ -125,3 +125,15 @@ import { Drawer } from 'tailor-ui';
 ```
 
 ## API
+
+| Property     | Description | Type                                           | Default   |
+| ------------ | ----------- | ---------------------------------------------- | --------- |
+| visible      |             | `boolean`                                      |           |
+| onClose      |             | `() => void`                                   |           |
+| title        |             | `ReactNode`                                    |           |
+| footer       |             | `ReactNode`                                    |           |
+| placement    |             | `'top'` \| `'right'` \| `'bottom'` \| `'left'` | `'right'` |
+| closable     |             | `boolean`                                      | `true`    |
+| maskClosable |             | `boolean`                                      | `true`    |
+| width        |             | `string` \| `number`                           | 400       |
+| height       |             | `string` \| `number`                           | 300       |

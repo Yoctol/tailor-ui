@@ -8,29 +8,11 @@ import { StatusType } from '../types';
 import { useLocale } from '../locale';
 
 interface PopconfirmContentProps extends PopoverProps {
-  /**
-   * text of the Cancel button
-   */
   cancelText?: string;
-  /**
-   * text of the Confirm button
-   */
   confirmText?: string;
-  /**
-   * content of the confirmation box
-   */
   content: ReactNode;
-  /**
-   * customize icon of confirmation
-   */
   type?: StatusType;
-  /**
-   * callback of cancel
-   */
   onCancel?: (event: MouseEvent) => void;
-  /**
-   * callback of confirmation
-   */
   onConfirm?: (event: MouseEvent) => void;
   onOpenComplete?: () => void;
   onCloseComplete?: () => void;

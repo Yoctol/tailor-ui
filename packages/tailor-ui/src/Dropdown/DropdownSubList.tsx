@@ -11,9 +11,6 @@ import { Item, List } from './styles';
 
 interface DropdownSubListProps {
   title: string;
-  /**
-   * Disabled the item
-   */
   disabled?: boolean;
 }
 

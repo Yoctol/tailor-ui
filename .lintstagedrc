@@ -5,7 +5,7 @@
     "prettier --parser typescript --write",
     "git add"
   ],
-  "*.{json,md,mdx}": ["prettier --write", "git add"],
+  "*.json": ["prettier --write", "git add"],
   "package.json": [
     "prettier-package-json --write",
     "prettier --write",

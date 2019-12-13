@@ -217,4 +217,23 @@ import { Checkbox } from 'tailor-ui';
 
 ### Checkbox
 
+| Property         | Description                                                          | Type                           | Default |
+| ---------------- | -------------------------------------------------------------------- | ------------------------------ | ------- |
+| `checked`        | Specifies whether the checkbox is selected                           | `boolean`                      |         |
+| `defaultChecked` | Specifies the initial state whether or not the checkbox is selected. | `boolean`                      |         |
+| `disabled`       | Disable Checkbox                                                     | `boolean`                      | false   |
+| `onChange`       | The callback function that is triggered when the state changes       | `(event: ChangeEvent) => void` |         |
+| `value`          | The value of checkbox                                                | `string`                       |         |
+| `id`             | The id of checkbox                                                   | `string`                       |         |
+| `onFocus`        |                                                                      | `(event: FocusEvent) => void`  |         |
+| `onBlur`         |                                                                      | `(event: FocusEvent) => void`  |         |
+
 ### Checkbox.Group
+
+| Property       | Description                                                    | Type                                                         | Default |
+| -------------- | -------------------------------------------------------------- | ------------------------------------------------------------ | ------- |
+| `direction`    | to specify the direction of the step bar                       | `'horizontal'` `'vertical'`                                  |         |
+| `defaultValue` | To set the initial value                                       | `string[]`                                                   |         |
+| `options`      | Specifies options                                              | `{ label: ReactNode; value: string; disabled?: boolean; }[]` |         |
+| `value`        | Used for setting the currently selected value                  | `string[]`                                                   |         |
+| `onChange`     | The callback function that is triggered when the state changes | `(value: string[]) => void`                                  |         |

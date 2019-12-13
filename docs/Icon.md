@@ -84,3 +84,30 @@ import { MdEdit, MdComment, MdInput, MdInfo } from 'react-icons/md';
 ```
 
 ## API
+
+| Property        | Description                                        | Type                | Default |
+| --------------- | -------------------------------------------------- | ------------------- | ------- |
+| `type`          | import from `react-icons` or built-in icons string | `IconType`          |         |
+| `size`          | width & height of icon                             | `string` \|`number` | 24      |
+| `fill`          | icon color                                         | `string`            |         |
+| `alt`           | The alt of icon                                    | `string`            |         |
+| `cursor`        |                                                    | `string`            |         |
+| `pointerEvents` |                                                    | `string`            |         |
+
+### Built-in icons
+
+- `'line'`
+- `'messenger'`
+- `'info'`
+- `'success'`
+- `'warning'`
+- `'danger'`
+- `'error'`
+- `'robot'`
+- `'understood'`
+- `'kurator'`
+- `'touch'`
+- `'analytics'`
+- `'tags'`
+- `'tutorial'`
+- `'settings';`

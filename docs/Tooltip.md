@@ -87,3 +87,17 @@ import { Tooltip } from '@tailor-ui/lab';
 ```
 
 ## API
+
+
+| Property          | Description                                                                                                                                          | Type                                                    | Default        |
+|-------------------|------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------|----------------|
+| `defaultVisible`  | Whether the floating tooltip card is visible by default                                                                                              | `boolean`                                               |                |
+| `visible`         | Whether the floating tooltip card is visible                                                                                                         | `boolean`                                               |                |
+| `onVisibleChange` | Callback executed when visibility of the tooltip card is changed                                                                                     | `(visible: boolean) => void`                            |                |
+| `position`        | The position base on the children component                                                                                                          | `Positions`                                             | `Position.TOP` |
+| `mouseEnterDelay` | Delay in milliseconds, before tooltip is shown on mouse enter                                                                                        | `number`                                                | 0              |
+| `mouseLeaveDelay` | Delay in milliseconds, before tooltip is hidden on mouse leave                                                                                       | `number`                                                | 200            |
+| `content`         | A string or react component inside this tooltip. If you are using click to trigger, it can be a function that with `hide` callback as first argument | `ReactNode` \| `(handleClose: () => void) => ReactNode` |                |
+| `onOpenComplete`  | Whether to mount child components on onClose                                                                                                         | `() => void`                                            |                |
+| `onCloseComplete` | Whether to unmount child components on onClose                                                                                                       | `() => void`                                            |                |
+| `Wrapper`         | The wrapper of tooltip content                                                                                                                       | `ComponentType`                                         |                |
