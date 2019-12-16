@@ -85,3 +85,14 @@ import { Slider } from 'tailor-ui';
 ```
 
 ## API
+
+| Property       | Description                                                                                            | Type                                          | Default |
+|----------------|--------------------------------------------------------------------------------------------------------|-----------------------------------------------|---------|
+| `value`        | The value of slider. When `range` is `false`, use `number`, otherwise, use `[number, number]`          | `number` \| `[number, number]`                |         |
+| `defaultValue` | The default value of slider. When `range` is `false`, use `number`, otherwise, use `[number, number]`  | `number` \| `[number, number]`                |         |
+| `min`          | The minimum value the slider can slide to                                                              | `number`                                      | 0       |
+| `max`          | The maximum value the slider can slide to                                                              | `number`                                      | 100     |
+| `step`         | The granularity the slider can step through values. Must greater than 0, and be divided by (max - min) | `number`                                      | 1       |
+| `range`        | dual thumb mode                                                                                        | `boolean`                                     | false   |
+| `disabled`     | If true, the slider will not be interactable.                                                          | `boolean`                                     | false   |
+| `onChange`     | Callback function that is fired when the user changes the slider's value.                              | `(value: number \| [number, number]) => void` |         |

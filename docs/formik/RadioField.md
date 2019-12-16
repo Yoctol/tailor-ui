@@ -37,3 +37,11 @@ title: RadioField
 ```
 
 ## API
+
+| Property   | Description          | Type        | Default |
+|------------|----------------------|-------------|---------|
+| `label`    | label of radio field | `ReactNode` |         |
+| `name`     | name of radio field  | `string`    |         |
+| `required` | show `*` after label | `boolean`   | `false` |
+
+This component is based on radio group component, please check [it's documentation](Radio.md#radiogroup-1) for more usage.

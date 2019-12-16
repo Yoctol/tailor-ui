@@ -12,9 +12,6 @@ import {
 } from './styles';
 
 export interface TabProps {
-  /**
-   * Tab's value
-   */
   value: string;
 }
 
@@ -36,25 +33,10 @@ export const Tab: FC<TabProps> = ({ children, value, ...props }) => {
 };
 
 export interface TabsProps {
-  /**
-   * Initial active Tab's value, if `activeValue` is not set.
-   */
   defaultValue?: string;
-  /**
-   * Current Tab's value
-   */
   value?: string;
-  /**
-   * Callback executed when active tab is changed
-   */
   onChange?: (activeValue: string) => void;
-  /**
-   * Preset tab bar size
-   */
   size?: Size;
-  /**
-   * Type of tab
-   */
   type?: Type;
 }
 

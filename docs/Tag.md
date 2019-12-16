@@ -169,3 +169,14 @@ import { Tag } from 'tailor-ui';
 ```
 
 ## API
+
+| Property         | Description                                                          | Type                                             | Default |
+|------------------|----------------------------------------------------------------------|--------------------------------------------------|---------|
+| `closable`       | Whether the Tag can be closed                                        | `boolean`                                        |         |
+| `editable`       | Can update value when click tag                                      | `boolean`                                        |         |
+| `onClosed`       | Callback executed when close animation is completed                  | `() => void`                                     |         |
+| `canClose`       | Trigger when tag close button is clicked, return `true` to close tag | `() => boolean` \| `() => Promise<boolean>`      |         |
+| `onChange`       | Callback executed when Tag is edited                                 | `(previousValue: string, value: string) => void` |         |
+| `initialEditing` | Initial edit status for tag                                          | `boolean`                                        |         |
+| `invalid`        | show invalid border for tag                                          | `boolean`                                        |         |
+| `prefix`         | Prefix of tag                                                        | `ReactNode`                                      |         |

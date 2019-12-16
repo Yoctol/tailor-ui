@@ -106,3 +106,11 @@ ReactDOM.render(
   );
 }
 ```
+
+
+## API
+
+| Property | Description | Type         | Default |
+|----------|-------------|--------------|---------|
+| `locale` |             | `LocaleType` |         |
+| `theme`  |             | `ThemeType`  |         |

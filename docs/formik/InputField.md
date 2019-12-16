@@ -27,3 +27,11 @@ title: InputField
 ```
 
 ## API
+
+| Property   | Description          | Type        | Default |
+|------------|----------------------|-------------|---------|
+| `label`    | label of input field | `ReactNode` |         |
+| `name`     | name of input field  | `string`    |         |
+| `required` | show `*` after label | `boolean`   | `false` |
+
+This component is based on input component, please check [it's documentation](Input.md#api) for more usage.

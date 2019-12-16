@@ -78,4 +78,13 @@ import { Upload } from 'tailor-ui';
 
 ## API
 
+| Property         | Description | Type                                                                                           | Default |
+|------------------|-------------|------------------------------------------------------------------------------------------------|---------|
+| `disabled`       |             | `boolean`                                                                                      |         |
+| `onSelect`       |             | `(files: File[]) => Promise<any>`                                                              |         |
+| `onClear`        |             | `(file: File) => void`                                                                         |         |
+| `onBeforeSelect` |             | `() => Promise<boolean>` \| `boolean`                                                          |         |
+| `buttonProps`    |             | `ButtonProps`                                                                                  |         |
+| `texts`          |             | `{ uploadText?: string; uploadingText?: string; uploadedText?: string; failedText?: string; }` |         |
+
 This component is based on [react-dropzone](https://github.com/react-dropzone/react-dropzone), please check [it's documentation](https://react-dropzone.js.org/#proptypes) for more usage.

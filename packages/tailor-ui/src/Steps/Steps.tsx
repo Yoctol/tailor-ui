@@ -52,7 +52,7 @@ const getTailColor = ({
 export interface StepsProps {
   current: number;
   direction?: Direction;
-  onCurrentChange?: () => void;
+  onCurrentChange?: (count: number) => void;
   children: ReactElement<StepProps>[];
 }
 

@@ -53,21 +53,9 @@ const StyledSwitch = styled.label`
 `;
 
 export interface SwitchProps {
-  /**
-   * determine whether the Switch is checked
-   */
   checked?: boolean;
-  /**
-   * to set the initial state
-   */
   defaultChecked?: boolean;
-  /**
-   * Disable switch
-   */
   disabled?: boolean;
-  /**
-   * a callback function, can be executed when the checked state is changing
-   */
   onChange?: (checked: boolean) => void;
 }
 
