@@ -143,5 +143,14 @@ import { TextField } from 'tailor-ui';
 
 ## API
 
+| Property       | Description                         | Type      | Default |
+|----------------|-------------------------------------|-----------|---------|
+| `label`        | The label text                      | `string`  |         |
+| `value`        | value of the TextField              | `string`  |         |
+| `defaultValue` | defaultValue of the TextField       | `string`  |         |
+| `maxLength`    | The content max length of textfield | `number`  |         |
+| `textarea`     | Whether the input is a textarea     | `boolean` | `false` |
+| `disabled`     | Disabled the TextField              | `boolean` | `false` |
+
 If you are using `textarea` props, you can consult [Input's documentation](Input.md#api) to find more
 `textarea` APIs.

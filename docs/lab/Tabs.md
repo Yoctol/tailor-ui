@@ -143,4 +143,16 @@ import { Tabs } from 'tailor-ui';
 
 ### Tabs
 
+| Property       | Description                                              | Type                            | Default  |
+|----------------|----------------------------------------------------------|---------------------------------|----------|
+| `defaultValue` | Initial active Tab's value, if `activeValue` is not set. | `string`                        |          |
+| `value`        | Current Tab's value                                      | `string`                        |          |
+| `onChange`     | Callback executed when active tab is changed             | `(activeValue: string) => void` |          |
+| `size`         | Preset tab bar size                                      | `'sm'` \| `'md'` \| `'lg'`      | `'md'`   |
+| `type`         | Type of tab                                              | `'line'` \| `'card'`            | `'line'` |
+
 ### Tabs.Tab
+
+| Property | Description | Type     | Default |
+|----------|-------------|----------|---------|
+| `value`  | Tab's value | `string` |         |

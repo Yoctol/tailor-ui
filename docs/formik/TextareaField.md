@@ -32,3 +32,11 @@ title: TextareaField
 ```
 
 ## API
+
+| Property   | Description             | Type        | Default |
+|------------|-------------------------|-------------|---------|
+| `label`    | label of textarea field | `ReactNode` |         |
+| `name`     | name of textarea field  | `string`    |         |
+| `required` | show `*` after label    | `boolean`   | `false` |
+
+This component is based on textarea component, please check [it's documentation](Input.md#textarea-1) for more usage.

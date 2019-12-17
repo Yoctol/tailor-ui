@@ -16,29 +16,11 @@ import { Input, Textarea } from '../Input';
 import { MaxLength, TextFieldContainer } from './styles';
 
 export interface TextFieldProps {
-  /**
-   * The label text
-   */
   label?: string;
-  /**
-   * value of the TextField
-   */
   value?: string;
-  /**
-   * defaultValue of the TextField
-   */
   defaultValue?: string;
-  /**
-   * The content max length of textfield
-   */
   maxLength?: number;
-  /**
-   * Whether the input is a textarea
-   */
   textarea?: boolean;
-  /**
-   * Disabled the TextField
-   */
   disabled?: boolean;
   onChange?:
     | ChangeEventHandler<HTMLInputElement>

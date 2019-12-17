@@ -39,3 +39,12 @@ title: CheckboxField
 ```
 
 ## API
+
+| Property   | Description             | Type        | Default |
+|------------|-------------------------|-------------|---------|
+| `label`    | label of checkbox field | `ReactNode` |         |
+| `name`     | name of checkbox field  | `string`    |         |
+| `required` | show `*` after label    | `boolean`   | `false` |
+
+This component is based on checkbox group component, please check [it's documentation](Checkbox.md#checkboxgroup-1) for more usage.
+

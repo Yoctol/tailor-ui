@@ -140,5 +140,3 @@ import { Table } from 'tailor-ui';
   </Table>
 </Box>
 ```
-
-## API

@@ -49,3 +49,10 @@ import { Switch } from 'tailor-ui';
 ```
 
 ## API
+
+| Property         | Description                                                             | Type                         | Default |
+|------------------|-------------------------------------------------------------------------|------------------------------|---------|
+| `checked`        | determine whether the Switch is checked                                 | `boolean`                    |         |
+| `defaultChecked` | to set the initial state                                                | `boolean`                    |         |
+| `disabled`       | Disable switch                                                          | `boolean`                    | false   |
+| `onChange`       | a callback function, can be executed when the checked state is changing | `(checked: boolean) => void` |         |

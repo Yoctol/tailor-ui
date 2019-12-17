@@ -40,3 +40,11 @@ title: SelectField
 ```
 
 ## API
+
+| Property   | Description           | Type        | Default |
+|------------|-----------------------|-------------|---------|
+| `label`    | label of select field | `ReactNode` |         |
+| `name`     | name of select field  | `string`    |         |
+| `required` | show `*` after label  | `boolean`   | `false` |
+
+This component is based on select component, please check [it's documentation](Select.md#api) for more usage.
