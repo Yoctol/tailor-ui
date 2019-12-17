@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.27.0](https://github.com/yoctol/tailor-ui/compare/tailor-ui@0.26.1...tailor-ui@0.27.0) (2019-12-17)
+
+
+### Features
+
+* **TelInput:** add FormField in TelInput, ref: [#311](https://github.com/yoctol/tailor-ui/issues/311) ([8f3d907](https://github.com/yoctol/tailor-ui/commit/8f3d907b38ce2a21560ba8987c510068acade31d))
+* **TelInput:** add FormField in TelInput, ref: [#311](https://github.com/yoctol/tailor-ui/issues/311) ([#373](https://github.com/yoctol/tailor-ui/issues/373)) ([783dab0](https://github.com/yoctol/tailor-ui/commit/783dab0be1f6ab0b2a99a6ad04b62805817c997c))
+
+
+
+
+
 ## [0.26.1](https://github.com/yoctol/tailor-ui/compare/tailor-ui@0.26.0...tailor-ui@0.26.1) (2019-12-11)
 
 
