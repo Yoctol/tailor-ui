@@ -25,9 +25,10 @@
     "testonly:cov": "jest --coverage --runInBand",
     "testonly:watch": "jest --watch"
   },
+  "sideEffects": false,
   "typings": "lib/index.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.7.4",
+    "@babel/runtime": "^7.7.6",
     "@tailor-ui/hooks": "^0.6.0",
     "@tailor-ui/theme": "^0.3.2",
     "@tailor-ui/utils": "^0.3.0",
@@ -52,6 +53,5 @@
     "react-icons": ">=3.2.0",
     "react-spring": ">=8.0.0",
     "styled-components": ">=4.4.0"
-  },
-  "sideEffects": false
+  }
 }
