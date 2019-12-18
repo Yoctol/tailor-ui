@@ -1,5 +1,5 @@
 ---
-id: get-started
+id: getting-started
 title: Getting Started
 ---
 
