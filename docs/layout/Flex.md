@@ -9,16 +9,7 @@ title: Flex
 
 All of the properties of the `<Flex>` component are **not** required. Pick whatever you want.
 
-<div>
-  You can use{' '}
-  <Link to="/layout/space#api">the properties of the Space component</Link> to
-  modify the element’s margin or padding.
-</div>
-
-<div>
-  You can also use{' '}
-  <Link to="/layout/box#api">the properties of the Box component</Link>.
-</div>
+You can use [the properties of the Box component](Box.md#api) to modify the element’s margin or padding.
 
 And these as well:
 
