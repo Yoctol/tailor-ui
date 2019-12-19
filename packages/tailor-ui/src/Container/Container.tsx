@@ -1,5 +1,7 @@
 import React, { FC, ReactNode } from 'react';
 
+import { BoxProps } from '../Layout/Box';
+
 import {
   StyledContainer,
   StyledContainerTitle,
@@ -7,7 +9,7 @@ import {
   StyledSectionTitle,
 } from './styles';
 
-export interface SectionProps {
+export interface SectionProps extends Omit<BoxProps, 'color'> {
   title?: ReactNode;
 }
 
@@ -20,7 +22,7 @@ const Section: FC<SectionProps> = ({ title, children, ...props }) => {
   );
 };
 
-export interface ContainerProps {
+export interface ContainerProps extends Omit<BoxProps, 'color'> {
   title?: ReactNode;
 }
 
