@@ -1,8 +1,9 @@
 import styled from 'styled-components';
 
+import { Box } from '../Layout';
 import { Heading } from '../Typography';
 
-export const StyledContainer = styled.article`
+export const StyledContainer = styled(Box)`
   padding: 24px 32px 32px;
   border-radius: ${p => p.theme.radii.xl};
   background-color: ${p => p.theme.colors.light};
@@ -22,7 +23,7 @@ export const StyledContainerTitle = styled(Heading.h4)`
   border-color: ${p => p.theme.colors.gray300};
 `;
 
-export const StyledSection = styled.section`
+export const StyledSection = styled(Box)`
   & + & {
     margin-top: 32px;
   }
