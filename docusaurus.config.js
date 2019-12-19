@@ -7,25 +7,28 @@
 
 module.exports = {
   title: 'Tailor UI',
-  tagline: 'A bespoke UI collection for building web application.',
+  tagline: 'A bespoke UI collection for building web application',
   url: 'https://tailor-ui-netlify.com',
   baseUrl: '/',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/favicon.png',
   organizationName: 'Yoctol.AI', // Usually your GitHub org/user name.
   projectName: 'docusaurus', // Usually your repo name.
   themes: ['@docusaurus/theme-live-codeblock'],
+  stylesheets: [
+    'https://fonts.googleapis.com/css?family=Montserrat:700|Roboto&display=swap',
+  ],
   themeConfig: {
     disableDarkMode: true,
     sidebarCollapsible: false,
+    image: 'img/og-image.png',
     prism: {
       // eslint-disable-next-line import/no-extraneous-dependencies
       theme: require('prism-react-renderer/themes/oceanicNext'),
     },
     navbar: {
-      title: 'Tailor UI',
       logo: {
-        alt: 'My Site Logo',
-        src: 'img/logo.svg',
+        alt: 'Tailor UI',
+        src: 'img/tailor-ui-horizon.svg',
       },
       links: [
         { to: 'docs/getting-started', label: 'Docs', position: 'left' },
