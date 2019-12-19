@@ -80,11 +80,11 @@ function Home() {
             <Link
               className={classnames(
                 'button button--outline button--secondary button--lg',
-                styles.getStarted
+                styles.gettingStarted
               )}
-              to={useBaseUrl('docs/get-started')}
+              to={useBaseUrl('docs/getting-started')}
             >
-              Get Started
+              Getting Started
             </Link>
           </div>
         </div>

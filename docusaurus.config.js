@@ -16,6 +16,7 @@ module.exports = {
   themes: ['@docusaurus/theme-live-codeblock'],
   themeConfig: {
     disableDarkMode: true,
+    sidebarCollapsible: false,
     prism: {
       // eslint-disable-next-line import/no-extraneous-dependencies
       theme: require('prism-react-renderer/themes/oceanicNext'),
@@ -27,7 +28,7 @@ module.exports = {
         src: 'img/logo.svg',
       },
       links: [
-        { to: 'docs/get-started', label: 'Docs', position: 'left' },
+        { to: 'docs/getting-started', label: 'Docs', position: 'left' },
         {
           href: 'https://github.com/yoctol/tailor-ui',
           label: 'GitHub',
