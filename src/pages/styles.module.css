@@ -12,9 +12,23 @@
 
 .heroBanner {
   padding: 4rem 0;
+  background-color: #001E40;
   text-align: center;
   position: relative;
   overflow: hidden;
+}
+
+.heroSubtitle {
+  color: #fff;
+  font-family: Montserrat;
+  margin-top: 16px;
+}
+
+.gettingStarted {
+  background-color: #3C5AD0;
+  color: #fff;
+  border-radius: 32px;
+  border: none;
 }
 
 @media screen and (max-width: 966px) {
@@ -32,11 +46,49 @@
 .features {
   display: flex;
   align-items: center;
-  padding: 2rem 0;
+  padding: 6rem 0;
   width: 100%;
 }
 
+.featuresTitle {
+  margin-bottom: 48px;
+  font-family: Montserrat;
+  font-size: 28px;
+  text-align: center;
+  color: #001E40;
+}
+
+.feature {
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+}
+
 .featureImage {
-  height: 200px;
-  width: 200px;
+  height: 80px;
+  width: 80px;
+}
+
+.featureTitle {
+  font-family: Montserrat;
+  margin-top: 24px;
+  font-size: 24px;
+  color: #283040;
+}
+
+.featureDescription {
+  margin-top: 8px;
+  font-size: 16px;
+  color: #67758D;
+}
+
+.featureLinkButton {
+  border-radius: 32px;
+  background: #FFFFFF;
+  border: 1px solid #C4CFDD;
+  color: #283040;
+}
+
+.featureLinkButton:hover {
+  color: #283040;
 }

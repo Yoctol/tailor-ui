@@ -1,0 +1,92 @@
+/**
+ * Copyright (c) 2017-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+ .mobile {
+  display: none;
+}
+
+.navFooter {
+  background-color: #0a1c30;
+}
+
+.navFooterTitle {
+  margin: 0;
+  margin-bottom: 16px;
+  color: #50d5ff;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+}
+
+.navFooterText {
+  margin: 0;
+  margin-bottom: 8px;
+  color: #fff;
+  font-size: 12px;
+  letter-spacing: 0.2px;
+  line-height: 1.5;
+}
+
+.footerLayout {
+  display: flex;
+  justify-content: space-between;
+  width: 720px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 16px 0;
+}
+
+.icons {
+  display: flex;
+}
+
+.icons svg {
+  fill: white;
+  transition: all 200ms ease-in-out;
+}
+
+.icons a:hover > svg {
+  fill: #50d5ff;
+}
+
+.icons a:active > svg {
+  fill: #2db8de;
+}
+
+
+@media only screen and (min-device-width: 360px) and (max-device-width: 736px) {
+  .desktop {
+    display: none;
+  }
+
+  .mobile {
+    display: block;
+  }
+
+  .footerLayout {
+    flex-direction: column;
+    align-items: center;
+    width: auto;
+  }
+
+  .footerProduct {
+    margin-top: 24px;
+    text-align: center;
+  }
+
+  .footerMedias {
+    margin-top: 24px;
+  }
+
+  .footerContacts {
+    text-align: center;
+  }
+
+  .icons {
+    justify-content: space-around;
+  }
+}
