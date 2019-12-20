@@ -160,7 +160,7 @@ function Footer() {
 
         <div className={styles.footerContacts}>
           <h4 className={styles.navFooterTitle}>Contact Us</h4>
-          <p className={styles.navFooterText}>Yoctol Info. Inc.</p>
+          <p className={styles.navFooterText}>YOCTOL.AI</p>
           <p className={styles.navFooterText}>service@yoctol.com</p>
         </div>
 
