@@ -41,7 +41,7 @@ module.exports = {
     },
     footer: {
       style: 'dark',
-      copyright: '© 2019 - PRESENT YOCTOL INFO INC. ALL RIGHTS RESERVED.',
+      copyright: '© 2019 - PRESENT YOCTOL.AI ALL RIGHTS RESERVED.',
     },
   },
   presets: [
