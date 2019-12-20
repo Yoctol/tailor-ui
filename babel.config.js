@@ -6,11 +6,18 @@ module.exports = {
         modules: false,
       },
     ],
-    '@babel/preset-react',
+    ['@babel/preset-react', { useSpread: true }],
     '@babel/preset-typescript',
   ],
   plugins: [
-    '@babel/plugin-transform-runtime',
+    [
+      '@babel/plugin-transform-runtime',
+      // By default, it assumes @babel/runtime@7.0.0. Since we use >7.0.0, better to
+      // explicitly specify the version so that it can reuse the helper better
+      // See https://github.com/babel/babel/issues/10261
+      // eslint-disable-next-line import/no-extraneous-dependencies
+      { version: require('@babel/runtime/package.json').version },
+    ],
     '@babel/plugin-proposal-class-properties',
     'babel-plugin-typescript-to-proptypes',
     'ramda',
