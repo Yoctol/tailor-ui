@@ -1,44 +1,33 @@
-import React, {
-  CSSProperties,
-  FC,
-  ReactNode,
-  RefObject,
-  useEffect,
-  useRef,
-  useState,
-} from 'react';
+import React, { FC, ReactNode, RefObject, useRef } from 'react';
 import { useTransition } from 'react-spring';
 
 import { Portal } from '../Portal';
 import { Position, Positions, StackingOrder } from '../constants';
 import { Stack } from '../Stack';
 
-import PositionerWrapper from './PositionerWrapper';
-import getPosition from './getPosition';
+import PositionerImpl from './PositionerImpl';
 
-type RenderPropsChildren = ({
-  ref,
-}: {
-  ref: RefObject<HTMLElement>;
-}) => ReactNode;
+type Target =
+  | ReactNode
+  | FC<{
+      ref: RefObject<HTMLElement>;
+    }>;
 
-export type RenderPropsPositioner = ({
-  ref,
-  style,
-}: {
-  ref: RefObject<HTMLElement>;
-  style: CSSProperties;
-}) => ReactNode;
+export type PositionerRenderer =
+  | ReactNode
+  | FC<{
+      ref: RefObject<HTMLDivElement>;
+    }>;
 
 interface PositionerProps {
   visible?: boolean;
   position?: Positions;
   targetRef?: RefObject<HTMLElement>;
-  positionerRef?: RefObject<HTMLElement>;
+  positionerRef?: RefObject<HTMLDivElement>;
   targetOffset?: number;
   bodyOffset?: number;
-  positioner: RenderPropsPositioner;
-  children: ReactNode | RenderPropsChildren;
+  positioner: PositionerRenderer;
+  children: Target;
   onOpenComplete?: () => void;
   onCloseComplete?: () => void;
 }
@@ -46,106 +35,15 @@ interface PositionerProps {
 const Positioner: FC<PositionerProps> = ({
   visible,
   targetRef: targetRefFromProps,
-  positionerRef: positionerRefFromProps,
+  positionerRef,
   position = Position.TOP_RIGHT,
-  targetOffset = 6,
-  bodyOffset = 6,
   children,
   positioner,
   onOpenComplete,
   onCloseComplete,
 }) => {
   const targetRefFromSelf = useRef<HTMLElement>(null);
-  const positionerRefFromSelf = useRef<HTMLElement>(null);
-  const laf = useRef<number>();
-  const entered = useRef<boolean>(false);
-  const prevDimensions = useRef({ height: 0, width: 0 });
-  const [state, setState] = useState<{
-    top: number | null;
-    left: number | null;
-    transformOrigin: string | null;
-  }>({
-    top: null,
-    left: null,
-    transformOrigin: null,
-  });
-
   const targetRef = targetRefFromProps || targetRefFromSelf;
-  const positionerRef = positionerRefFromProps || positionerRefFromSelf;
-
-  useEffect(
-    () => () => {
-      if (laf.current) {
-        cancelAnimationFrame(laf.current);
-      }
-    },
-    []
-  );
-
-  const update = () => {
-    if (!visible || !targetRef.current || !positionerRef.current) {
-      return;
-    }
-
-    let height: number;
-    let width: number;
-
-    if (entered.current) {
-      const positionerRect = positionerRef.current.getBoundingClientRect();
-
-      height = Math.round(positionerRect.height);
-      width = Math.round(positionerRect.width);
-    } else {
-      const { height: prevHeight, width: prevWidth } = prevDimensions.current;
-
-      height = Math.max(positionerRef.current.offsetHeight, prevHeight);
-      width = Math.max(positionerRef.current.offsetWidth, prevWidth);
-    }
-
-    const targetRect = targetRef.current.getBoundingClientRect();
-    const viewportHeight = document.documentElement.clientHeight;
-    const viewportWidth = document.documentElement.clientWidth;
-
-    const { rect, transformOrigin } = getPosition({
-      position,
-      targetRect,
-      targetOffset,
-      dimensions: {
-        height,
-        width,
-      },
-      viewport: {
-        width: viewportWidth,
-        height: viewportHeight,
-      },
-      viewportOffset: bodyOffset,
-    });
-
-    setState({
-      left: rect.left,
-      top: rect.top,
-      transformOrigin,
-    });
-
-    prevDimensions.current = {
-      height,
-      width,
-    };
-  };
-
-  useEffect(() => {
-    if (![state.top, state.left, state.transformOrigin].includes(null)) {
-      laf.current = requestAnimationFrame(update);
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [state]);
-
-  useEffect(() => {
-    if (visible) {
-      update();
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [visible]);
 
   const transitions = useTransition(visible, null, {
     from: {
@@ -163,31 +61,20 @@ const Positioner: FC<PositionerProps> = ({
     },
     onDestroyed: isDestroyed => {
       if (isDestroyed) {
-        entered.current = false;
-        prevDimensions.current = { height: 0, width: 0 };
-
-        setState({
-          top: null,
-          left: null,
-          transformOrigin: null,
-        });
-
         if (!visible && onCloseComplete) {
           onCloseComplete();
         }
-      } else {
-        entered.current = true;
-
-        if (visible && onOpenComplete) {
+      } else if (visible && onOpenComplete) {
+        if (onOpenComplete) {
           onOpenComplete();
         }
       }
     },
-    config: {
+    config: item => ({
       mass: 1,
-      tension: 500,
-      friction: 40,
-    },
+      tension: item ? 500 : 1500,
+      friction: item ? 40 : 1200,
+    }),
   });
 
   return (
@@ -198,24 +85,20 @@ const Positioner: FC<PositionerProps> = ({
             ? children({ ref: targetRef })
             : children}
 
-          {transitions.map(({ key, item, props }) => {
-            if (!item) {
-              return null;
-            }
-
-            return (
-              <Portal key={key} zIndex={stackingOrder}>
-                <PositionerWrapper
-                  left={state.left}
-                  top={state.top}
-                  transformOrigin={state.transformOrigin}
-                  style={props}
-                  positioner={positioner}
-                  positionerRef={positionerRef}
-                />
-              </Portal>
-            );
-          })}
+          {transitions.map(
+            ({ key, item, props }) =>
+              item && (
+                <Portal key={key} zIndex={stackingOrder}>
+                  <PositionerImpl
+                    style={props}
+                    positioner={positioner}
+                    position={position}
+                    targetRef={targetRef}
+                    positionerRef={positionerRef}
+                  />
+                </Portal>
+              )
+          )}
         </>
       )}
     </Stack>

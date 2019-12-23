@@ -39,10 +39,10 @@ const Tooltip: FC<TooltipProps> = ({
   onCloseComplete,
   ...otherProps
 }) => {
+  const popupRef = useRef<HTMLDivElement>(null);
   const targetRef = useTargetRef({
     children,
   });
-  const popupRef = useRef(null);
 
   const { visible, handleOpen, handleClose } = useHoverTrigger({
     visible: visibleFromProps,
@@ -69,17 +69,15 @@ const Tooltip: FC<TooltipProps> = ({
       onOpenComplete={onOpenComplete}
       onCloseComplete={onCloseComplete}
       position={position}
-      positioner={({ style }) => (
+      positioner={
         <TooltipPopup
-          ref={popupRef}
-          style={style}
           Wrapper={Wrapper}
           content={content}
           handleOpen={handleOpen}
           handleClose={handleClose}
           {...otherProps}
         />
-      )}
+      }
     >
       {renderChildren}
     </Positioner>

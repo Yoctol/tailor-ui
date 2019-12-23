@@ -1,46 +1,30 @@
-import React, {
-  CSSProperties,
-  ComponentType,
-  ReactNode,
-  forwardRef,
-  memo,
-} from 'react';
-import { animated } from 'react-spring';
+import React, { ComponentType, ReactNode, memo } from 'react';
 
 import { StyledTooltip } from './styles';
 
 interface TooltipPopup {
-  style: CSSProperties;
   Wrapper?: ComponentType;
   content: ReactNode;
   handleOpen: () => void;
   handleClose: () => void;
 }
 
-const TooltipPopup = memo(
-  forwardRef<HTMLDivElement, TooltipPopup>(function TooltipPopup(
-    {
-      style,
-      content,
-      handleOpen,
-      handleClose,
-      Wrapper = StyledTooltip,
-      ...otherProps
-    },
-    ref
-  ) {
-    return (
-      <animated.div style={style} ref={ref}>
-        <Wrapper
-          onMouseEnter={handleOpen}
-          onMouseLeave={handleClose}
-          {...otherProps}
-        >
-          {content}
-        </Wrapper>
-      </animated.div>
-    );
-  })
-);
+const TooltipPopup = memo<TooltipPopup>(function TooltipPopup({
+  content,
+  handleOpen,
+  handleClose,
+  Wrapper = StyledTooltip,
+  ...otherProps
+}) {
+  return (
+    <Wrapper
+      onMouseEnter={handleOpen}
+      onMouseLeave={handleClose}
+      {...otherProps}
+    >
+      {content}
+    </Wrapper>
+  );
+});
 
 export default TooltipPopup;

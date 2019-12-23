@@ -53,10 +53,10 @@ const Popover: FC<PopoverProps> = ({
   Wrapper,
   ...otherProps
 }) => {
+  const popupRef = useRef<HTMLDivElement>(null);
   const targetRef = useTargetRef({
     children,
   });
-  const popupRef = useRef(null);
 
   const { setHasChild: setHasChildFromContext } = useContext(
     ClickOutsideContext
@@ -103,17 +103,15 @@ const Popover: FC<PopoverProps> = ({
         onOpenComplete={onOpenComplete}
         onCloseComplete={onCloseComplete}
         position={position}
-        positioner={({ style }) => (
+        positioner={
           <PopoverPopup
-            ref={popupRef}
-            style={style}
             title={title}
             content={content}
             handleClose={handleClose}
             Wrapper={Wrapper}
             {...otherProps}
           />
-        )}
+        }
       >
         {renderChildren}
       </Positioner>
