@@ -37,7 +37,7 @@ import { DatePicker } from 'tailor-ui';
       </Button>
     </>
   );
-};
+}
 ```
 
 #### Clearable
@@ -53,7 +53,7 @@ import { DatePicker } from 'tailor-ui';
       <DatePicker defaultValue={moment()} onChange={console.log} clearable />
     </>
   );
-};
+}
 ```
 
 #### Customize input
@@ -133,7 +133,7 @@ import { DatePicker } from 'tailor-ui';
       <DatePicker range value={value} onChange={setValue} />
     </>
   )
-};
+}
 ```
 
 #### With time picker
