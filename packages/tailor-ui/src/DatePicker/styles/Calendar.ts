@@ -82,8 +82,7 @@ export default css`
 
     &-column-header {
       text-align: center;
-      padding-top: 2px;
-      padding-bottom: 4px;
+      padding: 2px 0 4px;
 
       &:first-child {
         padding-left: 10px;
