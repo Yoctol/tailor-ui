@@ -36,7 +36,6 @@ const buttonLoading = ({ isLoading }: { isLoading: boolean }) =>
 export type ButtonSize = 'sm' | 'md' | 'lg';
 
 export type ButtonVariant =
-  | 'basic'
   | 'primary'
   | 'primary-invert'
   | 'danger'

@@ -224,12 +224,12 @@ import { MdCheck } from 'react-icons/md';
 
 ## API
 
-| Property   | Description | Type                                                                               | Default |
-| ---------- | ----------- | ---------------------------------------------------------------------------------- | ------- |
-| `variant`  |             | `'primary'` `'primary-invert'` `'danger'` `'danger-invert'` `'regular'` `'normal'` |         |
-| `size`     |             | `'sm'` \| `'md'` \| `'lg'`                                                         | `'md'`  |
-| `loading`  |             | `boolean`                                                                          | `false` |
-| `rounded`  |             | `boolean`                                                                          | `false` |
-| `disabled` |             | `boolean`                                                                          | `false` |
-| `icon`     |             | `IconType`                                                                         |         |
-| `onClick`  |             | `(event: MouseEvent) => void`                                                      |         |
+| Property   | Description                                             | Type                                                                               | Default |
+|------------|---------------------------------------------------------|------------------------------------------------------------------------------------|---------|
+| `variant`  | set different variant to display other colors of button | `'primary'` `'primary-invert'` `'danger'` `'danger-invert'` `'regular'` `'normal'` |         |
+| `size`     | the size of button                                      | `'sm'` \| `'md'` \| `'lg'`                                                         | `'md'`  |
+| `loading`  | set the loading status of button                        | `boolean`                                                                          | `false` |
+| `rounded`  | set the button is rounded or not                        | `boolean`                                                                          | `false` |
+| `disabled` | disabled state of button                                | `boolean`                                                                          | `false` |
+| `icon`     | set the icon of button, see: [Icon](Icon.md) component  | `IconType`                                                                         |         |
+| `onClick`  | set the handler to handle `click` event                 | `(event: MouseEvent) => void`                                                      |         |
