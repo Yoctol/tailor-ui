@@ -24,7 +24,7 @@ import { PageHeader } from 'tailor-ui';
     breadcrumb={[
       {
         key: 'dashboard',
-        id: 'Dashboard',
+        name: 'Dashboard',
         onClick: () => {},
       },
     ]}
@@ -41,12 +41,12 @@ import { PageHeader } from 'tailor-ui';
     breadcrumb={[
       {
         key: '1',
-        id: 'Page 1',
+        name: 'Page 1',
         onClick: () => {},
       },
       {
         key: '2',
-        id: 'Page 2',
+        name: 'Page 2',
         onClick: () => {},
       },
     ]}
@@ -64,12 +64,12 @@ import { PageHeader } from 'tailor-ui';
     breadcrumb={[
       {
         key: '1',
-        id: 'Page 1',
+        name: 'Page 1',
         onClick: () => {},
       },
       {
         key: '2',
-        id: 'Page 2',
+        name: 'Page 2',
         onClick: () => {},
       },
     ]}
@@ -86,12 +86,12 @@ import { PageHeader } from 'tailor-ui';
     breadcrumb={[
       {
         key: 'list',
-        id: 'Project List',
+        name: 'Project List',
         onClick: () => {},
       },
       {
         key: 'create',
-        id: 'Create Project',
+        name: 'Create Project',
         onClick: () => {},
       },
     ]}
@@ -110,22 +110,22 @@ import { PageHeader } from 'tailor-ui';
     breadcrumb={[
       {
         key: '1',
-        id: 'Page 1 is too too long long long long long long long long',
+        name: 'Page 1 is too too long long long long long long long long',
         onClick: () => {},
       },
       {
         key: '2',
-        id: 'Page 2 is too too long long long long long long long long',
+        name: 'Page 2 is too too long long long long long long long long',
         onClick: () => {},
       },
       {
         key: '3',
-        id: 'Page 3 is too too long long long long long long long long',
+        name: 'Page 3 is too too long long long long long long long long',
         onClick: () => {},
       },
       {
         key: '4',
-        id: 'Page 4 is too too long long long long long long long long',
+        name: 'Page 4 is too too long long long long long long long long',
         onClick: () => {},
       },
     ]}
@@ -143,7 +143,7 @@ import { PageHeader } from 'tailor-ui';
     breadcrumb={[
       {
         key: '1',
-        id: 'Choose your plan to continue with all powerful features',
+        name: 'Choose your plan to continue with all powerful features',
         onClick: () => {},
       },
     ]}
