@@ -11,7 +11,6 @@ import {
 import { Backdrop } from '../Backdrop';
 import { FooterWrapper, ModalContent, ModalHeader } from '../Modal';
 import { Portal } from '../Portal';
-import { Stack } from '../Stack';
 import { StackingOrder } from '../constants';
 
 type Placement = 'top' | 'right' | 'bottom' | 'left';
@@ -145,44 +144,37 @@ const Drawer: FC<DrawerProps> = ({
   });
 
   return (
-    <Stack defaultOrder={StackingOrder.OVERLAY}>
-      {stackingOrder => (
-        <>
-          <Backdrop
-            visible={visible}
-            onClick={() => maskClosable && onClose()}
-          />
-          {transition.map(
-            ({ item, key, props }) =>
-              item && (
-                <Portal key={key} zIndex={stackingOrder}>
-                  <animated.div
-                    style={{
-                      transform:
-                        props.offset &&
-                        props.offset.interpolate(
-                          offset => `${transformAxis}(${offset})`
-                        ),
-                    }}
-                  >
-                    <DrawerWrapper placement={placement} breadth={breadth}>
-                      {title && (
-                        <ModalHeader
-                          title={title}
-                          onCancel={onClose}
-                          closable={closable}
-                        />
-                      )}
-                      <ModalContent {...otherProps}>{children}</ModalContent>
-                      {footer && <FooterWrapper>{footer}</FooterWrapper>}
-                    </DrawerWrapper>
-                  </animated.div>
-                </Portal>
-              )
-          )}
-        </>
+    <>
+      <Backdrop visible={visible} onClick={() => maskClosable && onClose()} />
+      {transition.map(
+        ({ item, key, props }) =>
+          item && (
+            <Portal key={key} defaultOrder={StackingOrder.OVERLAY}>
+              <animated.div
+                style={{
+                  transform:
+                    props.offset &&
+                    props.offset.interpolate(
+                      offset => `${transformAxis}(${offset})`
+                    ),
+                }}
+              >
+                <DrawerWrapper placement={placement} breadth={breadth}>
+                  {title && (
+                    <ModalHeader
+                      title={title}
+                      onCancel={onClose}
+                      closable={closable}
+                    />
+                  )}
+                  <ModalContent {...otherProps}>{children}</ModalContent>
+                  {footer && <FooterWrapper>{footer}</FooterWrapper>}
+                </DrawerWrapper>
+              </animated.div>
+            </Portal>
+          )
       )}
-    </Stack>
+    </>
   );
 };
 

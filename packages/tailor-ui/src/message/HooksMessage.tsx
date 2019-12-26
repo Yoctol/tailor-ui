@@ -6,7 +6,6 @@ import { State, Transition, animated } from 'react-spring/renderprops.cjs';
 import { Box } from '../Layout';
 import { Icon } from '../Icon';
 import { Portal } from '../Portal';
-import { Stack } from '../Stack';
 import { StackingOrder } from '../constants';
 import { StatusType } from '../types';
 import { UIDContext } from '../UIProvider/UIDContext';
@@ -145,52 +144,50 @@ class EffectMessage extends PureComponent<
   render() {
     const { messages } = this.state;
 
+    if (!this.mounted) {
+      return null;
+    }
+
     return (
-      <Stack defaultOrder={StackingOrder.MESSAGE}>
-        {stackingOrder =>
-          this.mounted ? (
-            <Portal zIndex={stackingOrder}>
-              <MessageContainer>
-                <Transition
-                  native
-                  keys={message => message.key}
-                  items={messages}
-                  from={{
-                    opacity: 0,
-                    height: 0,
-                    life: '100%',
-                  }}
-                  enter={{
-                    opacity: 1,
-                    height: 'auto',
-                  }}
-                  leave={this.leave}
-                  onRest={this.remove}
-                  config={this.config as any}
-                >
-                  {message => ({ life, ...props }) => (
-                    <AnimatedMessageBox style={props}>
-                      <MessageContent>
-                        {message.icon}
-                        <Box flex="auto">{message.content}</Box>
-                        <Icon
-                          type={MdClose}
-                          fill="light"
-                          size="16"
-                          role="button"
-                          cursor="pointer"
-                          onClick={() => this.cancel(message)}
-                        />
-                        <Life style={{ right: life }} />
-                      </MessageContent>
-                    </AnimatedMessageBox>
-                  )}
-                </Transition>
-              </MessageContainer>
-            </Portal>
-          ) : null
-        }
-      </Stack>
+      <Portal defaultOrder={StackingOrder.MESSAGE}>
+        <MessageContainer>
+          <Transition
+            native
+            keys={message => message.key}
+            items={messages}
+            from={{
+              opacity: 0,
+              height: 0,
+              life: '100%',
+            }}
+            enter={{
+              opacity: 1,
+              height: 'auto',
+            }}
+            leave={this.leave}
+            onRest={this.remove}
+            config={this.config as any}
+          >
+            {message => ({ life, ...props }) => (
+              <AnimatedMessageBox style={props}>
+                <MessageContent>
+                  {message.icon}
+                  <Box flex="auto">{message.content}</Box>
+                  <Icon
+                    type={MdClose}
+                    fill="light"
+                    size="16"
+                    role="button"
+                    cursor="pointer"
+                    onClick={() => this.cancel(message)}
+                  />
+                  <Life style={{ right: life }} />
+                </MessageContent>
+              </AnimatedMessageBox>
+            )}
+          </Transition>
+        </MessageContainer>
+      </Portal>
     );
   }
 }
