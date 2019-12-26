@@ -17,7 +17,6 @@ import { ESC_KEY_CODE, useKeydown } from '@tailor-ui/hooks';
 
 import { Backdrop } from '../Backdrop';
 import { Portal } from '../Portal';
-import { Stack } from '../Stack';
 import { StackingOrder } from '../constants';
 import { StatusType } from '../types';
 
@@ -138,38 +137,34 @@ const BaseModal: FC<BaseModalProps> = ({
   ]);
 
   return (
-    <Stack defaultOrder={StackingOrder.OVERLAY}>
-      {stackingOrder => (
-        <>
-          <Backdrop
-            visible={visible}
-            onClick={event => {
-              if (closable) {
-                onCancel(event as any);
-              }
-            }}
-          />
-          {transitions.map(
-            ({ item, key, props }) =>
-              item && (
-                <Portal key={key} zIndex={stackingOrder}>
-                  <AnimatedModalWrapper style={props}>
-                    {statusBar && (
-                      <AnimatedModalStatusBar
-                        statusBar={statusBar}
-                        style={statusProps}
-                      />
-                    )}
-                    <ModalContent size={size} {...otherProps}>
-                      {children}
-                    </ModalContent>
-                  </AnimatedModalWrapper>
-                </Portal>
-              )
-          )}
-        </>
+    <>
+      <Backdrop
+        visible={visible}
+        onClick={event => {
+          if (closable) {
+            onCancel(event as any);
+          }
+        }}
+      />
+      {transitions.map(
+        ({ item, key, props }) =>
+          item && (
+            <Portal key={key} defaultOrder={StackingOrder.OVERLAY}>
+              <AnimatedModalWrapper style={props}>
+                {statusBar && (
+                  <AnimatedModalStatusBar
+                    statusBar={statusBar}
+                    style={statusProps}
+                  />
+                )}
+                <ModalContent size={size} {...otherProps}>
+                  {children}
+                </ModalContent>
+              </AnimatedModalWrapper>
+            </Portal>
+          )
       )}
-    </Stack>
+    </>
   );
 };
 

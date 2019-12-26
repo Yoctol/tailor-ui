@@ -1,5 +1,7 @@
-import { FC, useCallback, useEffect, useRef } from 'react';
+import React, { FC, useCallback, useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
+
+import { Stack } from '../Stack';
 
 let portalContainer: HTMLDivElement;
 
@@ -22,10 +24,10 @@ const createMountNode = (zIndex: number) => {
 };
 
 interface PortalProps {
-  zIndex?: number;
+  defaultOrder?: number;
 }
 
-const Portal: FC<PortalProps> = ({ zIndex, children }) => {
+const Portal: FC<PortalProps> = ({ defaultOrder, children }) => {
   const elementRef = useRef<HTMLElement>();
 
   useEffect(
@@ -37,14 +39,9 @@ const Portal: FC<PortalProps> = ({ zIndex, children }) => {
     []
   );
 
-  const getElement = useCallback(() => {
+  const getElement = useCallback(zIndex => {
     if (elementRef.current) {
       return elementRef.current;
-    }
-
-    // This fixes SSR
-    if (!canUseDom()) {
-      return null;
     }
 
     if (!portalContainer) {
@@ -57,15 +54,18 @@ const Portal: FC<PortalProps> = ({ zIndex, children }) => {
     portalContainer.appendChild(elementRef.current);
 
     return elementRef.current;
-  }, [zIndex]);
+  }, []);
 
-  const element = getElement();
-
-  if (!(canUseDom() && element)) {
+  // This fixes SSR
+  if (!canUseDom()) {
     return null;
   }
 
-  return createPortal(children, element);
+  return (
+    <Stack defaultOrder={defaultOrder}>
+      {stackingOrder => createPortal(children, getElement(stackingOrder))}
+    </Stack>
+  );
 };
 
 export { Portal };
