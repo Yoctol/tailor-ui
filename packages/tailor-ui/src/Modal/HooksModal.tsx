@@ -81,12 +81,13 @@ const EffectModal: FC<EffectModalProps> = ({ triggerRef }) => {
 
   const getIcon = useCallback(() => {
     const { type } = modalOptions;
+    const iconColor = type === 'info' ? 'primary' : type;
 
     if (type === 'confirm') {
       return null;
     }
 
-    return <Icon type={type} fill={type} size="32" mr="2" />;
+    return <Icon type={type} fill={iconColor} size="32" mr="2" />;
   }, [modalOptions]);
 
   const trigger = useCallback(
