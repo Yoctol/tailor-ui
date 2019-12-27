@@ -13,10 +13,10 @@ Check out our [documentation website](https://tailor-ui.netlify.com).
 ### Installation
 
 ```bash
-// with npm
+# with npm
 npm install tailor-ui
 
-// with yarn
+# with yarn
 yarn add tailor-ui
 ```
 
@@ -44,16 +44,16 @@ ReactDOM.render(<App />, document.querySelector('#root'));
 git clone git@github.com:Yoctol/tailor-ui.git
 ```
 
-Run below commands:
+First, open the terminal to watch the file changing and do the type checking:
 
 ```bash
 cd tailor-ui
-yarn bootstrap
-yarn start
+yarn watch
 ```
 
-Watch files changed and check type:
+And then, open another tab to run the project:
 
 ```bash
-yarn watch
+cd tailor-ui
+yarn start
 ```
