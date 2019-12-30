@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.28.0](https://github.com/yoctol/tailor-ui/compare/tailor-ui@0.27.0...tailor-ui@0.28.0) (2019-12-30)
+
+
+### Bug Fixes
+
+* **modal:** adjust icon color of info modal ([f6ac65f](https://github.com/yoctol/tailor-ui/commit/f6ac65f44f270aa0e01b4c32d759fea93603a474))
+
+
+### Features
+
+* **modal:** add status support ([9f9290c](https://github.com/yoctol/tailor-ui/commit/9f9290c3b3d1796c9ae91bb7871764f98bef4640))
+
+
+
+
+
 # [0.27.0](https://github.com/yoctol/tailor-ui/compare/tailor-ui@0.26.1...tailor-ui@0.27.0) (2019-12-17)
 
 
