@@ -3,3 +3,4 @@ lib
 build
 types
 .docusaurus
+!.eslintrc.js

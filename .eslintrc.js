@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 const path = require('path');
 
 module.exports = {
@@ -28,9 +29,25 @@ module.exports = {
     'react/jsx-props-no-spreading': 'off',
     'react/state-in-constructor': 'off',
 
+    'import/no-extraneous-dependencies': [
+      'error',
+      {
+        devDependencies: true,
+        packageDir: [
+          './',
+          './packages/tailor-ui/',
+          './packages/tailor-ui-lab/',
+          './packages/tailor-ui-theme/',
+          './packages/tailor-ui-utils/',
+          './packages/tailor-ui-hooks/',
+          './packages/tailor-ui-formik/',
+        ],
+      },
+    ],
+
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/explicit-member-accessibility': 'off',
-    '@typescript-eslint/no-empty-function': 'off'
+    '@typescript-eslint/no-empty-function': 'off',
   },
   settings: {
     'import/resolver': {

@@ -1,13 +1,21 @@
 import React, { useState } from 'react';
+import createMockRaf from '@react-spring/mock-raf';
 
-import { fireEvent, render, wait } from 'test/test-utils';
+import { fireEvent, render } from 'test/test-utils';
 
 import { Button } from '../../Button';
 import { Modal } from '../Modal';
 
+const mockRaf = createMockRaf();
+
+window.requestAnimationFrame = mockRaf.raf;
+window.cancelAnimationFrame = mockRaf.cancel;
+
 describe('Modal', () => {
   it('should render correctly', () => {
     const { baseElement } = render(<Modal visible onCancel={() => {}} />);
+
+    mockRaf.flush();
 
     expect(baseElement).toMatchSnapshot();
   });
@@ -17,6 +25,8 @@ describe('Modal', () => {
       <Modal size="lg" visible onCancel={() => {}} />
     );
 
+    mockRaf.flush();
+
     expect(baseElement).toMatchSnapshot();
   });
 
@@ -25,18 +35,47 @@ describe('Modal', () => {
       <Modal visible closable onCancel={() => {}} />
     );
 
+    mockRaf.flush();
+
     expect(baseElement).toMatchSnapshot();
   });
 
-  it('should render with different status', () => {
+  it('should render with info status', () => {
     const { baseElement } = render(
-      <>
-        <Modal status="info" visible closable onCancel={() => {}} />
-        <Modal status="success" visible closable onCancel={() => {}} />
-        <Modal status="warning" visible closable onCancel={() => {}} />
-        <Modal status="error" visible closable onCancel={() => {}} />
-      </>
+      <Modal status="info" visible closable onCancel={() => {}} />
     );
+
+    mockRaf.flush();
+
+    expect(baseElement).toMatchSnapshot();
+  });
+
+  it('should render with success status', () => {
+    const { baseElement } = render(
+      <Modal status="success" visible closable onCancel={() => {}} />
+    );
+
+    mockRaf.flush();
+
+    expect(baseElement).toMatchSnapshot();
+  });
+
+  it('should render with warning status', () => {
+    const { baseElement } = render(
+      <Modal status="warning" visible closable onCancel={() => {}} />
+    );
+
+    mockRaf.flush();
+
+    expect(baseElement).toMatchSnapshot();
+  });
+
+  it('should render with error status', () => {
+    const { baseElement } = render(
+      <Modal status="error" visible closable onCancel={() => {}} />
+    );
+
+    mockRaf.flush();
 
     expect(baseElement).toMatchSnapshot();
   });
@@ -72,7 +111,9 @@ describe('Modal', () => {
 
     const modal = getByText('This is the content of Modal');
 
-    expect(modal).toBeInTheDocument();
+    mockRaf.flush();
+
+    expect(modal).toBeVisible();
   });
 
   it('should not display modal when click close button', async () => {
@@ -96,16 +137,16 @@ describe('Modal', () => {
       );
     };
 
-    const { getByText } = render(<ModalWithState />);
+    const { getByText, queryByText } = render(<ModalWithState />);
 
     const closeButton = await getByText('Cancel');
 
     fireEvent.click(closeButton);
 
-    const popconfirm = getByText('This is the content of Modal');
+    mockRaf.flush();
 
-    expect(popconfirm).not.toBeVisible();
+    const modal = queryByText('This is the content of Modal');
+
+    expect(modal).toBeNull();
   });
-
-  // TODO: Add useModal tests
 });

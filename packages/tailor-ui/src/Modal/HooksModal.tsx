@@ -2,10 +2,9 @@ import React, {
   FC,
   KeyboardEventHandler,
   MouseEventHandler,
-  MutableRefObject,
   ReactNode,
   useCallback,
-  useEffect,
+  useMemo,
   useState,
 } from 'react';
 
@@ -44,7 +43,7 @@ export type Trigger = (
 ) => TriggerResponse;
 
 interface EffectModalProps {
-  triggerRef: MutableRefObject<Trigger>;
+  setTrigger: (trigger: Trigger) => void;
 }
 
 interface ModalOptionsState {
@@ -60,7 +59,7 @@ interface ModalOptionsState {
   type: ModalTypes;
 }
 
-const EffectModal: FC<EffectModalProps> = ({ triggerRef }) => {
+const EffectModal: FC<EffectModalProps> = ({ setTrigger }) => {
   const { locale } = useLocale();
   const [visible, setVisible] = useState(false);
   const [modalOptions, setModalOptions] = useState<ModalOptionsState>({
@@ -148,12 +147,6 @@ const EffectModal: FC<EffectModalProps> = ({ triggerRef }) => {
     [locale.Modal.cancelText, locale.Modal.confirmText]
   );
 
-  useEffect(() => {
-    // eslint-disable-next-line no-param-reassign
-    triggerRef.current = trigger;
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
   const {
     title,
     closable,
@@ -166,6 +159,8 @@ const EffectModal: FC<EffectModalProps> = ({ triggerRef }) => {
   } = modalOptions;
 
   const status = type !== 'confirm' ? type : null;
+
+  useMemo(() => setTrigger(trigger), [setTrigger, trigger]);
 
   return (
     <Modal
