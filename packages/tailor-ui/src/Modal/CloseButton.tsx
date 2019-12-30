@@ -1,18 +1,9 @@
 import React, { FC, MouseEventHandler } from 'react';
-import styled from 'styled-components';
 import { MdClose } from 'react-icons/md';
 
 import { Button } from '../Button';
 
-const CloseButtonWrapper = styled.div`
-  background: transparent;
-  transform: rotate(0deg);
-  transition: all 0.2s ease-in;
-
-  :hover {
-    transform: rotate(90deg);
-  }
-`;
+import { CloseButtonWrapper } from './styles';
 
 export interface CloseButtonProps {
   onCancel?: MouseEventHandler;

@@ -9,13 +9,10 @@ import React, {
   useState,
 } from 'react';
 
-import { Icon } from '../Icon';
 import { StatusType } from '../types';
 import { useLocale } from '../locale';
 
-import BaseModal from './BaseModal';
-import Footer from './Footer';
-import { FooterWrapper, ModalContent, ModalHeader } from './Modal';
+import { Modal } from './Modal';
 
 export type ModalTypes = StatusType | 'confirm';
 
@@ -78,17 +75,6 @@ const EffectModal: FC<EffectModalProps> = ({ triggerRef }) => {
     onOpenComplete: () => {},
     onCloseComplete: () => {},
   });
-
-  const getIcon = useCallback(() => {
-    const { type } = modalOptions;
-    const iconColor = type === 'info' ? 'primary' : type;
-
-    if (type === 'confirm') {
-      return null;
-    }
-
-    return <Icon type={type} fill={iconColor} size="32" mr="2" />;
-  }, [modalOptions]);
 
   const trigger = useCallback(
     (options: ModalOptions, type: ModalTypes) => {
@@ -168,8 +154,6 @@ const EffectModal: FC<EffectModalProps> = ({ triggerRef }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const icon = getIcon();
-
   const {
     title,
     closable,
@@ -181,33 +165,24 @@ const EffectModal: FC<EffectModalProps> = ({ triggerRef }) => {
     type,
   } = modalOptions;
 
+  const status = type !== 'confirm' ? type : null;
+
   return (
-    <BaseModal
-      closable={closable}
-      statusBar={type !== 'confirm' ? type : null}
+    <Modal
       visible={visible}
-      onCancel={onCancel}
+      closable={closable}
+      title={title}
+      status={status}
+      cancelText={cancelText}
+      confirmText={confirmText}
+      onCancel={onCancel as MouseEventHandler}
+      onConfirm={onConfirm}
+      confirmButtonProps={{
+        variant: type === 'error' ? 'danger' : 'primary',
+      }}
     >
-      <ModalHeader
-        icon={icon}
-        title={title}
-        closable={closable}
-        onCancel={onCancel as MouseEventHandler}
-      />
-      <ModalContent>{content}</ModalContent>
-      <FooterWrapper>
-        <Footer
-          closable={closable}
-          cancelText={cancelText}
-          confirmText={confirmText}
-          onCancel={onCancel as MouseEventHandler}
-          onConfirm={onConfirm}
-          confirmButtonProps={{
-            variant: type === 'error' ? 'danger' : 'primary',
-          }}
-        />
-      </FooterWrapper>
-    </BaseModal>
+      {content}
+    </Modal>
   );
 };
 

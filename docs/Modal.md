@@ -40,6 +40,43 @@ import { Modal, useModal } from 'tailor-ui';
 }
 ```
 
+### Status bar and icon
+
+```jsx live
+() => {
+  const [visible, setVisible] = useState(false);
+  const [status, setStatus] = useState('info');
+
+  const showStatusModal = status => {
+    setStatus(status);
+    setVisible(true);
+  };
+
+  return (
+    <>
+      <Modal
+        title={`This is a ${status} Modal`}
+        visible={visible}
+        status={status}
+        closable
+        onConfirm={() => setVisible(false)}
+        onCancel={() => setVisible(false)}
+      >
+        {Array.from({ length: 100 }).map((_, index) => (
+          <div key={index}>This is the content of Modal</div>
+        ))}
+      </Modal>
+      <Flex>
+        <Button onClick={() => showStatusModal('info')}>Info</Button>
+        <Button ml="2" onClick={() => showStatusModal('success')}>Success</Button>
+        <Button ml="2" onClick={() => showStatusModal('warning')}>Warning</Button>
+        <Button ml="2" onClick={() => showStatusModal('error')}>Error</Button>
+      </Flex>
+    </>
+  );
+}
+```
+
 ### Large size
 
 ```jsx live
@@ -392,21 +429,22 @@ You can use the `useModal` hooks to display Modal without render `Modal` compone
 
 ### Modal
 
-| Property             | Description                                                                                                | Type                          | Default               |
-|----------------------|------------------------------------------------------------------------------------------------------------|-------------------------------|-----------------------|
-| `title`              | The modal dialog's title                                                                                   | `ReactNode`                   |                       |
-| `visible`            | Whether the modal dialog is visible or not                                                                 | `boolean`                     |                       |
-| `closable`           | Call onCancel when click  the close (x) button or modal mask                                               | `boolean`                     | `true`                |
-| `size`               | The size of modal                                                                                          | `'md'` \| `'lg'`              | `'md'`                |
-| `footer`             | Footer content, set as `footer={null}` when you don't need default buttons                                 | `ReactNode` \| `null`         | Confirm and Cancel buttons |
-| `onOpenComplete`     | Whether to mount child components on onClose                                                               | `() => void`                  |                       |
-| `onCloseComplete`    | Whether to unmount child components on onClose                                                             | `() => void`                  |                       |
-| `confirmText`        | Text of the Confirm button                                                                                 | `string`                      | Confirm               |
-| `cancelText`         | Text of the Cancel button                                                                                  | `string`                      | Cancel                |
-| `onConfirm`          | Specify a function that will be called when a user clicks the Confrim button                               | `(event: MouseEvent) => void` |                       |
-| `onCancel`           | Specify a function that will be called when a user clicks mask, close button on top right or Cancel button | `(event: MouseEvent) => void` |                       |
-| `confirmButtonProps` | The confirm button props                                                                                   | `ButtonProps`                 |                       |
-| `cancelButtonProps`  | The cancel button props                                                                                    | `ButtonProps`                 |                       |
+| Property             | Description                                                                                                | Type                                                | Default                    |
+|----------------------|------------------------------------------------------------------------------------------------------------|-----------------------------------------------------|----------------------------|
+| `title`              | The modal dialog's title                                                                                   | `ReactNode`                                         |                            |
+| `visible`            | Whether the modal dialog is visible or not                                                                 | `boolean`                                           |                            |
+| `closable`           | Call onCancel when click  the close (x) button or modal mask                                               | `boolean`                                           | `true`                     |
+| `status`             | Show the status bar and header icon in modal                                                               | `'info'` \| `'success'` \| `'warning'` \| `'error'` |                            |
+| `size`               | The size of modal                                                                                          | `'md'` \| `'lg'`                                    | `'md'`                     |
+| `footer`             | Footer content, set as `footer={null}` when you don't need default buttons                                 | `ReactNode` \| `null`                               | Confirm and Cancel buttons |
+| `onOpenComplete`     | Whether to mount child components on onClose                                                               | `() => void`                                        |                            |
+| `onCloseComplete`    | Whether to unmount child components on onClose                                                             | `() => void`                                        |                            |
+| `confirmText`        | Text of the Confirm button                                                                                 | `string`                                            | Confirm                    |
+| `cancelText`         | Text of the Cancel button                                                                                  | `string`                                            | Cancel                     |
+| `onConfirm`          | Specify a function that will be called when a user clicks the Confrim button                               | `(event: MouseEvent) => void`                       |                            |
+| `onCancel`           | Specify a function that will be called when a user clicks mask, close button on top right or Cancel button | `(event: MouseEvent) => void`                       |                            |
+| `confirmButtonProps` | The confirm button props                                                                                   | `ButtonProps`                                       |                            |
+| `cancelButtonProps`  | The cancel button props                                                                                    | `ButtonProps`                                       |                            |
 
 ### Hooks
 
