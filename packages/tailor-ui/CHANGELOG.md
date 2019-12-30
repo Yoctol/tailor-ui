@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.28.1](https://github.com/yoctol/tailor-ui/compare/tailor-ui@0.28.0...tailor-ui@0.28.1) (2019-12-30)
+
+
+### Bug Fixes
+
+* **icon:** import type ([bb53e85](https://github.com/yoctol/tailor-ui/commit/bb53e85e25d963d18decefa108877b63b6f6ce81))
+
+
+
+
+
 # [0.28.0](https://github.com/yoctol/tailor-ui/compare/tailor-ui@0.27.0...tailor-ui@0.28.0) (2019-12-30)
 
 
