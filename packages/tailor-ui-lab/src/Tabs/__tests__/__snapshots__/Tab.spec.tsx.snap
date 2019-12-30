@@ -117,25 +117,6 @@ exports[`Tabs should render with props type 1`] = `
   transition: all 200ms ease 0s;
 }
 
-.c3 .c1 {
-  background-color: transparent;
-  color: #e0e0e0;
-}
-
-.c3 .c1:hover {
-  color: #ffffff;
-}
-
-.c3 .c1:active {
-  color: #50d5ff;
-}
-
-.c3 .c1 {
-  height: 48px;
-  padding: 0 24px;
-  font-size: 1rem;
-}
-
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -254,82 +235,6 @@ exports[`Tabs should render with sizes 1`] = `
   background-color: #50d5ff;
 }
 
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  position: relative;
-  -webkit-transition: all 200ms ease 0s;
-  transition: all 200ms ease 0s;
-}
-
-.c5 .c1 {
-  background-color: transparent;
-  color: #e0e0e0;
-}
-
-.c5 .c1:hover {
-  color: #ffffff;
-}
-
-.c5 .c1:active {
-  color: #50d5ff;
-}
-
-.c5 .c1 {
-  height: 48px;
-  padding: 0 24px;
-  font-size: 1rem;
-}
-
-.c7 .c1 {
-  background-color: #d5d8e8;
-  color: #8b8b8b;
-  border-top: 1px solid transparent;
-}
-
-.c7 .c1:hover {
-  color: #6B88c5;
-}
-
-.c7 .c1:active {
-  color: #3c5ad0;
-}
-
-.c7 .c1:first-child {
-  border-top-left-radius: 1rem;
-  border-left: 1px solid transparent;
-}
-
-.c7 .c1:last-child {
-  border-top-right-radius: 1rem;
-  border-right: 1px solid transparent;
-}
-
-.c7 .c1.active {
-  z-index: 1;
-  background-color: #ffffff;
-  color: #6B88c5;
-  border-color: #d5d8e8;
-  box-shadow: 0px -2px 4px -4px rgba(100,120,168,0.3),4px 0px 4px -4px rgba(100,120,168,0.3),-4px 0px 4px -4px rgba(100,120,168,0.3);
-}
-
-.c7 .c1:not(.active) + .c1:not(.active)::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  width: 1px;
-  height: 1rem;
-  background-color: #8b8b8b;
-}
-
-.c7 .c1 {
-  height: 48px;
-  padding: 0 24px;
-  font-size: 1rem;
-}
-
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -357,6 +262,35 @@ exports[`Tabs should render with sizes 1`] = `
   height: 40px;
   padding: 0 20px;
   font-size: 0.875rem;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+}
+
+.c5 .c1 {
+  background-color: transparent;
+  color: #e0e0e0;
+}
+
+.c5 .c1:hover {
+  color: #ffffff;
+}
+
+.c5 .c1:active {
+  color: #50d5ff;
+}
+
+.c5 .c1 {
+  height: 48px;
+  padding: 0 24px;
+  font-size: 1rem;
 }
 
 .c6 {

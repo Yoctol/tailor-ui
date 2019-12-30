@@ -338,85 +338,6 @@ exports[`Tabs should render with props pills 1`] = `
 `;
 
 exports[`Tabs should render with sizes 1`] = `
-.c3 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  position: relative;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  color: #1a1a1a;
-  text-align: center;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  cursor: pointer;
-  height: 2.25rem;
-  padding: 0 1rem;
-  font-size: 1rem;
-  border-bottom: 3px solid transparent;
-  border-bottom-color: #3c5ad0;
-  -webkit-transition: all 200ms ease 0s;
-  transition: all 200ms ease 0s;
-}
-
-.c3:hover {
-  -webkit-text-decoration: none;
-  text-decoration: none;
-}
-
-.c3:disabled,
-.c3[disabled] {
-  opacity: 0.5;
-  cursor: default;
-  pointer-events: none;
-}
-
-.c3:not(:first-child) {
-  margin-left: 0.5rem;
-}
-
-.c4 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  position: relative;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  color: #1a1a1a;
-  text-align: center;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  cursor: pointer;
-  height: 2.25rem;
-  padding: 0 1rem;
-  font-size: 1rem;
-  border-bottom: 3px solid transparent;
-  -webkit-transition: all 200ms ease 0s;
-  transition: all 200ms ease 0s;
-}
-
-.c4:hover {
-  -webkit-text-decoration: none;
-  text-decoration: none;
-}
-
-.c4:disabled,
-.c4[disabled] {
-  opacity: 0.5;
-  cursor: default;
-  pointer-events: none;
-}
-
-.c4:not(:first-child) {
-  margin-left: 0.5rem;
-}
-
 .c1 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -493,6 +414,85 @@ exports[`Tabs should render with sizes 1`] = `
 }
 
 .c2:not(:first-child) {
+  margin-left: 0.5rem;
+}
+
+.c3 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  position: relative;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #1a1a1a;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  cursor: pointer;
+  height: 2.25rem;
+  padding: 0 1rem;
+  font-size: 1rem;
+  border-bottom: 3px solid transparent;
+  border-bottom-color: #3c5ad0;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+}
+
+.c3:hover {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c3:disabled,
+.c3[disabled] {
+  opacity: 0.5;
+  cursor: default;
+  pointer-events: none;
+}
+
+.c3:not(:first-child) {
+  margin-left: 0.5rem;
+}
+
+.c4 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  position: relative;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #1a1a1a;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  cursor: pointer;
+  height: 2.25rem;
+  padding: 0 1rem;
+  font-size: 1rem;
+  border-bottom: 3px solid transparent;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+}
+
+.c4:hover {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c4:disabled,
+.c4[disabled] {
+  opacity: 0.5;
+  cursor: default;
+  pointer-events: none;
+}
+
+.c4:not(:first-child) {
   margin-left: 0.5rem;
 }
 

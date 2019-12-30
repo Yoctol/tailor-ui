@@ -142,8 +142,8 @@ exports[`Modal should render correctly 1`] = `
   pointer-events: none;
 }
 
-.c10:disabled .c11 svg,
-.c10[disabled] .c11 svg {
+.c10:disabled .sc-10g5g0q-0 svg,
+.c10[disabled] .sc-10g5g0q-0 svg {
   fill: #8b8b8b;
 }
 
@@ -162,7 +162,7 @@ exports[`Modal should render correctly 1`] = `
   transition: all 200ms ease 0s;
 }
 
-.c10 .c11 svg {
+.c10 .sc-10g5g0q-0 svg {
   fill: #ffffff;
 }
 
@@ -434,8 +434,8 @@ exports[`Modal should render correctly with lg size 1`] = `
   pointer-events: none;
 }
 
-.c9:disabled .c10 svg,
-.c9[disabled] .c10 svg {
+.c9:disabled .sc-10g5g0q-0 svg,
+.c9[disabled] .sc-10g5g0q-0 svg {
   fill: #8b8b8b;
 }
 
@@ -454,7 +454,7 @@ exports[`Modal should render correctly with lg size 1`] = `
   transition: all 200ms ease 0s;
 }
 
-.c9 .c10 svg {
+.c9 .sc-10g5g0q-0 svg {
   fill: #ffffff;
 }
 
@@ -586,6 +586,15 @@ exports[`Modal should render with error status 1`] = `
   align-items: center;
 }
 
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  margin-right: 0.5rem;
+}
+
 .c7 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -644,13 +653,28 @@ exports[`Modal should render with error status 1`] = `
   width: 100%;
 }
 
-.c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
+.c6 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  line-height: 1;
+  cursor: default;
   margin-right: 0.5rem;
+}
+
+.c6 svg {
+  fill: #8b8b8b;
+  vertical-align: middle;
+  pointer-events: none;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+}
+
+.c6.c6.c6 svg {
+  fill: #fc5475;
+  width: 32px;
+  height: 32px;
 }
 
 .c11 {
@@ -676,120 +700,12 @@ exports[`Modal should render with error status 1`] = `
   height: 24px;
 }
 
-.c6 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  line-height: 1;
-  cursor: default;
-  margin-right: 0.5rem;
-}
-
-.c6 svg {
-  fill: #8b8b8b;
-  vertical-align: middle;
-  pointer-events: none;
-  -webkit-transition: all 200ms ease 0s;
-  transition: all 200ms ease 0s;
-}
-
-.c6.c6.c6 svg {
-  fill: #fc5475;
-  width: 32px;
-  height: 32px;
-}
-
 .c8 {
   font-size: 1.25rem;
   margin: 0;
   color: #373737;
   font-weight: bold;
   line-height: 1.5;
-}
-
-.c17 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  position: relative;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  overflow: hidden;
-  border: 1px solid;
-  border-radius: 0.5rem;
-  border-color: transparent;
-  line-height: 1.5;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  vertical-align: middle;
-  white-space: nowrap;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-transition: all 200ms ease 0s;
-  transition: all 200ms ease 0s;
-  height: 2.25rem;
-  padding: 0 0.75rem;
-  font-size: 1rem;
-  background-color: #3c5ad0;
-  color: #ffffff;
-  font-weight: bold;
-  margin-left: 1rem;
-}
-
-.c17:focus {
-  outline: 0;
-}
-
-.c17:disabled,
-.c17[disabled] {
-  opacity: 0.85;
-  background-color: #e0e0e0;
-  color: #8b8b8b;
-  cursor: default;
-  pointer-events: none;
-}
-
-.c17:disabled .c5 svg,
-.c17[disabled] .c5 svg {
-  fill: #8b8b8b;
-}
-
-.c17::before {
-  content: '';
-  display: inline-block;
-  position: relative;
-  left: 0;
-  -webkit-flex: none;
-  -ms-flex: none;
-  flex: none;
-  width: 0;
-  height: 0;
-  margin-right: 0;
-  -webkit-transition: all 200ms ease 0s;
-  transition: all 200ms ease 0s;
-}
-
-.c17 .c5 svg {
-  fill: #ffffff;
-}
-
-.c17:hover {
-  background-color: #516bd5;
-}
-
-.c17:active {
-  background-color: #2f4dc3;
 }
 
 .c10 {
@@ -956,6 +872,90 @@ exports[`Modal should render with error status 1`] = `
 
 .c16:active {
   background-color: #d6dded;
+}
+
+.c17 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  position: relative;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  overflow: hidden;
+  border: 1px solid;
+  border-radius: 0.5rem;
+  border-color: transparent;
+  line-height: 1.5;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+  height: 2.25rem;
+  padding: 0 0.75rem;
+  font-size: 1rem;
+  background-color: #3c5ad0;
+  color: #ffffff;
+  font-weight: bold;
+  margin-left: 1rem;
+}
+
+.c17:focus {
+  outline: 0;
+}
+
+.c17:disabled,
+.c17[disabled] {
+  opacity: 0.85;
+  background-color: #e0e0e0;
+  color: #8b8b8b;
+  cursor: default;
+  pointer-events: none;
+}
+
+.c17:disabled .c5 svg,
+.c17[disabled] .c5 svg {
+  fill: #8b8b8b;
+}
+
+.c17::before {
+  content: '';
+  display: inline-block;
+  position: relative;
+  left: 0;
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
+  width: 0;
+  height: 0;
+  margin-right: 0;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+}
+
+.c17 .c5 svg {
+  fill: #ffffff;
+}
+
+.c17:hover {
+  background-color: #516bd5;
+}
+
+.c17:active {
+  background-color: #2f4dc3;
 }
 
 .c0 {
@@ -1161,6 +1161,15 @@ exports[`Modal should render with info status 1`] = `
   align-items: center;
 }
 
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  margin-right: 0.5rem;
+}
+
 .c7 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1219,13 +1228,28 @@ exports[`Modal should render with info status 1`] = `
   width: 100%;
 }
 
-.c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
+.c6 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  line-height: 1;
+  cursor: default;
   margin-right: 0.5rem;
+}
+
+.c6 svg {
+  fill: #8b8b8b;
+  vertical-align: middle;
+  pointer-events: none;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+}
+
+.c6.c6.c6 svg {
+  fill: #3c5ad0;
+  width: 32px;
+  height: 32px;
 }
 
 .c11 {
@@ -1251,120 +1275,12 @@ exports[`Modal should render with info status 1`] = `
   height: 24px;
 }
 
-.c6 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  line-height: 1;
-  cursor: default;
-  margin-right: 0.5rem;
-}
-
-.c6 svg {
-  fill: #8b8b8b;
-  vertical-align: middle;
-  pointer-events: none;
-  -webkit-transition: all 200ms ease 0s;
-  transition: all 200ms ease 0s;
-}
-
-.c6.c6.c6 svg {
-  fill: #3c5ad0;
-  width: 32px;
-  height: 32px;
-}
-
 .c8 {
   font-size: 1.25rem;
   margin: 0;
   color: #373737;
   font-weight: bold;
   line-height: 1.5;
-}
-
-.c17 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  position: relative;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  overflow: hidden;
-  border: 1px solid;
-  border-radius: 0.5rem;
-  border-color: transparent;
-  line-height: 1.5;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  vertical-align: middle;
-  white-space: nowrap;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-transition: all 200ms ease 0s;
-  transition: all 200ms ease 0s;
-  height: 2.25rem;
-  padding: 0 0.75rem;
-  font-size: 1rem;
-  background-color: #3c5ad0;
-  color: #ffffff;
-  font-weight: bold;
-  margin-left: 1rem;
-}
-
-.c17:focus {
-  outline: 0;
-}
-
-.c17:disabled,
-.c17[disabled] {
-  opacity: 0.85;
-  background-color: #e0e0e0;
-  color: #8b8b8b;
-  cursor: default;
-  pointer-events: none;
-}
-
-.c17:disabled .c5 svg,
-.c17[disabled] .c5 svg {
-  fill: #8b8b8b;
-}
-
-.c17::before {
-  content: '';
-  display: inline-block;
-  position: relative;
-  left: 0;
-  -webkit-flex: none;
-  -ms-flex: none;
-  flex: none;
-  width: 0;
-  height: 0;
-  margin-right: 0;
-  -webkit-transition: all 200ms ease 0s;
-  transition: all 200ms ease 0s;
-}
-
-.c17 .c5 svg {
-  fill: #ffffff;
-}
-
-.c17:hover {
-  background-color: #516bd5;
-}
-
-.c17:active {
-  background-color: #2f4dc3;
 }
 
 .c10 {
@@ -1531,6 +1447,90 @@ exports[`Modal should render with info status 1`] = `
 
 .c16:active {
   background-color: #d6dded;
+}
+
+.c17 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  position: relative;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  overflow: hidden;
+  border: 1px solid;
+  border-radius: 0.5rem;
+  border-color: transparent;
+  line-height: 1.5;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+  height: 2.25rem;
+  padding: 0 0.75rem;
+  font-size: 1rem;
+  background-color: #3c5ad0;
+  color: #ffffff;
+  font-weight: bold;
+  margin-left: 1rem;
+}
+
+.c17:focus {
+  outline: 0;
+}
+
+.c17:disabled,
+.c17[disabled] {
+  opacity: 0.85;
+  background-color: #e0e0e0;
+  color: #8b8b8b;
+  cursor: default;
+  pointer-events: none;
+}
+
+.c17:disabled .c5 svg,
+.c17[disabled] .c5 svg {
+  fill: #8b8b8b;
+}
+
+.c17::before {
+  content: '';
+  display: inline-block;
+  position: relative;
+  left: 0;
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
+  width: 0;
+  height: 0;
+  margin-right: 0;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+}
+
+.c17 .c5 svg {
+  fill: #ffffff;
+}
+
+.c17:hover {
+  background-color: #516bd5;
+}
+
+.c17:active {
+  background-color: #2f4dc3;
 }
 
 .c0 {
@@ -1825,90 +1825,6 @@ exports[`Modal should render with props closable 1`] = `
   line-height: 1.5;
 }
 
-.c14 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  position: relative;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  overflow: hidden;
-  border: 1px solid;
-  border-radius: 0.5rem;
-  border-color: transparent;
-  line-height: 1.5;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  vertical-align: middle;
-  white-space: nowrap;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-transition: all 200ms ease 0s;
-  transition: all 200ms ease 0s;
-  height: 2.25rem;
-  padding: 0 0.75rem;
-  font-size: 1rem;
-  background-color: #3c5ad0;
-  color: #ffffff;
-  font-weight: bold;
-  margin-left: 1rem;
-}
-
-.c14:focus {
-  outline: 0;
-}
-
-.c14:disabled,
-.c14[disabled] {
-  opacity: 0.85;
-  background-color: #e0e0e0;
-  color: #8b8b8b;
-  cursor: default;
-  pointer-events: none;
-}
-
-.c14:disabled .c7 svg,
-.c14[disabled] .c7 svg {
-  fill: #8b8b8b;
-}
-
-.c14::before {
-  content: '';
-  display: inline-block;
-  position: relative;
-  left: 0;
-  -webkit-flex: none;
-  -ms-flex: none;
-  flex: none;
-  width: 0;
-  height: 0;
-  margin-right: 0;
-  -webkit-transition: all 200ms ease 0s;
-  transition: all 200ms ease 0s;
-}
-
-.c14 .c7 svg {
-  fill: #ffffff;
-}
-
-.c14:hover {
-  background-color: #516bd5;
-}
-
-.c14:active {
-  background-color: #2f4dc3;
-}
-
 .c6 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -2073,6 +1989,90 @@ exports[`Modal should render with props closable 1`] = `
 
 .c13:active {
   background-color: #d6dded;
+}
+
+.c14 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  position: relative;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  overflow: hidden;
+  border: 1px solid;
+  border-radius: 0.5rem;
+  border-color: transparent;
+  line-height: 1.5;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+  height: 2.25rem;
+  padding: 0 0.75rem;
+  font-size: 1rem;
+  background-color: #3c5ad0;
+  color: #ffffff;
+  font-weight: bold;
+  margin-left: 1rem;
+}
+
+.c14:focus {
+  outline: 0;
+}
+
+.c14:disabled,
+.c14[disabled] {
+  opacity: 0.85;
+  background-color: #e0e0e0;
+  color: #8b8b8b;
+  cursor: default;
+  pointer-events: none;
+}
+
+.c14:disabled .c7 svg,
+.c14[disabled] .c7 svg {
+  fill: #8b8b8b;
+}
+
+.c14::before {
+  content: '';
+  display: inline-block;
+  position: relative;
+  left: 0;
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
+  width: 0;
+  height: 0;
+  margin-right: 0;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+}
+
+.c14 .c7 svg {
+  fill: #ffffff;
+}
+
+.c14:hover {
+  background-color: #516bd5;
+}
+
+.c14:active {
+  background-color: #2f4dc3;
 }
 
 .c0 {
@@ -2243,6 +2243,15 @@ exports[`Modal should render with success status 1`] = `
   align-items: center;
 }
 
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  margin-right: 0.5rem;
+}
+
 .c7 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -2301,13 +2310,28 @@ exports[`Modal should render with success status 1`] = `
   width: 100%;
 }
 
-.c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
+.c6 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  line-height: 1;
+  cursor: default;
   margin-right: 0.5rem;
+}
+
+.c6 svg {
+  fill: #8b8b8b;
+  vertical-align: middle;
+  pointer-events: none;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+}
+
+.c6.c6.c6 svg {
+  fill: #40d064;
+  width: 32px;
+  height: 32px;
 }
 
 .c11 {
@@ -2333,120 +2357,12 @@ exports[`Modal should render with success status 1`] = `
   height: 24px;
 }
 
-.c6 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  line-height: 1;
-  cursor: default;
-  margin-right: 0.5rem;
-}
-
-.c6 svg {
-  fill: #8b8b8b;
-  vertical-align: middle;
-  pointer-events: none;
-  -webkit-transition: all 200ms ease 0s;
-  transition: all 200ms ease 0s;
-}
-
-.c6.c6.c6 svg {
-  fill: #40d064;
-  width: 32px;
-  height: 32px;
-}
-
 .c8 {
   font-size: 1.25rem;
   margin: 0;
   color: #373737;
   font-weight: bold;
   line-height: 1.5;
-}
-
-.c17 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  position: relative;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  overflow: hidden;
-  border: 1px solid;
-  border-radius: 0.5rem;
-  border-color: transparent;
-  line-height: 1.5;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  vertical-align: middle;
-  white-space: nowrap;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-transition: all 200ms ease 0s;
-  transition: all 200ms ease 0s;
-  height: 2.25rem;
-  padding: 0 0.75rem;
-  font-size: 1rem;
-  background-color: #3c5ad0;
-  color: #ffffff;
-  font-weight: bold;
-  margin-left: 1rem;
-}
-
-.c17:focus {
-  outline: 0;
-}
-
-.c17:disabled,
-.c17[disabled] {
-  opacity: 0.85;
-  background-color: #e0e0e0;
-  color: #8b8b8b;
-  cursor: default;
-  pointer-events: none;
-}
-
-.c17:disabled .c5 svg,
-.c17[disabled] .c5 svg {
-  fill: #8b8b8b;
-}
-
-.c17::before {
-  content: '';
-  display: inline-block;
-  position: relative;
-  left: 0;
-  -webkit-flex: none;
-  -ms-flex: none;
-  flex: none;
-  width: 0;
-  height: 0;
-  margin-right: 0;
-  -webkit-transition: all 200ms ease 0s;
-  transition: all 200ms ease 0s;
-}
-
-.c17 .c5 svg {
-  fill: #ffffff;
-}
-
-.c17:hover {
-  background-color: #516bd5;
-}
-
-.c17:active {
-  background-color: #2f4dc3;
 }
 
 .c10 {
@@ -2613,6 +2529,90 @@ exports[`Modal should render with success status 1`] = `
 
 .c16:active {
   background-color: #d6dded;
+}
+
+.c17 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  position: relative;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  overflow: hidden;
+  border: 1px solid;
+  border-radius: 0.5rem;
+  border-color: transparent;
+  line-height: 1.5;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+  height: 2.25rem;
+  padding: 0 0.75rem;
+  font-size: 1rem;
+  background-color: #3c5ad0;
+  color: #ffffff;
+  font-weight: bold;
+  margin-left: 1rem;
+}
+
+.c17:focus {
+  outline: 0;
+}
+
+.c17:disabled,
+.c17[disabled] {
+  opacity: 0.85;
+  background-color: #e0e0e0;
+  color: #8b8b8b;
+  cursor: default;
+  pointer-events: none;
+}
+
+.c17:disabled .c5 svg,
+.c17[disabled] .c5 svg {
+  fill: #8b8b8b;
+}
+
+.c17::before {
+  content: '';
+  display: inline-block;
+  position: relative;
+  left: 0;
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
+  width: 0;
+  height: 0;
+  margin-right: 0;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+}
+
+.c17 .c5 svg {
+  fill: #ffffff;
+}
+
+.c17:hover {
+  background-color: #516bd5;
+}
+
+.c17:active {
+  background-color: #2f4dc3;
 }
 
 .c0 {
@@ -2818,6 +2818,15 @@ exports[`Modal should render with warning status 1`] = `
   align-items: center;
 }
 
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  margin-right: 0.5rem;
+}
+
 .c7 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -2876,13 +2885,28 @@ exports[`Modal should render with warning status 1`] = `
   width: 100%;
 }
 
-.c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
+.c6 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  line-height: 1;
+  cursor: default;
   margin-right: 0.5rem;
+}
+
+.c6 svg {
+  fill: #8b8b8b;
+  vertical-align: middle;
+  pointer-events: none;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+}
+
+.c6.c6.c6 svg {
+  fill: #f6a700;
+  width: 32px;
+  height: 32px;
 }
 
 .c11 {
@@ -2908,120 +2932,12 @@ exports[`Modal should render with warning status 1`] = `
   height: 24px;
 }
 
-.c6 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  line-height: 1;
-  cursor: default;
-  margin-right: 0.5rem;
-}
-
-.c6 svg {
-  fill: #8b8b8b;
-  vertical-align: middle;
-  pointer-events: none;
-  -webkit-transition: all 200ms ease 0s;
-  transition: all 200ms ease 0s;
-}
-
-.c6.c6.c6 svg {
-  fill: #f6a700;
-  width: 32px;
-  height: 32px;
-}
-
 .c8 {
   font-size: 1.25rem;
   margin: 0;
   color: #373737;
   font-weight: bold;
   line-height: 1.5;
-}
-
-.c17 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  position: relative;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  overflow: hidden;
-  border: 1px solid;
-  border-radius: 0.5rem;
-  border-color: transparent;
-  line-height: 1.5;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  vertical-align: middle;
-  white-space: nowrap;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-transition: all 200ms ease 0s;
-  transition: all 200ms ease 0s;
-  height: 2.25rem;
-  padding: 0 0.75rem;
-  font-size: 1rem;
-  background-color: #3c5ad0;
-  color: #ffffff;
-  font-weight: bold;
-  margin-left: 1rem;
-}
-
-.c17:focus {
-  outline: 0;
-}
-
-.c17:disabled,
-.c17[disabled] {
-  opacity: 0.85;
-  background-color: #e0e0e0;
-  color: #8b8b8b;
-  cursor: default;
-  pointer-events: none;
-}
-
-.c17:disabled .c5 svg,
-.c17[disabled] .c5 svg {
-  fill: #8b8b8b;
-}
-
-.c17::before {
-  content: '';
-  display: inline-block;
-  position: relative;
-  left: 0;
-  -webkit-flex: none;
-  -ms-flex: none;
-  flex: none;
-  width: 0;
-  height: 0;
-  margin-right: 0;
-  -webkit-transition: all 200ms ease 0s;
-  transition: all 200ms ease 0s;
-}
-
-.c17 .c5 svg {
-  fill: #ffffff;
-}
-
-.c17:hover {
-  background-color: #516bd5;
-}
-
-.c17:active {
-  background-color: #2f4dc3;
 }
 
 .c10 {
@@ -3188,6 +3104,90 @@ exports[`Modal should render with warning status 1`] = `
 
 .c16:active {
   background-color: #d6dded;
+}
+
+.c17 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  position: relative;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  overflow: hidden;
+  border: 1px solid;
+  border-radius: 0.5rem;
+  border-color: transparent;
+  line-height: 1.5;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+  height: 2.25rem;
+  padding: 0 0.75rem;
+  font-size: 1rem;
+  background-color: #3c5ad0;
+  color: #ffffff;
+  font-weight: bold;
+  margin-left: 1rem;
+}
+
+.c17:focus {
+  outline: 0;
+}
+
+.c17:disabled,
+.c17[disabled] {
+  opacity: 0.85;
+  background-color: #e0e0e0;
+  color: #8b8b8b;
+  cursor: default;
+  pointer-events: none;
+}
+
+.c17:disabled .c5 svg,
+.c17[disabled] .c5 svg {
+  fill: #8b8b8b;
+}
+
+.c17::before {
+  content: '';
+  display: inline-block;
+  position: relative;
+  left: 0;
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
+  width: 0;
+  height: 0;
+  margin-right: 0;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+}
+
+.c17 .c5 svg {
+  fill: #ffffff;
+}
+
+.c17:hover {
+  background-color: #516bd5;
+}
+
+.c17:active {
+  background-color: #2f4dc3;
 }
 
 .c0 {
