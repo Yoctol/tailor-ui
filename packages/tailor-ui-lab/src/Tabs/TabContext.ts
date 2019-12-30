@@ -10,4 +10,6 @@ const TabContext = createContext<{
   setValue: () => {},
 });
 
+TabContext.displayName = 'TabContext';
+
 export default TabContext;

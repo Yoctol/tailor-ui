@@ -10,4 +10,6 @@ const RadioContext = createContext<{
   direction: 'horizontal',
 });
 
+RadioContext.displayName = 'RadioContext';
+
 export { RadioContext };

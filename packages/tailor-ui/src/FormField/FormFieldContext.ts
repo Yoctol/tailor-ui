@@ -12,4 +12,6 @@ const FormFieldContext = createContext<{
   setLabelId: () => {},
 });
 
+FormFieldContext.displayName = 'FormFieldContext';
+
 export default FormFieldContext;

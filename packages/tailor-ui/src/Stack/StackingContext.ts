@@ -7,4 +7,6 @@ import { StackingOrder } from '../constants';
  */
 const StackingContext = React.createContext(StackingOrder.STACKING_CONTEXT);
 
+StackingContext.displayName = 'StackingContext';
+
 export default StackingContext;

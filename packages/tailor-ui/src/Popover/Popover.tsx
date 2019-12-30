@@ -40,6 +40,8 @@ const ClickOutsideContext = createContext<{
   setHasChild: () => {},
 });
 
+ClickOutsideContext.displayName = 'ClickOutsideContext';
+
 const Popover: FC<PopoverProps> = ({
   children,
   position = Position.TOP,

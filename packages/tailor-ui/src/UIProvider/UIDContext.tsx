@@ -2,6 +2,8 @@ import React, { FC, createContext, useContext, useRef } from 'react';
 
 const UIDContext = createContext<() => string>(() => 'tailor_uid_0');
 
+UIDContext.displayName = 'UIDContext';
+
 const UIDProvider: FC = ({ children }) => {
   const UID = useRef(0);
 

@@ -6,6 +6,8 @@ const HooksMessageContext = createContext<MutableRefObject<Trigger>>({
   current: () => Promise.resolve(false),
 });
 
+HooksMessageContext.displayName = 'HooksMessageContext';
+
 const HooksMessageProvider: FC = ({ children }) => {
   const messageTriggerRef = useRef(() => Promise.resolve(false));
 

@@ -16,4 +16,6 @@ const TabContext = createContext<{
   pills: false,
 });
 
+TabContext.displayName = 'TabContext';
+
 export default TabContext;
