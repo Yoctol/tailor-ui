@@ -1,6 +1,6 @@
 import React, { FC, HTMLAttributes, forwardRef } from 'react';
 import styled, { css } from 'styled-components';
-import { IconType as ReactIconsIconType } from 'react-icons';
+import { IconType as ReactIconsIconType } from 'react-icons/lib/esm';
 import { SpaceProps, style, space as styledSpace } from 'styled-system';
 
 import { BuiltInIconKeys, icons } from './icons';
