@@ -1,4 +1,10 @@
-import React, { FC, MutableRefObject, createContext, useRef } from 'react';
+import React, {
+  FC,
+  MutableRefObject,
+  createContext,
+  useCallback,
+  useRef,
+} from 'react';
 
 import { tuplify } from '@tailor-ui/utils';
 
@@ -21,10 +27,14 @@ const HooksModalContext = createContext<MutableRefObject<Trigger>>({
 const HooksModalProvider: FC = ({ children }) => {
   const modalTriggerRef = useRef<Trigger>(() => defaultTrigger as any);
 
+  const setTrigger = useCallback((trigger: Trigger) => {
+    modalTriggerRef.current = trigger;
+  }, []);
+
   return (
     <HooksModalContext.Provider value={modalTriggerRef}>
       {children}
-      <HooksModal triggerRef={modalTriggerRef} />
+      <HooksModal setTrigger={setTrigger} />
     </HooksModalContext.Provider>
   );
 };
