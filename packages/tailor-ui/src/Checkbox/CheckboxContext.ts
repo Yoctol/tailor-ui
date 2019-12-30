@@ -10,4 +10,6 @@ const CheckboxContext = createContext<{
   direction: 'horizontal',
 });
 
+CheckboxContext.displayName = 'CheckboxContext';
+
 export { CheckboxContext };

@@ -8,4 +8,6 @@ const MenuContext = createContext<{
   handleToggleOpenKeys: () => {},
 });
 
+MenuContext.displayName = 'MenuContext';
+
 export default MenuContext;

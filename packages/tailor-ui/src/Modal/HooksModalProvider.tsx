@@ -18,6 +18,8 @@ const HooksModalContext = createContext<MutableRefObject<Trigger>>({
   current: () => defaultTrigger as any,
 });
 
+HooksModalContext.displayName = 'HooksModalContext';
+
 const HooksModalProvider: FC = ({ children }) => {
   const modalTriggerRef = useRef<Trigger>(() => defaultTrigger as any);
 

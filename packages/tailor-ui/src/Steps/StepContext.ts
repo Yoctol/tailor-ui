@@ -22,4 +22,6 @@ const StepContext = createContext<{
   onCurrentChange: () => {},
 });
 
+StepContext.displayName = 'StepContext';
+
 export default StepContext;

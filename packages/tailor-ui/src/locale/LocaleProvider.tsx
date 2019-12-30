@@ -10,6 +10,8 @@ const LocaleContext = createContext<{
   locale: en_US,
 });
 
+LocaleContext.displayName = 'LocaleContext';
+
 const LocaleProvider: FC<{ locale: LocaleType }> = ({ children, locale }) => {
   useEffect(() => {
     moment.locale(locale.momentLocale);
