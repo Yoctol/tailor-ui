@@ -7,15 +7,156 @@ exports[`Drawer should render correctly 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
+  padding: 2rem;
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  -webkit-flex: auto;
+  -ms-flex: auto;
+  flex: auto;
+}
+
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
   overflow-y: auto;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
   -webkit-flex: auto;
   -ms-flex: auto;
   flex: auto;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+}
+
+.c8 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  line-height: 1;
+  cursor: default;
+  margin-right: 0rem;
+}
+
+.c8 svg {
+  fill: #8b8b8b;
+  vertical-align: middle;
+  pointer-events: none;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+}
+
+.c8.c8.c8 svg {
+  width: 24px;
+  height: 24px;
+}
+
+.c4 {
+  font-size: 1.25rem;
+  margin: 0;
+  color: #373737;
+  font-weight: bold;
+  line-height: 1.5;
+}
+
+.c6 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  position: relative;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  overflow: hidden;
+  border: 1px solid;
+  border-radius: 0.5rem;
+  border-color: transparent;
+  line-height: 1.5;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border-radius: 999px;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+  width: 2.25rem;
+  height: 2.25rem;
+  background-color: #e8ecf5;
+  color: #6B88c5;
+  font-weight: bold;
+}
+
+.c6:focus {
+  outline: 0;
+}
+
+.c6:disabled,
+.c6[disabled] {
+  opacity: 0.85;
+  background-color: #e0e0e0;
+  color: #8b8b8b;
+  cursor: default;
+  pointer-events: none;
+}
+
+.c6:disabled .c7 svg,
+.c6[disabled] .c7 svg {
+  fill: #8b8b8b;
+}
+
+.c6::before {
+  content: '';
+  display: inline-block;
+  position: relative;
+  left: 0;
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
+  width: 0;
+  height: 0;
+  margin-right: 0;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+}
+
+.c6 .c7 svg {
+  fill: #6B88c5;
+}
+
+.c6:hover {
+  background-color: #fafbfd;
+}
+
+.c6:active {
+  background-color: #d6dded;
 }
 
 .c0 {
@@ -28,17 +169,30 @@ exports[`Drawer should render correctly 1`] = `
   background-color: rgba(0,0,0,0.65);
 }
 
+.c5 {
+  background: transparent;
+  -webkit-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+.c5:hover {
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
 .c1 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   position: absolute;
-  z-index: 10000;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 1rem;
   background-color: #fff;
   left: calc(100vw - 400px);
   width: 400px;
@@ -58,21 +212,64 @@ exports[`Drawer should render correctly 1`] = `
     >
       <div
         class="c0"
-        style="opacity: 0;"
+        style="opacity: 1;"
       />
     </div>
     <div
       style="position: fixed; top: 0px; left: 0px; z-index: 20;"
     >
       <div
-        style="transform: translateX(400px);"
+        style="transform: translateX(0px);"
       >
         <div
           class="c1"
         >
           <div
             class="c2"
-          />
+          >
+            <div
+              class="c3"
+            >
+              <h3
+                class="c4"
+              >
+                Title
+              </h3>
+            </div>
+            <div
+              class="c5"
+            >
+              <button
+                class="c6"
+              >
+                <i
+                  class="c7 c8"
+                  cursor="default"
+                  size="24"
+                  style="pointer-events: none;"
+                >
+                  <svg
+                    fill="currentColor"
+                    height="1em"
+                    stroke="currentColor"
+                    stroke-width="0"
+                    viewBox="0 0 24 24"
+                    width="1em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+                    />
+                  </svg>
+                </i>
+              </button>
+            </div>
+          </div>
+          <div
+            class="c9"
+          >
+            Content
+          </div>
         </div>
       </div>
     </div>
@@ -80,7 +277,7 @@ exports[`Drawer should render correctly 1`] = `
 </body>
 `;
 
-exports[`Drawer should render with props closable 1`] = `
+exports[`Drawer should render correctly with props closable 1`] = `
 <body
   style="padding-right: 0px; overflow: hidden;"
 >
@@ -102,7 +299,7 @@ exports[`Drawer should render with props closable 1`] = `
     >
       <div
         class="c0"
-        style="opacity: 0;"
+        style="opacity: 1;"
       />
     </div>
     .c1 {
@@ -111,9 +308,36 @@ exports[`Drawer should render with props closable 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
+  padding: 2rem;
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  -webkit-flex: auto;
+  -ms-flex: auto;
+  flex: auto;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
   overflow-y: auto;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
   -webkit-flex: auto;
   -ms-flex: auto;
   flex: auto;
@@ -122,17 +346,23 @@ exports[`Drawer should render with props closable 1`] = `
   flex-direction: column;
 }
 
+.c3 {
+  font-size: 1.25rem;
+  margin: 0;
+  color: #373737;
+  font-weight: bold;
+  line-height: 1.5;
+}
+
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   position: absolute;
-  z-index: 10000;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 1rem;
   background-color: #fff;
   left: calc(100vw - 400px);
   width: 400px;
@@ -144,14 +374,266 @@ exports[`Drawer should render with props closable 1`] = `
       style="position: fixed; top: 0px; left: 0px; z-index: 20;"
     >
       <div
-        style="transform: translateX(400px);"
+        style="transform: translateX(0px);"
       >
         <div
           class="c0"
         >
           <div
             class="c1"
-          />
+          >
+            <div
+              class="c2"
+            >
+              <h3
+                class="c3"
+              >
+                Title
+              </h3>
+            </div>
+          </div>
+          <div
+            class="c4"
+          >
+            Content
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div />
+</body>
+`;
+
+exports[`Drawer should render custom footer correctly 1`] = `
+<body
+  style="padding-right: 0px; overflow: hidden;"
+>
+  <div
+    portal-container=""
+  >
+    .c0 {
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0,0,0,0.65);
+}
+
+<div
+      style="position: fixed; top: 0px; left: 0px; z-index: 5;"
+    >
+      <div
+        class="c0"
+        style="opacity: 1;"
+      />
+    </div>
+    .c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  padding: 2rem;
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  -webkit-flex: auto;
+  -ms-flex: auto;
+  flex: auto;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  overflow-y: auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  -webkit-flex: auto;
+  -ms-flex: auto;
+  flex: auto;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  background-color: #e8ecf5;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+.c3 {
+  font-size: 1.25rem;
+  margin: 0;
+  color: #373737;
+  font-weight: bold;
+  line-height: 1.5;
+}
+
+.c6 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  position: relative;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  overflow: hidden;
+  border: 1px solid;
+  border-radius: 0.5rem;
+  border-color: transparent;
+  line-height: 1.5;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+  height: 2.25rem;
+  padding: 0 0.75rem;
+  font-size: 1rem;
+  background-color: #3c5ad0;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.c6:focus {
+  outline: 0;
+}
+
+.c6:disabled,
+.c6[disabled] {
+  opacity: 0.85;
+  background-color: #e0e0e0;
+  color: #8b8b8b;
+  cursor: default;
+  pointer-events: none;
+}
+
+.c6:disabled .c7 svg,
+.c6[disabled] .c7 svg {
+  fill: #8b8b8b;
+}
+
+.c6::before {
+  content: '';
+  display: inline-block;
+  position: relative;
+  left: 0;
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
+  width: 0;
+  height: 0;
+  margin-right: 0;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+}
+
+.c6 .c7 svg {
+  fill: #ffffff;
+}
+
+.c6:hover {
+  background-color: #516bd5;
+}
+
+.c6:active {
+  background-color: #2f4dc3;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  background-color: #fff;
+  left: calc(100vw - 400px);
+  width: 400px;
+  height: 100vh;
+  box-shadow: -2px 0 8px rgba(0,0,0,0.15);
+}
+
+<div
+      style="position: fixed; top: 0px; left: 0px; z-index: 20;"
+    >
+      <div
+        style="transform: translateX(0px);"
+      >
+        <div
+          class="c0"
+        >
+          <div
+            class="c1"
+          >
+            <div
+              class="c2"
+            >
+              <h3
+                class="c3"
+              >
+                Title
+              </h3>
+            </div>
+          </div>
+          <div
+            class="c4"
+          >
+            Content
+          </div>
+          <div
+            class="c5"
+          >
+            <button
+              class="c6"
+            >
+              Close Drawer
+            </button>
+          </div>
         </div>
       </div>
     </div>

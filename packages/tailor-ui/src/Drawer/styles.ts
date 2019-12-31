@@ -10,9 +10,7 @@ interface DrawerWrapperProps {
 export const DrawerWrapper = styled.div<DrawerWrapperProps>`
   display: flex;
   position: absolute;
-  z-index: 10000;
   flex-direction: column;
-  padding: ${p => p.theme.space[3]};
   background-color: #fff;
 
   ${p =>

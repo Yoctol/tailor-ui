@@ -30,7 +30,9 @@ import { Drawer } from 'tailor-ui';
     <>
       <Button onClick={() => setVisible(!visible)}>Open</Button>
       <Drawer title="Title" visible={visible} onClose={() => setVisible(false)}>
-        Content...
+        {Array.from({ length: 100 }).map((_, index) => (
+          <div key={index}>This is the content of Drawer</div>
+        ))}
       </Drawer>
     </>
   );
@@ -53,7 +55,7 @@ import { Drawer } from 'tailor-ui';
         <Radio value="left">Left</Radio>
       </Radio.Group>
 
-      <Button mt="2" onClick={() => setVisible(!visible)}>
+      <Button mt="3" onClick={() => setVisible(!visible)}>
         Open
       </Button>
 
@@ -63,7 +65,9 @@ import { Drawer } from 'tailor-ui';
         placement={placement}
         onClose={() => setVisible(false)}
       >
-        Content...
+        {Array.from({ length: 100 }).map((_, index) => (
+          <div key={index}>This is the content of Drawer</div>
+        ))}
       </Drawer>
     </>
   );
@@ -89,7 +93,9 @@ import { Drawer } from 'tailor-ui';
           </Button>
         }
       >
-        Content...
+        {Array.from({ length: 100 }).map((_, index) => (
+          <div key={index}>This is the content of Drawer</div>
+        ))}
       </Drawer>
     </>
   );
@@ -117,7 +123,9 @@ import { Drawer } from 'tailor-ui';
           </Button>
         }
       >
-        Content...
+        {Array.from({ length: 100 }).map((_, index) => (
+          <div key={index}>This is the content of Drawer</div>
+        ))}
       </Drawer>
     </>
   );

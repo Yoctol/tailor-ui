@@ -130,9 +130,13 @@ const Drawer: FC<DrawerProps> = ({
                     ),
                 }}
               >
-                <DrawerWrapper placement={placement} breadth={breadth}>
+                <DrawerWrapper
+                  placement={placement}
+                  breadth={breadth}
+                  {...otherProps}
+                >
                   {title && (
-                    <Flex flex="none" alignItems="center" mb="3" mx="3">
+                    <Flex flex="none" alignItems="center" p="4">
                       <Flex flex="auto">
                         <Heading.h3>{title}</Heading.h3>
                       </Flex>
@@ -143,12 +147,12 @@ const Drawer: FC<DrawerProps> = ({
                     flex="auto"
                     flexDirection="column"
                     overflowY="auto"
-                    px="3"
+                    px="4"
                   >
                     {children}
                   </Flex>
                   {footer && (
-                    <Flex bg="surface" px="32px" py="16px">
+                    <Flex justifyContent="flex-end" bg="surface" px="4" py="3">
                       {footer}
                     </Flex>
                   )}
