@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { useField, useFormikContext } from 'formik';
+import { useField } from 'formik';
 
 import { FormField, Option, Select, SelectProps } from 'tailor-ui';
 import { mergeEventProps } from '@tailor-ui/utils';
@@ -16,8 +16,7 @@ const SelectField: FC<SelectFieldProps> = ({
   name,
   ...otherProps
 }) => {
-  const [field, meta] = useField(name);
-  const { setFieldValue } = useFormikContext<any>();
+  const [field, meta, helpers] = useField(name);
   const id = `select-${name}`;
 
   return (
@@ -34,12 +33,12 @@ const SelectField: FC<SelectFieldProps> = ({
           onBlur: field.onBlur,
           onChange: (selectedOption: Option | Option[]) => {
             if (!selectedOption) {
-              setFieldValue(name, null);
+              helpers.setValue(null);
               return;
             }
 
             if (Array.isArray(selectedOption)) {
-              setFieldValue(name, selectedOption);
+              helpers.setValue(selectedOption);
               return;
             }
 
@@ -48,7 +47,7 @@ const SelectField: FC<SelectFieldProps> = ({
                 ? selectedOption.value
                 : selectedOption;
 
-            setFieldValue(name, changedValue);
+            helpers.setValue(changedValue);
           },
         })}
       />

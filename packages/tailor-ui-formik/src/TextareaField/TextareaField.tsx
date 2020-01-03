@@ -1,5 +1,5 @@
 import React, { FC, FocusEvent } from 'react';
-import { useField, useFormikContext } from 'formik';
+import { useField } from 'formik';
 
 import { FormField, Textarea, TextareaProps } from 'tailor-ui';
 import { mergeEventProps } from '@tailor-ui/utils';
@@ -16,8 +16,7 @@ const TextareaField: FC<TextareaFieldProps> = ({
   name,
   ...otherProps
 }) => {
-  const [field, meta] = useField(name);
-  const { setFieldValue } = useFormikContext<any>();
+  const [field, meta, helpers] = useField(name);
   const id = `input-${name}`;
 
   return (
@@ -31,7 +30,7 @@ const TextareaField: FC<TextareaFieldProps> = ({
         id={id}
         {...mergeEventProps(otherProps, {
           onBlur: (event: FocusEvent<HTMLTextAreaElement>) => {
-            setFieldValue(name, event.target.value.trim());
+            helpers.setValue(event.target.value.trim());
             field.onBlur(event);
           },
         })}
