@@ -89,7 +89,7 @@
     "eslint-plugin-react-hooks": "^2.3.0",
     "eslint-plugin-sort-imports-es6-autofix": "^0.5.0",
     "eslint-plugin-typescript": "^0.14.0",
-    "formik": "^2.0.8",
+    "formik": "^2.1.1",
     "husky": "^3.1.0",
     "jest": "^24.9.0",
     "jest-styled-components": "^6.3.4",
