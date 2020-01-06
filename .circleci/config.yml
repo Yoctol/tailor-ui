@@ -1,22 +1,22 @@
 version: 2
 # Reference variables.
 references:
-  docker_default: &docker_10
+  docker_default: &docker_12
     working_directory: /tmp/app
     docker:
-      - image: node:10
+      - image: node:12
     environment:
       TZ: "/usr/share/zoneinfo/Asia/Taipei"
 
 jobs:
-  build-node-10:
-    <<: *docker_10
+  build-node-12:
+    <<: *docker_12
     steps:
       - checkout
       - restore_cache:
           keys:
-            - node-10-cache-{{checksum "yarn.lock"}}
-            - node-10-cache
+            - node-12-cache-{{checksum "yarn.lock"}}
+            - node-12-cache
       - run:
           name: install dependencies
           command: |
@@ -26,7 +26,7 @@ jobs:
           name: build
           command: yarn build
       - save_cache:
-          key: node-10-cache-{{checksum "yarn.lock"}}
+          key: node-12-cache-{{checksum "yarn.lock"}}
           paths:
             - .yarn-cache
       - persist_to_workspace:
@@ -34,8 +34,8 @@ jobs:
           paths:
             - node_modules
             - lib
-  test-node-10:
-    <<: *docker_10
+  test-node-12:
+    <<: *docker_12
     steps:
       - checkout
       - attach_workspace:
@@ -46,8 +46,8 @@ jobs:
       - store_artifacts:
           path: coverage
           prefix: coverage
-  lint-node-10:
-    <<: *docker_10
+  lint-node-12:
+    <<: *docker_12
     steps:
       - checkout
       - attach_workspace:
@@ -55,8 +55,8 @@ jobs:
       - run:
           name: run lint
           command: npm run lint
-  type-check-node-10:
-    <<: *docker_10
+  type-check-node-12:
+    <<: *docker_12
     steps:
       - checkout
       - attach_workspace:
@@ -67,15 +67,15 @@ jobs:
 
 workflows:
   version: 2
-  test-on-node-10:
+  test-on-node-12:
     jobs:
-      - build-node-10
-      - test-node-10:
+      - build-node-12
+      - test-node-12:
           requires:
-            - build-node-10
-      - lint-node-10:
+            - build-node-12
+      - lint-node-12:
           requires:
-            - build-node-10
-      - type-check-node-10:
+            - build-node-12
+      - type-check-node-12:
           requires:
-            - build-node-10
+            - build-node-12
