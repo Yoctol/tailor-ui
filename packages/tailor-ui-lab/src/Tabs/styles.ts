@@ -16,7 +16,7 @@ export const StyledTab = styled.a`
 
 export const TabLine = styled(animated.div)`
   position: absolute;
-  z-index: 2;
+  z-index: 1;
   bottom: 0;
   width: 100%;
   height: 3px;
@@ -26,7 +26,7 @@ export const TabLine = styled(animated.div)`
 
 export const TabActiveLine = styled(animated.div)`
   position: absolute;
-  z-index: 10;
+  z-index: 2;
   bottom: 0;
   height: 3px;
   border-radius: ${p => p.theme.radii.base};
