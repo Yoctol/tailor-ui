@@ -35,11 +35,10 @@ export const StyledSelectOption = styled.div<StyledSelectOptionProps>`
   }
 `;
 
-export const StyledSelectedOption = styled.div`
+export const StyledSelectedOption = styled.div<{ size: 'sm' | 'md' | 'lg' }>`
   display: inline-flex;
   align-items: center;
   max-width: 100%;
-  height: 26px;
   margin-right: 8px;
   padding: 0 8px;
   border: ${p => p.theme.borders.base};
@@ -48,6 +47,25 @@ export const StyledSelectedOption = styled.div`
   background-color: ${p => p.theme.colors.surface2};
   color: ${p => p.theme.colors.primaryLight};
   font-size: ${p => p.theme.fontSizes.sm};
+
+  ${({ size, theme: { heights } }) =>
+    ({
+      sm: css`
+        min-height: calc(${heights.sm} - 4px);
+        margin-top: 0.5px;
+        margin-bottom: 0.5px;
+      `,
+      md: css`
+        min-height: calc(${heights.base} - 10px);
+        margin-top: 2px;
+        margin-bottom: 2px;
+      `,
+      lg: css`
+        min-height: calc(${heights.lg} - 14px);
+        margin-top: 3px;
+        margin-bottom: 3px;
+      `,
+    }[size])};
 
   > span {
     overflow: hidden;
@@ -68,6 +86,7 @@ export interface StyledSelectProps {
   focused: boolean;
   disabled: boolean;
   invalid: boolean;
+  multiple: boolean;
   size?: 'sm' | 'md' | 'lg';
 }
 
@@ -140,11 +159,11 @@ export const StyledSelect = styled.div<StyledSelectProps>`
     }
   }
 
-  ${({ size = 'md', theme: { paddings, heights, fontSizes } }) => {
+  ${({ size = 'md', multiple, theme: { paddings, heights, fontSizes } }) => {
     const inputSizeStyles = {
       sm: css`
         min-height: ${heights.sm};
-        padding: 1px ${paddings.xs};
+        padding: ${multiple ? '0.5px' : '1px'} ${paddings.xs};
 
         input {
           font-size: ${fontSizes.sm};
@@ -152,7 +171,7 @@ export const StyledSelect = styled.div<StyledSelectProps>`
       `,
       md: css`
         min-height: ${heights.base};
-        padding: 4px ${paddings.sm};
+        padding: ${multiple ? '2px' : '4px'} ${paddings.sm};
 
         input {
           font-size: ${fontSizes.base};
@@ -160,7 +179,7 @@ export const StyledSelect = styled.div<StyledSelectProps>`
       `,
       lg: css`
         min-height: ${heights.lg};
-        padding: 6px ${paddings.md};
+        padding: ${multiple ? '3px' : '6px'} ${paddings.md};
 
         input {
           font-size: ${fontSizes.lg};
