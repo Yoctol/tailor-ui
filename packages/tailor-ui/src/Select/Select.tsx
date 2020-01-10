@@ -252,6 +252,7 @@ const Select: FC<SelectProps> = ({
               size={size}
               focused={visible}
               disabled={disabled || loading}
+              multiple={multiple}
               onClick={() => {
                 if (!visible) {
                   if (searchable || creatable || multiple) {
@@ -274,6 +275,7 @@ const Select: FC<SelectProps> = ({
                     <SelectedOption
                       key={itemToString(item)}
                       index={index}
+                      size={size}
                       data-testid={props['data-testid']}
                       {...getRemoveButtonProps({
                         item,

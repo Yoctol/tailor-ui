@@ -8,19 +8,22 @@ import { getDataTestId } from './utils';
 
 export interface SelectedOption {
   index: number;
+  size: 'sm' | 'md' | 'lg';
   'data-testid'?: string;
 }
 
 const SelectedOption: FC<SelectedOption> = ({ children, index, ...props }) => {
   return (
-    <StyledSelectedOption {...getDataTestId(props, `selected-option-${index}`)}>
+    <StyledSelectedOption
+      {...props}
+      {...getDataTestId(props, `selected-option-${index}`)}
+    >
       {children}
       <Icon
         type={MdClose}
         size="16"
         cursor="pointer"
         ml="1"
-        {...props}
         {...getDataTestId(props, `selected-option-${index}-clear-icon`)}
       />
     </StyledSelectedOption>
