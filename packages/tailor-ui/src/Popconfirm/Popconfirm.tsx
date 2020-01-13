@@ -7,7 +7,7 @@ import { Popover, PopoverProps } from '../Popover';
 import { StatusType } from '../types';
 import { useLocale } from '../locale';
 
-interface PopconfirmContentProps extends PopoverProps {
+export interface PopconfirmContentProps extends PopoverProps {
   cancelText?: string;
   confirmText?: string;
   content: ReactNode;
