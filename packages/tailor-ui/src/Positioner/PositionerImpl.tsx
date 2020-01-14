@@ -86,7 +86,7 @@ const getPositionerProps = ({
   };
 };
 
-interface PositionImplProps {
+interface PositionerImplProps {
   style: CSSProperties;
   position: Positions;
   positioner: PositionerRenderer;
@@ -94,7 +94,7 @@ interface PositionImplProps {
   targetRef: RefObject<HTMLElement>;
 }
 
-const PositionImpl: FC<PositionImplProps> = ({
+const PositionerImpl: FC<PositionerImplProps> = ({
   style,
   position,
   positioner,
@@ -116,6 +116,10 @@ const PositionImpl: FC<PositionImplProps> = ({
       width: rect.width,
     };
   });
+
+  if (!targetRect) {
+    return null;
+  }
 
   const { positionerStyle, transformOrigin } = getPositionerProps({
     entered: style.opacity === 1,
@@ -143,4 +147,4 @@ const PositionImpl: FC<PositionImplProps> = ({
   );
 };
 
-export default PositionImpl;
+export default PositionerImpl;
