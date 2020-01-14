@@ -24,45 +24,6 @@ exports[`Button should render button with specified icon 1`] = `
   height: 24px;
 }
 
-.c3:disabled .c1 svg,
-.c3[disabled] .c1 svg {
-  fill: #8b8b8b;
-}
-
-.c3 .c1 svg {
-  fill: #bfbfbf;
-}
-
-.c3:active .c1 svg {
-  fill: #3c5ad0;
-}
-
-.c4:disabled .c1 svg,
-.c4[disabled] .c1 svg {
-  fill: #8b8b8b;
-}
-
-.c4 .c1 svg {
-  fill: #ffffff;
-}
-
-.c5:disabled .c1 svg,
-.c5[disabled] .c1 svg {
-  fill: #8b8b8b;
-}
-
-.c5 .c1 svg {
-  fill: #3c5ad0;
-}
-
-.c5:hover .c1 svg {
-  fill: #516bd5;
-}
-
-.c5:active .c1 svg {
-  fill: #2f4dc3;
-}
-
 .c0 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -146,194 +107,6 @@ exports[`Button should render button with specified icon 1`] = `
   background-color: #fc3b61;
 }
 
-.c6:disabled .c1 svg,
-.c6[disabled] .c1 svg {
-  fill: #8b8b8b;
-}
-
-.c6 .c1 svg {
-  fill: #fc5475;
-}
-
-.c6:hover .c1 svg {
-  fill: #fc6d89;
-}
-
-.c6:active .c1 svg {
-  fill: #fc3b61;
-}
-
-.c7:disabled .c1 svg,
-.c7[disabled] .c1 svg {
-  fill: #8b8b8b;
-}
-
-.c7 .c1 svg {
-  fill: #ffffff;
-}
-
-.c8:disabled .c1 svg,
-.c8[disabled] .c1 svg {
-  fill: #8b8b8b;
-}
-
-.c8 .c1 svg {
-  fill: #6B88c5;
-}
-
-.c9:disabled .c1 svg,
-.c9[disabled] .c1 svg {
-  fill: #8b8b8b;
-}
-
-.c9 .c1 svg {
-  fill: #ffffff;
-}
-
-.c10:disabled .c1 svg,
-.c10[disabled] .c1 svg {
-  fill: #8b8b8b;
-}
-
-.c10 .c1 svg {
-  fill: #3c5ad0;
-}
-
-.c10:hover .c1 svg {
-  fill: #516bd5;
-}
-
-.c10:active .c1 svg {
-  fill: #2f4dc3;
-}
-
-.c11:disabled .c1 svg,
-.c11[disabled] .c1 svg {
-  fill: #8b8b8b;
-}
-
-.c11 .c1 svg {
-  fill: #ffffff;
-}
-
-.c12:disabled .c1 svg,
-.c12[disabled] .c1 svg {
-  fill: #8b8b8b;
-}
-
-.c12 .c1 svg {
-  fill: #fc5475;
-}
-
-.c12:hover .c1 svg {
-  fill: #fc6d89;
-}
-
-.c12:active .c1 svg {
-  fill: #fc3b61;
-}
-
-.c13:disabled .c1 svg,
-.c13[disabled] .c1 svg {
-  fill: #8b8b8b;
-}
-
-.c13 .c1 svg {
-  fill: #ffffff;
-}
-
-.c14:disabled .c1 svg,
-.c14[disabled] .c1 svg {
-  fill: #8b8b8b;
-}
-
-.c14 .c1 svg {
-  fill: #6B88c5;
-}
-
-.c15:disabled .c1 svg,
-.c15[disabled] .c1 svg {
-  fill: #8b8b8b;
-}
-
-.c15 .c1 svg {
-  fill: #ffffff;
-}
-
-.c16:disabled .c1 svg,
-.c16[disabled] .c1 svg {
-  fill: #8b8b8b;
-}
-
-.c16 .c1 svg {
-  fill: #3c5ad0;
-}
-
-.c16:hover .c1 svg {
-  fill: #516bd5;
-}
-
-.c16:active .c1 svg {
-  fill: #2f4dc3;
-}
-
-.c17:disabled .c1 svg,
-.c17[disabled] .c1 svg {
-  fill: #8b8b8b;
-}
-
-.c17 .c1 svg {
-  fill: #ffffff;
-}
-
-.c18:disabled .c1 svg,
-.c18[disabled] .c1 svg {
-  fill: #8b8b8b;
-}
-
-.c18 .c1 svg {
-  fill: #fc5475;
-}
-
-.c18:hover .c1 svg {
-  fill: #fc6d89;
-}
-
-.c18:active .c1 svg {
-  fill: #fc3b61;
-}
-
-.c19:disabled .c1 svg,
-.c19[disabled] .c1 svg {
-  fill: #8b8b8b;
-}
-
-.c19 .c1 svg {
-  fill: #ffffff;
-}
-
-.c20:disabled .c1 svg,
-.c20[disabled] .c1 svg {
-  fill: #8b8b8b;
-}
-
-.c20 .c1 svg {
-  fill: #6B88c5;
-}
-
-.c21:disabled .c1 svg,
-.c21[disabled] .c1 svg {
-  fill: #8b8b8b;
-}
-
-.c21 .c1 svg {
-  fill: #bfbfbf;
-}
-
-.c21:active .c1 svg {
-  fill: #3c5ad0;
-}
-
 <button
   class="c0"
 >
@@ -413,8 +186,8 @@ exports[`Button should render button with specified size 1`] = `
   pointer-events: none;
 }
 
-.c0:disabled .c1 svg,
-.c0[disabled] .c1 svg {
+.c0:disabled .sc-10g5g0q-0 svg,
+.c0[disabled] .sc-10g5g0q-0 svg {
   fill: #8b8b8b;
 }
 
@@ -437,7 +210,7 @@ exports[`Button should render button with specified size 1`] = `
   border-color: #373737;
 }
 
-.c0 .c1 svg {
+.c0 .sc-10g5g0q-0 svg {
   fill: #bfbfbf;
 }
 
@@ -450,7 +223,7 @@ exports[`Button should render button with specified size 1`] = `
   color: #3c5ad0;
 }
 
-.c0:active .c1 svg {
+.c0:active .sc-10g5g0q-0 svg {
   fill: #3c5ad0;
 }
 
@@ -513,8 +286,8 @@ exports[`Button should render correctly 1`] = `
   pointer-events: none;
 }
 
-.c0:disabled .c1 svg,
-.c0[disabled] .c1 svg {
+.c0:disabled .sc-10g5g0q-0 svg,
+.c0[disabled] .sc-10g5g0q-0 svg {
   fill: #8b8b8b;
 }
 
@@ -537,7 +310,7 @@ exports[`Button should render correctly 1`] = `
   border-color: #373737;
 }
 
-.c0 .c1 svg {
+.c0 .sc-10g5g0q-0 svg {
   fill: #bfbfbf;
 }
 
@@ -550,7 +323,7 @@ exports[`Button should render correctly 1`] = `
   color: #3c5ad0;
 }
 
-.c0:active .c1 svg {
+.c0:active .sc-10g5g0q-0 svg {
   fill: #3c5ad0;
 }
 
@@ -613,8 +386,8 @@ exports[`Button should render different button type 1`] = `
   pointer-events: none;
 }
 
-.c0:disabled .c1 svg,
-.c0[disabled] .c1 svg {
+.c0:disabled .sc-10g5g0q-0 svg,
+.c0[disabled] .sc-10g5g0q-0 svg {
   fill: #8b8b8b;
 }
 
@@ -633,7 +406,7 @@ exports[`Button should render different button type 1`] = `
   transition: all 200ms ease 0s;
 }
 
-.c0 .c1 svg {
+.c0 .sc-10g5g0q-0 svg {
   fill: #ffffff;
 }
 
@@ -704,8 +477,8 @@ exports[`Button should render disabled button 1`] = `
   pointer-events: none;
 }
 
-.c0:disabled .c1 svg,
-.c0[disabled] .c1 svg {
+.c0:disabled .sc-10g5g0q-0 svg,
+.c0[disabled] .sc-10g5g0q-0 svg {
   fill: #8b8b8b;
 }
 
@@ -724,7 +497,7 @@ exports[`Button should render disabled button 1`] = `
   transition: all 200ms ease 0s;
 }
 
-.c0 .c1 svg {
+.c0 .sc-10g5g0q-0 svg {
   fill: #ffffff;
 }
 
@@ -799,8 +572,8 @@ exports[`Button should render loading button 1`] = `
   pointer-events: none;
 }
 
-.c0:disabled .c1 svg,
-.c0[disabled] .c1 svg {
+.c0:disabled .sc-10g5g0q-0 svg,
+.c0[disabled] .sc-10g5g0q-0 svg {
   fill: #8b8b8b;
 }
 
@@ -819,7 +592,7 @@ exports[`Button should render loading button 1`] = `
   transition: all 200ms ease 0s;
 }
 
-.c0 .c1 svg {
+.c0 .sc-10g5g0q-0 svg {
   fill: #ffffff;
 }
 
@@ -839,8 +612,8 @@ exports[`Button should render loading button 1`] = `
   border-radius: 50%;
   border-top-color: transparent;
   border-right-color: transparent;
-  -webkit-animation: iECmZH 0.7s linear infinite;
-  animation: iECmZH 0.7s linear infinite;
+  -webkit-animation: zdZhV 0.7s linear infinite;
+  animation: zdZhV 0.7s linear infinite;
 }
 
 <button
@@ -903,8 +676,8 @@ exports[`Button should render rounded button 1`] = `
   pointer-events: none;
 }
 
-.c0:disabled .c1 svg,
-.c0[disabled] .c1 svg {
+.c0:disabled .sc-10g5g0q-0 svg,
+.c0[disabled] .sc-10g5g0q-0 svg {
   fill: #8b8b8b;
 }
 
@@ -923,7 +696,7 @@ exports[`Button should render rounded button 1`] = `
   transition: all 200ms ease 0s;
 }
 
-.c0 .c1 svg {
+.c0 .sc-10g5g0q-0 svg {
   fill: #ffffff;
 }
 
@@ -964,242 +737,6 @@ exports[`Button should render rounded icon button 1`] = `
 .c2.c2.c2 svg {
   width: 24px;
   height: 24px;
-}
-
-.c3:disabled .c1 svg,
-.c3[disabled] .c1 svg {
-  fill: #8b8b8b;
-}
-
-.c3 .c1 svg {
-  fill: #bfbfbf;
-}
-
-.c3:active .c1 svg {
-  fill: #3c5ad0;
-}
-
-.c4:disabled .c1 svg,
-.c4[disabled] .c1 svg {
-  fill: #8b8b8b;
-}
-
-.c4 .c1 svg {
-  fill: #ffffff;
-}
-
-.c5:disabled .c1 svg,
-.c5[disabled] .c1 svg {
-  fill: #8b8b8b;
-}
-
-.c5 .c1 svg {
-  fill: #3c5ad0;
-}
-
-.c5:hover .c1 svg {
-  fill: #516bd5;
-}
-
-.c5:active .c1 svg {
-  fill: #2f4dc3;
-}
-
-.c6:disabled .c1 svg,
-.c6[disabled] .c1 svg {
-  fill: #8b8b8b;
-}
-
-.c6 .c1 svg {
-  fill: #ffffff;
-}
-
-.c7:disabled .c1 svg,
-.c7[disabled] .c1 svg {
-  fill: #8b8b8b;
-}
-
-.c7 .c1 svg {
-  fill: #fc5475;
-}
-
-.c7:hover .c1 svg {
-  fill: #fc6d89;
-}
-
-.c7:active .c1 svg {
-  fill: #fc3b61;
-}
-
-.c8:disabled .c1 svg,
-.c8[disabled] .c1 svg {
-  fill: #8b8b8b;
-}
-
-.c8 .c1 svg {
-  fill: #ffffff;
-}
-
-.c9:disabled .c1 svg,
-.c9[disabled] .c1 svg {
-  fill: #8b8b8b;
-}
-
-.c9 .c1 svg {
-  fill: #6B88c5;
-}
-
-.c10:disabled .c1 svg,
-.c10[disabled] .c1 svg {
-  fill: #8b8b8b;
-}
-
-.c10 .c1 svg {
-  fill: #ffffff;
-}
-
-.c11:disabled .c1 svg,
-.c11[disabled] .c1 svg {
-  fill: #8b8b8b;
-}
-
-.c11 .c1 svg {
-  fill: #3c5ad0;
-}
-
-.c11:hover .c1 svg {
-  fill: #516bd5;
-}
-
-.c11:active .c1 svg {
-  fill: #2f4dc3;
-}
-
-.c12:disabled .c1 svg,
-.c12[disabled] .c1 svg {
-  fill: #8b8b8b;
-}
-
-.c12 .c1 svg {
-  fill: #ffffff;
-}
-
-.c13:disabled .c1 svg,
-.c13[disabled] .c1 svg {
-  fill: #8b8b8b;
-}
-
-.c13 .c1 svg {
-  fill: #fc5475;
-}
-
-.c13:hover .c1 svg {
-  fill: #fc6d89;
-}
-
-.c13:active .c1 svg {
-  fill: #fc3b61;
-}
-
-.c14:disabled .c1 svg,
-.c14[disabled] .c1 svg {
-  fill: #8b8b8b;
-}
-
-.c14 .c1 svg {
-  fill: #ffffff;
-}
-
-.c15:disabled .c1 svg,
-.c15[disabled] .c1 svg {
-  fill: #8b8b8b;
-}
-
-.c15 .c1 svg {
-  fill: #6B88c5;
-}
-
-.c16:disabled .c1 svg,
-.c16[disabled] .c1 svg {
-  fill: #8b8b8b;
-}
-
-.c16 .c1 svg {
-  fill: #ffffff;
-}
-
-.c17:disabled .c1 svg,
-.c17[disabled] .c1 svg {
-  fill: #8b8b8b;
-}
-
-.c17 .c1 svg {
-  fill: #3c5ad0;
-}
-
-.c17:hover .c1 svg {
-  fill: #516bd5;
-}
-
-.c17:active .c1 svg {
-  fill: #2f4dc3;
-}
-
-.c18:disabled .c1 svg,
-.c18[disabled] .c1 svg {
-  fill: #8b8b8b;
-}
-
-.c18 .c1 svg {
-  fill: #ffffff;
-}
-
-.c19:disabled .c1 svg,
-.c19[disabled] .c1 svg {
-  fill: #8b8b8b;
-}
-
-.c19 .c1 svg {
-  fill: #fc5475;
-}
-
-.c19:hover .c1 svg {
-  fill: #fc6d89;
-}
-
-.c19:active .c1 svg {
-  fill: #fc3b61;
-}
-
-.c20:disabled .c1 svg,
-.c20[disabled] .c1 svg {
-  fill: #8b8b8b;
-}
-
-.c20 .c1 svg {
-  fill: #ffffff;
-}
-
-.c21:disabled .c1 svg,
-.c21[disabled] .c1 svg {
-  fill: #8b8b8b;
-}
-
-.c21 .c1 svg {
-  fill: #6B88c5;
-}
-
-.c22:disabled .c1 svg,
-.c22[disabled] .c1 svg {
-  fill: #8b8b8b;
-}
-
-.c22 .c1 svg {
-  fill: #bfbfbf;
-}
-
-.c22:active .c1 svg {
-  fill: #3c5ad0;
 }
 
 .c0 {
@@ -1285,64 +822,64 @@ exports[`Button should render rounded icon button 1`] = `
   background-color: #2f4dc3;
 }
 
-.c23:disabled .c1 svg,
-.c23[disabled] .c1 svg {
+.c3:disabled .c1 svg,
+.c3[disabled] .c1 svg {
   fill: #8b8b8b;
 }
 
-.c23 .c1 svg {
+.c3 .c1 svg {
   fill: #3c5ad0;
 }
 
-.c23:hover .c1 svg {
+.c3:hover .c1 svg {
   fill: #516bd5;
 }
 
-.c23:active .c1 svg {
+.c3:active .c1 svg {
   fill: #2f4dc3;
 }
 
-.c24:disabled .c1 svg,
-.c24[disabled] .c1 svg {
+.c4:disabled .c1 svg,
+.c4[disabled] .c1 svg {
   fill: #8b8b8b;
 }
 
-.c24 .c1 svg {
+.c4 .c1 svg {
   fill: #ffffff;
 }
 
-.c25:disabled .c1 svg,
-.c25[disabled] .c1 svg {
+.c5:disabled .c1 svg,
+.c5[disabled] .c1 svg {
   fill: #8b8b8b;
 }
 
-.c25 .c1 svg {
+.c5 .c1 svg {
   fill: #fc5475;
 }
 
-.c25:hover .c1 svg {
+.c5:hover .c1 svg {
   fill: #fc6d89;
 }
 
-.c25:active .c1 svg {
+.c5:active .c1 svg {
   fill: #fc3b61;
 }
 
-.c26:disabled .c1 svg,
-.c26[disabled] .c1 svg {
+.c6:disabled .c1 svg,
+.c6[disabled] .c1 svg {
   fill: #8b8b8b;
 }
 
-.c26 .c1 svg {
+.c6 .c1 svg {
   fill: #ffffff;
 }
 
-.c27:disabled .c1 svg,
-.c27[disabled] .c1 svg {
+.c7:disabled .c1 svg,
+.c7[disabled] .c1 svg {
   fill: #8b8b8b;
 }
 
-.c27 .c1 svg {
+.c7 .c1 svg {
   fill: #6B88c5;
 }
 
@@ -1425,8 +962,8 @@ exports[`Button should render width 100% button 1`] = `
   pointer-events: none;
 }
 
-.c0:disabled .c1 svg,
-.c0[disabled] .c1 svg {
+.c0:disabled .sc-10g5g0q-0 svg,
+.c0[disabled] .sc-10g5g0q-0 svg {
   fill: #8b8b8b;
 }
 
@@ -1449,7 +986,7 @@ exports[`Button should render width 100% button 1`] = `
   border-color: #373737;
 }
 
-.c0 .c1 svg {
+.c0 .sc-10g5g0q-0 svg {
   fill: #bfbfbf;
 }
 
@@ -1462,7 +999,7 @@ exports[`Button should render width 100% button 1`] = `
   color: #3c5ad0;
 }
 
-.c0:active .c1 svg {
+.c0:active .sc-10g5g0q-0 svg {
   fill: #3c5ad0;
 }
 

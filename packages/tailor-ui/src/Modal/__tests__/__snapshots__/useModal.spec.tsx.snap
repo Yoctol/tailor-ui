@@ -557,6 +557,15 @@ exports[`useModal should render error modal correctly 1`] = `
   align-items: center;
 }
 
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  margin-right: 0.5rem;
+}
+
 .c7 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -615,15 +624,6 @@ exports[`useModal should render error modal correctly 1`] = `
   width: 100%;
 }
 
-.c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  margin-right: 0.5rem;
-}
-
 .c6 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -654,33 +654,6 @@ exports[`useModal should render error modal correctly 1`] = `
   color: #373737;
   font-weight: bold;
   line-height: 1.5;
-}
-
-.c14:disabled .c5 svg,
-.c14[disabled] .c5 svg {
-  fill: #8b8b8b;
-}
-
-.c14 .c5 svg {
-  fill: #6B88c5;
-}
-
-.c15:disabled .c5 svg,
-.c15[disabled] .c5 svg {
-  fill: #8b8b8b;
-}
-
-.c15 .c5 svg {
-  fill: #6B88c5;
-}
-
-.c16:disabled .c5 svg,
-.c16[disabled] .c5 svg {
-  fill: #8b8b8b;
-}
-
-.c16 .c5 svg {
-  fill: #ffffff;
 }
 
 .c13 {
@@ -927,6 +900,15 @@ exports[`useModal should render info modal correctly 1`] = `
   align-items: center;
 }
 
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  margin-right: 0.5rem;
+}
+
 .c7 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -985,15 +967,6 @@ exports[`useModal should render info modal correctly 1`] = `
   width: 100%;
 }
 
-.c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  margin-right: 0.5rem;
-}
-
 .c6 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -1024,24 +997,6 @@ exports[`useModal should render info modal correctly 1`] = `
   color: #373737;
   font-weight: bold;
   line-height: 1.5;
-}
-
-.c14:disabled .c5 svg,
-.c14[disabled] .c5 svg {
-  fill: #8b8b8b;
-}
-
-.c14 .c5 svg {
-  fill: #6B88c5;
-}
-
-.c15:disabled .c5 svg,
-.c15[disabled] .c5 svg {
-  fill: #8b8b8b;
-}
-
-.c15 .c5 svg {
-  fill: #6B88c5;
 }
 
 .c13 {
@@ -1288,6 +1243,15 @@ exports[`useModal should render success modal correctly 1`] = `
   align-items: center;
 }
 
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  margin-right: 0.5rem;
+}
+
 .c7 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1346,15 +1310,6 @@ exports[`useModal should render success modal correctly 1`] = `
   width: 100%;
 }
 
-.c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  margin-right: 0.5rem;
-}
-
 .c6 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -1385,24 +1340,6 @@ exports[`useModal should render success modal correctly 1`] = `
   color: #373737;
   font-weight: bold;
   line-height: 1.5;
-}
-
-.c14:disabled .c5 svg,
-.c14[disabled] .c5 svg {
-  fill: #8b8b8b;
-}
-
-.c14 .c5 svg {
-  fill: #6B88c5;
-}
-
-.c15:disabled .c5 svg,
-.c15[disabled] .c5 svg {
-  fill: #8b8b8b;
-}
-
-.c15 .c5 svg {
-  fill: #6B88c5;
 }
 
 .c13 {
@@ -1649,6 +1586,15 @@ exports[`useModal should render warning modal correctly 1`] = `
   align-items: center;
 }
 
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  margin-right: 0.5rem;
+}
+
 .c7 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1707,15 +1653,6 @@ exports[`useModal should render warning modal correctly 1`] = `
   width: 100%;
 }
 
-.c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  margin-right: 0.5rem;
-}
-
 .c6 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -1746,24 +1683,6 @@ exports[`useModal should render warning modal correctly 1`] = `
   color: #373737;
   font-weight: bold;
   line-height: 1.5;
-}
-
-.c14:disabled .c5 svg,
-.c14[disabled] .c5 svg {
-  fill: #8b8b8b;
-}
-
-.c14 .c5 svg {
-  fill: #6B88c5;
-}
-
-.c15:disabled .c5 svg,
-.c15[disabled] .c5 svg {
-  fill: #8b8b8b;
-}
-
-.c15 .c5 svg {
-  fill: #6B88c5;
 }
 
 .c13 {

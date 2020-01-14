@@ -550,8 +550,8 @@ exports[`Drawer should render custom footer correctly 1`] = `
   pointer-events: none;
 }
 
-.c6:disabled .c7 svg,
-.c6[disabled] .c7 svg {
+.c6:disabled .sc-10g5g0q-0 svg,
+.c6[disabled] .sc-10g5g0q-0 svg {
   fill: #8b8b8b;
 }
 
@@ -570,7 +570,7 @@ exports[`Drawer should render custom footer correctly 1`] = `
   transition: all 200ms ease 0s;
 }
 
-.c6 .c7 svg {
+.c6 .sc-10g5g0q-0 svg {
   fill: #ffffff;
 }
 
