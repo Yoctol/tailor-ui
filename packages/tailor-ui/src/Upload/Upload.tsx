@@ -1,7 +1,7 @@
 import React, { FC, Reducer, useCallback, useMemo, useReducer } from 'react';
 import styled from 'styled-components';
+import { DropzoneOptions, useDropzone } from 'react-dropzone';
 import { MdCheck, MdClose, MdFileUpload } from 'react-icons/md';
-import { useDropzone } from 'react-dropzone';
 
 import { Box, Flex } from '../Layout';
 import { Button, ButtonProps } from '../Button';
@@ -92,20 +92,6 @@ const FileItem: FC<FileItemProps> = ({ file, uploaded, onClear }) => (
   </StyledFileItem>
 );
 
-interface UploadProps {
-  disabled?: boolean;
-  onSelect: (files: File[]) => Promise<any>;
-  onClear?: (file: File) => void;
-  onBeforeSelect?: () => Promise<boolean> | boolean;
-  texts?: {
-    uploadText?: string;
-    uploadingText?: string;
-    uploadedText?: string;
-    failedText?: string;
-  };
-  buttonProps?: ButtonProps;
-}
-
 const START_UPLOADING = 'START_UPLOADING';
 const UPLOAD_SUCCESS = 'UPLOAD_SUCCESS';
 const UPLOAD_FAILED = 'UPLOAD_FAILED';
@@ -157,6 +143,20 @@ const uploadReducer: Reducer<ReducerState, ReducerAction> = (state, action) => {
       throw new Error();
   }
 };
+
+interface UploadProps extends DropzoneOptions {
+  disabled?: boolean;
+  onSelect: (files: File[]) => Promise<any>;
+  onClear?: (file: File) => void;
+  onBeforeSelect?: () => Promise<boolean> | boolean;
+  texts?: {
+    uploadText?: string;
+    uploadingText?: string;
+    uploadedText?: string;
+    failedText?: string;
+  };
+  buttonProps?: ButtonProps;
+}
 
 const Upload: FC<UploadProps> = ({
   onBeforeSelect,
