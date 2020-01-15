@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.28.3](https://github.com/yoctol/tailor-ui/compare/tailor-ui@0.28.2...tailor-ui@0.28.3) (2020-01-15)
+
+
+### Bug Fixes
+
+* **popconfirm:** export types ([fb39175](https://github.com/yoctol/tailor-ui/commit/fb39175ff7ccc3d9e414fc41016e335b47b86376))
+* **upload:** extends dropzone type ([8169ee0](https://github.com/yoctol/tailor-ui/commit/8169ee0ae8b755e1fc988b445d816ae69ec71404))
+
+
+
+
+
 ## [0.28.2](https://github.com/yoctol/tailor-ui/compare/tailor-ui@0.28.1...tailor-ui@0.28.2) (2019-12-31)
 
 **Note:** Version bump only for package tailor-ui

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.14.6](https://github.com/Yoctol/tailor-ui/compare/@tailor-ui/lab@0.14.5...@tailor-ui/lab@0.14.6) (2020-01-15)
+
+
+### Bug Fixes
+
+* **Tab:** adjust z-index value ([ff3e65e](https://github.com/Yoctol/tailor-ui/commit/ff3e65e21c68eefba7d1b98dd339dea6987e9510))
+
+
+
+
+
 ## [0.14.5](https://github.com/Yoctol/tailor-ui/compare/@tailor-ui/lab@0.14.4...@tailor-ui/lab@0.14.5) (2019-12-31)
 
 **Note:** Version bump only for package @tailor-ui/lab
