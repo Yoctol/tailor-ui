@@ -1,8 +1,8 @@
-import React, { FC } from 'react';
+import React, { forwardRef } from 'react';
 import styled from 'styled-components';
 
 const StyledSwitch = styled.label`
-  display: inline-block;
+  display: inline-flex;
   position: relative;
   width: 40px;
   height: 20px;
@@ -59,28 +59,25 @@ export interface SwitchProps {
   onChange?: (checked: boolean) => void;
 }
 
-const Switch: FC<SwitchProps> = ({
-  defaultChecked,
-  checked,
-  onChange,
-  disabled = false,
-  ...props
-}) => (
-  <StyledSwitch>
-    <input
-      type="checkbox"
-      defaultChecked={defaultChecked}
-      checked={checked}
-      onChange={({ target }) => {
-        if (onChange) {
-          onChange(target.checked);
-        }
-      }}
-      disabled={disabled}
-      {...props}
-    />
-    <span />
-  </StyledSwitch>
-);
+const Switch = forwardRef<HTMLLabelElement, SwitchProps>(function Switch(
+  { onChange, disabled = false, ...props },
+  ref
+) {
+  return (
+    <StyledSwitch ref={ref}>
+      <input
+        type="checkbox"
+        onChange={({ target }) => {
+          if (onChange) {
+            onChange(target.checked);
+          }
+        }}
+        disabled={disabled}
+        {...props}
+      />
+      <span />
+    </StyledSwitch>
+  );
+});
 
 export { Switch };
