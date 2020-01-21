@@ -2,7 +2,10 @@
 
 exports[`Switch should render correctly 1`] = `
 .c0 {
-  display: inline-block;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   position: relative;
   width: 40px;
   height: 20px;
