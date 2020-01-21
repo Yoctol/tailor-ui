@@ -1,17 +1,13 @@
 import React, { useState } from 'react';
-import createMockRaf from '@react-spring/mock-raf';
 
-import { fireEvent, render } from 'test/test-utils';
+import { fireEvent, mockRaf, render, useMockRaf } from 'test/test-utils';
 
 import { Button } from '../../Button';
 import { Modal } from '../Modal';
 
-const mockRaf = createMockRaf();
-
-window.requestAnimationFrame = mockRaf.raf;
-window.cancelAnimationFrame = mockRaf.cancel;
-
 describe('Modal', () => {
+  useMockRaf();
+
   it('should render correctly', () => {
     const { baseElement } = render(<Modal visible onCancel={() => {}} />);
 
@@ -109,9 +105,9 @@ describe('Modal', () => {
 
     fireEvent.click(openButton);
 
-    const modal = getByText('This is the content of Modal');
-
     mockRaf.flush();
+
+    const modal = getByText('This is the content of Modal');
 
     expect(modal).toBeVisible();
   });
@@ -138,6 +134,8 @@ describe('Modal', () => {
     };
 
     const { getByText, queryByText } = render(<ModalWithState />);
+
+    mockRaf.flush();
 
     const closeButton = await getByText('Cancel');
 

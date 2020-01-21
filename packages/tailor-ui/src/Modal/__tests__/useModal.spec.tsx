@@ -1,18 +1,13 @@
 import React, { useCallback, useEffect } from 'react';
-import createMockRaf from '@react-spring/mock-raf';
 
-import { fireEvent, render, wait } from 'test/test-utils';
+import { fireEvent, mockRaf, render, useMockRaf, wait } from 'test/test-utils';
 
 import { ModalTypes } from '../HooksModal';
-import { UIProvider } from '../../UIProvider';
 import { useModal } from '../useModal';
 
-const mockRaf = createMockRaf();
-
-window.requestAnimationFrame = mockRaf.raf;
-window.cancelAnimationFrame = mockRaf.cancel;
-
 describe('useModal', () => {
+  useMockRaf();
+
   const renderSpecifiedModal = async (type: ModalTypes) => {
     const HooksModal = () => {
       const modal = useModal();
@@ -27,11 +22,7 @@ describe('useModal', () => {
       return null;
     };
 
-    const { baseElement } = render(
-      <UIProvider>
-        <HooksModal />
-      </UIProvider>
-    );
+    const { baseElement } = render(<HooksModal />);
 
     mockRaf.flush();
 
@@ -85,11 +76,7 @@ describe('useModal', () => {
       return null;
     };
 
-    const { getByText, queryByText } = render(
-      <UIProvider>
-        <HooksModal />
-      </UIProvider>
-    );
+    const { getByText, queryByText } = render(<HooksModal />);
 
     mockRaf.flush();
 
@@ -120,11 +107,7 @@ describe('useModal', () => {
       return null;
     };
 
-    const { getByText, queryByText } = render(
-      <UIProvider>
-        <HooksModal />
-      </UIProvider>
-    );
+    const { getByText, queryByText } = render(<HooksModal />);
 
     mockRaf.flush();
 
@@ -164,11 +147,7 @@ describe('useModal', () => {
           return null;
         };
 
-        const { getByText } = render(
-          <UIProvider>
-            <HooksModal />
-          </UIProvider>
-        );
+        const { getByText } = render(<HooksModal />);
 
         mockRaf.flush();
 
@@ -202,11 +181,7 @@ describe('useModal', () => {
           return null;
         };
 
-        const { getByText } = render(
-          <UIProvider>
-            <HooksModal />
-          </UIProvider>
-        );
+        const { getByText } = render(<HooksModal />);
 
         mockRaf.flush();
 
@@ -236,11 +211,7 @@ describe('useModal', () => {
           return null;
         };
 
-        const { queryByText } = render(
-          <UIProvider>
-            <HooksModal />
-          </UIProvider>
-        );
+        const { queryByText } = render(<HooksModal />);
 
         mockRaf.flush();
 
@@ -269,11 +240,7 @@ describe('useModal', () => {
           return null;
         };
 
-        const { getByText } = render(
-          <UIProvider>
-            <HooksModal />
-          </UIProvider>
-        );
+        const { getByText } = render(<HooksModal />);
 
         mockRaf.flush();
 
@@ -306,11 +273,7 @@ describe('useModal', () => {
           return null;
         };
 
-        const { getByText } = render(
-          <UIProvider>
-            <HooksModal />
-          </UIProvider>
-        );
+        const { getByText } = render(<HooksModal />);
 
         mockRaf.flush();
 
@@ -344,11 +307,7 @@ describe('useModal', () => {
           return null;
         };
 
-        const { getByText } = render(
-          <UIProvider>
-            <HooksModal />
-          </UIProvider>
-        );
+        const { getByText } = render(<HooksModal />);
 
         mockRaf.flush();
 
@@ -378,11 +337,7 @@ describe('useModal', () => {
           return null;
         };
 
-        const { queryByText } = render(
-          <UIProvider>
-            <HooksModal />
-          </UIProvider>
-        );
+        const { queryByText } = render(<HooksModal />);
 
         mockRaf.flush();
 
@@ -411,11 +366,7 @@ describe('useModal', () => {
           return null;
         };
 
-        const { getByText } = render(
-          <UIProvider>
-            <HooksModal />
-          </UIProvider>
-        );
+        const { getByText } = render(<HooksModal />);
 
         mockRaf.flush();
 

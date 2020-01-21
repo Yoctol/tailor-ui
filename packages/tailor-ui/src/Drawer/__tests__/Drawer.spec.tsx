@@ -1,17 +1,13 @@
 import React from 'react';
-import createMockRaf from '@react-spring/mock-raf';
 
-import { render } from 'test/test-utils';
+import { mockRaf, render, useMockRaf } from 'test/test-utils';
 
 import { Button } from '../../Button';
 import { Drawer } from '../Drawer';
 
-const mockRaf = createMockRaf();
-
-window.requestAnimationFrame = mockRaf.raf;
-window.cancelAnimationFrame = mockRaf.cancel;
-
 describe('Drawer', () => {
+  useMockRaf();
+
   it('should render correctly', () => {
     const { baseElement } = render(
       <Drawer title="Title" visible onClose={() => {}}>

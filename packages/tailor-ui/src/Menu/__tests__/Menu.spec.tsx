@@ -1,10 +1,12 @@
 import React from 'react';
 
-import { fireEvent, render, wait } from 'test/test-utils';
+import { fireEvent, mockRaf, render, useMockRaf } from 'test/test-utils';
 
 import { Menu } from '../Menu';
 
 describe('Menu', () => {
+  useMockRaf();
+
   it('should render correctly', () => {
     const { container } = render(
       <Menu>
@@ -16,6 +18,8 @@ describe('Menu', () => {
         </Menu.SubMenu>
       </Menu>
     );
+
+    mockRaf.flush();
 
     expect(container.firstChild).toMatchSnapshot();
   });
@@ -36,6 +40,8 @@ describe('Menu', () => {
 
     fireEvent.click(subMenu2);
 
-    await wait(() => expect(getByText('Item 1')).not.toBeVisible());
+    mockRaf.flush();
+
+    expect(getByText('Item 1')).not.toBeVisible();
   });
 });
