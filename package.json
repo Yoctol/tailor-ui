@@ -41,7 +41,7 @@
   "peerDependencies": {
     "react": ">=16.10.0",
     "react-dom": ">=16.10.0",
-    "styled-components": ">=4.4.0"
+    "styled-components": ">=5.0.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.8.3",
@@ -114,7 +114,7 @@
     "stylelint-config-yoctol": "^2.0.0",
     "stylelint-processor-styled-components": "^1.9.0",
     "ts-loader": "^6.2.1",
-    "typescript": "3.7.4",
+    "typescript": "3.7.5",
     "yup": "^0.28.0"
   },
   "browserslist": {

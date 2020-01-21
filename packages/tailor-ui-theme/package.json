@@ -25,16 +25,16 @@
     "testonly:cov": "jest --coverage --runInBand",
     "testonly:watch": "jest --watch"
   },
+  "sideEffects": false,
   "typings": "lib/index.d.ts",
   "dependencies": {
     "polished": "^3.4.2",
     "styled-normalize": "^8.0.6"
   },
   "peerDependencies": {
-    "styled-components": ">=4.4.0"
+    "styled-components": ">=5.0.0"
   },
   "publishConfig": {
     "access": "public"
-  },
-  "sideEffects": false
+  }
 }
