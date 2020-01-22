@@ -4,13 +4,7 @@ import React, {
   MouseEventHandler,
   useRef,
 } from 'react';
-import {
-  animated,
-  config,
-  useChain,
-  useSpring,
-  useTransition,
-} from 'react-spring';
+import { config, useChain, useSpring, useTransition } from 'react-spring';
 
 import { ESC_KEY_CODE, useKeydown } from '@tailor-ui/hooks';
 
@@ -21,9 +15,6 @@ import { StatusType } from '../types';
 
 import { ModalContent, ModalStatusBar, ModalWrapper } from './styles';
 import { ModalSize } from './types';
-
-const AnimatedModalWrapper = animated(ModalWrapper);
-const AnimatedModalStatusBar = animated(ModalStatusBar);
 
 export interface AnimationModalProps {
   onCancel: MouseEventHandler | KeyboardEventHandler;
@@ -107,14 +98,14 @@ const AnimationModal: FC<AnimationModalProps> = ({
         ({ item, key, props }) =>
           item && (
             <Portal key={key} defaultOrder={StackingOrder.OVERLAY}>
-              <AnimatedModalWrapper style={props}>
+              <ModalWrapper style={props}>
                 {status && (
-                  <AnimatedModalStatusBar status={status} style={statusProps} />
+                  <ModalStatusBar status={status} style={statusProps} />
                 )}
                 <ModalContent size={size} {...otherProps}>
                   {children}
                 </ModalContent>
-              </AnimatedModalWrapper>
+              </ModalWrapper>
             </Portal>
           )
       )}

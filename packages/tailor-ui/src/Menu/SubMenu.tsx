@@ -10,12 +10,10 @@ import { Icon, IconType } from '../Icon';
 import MenuContext from './MenuContext';
 import { StyledSubMenu } from './styles';
 
-const SubMenuWrapper = styled.div`
+const SubMenuWrapper = styled(animated.div)`
   flex: none;
   overflow: hidden;
 `;
-
-const AnimatedSubMenuWrapper = animated(SubMenuWrapper);
 
 export interface SubMenuProps {
   id: string;
@@ -67,9 +65,9 @@ const SubMenu: FC<SubMenuProps> = ({
           <Icon type={MdKeyboardArrowDown} size="24" />
         </animated.div>
       </StyledSubMenu>
-      <AnimatedSubMenuWrapper style={style}>
+      <SubMenuWrapper style={style}>
         <div {...bind}>{children}</div>
-      </AnimatedSubMenuWrapper>
+      </SubMenuWrapper>
     </>
   );
 };

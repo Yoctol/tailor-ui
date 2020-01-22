@@ -18,12 +18,10 @@ import { Icon } from '../Icon';
 
 import { StyledTag, StyledTagInput, StyledTagPrefix } from './styles';
 
-const StyledTagWrapper = styled.div`
+const StyledTagWrapper = styled(animated.div)`
   display: inline-flex;
   overflow-x: hidden;
 `;
-
-const AnimatedStyledTagWrapper = animated(StyledTagWrapper);
 
 const StyledCloseIcon = styled(Icon)`
   & svg {
@@ -111,7 +109,7 @@ const Tag: FC<TagProps> = ({
   );
 
   return (
-    <AnimatedStyledTagWrapper
+    <StyledTagWrapper
       style={{ ...props, width: on && previous === on ? 'auto' : props.width }}
       {...bind}
     >
@@ -166,7 +164,7 @@ const Tag: FC<TagProps> = ({
           />
         )}
       </StyledTag>
-    </AnimatedStyledTagWrapper>
+    </StyledTagWrapper>
   );
 };
 

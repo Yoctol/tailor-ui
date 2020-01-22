@@ -18,7 +18,7 @@ const MessageContainer = styled.div`
   flex-direction: column;
 `;
 
-const MessageBox = styled.div`
+const MessageBox = styled(animated.div)`
   position: relative;
   box-sizing: border-box;
   flex: none;
@@ -47,8 +47,6 @@ const Life = styled(animated.div)`
   height: 3px;
   background-color: ${p => p.theme.colors.primaryLight};
 `;
-
-const AnimatedMessageBox = animated(MessageBox);
 
 const config = { tension: 125, friction: 20, precision: 0.1 };
 
@@ -169,7 +167,7 @@ class EffectMessage extends PureComponent<
             config={this.config as any}
           >
             {message => ({ life, ...props }) => (
-              <AnimatedMessageBox style={props}>
+              <MessageBox style={props}>
                 <MessageContent>
                   {message.icon}
                   <Box flex="auto">{message.content}</Box>
@@ -183,7 +181,7 @@ class EffectMessage extends PureComponent<
                   />
                   <Life style={{ right: life }} />
                 </MessageContent>
-              </AnimatedMessageBox>
+              </MessageBox>
             )}
           </Transition>
         </MessageContainer>

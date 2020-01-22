@@ -4,7 +4,7 @@ import { animated, config, useTransition } from 'react-spring';
 
 import { Portal } from '../Portal';
 
-const StyledBackdrop = styled.div`
+const StyledBackdrop = styled(animated.div)`
   position: fixed;
   z-index: -1;
   top: 0;
@@ -13,8 +13,6 @@ const StyledBackdrop = styled.div`
   left: 0;
   background-color: rgba(0, 0, 0, 0.65);
 `;
-
-const AnimatedStyledBackdrop = animated(StyledBackdrop);
 
 export interface BackdropProps extends HTMLAttributes<HTMLDivElement> {
   visible: boolean;
@@ -42,7 +40,7 @@ const Backdrop: FC<BackdropProps> = ({ visible, ...otherProps }) => {
         ({ item, key, props }) =>
           item && (
             <Portal key={key}>
-              <AnimatedStyledBackdrop style={props} {...otherProps} />
+              <StyledBackdrop style={props} {...otherProps} />
             </Portal>
           )
       )}

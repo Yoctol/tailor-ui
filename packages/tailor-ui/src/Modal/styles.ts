@@ -1,17 +1,18 @@
 import styled from 'styled-components';
+import { animated } from 'react-spring';
 
 import { StatusType } from '../types';
 
 import { ModalSize } from './types';
 
-export const ModalWrapper = styled.div`
+export const ModalWrapper = styled(animated.div)`
   position: fixed;
   z-index: 10001;
   top: 50%;
   left: 50%;
 `;
 
-export const ModalStatusBar = styled.div<{ status: StatusType }>`
+export const ModalStatusBar = styled(animated.div)<{ status: StatusType }>`
   position: absolute;
   z-index: -1;
   top: 0;
