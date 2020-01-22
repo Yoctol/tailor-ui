@@ -2,14 +2,9 @@
   "*.{js,ts,tsx}": [
     "eslint --ext=ts,tsx --fix",
     "stylelint",
-    "prettier --parser typescript --write",
-    "git add"
+    "prettier --parser typescript --write"
   ],
-  "*.json": ["prettier --write", "git add"],
-  "package.json": [
-    "prettier-package-json --write",
-    "prettier --write",
-    "git add"
-  ],
-  ".*rc": ["prettier --parser json --write", "git add"]
+  "*.json": ["prettier --write"],
+  "package.json": ["prettier-package-json --write", "prettier --write"],
+  ".*rc": ["prettier --parser json --write"]
 }
