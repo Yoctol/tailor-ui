@@ -1,16 +1,20 @@
 import React from 'react';
 
-import { fireEvent, render, wait } from 'test/test-utils';
+import { fireEvent, mockRaf, render, useMockRaf, wait } from 'test/test-utils';
 
 import { Popover } from '../Popover';
 
 describe('Popover', () => {
+  useMockRaf();
+
   it('should render correctly', () => {
     const { baseElement } = render(
       <Popover visible title="Popover Title" content="Popover Content">
         <button type="button">button</button>
       </Popover>
     );
+
+    mockRaf.flushSpring();
 
     expect(baseElement).toMatchSnapshot();
   });
@@ -26,13 +30,15 @@ describe('Popover', () => {
 
     fireEvent.click(button);
 
-    const popconfirm = getByText('Popover Content');
+    mockRaf.flushSpring();
 
-    expect(popconfirm).toBeInTheDocument();
+    const content = getByText('Popover Content');
+
+    expect(content).toBeInTheDocument();
   });
 
   it('should not visible when click children twice', () => {
-    const { getByText } = render(
+    const { getByText, queryByText } = render(
       <Popover title="Popover Title" content="Popover Content">
         <button type="button">button</button>
       </Popover>
@@ -41,15 +47,18 @@ describe('Popover', () => {
     const button = getByText('button');
 
     fireEvent.click(button);
+    mockRaf.flushSpring();
+    expect(queryByText('Popover Content')).toBeInTheDocument();
+
     fireEvent.click(button);
+    mockRaf.flushSpring();
 
-    const popconfirm = getByText('Popover Content');
-
-    expect(popconfirm).not.toBeVisible();
+    const content = queryByText('Popover Content');
+    expect(content).not.toBeInTheDocument();
   });
 
   it('should not visible when click hide button', () => {
-    const { getByText } = render(
+    const { getByText, queryByText } = render(
       <Popover
         title="Popover Title"
         content={hide => (
@@ -67,17 +76,19 @@ describe('Popover', () => {
 
     const button = getByText('button');
     fireEvent.click(button);
+    mockRaf.flushSpring();
 
     const hideButton = getByText('hide');
     fireEvent.click(hideButton);
+    mockRaf.flushSpring();
 
-    const popconfirm = getByText('Popover Content');
+    const content = queryByText('Popover Content');
 
-    expect(popconfirm).not.toBeVisible();
+    expect(content).not.toBeInTheDocument();
   });
 
   it('should not visible when click outside', () => {
-    const { getByText } = render(
+    const { getByText, queryByText } = render(
       <div>
         <Popover title="Popover Title" content="Popover Content">
           <button type="button">button</button>
@@ -88,13 +99,15 @@ describe('Popover', () => {
 
     const button = getByText('button');
     fireEvent.click(button);
+    mockRaf.flushSpring();
 
     const outsideButton = getByText('outside');
     fireEvent.click(outsideButton);
+    mockRaf.flushSpring();
 
-    const popconfirm = getByText('Popover Content');
+    const content = queryByText('Popover Content');
 
-    expect(popconfirm).not.toBeVisible();
+    expect(content).not.toBeInTheDocument();
   });
 
   it('should close latest one when nested usage', async () => {
@@ -123,27 +136,33 @@ describe('Popover', () => {
 
     const button1 = getByText('button1');
     fireEvent.click(button1);
+    mockRaf.flushSpring();
+
     const button2 = getByText('button2');
     fireEvent.click(button2);
+    mockRaf.flushSpring();
+
     const button3 = getByText('button3');
     fireEvent.click(button3);
+    mockRaf.flushSpring();
 
     const popover1 = getByText('popover1');
     const popover2 = getByText('popover2');
     const popover3 = getByText('popover3');
     await wait(() => [
-      expect(popover1).toBeVisible(),
-      expect(popover2).toBeVisible(),
-      expect(popover3).toBeVisible(),
+      expect(popover1).toBeInTheDocument(),
+      expect(popover2).toBeInTheDocument(),
+      expect(popover3).toBeInTheDocument(),
     ]);
 
     const outsideButton = getByText('outside');
     fireEvent.click(outsideButton);
+    mockRaf.flushSpring();
 
     await wait(() => [
-      expect(popover1).toBeVisible(),
-      expect(popover2).toBeVisible(),
-      expect(popover3).not.toBeVisible(),
+      expect(popover1).toBeInTheDocument(),
+      expect(popover2).toBeInTheDocument(),
+      expect(popover3).not.toBeInTheDocument(),
     ]);
   });
 });

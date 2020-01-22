@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { fireEvent, render, wait } from 'test/test-utils';
+import { fireEvent, mockRaf, render, useMockRaf, wait } from 'test/test-utils';
 
 import { Tooltip } from '../Tooltip';
 
@@ -19,12 +19,16 @@ jest.mock('lodash.debounce', () => (fn: Function) => {
 });
 
 describe('Tooltip', () => {
+  useMockRaf();
+
   it('should render tooltip correctly', () => {
     const { baseElement } = render(
       <Tooltip visible content="Content">
         <span>target</span>
       </Tooltip>
     );
+
+    mockRaf.flushSpring();
 
     expect(baseElement).toMatchSnapshot();
   });
@@ -38,8 +42,9 @@ describe('Tooltip', () => {
 
     const target = getByText('target');
     fireEvent.mouseEnter(target);
+    mockRaf.flushSpring();
 
-    await wait(() => expect(getByText('Content')).toBeInTheDocument());
+    expect(getByText('Content')).toBeInTheDocument();
   });
 
   it('should render tooltip content when hovered over 1000ms', async () => {
@@ -53,12 +58,14 @@ describe('Tooltip', () => {
 
     const target = getByText('target');
     fireEvent.mouseEnter(target);
+    mockRaf.flushSpring();
 
     expect(queryByText('Content')).not.toBeInTheDocument();
 
     jest.advanceTimersByTime(1000);
+    mockRaf.flushSpring();
 
-    await wait(() => expect(getByText('Content')).toBeInTheDocument());
+    expect(getByText('Content')).toBeInTheDocument();
   });
 
   it('should not render tooltip content when hovered does not over 1000ms', async () => {
@@ -72,11 +79,13 @@ describe('Tooltip', () => {
 
     const target = getByText('target');
     fireEvent.mouseEnter(target);
+    mockRaf.flushSpring();
 
     expect(queryByText('Content')).not.toBeInTheDocument();
 
     jest.advanceTimersByTime(500);
     fireEvent.mouseLeave(target);
+    mockRaf.flushSpring();
 
     expect(queryByText('Content')).not.toBeInTheDocument();
   });
@@ -92,11 +101,13 @@ describe('Tooltip', () => {
 
     const target = getByText('target');
     fireEvent.mouseEnter(target);
+    mockRaf.flushSpring();
 
     const content = getByText('Content');
     expect(content).toBeInTheDocument();
 
     fireEvent.mouseEnter(content);
+    mockRaf.flushSpring();
 
     expect(content).toBeInTheDocument();
   });
