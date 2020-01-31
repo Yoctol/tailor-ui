@@ -1,10 +1,51 @@
 /* eslint-disable */
-import React from 'react';
-import { Flex, Heading } from 'tailor-ui';
+import React, { useState, useCallback } from 'react';
+import { Flex, Heading, Tooltip } from 'tailor-ui';
 import { theme } from '@tailor-ui/theme';
-import { readableColor } from 'polished';
+import { readableColor, darken, lighten } from 'polished';
+import styled from 'styled-components';
 
 const { colors: themeColors } = theme;
+
+const StyledHeading = styled(Heading.h5)`
+  border-bottom: 1px dotted ${p => p.color};
+  cursor: pointer;
+
+  &:hover {
+    color: ${p => p.changeColor(0.3, p.color)};
+  }
+
+  ${p => p.theme.transition};
+`;
+
+const CopyText = ({ color, children }) => {
+  const [copySuccess, setCopySuccess] = useState(false);
+
+  const copyToClipboard = useCallback(
+    e => {
+      navigator.clipboard.writeText(e.target.textContent);
+
+      if (!copySuccess) {
+        setCopySuccess(true);
+      }
+
+      setTimeout(() => setCopySuccess(false), 500);
+    },
+    [copySuccess]
+  );
+
+  return (
+    <Tooltip content="Copied!" visible={copySuccess}>
+      <StyledHeading
+        color={color}
+        changeColor={color === '#fff' ? darken : lighten}
+        onClick={copyToClipboard}
+      >
+        {children}
+      </StyledHeading>
+    </Tooltip>
+  );
+};
 
 const Color = ({ colorKey, width }) => {
   const color = themeColors[colorKey];
@@ -21,8 +62,8 @@ const Color = ({ colorKey, width }) => {
       mx="2"
       bg={colorKey}
     >
-      <Heading.h5 color={fontColor}>{colorKey}</Heading.h5>
-      <Heading.h5 color={fontColor}>{color}</Heading.h5>
+      <CopyText color={fontColor}>{colorKey}</CopyText>
+      <CopyText color={fontColor}>{color}</CopyText>
     </Flex>
   );
 };
