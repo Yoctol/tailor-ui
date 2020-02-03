@@ -1,7 +1,7 @@
 import Downshift from 'downshift';
 import React, {
-  FC,
   FocusEventHandler,
+  PropsWithChildren,
   ReactNode,
   useCallback,
   useEffect,
@@ -19,12 +19,16 @@ import ClearIcon from './ClearIcon';
 import MultiDownshift from './MultiDownshift';
 import SelectArrow from './SelectArrow';
 import SelectInput from './SelectInput';
-import SelectOptions, { CreateOption, Option } from './SelectOptions';
+import SelectOptions, {
+  CreateOption,
+  Option,
+  SelectedValue,
+} from './SelectOptions';
 import SelectedOption from './SelectedOption';
 import { Loading, SelectWrapper, StyledSelect } from './styles';
 import { getDataTestId, itemToString } from './utils';
 
-export interface SelectProps {
+export interface SelectProps<V extends SelectedValue = SelectedValue> {
   id?: string;
   name?: string;
   className?: string;
@@ -37,13 +41,13 @@ export interface SelectProps {
   multiple?: boolean;
   searchable?: boolean;
   options: Option[];
-  value?: Option | Option[];
-  defaultValue?: Option | Option[];
+  value?: V;
+  defaultValue?: V;
   placeholder?: string;
   menu?: ReactNode;
   itemSize?: number;
   optionsMaxHeight?: number;
-  onChange?: (option: Option | Option[]) => void;
+  onChange?: (option: V) => void;
   onBlur?: FocusEventHandler<HTMLInputElement>;
   noOptionsMessage?: () => ReactNode;
   formatCreateLabel?: (labelInfo: {
@@ -56,7 +60,7 @@ export interface SelectProps {
   'data-testid'?: string;
 }
 
-const Select: FC<SelectProps> = ({
+const Select = <V extends SelectedValue>({
   id,
   width = 240,
   size = 'md',
@@ -80,7 +84,7 @@ const Select: FC<SelectProps> = ({
   onCreateOption,
   onBlur,
   ...props
-}) => {
+}: PropsWithChildren<SelectProps<V>>) => {
   const [invalid, labelId, setValue] = useFormField({
     id,
     value,
@@ -99,7 +103,7 @@ const Select: FC<SelectProps> = ({
   }, [visible]);
 
   const handleChange = useCallback(
-    (selection: Option | CreateOption) => {
+    (selection: V | CreateOption) => {
       if (inputRef.current && !multiple) {
         inputRef.current.blur();
       }
@@ -112,8 +116,8 @@ const Select: FC<SelectProps> = ({
       }
 
       if (!isCreate && onChange) {
-        onChange(selection as Option);
-        setValue(selection as Option);
+        onChange(selection as V);
+        setValue(selection);
       }
 
       if (!multiple || isCreate) {

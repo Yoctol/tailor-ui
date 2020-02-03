@@ -20,10 +20,12 @@ import { fuzzyFilter, getDataTestId, itemToString } from './utils';
 export type Option =
   | {
       label: string;
-      value: string;
+      value: string | number;
     }
   | string
   | number;
+
+export type SelectedValue = Option | Option[];
 
 export interface CreateOption {
   label: 'CREATE_OPTION';

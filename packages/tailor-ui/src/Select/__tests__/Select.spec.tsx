@@ -20,8 +20,8 @@ const DEFAULT_OPTIONS = [
 
 const DEFAULT_SELECT_OPTION = { label: 'Banana', value: 'banana' };
 
-const ControlSelect = (props: any) => {
-  const [value, setValue] = useState<any>(DEFAULT_SELECT_OPTION);
+const ControlSelect = (props: Record<string, any>) => {
+  const [value, setValue] = useState(DEFAULT_SELECT_OPTION);
 
   return (
     <Select
@@ -48,7 +48,7 @@ describe('Select', () => {
     const select = getByTestId('select');
     fireEvent.click(select);
 
-    expect(queryByTestId('select-menu')).not.toBeInTheDocument();
+    expect(queryByTestId('select-menu')).toBeNull();
   });
 
   it('should not open menu when loading', () => {
@@ -59,7 +59,7 @@ describe('Select', () => {
     const select = getByTestId('select');
     fireEvent.click(select);
 
-    expect(queryByTestId('select-menu')).not.toBeInTheDocument();
+    expect(queryByTestId('select-menu')).toBeNull();
   });
 
   it('should change value correctly when click option', async () => {
@@ -106,8 +106,8 @@ describe('Select', () => {
       fireEvent.click(orange);
 
       expect(getByTestId('select-item-0')).toHaveTextContent('Orange');
-      expect(queryByTestId('select-item-1')).not.toBeInTheDocument();
-      expect(queryByText('Banana')).not.toBeInTheDocument();
+      expect(queryByTestId('select-item-1')).toBeNull();
+      expect(queryByText('Banana')).toBeNull();
     });
   });
 
@@ -115,7 +115,7 @@ describe('Select', () => {
     it('should create successfully when pass creatable', async () => {
       const CreatableSelect = () => {
         const [loading, setLoading] = useState(false);
-        const [value, setValue] = useState<any>(DEFAULT_SELECT_OPTION);
+        const [value, setValue] = useState(DEFAULT_SELECT_OPTION);
         const [options, setOptions] = useState(DEFAULT_OPTIONS);
 
         return (
@@ -171,7 +171,7 @@ describe('Select', () => {
 
       jest.runOnlyPendingTimers();
 
-      await wait(() => expect(queryByTitle('loading')).not.toBeInTheDocument());
+      await wait(() => expect(queryByTitle('loading')).toBeNull());
       expect(input.value).toBe('XXXXXX');
 
       jest.useRealTimers();
@@ -179,7 +179,7 @@ describe('Select', () => {
 
     it('should not creatable when option is not valid', async () => {
       const CreatableSelect = () => {
-        const [value, setValue] = useState<any>(DEFAULT_SELECT_OPTION);
+        const [value, setValue] = useState(DEFAULT_SELECT_OPTION);
 
         return (
           <Select
@@ -217,7 +217,7 @@ describe('Select', () => {
   describe('clearable', () => {
     it('should clear value when click clear icon', async () => {
       const ClearableSelect = () => {
-        const [value, setValue] = useState<any>(DEFAULT_SELECT_OPTION);
+        const [value, setValue] = useState(DEFAULT_SELECT_OPTION);
 
         return (
           <Select
@@ -264,7 +264,7 @@ describe('Select', () => {
           width="360px"
           multiple
           value={value}
-          onChange={newValue => setValue(newValue as any)}
+          onChange={newValue => setValue(newValue)}
           options={options}
           isValidNewOption={name =>
             !options.map(option => option.label).includes(name) &&
@@ -311,9 +311,7 @@ describe('Select', () => {
 
       fireEvent.click(select);
 
-      await wait(() =>
-        expect(queryByTestId('select-menu')).not.toBeInTheDocument()
-      );
+      await wait(() => expect(queryByTestId('select-menu')).toBeNull());
       expect(getByText('Apple')).toBeInTheDocument();
       expect(getByText('Mango')).toBeInTheDocument();
     });
@@ -326,8 +324,8 @@ describe('Select', () => {
 
       const select = getByTestId('select');
 
-      expect(utilsQueryByText(select, 'Banana')).not.toBeInTheDocument();
-      expect(utilsQueryByText(select, 'Orange')).not.toBeInTheDocument();
+      expect(utilsQueryByText(select, 'Banana')).toBeNull();
+      expect(utilsQueryByText(select, 'Orange')).toBeNull();
     });
 
     it('should remove last selected option when press backspace ', async () => {
@@ -348,12 +346,10 @@ describe('Select', () => {
 
       fireEvent.click(select);
 
-      await wait(() =>
-        expect(queryByTestId('select-menu')).not.toBeInTheDocument()
-      );
+      await wait(() => expect(queryByTestId('select-menu')).toBeNull());
 
       expect(utilsGetByText(select, 'Banana')).toBeInTheDocument();
-      expect(queryByText('Orange')).not.toBeInTheDocument();
+      expect(queryByText('Orange')).toBeNull();
     });
   });
 });
