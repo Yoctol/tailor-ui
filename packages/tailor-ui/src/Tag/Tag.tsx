@@ -60,7 +60,7 @@ export interface TagProps
    * Callback executed when close animation is completed
    */
   onClosed?: () => void;
-  canClose?: () => boolean | (() => Promise<boolean>);
+  canClose?: () => boolean | Promise<boolean>;
   onChange?: (previousValue: string, value: string) => void;
   children?: string;
   initialEditing?: boolean;
