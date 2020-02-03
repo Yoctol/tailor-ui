@@ -28,8 +28,8 @@
   "sideEffects": false,
   "typings": "lib/index.d.ts",
   "dependencies": {
-    "polished": "^3.4.2",
-    "styled-normalize": "^8.0.6"
+    "polished": "^3.4.4",
+    "styled-normalize": "^8.0.7"
   },
   "peerDependencies": {
     "styled-components": ">=5.0.0"
