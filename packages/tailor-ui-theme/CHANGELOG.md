@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.4](https://github.com/Yoctol/tailor-ui/compare/@tailor-ui/theme@0.3.3...@tailor-ui/theme@0.3.4) (2020-02-03)
+
+
+### Bug Fixes
+
+* **docs:** update yarn.lock to fix doc site ([855c1e9](https://github.com/Yoctol/tailor-ui/commit/855c1e9fe4e2682851f2192ea41cff55260122d2))
+
+
+
+
+
 ## [0.3.3](https://github.com/Yoctol/tailor-ui/compare/@tailor-ui/theme@0.3.2...@tailor-ui/theme@0.3.3) (2019-12-30)
 
 **Note:** Version bump only for package @tailor-ui/theme

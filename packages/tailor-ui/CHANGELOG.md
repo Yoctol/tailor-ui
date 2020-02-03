@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.28.4](https://github.com/yoctol/tailor-ui/compare/tailor-ui@0.28.3...tailor-ui@0.28.4) (2020-02-03)
+
+
+### Bug Fixes
+
+* **docs:** update yarn.lock to fix doc site ([855c1e9](https://github.com/yoctol/tailor-ui/commit/855c1e9fe4e2682851f2192ea41cff55260122d2))
+* **switch:** add forward ref ([4298dc9](https://github.com/yoctol/tailor-ui/commit/4298dc9d9fa61fa1d3b1ef23bdb6aaf2d4065164))
+* **tag:** canClose type ([dace006](https://github.com/yoctol/tailor-ui/commit/dace0060a36f0a0ea0a566cb06e9c0412e38aab9))
+
+
+
+
+
 ## [0.28.3](https://github.com/yoctol/tailor-ui/compare/tailor-ui@0.28.2...tailor-ui@0.28.3) (2020-01-15)
 
 

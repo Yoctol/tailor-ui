@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.14.7](https://github.com/Yoctol/tailor-ui/compare/@tailor-ui/lab@0.14.6...@tailor-ui/lab@0.14.7) (2020-02-03)
+
+
+### Bug Fixes
+
+* **docs:** update yarn.lock to fix doc site ([855c1e9](https://github.com/Yoctol/tailor-ui/commit/855c1e9fe4e2682851f2192ea41cff55260122d2))
+
+
+
+
+
 ## [0.14.6](https://github.com/Yoctol/tailor-ui/compare/@tailor-ui/lab@0.14.5...@tailor-ui/lab@0.14.6) (2020-01-15)
 
 
