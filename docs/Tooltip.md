@@ -13,8 +13,7 @@ A simple text popup tip.
 ## Examples
 
 ```js
-import { Position } from 'tailor-ui';
-import { Tooltip } from '@tailor-ui/lab';
+import { Position, Tooltip } from 'tailor-ui';
 ```
 
 ### Basic

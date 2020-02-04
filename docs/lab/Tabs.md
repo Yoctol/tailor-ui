@@ -12,7 +12,7 @@ Use tabs for functional aspects of a page.
 ## Examples
 
 ```js
-import { Tabs } from 'tailor-ui';
+import { Tabs } from '@tailor-ui/lab';
 ```
 
 ### Basic
