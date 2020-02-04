@@ -14,7 +14,7 @@ Comparing with `Tooltip`, besides information `Popover` card can also provide ac
 ## Examples
 
 ```js
-import { Popover } from 'tailor-ui';
+import { Position, Popover } from 'tailor-ui';
 ```
 
 ### Basic
