@@ -5,6 +5,7 @@ import {
   Button,
   Card,
   Checkbox,
+  CheckboxGroup,
   Container,
   DatePicker,
   Divider,
@@ -22,6 +23,7 @@ import {
   Popconfirm,
   Popover,
   Radio,
+  RadioGroup,
   Select,
   Spin,
   Steps,
@@ -47,7 +49,7 @@ describe('index', () => {
     expect(Button).toBeDefined();
     expect(Card).toBeDefined();
     expect(Checkbox).toBeDefined();
-    expect(Checkbox.Group).toBeDefined();
+    expect(CheckboxGroup).toBeDefined();
     expect(Container).toBeDefined();
     expect(DatePicker).toBeDefined();
     expect(Divider).toBeDefined();
@@ -65,7 +67,7 @@ describe('index', () => {
     expect(Popconfirm).toBeDefined();
     expect(Popover).toBeDefined();
     expect(Radio).toBeDefined();
-    expect(Radio.Group).toBeDefined();
+    expect(RadioGroup).toBeDefined();
     expect(Select).toBeDefined();
     expect(Spin).toBeDefined();
     expect(Steps).toBeDefined();

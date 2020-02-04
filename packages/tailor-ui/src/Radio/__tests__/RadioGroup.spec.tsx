@@ -4,13 +4,14 @@ import { fireEvent, render } from 'test/test-utils';
 
 import { Box } from '../../Layout';
 import { Radio } from '../Radio';
+import { RadioGroup } from '../RadioGroup';
 
-describe('Radio.Group', () => {
+describe('RadioGroup', () => {
   it('should render disabled radio if option set disabled as true', () => {
     const onChange = jest.fn();
 
     const { container } = render(
-      <Radio.Group
+      <RadioGroup
         direction="vertical"
         options={[
           { label: 'radio 1', value: 'radio_1', disabled: true },
@@ -31,7 +32,7 @@ describe('Radio.Group', () => {
     const onChange = jest.fn();
 
     const { container } = render(
-      <Radio.Group
+      <RadioGroup
         direction="vertical"
         options={[
           { label: 'radio 1', value: 'radio_1' },
@@ -54,7 +55,7 @@ describe('Radio.Group', () => {
 
   it('should render vertical radio group', () => {
     const { container } = render(
-      <Radio.Group
+      <RadioGroup
         direction="vertical"
         options={[
           { label: 'radio 1', value: 'radio_1' },
@@ -71,7 +72,7 @@ describe('Radio.Group', () => {
   describe('composition with Radio', () => {
     it('should render correctly', () => {
       const { container } = render(
-        <Radio.Group value="">
+        <RadioGroup value="">
           <Box>
             <Radio value="radio_1">Radio 1</Radio>
           </Box>
@@ -81,7 +82,7 @@ describe('Radio.Group', () => {
           <Box>
             <Radio value="radio_3">Radio 3</Radio>
           </Box>
-        </Radio.Group>
+        </RadioGroup>
       );
 
       expect(container.firstChild).toMatchSnapshot();
@@ -91,7 +92,7 @@ describe('Radio.Group', () => {
       const onChange = jest.fn();
 
       const { container } = render(
-        <Radio.Group value="" onChange={onChange}>
+        <RadioGroup value="" onChange={onChange}>
           <Box>
             <Radio value="radio_1">Radio 1</Radio>
           </Box>
@@ -101,7 +102,7 @@ describe('Radio.Group', () => {
           <Box>
             <Radio value="radio_3">Radio 3</Radio>
           </Box>
-        </Radio.Group>
+        </RadioGroup>
       );
 
       const radio1 = container.querySelector(

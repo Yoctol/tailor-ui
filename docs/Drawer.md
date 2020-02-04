@@ -48,12 +48,12 @@ import { Drawer } from 'tailor-ui';
 
   return (
     <>
-      <Radio.Group value={placement} onChange={setPlacement}>
+      <RadioGroup value={placement} onChange={setPlacement}>
         <Radio value="top">Top</Radio>
         <Radio value="right">Right (default)</Radio>
         <Radio value="bottom">Bottom</Radio>
         <Radio value="left">Left</Radio>
-      </Radio.Group>
+      </RadioGroup>
 
       <Button mt="3" onClick={() => setVisible(!visible)}>
         Open

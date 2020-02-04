@@ -1,9 +1,10 @@
 import React, {
   ChangeEventHandler,
-  FC,
   FocusEventHandler,
+  MouseEventHandler,
+  ReactNode,
+  forwardRef,
   useContext,
-  useMemo,
 } from 'react';
 
 import { Box } from '../Layout';
@@ -11,19 +12,14 @@ import { useFormField } from '../FormField';
 
 import { CheckboxContext } from './CheckboxContext';
 import {
-  CheckboxGroup,
-  CheckboxGroupProps as _CheckboxGroupProps,
-} from './CheckboxGroup';
-import {
   CheckboxInner,
   CheckboxLabel,
   CheckboxWrapper,
   StyledCheckbox,
 } from './styles';
 
-export type CheckboxGroupProps = _CheckboxGroupProps;
-
 export interface CheckboxProps {
+  children?: ReactNode;
   checked?: boolean;
   defaultChecked?: boolean;
   disabled?: boolean;
@@ -32,37 +28,43 @@ export interface CheckboxProps {
   id?: string;
   onFocus?: FocusEventHandler<HTMLInputElement>;
   onBlur?: FocusEventHandler<HTMLInputElement>;
+  onMouseEnter?: MouseEventHandler<HTMLLabelElement>;
+  onMouseLeave?: MouseEventHandler<HTMLLabelElement>;
 }
 
-const Checkbox: FC<CheckboxProps> & {
-  Group: typeof CheckboxGroup;
-} = ({
-  children,
-  disabled = false,
-  checked,
-  defaultChecked,
-  onChange,
-  value,
-  id,
-  ...props
-}) => {
+const Checkbox = forwardRef<HTMLLabelElement, CheckboxProps>(function Checkbox(
+  {
+    children,
+    disabled = false,
+    checked,
+    defaultChecked,
+    onChange,
+    value,
+    id,
+    onMouseEnter,
+    onMouseLeave,
+    ...props
+  },
+  ref
+) {
   const { handleChange, isChecked, direction } = useContext(CheckboxContext);
-
-  const inGroup = Boolean(handleChange);
-
-  const boxChecked = useMemo(
-    () => (isChecked && value ? isChecked(value) : checked),
-    [checked, isChecked, value]
-  );
-
   const [, labelId, setValue] = useFormField({
     id,
     value: checked,
     defaultValue: defaultChecked,
   });
 
+  const inGroup = Boolean(handleChange);
+  const boxChecked = isChecked && value ? isChecked(value) : checked;
+
   return (
-    <CheckboxLabel disabled={disabled} direction={direction}>
+    <CheckboxLabel
+      ref={ref}
+      disabled={disabled}
+      direction={direction}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
+    >
       <CheckboxWrapper>
         <StyledCheckbox
           id={inGroup ? undefined : labelId}
@@ -87,8 +89,6 @@ const Checkbox: FC<CheckboxProps> & {
       <Box px="2">{children}</Box>
     </CheckboxLabel>
   );
-};
-
-Checkbox.Group = CheckboxGroup;
+});
 
 export { Checkbox };

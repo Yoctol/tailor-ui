@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { useField } from 'formik';
 
-import { FormField, Radio, RadioGroupProps } from 'tailor-ui';
+import { FormField, RadioGroup, RadioGroupProps } from 'tailor-ui';
 import { mergeEventProps } from '@tailor-ui/utils';
 
 export interface RadioProps extends RadioGroupProps {
@@ -26,7 +26,7 @@ const RadioField: FC<RadioProps> = ({
       label={fieldLabel}
       validationMessage={meta.error && meta.touched ? meta.error : null}
     >
-      <Radio.Group
+      <RadioGroup
         direction={direction}
         value={field.value}
         options={options}

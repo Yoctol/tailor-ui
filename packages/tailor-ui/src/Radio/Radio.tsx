@@ -1,21 +1,20 @@
 import React, {
   ChangeEventHandler,
-  FC,
   FocusEventHandler,
+  MouseEventHandler,
+  ReactNode,
+  forwardRef,
   useContext,
-  useMemo,
 } from 'react';
 
 import { Box } from '../Layout';
 import { useFormField } from '../FormField';
 
 import { RadioContext } from './RadioContext';
-import { RadioGroup, RadioGroupProps as _RadioGroupProps } from './RadioGroup';
 import { RadioInner, RadioLabel, RadioWrapper, StyledRadio } from './styles';
 
-export type RadioGroupProps = _RadioGroupProps;
-
 export interface RadioProps {
+  children?: ReactNode;
   checked?: boolean;
   defaultChecked?: boolean;
   disabled?: boolean;
@@ -23,35 +22,41 @@ export interface RadioProps {
   value?: string;
   onFocus?: FocusEventHandler<HTMLInputElement>;
   onBlur?: FocusEventHandler<HTMLInputElement>;
+  onMouseEnter?: MouseEventHandler<HTMLLabelElement>;
+  onMouseLeave?: MouseEventHandler<HTMLLabelElement>;
 }
 
-const Radio: FC<RadioProps> & {
-  Group: typeof RadioGroup;
-} = ({
-  children,
-  disabled = false,
-  checked,
-  defaultChecked,
-  onChange,
-  value,
-  ...props
-}) => {
+const Radio = forwardRef<HTMLLabelElement, RadioProps>(function Radio(
+  {
+    children,
+    disabled = false,
+    checked,
+    defaultChecked,
+    onChange,
+    value,
+    onMouseEnter,
+    onMouseLeave,
+    ...props
+  },
+  ref
+) {
   const { handleChange, isChecked, direction } = useContext(RadioContext);
-
-  const inGroup = Boolean(handleChange);
-
-  const boxChecked = useMemo(
-    () => (isChecked && value ? isChecked(value) : checked),
-    [checked, isChecked, value]
-  );
-
   const [, , setValue] = useFormField({
     value: checked,
     defaultValue: defaultChecked,
   });
 
+  const inGroup = Boolean(handleChange);
+  const boxChecked = isChecked && value ? isChecked(value) : checked;
+
   return (
-    <RadioLabel disabled={disabled} direction={direction}>
+    <RadioLabel
+      ref={ref}
+      disabled={disabled}
+      direction={direction}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
+    >
       <RadioWrapper>
         <StyledRadio
           disabled={disabled}
@@ -75,8 +80,6 @@ const Radio: FC<RadioProps> & {
       <Box px="2">{children}</Box>
     </RadioLabel>
   );
-};
-
-Radio.Group = RadioGroup;
+});
 
 export { Radio };
