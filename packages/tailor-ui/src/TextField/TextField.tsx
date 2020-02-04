@@ -2,6 +2,7 @@ import React, {
   ChangeEvent,
   ChangeEventHandler,
   FC,
+  FocusEventHandler,
   FormEvent,
   FormEventHandler,
   KeyboardEventHandler,
@@ -22,10 +23,13 @@ export interface TextFieldProps {
   maxLength?: number;
   textarea?: boolean;
   disabled?: boolean;
+  autoSelect: boolean;
+  autoFocus: boolean;
   onChange?:
     | ChangeEventHandler<HTMLInputElement>
     | FormEventHandler<HTMLTextAreaElement>;
   onPressEnter?: KeyboardEventHandler<HTMLInputElement>;
+  onBlur: FocusEventHandler<HTMLInputElement | HTMLTextAreaElement>;
 }
 
 const TextField: FC<TextFieldProps> = ({
