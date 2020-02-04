@@ -17,6 +17,9 @@ import { inputStyles } from './styles';
 
 export type TextareaProps = TextareaHTMLAttributes<HTMLTextAreaElement> & {
   resize?: boolean;
+  onResize?: (e: Event) => void;
+  maxRows?: number;
+  async?: boolean;
 };
 
 export const StyledTextarea = styled(
