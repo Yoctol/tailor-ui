@@ -2,19 +2,16 @@ import React, { FC } from 'react';
 import styled, { css } from 'styled-components';
 import {
   ColorProps,
-  FontSizeProps,
-  FontWeightProps,
   SpaceProps,
+  TypographyProps,
   color,
-  fontSize,
-  fontWeight,
   space,
+  typography,
 } from 'styled-system';
 
 type IStyledDividerProps = SpaceProps &
   ColorProps &
-  FontSizeProps &
-  FontWeightProps & {
+  TypographyProps & {
     type: 'horizontal' | 'vertical';
     orientation?: 'left' | 'right';
     dashed?: boolean;
@@ -108,8 +105,7 @@ const StyledDivider = styled.div<IStyledDividerProps>`
 
     ${space};
     ${color};
-    ${fontSize};
-    ${fontWeight};
+    ${typography};
 `;
 
 StyledDivider.defaultProps = {

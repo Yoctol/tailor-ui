@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { color } from 'styled-system';
+import { ColorProps, color } from 'styled-system';
 
 export const List = styled.div`
   max-height: 240px;
@@ -9,7 +9,7 @@ export const List = styled.div`
   border-radius: ${p => p.theme.radii.lg};
 `;
 
-export const Item = styled.li<{ disabled: boolean }>`
+export const Item = styled.li<{ disabled: boolean } & ColorProps>`
   display: flex;
   align-items: center;
   height: ${p => p.theme.heights.base};

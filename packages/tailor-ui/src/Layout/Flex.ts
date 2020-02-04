@@ -1,32 +1,15 @@
 import styled from 'styled-components';
-import {
-  AlignItemsProps,
-  FlexDirectionProps,
-  FlexWrapProps,
-  JustifyContentProps,
-  alignItems,
-  compose,
-  flexDirection,
-  flexWrap,
-  justifyContent,
-} from 'styled-system';
 
 import { BoxProps, box } from './Box';
 
-export type FlexProps = BoxProps &
-  AlignItemsProps &
-  FlexDirectionProps &
-  FlexWrapProps &
-  JustifyContentProps;
-
-const flex = compose(box, alignItems, flexDirection, justifyContent, flexWrap);
+export type FlexProps = BoxProps;
 
 const Flex = styled('div')<FlexProps>(
   {
     display: 'flex',
     boxSizing: 'border-box',
   },
-  flex
+  box
 );
 
 export { Flex };

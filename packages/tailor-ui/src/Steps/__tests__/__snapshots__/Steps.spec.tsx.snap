@@ -18,13 +18,13 @@ exports[`Steps should render correctly 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  overflow: hidden;
-  margin-bottom: 0rem;
-  margin-right: 16px;
-  min-height: auto;
   -webkit-flex: auto;
   -ms-flex: auto;
   flex: auto;
+  margin-right: 16px;
+  margin-bottom: 0rem;
+  overflow: hidden;
+  min-height: auto;
 }
 
 .c10 {
@@ -33,13 +33,13 @@ exports[`Steps should render correctly 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  overflow: hidden;
-  margin-bottom: 0rem;
-  margin-right: 16px;
-  min-height: auto;
   -webkit-flex: none;
   -ms-flex: none;
   flex: none;
+  margin-right: 16px;
+  margin-bottom: 0rem;
+  overflow: hidden;
+  min-height: auto;
 }
 
 .c3 {

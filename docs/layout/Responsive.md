@@ -51,11 +51,5 @@ const breakpoints = [
   '75rem', // 122px
 ]
 
-// aliases
-breakpoints.sm = breakpoints[0]
-breakpoints.md = breakpoints[1]
-breakpoints.lg = breakpoints[2]
-breakpoints.xl = breakpoints[3]
-
-<Box width={{ sm: 1, md: 1/2, lg: 1/4 }} />
+<Box width={[1, 1 / 2, 1 / 4]} />
 ```

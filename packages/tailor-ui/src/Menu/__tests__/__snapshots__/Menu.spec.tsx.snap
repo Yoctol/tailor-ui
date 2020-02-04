@@ -7,10 +7,6 @@ exports[`Menu should render correctly 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  overflow-y: auto;
-  background-color: #001e40;
-  width: 240px;
-  height: 100%;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -18,6 +14,10 @@ exports[`Menu should render correctly 1`] = `
   -webkit-justify-content: start;
   -ms-flex-pack: start;
   justify-content: start;
+  height: 100%;
+  overflow-y: auto;
+  background-color: #001e40;
+  width: 240px;
 }
 
 .c2 {

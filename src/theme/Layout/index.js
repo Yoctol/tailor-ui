@@ -9,12 +9,13 @@
 import Footer from '@theme/Footer';
 import Head from '@docusaurus/Head';
 import Navbar from '@theme/Navbar';
-import React from 'react';
+import React, { useState } from 'react';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
-import { UIProvider } from 'tailor-ui';
+import { UIProvider, locales } from 'tailor-ui';
 
+import LocaleContext from '../../context/LocaleContext';
 import './styles.css';
 
 function Layout(props) {
@@ -39,6 +40,8 @@ function Layout(props) {
   const metaImage = image || defaultImage;
   const metaImageUrl = siteUrl + useBaseUrl(metaImage);
   const faviconUrl = useBaseUrl(favicon);
+  const [locale, setLocale] = useState('en_US');
+
   return (
     <>
       <Head>
@@ -64,9 +67,11 @@ function Layout(props) {
         <meta name="twitter:card" content="summary" />
       </Head>
       <Navbar />
-      <UIProvider>
-        <main className="main">{children}</main>
-      </UIProvider>
+      <LocaleContext.Provider value={{ locale, setLocale }}>
+        <UIProvider locale={locales[locale]}>
+          <main className="main">{children}</main>
+        </UIProvider>
+      </LocaleContext.Provider>
       {!noFooter && <Footer />}
     </>
   );

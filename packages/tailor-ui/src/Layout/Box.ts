@@ -1,85 +1,28 @@
 import styled from 'styled-components';
 import * as system from 'styled-system';
 
-const overflowX = system.style({
-  prop: 'overflowX',
-  cssProperty: 'overflow-x',
-});
-
-const overflowY = system.style({
-  prop: 'overflowY',
-  cssProperty: 'overflow-y',
-});
-
-export type BoxProps = system.PositionProps &
-  system.TopProps &
-  system.RightProps &
-  system.BottomProps &
-  system.LeftProps &
-  system.OverflowProps &
-  system.GridAreaProps &
-  system.ZIndexProps &
-  system.DisplayProps &
+export type BoxProps = system.GridAreaProps &
+  system.PositionProps &
   system.SpaceProps &
-  system.LineHeightProps &
   system.BackgroundProps &
-  system.FontSizeProps &
-  system.TextAlignProps &
+  system.TypographyProps &
   system.ColorProps &
-  system.BordersProps &
-  system.BorderColorProps &
-  system.BorderRadiusProps &
-  system.BoxShadowProps &
-  system.WidthProps &
-  system.MinWidthProps &
-  system.MaxWidthProps &
-  system.HeightProps &
-  system.MinHeightProps &
-  system.MaxHeightProps &
-  system.FlexProps &
-  system.OrderProps &
-  system.AlignSelfProps & {
-    overflowX?: string;
-    overflowY?: string;
-  };
+  system.BorderProps &
+  system.ShadowProps &
+  system.LayoutProps &
+  system.FlexboxProps;
 
 export const box = system.compose(
-  system.position,
-  system.top,
-  system.right,
-  system.bottom,
-  system.left,
-  system.overflow,
-  overflowX as any,
-  overflowY as any,
-
   system.gridArea,
-
-  system.zIndex,
-  system.display,
+  system.position,
   system.space,
-  system.lineHeight,
   system.background,
-  system.fontSize,
-  system.textAlign,
+  system.typography,
   system.color,
-
-  system.borders,
-  system.borderColor,
-  system.borderRadius,
-  system.boxShadow,
-
-  system.width,
-  system.minWidth,
-  system.maxWidth,
-
-  system.height,
-  system.minHeight,
-  system.maxHeight,
-
-  system.flex,
-  system.order,
-  system.alignSelf
+  system.border,
+  system.shadow,
+  system.layout,
+  system.flexbox
 );
 
 const Box = styled('div')<BoxProps>(
