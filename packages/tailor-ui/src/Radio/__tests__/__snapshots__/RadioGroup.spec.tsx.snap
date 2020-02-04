@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Radio.Group composition with Radio should render correctly 1`] = `
+exports[`RadioGroup composition with Radio should render correctly 1`] = `
 .c1 {
   box-sizing: border-box;
 }
@@ -185,7 +185,7 @@ exports[`Radio.Group composition with Radio should render correctly 1`] = `
 </div>
 `;
 
-exports[`Radio.Group should render vertical radio group 1`] = `
+exports[`RadioGroup should render vertical radio group 1`] = `
 .c6 {
   box-sizing: border-box;
   padding-left: 0.5rem;

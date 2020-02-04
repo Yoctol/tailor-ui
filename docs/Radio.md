@@ -13,7 +13,7 @@ Radio.
 ## Examples
 
 ```js
-import { Radio } from 'tailor-ui';
+import { Radio, RadioGroup } from 'tailor-ui';
 ```
 
 ### Radio
@@ -54,7 +54,7 @@ import { Radio } from 'tailor-ui';
 </>
 ```
 
-### Radio.Group
+### RadioGroup
 
 #### Basic
 
@@ -64,7 +64,7 @@ import { Radio } from 'tailor-ui';
 
   return (
     <>
-      <Radio.Group
+      <RadioGroup
         options={[
           { label: 'Radio A', value: 'radio-a' },
           { label: 'Radio B', value: 'radio-b' },
@@ -75,7 +75,7 @@ import { Radio } from 'tailor-ui';
         onChange={setValue}
       />
       <br />
-      <Radio.Group
+      <RadioGroup
         options={[
           { label: 'Radio A', value: 'radio-a' },
           { label: 'Radio B', value: 'radio-b' },
@@ -98,7 +98,7 @@ import { Radio } from 'tailor-ui';
 
   return (
     <>
-      <Radio.Group
+      <RadioGroup
         options={[
           { label: 'Radio A', value: 'radio-a' },
           { label: 'Radio B', value: 'radio-b' },
@@ -123,7 +123,7 @@ import { Radio } from 'tailor-ui';
 
   return (
     <>
-      <Radio.Group value={value} onChange={setValue}>
+      <RadioGroup value={value} onChange={setValue}>
         <Box bg="gray300" p="2" m="2">
           <Radio value="radio_1">radio 1</Radio>
         </Box>
@@ -136,9 +136,9 @@ import { Radio } from 'tailor-ui';
         <Box bg="gray300" p="2" m="2">
           <Radio value="radio_4">radio 4</Radio>
         </Box>
-      </Radio.Group>
+      </RadioGroup>
       <br />
-      <Radio.Group defaultValue="radio_1" onChange={console.log}>
+      <RadioGroup defaultValue="radio_1" onChange={console.log}>
         <Box bg="gray300" p="2" m="2">
           <Radio value="radio_1">radio 1</Radio>
         </Box>
@@ -151,7 +151,7 @@ import { Radio } from 'tailor-ui';
         <Box bg="gray300" p="2" m="2">
           <Radio value="radio_4">radio 4</Radio>
         </Box>
-      </Radio.Group>
+      </RadioGroup>
     </>
   );
 }
@@ -164,7 +164,7 @@ import { Radio } from 'tailor-ui';
   const [value, setValue] = useState('');
 
   return (
-    <Radio.Group
+    <RadioGroup
       direction="vertical"
       options={[
         { label: 'radio 1', value: 'radio_1' },
@@ -187,7 +187,7 @@ import { Radio } from 'tailor-ui';
   label="Yes or No?"
   validator={value => (value !== 'yes' ? 'Should press yes' : null)}
 >
-  <Radio.Group
+  <RadioGroup
     defaultValue="no"
     options={[
       { label: 'Yes', value: 'yes' },
@@ -213,7 +213,7 @@ import { Radio } from 'tailor-ui';
 | `onFocus`        |                                                                   | `(event: FocusEvent) => void`  |         |
 | `onBlur`         |                                                                   | `(event: FocusEvent) => void`  |         |
 
-### Radio.Group
+### RadioGroup
 
 | Property       | Description                                                    | Type                                                         | Default |
 |----------------|----------------------------------------------------------------|--------------------------------------------------------------|---------|

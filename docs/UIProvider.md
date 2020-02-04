@@ -31,10 +31,10 @@ ReactDOM.render(
 
   return (
     <>
-      <Radio.Group value={value} onChange={setValue}>
+      <RadioGroup value={value} onChange={setValue}>
         <Radio value="en_US">English</Radio>
         <Radio value="zh_Hant">正體中文</Radio>
-      </Radio.Group>
+      </RadioGroup>
 
       <Box mt="3">
         <UIProvider locale={locales[value]}>

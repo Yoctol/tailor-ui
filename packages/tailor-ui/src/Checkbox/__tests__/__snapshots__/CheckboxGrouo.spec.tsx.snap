@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Checkbox.Group composition with Checkbox should render correctly 1`] = `
+exports[`CheckboxGroup composition with Checkbox should render correctly 1`] = `
 .c1 {
   box-sizing: border-box;
 }
@@ -190,7 +190,7 @@ exports[`Checkbox.Group composition with Checkbox should render correctly 1`] = 
 </div>
 `;
 
-exports[`Checkbox.Group should render vertical checkbox group 1`] = `
+exports[`CheckboxGroup should render vertical checkbox group 1`] = `
 .c7 {
   box-sizing: border-box;
   padding-left: 0.5rem;

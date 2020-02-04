@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { useField } from 'formik';
 
-import { Checkbox, CheckboxGroupProps, FormField } from 'tailor-ui';
+import { CheckboxGroup, CheckboxGroupProps, FormField } from 'tailor-ui';
 import { mergeEventProps } from '@tailor-ui/utils';
 
 export interface CheckboxFieldProps extends CheckboxGroupProps {
@@ -26,7 +26,7 @@ const CheckboxField: FC<CheckboxFieldProps> = ({
       label={fieldLabel}
       validationMessage={meta.error && meta.touched ? meta.error : null}
     >
-      <Checkbox.Group
+      <CheckboxGroup
         direction={direction}
         value={field.value}
         options={options}

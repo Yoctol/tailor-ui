@@ -4,13 +4,14 @@ import { fireEvent, render } from 'test/test-utils';
 
 import { Box } from '../../Layout';
 import { Checkbox } from '../Checkbox';
+import { CheckboxGroup } from '../CheckboxGroup';
 
-describe('Checkbox.Group', () => {
+describe('CheckboxGroup', () => {
   it('should render disabled checkbox if option set disabled as true', () => {
     const onChange = jest.fn();
 
     const { container } = render(
-      <Checkbox.Group
+      <CheckboxGroup
         direction="vertical"
         options={[
           { label: 'checkbox 1', value: 'check_1', disabled: true },
@@ -31,7 +32,7 @@ describe('Checkbox.Group', () => {
     const onChange = jest.fn();
 
     const { container } = render(
-      <Checkbox.Group
+      <CheckboxGroup
         direction="vertical"
         options={[
           { label: 'checkbox 1', value: 'check_1' },
@@ -54,7 +55,7 @@ describe('Checkbox.Group', () => {
 
   it('should render vertical checkbox group', () => {
     const { container } = render(
-      <Checkbox.Group
+      <CheckboxGroup
         direction="vertical"
         options={[
           { label: 'checkbox 1', value: 'check_1' },
@@ -71,7 +72,7 @@ describe('Checkbox.Group', () => {
   describe('composition with Checkbox', () => {
     it('should render correctly', () => {
       const { container } = render(
-        <Checkbox.Group value={[]}>
+        <CheckboxGroup value={[]}>
           <Box>
             <Checkbox value="check_1">checkbox 1</Checkbox>
           </Box>
@@ -81,7 +82,7 @@ describe('Checkbox.Group', () => {
           <Box>
             <Checkbox value="check_3">checkbox 3</Checkbox>
           </Box>
-        </Checkbox.Group>
+        </CheckboxGroup>
       );
 
       expect(container.firstChild).toMatchSnapshot();
@@ -91,7 +92,7 @@ describe('Checkbox.Group', () => {
       const onChange = jest.fn();
 
       const { container } = render(
-        <Checkbox.Group value={[]} onChange={onChange}>
+        <CheckboxGroup value={[]} onChange={onChange}>
           <Box>
             <Checkbox value="check_1">checkbox 1</Checkbox>
           </Box>
@@ -101,7 +102,7 @@ describe('Checkbox.Group', () => {
           <Box>
             <Checkbox value="check_3">checkbox 3</Checkbox>
           </Box>
-        </Checkbox.Group>
+        </CheckboxGroup>
       );
 
       const checkbox = container.querySelector(

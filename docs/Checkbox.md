@@ -13,7 +13,7 @@ Checkbox component.
 ## Examples
 
 ```js
-import { Checkbox } from 'tailor-ui';
+import { Checkbox, CheckboxGroup } from 'tailor-ui';
 ```
 
 ### Checkbox
@@ -61,7 +61,7 @@ import { Checkbox } from 'tailor-ui';
 </>
 ```
 
-### Checkbox.Group
+### CheckboxGroup
 
 #### Basic
 
@@ -71,7 +71,7 @@ import { Checkbox } from 'tailor-ui';
 
   return (
     <>
-      <Checkbox.Group
+      <CheckboxGroup
         options={[
           { label: 'checkbox 1', value: 'check_1' },
           { label: 'checkbox 2', value: 'check_2' },
@@ -82,7 +82,7 @@ import { Checkbox } from 'tailor-ui';
         onChange={set}
       />
       <br />
-      <Checkbox.Group
+      <CheckboxGroup
         options={[
           { label: 'checkbox 1', value: 'check_1' },
           { label: 'checkbox 2', value: 'check_2' },
@@ -105,7 +105,7 @@ import { Checkbox } from 'tailor-ui';
 
   return (
     <>
-      <Checkbox.Group
+      <CheckboxGroup
         options={[
           { label: 'checkbox 1', value: 'check_1' },
           { label: 'checkbox 2', value: 'check_2' },
@@ -135,7 +135,7 @@ import { Checkbox } from 'tailor-ui';
 
   return (
     <>
-      <Checkbox.Group value={value} onChange={set}>
+      <CheckboxGroup value={value} onChange={set}>
         <Box bg="gray300" p="2" m="2">
           <Checkbox value="check_1">checkbox 1</Checkbox>
         </Box>
@@ -148,9 +148,9 @@ import { Checkbox } from 'tailor-ui';
         <Box bg="gray300" p="2" m="2">
           <Checkbox value="check_4">checkbox 4</Checkbox>
         </Box>
-      </Checkbox.Group>
+      </CheckboxGroup>
       <br />
-      <Checkbox.Group defaultValue={['check_1']} onChange={console.log}>
+      <CheckboxGroup defaultValue={['check_1']} onChange={console.log}>
         <Box bg="gray300" p="2" m="2">
           <Checkbox value="check_1">checkbox 1</Checkbox>
         </Box>
@@ -163,7 +163,7 @@ import { Checkbox } from 'tailor-ui';
         <Box bg="gray300" p="2" m="2">
           <Checkbox value="check_4">checkbox 4</Checkbox>
         </Box>
-      </Checkbox.Group>
+      </CheckboxGroup>
     </>
   );
 }
@@ -176,7 +176,7 @@ import { Checkbox } from 'tailor-ui';
   const [value, set] = useState([]);
 
   return (
-    <Checkbox.Group
+    <CheckboxGroup
       direction="vertical"
       options={[
         { label: 'checkbox 1', value: 'check_1' },
@@ -201,7 +201,7 @@ import { Checkbox } from 'tailor-ui';
     value && value.length !== 4 ? 'Should checked all check box' : null
   }
 >
-  <Checkbox.Group
+  <CheckboxGroup
     defaultValue={['check_1']}
     options={[
       { label: 'checkbox 1', value: 'check_1' },
@@ -228,7 +228,7 @@ import { Checkbox } from 'tailor-ui';
 | `onFocus`        |                                                                      | `(event: FocusEvent) => void`  |         |
 | `onBlur`         |                                                                      | `(event: FocusEvent) => void`  |         |
 
-### Checkbox.Group
+### CheckboxGroup
 
 | Property       | Description                                                    | Type                                                         | Default |
 | -------------- | -------------------------------------------------------------- | ------------------------------------------------------------ | ------- |
