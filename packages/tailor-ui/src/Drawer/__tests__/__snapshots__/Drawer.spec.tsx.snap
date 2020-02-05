@@ -7,7 +7,6 @@ exports[`Drawer should render correctly 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  padding: 2rem;
   -webkit-flex: none;
   -ms-flex: none;
   flex: none;
@@ -15,6 +14,7 @@ exports[`Drawer should render correctly 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  padding: 2rem;
 }
 
 .c3 {
@@ -34,15 +34,15 @@ exports[`Drawer should render correctly 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  overflow-y: auto;
-  padding-left: 2rem;
-  padding-right: 2rem;
   -webkit-flex: auto;
   -ms-flex: auto;
   flex: auto;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  overflow-y: auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
 .c8 {
@@ -308,7 +308,6 @@ exports[`Drawer should render correctly with props closable 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  padding: 2rem;
   -webkit-flex: none;
   -ms-flex: none;
   flex: none;
@@ -316,6 +315,7 @@ exports[`Drawer should render correctly with props closable 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  padding: 2rem;
 }
 
 .c2 {
@@ -335,15 +335,15 @@ exports[`Drawer should render correctly with props closable 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  overflow-y: auto;
-  padding-left: 2rem;
-  padding-right: 2rem;
   -webkit-flex: auto;
   -ms-flex: auto;
   flex: auto;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  overflow-y: auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
 .c3 {
@@ -436,7 +436,6 @@ exports[`Drawer should render custom footer correctly 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  padding: 2rem;
   -webkit-flex: none;
   -ms-flex: none;
   flex: none;
@@ -444,6 +443,7 @@ exports[`Drawer should render custom footer correctly 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  padding: 2rem;
 }
 
 .c2 {
@@ -463,15 +463,15 @@ exports[`Drawer should render custom footer correctly 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  overflow-y: auto;
-  padding-left: 2rem;
-  padding-right: 2rem;
   -webkit-flex: auto;
   -ms-flex: auto;
   flex: auto;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  overflow-y: auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
 .c5 {
@@ -480,15 +480,15 @@ exports[`Drawer should render custom footer correctly 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  padding-left: 2rem;
-  padding-right: 2rem;
-  background-color: #e8ecf5;
   -webkit-box-pack: end;
   -webkit-justify-content: flex-end;
   -ms-flex-pack: end;
   justify-content: flex-end;
+  background-color: #e8ecf5;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 .c3 {

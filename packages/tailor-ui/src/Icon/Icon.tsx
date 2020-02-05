@@ -1,7 +1,7 @@
 import React, { FC, HTMLAttributes, forwardRef } from 'react';
 import styled, { css } from 'styled-components';
 import { IconType as ReactIconsIconType } from 'react-icons/lib/esm';
-import { SpaceProps, style, space as styledSpace } from 'styled-system';
+import { SpaceProps, space, style } from 'styled-system';
 
 import { BuiltInIconKeys, icons } from './icons';
 
@@ -43,7 +43,7 @@ export const IconWrapper = styled.i<IconWrapperProps>`
     ${styledSize};
   }
 
-  ${styledSpace};
+  ${space};
 `;
 
 export type IconType = BuiltInIconKeys | ReactIconsIconType;

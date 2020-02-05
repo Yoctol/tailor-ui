@@ -10,7 +10,7 @@
 import Clipboard from 'clipboard';
 import Highlight, { defaultProps } from 'prism-react-renderer';
 import Playground from '@theme/Playground';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 import classnames from 'classnames';
 import defaultTheme from 'prism-react-renderer/themes/palenight';
 import moment from 'moment';
@@ -26,6 +26,8 @@ import * as TailorUI from 'tailor-ui';
 import * as TailorUIFormik from '@tailor-ui/formik';
 import * as TailorUILab from '@tailor-ui/lab';
 
+import LocaleContext from '../../context/LocaleContext';
+
 import styles from './styles.module.css';
 
 const highlightLinesRangeRegex = /{([\d,-]+)}/;
@@ -40,6 +42,7 @@ const scope = {
   ...ReactIconsMd,
   ...ReactIconsTi,
   ...ramda,
+  useLocaleContext: () => useContext(LocaleContext),
   moment,
 };
 

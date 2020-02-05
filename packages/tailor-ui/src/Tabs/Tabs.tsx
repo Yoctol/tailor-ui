@@ -1,10 +1,10 @@
 import React, { FC, useContext, useState } from 'react';
 import styled, { css } from 'styled-components';
-import { space as styledSpace } from 'styled-system';
+import { SpaceProps, space } from 'styled-system';
 
 import TabContext, { Size } from './TabContext';
 
-interface StyledTabProps {
+interface StyledTabProps extends SpaceProps {
   size: Size;
   pills: boolean;
   active: boolean;
@@ -84,7 +84,7 @@ const StyledTab = styled.a<StyledTabProps>`
         `};
 
   ${p => p.theme.transition /* sc-declaration */};
-  ${styledSpace};
+  ${space};
 `;
 
 export interface TabProps {
@@ -118,7 +118,7 @@ export const Tab: FC<TabProps> = ({ label, value, ...props }) => {
   );
 };
 
-interface StyledTabsProps {
+interface StyledTabsProps extends SpaceProps {
   /**
    * Make the tabs position to bottom of parent
    */
@@ -151,7 +151,7 @@ const StyledTabs = styled.nav<StyledTabsProps>`
       }
     `};
 
-  ${styledSpace};
+  ${space};
 `;
 
 type TabsProps = StyledTabsProps & {

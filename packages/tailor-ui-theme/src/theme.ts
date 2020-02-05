@@ -57,34 +57,14 @@ export interface BreakpointsType {
    * 1200px
    */
   3: string;
-  /**
-   * 576px
-   */
-  sm: string;
-  /**
-   * 768px
-   */
-  md: string;
-  /**
-   * 992px
-   */
-  lg: string;
-  /**
-   * 1200px
-   */
-  xl: string;
 }
 
-const breakpoints: BreakpointsType = {
-  0: toRem(576),
-  1: toRem(768),
-  2: toRem(992),
-  3: toRem(1200),
-  sm: toRem(576),
-  md: toRem(768),
-  lg: toRem(992),
-  xl: toRem(1200),
-};
+const breakpoints: BreakpointsType = [
+  toRem(576),
+  toRem(768),
+  toRem(992),
+  toRem(1200),
+];
 
 export interface SpaceType {
   /**
