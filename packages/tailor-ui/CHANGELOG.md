@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.29.1](https://github.com/yoctol/tailor-ui/compare/tailor-ui@0.29.0...tailor-ui@0.29.1) (2020-02-05)
+
+
+### Bug Fixes
+
+* remove [@import](https://github.com/import) statements from globalStyle ([0f95e83](https://github.com/yoctol/tailor-ui/commit/0f95e83baa6512a7433ad6e8b57790aec63ac8db))
+
+
+
+
+
 # [0.29.0](https://github.com/yoctol/tailor-ui/compare/tailor-ui@0.28.4...tailor-ui@0.29.0) (2020-02-05)
 
 
