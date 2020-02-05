@@ -3,6 +3,29 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.29.0](https://github.com/yoctol/tailor-ui/compare/tailor-ui@0.28.4...tailor-ui@0.29.0) (2020-02-05)
+
+
+### Bug Fixes
+
+* **textarea:** correctly props type ([5caeaee](https://github.com/yoctol/tailor-ui/commit/5caeaeefa1974ce8a5c01874bb1734d0ed185ae3))
+* **textfield:** add some types ([6e81ceb](https://github.com/yoctol/tailor-ui/commit/6e81cebb12ebb5ebc0bfa881c89ab83f5707cfff))
+* **textfield:** optional type ([77c8091](https://github.com/yoctol/tailor-ui/commit/77c8091d9f496a50d86991abdd9d6b1a05ead38b))
+
+
+### reafctor
+
+* move checkbox group & radio group out of its base component ([e39554f](https://github.com/yoctol/tailor-ui/commit/e39554f3501a2f1e4b5e221b3b6bd593b8d58380))
+
+
+### BREAKING CHANGES
+
+* You should import CheckboxGroup & RadioGroup instead of Checkbox.Group & Radio.Group
+
+
+
+
+
 ## [0.28.4](https://github.com/yoctol/tailor-ui/compare/tailor-ui@0.28.3...tailor-ui@0.28.4) (2020-02-03)
 
 

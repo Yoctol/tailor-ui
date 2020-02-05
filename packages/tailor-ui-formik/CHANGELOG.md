@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0](https://github.com/Yoctol/tailor-ui/compare/@tailor-ui/formik@0.3.7...@tailor-ui/formik@0.4.0) (2020-02-05)
+
+
+### reafctor
+
+* move checkbox group & radio group out of its base component ([e39554f](https://github.com/Yoctol/tailor-ui/commit/e39554f3501a2f1e4b5e221b3b6bd593b8d58380))
+
+
+### BREAKING CHANGES
+
+* You should import CheckboxGroup & RadioGroup instead of Checkbox.Group & Radio.Group
+
+
+
+
+
 ## [0.3.7](https://github.com/Yoctol/tailor-ui/compare/@tailor-ui/formik@0.3.6...@tailor-ui/formik@0.3.7) (2020-02-03)
 
 **Note:** Version bump only for package @tailor-ui/formik
