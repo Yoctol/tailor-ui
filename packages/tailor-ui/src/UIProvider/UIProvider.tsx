@@ -1,8 +1,9 @@
 /* eslint camelcase: off */
 import React, { FC, ReactNode } from 'react';
+import { Helmet } from 'react-helmet';
 import { ThemeProvider } from 'styled-components';
 
-import { ThemeType, theme as defaultTheme } from '@tailor-ui/theme';
+import { ThemeType, theme as defaultTheme, fontStyle } from '@tailor-ui/theme';
 
 import { GlobalStyle } from '../GlobalStyle';
 import { HooksMessageProvider } from '../message/HooksMessageProvider';
@@ -32,6 +33,9 @@ const UIProvider: FC<UIProviderProps> = ({
         <UIDProvider>
           <HooksModalProvider>
             <HooksMessageProvider>
+              <Helmet>
+                <style type="text/css">{fontStyle}</style>
+              </Helmet>
               <GlobalStyle />
               {children}
             </HooksMessageProvider>

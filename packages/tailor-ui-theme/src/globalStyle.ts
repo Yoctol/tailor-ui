@@ -5,9 +5,6 @@ import { rem } from 'polished';
 export const globalStyle = css`
   ${styledNormalize}
 
-  @import url('https://fonts.googleapis.com/css?family=Roboto');
-  @import url('https://fonts.googleapis.com/css?family=Roboto+Mono');
-
   *,
   *::before,
   *::after {
