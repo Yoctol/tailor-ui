@@ -612,8 +612,8 @@ exports[`Button should render loading button 1`] = `
   border-radius: 50%;
   border-top-color: transparent;
   border-right-color: transparent;
-  -webkit-animation: zdZhV 0.7s linear infinite;
-  animation: zdZhV 0.7s linear infinite;
+  -webkit-animation: fEWCgj 0.7s linear infinite;
+  animation: fEWCgj 0.7s linear infinite;
 }
 
 <button
