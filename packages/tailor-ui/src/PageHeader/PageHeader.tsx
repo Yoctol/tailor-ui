@@ -2,15 +2,16 @@ import React, { FC, ReactNode } from 'react';
 import { MdKeyboardBackspace } from 'react-icons/md';
 
 import { Box, Flex } from '../Layout';
-import { Breadcrumb, BreadcrumbProps } from '../Breadcrumb';
+import { Breadcrumb, BreadcrumbItem } from '../Breadcrumb';
 import { Button } from '../Button';
 import { Ellipsis } from '../Ellipsis';
 import { Heading } from '../Typography';
 
-export interface PageHeaderProps extends BreadcrumbProps {
+export interface PageHeaderProps {
   title?: ReactNode;
   extra?: ReactNode;
   onBack?: () => void;
+  breadcrumb?: BreadcrumbItem[];
 }
 
 const PageHeader: FC<PageHeaderProps> = ({
@@ -42,7 +43,7 @@ const PageHeader: FC<PageHeaderProps> = ({
         {title && breadcrumb.length > 0 && (
           <Box mx="12px" width="1px" height="16px" bg="gray300" />
         )}
-        <Breadcrumb breadcrumb={breadcrumb} />
+        <Breadcrumb items={breadcrumb} />
       </Flex>
       {extra && (
         <Flex alignItems="center" flex="none">

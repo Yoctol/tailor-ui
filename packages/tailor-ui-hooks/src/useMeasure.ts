@@ -1,10 +1,12 @@
 import ResizeObserver from 'resize-observer-polyfill';
-import { useEffect, useRef, useState } from 'react';
+import { Ref, useEffect, useRef, useState } from 'react';
+import { useForkedRef } from '@reach/utils';
 
 import { tuplify } from '@tailor-ui/utils';
 
-const useMeasure = () => {
-  const ref = useRef<any>(null);
+const useMeasure = (targetRef: Ref<any> = null) => {
+  const measureRef = useRef<any>(null);
+  const ref = useForkedRef(measureRef, targetRef);
 
   const [bounds, set] = useState({
     left: 0,
@@ -18,8 +20,8 @@ const useMeasure = () => {
   );
 
   useEffect(() => {
-    if (ref.current) {
-      ro.observe(ref.current);
+    if (measureRef.current) {
+      ro.observe(measureRef.current);
     }
 
     return () => ro.disconnect();
