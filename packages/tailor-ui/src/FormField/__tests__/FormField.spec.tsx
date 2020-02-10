@@ -2,13 +2,15 @@ import React, { useState } from 'react';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { string } from 'yup';
 
-import { fireEvent, render, wait } from 'test/test-utils';
+import { fireEvent, mockRaf, render, useMockRaf } from 'test/test-utils';
 
 import { Button } from '../../Button';
 import { FormField } from '../FormField';
 import { Input } from '../../Input';
 
 describe('FormField', () => {
+  useMockRaf();
+
   it('should render correctly', () => {
     const { container, getByLabelText } = render(
       <FormField label="Input">
@@ -39,17 +41,17 @@ describe('FormField', () => {
 
   describe('validationMessage', () => {
     it('should render FormField with error message correctly', async () => {
-      const { container, findByText } = render(
+      const { container, getByText } = render(
         <FormField label="Input" validationMessage="Error Message">
           <Input placeholder="Placeholder" defaultValue="" />
         </FormField>
       );
 
-      const message = await findByText('Error Message');
+      mockRaf.flush();
 
-      await wait(() =>
-        expect(message.parentElement).toHaveStyle('opacity: 1; height: 22px')
-      );
+      const message = getByText('Error Message');
+
+      expect(message).toBeVisible();
       expect(container.firstChild).toMatchSnapshot();
     });
 
@@ -71,9 +73,9 @@ describe('FormField', () => {
         );
       };
 
-      const { getByTestId, findByText, queryByText } = render(<TextInput />);
+      const { getByTestId, getByText, queryByText } = render(<TextInput />);
 
-      expect(queryByText('Error Message')).not.toBeInTheDocument();
+      expect(queryByText('Error Message')).toBeNull();
 
       fireEvent.change(getByTestId('input'), {
         target: {
@@ -81,8 +83,9 @@ describe('FormField', () => {
         },
       });
 
-      const message = await findByText('Error Message');
+      mockRaf.flush();
 
+      const message = getByText('Error Message');
       expect(message).toBeInTheDocument();
     });
 
@@ -105,21 +108,22 @@ describe('FormField', () => {
         );
       };
 
-      const { getByTestId, findByText, queryByText } = render(<TextInput />);
+      const { getByTestId, getByText, queryByText } = render(<TextInput />);
 
-      expect(queryByText('Error Message')).not.toBeInTheDocument();
+      expect(queryByText('Error Message')).toBeNull();
 
       fireEvent.click(getByTestId('button'));
 
-      const message = await findByText('Error Message');
+      mockRaf.flush();
 
+      const message = getByText('Error Message');
       expect(message).toBeInTheDocument();
     });
   });
 
   describe('yup schema validator', () => {
     it('should render error message when input is invalid value', async () => {
-      const { findByText } = render(
+      const { getByText } = render(
         <FormField
           label="Input"
           validator={string().test(
@@ -132,8 +136,9 @@ describe('FormField', () => {
         </FormField>
       );
 
-      const message = await findByText('Error Message');
+      mockRaf.flush();
 
+      const message = getByText('Error Message');
       expect(message).toBeInTheDocument();
     });
 
@@ -151,11 +156,11 @@ describe('FormField', () => {
         </FormField>
       );
 
-      expect(queryByText('Error Message')).not.toBeInTheDocument();
+      expect(queryByText('Error Message')).toBeNull();
     });
 
     it('should render FormField with error message correctly when change input value', async () => {
-      const { getByTestId, findByText, queryByText } = render(
+      const { getByTestId, getByText, queryByText } = render(
         <FormField
           label="Input"
           validator={string().test(
@@ -172,21 +177,23 @@ describe('FormField', () => {
         </FormField>
       );
 
-      expect(queryByText('Error Message')).not.toBeInTheDocument();
+      expect(queryByText('Error Message')).toBeNull();
       fireEvent.change(getByTestId('input'), {
         target: {
           value: 'error',
         },
       });
 
-      const message = await findByText('Error Message');
+      mockRaf.flush();
+
+      const message = getByText('Error Message');
       expect(message).toBeInTheDocument();
     });
   });
 
   describe('function validator', () => {
     it('should render error message when input is invalid value', async () => {
-      const { findByText } = render(
+      const { getByText } = render(
         <FormField
           label="Input"
           validator={value => (value === 'error' ? 'Error Message' : null)}
@@ -195,8 +202,9 @@ describe('FormField', () => {
         </FormField>
       );
 
-      const message = await findByText('Error Message');
+      mockRaf.flush();
 
+      const message = getByText('Error Message');
       expect(message).toBeInTheDocument();
     });
 
@@ -210,11 +218,11 @@ describe('FormField', () => {
         </FormField>
       );
 
-      expect(queryByText('Error Message')).not.toBeInTheDocument();
+      expect(queryByText('Error Message')).toBeNull();
     });
 
     it('should render FormField with error message correctly when change input value', async () => {
-      const { getByTestId, findByText, queryByText } = render(
+      const { getByTestId, getByText, queryByText } = render(
         <FormField
           label="Input"
           validator={value => (value === 'error' ? 'Error Message' : null)}
@@ -227,22 +235,23 @@ describe('FormField', () => {
         </FormField>
       );
 
-      expect(queryByText('Error Message')).not.toBeInTheDocument();
+      expect(queryByText('Error Message')).toBeNull();
       fireEvent.change(getByTestId('input'), {
         target: {
           value: 'error',
         },
       });
 
-      const message = await findByText('Error Message');
+      mockRaf.flush();
 
+      const message = getByText('Error Message');
       expect(message).toBeInTheDocument();
     });
   });
 
   describe('object validator', () => {
     it('should render error message when input is invalid value', async () => {
-      const { findByText } = render(
+      const { getByText } = render(
         <FormField
           label="Input"
           validator={{
@@ -254,12 +263,14 @@ describe('FormField', () => {
         </FormField>
       );
 
-      const message = await findByText('error message');
+      mockRaf.flush();
+
+      const message = getByText('error message');
       expect(message).toBeInTheDocument();
     });
 
     it('should render error message when input is invalid value', async () => {
-      const { findByText } = render(
+      const { getByText } = render(
         <FormField
           label="Input"
           validator={[
@@ -277,12 +288,14 @@ describe('FormField', () => {
         </FormField>
       );
 
-      const message = await findByText('error message');
+      mockRaf.flush();
+
+      const message = getByText('error message');
       expect(message).toBeInTheDocument();
     });
 
     it('should render error message when input is another invalid value', async () => {
-      const { findByText } = render(
+      const { getByText } = render(
         <FormField
           label="Input"
           validator={[
@@ -300,7 +313,9 @@ describe('FormField', () => {
         </FormField>
       );
 
-      const message = await findByText('another error message');
+      mockRaf.flush();
+
+      const message = getByText('another error message');
       expect(message).toBeInTheDocument();
     });
 
@@ -323,12 +338,12 @@ describe('FormField', () => {
         </FormField>
       );
 
-      expect(queryByText('error message')).not.toBeInTheDocument();
-      expect(queryByText('another error message')).not.toBeInTheDocument();
+      expect(queryByText('error message')).toBeNull();
+      expect(queryByText('another error message')).toBeNull();
     });
 
     it('should render FormField with error message correctly when change input value', async () => {
-      const { getByTestId, findByText, queryByText } = render(
+      const { getByTestId, getByText, queryByText } = render(
         <FormField
           label="Input"
           validator={[
@@ -350,7 +365,7 @@ describe('FormField', () => {
         </FormField>
       );
 
-      expect(queryByText('Error Message')).not.toBeInTheDocument();
+      expect(queryByText('Error Message')).toBeNull();
 
       fireEvent.change(getByTestId('input'), {
         target: {
@@ -358,7 +373,9 @@ describe('FormField', () => {
         },
       });
 
-      const message = await findByText('error message');
+      mockRaf.flush();
+
+      const message = getByText('error message');
       expect(message).toBeInTheDocument();
 
       fireEvent.change(getByTestId('input'), {
@@ -367,7 +384,9 @@ describe('FormField', () => {
         },
       });
 
-      const message2 = await findByText('another error message');
+      mockRaf.flush();
+
+      const message2 = getByText('another error message');
       expect(message2).toBeInTheDocument();
     });
   });

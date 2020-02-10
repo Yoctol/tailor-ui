@@ -66,7 +66,7 @@ exports[`Dropdown should render correctly 1`] = `
     <button
       type="button"
     >
-      button
+      Button
     </button>
   </div>
   <div
@@ -80,7 +80,7 @@ exports[`Dropdown should render correctly 1`] = `
         style="transform: translate3d(-6px, -6px, 0px);"
       >
         <div
-          style="opacity: 0; transform: scale(0.9); transform-origin: 6px 0px;"
+          style="opacity: 1; transform: scale(1); transform-origin: 6px 0px;"
         >
           <div
             class="c1"
@@ -91,7 +91,7 @@ exports[`Dropdown should render correctly 1`] = `
               <li
                 class="c3"
               >
-                item
+                Item
               </li>
             </div>
           </div>

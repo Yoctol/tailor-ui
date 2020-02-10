@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 
 import {
   fireEvent,
+  mockRaf,
   render,
+  useMockRaf,
   getByText as utilsGetByText,
   queryByText as utilsQueryByText,
-  wait,
-  waitForElement,
 } from 'test/test-utils';
 
 import { Select } from '../Select';
@@ -34,6 +34,8 @@ const ControlSelect = (props: Record<string, any>) => {
 };
 
 describe('Select', () => {
+  useMockRaf();
+
   it('should render correctly', () => {
     const { baseElement } = render(<Select options={DEFAULT_OPTIONS} />);
 
@@ -71,7 +73,7 @@ describe('Select', () => {
     const select = getByTestId('select');
     fireEvent.click(select);
 
-    await waitForElement(() => getByTestId('select-menu'));
+    mockRaf.flushSpring();
 
     const orange = getByTestId('select-item-1');
     fireEvent.click(orange);
@@ -91,7 +93,7 @@ describe('Select', () => {
       const select = getByTestId('select');
       fireEvent.click(select);
 
-      await waitForElement(() => getByTestId('select-menu'));
+      mockRaf.flushSpring();
 
       expect(input.value).toBe('');
       expect(input.placeholder).toBe('Banana');
@@ -155,7 +157,7 @@ describe('Select', () => {
       const select = getByTestId('select');
       fireEvent.click(select);
 
-      await waitForElement(() => getByTestId('select-menu'));
+      mockRaf.flushSpring();
 
       fireEvent.change(input, {
         target: {
@@ -171,7 +173,7 @@ describe('Select', () => {
 
       jest.runOnlyPendingTimers();
 
-      await wait(() => expect(queryByTitle('loading')).toBeNull());
+      expect(queryByTitle('loading')).toBeNull();
       expect(input.value).toBe('XXXXXX');
 
       jest.useRealTimers();
@@ -201,7 +203,7 @@ describe('Select', () => {
       const select = getByTestId('select');
       fireEvent.click(select);
 
-      await waitForElement(() => getByTestId('select-menu'));
+      mockRaf.flushSpring();
 
       fireEvent.change(input, {
         target: {
@@ -301,7 +303,7 @@ describe('Select', () => {
       const select = getByTestId('select');
       fireEvent.click(select);
 
-      await waitForElement(() => getByTestId('select-menu'));
+      mockRaf.flushSpring();
 
       fireEvent.click(getByText('Apple'));
 
@@ -311,7 +313,9 @@ describe('Select', () => {
 
       fireEvent.click(select);
 
-      await wait(() => expect(queryByTestId('select-menu')).toBeNull());
+      mockRaf.flushSpring();
+
+      expect(queryByTestId('select-menu')).toBeNull();
       expect(getByText('Apple')).toBeInTheDocument();
       expect(getByText('Mango')).toBeInTheDocument();
     });
@@ -346,8 +350,9 @@ describe('Select', () => {
 
       fireEvent.click(select);
 
-      await wait(() => expect(queryByTestId('select-menu')).toBeNull());
+      mockRaf.flushSpring();
 
+      expect(queryByTestId('select-menu')).toBeNull();
       expect(utilsGetByText(select, 'Banana')).toBeInTheDocument();
       expect(queryByText('Orange')).toBeNull();
     });

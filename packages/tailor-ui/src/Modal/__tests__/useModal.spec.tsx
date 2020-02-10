@@ -87,7 +87,7 @@ describe('useModal', () => {
 
     mockRaf.flush();
 
-    await wait(() => expect(queryByText('Content')).not.toBeInTheDocument());
+    expect(queryByText('Content')).toBeNull();
   });
 
   it('should trigger onConfirm correctly', async () => {
@@ -118,7 +118,7 @@ describe('useModal', () => {
 
     mockRaf.flush();
 
-    await wait(() => expect(queryByText('Content')).not.toBeInTheDocument());
+    expect(queryByText('Content')).toBeNull();
   });
 
   describe('return values', () => {
