@@ -18,7 +18,7 @@ module.exports = {
       'layout/spacing-scale',
       'layout/width-scale',
     ],
-    Navigation: ['dropdown', 'menu', 'page-header', 'steps'],
+    Navigation: ['breadcrumb', 'dropdown', 'menu', 'page-header', 'steps'],
     'Data Entry': [
       'checkbox',
       'date-picker',

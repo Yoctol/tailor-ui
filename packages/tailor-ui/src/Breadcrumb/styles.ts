@@ -8,7 +8,7 @@ interface StyledBreadcrumbLinkProps {
 }
 
 export const StyledBreadcrumbLink = styled.a<StyledBreadcrumbLinkProps>`
-  max-width: ${p => (p.lockWidth ? '200px' : '100%')};
+  max-width: ${p => (p.lockWidth ? '200px' : 'auto')};
   color: ${p => p.theme.colors.gray400};
   font-size: ${p => p.theme.fontSizes.base};
   font-weight: bold;

@@ -1,17 +1,20 @@
 import React, {
   FC,
-  Fragment,
   MouseEventHandler,
   ReactNode,
+  createRef,
+  forwardRef,
   useEffect,
-  useRef,
+  useMemo,
   useState,
 } from 'react';
 import { MdKeyboardArrowRight, MdMoreHoriz } from 'react-icons/md';
 
+import { useMeasure } from '@tailor-ui/hooks';
+
+import { Box, Flex } from '../Layout';
 import { Dropdown } from '../Dropdown';
 import { Ellipsis } from '../Ellipsis';
-import { Flex } from '../Layout';
 import { Icon } from '../Icon';
 import { Position } from '../constants';
 
@@ -22,35 +25,22 @@ export interface BreadcrumbLink {
   name: ReactNode;
   lockWidth: boolean;
   onClick: MouseEventHandler<HTMLAnchorElement>;
-  onMeasure: (width: number) => void;
 }
 
-const BreadcrumbLink: FC<BreadcrumbLink> = ({
-  active,
-  name,
-  lockWidth,
-  onClick,
-  onMeasure,
-}) => {
-  const ref = useRef<HTMLAnchorElement>(null);
-
-  useEffect(() => {
-    if (ref.current) {
-      onMeasure(ref.current.offsetWidth);
-    }
-  }, [name, onMeasure]);
-
-  return (
-    <StyledBreadcrumbLink
-      ref={ref}
-      active={active}
-      lockWidth={lockWidth}
-      onClick={onClick}
-    >
-      <Ellipsis>{name}</Ellipsis>
-    </StyledBreadcrumbLink>
-  );
-};
+const BreadcrumbLink = forwardRef<HTMLAnchorElement, BreadcrumbLink>(
+  function BreadcrumbLink({ active, name, lockWidth, onClick }, ref) {
+    return (
+      <StyledBreadcrumbLink
+        ref={ref}
+        active={active}
+        lockWidth={lockWidth}
+        onClick={onClick}
+      >
+        <Ellipsis>{name}</Ellipsis>
+      </StyledBreadcrumbLink>
+    );
+  }
+);
 
 export interface BreadcrumbItem {
   key: string;
@@ -59,131 +49,130 @@ export interface BreadcrumbItem {
 }
 
 export interface BreadcrumbItemProps {
-  breadcrumb: BreadcrumbItem[];
+  items: BreadcrumbItem[];
 }
 
-const HiddenBreadcrumb: FC<BreadcrumbItemProps> = ({ breadcrumb }) => {
+const HiddenBreadcrumb: FC<BreadcrumbItemProps> = ({ items }) => {
   return (
-    <>
-      <Dropdown
-        position={Position.BOTTOM}
-        overlay={
-          <Dropdown.List>
-            {breadcrumb.map(({ key, name, onClick }) => (
-              <Dropdown.Item key={key} onClick={onClick}>
-                {name}
-              </Dropdown.Item>
-            ))}
-          </Dropdown.List>
-        }
-      >
-        <MoreIcon type={MdMoreHoriz} fill="gray400" cursor="pointer" />
-      </Dropdown>
-      <Icon type={MdKeyboardArrowRight} fill="gray400" />
-    </>
+    <Dropdown
+      position={Position.BOTTOM}
+      overlay={
+        <Dropdown.List>
+          {items.map(({ key, name, onClick }) => (
+            <Dropdown.Item key={key} onClick={onClick}>
+              {name}
+            </Dropdown.Item>
+          ))}
+        </Dropdown.List>
+      }
+    >
+      <MoreIcon type={MdMoreHoriz} fill="gray400" cursor="pointer" />
+    </Dropdown>
   );
 };
 
 export interface BreadcrumbProps {
-  breadcrumb?: BreadcrumbItem[];
+  items?: BreadcrumbItem[];
 }
 
-const Breadcrumb: FC<BreadcrumbProps> = ({ breadcrumb = [] }) => {
-  const [measured, setMeasured] = useState(false);
-  const breadcrumbRef = useRef<HTMLDivElement>(null);
-  const [hiddenKeys, setHiddenKeys] = useState<string[]>([]);
-  const [breadcrumbsWidth, setBreadcrumbsWidth] = useState<
-    { key: string; width: number }[]
-  >([]);
+const Breadcrumb = forwardRef<HTMLDivElement, BreadcrumbProps>(
+  function Breadcrumb({ items = [] }, forwardedRef) {
+    const [{ ref }, bound] = useMeasure(forwardedRef);
+    const [measured, setMeasured] = useState(false);
+    const [hiddenKeys, setHiddenKeys] = useState<string[]>(
+      items.map(item => item.key)
+    );
 
-  useEffect(() => {
-    if (
-      breadcrumbRef.current &&
-      breadcrumbsWidth.length === breadcrumb.length &&
-      !measured
-    ) {
-      let containerWidth = breadcrumbRef.current.offsetWidth - 48;
+    const itemWithRefs = useMemo(
+      () =>
+        items.map(attrs => ({
+          ...attrs,
+          itemRef: createRef<HTMLAnchorElement>(),
+        })),
+      [items]
+    );
 
-      const keys = breadcrumbsWidth.reverse().reduce((prev, curr, index) => {
-        const hasArrow = index !== 0;
-        containerWidth -= curr.width + (hasArrow ? 24 : 0);
+    useEffect(() => {
+      setMeasured(false);
 
-        if (containerWidth < 0 && !prev.includes(curr.key)) {
-          return [...prev, curr.key];
-        }
+      if (
+        bound.width !== 0 &&
+        itemWithRefs.every(({ itemRef }) => itemRef.current?.offsetWidth)
+      ) {
+        let containerWidth = bound.width - 48;
 
-        return prev;
-      }, [] as string[]);
+        const keys = [...itemWithRefs]
+          .reverse()
+          .reduce<string[]>((prev, { key, itemRef }, index) => {
+            const hasArrow = index !== 0;
+            containerWidth -=
+              (itemRef.current as HTMLAnchorElement).offsetWidth +
+              (hasArrow ? 24 : 0);
 
-      setBreadcrumbsWidth([]);
-      setHiddenKeys(keys);
-      setMeasured(true);
+            if (containerWidth < 0) {
+              return [...prev, key];
+            }
+
+            return prev;
+          }, []);
+
+        setHiddenKeys(keys);
+        setMeasured(true);
+      }
+    }, [bound.width, itemWithRefs]);
+
+    const hiddenItems = items.filter(({ key }) => hiddenKeys.includes(key));
+
+    if (items.length === 0) {
+      return null;
     }
-  }, [breadcrumb.length, breadcrumbsWidth, measured]);
 
-  const hiddenBreadcrumb = breadcrumb.filter(({ key }) =>
-    hiddenKeys.includes(key)
-  );
-
-  const visibleBreadcrumb = breadcrumb.filter(
-    ({ key }) => !hiddenKeys.includes(key)
-  );
-
-  return (
-    <Flex alignItems="center" flex="auto" overflow="hidden">
-      {breadcrumb.length > 0 && (
-        <Flex
-          ref={breadcrumbRef}
-          flex="auto"
-          alignItems="center"
-          overflow="hidden"
-          style={{
-            opacity: measured ? 1 : 0,
-            transition: 'transition: all 200ms ease 0s',
-          }}
-        >
-          {hiddenBreadcrumb.length > 0 && (
-            <HiddenBreadcrumb breadcrumb={hiddenBreadcrumb} />
-          )}
-          {visibleBreadcrumb.map(({ key, name, onClick = () => {} }, index) => {
-            const active = index === visibleBreadcrumb.length - 1;
+    return (
+      <Flex
+        ref={ref}
+        flex="auto"
+        alignItems="center"
+        overflow="hidden"
+        style={{
+          opacity: measured ? 1 : 0,
+          transition: 'transition: all 200ms ease 0s',
+        }}
+      >
+        {hiddenItems.length > 0 && <HiddenBreadcrumb items={hiddenItems} />}
+        {itemWithRefs.map(
+          ({ key, itemRef, name, onClick = () => {} }, index) => {
+            const hidden = hiddenKeys.includes(key);
+            const active = index === itemWithRefs.length - 1;
             const arrow = index !== 0 && (
               <Icon type={MdKeyboardArrowRight} fill="gray400" />
             );
 
             return (
-              <Fragment key={key}>
+              <Box
+                key={key}
+                display="inline-flex"
+                overflow="hidden"
+                width={hidden ? 0 : 'auto'}
+              >
                 {arrow}
                 <BreadcrumbLink
+                  ref={itemRef}
                   active={active}
                   name={name}
-                  lockWidth={breadcrumb.length !== 1}
+                  lockWidth={items.length !== 1}
                   onClick={event => {
                     if (!active) {
                       onClick(event);
                     }
                   }}
-                  onMeasure={width => {
-                    if (
-                      !breadcrumbsWidth[index] ||
-                      breadcrumbsWidth[index].width !== width
-                    ) {
-                      setBreadcrumbsWidth(prev => {
-                        const clonePrev = [...prev];
-                        clonePrev[index] = { key, width };
-
-                        return clonePrev;
-                      });
-                    }
-                  }}
                 />
-              </Fragment>
+              </Box>
             );
-          })}
-        </Flex>
-      )}
-    </Flex>
-  );
-};
+          }
+        )}
+      </Flex>
+    );
+  }
+);
 
 export { Breadcrumb };
