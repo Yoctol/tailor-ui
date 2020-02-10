@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { fireEvent, render, wait, waitForElement } from 'test/test-utils';
+import { fireEvent, render, wait } from 'test/test-utils';
 
 import { useMessage } from '../useMessage';
 
@@ -20,25 +20,25 @@ const Message = () => {
 
 describe('useMessage', () => {
   it('should render message correctly', async () => {
-    const { getByTestId, getByText, baseElement } = render(<Message />);
+    const { getByTestId, findByText, baseElement } = render(<Message />);
 
     const button = getByTestId('button');
     fireEvent.click(button);
 
-    await waitForElement(() => getByText('Success'));
+    await findByText('Success');
 
     expect(baseElement).toMatchSnapshot();
   });
 
   it('should remove message when click close button', async () => {
-    const { getByTestId, getByText, queryByText, baseElement } = render(
+    const { getByTestId, findByText, queryByText, baseElement } = render(
       <Message />
     );
 
     const button = getByTestId('button');
     fireEvent.click(button);
 
-    await waitForElement(() => getByText('Success'));
+    await findByText('Success');
 
     const closeButton = baseElement.querySelector('i[role=button]');
     fireEvent.click(closeButton as Element);

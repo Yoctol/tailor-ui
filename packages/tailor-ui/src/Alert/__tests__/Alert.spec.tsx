@@ -1,10 +1,12 @@
 import React from 'react';
 
-import { fireEvent, render, wait } from 'test/test-utils';
+import { fireEvent, mockRaf, render, useMockRaf } from 'test/test-utils';
 
 import { Alert } from '../Alert';
 
 describe('Alert', () => {
+  useMockRaf();
+
   it('should render message correctly', () => {
     const { queryByText } = render(<Alert message="Info Text" />);
 
@@ -53,12 +55,11 @@ describe('Alert', () => {
 
     fireEvent.click(closeIcon);
 
+    mockRaf.flushSpring();
+
     const message = queryByText('Info Text');
 
-    await wait(() => {
-      expect(message).not.toBeVisible();
-    });
-
+    expect(message).not.toBeVisible();
     expect(onClosed).toBeCalled();
   });
 });

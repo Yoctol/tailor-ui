@@ -149,20 +149,17 @@ describe('Popover', () => {
     const popover1 = getByText('popover1');
     const popover2 = getByText('popover2');
     const popover3 = getByText('popover3');
-    await wait(() => [
-      expect(popover1).toBeInTheDocument(),
-      expect(popover2).toBeInTheDocument(),
-      expect(popover3).toBeInTheDocument(),
-    ]);
+
+    expect(popover1).toBeInTheDocument();
+    expect(popover2).toBeInTheDocument();
+    expect(popover3).toBeInTheDocument();
 
     const outsideButton = getByText('outside');
     fireEvent.click(outsideButton);
     mockRaf.flushSpring();
 
-    await wait(() => [
-      expect(popover1).toBeInTheDocument(),
-      expect(popover2).toBeInTheDocument(),
-      expect(popover3).not.toBeInTheDocument(),
-    ]);
+    expect(popover1).toBeInTheDocument();
+    expect(popover2).toBeInTheDocument();
+    expect(popover3).not.toBeInTheDocument();
   });
 });
