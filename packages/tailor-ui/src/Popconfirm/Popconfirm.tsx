@@ -8,8 +8,8 @@ import { StatusType } from '../types';
 import { useLocale } from '../locale';
 
 export interface PopconfirmContentProps extends PopoverProps {
-  cancelText?: string;
-  confirmText?: string;
+  cancelText?: ReactNode;
+  confirmText?: ReactNode;
   content: ReactNode;
   type?: StatusType;
   onCancel?: (event: MouseEvent) => void;

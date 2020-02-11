@@ -6,8 +6,8 @@ import { useLocale } from '../locale';
 
 export interface FooterButtonsProps {
   closable?: boolean;
-  cancelText?: string | null;
-  confirmText?: string;
+  cancelText?: ReactNode;
+  confirmText?: ReactNode;
   onConfirm?: MouseEventHandler;
   onCancel?: MouseEventHandler;
   confirmButtonProps?: ButtonProps;
