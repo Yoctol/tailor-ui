@@ -18,8 +18,8 @@ export type ModalTypes = StatusType | 'confirm';
 export interface ModalOptions {
   title?: ReactNode;
   content?: ReactNode;
-  confirmText?: string;
-  cancelText?: string;
+  confirmText?: ReactNode;
+  cancelText?: ReactNode;
   onConfirm?: MouseEventHandler;
   onCancel?: MouseEventHandler | KeyboardEventHandler;
   onOpenComplete?: () => void;
@@ -49,8 +49,8 @@ interface EffectModalProps {
 interface ModalOptionsState {
   title?: ReactNode;
   content?: ReactNode;
-  confirmText?: string;
-  cancelText?: string | null;
+  confirmText?: ReactNode;
+  cancelText?: ReactNode;
   onConfirm: MouseEventHandler;
   onCancel: MouseEventHandler | KeyboardEventHandler;
   onOpenComplete?: () => void;
