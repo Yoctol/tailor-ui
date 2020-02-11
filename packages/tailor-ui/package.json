@@ -29,8 +29,8 @@
   "typings": "lib/index.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.8.4",
-    "@reach/rect": "^0.8.0",
-    "@reach/utils": "^0.8.0",
+    "@reach/rect": "^0.8.2",
+    "@reach/utils": "^0.8.2",
     "@tailor-ui/hooks": "^0.6.2",
     "@tailor-ui/theme": "^0.4.1",
     "@tailor-ui/utils": "^0.3.2",
