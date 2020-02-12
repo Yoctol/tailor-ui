@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.29.2](https://github.com/yoctol/tailor-ui/compare/tailor-ui@0.29.1...tailor-ui@0.29.2) (2020-02-12)
+
+
+### Bug Fixes
+
+* change confirmText & cancelText type to ReactNode ([8bf4a2b](https://github.com/yoctol/tailor-ui/commit/8bf4a2bca2877a6d61c0ea8ba120f742f00688c7))
+
+
+
+
+
 ## [0.29.1](https://github.com/yoctol/tailor-ui/compare/tailor-ui@0.29.0...tailor-ui@0.29.1) (2020-02-05)
 
 
