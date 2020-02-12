@@ -6,7 +6,7 @@ import React, {
   useRef,
   useState,
 } from 'react';
-import VirtualList from 'react-tiny-virtual-list';
+import { FixedSizeList } from 'react-window';
 import { GetItemPropsOptions } from 'downshift';
 import { MdCheck, MdHighlightOff } from 'react-icons/md';
 
@@ -89,11 +89,18 @@ const SelectOptions: FC<SelectOptionsProps> = ({
   isValidNewOption = value => value.trim() !== '',
   ...props
 }) => {
+  const listRef = useRef<FixedSizeList>(null);
   const [prevSearchValue, setPrevSearchValue] = useState(inputValue);
   const [createOptionWidth, setCreateOptionWidth] = useState<
     number | undefined
   >(undefined);
   const createOptionRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (listRef.current && highlightedIndex) {
+      listRef.current.scrollToItem(highlightedIndex);
+    }
+  }, [highlightedIndex]);
 
   useEffect(() => {
     // save previous inputValue to prevent options reset when options animating fade out
@@ -153,15 +160,15 @@ const SelectOptions: FC<SelectOptionsProps> = ({
       {...getDataTestId(props, 'menu')}
       {...getMenuProps()}
     >
-      <VirtualList
+      <FixedSizeList
+        ref={listRef}
         width="100%"
         height={Math.min(items.length * itemSize, optionsMaxHeight)}
         itemSize={itemSize}
         itemCount={items.length}
-        scrollToIndex={highlightedIndex || 0}
-        overscanCount={3}
-        scrollToAlignment={'auto' as any}
-        renderItem={({ index, style }) => {
+        initialScrollOffset={highlightedIndex ? highlightedIndex * itemSize : 0}
+      >
+        {({ index, style }) => {
           const option = items[index];
           const isCreateOption =
             (option as CreateOption).label === 'CREATE_OPTION';
@@ -212,7 +219,7 @@ const SelectOptions: FC<SelectOptionsProps> = ({
             </StyledSelectOption>
           );
         }}
-      />
+      </FixedSizeList>
       {menu}
     </Box>
   );
