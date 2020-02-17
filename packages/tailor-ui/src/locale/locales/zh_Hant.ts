@@ -13,6 +13,9 @@ export default {
     confirmText: '確認',
     cancelText: '取消',
   },
+  Select: {
+    noDataText: '沒有資料',
+  },
   Upload: {
     uploadText: '點擊上傳',
     uploadingText: '上傳中...',

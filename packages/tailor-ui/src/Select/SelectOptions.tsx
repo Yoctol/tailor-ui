@@ -13,6 +13,7 @@ import { MdCheck, MdHighlightOff } from 'react-icons/md';
 import { Box, Flex } from '../Layout';
 import { Heading } from '../Typography';
 import { Icon } from '../Icon';
+import { useLocale } from '../locale';
 
 import { StyledSelectOption } from './styles';
 import { fuzzyFilter, getDataTestId, itemToString } from './utils';
@@ -32,17 +33,21 @@ export interface CreateOption {
   value: string;
 }
 
-const DefaultNoOptionsMessage: FC = () => (
-  <Flex
-    py="3"
-    alignItems="center"
-    justifyContent="center"
-    style={{ cursor: 'not-allowed' }}
-  >
-    <Icon type={MdHighlightOff} mr="2" />
-    <Heading.h5 color="gray500">No Data</Heading.h5>
-  </Flex>
-);
+const DefaultNoOptionsMessage: FC = () => {
+  const { locale } = useLocale();
+
+  return (
+    <Flex
+      py="3"
+      alignItems="center"
+      justifyContent="center"
+      style={{ cursor: 'not-allowed' }}
+    >
+      <Icon type={MdHighlightOff} mr="2" />
+      <Heading.h5 color="gray500">{locale.Select.noDataText}</Heading.h5>
+    </Flex>
+  );
+};
 
 interface SelectOptionsProps {
   visible: boolean;

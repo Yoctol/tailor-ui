@@ -12,6 +12,9 @@ export default {
     confirmText: 'Confirm',
     cancelText: 'Cancel',
   },
+  Select: {
+    noDataText: 'No data',
+  },
   Upload: {
     uploadText: 'Click to Upload',
     uploadingText: 'Uploading...',
