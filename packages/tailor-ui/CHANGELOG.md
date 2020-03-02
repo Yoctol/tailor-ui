@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.29.3](https://github.com/yoctol/tailor-ui/compare/tailor-ui@0.29.2...tailor-ui@0.29.3) (2020-03-02)
+
+
+### Bug Fixes
+
+* **select:** update locale ([14e2fe6](https://github.com/yoctol/tailor-ui/commit/14e2fe607a1e3a5ef7a95dd6ef7fc56eb29cd726))
+
+
+
+
+
 ## [0.29.2](https://github.com/yoctol/tailor-ui/compare/tailor-ui@0.29.1...tailor-ui@0.29.2) (2020-02-12)
 
 
