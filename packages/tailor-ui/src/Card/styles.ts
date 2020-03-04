@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled, { DefaultTheme, StyledComponent, css } from 'styled-components';
 import {
   BorderColorProps,
   BorderRadiusProps,
@@ -15,7 +15,12 @@ import {
 } from 'styled-system';
 import { HTMLAttributes } from 'react';
 
-export const StyledImage = styled.div<SpaceProps>`
+export const StyledImage: StyledComponent<
+  'div',
+  DefaultTheme,
+  SpaceProps,
+  never
+> = styled.div<SpaceProps>`
   overflow: hidden;
 
   img {
@@ -28,11 +33,16 @@ export const StyledImage = styled.div<SpaceProps>`
   ${space};
 `;
 
-export const StyledBlock = styled.div<SpaceProps & HeightProps>`
+export const StyledBlock: StyledComponent<
+  'div',
+  DefaultTheme,
+  SpaceProps & HeightProps,
+  never
+> = styled.div<SpaceProps & HeightProps>`
   position: relative;
-  border-bottom: ${p => p.theme.borders.base};
-  border-color: ${p => p.theme.colors.gray300};
-  font-size: ${p => p.theme.fontSizes.base};
+  border-bottom: ${(p) => p.theme.borders.base};
+  border-color: ${(p) => p.theme.colors.gray300};
+  font-size: ${(p) => p.theme.fontSizes.base};
 
   &:last-child {
     border-bottom: 0;
@@ -60,9 +70,9 @@ export type CardProps = HTMLAttributes<HTMLDivElement> &
 export const CardWrapper = styled.div<CardProps>`
   display: flex;
   flex-direction: column;
-  border: ${p => p.theme.borders.base};
+  border: ${(p) => p.theme.borders.base};
 
-  ${p => p.theme.transition};
+  ${(p) => p.theme.transition};
 
   ${({ clickable }) =>
     clickable &&
@@ -73,20 +83,20 @@ export const CardWrapper = styled.div<CardProps>`
   ${({ hoverable }) =>
     hoverable &&
     css`
-      box-shadow: ${p => p.theme.shadows.base};
+      box-shadow: ${(p) => p.theme.shadows.base};
       &:hover {
-        box-shadow: ${p => p.theme.shadows.lg};
+        box-shadow: ${(p) => p.theme.shadows.lg};
       }
     `};
 
   ${StyledImage /* sc-selector */}:first-child {
-    border-top-left-radius: calc(${p => p.theme.radii.lg} - 1px);
-    border-top-right-radius: calc(${p => p.theme.radii.lg} - 1px);
+    border-top-left-radius: calc(${(p) => p.theme.radii.lg} - 1px);
+    border-top-right-radius: calc(${(p) => p.theme.radii.lg} - 1px);
   }
 
   ${StyledImage /* sc-selector */}:last-child {
-    border-bottom-right-radius: calc(${p => p.theme.radii.lg} - 1px);
-    border-bottom-left-radius: calc(${p => p.theme.radii.lg} - 1px);
+    border-bottom-right-radius: calc(${(p) => p.theme.radii.lg} - 1px);
+    border-bottom-left-radius: calc(${(p) => p.theme.radii.lg} - 1px);
   }
 
   ${space};

@@ -11,14 +11,14 @@ import {
 export type StyledPopoverProps = SpaceProps & MinWidthProps & MinHeightProps;
 
 export const StyledPopover = styled.div<StyledPopoverProps>`
-  padding: ${p => p.theme.space[2]} ${p => p.theme.space[3]};
-  border: ${p => p.theme.borders.base};
-  border-radius: ${p => p.theme.radii.lg};
-  border-color: ${p => p.theme.colors.gray300};
-  background-color: ${p => p.theme.colors.light};
-  box-shadow: ${p => p.theme.shadows.base};
-  color: ${p => p.theme.colors.gray700};
-  font-size: ${p => p.theme.fontSizes.sm};
+  padding: ${(p) => p.theme.space[2]} ${(p) => p.theme.space[3]};
+  border: ${(p) => p.theme.borders.base};
+  border-radius: ${(p) => p.theme.radii.lg};
+  border-color: ${(p) => p.theme.colors.gray300};
+  background-color: ${(p) => p.theme.colors.light};
+  box-shadow: ${(p) => p.theme.shadows.base};
+  color: ${(p) => p.theme.colors.gray700};
+  font-size: ${(p) => p.theme.fontSizes.sm};
   text-align: left;
   white-space: nowrap;
 
@@ -28,5 +28,5 @@ export const StyledPopover = styled.div<StyledPopoverProps>`
 `;
 
 export const PopoverHeader = styled.div`
-  margin-bottom: ${p => p.theme.space[2]};
+  margin-bottom: ${(p) => p.theme.space[2]};
 `;

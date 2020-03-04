@@ -48,14 +48,14 @@ const RadioGroup = forwardRef<HTMLDivElement, RadioGroupProps>(
     });
 
     const handleChange = useCallback(
-      newValue => {
+      (newValue) => {
         setOwnValue(newValue);
         setValue(newValue);
       },
       [setOwnValue, setValue]
     );
 
-    const isChecked = useCallback(_value => ownValue === _value, [ownValue]);
+    const isChecked = useCallback((_value) => ownValue === _value, [ownValue]);
 
     const child = useMemo(
       () =>

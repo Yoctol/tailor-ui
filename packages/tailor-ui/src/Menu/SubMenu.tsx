@@ -61,7 +61,7 @@ const SubMenu: FC<SubMenuProps> = ({
             display: 'inline-flex',
             pointerEvents: 'none',
             marginLeft: 'auto',
-            transform: rotate.interpolate(r => `rotate(${r}deg)`),
+            transform: rotate.interpolate((r) => `rotate(${r}deg)`),
           }}
         >
           <Icon type={MdKeyboardArrowDown} size="24" />

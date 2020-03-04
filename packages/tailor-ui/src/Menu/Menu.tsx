@@ -36,9 +36,9 @@ const Menu: FC<MenuProps> & {
     <MenuContext.Provider
       value={{
         openKeys,
-        handleToggleOpenKeys: key => {
+        handleToggleOpenKeys: (key) => {
           if (openKeys.includes(key)) {
-            setOpenKeys(openKeys.filter(openKey => openKey !== key));
+            setOpenKeys(openKeys.filter((openKey) => openKey !== key));
           } else {
             setOpenKeys(currentSubOnly ? [key] : [...openKeys, key]);
           }

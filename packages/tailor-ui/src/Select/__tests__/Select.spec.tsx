@@ -26,7 +26,7 @@ const ControlSelect = (props: Record<string, any>) => {
   return (
     <Select
       value={value}
-      onChange={newValue => setValue(newValue)}
+      onChange={(newValue) => setValue(newValue)}
       options={DEFAULT_OPTIONS}
       {...props}
     />
@@ -126,13 +126,13 @@ describe('Select', () => {
             data-testid="select"
             loading={loading}
             value={value}
-            onChange={newValue => setValue(newValue)}
+            onChange={(newValue) => setValue(newValue)}
             options={options}
-            isValidNewOption={name =>
-              !options.map(option => option.value).includes(name) &&
+            isValidNewOption={(name) =>
+              !options.map((option) => option.value).includes(name) &&
               name.trim() !== ''
             }
-            onCreateOption={name => {
+            onCreateOption={(name) => {
               const newOption = { label: name, value: name };
               setLoading(true);
               setTimeout(() => {
@@ -188,9 +188,9 @@ describe('Select', () => {
             creatable
             data-testid="select"
             value={value}
-            onChange={newValue => setValue(newValue)}
+            onChange={(newValue) => setValue(newValue)}
             options={DEFAULT_OPTIONS}
-            isValidNewOption={name => name === 'NOT_VALID'}
+            isValidNewOption={(name) => name === 'NOT_VALID'}
           />
         );
       };
@@ -226,7 +226,7 @@ describe('Select', () => {
             clearable
             data-testid="select"
             value={value}
-            onChange={newValue => setValue(newValue)}
+            onChange={(newValue) => setValue(newValue)}
             options={DEFAULT_OPTIONS}
           />
         );
@@ -266,18 +266,18 @@ describe('Select', () => {
           width="360px"
           multiple
           value={value}
-          onChange={newValue => setValue(newValue)}
+          onChange={(newValue) => setValue(newValue)}
           options={options}
-          isValidNewOption={name =>
-            !options.map(option => option.label).includes(name) &&
+          isValidNewOption={(name) =>
+            !options.map((option) => option.label).includes(name) &&
             name.trim() !== ''
           }
-          onCreateOption={name => {
+          onCreateOption={(name) => {
             const newOption = { label: name, value: name };
             setLoading(true);
             setTimeout(() => {
               setOptions([...options, newOption]);
-              setValue(prevValue => [...prevValue, newOption]);
+              setValue((prevValue) => [...prevValue, newOption]);
               setLoading(false);
             }, 1000);
           }}

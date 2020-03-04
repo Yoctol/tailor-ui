@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled, { DefaultTheme, StyledComponent, css } from 'styled-components';
 
 import { Icon } from '../Icon';
 
@@ -8,14 +8,14 @@ interface StyledBreadcrumbLinkProps {
 }
 
 export const StyledBreadcrumbLink = styled.a<StyledBreadcrumbLinkProps>`
-  max-width: ${p => (p.lockWidth ? '200px' : '100%')};
-  color: ${p => p.theme.colors.gray400};
-  font-size: ${p => p.theme.fontSizes.base};
+  max-width: ${(p) => (p.lockWidth ? '200px' : '100%')};
+  color: ${(p) => p.theme.colors.gray400};
+  font-size: ${(p) => p.theme.fontSizes.base};
   font-weight: bold;
   letter-spacing: 0.2px;
   white-space: pre-wrap;
 
-  ${p =>
+  ${(p) =>
     p.active
       ? css`
           cursor: auto;
@@ -27,11 +27,16 @@ export const StyledBreadcrumbLink = styled.a<StyledBreadcrumbLinkProps>`
           }
         `}
 
-  ${p => p.theme.transition}
+  ${(p) => p.theme.transition}
 `;
 
-export const MoreIcon = styled(Icon)`
+export const MoreIcon: StyledComponent<
+  typeof Icon,
+  DefaultTheme,
+  {},
+  never
+> = styled(Icon)`
   &:hover svg {
-    fill: ${p => p.theme.colors.primary} !important;
+    fill: ${(p) => p.theme.colors.primary} !important;
   }
 `;

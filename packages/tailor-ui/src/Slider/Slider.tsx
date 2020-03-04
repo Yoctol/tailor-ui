@@ -122,11 +122,13 @@ const Slider: FC<SliderProps> = ({
 
   const valuePercentage = useMemo(
     () =>
-      `${((range
-        ? (value as RangeValue)[1] - (value as RangeValue)[0]
-        : (value as number) - min) /
-        denominator) *
-        100}%`,
+      `${
+        ((range
+          ? (value as RangeValue)[1] - (value as RangeValue)[0]
+          : (value as number) - min) /
+          denominator) *
+        100
+      }%`,
     [denominator, min, range, value]
   );
 
@@ -150,7 +152,7 @@ const Slider: FC<SliderProps> = ({
 
       if (range) {
         const replaceValue = minBy(
-          v => Math.abs(newValue - v),
+          (v) => Math.abs(newValue - v),
           ...(value as RangeValue)
         );
 
@@ -183,7 +185,7 @@ const Slider: FC<SliderProps> = ({
         disabled={disabled}
         onMouseDown={handleSlideStart}
         onTouchStart={handleSlideStart}
-        onTouchEnd={e => e.preventDefault()}
+        onTouchEnd={(e) => e.preventDefault()}
       >
         <StyledSliderBar />
         <StyledSliderActiveBar

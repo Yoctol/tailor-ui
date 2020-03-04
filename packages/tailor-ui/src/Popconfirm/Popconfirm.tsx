@@ -80,7 +80,7 @@ const Popconfirm: FC<PopconfirmContentProps> = ({
   ...props
 }) => (
   <Popover
-    content={hideTooltip => (
+    content={(hideTooltip) => (
       <PopconfirmContent
         type={type}
         content={content}

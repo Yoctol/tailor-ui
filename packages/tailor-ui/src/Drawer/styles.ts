@@ -13,7 +13,7 @@ export const DrawerWrapper = styled.div<DrawerWrapperProps>`
   flex-direction: column;
   background-color: #fff;
 
-  ${p =>
+  ${(p) =>
     ['top', 'bottom'].includes(p.placement)
       ? css`
           top: ${p.placement === 'top' ? 0 : `calc(100vh - ${p.breadth})`};

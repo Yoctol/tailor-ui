@@ -9,7 +9,7 @@ export default css`
     display: flex;
     flex-direction: row-reverse;
     outline: none;
-    border-radius: ${p => p.theme.radii.lg};
+    border-radius: ${(p) => p.theme.radii.lg};
     background-clip: padding-box;
     background-color: #fff;
     font-size: 14px;
@@ -67,7 +67,7 @@ export default css`
 
     thead {
       margin: 2px 10px 4px;
-      border-bottom: 1px solid ${p => p.theme.colors.gray300};
+      border-bottom: 1px solid ${(p) => p.theme.colors.gray300};
     }
 
     &-calendar-table {
@@ -112,8 +112,8 @@ export default css`
     }
 
     &-date {
-      color: ${p => p.theme.colors.gray500};
-      border-radius: ${p => p.theme.radii.lg};
+      color: ${(p) => p.theme.colors.gray500};
+      border-radius: ${(p) => p.theme.radii.lg};
       margin: 0 auto;
       width: 28px;
       height: 28px;
@@ -123,54 +123,54 @@ export default css`
       transition: background 0.3s ease;
 
       &:hover {
-        color: ${p => p.theme.colors.gray700};
-        background-color: ${p => p.theme.colors.gray200};
+        color: ${(p) => p.theme.colors.gray700};
+        background-color: ${(p) => p.theme.colors.gray200};
         cursor: pointer;
       }
     }
 
     &-selected-day &-date {
-      color: ${p => p.theme.colors.light};
-      background-color: ${p => p.theme.colors.primary};
+      color: ${(p) => p.theme.colors.light};
+      background-color: ${(p) => p.theme.colors.primary};
     }
 
     &-selected-date &-date {
-      background: ${p => p.theme.colors.primary};
+      background: ${(p) => p.theme.colors.primary};
       color: #fff;
       &:hover {
-        background: ${p => p.theme.colors.primary};
+        background: ${(p) => p.theme.colors.primary};
       }
     }
 
     &-today &-date {
-      border: 1px solid ${p => p.theme.colors.primary};
+      border: 1px solid ${(p) => p.theme.colors.primary};
     }
 
     &-disabled-cell &-date {
       cursor: not-allowed;
-      color: ${p => p.theme.colors.gray500};
-      background-color: ${p => p.theme.colors.gray300};
+      color: ${(p) => p.theme.colors.gray500};
+      background-color: ${(p) => p.theme.colors.gray300};
       border-radius: 0;
       width: auto;
     }
 
     &-disabled-cell-first-of-row &-date {
-      border-top-left-radius: ${p => p.theme.radii.lg};
-      border-bottom-left-radius: ${p => p.theme.radii.lg};
+      border-top-left-radius: ${(p) => p.theme.radii.lg};
+      border-bottom-left-radius: ${(p) => p.theme.radii.lg};
     }
 
     &-disabled-cell-last-of-row &-date {
-      border-top-right-radius: ${p => p.theme.radii.lg};
-      border-bottom-right-radius: ${p => p.theme.radii.lg};
+      border-top-right-radius: ${(p) => p.theme.radii.lg};
+      border-bottom-right-radius: ${(p) => p.theme.radii.lg};
     }
 
     &-last-month-cell &-date,
     &-next-month-btn-day &-date {
-      color: ${p => p.theme.colors.gray400};
+      color: ${(p) => p.theme.colors.gray400};
     }
 
     &-footer {
-      border-top: 1px solid ${p => p.theme.colors.gray300};
+      border-top: 1px solid ${(p) => p.theme.colors.gray300};
       padding: 10px 0;
       text-align: center;
       position: relative;
@@ -221,11 +221,11 @@ export default css`
     &-time-picker-btn {
       display: inline-block;
       text-align: center;
-      color: ${p => p.theme.colors.primary};
+      color: ${(p) => p.theme.colors.primary};
 
       &:hover {
         cursor: pointer;
-        color: ${p => p.theme.colors.primary};
+        color: ${(p) => p.theme.colors.primary};
       }
 
       &-disabled {

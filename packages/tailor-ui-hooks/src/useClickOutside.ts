@@ -13,7 +13,7 @@ const useClickOutside = ({
 }: ClickOutside) => {
   const handleClick = useCallback(
     (event: MouseEvent) => {
-      const clickInside = refs.some(ref => {
+      const clickInside = refs.some((ref) => {
         if (!ref.current) {
           return false;
         }

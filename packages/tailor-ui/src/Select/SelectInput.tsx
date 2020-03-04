@@ -89,9 +89,9 @@ const SelectInput = forwardRef<HTMLInputElement, SelectInputProps>(
           : {
               value: itemToString(
                 typeof selectedItem !== 'object' &&
-                  options.every(option => typeof option === 'object')
+                  options.every((option) => typeof option === 'object')
                   ? options.find(
-                      option =>
+                      (option) =>
                         (option as Record<string, any>).value === selectedItem
                     )
                   : selectedItem

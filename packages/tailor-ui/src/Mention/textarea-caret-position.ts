@@ -68,14 +68,18 @@ export function createDebugEle(
   rect.style.backgroundColor = 'red';
   rect.style.height = fontSize;
   rect.style.width = '1px';
-  rect.style.top = `${element.getBoundingClientRect().top -
+  rect.style.top = `${
+    element.getBoundingClientRect().top -
     element.scrollTop +
     window.pageYOffset +
-    coordinates.top}px`;
-  rect.style.left = `${element.getBoundingClientRect().left -
+    coordinates.top
+  }px`;
+  rect.style.left = `${
+    element.getBoundingClientRect().left -
     element.scrollLeft +
     window.pageXOffset +
-    coordinates.left}px`;
+    coordinates.left
+  }px`;
   console.log(rect.style.top);
   console.log(rect.style.left);
 }

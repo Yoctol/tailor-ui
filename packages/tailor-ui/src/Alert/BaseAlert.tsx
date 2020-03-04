@@ -16,13 +16,13 @@ export type IAlertTypes = SpaceProps & {
 const StyledAlert = styled.div<IAlertTypes>`
   display: flex;
   align-items: center;
-  margin-bottom: ${p => p.theme.space[3]};
-  padding: ${p => p.theme.space[2]} ${p => p.theme.space[3]};
-  border: ${p => p.theme.borders.base};
-  border-radius: ${p => p.theme.radii.base};
-  border-color: ${p => p.theme.colors[p.type]};
-  background-color: ${p => rgba(p.theme.colors[p.type], 0.1)};
-  font-size: ${p => p.theme.fontSizes.sm};
+  margin-bottom: ${(p) => p.theme.space[3]};
+  padding: ${(p) => p.theme.space[2]} ${(p) => p.theme.space[3]};
+  border: ${(p) => p.theme.borders.base};
+  border-radius: ${(p) => p.theme.radii.base};
+  border-color: ${(p) => p.theme.colors[p.type]};
+  background-color: ${(p) => rgba(p.theme.colors[p.type], 0.1)};
+  font-size: ${(p) => p.theme.fontSizes.sm};
   transform-origin: top;
 
   ${space};

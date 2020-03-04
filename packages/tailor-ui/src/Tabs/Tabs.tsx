@@ -14,7 +14,7 @@ const StyledTab = styled.a<StyledTabProps>`
   display: inline-flex;
   position: relative;
   align-items: center;
-  color: ${p => p.theme.colors.gray800};
+  color: ${(p) => p.theme.colors.gray800};
   text-align: center;
   text-decoration: none;
   cursor: pointer;
@@ -31,7 +31,7 @@ const StyledTab = styled.a<StyledTabProps>`
   }
 
   &:not(:first-child) {
-    margin-left: ${p => p.theme.space[2]};
+    margin-left: ${(p) => p.theme.space[2]};
   }
 
   ${({
@@ -78,12 +78,12 @@ const StyledTab = styled.a<StyledTabProps>`
           border-bottom: 3px solid transparent;
 
           ${active &&
-            css`
-              border-bottom-color: ${theme.colors.primary};
-            `};
+          css`
+            border-bottom-color: ${theme.colors.primary};
+          `};
         `};
 
-  ${p => p.theme.transition /* sc-declaration */};
+  ${(p) => p.theme.transition /* sc-declaration */};
   ${space};
 `;
 
@@ -195,7 +195,7 @@ const Tabs: FC<TabsProps> & {
     <TabContext.Provider
       value={{
         activeValue: activeValue || activeTab || '',
-        setValue: value => {
+        setValue: (value) => {
           setActiveTab(value);
 
           if (onChange && value) {

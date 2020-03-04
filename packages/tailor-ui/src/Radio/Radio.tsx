@@ -62,7 +62,7 @@ const Radio = forwardRef<HTMLLabelElement, RadioProps>(function Radio(
           disabled={disabled}
           checked={boxChecked}
           defaultChecked={defaultChecked}
-          onChange={event => {
+          onChange={(event) => {
             if (onChange) {
               onChange(event);
             }

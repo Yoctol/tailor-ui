@@ -71,7 +71,7 @@ interface FileItemProps {
 
 const StyledFileItem = styled(Flex)`
   &:hover {
-    background-color: ${p => p.theme.colors.gray200};
+    background-color: ${(p) => p.theme.colors.gray200};
   }
 `;
 
@@ -137,7 +137,7 @@ const uploadReducer: Reducer<ReducerState, ReducerAction> = (state, action) => {
       return {
         ...state,
         uploaded: false,
-        files: state.files.filter(file => file.name !== action.payload),
+        files: state.files.filter((file) => file.name !== action.payload),
       };
     default:
       throw new Error();
@@ -228,14 +228,14 @@ const Upload: FC<UploadProps> = ({
         role="button"
         {...getRootProps()}
         style={{ display: 'inline-flex', flex: 'none' }}
-        onClick={event => event.preventDefault()}
+        onClick={(event) => event.preventDefault()}
       >
         <input {...getInputProps()} />
         <Button
           icon={icon}
           loading={state.uploading}
           disabled={disabled}
-          onClick={async event => {
+          onClick={async (event) => {
             event.preventDefault();
 
             if (onBeforeSelect) {
@@ -261,7 +261,7 @@ const Upload: FC<UploadProps> = ({
       <br />
       {state.files.length > 0 && (
         <FileList>
-          {state.files.map(file => (
+          {state.files.map((file) => (
             <FileItem
               key={file.name}
               file={file}

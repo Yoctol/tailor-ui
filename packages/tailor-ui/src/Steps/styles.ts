@@ -18,9 +18,9 @@ export const StepsIconItem = styled.div<StepsItemProps>`
   width: 32px;
   height: 32px;
   margin-right: 8px;
-  border: ${p => p.theme.borders.base};
+  border: ${(p) => p.theme.borders.base};
   border-radius: 50%;
-  border-color: ${p => {
+  border-color: ${(p) => {
     switch (p.status) {
       case 'progress':
       case 'finish':
@@ -32,9 +32,9 @@ export const StepsIconItem = styled.div<StepsItemProps>`
         return p.theme.colors.gray500;
     }
   }};
-  background-color: ${p =>
+  background-color: ${(p) =>
     p.status === 'progress' ? p.theme.colors.primary : p.theme.colors.light};
-  color: ${p => {
+  color: ${(p) => {
     switch (p.status) {
       case 'progress':
         return p.theme.colors.light;
@@ -49,7 +49,7 @@ export const StepsIconItem = styled.div<StepsItemProps>`
   }};
   cursor: pointer;
 
-  ${p =>
+  ${(p) =>
     !p.isLast &&
     p.direction === 'vertical' &&
     css`
@@ -68,7 +68,7 @@ export const StepsIconItem = styled.div<StepsItemProps>`
       }
     `};
 
-  ${p => p.theme.transition /* sc-declaration */};
+  ${(p) => p.theme.transition /* sc-declaration */};
 `;
 
 export const Title = styled.div<StepsItemProps>`
@@ -77,7 +77,7 @@ export const Title = styled.div<StepsItemProps>`
   align-items: center;
   height: 32px;
   padding-right: 16px;
-  color: ${p => {
+  color: ${(p) => {
     switch (p.status) {
       case 'progress':
         return p.theme.colors.primary;
@@ -91,7 +91,7 @@ export const Title = styled.div<StepsItemProps>`
   }};
   line-height: 32px;
 
-  ${p =>
+  ${(p) =>
     !p.isLast &&
     p.direction === 'horizontal' &&
     css`
@@ -109,7 +109,7 @@ export const Title = styled.div<StepsItemProps>`
       }
     `};
 
-  ${p => p.theme.transition /* sc-declaration */};
+  ${(p) => p.theme.transition /* sc-declaration */};
 `;
 
 export interface DescriptionProps {
@@ -118,8 +118,8 @@ export interface DescriptionProps {
 }
 
 export const Description = styled.div<DescriptionProps>`
-  padding-bottom: ${p => p.direction === 'vertical' && '12px'};
-  color: ${p => {
+  padding-bottom: ${(p) => p.direction === 'vertical' && '12px'};
+  color: ${(p) => {
     switch (p.status) {
       case 'progress':
         return p.theme.colors.primary;
@@ -131,6 +131,6 @@ export const Description = styled.div<DescriptionProps>`
         return p.theme.colors.gray500;
     }
   }};
-  font-size: ${p => p.theme.fontSizes.sm};
-  ${p => p.theme.transition /* sc-declaration */};
+  font-size: ${(p) => p.theme.fontSizes.sm};
+  ${(p) => p.theme.transition /* sc-declaration */};
 `;

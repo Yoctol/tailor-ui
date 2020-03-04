@@ -48,7 +48,7 @@ const setup = async ({
 describe('Upload', () => {
   it('should render correctly', () => {
     const { container } = render(
-      <Upload onSelect={files => new Promise(resolve => resolve(files))} />
+      <Upload onSelect={(files) => new Promise((resolve) => resolve(files))} />
     );
 
     expect(container.firstChild).toMatchSnapshot();

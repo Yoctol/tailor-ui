@@ -20,7 +20,7 @@ describe('Table', () => {
           <Table.HeadColumn>Action</Table.HeadColumn>
         </Table.Head>
         <Table.Body>
-          {range(1, 4).map(value => (
+          {range(1, 4).map((value) => (
             <Table.Row key={value}>
               <Table.Column>Name {value}</Table.Column>
               <Table.Column>Platform {value}</Table.Column>
@@ -47,7 +47,7 @@ describe('Table', () => {
           <Table.HeadColumn>Action</Table.HeadColumn>
         </Table.Head>
         <Table.Body>
-          {range(1, 4).map(value => (
+          {range(1, 4).map((value) => (
             <Table.Row key={value}>
               <Table.Column>Name {value}</Table.Column>
               <Table.Column>Platform {value}</Table.Column>

@@ -22,7 +22,7 @@ const Dropdown: FC<DropdownProps> & {
     <Popover
       p="0"
       position={position}
-      content={close => (
+      content={(close) => (
         <DropdownContext.Provider value={{ close }}>
           {overlay}
         </DropdownContext.Provider>

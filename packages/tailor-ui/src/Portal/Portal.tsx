@@ -39,7 +39,7 @@ const Portal: FC<PortalProps> = ({ defaultOrder, children }) => {
     []
   );
 
-  const getElement = useCallback(zIndex => {
+  const getElement = useCallback((zIndex) => {
     if (elementRef.current) {
       return elementRef.current;
     }
@@ -63,7 +63,7 @@ const Portal: FC<PortalProps> = ({ defaultOrder, children }) => {
 
   return (
     <Stack defaultOrder={defaultOrder}>
-      {stackingOrder => createPortal(children, getElement(stackingOrder))}
+      {(stackingOrder) => createPortal(children, getElement(stackingOrder))}
     </Stack>
   );
 };

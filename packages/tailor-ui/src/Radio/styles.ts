@@ -15,13 +15,13 @@ export const RadioInner = styled.span`
   width: 16px;
   height: 16px;
   padding: 0;
-  border: ${p => p.theme.borders.base};
+  border: ${(p) => p.theme.borders.base};
   border-radius: 50%;
-  border-color: ${p => p.theme.colors.gray400};
-  background-color: ${p => p.theme.colors.light};
-  color: ${p => p.theme.colors.gray700};
+  border-color: ${(p) => p.theme.colors.gray400};
+  background-color: ${(p) => p.theme.colors.light};
+  color: ${(p) => p.theme.colors.gray700};
 
-  ${p => p.theme.transition};
+  ${(p) => p.theme.transition};
 
   &::after {
     content: '';
@@ -32,9 +32,9 @@ export const RadioInner = styled.span`
     height: 10px;
     border-radius: 50%;
     opacity: 0;
-    background-color: ${p => p.theme.colors.primary};
+    background-color: ${(p) => p.theme.colors.primary};
     transform: scale(0);
-    ${p => p.theme.transition};
+    ${(p) => p.theme.transition};
   }
 `;
 
@@ -51,7 +51,7 @@ export const StyledRadio = styled.input.attrs({
   opacity: 0;
 
   &:checked + ${RadioInner /* sc-selector */} {
-    border-color: ${p => p.theme.colors.primary};
+    border-color: ${(p) => p.theme.colors.primary};
   }
 
   &:checked + ${RadioInner /* sc-selector */}::after {
@@ -67,10 +67,10 @@ interface RadioLabelBaseProps {
 export const RadioLabelBase = styled.label<RadioLabelBaseProps>`
   display: inline-flex;
   align-items: center;
-  font-size: ${p => p.theme.fontSizes.base};
-  cursor: ${p => (p.disabled ? 'not-allowed' : 'pointer')};
+  font-size: ${(p) => p.theme.fontSizes.base};
+  cursor: ${(p) => (p.disabled ? 'not-allowed' : 'pointer')};
 
-  ${p =>
+  ${(p) =>
     p.disabled
       ? css`
           opacity: 0.5;
@@ -88,11 +88,11 @@ export const RadioLabel = styled(RadioLabelBase)<{ direction: Direction }>`
     ${({ direction }) =>
       direction === 'horizontal'
         ? 'margin-left'
-        : 'margin-top' /* sc-prop */}: ${p => p.theme.space[2]};
+        : 'margin-top' /* sc-prop */}: ${(p) => p.theme.space[2]};
   }
 `;
 
 export const RadioGroupFlex = styled.div<{ direction: Direction }>`
-  display: ${p => (p.direction === 'horizontal' ? 'flex' : 'inline-flex')};
-  flex-direction: ${p => (p.direction === 'horizontal' ? 'row' : 'column')};
+  display: ${(p) => (p.direction === 'horizontal' ? 'flex' : 'inline-flex')};
+  flex-direction: ${(p) => (p.direction === 'horizontal' ? 'row' : 'column')};
 `;

@@ -82,7 +82,7 @@ const initialState = ({ value, suggestions }: InitialState) => ({
   activeIndex: -1,
   caretPos: -1,
   dropdownVisible: false,
-  filteredSuggestions: suggestions.map(suggestion => ({
+  filteredSuggestions: suggestions.map((suggestion) => ({
     type: 'option' as FilteredSuggestionType,
     value: suggestion,
   })),
@@ -266,8 +266,8 @@ const Mention: FC<MentionProps> = ({
     if (cursor.mention !== null) {
       const filteredSuggestions = [
         ...suggestions
-          .filter(suggestion => suggestion.includes(cursor.searchValue))
-          .map(suggestion => ({
+          .filter((suggestion) => suggestion.includes(cursor.searchValue))
+          .map((suggestion) => ({
             type: 'option',
             value: suggestion,
           })),
@@ -473,7 +473,7 @@ Mention.defaultProps = {
   creatable: false,
   highlightInvalid: false,
   onMentionCreate: () => {},
-  formatCreateText: createValue =>
+  formatCreateText: (createValue) =>
     `Press Enter to create mention: ${createValue}`,
 };
 

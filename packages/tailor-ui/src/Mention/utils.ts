@@ -50,7 +50,7 @@ export const getCursorPosition = (value: string, selectionStart: number) => {
   const spacePos = value.indexOf(' ', selectionStart);
 
   const positions = [suffixPos, nextPrefixPos, spacePos]
-    .filter(pos => pos !== -1)
+    .filter((pos) => pos !== -1)
     .sort((a, b) => a - b);
 
   if (

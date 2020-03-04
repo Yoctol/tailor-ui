@@ -9,7 +9,7 @@ export const applyHighlights = ({
 }) => {
   const transformedValue = value.replace(/\n$/g, '\n\n');
   const mentionRegexp = /\{{2}[^{}\n]+\}{2}/g;
-  const allSuggestions = suggestions.map(suggestion => `{{${suggestion}}}`);
+  const allSuggestions = suggestions.map((suggestion) => `{{${suggestion}}}`);
 
   const replacer = (match: string) => {
     let valid = true;
@@ -33,10 +33,7 @@ export const applyHighlights = ({
       return `<span class="${classNames}">${content}</span>`;
     };
 
-    return match
-      .split('')
-      .map(formatText)
-      .join('');
+    return match.split('').map(formatText).join('');
   };
 
   return transformedValue.replace(mentionRegexp, replacer);

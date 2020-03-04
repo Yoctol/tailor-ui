@@ -65,7 +65,9 @@ export default ({
 
   if (metastring && highlightLinesRangeRegex.test(metastring)) {
     const highlightLinesRange = metastring.match(highlightLinesRangeRegex)[1];
-    highlightLines = rangeParser.parse(highlightLinesRange).filter(n => n > 0);
+    highlightLines = rangeParser
+      .parse(highlightLinesRange)
+      .filter((n) => n > 0);
   }
 
   useEffect(() => {

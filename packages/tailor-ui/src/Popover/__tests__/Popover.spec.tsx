@@ -61,7 +61,7 @@ describe('Popover', () => {
     const { getByText, queryByText } = render(
       <Popover
         title="Popover Title"
-        content={hide => (
+        content={(hide) => (
           <>
             Popover Content
             <button type="button" onClick={hide}>

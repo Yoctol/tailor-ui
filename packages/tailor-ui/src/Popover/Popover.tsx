@@ -68,7 +68,7 @@ const Popover: FC<PopoverProps> = ({
   const { visible, handleClose, toggle } = useToggleTrigger({
     visible: visibleFromProps,
     defaultVisible,
-    onVisibleChange: newVisible => {
+    onVisibleChange: (newVisible) => {
       setHasChildFromContext(newVisible);
       if (onVisibleChange) {
         onVisibleChange(newVisible);

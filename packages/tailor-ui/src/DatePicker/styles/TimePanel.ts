@@ -67,11 +67,11 @@ export default css`
   }
 
   ${prefixClass}-time-panel-selected-cell ${prefixClass}-time-panel-time {
-    background: ${p => p.theme.colors.primary};
+    background: ${(p) => p.theme.colors.primary};
     color: #fff;
 
     &:hover {
-      background: ${p => p.theme.colors.primary};
+      background: ${(p) => p.theme.colors.primary};
       color: #fff;
     }
   }

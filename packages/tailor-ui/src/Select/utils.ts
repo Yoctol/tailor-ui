@@ -5,7 +5,7 @@ import { CreateOption, Option } from './SelectOptions';
 export const fuzzyFilter = (itemToString: (item: Option) => string) => {
   if (itemToString) {
     return (items: Option[], input: string) => {
-      const wrappedItems = items.map(item => ({
+      const wrappedItems = items.map((item) => ({
         key: itemToString(item),
         item,
       }));
@@ -19,7 +19,17 @@ export const fuzzyFilter = (itemToString: (item: Option) => string) => {
   return (items: Option[], input: string) => fuzzaldrin.filter(items, input);
 };
 
-export const itemToString = (item?: Option | CreateOption) => {
+export const itemToString: (
+  item?:
+    | string
+    | number
+    | {
+        label: string;
+        value: string | number;
+      }
+    | CreateOption
+    | undefined
+) => string = (item?: Option | CreateOption) => {
   if (!item) {
     return '';
   }

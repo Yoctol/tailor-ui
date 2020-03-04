@@ -11,7 +11,7 @@ export const calendarLeftArrow = css`
     top: -1px;
     width: 8px;
     height: 8px;
-    border: 0 solid ${p => p.theme.colors.gray300};
+    border: 0 solid ${(p) => p.theme.colors.gray300};
     border-width: 1.5px 0 0 1.5px;
     border-radius: 1px;
     vertical-align: middle;
@@ -25,7 +25,7 @@ export const calendarLeftArrow = css`
 
   &:hover::before,
   &:hover::after {
-    border-color: ${p => p.theme.colors.primary};
+    border-color: ${(p) => p.theme.colors.primary};
   }
 `;
 
@@ -69,7 +69,7 @@ export const calendarPanelHeader = (calendarPrefixCls: string) => {
     user-select: none;
 
     a:hover {
-      color: ${p => p.theme.colors.gray700};
+      color: ${(p) => p.theme.colors.gray700};
     }
 
     ${calendarPrefixCls /* sc-sel */}-century-select,
@@ -78,7 +78,7 @@ export const calendarPanelHeader = (calendarPrefixCls: string) => {
     ${calendarPrefixCls /* sc-sel */}-month-select {
       display: inline-block;
       padding: 0 4px;
-      color: ${p => p.theme.colors.gray700};
+      color: ${(p) => p.theme.colors.gray700};
       font-weight: 600;
       line-height: 40px;
     }
@@ -102,7 +102,7 @@ export const calendarPanelHeader = (calendarPrefixCls: string) => {
       position: absolute;
       top: 0;
       padding: 0 5px;
-      color: ${p => p.theme.colors.gray300};
+      color: ${(p) => p.theme.colors.gray300};
       font-size: 16px;
       line-height: 40px;
     }

@@ -20,8 +20,8 @@ export const globalStyle = css`
 
   body {
     overflow-x: hidden;
-    background: ${p => p.theme.colors.light};
-    color: ${p => p.theme.colors.gray700};
+    background: ${(p) => p.theme.colors.light};
+    color: ${(p) => p.theme.colors.gray700};
     font-family: Roboto, 'PingFang TC', 'Microsoft JhengHei', 'Helvetica Neue',
       sans-serif;
     font-size: ${rem('16px')};
@@ -29,7 +29,7 @@ export const globalStyle = css`
   }
 
   a {
-    color: ${p => p.theme.colors.info};
+    color: ${(p) => p.theme.colors.info};
     text-decoration: none;
     cursor: pointer;
   }

@@ -9,9 +9,9 @@ export const MaxLength = styled.div`
   right: -1px;
   bottom: -2px;
   padding: 1px 5px;
-  border: ${p => p.theme.borders.base};
+  border: ${(p) => p.theme.borders.base};
   border-radius: 999px;
-  border-color: ${p => p.theme.colors.primary};
+  border-color: ${(p) => p.theme.colors.primary};
   opacity: 0;
   background-color: #fff;
   font-size: ${rem('10px')};
@@ -31,7 +31,7 @@ export const TextFieldContainer = styled.div<{
       line-height: 1;
       pointer-events: none;
 
-      ${p =>
+      ${(p) =>
         p.empty
           ? css`
               top: 9px;
@@ -51,7 +51,7 @@ export const TextFieldContainer = styled.div<{
               font-size: 0.75rem;
             `}
 
-      ${p => p.theme.transition};
+      ${(p) => p.theme.transition};
     }
   }
 
@@ -62,7 +62,7 @@ export const TextFieldContainer = styled.div<{
       left: 7px;
       padding: 0 2px;
       background-color: #fff;
-      color: ${p =>
+      color: ${(p) =>
         p.invalid ? p.theme.colors.danger : p.theme.colors.primary};
       font-size: 0.75rem;
     }

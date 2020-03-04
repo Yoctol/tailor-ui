@@ -91,7 +91,7 @@ const EffectModal: FC<EffectModalProps> = ({ setTrigger }) => {
 
       let resolveFn: (value: boolean) => void = () => {};
 
-      const confirmation = new Promise<boolean>(resolve => {
+      const confirmation = new Promise<boolean>((resolve) => {
         resolveFn = resolve;
       });
 
@@ -119,7 +119,7 @@ const EffectModal: FC<EffectModalProps> = ({ setTrigger }) => {
 
       const handleUpdate = (
         updateOptions: Omit<ModalOptions, 'onConfirm' | 'onCancel'>
-      ) => setModalOptions(prev => ({ ...prev, ...updateOptions }));
+      ) => setModalOptions((prev) => ({ ...prev, ...updateOptions }));
 
       setModalOptions({
         type,

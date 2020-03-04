@@ -1,3 +1,3 @@
-export { Box } from './Box';
-export { Flex } from './Flex';
-export { Grid } from './Grid';
+export * from './Box';
+export * from './Flex';
+export * from './Grid';

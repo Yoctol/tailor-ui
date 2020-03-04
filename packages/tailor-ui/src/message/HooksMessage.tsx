@@ -29,13 +29,13 @@ const MessageBox = styled.div`
 const MessageContent = styled.div`
   display: flex;
   position: relative;
-  margin-top: ${p => p.theme.space[2]};
-  padding: ${p => p.theme.space[3]};
+  margin-top: ${(p) => p.theme.space[2]};
+  padding: ${(p) => p.theme.space[3]};
   overflow: hidden;
-  border-radius: ${p => p.theme.radii.lg};
-  background-color: ${p => p.theme.colors.gray800};
-  color: ${p => p.theme.colors.light};
-  font-size: ${p => p.theme.fontSizes.sm};
+  border-radius: ${(p) => p.theme.radii.lg};
+  background-color: ${(p) => p.theme.colors.gray800};
+  color: ${(p) => p.theme.colors.light};
+  font-size: ${(p) => p.theme.fontSizes.sm};
 `;
 
 const Life = styled(animated.div)`
@@ -45,7 +45,7 @@ const Life = styled(animated.div)`
   left: 0;
   width: auto;
   height: 3px;
-  background-color: ${p => p.theme.colors.primaryLight};
+  background-color: ${(p) => p.theme.colors.primaryLight};
 `;
 
 const AnimatedMessageBox = animated(MessageBox);
@@ -96,7 +96,7 @@ class EffectMessage extends PureComponent<
 
   remove = ({ key }: any) => {
     this.setState(({ messages }) => ({
-      messages: messages.filter(message => message.key !== key),
+      messages: messages.filter((message) => message.key !== key),
     }));
   };
 
@@ -105,7 +105,7 @@ class EffectMessage extends PureComponent<
       this.mounted = true;
     }
 
-    return new Promise<boolean>(resolve => {
+    return new Promise<boolean>((resolve) => {
       const key = this.context();
       const icon = <Icon type={type} fill={type} size="20" mr="2" />;
 
@@ -153,7 +153,7 @@ class EffectMessage extends PureComponent<
         <MessageContainer>
           <Transition
             native
-            keys={message => message.key}
+            keys={(message) => message.key}
             items={messages}
             from={{
               opacity: 0,
@@ -168,7 +168,7 @@ class EffectMessage extends PureComponent<
             onRest={this.remove}
             config={this.config as any}
           >
-            {message => ({ life, ...props }) => (
+            {(message) => ({ life, ...props }) => (
               <AnimatedMessageBox style={props}>
                 <MessageContent>
                   {message.icon}

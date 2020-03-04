@@ -13,9 +13,9 @@ export default css`
     bottom: 0;
     left: 0;
     flex-direction: column;
-    border-radius: ${p => p.theme.radii.lg};
+    border-radius: ${(p) => p.theme.radii.lg};
     outline: none;
-    background-color: ${p => p.theme.colors.light};
+    background-color: ${(p) => p.theme.colors.light};
   }
 
   ${prefixClass /* sc-sel */}-decade-panel-hidden {
@@ -31,7 +31,7 @@ export default css`
   }
 
   ${prefixClass /* sc-sel */}-decade-panel-footer {
-    border-top: ${p => p.theme.borders.base} ${p => p.theme.colors.gray200};
+    border-top: ${(p) => p.theme.borders.base} ${(p) => p.theme.colors.gray200};
     ${prefixClass /* sc-sel */}-footer-extra {
       padding: 0 12px;
     }
@@ -54,27 +54,27 @@ export default css`
     height: 28px;
     margin: 0 auto;
     padding: 0 8px;
-    border-radius: ${p => p.theme.radii.lg};
+    border-radius: ${(p) => p.theme.radii.lg};
     background-color: transparent;
-    color: ${p => p.theme.colors.gray500};
+    color: ${(p) => p.theme.colors.gray500};
     font-weight: 600;
     line-height: 28px;
     text-align: center;
     transition: background 0.3s ease;
 
     &:hover {
-      background-color: ${p => p.theme.colors.gray200};
+      background-color: ${(p) => p.theme.colors.gray200};
       cursor: pointer;
     }
   }
 
   ${prefixClass /* sc-sel */}-decade-panel-selected-cell ${prefixClass /* sc-sel */}-decade-panel-decade {
-    background-color: ${p => p.theme.colors.primary};
-    color: ${p => p.theme.colors.light};
+    background-color: ${(p) => p.theme.colors.primary};
+    color: ${(p) => p.theme.colors.light};
 
     &:hover {
-      background-color: ${p => p.theme.colors.primary};
-      color: ${p => p.theme.colors.light};
+      background-color: ${(p) => p.theme.colors.primary};
+      color: ${(p) => p.theme.colors.light};
     }
   }
 

@@ -59,12 +59,12 @@ export default css`
       outline: none;
 
       &:hover {
-        background: ${p => p.theme.colors.gray300};
+        background: ${(p) => p.theme.colors.gray300};
       }
     }
 
     li&-option-selected {
-      background-color: ${p => p.theme.colors.surface};
+      background-color: ${(p) => p.theme.colors.surface};
       font-weight: bold;
     }
 
@@ -96,7 +96,7 @@ export default css`
       text-align: left;
       background-color: #fff;
       border-radius: 4px;
-      box-shadow: ${p => p.theme.shadows.sm};
+      box-shadow: ${(p) => p.theme.shadows.sm};
       background-clip: padding-box;
       border: 1px solid #ccc;
       line-height: 1.5;

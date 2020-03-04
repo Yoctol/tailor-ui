@@ -54,7 +54,7 @@ const CheckboxGroup = forwardRef<HTMLDivElement, CheckboxGroupProps>(
         let nextValue = ownValue;
 
         if (ownValue.includes(newValue) && !checked) {
-          nextValue = ownValue.filter(val => val !== newValue);
+          nextValue = ownValue.filter((val) => val !== newValue);
         }
 
         if (!ownValue.includes(newValue) && checked) {
@@ -67,7 +67,7 @@ const CheckboxGroup = forwardRef<HTMLDivElement, CheckboxGroupProps>(
       [ownValue, setOwnValue, setValue]
     );
 
-    const isChecked = useCallback(_value => ownValue.includes(_value), [
+    const isChecked = useCallback((_value) => ownValue.includes(_value), [
       ownValue,
     ]);
 

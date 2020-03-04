@@ -99,14 +99,14 @@ describe('Backdrop', () => {
           <button
             data-testid="increment"
             type="button"
-            onClick={() => setCount(prev => prev + 1)}
+            onClick={() => setCount((prev) => prev + 1)}
           >
             +
           </button>
           <button
             data-testid="decrement"
             type="button"
-            onClick={() => setCount(prev => prev - 1)}
+            onClick={() => setCount((prev) => prev - 1)}
           >
             -
           </button>

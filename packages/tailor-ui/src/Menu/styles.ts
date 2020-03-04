@@ -10,34 +10,34 @@ export const StyledSubMenu = styled.div<StyledItemProps>`
   width: 100%;
   height: 56px;
   padding: 16px 14px;
-  background-color: ${p => p.theme.colors.primaryDark2};
-  color: ${p => p.theme.colors.primaryLight};
-  font-size: ${p => p.theme.fontSizes.lg};
+  background-color: ${(p) => p.theme.colors.primaryDark2};
+  color: ${(p) => p.theme.colors.primaryLight};
+  font-size: ${(p) => p.theme.fontSizes.lg};
   cursor: pointer;
 
   svg {
-    fill: ${p => p.theme.colors.primaryLight};
+    fill: ${(p) => p.theme.colors.primaryLight};
   }
 
   ${({ active }) =>
     active &&
     css`
-      color: ${p => p.theme.colors.light};
+      color: ${(p) => p.theme.colors.light};
 
       svg {
-        fill: ${p => p.theme.colors.light};
+        fill: ${(p) => p.theme.colors.light};
       }
     `};
 
   &:hover {
-    color: ${p => p.theme.colors.light};
+    color: ${(p) => p.theme.colors.light};
 
     svg {
-      fill: ${p => p.theme.colors.light};
+      fill: ${(p) => p.theme.colors.light};
     }
   }
 
-  ${p => p.theme.transition};
+  ${(p) => p.theme.transition};
 `;
 
 export const StyledItem = styled.div`
@@ -46,13 +46,13 @@ export const StyledItem = styled.div`
   align-items: center;
   padding: 12px;
   border-radius: 16px;
-  background-color: ${p => p.theme.colors.primaryDark2};
-  color: ${p => p.theme.colors.light};
-  font-size: ${p => p.theme.fontSizes.base};
+  background-color: ${(p) => p.theme.colors.primaryDark2};
+  color: ${(p) => p.theme.colors.light};
+  font-size: ${(p) => p.theme.fontSizes.base};
   transition: all 0.1s ease-in-out;
   cursor: pointer;
 
-  ${p => p.theme.transition};
+  ${(p) => p.theme.transition};
 `;
 
 export const StyledItemBadge = styled.div`
@@ -60,43 +60,43 @@ export const StyledItemBadge = styled.div`
   height: 100%;
   margin-right: 22px;
   border-radius: 16px;
-  background-color: ${p => p.theme.colors.primaryDark2};
+  background-color: ${(p) => p.theme.colors.primaryDark2};
   list-style: none;
 
-  ${p => p.theme.transition};
+  ${(p) => p.theme.transition};
 `;
 
 export const StyledItemBox = styled.div<{ active: boolean }>`
   display: flex;
   height: 40px;
   padding: 0 8px;
-  background-color: ${p => p.theme.colors.primaryDark2};
-  font-size: ${p => p.theme.fontSizes.base};
+  background-color: ${(p) => p.theme.colors.primaryDark2};
+  font-size: ${(p) => p.theme.fontSizes.base};
 
   ${({ active }) =>
     active &&
     css`
-      color: ${p => p.theme.colors.secondary};
+      color: ${(p) => p.theme.colors.secondary};
 
       ${StyledItem} {
-        color: ${p => p.theme.colors.secondary};
+        color: ${(p) => p.theme.colors.secondary};
       }
 
       ${StyledItemBadge} {
-        background-color: ${p => p.theme.colors.secondary};
+        background-color: ${(p) => p.theme.colors.secondary};
       }
     `};
 
   &:hover {
     ${StyledItem} {
-      background-color: ${p => p.theme.colors.primaryDark};
+      background-color: ${(p) => p.theme.colors.primaryDark};
     }
 
     ${StyledItemBadge} {
-      background-color: ${p =>
+      background-color: ${(p) =>
         p.active ? p.theme.colors.secondary : p.theme.colors.primaryDark};
     }
   }
 
-  ${p => p.theme.transition};
+  ${(p) => p.theme.transition};
 `;

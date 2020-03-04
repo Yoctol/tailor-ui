@@ -1,4 +1,10 @@
-import React, { FC, HTMLAttributes, forwardRef } from 'react';
+import React, {
+  FC,
+  ForwardRefExoticComponent,
+  HTMLAttributes,
+  PropsWithoutRef,
+  forwardRef,
+} from 'react';
 import styled, { css } from 'styled-components';
 import { IconType as ReactIconsIconType } from 'react-icons/lib/esm';
 import { SpaceProps, space, style } from 'styled-system';
@@ -14,8 +20,8 @@ const styledFill = style({
 type Size = string | number;
 
 const styledSize = css<{ size: Size }>`
-  width: ${p => p.size}px;
-  height: ${p => p.size}px;
+  width: ${(p) => p.size}px;
+  height: ${(p) => p.size}px;
 `;
 
 export type IconWrapperProps = SpaceProps & {
@@ -28,14 +34,14 @@ export type IconWrapperProps = SpaceProps & {
 export const IconWrapper = styled.i<IconWrapperProps>`
   display: inline-flex;
   line-height: 1;
-  cursor: ${p => p.cursor};
-  pointer-events: ${p => p.pointerEvents};
+  cursor: ${(p) => p.cursor};
+  pointer-events: ${(p) => p.pointerEvents};
 
   svg {
-    fill: ${p => p.theme.colors.gray500};
+    fill: ${(p) => p.theme.colors.gray500};
     vertical-align: middle;
     pointer-events: none;
-    ${p => p.theme.transition /* sc-declaration */};
+    ${(p) => p.theme.transition /* sc-declaration */};
   }
 
   &&& svg {
@@ -58,7 +64,9 @@ export type IconProps = HTMLAttributes<HTMLDivElement> &
     type: IconType;
   };
 
-const Icon = forwardRef<HTMLElement, IconProps>(function Icon(
+const Icon: ForwardRefExoticComponent<
+  PropsWithoutRef<IconProps> & React.RefAttributes<HTMLElement>
+> = forwardRef<HTMLElement, IconProps>(function Icon(
   { type, cursor = 'default', size = 24, ...otherProps },
   ref
 ) {
