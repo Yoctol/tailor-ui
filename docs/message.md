@@ -50,7 +50,7 @@ import { useMessage } from 'tailor-ui';
 }
 ```
 
-### Customize duration
+### Customized duration
 
 ```jsx live
 () => {

@@ -21,7 +21,7 @@ describe('Backdrop', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  it('should render customize badge correctly', async () => {
+  it('should render customized badge correctly', async () => {
     const { container } = render(
       <Badge count={16} bg="success">
         <button type="button">btn</button>
@@ -41,7 +41,7 @@ describe('Backdrop', () => {
     expect(getByText('99+')).toBeInTheDocument();
   });
 
-  it('should render customize overflowCount badge correctly', async () => {
+  it('should render customized overflowCount badge correctly', async () => {
     const { getByText } = render(
       <Badge count={1000} overflowCount={999}>
         <button type="button">btn</button>

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Slider should render customize min & max slider correctly 1`] = `
+exports[`Slider should render customized min & max slider correctly 1`] = `
 .c3 {
   position: absolute;
   z-index: 0;

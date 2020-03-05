@@ -45,7 +45,7 @@ import { Slider } from 'tailor-ui';
 }
 ```
 
-### Customize min & max usage
+### Customized min & max usage
 
 ```jsx live
 () => {
@@ -60,7 +60,7 @@ import { Slider } from 'tailor-ui';
 }
 ```
 
-### Customize step usage
+### Customized step usage
 
 ```jsx live
 () => {

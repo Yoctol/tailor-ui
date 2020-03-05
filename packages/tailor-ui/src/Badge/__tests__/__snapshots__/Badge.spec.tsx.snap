@@ -58,7 +58,7 @@ exports[`Backdrop should render badge correctly 1`] = `
 </div>
 `;
 
-exports[`Backdrop should render customize badge correctly 1`] = `
+exports[`Backdrop should render customized badge correctly 1`] = `
 .c2 {
   box-sizing: border-box;
   color: #ffffff;
