@@ -1,4 +1,5 @@
-import { css } from 'styled-components';
+import styled from 'styled-components';
+import { Fragment } from 'react';
 
 import Calendar from './Calendar';
 import Common from './common';
@@ -9,7 +10,7 @@ import TimePanel from './TimePanel';
 import YearPanel from './YearPanel';
 import timepicker from './timepicker';
 
-const DatePickerStyle = css`
+const DatePickerStyle = styled(Fragment)`
   ${Calendar};
   ${Common};
   ${DecadePanel};
