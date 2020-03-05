@@ -12,6 +12,7 @@ import { Position } from '../constants';
 import { useLocale } from '../locale';
 
 import DatePickerInput from './DatePickerInput';
+import DatePickerStyle from './styles';
 import DatePresets, { Presets } from './DatePresets';
 
 export interface DatePickerProps {
@@ -145,56 +146,58 @@ const DatePicker: FC<DatePickerProps> = ({
   }, [format, ownValue]);
 
   return (
-    <Popover
-      position={Position.BOTTOM_LEFT}
-      p="0"
-      content={handleClose => (
-        <RenderCalendar
-          showWeekNumber={false}
-          showDateInput={false}
-          showOk={showTime}
-          format={format}
-          disabledDate={disabledDate}
-          disabledTime={disabledTime}
-          locale={locale.DatePicker}
-          onOk={handleClose}
-          timePicker={
-            showTime ? (
-              <TimePickerPanel
-                minuteStep={minuteStep}
-                showSecond={showSecond}
-              />
-            ) : null
-          }
-          renderSidebar={() => (
-            <DatePresets
-              key="sidebar"
-              presets={presets}
-              onDateClick={handleChange}
-            />
-          )}
-          {...props}
-          {...valueProps}
-          onChange={setDisplayDate}
-          onSelect={(newValue: Moment | Moment[]) => {
-            handleChange(newValue);
-
-            if (!showTime) {
-              handleClose();
+    <DatePickerStyle>
+      <Popover
+        position={Position.BOTTOM_LEFT}
+        p="0"
+        content={handleClose => (
+          <RenderCalendar
+            showWeekNumber={false}
+            showDateInput={false}
+            showOk={showTime}
+            format={format}
+            disabledDate={disabledDate}
+            disabledTime={disabledTime}
+            locale={locale.DatePicker}
+            onOk={handleClose}
+            timePicker={
+              showTime ? (
+                <TimePickerPanel
+                  minuteStep={minuteStep}
+                  showSecond={showSecond}
+                />
+              ) : null
             }
-          }}
+            renderSidebar={() => (
+              <DatePresets
+                key="sidebar"
+                presets={presets}
+                onDateClick={handleChange}
+              />
+            )}
+            {...props}
+            {...valueProps}
+            onChange={setDisplayDate}
+            onSelect={(newValue: Moment | Moment[]) => {
+              handleChange(newValue);
+
+              if (!showTime) {
+                handleClose();
+              }
+            }}
+          />
+        )}
+      >
+        <DatePickerInput
+          width={width}
+          value={displayValue}
+          inputProps={inputProps}
+          clearable={clearable}
+          placeholder={placeholder}
+          handleClear={handleClear}
         />
-      )}
-    >
-      <DatePickerInput
-        width={width}
-        value={displayValue}
-        inputProps={inputProps}
-        clearable={clearable}
-        placeholder={placeholder}
-        handleClear={handleClear}
-      />
-    </Popover>
+      </Popover>
+    </DatePickerStyle>
   );
 };
 
