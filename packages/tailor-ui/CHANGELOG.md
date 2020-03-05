@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.30.0](https://github.com/yoctol/tailor-ui/compare/tailor-ui@0.29.3...tailor-ui@0.30.0) (2020-03-05)
+
+
+### Bug Fixes
+
+* **provider:** move datePickerStyle from GlobalStyle into its component to prevent tests slowly ([c3e8808](https://github.com/yoctol/tailor-ui/commit/c3e880850e673392d4ec4aa3d0b29808b32fcd8e))
+
+
+### Features
+
+* **badge:** implement Badge component ([d2402cf](https://github.com/yoctol/tailor-ui/commit/d2402cf7e2779634814be3aa1c043be4bbb4bef1))
+
+
+
+
+
 ## [0.29.3](https://github.com/yoctol/tailor-ui/compare/tailor-ui@0.29.2...tailor-ui@0.29.3) (2020-03-02)
 
 
