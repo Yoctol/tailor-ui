@@ -1,6 +1,6 @@
-import React, { ReactChild } from 'react';
 import createMockRaf, { MockRaf } from '@react-spring/mock-raf';
-import { render } from '@testing-library/react';
+import { ReactElement } from 'react';
+import { RenderOptions, render } from '@testing-library/react';
 
 import { UIProvider } from '../packages/tailor-ui/src';
 
@@ -29,8 +29,14 @@ const useMockRaf = () => {
 
 export { mockRaf, useMockRaf };
 
-const customRender = (node: ReactChild, options?: object) =>
-  render(<UIProvider>{node}</UIProvider>, options);
+const customRender = (
+  node: ReactElement,
+  options?: Omit<RenderOptions, 'queries' | 'wrapper'>
+) =>
+  render(node, {
+    wrapper: UIProvider as any,
+    ...options,
+  });
 
 // re-export everything
 export * from '@testing-library/react';

@@ -3,6 +3,7 @@ export * from './types';
 
 export * from './Alert';
 export * from './AutoSizeInput';
+export * from './Badge';
 export * from './Breadcrumb';
 export * from './Button';
 export * from './Backdrop';

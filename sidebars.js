@@ -34,6 +34,7 @@ module.exports = {
       'upload',
     ],
     'Data Display': [
+      'badge',
       'card',
       'container',
       'divider',
