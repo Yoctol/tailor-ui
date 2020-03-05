@@ -1,0 +1,148 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Backdrop should render badge correctly 1`] = `
+.c2 {
+  box-sizing: border-box;
+  color: #ffffff;
+  background-color: #fc5475;
+  border-color: #ffffff;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 16px;
+  height: 16px;
+  padding: 0 4px;
+  border: 1px solid;
+  border-radius: 0.25rem;
+  font-size: 12px;
+  line-height: 1;
+}
+
+.c0 {
+  box-sizing: border-box;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  position: relative;
+}
+
+.c0 .c1 {
+  position: absolute;
+  top: 0;
+  right: 8px;
+  -webkit-transform: translateX(50%);
+  -ms-transform: translateX(50%);
+  transform: translateX(50%);
+}
+
+<div
+  class="sc-1nz5gok-0 c0"
+>
+  <button
+    type="button"
+  >
+    btn
+  </button>
+  <div
+    class="sc-1nz5gok-0 c1 c2"
+    color="light"
+  >
+    2
+  </div>
+</div>
+`;
+
+exports[`Backdrop should render customize badge correctly 1`] = `
+.c2 {
+  box-sizing: border-box;
+  color: #ffffff;
+  background-color: #40d064;
+  border-color: #ffffff;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 16px;
+  height: 16px;
+  padding: 0 4px;
+  border: 1px solid;
+  border-radius: 0.25rem;
+  font-size: 12px;
+  line-height: 1;
+}
+
+.c0 {
+  box-sizing: border-box;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  position: relative;
+}
+
+.c0 .c1 {
+  position: absolute;
+  top: 0;
+  right: 8px;
+  -webkit-transform: translateX(50%);
+  -ms-transform: translateX(50%);
+  transform: translateX(50%);
+}
+
+<div
+  class="sc-1nz5gok-0 c0"
+>
+  <button
+    type="button"
+  >
+    btn
+  </button>
+  <div
+    class="sc-1nz5gok-0 c1 c2"
+    color="light"
+  >
+    16
+  </div>
+</div>
+`;
+
+exports[`Backdrop should render standalone badge correctly 1`] = `
+.c0 {
+  box-sizing: border-box;
+  color: #ffffff;
+  background-color: #fc5475;
+  border-color: #ffffff;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 16px;
+  height: 16px;
+  padding: 0 4px;
+  border: 1px solid;
+  border-radius: 0.25rem;
+  font-size: 12px;
+  line-height: 1;
+}
+
+<div
+  class="sc-1nz5gok-0 c0"
+  color="light"
+>
+  2
+</div>
+`;

@@ -1,5 +1,6 @@
 import {
   Alert,
+  Badge,
   Box,
   Breadcrumb,
   Button,
@@ -44,6 +45,7 @@ import {
 describe('index', () => {
   it('should export all components', () => {
     expect(Alert).toBeDefined();
+    expect(Badge).toBeDefined();
     expect(Box).toBeDefined();
     expect(Breadcrumb).toBeDefined();
     expect(Button).toBeDefined();
