@@ -103,7 +103,7 @@ import { Modal, useModal } from 'tailor-ui';
 }
 ```
 
-### Customize footer
+### Customized footer
 
 ```jsx live
 () => {

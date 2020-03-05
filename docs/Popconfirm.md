@@ -28,7 +28,7 @@ import { Popconfirm } from 'tailor-ui';
 </Popconfirm>
 ```
 
-### With customize text & type
+### With customized text & type
 
 ```jsx live
 () => {

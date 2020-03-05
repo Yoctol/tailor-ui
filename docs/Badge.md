@@ -32,7 +32,7 @@ import { Badge } from 'tailor-ui';
 </Flex>
 ```
 
-### Customize color
+### Customized color
 
 ```jsx live
 <>

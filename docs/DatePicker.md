@@ -56,7 +56,7 @@ import { DatePicker } from 'tailor-ui';
 }
 ```
 
-#### Customize input
+#### Customized input
 
 ```jsx live
 <DatePicker

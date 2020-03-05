@@ -17,7 +17,7 @@ describe('Slider', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  it('should render customize min & max slider correctly', () => {
+  it('should render customized min & max slider correctly', () => {
     const { container } = render(
       <>
         <Slider min={100} max={200} value={130} />
