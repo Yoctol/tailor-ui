@@ -146,11 +146,12 @@ const DatePicker: FC<DatePickerProps> = ({
   }, [format, ownValue]);
 
   return (
-    <DatePickerStyle>
-      <Popover
-        position={Position.BOTTOM_LEFT}
-        p="0"
-        content={handleClose => (
+    <Popover
+      position={Position.BOTTOM_LEFT}
+      p="0"
+      content={handleClose => (
+        <>
+          <DatePickerStyle />
           <RenderCalendar
             showWeekNumber={false}
             showDateInput={false}
@@ -186,18 +187,18 @@ const DatePicker: FC<DatePickerProps> = ({
               }
             }}
           />
-        )}
-      >
-        <DatePickerInput
-          width={width}
-          value={displayValue}
-          inputProps={inputProps}
-          clearable={clearable}
-          placeholder={placeholder}
-          handleClear={handleClear}
-        />
-      </Popover>
-    </DatePickerStyle>
+        </>
+      )}
+    >
+      <DatePickerInput
+        width={width}
+        value={displayValue}
+        inputProps={inputProps}
+        clearable={clearable}
+        placeholder={placeholder}
+        handleClear={handleClear}
+      />
+    </Popover>
   );
 };
 
