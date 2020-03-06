@@ -11,7 +11,7 @@
   "bugs": {
     "url": "https://github.com/Yoctol/tailor-ui/issues"
   },
-  "version": "0.4.4",
+  "version": "0.4.5",
   "main": "lib/index.cjs.js",
   "module": "lib/index.js",
   "files": [
@@ -28,9 +28,9 @@
   "sideEffects": false,
   "typings": "lib/index.d.ts",
   "dependencies": {
-    "@tailor-ui/lab": "^0.15.4",
+    "@tailor-ui/lab": "^0.15.5",
     "@tailor-ui/utils": "^0.3.2",
-    "tailor-ui": "^0.30.0"
+    "tailor-ui": "^0.30.1"
   },
   "peerDependencies": {
     "formik": ">=2.1.0",

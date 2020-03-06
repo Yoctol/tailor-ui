@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.30.1](https://github.com/yoctol/tailor-ui/compare/tailor-ui@0.30.0...tailor-ui@0.30.1) (2020-03-06)
+
+
+### Bug Fixes
+
+* **date-picker:** render correctly styles ([eecaa10](https://github.com/yoctol/tailor-ui/commit/eecaa10f9b95dc101b1b904eb6ad38ae52fb2c9f))
+
+
+
+
+
 # [0.30.0](https://github.com/yoctol/tailor-ui/compare/tailor-ui@0.29.3...tailor-ui@0.30.0) (2020-03-05)
 
 
