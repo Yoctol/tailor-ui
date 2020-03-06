@@ -1,5 +1,4 @@
-import styled from 'styled-components';
-import { Fragment } from 'react';
+import { createGlobalStyle } from 'styled-components';
 
 import Calendar from './Calendar';
 import Common from './common';
@@ -10,7 +9,7 @@ import TimePanel from './TimePanel';
 import YearPanel from './YearPanel';
 import timepicker from './timepicker';
 
-const DatePickerStyle = styled(Fragment)`
+const DatePickerStyle = createGlobalStyle`
   ${Calendar};
   ${Common};
   ${DecadePanel};
