@@ -36,9 +36,6 @@ exports[`Backdrop should render badge correctly 1`] = `
   position: absolute;
   top: 0;
   right: 8px;
-  -webkit-transform: translateX(50%);
-  -ms-transform: translateX(50%);
-  transform: translateX(50%);
 }
 
 <div
@@ -52,6 +49,7 @@ exports[`Backdrop should render badge correctly 1`] = `
   <div
     class="sc-1nz5gok-0 c1 c2"
     color="light"
+    style="opacity: 1; transform-origin: right; transform: scale(1) translateX(50%);"
   >
     2
   </div>
@@ -94,9 +92,6 @@ exports[`Backdrop should render customized badge correctly 1`] = `
   position: absolute;
   top: 0;
   right: 8px;
-  -webkit-transform: translateX(50%);
-  -ms-transform: translateX(50%);
-  transform: translateX(50%);
 }
 
 <div
@@ -110,6 +105,7 @@ exports[`Backdrop should render customized badge correctly 1`] = `
   <div
     class="sc-1nz5gok-0 c1 c2"
     color="light"
+    style="opacity: 1; transform-origin: right; transform: scale(1) translateX(50%);"
   >
     16
   </div>
@@ -142,6 +138,7 @@ exports[`Backdrop should render standalone badge correctly 1`] = `
 <div
   class="sc-1nz5gok-0 c0"
   color="light"
+  style="opacity: 1; transform-origin: center; transform: scale(1);"
 >
   2
 </div>

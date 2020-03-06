@@ -1,8 +1,9 @@
 import styled from 'styled-components';
+import { animated } from 'react-spring';
 
 import { Box } from '../Layout';
 
-export const StyledBadge = styled(Box)`
+const StyledBadge = styled(Box)`
   display: inline-flex;
   align-items: center;
   min-width: 16px;
@@ -14,6 +15,8 @@ export const StyledBadge = styled(Box)`
   line-height: 1;
 `;
 
+export const AnimatedStyledBadge = animated(StyledBadge);
+
 export const StyledBadgeWrapper = styled(Box)`
   display: inline-flex;
   position: relative;
@@ -22,6 +25,5 @@ export const StyledBadgeWrapper = styled(Box)`
     position: absolute;
     top: 0;
     right: 8px;
-    transform: translateX(50%);
   }
 `;
