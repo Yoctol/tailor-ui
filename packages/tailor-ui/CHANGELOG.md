@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.30.2](https://github.com/yoctol/tailor-ui/compare/tailor-ui@0.30.1...tailor-ui@0.30.2) (2020-03-09)
+
+
+### Features
+
+* **badge:** add new API showZero & animation ([f62a8ba](https://github.com/yoctol/tailor-ui/commit/f62a8ba12381c27618e5b4bff899589bbe4d934b))
+* **drawer:** remove default padding x ([fc4bd86](https://github.com/yoctol/tailor-ui/commit/fc4bd86ffe22b41d4247ee6487dfe98eb8955e89))
+
+
+
+
+
 ## [0.30.1](https://github.com/yoctol/tailor-ui/compare/tailor-ui@0.30.0...tailor-ui@0.30.1) (2020-03-06)
 
 
