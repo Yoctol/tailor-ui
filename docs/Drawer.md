@@ -30,9 +30,11 @@ import { Drawer } from 'tailor-ui';
     <>
       <Button onClick={() => setVisible(!visible)}>Open</Button>
       <Drawer title="Title" visible={visible} onClose={() => setVisible(false)}>
-        {Array.from({ length: 100 }).map((_, index) => (
-          <div key={index}>This is the content of Drawer</div>
-        ))}
+        <Box px="4">
+          {Array.from({ length: 100 }).map((_, index) => (
+            <div key={index}>This is the content of Drawer</div>
+          ))}
+        </Box>
       </Drawer>
     </>
   );
@@ -65,9 +67,11 @@ import { Drawer } from 'tailor-ui';
         placement={placement}
         onClose={() => setVisible(false)}
       >
-        {Array.from({ length: 100 }).map((_, index) => (
-          <div key={index}>This is the content of Drawer</div>
-        ))}
+        <Box px="4">
+          {Array.from({ length: 100 }).map((_, index) => (
+            <div key={index}>This is the content of Drawer</div>
+          ))}
+        </Box>
       </Drawer>
     </>
   );
@@ -93,9 +97,11 @@ import { Drawer } from 'tailor-ui';
           </Button>
         }
       >
-        {Array.from({ length: 100 }).map((_, index) => (
-          <div key={index}>This is the content of Drawer</div>
-        ))}
+        <Box px="4">
+          {Array.from({ length: 100 }).map((_, index) => (
+            <div key={index}>This is the content of Drawer</div>
+          ))}
+        </Box>
       </Drawer>
     </>
   );
@@ -123,9 +129,11 @@ import { Drawer } from 'tailor-ui';
           </Button>
         }
       >
-        {Array.from({ length: 100 }).map((_, index) => (
-          <div key={index}>This is the content of Drawer</div>
-        ))}
+        <Box px="4">
+          {Array.from({ length: 100 }).map((_, index) => (
+            <div key={index}>This is the content of Drawer</div>
+          ))}
+        </Box>
       </Drawer>
     </>
   );

@@ -143,12 +143,7 @@ const Drawer: FC<DrawerProps> = ({
                       {closable && <CloseButton onCancel={onClose} />}
                     </Flex>
                   )}
-                  <Flex
-                    flex="auto"
-                    flexDirection="column"
-                    overflowY="auto"
-                    px="4"
-                  >
+                  <Flex flex="auto" flexDirection="column" overflowY="auto">
                     {children}
                   </Flex>
                   {footer && (

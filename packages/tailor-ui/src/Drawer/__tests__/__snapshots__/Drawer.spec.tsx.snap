@@ -41,8 +41,6 @@ exports[`Drawer should render correctly 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   overflow-y: auto;
-  padding-left: 2rem;
-  padding-right: 2rem;
 }
 
 .c8 {
@@ -342,8 +340,6 @@ exports[`Drawer should render correctly with props closable 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   overflow-y: auto;
-  padding-left: 2rem;
-  padding-right: 2rem;
 }
 
 .c3 {
@@ -470,8 +466,6 @@ exports[`Drawer should render custom footer correctly 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   overflow-y: auto;
-  padding-left: 2rem;
-  padding-right: 2rem;
 }
 
 .c5 {
