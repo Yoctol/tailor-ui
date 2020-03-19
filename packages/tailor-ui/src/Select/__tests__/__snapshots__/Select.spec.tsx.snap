@@ -208,9 +208,7 @@ exports[`Select multiple should display multi option 1`] = `
             class="c3"
             data-testid="select-selected-option-0"
           >
-            <span>
-              Banana
-            </span>
+            Banana
             <i
               class="c4"
               cursor="pointer"
@@ -236,9 +234,7 @@ exports[`Select multiple should display multi option 1`] = `
             class="c3"
             data-testid="select-selected-option-1"
           >
-            <span>
-              Orange
-            </span>
+            Orange
             <i
               class="c4"
               cursor="pointer"
