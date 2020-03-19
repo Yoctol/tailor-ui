@@ -281,7 +281,7 @@ const Select = <V extends SelectedValue>({
                       index={index}
                       size={size}
                       data-testid={props['data-testid']}
-                      {...getRemoveButtonProps({
+                      removeButtonProps={getRemoveButtonProps({
                         item,
                         onClick: () => {
                           if (inputRef.current) {
@@ -290,7 +290,7 @@ const Select = <V extends SelectedValue>({
                         },
                       })}
                     >
-                      <span>{itemToString(item)}</span>
+                      {itemToString(item)}
                     </SelectedOption>
                   ))}
                 <SelectInput
