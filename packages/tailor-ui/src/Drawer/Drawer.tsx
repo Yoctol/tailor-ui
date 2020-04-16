@@ -126,7 +126,7 @@ const Drawer: FC<DrawerProps> = ({
                   transform:
                     props.offset &&
                     props.offset.interpolate(
-                      offset => `${transformAxis}(${offset})`
+                      (offset) => `${transformAxis}(${offset})`
                     ),
                 }}
               >

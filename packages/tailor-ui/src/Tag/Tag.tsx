@@ -27,11 +27,11 @@ const AnimatedStyledTagWrapper = animated(StyledTagWrapper);
 
 const StyledCloseIcon = styled(Icon)`
   & svg {
-    fill: ${p => p.theme.colors.primaryLight2};
+    fill: ${(p) => p.theme.colors.primaryLight2};
   }
 
   &:hover svg {
-    fill: ${p => p.theme.colors.primaryLight};
+    fill: ${(p) => p.theme.colors.primaryLight};
   }
 `;
 
@@ -119,7 +119,7 @@ const Tag: FC<TagProps> = ({
         editable={editable}
         clickable={Boolean(onClick)}
         invalid={invalid}
-        onClick={event => {
+        onClick={(event) => {
           if (editable) {
             setEditing(true);
           }
@@ -137,12 +137,12 @@ const Tag: FC<TagProps> = ({
             autoFocus
             defaultValue={children}
             onBlur={handleUpdate}
-            onKeyPress={event => {
+            onKeyPress={(event) => {
               if (event.key === 'Enter') {
                 handleUpdate(event);
               }
             }}
-            onKeyDown={event => {
+            onKeyDown={(event) => {
               if (event.key === 'Escape') {
                 setEditing(false);
               }
@@ -154,7 +154,7 @@ const Tag: FC<TagProps> = ({
         {closable && (
           <CloseIcon
             invalid={invalid}
-            onClick={async event => {
+            onClick={async (event) => {
               event.stopPropagation();
 
               if (canClose && !(await canClose())) {

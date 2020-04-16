@@ -1,6 +1,12 @@
 import React, { useCallback, useEffect } from 'react';
 
-import { fireEvent, mockRaf, render, useMockRaf, wait } from 'test/test-utils';
+import {
+  fireEvent,
+  mockRaf,
+  render,
+  useMockRaf,
+  waitFor,
+} from 'test/test-utils';
 
 import { ModalTypes } from '../HooksModal';
 import { useModal } from '../useModal';
@@ -154,7 +160,7 @@ describe('useModal', () => {
         const confirmButton = getByText('Confirm');
         fireEvent.click(confirmButton);
 
-        await wait(() => expect(confirmationFn).toBeCalled());
+        await waitFor(() => expect(confirmationFn).toBeCalled());
       });
 
       it('should return confirmation and await it not confirm successfully', async () => {
@@ -188,7 +194,7 @@ describe('useModal', () => {
         const cancelButton = getByText('Cancel');
         fireEvent.click(cancelButton);
 
-        await wait(() => expect(confirmationFn).toBeCalled());
+        await waitFor(() => expect(confirmationFn).toBeCalled());
       });
 
       it('should return close and call it to close modal successfully', async () => {
@@ -280,7 +286,7 @@ describe('useModal', () => {
         const confirmButton = getByText('Confirm');
         fireEvent.click(confirmButton);
 
-        await wait(() => expect(confirmationFn).toBeCalled());
+        await waitFor(() => expect(confirmationFn).toBeCalled());
       });
 
       it('should return confirmation and await it not confirm successfully', async () => {
@@ -314,7 +320,7 @@ describe('useModal', () => {
         const cancelButton = getByText('Cancel');
         fireEvent.click(cancelButton);
 
-        await wait(() => expect(confirmationFn).toBeCalled());
+        await waitFor(() => expect(confirmationFn).toBeCalled());
       });
 
       it('should return close and call it to close modal successfully', async () => {

@@ -10,7 +10,7 @@ const heading = compose(text, space);
 
 const headingStyles = css`
   margin: 0;
-  color: ${p => p.theme.colors.gray700};
+  color: ${(p) => p.theme.colors.gray700};
   font-weight: bold;
   line-height: 1.5;
 

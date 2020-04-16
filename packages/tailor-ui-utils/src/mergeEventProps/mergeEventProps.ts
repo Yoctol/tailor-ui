@@ -3,7 +3,7 @@ const mergeEventProps = (...objEvents: any[]) => {
   return objEvents.reduce((allEvents, events) => {
     const append = {};
 
-    Object.keys(events).forEach(key => {
+    Object.keys(events).forEach((key) => {
       (append as any)[key] = allEvents[key]
         ? // Already have this event: let's merge
           (...args: any[]) => {

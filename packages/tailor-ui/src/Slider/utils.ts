@@ -59,12 +59,12 @@ export const updateRangeValues = ({
   replaceValue: number;
   newValue: number;
 }): RangeValue => {
-  if (value.every(val => val === replaceValue)) {
+  if (value.every((val) => val === replaceValue)) {
     return [value[0], newValue];
   }
 
   const updatedValues = value
-    .map(v => (v === replaceValue ? newValue : v))
+    .map((v) => (v === replaceValue ? newValue : v))
     .sort((a, b) => a - b) as RangeValue;
 
   return updatedValues;

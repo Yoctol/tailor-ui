@@ -101,7 +101,7 @@ class MultiDownshift extends Component<
     this.setState(
       {
         selectedItems: this.selectedItems.filter(
-          i => itemToString(i) !== itemToString(item)
+          (i) => itemToString(i) !== itemToString(item)
         ),
       },
       this.handleChange
@@ -148,7 +148,7 @@ class MultiDownshift extends Component<
         onChange={this.handleSelection}
         selectedItem={null}
       >
-        {downshift =>
+        {(downshift) =>
           children({
             getRemoveButtonProps: this.getRemoveButtonProps,
             removeItem: this.removeItem,

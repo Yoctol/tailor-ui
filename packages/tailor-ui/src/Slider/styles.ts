@@ -5,8 +5,8 @@ export const StyledSliderBar = styled.div`
   z-index: 0;
   width: 100%;
   height: 4px;
-  border-radius: ${p => p.theme.radii.sm};
-  background-color: ${p => p.theme.colors.gray200};
+  border-radius: ${(p) => p.theme.radii.sm};
+  background-color: ${(p) => p.theme.colors.gray200};
   transition: background-color 200ms ease 0s;
   user-select: none;
 `;
@@ -15,8 +15,8 @@ export const StyledSliderActiveBar = styled.div`
   position: absolute;
   z-index: 1;
   height: 4px;
-  border-radius: ${p => p.theme.radii.sm};
-  background-color: ${p => p.theme.colors.secondaryLight};
+  border-radius: ${(p) => p.theme.radii.sm};
+  background-color: ${(p) => p.theme.colors.secondaryLight};
   transition: background-color 200ms ease 0s;
   user-select: none;
 `;
@@ -32,21 +32,21 @@ export const StyledSliderContainer = styled.div<{
   user-select: none;
 
   &::before {
-    content: '${p => p.min}';
+    content: '${(p) => p.min}';
     position: absolute;
     top: 0;
     left: 4px;
-    color: ${p => p.theme.colors.gray500};
+    color: ${(p) => p.theme.colors.gray500};
     font-size: 12px;
     letter-spacing: 0.2px;
   }
 
   &::after {
-    content: '${p => p.max}';
+    content: '${(p) => p.max}';
     position: absolute;
     top: 0;
     right: 4px;
-    color: ${p => p.theme.colors.gray500};
+    color: ${(p) => p.theme.colors.gray500};
     font-size: 12px;
     letter-spacing: 0.2px;
   }
@@ -57,10 +57,10 @@ export const StyledSliderDot = styled.span`
   z-index: 2;
   width: 12px;
   height: 12px;
-  border: ${p => p.theme.borders.lg};
+  border: ${(p) => p.theme.borders.lg};
   border-radius: 50%;
-  border-color: ${p => p.theme.colors.light};
-  background-color: ${p => p.theme.colors.primary};
+  border-color: ${(p) => p.theme.colors.light};
+  background-color: ${(p) => p.theme.colors.primary};
   transform: translate3d(2px, 2px, 0);
   cursor: pointer;
   user-select: none;
@@ -72,8 +72,8 @@ export const StyledSliderDotNumber = styled.span`
   top: 20px;
   justify-content: center;
   width: 100%;
-  color: ${p => p.theme.colors.gray500};
-  font-size: ${p => p.theme.fontSizes.sm};
+  color: ${(p) => p.theme.colors.gray500};
+  font-size: ${(p) => p.theme.fontSizes.sm};
   line-height: 1;
   transition: font-size, color 200ms ease 0s;
   pointer-events: none;
@@ -86,7 +86,7 @@ export const StyledDotContainer = styled.div<{ active: boolean }>`
   height: 36px;
   transform: translate3d(-8px, -6px, 0);
 
-  ${p =>
+  ${(p) =>
     p.active &&
     css`
       ${StyledSliderDot} {
@@ -110,7 +110,7 @@ export const StyledSlider = styled.div<{ disabled: boolean }>`
   cursor: pointer;
   user-select: none;
 
-  ${p =>
+  ${(p) =>
     p.disabled
       ? css`
           cursor: not-allowed;

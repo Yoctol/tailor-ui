@@ -13,7 +13,7 @@ const SelectArrow: FC<{ on: boolean }> = ({ on }) => {
   return (
     <animated.i
       style={{
-        transform: deg.interpolate(d => `rotate(${d}deg)`),
+        transform: deg.interpolate((d) => `rotate(${d}deg)`),
         flex: 'none',
         pointerEvents: 'none',
         display: 'inline-flex',

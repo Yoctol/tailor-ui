@@ -14,7 +14,9 @@ interface DropdownSubListProps {
   disabled?: boolean;
 }
 
-const DropdownSubListWrapper: FC = props => <StyledPopover p="0" {...props} />;
+const DropdownSubListWrapper: FC = (props) => (
+  <StyledPopover p="0" {...props} />
+);
 
 const DropdownSubList: FC<DropdownSubListProps> = ({
   disabled = false,
@@ -32,7 +34,7 @@ const DropdownSubList: FC<DropdownSubListProps> = ({
       mouseLeaveDelay={300}
       Wrapper={DropdownSubListWrapper}
       content={<List onClick={() => setVisible(false)}>{children}</List>}
-      onVisibleChange={newVisible => {
+      onVisibleChange={(newVisible) => {
         if (!disabled) {
           setVisible(newVisible);
         }

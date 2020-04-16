@@ -67,7 +67,7 @@ describe('FormField', () => {
             <Input
               data-testid="input"
               value={value}
-              onChange={e => setValue(e.target.value)}
+              onChange={(e) => setValue(e.target.value)}
             />
           </FormField>
         );
@@ -129,7 +129,7 @@ describe('FormField', () => {
           validator={string().test(
             'is-error',
             'Error Message',
-            value => value !== 'error'
+            (value) => value !== 'error'
           )}
         >
           <Input defaultValue="error" placeholder="Placeholder" />
@@ -149,7 +149,7 @@ describe('FormField', () => {
           validator={string().test(
             'is-error',
             'Error Message',
-            value => value !== 'error'
+            (value) => value !== 'error'
           )}
         >
           <Input defaultValue="valid input" placeholder="Placeholder" />
@@ -166,7 +166,7 @@ describe('FormField', () => {
           validator={string().test(
             'is-error',
             'Error Message',
-            value => value !== 'error'
+            (value) => value !== 'error'
           )}
         >
           <Input
@@ -196,7 +196,7 @@ describe('FormField', () => {
       const { getByText } = render(
         <FormField
           label="Input"
-          validator={value => (value === 'error' ? 'Error Message' : null)}
+          validator={(value) => (value === 'error' ? 'Error Message' : null)}
         >
           <Input defaultValue="error" placeholder="Placeholder" />
         </FormField>
@@ -212,7 +212,7 @@ describe('FormField', () => {
       const { queryByText } = render(
         <FormField
           label="Input"
-          validator={value => (value === 'error' ? 'Error Message' : null)}
+          validator={(value) => (value === 'error' ? 'Error Message' : null)}
         >
           <Input defaultValue="valid input" placeholder="Placeholder" />
         </FormField>
@@ -225,7 +225,7 @@ describe('FormField', () => {
       const { getByTestId, getByText, queryByText } = render(
         <FormField
           label="Input"
-          validator={value => (value === 'error' ? 'Error Message' : null)}
+          validator={(value) => (value === 'error' ? 'Error Message' : null)}
         >
           <Input
             data-testid="input"
@@ -255,7 +255,7 @@ describe('FormField', () => {
         <FormField
           label="Input"
           validator={{
-            rule: value => value === 'error1',
+            rule: (value) => value === 'error1',
             message: 'error message',
           }}
         >
@@ -275,11 +275,11 @@ describe('FormField', () => {
           label="Input"
           validator={[
             {
-              rule: value => value === 'error1',
+              rule: (value) => value === 'error1',
               message: 'error message',
             },
             {
-              rule: value => value === 'error2',
+              rule: (value) => value === 'error2',
               message: 'another error message',
             },
           ]}
@@ -300,11 +300,11 @@ describe('FormField', () => {
           label="Input"
           validator={[
             {
-              rule: value => value === 'error1',
+              rule: (value) => value === 'error1',
               message: 'error message',
             },
             {
-              rule: value => value === 'error2',
+              rule: (value) => value === 'error2',
               message: 'another error message',
             },
           ]}
@@ -325,11 +325,11 @@ describe('FormField', () => {
           label="Input"
           validator={[
             {
-              rule: value => value === 'error1',
+              rule: (value) => value === 'error1',
               message: 'error message',
             },
             {
-              rule: value => value === 'error2',
+              rule: (value) => value === 'error2',
               message: 'another error message',
             },
           ]}
@@ -348,11 +348,11 @@ describe('FormField', () => {
           label="Input"
           validator={[
             {
-              rule: value => value === 'error1',
+              rule: (value) => value === 'error1',
               message: 'error message',
             },
             {
-              rule: value => value === 'error2',
+              rule: (value) => value === 'error2',
               message: 'another error message',
             },
           ]}

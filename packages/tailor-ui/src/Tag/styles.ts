@@ -13,20 +13,20 @@ export const StyledTag = styled.div<StyledTagProps>`
   align-items: center;
   height: 28px;
   padding: 0 8px;
-  border: ${p => p.theme.borders.base};
-  border-radius: ${p => p.theme.radii.lg};
-  border-color: ${p =>
+  border: ${(p) => p.theme.borders.base};
+  border-radius: ${(p) => p.theme.radii.lg};
+  border-color: ${(p) =>
     p.invalid ? p.theme.colors.danger : p.theme.colors.primaryLight};
-  background-color: ${p =>
+  background-color: ${(p) =>
     p.invalid ? p.theme.colors.light : p.theme.colors.surface2};
-  color: ${p =>
+  color: ${(p) =>
     p.invalid ? p.theme.colors.danger : p.theme.colors.primaryLight};
-  font-size: ${p => p.theme.fontSizes.sm};
+  font-size: ${(p) => p.theme.fontSizes.sm};
   white-space: nowrap;
-  cursor: ${p => (p.editable || p.clickable ? 'pointer' : 'auto')};
+  cursor: ${(p) => (p.editable || p.clickable ? 'pointer' : 'auto')};
 
   input {
-    color: ${p =>
+    color: ${(p) =>
       p.invalid ? p.theme.colors.danger : p.theme.colors.primaryLight};
   }
 `;
@@ -37,12 +37,12 @@ export const StyledTagPrefix = styled.span<{ invalid: boolean }>`
   height: 100%;
   margin-right: 8px;
   padding-right: 8px;
-  border-right: ${p => p.theme.borders.base};
-  border-color: ${p =>
+  border-right: ${(p) => p.theme.borders.base};
+  border-color: ${(p) =>
     p.invalid ? p.theme.colors.danger : p.theme.colors.primaryLight};
-  color: ${p =>
+  color: ${(p) =>
     p.invalid ? p.theme.colors.danger : p.theme.colors.primaryLight};
-  font-size: ${p => p.theme.fontSizes.sm};
+  font-size: ${(p) => p.theme.fontSizes.sm};
 `;
 
 export const StyledTagInput = styled(AutoSizeInput)`
@@ -52,5 +52,5 @@ export const StyledTagInput = styled(AutoSizeInput)`
   border: none;
   outline: none;
   background-color: transparent;
-  font-size: ${p => p.theme.fontSizes.sm};
+  font-size: ${(p) => p.theme.fontSizes.sm};
 `;

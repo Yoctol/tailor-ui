@@ -20,13 +20,13 @@ type IStyledDividerProps = SpaceProps &
 
 const StyledInnerText = styled.span`
   display: inline-block;
-  padding: 0 ${p => p.theme.space[3]};
+  padding: 0 ${(p) => p.theme.space[3]};
 `;
 
 const StyledDivider = styled.div<IStyledDividerProps>`
-  background-color: ${p => p.theme.colors.gray300};
+  background-color: ${(p) => p.theme.colors.gray300};
 
-  ${p => {
+  ${(p) => {
     if (p.type === 'vertical') {
       return css`
         display: inline-block;
@@ -37,13 +37,13 @@ const StyledDivider = styled.div<IStyledDividerProps>`
         vertical-align: middle;
 
         ${p.withText &&
-          css`
-            border-top: 0;
-            &::before,
-            &::after {
-              border-style: dashed none none;
-            }
-          `}
+        css`
+          border-top: 0;
+          &::before,
+          &::after {
+            border-style: dashed none none;
+          }
+        `}
       `;
     }
 
@@ -56,46 +56,46 @@ const StyledDivider = styled.div<IStyledDividerProps>`
       clear: both;
 
       ${p.withText &&
-        css`
-          display: table;
-          background-color: transparent;
-          text-align: center;
-          white-space: nowrap;
+      css`
+        display: table;
+        background-color: transparent;
+        text-align: center;
+        white-space: nowrap;
 
-          &::before,
-          &::after {
-            content: '';
-            display: table-cell;
-            position: relative;
+        &::before,
+        &::after {
+          content: '';
+          display: table-cell;
+          position: relative;
+          top: 50%;
+          width: 50%;
+          border-top: ${p.theme.borders.base};
+          border-color: ${p.theme.colors.gray300};
+          transform: translateY(50%);
+        }
+
+        ${p.orientation &&
+        css`
+          &::before {
             top: 50%;
-            width: 50%;
-            border-top: ${p.theme.borders.base};
-            border-color: ${p.theme.colors.gray300};
-            transform: translateY(50%);
+            width: ${p.orientation === 'left' ? '5%' : '95%'};
           }
 
-          ${p.orientation &&
-            css`
-              &::before {
-                top: 50%;
-                width: ${p.orientation === 'left' ? '5%' : '95%'};
-              }
+          &::after {
+            top: 50%;
+            width: ${p.orientation === 'left' ? '95%' : '5%'};
+          }
 
-              &::after {
-                top: 50%;
-                width: ${p.orientation === 'left' ? '95%' : '5%'};
-              }
-
-              ${StyledInnerText} {
-                display: inline-block;
-                padding: 0 10px;
-              }
-            `}
+          ${StyledInnerText} {
+            display: inline-block;
+            padding: 0 10px;
+          }
         `}
+      `}
     `;
   }}
 
-  ${p =>
+  ${(p) =>
     p.dashed &&
     css`
       border-top: ${p.theme.borders.dashed};

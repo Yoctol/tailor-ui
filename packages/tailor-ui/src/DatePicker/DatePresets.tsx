@@ -20,12 +20,12 @@ const StyledPresetButton = styled.button`
   border: none;
   outline: none;
   background-color: transparent;
-  color: ${p => p.theme.colors.gray500};
-  font-size: ${p => p.theme.fontSizes.sm};
+  color: ${(p) => p.theme.colors.gray500};
+  font-size: ${(p) => p.theme.fontSizes.sm};
   line-height: 24px;
   cursor: pointer;
   &:hover {
-    color: ${p => p.theme.colors.primary};
+    color: ${(p) => p.theme.colors.primary};
   }
 `;
 
@@ -36,7 +36,7 @@ const DatePresets: FC<DatePresetsProps> = ({ presets, onDateClick }) => {
 
   return (
     <Box borderLeft="base" borderColor="gray200" px="8px" py="12px">
-      {Object.keys(presets).map(label => (
+      {Object.keys(presets).map((label) => (
         <StyledPresetButton
           key={label}
           onClick={() => onDateClick(presets[label])}

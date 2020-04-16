@@ -15,13 +15,13 @@ export const CheckboxInner = styled.span`
   width: 16px;
   height: 16px;
   padding: 0;
-  border: ${p => p.theme.borders.base};
+  border: ${(p) => p.theme.borders.base};
   border-radius: 2px;
-  border-color: ${p => p.theme.colors.gray400};
-  background-color: ${p => p.theme.colors.light};
-  color: ${p => p.theme.colors.gray700};
+  border-color: ${(p) => p.theme.colors.gray400};
+  background-color: ${(p) => p.theme.colors.light};
+  color: ${(p) => p.theme.colors.gray700};
 
-  ${p => p.theme.transition};
+  ${(p) => p.theme.transition};
 
   &::after {
     content: '';
@@ -34,7 +34,7 @@ export const CheckboxInner = styled.span`
     border-width: 0 2px 2px 0;
     opacity: 0;
     transform: rotate(45deg) scale(0);
-    ${p => p.theme.transition};
+    ${(p) => p.theme.transition};
   }
 `;
 
@@ -51,8 +51,8 @@ export const StyledCheckbox = styled.input.attrs({
   opacity: 0;
 
   &:checked + ${CheckboxInner /* sc-selector */} {
-    border-color: ${p => p.theme.colors.primary};
-    background-color: ${p => p.theme.colors.primary};
+    border-color: ${(p) => p.theme.colors.primary};
+    background-color: ${(p) => p.theme.colors.primary};
   }
 
   &:checked + ${CheckboxInner /* sc-selector */}::after {
@@ -69,17 +69,17 @@ interface RadioLabelBaseProps {
 export const CheckboxLabelBase = styled.label<RadioLabelBaseProps>`
   display: inline-flex;
   align-items: center;
-  font-size: ${p => p.theme.fontSizes.base};
-  cursor: ${p => (p.disabled ? 'not-allowed' : 'pointer')};
+  font-size: ${(p) => p.theme.fontSizes.base};
+  cursor: ${(p) => (p.disabled ? 'not-allowed' : 'pointer')};
 
   & + & {
     ${({ direction }) =>
       direction === 'horizontal'
         ? 'margin-left'
-        : 'margin-top' /* sc-prop */}: ${p => p.theme.space[2]};
+        : 'margin-top' /* sc-prop */}: ${(p) => p.theme.space[2]};
   }
 
-  ${p =>
+  ${(p) =>
     p.disabled
       ? css`
           opacity: 0.5;
@@ -99,11 +99,11 @@ export const CheckboxLabel = styled(CheckboxLabelBase)<{
     ${({ direction }) =>
       direction === 'horizontal'
         ? 'margin-left'
-        : 'margin-top' /* sc-prop */}: ${p => p.theme.space[2]};
+        : 'margin-top' /* sc-prop */}: ${(p) => p.theme.space[2]};
   }
 `;
 
 export const CheckboxGroupFlex = styled.div<{ direction: Direction }>`
-  display: ${p => (p.direction === 'horizontal' ? 'flex' : 'inline-flex')};
-  flex-direction: ${p => (p.direction === 'horizontal' ? 'row' : 'column')};
+  display: ${(p) => (p.direction === 'horizontal' ? 'flex' : 'inline-flex')};
+  flex-direction: ${(p) => (p.direction === 'horizontal' ? 'row' : 'column')};
 `;

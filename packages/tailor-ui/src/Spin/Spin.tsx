@@ -84,28 +84,28 @@ const BaseSpinCircle = styled.div`
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  background-color: ${p => p.theme.colors.primary};
+  background-color: ${(p) => p.theme.colors.primary};
 `;
 
 const SpinCircle1 = styled(BaseSpinCircle)`
-  animation: ${p => spinAnimationCircle1(p.theme.colors.primaryLight)} 1.5s
+  animation: ${(p) => spinAnimationCircle1(p.theme.colors.primaryLight)} 1.5s
     infinite linear both;
 `;
 
 const SpinCircle2 = styled(BaseSpinCircle)`
-  animation: ${p => spinAnimationCircle2(p.theme.colors.primaryLight)} 1.5s
+  animation: ${(p) => spinAnimationCircle2(p.theme.colors.primaryLight)} 1.5s
     infinite linear both;
 `;
 
 const SpinCircle3 = styled(BaseSpinCircle)`
-  animation: ${p => spinAnimationCircle3(p.theme.colors.primaryLight)} 1.5s
+  animation: ${(p) => spinAnimationCircle3(p.theme.colors.primaryLight)} 1.5s
     infinite linear both;
 `;
 
 const SpinCircleWrapper = styled.div<SpinCircleWrapperProps>`
   position: relative;
-  width: ${p => p.size}px;
-  height: ${p => p.size}px;
+  width: ${(p) => p.size}px;
+  height: ${(p) => p.size}px;
 `;
 
 const SpinWrapper = styled.div`

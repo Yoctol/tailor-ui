@@ -25,7 +25,7 @@ const buttonLoading = ({ isLoading }: { isLoading: boolean }) =>
       width: 1em;
       height: 1em;
       margin-right: 8px;
-      border: ${p => p.theme.borders.base};
+      border: ${(p) => p.theme.borders.base};
       border-radius: 50%;
       border-top-color: transparent;
       border-right-color: transparent;
@@ -89,169 +89,170 @@ export const buttonVariant = ({ variant }: { variant?: ButtonVariant }) => {
   switch (variant) {
     default:
       return css`
-        border-color: ${p => p.theme.colors.gray300};
-        background-color: ${p => p.theme.colors.light};
-        color: ${p => p.theme.colors.gray700};
+        border-color: ${(p) => p.theme.colors.gray300};
+        background-color: ${(p) => p.theme.colors.light};
+        color: ${(p) => p.theme.colors.gray700};
 
         &::before {
-          border-color: ${p => p.theme.colors.gray700};
+          border-color: ${(p) => p.theme.colors.gray700};
         }
 
         ${IconWrapper} svg {
-          fill: ${p => p.theme.colors.gray400};
+          fill: ${(p) => p.theme.colors.gray400};
         }
 
         &:hover {
-          border-color: ${p => p.theme.colors.primaryLight};
+          border-color: ${(p) => p.theme.colors.primaryLight};
         }
 
         &:active {
-          border-color: ${p => p.theme.colors.primary};
-          color: ${p => p.theme.colors.primary};
+          border-color: ${(p) => p.theme.colors.primary};
+          color: ${(p) => p.theme.colors.primary};
 
           ${IconWrapper} svg {
-            fill: ${p => p.theme.colors.primary};
+            fill: ${(p) => p.theme.colors.primary};
           }
         }
       `;
     case 'primary':
       return css`
-        background-color: ${p => p.theme.colors.primary};
-        color: ${p => p.theme.colors.light};
+        background-color: ${(p) => p.theme.colors.primary};
+        color: ${(p) => p.theme.colors.light};
         font-weight: bold;
 
         /* stylelint-disable-next-line no-descending-specificity */
         ${IconWrapper} svg {
-          fill: ${p => p.theme.colors.light};
+          fill: ${(p) => p.theme.colors.light};
         }
 
         &:hover {
-          background-color: ${p => lighten(0.05, p.theme.colors.primary)};
+          background-color: ${(p) => lighten(0.05, p.theme.colors.primary)};
         }
 
         &:active {
-          background-color: ${p => darken(0.05, p.theme.colors.primary)};
+          background-color: ${(p) => darken(0.05, p.theme.colors.primary)};
         }
       `;
     case 'primary-invert':
       return css`
-        background-color: ${p => p.theme.colors.light};
-        color: ${p => p.theme.colors.primary};
+        background-color: ${(p) => p.theme.colors.light};
+        color: ${(p) => p.theme.colors.primary};
         font-weight: bold;
 
         &::before {
-          border-color: ${p => p.theme.colors.primary};
+          border-color: ${(p) => p.theme.colors.primary};
         }
 
         /* stylelint-disable-next-line no-descending-specificity */
         ${IconWrapper} svg {
-          fill: ${p => p.theme.colors.primary};
+          fill: ${(p) => p.theme.colors.primary};
         }
 
         &:hover {
-          color: ${p => lighten(0.05, p.theme.colors.primary)};
+          color: ${(p) => lighten(0.05, p.theme.colors.primary)};
 
           ${IconWrapper} svg {
-            fill: ${p => lighten(0.05, p.theme.colors.primary)};
+            fill: ${(p) => lighten(0.05, p.theme.colors.primary)};
           }
         }
 
         &:active {
-          background-color: ${p => p.theme.colors.gray200};
-          color: ${p => darken(0.05, p.theme.colors.primary)};
+          background-color: ${(p) => p.theme.colors.gray200};
+          color: ${(p) => darken(0.05, p.theme.colors.primary)};
 
           ${IconWrapper} svg {
-            fill: ${p => darken(0.05, p.theme.colors.primary)};
+            fill: ${(p) => darken(0.05, p.theme.colors.primary)};
           }
         }
       `;
     case 'danger':
       return css`
-        background-color: ${p => p.theme.colors.danger};
-        color: ${p => p.theme.colors.light};
+        background-color: ${(p) => p.theme.colors.danger};
+        color: ${(p) => p.theme.colors.light};
         font-weight: bold;
 
         /* stylelint-disable-next-line no-descending-specificity */
         ${IconWrapper} svg {
-          fill: ${p => p.theme.colors.light};
+          fill: ${(p) => p.theme.colors.light};
         }
 
         &:hover {
-          background-color: ${p => lighten(0.05, p.theme.colors.danger)};
+          background-color: ${(p) => lighten(0.05, p.theme.colors.danger)};
         }
 
         &:active {
-          background-color: ${p => darken(0.05, p.theme.colors.danger)};
+          background-color: ${(p) => darken(0.05, p.theme.colors.danger)};
         }
       `;
     case 'danger-invert':
       return css`
-        background-color: ${p => p.theme.colors.light};
-        color: ${p => p.theme.colors.danger};
+        background-color: ${(p) => p.theme.colors.light};
+        color: ${(p) => p.theme.colors.danger};
         font-weight: bold;
 
         &::before {
-          border-color: ${p => p.theme.colors.danger};
+          border-color: ${(p) => p.theme.colors.danger};
         }
 
         /* stylelint-disable-next-line no-descending-specificity */
         ${IconWrapper} svg {
-          fill: ${p => p.theme.colors.danger};
+          fill: ${(p) => p.theme.colors.danger};
         }
 
         &:hover {
-          color: ${p => lighten(0.05, p.theme.colors.danger)};
+          color: ${(p) => lighten(0.05, p.theme.colors.danger)};
 
           ${IconWrapper} svg {
-            fill: ${p => lighten(0.05, p.theme.colors.danger)};
+            fill: ${(p) => lighten(0.05, p.theme.colors.danger)};
           }
         }
 
         &:active {
-          background-color: ${p => p.theme.colors.gray200};
-          color: ${p => darken(0.05, p.theme.colors.danger)};
+          background-color: ${(p) => p.theme.colors.gray200};
+          color: ${(p) => darken(0.05, p.theme.colors.danger)};
 
           ${IconWrapper} svg {
-            fill: ${p => darken(0.05, p.theme.colors.danger)};
+            fill: ${(p) => darken(0.05, p.theme.colors.danger)};
           }
         }
       `;
     case 'regular':
       return css`
-        background-color: ${p => p.theme.colors.primaryLight};
-        color: ${p => p.theme.colors.light};
+        background-color: ${(p) => p.theme.colors.primaryLight};
+        color: ${(p) => p.theme.colors.light};
         font-weight: bold;
 
         /* stylelint-disable-next-line no-descending-specificity */
         ${IconWrapper} svg {
-          fill: ${p => p.theme.colors.light};
+          fill: ${(p) => p.theme.colors.light};
         }
 
         &:hover {
-          background-color: ${p => lighten(0.05, p.theme.colors.primaryLight)};
+          background-color: ${(p) =>
+            lighten(0.05, p.theme.colors.primaryLight)};
         }
 
         &:active {
-          background-color: ${p => darken(0.05, p.theme.colors.primaryLight)};
+          background-color: ${(p) => darken(0.05, p.theme.colors.primaryLight)};
         }
       `;
     case 'normal':
       return css`
-        background-color: ${p => p.theme.colors.surface};
-        color: ${p => p.theme.colors.primaryLight};
+        background-color: ${(p) => p.theme.colors.surface};
+        color: ${(p) => p.theme.colors.primaryLight};
         font-weight: bold;
 
         /* stylelint-disable-next-line no-descending-specificity */
         ${IconWrapper} svg {
-          fill: ${p => p.theme.colors.primaryLight};
+          fill: ${(p) => p.theme.colors.primaryLight};
         }
 
         &:hover {
-          background-color: ${p => lighten(0.05, p.theme.colors.surface)};
+          background-color: ${(p) => lighten(0.05, p.theme.colors.surface)};
         }
 
         &:active {
-          background-color: ${p => darken(0.05, p.theme.colors.surface)};
+          background-color: ${(p) => darken(0.05, p.theme.colors.surface)};
         }
       `;
   }
@@ -273,10 +274,10 @@ export const StyledButton = styled.button<StyledButtonProps>`
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  border: ${p => p.theme.borders.base};
-  border-radius: ${p => p.theme.radii.lg};
+  border: ${(p) => p.theme.borders.base};
+  border-radius: ${(p) => p.theme.radii.lg};
   border-color: transparent;
-  line-height: ${p => p.theme.lineHeight};
+  line-height: ${(p) => p.theme.lineHeight};
   text-decoration: none;
   vertical-align: middle;
   white-space: nowrap;
@@ -290,13 +291,13 @@ export const StyledButton = styled.button<StyledButtonProps>`
   &:disabled,
   &[disabled] {
     opacity: 0.85;
-    background-color: ${p => p.theme.colors.gray300};
-    color: ${p => p.theme.colors.gray500};
+    background-color: ${(p) => p.theme.colors.gray300};
+    color: ${(p) => p.theme.colors.gray500};
     cursor: default;
     pointer-events: none;
 
     ${IconWrapper} svg {
-      fill: ${p => p.theme.colors.gray500};
+      fill: ${(p) => p.theme.colors.gray500};
     }
   }
 
@@ -309,16 +310,16 @@ export const StyledButton = styled.button<StyledButtonProps>`
     width: 0;
     height: 0;
     margin-right: 0;
-    ${p => p.theme.transition /* sc-declaration */};
+    ${(p) => p.theme.transition /* sc-declaration */};
   }
 
-  ${p =>
+  ${(p) =>
     p.rounded &&
     css`
       border-radius: 999px;
     `};
 
-  ${p => p.theme.transition /* sc-declaration */};
+  ${(p) => p.theme.transition /* sc-declaration */};
   ${buttonSize /* sc-declaration */}
   ${buttonVariant /* sc-declaration */}
   ${buttonLoading /* sc-declaration */};

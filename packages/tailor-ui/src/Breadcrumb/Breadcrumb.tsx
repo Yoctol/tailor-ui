@@ -80,12 +80,12 @@ const Breadcrumb = forwardRef<HTMLDivElement, BreadcrumbProps>(
     const [{ ref }, bound] = useMeasure(forwardedRef);
     const [measured, setMeasured] = useState(false);
     const [hiddenKeys, setHiddenKeys] = useState<string[]>(
-      items.map(item => item.key)
+      items.map((item) => item.key)
     );
 
     const itemWithRefs = useMemo(
       () =>
-        items.map(attrs => ({
+        items.map((attrs) => ({
           ...attrs,
           itemRef: createRef<HTMLAnchorElement>(),
         })),
@@ -160,7 +160,7 @@ const Breadcrumb = forwardRef<HTMLDivElement, BreadcrumbProps>(
                   active={active}
                   name={name}
                   lockWidth={items.length !== 1}
-                  onClick={event => {
+                  onClick={(event) => {
                     if (!active) {
                       onClick(event);
                     }

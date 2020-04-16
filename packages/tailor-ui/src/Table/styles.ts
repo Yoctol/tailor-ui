@@ -1,22 +1,27 @@
-import styled, { css } from 'styled-components';
+import styled, { DefaultTheme, StyledComponent, css } from 'styled-components';
 import { TextAlignProps, WidthProps, textAlign, width } from 'styled-system';
 
-export const HeadColumn = styled.th<WidthProps>`
-  padding: ${p => p.theme.paddings.xs} ${p => p.theme.paddings.sm};
+export const HeadColumn: StyledComponent<
+  'th',
+  DefaultTheme,
+  WidthProps,
+  never
+> = styled.th<WidthProps>`
+  padding: ${(p) => p.theme.paddings.xs} ${(p) => p.theme.paddings.sm};
   font-weight: bold;
 
   ${width};
 `;
 
 export const Column = styled.td`
-  padding: ${p => p.theme.paddings.xs} ${p => p.theme.paddings.sm};
+  padding: ${(p) => p.theme.paddings.xs} ${(p) => p.theme.paddings.sm};
 `;
 
 export const Row = styled.tr`
   height: 56px;
-  border-bottom: ${p => p.theme.borders.base} ${p => p.theme.colors.gray300};
+  border-bottom: ${(p) => p.theme.borders.base} ${(p) => p.theme.colors.gray300};
 
-  ${p => p.theme.transition};
+  ${(p) => p.theme.transition};
 `;
 
 export type StyledTableProps = TextAlignProps & WidthProps;
@@ -27,19 +32,20 @@ export const StyledTable = styled.table<StyledTableProps>`
   border-spacing: 0;
   border-collapse: collapse;
   border-style: hidden;
-  border-radius: ${p => p.theme.radii.xl};
-  font-size: ${p => p.theme.fontSizes.base};
+  border-radius: ${(p) => p.theme.radii.xl};
+  font-size: ${(p) => p.theme.fontSizes.base};
 
   & > thead {
-    border-bottom: ${p => p.theme.borders.base} ${p => p.theme.colors.gray300};
-    background-color: ${p => p.theme.colors.surface2};
+    border-bottom: ${(p) => p.theme.borders.base}
+      ${(p) => p.theme.colors.gray300};
+    background-color: ${(p) => p.theme.colors.surface2};
   }
 
   & > tbody > ${Row /* sc-selector */} {
-    background-color: ${p => p.theme.colors.light};
+    background-color: ${(p) => p.theme.colors.light};
 
     &:hover {
-      background-color: ${p => p.theme.colors.gray100};
+      background-color: ${(p) => p.theme.colors.gray100};
     }
   }
 
@@ -55,22 +61,22 @@ export type TableWrapperProps = WidthProps & {
 export const TableWrapper = styled.div<TableWrapperProps>`
   flex: none;
   overflow: hidden;
-  border-radius: ${p => p.theme.radii.xl};
-  background-color: ${p => p.theme.colors.light};
-  box-shadow: ${p => p.theme.shadows.base};
+  border-radius: ${(p) => p.theme.radii.xl};
+  background-color: ${(p) => p.theme.colors.light};
+  box-shadow: ${(p) => p.theme.shadows.base};
 
   /* stylelint-disable-next-line no-descending-specificity */
   & > ${StyledTable} {
     width: 100%;
     border-radius: 0;
 
-    ${p =>
+    ${(p) =>
       p.hasHeader &&
       css`
         border-top: ${p.theme.borders.base} ${p.theme.colors.gray300};
       `}
 
-    ${p =>
+    ${(p) =>
       p.hasFooter &&
       css`
         border-bottom: ${p.theme.borders.base} ${p.theme.colors.gray300};

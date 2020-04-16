@@ -11,8 +11,8 @@ export default css`
       width: 264px;
       height: 267px;
       background-color: white;
-      border-top: ${p => p.theme.borders.base};
-      border-color: ${p => p.theme.colors.gray200};
+      border-top: ${(p) => p.theme.borders.base};
+      border-color: ${(p) => p.theme.colors.gray200};
 
       &-panel {
         position: relative;

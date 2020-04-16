@@ -87,7 +87,7 @@ const Tabs: FC<TabsProps> & {
       value={{
         activeTabRef,
         activeValue,
-        setValue: newValue => {
+        setValue: (newValue) => {
           setTabValue(newValue);
 
           if (onChange && newValue) {

@@ -52,7 +52,7 @@ const Badge: FC<BadgeProps> = ({
           style={{
             opacity: props.opacity,
             transformOrigin: children ? 'right' : 'center',
-            transform: props.transform?.interpolate(x =>
+            transform: props.transform?.interpolate((x) =>
               children ? `${x} translateX(50%)` : x
             ),
           }}

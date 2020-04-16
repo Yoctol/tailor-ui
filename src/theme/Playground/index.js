@@ -42,7 +42,7 @@ function LiveCode({ defaultShowCode, refreshPreview, onChangeCode }) {
           className={styles.playgroundButton}
           variant={showCode ? 'regular' : 'normal'}
           width="100%"
-          onClick={() => setShowCode(prevShowCode => !prevShowCode)}
+          onClick={() => setShowCode((prevShowCode) => !prevShowCode)}
         >
           {showCode ? 'HIDE' : 'SHOW'} CODE
         </Button>
@@ -63,15 +63,15 @@ function Playground({
 
   return (
     <LiveProvider
-      transformCode={transformCode || (codeString => `${codeString};`)}
+      transformCode={transformCode || ((codeString) => `${codeString};`)}
       theme={theme}
       code={code}
       {...props}
     >
       <LiveCode
         defaultShowCode={defaultShowCode}
-        refreshPreview={() => setCount(prev => prev + 1)}
-        onChangeCode={newCode => setCode(newCode)}
+        refreshPreview={() => setCount((prev) => prev + 1)}
+        onChangeCode={(newCode) => setCode(newCode)}
       />
     </LiveProvider>
   );

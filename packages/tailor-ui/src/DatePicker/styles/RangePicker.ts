@@ -34,8 +34,8 @@ ${prefixClass}-range {
   }
 
   &-right {
-    border-left: ${p => p.theme.borders.base};
-    border-color: ${p => p.theme.colors.gray200};
+    border-left: ${(p) => p.theme.borders.base};
+    border-color: ${(p) => p.theme.colors.gray200};
     ${prefixClass}-time-picker-panel {
       left: 21px;
 
@@ -94,7 +94,7 @@ ${prefixClass}-range {
   }
 
   ${prefixClass}-in-range-cell ${prefixClass}-date {
-    background: ${p => p.theme.colors.surface};
+    background: ${(p) => p.theme.colors.surface};
     width: auto;
     border-radius: 0;
   }

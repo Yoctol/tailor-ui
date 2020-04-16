@@ -91,7 +91,7 @@ const SelectOptions: FC<SelectOptionsProps> = ({
   selectedItems,
   noOptionsMessage = () => <DefaultNoOptionsMessage />,
   formatCreateLabel = ({ value }) => `Create new option: ${value}`,
-  isValidNewOption = value => value.trim() !== '',
+  isValidNewOption = (value) => value.trim() !== '',
   ...props
 }) => {
   const listRef = useRef<FixedSizeList>(null);

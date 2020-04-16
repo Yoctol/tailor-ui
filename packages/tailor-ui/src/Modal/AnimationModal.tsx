@@ -72,7 +72,7 @@ const AnimationModal: FC<AnimationModalProps> = ({
       transform: 'translate(-50%, -50%) scale(0.9)',
       pointerEvents: 'none',
     },
-    onDestroyed: isDestroyed => {
+    onDestroyed: (isDestroyed) => {
       if (isDestroyed && onCloseComplete && !visible) {
         onCloseComplete();
       } else if (!isDestroyed && onOpenComplete && visible) {
@@ -97,7 +97,7 @@ const AnimationModal: FC<AnimationModalProps> = ({
     <>
       <Backdrop
         visible={visible}
-        onClick={event => {
+        onClick={(event) => {
           if (closable) {
             onCancel(event as any);
           }

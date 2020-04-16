@@ -5,7 +5,7 @@ import { CardProps, CardWrapper, StyledBlock, StyledImage } from './styles';
 const Card: FC<CardProps> & {
   Block: typeof StyledBlock;
   Image: typeof StyledImage;
-} = props => <CardWrapper clickable={!!props.onClick} {...props} />;
+} = (props) => <CardWrapper clickable={!!props.onClick} {...props} />;
 
 Card.Block = StyledBlock;
 Card.Image = StyledImage;

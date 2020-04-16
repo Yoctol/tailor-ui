@@ -99,7 +99,7 @@ const DatePicker: FC<DatePickerProps> = ({
   const [displayDate, setDisplayDate] = useState(ownValue);
 
   const handleChange = useCallback(
-    newValue => {
+    (newValue) => {
       handleOwnValueChange(newValue);
       setDisplayDate(newValue);
     },
@@ -139,7 +139,7 @@ const DatePicker: FC<DatePickerProps> = ({
     }
 
     if (Array.isArray(ownValue)) {
-      return ownValue.map(val => val.format(format)).join(' ~ ');
+      return ownValue.map((val) => val.format(format)).join(' ~ ');
     }
 
     return ownValue.format(format);
@@ -149,7 +149,7 @@ const DatePicker: FC<DatePickerProps> = ({
     <Popover
       position={Position.BOTTOM_LEFT}
       p="0"
-      content={handleClose => (
+      content={(handleClose) => (
         <>
           <DatePickerStyle />
           <RenderCalendar

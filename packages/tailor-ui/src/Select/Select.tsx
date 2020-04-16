@@ -136,7 +136,7 @@ const Select = <V extends SelectedValue>({
       }
 
       const index = options.findIndex(
-        option => itemToString(option) === itemToString(item)
+        (option) => itemToString(option) === itemToString(item)
       );
 
       if (index === null) {
@@ -179,7 +179,7 @@ const Select = <V extends SelectedValue>({
       }}
       itemToString={itemToString}
       inputValue={inputValue}
-      onInputValueChange={newInputValue => {
+      onInputValueChange={(newInputValue) => {
         if (!multiple && newInputValue !== 'CREATE_OPTION') {
           setInputValue(newInputValue);
         }
@@ -214,7 +214,7 @@ const Select = <V extends SelectedValue>({
             visible={visible}
             position={Position.BOTTOM_LEFT}
             minWidth={selectWidth}
-            onVisibleChange={newVisible => {
+            onVisibleChange={(newVisible) => {
               if (disabled || loading) {
                 return;
               }
@@ -305,7 +305,7 @@ const Select = <V extends SelectedValue>({
                   selectedItem={selectedItem}
                   selectedItems={selectedItems}
                   removeItem={removeItem}
-                  onChange={event => setInputValue(event.currentTarget.value)}
+                  onChange={(event) => setInputValue(event.currentTarget.value)}
                   onBlur={onBlur}
                   getInputProps={getInputProps}
                   data-testid={props['data-testid']}

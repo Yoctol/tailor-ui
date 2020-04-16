@@ -11,9 +11,9 @@ export default css`
     right: 0;
     bottom: 0;
     left: 0;
-    border-radius: ${p => p.theme.radii.lg};
+    border-radius: ${(p) => p.theme.radii.lg};
     outline: none;
-    background-color: ${p => p.theme.colors.light};
+    background-color: ${(p) => p.theme.colors.light};
 
     > div {
       display: flex;
@@ -35,7 +35,7 @@ export default css`
   }
 
   ${prefixClass /* sc-sel */}-month-panel-footer {
-    border-top: ${p => p.theme.borders.base} ${p => p.theme.colors.gray200};
+    border-top: ${(p) => p.theme.borders.base} ${(p) => p.theme.colors.gray200};
     ${prefixClass /* sc-sel */}-footer-extra {
       padding: 0 12px;
     }
@@ -49,12 +49,12 @@ export default css`
   }
 
   ${prefixClass /* sc-sel */}-month-panel-selected-cell ${prefixClass /* sc-sel */}-month-panel-month {
-    background-color: ${p => p.theme.colors.primary};
-    color: ${p => p.theme.colors.light};
+    background-color: ${(p) => p.theme.colors.primary};
+    color: ${(p) => p.theme.colors.light};
 
     &:hover {
-      background-color: ${p => p.theme.colors.primary};
-      color: ${p => p.theme.colors.light};
+      background-color: ${(p) => p.theme.colors.primary};
+      color: ${(p) => p.theme.colors.light};
     }
   }
 
@@ -64,8 +64,8 @@ export default css`
     &-disabled ${prefixClass /* sc-sel */}-month-panel-month {
       &,
       &:hover {
-        background-color: ${p => p.theme.colors.gray500};
-        color: ${p => p.theme.colors.gray400};
+        background-color: ${(p) => p.theme.colors.gray500};
+        color: ${(p) => p.theme.colors.gray400};
         cursor: not-allowed;
       }
     }
@@ -76,16 +76,16 @@ export default css`
     height: 28px;
     margin: 0 auto;
     padding: 0 12px;
-    border-radius: ${p => p.theme.radii.lg};
+    border-radius: ${(p) => p.theme.radii.lg};
     background-color: transparent;
-    color: ${p => p.theme.colors.gray500};
+    color: ${(p) => p.theme.colors.gray500};
     font-weight: 600;
     line-height: 28px;
     text-align: center;
     transition: background 0.3s ease;
 
     &:hover {
-      background-color: ${p => p.theme.colors.gray200};
+      background-color: ${(p) => p.theme.colors.gray200};
       cursor: pointer;
     }
   }

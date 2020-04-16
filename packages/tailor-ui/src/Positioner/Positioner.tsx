@@ -58,7 +58,7 @@ const Positioner: FC<PositionerProps> = ({
       transform: 'scale(1)',
       pointerEvents: 'none',
     },
-    onDestroyed: isDestroyed => {
+    onDestroyed: (isDestroyed) => {
       if (isDestroyed) {
         if (!visible && onCloseComplete) {
           onCloseComplete();
@@ -69,7 +69,7 @@ const Positioner: FC<PositionerProps> = ({
         }
       }
     },
-    config: item => ({
+    config: (item) => ({
       mass: 1,
       tension: item ? 500 : 1500,
       friction: item ? 40 : 1200,

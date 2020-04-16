@@ -18,7 +18,7 @@ const StyledSwitch = styled.label`
     bottom: 0;
     left: 0;
     border-radius: 99px;
-    background-color: ${p => p.theme.colors.gray400};
+    background-color: ${(p) => p.theme.colors.gray400};
     transition: 0.4s;
     cursor: pointer;
   }
@@ -36,7 +36,7 @@ const StyledSwitch = styled.label`
   }
 
   input:checked + span {
-    background-color: ${p => p.theme.colors.primary};
+    background-color: ${(p) => p.theme.colors.primary};
   }
 
   input:checked + span::before {

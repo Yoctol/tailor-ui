@@ -11,7 +11,7 @@ export const StyledTab = styled.a`
   text-decoration: none;
   cursor: pointer;
 
-  ${p => p.theme.transition /* sc-declaration */};
+  ${(p) => p.theme.transition /* sc-declaration */};
 `;
 
 export const TabLine = styled(animated.div)`
@@ -20,8 +20,8 @@ export const TabLine = styled(animated.div)`
   bottom: 0;
   width: 100%;
   height: 3px;
-  border-radius: ${p => p.theme.radii.base};
-  background-color: ${p => rgba(p.theme.colors.primaryDark, 0.5)};
+  border-radius: ${(p) => p.theme.radii.base};
+  background-color: ${(p) => rgba(p.theme.colors.primaryDark, 0.5)};
 `;
 
 export const TabActiveLine = styled(animated.div)`
@@ -29,8 +29,8 @@ export const TabActiveLine = styled(animated.div)`
   z-index: 2;
   bottom: 0;
   height: 3px;
-  border-radius: ${p => p.theme.radii.base};
-  background-color: ${p => p.theme.colors.secondary};
+  border-radius: ${(p) => p.theme.radii.base};
+  background-color: ${(p) => p.theme.colors.secondary};
 `;
 
 export type Size = 'sm' | 'md' | 'lg';
@@ -45,7 +45,7 @@ export const StyledTabs = styled.nav<StyledTabsProps>`
   display: flex;
   position: relative;
 
-  ${p =>
+  ${(p) =>
     p.type === 'card'
       ? css`
           ${StyledTab} {
@@ -107,7 +107,7 @@ export const StyledTabs = styled.nav<StyledTabsProps>`
         `}
 
   ${StyledTab} {
-    ${p =>
+    ${(p) =>
       ({
         sm: css`
           height: 40px;
@@ -127,5 +127,5 @@ export const StyledTabs = styled.nav<StyledTabsProps>`
       }[p.size])};
   }
 
-  ${p => p.theme.transition}
+  ${(p) => p.theme.transition}
 `;

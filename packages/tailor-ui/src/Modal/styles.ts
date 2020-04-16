@@ -17,8 +17,8 @@ export const ModalStatusBar = styled.div<{ status: StatusType }>`
   top: 0;
   width: 100%;
   height: 48px;
-  border-radius: ${p => p.theme.radii.xl};
-  background-color: ${p => {
+  border-radius: ${(p) => p.theme.radii.xl};
+  background-color: ${(p) => {
     switch (p.status) {
       case 'info':
         return p.theme.colors.primary;
@@ -37,12 +37,12 @@ export const ModalStatusBar = styled.div<{ status: StatusType }>`
 export const ModalContent = styled.div<{ size: ModalSize }>`
   display: flex;
   flex-direction: column;
-  width: ${p => ({ md: 516, lg: 786 }[p.size] || 516)}px;
+  width: ${(p) => ({ md: 516, lg: 786 }[p.size] || 516)}px;
   max-width: 90vw;
   min-height: 220px;
   max-height: 75vh;
-  padding: 24px ${p => p.theme.space[3]} ${p => p.theme.space[3]};
-  border-radius: ${p => p.theme.radii.xl};
+  padding: 24px ${(p) => p.theme.space[3]} ${(p) => p.theme.space[3]};
+  border-radius: ${(p) => p.theme.radii.xl};
   background-color: #fff;
 `;
 
