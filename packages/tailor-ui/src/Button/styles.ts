@@ -14,7 +14,13 @@ export const spin = keyframes`
   }
 `;
 
-const buttonLoading = ({ isLoading }: { isLoading: boolean }) =>
+const buttonLoading = ({
+  isLoading,
+  hasIcon,
+}: {
+  isLoading: boolean;
+  hasIcon: boolean;
+}) =>
   isLoading &&
   css`
     opacity: 0.5;
@@ -24,7 +30,7 @@ const buttonLoading = ({ isLoading }: { isLoading: boolean }) =>
     &::before {
       width: 1em;
       height: 1em;
-      margin-right: 8px;
+      margin-right: ${hasIcon ? 0 : 8}px;
       border: ${(p) => p.theme.borders.base};
       border-radius: 50%;
       border-top-color: transparent;

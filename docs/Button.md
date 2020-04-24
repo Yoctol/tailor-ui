@@ -187,6 +187,10 @@ import { MdCheck } from 'react-icons/md';
   <Button loading variant="normal" ml="2">
     Normal
   </Button>
+  <br />
+  <br />
+  <Button icon={MdCheck} loading ml="2" />
+  <Button icon={MdCheck} loading ml="2" rounded />
 </>
 ```
 
