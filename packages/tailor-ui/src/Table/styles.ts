@@ -24,7 +24,11 @@ export const Row = styled.tr`
   ${(p) => p.theme.transition};
 `;
 
-export type StyledTableProps = TextAlignProps & WidthProps;
+export type StyledTableProps = TextAlignProps &
+  WidthProps & {
+    hasHeader: boolean;
+    hasFooter: boolean;
+  };
 
 export const StyledTable = styled.table<StyledTableProps>`
   flex: none;
@@ -33,7 +37,14 @@ export const StyledTable = styled.table<StyledTableProps>`
   border-collapse: collapse;
   border-style: hidden;
   border-radius: ${(p) => p.theme.radii.xl};
+  background-color: ${(p) => p.theme.colors.light};
   font-size: ${(p) => p.theme.fontSizes.base};
+  ${(p) =>
+    !p.hasHeader &&
+    !p.hasFooter &&
+    css`
+      box-shadow: ${p.theme.shadows.base};
+    `}
 
   & > thead {
     border-bottom: ${(p) => p.theme.borders.base}

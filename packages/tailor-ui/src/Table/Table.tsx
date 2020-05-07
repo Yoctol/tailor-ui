@@ -29,7 +29,13 @@ const Table: FC<TableProps> & {
   Row: typeof Row;
   Column: typeof Column;
 } = ({ header, footer, ...props }) => {
-  const table = <StyledTable {...props} />;
+  const table = (
+    <StyledTable
+      hasHeader={Boolean(header)}
+      hasFooter={Boolean(footer)}
+      {...props}
+    />
+  );
 
   if (header || footer) {
     return (
