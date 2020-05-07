@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { fireEvent, render, waitForElement } from 'test/test-utils';
+import { fireEvent, render } from 'test/test-utils';
 
 import { Upload } from '../Upload';
 
@@ -17,7 +17,7 @@ const setup = async ({
     <Upload onSelect={handleSelect} onClear={handleClear} />
   );
 
-  const { container, getByText } = renderer;
+  const { container, getByText, findByText } = renderer;
 
   const uploadInput = container.querySelector(
     'input[type=file]'
@@ -31,11 +31,11 @@ const setup = async ({
   fireEvent.change(uploadInput, { target: { files: [file] } });
 
   // FIXME: Can not get the Uploading... button
-  // await waitForElement(() => getByText('Uploading...'));
-  await waitForElement(() => getByText('example.json'));
+  // await findByText('Uploading...');
+  await findByText('example.json');
   expect(container).toContainElement(getByText('example.json'));
 
-  await waitForElement(() => getByText(expectFinalStateText));
+  await findByText(expectFinalStateText);
 
   expect(container).toHaveTextContent(expectFinalStateText);
 
