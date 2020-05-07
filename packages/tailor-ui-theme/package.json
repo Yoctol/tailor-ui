@@ -28,7 +28,7 @@
   "sideEffects": false,
   "typings": "lib/index.d.ts",
   "dependencies": {
-    "polished": "^3.5.1",
+    "polished": "^3.6.2",
     "styled-normalize": "^8.0.7"
   },
   "peerDependencies": {

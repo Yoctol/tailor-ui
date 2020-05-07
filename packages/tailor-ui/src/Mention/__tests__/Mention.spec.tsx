@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { fireEvent, render, waitForElement } from 'test/test-utils';
+import { fireEvent, render } from 'test/test-utils';
 
 import { Mention } from '../Mention';
 
@@ -58,8 +58,6 @@ describe('Mention', () => {
         selectionStart: 2,
       },
     });
-
-    await waitForElement(() => mention);
 
     fireEvent.click(other);
 
