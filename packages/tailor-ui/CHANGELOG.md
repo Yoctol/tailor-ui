@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.30.4](https://github.com/yoctol/tailor-ui/compare/tailor-ui@0.30.3...tailor-ui@0.30.4) (2020-05-11)
+
+
+### Bug Fixes
+
+* table props ([9bcd23a](https://github.com/yoctol/tailor-ui/commit/9bcd23a921992729dad2314b55957695c8f2da79))
+
+
+
+
+
 ## [0.30.3](https://github.com/yoctol/tailor-ui/compare/tailor-ui@0.30.2...tailor-ui@0.30.3) (2020-05-11)
 
 
