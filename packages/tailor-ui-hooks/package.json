@@ -11,7 +11,7 @@
   "bugs": {
     "url": "https://github.com/Yoctol/tailor-ui/issues"
   },
-  "version": "0.6.3",
+  "version": "0.6.4",
   "main": "lib/index.cjs.js",
   "module": "lib/index.js",
   "files": [
@@ -29,7 +29,7 @@
   "typings": "lib/index.d.ts",
   "dependencies": {
     "@reach/utils": "^0.10.1",
-    "@tailor-ui/utils": "^0.3.2",
+    "@tailor-ui/utils": "^0.3.3",
     "lodash.debounce": "^4.0.8",
     "resize-observer-polyfill": "^1.5.1"
   },

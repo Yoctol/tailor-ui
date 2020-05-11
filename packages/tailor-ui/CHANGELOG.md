@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.30.3](https://github.com/yoctol/tailor-ui/compare/tailor-ui@0.30.2...tailor-ui@0.30.3) (2020-05-11)
+
+
+### Bug Fixes
+
+* remove margin-right of loading spinner when use icon button ([c675428](https://github.com/yoctol/tailor-ui/commit/c6754283beb978285c858ccc459ab74c1a686194))
+* **select:** should only remove item when the x button clicked ([16f05aa](https://github.com/yoctol/tailor-ui/commit/16f05aaabdae32183927971375c6b27e8a8a3558))
+
+
+
+
+
 ## [0.30.2](https://github.com/yoctol/tailor-ui/compare/tailor-ui@0.30.1...tailor-ui@0.30.2) (2020-03-09)
 
 
