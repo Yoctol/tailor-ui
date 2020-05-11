@@ -17,7 +17,7 @@ const Head: FC = ({ children }) => (
 
 const Body: FC = ({ children }) => <tbody>{children}</tbody>;
 
-export type TableProps = StyledTableProps & {
+export type TableProps = Omit<StyledTableProps, 'hasHeader' | 'hasFooter'> & {
   header?: ReactNode;
   footer?: ReactNode;
 };
@@ -29,21 +29,15 @@ const Table: FC<TableProps> & {
   Row: typeof Row;
   Column: typeof Column;
 } = ({ header, footer, ...props }) => {
-  const table = (
-    <StyledTable
-      hasHeader={Boolean(header)}
-      hasFooter={Boolean(footer)}
-      {...props}
-    />
-  );
+  const optionsProps = {
+    hasHeader: Boolean(header),
+    hasFooter: Boolean(footer),
+  };
+  const table = <StyledTable {...optionsProps} {...props} />;
 
   if (header || footer) {
     return (
-      <TableWrapper
-        hasHeader={Boolean(header)}
-        hasFooter={Boolean(footer)}
-        width={props.width}
-      >
+      <TableWrapper {...optionsProps} width={props.width}>
         {header}
         {table}
         {footer}
