@@ -32,7 +32,7 @@ const ModalHeader: FC<ModalHeaderProps> = ({
       </Flex>
     )}
     <Flex flex="auto">
-      <Heading.h3>{title}</Heading.h3>
+      <Heading.H3>{title}</Heading.H3>
     </Flex>
     {closable && <CloseButton onCancel={onCancel} />}
   </Flex>

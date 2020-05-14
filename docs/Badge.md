@@ -27,7 +27,7 @@ import { Badge } from 'tailor-ui';
 
 ```jsx live
 <Flex alignItems="center">
-  <Heading.h4 mr="2px">Notifications</Heading.h4>
+  <Heading.H4 mr="2px">Notifications</Heading.H4>
   <Badge count={2} />
 </Flex>
 ```

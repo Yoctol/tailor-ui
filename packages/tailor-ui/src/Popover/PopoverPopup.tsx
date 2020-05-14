@@ -22,9 +22,9 @@ const PopoverPopup = memo<PopoverPopup>(function PopoverPopup({
     <Wrapper {...otherProps}>
       {title && (
         <PopoverHeader>
-          <Heading.h6>
+          <Heading.H6>
             {title instanceof Function ? title(handleClose) : title}
-          </Heading.h6>
+          </Heading.H6>
         </PopoverHeader>
       )}
       {content instanceof Function ? content(handleClose) : content}

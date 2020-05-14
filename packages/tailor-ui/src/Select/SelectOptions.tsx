@@ -44,7 +44,7 @@ const DefaultNoOptionsMessage: FC = () => {
       style={{ cursor: 'not-allowed' }}
     >
       <Icon type={MdHighlightOff} mr="2" />
-      <Heading.h5 color="gray500">{locale.Select.noDataText}</Heading.h5>
+      <Heading.H5 color="gray500">{locale.Select.noDataText}</Heading.H5>
     </Flex>
   );
 };

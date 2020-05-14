@@ -35,9 +35,9 @@ const PageHeader: FC<PageHeaderProps> = ({
         )}
         {title && (
           <Box maxWidth="240px">
-            <Heading.h5 letterSpacing="0.2px" color="gray500">
+            <Heading.H5 letterSpacing="0.2px" color="gray500">
               <Ellipsis>{title}</Ellipsis>
-            </Heading.h5>
+            </Heading.H5>
           </Box>
         )}
         {title && breadcrumb.length > 0 && (

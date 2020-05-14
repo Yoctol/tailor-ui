@@ -16,7 +16,7 @@ export const StyledContainer = styled(Box)`
   }
 `;
 
-export const StyledContainerTitle = styled(Heading.h4)`
+export const StyledContainerTitle = styled(Heading.H4)`
   margin-bottom: 24px;
   padding-bottom: 8px;
   border-bottom: ${(p) => p.theme.borders.base};
@@ -29,6 +29,6 @@ export const StyledSection = styled(Box)`
   }
 `;
 
-export const StyledSectionTitle = styled(Heading.h5)`
+export const StyledSectionTitle = styled(Heading.H5)`
   margin-bottom: 12px;
 `;
