@@ -7,22 +7,22 @@ import styled from 'styled-components';
 
 const { colors: themeColors } = theme;
 
-const StyledHeading = styled(Heading.h5)`
-  border-bottom: 1px dotted ${p => p.color};
+const StyledHeading = styled(Heading.H5)`
+  border-bottom: 1px dotted ${(p) => p.color};
   cursor: pointer;
 
   &:hover {
-    color: ${p => p.changeColor(0.3, p.color)};
+    color: ${(p) => p.changeColor(0.3, p.color)};
   }
 
-  ${p => p.theme.transition};
+  ${(p) => p.theme.transition};
 `;
 
 const CopyText = ({ color, children }) => {
   const [copySuccess, setCopySuccess] = useState(false);
 
   const copyToClipboard = useCallback(
-    e => {
+    (e) => {
       navigator.clipboard.writeText(e.target.textContent);
 
       if (!copySuccess) {
@@ -70,7 +70,7 @@ const Color = ({ colorKey, width }) => {
 
 const Colors = ({ colors }) => (
   <Flex mb={4}>
-    {colors.map(color => (
+    {colors.map((color) => (
       <Color key={color} colorKey={color} width={1 / colors.length} />
     ))}
   </Flex>

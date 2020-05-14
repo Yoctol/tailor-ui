@@ -17,47 +17,47 @@ const headingStyles = css`
   ${heading};
 `;
 
-const hero = styled.h1<HeadingBaseProps>`
+const Hero = styled.h1<HeadingBaseProps>`
   font-size: ${rem('32px')};
   ${headingStyles};
 `;
 
-const h1 = styled.h1<HeadingBaseProps>`
+const H1 = styled.h1<HeadingBaseProps>`
   font-size: ${rem('28px')};
   ${headingStyles};
 `;
 
-const h2 = styled.h2<HeadingBaseProps>`
+const H2 = styled.h2<HeadingBaseProps>`
   font-size: ${rem('24px')};
   ${headingStyles};
 `;
 
-const h3 = styled.h3<HeadingBaseProps>`
+const H3 = styled.h3<HeadingBaseProps>`
   font-size: ${rem('20px')};
   ${headingStyles};
 `;
 
-const h4 = styled.h4<HeadingBaseProps>`
+const H4 = styled.h4<HeadingBaseProps>`
   font-size: ${rem('18px')};
   ${headingStyles};
 `;
 
-const h5 = styled.h5<HeadingBaseProps>`
+const H5 = styled.h5<HeadingBaseProps>`
   font-size: ${rem('16px')};
   ${headingStyles};
 `;
 
-const h6 = styled.h6<HeadingBaseProps>`
+const H6 = styled.h6<HeadingBaseProps>`
   font-size: ${rem('14px')};
   ${headingStyles};
 `;
 
 export default {
-  hero,
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
+  Hero,
+  H1,
+  H2,
+  H3,
+  H4,
+  H5,
+  H6,
 };

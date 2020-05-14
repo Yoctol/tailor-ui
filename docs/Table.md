@@ -52,7 +52,7 @@ import { Table } from 'tailor-ui';
   <Table
     header={
       <Box py="24px" px="4">
-        <Heading.h4>Text Here</Heading.h4>
+        <Heading.H4>Text Here</Heading.H4>
       </Box>
     }
     footer={
@@ -99,8 +99,8 @@ import { Table } from 'tailor-ui';
           px="4"
         >
           <div>
-            <Heading.h3>Text Here</Heading.h3>
-            <Heading.h3>Text Here</Heading.h3>
+            <Heading.H3>Text Here</Heading.H3>
+            <Heading.H3>Text Here</Heading.H3>
           </div>
         </Flex>
         <Flex

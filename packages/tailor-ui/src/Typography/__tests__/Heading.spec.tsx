@@ -6,23 +6,23 @@ import Heading from '../Heading';
 
 describe('Heading', () => {
   it('should default export h1 ~ h6', () => {
-    expect(Heading.h1).toBeDefined();
-    expect(Heading.h2).toBeDefined();
-    expect(Heading.h3).toBeDefined();
-    expect(Heading.h4).toBeDefined();
-    expect(Heading.h5).toBeDefined();
-    expect(Heading.h6).toBeDefined();
+    expect(Heading.H1).toBeDefined();
+    expect(Heading.H2).toBeDefined();
+    expect(Heading.H3).toBeDefined();
+    expect(Heading.H4).toBeDefined();
+    expect(Heading.H5).toBeDefined();
+    expect(Heading.H6).toBeDefined();
   });
 
   it('should render correctly', () => {
     const { container } = render(
       <div>
-        <Heading.h1>H1 Heading 28px</Heading.h1>
-        <Heading.h2>H2 Heading 26px</Heading.h2>
-        <Heading.h3>H3 Heading 18px</Heading.h3>
-        <Heading.h4>H4 Heading 16px</Heading.h4>
-        <Heading.h5>H5 Heading 14px</Heading.h5>
-        <Heading.h6>H6 Heading 12px</Heading.h6>
+        <Heading.H1>H1 Heading 28px</Heading.H1>
+        <Heading.H2>H2 Heading 26px</Heading.H2>
+        <Heading.H3>H3 Heading 18px</Heading.H3>
+        <Heading.H4>H4 Heading 16px</Heading.H4>
+        <Heading.H5>H5 Heading 14px</Heading.H5>
+        <Heading.H6>H6 Heading 12px</Heading.H6>
       </div>
     );
 
@@ -31,7 +31,7 @@ describe('Heading', () => {
 
   it('should render different color heading', () => {
     const { container } = render(
-      <Heading.h1 color="gray400">H1 Heading</Heading.h1>
+      <Heading.H1 color="gray400">H1 Heading</Heading.H1>
     );
 
     expect(container.firstChild).toMatchSnapshot();
@@ -40,12 +40,12 @@ describe('Heading', () => {
   it('should support data-testid', () => {
     const { getByTestId } = render(
       <>
-        <Heading.h1 data-testid="h1">H1 Heading</Heading.h1>
-        <Heading.h2 data-testid="h2">H2 Heading</Heading.h2>
-        <Heading.h3 data-testid="h3">H3 Heading</Heading.h3>
-        <Heading.h4 data-testid="h4">H4 Heading</Heading.h4>
-        <Heading.h5 data-testid="h5">H5 Heading</Heading.h5>
-        <Heading.h6 data-testid="h6">H6 Heading</Heading.h6>
+        <Heading.H1 data-testid="h1">H1 Heading</Heading.H1>
+        <Heading.H2 data-testid="h2">H2 Heading</Heading.H2>
+        <Heading.H3 data-testid="h3">H3 Heading</Heading.H3>
+        <Heading.H4 data-testid="h4">H4 Heading</Heading.H4>
+        <Heading.H5 data-testid="h5">H5 Heading</Heading.H5>
+        <Heading.H6 data-testid="h6">H6 Heading</Heading.H6>
       </>
     );
 
