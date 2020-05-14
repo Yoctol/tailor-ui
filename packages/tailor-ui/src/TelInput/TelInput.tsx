@@ -19,6 +19,8 @@ interface TelInputProps {
   defaultValue?: string;
   onChange?: ChangeHandler;
   onBlur?: MouseEventHandler;
+  placeholder?: string;
+  disabled?: boolean;
 }
 
 const TelInput: FC<TelInputProps> = ({
