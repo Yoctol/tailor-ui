@@ -16,13 +16,6 @@ export const StyledContainer = styled(Box)`
   }
 `;
 
-export const StyledContainerTitle = styled(Heading.H4)`
-  margin-bottom: 24px;
-  padding-bottom: 8px;
-  border-bottom: ${(p) => p.theme.borders.base};
-  border-color: ${(p) => p.theme.colors.gray300};
-`;
-
 export const StyledSection = styled(Box)`
   & + & {
     margin-top: 32px;

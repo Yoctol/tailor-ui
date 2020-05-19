@@ -1,6 +1,32 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Container should render correctly 1`] = `
+.c2 {
+  font-size: 1.125rem;
+  margin: 0;
+  color: #373737;
+  font-weight: bold;
+  line-height: 1.5;
+  margin-bottom: 8px;
+}
+
+.c3 {
+  background-color: #e0e0e0;
+  display: block;
+  width: 100%;
+  min-width: 100%;
+  height: 1px;
+  margin: 1rem 0;
+  clear: both;
+  margin-top: 0.5rem;
+  margin-bottom: 24px;
+  margin-left: 0rem;
+  margin-right: 0rem;
+  color: #bfbfbf;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
 .c1 {
   box-sizing: border-box;
   padding: 24px 32px 32px;
@@ -15,27 +41,15 @@ exports[`Container should render correctly 1`] = `
   margin-top: 16px;
 }
 
-.c2 {
-  font-size: 1.125rem;
-  margin: 0;
-  color: #373737;
-  font-weight: bold;
-  line-height: 1.5;
-  margin-bottom: 24px;
-  padding-bottom: 8px;
-  border-bottom: 1px solid;
-  border-color: #e0e0e0;
-}
-
-.c4 {
+.c5 {
   box-sizing: border-box;
 }
 
-.c4 + .c3 {
+.c5 + .c4 {
   margin-top: 32px;
 }
 
-.c5 {
+.c6 {
   font-size: 1rem;
   margin: 0;
   color: #373737;
@@ -50,25 +64,32 @@ exports[`Container should render correctly 1`] = `
       class="sc-1nz5gok-0 c0 c1"
     >
       <h4
-        class="dh6qcl-4 c2"
+        class="c2"
       >
         Title A
       </h4>
       <div
-        class="sc-1nz5gok-0 c3 c4"
+        class="c3"
+        color="gray400"
+        font-size="sm"
+        font-weight="500"
+        type="horizontal"
+      />
+      <div
+        class="sc-1nz5gok-0 c4 c5"
       >
         <h5
-          class="dh6qcl-5 c5"
+          class="dh6qcl-5 c6"
         >
           Subtitle #1
         </h5>
         Subtitles are text derived from either a transcript or screenplay of the dialog or commentary in films.
       </div>
       <div
-        class="sc-1nz5gok-0 c3 c4"
+        class="sc-1nz5gok-0 c4 c5"
       >
         <h5
-          class="dh6qcl-5 c5"
+          class="dh6qcl-5 c6"
         >
           Subtitle #2
         </h5>
@@ -79,25 +100,32 @@ exports[`Container should render correctly 1`] = `
       class="sc-1nz5gok-0 c0 c1"
     >
       <h4
-        class="dh6qcl-4 c2"
+        class="c2"
       >
         Title B
       </h4>
       <div
-        class="sc-1nz5gok-0 c3 c4"
+        class="c3"
+        color="gray400"
+        font-size="sm"
+        font-weight="500"
+        type="horizontal"
+      />
+      <div
+        class="sc-1nz5gok-0 c4 c5"
       >
         <h5
-          class="dh6qcl-5 c5"
+          class="dh6qcl-5 c6"
         >
           Subtitle #1
         </h5>
         Subtitles are text derived from either a transcript or screenplay of the dialog or commentary in films.
       </div>
       <div
-        class="sc-1nz5gok-0 c3 c4"
+        class="sc-1nz5gok-0 c4 c5"
       >
         <h5
-          class="dh6qcl-5 c5"
+          class="dh6qcl-5 c6"
         >
           Subtitle #2
         </h5>
