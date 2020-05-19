@@ -1,13 +1,10 @@
 import React, { FC, ReactNode } from 'react';
 
-import { BoxProps } from '../Layout/Box';
+import { Box, BoxProps } from '../Layout/Box';
+import { Divider } from '../Divider';
+import { Heading, Text } from '../Typography';
 
-import {
-  StyledContainer,
-  StyledContainerTitle,
-  StyledSection,
-  StyledSectionTitle,
-} from './styles';
+import { StyledContainer, StyledSection, StyledSectionTitle } from './styles';
 
 export interface SectionProps extends Omit<BoxProps, 'color'> {
   title?: ReactNode;
@@ -24,14 +21,23 @@ const Section: FC<SectionProps> = ({ title, children, ...props }) => {
 
 export interface ContainerProps extends Omit<BoxProps, 'color'> {
   title?: ReactNode;
+  subTitle?: ReactNode;
 }
 
 const Container: FC<ContainerProps> & {
   Section: typeof Section;
-} = ({ title, children, ...props }) => {
+} = ({ title, subTitle, children, ...props }) => {
   return (
     <StyledContainer {...props}>
-      {title && <StyledContainerTitle>{title}</StyledContainerTitle>}
+      {title && <Heading.H4 mb="8px">{title}</Heading.H4>}
+      {subTitle && (
+        <Box mb="16px">
+          <Text color="gray500" fontSize="sm">
+            {subTitle}
+          </Text>
+        </Box>
+      )}
+      {(title || subTitle) && <Divider mb="24px" />}
       {children}
     </StyledContainer>
   );

@@ -4,12 +4,12 @@ import {
   ColorProps,
   SpaceProps,
   TypographyProps,
-  color,
   space,
+  color as styledColor,
   typography,
 } from 'styled-system';
 
-type IStyledDividerProps = SpaceProps &
+type StyledDividerProps = SpaceProps &
   ColorProps &
   TypographyProps & {
     type: 'horizontal' | 'vertical';
@@ -23,7 +23,7 @@ const StyledInnerText = styled.span`
   padding: 0 ${(p) => p.theme.space[3]};
 `;
 
-const StyledDivider = styled.div<IStyledDividerProps>`
+const StyledDivider = styled.div<StyledDividerProps>`
   background-color: ${(p) => p.theme.colors.gray300};
 
   ${(p) => {
@@ -104,27 +104,26 @@ const StyledDivider = styled.div<IStyledDividerProps>`
     `}
 
     ${space};
-    ${color};
+    ${styledColor};
     ${typography};
 `;
 
-StyledDivider.defaultProps = {
-  color: 'gray400',
-  fontSize: 'sm',
-  fontWeight: 500,
-};
-
-export interface DividerProps {
-  type?: 'horizontal' | 'vertical';
-  orientation?: 'left' | 'right';
-  dashed?: boolean;
-}
+export type DividerProps = SpaceProps &
+  ColorProps &
+  TypographyProps & {
+    type?: 'horizontal' | 'vertical';
+    orientation?: 'left' | 'right';
+    dashed?: boolean;
+  };
 
 const Divider: FC<DividerProps> = ({
   type = 'horizontal',
   orientation,
   dashed,
   children,
+  color = 'gray400',
+  fontSize = 'sm',
+  fontWeight = 500,
   ...props
 }) => (
   <StyledDivider
@@ -134,6 +133,9 @@ const Divider: FC<DividerProps> = ({
     withText={!!children}
     my={type === 'horizontal' ? 2 : 0}
     mx={type === 'vertical' ? 2 : 0}
+    color={color as string}
+    fontSize={fontSize}
+    fontWeight={fontWeight}
     {...props}
   >
     {children && <StyledInnerText>{children}</StyledInnerText>}
