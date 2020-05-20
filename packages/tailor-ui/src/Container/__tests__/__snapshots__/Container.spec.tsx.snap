@@ -28,7 +28,14 @@ exports[`Container should render correctly 1`] = `
 }
 
 .c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   box-sizing: border-box;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   padding: 24px 32px 32px;
   border-radius: 1rem;
   background-color: #ffffff;
@@ -42,7 +49,14 @@ exports[`Container should render correctly 1`] = `
 }
 
 .c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   box-sizing: border-box;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
 .c5 + .c4 {
@@ -61,7 +75,7 @@ exports[`Container should render correctly 1`] = `
 <div>
   <div>
     <div
-      class="sc-1nz5gok-0 c0 c1"
+      class="sc-69g3g9-0 c0 c1"
     >
       <h4
         class="c2"
@@ -76,7 +90,7 @@ exports[`Container should render correctly 1`] = `
         type="horizontal"
       />
       <div
-        class="sc-1nz5gok-0 c4 c5"
+        class="sc-69g3g9-0 c4 c5"
       >
         <h5
           class="dh6qcl-5 c6"
@@ -86,7 +100,7 @@ exports[`Container should render correctly 1`] = `
         Subtitles are text derived from either a transcript or screenplay of the dialog or commentary in films.
       </div>
       <div
-        class="sc-1nz5gok-0 c4 c5"
+        class="sc-69g3g9-0 c4 c5"
       >
         <h5
           class="dh6qcl-5 c6"
@@ -97,7 +111,7 @@ exports[`Container should render correctly 1`] = `
       </div>
     </div>
     <div
-      class="sc-1nz5gok-0 c0 c1"
+      class="sc-69g3g9-0 c0 c1"
     >
       <h4
         class="c2"
@@ -112,7 +126,7 @@ exports[`Container should render correctly 1`] = `
         type="horizontal"
       />
       <div
-        class="sc-1nz5gok-0 c4 c5"
+        class="sc-69g3g9-0 c4 c5"
       >
         <h5
           class="dh6qcl-5 c6"
@@ -122,7 +136,7 @@ exports[`Container should render correctly 1`] = `
         Subtitles are text derived from either a transcript or screenplay of the dialog or commentary in films.
       </div>
       <div
-        class="sc-1nz5gok-0 c4 c5"
+        class="sc-69g3g9-0 c4 c5"
       >
         <h5
           class="dh6qcl-5 c6"
