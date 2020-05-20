@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.31.0](https://github.com/yoctol/tailor-ui/compare/tailor-ui@0.30.4...tailor-ui@0.31.0) (2020-05-20)
+
+
+### Features
+
+* **container:** add box to container children ([e309f62](https://github.com/yoctol/tailor-ui/commit/e309f6221deb219bf639f83f823a7c1fddeb594e))
+* **container:** add subTitle props ([c4e4ea7](https://github.com/yoctol/tailor-ui/commit/c4e4ea7655f9a7b8a799811a285ad46e495bd91e))
+
+
+
+
+
 ## [0.30.4](https://github.com/yoctol/tailor-ui/compare/tailor-ui@0.30.3...tailor-ui@0.30.4) (2020-05-11)
 
 
