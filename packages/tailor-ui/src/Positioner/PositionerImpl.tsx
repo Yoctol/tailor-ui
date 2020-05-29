@@ -34,9 +34,11 @@ const getPositionerProps = ({
   prevDimensions: { height: number; width: number };
 }) => {
   if (!positionerRect) {
+    type hidden = 'hidden';
+
     return {
       positionerStyle: {
-        visibility: 'hidden' as 'hidden',
+        visibility: 'hidden' as hidden,
       },
     };
   }

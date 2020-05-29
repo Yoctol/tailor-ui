@@ -1,10 +1,10 @@
 import React from 'react';
 
-import { fireEvent, mockRaf, render, useMockRaf, wait } from 'test/test-utils';
+import { fireEvent, mockRaf, render, useMockRaf } from 'test/test-utils';
 
 import { Tooltip } from '../Tooltip';
 
-jest.mock('lodash.debounce', () => (fn: Function) => {
+jest.mock('lodash.debounce', () => (fn: () => void) => {
   let t = 0;
 
   const ret = () => {

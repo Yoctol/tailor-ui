@@ -33,7 +33,7 @@ export const StyledBreadcrumbLink = styled.a<StyledBreadcrumbLinkProps>`
 export const MoreIcon: StyledComponent<
   typeof Icon,
   DefaultTheme,
-  {},
+  any,
   never
 > = styled(Icon)`
   &:hover svg {

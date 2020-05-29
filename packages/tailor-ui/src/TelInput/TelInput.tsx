@@ -8,7 +8,7 @@ import StyledTelInput from './style';
 type ChangeHandler = (
   isValid: boolean,
   value: string,
-  phoneInfo: object,
+  phoneInfo: Record<string, any>,
   fullPhoneNumber: string
 ) => void;
 
