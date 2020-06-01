@@ -44,6 +44,12 @@ export const ModalContent = styled.div<{ size: ModalSize }>`
   padding: 24px ${(p) => p.theme.space[3]} ${(p) => p.theme.space[3]};
   border-radius: ${(p) => p.theme.radii.xl};
   background-color: #fff;
+
+  @media screen and (max-width: 36rem) {
+    width: calc(100vw - 32px);
+    max-width: calc(100vw - 32px);
+    max-height: calc(100vh - 132px);
+  }
 `;
 
 export const CloseButtonWrapper = styled.div`

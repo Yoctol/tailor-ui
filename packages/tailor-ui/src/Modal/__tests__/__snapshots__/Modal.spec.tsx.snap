@@ -208,6 +208,14 @@ exports[`Modal should render correctly 1`] = `
   background-color: #fff;
 }
 
+@media screen and (max-width:36rem) {
+  .c2 {
+    width: calc(100vw - 32px);
+    max-width: calc(100vw - 32px);
+    max-height: calc(100vh - 132px);
+  }
+}
+
 <body>
   <div />
   <div
@@ -283,6 +291,10 @@ exports[`Modal should render correctly with lg size 1`] = `
   bottom: 0;
   left: 0;
   background-color: rgba(0,0,0,0.65);
+}
+
+@media screen and (max-width:36rem) {
+
 }
 
 <div
@@ -490,6 +502,14 @@ exports[`Modal should render correctly with lg size 1`] = `
   background-color: #fff;
 }
 
+@media screen and (max-width:36rem) {
+  .c1 {
+    width: calc(100vw - 32px);
+    max-width: calc(100vw - 32px);
+    max-height: calc(100vh - 132px);
+  }
+}
+
 <div
       style="position: fixed; top: 0px; left: 0px; z-index: 20;"
     >
@@ -536,7 +556,11 @@ exports[`Modal should render correctly with lg size 1`] = `
       </div>
     </div>
   </div>
-  <div />
+  @media screen and (max-width:36rem) {
+
+}
+
+<div />
 </body>
 `;
 
@@ -553,6 +577,10 @@ exports[`Modal should render with error status 1`] = `
   bottom: 0;
   left: 0;
   background-color: rgba(0,0,0,0.65);
+}
+
+@media screen and (max-width:36rem) {
+
 }
 
 <div
@@ -1007,6 +1035,14 @@ exports[`Modal should render with error status 1`] = `
   transform: rotate(90deg);
 }
 
+@media screen and (max-width:36rem) {
+  .c2 {
+    width: calc(100vw - 32px);
+    max-width: calc(100vw - 32px);
+    max-height: calc(100vh - 132px);
+  }
+}
+
 <div
       style="position: fixed; top: 0px; left: 0px; z-index: 20;"
     >
@@ -1111,7 +1147,11 @@ exports[`Modal should render with error status 1`] = `
       </div>
     </div>
   </div>
-  <div />
+  @media screen and (max-width:36rem) {
+
+}
+
+<div />
 </body>
 `;
 
@@ -1128,6 +1168,10 @@ exports[`Modal should render with info status 1`] = `
   bottom: 0;
   left: 0;
   background-color: rgba(0,0,0,0.65);
+}
+
+@media screen and (max-width:36rem) {
+
 }
 
 <div
@@ -1582,6 +1626,14 @@ exports[`Modal should render with info status 1`] = `
   transform: rotate(90deg);
 }
 
+@media screen and (max-width:36rem) {
+  .c2 {
+    width: calc(100vw - 32px);
+    max-width: calc(100vw - 32px);
+    max-height: calc(100vh - 132px);
+  }
+}
+
 <div
       style="position: fixed; top: 0px; left: 0px; z-index: 20;"
     >
@@ -1686,7 +1738,11 @@ exports[`Modal should render with info status 1`] = `
       </div>
     </div>
   </div>
-  <div />
+  @media screen and (max-width:36rem) {
+
+}
+
+<div />
 </body>
 `;
 
@@ -1703,6 +1759,10 @@ exports[`Modal should render with props closable 1`] = `
   bottom: 0;
   left: 0;
   background-color: rgba(0,0,0,0.65);
+}
+
+@media screen and (max-width:36rem) {
+
 }
 
 <div
@@ -2114,6 +2174,14 @@ exports[`Modal should render with props closable 1`] = `
   transform: rotate(90deg);
 }
 
+@media screen and (max-width:36rem) {
+  .c1 {
+    width: calc(100vw - 32px);
+    max-width: calc(100vw - 32px);
+    max-height: calc(100vh - 132px);
+  }
+}
+
 <div
       style="position: fixed; top: 0px; left: 0px; z-index: 20;"
     >
@@ -2193,7 +2261,11 @@ exports[`Modal should render with props closable 1`] = `
       </div>
     </div>
   </div>
-  <div />
+  @media screen and (max-width:36rem) {
+
+}
+
+<div />
 </body>
 `;
 
@@ -2210,6 +2282,10 @@ exports[`Modal should render with success status 1`] = `
   bottom: 0;
   left: 0;
   background-color: rgba(0,0,0,0.65);
+}
+
+@media screen and (max-width:36rem) {
+
 }
 
 <div
@@ -2664,6 +2740,14 @@ exports[`Modal should render with success status 1`] = `
   transform: rotate(90deg);
 }
 
+@media screen and (max-width:36rem) {
+  .c2 {
+    width: calc(100vw - 32px);
+    max-width: calc(100vw - 32px);
+    max-height: calc(100vh - 132px);
+  }
+}
+
 <div
       style="position: fixed; top: 0px; left: 0px; z-index: 20;"
     >
@@ -2768,7 +2852,11 @@ exports[`Modal should render with success status 1`] = `
       </div>
     </div>
   </div>
-  <div />
+  @media screen and (max-width:36rem) {
+
+}
+
+<div />
 </body>
 `;
 
@@ -2785,6 +2873,10 @@ exports[`Modal should render with warning status 1`] = `
   bottom: 0;
   left: 0;
   background-color: rgba(0,0,0,0.65);
+}
+
+@media screen and (max-width:36rem) {
+
 }
 
 <div
@@ -3239,6 +3331,14 @@ exports[`Modal should render with warning status 1`] = `
   transform: rotate(90deg);
 }
 
+@media screen and (max-width:36rem) {
+  .c2 {
+    width: calc(100vw - 32px);
+    max-width: calc(100vw - 32px);
+    max-height: calc(100vh - 132px);
+  }
+}
+
 <div
       style="position: fixed; top: 0px; left: 0px; z-index: 20;"
     >
@@ -3343,6 +3443,10 @@ exports[`Modal should render with warning status 1`] = `
       </div>
     </div>
   </div>
-  <div />
+  @media screen and (max-width:36rem) {
+
+}
+
+<div />
 </body>
 `;
