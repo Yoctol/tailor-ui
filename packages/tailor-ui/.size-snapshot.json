@@ -3,5 +3,10 @@
     "bundled": 447897,
     "minified": 299377,
     "gzipped": 135742
+  },
+  "index.cjs.js": {
+    "bundled": 448361,
+    "minified": 299499,
+    "gzipped": 135785
   }
 }
