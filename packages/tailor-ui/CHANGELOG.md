@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.31.1](https://github.com/yoctol/tailor-ui/compare/tailor-ui@0.31.0...tailor-ui@0.31.1) (2020-06-02)
+
+
+### Features
+
+* **modal:** add mobile screen support ([f56d324](https://github.com/yoctol/tailor-ui/commit/f56d32431de8eb4aef0ae52e8d47f9d9291e89c5))
+
+
+
+
+
 # [0.31.0](https://github.com/yoctol/tailor-ui/compare/tailor-ui@0.30.4...tailor-ui@0.31.0) (2020-05-20)
 
 

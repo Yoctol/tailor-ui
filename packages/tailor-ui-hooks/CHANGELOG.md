@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.6.6](https://github.com/Yoctol/tailor-ui/compare/@tailor-ui/hooks@0.6.5...@tailor-ui/hooks@0.6.6) (2020-06-02)
+
+
+### Features
+
+* **modal:** add mobile screen support ([f56d324](https://github.com/Yoctol/tailor-ui/commit/f56d32431de8eb4aef0ae52e8d47f9d9291e89c5))
+
+
+
+
+
 ## [0.6.5](https://github.com/Yoctol/tailor-ui/compare/@tailor-ui/hooks@0.6.4...@tailor-ui/hooks@0.6.5) (2020-05-20)
 
 **Note:** Version bump only for package @tailor-ui/hooks
