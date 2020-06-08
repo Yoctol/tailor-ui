@@ -13,7 +13,6 @@ import { LocaleType, locales } from '../locale';
 
 import { UIDProvider } from './UIDContext';
 
-// eslint-disable-next-line @typescript-eslint/camelcase
 const { en_US } = locales;
 
 export interface UIProviderProps {

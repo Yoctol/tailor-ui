@@ -15,13 +15,14 @@ const useRenderChildren = ({
 }: {
   children?: ReactNode;
   targetRef: RefObject<HTMLElement>;
-  mergeProps: object;
+  mergeProps: Record<string, any>;
 }) => {
   const renderChildren = useCallback(() => {
     if (children instanceof Function) {
       return children({
         ref: targetRef,
-        bind: (props: object) => mergeEventProps(props, mergeProps),
+        bind: (props: Record<string, any>) =>
+          mergeEventProps(props, mergeProps),
       });
     }
 

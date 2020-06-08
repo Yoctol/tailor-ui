@@ -29,7 +29,7 @@
   "typings": "lib/index.d.ts",
   "dependencies": {
     "@tailor-ui/utils": "^0.3.4",
-    "polished": "^3.6.3",
+    "polished": "^3.6.4",
     "tailor-ui": "^0.31.1"
   },
   "peerDependencies": {

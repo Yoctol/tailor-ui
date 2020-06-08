@@ -1,4 +1,4 @@
-/* eslint camelcase: off, @typescript-eslint/camelcase: off */
+/* eslint camelcase: off */
 import React, { FC, createContext, useEffect } from 'react';
 import moment from 'moment';
 

@@ -1,4 +1,4 @@
-/* eslint @typescript-eslint/camelcase: off, camelcase: "off" */
+/* eslint camelcase: "off" */
 import en_US from './en_US';
 import zh_Hant from './zh_Hant';
 

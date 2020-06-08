@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { fireEvent, mockRaf, render, useMockRaf, wait } from 'test/test-utils';
+import { fireEvent, mockRaf, render, useMockRaf } from 'test/test-utils';
 
 import { Popover } from '../Popover';
 
