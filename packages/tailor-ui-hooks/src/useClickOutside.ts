@@ -12,7 +12,7 @@ const useClickOutside = ({
   refs,
 }: ClickOutside) => {
   const handleClick = useCallback(
-    (event: MouseEvent) => {
+    (event: MouseEvent | TouchEvent) => {
       const clickInside = refs.some((ref) => {
         if (!ref.current) {
           return false;
@@ -31,13 +31,16 @@ const useClickOutside = ({
   useEffect(() => {
     if (listening) {
       document.body.addEventListener('click', handleClick);
+      document.body.addEventListener('touchend', handleClick);
 
       return () => {
         document.body.removeEventListener('click', handleClick, false);
+        document.body.removeEventListener('touchend', handleClick, false);
       };
     }
 
     document.body.removeEventListener('click', handleClick, false);
+    document.body.removeEventListener('touchend', handleClick, false);
     return () => {};
   }, [listening, onClickOutside, handleClick]);
 
