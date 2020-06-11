@@ -1,6 +1,7 @@
 import React, { FC, useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 
+import { Box } from '../Layout';
 import { Position } from '../constants';
 import { Tooltip, TooltipProps } from '../Tooltip';
 
@@ -39,7 +40,15 @@ const Ellipsis: FC<EllipsisProps> = ({
 
   return isOverflowed ? (
     <Tooltip
-      content={children}
+      content={
+        <Box
+          minWidth="200px"
+          maxWidth="280px"
+          style={{ whiteSpace: 'pre-line', wordBreak: 'break-word' }}
+        >
+          {children}
+        </Box>
+      }
       position={Position.BOTTOM}
       mouseLeaveDelay={0}
       {...tooltipProps}
