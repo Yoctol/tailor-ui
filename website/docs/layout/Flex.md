@@ -3,7 +3,7 @@ id: flex
 title: Flex
 ---
 
-[Examples of usage](grid.md)
+[Examples of usage](Grid.md)
 
 ## API
 

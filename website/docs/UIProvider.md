@@ -25,7 +25,7 @@ ReactDOM.render(
 
 ```jsx live
 () => {
-  const { locale, setLocale } = useLocaleContext();
+  const { locale, setLocale } = useContext(LocaleContext);
   const [visible, setVisible] = useState(false);
   const modal = useModal();
 

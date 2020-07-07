@@ -28,16 +28,23 @@ const Table: FC<TableProps> & {
   Body: typeof Body;
   Row: typeof Row;
   Column: typeof Column;
-} = ({ header, footer, ...props }) => {
+} = ({ header, footer, width = '100%', textAlign = 'center', ...props }) => {
   const optionsProps = {
     hasHeader: Boolean(header),
     hasFooter: Boolean(footer),
   };
-  const table = <StyledTable {...optionsProps} {...props} />;
+  const table = (
+    <StyledTable
+      {...optionsProps}
+      width={width as string}
+      textAlign={textAlign}
+      {...props}
+    />
+  );
 
   if (header || footer) {
     return (
-      <TableWrapper {...optionsProps} width={props.width}>
+      <TableWrapper {...optionsProps} width={width}>
         {header}
         {table}
         {footer}
@@ -53,10 +60,5 @@ Table.HeadColumn = HeadColumn;
 Table.Body = Body;
 Table.Row = Row;
 Table.Column = Column;
-
-Table.defaultProps = {
-  width: '100%',
-  textAlign: 'center',
-};
 
 export { Table };
