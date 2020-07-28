@@ -124,25 +124,27 @@ function User({ imageUrl, url, title, description }) {
 }
 
 function Home() {
-  const context = useDocusaurusContext();
+  const {
+    siteConfig: { customFields = {}, tagline } = {},
+  } = useDocusaurusContext();
   const logoUrl = useBaseUrl('/img/tailor-ui-dark.svg');
 
-  const { siteConfig = {} } = context;
   return (
     <Layout
-      title={siteConfig.title}
-      description="A bespoke UI collection for building web application."
+      permalink="/"
+      title={tagline}
+      description={customFields.description}
     >
       <header className={classnames('hero', styles.heroBanner)}>
         <div className="container">
           <img src={logoUrl} width="140px" alt="Tailor UI" />
           <p className={classnames('hero__subtitle', styles.heroSubtitle)}>
-            {siteConfig.tagline}
+            {tagline}
           </p>
           <div className={styles.buttons}>
             <Link
               className={classnames('button button--lg', styles.gettingStarted)}
-              to={useBaseUrl('docs/getting-started')}
+              to={useBaseUrl('docs')}
             >
               Getting Started
             </Link>

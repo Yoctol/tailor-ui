@@ -5,8 +5,8 @@
     "gzipped": 600
   },
   "index.cjs.js": {
-    "bundled": 3136,
-    "minified": 1286,
-    "gzipped": 600
+    "bundled": 3185,
+    "minified": 1328,
+    "gzipped": 614
   }
 }

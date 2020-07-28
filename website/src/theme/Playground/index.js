@@ -1,6 +1,6 @@
-/* eslint-disable import/no-extraneous-dependencies */
+/* eslint-disable import/no-extraneous-dependencies, import/no-unresolved */
 /**
- * Copyright (c) 2017-present, Facebook, Inc.
+ * Copyright (c) Facebook, Inc. and its affiliates.
  *
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
@@ -52,14 +52,14 @@ function LiveCode({ defaultShowCode, refreshPreview, onChangeCode }) {
 }
 
 function Playground({
-  code: defaultCode,
   theme,
   transformCode,
+  children,
   showCode: defaultShowCode = false,
   ...props
 }) {
   const [, setCount] = useState(0);
-  const [code, setCode] = useState(defaultCode);
+  const [code, setCode] = useState(children.replace(/\n$/, ''));
 
   return (
     <LiveProvider
@@ -71,7 +71,7 @@ function Playground({
       <LiveCode
         defaultShowCode={defaultShowCode}
         refreshPreview={() => setCount((prev) => prev + 1)}
-        onChangeCode={(newCode) => setCode(newCode)}
+        onChangeCode={(newCode) => setCode(newCode.replace(/\n$/, ''))}
       />
     </LiveProvider>
   );
