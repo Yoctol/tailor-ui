@@ -1,8 +1,7 @@
-import DatePicker from 'rc-calendar/lib/locale/en_US';
+import DatePicker from 'rc-picker/lib/locale/en_US';
 
 export default {
   locale: 'en_US',
-  momentLocale: 'en',
   DatePicker,
   Modal: {
     confirmText: 'Confirm',

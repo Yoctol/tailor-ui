@@ -6,7 +6,7 @@
  */
 
 import React from 'react';
-import moment from 'moment';
+import * as DateFns from 'date-fns';
 import * as Formik from 'formik';
 import * as ReactIconsMd from 'react-icons/md';
 import * as ReactIconsTi from 'react-icons/ti';
@@ -32,7 +32,7 @@ const ReactLiveScope = {
   ...ReactIconsTi,
   ...ramda,
   LocaleContext,
-  moment,
+  DateFns,
 };
 
 export default ReactLiveScope;
