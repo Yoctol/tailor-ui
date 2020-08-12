@@ -1,20 +1,20 @@
 {
+  "private": true,
   "name": "tailor-ui-website",
   "version": "0.0.0",
-  "private": true,
   "scripts": {
-    "docusaurus": "docusaurus",
-    "start": "docusaurus start",
     "build": "docusaurus build",
-    "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
-    "serve": "docusaurus serve"
+    "docusaurus": "docusaurus",
+    "serve": "docusaurus serve",
+    "start": "docusaurus start",
+    "swizzle": "docusaurus swizzle"
   },
   "dependencies": {
     "@docusaurus/core": "^2.0.0-alpha.59",
     "@docusaurus/preset-classic": "^2.0.0-alpha.59",
     "@docusaurus/theme-live-codeblock": "^2.0.0-alpha.59",
-    "@mdx-js/react": "^1.5.8",
+    "@mdx-js/react": "^1.6.16",
     "clsx": "^1.1.1"
   },
   "browserslist": {
