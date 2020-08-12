@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.31.2](https://github.com/yoctol/tailor-ui/compare/tailor-ui@0.31.1...tailor-ui@0.31.2) (2020-08-12)
+
+
+### Bug Fixes
+
+* **ellipsis:** adjust tooltip width ([9c9c032](https://github.com/yoctol/tailor-ui/commit/9c9c032b2b8ef6adfb1dfcf649c9070c0d655b8e))
+
+
+
+
+
 ## [0.31.1](https://github.com/yoctol/tailor-ui/compare/tailor-ui@0.31.0...tailor-ui@0.31.1) (2020-06-02)
 
 

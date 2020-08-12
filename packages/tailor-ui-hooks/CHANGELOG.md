@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.6.7](https://github.com/Yoctol/tailor-ui/compare/@tailor-ui/hooks@0.6.6...@tailor-ui/hooks@0.6.7) (2020-08-12)
+
+
+### Bug Fixes
+
+* handle touch event in useClickOutside ([9064d37](https://github.com/Yoctol/tailor-ui/commit/9064d375fff662fe42a095e80cbd07b139f33356))
+
+
+
+
+
 ## [0.6.6](https://github.com/Yoctol/tailor-ui/compare/@tailor-ui/hooks@0.6.5...@tailor-ui/hooks@0.6.6) (2020-06-02)
 
 

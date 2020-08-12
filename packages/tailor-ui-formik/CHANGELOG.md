@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.11](https://github.com/Yoctol/tailor-ui/compare/@tailor-ui/formik@0.4.10...@tailor-ui/formik@0.4.11) (2020-08-12)
+
+**Note:** Version bump only for package @tailor-ui/formik
+
+
+
+
+
 ## [0.4.10](https://github.com/Yoctol/tailor-ui/compare/@tailor-ui/formik@0.4.9...@tailor-ui/formik@0.4.10) (2020-06-02)
 
 
