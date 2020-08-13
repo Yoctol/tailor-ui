@@ -1,4 +1,5 @@
 import fuzzaldrin from 'fuzzaldrin-plus';
+import { ReactNode } from 'react';
 
 import { CreateOption, Option } from './SelectOptions';
 
@@ -24,7 +25,7 @@ export const itemToString: (
     | string
     | number
     | {
-        label: string;
+        label: ReactNode;
         value: string | number;
       }
     | CreateOption
