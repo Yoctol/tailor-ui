@@ -8,6 +8,7 @@ export const SelectWrapper = styled.div`
 export interface StyledSelectOptionProps {
   active: boolean;
   hovered: boolean;
+  disabled?: boolean;
 }
 
 export const StyledSelectOption = styled.div<StyledSelectOptionProps>`
@@ -22,10 +23,13 @@ export const StyledSelectOption = styled.div<StyledSelectOptionProps>`
     if (p.active) {
       return p.theme.colors.primaryLight;
     }
+    if (p.disabled) {
+      return p.theme.colors.gray300;
+    }
     return p.theme.colors.gray700;
   }};
   font-size: ${(p) => p.theme.fontSizes.sm};
-  cursor: pointer;
+  cursor: ${(p) => (p.disabled ? 'not-allowed' : 'pointer')};
 
   > div {
     padding: 0 24px;

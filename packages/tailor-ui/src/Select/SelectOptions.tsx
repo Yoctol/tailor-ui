@@ -22,6 +22,7 @@ export type Option =
   | {
       label: ReactNode;
       value: string | number;
+      disabled?: boolean;
     }
   | string
   | number;
@@ -179,6 +180,10 @@ const SelectOptions: FC<SelectOptionsProps> = ({
             (option as CreateOption).label === 'CREATE_OPTION';
           const optionString = itemToString(option);
           const hovered = visible && highlightedIndex === index;
+          const disabled =
+            typeof option === 'object' && 'disabled' in option
+              ? option.disabled
+              : undefined;
           const active = multiple
             ? (selectedItems as Option[])
                 .map(itemToString)
@@ -197,11 +202,13 @@ const SelectOptions: FC<SelectOptionsProps> = ({
               key={optionString}
               active={active}
               hovered={hovered}
+              disabled={disabled}
               style={style}
               {...getDataTestId(props, `item-${index}`)}
               {...getItemProps({
                 index,
                 item: option,
+                disabled,
               })}
             >
               <div

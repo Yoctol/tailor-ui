@@ -29,7 +29,7 @@ import { Select } from 'tailor-ui';
       options={[
         { label: 'Banana', value: 'banana' },
         { label: 'Orange', value: 'orange' },
-        { label: 'Apple', value: 'apple' },
+        { label: 'Apple', value: 'apple', disabled: true },
         { label: 'Mango', value: 'mango' },
       ]}
     />
