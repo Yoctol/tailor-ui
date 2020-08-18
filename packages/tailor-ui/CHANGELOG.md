@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.32.0](https://github.com/yoctol/tailor-ui/compare/tailor-ui@0.31.2...tailor-ui@0.32.0) (2020-08-18)
+
+
+### Bug Fixes
+
+* **select:** option label type ([a6b22d0](https://github.com/yoctol/tailor-ui/commit/a6b22d05cf4916a8ef8c5064abae8c865430962b))
+
+
+### Features
+
+* **select:** add disabled props to select option ([fdb5969](https://github.com/yoctol/tailor-ui/commit/fdb5969969d89eae0b59b6a5805d9f1c52098167))
+
+
+
+
+
 ## [0.31.2](https://github.com/yoctol/tailor-ui/compare/tailor-ui@0.31.1...tailor-ui@0.31.2) (2020-08-12)
 
 
