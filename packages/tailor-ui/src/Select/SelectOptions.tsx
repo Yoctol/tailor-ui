@@ -20,7 +20,7 @@ import { fuzzyFilter, getDataTestId, itemToString } from './utils';
 
 export type Option =
   | {
-      label: string;
+      label: ReactNode;
       value: string | number;
     }
   | string
