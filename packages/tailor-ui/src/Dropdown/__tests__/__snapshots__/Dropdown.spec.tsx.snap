@@ -61,6 +61,10 @@ exports[`Dropdown should render correctly 1`] = `
   background-color: #f6f6f6;
 }
 
+.c3:hover svg {
+  fill: #bfbfbf !important;
+}
+
 <body>
   <div>
     <button

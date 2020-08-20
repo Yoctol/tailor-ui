@@ -4,6 +4,7 @@ import info from './info';
 import kurator from './kurator';
 import line from './line';
 import messenger from './messenger';
+import openInNew from './open_in_new';
 import robot from './robot';
 import settings from './settings';
 import success from './success';
@@ -28,7 +29,8 @@ export type BuiltInIconKeys =
   | 'analytics'
   | 'tags'
   | 'tutorial'
-  | 'settings';
+  | 'settings'
+  | 'open-in-new';
 
 export const icons = {
   line,
@@ -46,4 +48,5 @@ export const icons = {
   tags,
   settings,
   tutorial,
+  'open-in-new': openInNew,
 };
