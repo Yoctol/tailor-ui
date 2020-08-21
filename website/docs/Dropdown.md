@@ -33,6 +33,22 @@ import { Dropdown } from 'tailor-ui';
 </Dropdown>
 ```
 
+### With icon
+
+```jsx live
+<Dropdown
+  overlay={
+    <Dropdown.List>
+      <Dropdown.Item>normal</Dropdown.Item>
+      <Dropdown.Item icon="open-in-new">with open in new icon</Dropdown.Item>
+      <Dropdown.Item icon="tutorial">with tutorial icon</Dropdown.Item>
+    </Dropdown.List>
+  }
+>
+  <Button>Toggle</Button>
+</Dropdown>
+```
+
 ### Get visible
 
 ```jsx live

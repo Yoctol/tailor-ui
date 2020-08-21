@@ -37,6 +37,10 @@ export const Item: StyledComponent<
 
   &:hover {
     background-color: ${(p) => p.theme.colors.gray200};
+
+    & svg {
+      fill: ${(p) => p.theme.colors.gray400} !important;
+    }
   }
 
   ${color};

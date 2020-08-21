@@ -31,6 +31,7 @@ import { MdEdit, MdComment, MdInput, MdInfo } from 'react-icons/md';
   <Icon mx="2" type="success" />
   <Icon mx="2" type="warning" />
   <Icon mx="2" type="danger" />
+  <Icon mx="2" type="open-in-new" />
 </>
 ```
 
@@ -110,4 +111,5 @@ import { MdEdit, MdComment, MdInput, MdInfo } from 'react-icons/md';
 - `'analytics'`
 - `'tags'`
 - `'tutorial'`
-- `'settings';`
+- `'open-in-new'`
+- `'settings'`
