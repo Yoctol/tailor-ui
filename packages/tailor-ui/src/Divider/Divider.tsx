@@ -104,8 +104,8 @@ const StyledDivider = styled.div<StyledDividerProps>`
     `}
 
     ${space};
-    ${styledColor};
-    ${typography};
+  ${styledColor};
+  ${typography};
 `;
 
 export type DividerProps = SpaceProps &

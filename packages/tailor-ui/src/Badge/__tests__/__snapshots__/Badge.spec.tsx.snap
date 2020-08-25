@@ -39,7 +39,7 @@ exports[`Backdrop should render badge correctly 1`] = `
 }
 
 <div
-  class="sc-1nz5gok-0 c0"
+  class="c0"
 >
   <button
     type="button"
@@ -47,7 +47,7 @@ exports[`Backdrop should render badge correctly 1`] = `
     btn
   </button>
   <div
-    class="sc-1nz5gok-0 c1 c2"
+    class="c1 c2"
     color="light"
     style="opacity: 1; transform-origin: right; transform: scale(1) translateX(50%);"
   >
@@ -95,7 +95,7 @@ exports[`Backdrop should render customized badge correctly 1`] = `
 }
 
 <div
-  class="sc-1nz5gok-0 c0"
+  class="c0"
 >
   <button
     type="button"
@@ -103,7 +103,7 @@ exports[`Backdrop should render customized badge correctly 1`] = `
     btn
   </button>
   <div
-    class="sc-1nz5gok-0 c1 c2"
+    class="c1 c2"
     color="light"
     style="opacity: 1; transform-origin: right; transform: scale(1) translateX(50%);"
   >
@@ -136,7 +136,7 @@ exports[`Backdrop should render standalone badge correctly 1`] = `
 }
 
 <div
-  class="sc-1nz5gok-0 c0"
+  class="c0"
   color="light"
   style="opacity: 1; transform-origin: center; transform: scale(1);"
 >

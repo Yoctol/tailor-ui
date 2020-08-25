@@ -85,12 +85,12 @@ exports[`Radio should render correctly 1`] = `
   border-color: #3c5ad0;
 }
 
-.c0 + .sc-12zx7ee-3 {
+.c0 + .{
   margin-left: 0.5rem;
 }
 
 <label
-  class="sc-12zx7ee-3 c0"
+  class="c0"
   direction="horizontal"
 >
   <span
