@@ -90,12 +90,12 @@ exports[`Checkbox should render correctly 1`] = `
   border-color: #3c5ad0;
 }
 
-.c1 + .sc-19qg157-3 {
+.c1 + .{
   margin-left: 0.5rem;
 }
 
 <label
-  class="sc-19qg157-3 c0 c1"
+  class="c0 c1"
   direction="horizontal"
 >
   <span

@@ -94,7 +94,7 @@ exports[`CheckboxGroup composition with Checkbox should render correctly 1`] = `
   border-color: #3c5ad0;
 }
 
-.c3 + .sc-19qg157-3 {
+.c3 + .{
   margin-left: 0.5rem;
 }
 
@@ -116,7 +116,7 @@ exports[`CheckboxGroup composition with Checkbox should render correctly 1`] = `
     class="c1"
   >
     <label
-      class="sc-19qg157-3 c2 c3"
+      class="c2 c3"
       direction="horizontal"
     >
       <span
@@ -141,7 +141,7 @@ exports[`CheckboxGroup composition with Checkbox should render correctly 1`] = `
     class="c1"
   >
     <label
-      class="sc-19qg157-3 c2 c3"
+      class="c2 c3"
       direction="horizontal"
     >
       <span
@@ -166,7 +166,7 @@ exports[`CheckboxGroup composition with Checkbox should render correctly 1`] = `
     class="c1"
   >
     <label
-      class="sc-19qg157-3 c2 c3"
+      class="c2 c3"
       direction="horizontal"
     >
       <span
@@ -280,7 +280,7 @@ exports[`CheckboxGroup should render vertical checkbox group 1`] = `
   border-color: #3c5ad0;
 }
 
-.c2 + .sc-19qg157-3 {
+.c2 + .{
   margin-top: 0.5rem;
 }
 
@@ -299,7 +299,7 @@ exports[`CheckboxGroup should render vertical checkbox group 1`] = `
   direction="vertical"
 >
   <label
-    class="sc-19qg157-3 c1 c2"
+    class="c1 c2"
     direction="vertical"
   >
     <span
@@ -320,7 +320,7 @@ exports[`CheckboxGroup should render vertical checkbox group 1`] = `
     </div>
   </label>
   <label
-    class="sc-19qg157-3 c1 c2"
+    class="c1 c2"
     direction="vertical"
   >
     <span
@@ -341,7 +341,7 @@ exports[`CheckboxGroup should render vertical checkbox group 1`] = `
     </div>
   </label>
   <label
-    class="sc-19qg157-3 c1 c2"
+    class="c1 c2"
     direction="vertical"
   >
     <span

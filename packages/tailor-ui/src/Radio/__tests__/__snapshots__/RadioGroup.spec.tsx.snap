@@ -89,7 +89,7 @@ exports[`RadioGroup composition with Radio should render correctly 1`] = `
   border-color: #3c5ad0;
 }
 
-.c2 + .sc-12zx7ee-3 {
+.c2 + .{
   margin-left: 0.5rem;
 }
 
@@ -111,7 +111,7 @@ exports[`RadioGroup composition with Radio should render correctly 1`] = `
     class="c1"
   >
     <label
-      class="sc-12zx7ee-3 c2"
+      class="c2"
       direction="horizontal"
     >
       <span
@@ -136,7 +136,7 @@ exports[`RadioGroup composition with Radio should render correctly 1`] = `
     class="c1"
   >
     <label
-      class="sc-12zx7ee-3 c2"
+      class="c2"
       direction="horizontal"
     >
       <span
@@ -161,7 +161,7 @@ exports[`RadioGroup composition with Radio should render correctly 1`] = `
     class="c1"
   >
     <label
-      class="sc-12zx7ee-3 c2"
+      class="c2"
       direction="horizontal"
     >
       <span
@@ -270,7 +270,7 @@ exports[`RadioGroup should render vertical radio group 1`] = `
   border-color: #3c5ad0;
 }
 
-.c1 + .sc-12zx7ee-3 {
+.c1 + .{
   margin-top: 0.5rem;
 }
 
@@ -289,7 +289,7 @@ exports[`RadioGroup should render vertical radio group 1`] = `
   direction="vertical"
 >
   <label
-    class="sc-12zx7ee-3 c1"
+    class="c1"
     direction="vertical"
   >
     <span
@@ -310,7 +310,7 @@ exports[`RadioGroup should render vertical radio group 1`] = `
     </div>
   </label>
   <label
-    class="sc-12zx7ee-3 c1"
+    class="c1"
     direction="vertical"
   >
     <span
@@ -331,7 +331,7 @@ exports[`RadioGroup should render vertical radio group 1`] = `
     </div>
   </label>
   <label
-    class="sc-12zx7ee-3 c1"
+    class="c1"
     direction="vertical"
   >
     <span

@@ -28,7 +28,7 @@
   "sideEffects": false,
   "typings": "lib/index.d.ts",
   "dependencies": {
-    "@reach/utils": "^0.10.5",
+    "@reach/utils": "^0.11.0",
     "@tailor-ui/utils": "^0.3.5",
     "lodash.debounce": "^4.0.8",
     "resize-observer-polyfill": "^1.5.1"

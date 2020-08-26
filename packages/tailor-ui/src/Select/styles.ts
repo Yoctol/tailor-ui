@@ -119,11 +119,11 @@ export const StyledSelect = styled.div<StyledSelectProps>`
       border-color: ${p.theme.colors.primary};
     `}
 
-    ${(p) =>
-      p.invalid &&
-      css`
-        border-color: ${p.theme.colors.danger} !important;
-      `}
+  ${(p) =>
+    p.invalid &&
+    css`
+      border-color: ${p.theme.colors.danger} !important;
+    `}
 
   ${(p) =>
     p.disabled &&
