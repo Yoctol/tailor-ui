@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.33.0](https://github.com/yoctol/tailor-ui/compare/tailor-ui@0.32.0...tailor-ui@0.33.0) (2020-08-27)
+
+
+### Features
+
+* **dropdown:** add open in new icon ([738707b](https://github.com/yoctol/tailor-ui/commit/738707b82866f3cc3e16b2bc5d456ada15619a7e))
+
+
+
+
+
 # [0.32.0](https://github.com/yoctol/tailor-ui/compare/tailor-ui@0.31.2...tailor-ui@0.32.0) (2020-08-18)
 
 

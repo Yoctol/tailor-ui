@@ -11,7 +11,7 @@
   "bugs": {
     "url": "https://github.com/Yoctol/tailor-ui/issues"
   },
-  "version": "0.15.12",
+  "version": "0.15.13",
   "main": "lib/index.cjs.js",
   "module": "lib/index.js",
   "files": [
@@ -28,9 +28,9 @@
   "sideEffects": false,
   "typings": "lib/index.d.ts",
   "dependencies": {
-    "@tailor-ui/utils": "^0.3.5",
+    "@tailor-ui/utils": "^0.3.6",
     "polished": "^3.6.5",
-    "tailor-ui": "^0.32.0"
+    "tailor-ui": "^0.33.0"
   },
   "peerDependencies": {
     "react": ">=16.10.0",
