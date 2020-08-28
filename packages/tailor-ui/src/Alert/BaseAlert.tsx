@@ -9,11 +9,11 @@ import { Box, Flex } from '../Layout';
 import { Icon } from '../Icon';
 import { StatusType } from '../types';
 
-export type IAlertTypes = SpaceProps & {
+export type StyledAlertTypes = SpaceProps & {
   type: StatusType;
 };
 
-const StyledAlert = styled.div<IAlertTypes>`
+const StyledAlert = styled.div<StyledAlertTypes>`
   display: flex;
   align-items: center;
   margin-bottom: ${(p) => p.theme.space[3]};
@@ -28,7 +28,7 @@ const StyledAlert = styled.div<IAlertTypes>`
   ${space};
 `;
 
-export interface BaseAlertProps extends IAlertTypes {
+export interface BaseAlertProps extends StyledAlertTypes {
   closable: boolean;
   message: ReactNode;
   type: StatusType;

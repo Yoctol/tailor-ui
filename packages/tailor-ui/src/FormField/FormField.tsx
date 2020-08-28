@@ -9,7 +9,7 @@ import { Label, ValidationMessage } from './styles';
 import { Validator, validate } from './validate';
 
 export interface FormFieldProps {
-  label?: string;
+  label?: ReactNode;
   required?: boolean;
   validator?: Validator;
   validationMessage?: ReactNode;
