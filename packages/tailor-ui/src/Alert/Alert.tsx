@@ -1,17 +1,7 @@
-import React, { FC, ReactNode } from 'react';
-
-import { StatusType } from '../types';
+import React, { FC } from 'react';
 
 import BaseAlert from './BaseAlert';
-import ClosableAlert from './ClosableAlert';
-
-interface AlertProps {
-  closable?: boolean;
-  message: ReactNode;
-  type?: StatusType;
-  onClose?: () => void;
-  onClosed?: () => void;
-}
+import ClosableAlert, { AlertProps } from './ClosableAlert';
 
 const Alert: FC<AlertProps> = ({
   type = 'info',
