@@ -6,6 +6,7 @@ import React, {
   FormEvent,
   FormEventHandler,
   KeyboardEventHandler,
+  ReactNode,
   useContext,
   useState,
 } from 'react';
@@ -17,7 +18,7 @@ import { Input, Textarea } from '../Input';
 import { MaxLength, TextFieldContainer } from './styles';
 
 export interface TextFieldProps {
-  label?: string;
+  label?: ReactNode;
   value?: string;
   defaultValue?: string;
   maxLength?: number;
