@@ -20,14 +20,14 @@ import { Position } from '../constants';
 
 import { MoreIcon, StyledBreadcrumbLink } from './styles';
 
-export interface BreadcrumbLink {
+export interface BreadcrumbLinkProps {
   active: boolean;
   name: ReactNode;
   lockWidth: boolean;
   onClick: MouseEventHandler<HTMLAnchorElement>;
 }
 
-const BreadcrumbLink = forwardRef<HTMLAnchorElement, BreadcrumbLink>(
+const BreadcrumbLink = forwardRef<HTMLAnchorElement, BreadcrumbLinkProps>(
   function BreadcrumbLink({ active, name, lockWidth, onClick }, ref) {
     return (
       <StyledBreadcrumbLink

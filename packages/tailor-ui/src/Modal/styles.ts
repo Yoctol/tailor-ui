@@ -11,7 +11,11 @@ export const ModalWrapper = styled.div`
   left: 50%;
 `;
 
-export const ModalStatusBar = styled.div<{ status: StatusType }>`
+interface ModalStatusBarProps {
+  status: StatusType;
+}
+
+export const ModalStatusBar = styled.div<ModalStatusBarProps>`
   position: absolute;
   z-index: -1;
   top: 0;

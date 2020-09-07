@@ -9,30 +9,19 @@ exports[`Spin should render correctly 1`] = `
   height: 100%;
   border-radius: 50%;
   background-color: #3c5ad0;
+}
+
+.c3 {
   -webkit-animation: gKnplJ 1.5s infinite linear both;
   animation: gKnplJ 1.5s infinite linear both;
 }
 
-.c3 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  background-color: #3c5ad0;
+.c4 {
   -webkit-animation: iugaHm 1.5s infinite linear both;
   animation: iugaHm 1.5s infinite linear both;
 }
 
-.c4 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  background-color: #3c5ad0;
+.c5 {
   -webkit-animation: hutlQO 1.5s infinite linear both;
   animation: hutlQO 1.5s infinite linear both;
 }
@@ -71,13 +60,13 @@ exports[`Spin should render correctly 1`] = `
       size="40"
     >
       <div
-        class="i6fbnf-0 c2"
+        class="c2 c3"
       />
       <div
-        class="i6fbnf-0 c3"
+        class="c2 c4"
       />
       <div
-        class="i6fbnf-0 c4"
+        class="c2 c5"
       />
     </div>
   </div>

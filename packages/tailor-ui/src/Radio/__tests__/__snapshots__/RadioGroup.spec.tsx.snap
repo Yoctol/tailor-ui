@@ -5,20 +5,20 @@ exports[`RadioGroup composition with Radio should render correctly 1`] = `
   box-sizing: border-box;
 }
 
-.c7 {
+.c9 {
   box-sizing: border-box;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
 }
 
-.c3 {
+.c5 {
   display: inline-block;
   position: relative;
   margin-bottom: 1px;
   line-height: 1;
 }
 
-.c6 {
+.c8 {
   display: block;
   position: relative;
   width: 16px;
@@ -33,7 +33,7 @@ exports[`RadioGroup composition with Radio should render correctly 1`] = `
   transition: all 200ms ease 0s;
 }
 
-.c6::after {
+.c8::after {
   content: '';
   position: absolute;
   top: 2px;
@@ -50,7 +50,7 @@ exports[`RadioGroup composition with Radio should render correctly 1`] = `
   transition: all 200ms ease 0s;
 }
 
-.c4 {
+.c6 {
   position: absolute;
   top: 0;
   right: 0;
@@ -61,18 +61,18 @@ exports[`RadioGroup composition with Radio should render correctly 1`] = `
   opacity: 0;
 }
 
-.c4:checked + .c5 {
+.c6:checked + .c7 {
   border-color: #3c5ad0;
 }
 
-.c4:checked + .c5::after {
+.c6:checked + .c7::after {
   opacity: 1;
   -webkit-transform: scale(1);
   -ms-transform: scale(1);
   transform: scale(1);
 }
 
-.c2 {
+.c3 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -85,11 +85,11 @@ exports[`RadioGroup composition with Radio should render correctly 1`] = `
   cursor: pointer;
 }
 
-.c2:hover .c5 {
+.c3:hover .c7 {
   border-color: #3c5ad0;
 }
 
-.c2 + .{
+.c4 + .c2 {
   margin-left: 0.5rem;
 }
 
@@ -111,22 +111,22 @@ exports[`RadioGroup composition with Radio should render correctly 1`] = `
     class="c1"
   >
     <label
-      class="c2"
+      class="c2 c3 c4"
       direction="horizontal"
     >
       <span
-        class="c3"
+        class="c5"
       >
         <input
-          class="c4"
+          class="c6"
           type="radio"
         />
         <span
-          class="c5 c6"
+          class="c7 c8"
         />
       </span>
       <div
-        class="c7"
+        class="c9"
       >
         Radio 1
       </div>
@@ -136,22 +136,22 @@ exports[`RadioGroup composition with Radio should render correctly 1`] = `
     class="c1"
   >
     <label
-      class="c2"
+      class="c2 c3 c4"
       direction="horizontal"
     >
       <span
-        class="c3"
+        class="c5"
       >
         <input
-          class="c4"
+          class="c6"
           type="radio"
         />
         <span
-          class="c5 c6"
+          class="c7 c8"
         />
       </span>
       <div
-        class="c7"
+        class="c9"
       >
         Radio 2
       </div>
@@ -161,22 +161,22 @@ exports[`RadioGroup composition with Radio should render correctly 1`] = `
     class="c1"
   >
     <label
-      class="c2"
+      class="c2 c3 c4"
       direction="horizontal"
     >
       <span
-        class="c3"
+        class="c5"
       >
         <input
-          class="c4"
+          class="c6"
           type="radio"
         />
         <span
-          class="c5 c6"
+          class="c7 c8"
         />
       </span>
       <div
-        class="c7"
+        class="c9"
       >
         Radio 3
       </div>
@@ -186,20 +186,20 @@ exports[`RadioGroup composition with Radio should render correctly 1`] = `
 `;
 
 exports[`RadioGroup should render vertical radio group 1`] = `
-.c6 {
+.c8 {
   box-sizing: border-box;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
 }
 
-.c2 {
+.c4 {
   display: inline-block;
   position: relative;
   margin-bottom: 1px;
   line-height: 1;
 }
 
-.c5 {
+.c7 {
   display: block;
   position: relative;
   width: 16px;
@@ -214,7 +214,7 @@ exports[`RadioGroup should render vertical radio group 1`] = `
   transition: all 200ms ease 0s;
 }
 
-.c5::after {
+.c7::after {
   content: '';
   position: absolute;
   top: 2px;
@@ -231,7 +231,7 @@ exports[`RadioGroup should render vertical radio group 1`] = `
   transition: all 200ms ease 0s;
 }
 
-.c3 {
+.c5 {
   position: absolute;
   top: 0;
   right: 0;
@@ -242,18 +242,18 @@ exports[`RadioGroup should render vertical radio group 1`] = `
   opacity: 0;
 }
 
-.c3:checked + .c4 {
+.c5:checked + .c6 {
   border-color: #3c5ad0;
 }
 
-.c3:checked + .c4::after {
+.c5:checked + .c6::after {
   opacity: 1;
   -webkit-transform: scale(1);
   -ms-transform: scale(1);
   transform: scale(1);
 }
 
-.c1 {
+.c2 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -266,11 +266,11 @@ exports[`RadioGroup should render vertical radio group 1`] = `
   cursor: pointer;
 }
 
-.c1:hover .c4 {
+.c2:hover .c6 {
   border-color: #3c5ad0;
 }
 
-.c1 + .{
+.c3 + .c1 {
   margin-top: 0.5rem;
 }
 
@@ -289,64 +289,64 @@ exports[`RadioGroup should render vertical radio group 1`] = `
   direction="vertical"
 >
   <label
-    class="c1"
+    class="c1 c2 c3"
     direction="vertical"
   >
     <span
-      class="c2"
+      class="c4"
     >
       <input
-        class="c3"
+        class="c5"
         type="radio"
       />
       <span
-        class="c4 c5"
+        class="c6 c7"
       />
     </span>
     <div
-      class="c6"
+      class="c8"
     >
       radio 1
     </div>
   </label>
   <label
-    class="c1"
+    class="c1 c2 c3"
     direction="vertical"
   >
     <span
-      class="c2"
+      class="c4"
     >
       <input
-        class="c3"
+        class="c5"
         type="radio"
       />
       <span
-        class="c4 c5"
+        class="c6 c7"
       />
     </span>
     <div
-      class="c6"
+      class="c8"
     >
       radio 2
     </div>
   </label>
   <label
-    class="c1"
+    class="c1 c2 c3"
     direction="vertical"
   >
     <span
-      class="c2"
+      class="c4"
     >
       <input
-        class="c3"
+        class="c5"
         type="radio"
       />
       <span
-        class="c4 c5"
+        class="c6 c7"
       />
     </span>
     <div
-      class="c6"
+      class="c8"
     >
       radio 3
     </div>

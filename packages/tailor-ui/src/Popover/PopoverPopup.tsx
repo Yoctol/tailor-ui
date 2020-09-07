@@ -4,14 +4,14 @@ import { Heading } from '../Typography';
 
 import { PopoverHeader, StyledPopover } from './styles';
 
-interface PopoverPopup {
+interface PopoverPopupProps {
   Wrapper?: ComponentType;
   title: ReactNode | ((handleClose: () => void) => ReactNode);
   content: ReactNode | ((handleClose: () => void) => ReactNode);
   handleClose: () => void;
 }
 
-const PopoverPopup = memo<PopoverPopup>(function PopoverPopup({
+const PopoverPopup = memo<PopoverPopupProps>(function PopoverPopup({
   title,
   content,
   handleClose,
