@@ -1,11 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Backdrop should render badge correctly 1`] = `
-.c2 {
+.c0 {
+  box-sizing: border-box;
+}
+
+.c3 {
   box-sizing: border-box;
   color: #ffffff;
   background-color: #fc5475;
   border-color: #ffffff;
+}
+
+.c4 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -23,8 +30,7 @@ exports[`Backdrop should render badge correctly 1`] = `
   line-height: 1;
 }
 
-.c0 {
-  box-sizing: border-box;
+.c1 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -32,14 +38,14 @@ exports[`Backdrop should render badge correctly 1`] = `
   position: relative;
 }
 
-.c0 .c1 {
+.c1 .c2 {
   position: absolute;
   top: 0;
   right: 8px;
 }
 
 <div
-  class="c0"
+  class="c0 c1"
 >
   <button
     type="button"
@@ -47,7 +53,7 @@ exports[`Backdrop should render badge correctly 1`] = `
     btn
   </button>
   <div
-    class="c1 c2"
+    class="c2 c3 c4"
     color="light"
     style="opacity: 1; transform-origin: right; transform: scale(1) translateX(50%);"
   >
@@ -57,11 +63,18 @@ exports[`Backdrop should render badge correctly 1`] = `
 `;
 
 exports[`Backdrop should render customized badge correctly 1`] = `
-.c2 {
+.c0 {
+  box-sizing: border-box;
+}
+
+.c3 {
   box-sizing: border-box;
   color: #ffffff;
   background-color: #40d064;
   border-color: #ffffff;
+}
+
+.c4 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -79,8 +92,7 @@ exports[`Backdrop should render customized badge correctly 1`] = `
   line-height: 1;
 }
 
-.c0 {
-  box-sizing: border-box;
+.c1 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -88,14 +100,14 @@ exports[`Backdrop should render customized badge correctly 1`] = `
   position: relative;
 }
 
-.c0 .c1 {
+.c1 .c2 {
   position: absolute;
   top: 0;
   right: 8px;
 }
 
 <div
-  class="c0"
+  class="c0 c1"
 >
   <button
     type="button"
@@ -103,7 +115,7 @@ exports[`Backdrop should render customized badge correctly 1`] = `
     btn
   </button>
   <div
-    class="c1 c2"
+    class="c2 c3 c4"
     color="light"
     style="opacity: 1; transform-origin: right; transform: scale(1) translateX(50%);"
   >
@@ -118,6 +130,9 @@ exports[`Backdrop should render standalone badge correctly 1`] = `
   color: #ffffff;
   background-color: #fc5475;
   border-color: #ffffff;
+}
+
+.c1 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -136,7 +151,7 @@ exports[`Backdrop should render standalone badge correctly 1`] = `
 }
 
 <div
-  class="c0"
+  class="c0 c1"
   color="light"
   style="opacity: 1; transform-origin: center; transform: scale(1);"
 >

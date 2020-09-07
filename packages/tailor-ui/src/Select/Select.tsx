@@ -126,6 +126,7 @@ const Select = <V extends SelectedValue>({
         setInputValue('');
       }
     },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     [multiple, onChange, onCreateOption, setValue]
   );
 

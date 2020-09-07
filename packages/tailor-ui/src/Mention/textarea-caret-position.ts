@@ -54,6 +54,12 @@ const isFirefox = isBrowser && (window as any).mozInnerScreenX != null;
 // eslint-disable-next-line no-underscore-dangle
 const _parseInt = (str: string) => parseInt(str, 10);
 
+export interface Coordinates {
+  top: number;
+  left: number;
+  height: number;
+}
+
 export function createDebugEle(
   element: HTMLInputElement | HTMLTextAreaElement,
   coordinates: Coordinates
@@ -82,12 +88,6 @@ export function createDebugEle(
   }px`;
   console.log(rect.style.top);
   console.log(rect.style.left);
-}
-
-export interface Coordinates {
-  top: number;
-  left: number;
-  height: number;
 }
 
 export function getCaretCoordinates(
