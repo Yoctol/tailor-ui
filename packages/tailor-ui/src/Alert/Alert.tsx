@@ -1,7 +1,16 @@
 import React, { FC } from 'react';
 
+import { StatusType } from '../types';
+
 import BaseAlert from './BaseAlert';
-import ClosableAlert, { AlertProps } from './ClosableAlert';
+import ClosableAlert, {
+  AlertProps as ClosableAlertProps,
+} from './ClosableAlert';
+
+type AlertProps = Omit<ClosableAlertProps, 'type' | 'closable'> & {
+  type?: StatusType;
+  closable?: boolean;
+};
 
 const Alert: FC<AlertProps> = ({
   type = 'info',
