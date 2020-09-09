@@ -57,6 +57,7 @@ export interface SelectProps<V extends SelectedValue = SelectedValue> {
   }) => ReactNode;
   isValidNewOption?: (value: string) => boolean;
   onCreateOption?: (value: string) => void;
+  onVisibleChange?: (visible: boolean) => void;
   'data-testid'?: string;
 }
 
@@ -82,6 +83,7 @@ const Select = <V extends SelectedValue>({
   formatCreateLabel,
   isValidNewOption,
   onCreateOption,
+  onVisibleChange,
   onBlur,
   ...props
 }: PropsWithChildren<SelectProps<V>>) => {
@@ -100,7 +102,10 @@ const Select = <V extends SelectedValue>({
     if (visible && wrapperRef.current) {
       setSelectWidth(wrapperRef.current.offsetWidth);
     }
-  }, [visible]);
+    if (onVisibleChange) {
+      onVisibleChange(visible);
+    }
+  }, [visible, onVisibleChange]);
 
   const handleChange = useCallback(
     (selection: V | CreateOption) => {
