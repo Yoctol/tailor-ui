@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.34.1](https://github.com/yoctol/tailor-ui/compare/tailor-ui@0.34.0...tailor-ui@0.34.1) (2020-09-09)
+
+
+### Bug Fixes
+
+* **alert:** correct optional types ([3709982](https://github.com/yoctol/tailor-ui/commit/370998279e8354236b2a3d769c880fc58a5de592))
+
+
+
+
+
 # [0.34.0](https://github.com/yoctol/tailor-ui/compare/tailor-ui@0.33.0...tailor-ui@0.34.0) (2020-09-09)
 
 
