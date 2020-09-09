@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.34.0](https://github.com/yoctol/tailor-ui/compare/tailor-ui@0.33.0...tailor-ui@0.34.0) (2020-09-09)
+
+
+### Bug Fixes
+
+* **textfield:** label type ([803134d](https://github.com/yoctol/tailor-ui/commit/803134ddd073ccc6a4501c8106a6d253709f3876))
+* some types ([88ce813](https://github.com/yoctol/tailor-ui/commit/88ce813bfed39580a5979f4543993d9707f88630))
+
+
+### Features
+
+* **select:** add onVisibleChange props ([68e4c36](https://github.com/yoctol/tailor-ui/commit/68e4c3640e730a4613c3c06644592bf412ff27af))
+
+
+
+
+
 # [0.33.0](https://github.com/yoctol/tailor-ui/compare/tailor-ui@0.32.0...tailor-ui@0.33.0) (2020-08-27)
 
 

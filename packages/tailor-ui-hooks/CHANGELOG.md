@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.7.0](https://github.com/Yoctol/tailor-ui/compare/@tailor-ui/hooks@0.6.8...@tailor-ui/hooks@0.7.0) (2020-09-09)
+
+
+### Features
+
+* **select:** add onVisibleChange props ([68e4c36](https://github.com/Yoctol/tailor-ui/commit/68e4c3640e730a4613c3c06644592bf412ff27af))
+
+
+
+
+
 ## [0.6.8](https://github.com/Yoctol/tailor-ui/compare/@tailor-ui/hooks@0.6.7...@tailor-ui/hooks@0.6.8) (2020-08-27)
 
 **Note:** Version bump only for package @tailor-ui/hooks
