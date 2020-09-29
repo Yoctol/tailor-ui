@@ -17,7 +17,7 @@
   ],
   "scripts": {
     "bootstrap": "npx lerna bootstrap",
-    "build": "yarn type-check && lerna run build",
+    "build": "yarn type-check && lerna run build --ignore=tailor-ui-website",
     "clean": "yarn clean:lib && npx lerna clean",
     "clean:lib": "rimraf packages/**/{lib,*.tsbuildinfo}",
     "docs:build": "yarn workspace tailor-ui-website build",
