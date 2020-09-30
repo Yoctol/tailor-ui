@@ -42,7 +42,7 @@ jobs:
           at: .
       - run:
           name: run test
-          command: npm run testonly:cov -- --no-cache --colors
+          command: yarn testonly:cov -- --no-cache --colors
       - store_artifacts:
           path: coverage
           prefix: coverage
@@ -54,7 +54,7 @@ jobs:
           at: .
       - run:
           name: run lint
-          command: npm run lint
+          command: yarn lint
   type-check-node-12:
     <<: *docker_12
     steps:
@@ -63,7 +63,7 @@ jobs:
           at: .
       - run:
           name: run type-check
-          command: npm run type-check
+          command: yarn build:type
 
 workflows:
   version: 2

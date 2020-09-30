@@ -36,15 +36,6 @@ module.exports = {
       'error',
       {
         devDependencies: true,
-        packageDir: [
-          './',
-          './packages/tailor-ui/',
-          './packages/tailor-ui-lab/',
-          './packages/tailor-ui-theme/',
-          './packages/tailor-ui-utils/',
-          './packages/tailor-ui-hooks/',
-          './packages/tailor-ui-formik/',
-        ],
       },
     ],
     'import/extensions': [
@@ -65,17 +56,6 @@ module.exports = {
   },
   settings: {
     'import/resolver': {
-      alias: {
-        map: [
-          ['tailor-ui', './packages/tailor-ui/src'],
-          ['@tailor-ui/lab', './packages/tailor-ui-lab/src'],
-          ['@tailor-ui/theme', './packages/tailor-ui-theme/src'],
-          ['@tailor-ui/utils', './packages/tailor-ui-utils/src'],
-          ['@tailor-ui/hooks', './packages/tailor-ui-hooks/src'],
-          ['@tailor-ui/formik', './packages/tailor-ui-formik/src'],
-        ],
-        extensions: ['.js', '.jsx', '.ts', '.tsx'],
-      },
       node: {
         extensions: ['.js', '.jsx', '.ts', '.tsx'],
       },

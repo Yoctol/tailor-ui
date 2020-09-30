@@ -10,7 +10,7 @@ import React, { useState } from 'react';
 import { LiveEditor, LiveError, LivePreview, LiveProvider } from 'react-live';
 import { MdCode, MdRefresh } from 'react-icons/md';
 
-import { Button, Grid } from 'tailor-ui';
+import { Button, Grid } from '../../../../src';
 
 import styles from './styles.module.css';
 

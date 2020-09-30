@@ -1,17 +1,25 @@
 import commonjs from 'rollup-plugin-commonjs';
-import { sizeSnapshot } from 'rollup-plugin-size-snapshot';
 
-export function rollup({ name }) {
-  return {
-    input: 'lib/index.js',
+const entryPoints = [
+  { input: './lib/index.js', output: './lib/index.cjs.js' },
+  { input: './lib/formik/index.js', output: './lib/formik/index.cjs.js' },
+  { input: './lib/theme/index.js', output: './lib/theme/index.cjs.js' },
+  { input: './lib/utils/index.js', output: './lib/utils/index.cjs.js' },
+  { input: './lib/lab/index.js', output: './lib/lab/index.cjs.js' },
+];
+
+export default function rollup() {
+  return entryPoints.map(({ input, output }) => ({
+    input,
     output: [
       {
-        file: 'lib/index.cjs.js',
-        format: 'umd',
-        name,
-        sourcemap: false,
+        file: output,
+        format: 'cjs',
+        sourcemap: true,
+        exports: 'named',
+        externalLiveBindings: false,
       },
     ],
-    plugins: [sizeSnapshot(), commonjs()],
-  };
+    plugins: [commonjs()],
+  }));
 }

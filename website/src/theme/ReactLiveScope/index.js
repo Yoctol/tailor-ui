@@ -1,3 +1,4 @@
+/* eslint-disable import/no-extraneous-dependencies */
 /**
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
@@ -13,11 +14,10 @@ import * as ReactIconsTi from 'react-icons/ti';
 import * as Yup from 'yup';
 import * as ramda from 'ramda';
 
-import * as TailorUI from 'tailor-ui';
-import * as TailorUIFormik from '@tailor-ui/formik';
-import * as TailorUILab from '@tailor-ui/lab';
-
 import LocaleContext from '../../context/LocaleContext';
+import * as TailorUI from '../../../../src';
+import * as TailorUIFormik from '../../../../src/formik';
+import * as TailorUILab from '../../../../src/lab';
 
 // Add react-live imports you need here
 const ReactLiveScope = {
