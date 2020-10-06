@@ -2,7 +2,7 @@ import createMockRaf, { MockRaf } from '@react-spring/mock-raf';
 import { ReactElement } from 'react';
 import { RenderOptions, render } from '@testing-library/react';
 
-import { UIProvider } from '../packages/tailor-ui/src';
+import { UIProvider } from '../src';
 
 // eslint-disable-next-line import/no-mutable-exports
 let mockRaf: MockRaf & { flushSpring: () => void };

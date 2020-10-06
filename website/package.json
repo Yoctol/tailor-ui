@@ -11,6 +11,7 @@
     "swizzle": "docusaurus swizzle"
   },
   "dependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.10.4",
     "@docusaurus/core": "2.0.0-alpha.63",
     "@docusaurus/preset-classic": "2.0.0-alpha.63",
     "@docusaurus/theme-live-codeblock": "2.0.0-alpha.63"

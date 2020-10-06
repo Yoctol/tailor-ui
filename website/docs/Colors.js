@@ -1,7 +1,7 @@
 /* eslint-disable */
 import React, { useState, useCallback } from 'react';
-import { Flex, Heading, Tooltip } from 'tailor-ui';
-import { theme } from '@tailor-ui/theme';
+import { Flex, Heading, Tooltip } from '../../src';
+import { theme } from '../../src/theme';
 import { readableColor, darken, lighten } from 'polished';
 import styled from 'styled-components';
 

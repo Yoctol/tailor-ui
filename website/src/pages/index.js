@@ -8,6 +8,7 @@
 
 import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
+// eslint-disable-next-line import/no-extraneous-dependencies
 import React from 'react';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import classnames from 'classnames';

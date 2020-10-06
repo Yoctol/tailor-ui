@@ -9,15 +9,15 @@ import AnnouncementBar from '@theme/AnnouncementBar';
 import Footer from '@theme/Footer';
 import Head from '@docusaurus/Head';
 import Navbar from '@theme/Navbar';
+// eslint-disable-next-line import/no-extraneous-dependencies
 import React, { useState } from 'react';
 import ThemeProvider from '@theme/ThemeProvider';
 import UserPreferencesProvider from '@theme/UserPreferencesProvider';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
-import { UIProvider, locales } from 'tailor-ui';
-
 import LocaleContext from '../../context/LocaleContext';
+import { UIProvider, locales } from '../../../../src';
 
 import './styles.css';
 
