@@ -65,6 +65,14 @@ jobs:
           name: run type-check
           command: yarn build:type
 
+  release:
+    <<: *docker_12
+    steps:
+      - checkout
+      - run: yarn
+      - run: yarn build
+      - run: yarn semantic-release || true
+
 workflows:
   version: 2
   test-on-node-12:
@@ -79,3 +87,8 @@ workflows:
       - type-check-node-12:
           requires:
             - build-node-12
+      - release:
+          requires:
+            - test-node-12
+            - lint-node-12
+            - type-check-node-12
