@@ -2,5 +2,7 @@
   "private": true,
   "name": "tailor-ui/lab",
   "main": "../lib/lab/index.cjs.js",
-  "module": "../lib/lab/index.js"
+  "module": "../lib/lab/index.js",
+  "sideEffects": false,
+  "typings": "lib/lab/index.d.ts"
 }
