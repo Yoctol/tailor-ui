@@ -2,8 +2,5 @@
   "private": true,
   "name": "tailor-ui/formik",
   "main": "../lib/formik/index.cjs.js",
-  "module": "../lib/formik/index.js",
-  "files": [
-    "../lib/formik"
-  ]
+  "module": "../lib/formik/index.js"
 }

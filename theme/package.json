@@ -2,8 +2,5 @@
   "private": true,
   "name": "tailor-ui/theme",
   "main": "../lib/theme/index.cjs.js",
-  "module": "../lib/theme/index.js",
-  "files": [
-    "../lib/theme"
-  ]
+  "module": "../lib/theme/index.js"
 }
