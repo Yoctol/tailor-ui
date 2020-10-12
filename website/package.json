@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "tailor-ui-website",
-  "version": "0.2.2",
+  "version": "0.0.1",
   "scripts": {
     "build": "docusaurus build",
     "deploy": "docusaurus deploy",
@@ -12,9 +12,9 @@
   },
   "dependencies": {
     "@babel/plugin-proposal-class-properties": "^7.10.4",
-    "@docusaurus/core": "2.0.0-alpha.63",
-    "@docusaurus/preset-classic": "2.0.0-alpha.63",
-    "@docusaurus/theme-live-codeblock": "2.0.0-alpha.63"
+    "@docusaurus/core": "2.0.0-alpha.65",
+    "@docusaurus/preset-classic": "2.0.0-alpha.65",
+    "@docusaurus/theme-live-codeblock": "2.0.0-alpha.65"
   },
   "browserslist": {
     "production": [
