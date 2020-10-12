@@ -4,5 +4,5 @@
   "main": "../lib/formik/index.cjs.js",
   "module": "../lib/formik/index.js",
   "sideEffects": false,
-  "typings": "lib/formik/index.d.ts"
+  "typings": "../lib/formik/index.d.ts"
 }

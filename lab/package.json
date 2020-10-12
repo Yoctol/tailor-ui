@@ -4,5 +4,5 @@
   "main": "../lib/lab/index.cjs.js",
   "module": "../lib/lab/index.js",
   "sideEffects": false,
-  "typings": "lib/lab/index.d.ts"
+  "typings": "../lib/lab/index.d.ts"
 }
