@@ -52,7 +52,6 @@
     "polished": "^4.0.1",
     "prop-types": "^15.7.1",
     "ramda": "^0.27.1",
-    "rc-calendar": "^9.15.11",
     "rc-picker": "^2.2.1",
     "rc-time-picker": "^3.7.3",
     "react": "^16.13.1",

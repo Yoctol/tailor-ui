@@ -1,5 +1,5 @@
 import 'styled-components';
-import { ThemeType } from '../packages/tailor-ui-theme/src';
+import { ThemeType } from '../src/theme';
 
 declare module 'styled-components' {
   export interface DefaultTheme extends ThemeType {}

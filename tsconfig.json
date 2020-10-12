@@ -27,7 +27,7 @@
     "paths": {
       "*": ["./types/*"],
       "test/test-utils": ["./test/test-utils"],
-      "rc-time-picker/*": ["./types/rc-time-picker"]
+      "react-intl-tel-input": ["./types/react-intl-tel-input"]
     },
     "types": ["node", "jest"],
     "allowSyntheticDefaultImports": true,
