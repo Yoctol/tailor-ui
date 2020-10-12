@@ -1,3 +1,10 @@
+## [1.0.4](https://github.com/yoctol/tailor-ui/compare/v1.0.3...v1.0.4) (2020-10-12)
+
+
+### Bug Fixes
+
+* remove useless packages ([5060745](https://github.com/yoctol/tailor-ui/commit/5060745d5005369eade1fe17a154fe3a4cb5f5ed))
+
 ## [0.2.11](https://github.com/yoctol/tailor-ui/compare/v0.2.10...v0.2.11) (2019-02-13)
 
 ### Bug Fixes
