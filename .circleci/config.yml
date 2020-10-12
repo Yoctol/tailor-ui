@@ -34,6 +34,7 @@ jobs:
           paths:
             - node_modules
             - lib
+
   test-node-12:
     <<: *docker_12
     steps:
@@ -46,6 +47,7 @@ jobs:
       - store_artifacts:
           path: coverage
           prefix: coverage
+
   lint-node-12:
     <<: *docker_12
     steps:
@@ -55,23 +57,16 @@ jobs:
       - run:
           name: run lint
           command: yarn lint
-  type-check-node-12:
+
+  release:
     <<: *docker_12
     steps:
       - checkout
       - attach_workspace:
           at: .
       - run:
-          name: run type-check
-          command: yarn build:type
-
-  release:
-    <<: *docker_12
-    steps:
-      - checkout
-      - run: yarn
-      - run: yarn build
-      - run: yarn semantic-release
+        name: run release
+        command: yarn semantic-release
 
 workflows:
   version: 2
@@ -84,11 +79,7 @@ workflows:
       - lint-node-12:
           requires:
             - build-node-12
-      - type-check-node-12:
-          requires:
-            - build-node-12
       - release:
           requires:
             - test-node-12
             - lint-node-12
-            - type-check-node-12
