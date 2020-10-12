@@ -71,7 +71,7 @@ jobs:
       - checkout
       - run: yarn
       - run: yarn build
-      - run: yarn semantic-release || true
+      - run: yarn semantic-release
 
 workflows:
   version: 2

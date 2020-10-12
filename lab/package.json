@@ -1,0 +1,9 @@
+{
+  "private": true,
+  "name": "tailor-ui/lab",
+  "main": "../lib/lab/index.cjs.js",
+  "module": "../lib/lab/index.js",
+  "files": [
+    "../lib/lab"
+  ]
+}
