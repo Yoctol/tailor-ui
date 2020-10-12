@@ -65,8 +65,8 @@ jobs:
       - attach_workspace:
           at: .
       - run:
-        name: run release
-        command: yarn semantic-release
+          name: run release
+          command: yarn semantic-release
 
 workflows:
   version: 2
