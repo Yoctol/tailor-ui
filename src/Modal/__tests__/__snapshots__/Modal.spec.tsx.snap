@@ -70,7 +70,7 @@ exports[`Modal should render correctly 1`] = `
   margin-right: 1rem;
   padding-top: 1rem;
   border-top: 1px solid;
-  border-color: #e0e0e0;
+  border-color: #c4cfdd;
 }
 
 .c8 {
@@ -85,7 +85,7 @@ exports[`Modal should render correctly 1`] = `
 .c5 {
   font-size: 1.25rem;
   margin: 0;
-  color: #373737;
+  color: #283040;
   font-weight: bold;
   line-height: 1.5;
 }
@@ -123,7 +123,7 @@ exports[`Modal should render correctly 1`] = `
   height: 2.25rem;
   padding: 0 0.75rem;
   font-size: 1rem;
-  background-color: #3c5ad0;
+  background-color: #328ef5;
   color: #ffffff;
   font-weight: bold;
   margin-left: 1rem;
@@ -136,15 +136,15 @@ exports[`Modal should render correctly 1`] = `
 .c10:disabled,
 .c10[disabled] {
   opacity: 0.85;
-  background-color: #e0e0e0;
-  color: #8b8b8b;
+  background-color: #c4cfdd;
+  color: #67758d;
   cursor: default;
   pointer-events: none;
 }
 
 .c10:disabled .sc-10g5g0q-0 svg,
 .c10[disabled] .sc-10g5g0q-0 svg {
-  fill: #8b8b8b;
+  fill: #67758d;
 }
 
 .c10::before {
@@ -167,11 +167,11 @@ exports[`Modal should render correctly 1`] = `
 }
 
 .c10:hover {
-  background-color: #516bd5;
+  background-color: #4a9bf6;
 }
 
 .c10:active {
-  background-color: #2f4dc3;
+  background-color: #1a81f4;
 }
 
 .c0 {
@@ -374,7 +374,7 @@ exports[`Modal should render correctly with lg size 1`] = `
   margin-right: 1rem;
   padding-top: 1rem;
   border-top: 1px solid;
-  border-color: #e0e0e0;
+  border-color: #c4cfdd;
 }
 
 .c7 {
@@ -389,7 +389,7 @@ exports[`Modal should render correctly with lg size 1`] = `
 .c4 {
   font-size: 1.25rem;
   margin: 0;
-  color: #373737;
+  color: #283040;
   font-weight: bold;
   line-height: 1.5;
 }
@@ -427,7 +427,7 @@ exports[`Modal should render correctly with lg size 1`] = `
   height: 2.25rem;
   padding: 0 0.75rem;
   font-size: 1rem;
-  background-color: #3c5ad0;
+  background-color: #328ef5;
   color: #ffffff;
   font-weight: bold;
   margin-left: 1rem;
@@ -440,15 +440,15 @@ exports[`Modal should render correctly with lg size 1`] = `
 .c9:disabled,
 .c9[disabled] {
   opacity: 0.85;
-  background-color: #e0e0e0;
-  color: #8b8b8b;
+  background-color: #c4cfdd;
+  color: #67758d;
   cursor: default;
   pointer-events: none;
 }
 
 .c9:disabled .sc-10g5g0q-0 svg,
 .c9[disabled] .sc-10g5g0q-0 svg {
-  fill: #8b8b8b;
+  fill: #67758d;
 }
 
 .c9::before {
@@ -471,11 +471,11 @@ exports[`Modal should render correctly with lg size 1`] = `
 }
 
 .c9:hover {
-  background-color: #516bd5;
+  background-color: #4a9bf6;
 }
 
 .c9:active {
-  background-color: #2f4dc3;
+  background-color: #1a81f4;
 }
 
 .c0 {
@@ -669,7 +669,7 @@ exports[`Modal should render with error status 1`] = `
   margin-right: 1rem;
   padding-top: 1rem;
   border-top: 1px solid;
-  border-color: #e0e0e0;
+  border-color: #c4cfdd;
 }
 
 .c14 {
@@ -692,7 +692,7 @@ exports[`Modal should render with error status 1`] = `
 }
 
 .c6 svg {
-  fill: #8b8b8b;
+  fill: #67758d;
   vertical-align: middle;
   pointer-events: none;
   -webkit-transition: all 200ms ease 0s;
@@ -700,7 +700,7 @@ exports[`Modal should render with error status 1`] = `
 }
 
 .c6.c6.c6 svg {
-  fill: #fc5475;
+  fill: #ff5757;
   width: 32px;
   height: 32px;
 }
@@ -716,7 +716,7 @@ exports[`Modal should render with error status 1`] = `
 }
 
 .c11 svg {
-  fill: #8b8b8b;
+  fill: #67758d;
   vertical-align: middle;
   pointer-events: none;
   -webkit-transition: all 200ms ease 0s;
@@ -731,7 +731,7 @@ exports[`Modal should render with error status 1`] = `
 .c8 {
   font-size: 1.25rem;
   margin: 0;
-  color: #373737;
+  color: #283040;
   font-weight: bold;
   line-height: 1.5;
 }
@@ -769,8 +769,8 @@ exports[`Modal should render with error status 1`] = `
   transition: all 200ms ease 0s;
   width: 2.25rem;
   height: 2.25rem;
-  background-color: #e8ecf5;
-  color: #6B88c5;
+  background-color: #eef1f8;
+  color: #3990cd;
   font-weight: bold;
 }
 
@@ -781,15 +781,15 @@ exports[`Modal should render with error status 1`] = `
 .c10:disabled,
 .c10[disabled] {
   opacity: 0.85;
-  background-color: #e0e0e0;
-  color: #8b8b8b;
+  background-color: #c4cfdd;
+  color: #67758d;
   cursor: default;
   pointer-events: none;
 }
 
 .c10:disabled .c5 svg,
 .c10[disabled] .c5 svg {
-  fill: #8b8b8b;
+  fill: #67758d;
 }
 
 .c10::before {
@@ -808,15 +808,15 @@ exports[`Modal should render with error status 1`] = `
 }
 
 .c10 .c5 svg {
-  fill: #6B88c5;
+  fill: #3990cd;
 }
 
 .c10:hover {
-  background-color: #fafbfd;
+  background-color: #fff;
 }
 
 .c10:active {
-  background-color: #d6dded;
+  background-color: #dce2f1;
 }
 
 .c16 {
@@ -852,8 +852,8 @@ exports[`Modal should render with error status 1`] = `
   height: 2.25rem;
   padding: 0 0.75rem;
   font-size: 1rem;
-  background-color: #e8ecf5;
-  color: #6B88c5;
+  background-color: #eef1f8;
+  color: #3990cd;
   font-weight: bold;
 }
 
@@ -864,15 +864,15 @@ exports[`Modal should render with error status 1`] = `
 .c16:disabled,
 .c16[disabled] {
   opacity: 0.85;
-  background-color: #e0e0e0;
-  color: #8b8b8b;
+  background-color: #c4cfdd;
+  color: #67758d;
   cursor: default;
   pointer-events: none;
 }
 
 .c16:disabled .c5 svg,
 .c16[disabled] .c5 svg {
-  fill: #8b8b8b;
+  fill: #67758d;
 }
 
 .c16::before {
@@ -891,15 +891,15 @@ exports[`Modal should render with error status 1`] = `
 }
 
 .c16 .c5 svg {
-  fill: #6B88c5;
+  fill: #3990cd;
 }
 
 .c16:hover {
-  background-color: #fafbfd;
+  background-color: #fff;
 }
 
 .c16:active {
-  background-color: #d6dded;
+  background-color: #dce2f1;
 }
 
 .c17 {
@@ -935,7 +935,7 @@ exports[`Modal should render with error status 1`] = `
   height: 2.25rem;
   padding: 0 0.75rem;
   font-size: 1rem;
-  background-color: #3c5ad0;
+  background-color: #328ef5;
   color: #ffffff;
   font-weight: bold;
   margin-left: 1rem;
@@ -948,15 +948,15 @@ exports[`Modal should render with error status 1`] = `
 .c17:disabled,
 .c17[disabled] {
   opacity: 0.85;
-  background-color: #e0e0e0;
-  color: #8b8b8b;
+  background-color: #c4cfdd;
+  color: #67758d;
   cursor: default;
   pointer-events: none;
 }
 
 .c17:disabled .c5 svg,
 .c17[disabled] .c5 svg {
-  fill: #8b8b8b;
+  fill: #67758d;
 }
 
 .c17::before {
@@ -979,11 +979,11 @@ exports[`Modal should render with error status 1`] = `
 }
 
 .c17:hover {
-  background-color: #516bd5;
+  background-color: #4a9bf6;
 }
 
 .c17:active {
-  background-color: #2f4dc3;
+  background-color: #1a81f4;
 }
 
 .c0 {
@@ -1000,7 +1000,7 @@ exports[`Modal should render with error status 1`] = `
   width: 100%;
   height: 48px;
   border-radius: 1rem;
-  background-color: #fc5475;
+  background-color: #ff5757;
 }
 
 .c2 {
@@ -1260,7 +1260,7 @@ exports[`Modal should render with info status 1`] = `
   margin-right: 1rem;
   padding-top: 1rem;
   border-top: 1px solid;
-  border-color: #e0e0e0;
+  border-color: #c4cfdd;
 }
 
 .c14 {
@@ -1283,7 +1283,7 @@ exports[`Modal should render with info status 1`] = `
 }
 
 .c6 svg {
-  fill: #8b8b8b;
+  fill: #67758d;
   vertical-align: middle;
   pointer-events: none;
   -webkit-transition: all 200ms ease 0s;
@@ -1291,7 +1291,7 @@ exports[`Modal should render with info status 1`] = `
 }
 
 .c6.c6.c6 svg {
-  fill: #3c5ad0;
+  fill: #328ef5;
   width: 32px;
   height: 32px;
 }
@@ -1307,7 +1307,7 @@ exports[`Modal should render with info status 1`] = `
 }
 
 .c11 svg {
-  fill: #8b8b8b;
+  fill: #67758d;
   vertical-align: middle;
   pointer-events: none;
   -webkit-transition: all 200ms ease 0s;
@@ -1322,7 +1322,7 @@ exports[`Modal should render with info status 1`] = `
 .c8 {
   font-size: 1.25rem;
   margin: 0;
-  color: #373737;
+  color: #283040;
   font-weight: bold;
   line-height: 1.5;
 }
@@ -1360,8 +1360,8 @@ exports[`Modal should render with info status 1`] = `
   transition: all 200ms ease 0s;
   width: 2.25rem;
   height: 2.25rem;
-  background-color: #e8ecf5;
-  color: #6B88c5;
+  background-color: #eef1f8;
+  color: #3990cd;
   font-weight: bold;
 }
 
@@ -1372,15 +1372,15 @@ exports[`Modal should render with info status 1`] = `
 .c10:disabled,
 .c10[disabled] {
   opacity: 0.85;
-  background-color: #e0e0e0;
-  color: #8b8b8b;
+  background-color: #c4cfdd;
+  color: #67758d;
   cursor: default;
   pointer-events: none;
 }
 
 .c10:disabled .c5 svg,
 .c10[disabled] .c5 svg {
-  fill: #8b8b8b;
+  fill: #67758d;
 }
 
 .c10::before {
@@ -1399,15 +1399,15 @@ exports[`Modal should render with info status 1`] = `
 }
 
 .c10 .c5 svg {
-  fill: #6B88c5;
+  fill: #3990cd;
 }
 
 .c10:hover {
-  background-color: #fafbfd;
+  background-color: #fff;
 }
 
 .c10:active {
-  background-color: #d6dded;
+  background-color: #dce2f1;
 }
 
 .c16 {
@@ -1443,8 +1443,8 @@ exports[`Modal should render with info status 1`] = `
   height: 2.25rem;
   padding: 0 0.75rem;
   font-size: 1rem;
-  background-color: #e8ecf5;
-  color: #6B88c5;
+  background-color: #eef1f8;
+  color: #3990cd;
   font-weight: bold;
 }
 
@@ -1455,15 +1455,15 @@ exports[`Modal should render with info status 1`] = `
 .c16:disabled,
 .c16[disabled] {
   opacity: 0.85;
-  background-color: #e0e0e0;
-  color: #8b8b8b;
+  background-color: #c4cfdd;
+  color: #67758d;
   cursor: default;
   pointer-events: none;
 }
 
 .c16:disabled .c5 svg,
 .c16[disabled] .c5 svg {
-  fill: #8b8b8b;
+  fill: #67758d;
 }
 
 .c16::before {
@@ -1482,15 +1482,15 @@ exports[`Modal should render with info status 1`] = `
 }
 
 .c16 .c5 svg {
-  fill: #6B88c5;
+  fill: #3990cd;
 }
 
 .c16:hover {
-  background-color: #fafbfd;
+  background-color: #fff;
 }
 
 .c16:active {
-  background-color: #d6dded;
+  background-color: #dce2f1;
 }
 
 .c17 {
@@ -1526,7 +1526,7 @@ exports[`Modal should render with info status 1`] = `
   height: 2.25rem;
   padding: 0 0.75rem;
   font-size: 1rem;
-  background-color: #3c5ad0;
+  background-color: #328ef5;
   color: #ffffff;
   font-weight: bold;
   margin-left: 1rem;
@@ -1539,15 +1539,15 @@ exports[`Modal should render with info status 1`] = `
 .c17:disabled,
 .c17[disabled] {
   opacity: 0.85;
-  background-color: #e0e0e0;
-  color: #8b8b8b;
+  background-color: #c4cfdd;
+  color: #67758d;
   cursor: default;
   pointer-events: none;
 }
 
 .c17:disabled .c5 svg,
 .c17[disabled] .c5 svg {
-  fill: #8b8b8b;
+  fill: #67758d;
 }
 
 .c17::before {
@@ -1570,11 +1570,11 @@ exports[`Modal should render with info status 1`] = `
 }
 
 .c17:hover {
-  background-color: #516bd5;
+  background-color: #4a9bf6;
 }
 
 .c17:active {
-  background-color: #2f4dc3;
+  background-color: #1a81f4;
 }
 
 .c0 {
@@ -1591,7 +1591,7 @@ exports[`Modal should render with info status 1`] = `
   width: 100%;
   height: 48px;
   border-radius: 1rem;
-  background-color: #3c5ad0;
+  background-color: #328ef5;
 }
 
 .c2 {
@@ -1842,7 +1842,7 @@ exports[`Modal should render with props closable 1`] = `
   margin-right: 1rem;
   padding-top: 1rem;
   border-top: 1px solid;
-  border-color: #e0e0e0;
+  border-color: #c4cfdd;
 }
 
 .c11 {
@@ -1865,7 +1865,7 @@ exports[`Modal should render with props closable 1`] = `
 }
 
 .c8 svg {
-  fill: #8b8b8b;
+  fill: #67758d;
   vertical-align: middle;
   pointer-events: none;
   -webkit-transition: all 200ms ease 0s;
@@ -1880,7 +1880,7 @@ exports[`Modal should render with props closable 1`] = `
 .c4 {
   font-size: 1.25rem;
   margin: 0;
-  color: #373737;
+  color: #283040;
   font-weight: bold;
   line-height: 1.5;
 }
@@ -1918,8 +1918,8 @@ exports[`Modal should render with props closable 1`] = `
   transition: all 200ms ease 0s;
   width: 2.25rem;
   height: 2.25rem;
-  background-color: #e8ecf5;
-  color: #6B88c5;
+  background-color: #eef1f8;
+  color: #3990cd;
   font-weight: bold;
 }
 
@@ -1930,15 +1930,15 @@ exports[`Modal should render with props closable 1`] = `
 .c6:disabled,
 .c6[disabled] {
   opacity: 0.85;
-  background-color: #e0e0e0;
-  color: #8b8b8b;
+  background-color: #c4cfdd;
+  color: #67758d;
   cursor: default;
   pointer-events: none;
 }
 
 .c6:disabled .c7 svg,
 .c6[disabled] .c7 svg {
-  fill: #8b8b8b;
+  fill: #67758d;
 }
 
 .c6::before {
@@ -1957,15 +1957,15 @@ exports[`Modal should render with props closable 1`] = `
 }
 
 .c6 .c7 svg {
-  fill: #6B88c5;
+  fill: #3990cd;
 }
 
 .c6:hover {
-  background-color: #fafbfd;
+  background-color: #fff;
 }
 
 .c6:active {
-  background-color: #d6dded;
+  background-color: #dce2f1;
 }
 
 .c13 {
@@ -2001,8 +2001,8 @@ exports[`Modal should render with props closable 1`] = `
   height: 2.25rem;
   padding: 0 0.75rem;
   font-size: 1rem;
-  background-color: #e8ecf5;
-  color: #6B88c5;
+  background-color: #eef1f8;
+  color: #3990cd;
   font-weight: bold;
 }
 
@@ -2013,15 +2013,15 @@ exports[`Modal should render with props closable 1`] = `
 .c13:disabled,
 .c13[disabled] {
   opacity: 0.85;
-  background-color: #e0e0e0;
-  color: #8b8b8b;
+  background-color: #c4cfdd;
+  color: #67758d;
   cursor: default;
   pointer-events: none;
 }
 
 .c13:disabled .c7 svg,
 .c13[disabled] .c7 svg {
-  fill: #8b8b8b;
+  fill: #67758d;
 }
 
 .c13::before {
@@ -2040,15 +2040,15 @@ exports[`Modal should render with props closable 1`] = `
 }
 
 .c13 .c7 svg {
-  fill: #6B88c5;
+  fill: #3990cd;
 }
 
 .c13:hover {
-  background-color: #fafbfd;
+  background-color: #fff;
 }
 
 .c13:active {
-  background-color: #d6dded;
+  background-color: #dce2f1;
 }
 
 .c14 {
@@ -2084,7 +2084,7 @@ exports[`Modal should render with props closable 1`] = `
   height: 2.25rem;
   padding: 0 0.75rem;
   font-size: 1rem;
-  background-color: #3c5ad0;
+  background-color: #328ef5;
   color: #ffffff;
   font-weight: bold;
   margin-left: 1rem;
@@ -2097,15 +2097,15 @@ exports[`Modal should render with props closable 1`] = `
 .c14:disabled,
 .c14[disabled] {
   opacity: 0.85;
-  background-color: #e0e0e0;
-  color: #8b8b8b;
+  background-color: #c4cfdd;
+  color: #67758d;
   cursor: default;
   pointer-events: none;
 }
 
 .c14:disabled .c7 svg,
 .c14[disabled] .c7 svg {
-  fill: #8b8b8b;
+  fill: #67758d;
 }
 
 .c14::before {
@@ -2128,11 +2128,11 @@ exports[`Modal should render with props closable 1`] = `
 }
 
 .c14:hover {
-  background-color: #516bd5;
+  background-color: #4a9bf6;
 }
 
 .c14:active {
-  background-color: #2f4dc3;
+  background-color: #1a81f4;
 }
 
 .c0 {
@@ -2374,7 +2374,7 @@ exports[`Modal should render with success status 1`] = `
   margin-right: 1rem;
   padding-top: 1rem;
   border-top: 1px solid;
-  border-color: #e0e0e0;
+  border-color: #c4cfdd;
 }
 
 .c14 {
@@ -2397,7 +2397,7 @@ exports[`Modal should render with success status 1`] = `
 }
 
 .c6 svg {
-  fill: #8b8b8b;
+  fill: #67758d;
   vertical-align: middle;
   pointer-events: none;
   -webkit-transition: all 200ms ease 0s;
@@ -2405,7 +2405,7 @@ exports[`Modal should render with success status 1`] = `
 }
 
 .c6.c6.c6 svg {
-  fill: #40d064;
+  fill: #51c81c;
   width: 32px;
   height: 32px;
 }
@@ -2421,7 +2421,7 @@ exports[`Modal should render with success status 1`] = `
 }
 
 .c11 svg {
-  fill: #8b8b8b;
+  fill: #67758d;
   vertical-align: middle;
   pointer-events: none;
   -webkit-transition: all 200ms ease 0s;
@@ -2436,7 +2436,7 @@ exports[`Modal should render with success status 1`] = `
 .c8 {
   font-size: 1.25rem;
   margin: 0;
-  color: #373737;
+  color: #283040;
   font-weight: bold;
   line-height: 1.5;
 }
@@ -2474,8 +2474,8 @@ exports[`Modal should render with success status 1`] = `
   transition: all 200ms ease 0s;
   width: 2.25rem;
   height: 2.25rem;
-  background-color: #e8ecf5;
-  color: #6B88c5;
+  background-color: #eef1f8;
+  color: #3990cd;
   font-weight: bold;
 }
 
@@ -2486,15 +2486,15 @@ exports[`Modal should render with success status 1`] = `
 .c10:disabled,
 .c10[disabled] {
   opacity: 0.85;
-  background-color: #e0e0e0;
-  color: #8b8b8b;
+  background-color: #c4cfdd;
+  color: #67758d;
   cursor: default;
   pointer-events: none;
 }
 
 .c10:disabled .c5 svg,
 .c10[disabled] .c5 svg {
-  fill: #8b8b8b;
+  fill: #67758d;
 }
 
 .c10::before {
@@ -2513,15 +2513,15 @@ exports[`Modal should render with success status 1`] = `
 }
 
 .c10 .c5 svg {
-  fill: #6B88c5;
+  fill: #3990cd;
 }
 
 .c10:hover {
-  background-color: #fafbfd;
+  background-color: #fff;
 }
 
 .c10:active {
-  background-color: #d6dded;
+  background-color: #dce2f1;
 }
 
 .c16 {
@@ -2557,8 +2557,8 @@ exports[`Modal should render with success status 1`] = `
   height: 2.25rem;
   padding: 0 0.75rem;
   font-size: 1rem;
-  background-color: #e8ecf5;
-  color: #6B88c5;
+  background-color: #eef1f8;
+  color: #3990cd;
   font-weight: bold;
 }
 
@@ -2569,15 +2569,15 @@ exports[`Modal should render with success status 1`] = `
 .c16:disabled,
 .c16[disabled] {
   opacity: 0.85;
-  background-color: #e0e0e0;
-  color: #8b8b8b;
+  background-color: #c4cfdd;
+  color: #67758d;
   cursor: default;
   pointer-events: none;
 }
 
 .c16:disabled .c5 svg,
 .c16[disabled] .c5 svg {
-  fill: #8b8b8b;
+  fill: #67758d;
 }
 
 .c16::before {
@@ -2596,15 +2596,15 @@ exports[`Modal should render with success status 1`] = `
 }
 
 .c16 .c5 svg {
-  fill: #6B88c5;
+  fill: #3990cd;
 }
 
 .c16:hover {
-  background-color: #fafbfd;
+  background-color: #fff;
 }
 
 .c16:active {
-  background-color: #d6dded;
+  background-color: #dce2f1;
 }
 
 .c17 {
@@ -2640,7 +2640,7 @@ exports[`Modal should render with success status 1`] = `
   height: 2.25rem;
   padding: 0 0.75rem;
   font-size: 1rem;
-  background-color: #3c5ad0;
+  background-color: #328ef5;
   color: #ffffff;
   font-weight: bold;
   margin-left: 1rem;
@@ -2653,15 +2653,15 @@ exports[`Modal should render with success status 1`] = `
 .c17:disabled,
 .c17[disabled] {
   opacity: 0.85;
-  background-color: #e0e0e0;
-  color: #8b8b8b;
+  background-color: #c4cfdd;
+  color: #67758d;
   cursor: default;
   pointer-events: none;
 }
 
 .c17:disabled .c5 svg,
 .c17[disabled] .c5 svg {
-  fill: #8b8b8b;
+  fill: #67758d;
 }
 
 .c17::before {
@@ -2684,11 +2684,11 @@ exports[`Modal should render with success status 1`] = `
 }
 
 .c17:hover {
-  background-color: #516bd5;
+  background-color: #4a9bf6;
 }
 
 .c17:active {
-  background-color: #2f4dc3;
+  background-color: #1a81f4;
 }
 
 .c0 {
@@ -2705,7 +2705,7 @@ exports[`Modal should render with success status 1`] = `
   width: 100%;
   height: 48px;
   border-radius: 1rem;
-  background-color: #40d064;
+  background-color: #51c81c;
 }
 
 .c2 {
@@ -2965,7 +2965,7 @@ exports[`Modal should render with warning status 1`] = `
   margin-right: 1rem;
   padding-top: 1rem;
   border-top: 1px solid;
-  border-color: #e0e0e0;
+  border-color: #c4cfdd;
 }
 
 .c14 {
@@ -2988,7 +2988,7 @@ exports[`Modal should render with warning status 1`] = `
 }
 
 .c6 svg {
-  fill: #8b8b8b;
+  fill: #67758d;
   vertical-align: middle;
   pointer-events: none;
   -webkit-transition: all 200ms ease 0s;
@@ -2996,7 +2996,7 @@ exports[`Modal should render with warning status 1`] = `
 }
 
 .c6.c6.c6 svg {
-  fill: #f6a700;
+  fill: #fcb41d;
   width: 32px;
   height: 32px;
 }
@@ -3012,7 +3012,7 @@ exports[`Modal should render with warning status 1`] = `
 }
 
 .c11 svg {
-  fill: #8b8b8b;
+  fill: #67758d;
   vertical-align: middle;
   pointer-events: none;
   -webkit-transition: all 200ms ease 0s;
@@ -3027,7 +3027,7 @@ exports[`Modal should render with warning status 1`] = `
 .c8 {
   font-size: 1.25rem;
   margin: 0;
-  color: #373737;
+  color: #283040;
   font-weight: bold;
   line-height: 1.5;
 }
@@ -3065,8 +3065,8 @@ exports[`Modal should render with warning status 1`] = `
   transition: all 200ms ease 0s;
   width: 2.25rem;
   height: 2.25rem;
-  background-color: #e8ecf5;
-  color: #6B88c5;
+  background-color: #eef1f8;
+  color: #3990cd;
   font-weight: bold;
 }
 
@@ -3077,15 +3077,15 @@ exports[`Modal should render with warning status 1`] = `
 .c10:disabled,
 .c10[disabled] {
   opacity: 0.85;
-  background-color: #e0e0e0;
-  color: #8b8b8b;
+  background-color: #c4cfdd;
+  color: #67758d;
   cursor: default;
   pointer-events: none;
 }
 
 .c10:disabled .c5 svg,
 .c10[disabled] .c5 svg {
-  fill: #8b8b8b;
+  fill: #67758d;
 }
 
 .c10::before {
@@ -3104,15 +3104,15 @@ exports[`Modal should render with warning status 1`] = `
 }
 
 .c10 .c5 svg {
-  fill: #6B88c5;
+  fill: #3990cd;
 }
 
 .c10:hover {
-  background-color: #fafbfd;
+  background-color: #fff;
 }
 
 .c10:active {
-  background-color: #d6dded;
+  background-color: #dce2f1;
 }
 
 .c16 {
@@ -3148,8 +3148,8 @@ exports[`Modal should render with warning status 1`] = `
   height: 2.25rem;
   padding: 0 0.75rem;
   font-size: 1rem;
-  background-color: #e8ecf5;
-  color: #6B88c5;
+  background-color: #eef1f8;
+  color: #3990cd;
   font-weight: bold;
 }
 
@@ -3160,15 +3160,15 @@ exports[`Modal should render with warning status 1`] = `
 .c16:disabled,
 .c16[disabled] {
   opacity: 0.85;
-  background-color: #e0e0e0;
-  color: #8b8b8b;
+  background-color: #c4cfdd;
+  color: #67758d;
   cursor: default;
   pointer-events: none;
 }
 
 .c16:disabled .c5 svg,
 .c16[disabled] .c5 svg {
-  fill: #8b8b8b;
+  fill: #67758d;
 }
 
 .c16::before {
@@ -3187,15 +3187,15 @@ exports[`Modal should render with warning status 1`] = `
 }
 
 .c16 .c5 svg {
-  fill: #6B88c5;
+  fill: #3990cd;
 }
 
 .c16:hover {
-  background-color: #fafbfd;
+  background-color: #fff;
 }
 
 .c16:active {
-  background-color: #d6dded;
+  background-color: #dce2f1;
 }
 
 .c17 {
@@ -3231,7 +3231,7 @@ exports[`Modal should render with warning status 1`] = `
   height: 2.25rem;
   padding: 0 0.75rem;
   font-size: 1rem;
-  background-color: #3c5ad0;
+  background-color: #328ef5;
   color: #ffffff;
   font-weight: bold;
   margin-left: 1rem;
@@ -3244,15 +3244,15 @@ exports[`Modal should render with warning status 1`] = `
 .c17:disabled,
 .c17[disabled] {
   opacity: 0.85;
-  background-color: #e0e0e0;
-  color: #8b8b8b;
+  background-color: #c4cfdd;
+  color: #67758d;
   cursor: default;
   pointer-events: none;
 }
 
 .c17:disabled .c5 svg,
 .c17[disabled] .c5 svg {
-  fill: #8b8b8b;
+  fill: #67758d;
 }
 
 .c17::before {
@@ -3275,11 +3275,11 @@ exports[`Modal should render with warning status 1`] = `
 }
 
 .c17:hover {
-  background-color: #516bd5;
+  background-color: #4a9bf6;
 }
 
 .c17:active {
-  background-color: #2f4dc3;
+  background-color: #1a81f4;
 }
 
 .c0 {
@@ -3296,7 +3296,7 @@ exports[`Modal should render with warning status 1`] = `
   width: 100%;
   height: 48px;
   border-radius: 1rem;
-  background-color: #f6a700;
+  background-color: #fcb41d;
 }
 
 .c2 {

@@ -2,7 +2,7 @@
 
 exports[`Text should render correctly 1`] = `
 .c0 {
-  color: #184480;
+  color: #1d70b8;
   -webkit-letter-spacing: 1.5px;
   -moz-letter-spacing: 1.5px;
   -ms-letter-spacing: 1.5px;

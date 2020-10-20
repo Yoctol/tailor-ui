@@ -22,9 +22,9 @@ exports[`Radio should render correctly 1`] = `
   padding: 0;
   border: 1px solid;
   border-radius: 50%;
-  border-color: #bfbfbf;
+  border-color: #97a4ba;
   background-color: #ffffff;
-  color: #373737;
+  color: #283040;
   -webkit-transition: all 200ms ease 0s;
   transition: all 200ms ease 0s;
 }
@@ -38,7 +38,7 @@ exports[`Radio should render correctly 1`] = `
   height: 10px;
   border-radius: 50%;
   opacity: 0;
-  background-color: #3c5ad0;
+  background-color: #328ef5;
   -webkit-transform: scale(0);
   -ms-transform: scale(0);
   transform: scale(0);
@@ -58,7 +58,7 @@ exports[`Radio should render correctly 1`] = `
 }
 
 .c4:checked + .c5 {
-  border-color: #3c5ad0;
+  border-color: #328ef5;
 }
 
 .c4:checked + .c5::after {
@@ -82,7 +82,7 @@ exports[`Radio should render correctly 1`] = `
 }
 
 .c1:hover .c5 {
-  border-color: #3c5ad0;
+  border-color: #328ef5;
 }
 
 .c2 + .c0 {

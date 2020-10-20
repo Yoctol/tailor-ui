@@ -7,7 +7,7 @@ exports[`Divider should render correct with orientation 1`] = `
 }
 
 .c0 {
-  background-color: #e0e0e0;
+  background-color: #c4cfdd;
   display: block;
   width: 100%;
   min-width: 100%;
@@ -22,7 +22,7 @@ exports[`Divider should render correct with orientation 1`] = `
   margin-bottom: 0.5rem;
   margin-left: 0rem;
   margin-right: 0rem;
-  color: #bfbfbf;
+  color: #97a4ba;
   font-size: 0.875rem;
   font-weight: 500;
 }
@@ -35,7 +35,7 @@ exports[`Divider should render correct with orientation 1`] = `
   top: 50%;
   width: 50%;
   border-top: 1px solid;
-  border-color: #e0e0e0;
+  border-color: #c4cfdd;
   -webkit-transform: translateY(50%);
   -ms-transform: translateY(50%);
   transform: translateY(50%);
@@ -57,7 +57,7 @@ exports[`Divider should render correct with orientation 1`] = `
 }
 
 .c3 {
-  background-color: #e0e0e0;
+  background-color: #c4cfdd;
   display: block;
   width: 100%;
   min-width: 100%;
@@ -72,7 +72,7 @@ exports[`Divider should render correct with orientation 1`] = `
   margin-bottom: 0.5rem;
   margin-left: 0rem;
   margin-right: 0rem;
-  color: #bfbfbf;
+  color: #97a4ba;
   font-size: 0.875rem;
   font-weight: 500;
 }
@@ -85,7 +85,7 @@ exports[`Divider should render correct with orientation 1`] = `
   top: 50%;
   width: 50%;
   border-top: 1px solid;
-  border-color: #e0e0e0;
+  border-color: #c4cfdd;
   -webkit-transform: translateY(50%);
   -ms-transform: translateY(50%);
   transform: translateY(50%);
@@ -146,7 +146,7 @@ exports[`Divider should render correct with orientation 1`] = `
 
 exports[`Divider should render correct with type vertical 1`] = `
 .c0 {
-  background-color: #e0e0e0;
+  background-color: #c4cfdd;
   display: inline-block;
   position: relative;
   top: -0.06em;
@@ -157,7 +157,7 @@ exports[`Divider should render correct with type vertical 1`] = `
   margin-bottom: 0rem;
   margin-left: 0.5rem;
   margin-right: 0.5rem;
-  color: #bfbfbf;
+  color: #97a4ba;
   font-size: 0.875rem;
   font-weight: 500;
 }
@@ -198,7 +198,7 @@ exports[`Divider should render correctly 1`] = `
 }
 
 .c0 {
-  background-color: #e0e0e0;
+  background-color: #c4cfdd;
   display: block;
   width: 100%;
   min-width: 100%;
@@ -209,13 +209,13 @@ exports[`Divider should render correctly 1`] = `
   margin-bottom: 0.5rem;
   margin-left: 0rem;
   margin-right: 0rem;
-  color: #bfbfbf;
+  color: #97a4ba;
   font-size: 0.875rem;
   font-weight: 500;
 }
 
 .c1 {
-  background-color: #e0e0e0;
+  background-color: #c4cfdd;
   display: block;
   width: 100%;
   min-width: 100%;
@@ -230,7 +230,7 @@ exports[`Divider should render correctly 1`] = `
   margin-bottom: 0.5rem;
   margin-left: 0rem;
   margin-right: 0rem;
-  color: #bfbfbf;
+  color: #97a4ba;
   font-size: 0.875rem;
   font-weight: 500;
 }
@@ -243,14 +243,14 @@ exports[`Divider should render correctly 1`] = `
   top: 50%;
   width: 50%;
   border-top: 1px solid;
-  border-color: #e0e0e0;
+  border-color: #c4cfdd;
   -webkit-transform: translateY(50%);
   -ms-transform: translateY(50%);
   transform: translateY(50%);
 }
 
 .c3 {
-  background-color: #e0e0e0;
+  background-color: #c4cfdd;
   display: block;
   width: 100%;
   min-width: 100%;
@@ -258,13 +258,13 @@ exports[`Divider should render correctly 1`] = `
   margin: 1rem 0;
   clear: both;
   border-top: 1px dashed;
-  border-color: #e0e0e0;
+  border-color: #c4cfdd;
   background-color: transparent;
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
   margin-left: 0rem;
   margin-right: 0rem;
-  color: #bfbfbf;
+  color: #97a4ba;
   font-size: 0.875rem;
   font-weight: 500;
 }

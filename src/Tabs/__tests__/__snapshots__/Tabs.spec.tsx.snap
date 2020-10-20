@@ -11,7 +11,7 @@ exports[`Tabs should render correctly 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #1a1a1a;
+  color: #191d28;
   text-align: center;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -20,7 +20,7 @@ exports[`Tabs should render correctly 1`] = `
   padding: 0 1rem;
   font-size: 1rem;
   border-bottom: 3px solid transparent;
-  border-bottom-color: #3c5ad0;
+  border-bottom-color: #328ef5;
   -webkit-transition: all 200ms ease 0s;
   transition: all 200ms ease 0s;
 }
@@ -51,7 +51,7 @@ exports[`Tabs should render correctly 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #1a1a1a;
+  color: #191d28;
   text-align: center;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -120,7 +120,7 @@ exports[`Tabs should render with props absolute 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #1a1a1a;
+  color: #191d28;
   text-align: center;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -129,7 +129,7 @@ exports[`Tabs should render with props absolute 1`] = `
   padding: 0 1rem;
   font-size: 1rem;
   border-bottom: 3px solid transparent;
-  border-bottom-color: #3c5ad0;
+  border-bottom-color: #328ef5;
   -webkit-transition: all 200ms ease 0s;
   transition: all 200ms ease 0s;
 }
@@ -160,7 +160,7 @@ exports[`Tabs should render with props absolute 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #1a1a1a;
+  color: #191d28;
   text-align: center;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -231,7 +231,7 @@ exports[`Tabs should render with props pills 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #1a1a1a;
+  color: #191d28;
   text-align: center;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -240,8 +240,8 @@ exports[`Tabs should render with props pills 1`] = `
   padding: 0 1rem;
   font-size: 1rem;
   border-radius: 0.5rem;
-  color: #5e5e5e;
-  background-color: #3c5ad0;
+  color: #424b5f;
+  background-color: #328ef5;
   color: #ffffff;
   -webkit-transition: all 200ms ease 0s;
   transition: all 200ms ease 0s;
@@ -273,7 +273,7 @@ exports[`Tabs should render with props pills 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #1a1a1a;
+  color: #191d28;
   text-align: center;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -282,7 +282,7 @@ exports[`Tabs should render with props pills 1`] = `
   padding: 0 1rem;
   font-size: 1rem;
   border-radius: 0.5rem;
-  color: #5e5e5e;
+  color: #424b5f;
   -webkit-transition: all 200ms ease 0s;
   transition: all 200ms ease 0s;
 }
@@ -304,8 +304,8 @@ exports[`Tabs should render with props pills 1`] = `
 }
 
 .c2:hover {
-  background-color: #e0e0e0;
-  color: #373737;
+  background-color: #c4cfdd;
+  color: #283040;
 }
 
 .c0 {
@@ -348,7 +348,7 @@ exports[`Tabs should render with sizes 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #1a1a1a;
+  color: #191d28;
   text-align: center;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -357,7 +357,7 @@ exports[`Tabs should render with sizes 1`] = `
   padding: 0 0.75rem;
   font-size: 0.875rem;
   border-bottom: 3px solid transparent;
-  border-bottom-color: #3c5ad0;
+  border-bottom-color: #328ef5;
   -webkit-transition: all 200ms ease 0s;
   transition: all 200ms ease 0s;
 }
@@ -388,7 +388,7 @@ exports[`Tabs should render with sizes 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #1a1a1a;
+  color: #191d28;
   text-align: center;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -427,7 +427,7 @@ exports[`Tabs should render with sizes 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #1a1a1a;
+  color: #191d28;
   text-align: center;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -436,7 +436,7 @@ exports[`Tabs should render with sizes 1`] = `
   padding: 0 1rem;
   font-size: 1rem;
   border-bottom: 3px solid transparent;
-  border-bottom-color: #3c5ad0;
+  border-bottom-color: #328ef5;
   -webkit-transition: all 200ms ease 0s;
   transition: all 200ms ease 0s;
 }
@@ -467,7 +467,7 @@ exports[`Tabs should render with sizes 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #1a1a1a;
+  color: #191d28;
   text-align: center;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -506,7 +506,7 @@ exports[`Tabs should render with sizes 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #1a1a1a;
+  color: #191d28;
   text-align: center;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -515,7 +515,7 @@ exports[`Tabs should render with sizes 1`] = `
   padding: 0 1.5rem;
   font-size: 1.125rem;
   border-bottom: 3px solid transparent;
-  border-bottom-color: #3c5ad0;
+  border-bottom-color: #328ef5;
   -webkit-transition: all 200ms ease 0s;
   transition: all 200ms ease 0s;
 }
@@ -546,7 +546,7 @@ exports[`Tabs should render with sizes 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #1a1a1a;
+  color: #191d28;
   text-align: center;
   -webkit-text-decoration: none;
   text-decoration: none;

@@ -14,16 +14,16 @@ exports[`Tag should render invalid style tag 1`] = `
   padding: 0 8px;
   border: 1px solid;
   border-radius: 0.5rem;
-  border-color: #fc5475;
+  border-color: #ff5757;
   background-color: #ffffff;
-  color: #fc5475;
+  color: #ff5757;
   font-size: 0.875rem;
   white-space: nowrap;
   cursor: auto;
 }
 
 .c1 input {
-  color: #fc5475;
+  color: #ff5757;
 }
 
 .c0 {
@@ -62,16 +62,16 @@ exports[`Tag should render tag 1`] = `
   padding: 0 8px;
   border: 1px solid;
   border-radius: 0.5rem;
-  border-color: #6B88c5;
-  background-color: #f8f8fc;
-  color: #6B88c5;
+  border-color: #3990cd;
+  background-color: #fbfbfd;
+  color: #3990cd;
   font-size: 0.875rem;
   white-space: nowrap;
   cursor: auto;
 }
 
 .c1 input {
-  color: #6B88c5;
+  color: #3990cd;
 }
 
 .c0 {
@@ -110,16 +110,16 @@ exports[`Tag should render tag with prefix 1`] = `
   padding: 0 8px;
   border: 1px solid;
   border-radius: 0.5rem;
-  border-color: #6B88c5;
-  background-color: #f8f8fc;
-  color: #6B88c5;
+  border-color: #3990cd;
+  background-color: #fbfbfd;
+  color: #3990cd;
   font-size: 0.875rem;
   white-space: nowrap;
   cursor: auto;
 }
 
 .c1 input {
-  color: #6B88c5;
+  color: #3990cd;
 }
 
 .c2 {
@@ -135,8 +135,8 @@ exports[`Tag should render tag with prefix 1`] = `
   margin-right: 8px;
   padding-right: 8px;
   border-right: 1px solid;
-  border-color: #6B88c5;
-  color: #6B88c5;
+  border-color: #3990cd;
+  color: #3990cd;
   font-size: 0.875rem;
 }
 

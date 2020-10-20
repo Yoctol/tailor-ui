@@ -142,6 +142,42 @@ ReactDOM.render(
 }
 ```
 
+## Theme Examples
+
+```jsx live
+() => {
+  const { themeKey, setThemeKey } = useContext(ThemeContext);
+
+  return (
+    <>
+      <RadioGroup value={themeKey} onChange={setThemeKey}>
+        <Radio value="base">Base</Radio>
+        <Radio value="darker">Darker</Radio>
+      </RadioGroup>
+
+      <Box mt="3">
+        <Button variant="primary">Primary</Button>
+        <Button variant="primary-invert" ml="2">
+          Primary Invert
+        </Button>
+        <br />
+        <br />
+        <Button variant="danger">Danger</Button>
+        <Button variant="danger-invert" ml="2">
+          Danger Invert
+        </Button>
+        <br />
+        <br />
+        <Button variant="regular">Regular</Button>
+        <Button variant="normal" ml="2">
+          Normal
+        </Button>
+      </Box>
+    </>
+  );
+}
+```
+
 
 ## API
 

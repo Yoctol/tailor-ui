@@ -19,7 +19,7 @@ exports[`useMessage should render message correctly 1`] = `
 }
 
 .c3 svg {
-  fill: #8b8b8b;
+  fill: #67758d;
   vertical-align: middle;
   pointer-events: none;
   -webkit-transition: all 200ms ease 0s;
@@ -27,7 +27,7 @@ exports[`useMessage should render message correctly 1`] = `
 }
 
 .c3.c3.c3 svg {
-  fill: #40d064;
+  fill: #51c81c;
   width: 20px;
   height: 20px;
 }
@@ -42,7 +42,7 @@ exports[`useMessage should render message correctly 1`] = `
 }
 
 .c5 svg {
-  fill: #8b8b8b;
+  fill: #67758d;
   vertical-align: middle;
   pointer-events: none;
   -webkit-transition: all 200ms ease 0s;
@@ -88,7 +88,7 @@ exports[`useMessage should render message correctly 1`] = `
   padding: 1rem;
   overflow: hidden;
   border-radius: 0.5rem;
-  background-color: #1a1a1a;
+  background-color: #191d28;
   color: #ffffff;
   font-size: 0.875rem;
 }
@@ -100,7 +100,7 @@ exports[`useMessage should render message correctly 1`] = `
   left: 0;
   width: auto;
   height: 3px;
-  background-color: #6B88c5;
+  background-color: #3990cd;
 }
 
 <body>

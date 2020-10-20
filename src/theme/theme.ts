@@ -1,6 +1,39 @@
 import { rem } from 'polished';
 
 const colors = {
+  primary: '#328ef5',
+  primaryLight: '#3990cd',
+  primaryLight2: '#a2d3ff',
+  primaryDark: '#1d70b8',
+  primaryDark2: '#0b4278',
+
+  secondary: '#3dc8ff',
+  secondaryLight: '#50acff',
+  secondaryDark: '#0097cc',
+
+  surface: '#eef1f8',
+  surface2: '#fbfbfd',
+
+  dark: '#000000',
+  light: '#ffffff',
+
+  gray100: '#f6f8fb',
+  gray200: '#dee5ef',
+  gray300: '#c4cfdd',
+  gray400: '#97a4ba',
+  gray500: '#67758d',
+  gray600: '#424b5f',
+  gray700: '#283040',
+  gray800: '#191d28',
+
+  success: '#51c81c',
+  danger: '#ff5757',
+  warning: '#fcb41d',
+  info: '#328ef5',
+  error: '#ff5757',
+};
+
+const darkerColors = {
   // primary
   primary: '#3c5ad0',
   primaryDark: '#184480',
@@ -264,6 +297,20 @@ const shadows: ShadowsType = {
 export const theme = {
   breakpoints,
   colors,
+  space,
+  paddings,
+  heights,
+  fontSizes,
+  radii,
+  borders,
+  shadows,
+  lineHeight: 1.5,
+  transition,
+};
+
+export const darkerTheme = {
+  breakpoints,
+  colors: darkerColors,
   space,
   paddings,
   heights,

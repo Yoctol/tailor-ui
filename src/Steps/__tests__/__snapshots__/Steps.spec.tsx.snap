@@ -52,7 +52,7 @@ exports[`Steps should render correctly 1`] = `
 }
 
 .c3 svg {
-  fill: #8b8b8b;
+  fill: #67758d;
   vertical-align: middle;
   pointer-events: none;
   -webkit-transition: all 200ms ease 0s;
@@ -60,7 +60,7 @@ exports[`Steps should render correctly 1`] = `
 }
 
 .c3.c3.c3 svg {
-  fill: #3c5ad0;
+  fill: #328ef5;
   width: 20px;
   height: 20px;
 }
@@ -75,7 +75,7 @@ exports[`Steps should render correctly 1`] = `
 }
 
 .c7 svg {
-  fill: #8b8b8b;
+  fill: #67758d;
   vertical-align: middle;
   pointer-events: none;
   -webkit-transition: all 200ms ease 0s;
@@ -83,7 +83,7 @@ exports[`Steps should render correctly 1`] = `
 }
 
 .c7.c7.c7 svg {
-  fill: #fc5475;
+  fill: #ff5757;
   width: 20px;
   height: 20px;
 }
@@ -110,9 +110,9 @@ exports[`Steps should render correctly 1`] = `
   margin-right: 8px;
   border: 1px solid;
   border-radius: 50%;
-  border-color: #3c5ad0;
+  border-color: #328ef5;
   background-color: #ffffff;
-  color: #3c5ad0;
+  color: #328ef5;
   cursor: pointer;
   -webkit-transition: all 200ms ease 0s;
   transition: all 200ms ease 0s;
@@ -140,9 +140,9 @@ exports[`Steps should render correctly 1`] = `
   margin-right: 8px;
   border: 1px solid;
   border-radius: 50%;
-  border-color: #fc5475;
+  border-color: #ff5757;
   background-color: #ffffff;
-  color: #fc5475;
+  color: #ff5757;
   cursor: pointer;
   -webkit-transition: all 200ms ease 0s;
   transition: all 200ms ease 0s;
@@ -170,9 +170,9 @@ exports[`Steps should render correctly 1`] = `
   margin-right: 8px;
   border: 1px solid;
   border-radius: 50%;
-  border-color: #8b8b8b;
+  border-color: #67758d;
   background-color: #ffffff;
-  color: #8b8b8b;
+  color: #67758d;
   cursor: pointer;
   -webkit-transition: all 200ms ease 0s;
   transition: all 200ms ease 0s;
@@ -187,7 +187,7 @@ exports[`Steps should render correctly 1`] = `
   align-items: center;
   height: 32px;
   padding-right: 16px;
-  color: #8b8b8b;
+  color: #67758d;
   line-height: 32px;
   -webkit-transition: all 200ms ease 0s;
   transition: all 200ms ease 0s;
@@ -201,7 +201,7 @@ exports[`Steps should render correctly 1`] = `
   left: 100%;
   width: 9999px;
   height: 1px;
-  background: #fc5475;
+  background: #ff5757;
 }
 
 .c8 {
@@ -213,7 +213,7 @@ exports[`Steps should render correctly 1`] = `
   align-items: center;
   height: 32px;
   padding-right: 16px;
-  color: #fc5475;
+  color: #ff5757;
   line-height: 32px;
   -webkit-transition: all 200ms ease 0s;
   transition: all 200ms ease 0s;
@@ -227,7 +227,7 @@ exports[`Steps should render correctly 1`] = `
   left: 100%;
   width: 9999px;
   height: 1px;
-  background: #3c5ad0;
+  background: #328ef5;
 }
 
 .c12 {
@@ -239,21 +239,21 @@ exports[`Steps should render correctly 1`] = `
   align-items: center;
   height: 32px;
   padding-right: 16px;
-  color: #8b8b8b;
+  color: #67758d;
   line-height: 32px;
   -webkit-transition: all 200ms ease 0s;
   transition: all 200ms ease 0s;
 }
 
 .c5 {
-  color: #8b8b8b;
+  color: #67758d;
   font-size: 0.875rem;
   -webkit-transition: all 200ms ease 0s;
   transition: all 200ms ease 0s;
 }
 
 .c9 {
-  color: #fc5475;
+  color: #ff5757;
   font-size: 0.875rem;
   -webkit-transition: all 200ms ease 0s;
   transition: all 200ms ease 0s;

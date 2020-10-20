@@ -8,7 +8,7 @@ exports[`Backdrop should render badge correctly 1`] = `
 .c3 {
   box-sizing: border-box;
   color: #ffffff;
-  background-color: #fc5475;
+  background-color: #ff5757;
   border-color: #ffffff;
 }
 
@@ -70,7 +70,7 @@ exports[`Backdrop should render customized badge correctly 1`] = `
 .c3 {
   box-sizing: border-box;
   color: #ffffff;
-  background-color: #40d064;
+  background-color: #51c81c;
   border-color: #ffffff;
 }
 
@@ -128,7 +128,7 @@ exports[`Backdrop should render standalone badge correctly 1`] = `
 .c0 {
   box-sizing: border-box;
   color: #ffffff;
-  background-color: #fc5475;
+  background-color: #ff5757;
   border-color: #ffffff;
 }
 
