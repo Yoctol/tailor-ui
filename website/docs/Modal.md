@@ -37,7 +37,7 @@ import { Modal, useModal } from 'tailor-ui';
       <Button onClick={() => setVisible(true)}>Open Modal</Button>
     </>
   );
-};
+}
 ```
 
 ### Status bar and icon
@@ -80,7 +80,7 @@ import { Modal, useModal } from 'tailor-ui';
       </Flex>
     </>
   );
-};
+}
 ```
 
 ### Large size
@@ -106,7 +106,7 @@ import { Modal, useModal } from 'tailor-ui';
       <Button onClick={() => setVisible(true)}>Open Modal</Button>
     </>
   );
-};
+}
 ```
 
 ### Customized footer
@@ -133,7 +133,7 @@ import { Modal, useModal } from 'tailor-ui';
       <Button onClick={() => setVisible(true)}>Open Modal</Button>
     </>
   );
-};
+}
 ```
 
 ### Without footer
@@ -160,7 +160,7 @@ import { Modal, useModal } from 'tailor-ui';
       <Button onClick={() => setVisible(true)}>Open Modal</Button>
     </>
   );
-};
+}
 ```
 
 ### With button props
@@ -196,7 +196,7 @@ import { Modal, useModal } from 'tailor-ui';
       <Button onClick={() => setVisible(true)}>Open Modal</Button>
     </>
   );
-};
+}
 ```
 
 ### onOpenComplete & onCloseComplete
@@ -225,7 +225,7 @@ import { Modal, useModal } from 'tailor-ui';
       <Button onClick={() => setVisible(true)}>Open Modal</Button>
     </>
   );
-};
+}
 ```
 
 ### useModal Hooks
@@ -254,7 +254,7 @@ You can use the `useModal` hooks to display Modal without render `Modal` compone
       Confirm
     </Button>
   );
-};
+}
 ```
 
 ##### Using promise
@@ -284,7 +284,7 @@ You can use the `useModal` hooks to display Modal without render `Modal` compone
       Confirm
     </Button>
   );
-};
+}
 ```
 
 #### With other status
@@ -351,7 +351,7 @@ You can use the `useModal` hooks to display Modal without render `Modal` compone
       </Button>
     </>
   );
-};
+}
 ```
 
 ##### Set closable to true
@@ -383,7 +383,7 @@ You can use the `useModal` hooks to display Modal without render `Modal` compone
       Click Me
     </Button>
   );
-};
+}
 ```
 
 ##### Manual to update and close
@@ -428,7 +428,7 @@ You can use the `useModal` hooks to display Modal without render `Modal` compone
       Confirm
     </Button>
   );
-};
+}
 ```
 
 ## API
