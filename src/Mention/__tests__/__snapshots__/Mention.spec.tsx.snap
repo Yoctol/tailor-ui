@@ -9,10 +9,10 @@ exports[`Mention should render correctly 1`] = `
   max-width: 100%;
   border: 1px solid;
   border-radius: 0.25rem;
-  border-color: #bfbfbf;
+  border-color: #97a4ba;
   outline: none;
   background-color: #ffffff;
-  color: #373737;
+  color: #283040;
   line-height: 1.5;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -28,36 +28,36 @@ exports[`Mention should render correctly 1`] = `
 }
 
 .c2:hover {
-  border-color: #3c5ad0;
+  border-color: #328ef5;
 }
 
 .c2:focus {
-  border-color: #3c5ad0;
-  box-shadow: inset 0 0 0 2px #e8ecf5;
+  border-color: #328ef5;
+  box-shadow: inset 0 0 0 2px #eef1f8;
 }
 
 .c2:disabled,
 .c2 [disabled] {
-  border-color: #bfbfbf;
-  background-color: #e0e0e0;
-  color: #8b8b8b;
+  border-color: #97a4ba;
+  background-color: #c4cfdd;
+  color: #67758d;
   cursor: not-allowed;
 }
 
 .c2::-webkit-input-placeholder {
-  color: #bfbfbf;
+  color: #97a4ba;
 }
 
 .c2::-moz-placeholder {
-  color: #bfbfbf;
+  color: #97a4ba;
 }
 
 .c2:-ms-input-placeholder {
-  color: #bfbfbf;
+  color: #97a4ba;
 }
 
 .c2::placeholder {
-  color: #bfbfbf;
+  color: #97a4ba;
 }
 
 .c3 {
@@ -65,7 +65,7 @@ exports[`Mention should render correctly 1`] = `
   top: 0;
   background-color: transparent;
   color: transparent;
-  caret-color: #373737;
+  caret-color: #283040;
 }
 
 .c0 {
@@ -77,14 +77,14 @@ exports[`Mention should render correctly 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  color: #6B88c5;
+  color: #3990cd;
   line-height: 1.3;
   -webkit-text-decoration: none;
   text-decoration: none;
 }
 
 .c0 .mention-highlight.invalid {
-  color: #fc5475;
+  color: #ff5757;
 }
 
 .c1 {
@@ -93,10 +93,10 @@ exports[`Mention should render correctly 1`] = `
   max-width: 100%;
   border: 1px solid;
   border-radius: 0.25rem;
-  border-color: #bfbfbf;
+  border-color: #97a4ba;
   outline: none;
   background-color: #ffffff;
-  color: #373737;
+  color: #283040;
   line-height: 1.5;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -108,7 +108,7 @@ exports[`Mention should render correctly 1`] = `
   transition: all 200ms ease 0s;
   overflow-y: auto;
   border-color: transparent;
-  color: #373737;
+  color: #283040;
   word-break: break-word;
   white-space: pre-wrap;
   -webkit-transition: none;
@@ -116,36 +116,36 @@ exports[`Mention should render correctly 1`] = `
 }
 
 .c1:hover {
-  border-color: #3c5ad0;
+  border-color: #328ef5;
 }
 
 .c1:focus {
-  border-color: #3c5ad0;
-  box-shadow: inset 0 0 0 2px #e8ecf5;
+  border-color: #328ef5;
+  box-shadow: inset 0 0 0 2px #eef1f8;
 }
 
 .c1:disabled,
 .c1 [disabled] {
-  border-color: #bfbfbf;
-  background-color: #e0e0e0;
-  color: #8b8b8b;
+  border-color: #97a4ba;
+  background-color: #c4cfdd;
+  color: #67758d;
   cursor: not-allowed;
 }
 
 .c1::-webkit-input-placeholder {
-  color: #bfbfbf;
+  color: #97a4ba;
 }
 
 .c1::-moz-placeholder {
-  color: #bfbfbf;
+  color: #97a4ba;
 }
 
 .c1:-ms-input-placeholder {
-  color: #bfbfbf;
+  color: #97a4ba;
 }
 
 .c1::placeholder {
-  color: #bfbfbf;
+  color: #97a4ba;
 }
 
 <div

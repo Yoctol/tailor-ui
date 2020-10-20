@@ -17,7 +17,9 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
 import LocaleContext from '../../context/LocaleContext';
+import ThemeContext from '../../context/ThemeContext';
 import { UIProvider, locales } from '../../../../src';
+import { darkerTheme, theme } from '../../../../src/theme';
 
 import './styles.css';
 
@@ -28,6 +30,11 @@ function Providers({ children }) {
     </ThemeProvider>
   );
 }
+
+const themes = {
+  base: theme,
+  darker: darkerTheme,
+};
 
 function Layout(props) {
   const { siteConfig = {} } = useDocusaurusContext();
@@ -54,6 +61,7 @@ function Layout(props) {
   });
   const faviconUrl = useBaseUrl(favicon);
   const [locale, setLocale] = useState('en_US');
+  const [themeKey, setThemeKey] = useState('base');
 
   return (
     <Providers>
@@ -84,9 +92,11 @@ function Layout(props) {
       <AnnouncementBar />
       <Navbar />
       <LocaleContext.Provider value={{ locale, setLocale }}>
-        <UIProvider locale={locales[locale]}>
-          <div className="main-wrapper">{children}</div>
-        </UIProvider>
+        <ThemeContext.Provider value={{ themeKey, setThemeKey }}>
+          <UIProvider locale={locales[locale]} theme={themes[themeKey]}>
+            <div className="main-wrapper">{children}</div>
+          </UIProvider>
+        </ThemeContext.Provider>
       </LocaleContext.Provider>
       {!noFooter && <Footer />}
     </Providers>

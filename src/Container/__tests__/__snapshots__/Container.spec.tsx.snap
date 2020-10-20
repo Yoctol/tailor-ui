@@ -12,7 +12,7 @@ exports[`Container should render correctly 1`] = `
 .c3 {
   font-size: 1.125rem;
   margin: 0;
-  color: #373737;
+  color: #283040;
   font-weight: bold;
   line-height: 1.5;
   margin-bottom: 8px;
@@ -21,13 +21,13 @@ exports[`Container should render correctly 1`] = `
 .c7 {
   font-size: 1rem;
   margin: 0;
-  color: #373737;
+  color: #283040;
   font-weight: bold;
   line-height: 1.5;
 }
 
 .c4 {
-  background-color: #e0e0e0;
+  background-color: #c4cfdd;
   display: block;
   width: 100%;
   min-width: 100%;
@@ -38,7 +38,7 @@ exports[`Container should render correctly 1`] = `
   margin-bottom: 24px;
   margin-left: 0rem;
   margin-right: 0rem;
-  color: #bfbfbf;
+  color: #97a4ba;
   font-size: 0.875rem;
   font-weight: 500;
 }
@@ -51,7 +51,7 @@ exports[`Container should render correctly 1`] = `
   border-radius: 1rem;
   background-color: #ffffff;
   box-shadow: 0 2px 4px 0 #e0e0e0;
-  color: #373737;
+  color: #283040;
   font-size: 1rem;
 }
 

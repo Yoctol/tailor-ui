@@ -34,9 +34,9 @@ exports[`Card should render correctly with Button 1`] = `
   height: 2.25rem;
   padding: 0 0.75rem;
   font-size: 1rem;
-  border-color: #e0e0e0;
+  border-color: #c4cfdd;
   background-color: #ffffff;
-  color: #373737;
+  color: #283040;
   width: 100%;
 }
 
@@ -47,15 +47,15 @@ exports[`Card should render correctly with Button 1`] = `
 .c3:disabled,
 .c3[disabled] {
   opacity: 0.85;
-  background-color: #e0e0e0;
-  color: #8b8b8b;
+  background-color: #c4cfdd;
+  color: #67758d;
   cursor: default;
   pointer-events: none;
 }
 
 .c3:disabled .sc-10g5g0q-0 svg,
 .c3[disabled] .sc-10g5g0q-0 svg {
-  fill: #8b8b8b;
+  fill: #67758d;
 }
 
 .c3::before {
@@ -74,30 +74,30 @@ exports[`Card should render correctly with Button 1`] = `
 }
 
 .c3::before {
-  border-color: #373737;
+  border-color: #283040;
 }
 
 .c3 .sc-10g5g0q-0 svg {
-  fill: #bfbfbf;
+  fill: #97a4ba;
 }
 
 .c3:hover {
-  border-color: #6B88c5;
+  border-color: #3990cd;
 }
 
 .c3:active {
-  border-color: #3c5ad0;
-  color: #3c5ad0;
+  border-color: #328ef5;
+  color: #328ef5;
 }
 
 .c3:active .sc-10g5g0q-0 svg {
-  fill: #3c5ad0;
+  fill: #328ef5;
 }
 
 .c1 {
   position: relative;
   border-bottom: 1px solid;
-  border-color: #e0e0e0;
+  border-color: #c4cfdd;
   font-size: 1rem;
   padding: 1rem;
 }
@@ -109,7 +109,7 @@ exports[`Card should render correctly with Button 1`] = `
 .c2 {
   position: relative;
   border-bottom: 1px solid;
-  border-color: #e0e0e0;
+  border-color: #c4cfdd;
   font-size: 1rem;
   padding: 0.25rem;
 }
@@ -131,7 +131,7 @@ exports[`Card should render correctly with Button 1`] = `
   transition: all 200ms ease 0s;
   width: 400px;
   background-color: #ffffff;
-  border-color: #e0e0e0;
+  border-color: #c4cfdd;
   border-radius: 0.5rem;
 }
 
@@ -176,7 +176,7 @@ exports[`Card should render correctly with Card.Block 1`] = `
 .c1 {
   position: relative;
   border-bottom: 1px solid;
-  border-color: #e0e0e0;
+  border-color: #c4cfdd;
   font-size: 1rem;
   padding: 1rem;
 }
@@ -198,7 +198,7 @@ exports[`Card should render correctly with Card.Block 1`] = `
   transition: all 200ms ease 0s;
   width: 400px;
   background-color: #ffffff;
-  border-color: #e0e0e0;
+  border-color: #c4cfdd;
   border-radius: 0.5rem;
 }
 
@@ -249,7 +249,7 @@ exports[`Card should render correctly with Card.Image 1`] = `
 .c3 {
   position: relative;
   border-bottom: 1px solid;
-  border-color: #e0e0e0;
+  border-color: #c4cfdd;
   font-size: 1rem;
   padding: 1rem;
 }
@@ -271,7 +271,7 @@ exports[`Card should render correctly with Card.Image 1`] = `
   transition: all 200ms ease 0s;
   width: 400px;
   background-color: #ffffff;
-  border-color: #e0e0e0;
+  border-color: #c4cfdd;
   border-radius: 0.5rem;
 }
 
@@ -309,7 +309,7 @@ exports[`Card should render hoverable Card 1`] = `
 .c1 {
   position: relative;
   border-bottom: 1px solid;
-  border-color: #e0e0e0;
+  border-color: #c4cfdd;
   font-size: 1rem;
   padding: 1rem;
 }
@@ -332,7 +332,7 @@ exports[`Card should render hoverable Card 1`] = `
   box-shadow: 0 2px 4px 0 #e0e0e0;
   width: 400px;
   background-color: #ffffff;
-  border-color: #e0e0e0;
+  border-color: #c4cfdd;
   border-radius: 0.5rem;
 }
 

@@ -26,9 +26,9 @@ exports[`CheckboxGroup composition with Checkbox should render correctly 1`] = `
   padding: 0;
   border: 1px solid;
   border-radius: 2px;
-  border-color: #bfbfbf;
+  border-color: #97a4ba;
   background-color: #ffffff;
-  color: #373737;
+  color: #283040;
   -webkit-transition: all 200ms ease 0s;
   transition: all 200ms ease 0s;
 }
@@ -62,8 +62,8 @@ exports[`CheckboxGroup composition with Checkbox should render correctly 1`] = `
 }
 
 .c6:checked + .c7 {
-  border-color: #3c5ad0;
-  background-color: #3c5ad0;
+  border-color: #328ef5;
+  background-color: #328ef5;
 }
 
 .c6:checked + .c7::after {
@@ -91,7 +91,7 @@ exports[`CheckboxGroup composition with Checkbox should render correctly 1`] = `
 }
 
 .c3:hover .c7 {
-  border-color: #3c5ad0;
+  border-color: #328ef5;
 }
 
 .c4 + .c2 {
@@ -212,9 +212,9 @@ exports[`CheckboxGroup should render vertical checkbox group 1`] = `
   padding: 0;
   border: 1px solid;
   border-radius: 2px;
-  border-color: #bfbfbf;
+  border-color: #97a4ba;
   background-color: #ffffff;
-  color: #373737;
+  color: #283040;
   -webkit-transition: all 200ms ease 0s;
   transition: all 200ms ease 0s;
 }
@@ -248,8 +248,8 @@ exports[`CheckboxGroup should render vertical checkbox group 1`] = `
 }
 
 .c5:checked + .c6 {
-  border-color: #3c5ad0;
-  background-color: #3c5ad0;
+  border-color: #328ef5;
+  background-color: #328ef5;
 }
 
 .c5:checked + .c6::after {
@@ -277,7 +277,7 @@ exports[`CheckboxGroup should render vertical checkbox group 1`] = `
 }
 
 .c2:hover .c6 {
-  border-color: #3c5ad0;
+  border-color: #328ef5;
 }
 
 .c3 + .c1 {

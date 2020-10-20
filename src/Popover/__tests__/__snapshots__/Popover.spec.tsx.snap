@@ -11,7 +11,7 @@ exports[`Popover should render correctly 1`] = `
 .c3 {
   font-size: 0.875rem;
   margin: 0;
-  color: #373737;
+  color: #283040;
   font-weight: bold;
   line-height: 1.5;
 }
@@ -20,10 +20,10 @@ exports[`Popover should render correctly 1`] = `
   padding: 0.5rem 1rem;
   border: 1px solid;
   border-radius: 0.5rem;
-  border-color: #e0e0e0;
+  border-color: #c4cfdd;
   background-color: #ffffff;
   box-shadow: 0 2px 4px 0 #e0e0e0;
-  color: #373737;
+  color: #283040;
   font-size: 0.875rem;
   text-align: left;
   white-space: nowrap;

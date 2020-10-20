@@ -7,10 +7,10 @@ exports[`Input should render correctly 1`] = `
   max-width: 100%;
   border: 1px solid;
   border-radius: 0.25rem;
-  border-color: #bfbfbf;
+  border-color: #97a4ba;
   outline: none;
   background-color: #ffffff;
-  color: #373737;
+  color: #283040;
   line-height: 1.5;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -23,36 +23,36 @@ exports[`Input should render correctly 1`] = `
 }
 
 .c0:hover {
-  border-color: #3c5ad0;
+  border-color: #328ef5;
 }
 
 .c0:focus {
-  border-color: #3c5ad0;
-  box-shadow: inset 0 0 0 2px #e8ecf5;
+  border-color: #328ef5;
+  box-shadow: inset 0 0 0 2px #eef1f8;
 }
 
 .c0:disabled,
 .c0 [disabled] {
-  border-color: #bfbfbf;
-  background-color: #e0e0e0;
-  color: #8b8b8b;
+  border-color: #97a4ba;
+  background-color: #c4cfdd;
+  color: #67758d;
   cursor: not-allowed;
 }
 
 .c0::-webkit-input-placeholder {
-  color: #bfbfbf;
+  color: #97a4ba;
 }
 
 .c0::-moz-placeholder {
-  color: #bfbfbf;
+  color: #97a4ba;
 }
 
 .c0:-ms-input-placeholder {
-  color: #bfbfbf;
+  color: #97a4ba;
 }
 
 .c0::placeholder {
-  color: #bfbfbf;
+  color: #97a4ba;
 }
 
 <input
@@ -95,9 +95,9 @@ exports[`Input should render correctly with Button suffix 1`] = `
   height: 2.25rem;
   padding: 0 0.75rem;
   font-size: 1rem;
-  border-color: #e0e0e0;
+  border-color: #c4cfdd;
   background-color: #ffffff;
-  color: #373737;
+  color: #283040;
 }
 
 .c4:focus {
@@ -107,15 +107,15 @@ exports[`Input should render correctly with Button suffix 1`] = `
 .c4:disabled,
 .c4[disabled] {
   opacity: 0.85;
-  background-color: #e0e0e0;
-  color: #8b8b8b;
+  background-color: #c4cfdd;
+  color: #67758d;
   cursor: default;
   pointer-events: none;
 }
 
 .c4:disabled .sc-10g5g0q-0 svg,
 .c4[disabled] .sc-10g5g0q-0 svg {
-  fill: #8b8b8b;
+  fill: #67758d;
 }
 
 .c4::before {
@@ -134,24 +134,24 @@ exports[`Input should render correctly with Button suffix 1`] = `
 }
 
 .c4::before {
-  border-color: #373737;
+  border-color: #283040;
 }
 
 .c4 .sc-10g5g0q-0 svg {
-  fill: #bfbfbf;
+  fill: #97a4ba;
 }
 
 .c4:hover {
-  border-color: #6B88c5;
+  border-color: #3990cd;
 }
 
 .c4:active {
-  border-color: #3c5ad0;
-  color: #3c5ad0;
+  border-color: #328ef5;
+  color: #328ef5;
 }
 
 .c4:active .sc-10g5g0q-0 svg {
-  fill: #3c5ad0;
+  fill: #328ef5;
 }
 
 .c2 {
@@ -160,10 +160,10 @@ exports[`Input should render correctly with Button suffix 1`] = `
   max-width: 100%;
   border: 1px solid;
   border-radius: 0.25rem;
-  border-color: #bfbfbf;
+  border-color: #97a4ba;
   outline: none;
   background-color: #ffffff;
-  color: #373737;
+  color: #283040;
   line-height: 1.5;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -176,36 +176,36 @@ exports[`Input should render correctly with Button suffix 1`] = `
 }
 
 .c2:hover {
-  border-color: #3c5ad0;
+  border-color: #328ef5;
 }
 
 .c2:focus {
-  border-color: #3c5ad0;
-  box-shadow: inset 0 0 0 2px #e8ecf5;
+  border-color: #328ef5;
+  box-shadow: inset 0 0 0 2px #eef1f8;
 }
 
 .c2:disabled,
 .c2 [disabled] {
-  border-color: #bfbfbf;
-  background-color: #e0e0e0;
-  color: #8b8b8b;
+  border-color: #97a4ba;
+  background-color: #c4cfdd;
+  color: #67758d;
   cursor: not-allowed;
 }
 
 .c2::-webkit-input-placeholder {
-  color: #bfbfbf;
+  color: #97a4ba;
 }
 
 .c2::-moz-placeholder {
-  color: #bfbfbf;
+  color: #97a4ba;
 }
 
 .c2:-ms-input-placeholder {
-  color: #bfbfbf;
+  color: #97a4ba;
 }
 
 .c2::placeholder {
-  color: #bfbfbf;
+  color: #97a4ba;
 }
 
 .c0 {
@@ -255,10 +255,10 @@ exports[`Input should render correctly with text prefix 1`] = `
   max-width: 100%;
   border: 1px solid;
   border-radius: 0.25rem;
-  border-color: #bfbfbf;
+  border-color: #97a4ba;
   outline: none;
   background-color: #ffffff;
-  color: #373737;
+  color: #283040;
   line-height: 1.5;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -271,36 +271,36 @@ exports[`Input should render correctly with text prefix 1`] = `
 }
 
 .c4:hover {
-  border-color: #3c5ad0;
+  border-color: #328ef5;
 }
 
 .c4:focus {
-  border-color: #3c5ad0;
-  box-shadow: inset 0 0 0 2px #e8ecf5;
+  border-color: #328ef5;
+  box-shadow: inset 0 0 0 2px #eef1f8;
 }
 
 .c4:disabled,
 .c4 [disabled] {
-  border-color: #bfbfbf;
-  background-color: #e0e0e0;
-  color: #8b8b8b;
+  border-color: #97a4ba;
+  background-color: #c4cfdd;
+  color: #67758d;
   cursor: not-allowed;
 }
 
 .c4::-webkit-input-placeholder {
-  color: #bfbfbf;
+  color: #97a4ba;
 }
 
 .c4::-moz-placeholder {
-  color: #bfbfbf;
+  color: #97a4ba;
 }
 
 .c4:-ms-input-placeholder {
-  color: #bfbfbf;
+  color: #97a4ba;
 }
 
 .c4::placeholder {
-  color: #bfbfbf;
+  color: #97a4ba;
 }
 
 .c2 {
@@ -319,8 +319,8 @@ exports[`Input should render correctly with text prefix 1`] = `
   padding: 0 0.5rem;
   border: 1px solid;
   border-radius: 0.25rem;
-  border-color: #e0e0e0;
-  background-color: #f6f6f6;
+  border-color: #c4cfdd;
+  background-color: #dee5ef;
   font-size: 1rem;
   line-height: 1;
 }
@@ -365,10 +365,10 @@ exports[`Input should render different input size 1`] = `
   max-width: 100%;
   border: 1px solid;
   border-radius: 0.25rem;
-  border-color: #bfbfbf;
+  border-color: #97a4ba;
   outline: none;
   background-color: #ffffff;
-  color: #373737;
+  color: #283040;
   line-height: 1.5;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -381,36 +381,36 @@ exports[`Input should render different input size 1`] = `
 }
 
 .c0:hover {
-  border-color: #3c5ad0;
+  border-color: #328ef5;
 }
 
 .c0:focus {
-  border-color: #3c5ad0;
-  box-shadow: inset 0 0 0 2px #e8ecf5;
+  border-color: #328ef5;
+  box-shadow: inset 0 0 0 2px #eef1f8;
 }
 
 .c0:disabled,
 .c0 [disabled] {
-  border-color: #bfbfbf;
-  background-color: #e0e0e0;
-  color: #8b8b8b;
+  border-color: #97a4ba;
+  background-color: #c4cfdd;
+  color: #67758d;
   cursor: not-allowed;
 }
 
 .c0::-webkit-input-placeholder {
-  color: #bfbfbf;
+  color: #97a4ba;
 }
 
 .c0::-moz-placeholder {
-  color: #bfbfbf;
+  color: #97a4ba;
 }
 
 .c0:-ms-input-placeholder {
-  color: #bfbfbf;
+  color: #97a4ba;
 }
 
 .c0::placeholder {
-  color: #bfbfbf;
+  color: #97a4ba;
 }
 
 <input
@@ -426,10 +426,10 @@ exports[`Input should render disabled input 1`] = `
   max-width: 100%;
   border: 1px solid;
   border-radius: 0.25rem;
-  border-color: #bfbfbf;
+  border-color: #97a4ba;
   outline: none;
   background-color: #ffffff;
-  color: #373737;
+  color: #283040;
   line-height: 1.5;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -442,36 +442,36 @@ exports[`Input should render disabled input 1`] = `
 }
 
 .c0:hover {
-  border-color: #3c5ad0;
+  border-color: #328ef5;
 }
 
 .c0:focus {
-  border-color: #3c5ad0;
-  box-shadow: inset 0 0 0 2px #e8ecf5;
+  border-color: #328ef5;
+  box-shadow: inset 0 0 0 2px #eef1f8;
 }
 
 .c0:disabled,
 .c0 [disabled] {
-  border-color: #bfbfbf;
-  background-color: #e0e0e0;
-  color: #8b8b8b;
+  border-color: #97a4ba;
+  background-color: #c4cfdd;
+  color: #67758d;
   cursor: not-allowed;
 }
 
 .c0::-webkit-input-placeholder {
-  color: #bfbfbf;
+  color: #97a4ba;
 }
 
 .c0::-moz-placeholder {
-  color: #bfbfbf;
+  color: #97a4ba;
 }
 
 .c0:-ms-input-placeholder {
-  color: #bfbfbf;
+  color: #97a4ba;
 }
 
 .c0::placeholder {
-  color: #bfbfbf;
+  color: #97a4ba;
 }
 
 <input

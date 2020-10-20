@@ -9,10 +9,10 @@ exports[`TextField should render as textarea 1`] = `
   max-width: 100%;
   border: 1px solid;
   border-radius: 0.25rem;
-  border-color: #bfbfbf;
+  border-color: #97a4ba;
   outline: none;
   background-color: #ffffff;
-  color: #373737;
+  color: #283040;
   line-height: 1.5;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -28,36 +28,36 @@ exports[`TextField should render as textarea 1`] = `
 }
 
 .c2:hover {
-  border-color: #3c5ad0;
+  border-color: #328ef5;
 }
 
 .c2:focus {
-  border-color: #3c5ad0;
-  box-shadow: inset 0 0 0 2px #e8ecf5;
+  border-color: #328ef5;
+  box-shadow: inset 0 0 0 2px #eef1f8;
 }
 
 .c2:disabled,
 .c2 [disabled] {
-  border-color: #bfbfbf;
-  background-color: #e0e0e0;
-  color: #8b8b8b;
+  border-color: #97a4ba;
+  background-color: #c4cfdd;
+  color: #67758d;
   cursor: not-allowed;
 }
 
 .c2::-webkit-input-placeholder {
-  color: #bfbfbf;
+  color: #97a4ba;
 }
 
 .c2::-moz-placeholder {
-  color: #bfbfbf;
+  color: #97a4ba;
 }
 
 .c2:-ms-input-placeholder {
-  color: #bfbfbf;
+  color: #97a4ba;
 }
 
 .c2::placeholder {
-  color: #bfbfbf;
+  color: #97a4ba;
 }
 
 .c0 {
@@ -73,7 +73,7 @@ exports[`TextField should render as textarea 1`] = `
   top: 9px;
   left: 1px;
   padding: 0 0.5rem;
-  color: #bfbfbf;
+  color: #97a4ba;
   font-size: 1rem;
   -webkit-transition: all 200ms ease 0s;
   transition: all 200ms ease 0s;
@@ -85,7 +85,7 @@ exports[`TextField should render as textarea 1`] = `
   left: 7px;
   padding: 0 2px;
   background-color: #fff;
-  color: #3c5ad0;
+  color: #328ef5;
   font-size: 0.75rem;
 }
 
@@ -115,10 +115,10 @@ exports[`TextField should render correctly 1`] = `
   max-width: 100%;
   border: 1px solid;
   border-radius: 0.25rem;
-  border-color: #bfbfbf;
+  border-color: #97a4ba;
   outline: none;
   background-color: #ffffff;
-  color: #373737;
+  color: #283040;
   line-height: 1.5;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -131,36 +131,36 @@ exports[`TextField should render correctly 1`] = `
 }
 
 .c2:hover {
-  border-color: #3c5ad0;
+  border-color: #328ef5;
 }
 
 .c2:focus {
-  border-color: #3c5ad0;
-  box-shadow: inset 0 0 0 2px #e8ecf5;
+  border-color: #328ef5;
+  box-shadow: inset 0 0 0 2px #eef1f8;
 }
 
 .c2:disabled,
 .c2 [disabled] {
-  border-color: #bfbfbf;
-  background-color: #e0e0e0;
-  color: #8b8b8b;
+  border-color: #97a4ba;
+  background-color: #c4cfdd;
+  color: #67758d;
   cursor: not-allowed;
 }
 
 .c2::-webkit-input-placeholder {
-  color: #bfbfbf;
+  color: #97a4ba;
 }
 
 .c2::-moz-placeholder {
-  color: #bfbfbf;
+  color: #97a4ba;
 }
 
 .c2:-ms-input-placeholder {
-  color: #bfbfbf;
+  color: #97a4ba;
 }
 
 .c2::placeholder {
-  color: #bfbfbf;
+  color: #97a4ba;
 }
 
 .c0 {
@@ -176,7 +176,7 @@ exports[`TextField should render correctly 1`] = `
   top: 9px;
   left: 1px;
   padding: 0 0.5rem;
-  color: #bfbfbf;
+  color: #97a4ba;
   font-size: 1rem;
   -webkit-transition: all 200ms ease 0s;
   transition: all 200ms ease 0s;
@@ -188,7 +188,7 @@ exports[`TextField should render correctly 1`] = `
   left: 7px;
   padding: 0 2px;
   background-color: #fff;
-  color: #3c5ad0;
+  color: #328ef5;
   font-size: 0.75rem;
 }
 
@@ -217,10 +217,10 @@ exports[`TextField should render correctly with defaultValue 1`] = `
   max-width: 100%;
   border: 1px solid;
   border-radius: 0.25rem;
-  border-color: #bfbfbf;
+  border-color: #97a4ba;
   outline: none;
   background-color: #ffffff;
-  color: #373737;
+  color: #283040;
   line-height: 1.5;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -233,36 +233,36 @@ exports[`TextField should render correctly with defaultValue 1`] = `
 }
 
 .c2:hover {
-  border-color: #3c5ad0;
+  border-color: #328ef5;
 }
 
 .c2:focus {
-  border-color: #3c5ad0;
-  box-shadow: inset 0 0 0 2px #e8ecf5;
+  border-color: #328ef5;
+  box-shadow: inset 0 0 0 2px #eef1f8;
 }
 
 .c2:disabled,
 .c2 [disabled] {
-  border-color: #bfbfbf;
-  background-color: #e0e0e0;
-  color: #8b8b8b;
+  border-color: #97a4ba;
+  background-color: #c4cfdd;
+  color: #67758d;
   cursor: not-allowed;
 }
 
 .c2::-webkit-input-placeholder {
-  color: #bfbfbf;
+  color: #97a4ba;
 }
 
 .c2::-moz-placeholder {
-  color: #bfbfbf;
+  color: #97a4ba;
 }
 
 .c2:-ms-input-placeholder {
-  color: #bfbfbf;
+  color: #97a4ba;
 }
 
 .c2::placeholder {
-  color: #bfbfbf;
+  color: #97a4ba;
 }
 
 .c0 {
@@ -279,7 +279,7 @@ exports[`TextField should render correctly with defaultValue 1`] = `
   left: 7px;
   padding: 0 2px;
   background-color: #fff;
-  color: #3c5ad0;
+  color: #328ef5;
   font-size: 0.75rem;
   -webkit-transition: all 200ms ease 0s;
   transition: all 200ms ease 0s;
@@ -291,7 +291,7 @@ exports[`TextField should render correctly with defaultValue 1`] = `
   left: 7px;
   padding: 0 2px;
   background-color: #fff;
-  color: #3c5ad0;
+  color: #328ef5;
   font-size: 0.75rem;
 }
 
@@ -320,10 +320,10 @@ exports[`TextField should render with maxLength 1`] = `
   max-width: 100%;
   border: 1px solid;
   border-radius: 0.25rem;
-  border-color: #bfbfbf;
+  border-color: #97a4ba;
   outline: none;
   background-color: #ffffff;
-  color: #373737;
+  color: #283040;
   line-height: 1.5;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -336,36 +336,36 @@ exports[`TextField should render with maxLength 1`] = `
 }
 
 .c2:hover {
-  border-color: #3c5ad0;
+  border-color: #328ef5;
 }
 
 .c2:focus {
-  border-color: #3c5ad0;
-  box-shadow: inset 0 0 0 2px #e8ecf5;
+  border-color: #328ef5;
+  box-shadow: inset 0 0 0 2px #eef1f8;
 }
 
 .c2:disabled,
 .c2 [disabled] {
-  border-color: #bfbfbf;
-  background-color: #e0e0e0;
-  color: #8b8b8b;
+  border-color: #97a4ba;
+  background-color: #c4cfdd;
+  color: #67758d;
   cursor: not-allowed;
 }
 
 .c2::-webkit-input-placeholder {
-  color: #bfbfbf;
+  color: #97a4ba;
 }
 
 .c2::-moz-placeholder {
-  color: #bfbfbf;
+  color: #97a4ba;
 }
 
 .c2:-ms-input-placeholder {
-  color: #bfbfbf;
+  color: #97a4ba;
 }
 
 .c2::placeholder {
-  color: #bfbfbf;
+  color: #97a4ba;
 }
 
 .c4 {
@@ -375,7 +375,7 @@ exports[`TextField should render with maxLength 1`] = `
   padding: 1px 5px;
   border: 1px solid;
   border-radius: 999px;
-  border-color: #3c5ad0;
+  border-color: #328ef5;
   opacity: 0;
   background-color: #fff;
   font-size: 0.625rem;
@@ -395,7 +395,7 @@ exports[`TextField should render with maxLength 1`] = `
   top: 9px;
   left: 1px;
   padding: 0 0.5rem;
-  color: #bfbfbf;
+  color: #97a4ba;
   font-size: 1rem;
   -webkit-transition: all 200ms ease 0s;
   transition: all 200ms ease 0s;
@@ -407,7 +407,7 @@ exports[`TextField should render with maxLength 1`] = `
   left: 7px;
   padding: 0 2px;
   background-color: #fff;
-  color: #3c5ad0;
+  color: #328ef5;
   font-size: 0.75rem;
 }
 

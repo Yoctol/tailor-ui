@@ -12,7 +12,7 @@ exports[`Table should render table correctly 1`] = `
 
 .c2 {
   height: 56px;
-  border-bottom: 1px solid #e0e0e0;
+  border-bottom: 1px solid #c4cfdd;
   -webkit-transition: all 200ms ease 0s;
   transition: all 200ms ease 0s;
 }
@@ -34,8 +34,8 @@ exports[`Table should render table correctly 1`] = `
 }
 
 .c0 > thead {
-  border-bottom: 1px solid #e0e0e0;
-  background-color: #f8f8fc;
+  border-bottom: 1px solid #c4cfdd;
+  background-color: #fbfbfd;
 }
 
 .c0 > tbody > .c1 {
@@ -43,7 +43,7 @@ exports[`Table should render table correctly 1`] = `
 }
 
 .c0 > tbody > .c1:hover {
-  background-color: #fafafa;
+  background-color: #f6f8fb;
 }
 
 <table
@@ -191,7 +191,7 @@ exports[`Table should render table correctly with header and footer 1`] = `
 
 .c4 {
   height: 56px;
-  border-bottom: 1px solid #e0e0e0;
+  border-bottom: 1px solid #c4cfdd;
   -webkit-transition: all 200ms ease 0s;
   transition: all 200ms ease 0s;
 }
@@ -212,8 +212,8 @@ exports[`Table should render table correctly with header and footer 1`] = `
 }
 
 .c2 > thead {
-  border-bottom: 1px solid #e0e0e0;
-  background-color: #f8f8fc;
+  border-bottom: 1px solid #c4cfdd;
+  background-color: #fbfbfd;
 }
 
 .c2 > tbody > .c3 {
@@ -221,7 +221,7 @@ exports[`Table should render table correctly with header and footer 1`] = `
 }
 
 .c2 > tbody > .c3:hover {
-  background-color: #fafafa;
+  background-color: #f6f8fb;
 }
 
 .c0 {
@@ -238,8 +238,8 @@ exports[`Table should render table correctly with header and footer 1`] = `
 .c0 > .c1 {
   width: 100%;
   border-radius: 0;
-  border-top: 1px solid #e0e0e0;
-  border-bottom: 1px solid #e0e0e0;
+  border-top: 1px solid #c4cfdd;
+  border-bottom: 1px solid #c4cfdd;
 }
 
 <div

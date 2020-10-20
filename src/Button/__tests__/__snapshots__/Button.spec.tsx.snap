@@ -12,7 +12,7 @@ exports[`Button should render button with specified icon 1`] = `
 }
 
 .c2 svg {
-  fill: #8b8b8b;
+  fill: #67758d;
   vertical-align: middle;
   pointer-events: none;
   -webkit-transition: all 200ms ease 0s;
@@ -57,7 +57,7 @@ exports[`Button should render button with specified icon 1`] = `
   height: 2.25rem;
   padding: 0 0.75rem;
   font-size: 1rem;
-  background-color: #fc5475;
+  background-color: #ff5757;
   color: #ffffff;
   font-weight: bold;
 }
@@ -69,15 +69,15 @@ exports[`Button should render button with specified icon 1`] = `
 .c0:disabled,
 .c0[disabled] {
   opacity: 0.85;
-  background-color: #e0e0e0;
-  color: #8b8b8b;
+  background-color: #c4cfdd;
+  color: #67758d;
   cursor: default;
   pointer-events: none;
 }
 
 .c0:disabled .c1 svg,
 .c0[disabled] .c1 svg {
-  fill: #8b8b8b;
+  fill: #67758d;
 }
 
 .c0::before {
@@ -100,11 +100,11 @@ exports[`Button should render button with specified icon 1`] = `
 }
 
 .c0:hover {
-  background-color: #fc6d89;
+  background-color: #ff7171;
 }
 
 .c0:active {
-  background-color: #fc3b61;
+  background-color: #ff3e3e;
 }
 
 <button
@@ -168,9 +168,9 @@ exports[`Button should render button with specified size 1`] = `
   height: 1.75rem;
   padding: 0 0.5rem;
   font-size: 0.875rem;
-  border-color: #e0e0e0;
+  border-color: #c4cfdd;
   background-color: #ffffff;
-  color: #373737;
+  color: #283040;
 }
 
 .c0:focus {
@@ -180,15 +180,15 @@ exports[`Button should render button with specified size 1`] = `
 .c0:disabled,
 .c0[disabled] {
   opacity: 0.85;
-  background-color: #e0e0e0;
-  color: #8b8b8b;
+  background-color: #c4cfdd;
+  color: #67758d;
   cursor: default;
   pointer-events: none;
 }
 
 .c0:disabled .sc-10g5g0q-0 svg,
 .c0[disabled] .sc-10g5g0q-0 svg {
-  fill: #8b8b8b;
+  fill: #67758d;
 }
 
 .c0::before {
@@ -207,24 +207,24 @@ exports[`Button should render button with specified size 1`] = `
 }
 
 .c0::before {
-  border-color: #373737;
+  border-color: #283040;
 }
 
 .c0 .sc-10g5g0q-0 svg {
-  fill: #bfbfbf;
+  fill: #97a4ba;
 }
 
 .c0:hover {
-  border-color: #6B88c5;
+  border-color: #3990cd;
 }
 
 .c0:active {
-  border-color: #3c5ad0;
-  color: #3c5ad0;
+  border-color: #328ef5;
+  color: #328ef5;
 }
 
 .c0:active .sc-10g5g0q-0 svg {
-  fill: #3c5ad0;
+  fill: #328ef5;
 }
 
 <button
@@ -268,9 +268,9 @@ exports[`Button should render correctly 1`] = `
   height: 2.25rem;
   padding: 0 0.75rem;
   font-size: 1rem;
-  border-color: #e0e0e0;
+  border-color: #c4cfdd;
   background-color: #ffffff;
-  color: #373737;
+  color: #283040;
 }
 
 .c0:focus {
@@ -280,15 +280,15 @@ exports[`Button should render correctly 1`] = `
 .c0:disabled,
 .c0[disabled] {
   opacity: 0.85;
-  background-color: #e0e0e0;
-  color: #8b8b8b;
+  background-color: #c4cfdd;
+  color: #67758d;
   cursor: default;
   pointer-events: none;
 }
 
 .c0:disabled .sc-10g5g0q-0 svg,
 .c0[disabled] .sc-10g5g0q-0 svg {
-  fill: #8b8b8b;
+  fill: #67758d;
 }
 
 .c0::before {
@@ -307,24 +307,24 @@ exports[`Button should render correctly 1`] = `
 }
 
 .c0::before {
-  border-color: #373737;
+  border-color: #283040;
 }
 
 .c0 .sc-10g5g0q-0 svg {
-  fill: #bfbfbf;
+  fill: #97a4ba;
 }
 
 .c0:hover {
-  border-color: #6B88c5;
+  border-color: #3990cd;
 }
 
 .c0:active {
-  border-color: #3c5ad0;
-  color: #3c5ad0;
+  border-color: #328ef5;
+  color: #328ef5;
 }
 
 .c0:active .sc-10g5g0q-0 svg {
-  fill: #3c5ad0;
+  fill: #328ef5;
 }
 
 <button
@@ -368,7 +368,7 @@ exports[`Button should render different button type 1`] = `
   height: 2.25rem;
   padding: 0 0.75rem;
   font-size: 1rem;
-  background-color: #3c5ad0;
+  background-color: #328ef5;
   color: #ffffff;
   font-weight: bold;
 }
@@ -380,15 +380,15 @@ exports[`Button should render different button type 1`] = `
 .c0:disabled,
 .c0[disabled] {
   opacity: 0.85;
-  background-color: #e0e0e0;
-  color: #8b8b8b;
+  background-color: #c4cfdd;
+  color: #67758d;
   cursor: default;
   pointer-events: none;
 }
 
 .c0:disabled .sc-10g5g0q-0 svg,
 .c0[disabled] .sc-10g5g0q-0 svg {
-  fill: #8b8b8b;
+  fill: #67758d;
 }
 
 .c0::before {
@@ -411,11 +411,11 @@ exports[`Button should render different button type 1`] = `
 }
 
 .c0:hover {
-  background-color: #516bd5;
+  background-color: #4a9bf6;
 }
 
 .c0:active {
-  background-color: #2f4dc3;
+  background-color: #1a81f4;
 }
 
 <button
@@ -459,7 +459,7 @@ exports[`Button should render disabled button 1`] = `
   height: 2.25rem;
   padding: 0 0.75rem;
   font-size: 1rem;
-  background-color: #3c5ad0;
+  background-color: #328ef5;
   color: #ffffff;
   font-weight: bold;
 }
@@ -471,15 +471,15 @@ exports[`Button should render disabled button 1`] = `
 .c0:disabled,
 .c0[disabled] {
   opacity: 0.85;
-  background-color: #e0e0e0;
-  color: #8b8b8b;
+  background-color: #c4cfdd;
+  color: #67758d;
   cursor: default;
   pointer-events: none;
 }
 
 .c0:disabled .sc-10g5g0q-0 svg,
 .c0[disabled] .sc-10g5g0q-0 svg {
-  fill: #8b8b8b;
+  fill: #67758d;
 }
 
 .c0::before {
@@ -502,11 +502,11 @@ exports[`Button should render disabled button 1`] = `
 }
 
 .c0:hover {
-  background-color: #516bd5;
+  background-color: #4a9bf6;
 }
 
 .c0:active {
-  background-color: #2f4dc3;
+  background-color: #1a81f4;
 }
 
 <button
@@ -551,7 +551,7 @@ exports[`Button should render loading button 1`] = `
   height: 2.25rem;
   padding: 0 0.75rem;
   font-size: 1rem;
-  background-color: #3c5ad0;
+  background-color: #328ef5;
   color: #ffffff;
   font-weight: bold;
   opacity: 0.5;
@@ -566,15 +566,15 @@ exports[`Button should render loading button 1`] = `
 .c0:disabled,
 .c0[disabled] {
   opacity: 0.85;
-  background-color: #e0e0e0;
-  color: #8b8b8b;
+  background-color: #c4cfdd;
+  color: #67758d;
   cursor: default;
   pointer-events: none;
 }
 
 .c0:disabled .sc-10g5g0q-0 svg,
 .c0[disabled] .sc-10g5g0q-0 svg {
-  fill: #8b8b8b;
+  fill: #67758d;
 }
 
 .c0::before {
@@ -597,11 +597,11 @@ exports[`Button should render loading button 1`] = `
 }
 
 .c0:hover {
-  background-color: #516bd5;
+  background-color: #4a9bf6;
 }
 
 .c0:active {
-  background-color: #2f4dc3;
+  background-color: #1a81f4;
 }
 
 .c0::before {
@@ -658,7 +658,7 @@ exports[`Button should render rounded button 1`] = `
   height: 2.25rem;
   padding: 0 0.75rem;
   font-size: 1rem;
-  background-color: #3c5ad0;
+  background-color: #328ef5;
   color: #ffffff;
   font-weight: bold;
 }
@@ -670,15 +670,15 @@ exports[`Button should render rounded button 1`] = `
 .c0:disabled,
 .c0[disabled] {
   opacity: 0.85;
-  background-color: #e0e0e0;
-  color: #8b8b8b;
+  background-color: #c4cfdd;
+  color: #67758d;
   cursor: default;
   pointer-events: none;
 }
 
 .c0:disabled .sc-10g5g0q-0 svg,
 .c0[disabled] .sc-10g5g0q-0 svg {
-  fill: #8b8b8b;
+  fill: #67758d;
 }
 
 .c0::before {
@@ -701,11 +701,11 @@ exports[`Button should render rounded button 1`] = `
 }
 
 .c0:hover {
-  background-color: #516bd5;
+  background-color: #4a9bf6;
 }
 
 .c0:active {
-  background-color: #2f4dc3;
+  background-color: #1a81f4;
 }
 
 <button
@@ -727,7 +727,7 @@ exports[`Button should render rounded icon button 1`] = `
 }
 
 .c2 svg {
-  fill: #8b8b8b;
+  fill: #67758d;
   vertical-align: middle;
   pointer-events: none;
   -webkit-transition: all 200ms ease 0s;
@@ -772,7 +772,7 @@ exports[`Button should render rounded icon button 1`] = `
   transition: all 200ms ease 0s;
   width: 2.25rem;
   height: 2.25rem;
-  background-color: #3c5ad0;
+  background-color: #328ef5;
   color: #ffffff;
   font-weight: bold;
 }
@@ -784,15 +784,15 @@ exports[`Button should render rounded icon button 1`] = `
 .c0:disabled,
 .c0[disabled] {
   opacity: 0.85;
-  background-color: #e0e0e0;
-  color: #8b8b8b;
+  background-color: #c4cfdd;
+  color: #67758d;
   cursor: default;
   pointer-events: none;
 }
 
 .c0:disabled .c1 svg,
 .c0[disabled] .c1 svg {
-  fill: #8b8b8b;
+  fill: #67758d;
 }
 
 .c0::before {
@@ -815,33 +815,33 @@ exports[`Button should render rounded icon button 1`] = `
 }
 
 .c0:hover {
-  background-color: #516bd5;
+  background-color: #4a9bf6;
 }
 
 .c0:active {
-  background-color: #2f4dc3;
+  background-color: #1a81f4;
 }
 
 .c3:disabled .c1 svg,
 .c3[disabled] .c1 svg {
-  fill: #8b8b8b;
+  fill: #67758d;
 }
 
 .c3 .c1 svg {
-  fill: #3c5ad0;
+  fill: #328ef5;
 }
 
 .c3:hover .c1 svg {
-  fill: #516bd5;
+  fill: #4a9bf6;
 }
 
 .c3:active .c1 svg {
-  fill: #2f4dc3;
+  fill: #1a81f4;
 }
 
 .c4:disabled .c1 svg,
 .c4[disabled] .c1 svg {
-  fill: #8b8b8b;
+  fill: #67758d;
 }
 
 .c4 .c1 svg {
@@ -850,24 +850,24 @@ exports[`Button should render rounded icon button 1`] = `
 
 .c5:disabled .c1 svg,
 .c5[disabled] .c1 svg {
-  fill: #8b8b8b;
+  fill: #67758d;
 }
 
 .c5 .c1 svg {
-  fill: #fc5475;
+  fill: #ff5757;
 }
 
 .c5:hover .c1 svg {
-  fill: #fc6d89;
+  fill: #ff7171;
 }
 
 .c5:active .c1 svg {
-  fill: #fc3b61;
+  fill: #ff3e3e;
 }
 
 .c6:disabled .c1 svg,
 .c6[disabled] .c1 svg {
-  fill: #8b8b8b;
+  fill: #67758d;
 }
 
 .c6 .c1 svg {
@@ -876,11 +876,11 @@ exports[`Button should render rounded icon button 1`] = `
 
 .c7:disabled .c1 svg,
 .c7[disabled] .c1 svg {
-  fill: #8b8b8b;
+  fill: #67758d;
 }
 
 .c7 .c1 svg {
-  fill: #6B88c5;
+  fill: #3990cd;
 }
 
 <button
@@ -943,9 +943,9 @@ exports[`Button should render width 100% button 1`] = `
   height: 2.25rem;
   padding: 0 0.75rem;
   font-size: 1rem;
-  border-color: #e0e0e0;
+  border-color: #c4cfdd;
   background-color: #ffffff;
-  color: #373737;
+  color: #283040;
   width: 100%;
 }
 
@@ -956,15 +956,15 @@ exports[`Button should render width 100% button 1`] = `
 .c0:disabled,
 .c0[disabled] {
   opacity: 0.85;
-  background-color: #e0e0e0;
-  color: #8b8b8b;
+  background-color: #c4cfdd;
+  color: #67758d;
   cursor: default;
   pointer-events: none;
 }
 
 .c0:disabled .sc-10g5g0q-0 svg,
 .c0[disabled] .sc-10g5g0q-0 svg {
-  fill: #8b8b8b;
+  fill: #67758d;
 }
 
 .c0::before {
@@ -983,24 +983,24 @@ exports[`Button should render width 100% button 1`] = `
 }
 
 .c0::before {
-  border-color: #373737;
+  border-color: #283040;
 }
 
 .c0 .sc-10g5g0q-0 svg {
-  fill: #bfbfbf;
+  fill: #97a4ba;
 }
 
 .c0:hover {
-  border-color: #6B88c5;
+  border-color: #3990cd;
 }
 
 .c0:active {
-  border-color: #3c5ad0;
-  color: #3c5ad0;
+  border-color: #328ef5;
+  color: #328ef5;
 }
 
 .c0:active .sc-10g5g0q-0 svg {
-  fill: #3c5ad0;
+  fill: #328ef5;
 }
 
 <button

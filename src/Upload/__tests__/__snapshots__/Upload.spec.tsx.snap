@@ -12,7 +12,7 @@ exports[`Upload should render correctly 1`] = `
 }
 
 .c2 svg {
-  fill: #8b8b8b;
+  fill: #67758d;
   vertical-align: middle;
   pointer-events: none;
   -webkit-transition: all 200ms ease 0s;
@@ -57,9 +57,9 @@ exports[`Upload should render correctly 1`] = `
   height: 2.25rem;
   padding: 0 0.75rem;
   font-size: 1rem;
-  border-color: #e0e0e0;
+  border-color: #c4cfdd;
   background-color: #ffffff;
-  color: #373737;
+  color: #283040;
 }
 
 .c0:focus {
@@ -69,15 +69,15 @@ exports[`Upload should render correctly 1`] = `
 .c0:disabled,
 .c0[disabled] {
   opacity: 0.85;
-  background-color: #e0e0e0;
-  color: #8b8b8b;
+  background-color: #c4cfdd;
+  color: #67758d;
   cursor: default;
   pointer-events: none;
 }
 
 .c0:disabled .c1 svg,
 .c0[disabled] .c1 svg {
-  fill: #8b8b8b;
+  fill: #67758d;
 }
 
 .c0::before {
@@ -96,24 +96,24 @@ exports[`Upload should render correctly 1`] = `
 }
 
 .c0::before {
-  border-color: #373737;
+  border-color: #283040;
 }
 
 .c0 .c1 svg {
-  fill: #bfbfbf;
+  fill: #97a4ba;
 }
 
 .c0:hover {
-  border-color: #6B88c5;
+  border-color: #3990cd;
 }
 
 .c0:active {
-  border-color: #3c5ad0;
-  color: #3c5ad0;
+  border-color: #328ef5;
+  color: #328ef5;
 }
 
 .c0:active .c1 svg {
-  fill: #3c5ad0;
+  fill: #328ef5;
 }
 
 <div>

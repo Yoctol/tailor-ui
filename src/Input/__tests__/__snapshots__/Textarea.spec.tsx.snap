@@ -9,10 +9,10 @@ exports[`Textarea should render correctly 1`] = `
   max-width: 100%;
   border: 1px solid;
   border-radius: 0.25rem;
-  border-color: #bfbfbf;
+  border-color: #97a4ba;
   outline: none;
   background-color: #ffffff;
-  color: #373737;
+  color: #283040;
   line-height: 1.5;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -28,36 +28,36 @@ exports[`Textarea should render correctly 1`] = `
 }
 
 .c0:hover {
-  border-color: #3c5ad0;
+  border-color: #328ef5;
 }
 
 .c0:focus {
-  border-color: #3c5ad0;
-  box-shadow: inset 0 0 0 2px #e8ecf5;
+  border-color: #328ef5;
+  box-shadow: inset 0 0 0 2px #eef1f8;
 }
 
 .c0:disabled,
 .c0 [disabled] {
-  border-color: #bfbfbf;
-  background-color: #e0e0e0;
-  color: #8b8b8b;
+  border-color: #97a4ba;
+  background-color: #c4cfdd;
+  color: #67758d;
   cursor: not-allowed;
 }
 
 .c0::-webkit-input-placeholder {
-  color: #bfbfbf;
+  color: #97a4ba;
 }
 
 .c0::-moz-placeholder {
-  color: #bfbfbf;
+  color: #97a4ba;
 }
 
 .c0:-ms-input-placeholder {
-  color: #bfbfbf;
+  color: #97a4ba;
 }
 
 .c0::placeholder {
-  color: #bfbfbf;
+  color: #97a4ba;
 }
 
 <textarea
@@ -77,10 +77,10 @@ exports[`Textarea should render correctly with minRows & maxRows 1`] = `
   max-width: 100%;
   border: 1px solid;
   border-radius: 0.25rem;
-  border-color: #bfbfbf;
+  border-color: #97a4ba;
   outline: none;
   background-color: #ffffff;
-  color: #373737;
+  color: #283040;
   line-height: 1.5;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -96,36 +96,36 @@ exports[`Textarea should render correctly with minRows & maxRows 1`] = `
 }
 
 .c0:hover {
-  border-color: #3c5ad0;
+  border-color: #328ef5;
 }
 
 .c0:focus {
-  border-color: #3c5ad0;
-  box-shadow: inset 0 0 0 2px #e8ecf5;
+  border-color: #328ef5;
+  box-shadow: inset 0 0 0 2px #eef1f8;
 }
 
 .c0:disabled,
 .c0 [disabled] {
-  border-color: #bfbfbf;
-  background-color: #e0e0e0;
-  color: #8b8b8b;
+  border-color: #97a4ba;
+  background-color: #c4cfdd;
+  color: #67758d;
   cursor: not-allowed;
 }
 
 .c0::-webkit-input-placeholder {
-  color: #bfbfbf;
+  color: #97a4ba;
 }
 
 .c0::-moz-placeholder {
-  color: #bfbfbf;
+  color: #97a4ba;
 }
 
 .c0:-ms-input-placeholder {
-  color: #bfbfbf;
+  color: #97a4ba;
 }
 
 .c0::placeholder {
-  color: #bfbfbf;
+  color: #97a4ba;
 }
 
 <textarea

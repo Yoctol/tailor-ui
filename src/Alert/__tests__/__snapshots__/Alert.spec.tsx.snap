@@ -30,7 +30,7 @@ exports[`Alert should render error alert correctly 1`] = `
 }
 
 .c2 svg {
-  fill: #8b8b8b;
+  fill: #67758d;
   vertical-align: middle;
   pointer-events: none;
   -webkit-transition: all 200ms ease 0s;
@@ -38,7 +38,7 @@ exports[`Alert should render error alert correctly 1`] = `
 }
 
 .c2.c2.c2 svg {
-  fill: #fc5475;
+  fill: #ff5757;
   width: 20px;
   height: 20px;
 }
@@ -56,8 +56,8 @@ exports[`Alert should render error alert correctly 1`] = `
   padding: 0.5rem 1rem;
   border: 1px solid;
   border-radius: 0.25rem;
-  border-color: #fc5475;
-  background-color: rgba(252,84,117,0.1);
+  border-color: #ff5757;
+  background-color: rgba(255,87,87,0.1);
   font-size: 0.875rem;
   -webkit-transform-origin: top;
   -ms-transform-origin: top;
@@ -128,7 +128,7 @@ exports[`Alert should render info alert correctly 1`] = `
 }
 
 .c2 svg {
-  fill: #8b8b8b;
+  fill: #67758d;
   vertical-align: middle;
   pointer-events: none;
   -webkit-transition: all 200ms ease 0s;
@@ -136,7 +136,7 @@ exports[`Alert should render info alert correctly 1`] = `
 }
 
 .c2.c2.c2 svg {
-  fill: #4384f0;
+  fill: #328ef5;
   width: 20px;
   height: 20px;
 }
@@ -154,8 +154,8 @@ exports[`Alert should render info alert correctly 1`] = `
   padding: 0.5rem 1rem;
   border: 1px solid;
   border-radius: 0.25rem;
-  border-color: #4384f0;
-  background-color: rgba(67,132,240,0.1);
+  border-color: #328ef5;
+  background-color: rgba(50,142,245,0.1);
   font-size: 0.875rem;
   -webkit-transform-origin: top;
   -ms-transform-origin: top;
@@ -226,7 +226,7 @@ exports[`Alert should render success alert correctly 1`] = `
 }
 
 .c2 svg {
-  fill: #8b8b8b;
+  fill: #67758d;
   vertical-align: middle;
   pointer-events: none;
   -webkit-transition: all 200ms ease 0s;
@@ -234,7 +234,7 @@ exports[`Alert should render success alert correctly 1`] = `
 }
 
 .c2.c2.c2 svg {
-  fill: #40d064;
+  fill: #51c81c;
   width: 20px;
   height: 20px;
 }
@@ -252,8 +252,8 @@ exports[`Alert should render success alert correctly 1`] = `
   padding: 0.5rem 1rem;
   border: 1px solid;
   border-radius: 0.25rem;
-  border-color: #40d064;
-  background-color: rgba(64,208,100,0.1);
+  border-color: #51c81c;
+  background-color: rgba(81,200,28,0.1);
   font-size: 0.875rem;
   -webkit-transform-origin: top;
   -ms-transform-origin: top;
@@ -324,7 +324,7 @@ exports[`Alert should render warning alert correctly 1`] = `
 }
 
 .c2 svg {
-  fill: #8b8b8b;
+  fill: #67758d;
   vertical-align: middle;
   pointer-events: none;
   -webkit-transition: all 200ms ease 0s;
@@ -332,7 +332,7 @@ exports[`Alert should render warning alert correctly 1`] = `
 }
 
 .c2.c2.c2 svg {
-  fill: #f6a700;
+  fill: #fcb41d;
   width: 20px;
   height: 20px;
 }
@@ -350,8 +350,8 @@ exports[`Alert should render warning alert correctly 1`] = `
   padding: 0.5rem 1rem;
   border: 1px solid;
   border-radius: 0.25rem;
-  border-color: #f6a700;
-  background-color: rgba(246,167,0,0.1);
+  border-color: #fcb41d;
+  background-color: rgba(252,180,29,0.1);
   font-size: 0.875rem;
   -webkit-transform-origin: top;
   -ms-transform-origin: top;

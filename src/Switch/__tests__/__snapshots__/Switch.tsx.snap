@@ -22,7 +22,7 @@ exports[`Switch should render correctly 1`] = `
   bottom: 0;
   left: 0;
   border-radius: 99px;
-  background-color: #bfbfbf;
+  background-color: #97a4ba;
   -webkit-transition: 0.4s;
   transition: 0.4s;
   cursor: pointer;
@@ -42,7 +42,7 @@ exports[`Switch should render correctly 1`] = `
 }
 
 .c0 input:checked + span {
-  background-color: #3c5ad0;
+  background-color: #328ef5;
 }
 
 .c0 input:checked + span::before {

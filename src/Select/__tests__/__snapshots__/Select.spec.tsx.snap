@@ -35,7 +35,7 @@ exports[`Select multiple should display multi option 1`] = `
 }
 
 .c4 svg {
-  fill: #8b8b8b;
+  fill: #67758d;
   vertical-align: middle;
   pointer-events: none;
   -webkit-transition: all 200ms ease 0s;
@@ -57,7 +57,7 @@ exports[`Select multiple should display multi option 1`] = `
 }
 
 .c6 svg {
-  fill: #8b8b8b;
+  fill: #67758d;
   vertical-align: middle;
   pointer-events: none;
   -webkit-transition: all 200ms ease 0s;
@@ -65,7 +65,7 @@ exports[`Select multiple should display multi option 1`] = `
 }
 
 .c6.c6.c6 svg {
-  fill: #bfbfbf;
+  fill: #97a4ba;
   width: 24px;
   height: 24px;
 }
@@ -98,9 +98,9 @@ exports[`Select multiple should display multi option 1`] = `
   padding: 0 8px;
   border: 1px solid;
   border-radius: 0.25rem;
-  border-color: #6B88c5;
-  background-color: #f8f8fc;
-  color: #6B88c5;
+  border-color: #3990cd;
+  background-color: #fbfbfd;
+  color: #3990cd;
   font-size: 0.875rem;
   min-height: calc(2.25rem - 10px);
   margin-top: 2px;
@@ -114,11 +114,11 @@ exports[`Select multiple should display multi option 1`] = `
 }
 
 .c3 svg {
-  fill: #d5d8e8;
+  fill: #a2d3ff;
 }
 
 .c3:hover svg {
-  fill: #6B88c5;
+  fill: #3990cd;
 }
 
 .c1 {
@@ -134,10 +134,10 @@ exports[`Select multiple should display multi option 1`] = `
   max-width: 100%;
   border: 1px solid;
   border-radius: 0.25rem;
-  border-color: #bfbfbf;
+  border-color: #97a4ba;
   outline: none;
   background-color: #ffffff;
-  color: #373737;
+  color: #283040;
   line-height: 1.5;
   cursor: pointer;
   -webkit-appearance: none;
@@ -150,7 +150,7 @@ exports[`Select multiple should display multi option 1`] = `
 }
 
 .c1:hover {
-  border-color: #3c5ad0;
+  border-color: #328ef5;
 }
 
 .c1 input {
@@ -167,19 +167,19 @@ exports[`Select multiple should display multi option 1`] = `
 }
 
 .c1 input::-webkit-input-placeholder {
-  color: #bfbfbf;
+  color: #97a4ba;
 }
 
 .c1 input::-moz-placeholder {
-  color: #bfbfbf;
+  color: #97a4ba;
 }
 
 .c1 input:-ms-input-placeholder {
-  color: #bfbfbf;
+  color: #97a4ba;
 }
 
 .c1 input::placeholder {
-  color: #bfbfbf;
+  color: #97a4ba;
 }
 
 .c1 input {
@@ -331,7 +331,7 @@ exports[`Select should render correctly 1`] = `
 }
 
 .c4 svg {
-  fill: #8b8b8b;
+  fill: #67758d;
   vertical-align: middle;
   pointer-events: none;
   -webkit-transition: all 200ms ease 0s;
@@ -339,7 +339,7 @@ exports[`Select should render correctly 1`] = `
 }
 
 .c4.c4.c4 svg {
-  fill: #bfbfbf;
+  fill: #97a4ba;
   width: 24px;
   height: 24px;
 }
@@ -371,10 +371,10 @@ exports[`Select should render correctly 1`] = `
   max-width: 100%;
   border: 1px solid;
   border-radius: 0.25rem;
-  border-color: #bfbfbf;
+  border-color: #97a4ba;
   outline: none;
   background-color: #ffffff;
-  color: #373737;
+  color: #283040;
   line-height: 1.5;
   cursor: pointer;
   -webkit-appearance: none;
@@ -387,7 +387,7 @@ exports[`Select should render correctly 1`] = `
 }
 
 .c1:hover {
-  border-color: #3c5ad0;
+  border-color: #328ef5;
 }
 
 .c1 input {
@@ -404,19 +404,19 @@ exports[`Select should render correctly 1`] = `
 }
 
 .c1 input::-webkit-input-placeholder {
-  color: #bfbfbf;
+  color: #97a4ba;
 }
 
 .c1 input::-moz-placeholder {
-  color: #bfbfbf;
+  color: #97a4ba;
 }
 
 .c1 input:-ms-input-placeholder {
-  color: #bfbfbf;
+  color: #97a4ba;
 }
 
 .c1 input::placeholder {
-  color: #bfbfbf;
+  color: #97a4ba;
 }
 
 .c1 input {

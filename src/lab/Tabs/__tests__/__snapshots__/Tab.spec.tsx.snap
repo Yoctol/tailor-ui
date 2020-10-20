@@ -27,7 +27,7 @@ exports[`Tabs should render correctly 1`] = `
   width: 100%;
   height: 3px;
   border-radius: 0.25rem;
-  background-color: rgba(24,68,128,0.5);
+  background-color: rgba(29,112,184,0.5);
 }
 
 .c3 {
@@ -36,7 +36,7 @@ exports[`Tabs should render correctly 1`] = `
   bottom: 0;
   height: 3px;
   border-radius: 0.25rem;
-  background-color: #50d5ff;
+  background-color: #3dc8ff;
 }
 
 .c0 {
@@ -51,7 +51,7 @@ exports[`Tabs should render correctly 1`] = `
 
 .c0 .c1 {
   background-color: transparent;
-  color: #e0e0e0;
+  color: #c4cfdd;
 }
 
 .c0 .c1:hover {
@@ -59,7 +59,7 @@ exports[`Tabs should render correctly 1`] = `
 }
 
 .c0 .c1:active {
-  color: #50d5ff;
+  color: #3dc8ff;
 }
 
 .c0 .c1 {
@@ -128,17 +128,17 @@ exports[`Tabs should render with props type 1`] = `
 }
 
 .c0 .c1 {
-  background-color: #d5d8e8;
-  color: #8b8b8b;
+  background-color: #a2d3ff;
+  color: #67758d;
   border-top: 1px solid transparent;
 }
 
 .c0 .c1:hover {
-  color: #6B88c5;
+  color: #3990cd;
 }
 
 .c0 .c1:active {
-  color: #3c5ad0;
+  color: #328ef5;
 }
 
 .c0 .c1:first-child {
@@ -154,8 +154,8 @@ exports[`Tabs should render with props type 1`] = `
 .c0 .c1.active {
   z-index: 1;
   background-color: #ffffff;
-  color: #6B88c5;
-  border-color: #d5d8e8;
+  color: #3990cd;
+  border-color: #a2d3ff;
   box-shadow: 0px -2px 4px -4px rgba(100,120,168,0.3),4px 0px 4px -4px rgba(100,120,168,0.3),-4px 0px 4px -4px rgba(100,120,168,0.3);
 }
 
@@ -165,7 +165,7 @@ exports[`Tabs should render with props type 1`] = `
   left: 0;
   width: 1px;
   height: 1rem;
-  background-color: #8b8b8b;
+  background-color: #67758d;
 }
 
 .c0 .c1 {
@@ -223,7 +223,7 @@ exports[`Tabs should render with sizes 1`] = `
   width: 100%;
   height: 3px;
   border-radius: 0.25rem;
-  background-color: rgba(24,68,128,0.5);
+  background-color: rgba(29,112,184,0.5);
 }
 
 .c3 {
@@ -232,7 +232,7 @@ exports[`Tabs should render with sizes 1`] = `
   bottom: 0;
   height: 3px;
   border-radius: 0.25rem;
-  background-color: #50d5ff;
+  background-color: #3dc8ff;
 }
 
 .c0 {
@@ -247,7 +247,7 @@ exports[`Tabs should render with sizes 1`] = `
 
 .c0 .c1 {
   background-color: transparent;
-  color: #e0e0e0;
+  color: #c4cfdd;
 }
 
 .c0 .c1:hover {
@@ -255,7 +255,7 @@ exports[`Tabs should render with sizes 1`] = `
 }
 
 .c0 .c1:active {
-  color: #50d5ff;
+  color: #3dc8ff;
 }
 
 .c0 .c1 {
@@ -276,7 +276,7 @@ exports[`Tabs should render with sizes 1`] = `
 
 .c5 .c1 {
   background-color: transparent;
-  color: #e0e0e0;
+  color: #c4cfdd;
 }
 
 .c5 .c1:hover {
@@ -284,7 +284,7 @@ exports[`Tabs should render with sizes 1`] = `
 }
 
 .c5 .c1:active {
-  color: #50d5ff;
+  color: #3dc8ff;
 }
 
 .c5 .c1 {
@@ -305,7 +305,7 @@ exports[`Tabs should render with sizes 1`] = `
 
 .c6 .c1 {
   background-color: transparent;
-  color: #e0e0e0;
+  color: #c4cfdd;
 }
 
 .c6 .c1:hover {
@@ -313,7 +313,7 @@ exports[`Tabs should render with sizes 1`] = `
 }
 
 .c6 .c1:active {
-  color: #50d5ff;
+  color: #3dc8ff;
 }
 
 .c6 .c1 {

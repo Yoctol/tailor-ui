@@ -4,7 +4,7 @@ exports[`Heading should render correctly 1`] = `
 .c0 {
   font-size: 1.75rem;
   margin: 0;
-  color: #373737;
+  color: #283040;
   font-weight: bold;
   line-height: 1.5;
 }
@@ -12,7 +12,7 @@ exports[`Heading should render correctly 1`] = `
 .c1 {
   font-size: 1.5rem;
   margin: 0;
-  color: #373737;
+  color: #283040;
   font-weight: bold;
   line-height: 1.5;
 }
@@ -20,7 +20,7 @@ exports[`Heading should render correctly 1`] = `
 .c2 {
   font-size: 1.25rem;
   margin: 0;
-  color: #373737;
+  color: #283040;
   font-weight: bold;
   line-height: 1.5;
 }
@@ -28,7 +28,7 @@ exports[`Heading should render correctly 1`] = `
 .c3 {
   font-size: 1.125rem;
   margin: 0;
-  color: #373737;
+  color: #283040;
   font-weight: bold;
   line-height: 1.5;
 }
@@ -36,7 +36,7 @@ exports[`Heading should render correctly 1`] = `
 .c4 {
   font-size: 1rem;
   margin: 0;
-  color: #373737;
+  color: #283040;
   font-weight: bold;
   line-height: 1.5;
 }
@@ -44,7 +44,7 @@ exports[`Heading should render correctly 1`] = `
 .c5 {
   font-size: 0.875rem;
   margin: 0;
-  color: #373737;
+  color: #283040;
   font-weight: bold;
   line-height: 1.5;
 }
@@ -87,10 +87,10 @@ exports[`Heading should render different color heading 1`] = `
 .c0 {
   font-size: 1.75rem;
   margin: 0;
-  color: #373737;
+  color: #283040;
   font-weight: bold;
   line-height: 1.5;
-  color: #bfbfbf;
+  color: #97a4ba;
 }
 
 <h1

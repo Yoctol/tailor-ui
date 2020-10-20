@@ -37,7 +37,7 @@ exports[`Breadcrumb should render breadcrumb correctly 1`] = `
 }
 
 .c1 svg {
-  fill: #8b8b8b;
+  fill: #67758d;
   vertical-align: middle;
   pointer-events: none;
   -webkit-transition: all 200ms ease 0s;
@@ -45,7 +45,7 @@ exports[`Breadcrumb should render breadcrumb correctly 1`] = `
 }
 
 .c1.c1.c1 svg {
-  fill: #bfbfbf;
+  fill: #97a4ba;
   width: 24px;
   height: 24px;
 }
@@ -59,7 +59,7 @@ exports[`Breadcrumb should render breadcrumb correctly 1`] = `
 
 .c4 {
   max-width: auto;
-  color: #bfbfbf;
+  color: #97a4ba;
   font-size: 1rem;
   font-weight: bold;
   -webkit-letter-spacing: 0.2px;
@@ -68,13 +68,13 @@ exports[`Breadcrumb should render breadcrumb correctly 1`] = `
   letter-spacing: 0.2px;
   white-space: pre-wrap;
   cursor: auto;
-  color: #373737;
+  color: #283040;
   -webkit-transition: all 200ms ease 0s;
   transition: all 200ms ease 0s;
 }
 
 .c2:hover svg {
-  fill: #3c5ad0 !important;
+  fill: #328ef5 !important;
 }
 
 <div>

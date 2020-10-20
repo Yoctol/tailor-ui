@@ -54,7 +54,7 @@ exports[`Drawer should render correctly 1`] = `
 }
 
 .c8 svg {
-  fill: #8b8b8b;
+  fill: #67758d;
   vertical-align: middle;
   pointer-events: none;
   -webkit-transition: all 200ms ease 0s;
@@ -69,7 +69,7 @@ exports[`Drawer should render correctly 1`] = `
 .c4 {
   font-size: 1.25rem;
   margin: 0;
-  color: #373737;
+  color: #283040;
   font-weight: bold;
   line-height: 1.5;
 }
@@ -107,8 +107,8 @@ exports[`Drawer should render correctly 1`] = `
   transition: all 200ms ease 0s;
   width: 2.25rem;
   height: 2.25rem;
-  background-color: #e8ecf5;
-  color: #6B88c5;
+  background-color: #eef1f8;
+  color: #3990cd;
   font-weight: bold;
 }
 
@@ -119,15 +119,15 @@ exports[`Drawer should render correctly 1`] = `
 .c6:disabled,
 .c6[disabled] {
   opacity: 0.85;
-  background-color: #e0e0e0;
-  color: #8b8b8b;
+  background-color: #c4cfdd;
+  color: #67758d;
   cursor: default;
   pointer-events: none;
 }
 
 .c6:disabled .c7 svg,
 .c6[disabled] .c7 svg {
-  fill: #8b8b8b;
+  fill: #67758d;
 }
 
 .c6::before {
@@ -146,15 +146,15 @@ exports[`Drawer should render correctly 1`] = `
 }
 
 .c6 .c7 svg {
-  fill: #6B88c5;
+  fill: #3990cd;
 }
 
 .c6:hover {
-  background-color: #fafbfd;
+  background-color: #fff;
 }
 
 .c6:active {
-  background-color: #d6dded;
+  background-color: #dce2f1;
 }
 
 .c0 {
@@ -345,7 +345,7 @@ exports[`Drawer should render correctly with props closable 1`] = `
 .c3 {
   font-size: 1.25rem;
   margin: 0;
-  color: #373737;
+  color: #283040;
   font-weight: bold;
   line-height: 1.5;
 }
@@ -478,7 +478,7 @@ exports[`Drawer should render custom footer correctly 1`] = `
   -webkit-justify-content: flex-end;
   -ms-flex-pack: end;
   justify-content: flex-end;
-  background-color: #e8ecf5;
+  background-color: #eef1f8;
   padding-left: 2rem;
   padding-right: 2rem;
   padding-top: 1rem;
@@ -488,7 +488,7 @@ exports[`Drawer should render custom footer correctly 1`] = `
 .c3 {
   font-size: 1.25rem;
   margin: 0;
-  color: #373737;
+  color: #283040;
   font-weight: bold;
   line-height: 1.5;
 }
@@ -526,7 +526,7 @@ exports[`Drawer should render custom footer correctly 1`] = `
   height: 2.25rem;
   padding: 0 0.75rem;
   font-size: 1rem;
-  background-color: #3c5ad0;
+  background-color: #328ef5;
   color: #ffffff;
   font-weight: bold;
 }
@@ -538,15 +538,15 @@ exports[`Drawer should render custom footer correctly 1`] = `
 .c6:disabled,
 .c6[disabled] {
   opacity: 0.85;
-  background-color: #e0e0e0;
-  color: #8b8b8b;
+  background-color: #c4cfdd;
+  color: #67758d;
   cursor: default;
   pointer-events: none;
 }
 
 .c6:disabled .sc-10g5g0q-0 svg,
 .c6[disabled] .sc-10g5g0q-0 svg {
-  fill: #8b8b8b;
+  fill: #67758d;
 }
 
 .c6::before {
@@ -569,11 +569,11 @@ exports[`Drawer should render custom footer correctly 1`] = `
 }
 
 .c6:hover {
-  background-color: #516bd5;
+  background-color: #4a9bf6;
 }
 
 .c6:active {
-  background-color: #2f4dc3;
+  background-color: #1a81f4;
 }
 
 .c0 {
