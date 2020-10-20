@@ -23,11 +23,11 @@ import { Tabs } from 'tailor-ui/lab';
 
   return (
     <Box bg="primaryDark2" p="3" borderRadius="xl">
-      <Tabs value={value} onChange={setValue}>
-        <Tabs.Tab value="1">Tab 1</Tabs.Tab>
-        <Tabs.Tab value="2">Tab 2</Tabs.Tab>
-        <Tabs.Tab value="3">Tab 3</Tabs.Tab>
-      </Tabs>
+      <Lab.Tabs value={value} onChange={setValue}>
+        <Lab.Tabs.Tab value="1">Tab 1</Lab.Tabs.Tab>
+        <Lab.Tabs.Tab value="2">Tab 2</Lab.Tabs.Tab>
+        <Lab.Tabs.Tab value="3">Tab 3</Lab.Tabs.Tab>
+      </Lab.Tabs>
 
       <Box color="light">
         <p>Active Tab is {value}</p>
@@ -41,27 +41,27 @@ import { Tabs } from 'tailor-ui/lab';
 
 ```jsx live
 <Box bg="primaryDark2" p="3" borderRadius="xl">
-  <Tabs size="sm" defaultValue="1">
-    <Tabs.Tab value="1">Tab 1</Tabs.Tab>
-    <Tabs.Tab value="2">Tab 2</Tabs.Tab>
-    <Tabs.Tab value="3">Tab 3</Tabs.Tab>
-  </Tabs>
+  <Lab.Tabs size="sm" defaultValue="1">
+    <Lab.Tabs.Tab value="1">Tab 1</Lab.Tabs.Tab>
+    <Lab.Tabs.Tab value="2">Tab 2</Lab.Tabs.Tab>
+    <Lab.Tabs.Tab value="3">Tab 3</Lab.Tabs.Tab>
+  </Lab.Tabs>
 
   <br />
 
-  <Tabs defaultValue="1">
-    <Tabs.Tab value="1">Tab 1</Tabs.Tab>
-    <Tabs.Tab value="2">Tab 2</Tabs.Tab>
-    <Tabs.Tab value="3">Tab 3</Tabs.Tab>
-  </Tabs>
+  <Lab.Tabs defaultValue="1">
+    <Lab.Tabs.Tab value="1">Tab 1</Lab.Tabs.Tab>
+    <Lab.Tabs.Tab value="2">Tab 2</Lab.Tabs.Tab>
+    <Lab.Tabs.Tab value="3">Tab 3</Lab.Tabs.Tab>
+  </Lab.Tabs>
 
   <br />
 
-  <Tabs size="lg" defaultValue="1">
-    <Tabs.Tab value="1">Tab 1</Tabs.Tab>
-    <Tabs.Tab value="2">Tab 2</Tabs.Tab>
-    <Tabs.Tab value="3">Tab 3</Tabs.Tab>
-  </Tabs>
+  <Lab.Tabs size="lg" defaultValue="1">
+    <Lab.Tabs.Tab value="1">Tab 1</Lab.Tabs.Tab>
+    <Lab.Tabs.Tab value="2">Tab 2</Lab.Tabs.Tab>
+    <Lab.Tabs.Tab value="3">Tab 3</Lab.Tabs.Tab>
+  </Lab.Tabs>
 </Box>
 ```
 
@@ -73,19 +73,19 @@ import { Tabs } from 'tailor-ui/lab';
 
   return (
     <Box bg="primaryDark2" p="3" borderRadius="xl">
-      <Tabs value={value} onChange={setValue}>
-        <Tabs.Tab value="1">Tab 1</Tabs.Tab>
-        <Tabs.Tab value="2">Tab 2</Tabs.Tab>
-        <Tabs.Tab value="3">Tab 3</Tabs.Tab>
-      </Tabs>
+      <Lab.Tabs value={value} onChange={setValue}>
+        <Lab.Tabs.Tab value="1">Tab 1</Lab.Tabs.Tab>
+        <Lab.Tabs.Tab value="2">Tab 2</Lab.Tabs.Tab>
+        <Lab.Tabs.Tab value="3">Tab 3</Lab.Tabs.Tab>
+      </Lab.Tabs>
 
       <br />
 
-      <Tabs value={value} onChange={setValue}>
-        <Tabs.Tab value="1">Tab 1</Tabs.Tab>
-        <Tabs.Tab value="2">Tab 2</Tabs.Tab>
-        <Tabs.Tab value="3">Tab 3</Tabs.Tab>
-      </Tabs>
+      <Lab.Tabs value={value} onChange={setValue}>
+        <Lab.Tabs.Tab value="1">Tab 1</Lab.Tabs.Tab>
+        <Lab.Tabs.Tab value="2">Tab 2</Lab.Tabs.Tab>
+        <Lab.Tabs.Tab value="3">Tab 3</Lab.Tabs.Tab>
+      </Lab.Tabs>
     </Box>
   );
 }
@@ -99,11 +99,11 @@ import { Tabs } from 'tailor-ui/lab';
 
   return (
     <>
-      <Tabs type="card" value={value} onChange={setValue}>
-        <Tabs.Tab value="1">Tab 1</Tabs.Tab>
-        <Tabs.Tab value="2">Tab 2</Tabs.Tab>
-        <Tabs.Tab value="3">Tab 3</Tabs.Tab>
-      </Tabs>
+      <Lab.Tabs type="card" value={value} onChange={setValue}>
+        <Lab.Tabs.Tab value="1">Tab 1</Lab.Tabs.Tab>
+        <Lab.Tabs.Tab value="2">Tab 2</Lab.Tabs.Tab>
+        <Lab.Tabs.Tab value="3">Tab 3</Lab.Tabs.Tab>
+      </Lab.Tabs>
 
       <p>Active Tab is {value}</p>
     </>
@@ -115,27 +115,27 @@ import { Tabs } from 'tailor-ui/lab';
 
 ```jsx live
 <>
-  <Tabs type="card" size="sm" defaultValue="1">
-    <Tabs.Tab value="1">Tab 1</Tabs.Tab>
-    <Tabs.Tab value="2">Tab 2</Tabs.Tab>
-    <Tabs.Tab value="3">Tab 3</Tabs.Tab>
-  </Tabs>
+  <Lab.Tabs type="card" size="sm" defaultValue="1">
+    <Lab.Tabs.Tab value="1">Tab 1</Lab.Tabs.Tab>
+    <Lab.Tabs.Tab value="2">Tab 2</Lab.Tabs.Tab>
+    <Lab.Tabs.Tab value="3">Tab 3</Lab.Tabs.Tab>
+  </Lab.Tabs>
 
   <br />
 
-  <Tabs type="card" defaultValue="1">
-    <Tabs.Tab value="1">Tab 1</Tabs.Tab>
-    <Tabs.Tab value="2">Tab 2</Tabs.Tab>
-    <Tabs.Tab value="3">Tab 3</Tabs.Tab>
-  </Tabs>
+  <Lab.Tabs type="card" defaultValue="1">
+    <Lab.Tabs.Tab value="1">Tab 1</Lab.Tabs.Tab>
+    <Lab.Tabs.Tab value="2">Tab 2</Lab.Tabs.Tab>
+    <Lab.Tabs.Tab value="3">Tab 3</Lab.Tabs.Tab>
+  </Lab.Tabs>
 
   <br />
 
-  <Tabs type="card" size="lg" defaultValue="1">
-    <Tabs.Tab value="1">Tab 1</Tabs.Tab>
-    <Tabs.Tab value="2">Tab 2</Tabs.Tab>
-    <Tabs.Tab value="3">Tab 3</Tabs.Tab>
-  </Tabs>
+  <Lab.Tabs type="card" size="lg" defaultValue="1">
+    <Lab.Tabs.Tab value="1">Tab 1</Lab.Tabs.Tab>
+    <Lab.Tabs.Tab value="2">Tab 2</Lab.Tabs.Tab>
+    <Lab.Tabs.Tab value="3">Tab 3</Lab.Tabs.Tab>
+  </Lab.Tabs>
 </>
 ```
 
