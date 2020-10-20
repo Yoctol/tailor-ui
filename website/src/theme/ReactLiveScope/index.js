@@ -16,22 +16,22 @@ import * as ramda from 'ramda';
 
 import LocaleContext from '../../context/LocaleContext';
 import ThemeContext from '../../context/ThemeContext';
+import * as Lab from '../../../../src/lab';
 import * as TailorUI from '../../../../src';
 import * as TailorUIFormik from '../../../../src/formik';
-import * as TailorUILab from '../../../../src/lab';
 
 // Add react-live imports you need here
 const ReactLiveScope = {
   React,
   ...React,
   ...TailorUI,
-  ...TailorUILab,
   ...TailorUIFormik,
   ...Yup,
   ...Formik,
   ...ReactIconsMd,
   ...ReactIconsTi,
   ...ramda,
+  Lab,
   LocaleContext,
   ThemeContext,
   DateFns,
