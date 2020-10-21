@@ -1,3 +1,11 @@
+# [1.1.0](https://github.com/yoctol/tailor-ui/compare/v1.0.4...v1.1.0) (2020-10-21)
+
+
+### Features
+
+* **select:** new implementation with downshift@6.x ([683a124](https://github.com/yoctol/tailor-ui/commit/683a124ea71547c61765182979f381426a3eba92))
+* **theme:** move current theme to `darkerTheme` and add another light version ([1692288](https://github.com/yoctol/tailor-ui/commit/1692288dfa44862dfeb233f5100e9f462602475c))
+
 ## [1.0.4](https://github.com/yoctol/tailor-ui/compare/v1.0.3...v1.0.4) (2020-10-12)
 
 
