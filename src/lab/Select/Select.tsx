@@ -1,4 +1,10 @@
-import React, { PropsWithChildren, ReactNode, useState } from 'react';
+import React, {
+  PropsWithChildren,
+  ReactNode,
+  useEffect,
+  useRef,
+  useState,
+} from 'react';
 import { UseComboboxStateChange, useCombobox } from 'downshift6';
 
 import { useFormField } from '../../FormField';
@@ -54,7 +60,24 @@ const Select = <T extends SelectOption>({
     defaultValue,
   });
 
+  const selectRef = useRef<HTMLButtonElement>(null);
   const [searchValue, setSearchValue] = useState('');
+
+  // Prevent display the useless error message
+  useEffect(() => {
+    const originalError = console.error;
+
+    console.error = (...args: any[]) => {
+      if (/downshift: The ref prop "ref" from/.test(args[0])) {
+        return;
+      }
+      originalError.call(console, ...args);
+    };
+
+    return () => {
+      console.error = originalError;
+    };
+  }, []);
 
   const searchOptions =
     searchValue !== '' ? filter(options, searchValue) : options;
@@ -150,12 +173,14 @@ const Select = <T extends SelectOption>({
       {...getComboboxProps({
         style: {
           width,
-          position: 'relative',
         },
       })}
     >
       <StyledSelect
-        {...getToggleButtonProps({ disabled: disabled || loading })}
+        {...getToggleButtonProps({
+          ref: selectRef,
+          disabled: disabled || loading,
+        })}
         invalid={invalid}
         focused={isOpen}
       >
@@ -179,6 +204,7 @@ const Select = <T extends SelectOption>({
         />
       </StyledSelect>
       <SelectOptions
+        selectRef={selectRef}
         getMenuProps={getMenuProps}
         getItemProps={getItemProps}
         visible={isOpen}

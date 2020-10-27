@@ -150,26 +150,19 @@ export const StyledSelect = styled.div<StyledSelectProps>`
   ${(p) => p.theme.transition};
 `;
 
-export const StyledPopover = styled.div<{ visible: boolean }>`
-  position: absolute;
-  z-index: 10;
-  top: 40px;
+export const StyledPopover = styled.div`
+  position: relative;
   width: 100%;
   max-height: 182px;
   overflow-y: auto;
+  border: ${(p) => p.theme.borders.base};
+  border-radius: ${(p) => p.theme.radii.lg};
+  border-color: ${(p) => p.theme.colors.gray300};
+  box-shadow: ${(p) => p.theme.shadows.base};
   color: ${(p) => p.theme.colors.gray700};
   font-size: ${(p) => p.theme.fontSizes.sm};
   text-align: left;
   white-space: nowrap;
-  ${(p) =>
-    p.visible &&
-    css`
-      border: ${p.theme.borders.base};
-      border-radius: ${p.theme.radii.lg};
-      border-color: ${p.theme.colors.gray300};
-      background-color: ${p.theme.colors.light};
-      box-shadow: ${p.theme.shadows.base};
-    `}
 `;
 
 const spin = keyframes`
