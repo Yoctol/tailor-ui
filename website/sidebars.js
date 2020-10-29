@@ -44,6 +44,6 @@ module.exports = {
       'formik/radio-field',
       'formik/select-field',
     ],
-    Lab: ['lab/tabs', 'lab/select'],
+    Lab: ['lab/tabs', 'lab/select', 'lab/tooltip'],
   },
 };
