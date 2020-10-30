@@ -222,7 +222,7 @@ exports[`Modal should render correctly 1`] = `
     portal-container=""
   >
     <div
-      style="position: fixed; top: 0px; left: 0px; z-index: 5;"
+      style="position: fixed; top: 0px; left: 0px; z-index: 20;"
     >
       <div
         class="c0"
@@ -298,7 +298,7 @@ exports[`Modal should render correctly with lg size 1`] = `
 }
 
 <div
-      style="position: fixed; top: 0px; left: 0px; z-index: 5;"
+      style="position: fixed; top: 0px; left: 0px; z-index: 20;"
     >
       <div
         class="c0"
@@ -584,7 +584,7 @@ exports[`Modal should render with error status 1`] = `
 }
 
 <div
-      style="position: fixed; top: 0px; left: 0px; z-index: 5;"
+      style="position: fixed; top: 0px; left: 0px; z-index: 20;"
     >
       <div
         class="c0"
@@ -1175,7 +1175,7 @@ exports[`Modal should render with info status 1`] = `
 }
 
 <div
-      style="position: fixed; top: 0px; left: 0px; z-index: 5;"
+      style="position: fixed; top: 0px; left: 0px; z-index: 20;"
     >
       <div
         class="c0"
@@ -1766,7 +1766,7 @@ exports[`Modal should render with props closable 1`] = `
 }
 
 <div
-      style="position: fixed; top: 0px; left: 0px; z-index: 5;"
+      style="position: fixed; top: 0px; left: 0px; z-index: 20;"
     >
       <div
         class="c0"
@@ -2289,7 +2289,7 @@ exports[`Modal should render with success status 1`] = `
 }
 
 <div
-      style="position: fixed; top: 0px; left: 0px; z-index: 5;"
+      style="position: fixed; top: 0px; left: 0px; z-index: 20;"
     >
       <div
         class="c0"
@@ -2880,7 +2880,7 @@ exports[`Modal should render with warning status 1`] = `
 }
 
 <div
-      style="position: fixed; top: 0px; left: 0px; z-index: 5;"
+      style="position: fixed; top: 0px; left: 0px; z-index: 20;"
     >
       <div
         class="c0"

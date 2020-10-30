@@ -32,6 +32,7 @@ export interface AnimationModalProps {
   closable?: boolean;
   status?: StatusType | null;
   visible: boolean;
+  zIndex?: number;
 }
 
 const AnimationModal: FC<AnimationModalProps> = ({
@@ -43,6 +44,7 @@ const AnimationModal: FC<AnimationModalProps> = ({
   closable = true,
   size = 'md',
   status = null,
+  zIndex = StackingOrder.OVERLAY,
   ...otherProps
 }) => {
   const transRef = useRef(null);
@@ -96,6 +98,7 @@ const AnimationModal: FC<AnimationModalProps> = ({
     <>
       <Backdrop
         visible={visible}
+        zIndex={zIndex}
         onClick={(event) => {
           if (closable) {
             onCancel(event as any);
@@ -105,7 +108,7 @@ const AnimationModal: FC<AnimationModalProps> = ({
       {transitions.map(
         ({ item, key, props }) =>
           item && (
-            <Portal key={key} defaultOrder={StackingOrder.OVERLAY}>
+            <Portal key={key} defaultOrder={zIndex}>
               <AnimatedModalWrapper style={props}>
                 {status && (
                   <AnimatedModalStatusBar status={status} style={statusProps} />

@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { animated, config, useTransition } from 'react-spring';
 
 import { Portal } from '../Portal';
+import { StackingOrder } from '../constants';
 
 const StyledBackdrop = styled.div`
   position: fixed;
@@ -18,9 +19,14 @@ const AnimatedStyledBackdrop = animated(StyledBackdrop);
 
 export interface BackdropProps extends HTMLAttributes<HTMLDivElement> {
   visible: boolean;
+  zIndex?: number;
 }
 
-const Backdrop: FC<BackdropProps> = ({ visible, ...otherProps }) => {
+const Backdrop: FC<BackdropProps> = ({
+  visible,
+  zIndex = StackingOrder.OVERLAY,
+  ...otherProps
+}) => {
   const transition = useTransition(visible, null, {
     from: {
       opacity: 0,
@@ -41,7 +47,7 @@ const Backdrop: FC<BackdropProps> = ({ visible, ...otherProps }) => {
       {transition.map(
         ({ item, key, props }) =>
           item && (
-            <Portal key={key}>
+            <Portal key={key} defaultOrder={zIndex}>
               <AnimatedStyledBackdrop style={props} {...otherProps} />
             </Portal>
           )

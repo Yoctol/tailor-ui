@@ -25,6 +25,7 @@ export interface ModalOptions {
   onOpenComplete?: () => void;
   onCloseComplete?: () => void;
   closable?: boolean;
+  zIndex?: number;
 }
 
 export type UpdateFunction = (
@@ -57,6 +58,7 @@ interface ModalOptionsState {
   onCloseComplete?: () => void;
   closable: boolean;
   type: ModalTypes;
+  zIndex?: number;
 }
 
 const EffectModal: FC<EffectModalProps> = ({ setTrigger }) => {
@@ -87,6 +89,7 @@ const EffectModal: FC<EffectModalProps> = ({ setTrigger }) => {
         onCancel,
         onOpenComplete,
         onCloseComplete,
+        zIndex,
       } = options;
 
       let resolveFn: (value: boolean) => void = () => {};
@@ -132,6 +135,7 @@ const EffectModal: FC<EffectModalProps> = ({ setTrigger }) => {
         onCancel: handleCancel,
         onOpenComplete,
         onCloseComplete,
+        zIndex,
       });
 
       setVisible(true);
@@ -156,6 +160,7 @@ const EffectModal: FC<EffectModalProps> = ({ setTrigger }) => {
     onCancel,
     onConfirm,
     type,
+    zIndex,
   } = modalOptions;
 
   const status = type !== 'confirm' ? type : null;
@@ -172,6 +177,7 @@ const EffectModal: FC<EffectModalProps> = ({ setTrigger }) => {
       confirmText={confirmText}
       onCancel={onCancel as MouseEventHandler}
       onConfirm={onConfirm}
+      zIndex={zIndex}
       confirmButtonProps={{
         variant: type === 'error' ? 'danger' : 'primary',
       }}
