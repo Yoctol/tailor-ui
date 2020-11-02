@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/yoctol/tailor-ui/compare/v1.2.0...v1.2.1) (2020-11-02)
+
+
+### Bug Fixes
+
+* **modal:** add workaround for hooks modal z-index ([779f28f](https://github.com/yoctol/tailor-ui/commit/779f28fce97c4bd5b54336cc853f3aa09142245f))
+
 # [1.2.0](https://github.com/yoctol/tailor-ui/compare/v1.1.0...v1.2.0) (2020-10-29)
 
 
