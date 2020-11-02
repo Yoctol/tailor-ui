@@ -26,7 +26,7 @@ exports[`Backdrop should render backdrop correctly 1`] = `
     portal-container=""
   >
     <div
-      style="position: fixed; top: 0px; left: 0px; z-index: 5;"
+      style="position: fixed; top: 0px; left: 0px; z-index: 20;"
     >
       <div
         class="c0"

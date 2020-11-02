@@ -8,7 +8,9 @@ import ModalHeader, { ModalHeaderProps } from './Header';
 
 export type ModalProps = AnimationModalProps &
   ModalHeaderProps &
-  ModalFooterProps;
+  ModalFooterProps & {
+    zIndex?: number;
+  };
 
 const Modal: FC<ModalProps> = ({
   title,
@@ -22,9 +24,15 @@ const Modal: FC<ModalProps> = ({
   confirmText,
   confirmButtonProps,
   cancelButtonProps,
+  zIndex,
   ...props
 }) => (
-  <AnimationModal status={status} onCancel={onCancel} {...props}>
+  <AnimationModal
+    status={status}
+    onCancel={onCancel}
+    zIndex={zIndex}
+    {...props}
+  >
     <ModalHeader
       status={status}
       title={title}
