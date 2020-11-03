@@ -236,11 +236,11 @@ exports[`Popconfirm should render correctly 1`] = `
 }
 
 .c7:hover {
-  background-color: #4a9bf6;
+  background-color: #4196f6;
 }
 
 .c7:active {
-  background-color: #1a81f4;
+  background-color: #2386f4;
 }
 
 <body>

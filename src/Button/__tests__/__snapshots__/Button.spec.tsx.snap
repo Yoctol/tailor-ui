@@ -100,11 +100,11 @@ exports[`Button should render button with specified icon 1`] = `
 }
 
 .c0:hover {
-  background-color: #ff7171;
+  background-color: #f66;
 }
 
 .c0:active {
-  background-color: #ff3e3e;
+  background-color: #ff4848;
 }
 
 <button
@@ -411,11 +411,11 @@ exports[`Button should render different button type 1`] = `
 }
 
 .c0:hover {
-  background-color: #4a9bf6;
+  background-color: #4196f6;
 }
 
 .c0:active {
-  background-color: #1a81f4;
+  background-color: #2386f4;
 }
 
 <button
@@ -502,11 +502,11 @@ exports[`Button should render disabled button 1`] = `
 }
 
 .c0:hover {
-  background-color: #4a9bf6;
+  background-color: #4196f6;
 }
 
 .c0:active {
-  background-color: #1a81f4;
+  background-color: #2386f4;
 }
 
 <button
@@ -597,11 +597,11 @@ exports[`Button should render loading button 1`] = `
 }
 
 .c0:hover {
-  background-color: #4a9bf6;
+  background-color: #4196f6;
 }
 
 .c0:active {
-  background-color: #1a81f4;
+  background-color: #2386f4;
 }
 
 .c0::before {
@@ -701,11 +701,11 @@ exports[`Button should render rounded button 1`] = `
 }
 
 .c0:hover {
-  background-color: #4a9bf6;
+  background-color: #4196f6;
 }
 
 .c0:active {
-  background-color: #1a81f4;
+  background-color: #2386f4;
 }
 
 <button
@@ -815,11 +815,11 @@ exports[`Button should render rounded icon button 1`] = `
 }
 
 .c0:hover {
-  background-color: #4a9bf6;
+  background-color: #4196f6;
 }
 
 .c0:active {
-  background-color: #1a81f4;
+  background-color: #2386f4;
 }
 
 .c3:disabled .c1 svg,
@@ -832,11 +832,11 @@ exports[`Button should render rounded icon button 1`] = `
 }
 
 .c3:hover .c1 svg {
-  fill: #4a9bf6;
+  fill: #4196f6;
 }
 
 .c3:active .c1 svg {
-  fill: #1a81f4;
+  fill: #2386f4;
 }
 
 .c4:disabled .c1 svg,
@@ -858,11 +858,11 @@ exports[`Button should render rounded icon button 1`] = `
 }
 
 .c5:hover .c1 svg {
-  fill: #ff7171;
+  fill: #f66;
 }
 
 .c5:active .c1 svg {
-  fill: #ff3e3e;
+  fill: #ff4848;
 }
 
 .c6:disabled .c1 svg,

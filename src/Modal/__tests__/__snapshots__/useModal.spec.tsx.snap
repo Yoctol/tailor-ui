@@ -189,11 +189,11 @@ exports[`useModal should render confirm modal correctly 1`] = `
 }
 
 .c7:hover {
-  background-color: #fff;
+  background-color: #f9fafc;
 }
 
 .c7:active {
-  background-color: #dce2f1;
+  background-color: #e3e8f4;
 }
 
 .c14 {
@@ -272,11 +272,11 @@ exports[`useModal should render confirm modal correctly 1`] = `
 }
 
 .c14:hover {
-  background-color: #fff;
+  background-color: #f9fafc;
 }
 
 .c14:active {
-  background-color: #dce2f1;
+  background-color: #e3e8f4;
 }
 
 .c15 {
@@ -356,11 +356,11 @@ exports[`useModal should render confirm modal correctly 1`] = `
 }
 
 .c15:hover {
-  background-color: #4a9bf6;
+  background-color: #4196f6;
 }
 
 .c15:active {
-  background-color: #1a81f4;
+  background-color: #2386f4;
 }
 
 .c0 {
@@ -745,11 +745,11 @@ exports[`useModal should render error modal correctly 1`] = `
 }
 
 .c13:hover {
-  background-color: #ff7171;
+  background-color: #f66;
 }
 
 .c13:active {
-  background-color: #ff3e3e;
+  background-color: #ff4848;
 }
 
 .c0 {
@@ -1104,11 +1104,11 @@ exports[`useModal should render info modal correctly 1`] = `
 }
 
 .c13:hover {
-  background-color: #4a9bf6;
+  background-color: #4196f6;
 }
 
 .c13:active {
-  background-color: #1a81f4;
+  background-color: #2386f4;
 }
 
 .c0 {
@@ -1463,11 +1463,11 @@ exports[`useModal should render success modal correctly 1`] = `
 }
 
 .c13:hover {
-  background-color: #4a9bf6;
+  background-color: #4196f6;
 }
 
 .c13:active {
-  background-color: #1a81f4;
+  background-color: #2386f4;
 }
 
 .c0 {
@@ -1822,11 +1822,11 @@ exports[`useModal should render warning modal correctly 1`] = `
 }
 
 .c13:hover {
-  background-color: #4a9bf6;
+  background-color: #4196f6;
 }
 
 .c13:active {
-  background-color: #1a81f4;
+  background-color: #2386f4;
 }
 
 .c0 {

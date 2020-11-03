@@ -933,11 +933,11 @@ const style = css`
 
         &:hover {
           background-color: ${(p) =>
-            lighten(0.05, p.theme.colors.primaryLight)};
+            lighten(0.03, p.theme.colors.primaryLight)};
         }
 
         &:active {
-          background-color: ${(p) => darken(0.05, p.theme.colors.primaryLight)};
+          background-color: ${(p) => darken(0.03, p.theme.colors.primaryLight)};
         }
 
         &:disabled,

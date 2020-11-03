@@ -150,11 +150,11 @@ exports[`Drawer should render correctly 1`] = `
 }
 
 .c6:hover {
-  background-color: #fff;
+  background-color: #f9fafc;
 }
 
 .c6:active {
-  background-color: #dce2f1;
+  background-color: #e3e8f4;
 }
 
 .c0 {
@@ -569,11 +569,11 @@ exports[`Drawer should render custom footer correctly 1`] = `
 }
 
 .c6:hover {
-  background-color: #4a9bf6;
+  background-color: #4196f6;
 }
 
 .c6:active {
-  background-color: #1a81f4;
+  background-color: #2386f4;
 }
 
 .c0 {
