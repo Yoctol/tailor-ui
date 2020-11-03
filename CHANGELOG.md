@@ -1,3 +1,30 @@
+## [1.2.1](https://github.com/yoctol/tailor-ui/compare/v1.2.0...v1.2.1) (2020-11-02)
+
+
+### Bug Fixes
+
+* **modal:** add workaround for hooks modal z-index ([779f28f](https://github.com/yoctol/tailor-ui/commit/779f28fce97c4bd5b54336cc853f3aa09142245f))
+
+# [1.2.0](https://github.com/yoctol/tailor-ui/compare/v1.1.0...v1.2.0) (2020-10-29)
+
+
+### Bug Fixes
+
+* **select:** use absolute popover ([e6fc0ce](https://github.com/yoctol/tailor-ui/commit/e6fc0ceecd3eaf72f4d55bd8932d24b5fe4419b7))
+
+
+### Features
+
+* **tooltip:** new tooltip based on @reach-ui/tooltip ([ca12d1c](https://github.com/yoctol/tailor-ui/commit/ca12d1cfad45f467e1e4ca3cd07efdb8bbf1ea16))
+
+# [1.1.0](https://github.com/yoctol/tailor-ui/compare/v1.0.4...v1.1.0) (2020-10-21)
+
+
+### Features
+
+* **select:** new implementation with downshift@6.x ([683a124](https://github.com/yoctol/tailor-ui/commit/683a124ea71547c61765182979f381426a3eba92))
+* **theme:** move current theme to `darkerTheme` and add another light version ([1692288](https://github.com/yoctol/tailor-ui/commit/1692288dfa44862dfeb233f5100e9f462602475c))
+
 ## [1.0.4](https://github.com/yoctol/tailor-ui/compare/v1.0.3...v1.0.4) (2020-10-12)
 
 
