@@ -167,11 +167,11 @@ exports[`Modal should render correctly 1`] = `
 }
 
 .c10:hover {
-  background-color: #4a9bf6;
+  background-color: #4196f6;
 }
 
 .c10:active {
-  background-color: #1a81f4;
+  background-color: #2386f4;
 }
 
 .c0 {
@@ -471,11 +471,11 @@ exports[`Modal should render correctly with lg size 1`] = `
 }
 
 .c9:hover {
-  background-color: #4a9bf6;
+  background-color: #4196f6;
 }
 
 .c9:active {
-  background-color: #1a81f4;
+  background-color: #2386f4;
 }
 
 .c0 {
@@ -812,11 +812,11 @@ exports[`Modal should render with error status 1`] = `
 }
 
 .c10:hover {
-  background-color: #fff;
+  background-color: #f9fafc;
 }
 
 .c10:active {
-  background-color: #dce2f1;
+  background-color: #e3e8f4;
 }
 
 .c16 {
@@ -895,11 +895,11 @@ exports[`Modal should render with error status 1`] = `
 }
 
 .c16:hover {
-  background-color: #fff;
+  background-color: #f9fafc;
 }
 
 .c16:active {
-  background-color: #dce2f1;
+  background-color: #e3e8f4;
 }
 
 .c17 {
@@ -979,11 +979,11 @@ exports[`Modal should render with error status 1`] = `
 }
 
 .c17:hover {
-  background-color: #4a9bf6;
+  background-color: #4196f6;
 }
 
 .c17:active {
-  background-color: #1a81f4;
+  background-color: #2386f4;
 }
 
 .c0 {
@@ -1403,11 +1403,11 @@ exports[`Modal should render with info status 1`] = `
 }
 
 .c10:hover {
-  background-color: #fff;
+  background-color: #f9fafc;
 }
 
 .c10:active {
-  background-color: #dce2f1;
+  background-color: #e3e8f4;
 }
 
 .c16 {
@@ -1486,11 +1486,11 @@ exports[`Modal should render with info status 1`] = `
 }
 
 .c16:hover {
-  background-color: #fff;
+  background-color: #f9fafc;
 }
 
 .c16:active {
-  background-color: #dce2f1;
+  background-color: #e3e8f4;
 }
 
 .c17 {
@@ -1570,11 +1570,11 @@ exports[`Modal should render with info status 1`] = `
 }
 
 .c17:hover {
-  background-color: #4a9bf6;
+  background-color: #4196f6;
 }
 
 .c17:active {
-  background-color: #1a81f4;
+  background-color: #2386f4;
 }
 
 .c0 {
@@ -1961,11 +1961,11 @@ exports[`Modal should render with props closable 1`] = `
 }
 
 .c6:hover {
-  background-color: #fff;
+  background-color: #f9fafc;
 }
 
 .c6:active {
-  background-color: #dce2f1;
+  background-color: #e3e8f4;
 }
 
 .c13 {
@@ -2044,11 +2044,11 @@ exports[`Modal should render with props closable 1`] = `
 }
 
 .c13:hover {
-  background-color: #fff;
+  background-color: #f9fafc;
 }
 
 .c13:active {
-  background-color: #dce2f1;
+  background-color: #e3e8f4;
 }
 
 .c14 {
@@ -2128,11 +2128,11 @@ exports[`Modal should render with props closable 1`] = `
 }
 
 .c14:hover {
-  background-color: #4a9bf6;
+  background-color: #4196f6;
 }
 
 .c14:active {
-  background-color: #1a81f4;
+  background-color: #2386f4;
 }
 
 .c0 {
@@ -2517,11 +2517,11 @@ exports[`Modal should render with success status 1`] = `
 }
 
 .c10:hover {
-  background-color: #fff;
+  background-color: #f9fafc;
 }
 
 .c10:active {
-  background-color: #dce2f1;
+  background-color: #e3e8f4;
 }
 
 .c16 {
@@ -2600,11 +2600,11 @@ exports[`Modal should render with success status 1`] = `
 }
 
 .c16:hover {
-  background-color: #fff;
+  background-color: #f9fafc;
 }
 
 .c16:active {
-  background-color: #dce2f1;
+  background-color: #e3e8f4;
 }
 
 .c17 {
@@ -2684,11 +2684,11 @@ exports[`Modal should render with success status 1`] = `
 }
 
 .c17:hover {
-  background-color: #4a9bf6;
+  background-color: #4196f6;
 }
 
 .c17:active {
-  background-color: #1a81f4;
+  background-color: #2386f4;
 }
 
 .c0 {
@@ -3108,11 +3108,11 @@ exports[`Modal should render with warning status 1`] = `
 }
 
 .c10:hover {
-  background-color: #fff;
+  background-color: #f9fafc;
 }
 
 .c10:active {
-  background-color: #dce2f1;
+  background-color: #e3e8f4;
 }
 
 .c16 {
@@ -3191,11 +3191,11 @@ exports[`Modal should render with warning status 1`] = `
 }
 
 .c16:hover {
-  background-color: #fff;
+  background-color: #f9fafc;
 }
 
 .c16:active {
-  background-color: #dce2f1;
+  background-color: #e3e8f4;
 }
 
 .c17 {
@@ -3275,11 +3275,11 @@ exports[`Modal should render with warning status 1`] = `
 }
 
 .c17:hover {
-  background-color: #4a9bf6;
+  background-color: #4196f6;
 }
 
 .c17:active {
-  background-color: #1a81f4;
+  background-color: #2386f4;
 }
 
 .c0 {

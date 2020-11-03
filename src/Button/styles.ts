@@ -132,11 +132,11 @@ export const buttonVariant = ({ variant }: { variant?: ButtonVariant }) => {
         }
 
         &:hover {
-          background-color: ${(p) => lighten(0.05, p.theme.colors.primary)};
+          background-color: ${(p) => lighten(0.03, p.theme.colors.primary)};
         }
 
         &:active {
-          background-color: ${(p) => darken(0.05, p.theme.colors.primary)};
+          background-color: ${(p) => darken(0.03, p.theme.colors.primary)};
         }
       `;
     case 'primary-invert':
@@ -155,19 +155,19 @@ export const buttonVariant = ({ variant }: { variant?: ButtonVariant }) => {
         }
 
         &:hover {
-          color: ${(p) => lighten(0.05, p.theme.colors.primary)};
+          color: ${(p) => lighten(0.03, p.theme.colors.primary)};
 
           ${IconWrapper} svg {
-            fill: ${(p) => lighten(0.05, p.theme.colors.primary)};
+            fill: ${(p) => lighten(0.03, p.theme.colors.primary)};
           }
         }
 
         &:active {
           background-color: ${(p) => p.theme.colors.gray200};
-          color: ${(p) => darken(0.05, p.theme.colors.primary)};
+          color: ${(p) => darken(0.03, p.theme.colors.primary)};
 
           ${IconWrapper} svg {
-            fill: ${(p) => darken(0.05, p.theme.colors.primary)};
+            fill: ${(p) => darken(0.03, p.theme.colors.primary)};
           }
         }
       `;
@@ -183,11 +183,11 @@ export const buttonVariant = ({ variant }: { variant?: ButtonVariant }) => {
         }
 
         &:hover {
-          background-color: ${(p) => lighten(0.05, p.theme.colors.danger)};
+          background-color: ${(p) => lighten(0.03, p.theme.colors.danger)};
         }
 
         &:active {
-          background-color: ${(p) => darken(0.05, p.theme.colors.danger)};
+          background-color: ${(p) => darken(0.03, p.theme.colors.danger)};
         }
       `;
     case 'danger-invert':
@@ -206,19 +206,19 @@ export const buttonVariant = ({ variant }: { variant?: ButtonVariant }) => {
         }
 
         &:hover {
-          color: ${(p) => lighten(0.05, p.theme.colors.danger)};
+          color: ${(p) => lighten(0.03, p.theme.colors.danger)};
 
           ${IconWrapper} svg {
-            fill: ${(p) => lighten(0.05, p.theme.colors.danger)};
+            fill: ${(p) => lighten(0.03, p.theme.colors.danger)};
           }
         }
 
         &:active {
           background-color: ${(p) => p.theme.colors.gray200};
-          color: ${(p) => darken(0.05, p.theme.colors.danger)};
+          color: ${(p) => darken(0.03, p.theme.colors.danger)};
 
           ${IconWrapper} svg {
-            fill: ${(p) => darken(0.05, p.theme.colors.danger)};
+            fill: ${(p) => darken(0.03, p.theme.colors.danger)};
           }
         }
       `;
@@ -235,11 +235,11 @@ export const buttonVariant = ({ variant }: { variant?: ButtonVariant }) => {
 
         &:hover {
           background-color: ${(p) =>
-            lighten(0.05, p.theme.colors.primaryLight)};
+            lighten(0.03, p.theme.colors.primaryLight)};
         }
 
         &:active {
-          background-color: ${(p) => darken(0.05, p.theme.colors.primaryLight)};
+          background-color: ${(p) => darken(0.03, p.theme.colors.primaryLight)};
         }
       `;
     case 'normal':
@@ -254,11 +254,11 @@ export const buttonVariant = ({ variant }: { variant?: ButtonVariant }) => {
         }
 
         &:hover {
-          background-color: ${(p) => lighten(0.05, p.theme.colors.surface)};
+          background-color: ${(p) => lighten(0.03, p.theme.colors.surface)};
         }
 
         &:active {
-          background-color: ${(p) => darken(0.05, p.theme.colors.surface)};
+          background-color: ${(p) => darken(0.03, p.theme.colors.surface)};
         }
       `;
   }
