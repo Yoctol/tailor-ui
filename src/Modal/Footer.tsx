@@ -1,4 +1,10 @@
-import React, { FC, MouseEventHandler, ReactNode, isValidElement } from 'react';
+import React, {
+  CSSProperties,
+  FC,
+  MouseEventHandler,
+  ReactNode,
+  isValidElement,
+} from 'react';
 
 import { Box, Flex } from '../Layout';
 import { Button, ButtonProps } from '../Button';
@@ -48,6 +54,7 @@ export const FooterButtons: FC<FooterButtonsProps> = ({
 
 export interface ModalFooterProps extends FooterButtonsProps {
   footer?: ReactNode;
+  style?: CSSProperties;
 }
 
 const ModalFooter: FC<ModalFooterProps> = ({
@@ -65,9 +72,8 @@ const ModalFooter: FC<ModalFooterProps> = ({
     <Flex
       flex="none"
       alignItems="center"
-      mt="24px"
-      mx="3"
-      pt="3"
+      px="4"
+      py="3"
       borderTop="base"
       borderColor="gray300"
       {...props}

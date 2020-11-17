@@ -436,7 +436,7 @@ You can use the `useModal` hooks to display Modal without render `Modal` compone
 ### Modal
 
 | Property             | Description                                                                                                | Type                                                                     | Default                    |
-| -------------------- | ---------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------ | -------------------------- |
+|----------------------|------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------|----------------------------|
 | `title`              | The modal dialog's title                                                                                   | `ReactNode`                                                              |                            |
 | `visible`            | Whether the modal dialog is visible or not                                                                 | `boolean`                                                                |                            |
 | `closable`           | Call onCancel when click the close (x) button or modal mask                                                | `boolean`                                                                | `true`                     |
@@ -451,6 +451,8 @@ You can use the `useModal` hooks to display Modal without render `Modal` compone
 | `onCancel`           | Specify a function that will be called when a user clicks mask, close button on top right or Cancel button | `(event: MouseEvent) => void`                                            |                            |
 | `confirmButtonProps` | The confirm button props                                                                                   | `ButtonProps`                                                            |                            |
 | `cancelButtonProps`  | The cancel button props                                                                                    | `ButtonProps`                                                            |                            |
+| `contentStyle`       | The style of modal content                                                                                 | `CSSProperties`                                                          |                            |
+| `footerStyle`        | The style of modal footer                                                                                  | `CSSProperties`                                                          |                            |
 
 ### Hooks
 
@@ -478,7 +480,7 @@ Below is the type of `ReturnValue`:
 ### `options`
 
 | Property      | Description                                                                                                                                                                    | Type         | Default                                                   |
-| ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------ | --------------------------------------------------------- |
+|---------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------|-----------------------------------------------------------|
 | `closable`    | Show cancel button or not                                                                                                                                                      | `boolean`    | `true` if call `model.confirm`, otherwise will be `false` |
 | `cancelText`  | Text of the Cancel button                                                                                                                                                      | `string`     | `Cancel`                                                  |
 | `confirmText` | Text of the Confirm button                                                                                                                                                     | `string`     | `Confirm`                                                 |

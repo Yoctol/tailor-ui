@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { CSSProperties, FC } from 'react';
 
 import { Flex } from '../Layout';
 
@@ -10,6 +10,8 @@ export type ModalProps = AnimationModalProps &
   ModalHeaderProps &
   ModalFooterProps & {
     zIndex?: number;
+    contentStyle?: CSSProperties;
+    footerStyle?: CSSProperties;
   };
 
 const Modal: FC<ModalProps> = ({
@@ -25,6 +27,8 @@ const Modal: FC<ModalProps> = ({
   confirmButtonProps,
   cancelButtonProps,
   zIndex,
+  contentStyle,
+  footerStyle,
   ...props
 }) => (
   <AnimationModal
@@ -39,7 +43,15 @@ const Modal: FC<ModalProps> = ({
       onCancel={onCancel}
       closable={closable}
     />
-    <Flex flex="auto" flexDirection="column" overflowY="auto" px="3">
+    <Flex
+      flex="auto"
+      flexDirection="column"
+      overflowY="auto"
+      mx="3"
+      mb="24px"
+      px="3"
+      style={contentStyle}
+    >
       {children}
     </Flex>
     <ModalFooter
@@ -51,6 +63,7 @@ const Modal: FC<ModalProps> = ({
       onConfirm={onConfirm}
       confirmButtonProps={confirmButtonProps}
       cancelButtonProps={cancelButtonProps}
+      style={footerStyle}
     />
   </AnimationModal>
 );
