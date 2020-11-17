@@ -45,7 +45,6 @@ export const ModalContent = styled.div<{ size: ModalSize }>`
   max-width: 90vw;
   min-height: 220px;
   max-height: 75vh;
-  padding: 24px ${(p) => p.theme.space[3]} ${(p) => p.theme.space[3]};
   border-radius: ${(p) => p.theme.radii.xl};
   background-color: #fff;
 

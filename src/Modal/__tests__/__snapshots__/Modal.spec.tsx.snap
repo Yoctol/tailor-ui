@@ -20,8 +20,9 @@ exports[`Modal should render correctly 1`] = `
   -ms-flex-align: center;
   align-items: center;
   margin-bottom: 1rem;
-  margin-left: 1rem;
-  margin-right: 1rem;
+  padding-top: 24px;
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
 .c4 {
@@ -48,6 +49,9 @@ exports[`Modal should render correctly 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   overflow-y: auto;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-bottom: 24px;
   padding-left: 1rem;
   padding-right: 1rem;
 }
@@ -65,10 +69,10 @@ exports[`Modal should render correctly 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  margin-top: 24px;
-  margin-left: 1rem;
-  margin-right: 1rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
   padding-top: 1rem;
+  padding-bottom: 1rem;
   border-top: 1px solid;
   border-color: #c4cfdd;
 }
@@ -203,7 +207,6 @@ exports[`Modal should render correctly 1`] = `
   max-width: 90vw;
   min-height: 220px;
   max-height: 75vh;
-  padding: 24px 1rem 1rem;
   border-radius: 1rem;
   background-color: #fff;
 }
@@ -324,8 +327,9 @@ exports[`Modal should render correctly with lg size 1`] = `
   -ms-flex-align: center;
   align-items: center;
   margin-bottom: 1rem;
-  margin-left: 1rem;
-  margin-right: 1rem;
+  padding-top: 24px;
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
 .c3 {
@@ -352,6 +356,9 @@ exports[`Modal should render correctly with lg size 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   overflow-y: auto;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-bottom: 24px;
   padding-left: 1rem;
   padding-right: 1rem;
 }
@@ -369,10 +376,10 @@ exports[`Modal should render correctly with lg size 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  margin-top: 24px;
-  margin-left: 1rem;
-  margin-right: 1rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
   padding-top: 1rem;
+  padding-bottom: 1rem;
   border-top: 1px solid;
   border-color: #c4cfdd;
 }
@@ -497,7 +504,6 @@ exports[`Modal should render correctly with lg size 1`] = `
   max-width: 90vw;
   min-height: 220px;
   max-height: 75vh;
-  padding: 24px 1rem 1rem;
   border-radius: 1rem;
   background-color: #fff;
 }
@@ -610,8 +616,9 @@ exports[`Modal should render with error status 1`] = `
   -ms-flex-align: center;
   align-items: center;
   margin-bottom: 1rem;
-  margin-left: 1rem;
-  margin-right: 1rem;
+  padding-top: 24px;
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
 .c4 {
@@ -647,6 +654,9 @@ exports[`Modal should render with error status 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   overflow-y: auto;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-bottom: 24px;
   padding-left: 1rem;
   padding-right: 1rem;
 }
@@ -664,10 +674,10 @@ exports[`Modal should render with error status 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  margin-top: 24px;
-  margin-left: 1rem;
-  margin-right: 1rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
   padding-top: 1rem;
+  padding-bottom: 1rem;
   border-top: 1px solid;
   border-color: #c4cfdd;
 }
@@ -1015,7 +1025,6 @@ exports[`Modal should render with error status 1`] = `
   max-width: 90vw;
   min-height: 220px;
   max-height: 75vh;
-  padding: 24px 1rem 1rem;
   border-radius: 1rem;
   background-color: #fff;
 }
@@ -1201,8 +1210,9 @@ exports[`Modal should render with info status 1`] = `
   -ms-flex-align: center;
   align-items: center;
   margin-bottom: 1rem;
-  margin-left: 1rem;
-  margin-right: 1rem;
+  padding-top: 24px;
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
 .c4 {
@@ -1238,6 +1248,9 @@ exports[`Modal should render with info status 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   overflow-y: auto;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-bottom: 24px;
   padding-left: 1rem;
   padding-right: 1rem;
 }
@@ -1255,10 +1268,10 @@ exports[`Modal should render with info status 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  margin-top: 24px;
-  margin-left: 1rem;
-  margin-right: 1rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
   padding-top: 1rem;
+  padding-bottom: 1rem;
   border-top: 1px solid;
   border-color: #c4cfdd;
 }
@@ -1606,7 +1619,6 @@ exports[`Modal should render with info status 1`] = `
   max-width: 90vw;
   min-height: 220px;
   max-height: 75vh;
-  padding: 24px 1rem 1rem;
   border-radius: 1rem;
   background-color: #fff;
 }
@@ -1792,8 +1804,9 @@ exports[`Modal should render with props closable 1`] = `
   -ms-flex-align: center;
   align-items: center;
   margin-bottom: 1rem;
-  margin-left: 1rem;
-  margin-right: 1rem;
+  padding-top: 24px;
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
 .c3 {
@@ -1820,6 +1833,9 @@ exports[`Modal should render with props closable 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   overflow-y: auto;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-bottom: 24px;
   padding-left: 1rem;
   padding-right: 1rem;
 }
@@ -1837,10 +1853,10 @@ exports[`Modal should render with props closable 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  margin-top: 24px;
-  margin-left: 1rem;
-  margin-right: 1rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
   padding-top: 1rem;
+  padding-bottom: 1rem;
   border-top: 1px solid;
   border-color: #c4cfdd;
 }
@@ -2154,7 +2170,6 @@ exports[`Modal should render with props closable 1`] = `
   max-width: 90vw;
   min-height: 220px;
   max-height: 75vh;
-  padding: 24px 1rem 1rem;
   border-radius: 1rem;
   background-color: #fff;
 }
@@ -2315,8 +2330,9 @@ exports[`Modal should render with success status 1`] = `
   -ms-flex-align: center;
   align-items: center;
   margin-bottom: 1rem;
-  margin-left: 1rem;
-  margin-right: 1rem;
+  padding-top: 24px;
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
 .c4 {
@@ -2352,6 +2368,9 @@ exports[`Modal should render with success status 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   overflow-y: auto;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-bottom: 24px;
   padding-left: 1rem;
   padding-right: 1rem;
 }
@@ -2369,10 +2388,10 @@ exports[`Modal should render with success status 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  margin-top: 24px;
-  margin-left: 1rem;
-  margin-right: 1rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
   padding-top: 1rem;
+  padding-bottom: 1rem;
   border-top: 1px solid;
   border-color: #c4cfdd;
 }
@@ -2720,7 +2739,6 @@ exports[`Modal should render with success status 1`] = `
   max-width: 90vw;
   min-height: 220px;
   max-height: 75vh;
-  padding: 24px 1rem 1rem;
   border-radius: 1rem;
   background-color: #fff;
 }
@@ -2906,8 +2924,9 @@ exports[`Modal should render with warning status 1`] = `
   -ms-flex-align: center;
   align-items: center;
   margin-bottom: 1rem;
-  margin-left: 1rem;
-  margin-right: 1rem;
+  padding-top: 24px;
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
 .c4 {
@@ -2943,6 +2962,9 @@ exports[`Modal should render with warning status 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   overflow-y: auto;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-bottom: 24px;
   padding-left: 1rem;
   padding-right: 1rem;
 }
@@ -2960,10 +2982,10 @@ exports[`Modal should render with warning status 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  margin-top: 24px;
-  margin-left: 1rem;
-  margin-right: 1rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
   padding-top: 1rem;
+  padding-bottom: 1rem;
   border-top: 1px solid;
   border-color: #c4cfdd;
 }
@@ -3311,7 +3333,6 @@ exports[`Modal should render with warning status 1`] = `
   max-width: 90vw;
   min-height: 220px;
   max-height: 75vh;
-  padding: 24px 1rem 1rem;
   border-radius: 1rem;
   background-color: #fff;
 }

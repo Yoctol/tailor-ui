@@ -20,7 +20,7 @@ const ModalHeader: FC<ModalHeaderProps> = ({
   onCancel,
   closable,
 }) => (
-  <Flex flex="none" alignItems="center" mb="3" mx="3">
+  <Flex flex="none" alignItems="center" mb="3" pt="24px" px="4">
     {status && (
       <Flex mr="2">
         <Icon
