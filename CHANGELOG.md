@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/yoctol/tailor-ui/compare/v1.2.1...v1.3.0) (2020-11-18)
+
+
+### Features
+
+* **modal:** add style props to modal ([ee9f932](https://github.com/yoctol/tailor-ui/commit/ee9f932aafc7058958799b2e937b34f7d5e3591f))
+
 ## [1.2.1](https://github.com/yoctol/tailor-ui/compare/v1.2.0...v1.2.1) (2020-11-02)
 
 
