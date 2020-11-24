@@ -57,7 +57,7 @@ interface Message {
   icon: JSX.Element;
   content: string;
   duration: number;
-  resolve: () => void;
+  resolve: (value: boolean) => void;
 }
 
 export interface MessageOptions {
@@ -109,7 +109,7 @@ class EffectMessage extends PureComponent<
       const key = this.context();
       const icon = <Icon type={type} fill={type} size="20" mr="2" />;
 
-      const newMessage = {
+      const newMessage: Message = {
         key,
         icon,
         content,
@@ -129,12 +129,12 @@ class EffectMessage extends PureComponent<
   leave = (item: Message) => async (next: any, cancel: any) => {
     this.cancelMap.set(item, () => {
       cancel();
-      item.resolve();
+      item.resolve(true);
     });
 
     await next({ life: '0%' });
     await next({ opacity: 0 });
-    item.resolve();
+    item.resolve(true);
     await next({ height: 0 }, true);
   };
 

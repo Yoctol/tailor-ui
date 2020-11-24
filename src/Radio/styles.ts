@@ -85,10 +85,10 @@ export const RadioLabelBase = styled.label<RadioLabelBaseProps>`
 export const RadioLabel = styled(RadioLabelBase)<{ direction: Direction }>`
   /* stylelint-disable-next-line no-descending-specificity */
   & + ${RadioLabelBase /* sc-selector */} {
-    ${({ direction }) =>
-      direction === 'horizontal'
-        ? 'margin-left'
-        : 'margin-top' /* sc-prop */}: ${(p) => p.theme.space[2]};
+    ${
+      ({ direction }) =>
+        direction === 'horizontal' ? 'margin-left' : 'margin-top' /* sc-prop */
+    }: ${(p) => p.theme.space[2]};
   }
 `;
 

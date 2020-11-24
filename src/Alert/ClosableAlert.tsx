@@ -30,7 +30,7 @@ const ClosableAlert: FC<AlertProps> = ({ onClosed, ...props }) => {
     <animated.div
       style={{
         transform: x.interpolate((_x) => `scaleY(${_x})`),
-        opacity: x,
+        opacity: (x as unknown) as number,
         height,
       }}
     >
