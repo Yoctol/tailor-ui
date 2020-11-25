@@ -16,9 +16,9 @@ const StyledBadge = styled(Box)`
   line-height: 1;
 `;
 
-export const AnimatedStyledBadge: ForwardRefExoticComponent<ComponentPropsWithRef<
-  typeof StyledBadge
->> = animated(StyledBadge);
+export const AnimatedStyledBadge: ForwardRefExoticComponent<
+  ComponentPropsWithRef<typeof StyledBadge>
+> = animated(StyledBadge);
 
 export const StyledBadgeWrapper = styled(Box)`
   display: inline-flex;

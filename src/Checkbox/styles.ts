@@ -73,10 +73,10 @@ export const CheckboxLabelBase = styled.label<RadioLabelBaseProps>`
   cursor: ${(p) => (p.disabled ? 'not-allowed' : 'pointer')};
 
   & + & {
-    ${({ direction }) =>
-      direction === 'horizontal'
-        ? 'margin-left'
-        : 'margin-top' /* sc-prop */}: ${(p) => p.theme.space[2]};
+    ${
+      ({ direction }) =>
+        direction === 'horizontal' ? 'margin-left' : 'margin-top' /* sc-prop */
+    }: ${(p) => p.theme.space[2]};
   }
 
   ${(p) =>
@@ -96,10 +96,10 @@ export const CheckboxLabel = styled(CheckboxLabelBase)<{
 }>`
   /* stylelint-disable-next-line no-descending-specificity */
   & + ${CheckboxLabelBase /* sc-selector */} {
-    ${({ direction }) =>
-      direction === 'horizontal'
-        ? 'margin-left'
-        : 'margin-top' /* sc-prop */}: ${(p) => p.theme.space[2]};
+    ${
+      ({ direction }) =>
+        direction === 'horizontal' ? 'margin-left' : 'margin-top' /* sc-prop */
+    }: ${(p) => p.theme.space[2]};
   }
 `;
 
