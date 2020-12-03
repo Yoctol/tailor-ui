@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 // eslint-disable-next-line import/no-extraneous-dependencies
-import { Schema } from 'yup';
+import { AnySchema } from 'yup';
 
 export type FunctionValidator = (value?: any) => string | null;
 
@@ -11,7 +11,7 @@ export interface ObjectValidator {
 
 export type Validator =
   | FunctionValidator
-  | Schema<any>
+  | AnySchema
   | ObjectValidator
   | ObjectValidator[];
 
@@ -22,7 +22,7 @@ export interface Validate {
 }
 
 // eslint-disable-next-line no-underscore-dangle
-const isSchema = (obj: any): obj is Schema<any> => obj && obj.__isYupSchema__;
+const isSchema = (obj: any): obj is AnySchema => obj && obj.__isYupSchema__;
 
 export const validate = ({ value, validator, validationMessage }: Validate) => {
   if (validationMessage) {
