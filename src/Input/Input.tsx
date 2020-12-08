@@ -1,6 +1,6 @@
 import React, {
   ChangeEvent,
-  InputHTMLAttributes,
+  ComponentPropsWithoutRef,
   KeyboardEvent,
   KeyboardEventHandler,
   ReactNode,
@@ -16,7 +16,7 @@ import { useFormField } from '../FormField';
 
 import { InputLabel, InputWrapper, Size, StyledInput } from './styles';
 
-export type InputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'size'> & {
+export type InputProps = Omit<ComponentPropsWithoutRef<'input'>, 'size'> & {
   autoSelect?: boolean;
   size?: Size;
   onPressEnter?: KeyboardEventHandler<HTMLInputElement>;

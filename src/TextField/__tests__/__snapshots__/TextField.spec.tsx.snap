@@ -99,6 +99,7 @@ exports[`TextField should render as textarea 1`] = `
 >
   <textarea
     class="c1 c2"
+    label="Text Field(textarea)"
     rows="1"
     style="overflow-x: hidden; word-wrap: break-word; overflow-y: hidden;"
   />
@@ -202,7 +203,7 @@ exports[`TextField should render correctly 1`] = `
 >
   <input
     class="c1 c2"
-    value=""
+    label="placeholder"
   />
   <label>
     placeholder
@@ -305,6 +306,7 @@ exports[`TextField should render correctly with defaultValue 1`] = `
 >
   <input
     class="c1 c2"
+    label="placeholder"
     value="text field"
   />
   <label>
@@ -421,8 +423,8 @@ exports[`TextField should render with maxLength 1`] = `
 >
   <input
     class="c1 c2"
+    label="placeholder"
     maxlength="20"
-    value=""
   />
   <div
     class="c3 c4"
