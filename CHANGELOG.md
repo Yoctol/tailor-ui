@@ -1,3 +1,10 @@
+## [1.3.1](https://github.com/yoctol/tailor-ui/compare/v1.3.0...v1.3.1) (2020-12-17)
+
+
+### Bug Fixes
+
+* **textfield:** overload types ([f26b02c](https://github.com/yoctol/tailor-ui/commit/f26b02c2cae92328a9fc075d70ef4f38d726bc07))
+
 # [1.3.0](https://github.com/yoctol/tailor-ui/compare/v1.2.1...v1.3.0) (2020-11-18)
 
 
