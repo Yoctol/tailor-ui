@@ -1,8 +1,8 @@
 /* eslint react/no-multi-comp: off */
 import React, {
   ChangeEvent,
+  ComponentPropsWithoutRef,
   FC,
-  TextareaHTMLAttributes,
   forwardRef,
 } from 'react';
 import TextareaAutosize from 'react-autosize-textarea';
@@ -14,7 +14,7 @@ import { useFormField } from '../FormField';
 
 import { inputStyles } from './styles';
 
-export type TextareaProps = TextareaHTMLAttributes<HTMLTextAreaElement> & {
+export type TextareaProps = ComponentPropsWithoutRef<'textarea'> & {
   resize?: boolean;
   onResize?: (e: Event) => void;
   maxRows?: number;

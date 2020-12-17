@@ -55,8 +55,9 @@ export const TextFieldContainer = styled.div<{
     }
   }
 
-  /* stylelint-disable-next-line no-descending-specificity */
-  ${StyledInput /* sc-selector */}:focus, ${StyledTextarea /* sc-selector */}:focus {
+  ${StyledInput /* sc-selector */}:focus, ${
+    StyledTextarea /* sc-selector */
+  }:focus {
     & ~ label {
       top: -7px;
       left: 7px;
@@ -67,7 +68,6 @@ export const TextFieldContainer = styled.div<{
       font-size: 0.75rem;
     }
 
-    /* stylelint-disable-next-line no-duplicate-selectors */
     & ~ ${MaxLength /* sc-selector */} {
       opacity: 1;
     }
