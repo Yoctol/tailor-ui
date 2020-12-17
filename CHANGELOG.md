@@ -1,3 +1,10 @@
+## [1.3.2](https://github.com/yoctol/tailor-ui/compare/v1.3.1...v1.3.2) (2020-12-17)
+
+
+### Bug Fixes
+
+* **textfield:** prop `textarea` can be undeifned ([d553541](https://github.com/yoctol/tailor-ui/commit/d553541aa859c246b9e19d075a566c246e01dcc4))
+
 ## [1.3.1](https://github.com/yoctol/tailor-ui/compare/v1.3.0...v1.3.1) (2020-12-17)
 
 
