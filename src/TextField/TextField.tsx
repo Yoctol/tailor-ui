@@ -16,7 +16,7 @@ export type TextareaTextFieldProps = TextFieldSharedProps &
   ({ textarea: true } & TextareaProps);
 
 export type InputTextFieldProps = TextFieldSharedProps &
-  ({ textarea: false } & InputProps);
+  ({ textarea?: false } & InputProps);
 
 export type TextFieldOverload = {
   (props: TextareaTextFieldProps): JSX.Element;
@@ -25,7 +25,8 @@ export type TextFieldOverload = {
 
 const isTextarea = (
   props: InputTextFieldProps | TextareaTextFieldProps
-): props is TextareaTextFieldProps => 'textarea' in props && props.textarea;
+): props is TextareaTextFieldProps =>
+  'textarea' in props && typeof props.textarea === 'boolean' && props.textarea;
 
 const TextField: TextFieldOverload = (
   props: TextareaTextFieldProps | InputTextFieldProps
