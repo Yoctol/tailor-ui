@@ -112,11 +112,13 @@ const PositionerImpl: FC<PositionerImplProps> = ({
   );
 
   const targetRect = useRect(targetRef);
-  const positionerRect = useRect(positionerRef, true, (rect) => {
-    prevDimensions.current = {
-      height: rect.height,
-      width: rect.width,
-    };
+  const positionerRect = useRect(positionerRef, {
+    onChange: (rect) => {
+      prevDimensions.current = {
+        height: rect.height,
+        width: rect.width,
+      };
+    },
   });
 
   if (!targetRect) {
