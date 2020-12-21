@@ -184,6 +184,41 @@ import { Select } from 'tailor-ui/lab';
 }
 ```
 
+
+### Stack
+
+```jsx live
+() => {
+  const [visible, setVisible] = useState(false);
+  const [value, setValue] = useState({ label: 'Banana', value: 'banana' });
+  const options = [
+    { label: 'Banana', value: 'banana' },
+    { label: 'Orange', value: 'orange' },
+    { label: 'Apple', value: 'apple', disabled: true },
+    { label: 'Mango', value: 'mango' },
+  ];
+
+  return (
+    <>
+      <Modal
+        title="This is a Modal"
+        visible={visible}
+        closable
+        onConfirm={() => setVisible(false)}
+        onCancel={() => setVisible(false)}
+      >
+        <Lab.Select
+          value={value}
+          onChange={newValue => setValue(newValue)}
+          options={options}
+        />
+      </Modal>
+      <Button onClick={() => setVisible(true)}>Open Modal</Button>
+    </>
+  );
+}
+```
+
 ## API
 
 | Property            | Description                                                                                                                                                                                             | Type                                                                             | Default                                |

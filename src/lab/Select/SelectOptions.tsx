@@ -10,6 +10,7 @@ import React, {
 import { useVirtual } from 'react-virtual';
 
 import { Ellipsis } from '../../Ellipsis';
+import { Stack } from '../../Stack';
 
 import { SelectOption } from './types';
 import { StyledPopover, StyledSelectOption } from './styles';
@@ -55,52 +56,57 @@ const SelectOptions: FC<SelectOptionsProps> = ({
   }, [visible, scrollToIndex, highlightedIndex]);
 
   return (
-    <Popover
-      targetRef={selectRef}
-      hidden={!visible}
-      position={positionMatchWidth}
-    >
-      <StyledPopover {...getMenuProps({ ref: listRef })}>
-        {visible && (
-          <div style={{ height: totalSize }}>
-            {virtualItems.map((virtualRow) => {
-              const item = options[virtualRow.index];
-              const itemString = itemToString(item);
-              const itemDisabled =
-                (isObjectOption(item) && item.disabled) ?? false;
-              const hovered = highlightedIndex === virtualRow.index;
-              const active = currentSelectedItemString === itemString;
-              const content = isCreateOption(item)
-                ? formatCreateLabel({
-                    value: item.value,
-                    active,
-                    hovered,
-                  })
-                : itemString;
+    <Stack>
+      {(stackingOrder) => (
+        <Popover
+          targetRef={selectRef}
+          hidden={!visible}
+          position={positionMatchWidth}
+          style={{ zIndex: stackingOrder }}
+        >
+          <StyledPopover {...getMenuProps({ ref: listRef })}>
+            {visible && (
+              <div style={{ height: totalSize }}>
+                {virtualItems.map((virtualRow) => {
+                  const item = options[virtualRow.index];
+                  const itemString = itemToString(item);
+                  const itemDisabled =
+                    (isObjectOption(item) && item.disabled) ?? false;
+                  const hovered = highlightedIndex === virtualRow.index;
+                  const active = currentSelectedItemString === itemString;
+                  const content = isCreateOption(item)
+                    ? formatCreateLabel({
+                        value: item.value,
+                        active,
+                        hovered,
+                      })
+                    : itemString;
 
-              return (
-                <StyledSelectOption
-                  key={itemString}
-                  hovered={hovered}
-                  active={active}
-                  {...getItemProps({
-                    item,
-                    index: virtualRow.index,
-                    disabled: itemDisabled,
-                    style: {
-                      height: virtualRow.size,
-                      transform: `translateY(${virtualRow.start}px)`,
-                    },
-                  })}
-                >
-                  <Ellipsis>{content}</Ellipsis>
-                </StyledSelectOption>
-              );
-            })}
-          </div>
-        )}
-      </StyledPopover>
-    </Popover>
+                  return (
+                    <StyledSelectOption
+                      key={itemString}
+                      hovered={hovered}
+                      active={active}
+                      {...getItemProps({
+                        item,
+                        index: virtualRow.index,
+                        disabled: itemDisabled,
+                        style: {
+                          height: virtualRow.size,
+                          transform: `translateY(${virtualRow.start}px)`,
+                        },
+                      })}
+                    >
+                      <Ellipsis>{content}</Ellipsis>
+                    </StyledSelectOption>
+                  );
+                })}
+              </div>
+            )}
+          </StyledPopover>
+        </Popover>
+      )}
+    </Stack>
   );
 };
 
