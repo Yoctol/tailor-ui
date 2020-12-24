@@ -24,6 +24,31 @@ import { Tooltip } from 'tailor-ui/lab';
 </Lab.Tooltip>
 ```
 
+### Stack
+
+```jsx live
+() => {
+  const [visible, setVisible] = useState(false);
+
+  return (
+    <>
+      <Modal
+        title="This is a Modal"
+        visible={visible}
+        closable
+        onConfirm={() => setVisible(false)}
+        onCancel={() => setVisible(false)}
+      >
+        <Lab.Tooltip content="Tooltip Content">
+          <span>Hover Me!</span>
+        </Lab.Tooltip>
+      </Modal>
+      <Button onClick={() => setVisible(true)}>Open Modal</Button>
+    </>
+  );
+}
+```
+
 ## API
 
 

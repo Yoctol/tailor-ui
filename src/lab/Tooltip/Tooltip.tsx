@@ -7,6 +7,8 @@ import {
 import { animated, useTransition } from 'react-spring';
 import { forwardRefWithAs } from '@reach/utils';
 
+import { Stack } from '../../Stack';
+
 import { TooltipStyle } from './styles';
 
 const AnimatedTooltipContent = animated(TooltipPopup);
@@ -54,25 +56,32 @@ const Tooltip = forwardRefWithAs<TooltipProps, 'div'>(
     });
 
     return (
-      <>
-        <TooltipStyle />
+      <Stack>
+        {(stackingOrder) => (
+          <>
+            <TooltipStyle />
 
-        {cloneElement(child, trigger)}
+            {cloneElement(child, trigger)}
 
-        {transitions.map(
-          ({ item, props: styles, key }) =>
-            item && (
-              <AnimatedTooltipContent
-                key={key}
-                ref={forwardedRef}
-                label={content}
-                {...item}
-                {...props}
-                style={styles}
-              />
-            )
+            {transitions.map(
+              ({ item, props: styles, key }) =>
+                item && (
+                  <AnimatedTooltipContent
+                    key={key}
+                    ref={forwardedRef}
+                    label={content}
+                    {...item}
+                    {...props}
+                    style={{
+                      ...styles,
+                      zIndex: stackingOrder,
+                    }}
+                  />
+                )
+            )}
+          </>
         )}
-      </>
+      </Stack>
     );
   }
 );

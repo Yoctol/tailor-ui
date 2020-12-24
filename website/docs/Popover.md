@@ -213,18 +213,34 @@ import { Position, Popover } from 'tailor-ui';
   const [value, setValue] = useState('Banana');
 
   return (
-    <Popover
-      position={Position.RIGHT}
-      content={
-        <Select
-          value={value}
-          onChange={setValue}
-          options={['Banana', 'Orange', 'Apple', 'Mango']}
-        />
-      }
-    >
-      <Button>Button</Button>
-    </Popover>
+    <>
+      <Popover
+        position={Position.RIGHT}
+        content={
+          <Select
+            value={value}
+            onChange={setValue}
+            options={['Banana', 'Orange', 'Apple', 'Mango']}
+          />
+        }
+      >
+        <Button>Button</Button>
+      </Popover>
+      <br />
+      <br />
+      <Popover
+        position={Position.RIGHT}
+        content={
+          <Lab.Select
+            value={value}
+            onChange={setValue}
+            options={['Banana', 'Orange', 'Apple', 'Mango']}
+          />
+        }
+      >
+        <Button>Button</Button>
+      </Popover>
+    </>
   );
 }
 ```
