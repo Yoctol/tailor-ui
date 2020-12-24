@@ -1,3 +1,17 @@
+# [1.4.0](https://github.com/yoctol/tailor-ui/compare/v1.3.2...v1.4.0) (2020-12-24)
+
+
+### Bug Fixes
+
+* **positioner:** update useRect api usage ([db8b1bf](https://github.com/yoctol/tailor-ui/commit/db8b1bf97457bcdcb9da61f62f570c6a691686dc))
+* **select:** prevent parent popover disapear when click options of lab select ([86f8099](https://github.com/yoctol/tailor-ui/commit/86f8099d3b0bc1567710e163fbb223628223dfd0))
+
+
+### Features
+
+* **select:** add stack order to Select ([524e75b](https://github.com/yoctol/tailor-ui/commit/524e75b9a16442ede2fa97070ba07e5d8fbf3c67))
+* **tooltip:** add stack order to Tooltip ([5b43081](https://github.com/yoctol/tailor-ui/commit/5b43081ef7d10a372511ee338d602de7e4213d11))
+
 ## [1.3.2](https://github.com/yoctol/tailor-ui/compare/v1.3.1...v1.3.2) (2020-12-17)
 
 
