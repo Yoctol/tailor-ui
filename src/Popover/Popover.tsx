@@ -33,7 +33,7 @@ export type PopoverProps = StyledPopoverProps & {
   onCloseComplete?: () => void;
 };
 
-const ClickOutsideContext = createContext<{
+export const ClickOutsideContext = createContext<{
   setHasChild: (hasChild: boolean) => void;
 }>({
   setHasChild: () => {},

@@ -1,12 +1,14 @@
 import React, {
   PropsWithChildren,
   ReactNode,
+  useContext,
   useEffect,
   useRef,
   useState,
 } from 'react';
 import { UseComboboxStateChange, useCombobox } from 'downshift6';
 
+import { ClickOutsideContext } from '../../Popover';
 import { useFormField } from '../../FormField';
 
 import SelectOptions from './SelectOptions';
@@ -60,6 +62,7 @@ const Select = <T extends SelectOption>({
     defaultValue,
   });
 
+  const { setHasChild } = useContext(ClickOutsideContext);
   const selectRef = useRef<HTMLButtonElement>(null);
   const [searchValue, setSearchValue] = useState('');
 
@@ -164,6 +167,7 @@ const Select = <T extends SelectOption>({
     scrollIntoView: () => {},
     onSelectedItemChange: handleChange,
     onInputValueChange: handleInputValueChange,
+    onIsOpenChange: ({ isOpen: visible }) => setHasChild(Boolean(visible)),
   });
 
   const currentSelectedItemString = itemToString(currentSelectedItem);
