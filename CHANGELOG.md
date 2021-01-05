@@ -1,3 +1,10 @@
+## [1.4.1](https://github.com/yoctol/tailor-ui/compare/v1.4.0...v1.4.1) (2021-01-05)
+
+
+### Bug Fixes
+
+* **date-picker:** use customize dateFns config to decrease bundle size ([3054e08](https://github.com/yoctol/tailor-ui/commit/3054e085e4e00935df2c8b47cee9dd72e0df5c2b))
+
 # [1.4.0](https://github.com/yoctol/tailor-ui/compare/v1.3.2...v1.4.0) (2020-12-24)
 
 
