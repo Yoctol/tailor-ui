@@ -1,5 +1,4 @@
 import React, { useMemo } from 'react';
-import dateFnsGenerateConfig from 'rc-picker/lib/generate/dateFns';
 import format from 'date-fns/format';
 import {
   AiOutlineCalendar,
@@ -12,6 +11,8 @@ import {
 
 import { Icon } from '../../Icon';
 import { useLocale } from '../../locale';
+
+import dateFnsGenerateConfig from './dateFnsGenerateConfig';
 
 const useSharedProps = <T extends Record<string, unknown>>(props: T) => {
   const { locale } = useLocale();
