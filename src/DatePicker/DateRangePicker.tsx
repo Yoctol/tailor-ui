@@ -1,21 +1,23 @@
-import React, { FC } from 'react';
+import React, { PropsWithChildren } from 'react';
 import { RangePicker, RangePickerProps } from 'rc-picker';
 
 import useSharedProps from './hooks/useSharedProps';
 import { DatePickerStyle } from './styles';
 
-export type DateRangePickerProps = Omit<
-  RangePickerProps<Date>,
-  'generateConfig' | 'locale' | 'prefixCls' | 'picker'
+export type DateRangePickerProps<T> = Omit<
+  RangePickerProps<T>,
+  'locale' | 'prefixCls' | 'picker'
 >;
 
-const DateRangePicker: FC<DateRangePickerProps> = (props) => {
+const DateRangePicker = <T extends any = Date>(
+  props: PropsWithChildren<DateRangePickerProps<T>>
+) => {
   const sharedProps = useSharedProps(props);
 
   return (
     <>
       <DatePickerStyle />
-      <RangePicker<Date> {...sharedProps} />
+      <RangePicker<T> {...sharedProps} />
     </>
   );
 };

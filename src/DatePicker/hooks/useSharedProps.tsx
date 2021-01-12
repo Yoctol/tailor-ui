@@ -75,9 +75,9 @@ const useSharedProps = <T extends Record<string, unknown>>(props: T) => {
     superNextIcon,
     clearIcon,
     suffixIcon,
-    generateConfig: dateFnsGenerateConfig,
+    generateConfig: props.genericConfig ?? dateFnsGenerateConfig,
     locale: locale.DatePicker,
-    format: (date: Date) =>
+    format: (date: any) =>
       format(date, props.showTime ? 'yyyy−MM−dd HH:mm:ss' : 'yyyy−MM−dd'),
     ...props,
   };
