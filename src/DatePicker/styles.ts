@@ -26,7 +26,6 @@ const style = css`
   .tailor-ui-picker-year-panel {
     display: flex;
     flex-direction: column;
-    width: 280px;
   }
 
   .tailor-ui-picker-header {
@@ -79,7 +78,7 @@ const style = css`
 
   table.tailor-ui-picker-content {
     display: table;
-    width: 100%;
+    width: auto;
     margin-bottom: 0;
     table-layout: fixed;
     border-collapse: collapse;
@@ -475,10 +474,6 @@ const style = css`
 
   .tailor-ui-picker-date-panel .tailor-ui-picker-body {
     padding: 8px 12px;
-  }
-
-  .tailor-ui-picker-date-panel .tailor-ui-picker-content {
-    width: 252px;
   }
 
   .tailor-ui-picker-date-panel .tailor-ui-picker-content th {

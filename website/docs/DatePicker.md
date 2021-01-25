@@ -138,6 +138,27 @@ import { DatePicker, RangeDatePicker } from 'tailor-ui';
 }
 ```
 
+### Calendar usage
+
+```jsx live
+<DatePickerPanel
+  defaultValue={new Date()}
+  onChange={console.log}
+  dateRender={(date, today) => (
+    <div
+      style={{
+        width: 80,
+        height: 80,
+        borderTop: '3px solid #CCC',
+        borderTopColor: DateFns.isSameDay(date, today) ? 'blue' : '#CCC',
+      }}
+    >
+      {DateFns.format(date, 'd')}
+    </div>
+  )}
+/>
+```
+
 ## API
 
 ### Common API
