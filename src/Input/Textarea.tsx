@@ -2,7 +2,6 @@
 import React, {
   ChangeEvent,
   ComponentPropsWithoutRef,
-  FC,
   forwardRef,
 } from 'react';
 import TextareaAutosize from 'react-autosize-textarea';
@@ -36,28 +35,27 @@ export const StyledTextarea = styled(
   transition: border 0.2s ease;
 `;
 
-const Textarea: FC<TextareaProps> = forwardRef<
-  HTMLTextAreaElement,
-  TextareaProps
->(function Textarea({ id, ...props }, ref) {
-  const [invalid, labelId, setValue] = useFormField({
-    id,
-    value: props.value,
-    defaultValue: props.defaultValue,
-  });
+const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
+  function Textarea({ id, ...props }, ref) {
+    const [invalid, labelId, setValue] = useFormField({
+      id,
+      value: props.value,
+      defaultValue: props.defaultValue,
+    });
 
-  return (
-    <StyledTextarea
-      ref={ref}
-      id={labelId}
-      invalid={invalid || undefined}
-      {...mergeEventProps(props, {
-        onChange: (event: ChangeEvent<HTMLTextAreaElement>) => {
-          setValue(event.currentTarget.value);
-        },
-      })}
-    />
-  );
-});
+    return (
+      <StyledTextarea
+        ref={ref}
+        id={labelId}
+        invalid={invalid || undefined}
+        {...mergeEventProps(props, {
+          onChange: (event: ChangeEvent<HTMLTextAreaElement>) => {
+            setValue(event.currentTarget.value);
+          },
+        })}
+      />
+    );
+  }
+);
 
 export { Textarea };
