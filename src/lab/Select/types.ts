@@ -1,7 +1,10 @@
+import { ReactNode } from 'react';
+
 export type SelectOptionObject = {
   label: string;
   value: string;
   disabled?: boolean;
+  hint?: ReactNode;
 };
 
 export type SelectCreateOptionObject = {
