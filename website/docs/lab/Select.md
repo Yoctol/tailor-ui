@@ -24,7 +24,7 @@ import { Select } from 'tailor-ui/lab';
 
   const options = [
     { label: 'Banana', value: 'banana' },
-    { label: 'Orange', value: 'orange' },
+    { label: 'Orange', value: 'orange', hint: 'HINT FOR ORANGE' },
     { label: 'Apple', value: 'apple', disabled: true },
     { label: 'Mango', value: 'mango' },
   ];
@@ -113,6 +113,7 @@ import { Select } from 'tailor-ui/lab';
         { label: 'Orange', value: 'orange' },
         { label: 'Apple', value: 'apple' },
         { label: 'Mango', value: 'mango' },
+        { label: 'VERY VERY VERY VERY VERY VERY VERY LONG', value: 'mango' },
       ]}
     />
   );

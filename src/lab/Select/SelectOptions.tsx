@@ -1,4 +1,4 @@
-import Popover, { positionMatchWidth } from '@reach/popover';
+import Popover from '@reach/popover';
 import React, {
   FC,
   ReactNode,
@@ -11,10 +11,16 @@ import { useVirtual } from 'react-virtual';
 
 import { Ellipsis } from '../../Ellipsis';
 import { Stack } from '../../Stack';
+import { Tooltip } from '../../Tooltip';
 
 import { SelectOption } from './types';
 import { StyledPopover, StyledSelectOption } from './styles';
-import { isCreateOption, isObjectOption, itemToString } from './utils';
+import {
+  isCreateOption,
+  isObjectOption,
+  itemToString,
+  positionMatchWidth,
+} from './utils';
 
 interface SelectOptionsProps {
   selectRef: RefObject<HTMLButtonElement>;
@@ -81,6 +87,7 @@ const SelectOptions: FC<SelectOptionsProps> = ({
                         hovered,
                       })
                     : itemString;
+                  const hint = isObjectOption(item) ? item.hint : undefined;
 
                   return (
                     <StyledSelectOption
@@ -97,7 +104,13 @@ const SelectOptions: FC<SelectOptionsProps> = ({
                         },
                       })}
                     >
-                      <Ellipsis>{content}</Ellipsis>
+                      {hint ? (
+                        <Tooltip content={hint} mouseLeaveDelay={0}>
+                          <div style={{ width: '100%' }}>{content}</div>
+                        </Tooltip>
+                      ) : (
+                        <Ellipsis>{content}</Ellipsis>
+                      )}
                     </StyledSelectOption>
                   );
                 })}
