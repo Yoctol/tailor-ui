@@ -16,7 +16,10 @@ const useMeasure = (targetRef: Ref<any> = null) => {
   });
 
   const [ro] = useState(
-    () => new ResizeObserver(([entry]) => set(entry.contentRect))
+    () =>
+      new ResizeObserver(([entry]: ResizeObserverEntry[]) =>
+        set(entry.contentRect)
+      )
   );
 
   useEffect(() => {
