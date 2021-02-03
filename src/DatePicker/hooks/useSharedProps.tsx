@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { useContext, useMemo } from 'react';
 import format from 'date-fns/format';
 import {
   AiOutlineCalendar,
@@ -9,13 +9,16 @@ import {
   AiOutlineRight,
 } from 'react-icons/ai';
 
+import { ClickOutsideContext } from '../../Popover';
 import { Icon } from '../../Icon';
 import { useLocale } from '../../locale';
 
 import dateFnsGenerateConfig from './dateFnsGenerateConfig';
 
 const useSharedProps = <T extends Record<string, unknown>>(props: T) => {
+  const { setHasChild } = useContext(ClickOutsideContext);
   const { locale } = useLocale();
+
   const prevIcon = useMemo(
     () => (
       <Icon size="20" type={AiOutlineLeft} cursor="pointer" fill="gray300" />
@@ -77,6 +80,7 @@ const useSharedProps = <T extends Record<string, unknown>>(props: T) => {
     suffixIcon,
     generateConfig: dateFnsGenerateConfig,
     locale: locale.DatePicker,
+    onOpenChange: (open: boolean) => setHasChild(open),
     format: (date: Date) =>
       format(date, props.showTime ? 'yyyy−MM−dd HH:mm:ss' : 'yyyy−MM−dd'),
     ...props,
