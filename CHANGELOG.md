@@ -1,3 +1,19 @@
+# [1.5.0](https://github.com/yoctol/tailor-ui/compare/v1.4.1...v1.5.0) (2021-02-04)
+
+
+### Bug Fixes
+
+* **date-picker:** prevent trigger close when it is rendered in popover ([970f391](https://github.com/yoctol/tailor-ui/commit/970f3914f7543501cf262476bbb165697aa6be9c))
+* **textarea:** remove FC to keep ref props ([b89b94f](https://github.com/yoctol/tailor-ui/commit/b89b94fa191eb61c94b802bef44eec32148cfed7))
+
+
+### Features
+
+* **date-picker:** export DatePickerPanel for calendar usage ([54fbedf](https://github.com/yoctol/tailor-ui/commit/54fbedfb1f3d860e97ffa23fe62e6ed28ce2745c))
+* **select:** add hint to select option ([2e66881](https://github.com/yoctol/tailor-ui/commit/2e66881941e7c297c068932944acad29f8102ccd))
+* **select:** implement new MultipleSelect based on downshift.js ([8fdbeec](https://github.com/yoctol/tailor-ui/commit/8fdbeec9736ce1db4ee3931dea18dcbf05fa3dc4))
+* **tag:** add disabled API ([5c28784](https://github.com/yoctol/tailor-ui/commit/5c28784db5a6ee7aa32f8a48c1e6db05475a218b))
+
 ## [1.4.1](https://github.com/yoctol/tailor-ui/compare/v1.4.0...v1.4.1) (2021-01-05)
 
 
