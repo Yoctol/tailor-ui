@@ -1,6 +1,7 @@
 import fuzzaldrin from 'fuzzaldrin-plus';
 import { PRect } from '@reach/rect';
 import { Position } from '@reach/popover';
+import { useEffect, useState } from 'react';
 
 import {
   SelectCreateOptionObject,
@@ -41,6 +42,55 @@ export const filter = <T extends SelectOption>(items: T[], input: string) => {
   return fuzzaldrin
     .filter(wrappedItems, input, { key: 'key' })
     .map(({ item }) => item);
+};
+
+export const useSelectOptions = <T extends SelectOption>({
+  options,
+  creatable,
+  isValidNewOption,
+}: {
+  options: T[];
+  creatable: boolean;
+  isValidNewOption: (value: string) => boolean;
+}) => {
+  const [searchValue, setSearchValue] = useState('');
+
+  const searchOptions =
+    searchValue !== '' ? filter(options, searchValue) : options;
+  const additionOptions: [SelectCreateOptionObject] | [] =
+    creatable && isValidNewOption(searchValue)
+      ? [
+          {
+            label: CREATE_OPTION,
+            value: searchValue,
+          },
+        ]
+      : [];
+
+  const selectOptions = [...searchOptions, ...additionOptions];
+
+  return {
+    searchValue,
+    setSearchValue,
+    selectOptions,
+  };
+};
+
+export const useIgnoreDownshiftUselessWarning = () => {
+  useEffect(() => {
+    const originalError = console.error;
+
+    console.error = (...args: any[]) => {
+      if (/downshift: The ref prop "ref" from/.test(args[0])) {
+        return;
+      }
+      originalError.call(console, ...args);
+    };
+
+    return () => {
+      console.error = originalError;
+    };
+  }, []);
 };
 
 function getCollisions(

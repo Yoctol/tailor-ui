@@ -81,7 +81,10 @@ export const StyledSelect = styled.div<StyledSelectProps>`
   width: 100%;
   max-width: 100%;
   min-height: ${(p) => p.theme.heights.base};
-  padding: ${(p) => (p.multiple ? '2px' : '4px')} ${(p) => p.theme.paddings.sm};
+  padding-top: ${(p) => (p.multiple ? '2px' : '4px')};
+  padding-right: ${(p) => p.theme.paddings.sm};
+  padding-bottom: ${(p) => (p.multiple ? '0' : '4px')};
+  padding-left: ${(p) => p.theme.paddings.sm};
   border: ${(p) => p.theme.borders.base};
   border-radius: ${(p) => p.theme.radii.base};
   border-color: ${(p) => p.theme.colors.gray400};
@@ -158,7 +161,7 @@ export const StyledPopover = styled.div`
   border: ${(p) => p.theme.borders.base};
   border-radius: ${(p) => p.theme.radii.lg};
   border-color: ${(p) => p.theme.colors.gray300};
-  box-shadow: ${(p) => p.theme.shadows.base};
+  box-shadow: ${(p) => p.theme.shadows.xl};
   color: ${(p) => p.theme.colors.gray700};
   font-size: ${(p) => p.theme.fontSizes.sm};
   text-align: left;

@@ -1,11 +1,4 @@
-import React, {
-  PropsWithChildren,
-  ReactNode,
-  useContext,
-  useEffect,
-  useRef,
-  useState,
-} from 'react';
+import React, { PropsWithChildren, ReactNode, useContext, useRef } from 'react';
 import { UseComboboxStateChange, useCombobox } from 'downshift6';
 
 import { ClickOutsideContext } from '../../Popover';
@@ -13,8 +6,14 @@ import { useFormField } from '../../FormField';
 
 import SelectOptions from './SelectOptions';
 import SelectSuffix from './SelectSuffix';
-import { CREATE_OPTION, filter, isCreateOption, itemToString } from './utils';
-import { SelectCreateOptionObject, SelectOption, SelectValue } from './types';
+import {
+  CREATE_OPTION,
+  isCreateOption,
+  itemToString,
+  useIgnoreDownshiftUselessWarning,
+  useSelectOptions,
+} from './utils';
+import { SelectOption, SelectValue } from './types';
 import { StyledSelect } from './styles';
 
 interface SelectProps<T extends SelectOption = SelectOption, V = T | null> {
@@ -64,46 +63,13 @@ const Select = <T extends SelectOption>({
 
   const { setHasChild } = useContext(ClickOutsideContext);
   const selectRef = useRef<HTMLButtonElement>(null);
-  const [searchValue, setSearchValue] = useState('');
+  const { searchValue, setSearchValue, selectOptions } = useSelectOptions({
+    options,
+    creatable,
+    isValidNewOption,
+  });
 
-  // Prevent display the useless error message
-  useEffect(() => {
-    const originalError = console.error;
-
-    console.error = (...args: any[]) => {
-      if (/downshift: The ref prop "ref" from/.test(args[0])) {
-        return;
-      }
-      originalError.call(console, ...args);
-    };
-
-    return () => {
-      console.error = originalError;
-    };
-  }, []);
-
-  const searchOptions =
-    searchValue !== '' ? filter(options, searchValue) : options;
-  const additionOptions: [SelectCreateOptionObject] | [] =
-    creatable && isValidNewOption(searchValue)
-      ? [
-          {
-            label: CREATE_OPTION,
-            value: searchValue,
-          },
-        ]
-      : [];
-
-  const mergedOptions = [...searchOptions, ...additionOptions];
-
-  const valueProps =
-    typeof value !== 'undefined'
-      ? {
-          selectedItem: value,
-        }
-      : {
-          initialSelectedItem: defaultValue,
-        };
+  useIgnoreDownshiftUselessWarning();
 
   const handleChange = ({
     selectedItem,
@@ -140,7 +106,7 @@ const Select = <T extends SelectOption>({
       return 0;
     }
 
-    const index = searchOptions.findIndex(
+    const index = selectOptions.findIndex(
       (item) => itemToString(item) === itemToString(value ?? defaultValue)
     );
 
@@ -148,7 +114,7 @@ const Select = <T extends SelectOption>({
   };
 
   const {
-    selectedItem: currentSelectedItem,
+    selectedItem,
     highlightedIndex,
     getToggleButtonProps,
     getMenuProps,
@@ -160,9 +126,10 @@ const Select = <T extends SelectOption>({
   } = useCombobox({
     id: labelId,
     itemToString,
-    items: mergedOptions,
+    items: selectOptions,
     inputValue: searchValue,
-    ...valueProps,
+    selectedItem: value,
+    initialSelectedItem: defaultValue,
     defaultHighlightedIndex: getDefaultHighlightIndex(),
     scrollIntoView: () => {},
     onSelectedItemChange: handleChange,
@@ -170,7 +137,7 @@ const Select = <T extends SelectOption>({
     onIsOpenChange: ({ isOpen: visible }) => setHasChild(Boolean(visible)),
   });
 
-  const currentSelectedItemString = itemToString(currentSelectedItem);
+  const selectedItemString = itemToString(selectedItem);
 
   return (
     <div
@@ -193,15 +160,15 @@ const Select = <T extends SelectOption>({
             ...((searchable || creatable) && isOpen
               ? {}
               : {
-                  value: currentSelectedItemString,
+                  value: selectedItemString,
                 }),
             readOnly: (!searchable && !creatable) || loading,
-            placeholder: placeholder ?? currentSelectedItemString,
+            placeholder: placeholder ?? selectedItemString,
           })}
         />
         <SelectSuffix
           loading={loading}
-          hasSelectedItem={currentSelectedItem !== null}
+          hasSelectedItem={selectedItem !== null}
           clearable={clearable}
           onClearIconClick={() => selectItem(null as any)}
           visible={isOpen}
@@ -212,9 +179,9 @@ const Select = <T extends SelectOption>({
         getMenuProps={getMenuProps}
         getItemProps={getItemProps}
         visible={isOpen}
-        options={mergedOptions}
+        options={selectOptions}
+        selectedItem={selectedItem}
         highlightedIndex={highlightedIndex}
-        currentSelectedItemString={currentSelectedItemString}
         formatCreateLabel={formatCreateLabel}
       />
     </div>

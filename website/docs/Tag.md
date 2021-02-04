@@ -21,6 +21,7 @@ import { Tag } from 'tailor-ui';
 ```jsx live
 <>
   <Tag>Content</Tag>
+  <Tag disabled>Content</Tag>
   <Tag invalid>Content</Tag>
 </>
 ```

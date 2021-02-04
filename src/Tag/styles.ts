@@ -4,8 +4,8 @@ import { AutoSizeInput } from '../AutoSizeInput';
 
 export interface StyledTagProps {
   editable: boolean;
-  clickable: boolean;
   invalid: boolean;
+  disabled: boolean;
 }
 
 export const StyledTag = styled.div<StyledTagProps>`
@@ -15,15 +15,48 @@ export const StyledTag = styled.div<StyledTagProps>`
   padding: 0 8px;
   border: ${(p) => p.theme.borders.base};
   border-radius: ${(p) => p.theme.radii.lg};
-  border-color: ${(p) =>
-    p.invalid ? p.theme.colors.danger : p.theme.colors.primaryLight};
-  background-color: ${(p) =>
-    p.invalid ? p.theme.colors.light : p.theme.colors.surface2};
-  color: ${(p) =>
-    p.invalid ? p.theme.colors.danger : p.theme.colors.primaryLight};
+  border-color: ${(p) => {
+    if (p.disabled) {
+      return p.theme.colors.gray500;
+    }
+    if (p.invalid) {
+      return p.theme.colors.danger;
+    }
+
+    return p.theme.colors.primaryLight;
+  }};
+  background-color: ${(p) => {
+    if (p.disabled) {
+      return p.theme.colors.gray300;
+    }
+    if (p.invalid) {
+      return p.theme.colors.light;
+    }
+
+    return p.theme.colors.surface2;
+  }};
+  color: ${(p) => {
+    if (p.disabled) {
+      return p.theme.colors.gray500;
+    }
+    if (p.invalid) {
+      return p.theme.colors.danger;
+    }
+
+    return p.theme.colors.primaryLight;
+  }};
   font-size: ${(p) => p.theme.fontSizes.sm};
   white-space: nowrap;
-  cursor: ${(p) => (p.editable || p.clickable ? 'pointer' : 'auto')};
+  cursor: ${(p) => {
+    if (p.disabled) {
+      return 'not-allowed';
+    }
+    if (p.editable || Boolean(p.onClick)) {
+      return 'pointer';
+    }
+
+    return 'auto';
+  }};
 
   input {
     color: ${(p) =>
