@@ -5,6 +5,7 @@ import React, {
   KeyboardEvent,
   MouseEventHandler,
   ReactNode,
+  forwardRef,
   useCallback,
   useState,
 } from 'react';
@@ -34,19 +35,33 @@ const StyledCloseIcon = styled(Icon)`
   }
 `;
 
-const CloseIcon: FC<{
+interface CloseIconProps {
   onClick: MouseEventHandler;
   invalid: boolean;
-}> = ({ onClick, invalid }) => (
-  <StyledCloseIcon
-    size="16"
-    ml="1"
-    cursor="pointer"
-    fill={invalid ? 'danger' : undefined}
-    onClick={onClick}
-    type={MdClose}
-  />
-);
+  disabled: boolean;
+}
+
+const CloseIcon: FC<CloseIconProps> = ({ onClick, disabled, invalid }) => {
+  let fill: string | undefined;
+
+  if (invalid) {
+    fill = 'danger';
+  }
+  if (disabled) {
+    fill = 'gray500';
+  }
+
+  return (
+    <StyledCloseIcon
+      size="16"
+      ml="1"
+      cursor={disabled ? 'not-allowed' : 'pointer'}
+      fill={fill}
+      onClick={onClick}
+      type={MdClose}
+    />
+  );
+};
 
 export interface TagProps
   extends Omit<HTMLAttributes<HTMLDivElement>, 'prefix' | 'onChange'> {
@@ -59,27 +74,34 @@ export interface TagProps
    * Callback executed when close animation is completed
    */
   onClosed?: () => void;
+  onClose?: () => void;
   canClose?: () => boolean | Promise<boolean>;
   onChange?: (previousValue: string, value: string) => void;
   children?: string;
   initialEditing?: boolean;
   invalid?: boolean;
+  disabled?: boolean;
   prefix?: ReactNode;
 }
 
-const Tag: FC<TagProps> = ({
-  children = '',
-  editable = false,
-  initialEditing = false,
-  closable,
-  invalid = false,
-  onClosed,
-  canClose,
-  prefix,
-  onChange,
-  onClick,
-  ...otherProps
-}) => {
+const Tag = forwardRef<HTMLDivElement, TagProps>(function Tag(
+  {
+    children = '',
+    editable = false,
+    initialEditing = false,
+    closable,
+    invalid = false,
+    disabled = false,
+    onClose,
+    onClosed,
+    canClose,
+    prefix,
+    onChange,
+    onClick,
+    ...otherProps
+  },
+  ref
+) {
   const [on, setOn] = useState(true);
   const [editing, setEditing] = useState(initialEditing);
   const previous = usePrevious(on);
@@ -115,10 +137,15 @@ const Tag: FC<TagProps> = ({
       {...bind}
     >
       <StyledTag
+        ref={ref}
         editable={editable}
-        clickable={Boolean(onClick)}
+        disabled={disabled}
         invalid={invalid}
         onClick={(event) => {
+          if (disabled) {
+            return;
+          }
+
           if (editable) {
             setEditing(true);
           }
@@ -153,20 +180,29 @@ const Tag: FC<TagProps> = ({
         {closable && (
           <CloseIcon
             invalid={invalid}
+            disabled={disabled}
             onClick={async (event) => {
+              if (disabled) {
+                return;
+              }
+
               event.stopPropagation();
 
               if (canClose && !(await canClose())) {
                 return;
               }
 
-              setOn(!on);
+              if (onClose) {
+                onClose();
+              } else {
+                setOn(false);
+              }
             }}
           />
         )}
       </StyledTag>
     </AnimatedStyledTagWrapper>
   );
-};
+});
 
 export { Tag };
