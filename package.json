@@ -49,7 +49,7 @@
     "@reach/utils": "^0.12.1",
     "date-fns": "^2.16.1",
     "downshift": "3.2.12",
-    "downshift6": "npm:downshift@^6.0.6",
+    "downshift6": "npm:downshift@^6.1.0",
     "fuzzaldrin-plus": "^0.6.0",
     "lodash.debounce": "^4.0.8",
     "polished": "^4.0.5",

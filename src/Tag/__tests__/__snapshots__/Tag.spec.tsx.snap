@@ -19,7 +19,7 @@ exports[`Tag should render invalid style tag 1`] = `
   color: #ff5757;
   font-size: 0.875rem;
   white-space: nowrap;
-  cursor: auto;
+  cursor: pointer;
 }
 
 .c1 input {
@@ -67,7 +67,7 @@ exports[`Tag should render tag 1`] = `
   color: #3990cd;
   font-size: 0.875rem;
   white-space: nowrap;
-  cursor: auto;
+  cursor: pointer;
 }
 
 .c1 input {
@@ -115,7 +115,7 @@ exports[`Tag should render tag with prefix 1`] = `
   color: #3990cd;
   font-size: 0.875rem;
   white-space: nowrap;
-  cursor: auto;
+  cursor: pointer;
 }
 
 .c1 input {

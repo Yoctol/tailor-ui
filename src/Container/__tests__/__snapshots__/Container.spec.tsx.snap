@@ -50,7 +50,7 @@ exports[`Container should render correctly 1`] = `
   padding: 24px 32px 32px;
   border-radius: 1rem;
   background-color: #ffffff;
-  box-shadow: 0 2px 4px 0 #e0e0e0;
+  box-shadow: 0 2px 4px 0 #C4CFDD;
   color: #283040;
   font-size: 1rem;
 }

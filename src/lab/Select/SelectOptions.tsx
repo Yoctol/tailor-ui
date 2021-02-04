@@ -7,13 +7,16 @@ import React, {
   useEffect,
   useRef,
 } from 'react';
+import { MdCheck } from 'react-icons/md';
 import { useVirtual } from 'react-virtual';
 
+import { Box } from '../../Layout';
 import { Ellipsis } from '../../Ellipsis';
+import { Icon } from '../../Icon';
 import { Stack } from '../../Stack';
 import { Tooltip } from '../../Tooltip';
 
-import { SelectOption } from './types';
+import { SelectOption, SelectValue } from './types';
 import { StyledPopover, StyledSelectOption } from './styles';
 import {
   isCreateOption,
@@ -28,8 +31,9 @@ interface SelectOptionsProps {
   getMenuProps: any;
   getItemProps: any;
   options: SelectOption[];
+  selectedItem?: SelectValue;
+  selectedItems?: SelectOption[];
   highlightedIndex: number;
-  currentSelectedItemString: string;
   formatCreateLabel: (labelInfo: {
     value: string;
     active: boolean;
@@ -43,8 +47,9 @@ const SelectOptions: FC<SelectOptionsProps> = ({
   getItemProps,
   visible,
   options,
+  selectedItem,
+  selectedItems,
   highlightedIndex,
-  currentSelectedItemString,
   formatCreateLabel,
 }) => {
   const listRef = useRef<HTMLDivElement>(null);
@@ -79,7 +84,9 @@ const SelectOptions: FC<SelectOptionsProps> = ({
                   const itemDisabled =
                     (isObjectOption(item) && item.disabled) ?? false;
                   const hovered = highlightedIndex === virtualRow.index;
-                  const active = currentSelectedItemString === itemString;
+                  const active = selectedItems
+                    ? selectedItems.map(itemToString).includes(itemString)
+                    : itemToString(selectedItem) === itemString;
                   const content = isCreateOption(item)
                     ? formatCreateLabel({
                         value: item.value,
@@ -104,6 +111,22 @@ const SelectOptions: FC<SelectOptionsProps> = ({
                         },
                       })}
                     >
+                      {selectedItems && (
+                        <Box
+                          display="inline-flex"
+                          flex="none"
+                          width="16px"
+                          mr="8px"
+                        >
+                          {active && (
+                            <Icon
+                              type={MdCheck}
+                              fill={hovered ? 'light' : 'primaryLight'}
+                              size="16px"
+                            />
+                          )}
+                        </Box>
+                      )}
                       {hint ? (
                         <Tooltip content={hint} mouseLeaveDelay={0}>
                           <div style={{ width: '100%' }}>{content}</div>

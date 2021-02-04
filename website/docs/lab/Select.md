@@ -178,7 +178,7 @@ import { Select } from 'tailor-ui/lab';
           setOptions([...options, newOption]);
           setValue(newOption);
           setLoading(false);
-        }, 3000);
+        }, 1000);
       }}
     />
   );
@@ -216,6 +216,47 @@ import { Select } from 'tailor-ui/lab';
       </Modal>
       <Button onClick={() => setVisible(true)}>Open Modal</Button>
     </>
+  );
+}
+```
+
+## Multiple Select
+
+
+```jsx live
+() => {
+  const [loading, setLoading] = useState(false);
+  const [value, setValue] = useState([{ label: 'Banana', value: 'banana' }]);
+  const [options, setOptions] = useState([
+    { label: 'Banana', value: 'banana' },
+    { label: 'Orange', value: 'orange' },
+    { label: 'Apple', value: 'apple' },
+    { label: 'Mango', value: 'mango' },
+  ]);
+
+  return (
+    <Lab.MultipleSelect
+      creatable
+      loading={loading}
+      width="360px"
+      multiple
+      value={value}
+      onChange={newValue => setValue(newValue)}
+      options={options}
+      isValidNewOption={name =>
+        !options.map(option => option.label).includes(name) &&
+        name.trim() !== ''
+      }
+      onCreateOption={name => {
+        const newOption = { label: name, value: name };
+        setLoading(true);
+        setTimeout(() => {
+          setOptions([...options, newOption]);
+          setValue(prevValue => [...prevValue, newOption]);
+          setLoading(false);
+        }, 1000);
+      }}
+    />
   );
 }
 ```
