@@ -1,4 +1,11 @@
-import React, { PropsWithChildren, ReactNode, useContext, useRef } from 'react';
+import React, {
+  PropsWithoutRef,
+  ReactNode,
+  Ref,
+  forwardRef,
+  useContext,
+  useRef,
+} from 'react';
 import { UseComboboxStateChange, useCombobox } from 'downshift6';
 
 import { ClickOutsideContext } from '../../Popover';
@@ -38,23 +45,26 @@ interface SelectProps<T extends SelectOption = SelectOption, V = T | null> {
   isValidNewOption?: (value: string) => boolean;
 }
 
-const Select = <T extends SelectOption>({
-  id,
-  loading = false,
-  searchable = false,
-  clearable = false,
-  creatable = false,
-  disabled = false,
-  width = 240,
-  options,
-  value,
-  defaultValue,
-  onChange,
-  placeholder,
-  onCreateOption,
-  formatCreateLabel = (info) => `Create new option: ${info.value}`,
-  isValidNewOption = (optionValue) => optionValue.trim() !== '',
-}: PropsWithChildren<SelectProps<T>>) => {
+const Select = forwardRef(function Select<T extends SelectOption>(
+  {
+    id,
+    loading = false,
+    searchable = false,
+    clearable = false,
+    creatable = false,
+    disabled = false,
+    width = 240,
+    options,
+    value,
+    defaultValue,
+    onChange,
+    placeholder,
+    onCreateOption,
+    formatCreateLabel = (info) => `Create new option: ${info.value}`,
+    isValidNewOption = (optionValue) => optionValue.trim() !== '',
+  }: PropsWithoutRef<SelectProps<T>>,
+  ref: Ref<HTMLDivElement>
+) {
   const [invalid, labelId, setValue] = useFormField({
     id,
     value,
@@ -142,6 +152,7 @@ const Select = <T extends SelectOption>({
   return (
     <div
       {...getComboboxProps({
+        ref,
         style: {
           width,
         },
@@ -186,6 +197,6 @@ const Select = <T extends SelectOption>({
       />
     </div>
   );
-};
+});
 
 export { Select };
