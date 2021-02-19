@@ -1,4 +1,11 @@
-import React, { PropsWithChildren, ReactNode, useContext, useRef } from 'react';
+import React, {
+  PropsWithoutRef,
+  ReactNode,
+  Ref,
+  forwardRef,
+  useContext,
+  useRef,
+} from 'react';
 import {
   UseMultipleSelectionStateChange,
   useCombobox,
@@ -43,23 +50,28 @@ interface MultipleSelectProps<T extends SelectOption = SelectOption> {
   isValidNewOption?: (value: string) => boolean;
 }
 
-const MultipleSelect = <T extends SelectOption>({
-  id,
-  loading = false,
-  searchable = false,
-  clearable = false,
-  creatable = false,
-  disabled = false,
-  width = 240,
-  options,
-  value,
-  defaultValue,
-  onChange,
-  placeholder,
-  onCreateOption,
-  formatCreateLabel = (info) => `Create new option: ${info.value}`,
-  isValidNewOption = (optionValue) => optionValue.trim() !== '',
-}: PropsWithChildren<MultipleSelectProps<T>>) => {
+const MultipleSelect = forwardRef(function MultipleSelect<
+  T extends SelectOption
+>(
+  {
+    id,
+    loading = false,
+    searchable = false,
+    clearable = false,
+    creatable = false,
+    disabled = false,
+    width = 240,
+    options,
+    value,
+    defaultValue,
+    onChange,
+    placeholder,
+    onCreateOption,
+    formatCreateLabel = (info) => `Create new option: ${info.value}`,
+    isValidNewOption = (optionValue) => optionValue.trim() !== '',
+  }: PropsWithoutRef<MultipleSelectProps<T>>,
+  ref: Ref<HTMLDivElement>
+) {
   const [invalid, labelId, setValue] = useFormField({
     id,
     value,
@@ -165,6 +177,7 @@ const MultipleSelect = <T extends SelectOption>({
   return (
     <div
       {...getComboboxProps({
+        ref,
         style: {
           width,
         },
@@ -228,6 +241,6 @@ const MultipleSelect = <T extends SelectOption>({
       />
     </div>
   );
-};
+});
 
 export { MultipleSelect };
