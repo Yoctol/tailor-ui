@@ -1,6 +1,6 @@
 import React, {
   ChangeEvent,
-  InputHTMLAttributes,
+  ComponentPropsWithoutRef,
   forwardRef,
   useEffect,
   useRef,
@@ -20,7 +20,7 @@ const MIN_INPUT_WIDTH = 18;
 
 const AutoSizeInput = forwardRef<
   HTMLInputElement,
-  InputHTMLAttributes<HTMLInputElement> & {
+  ComponentPropsWithoutRef<'input'> & {
     fontSize?: number;
   }
 >(function AutoSizeInput({ fontSize = 14, ...props }, ref) {
