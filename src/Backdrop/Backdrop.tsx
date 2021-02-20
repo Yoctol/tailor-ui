@@ -1,4 +1,4 @@
-import React, { FC, HTMLAttributes } from 'react';
+import React, { ComponentPropsWithoutRef, FC } from 'react';
 import styled from 'styled-components';
 import { animated, config, useTransition } from 'react-spring';
 
@@ -17,7 +17,7 @@ const StyledBackdrop = styled.div`
 
 const AnimatedStyledBackdrop = animated(StyledBackdrop);
 
-export interface BackdropProps extends HTMLAttributes<HTMLDivElement> {
+export interface BackdropProps extends ComponentPropsWithoutRef<'div'> {
   visible: boolean;
   zIndex?: number;
 }

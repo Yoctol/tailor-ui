@@ -1,7 +1,7 @@
 import React, {
+  ComponentPropsWithoutRef,
   FC,
   FocusEvent,
-  HTMLAttributes,
   KeyboardEvent,
   MouseEventHandler,
   ReactNode,
@@ -64,7 +64,7 @@ const CloseIcon: FC<CloseIconProps> = ({ onClick, disabled, invalid }) => {
 };
 
 export interface TagProps
-  extends Omit<HTMLAttributes<HTMLDivElement>, 'prefix' | 'onChange'> {
+  extends Omit<ComponentPropsWithoutRef<'div'>, 'prefix' | 'onChange'> {
   /**
    * Whether the Tag can be closed
    */

@@ -13,7 +13,7 @@ import {
   space,
   width,
 } from 'styled-system';
-import { HTMLAttributes } from 'react';
+import { ComponentPropsWithoutRef } from 'react';
 
 export const StyledImage: StyledComponent<
   'div',
@@ -56,7 +56,7 @@ StyledBlock.defaultProps = {
   p: 3,
 };
 
-export type CardProps = HTMLAttributes<HTMLDivElement> &
+export type CardProps = ComponentPropsWithoutRef<'div'> &
   SpaceProps &
   HeightProps &
   WidthProps &

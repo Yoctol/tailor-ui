@@ -1,10 +1,4 @@
-import React, {
-  FC,
-  ForwardRefExoticComponent,
-  HTMLAttributes,
-  PropsWithoutRef,
-  forwardRef,
-} from 'react';
+import React, { ComponentPropsWithoutRef, FC, forwardRef } from 'react';
 import styled, { css } from 'styled-components';
 import { IconType as ReactIconsIconType } from 'react-icons/lib/esm';
 import { SpaceProps, space, style } from 'styled-system';
@@ -54,7 +48,7 @@ export const IconWrapper = styled.i<IconWrapperProps>`
 
 export type IconType = BuiltInIconKeys | ReactIconsIconType;
 
-export type IconProps = HTMLAttributes<HTMLDivElement> &
+export type IconProps = ComponentPropsWithoutRef<'div'> &
   SpaceProps & {
     cursor?: string;
     pointerEvents?: string;
@@ -64,9 +58,7 @@ export type IconProps = HTMLAttributes<HTMLDivElement> &
     type: IconType;
   };
 
-const Icon: ForwardRefExoticComponent<
-  PropsWithoutRef<IconProps> & React.RefAttributes<HTMLElement>
-> = forwardRef<HTMLElement, IconProps>(function Icon(
+const Icon = forwardRef<HTMLElement, IconProps>(function Icon(
   { type, cursor = 'default', size = 24, ...otherProps },
   ref
 ) {
