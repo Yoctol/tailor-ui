@@ -1,4 +1,4 @@
-import React, { FC, ReactNode } from 'react';
+import React, { ComponentPropsWithoutRef, ReactNode, forwardRef } from 'react';
 
 import {
   Column,
@@ -9,42 +9,51 @@ import {
   TableWrapper,
 } from './styles';
 
-const Head: FC = ({ children }) => (
-  <thead>
-    <Row>{children}</Row>
-  </thead>
-);
+const Head = forwardRef<HTMLTableSectionElement>(function Head(
+  { children },
+  ref
+) {
+  return (
+    <thead ref={ref}>
+      <Row>{children}</Row>
+    </thead>
+  );
+});
 
-const Body: FC = ({ children }) => <tbody>{children}</tbody>;
+const Body = forwardRef<HTMLTableSectionElement>(function Body(
+  { children },
+  ref
+) {
+  return <tbody ref={ref}>{children}</tbody>;
+});
 
-export type TableProps = Omit<StyledTableProps, 'hasHeader' | 'hasFooter'> & {
-  header?: ReactNode;
-  footer?: ReactNode;
-};
+export type TableProps = ComponentPropsWithoutRef<'table'> &
+  Omit<StyledTableProps, 'hasHeader' | 'hasFooter'> & {
+    header?: ReactNode;
+    footer?: ReactNode;
+  };
 
-const Table: FC<TableProps> & {
-  Head: typeof Head;
-  HeadColumn: typeof HeadColumn;
-  Body: typeof Body;
-  Row: typeof Row;
-  Column: typeof Column;
-} = ({ header, footer, width = '100%', textAlign = 'center', ...props }) => {
+const Table = forwardRef<HTMLTableElement, TableProps>(function Table(
+  { header, footer, width = '100%', textAlign = 'center', ...props },
+  ref
+) {
   const optionsProps = {
     hasHeader: Boolean(header),
     hasFooter: Boolean(footer),
   };
   const table = (
     <StyledTable
-      {...optionsProps}
+      ref={ref}
       width={width as string}
       textAlign={textAlign}
+      {...optionsProps}
       {...props}
     />
   );
 
   if (header || footer) {
     return (
-      <TableWrapper {...optionsProps} width={width}>
+      <TableWrapper ref={ref} width={width} {...optionsProps} {...props}>
         {header}
         {table}
         {footer}
@@ -53,6 +62,14 @@ const Table: FC<TableProps> & {
   }
 
   return table;
+}) as React.ForwardRefExoticComponent<
+  TableProps & React.RefAttributes<HTMLTableElement>
+> & {
+  Head: typeof Head;
+  HeadColumn: typeof HeadColumn;
+  Body: typeof Body;
+  Row: typeof Row;
+  Column: typeof Column;
 };
 
 Table.Head = Head;
