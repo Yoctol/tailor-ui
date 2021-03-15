@@ -1,4 +1,4 @@
-import React, { FC, ReactNode, RefObject, useRef } from 'react';
+import React, { FC, ReactNode, RefObject, useEffect, useRef } from 'react';
 import { useTransition } from 'react-spring';
 
 import { Portal } from '../Portal';
@@ -43,6 +43,21 @@ const Positioner: FC<PositionerProps> = ({
 }) => {
   const targetRefFromSelf = useRef<HTMLElement>(null);
   const targetRef = targetRefFromProps || targetRefFromSelf;
+
+  useEffect(() => {
+    const originalWarn = console.warn;
+
+    console.warn = (...args: any[]) => {
+      if (/You need to place the ref /.test(args[0])) {
+        return;
+      }
+      originalWarn.call(console, ...args);
+    };
+
+    return () => {
+      console.warn = originalWarn;
+    };
+  }, []);
 
   const transitions = useTransition(visible, null, {
     from: {
