@@ -1,3 +1,16 @@
+# [1.6.0](https://github.com/yoctol/tailor-ui/compare/v1.5.0...v1.6.0) (2021-03-15)
+
+
+### Bug Fixes
+
+* **positioner:** hide useless warning ([0ac555d](https://github.com/yoctol/tailor-ui/commit/0ac555d440d43569a98d4285a8c1dbc78efddfd4))
+* **table:** use forwardRef ([10e4df9](https://github.com/yoctol/tailor-ui/commit/10e4df93321c475fa260307fdd872b5b2dca6993))
+
+
+### Features
+
+* **select:** use forwardRef to pass ref down ([55e3f9c](https://github.com/yoctol/tailor-ui/commit/55e3f9ca3642fc6050284a491a9a4a75bf2b73ed))
+
 # [1.5.0](https://github.com/yoctol/tailor-ui/compare/v1.4.1...v1.5.0) (2021-02-04)
 
 
