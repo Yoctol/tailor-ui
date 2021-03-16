@@ -1,3 +1,10 @@
+## [1.6.2](https://github.com/yoctol/tailor-ui/compare/v1.6.1...v1.6.2) (2021-03-16)
+
+
+### Bug Fixes
+
+* **table:** children type of Head & Body ([e8c82b9](https://github.com/yoctol/tailor-ui/commit/e8c82b9d682d6f29965b53abe7fa270753696ab9))
+
 ## [1.6.1](https://github.com/yoctol/tailor-ui/compare/v1.6.0...v1.6.1) (2021-03-16)
 
 
