@@ -48,7 +48,7 @@ const Positioner: FC<PositionerProps> = ({
     const originalWarn = console.warn;
 
     console.warn = (...args: any[]) => {
-      if (/You need to place the ref /.test(args[0])) {
+      if (/You need to place the ref/.test(args[0])) {
         return;
       }
       originalWarn.call(console, ...args);
