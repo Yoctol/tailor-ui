@@ -1,3 +1,10 @@
+## [1.6.1](https://github.com/yoctol/tailor-ui/compare/v1.6.0...v1.6.1) (2021-03-16)
+
+
+### Bug Fixes
+
+* **positioner:** useless warning condition ([e062c38](https://github.com/yoctol/tailor-ui/commit/e062c38e6331df764d57ea0d9174b19ec6127107))
+
 # [1.6.0](https://github.com/yoctol/tailor-ui/compare/v1.5.0...v1.6.0) (2021-03-15)
 
 
