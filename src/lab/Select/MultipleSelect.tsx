@@ -1,5 +1,6 @@
 import React, {
   PropsWithoutRef,
+  ReactElement,
   ReactNode,
   Ref,
   forwardRef,
@@ -28,7 +29,7 @@ import {
   useSelectOptions,
 } from './utils';
 
-interface MultipleSelectProps<T extends SelectOption = SelectOption> {
+interface MultipleSelectProps<T extends SelectOption> {
   id?: string;
   loading?: boolean;
   searchable?: boolean;
@@ -241,6 +242,8 @@ const MultipleSelect = forwardRef(function MultipleSelect<
       />
     </div>
   );
-});
+}) as <T extends SelectOption>(
+  p: PropsWithoutRef<MultipleSelectProps<T>> & { ref?: Ref<HTMLDivElement> }
+) => ReactElement;
 
 export { MultipleSelect };

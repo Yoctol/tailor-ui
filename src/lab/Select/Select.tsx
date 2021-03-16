@@ -1,5 +1,6 @@
 import React, {
   PropsWithoutRef,
+  ReactElement,
   ReactNode,
   Ref,
   forwardRef,
@@ -23,7 +24,7 @@ import {
 import { SelectOption, SelectValue } from './types';
 import { StyledSelect } from './styles';
 
-interface SelectProps<T extends SelectOption = SelectOption, V = T | null> {
+interface SelectProps<T extends SelectOption, V = T | null> {
   id?: string;
   loading?: boolean;
   searchable?: boolean;
@@ -197,6 +198,8 @@ const Select = forwardRef(function Select<T extends SelectOption>(
       />
     </div>
   );
-});
+}) as <T extends SelectOption>(
+  p: PropsWithoutRef<SelectProps<T>> & { ref?: Ref<HTMLDivElement> }
+) => ReactElement;
 
 export { Select };
