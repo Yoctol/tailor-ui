@@ -1,3 +1,10 @@
+## [1.6.3](https://github.com/yoctol/tailor-ui/compare/v1.6.2...v1.6.3) (2021-03-16)
+
+
+### Bug Fixes
+
+* **select:** generic types ([ca9831e](https://github.com/yoctol/tailor-ui/commit/ca9831e8754a4062c40916a240ac9b8704a7b4a4))
+
 ## [1.6.2](https://github.com/yoctol/tailor-ui/compare/v1.6.1...v1.6.2) (2021-03-16)
 
 
