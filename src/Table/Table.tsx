@@ -9,23 +9,21 @@ import {
   TableWrapper,
 } from './styles';
 
-const Head = forwardRef<HTMLTableSectionElement>(function Head(
-  { children },
-  ref
-) {
-  return (
-    <thead ref={ref}>
-      <Row>{children}</Row>
-    </thead>
-  );
-});
+const Head = forwardRef<HTMLTableSectionElement, { children: ReactNode }>(
+  function Head({ children }, ref) {
+    return (
+      <thead ref={ref}>
+        <Row>{children}</Row>
+      </thead>
+    );
+  }
+);
 
-const Body = forwardRef<HTMLTableSectionElement>(function Body(
-  { children },
-  ref
-) {
-  return <tbody ref={ref}>{children}</tbody>;
-});
+const Body = forwardRef<HTMLTableSectionElement, { children: ReactNode }>(
+  function Body({ children }, ref) {
+    return <tbody ref={ref}>{children}</tbody>;
+  }
+);
 
 export type TableProps = ComponentPropsWithoutRef<'table'> &
   Omit<StyledTableProps, 'hasHeader' | 'hasFooter'> & {
