@@ -42,6 +42,7 @@ interface MultipleSelectProps<T extends SelectOption> {
   defaultValue?: T[];
   onChange: (item: T[]) => void;
   placeholder?: string;
+  noOptionsMessage?: () => ReactNode;
   onCreateOption?: (value: string) => void;
   formatCreateLabel?: (labelInfo: {
     value: string;
@@ -67,12 +68,14 @@ const MultipleSelect = forwardRef(function MultipleSelect<
     defaultValue,
     onChange,
     placeholder,
+    noOptionsMessage,
     onCreateOption,
     formatCreateLabel = (info) => `Create new option: ${info.value}`,
     isValidNewOption = (optionValue) => optionValue.trim() !== '',
   }: PropsWithoutRef<MultipleSelectProps<T>>,
   ref: Ref<HTMLDivElement>
 ) {
+  const inputRef = useRef<HTMLInputElement>(null);
   const [invalid, labelId, setValue] = useFormField({
     id,
     value,
@@ -165,14 +168,6 @@ const MultipleSelect = forwardRef(function MultipleSelect<
 
       return changes;
     },
-    onStateChange: ({ inputValue, type }) => {
-      if (
-        type === useCombobox.stateChangeTypes.InputChange &&
-        typeof inputValue !== 'undefined'
-      ) {
-        setSearchValue(inputValue);
-      }
-    },
   });
 
   return (
@@ -200,26 +195,30 @@ const MultipleSelect = forwardRef(function MultipleSelect<
               closable
               disabled={loading || disabled}
               style={{ marginBottom: 2 }}
-              onClose={() =>
+              onClose={() => {
                 setSelectedItems(
                   selectedItems.filter(
                     (item) => itemToString(item) !== itemToString(selectedItem)
                   )
-                )
-              }
+                );
+
+                inputRef.current?.focus();
+              }}
               {...getSelectedItemProps({ selectedItem, index })}
             >
               {itemToString(selectedItem)}
             </Tag>
           ))}
           <input
-            {...getInputProps(
-              getDropdownProps({
+            {...getInputProps({
+              ...getDropdownProps({
+                ref: inputRef,
                 preventKeyAction: isOpen,
                 readOnly: (!searchable && !creatable) || loading,
                 placeholder,
-              })
-            )}
+              }),
+              onChange: (event) => setSearchValue(event.currentTarget.value),
+            })}
           />
         </Flex>
         <SelectSuffix
@@ -239,6 +238,7 @@ const MultipleSelect = forwardRef(function MultipleSelect<
         selectedItems={selectedItems}
         highlightedIndex={highlightedIndex}
         formatCreateLabel={formatCreateLabel}
+        noOptionsMessage={noOptionsMessage}
       />
     </div>
   );
