@@ -1,5 +1,5 @@
 import React, { FC, ReactNode, useMemo } from 'react';
-import { animated, config, useTransition } from 'react-spring';
+import { animated, config, to, useTransition } from 'react-spring';
 
 import CloseButton from '../Modal/CloseButton';
 import { Backdrop } from '../Backdrop';
@@ -87,7 +87,7 @@ const Drawer: FC<DrawerProps> = ({
 
   usePreventBodyScroll(visible);
 
-  const transition = useTransition(visible, null, {
+  const transition = useTransition(visible, {
     from: {
       offset: transformBreadth,
     },
@@ -112,17 +112,15 @@ const Drawer: FC<DrawerProps> = ({
   return (
     <>
       <Backdrop visible={visible} onClick={() => maskClosable && onClose()} />
-      {transition.map(
-        ({ item, key, props }) =>
+      {transition(
+        (style, item) =>
           item && (
-            <Portal key={key} defaultOrder={StackingOrder.OVERLAY}>
+            <Portal defaultOrder={StackingOrder.OVERLAY}>
               <animated.div
                 style={{
                   transform:
-                    props.offset &&
-                    props.offset.interpolate(
-                      (offset) => `${transformAxis}(${offset})`
-                    ),
+                    style.offset &&
+                    to(style.offset, (offset) => `${transformAxis}(${offset})`),
                 }}
               >
                 <DrawerWrapper

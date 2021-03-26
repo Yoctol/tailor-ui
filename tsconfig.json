@@ -1,16 +1,12 @@
 {
   "include": ["./src/**/*"],
-  "exclude": ["./**/__tests__"],
   "compilerOptions": {
-    "outDir": "./lib" /* Redirect output structure to the directory. */,
-    "rootDir": "./src" /* Specify the root dir */,
     "skipLibCheck": true, // https://stackoverflow.com/questions/52399839/typescript-duplicate-identifier-librarymanagedattributes/52404148#52404148
     "target": "es2017",
     "module": "es2015",
     "lib": ["es2017", "dom"],
     "jsx": "react",
     "declaration": true,
-    "composite": true,
     "strict": true,
     "noImplicitAny": true,
     "strictNullChecks": true,
@@ -29,7 +25,7 @@
       "test/test-utils": ["./test/test-utils"],
       "react-intl-tel-input": ["./types/react-intl-tel-input"]
     },
-    "types": ["node", "jest"],
+    "types": ["node", "jest", "@types/testing-library__jest-dom"],
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "traceResolution": false,

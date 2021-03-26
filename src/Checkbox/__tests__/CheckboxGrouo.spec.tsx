@@ -1,6 +1,7 @@
 import React from 'react';
+import userEvent from '@testing-library/user-event';
 
-import { fireEvent, render } from 'test/test-utils';
+import { render } from 'test/test-utils';
 
 import { Box } from '../../Layout';
 import { Checkbox } from '../Checkbox';
@@ -48,7 +49,7 @@ describe('CheckboxGroup', () => {
       'input[type=checkbox]'
     ) as HTMLInputElement;
 
-    fireEvent.click(checkbox);
+    userEvent.click(checkbox);
 
     expect(onChange).toBeCalledWith(['check_1']);
   });
@@ -109,7 +110,7 @@ describe('CheckboxGroup', () => {
         'input[type=checkbox]'
       ) as HTMLInputElement;
 
-      fireEvent.click(checkbox);
+      userEvent.click(checkbox);
 
       expect(onChange).toBeCalledWith(['check_1']);
     });

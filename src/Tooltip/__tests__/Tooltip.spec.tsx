@@ -1,11 +1,12 @@
 import React from 'react';
+import userEvent from '@testing-library/user-event';
 
-import { fireEvent, mockRaf, render, useMockRaf } from 'test/test-utils';
+import { render, screen } from 'test/test-utils';
 
 import { Tooltip } from '../Tooltip';
 
 jest.mock('lodash.debounce', () => (fn: () => void) => {
-  let t = 0;
+  let t: NodeJS.Timeout;
 
   const ret = () => {
     t = setTimeout(fn, 1000);
@@ -19,8 +20,6 @@ jest.mock('lodash.debounce', () => (fn: () => void) => {
 });
 
 describe('Tooltip', () => {
-  useMockRaf();
-
   it('should render tooltip correctly', () => {
     const { baseElement } = render(
       <Tooltip visible content="Content">
@@ -28,86 +27,77 @@ describe('Tooltip', () => {
       </Tooltip>
     );
 
-    mockRaf.flushSpring();
-
     expect(baseElement).toMatchSnapshot();
   });
 
   it('should render tooltip content when hovered', async () => {
-    const { getByText } = render(
+    render(
       <Tooltip content="Content">
         <span>target</span>
       </Tooltip>
     );
 
-    const target = getByText('target');
-    fireEvent.mouseEnter(target);
-    mockRaf.flushSpring();
+    const target = screen.getByText('target');
+    userEvent.hover(target);
 
-    expect(getByText('Content')).toBeInTheDocument();
+    expect(screen.getByText('Content')).toBeInTheDocument();
   });
 
   it('should render tooltip content when hovered over 1000ms', async () => {
     jest.useFakeTimers();
 
-    const { getByText, queryByText } = render(
+    render(
       <Tooltip mouseEnterDelay={1000} content="Content">
         <span>target</span>
       </Tooltip>
     );
 
-    const target = getByText('target');
-    fireEvent.mouseEnter(target);
-    mockRaf.flushSpring();
+    const target = screen.getByText('target');
+    userEvent.hover(target);
 
-    expect(queryByText('Content')).not.toBeInTheDocument();
+    expect(screen.queryByText('Content')).not.toBeInTheDocument();
 
     jest.advanceTimersByTime(1000);
-    mockRaf.flushSpring();
 
-    expect(getByText('Content')).toBeInTheDocument();
+    expect(screen.getByText('Content')).toBeInTheDocument();
   });
 
   it('should not render tooltip content when hovered does not over 1000ms', async () => {
     jest.useFakeTimers();
 
-    const { getByText, queryByText } = render(
+    render(
       <Tooltip mouseEnterDelay={1000} content="Content">
         <span>target</span>
       </Tooltip>
     );
 
-    const target = getByText('target');
-    fireEvent.mouseEnter(target);
-    mockRaf.flushSpring();
+    const target = screen.getByText('target');
+    userEvent.hover(target);
 
-    expect(queryByText('Content')).not.toBeInTheDocument();
+    expect(screen.queryByText('Content')).not.toBeInTheDocument();
 
     jest.advanceTimersByTime(500);
-    fireEvent.mouseLeave(target);
-    mockRaf.flushSpring();
+    userEvent.unhover(target);
 
-    expect(queryByText('Content')).not.toBeInTheDocument();
+    expect(screen.queryByText('Content')).not.toBeInTheDocument();
   });
 
   it('should keep render tooltip content when hover on content', async () => {
     jest.useFakeTimers();
 
-    const { getByText } = render(
+    render(
       <Tooltip content="Content">
         <span>target</span>
       </Tooltip>
     );
 
-    const target = getByText('target');
-    fireEvent.mouseEnter(target);
-    mockRaf.flushSpring();
+    const target = screen.getByText('target');
+    userEvent.hover(target);
 
-    const content = getByText('Content');
+    const content = screen.getByText('Content');
     expect(content).toBeInTheDocument();
 
-    fireEvent.mouseEnter(content);
-    mockRaf.flushSpring();
+    userEvent.hover(content);
 
     expect(content).toBeInTheDocument();
   });

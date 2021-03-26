@@ -1,6 +1,6 @@
-import React, { CSSProperties, FC, RefObject, useMemo, useRef } from 'react';
+import React, { FC, RefObject, useMemo, useRef } from 'react';
 import styled from 'styled-components';
-import { animated } from 'react-spring';
+import { SpringValue, animated } from 'react-spring';
 import { useRect } from '@reach/rect';
 
 import { Positions } from '../constants';
@@ -46,7 +46,7 @@ const getPositionerProps = ({
   let height: number;
   let width: number;
 
-  if (entered) {
+  if (entered || !positionerRef.current) {
     height = Math.round(positionerRect.height);
     width = Math.round(positionerRect.width);
   } else {
@@ -89,7 +89,11 @@ const getPositionerProps = ({
 };
 
 interface PositionerImplProps {
-  style: CSSProperties;
+  style: {
+    opacity: SpringValue<number>;
+    transform: SpringValue<string>;
+    pointerEvents?: SpringValue<'none'>;
+  };
   position: Positions;
   positioner: PositionerRenderer;
   positionerRef?: RefObject<HTMLDivElement>;
@@ -126,7 +130,7 @@ const PositionerImpl: FC<PositionerImplProps> = ({
   }
 
   const { positionerStyle, transformOrigin } = getPositionerProps({
-    entered: style.opacity === 1,
+    entered: style.opacity.get() === 1,
     position,
     positionerRef,
     positionerRect,

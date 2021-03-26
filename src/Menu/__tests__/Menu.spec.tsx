@@ -1,12 +1,11 @@
 import React from 'react';
+import userEvent from '@testing-library/user-event';
 
-import { fireEvent, mockRaf, render, useMockRaf } from 'test/test-utils';
+import { render, screen, waitFor } from 'test/test-utils';
 
 import { Menu } from '../Menu';
 
 describe('Menu', () => {
-  useMockRaf();
-
   it('should render correctly', () => {
     const { container } = render(
       <Menu>
@@ -19,13 +18,11 @@ describe('Menu', () => {
       </Menu>
     );
 
-    mockRaf.flush();
-
     expect(container.firstChild).toMatchSnapshot();
   });
 
   it('should hide current submenu when click another submenu', async () => {
-    const { getByText } = render(
+    render(
       <Menu currentSubOnly defaultSubKeys={['menu1']}>
         <Menu.SubMenu id="menu1" title="Menu 1">
           <Menu.Item onClick={() => {}}>Item 1</Menu.Item>
@@ -36,12 +33,10 @@ describe('Menu', () => {
       </Menu>
     );
 
-    const subMenu2 = getByText('Menu 2');
+    const subMenu2 = screen.getByText('Menu 2');
 
-    fireEvent.click(subMenu2);
+    userEvent.click(subMenu2);
 
-    mockRaf.flush();
-
-    expect(getByText('Item 1')).not.toBeVisible();
+    await waitFor(() => expect(screen.getByText('Item 1')).not.toBeVisible());
   });
 });

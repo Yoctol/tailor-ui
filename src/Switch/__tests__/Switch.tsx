@@ -1,6 +1,7 @@
 import React from 'react';
+import userEvent from '@testing-library/user-event';
 
-import { fireEvent, render } from 'test/test-utils';
+import { render } from 'test/test-utils';
 
 import { Switch } from '../Switch';
 
@@ -36,14 +37,8 @@ describe('Switch', () => {
       'input[type=checkbox]'
     ) as HTMLInputElement;
 
-    fireEvent.click(switchInput);
+    userEvent.click(switchInput);
 
     expect(onChange).toBeCalled();
-  });
-
-  it('should support data-testid', () => {
-    const { getByTestId } = render(<Switch checked data-testid="my-switch" />);
-
-    expect(getByTestId('my-switch')).toHaveAttribute('checked');
   });
 });

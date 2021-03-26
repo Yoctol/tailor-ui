@@ -7,7 +7,7 @@ import React, {
   useContext,
   useRef,
 } from 'react';
-import { UseComboboxStateChange, useCombobox } from 'downshift6';
+import { UseComboboxStateChange, useCombobox } from 'downshift';
 
 import { ClickOutsideContext } from '../../Popover';
 import { useFormField } from '../../FormField';

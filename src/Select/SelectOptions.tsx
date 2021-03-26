@@ -7,7 +7,7 @@ import React, {
   useState,
 } from 'react';
 import { FixedSizeList } from 'react-window';
-import { GetItemPropsOptions } from 'downshift';
+import { GetItemPropsOptions } from 'downshift3';
 import { MdCheck, MdHighlightOff } from 'react-icons/md';
 
 import { Box, Flex } from '../Layout';

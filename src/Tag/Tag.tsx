@@ -7,11 +7,12 @@ import React, {
   ReactNode,
   forwardRef,
   useCallback,
+  useEffect,
   useState,
 } from 'react';
 import styled from 'styled-components';
 import { MdClose } from 'react-icons/md';
-import { animated, useSpring } from 'react-spring';
+import { animated, to, useSpring } from 'react-spring';
 
 import { Icon } from '../Icon';
 import { useMeasure, usePrevious } from '../hooks';
@@ -102,21 +103,30 @@ const Tag = forwardRef<HTMLDivElement, TagProps>(function Tag(
   },
   ref
 ) {
+  const [closeDone, setCloseDone] = useState(false);
   const [on, setOn] = useState(true);
   const [editing, setEditing] = useState(initialEditing);
   const previous = usePrevious(on);
   const [bind, { width }] = useMeasure();
 
-  const props = useSpring({
+  const style = useSpring({
     opacity: on ? 1 : 0,
     marginRight: on ? 4 : 0,
     width: on ? width : 0,
-    onRest: ({ width: restWidth }: { width: number }) => {
-      if (!on && restWidth === 0 && onClosed) {
-        onClosed();
-      }
+    onRest: {
+      opacity: (restOpacity) => {
+        if (restOpacity.value === 0) {
+          setCloseDone(true);
+        }
+      },
     },
   });
+
+  useEffect(() => {
+    if (onClosed && closeDone) {
+      onClosed();
+    }
+  }, [onClosed, closeDone]);
 
   const handleUpdate = useCallback(
     (event: FocusEvent<HTMLInputElement> | KeyboardEvent<HTMLInputElement>) => {
@@ -131,10 +141,19 @@ const Tag = forwardRef<HTMLDivElement, TagProps>(function Tag(
     [children, onChange]
   );
 
+  if (closeDone) {
+    return null;
+  }
+
   return (
     <AnimatedStyledTagWrapper
-      style={{ ...props, width: on && previous === on ? 'auto' : props.width }}
       {...bind}
+      style={{
+        ...style,
+        width: to(style.width, (springWidth) =>
+          on && previous === on ? 'auto' : springWidth
+        ),
+      }}
     >
       <StyledTag
         ref={ref}

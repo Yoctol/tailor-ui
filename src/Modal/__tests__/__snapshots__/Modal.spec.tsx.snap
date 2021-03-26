@@ -211,6 +211,19 @@ exports[`Modal should render correctly 1`] = `
   background-color: #fff;
 }
 
+.c11 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
 @media screen and (max-width:36rem) {
   .c2 {
     width: calc(100vw - 32px);
@@ -276,6 +289,13 @@ exports[`Modal should render correctly 1`] = `
           </div>
         </div>
       </div>
+    </div>
+    <div
+      style="position: fixed; top: 0px; left: 0px; z-index: 30;"
+    >
+      <div
+        class="c11"
+      />
     </div>
   </div>
 </body>
@@ -560,6 +580,30 @@ exports[`Modal should render correctly with lg size 1`] = `
           </div>
         </div>
       </div>
+    </div>
+    .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+@media screen and (max-width:36rem) {
+
+}
+
+<div
+      style="position: fixed; top: 0px; left: 0px; z-index: 30;"
+    >
+      <div
+        class="c0"
+      />
     </div>
   </div>
   @media screen and (max-width:36rem) {
@@ -1061,6 +1105,7 @@ exports[`Modal should render with error status 1`] = `
       >
         <div
           class="c1"
+          style="opacity: 1; top: -10px;"
         />
         <div
           class="c2"
@@ -1154,6 +1199,30 @@ exports[`Modal should render with error status 1`] = `
           </div>
         </div>
       </div>
+    </div>
+    .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+@media screen and (max-width:36rem) {
+
+}
+
+<div
+      style="position: fixed; top: 0px; left: 0px; z-index: 30;"
+    >
+      <div
+        class="c0"
+      />
     </div>
   </div>
   @media screen and (max-width:36rem) {
@@ -1655,6 +1724,7 @@ exports[`Modal should render with info status 1`] = `
       >
         <div
           class="c1"
+          style="opacity: 1; top: -10px;"
         />
         <div
           class="c2"
@@ -1748,6 +1818,30 @@ exports[`Modal should render with info status 1`] = `
           </div>
         </div>
       </div>
+    </div>
+    .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+@media screen and (max-width:36rem) {
+
+}
+
+<div
+      style="position: fixed; top: 0px; left: 0px; z-index: 30;"
+    >
+      <div
+        class="c0"
+      />
     </div>
   </div>
   @media screen and (max-width:36rem) {
@@ -2275,6 +2369,30 @@ exports[`Modal should render with props closable 1`] = `
         </div>
       </div>
     </div>
+    .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+@media screen and (max-width:36rem) {
+
+}
+
+<div
+      style="position: fixed; top: 0px; left: 0px; z-index: 30;"
+    >
+      <div
+        class="c0"
+      />
+    </div>
   </div>
   @media screen and (max-width:36rem) {
 
@@ -2775,6 +2893,7 @@ exports[`Modal should render with success status 1`] = `
       >
         <div
           class="c1"
+          style="opacity: 1; top: -10px;"
         />
         <div
           class="c2"
@@ -2868,6 +2987,30 @@ exports[`Modal should render with success status 1`] = `
           </div>
         </div>
       </div>
+    </div>
+    .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+@media screen and (max-width:36rem) {
+
+}
+
+<div
+      style="position: fixed; top: 0px; left: 0px; z-index: 30;"
+    >
+      <div
+        class="c0"
+      />
     </div>
   </div>
   @media screen and (max-width:36rem) {
@@ -3369,6 +3512,7 @@ exports[`Modal should render with warning status 1`] = `
       >
         <div
           class="c1"
+          style="opacity: 1; top: -10px;"
         />
         <div
           class="c2"
@@ -3462,6 +3606,30 @@ exports[`Modal should render with warning status 1`] = `
           </div>
         </div>
       </div>
+    </div>
+    .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+@media screen and (max-width:36rem) {
+
+}
+
+<div
+      style="position: fixed; top: 0px; left: 0px; z-index: 30;"
+    >
+      <div
+        class="c0"
+      />
     </div>
   </div>
   @media screen and (max-width:36rem) {

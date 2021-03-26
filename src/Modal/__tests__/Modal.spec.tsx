@@ -1,17 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-import { fireEvent, mockRaf, render, useMockRaf } from 'test/test-utils';
+import { render, screen, waitForElementToBeRemoved } from 'test/test-utils';
 
-import { Button } from '../../Button';
 import { Modal } from '../Modal';
 
 describe('Modal', () => {
-  useMockRaf();
-
   it('should render correctly', () => {
     const { baseElement } = render(<Modal visible onCancel={() => {}} />);
-
-    mockRaf.flush();
 
     expect(baseElement).toMatchSnapshot();
   });
@@ -21,8 +16,6 @@ describe('Modal', () => {
       <Modal size="lg" visible onCancel={() => {}} />
     );
 
-    mockRaf.flush();
-
     expect(baseElement).toMatchSnapshot();
   });
 
@@ -30,8 +23,6 @@ describe('Modal', () => {
     const { baseElement } = render(
       <Modal visible closable onCancel={() => {}} />
     );
-
-    mockRaf.flush();
 
     expect(baseElement).toMatchSnapshot();
   });
@@ -41,8 +32,6 @@ describe('Modal', () => {
       <Modal status="info" visible closable onCancel={() => {}} />
     );
 
-    mockRaf.flush();
-
     expect(baseElement).toMatchSnapshot();
   });
 
@@ -50,8 +39,6 @@ describe('Modal', () => {
     const { baseElement } = render(
       <Modal status="success" visible closable onCancel={() => {}} />
     );
-
-    mockRaf.flush();
 
     expect(baseElement).toMatchSnapshot();
   });
@@ -61,8 +48,6 @@ describe('Modal', () => {
       <Modal status="warning" visible closable onCancel={() => {}} />
     );
 
-    mockRaf.flush();
-
     expect(baseElement).toMatchSnapshot();
   });
 
@@ -71,80 +56,58 @@ describe('Modal', () => {
       <Modal status="error" visible closable onCancel={() => {}} />
     );
 
-    mockRaf.flush();
-
     expect(baseElement).toMatchSnapshot();
   });
 
   it('should display modal when click show modal button', async () => {
-    const ModalWithState = () => {
-      const [visible, setVisible] = useState(false);
+    const { rerender } = render(
+      <Modal
+        title="This is a Modal"
+        visible={false}
+        closable
+        onCancel={() => {}}
+      >
+        This is the content of Modal
+      </Modal>
+    );
 
-      return (
-        <>
-          <Modal
-            title="This is a Modal"
-            visible={visible}
-            closable
-            onConfirm={() => setVisible(false)}
-            onCancel={() => setVisible(false)}
-            data-testid="modal"
-          >
-            This is the content of Modal
-          </Modal>
-          <Button data-testid="open-button" onClick={() => setVisible(true)}>
-            Button
-          </Button>
-        </>
-      );
-    };
+    const modal = screen.queryByText('This is a Modal');
+    expect(modal).not.toBeInTheDocument();
 
-    const { getByTestId, getByText } = render(<ModalWithState />);
+    rerender(
+      <Modal title="This is a Modal" visible closable onCancel={() => {}}>
+        This is the content of Modal
+      </Modal>
+    );
 
-    const openButton = await getByTestId('open-button');
-
-    fireEvent.click(openButton);
-
-    mockRaf.flush();
-
-    const modal = getByText('This is the content of Modal');
-
-    expect(modal).toBeVisible();
+    const visibleModal = screen.queryByText('This is a Modal');
+    expect(visibleModal).toBeInTheDocument();
   });
 
   it('should not display modal when click close button', async () => {
-    const ModalWithState = () => {
-      const [visible, setVisible] = useState(true);
+    const { rerender } = render(
+      <Modal title="This is a Modal" visible closable onCancel={() => {}}>
+        This is the content of Modal
+      </Modal>
+    );
 
-      return (
-        <>
-          <Modal
-            title="This is a Modal"
-            visible={visible}
-            closable
-            onConfirm={() => setVisible(false)}
-            onCancel={() => setVisible(false)}
-            data-testid="modal"
-          >
-            This is the content of Modal
-          </Modal>
-          <Button data-testid="open-button">Button</Button>
-        </>
-      );
-    };
+    const modal = screen.queryByText('This is a Modal');
+    expect(modal).toBeInTheDocument();
 
-    const { getByText, queryByText } = render(<ModalWithState />);
+    rerender(
+      <Modal
+        title="This is a Modal"
+        visible={false}
+        closable
+        onCancel={() => {}}
+      >
+        This is the content of Modal
+      </Modal>
+    );
 
-    mockRaf.flush();
+    await waitForElementToBeRemoved(screen.queryByText('This is a Modal'));
 
-    const closeButton = await getByText('Cancel');
-
-    fireEvent.click(closeButton);
-
-    mockRaf.flush();
-
-    const modal = queryByText('This is the content of Modal');
-
-    expect(modal).toBeNull();
+    const visibleModal = screen.queryByText('This is a Modal');
+    expect(visibleModal).not.toBeInTheDocument();
   });
 });

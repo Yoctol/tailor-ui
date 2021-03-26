@@ -1,6 +1,7 @@
 import React from 'react';
+import userEvent from '@testing-library/user-event';
 
-import { fireEvent, render } from 'test/test-utils';
+import { render, screen } from 'test/test-utils';
 
 import { Button } from '../../Button';
 import { Input } from '../Input';
@@ -39,47 +40,36 @@ describe('Input', () => {
   it('should call onChange when change input', () => {
     const onChange = jest.fn();
 
-    const { container } = render(<Input onChange={onChange} />);
+    render(<Input onChange={onChange} placeholder="input" />);
 
-    const input = container.querySelector('input') as HTMLInputElement;
+    const input = screen.getByPlaceholderText('input') as HTMLInputElement;
 
-    fireEvent.change(input, {
-      target: {
-        value: 'change input',
-      },
-    });
+    userEvent.type(input, 'change input');
 
     expect(input.value).toBe('change input');
     expect(onChange).toBeCalled();
   });
 
   it('should auto select on input when pass autoSelect', () => {
-    const { container } = render(
-      <Input defaultValue="default value" autoSelect />
+    render(
+      <Input autoSelect defaultValue="default value" placeholder="input" />
     );
 
-    const input = container.querySelector('input');
+    const input = screen.getByPlaceholderText('input') as HTMLInputElement;
 
     expect(input).toHaveFocus();
-
-    // window.getSelection is not implemented in jsdom, so it's hard to test selection here
-    // - https://github.com/jsdom/jsdom/issues/317
-    // const selection = window.getSelection();
-    // expect(selection).toBe('default value');
+    expect(input.selectionStart).toBe(0);
+    expect(input.selectionEnd).toBe(13);
   });
 
   it('should call onPressEnter when press enter on input', () => {
     const onPressEnter = jest.fn();
 
-    const { container } = render(<Input onPressEnter={onPressEnter} />);
+    render(<Input onPressEnter={onPressEnter} placeholder="input" />);
 
-    const input = container.querySelector('input') as HTMLInputElement;
+    const input = screen.getByPlaceholderText('input') as HTMLInputElement;
 
-    fireEvent.keyPress(input, {
-      key: 'Enter',
-      keyCode: 13,
-      which: 13,
-    });
+    userEvent.type(input, '{enter}');
 
     expect(onPressEnter).toBeCalled();
   });

@@ -1,4 +1,4 @@
-import Downshift, { DownshiftInterface } from 'downshift';
+import Downshift, { DownshiftInterface } from 'downshift3';
 import React, { Component, ReactNode } from 'react';
 
 import { itemToString } from './utils';

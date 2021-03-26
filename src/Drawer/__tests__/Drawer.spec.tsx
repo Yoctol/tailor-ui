@@ -1,21 +1,17 @@
 import React from 'react';
 
-import { mockRaf, render, useMockRaf } from 'test/test-utils';
+import { render } from 'test/test-utils';
 
 import { Button } from '../../Button';
 import { Drawer } from '../Drawer';
 
 describe('Drawer', () => {
-  useMockRaf();
-
   it('should render correctly', () => {
     const { baseElement } = render(
       <Drawer title="Title" visible onClose={() => {}}>
         Content
       </Drawer>
     );
-
-    mockRaf.flush();
 
     expect(baseElement).toMatchSnapshot();
   });
@@ -26,8 +22,6 @@ describe('Drawer', () => {
         Content
       </Drawer>
     );
-
-    mockRaf.flush();
 
     expect(baseElement).toMatchSnapshot();
   });
@@ -44,8 +38,6 @@ describe('Drawer', () => {
         Content
       </Drawer>
     );
-
-    mockRaf.flush();
 
     expect(baseElement).toMatchSnapshot();
   });

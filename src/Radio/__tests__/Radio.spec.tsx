@@ -1,6 +1,7 @@
 import React from 'react';
+import userEvent from '@testing-library/user-event';
 
-import { fireEvent, render } from 'test/test-utils';
+import { render } from 'test/test-utils';
 
 import { Radio } from '../Radio';
 
@@ -40,18 +41,8 @@ describe('Radio', () => {
       'input[type=radio]'
     ) as HTMLInputElement;
 
-    fireEvent.click(radio);
+    userEvent.click(radio);
 
     expect(onChange).toBeCalled();
-  });
-
-  it('should support data-testid', () => {
-    const { getByTestId } = render(
-      <Radio checked data-testid="my-radio">
-        Radio
-      </Radio>
-    );
-
-    expect(getByTestId('my-radio')).toHaveAttribute('checked');
   });
 });

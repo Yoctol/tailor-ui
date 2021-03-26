@@ -17,6 +17,7 @@ export interface CheckboxGroupProps {
   }[];
   value?: string[];
   onChange?: (value: string[]) => void;
+  children?: ReactNode;
 }
 
 const CheckboxGroup = forwardRef<HTMLDivElement, CheckboxGroupProps>(

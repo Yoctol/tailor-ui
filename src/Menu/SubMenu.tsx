@@ -1,7 +1,7 @@
 import React, { FC, ReactNode, useContext } from 'react';
 import styled from 'styled-components';
 import { MdKeyboardArrowDown } from 'react-icons/md';
-import { animated, useSpring } from 'react-spring';
+import { animated, to, useSpring } from 'react-spring';
 
 import { Icon, IconType } from '../Icon';
 import { useMeasure } from '../hooks';
@@ -60,7 +60,7 @@ const SubMenu: FC<SubMenuProps> = ({
             display: 'inline-flex',
             pointerEvents: 'none',
             marginLeft: 'auto',
-            transform: rotate.interpolate((r) => `rotate(${r}deg)`),
+            transform: to(rotate, (r) => `rotate(${r}deg)`),
           }}
         >
           <Icon type={MdKeyboardArrowDown} size="24" />

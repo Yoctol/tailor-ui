@@ -35,7 +35,7 @@ const Tooltip = forwardRefWithAs<TooltipProps, 'div'>(
       DEBUG_STYLE,
     });
 
-    const transitions = useTransition(isVisible ? tooltip : null, null, {
+    const transitions = useTransition(isVisible ? tooltip : null, {
       from: {
         opacity: 0,
         transform: 'scale(0.9)',
@@ -63,17 +63,16 @@ const Tooltip = forwardRefWithAs<TooltipProps, 'div'>(
 
             {cloneElement(child, trigger)}
 
-            {transitions.map(
-              ({ item, props: styles, key }) =>
+            {transitions(
+              (style, item) =>
                 item && (
                   <AnimatedTooltipContent
-                    key={key}
                     ref={forwardedRef}
                     label={content}
                     {...item}
                     {...props}
                     style={{
-                      ...styles,
+                      ...style,
                       zIndex: stackingOrder,
                     }}
                   />
