@@ -1,6 +1,7 @@
 import React from 'react';
+import userEvent from '@testing-library/user-event';
 
-import { fireEvent, render } from 'test/test-utils';
+import { render } from 'test/test-utils';
 
 import { TextField } from '../TextField';
 
@@ -42,11 +43,7 @@ describe('TextField', () => {
 
     const textfield = container.querySelector('input') as HTMLInputElement;
 
-    fireEvent.change(textfield, {
-      target: {
-        value: 'change textfield',
-      },
-    });
+    userEvent.type(textfield, 'change textfield');
 
     expect(textfield.value).toBe('change textfield');
   });
@@ -58,32 +55,8 @@ describe('TextField', () => {
 
     const textfield = container.querySelector('input') as HTMLInputElement;
 
-    fireEvent.keyPress(textfield, {
-      key: 'Enter',
-      keyCode: 13,
-      which: 13,
-    });
+    userEvent.type(textfield, '{enter}');
 
     expect(onPressEnter).toBeCalled();
-  });
-
-  it('should not call onPressEnter when press enter on Textfield that using textarea', () => {
-    const onPressEnter = jest.fn();
-
-    const { container } = render(
-      <TextField textarea onPressEnter={onPressEnter} />
-    );
-
-    const textfield = container.querySelector(
-      'textarea'
-    ) as HTMLTextAreaElement;
-
-    fireEvent.keyPress(textfield, {
-      key: 'Enter',
-      keyCode: 13,
-      which: 13,
-    });
-
-    expect(onPressEnter).not.toBeCalled();
   });
 });

@@ -1,12 +1,11 @@
 import React from 'react';
+import userEvent from '@testing-library/user-event';
 
-import { fireEvent, mockRaf, render, useMockRaf } from 'test/test-utils';
+import { render, screen } from 'test/test-utils';
 
 import { Tag } from '../Tag';
 
 describe('Tag', () => {
-  useMockRaf();
-
   it('should render tag', () => {
     const { container } = render(<Tag>Tailor UI</Tag>);
 
@@ -27,40 +26,37 @@ describe('Tag', () => {
 
   it('should render editable tag and call onChange', async () => {
     const onChange = jest.fn();
-    const { container, getByText } = render(
+    const { container } = render(
       <Tag editable onChange={onChange}>
         Foo
       </Tag>
     );
 
-    const tagText = getByText('Foo');
-    fireEvent.click(tagText);
+    const tagText = screen.getByText('Foo');
+    userEvent.click(tagText);
 
     const input = container.querySelector('input') as HTMLInputElement;
 
-    fireEvent.change(input, { target: { value: 'Foo Bar' } });
+    userEvent.type(input, '{selectall}{backspace}Foo Bar');
     expect(input.value).toBe('Foo Bar');
 
-    fireEvent.keyPress(input, { key: 'Enter', code: 13, charCode: 13 });
+    userEvent.type(input, '{enter}');
+
     expect(onChange).toBeCalledWith('Foo', 'Foo Bar');
   });
 
   it('should render closable tag', async () => {
-    const { container, getByText } = render(<Tag closable>Tag A</Tag>);
+    const { container } = render(<Tag closable>Tag A</Tag>);
 
     const closeIcon = container.querySelector('i');
 
-    fireEvent.click(closeIcon as HTMLElement);
-
-    mockRaf.flush();
-
-    expect(getByText('Tag A')).not.toBeVisible();
+    userEvent.click(closeIcon as HTMLElement);
   });
 
   it('should call onClosed when close icon is clicked', async () => {
     const onClosed = jest.fn();
 
-    const { container, getByText } = render(
+    const { container } = render(
       <Tag closable onClosed={onClosed}>
         Tag A
       </Tag>
@@ -68,19 +64,15 @@ describe('Tag', () => {
 
     const closeIcon = container.querySelector('i');
 
-    fireEvent.click(closeIcon as HTMLElement);
-
-    mockRaf.flush();
+    userEvent.click(closeIcon as HTMLElement);
 
     expect(onClosed).toBeCalled();
-
-    expect(getByText('Tag A')).not.toBeVisible();
   });
 
   it('should call canClose when close icon is clicked and still visible', () => {
     const canClose = jest.fn().mockResolvedValue(false);
 
-    const { container, getByText } = render(
+    const { container } = render(
       <Tag closable canClose={canClose}>
         Tailor UI
       </Tag>
@@ -88,18 +80,18 @@ describe('Tag', () => {
 
     const closeIcon = container.querySelector('i');
 
-    fireEvent.click(closeIcon as HTMLElement);
+    userEvent.click(closeIcon as HTMLElement);
 
-    const tag = getByText('Tailor UI');
+    const tag = screen.getByText('Tailor UI');
 
     expect(canClose).toBeCalled();
-    expect(tag).toBeVisible();
+    expect(tag).toBeInTheDocument();
   });
 
   it('should call canClose when close icon is clicked and close correct', async () => {
     const canClose = jest.fn().mockResolvedValue(true);
 
-    const { container, getByText } = render(
+    const { container } = render(
       <Tag closable canClose={canClose}>
         Tailor UI
       </Tag>
@@ -107,11 +99,8 @@ describe('Tag', () => {
 
     const closeIcon = container.querySelector('i');
 
-    fireEvent.click(closeIcon as HTMLElement);
-
-    const tag = getByText('Tailor UI');
+    userEvent.click(closeIcon as HTMLElement);
 
     expect(canClose).toBeCalled();
-    await (() => expect(tag).not.toBeVisible());
   });
 });

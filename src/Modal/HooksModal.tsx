@@ -4,7 +4,7 @@ import React, {
   MouseEventHandler,
   ReactNode,
   useCallback,
-  useMemo,
+  useEffect,
   useState,
 } from 'react';
 
@@ -43,7 +43,7 @@ export type Trigger = (
   type: ModalTypes
 ) => TriggerResponse;
 
-interface EffectModalProps {
+interface HooksModalProps {
   setTrigger: (trigger: Trigger) => void;
 }
 
@@ -61,7 +61,7 @@ interface ModalOptionsState {
   zIndex?: number;
 }
 
-const EffectModal: FC<EffectModalProps> = ({ setTrigger }) => {
+const HooksModal: FC<HooksModalProps> = ({ setTrigger }) => {
   const { locale } = useLocale();
   const [visible, setVisible] = useState(false);
   const [modalOptions, setModalOptions] = useState<ModalOptionsState>({
@@ -165,7 +165,9 @@ const EffectModal: FC<EffectModalProps> = ({ setTrigger }) => {
 
   const status = type !== 'confirm' ? type : null;
 
-  useMemo(() => setTrigger(trigger), [setTrigger, trigger]);
+  useEffect(() => {
+    setTrigger(trigger);
+  }, [setTrigger, trigger]);
 
   return (
     <Modal
@@ -187,4 +189,4 @@ const EffectModal: FC<EffectModalProps> = ({ setTrigger }) => {
   );
 };
 
-export default EffectModal;
+export default HooksModal;

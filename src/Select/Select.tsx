@@ -1,4 +1,4 @@
-import Downshift from 'downshift';
+import Downshift from 'downshift3';
 import React, {
   FocusEventHandler,
   PropsWithChildren,

@@ -1,6 +1,7 @@
 import React from 'react';
+import userEvent from '@testing-library/user-event';
 
-import { fireEvent, render } from 'test/test-utils';
+import { render, screen } from 'test/test-utils';
 
 import { Button } from '../../Button';
 import { Card } from '../Card';
@@ -54,7 +55,7 @@ describe('Card', () => {
       </Card>
     );
 
-    fireEvent.click(container.firstChild as HTMLDivElement);
+    userEvent.click(container.firstChild as HTMLDivElement);
 
     expect(onClick).toBeCalled();
   });
@@ -62,7 +63,7 @@ describe('Card', () => {
   it('should call Card onClick when clicked item is not a button', () => {
     const onCardClick = jest.fn();
 
-    const { getByText } = render(
+    render(
       <Card width="400px" onClick={onCardClick}>
         <Card.Block>Title</Card.Block>
         <Card.Block>Content</Card.Block>
@@ -72,9 +73,9 @@ describe('Card', () => {
       </Card>
     );
 
-    const title = getByText('Title');
+    const title = screen.getByText('Title');
 
-    fireEvent.click(title);
+    userEvent.click(title);
 
     expect(onCardClick).toBeCalled();
   });
@@ -83,7 +84,7 @@ describe('Card', () => {
     const onButtonClick = jest.fn();
     const onCardClick = jest.fn();
 
-    const { getByText } = render(
+    render(
       <Card width="400px" onClick={onCardClick}>
         <Card.Block>Title</Card.Block>
         <Card.Block>Content</Card.Block>
@@ -101,9 +102,9 @@ describe('Card', () => {
       </Card>
     );
 
-    const button = getByText('With Button');
+    const button = screen.getByText('With Button');
 
-    fireEvent.click(button);
+    userEvent.click(button);
 
     expect(onButtonClick).toBeCalled();
     expect(onCardClick).not.toBeCalled();
@@ -116,7 +117,7 @@ describe('Card', () => {
       </Card>
     );
 
-    fireEvent.mouseEnter(container.firstChild as HTMLDivElement);
+    userEvent.hover(container.firstChild as HTMLDivElement);
 
     expect(container.firstChild).toMatchSnapshot();
   });

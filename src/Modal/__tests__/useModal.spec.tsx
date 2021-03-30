@@ -1,19 +1,17 @@
 import React, { useCallback, useEffect } from 'react';
+import userEvent from '@testing-library/user-event';
 
 import {
-  fireEvent,
-  mockRaf,
   render,
-  useMockRaf,
+  screen,
   waitFor,
+  waitForElementToBeRemoved,
 } from 'test/test-utils';
 
 import { ModalTypes } from '../HooksModal';
 import { useModal } from '../useModal';
 
 describe('useModal', () => {
-  useMockRaf();
-
   const renderSpecifiedModal = async (type: ModalTypes) => {
     const HooksModal = () => {
       const modal = useModal();
@@ -29,8 +27,6 @@ describe('useModal', () => {
     };
 
     const { baseElement } = render(<HooksModal />);
-
-    mockRaf.flush();
 
     return baseElement;
   };
@@ -82,18 +78,14 @@ describe('useModal', () => {
       return null;
     };
 
-    const { getByText, queryByText } = render(<HooksModal />);
+    render(<HooksModal />);
 
-    mockRaf.flush();
-
-    const cancelButton = getByText('Cancel');
-    fireEvent.click(cancelButton);
+    const cancelButton = await screen.findByText('Cancel');
+    userEvent.click(cancelButton);
 
     expect(cancelFn).toBeCalled();
 
-    mockRaf.flush();
-
-    expect(queryByText('Content')).toBeNull();
+    await waitForElementToBeRemoved(() => screen.queryByText('Content'));
   });
 
   it('should trigger onConfirm correctly', async () => {
@@ -113,18 +105,14 @@ describe('useModal', () => {
       return null;
     };
 
-    const { getByText, queryByText } = render(<HooksModal />);
+    render(<HooksModal />);
 
-    mockRaf.flush();
-
-    const confirmButton = getByText('Confirm');
-    fireEvent.click(confirmButton);
+    const confirmButton = screen.getByText('Confirm');
+    userEvent.click(confirmButton);
 
     expect(confirmFn).toBeCalled();
 
-    mockRaf.flush();
-
-    expect(queryByText('Content')).toBeNull();
+    await waitForElementToBeRemoved(() => screen.queryByText('Content'));
   });
 
   describe('return values', () => {
@@ -153,14 +141,12 @@ describe('useModal', () => {
           return null;
         };
 
-        const { getByText } = render(<HooksModal />);
+        render(<HooksModal />);
 
-        mockRaf.flush();
+        const confirmButton = screen.getByText('Confirm');
+        userEvent.click(confirmButton);
 
-        const confirmButton = getByText('Confirm');
-        fireEvent.click(confirmButton);
-
-        await waitFor(() => expect(confirmationFn).toBeCalled());
+        await waitForElementToBeRemoved(screen.queryByText('Confirm'));
       });
 
       it('should return confirmation and await it not confirm successfully', async () => {
@@ -187,12 +173,10 @@ describe('useModal', () => {
           return null;
         };
 
-        const { getByText } = render(<HooksModal />);
+        render(<HooksModal />);
 
-        mockRaf.flush();
-
-        const cancelButton = getByText('Cancel');
-        fireEvent.click(cancelButton);
+        const cancelButton = screen.getByText('Cancel');
+        userEvent.click(cancelButton);
 
         await waitFor(() => expect(confirmationFn).toBeCalled());
       });
@@ -201,7 +185,7 @@ describe('useModal', () => {
         const HooksModal = () => {
           const modal = useModal();
 
-          const renderModal = useCallback(async () => {
+          useEffect(() => {
             const [, close] = modal.confirm({
               title: 'Title',
               content: 'Content',
@@ -210,25 +194,19 @@ describe('useModal', () => {
             close();
           }, [modal]);
 
-          useEffect(() => {
-            renderModal();
-          }, [renderModal]);
-
           return null;
         };
 
-        const { queryByText } = render(<HooksModal />);
+        render(<HooksModal />);
 
-        mockRaf.flush();
-
-        expect(queryByText('Content')).not.toBeInTheDocument();
+        expect(screen.queryByText('Content')).not.toBeInTheDocument();
       });
 
       it('should return update and call it to update modal successfully', async () => {
         const HooksModal = () => {
           const modal = useModal();
 
-          const renderModal = useCallback(async () => {
+          useEffect(() => {
             const [, , update] = modal.confirm({
               title: 'Title',
               content: 'Content',
@@ -239,18 +217,12 @@ describe('useModal', () => {
             });
           }, [modal]);
 
-          useEffect(() => {
-            renderModal();
-          }, [renderModal]);
-
           return null;
         };
 
-        const { getByText } = render(<HooksModal />);
+        render(<HooksModal />);
 
-        mockRaf.flush();
-
-        expect(getByText('New Content')).toBeVisible();
+        expect(screen.getByText('New Content')).toBeInTheDocument();
       });
     });
 
@@ -279,12 +251,10 @@ describe('useModal', () => {
           return null;
         };
 
-        const { getByText } = render(<HooksModal />);
+        render(<HooksModal />);
 
-        mockRaf.flush();
-
-        const confirmButton = getByText('Confirm');
-        fireEvent.click(confirmButton);
+        const confirmButton = screen.getByText('Confirm');
+        userEvent.click(confirmButton);
 
         await waitFor(() => expect(confirmationFn).toBeCalled());
       });
@@ -313,12 +283,10 @@ describe('useModal', () => {
           return null;
         };
 
-        const { getByText } = render(<HooksModal />);
+        render(<HooksModal />);
 
-        mockRaf.flush();
-
-        const cancelButton = getByText('Cancel');
-        fireEvent.click(cancelButton);
+        const cancelButton = screen.getByText('Cancel');
+        userEvent.click(cancelButton);
 
         await waitFor(() => expect(confirmationFn).toBeCalled());
       });
@@ -327,7 +295,7 @@ describe('useModal', () => {
         const HooksModal = () => {
           const modal = useModal();
 
-          const renderModal = useCallback(async () => {
+          useEffect(() => {
             const { close } = modal.confirm({
               title: 'Title',
               content: 'Content',
@@ -336,25 +304,19 @@ describe('useModal', () => {
             close();
           }, [modal]);
 
-          useEffect(() => {
-            renderModal();
-          }, [renderModal]);
-
           return null;
         };
 
-        const { queryByText } = render(<HooksModal />);
+        render(<HooksModal />);
 
-        mockRaf.flush();
-
-        expect(queryByText('Content')).not.toBeInTheDocument();
+        expect(screen.queryByText('Content')).not.toBeInTheDocument();
       });
 
       it('should return update and call it to update modal successfully', async () => {
         const HooksModal = () => {
           const modal = useModal();
 
-          const renderModal = useCallback(async () => {
+          useEffect(() => {
             const { update } = modal.confirm({
               title: 'Title',
               content: 'Content',
@@ -365,18 +327,12 @@ describe('useModal', () => {
             });
           }, [modal]);
 
-          useEffect(() => {
-            renderModal();
-          }, [renderModal]);
-
           return null;
         };
 
-        const { getByText } = render(<HooksModal />);
+        render(<HooksModal />);
 
-        mockRaf.flush();
-
-        expect(getByText('New Content')).toBeVisible();
+        expect(screen.getByText('New Content')).toBeVisible();
       });
     });
   });

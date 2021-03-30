@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
+import userEvent from '@testing-library/user-event';
 
-import { fireEvent, mockRaf, render, useMockRaf } from 'test/test-utils';
+import { render, screen, waitFor } from 'test/test-utils';
 
 import { Badge } from '../Badge';
 
 describe('Backdrop', () => {
-  useMockRaf();
-
   it('should render badge correctly', async () => {
     const { container } = render(
       <Badge count={2}>
@@ -14,15 +13,11 @@ describe('Backdrop', () => {
       </Badge>
     );
 
-    mockRaf.flush();
-
     expect(container.firstChild).toMatchSnapshot();
   });
 
   it('should render standalone badge correctly', async () => {
     const { container } = render(<Badge count={2} />);
-
-    mockRaf.flush();
 
     expect(container.firstChild).toMatchSnapshot();
   });
@@ -34,57 +29,47 @@ describe('Backdrop', () => {
       </Badge>
     );
 
-    mockRaf.flush();
-
     expect(container.firstChild).toMatchSnapshot();
   });
 
   it('should render overflowCount badge correctly', async () => {
-    const { getByTestId } = render(
-      <Badge count={100} data-testid="badge">
+    const { container } = render(
+      <Badge count={100}>
         <button type="button">btn</button>
       </Badge>
     );
 
-    mockRaf.flush();
-
-    expect(getByTestId('badge')).toHaveTextContent('99+');
+    expect(container).toHaveTextContent('99+');
   });
 
   it('should render customized overflowCount badge correctly', async () => {
-    const { getByTestId } = render(
-      <Badge count={1000} overflowCount={999} data-testid="badge">
+    const { container } = render(
+      <Badge count={1000} overflowCount={999}>
         <button type="button">btn</button>
       </Badge>
     );
 
-    mockRaf.flush();
-
-    expect(getByTestId('badge')).toHaveTextContent('999+');
+    expect(container).toHaveTextContent('999+');
   });
 
   it('should render badge with 0 count when showZero is true', async () => {
-    const { getByTestId } = render(
-      <Badge count={0} showZero data-testid="badge">
+    const { container } = render(
+      <Badge count={0} showZero>
         <button type="button">btn</button>
       </Badge>
     );
 
-    mockRaf.flush();
-
-    expect(getByTestId('badge')).toHaveTextContent('0');
+    expect(container).toHaveTextContent('0');
   });
 
   it('should not render badge with 0 by default', async () => {
-    const { queryByTestId } = render(
-      <Badge count={0} data-testid="badge">
+    const { container } = render(
+      <Badge count={0}>
         <button type="button">btn</button>
       </Badge>
     );
 
-    mockRaf.flush();
-
-    expect(queryByTestId('badge')).toBeNull();
+    expect(container).not.toHaveTextContent('0');
   });
 
   it('should render badge dynamically', async () => {
@@ -93,42 +78,30 @@ describe('Backdrop', () => {
 
       return (
         <div>
-          <Badge count={count} data-testid="badge">
+          <Badge count={count}>
             <button type="button">btn</button>
           </Badge>
-          <button
-            data-testid="increment"
-            type="button"
-            onClick={() => setCount((prev) => prev + 1)}
-          >
+          <button type="button" onClick={() => setCount((prev) => prev + 1)}>
             +
           </button>
-          <button
-            data-testid="decrement"
-            type="button"
-            onClick={() => setCount((prev) => prev - 1)}
-          >
+          <button type="button" onClick={() => setCount((prev) => prev - 1)}>
             -
           </button>
         </div>
       );
     };
 
-    const { getByTestId, queryByTestId } = render(<DynamicBadge />);
+    const { container } = render(<DynamicBadge />);
 
-    mockRaf.flush();
+    const incrementBtn = screen.getByText('+');
+    const decrementBtn = screen.getByText('-');
 
-    const incrementBtn = getByTestId('increment');
-    const decrementBtn = getByTestId('decrement');
+    expect(container).not.toHaveTextContent('0');
 
-    expect(queryByTestId('badge')).toBeNull();
+    userEvent.click(incrementBtn);
+    expect(container).toHaveTextContent('1');
 
-    fireEvent.click(incrementBtn);
-    mockRaf.flush();
-    expect(getByTestId('badge')).toHaveTextContent('1');
-
-    fireEvent.click(decrementBtn);
-    mockRaf.flush();
-    expect(queryByTestId('badge')).toBeNull();
+    userEvent.click(decrementBtn);
+    waitFor(() => expect(container).not.toHaveTextContent('0'));
   });
 });

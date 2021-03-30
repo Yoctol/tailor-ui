@@ -4,7 +4,28 @@ exports[`Select multiple should display multi option 1`] = `
 <body>
   <div
     portal-container=""
-  />
+  >
+    .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+<div
+      style="position: fixed; top: 0px; left: 0px; z-index: 30;"
+    >
+      <div
+        class="c0"
+      />
+    </div>
+  </div>
   .c2 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -190,7 +211,7 @@ exports[`Select multiple should display multi option 1`] = `
     <div
       aria-expanded="false"
       aria-haspopup="listbox"
-      aria-labelledby="downshift-8-label"
+      aria-labelledby="downshift-4-label"
       class="c0"
       role="combobox"
       style="width: 360px;"
@@ -198,7 +219,7 @@ exports[`Select multiple should display multi option 1`] = `
       <div
         class="c1"
         data-testid="select"
-        id="downshift-8"
+        id="downshift-4"
       >
         <div
           class="c2"
@@ -258,10 +279,10 @@ exports[`Select multiple should display multi option 1`] = `
           </div>
           <input
             aria-autocomplete="list"
-            aria-labelledby="downshift-8-label"
+            aria-labelledby="downshift-4-label"
             autocomplete="off"
             data-testid="select-input"
-            id="downshift-8-input"
+            id="downshift-4-input"
             placeholder=""
             style="width: 18px; box-sizing: content-box;"
             value=""
@@ -348,6 +369,19 @@ exports[`Select should render correctly 1`] = `
   visibility: hidden;
   position: absolute;
   pointer-events: none;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
 .c0 {
@@ -480,6 +514,17 @@ exports[`Select should render correctly 1`] = `
           </i>
         </i>
       </div>
+    </div>
+  </div>
+  <div
+    portal-container=""
+  >
+    <div
+      style="position: fixed; top: 0px; left: 0px; z-index: 30;"
+    >
+      <div
+        class="c5"
+      />
     </div>
   </div>
 </body>

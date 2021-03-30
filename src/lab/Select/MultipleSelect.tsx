@@ -11,7 +11,7 @@ import {
   UseMultipleSelectionStateChange,
   useCombobox,
   useMultipleSelection,
-} from 'downshift6';
+} from 'downshift';
 
 import { ClickOutsideContext } from '../../Popover';
 import { Flex } from '../../Layout';

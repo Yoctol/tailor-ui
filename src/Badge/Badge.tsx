@@ -1,5 +1,5 @@
 import React, { ComponentPropsWithRef, FC } from 'react';
-import { useTransition } from 'react-spring';
+import { to, useTransition } from 'react-spring';
 
 import { AnimatedStyledBadge, StyledBadgeWrapper } from './styles';
 
@@ -25,7 +25,7 @@ const Badge: FC<BadgeProps> = ({
 }) => {
   const displayCount =
     count && count > overflowCount ? `${overflowCount}+` : count;
-  const transition = useTransition(showZero || count !== 0, null, {
+  const transition = useTransition(showZero || count !== 0, {
     from: {
       opacity: 0,
       transform: 'scale(0.6)',
@@ -40,19 +40,18 @@ const Badge: FC<BadgeProps> = ({
     },
   });
 
-  const badge = transition.map(
-    ({ item, key, props }) =>
+  const badge = transition(
+    (style, item) =>
       item && (
         <AnimatedStyledBadge
-          key={key}
           color={color}
           bg={bg}
           borderColor={borderColor}
           {...otherProps}
           style={{
-            opacity: props.opacity,
+            opacity: style.opacity,
             transformOrigin: children ? 'right' : 'center',
-            transform: props.transform?.interpolate((x) =>
+            transform: to(style.transform, (x) =>
               children ? `${x} translateX(50%)` : x
             ),
           }}
@@ -63,7 +62,7 @@ const Badge: FC<BadgeProps> = ({
   );
 
   if (!children) {
-    return <>{badge}</>;
+    return badge;
   }
 
   return (

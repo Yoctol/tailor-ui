@@ -1,14 +1,14 @@
-import React, { MutableRefObject, PureComponent } from 'react';
+import React, { FC, useCallback, useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import { MdClose } from 'react-icons/md';
-import { State, Transition, animated } from 'react-spring/renderprops.cjs';
+import { animated, useTransition } from 'react-spring';
 
 import { Box } from '../Layout';
 import { Icon } from '../Icon';
 import { Portal } from '../Portal';
 import { StackingOrder } from '../constants';
 import { StatusType } from '../types';
-import { UIDContext } from '../UIProvider/UIDContext';
+import { useUID } from '../UIProvider/UIDContext';
 
 const MessageContainer = styled.div`
   display: flex;
@@ -29,6 +29,7 @@ const MessageBox = styled.div`
 const MessageContent = styled.div`
   display: flex;
   position: relative;
+  height: auto;
   margin-top: ${(p) => p.theme.space[2]};
   padding: ${(p) => p.theme.space[3]};
   overflow: hidden;
@@ -70,128 +71,105 @@ export type Trigger = (
   type: StatusType
 ) => Promise<boolean>;
 
-export interface EffectMessageProps {
-  triggerRef: MutableRefObject<Trigger>;
+interface HooksMessageProps {
+  setTrigger: (trigger: Trigger) => void;
 }
 
-export interface EffectMessageState {
-  messages: Message[];
-}
+const HooksMessage: FC<HooksMessageProps> = ({ setTrigger }) => {
+  const refMap = useRef(new WeakMap());
+  const cancelMap = useRef(new WeakMap());
+  const [messages, setMessages] = useState<Message[]>([]);
+  const getUid = useUID();
 
-class EffectMessage extends PureComponent<
-  EffectMessageProps,
-  EffectMessageState
-> {
-  mounted = false;
+  const trigger = useCallback(
+    ({ content, duration }: MessageOptions, type: StatusType) => {
+      return new Promise<boolean>((resolve) => {
+        const key = getUid();
+        const icon = <Icon type={type} fill={type} size="20" mr="2" />;
 
-  state: EffectMessageState = {
-    messages: [],
-  };
+        const newMessage: Message = {
+          key,
+          icon,
+          content,
+          duration,
+          resolve,
+        };
 
-  cancelMap = new WeakMap();
+        setMessages((prevMessages) => [...prevMessages, newMessage]);
+      });
+    },
+    [getUid]
+  );
 
-  componentDidMount() {
-    this.props.triggerRef.current = this.add;
-  }
+  useEffect(() => {
+    setTrigger(trigger);
+  }, [trigger, setTrigger]);
 
-  remove = ({ key }: any) => {
-    this.setState(({ messages }) => ({
-      messages: messages.filter((message) => message.key !== key),
-    }));
-  };
+  const transition = useTransition(messages, {
+    key: (message) => message.key,
+    from: {
+      opacity: 0,
+      height: 0,
+      life: '100%',
+    },
+    enter: (message) => async (next, stop) => {
+      cancelMap.current.set(message, () => {
+        stop();
+        setMessages((prevMessages) =>
+          prevMessages.filter((prevMessage) => prevMessage.key !== message.key)
+        );
+      });
 
-  add = ({ content, duration }: MessageOptions, type: StatusType) => {
-    if (!this.mounted) {
-      this.mounted = true;
-    }
+      await next({
+        opacity: 1,
+        height: refMap.current.get(message).offsetHeight + 8,
+        config,
+      });
 
-    return new Promise<boolean>((resolve) => {
-      const key = this.context();
-      const icon = <Icon type={type} fill={type} size="20" mr="2" />;
-
-      const newMessage: Message = {
-        key,
-        icon,
-        content,
-        duration,
-        resolve,
-      };
-
-      this.setState(({ messages }) => ({
-        messages: [...messages, newMessage],
-      }));
-    });
-  };
-
-  cancel = (item: Message) =>
-    this.cancelMap.has(item) && this.cancelMap.get(item)();
-
-  leave = (item: Message) => async (next: any, cancel: any) => {
-    this.cancelMap.set(item, () => {
-      cancel();
+      await next({ life: '0%', config: { duration: message.duration } });
+      cancelMap.current.get(message)();
+    },
+    leave: (item) => async (next) => {
+      await next({ opacity: 0 });
       item.resolve(true);
-    });
+      await next({ height: 0 });
+    },
+    config,
+  });
 
-    await next({ life: '0%' });
-    await next({ opacity: 0 });
-    item.resolve(true);
-    await next({ height: 0 }, true);
-  };
+  return (
+    <Portal defaultOrder={StackingOrder.MESSAGE}>
+      <MessageContainer>
+        {transition(({ life, ...style }, message) => (
+          <AnimatedMessageBox style={style}>
+            <MessageContent
+              ref={(ref) => {
+                if (ref) {
+                  refMap.current.set(message, ref);
+                }
+              }}
+            >
+              {message.icon}
+              <Box flex="auto">{message.content}</Box>
+              <Icon
+                type={MdClose}
+                fill="light"
+                size="16"
+                role="button"
+                cursor="pointer"
+                onClick={() => {
+                  if (cancelMap.current.has(message)) {
+                    cancelMap.current.get(message)();
+                  }
+                }}
+              />
+              <Life style={{ right: life }} />
+            </MessageContent>
+          </AnimatedMessageBox>
+        ))}
+      </MessageContainer>
+    </Portal>
+  );
+};
 
-  config = (item: Message, state: State) =>
-    state === 'leave' ? [{ duration: item.duration }, config, config] : config;
-
-  render() {
-    const { messages } = this.state;
-
-    if (!this.mounted) {
-      return null;
-    }
-
-    return (
-      <Portal defaultOrder={StackingOrder.MESSAGE}>
-        <MessageContainer>
-          <Transition
-            native
-            keys={(message) => message.key}
-            items={messages}
-            from={{
-              opacity: 0,
-              height: 0,
-              life: '100%',
-            }}
-            enter={{
-              opacity: 1,
-              height: 'auto',
-            }}
-            leave={this.leave}
-            onRest={this.remove}
-            config={this.config as any}
-          >
-            {(message) => ({ life, ...props }) => (
-              <AnimatedMessageBox style={props}>
-                <MessageContent>
-                  {message.icon}
-                  <Box flex="auto">{message.content}</Box>
-                  <Icon
-                    type={MdClose}
-                    fill="light"
-                    size="16"
-                    role="button"
-                    cursor="pointer"
-                    onClick={() => this.cancel(message)}
-                  />
-                  <Life style={{ right: life }} />
-                </MessageContent>
-              </AnimatedMessageBox>
-            )}
-          </Transition>
-        </MessageContainer>
-      </Portal>
-    );
-  }
-}
-
-EffectMessage.contextType = UIDContext;
-
-export default EffectMessage;
+export default HooksMessage;

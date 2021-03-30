@@ -63,7 +63,7 @@ const FormField: FC<FormFieldProps> = ({
     handleValidation();
   }, [handleValidation]);
 
-  const transitions = useTransition(invalid, null, {
+  const transitions = useTransition(invalid, {
     immediate: !mounted,
     from: {
       height: 0,
@@ -96,10 +96,10 @@ const FormField: FC<FormFieldProps> = ({
 
         {children}
 
-        {transitions.map(
-          ({ key, item, props }) =>
+        {transitions(
+          (style, item) =>
             item && (
-              <animated.div key={key} style={props}>
+              <animated.div style={style}>
                 <ValidationMessage>{message}</ValidationMessage>
               </animated.div>
             )

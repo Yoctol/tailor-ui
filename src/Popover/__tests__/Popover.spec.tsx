@@ -1,12 +1,11 @@
 import React from 'react';
+import userEvent from '@testing-library/user-event';
 
-import { fireEvent, mockRaf, render, useMockRaf } from 'test/test-utils';
+import { render, screen, waitForElementToBeRemoved } from 'test/test-utils';
 
 import { Popover } from '../Popover';
 
 describe('Popover', () => {
-  useMockRaf();
-
   it('should render correctly', () => {
     const { baseElement } = render(
       <Popover visible title="Popover Title" content="Popover Content">
@@ -14,51 +13,45 @@ describe('Popover', () => {
       </Popover>
     );
 
-    mockRaf.flushSpring();
-
     expect(baseElement).toMatchSnapshot();
   });
 
   it('should render to document when click children', () => {
-    const { getByText } = render(
+    render(
       <Popover title="Popover Title" content="Popover Content">
         <button type="button">button</button>
       </Popover>
     );
 
-    const button = getByText('button');
+    const button = screen.getByText('button');
 
-    fireEvent.click(button);
+    userEvent.click(button);
 
-    mockRaf.flushSpring();
-
-    const content = getByText('Popover Content');
+    const content = screen.getByText('Popover Content');
 
     expect(content).toBeInTheDocument();
   });
 
-  it('should not visible when click children twice', () => {
-    const { getByText, queryByText } = render(
+  it('should not visible when click children twice', async () => {
+    render(
       <Popover title="Popover Title" content="Popover Content">
         <button type="button">button</button>
       </Popover>
     );
 
-    const button = getByText('button');
+    const button = screen.getByText('button');
 
-    fireEvent.click(button);
-    mockRaf.flushSpring();
-    expect(queryByText('Popover Content')).toBeInTheDocument();
+    userEvent.click(button);
+    expect(screen.getByText('Popover Content')).toBeInTheDocument();
 
-    fireEvent.click(button);
-    mockRaf.flushSpring();
+    userEvent.click(button);
 
-    const content = queryByText('Popover Content');
-    expect(content).not.toBeInTheDocument();
+    const content = screen.queryByText('Popover Content');
+    await waitForElementToBeRemoved(content);
   });
 
-  it('should not visible when click hide button', () => {
-    const { getByText, queryByText } = render(
+  it('should not visible when click hide button', async () => {
+    render(
       <Popover
         title="Popover Title"
         content={(hide) => (
@@ -74,21 +67,18 @@ describe('Popover', () => {
       </Popover>
     );
 
-    const button = getByText('button');
-    fireEvent.click(button);
-    mockRaf.flushSpring();
+    const button = screen.getByText('button');
+    userEvent.click(button);
 
-    const hideButton = getByText('hide');
-    fireEvent.click(hideButton);
-    mockRaf.flushSpring();
+    const hideButton = screen.getByText('hide');
+    userEvent.click(hideButton);
 
-    const content = queryByText('Popover Content');
-
-    expect(content).not.toBeInTheDocument();
+    const content = screen.queryByText('Popover Content');
+    await waitForElementToBeRemoved(content);
   });
 
-  it('should not visible when click outside', () => {
-    const { getByText, queryByText } = render(
+  it('should not visible when click outside', async () => {
+    render(
       <div>
         <Popover title="Popover Title" content="Popover Content">
           <button type="button">button</button>
@@ -97,21 +87,18 @@ describe('Popover', () => {
       </div>
     );
 
-    const button = getByText('button');
-    fireEvent.click(button);
-    mockRaf.flushSpring();
+    const button = screen.getByText('button');
+    userEvent.click(button);
 
-    const outsideButton = getByText('outside');
-    fireEvent.click(outsideButton);
-    mockRaf.flushSpring();
+    const outsideButton = screen.getByText('outside');
+    userEvent.click(outsideButton);
 
-    const content = queryByText('Popover Content');
-
-    expect(content).not.toBeInTheDocument();
+    const content = screen.queryByText('Popover Content');
+    await waitForElementToBeRemoved(content);
   });
 
   it('should close latest one when nested usage', async () => {
-    const { getByText } = render(
+    render(
       <div>
         <Popover
           title="popover1"
@@ -134,32 +121,28 @@ describe('Popover', () => {
       </div>
     );
 
-    const button1 = getByText('button1');
-    fireEvent.click(button1);
-    mockRaf.flushSpring();
+    const button1 = screen.getByText('button1');
+    userEvent.click(button1);
 
-    const button2 = getByText('button2');
-    fireEvent.click(button2);
-    mockRaf.flushSpring();
+    const button2 = screen.getByText('button2');
+    userEvent.click(button2);
 
-    const button3 = getByText('button3');
-    fireEvent.click(button3);
-    mockRaf.flushSpring();
+    const button3 = screen.getByText('button3');
+    userEvent.click(button3);
 
-    const popover1 = getByText('popover1');
-    const popover2 = getByText('popover2');
-    const popover3 = getByText('popover3');
+    const popover1 = screen.getByText('popover1');
+    const popover2 = screen.getByText('popover2');
+    const popover3 = screen.getByText('popover3');
 
     expect(popover1).toBeInTheDocument();
     expect(popover2).toBeInTheDocument();
     expect(popover3).toBeInTheDocument();
 
-    const outsideButton = getByText('outside');
-    fireEvent.click(outsideButton);
-    mockRaf.flushSpring();
+    const outsideButton = screen.getByText('outside');
+    userEvent.click(outsideButton);
 
     expect(popover1).toBeInTheDocument();
     expect(popover2).toBeInTheDocument();
-    expect(popover3).not.toBeInTheDocument();
+    await waitForElementToBeRemoved(popover3);
   });
 });

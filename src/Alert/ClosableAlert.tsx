@@ -1,5 +1,5 @@
-import React, { FC, useState } from 'react';
-import { animated, config, useSpring } from 'react-spring';
+import React, { FC, useEffect, useState } from 'react';
+import { animated, config, to, useSpring } from 'react-spring';
 
 import { useMeasure } from '../hooks';
 
@@ -12,13 +12,16 @@ export interface AlertProps extends BaseAlertProps {
 const ClosableAlert: FC<AlertProps> = ({ onClosed, ...props }) => {
   const [bind, { height: boundHeight }] = useMeasure();
   const [visible, setVisible] = useState(true);
+  const [closeDone, setCloseDone] = useState(false);
   const { x, height } = useSpring({
     x: visible ? 1 : 0,
     height: visible ? boundHeight : 0,
-    onRest: (rest) => {
-      if (rest.x === 0 && onClosed) {
-        onClosed();
-      }
+    onRest: {
+      x: (restX) => {
+        if (restX.value === 0) {
+          setCloseDone(true);
+        }
+      },
     },
     config: {
       ...config.default,
@@ -26,11 +29,21 @@ const ClosableAlert: FC<AlertProps> = ({ onClosed, ...props }) => {
     },
   });
 
+  useEffect(() => {
+    if (onClosed && closeDone) {
+      onClosed();
+    }
+  }, [closeDone, onClosed]);
+
+  if (closeDone) {
+    return null;
+  }
+
   return (
     <animated.div
       style={{
-        transform: x.interpolate((_x) => `scaleY(${_x})`),
-        opacity: (x as unknown) as number,
+        transform: to(x, (_x) => `scaleY(${_x})`),
+        opacity: x,
         height,
       }}
     >

@@ -1,16 +1,5 @@
-import React, {
-  FC,
-  KeyboardEventHandler,
-  MouseEventHandler,
-  useRef,
-} from 'react';
-import {
-  animated,
-  config,
-  useChain,
-  useSpring,
-  useTransition,
-} from 'react-spring';
+import React, { FC, KeyboardEventHandler, MouseEventHandler } from 'react';
+import { animated, config, useSpring, useTransition } from 'react-spring';
 
 import { Backdrop } from '../Backdrop';
 import { ESC_KEY_CODE, useKeydown } from '../hooks';
@@ -47,17 +36,13 @@ const AnimationModal: FC<AnimationModalProps> = ({
   zIndex = StackingOrder.OVERLAY,
   ...otherProps
 }) => {
-  const transRef = useRef(null);
-  const springRef = useRef(null);
-
   useKeydown({
     listening: closable ? visible : false,
     keyCode: ESC_KEY_CODE,
     onKeydown: onCancel as any,
   });
 
-  const transitions = useTransition(visible, null, {
-    ref: transRef,
+  const transitions = useTransition(visible, {
     from: {
       opacity: 0,
       transform: 'translate(-50%, -50%) scale(0.9)',
@@ -84,15 +69,9 @@ const AnimationModal: FC<AnimationModalProps> = ({
   });
 
   const statusProps = useSpring({
-    ref: springRef,
     opacity: visible ? 1 : 0,
     top: visible ? -10 : 0,
   });
-
-  useChain(visible ? [transRef, springRef] : [springRef, transRef], [
-    0,
-    visible ? 0.15 : 0,
-  ]);
 
   return (
     <>
@@ -105,11 +84,11 @@ const AnimationModal: FC<AnimationModalProps> = ({
           }
         }}
       />
-      {transitions.map(
-        ({ item, key, props }) =>
+      {transitions(
+        (style, item) =>
           item && (
-            <Portal key={key} defaultOrder={zIndex}>
-              <AnimatedModalWrapper style={props}>
+            <Portal defaultOrder={zIndex}>
+              <AnimatedModalWrapper style={style}>
                 {status && (
                   <AnimatedModalStatusBar status={status} style={statusProps} />
                 )}

@@ -7,9 +7,10 @@ import React, {
   forwardRef,
   isValidElement,
   useCallback,
-  useEffect,
-  useMemo,
+  useLayoutEffect,
+  useRef,
 } from 'react';
+import { useForkedRef } from '@reach/utils';
 
 import { mergeEventProps } from '../utils';
 import { useFormField } from '../FormField';
@@ -38,19 +39,21 @@ const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
     autoFocus,
     ...props
   },
-  ref
+  forwardedRef
 ) {
+  const ownRef = useRef<HTMLInputElement>(null);
+  const ref = useForkedRef(forwardedRef, ownRef);
   const [invalid, labelId, setValue] = useFormField({
     id,
     value: props.value,
     defaultValue: props.defaultValue,
   });
 
-  useEffect(() => {
-    if (autoSelect && ref) {
-      (ref as any).select();
+  useLayoutEffect(() => {
+    if (autoSelect) {
+      ownRef.current?.select();
     }
-  }, [autoSelect, ref]);
+  }, [autoSelect]);
 
   const handleKeyPress = useCallback(
     (event: KeyboardEvent<HTMLInputElement>) => {
@@ -65,33 +68,20 @@ const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
     [onKeyPress, onPressEnter]
   );
 
-  const input = useMemo(
-    () => (
-      <StyledInput
-        ref={ref}
-        id={labelId}
-        invalid={invalid}
-        size={size}
-        onKeyPress={handleKeyPress}
-        autoFocus={autoFocus || autoSelect}
-        {...mergeEventProps(props, {
-          onChange: (event: ChangeEvent<HTMLInputElement>) => {
-            setValue(event.currentTarget.value);
-          },
-        })}
-      />
-    ),
-    [
-      autoFocus,
-      autoSelect,
-      handleKeyPress,
-      invalid,
-      labelId,
-      props,
-      ref,
-      setValue,
-      size,
-    ]
+  const input = (
+    <StyledInput
+      ref={ref}
+      id={labelId}
+      invalid={invalid}
+      size={size}
+      onKeyPress={handleKeyPress}
+      autoFocus={autoFocus || autoSelect}
+      {...mergeEventProps(props, {
+        onChange: (event: ChangeEvent<HTMLInputElement>) => {
+          setValue(event.currentTarget.value);
+        },
+      })}
+    />
   );
 
   if (prefix || suffix) {
