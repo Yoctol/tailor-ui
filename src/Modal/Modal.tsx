@@ -15,8 +15,9 @@ export type ModalProps = AnimationModalProps &
   };
 
 const Modal: FC<ModalProps> = ({
-  title,
   status,
+  title,
+  header,
   onCancel,
   onConfirm,
   closable,
@@ -40,6 +41,7 @@ const Modal: FC<ModalProps> = ({
     <ModalHeader
       status={status}
       title={title}
+      header={header}
       onCancel={onCancel}
       closable={closable}
     />

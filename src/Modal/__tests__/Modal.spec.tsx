@@ -27,6 +27,32 @@ describe('Modal', () => {
     expect(baseElement).toMatchSnapshot();
   });
 
+  it('should render with customized header', () => {
+    const { baseElement } = render(
+      <Modal
+        header={<div>my header</div>}
+        visible
+        closable
+        onCancel={() => {}}
+      />
+    );
+
+    expect(baseElement).toMatchSnapshot();
+  });
+
+  it('should render with customized footer', () => {
+    const { baseElement } = render(
+      <Modal
+        footer={<div>my footer</div>}
+        visible
+        closable
+        onCancel={() => {}}
+      />
+    );
+
+    expect(baseElement).toMatchSnapshot();
+  });
+
   it('should render with info status', () => {
     const { baseElement } = render(
       <Modal status="info" visible closable onCancel={() => {}} />

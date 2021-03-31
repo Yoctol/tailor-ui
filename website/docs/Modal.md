@@ -109,6 +109,44 @@ import { Modal, useModal } from 'tailor-ui';
 }
 ```
 
+
+### Customized header
+
+```jsx live
+() => {
+  const [visible, setVisible] = useState(false);
+
+  return (
+    <>
+      <Modal
+        header={
+          <Flex
+            alignItems="center"
+            justifyContent="center"
+            width="100%"
+            height="480px"
+            bg="surface2"
+          >
+            <Heading.H1>
+              Welcome
+            </Heading.H1>
+          </Flex>
+        }
+        visible={visible}
+        closable
+        onConfirm={() => setVisible(false)}
+        onCancel={() => setVisible(false)}
+      >
+        {Array.from({ length: 100 }).map((_, index) => (
+          <div key={index}>This is the content of Modal</div>
+        ))}
+      </Modal>
+      <Button onClick={() => setVisible(true)}>Open Modal</Button>
+    </>
+  );
+}
+```
+
 ### Customized footer
 
 ```jsx live
