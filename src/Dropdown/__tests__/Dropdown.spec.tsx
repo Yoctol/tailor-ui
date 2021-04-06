@@ -1,12 +1,11 @@
 import React from 'react';
+import userEvent from '@testing-library/user-event';
 
-import { fireEvent, mockRaf, render, useMockRaf } from 'test/test-utils';
+import { render, screen } from 'test/test-utils';
 
 import { Dropdown } from '../Dropdown';
 
 describe('Dropdown', () => {
-  useMockRaf();
-
   it('should render correctly', () => {
     const { baseElement } = render(
       <Dropdown
@@ -21,76 +20,61 @@ describe('Dropdown', () => {
       </Dropdown>
     );
 
-    mockRaf.flushSpring();
-
     expect(baseElement).toMatchSnapshot();
   });
 
   it('should not visible when click dropdown item', async () => {
-    const { getByTestId, queryByTestId } = render(
-      <Dropdown
-        overlay={
-          <Dropdown.List data-testid="dropdown-list">
-            <Dropdown.Item data-testid="item">Item</Dropdown.Item>
-          </Dropdown.List>
-        }
-      >
-        <button data-testid="button" type="button">
-          Button
-        </button>
-      </Dropdown>
-    );
-
-    const button = getByTestId('button');
-    fireEvent.click(button);
-    mockRaf.flushSpring();
-
-    const item = getByTestId('item');
-    fireEvent.click(item);
-    mockRaf.flushSpring();
-
-    expect(queryByTestId('dropdown-list')).toBeNull();
-  });
-
-  it('should keep visible when click dropdown keep item', async () => {
-    const { getByTestId } = render(
-      <Dropdown
-        overlay={
-          <Dropdown.List data-testid="dropdown-list">
-            <Dropdown.Item data-testid="item" keep>
-              Item
-            </Dropdown.Item>
-          </Dropdown.List>
-        }
-      >
-        <button data-testid="button" type="button">
-          Button
-        </button>
-      </Dropdown>
-    );
-
-    const button = getByTestId('button');
-    fireEvent.click(button);
-    mockRaf.flushSpring();
-
-    const item = getByTestId('item');
-    fireEvent.click(item);
-    mockRaf.flushSpring();
-
-    expect(getByTestId('dropdown-list')).toBeInTheDocument();
-  });
-
-  // FIXME:
-  it.skip('should show SubList when mouse enter', () => {
-    const { getByTestId } = render(
+    render(
       <Dropdown
         overlay={
           <Dropdown.List>
             <Dropdown.Item>Item</Dropdown.Item>
-            <Dropdown.SubList data-testid="sub-list" title="SubList">
-              <Dropdown.Item data-testid="sub-list-item">
-                Sub List Item
-              </Dropdown.Item>
+          </Dropdown.List>
+        }
+      >
+        <button type="button">Button</button>
+      </Dropdown>
+    );
+
+    const button = screen.getByText('Button');
+    userEvent.click(button);
+
+    const item = screen.getByText('Item');
+    userEvent.click(item);
+
+    expect(screen.queryByTestId('dropdown-list')).not.toBeInTheDocument();
+  });
+
+  it('should keep visible when click dropdown keep item', async () => {
+    render(
+      <Dropdown
+        overlay={
+          <Dropdown.List>
+            <Dropdown.Item keep>Item</Dropdown.Item>
+          </Dropdown.List>
+        }
+      >
+        <button type="button">Button</button>
+      </Dropdown>
+    );
+
+    const button = screen.getByText('Button');
+    userEvent.click(button);
+
+    const item = screen.getByText('Item');
+    userEvent.click(item);
+
+    expect(screen.getByText('Item')).toBeInTheDocument();
+  });
+
+  it('should show SubList when mouse enter', async () => {
+    render(
+      <Dropdown
+        overlay={
+          <Dropdown.List>
+            <Dropdown.Item>Item</Dropdown.Item>
+            <Dropdown.SubList title="SubList">
+              <Dropdown.Item>Sub List Item</Dropdown.Item>
             </Dropdown.SubList>
           </Dropdown.List>
         }
@@ -101,14 +85,14 @@ describe('Dropdown', () => {
       </Dropdown>
     );
 
-    const button = getByTestId('button');
-    fireEvent.click(button);
-    mockRaf.flushSpring();
+    const button = screen.getByText('Button');
+    userEvent.click(button);
 
-    const item = getByTestId('sub-list');
-    fireEvent.mouseEnter(item);
-    mockRaf.flushSpring();
+    const item = screen.getByText('SubList');
+    userEvent.hover(item);
 
-    expect(getByTestId('sub-list-item')).toBeInTheDocument();
+    const subListItem = await screen.findByText('Sub List Item');
+
+    expect(subListItem).toBeInTheDocument();
   });
 });

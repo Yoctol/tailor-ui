@@ -1,6 +1,7 @@
 import React from 'react';
+import userEvent from '@testing-library/user-event';
 
-import { fireEvent, render } from 'test/test-utils';
+import { render } from 'test/test-utils';
 
 import { Checkbox } from '../Checkbox';
 
@@ -40,18 +41,8 @@ describe('Checkbox', () => {
       'input[type=checkbox]'
     ) as HTMLInputElement;
 
-    fireEvent.click(checkbox);
+    userEvent.click(checkbox);
 
     expect(onChange).toBeCalled();
-  });
-
-  it('should support data-testid', () => {
-    const { getByTestId } = render(
-      <Checkbox checked data-testid="my-checkbox">
-        Checkbox
-      </Checkbox>
-    );
-
-    expect(getByTestId('my-checkbox')).toHaveAttribute('checked');
   });
 });

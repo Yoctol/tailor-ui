@@ -1,7 +1,8 @@
 import React from 'react';
+import userEvent from '@testing-library/user-event';
 import { MdCheck, MdDelete } from 'react-icons/md';
 
-import { fireEvent, render } from 'test/test-utils';
+import { render, screen } from 'test/test-utils';
 
 import { Button } from '../Button';
 
@@ -148,22 +149,12 @@ describe('Button', () => {
   it('should call onClick when button is clicked', () => {
     const onClick = jest.fn();
 
-    const { getByText } = render(
-      <Button onClick={onClick}>Text Button</Button>
-    );
+    render(<Button onClick={onClick}>Text Button</Button>);
 
-    const button = getByText('Text Button');
+    const button = screen.getByText('Text Button');
 
-    fireEvent.click(button);
+    userEvent.click(button);
 
     expect(onClick).toBeCalled();
-  });
-
-  it('should support data-testid', () => {
-    const { getByTestId } = render(
-      <Button data-testid="my-button">Text Button</Button>
-    );
-
-    expect(getByTestId('my-button')).toHaveTextContent('Text Button');
   });
 });

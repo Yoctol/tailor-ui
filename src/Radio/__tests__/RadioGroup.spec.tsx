@@ -1,6 +1,7 @@
 import React from 'react';
+import userEvent from '@testing-library/user-event';
 
-import { fireEvent, render } from 'test/test-utils';
+import { render } from 'test/test-utils';
 
 import { Box } from '../../Layout';
 import { Radio } from '../Radio';
@@ -48,7 +49,7 @@ describe('RadioGroup', () => {
       'input[type=radio]'
     ) as HTMLInputElement;
 
-    fireEvent.click(radio1);
+    userEvent.click(radio1);
 
     expect(onChange).toBeCalledWith('radio_1');
   });
@@ -109,7 +110,7 @@ describe('RadioGroup', () => {
         'input[type=radio]'
       ) as HTMLInputElement;
 
-      fireEvent.click(radio1);
+      userEvent.click(radio1);
 
       expect(onChange).toBeCalledWith('radio_1');
     });

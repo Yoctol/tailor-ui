@@ -7,7 +7,7 @@ import React, {
   useContext,
   useRef,
 } from 'react';
-import { UseComboboxStateChange, useCombobox } from 'downshift6';
+import { UseComboboxStateChange, useCombobox } from 'downshift';
 
 import { ClickOutsideContext } from '../../Popover';
 import { useFormField } from '../../FormField';
@@ -37,6 +37,7 @@ interface SelectProps<T extends SelectOption, V = T | null> {
   defaultValue?: V;
   onChange: (item: V) => void;
   placeholder?: string;
+  noOptionsMessage?: () => ReactNode;
   onCreateOption?: (value: string) => void;
   formatCreateLabel?: (labelInfo: {
     value: string;
@@ -60,6 +61,7 @@ const Select = forwardRef(function Select<T extends SelectOption>(
     defaultValue,
     onChange,
     placeholder,
+    noOptionsMessage,
     onCreateOption,
     formatCreateLabel = (info) => `Create new option: ${info.value}`,
     isValidNewOption = (optionValue) => optionValue.trim() !== '',
@@ -99,19 +101,6 @@ const Select = forwardRef(function Select<T extends SelectOption>(
     }
   };
 
-  const handleInputValueChange = ({
-    inputValue = '',
-    isOpen,
-  }: UseComboboxStateChange<SelectValue | undefined>) => {
-    if (isOpen && (searchable || creatable)) {
-      if (inputValue === CREATE_OPTION) {
-        setSearchValue('');
-      } else {
-        setSearchValue(inputValue);
-      }
-    }
-  };
-
   const getDefaultHighlightIndex = () => {
     if (searchable && searchValue !== '') {
       return 0;
@@ -144,8 +133,12 @@ const Select = forwardRef(function Select<T extends SelectOption>(
     defaultHighlightedIndex: getDefaultHighlightIndex(),
     scrollIntoView: () => {},
     onSelectedItemChange: handleChange,
-    onInputValueChange: handleInputValueChange,
-    onIsOpenChange: ({ isOpen: visible }) => setHasChild(Boolean(visible)),
+    onIsOpenChange: ({ isOpen: visible }) => {
+      setHasChild(Boolean(visible));
+      if (visible) {
+        setSearchValue('');
+      }
+    },
   });
 
   const selectedItemString = itemToString(selectedItem);
@@ -176,6 +169,17 @@ const Select = forwardRef(function Select<T extends SelectOption>(
                 }),
             readOnly: (!searchable && !creatable) || loading,
             placeholder: placeholder ?? selectedItemString,
+            onChange: (event) => {
+              const newInputValue = event.currentTarget.value;
+
+              if (isOpen && (searchable || creatable)) {
+                if (newInputValue === CREATE_OPTION) {
+                  setSearchValue('');
+                } else {
+                  setSearchValue(newInputValue);
+                }
+              }
+            },
           })}
         />
         <SelectSuffix
@@ -195,6 +199,7 @@ const Select = forwardRef(function Select<T extends SelectOption>(
         selectedItem={selectedItem}
         highlightedIndex={highlightedIndex}
         formatCreateLabel={formatCreateLabel}
+        noOptionsMessage={noOptionsMessage}
       />
     </div>
   );

@@ -33,6 +33,19 @@ exports[`Popover should render correctly 1`] = `
   margin-bottom: 0.5rem;
 }
 
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
 <body>
   <div>
     <button
@@ -70,6 +83,13 @@ exports[`Popover should render correctly 1`] = `
           </div>
         </div>
       </div>
+    </div>
+    <div
+      style="position: fixed; top: 0px; left: 0px; z-index: 30;"
+    >
+      <div
+        class="c4"
+      />
     </div>
   </div>
 </body>

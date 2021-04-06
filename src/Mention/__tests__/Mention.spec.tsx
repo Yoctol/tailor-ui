@@ -1,6 +1,7 @@
 import React from 'react';
+import userEvent from '@testing-library/user-event';
 
-import { fireEvent, render } from 'test/test-utils';
+import { render, screen } from 'test/test-utils';
 
 import { Mention } from '../Mention';
 
@@ -31,7 +32,7 @@ describe('Mention', () => {
     const MENTION_TEST_ID = 'my-mention';
     const OTHER_TEST_ID = 'your-dom';
 
-    const { getByTestId } = render(
+    render(
       <div>
         <Mention
           data-testid={MENTION_TEST_ID}
@@ -48,19 +49,13 @@ describe('Mention', () => {
       </div>
     );
 
-    const mention = getByTestId(MENTION_TEST_ID);
-    const other = getByTestId(OTHER_TEST_ID);
+    const mention = screen.getByTestId(MENTION_TEST_ID);
+    const other = screen.getByTestId(OTHER_TEST_ID);
 
-    fireEvent.focus(mention);
-    fireEvent.change(mention, {
-      target: {
-        value: '{{',
-        selectionStart: 2,
-      },
-    });
+    userEvent.type(mention, '{{'.replace(/{/g, '$&$&'));
+    userEvent.click(other);
 
-    fireEvent.click(other);
-
+    expect(screen.getByText('drink')).toBeInTheDocument();
     expect(onChangeFromProps).toBeCalledWith('{{');
     expect(onBlurFromProps).toBeCalled();
   });

@@ -59,7 +59,7 @@ const Positioner: FC<PositionerProps> = ({
     };
   }, []);
 
-  const transitions = useTransition(visible, null, {
+  const transition = useTransition(visible, {
     from: {
       opacity: 0,
       transform: 'scale(0.9)',
@@ -71,7 +71,7 @@ const Positioner: FC<PositionerProps> = ({
     leave: {
       opacity: 0,
       transform: 'scale(1)',
-      pointerEvents: 'none',
+      pointerEvents: 'none' as const,
     },
     onDestroyed: (isDestroyed) => {
       if (isDestroyed) {
@@ -95,12 +95,12 @@ const Positioner: FC<PositionerProps> = ({
     <>
       {children instanceof Function ? children({ ref: targetRef }) : children}
 
-      {transitions.map(
-        ({ key, item, props }) =>
+      {transition(
+        (style, item) =>
           item && (
-            <Portal key={key} defaultOrder={StackingOrder.POSITIONER}>
+            <Portal defaultOrder={StackingOrder.POSITIONER}>
               <PositionerImpl
-                style={props}
+                style={style}
                 positioner={positioner}
                 position={position}
                 targetRef={targetRef}

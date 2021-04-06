@@ -32,7 +32,7 @@ const Suggestions = forwardRef<HTMLDivElement, SuggestionsProps>(
     },
     suggestionRef
   ) {
-    const translations = useTransition(dropdownVisible, null, {
+    const translations = useTransition(dropdownVisible, {
       from: {
         opacity: 0,
       },
@@ -64,17 +64,17 @@ const Suggestions = forwardRef<HTMLDivElement, SuggestionsProps>(
 
     return (
       <>
-        {translations.map(
-          ({ key, item, props }) =>
+        {translations(
+          (style, item) =>
             item && (
-              <Portal key={key}>
+              <Portal>
                 <div
                   style={{
                     willChange: 'transform',
                     transform: `translate3d(${overlayPosition.left}px, ${overlayPosition.top}px, 0px)`,
                   }}
                 >
-                  <SuggestionList ref={suggestionRef} style={props}>
+                  <SuggestionList ref={suggestionRef} style={style}>
                     {filteredSuggestions.map((suggestion, index) => (
                       <SuggestionItem
                         key={suggestion.value}

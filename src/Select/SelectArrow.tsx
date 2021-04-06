@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { MdKeyboardArrowUp } from 'react-icons/md';
-import { animated, config, useSpring } from 'react-spring';
+import { animated, config, to, useSpring } from 'react-spring';
 
 import { Icon } from '../Icon';
 
@@ -13,7 +13,7 @@ const SelectArrow: FC<{ on: boolean }> = ({ on }) => {
   return (
     <animated.i
       style={{
-        transform: deg.interpolate((d) => `rotate(${d}deg)`),
+        transform: to(deg, (d) => `rotate(${d}deg)`),
         flex: 'none',
         pointerEvents: 'none',
         display: 'inline-flex',

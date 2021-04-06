@@ -27,7 +27,7 @@ const Backdrop: FC<BackdropProps> = ({
   zIndex = StackingOrder.OVERLAY,
   ...otherProps
 }) => {
-  const transition = useTransition(visible, null, {
+  const transition = useTransition(visible, {
     from: {
       opacity: 0,
     },
@@ -41,18 +41,13 @@ const Backdrop: FC<BackdropProps> = ({
     config: config.stiff,
   });
 
-  return (
-    // FIXME: react type
-    <>
-      {transition.map(
-        ({ item, key, props }) =>
-          item && (
-            <Portal key={key} defaultOrder={zIndex}>
-              <AnimatedStyledBackdrop style={props} {...otherProps} />
-            </Portal>
-          )
-      )}
-    </>
+  return transition(
+    (style, item) =>
+      item && (
+        <Portal defaultOrder={zIndex}>
+          <AnimatedStyledBackdrop style={style} {...otherProps} />
+        </Portal>
+      )
   );
 };
 

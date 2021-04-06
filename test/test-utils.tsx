@@ -1,33 +1,10 @@
-import createMockRaf, { MockRaf } from '@react-spring/mock-raf';
+import { Globals } from 'react-spring';
 import { ReactElement } from 'react';
 import { RenderOptions, render } from '@testing-library/react';
 
 import { UIProvider } from '../src';
 
-// eslint-disable-next-line import/no-mutable-exports
-let mockRaf: MockRaf & { flushSpring: () => void };
-const raf = window.requestAnimationFrame;
-const caf = window.cancelAnimationFrame;
-
-const useMockRaf = () => {
-  beforeAll(() => {
-    const createdMockRaf = createMockRaf();
-    mockRaf = {
-      ...createdMockRaf,
-      flushSpring: () => mockRaf.step({ count: 32767 }),
-    };
-
-    window.requestAnimationFrame = mockRaf.raf;
-    window.cancelAnimationFrame = mockRaf.cancel;
-  });
-
-  afterAll(() => {
-    window.requestAnimationFrame = raf;
-    window.cancelAnimationFrame = caf;
-  });
-};
-
-export { mockRaf, useMockRaf };
+Globals.assign({ skipAnimation: true });
 
 const customRender = (
   node: ReactElement,

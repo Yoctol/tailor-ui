@@ -1,4 +1,5 @@
 import React, { ReactNode, useContext, useState } from 'react';
+import { omit } from 'ramda';
 
 import FormFieldContext from '../FormField/FormFieldContext';
 import { Input, InputProps, Textarea, TextareaProps } from '../Input';
@@ -15,8 +16,7 @@ export type TextFieldSharedProps = {
 export type TextareaTextFieldProps = TextFieldSharedProps &
   ({ textarea: true } & TextareaProps);
 
-export type InputTextFieldProps = TextFieldSharedProps &
-  ({ textarea?: false } & InputProps);
+export type InputTextFieldProps = TextFieldSharedProps & InputProps;
 
 export type TextFieldOverload = {
   (props: TextareaTextFieldProps): JSX.Element;
@@ -41,7 +41,7 @@ const TextField: TextFieldOverload = (
 
   const component = isTextarea(props) ? (
     <Textarea
-      {...props}
+      {...omit(['textarea', 'onChange'], props)}
       onChange={(event) => {
         setUncontrolledValue(event.currentTarget.value);
         if (props.onChange) {
@@ -51,7 +51,7 @@ const TextField: TextFieldOverload = (
     />
   ) : (
     <Input
-      {...props}
+      {...omit(['textarea', 'onChange'], props)}
       onChange={(event) => {
         setUncontrolledValue(event.currentTarget.value);
         if (props.onChange) {

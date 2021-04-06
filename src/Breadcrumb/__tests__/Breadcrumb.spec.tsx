@@ -1,6 +1,7 @@
 import React, { createRef } from 'react';
+import userEvent from '@testing-library/user-event';
 
-import { fireEvent, render } from 'test/test-utils';
+import { render, screen } from 'test/test-utils';
 
 import { Breadcrumb } from '../Breadcrumb';
 
@@ -26,7 +27,7 @@ describe('Breadcrumb', () => {
     const ref = createRef<HTMLDivElement>();
     const handleClick = jest.fn();
 
-    const { findByText } = render(
+    render(
       <Breadcrumb
         ref={ref}
         items={[
@@ -43,9 +44,9 @@ describe('Breadcrumb', () => {
       />
     );
 
-    const breadcrumb = await findByText('Click');
+    const breadcrumb = await screen.findByText('Click');
 
-    fireEvent.click(breadcrumb);
+    userEvent.click(breadcrumb);
 
     expect(handleClick).toBeCalled();
   });

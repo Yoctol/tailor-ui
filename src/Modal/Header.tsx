@@ -8,6 +8,7 @@ import { StatusType } from '../types';
 import CloseButton from './CloseButton';
 
 export interface ModalHeaderProps {
+  header?: ReactNode;
   title?: ReactNode;
   status?: StatusType | null;
   closable?: boolean;
@@ -15,27 +16,35 @@ export interface ModalHeaderProps {
 }
 
 const ModalHeader: FC<ModalHeaderProps> = ({
+  header,
   title,
   status,
   onCancel,
   closable,
-}) => (
-  <Flex flex="none" alignItems="center" mb="3" pt="24px" px="4">
-    {status && (
-      <Flex mr="2">
+}) => {
+  if (header) {
+    return (
+      <Flex flex="none" mb="3" position="relative">
+        {header}
+        {closable && <CloseButton onCancel={onCancel} />}
+      </Flex>
+    );
+  }
+
+  return (
+    <Flex flex="none" mb="3" pt="24px" px="4" position="relative">
+      {status && (
         <Icon
           type={status}
           fill={status === 'info' ? 'primary' : status}
           size="32"
-          mr="2"
+          mr="3"
         />
-      </Flex>
-    )}
-    <Flex flex="auto">
-      <Heading.H3>{title}</Heading.H3>
+      )}
+      <Heading.H3 lineHeight="32px">{title}</Heading.H3>
+      {closable && <CloseButton onCancel={onCancel} />}
     </Flex>
-    {closable && <CloseButton onCancel={onCancel} />}
-  </Flex>
-);
+  );
+};
 
 export default ModalHeader;

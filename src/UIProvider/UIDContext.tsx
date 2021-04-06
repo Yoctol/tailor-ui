@@ -1,4 +1,10 @@
-import React, { FC, createContext, useContext, useRef } from 'react';
+import React, {
+  FC,
+  createContext,
+  useCallback,
+  useContext,
+  useRef,
+} from 'react';
 
 const UIDContext = createContext<() => string>(() => 'tailor_uid_0');
 
@@ -7,11 +13,11 @@ UIDContext.displayName = 'UIDContext';
 const UIDProvider: FC = ({ children }) => {
   const UID = useRef(0);
 
-  const getUID = () => {
+  const getUID = useCallback(() => {
     UID.current += 1;
 
     return `tailor_uid_${UID.current}`;
-  };
+  }, []);
 
   return <UIDContext.Provider value={getUID}>{children}</UIDContext.Provider>;
 };

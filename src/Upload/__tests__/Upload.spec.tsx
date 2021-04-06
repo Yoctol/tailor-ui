@@ -1,6 +1,7 @@
 import React from 'react';
+import userEvent from '@testing-library/user-event';
 
-import { fireEvent, render } from 'test/test-utils';
+import { render } from 'test/test-utils';
 
 import { Upload } from '../Upload';
 
@@ -27,8 +28,8 @@ const setup = async ({
     type: 'application/json',
   });
 
-  fireEvent.click(getByText('Click to Upload'));
-  fireEvent.change(uploadInput, { target: { files: [file] } });
+  userEvent.click(getByText('Click to Upload'));
+  userEvent.upload(uploadInput, file);
 
   // FIXME: Can not get the Uploading... button
   // await findByText('Uploading...');
@@ -81,7 +82,7 @@ describe('Upload', () => {
 
     const clearIcon = container.querySelector('i[cursor=pointer]') as Element;
 
-    fireEvent.click(clearIcon);
+    userEvent.click(clearIcon);
 
     expect(container).toContainElement(getByText('Click to Upload'));
     expect(container).not.toContainElement(queryByText('example.json'));

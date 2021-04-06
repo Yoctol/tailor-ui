@@ -1,16 +1,15 @@
 import React from 'react';
+import userEvent from '@testing-library/user-event';
 
-import { fireEvent, mockRaf, render, useMockRaf } from 'test/test-utils';
+import { render, screen } from 'test/test-utils';
 
 import { Alert } from '../Alert';
 
 describe('Alert', () => {
-  useMockRaf();
-
   it('should render message correctly', () => {
-    const { queryByText } = render(<Alert message="Info Text" />);
+    render(<Alert message="Info Text" />);
 
-    const message = queryByText('Info Text');
+    const message = screen.queryByText('Info Text');
 
     expect(message).toBeInTheDocument();
   });
@@ -46,20 +45,14 @@ describe('Alert', () => {
   it('should call onClosed when closed', async () => {
     const onClosed = jest.fn();
 
-    const { container, queryByText } = render(
+    const { container } = render(
       <Alert message="Info Text" closable onClosed={onClosed} />
     );
 
     // first one icon is type icon
     const [, closeIcon] = Array.from(container.querySelectorAll('i'));
+    userEvent.click(closeIcon);
 
-    fireEvent.click(closeIcon);
-
-    mockRaf.flushSpring();
-
-    const message = queryByText('Info Text');
-
-    expect(message).not.toBeVisible();
     expect(onClosed).toBeCalled();
   });
 });

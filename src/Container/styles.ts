@@ -1,16 +1,25 @@
 import styled from 'styled-components';
 
 import { Flex } from '../Layout';
-import { Heading } from '../Typography';
+import { StyledTableWrapper } from '../Table/styles';
 
 export const StyledContainer = styled(Flex)`
   flex-direction: column;
-  padding: 24px 32px 32px;
+  overflow: hidden;
   border-radius: ${(p) => p.theme.radii.xl};
   background-color: ${(p) => p.theme.colors.light};
   box-shadow: ${(p) => p.theme.shadows.base};
   color: ${(p) => p.theme.colors.gray700};
   font-size: ${(p) => p.theme.fontSizes.base};
+
+  ${StyledTableWrapper} {
+    width: 100%;
+    border-top: ${(p) => p.theme.borders.base};
+    border-bottom: ${(p) => p.theme.borders.base};
+    border-radius: 0;
+    border-color: ${(p) => p.theme.colors.gray300};
+    box-shadow: none;
+  }
 
   & + & {
     margin-top: 16px;
@@ -23,8 +32,4 @@ export const StyledSection = styled(Flex)`
   & + & {
     margin-top: 32px;
   }
-`;
-
-export const StyledSectionTitle = styled(Heading.H5)`
-  margin-bottom: 12px;
 `;
