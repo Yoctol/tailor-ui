@@ -1,11 +1,18 @@
-import React, { ComponentPropsWithoutRef, ReactNode, forwardRef } from 'react';
+import React, {
+  ComponentPropsWithoutRef,
+  ReactNode,
+  forwardRef,
+  useState,
+} from 'react';
 
+import Column from './Column';
+import HeadColumn from './HeadColumn';
+import { FixedColumnContextProvider } from './FixedColumnContext';
 import {
-  Column,
-  HeadColumn,
   Row,
   StyledTable,
-  StyledTableProps,
+  StyledTableWrapper,
+  StyledTableWrapperProps,
   TableWrapper,
 } from './styles';
 
@@ -26,27 +33,48 @@ const Body = forwardRef<HTMLTableSectionElement, { children: ReactNode }>(
 );
 
 export type TableProps = ComponentPropsWithoutRef<'table'> &
-  Omit<StyledTableProps, 'hasHeader' | 'hasFooter'> & {
+  Omit<StyledTableWrapperProps, 'hasHeader' | 'hasFooter'> & {
     header?: ReactNode;
     footer?: ReactNode;
   };
 
-const Table = forwardRef<HTMLTableElement, TableProps>(function Table(
-  { header, footer, width = '100%', textAlign = 'center', ...props },
+const Table = forwardRef<HTMLDivElement, TableProps>(function Table(
+  { header, footer, width = '100%', textAlign = 'center', children, ...props },
   ref
 ) {
+  const [scrollShadow, setScrollShadow] = useState({
+    start: false,
+    end: true,
+  });
+
   const optionsProps = {
     hasHeader: Boolean(header),
     hasFooter: Boolean(footer),
   };
+
   const table = (
-    <StyledTable
-      ref={ref}
-      width={width as string}
-      textAlign={textAlign}
-      {...optionsProps}
-      {...props}
-    />
+    <FixedColumnContextProvider
+      scrollShadowStart={scrollShadow.start}
+      scrollShadowEnd={scrollShadow.end}
+    >
+      <StyledTableWrapper
+        ref={ref}
+        width={width as string}
+        textAlign={textAlign}
+        onScroll={(event) => {
+          const { scrollLeft, scrollWidth, offsetWidth } = event.currentTarget;
+
+          setScrollShadow({
+            start: scrollLeft > 0,
+            end: scrollLeft + offsetWidth < scrollWidth,
+          });
+        }}
+        {...optionsProps}
+        {...props}
+      >
+        <StyledTable>{children}</StyledTable>
+      </StyledTableWrapper>
+    </FixedColumnContextProvider>
   );
 
   if (header || footer) {
@@ -69,6 +97,8 @@ const Table = forwardRef<HTMLTableElement, TableProps>(function Table(
   Row: typeof Row;
   Column: typeof Column;
 };
+
+Table.displayName = 'Table';
 
 Table.Head = Head;
 Table.HeadColumn = HeadColumn;
