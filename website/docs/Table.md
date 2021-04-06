@@ -34,7 +34,7 @@ import { Table } from 'tailor-ui';
           <Table.Column>Name {value}</Table.Column>
           <Table.Column>Platform {value}</Table.Column>
           <Table.Column>10,000</Table.Column>
-          <Table.Column>1,000 NTD</Table.Column>
+          <Table.Column>NTD 1,000</Table.Column>
           <Table.Column>
             <Button variant="primary-invert">Action</Button>
           </Table.Column>
@@ -45,10 +45,12 @@ import { Table } from 'tailor-ui';
 </Box>
 ```
 
-### Header & Footer
+### Header & Footer (Deprecated)
+
+> This API will be deprecated in the future, please use Container wrap Table instead.
 
 ```jsx live
-<Box width="100%" height="100%" borderRadius="xl" bg="#eef0f5" p="4">
+<Box width="100%" height="100%" borderRadius="xl" bg="surface" p="4">
   <Table
     header={
       <Box py="24px" px="4">
@@ -74,7 +76,7 @@ import { Table } from 'tailor-ui';
           <Table.Column>Name {value}</Table.Column>
           <Table.Column>Platform {value}</Table.Column>
           <Table.Column>10,000</Table.Column>
-          <Table.Column>1,000 NTD</Table.Column>
+          <Table.Column>NTD 1,000</Table.Column>
           <Table.Column>
             <Button variant="primary-invert">Action</Button>
           </Table.Column>
@@ -82,6 +84,87 @@ import { Table } from 'tailor-ui';
       ))}
     </Table.Body>
   </Table>
+</Box>
+```
+
+### Scrollable
+
+```jsx live
+<Box width="100%" height="100%" borderRadius="xl" bg="surface" p="4">
+  <Container>
+    <Heading.H4>Text Here</Heading.H4>
+    <Table>
+      <Table.Head>
+        <Table.HeadColumn fixed="left">
+          <Box width="100px">
+            Column
+          </Box>
+        </Table.HeadColumn>
+        <Table.HeadColumn fixed="left">
+          <Box width="100px">
+            Column
+          </Box>
+        </Table.HeadColumn>
+        <Table.HeadColumn>
+          <Box width="160px">
+            Scrollable Column
+          </Box>
+        </Table.HeadColumn>
+        <Table.HeadColumn>
+          <Box width="160px">
+            Scrollable Column
+          </Box>
+        </Table.HeadColumn>
+        <Table.HeadColumn>
+          <Box width="160px">
+            Scrollable Column
+          </Box>
+        </Table.HeadColumn>
+        <Table.HeadColumn>
+          <Box width="160px">
+            Scrollable Column
+          </Box>
+        </Table.HeadColumn>
+        <Table.HeadColumn>
+          <Box width="160px">
+            Scrollable Column
+          </Box>
+        </Table.HeadColumn>
+        <Table.HeadColumn>
+          <Box width="160px">
+            Scrollable Column
+          </Box>
+        </Table.HeadColumn>
+        <Table.HeadColumn fixed="right">
+          <Box width="100px">
+            Column
+          </Box>
+        </Table.HeadColumn>
+      </Table.Head>
+      <Table.Body>
+        {range(1, 10).map(value => (
+          <Table.Row key={value}>
+            <Table.Column>
+              Column {value}
+            </Table.Column>
+            <Table.Column>
+              Column {value}
+            </Table.Column>
+            <Table.Column>Scrollable Column {value}</Table.Column>
+            <Table.Column>Scrollable Column {value}</Table.Column>
+            <Table.Column>Scrollable Column {value}</Table.Column>
+            <Table.Column>Scrollable Column {value}</Table.Column>
+            <Table.Column>Scrollable Column {value}</Table.Column>
+            <Table.Column>Scrollable Column {value}</Table.Column>
+            <Table.Column>
+              Column {value}
+            </Table.Column>
+          </Table.Row>
+        ))}
+      </Table.Body>
+    </Table>
+    <Button variant="regular">+ Button</Button>
+  </Container>
 </Box>
 ```
 
@@ -130,7 +213,7 @@ import { Table } from 'tailor-ui';
           <Table.Column>Name {value}</Table.Column>
           <Table.Column>Platform {value}</Table.Column>
           <Table.Column>10,000</Table.Column>
-          <Table.Column>1,000 NTD</Table.Column>
+          <Table.Column>NTD 1,000</Table.Column>
           <Table.Column>
             <Button variant="primary-invert">Action</Button>
           </Table.Column>

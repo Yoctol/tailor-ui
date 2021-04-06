@@ -13,13 +13,19 @@ const useMeasure = (targetRef: Ref<any> = null) => {
     top: 0,
     width: 0,
     height: 0,
+    offsetWidth: 0,
+    offsetHeight: 0,
   });
 
   const [ro] = useState(
     () =>
-      new ResizeObserver(([entry]: ResizeObserverEntry[]) =>
-        set(entry.contentRect)
-      )
+      new ResizeObserver(([entry]: ResizeObserverEntry[]) => {
+        set({
+          ...entry.contentRect,
+          offsetWidth: entry.target.clientWidth,
+          offsetHeight: entry.target.clientWidth,
+        });
+      })
   );
 
   useEffect(() => {

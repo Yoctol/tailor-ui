@@ -1,6 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Container should render correctly 1`] = `
+.c3 {
+  box-sizing: border-box;
+  padding-top: 24px;
+  padding-left: 32px;
+  padding-right: 32px;
+}
+
+.c6 {
+  box-sizing: border-box;
+  padding-left: 32px;
+  padding-right: 32px;
+  padding-bottom: 32px;
+}
+
 .c1 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -9,7 +23,7 @@ exports[`Container should render correctly 1`] = `
   box-sizing: border-box;
 }
 
-.c3 {
+.c4 {
   font-size: 1.125rem;
   margin: 0;
   color: #283040;
@@ -18,15 +32,16 @@ exports[`Container should render correctly 1`] = `
   margin-bottom: 8px;
 }
 
-.c7 {
+.c9 {
   font-size: 1rem;
   margin: 0;
   color: #283040;
   font-weight: bold;
   line-height: 1.5;
+  margin-bottom: 8px;
 }
 
-.c4 {
+.c5 {
   background-color: #c4cfdd;
   display: block;
   width: 100%;
@@ -47,7 +62,7 @@ exports[`Container should render correctly 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 24px 32px 32px;
+  overflow: hidden;
   border-radius: 1rem;
   background-color: #ffffff;
   box-shadow: 0 2px 4px 0 #C4CFDD;
@@ -55,22 +70,27 @@ exports[`Container should render correctly 1`] = `
   font-size: 1rem;
 }
 
+.c2 .sc-12ad6r6-4 {
+  width: 100%;
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+  border-radius: 0;
+  border-color: #c4cfdd;
+  box-shadow: none;
+}
+
 .c0 + .c0 {
   margin-top: 16px;
 }
 
-.c6 {
+.c8 {
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
 }
 
-.c5 + .c5 {
+.c7 + .c7 {
   margin-top: 32px;
-}
-
-.c8 {
-  margin-bottom: 12px;
 }
 
 <div>
@@ -78,73 +98,89 @@ exports[`Container should render correctly 1`] = `
     <div
       class="c0 c1 c2"
     >
-      <h4
+      <div
         class="c3"
       >
-        Title A
-      </h4>
-      <div
-        class="c4"
-        color="gray400"
-        font-size="sm"
-        font-weight="500"
-        type="horizontal"
-      />
-      <div
-        class="c5 c1 c6"
-      >
-        <h5
-          class="c7 c8"
+        <h4
+          class="c4"
         >
-          Subtitle #1
-        </h5>
-        Subtitles are text derived from either a transcript or screenplay of the dialog or commentary in films.
+          Title A
+        </h4>
+        <div
+          class="c5"
+          color="gray400"
+          font-size="sm"
+          font-weight="500"
+          type="horizontal"
+        />
       </div>
       <div
-        class="c5 c1 c6"
+        class="c6"
       >
-        <h5
-          class="c7 c8"
+        <div
+          class="c7 c1 c8"
         >
-          Subtitle #2
-        </h5>
-        Subtitles are text derived from either a transcript or screenplay of the dialog or commentary in films.
+          <h5
+            class="c9"
+          >
+            Subtitle #1
+          </h5>
+          Subtitles are text derived from either a transcript or screenplay of the dialog or commentary in films.
+        </div>
+        <div
+          class="c7 c1 c8"
+        >
+          <h5
+            class="c9"
+          >
+            Subtitle #2
+          </h5>
+          Subtitles are text derived from either a transcript or screenplay of the dialog or commentary in films.
+        </div>
       </div>
     </div>
     <div
       class="c0 c1 c2"
     >
-      <h4
+      <div
         class="c3"
       >
-        Title B
-      </h4>
-      <div
-        class="c4"
-        color="gray400"
-        font-size="sm"
-        font-weight="500"
-        type="horizontal"
-      />
-      <div
-        class="c5 c1 c6"
-      >
-        <h5
-          class="c7 c8"
+        <h4
+          class="c4"
         >
-          Subtitle #1
-        </h5>
-        Subtitles are text derived from either a transcript or screenplay of the dialog or commentary in films.
+          Title B
+        </h4>
+        <div
+          class="c5"
+          color="gray400"
+          font-size="sm"
+          font-weight="500"
+          type="horizontal"
+        />
       </div>
       <div
-        class="c5 c1 c6"
+        class="c6"
       >
-        <h5
-          class="c7 c8"
+        <div
+          class="c7 c1 c8"
         >
-          Subtitle #2
-        </h5>
-        Subtitles are text derived from either a transcript or screenplay of the dialog or commentary in films.
+          <h5
+            class="c9"
+          >
+            Subtitle #1
+          </h5>
+          Subtitles are text derived from either a transcript or screenplay of the dialog or commentary in films.
+        </div>
+        <div
+          class="c7 c1 c8"
+        >
+          <h5
+            class="c9"
+          >
+            Subtitle #2
+          </h5>
+          Subtitles are text derived from either a transcript or screenplay of the dialog or commentary in films.
+        </div>
       </div>
     </div>
   </div>

@@ -43,6 +43,42 @@ import { Container, Box } from 'tailor-ui';
 </Box>
 ```
 
+
+### With Table
+
+```jsx live
+<Box p="24px" bg="surface2">
+  <Container>
+    <Heading.H4>Text Here</Heading.H4>
+
+    <Table>
+      <Table.Head>
+        <Table.HeadColumn>Name</Table.HeadColumn>
+        <Table.HeadColumn>Platform</Table.HeadColumn>
+        <Table.HeadColumn>People</Table.HeadColumn>
+        <Table.HeadColumn>Ammount</Table.HeadColumn>
+        <Table.HeadColumn>Action</Table.HeadColumn>
+      </Table.Head>
+      <Table.Body>
+        {range(1, 4).map(value => (
+          <Table.Row key={value}>
+            <Table.Column>Name {value}</Table.Column>
+            <Table.Column>Platform {value}</Table.Column>
+            <Table.Column>10,000</Table.Column>
+            <Table.Column>NTD 1,000</Table.Column>
+            <Table.Column>
+              <Button variant="primary-invert">Action</Button>
+            </Table.Column>
+          </Table.Row>
+        ))}
+      </Table.Body>
+    </Table>
+
+    <Button variant="regular">+ Button</Button>
+  </Container>
+</Box>
+```
+
 ## API
 
 ### Container
