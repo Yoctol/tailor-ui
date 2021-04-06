@@ -1,3 +1,17 @@
+# [1.7.0](https://github.com/yoctol/tailor-ui/compare/v1.6.3...v1.7.0) (2021-04-06)
+
+
+### Bug Fixes
+
+* **select:** IME bugs & add missing no options message ([b50436a](https://github.com/yoctol/tailor-ui/commit/b50436a1eda87578e48464ec02fb86e96f487729))
+
+
+### Features
+
+* **modal:** support customized header ([ee35aea](https://github.com/yoctol/tailor-ui/commit/ee35aea477fff32158dd07a5182e937372bcf20e))
+* **table:** implement scrollable fixed table & usage with Container ([9814fe7](https://github.com/yoctol/tailor-ui/commit/9814fe74ee43e705e847c167bb71c1d0e7fb4f77))
+* bump deps & react-spring to v9 ([e097709](https://github.com/yoctol/tailor-ui/commit/e097709f8bf3cc5e31d1681015a4de2a24d80b00))
+
 ## [1.6.3](https://github.com/yoctol/tailor-ui/compare/v1.6.2...v1.6.3) (2021-03-16)
 
 
