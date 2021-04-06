@@ -45,6 +45,7 @@ export const ModalContent = styled.div<{ size: ModalSize }>`
   max-width: 90vw;
   min-height: 220px;
   max-height: 75vh;
+  overflow: hidden;
   border-radius: ${(p) => p.theme.radii.xl};
   background-color: #fff;
 
@@ -56,6 +57,9 @@ export const ModalContent = styled.div<{ size: ModalSize }>`
 `;
 
 export const CloseButtonWrapper = styled.div`
+  position: absolute;
+  top: 24px;
+  right: 32px;
   background: transparent;
   transform: rotate(0deg);
   transition: all 0.2s ease-in;

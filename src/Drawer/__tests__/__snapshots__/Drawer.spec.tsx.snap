@@ -168,6 +168,9 @@ exports[`Drawer should render correctly 1`] = `
 }
 
 .c5 {
+  position: absolute;
+  top: 24px;
+  right: 32px;
   background: transparent;
   -webkit-transform: rotate(0deg);
   -ms-transform: rotate(0deg);

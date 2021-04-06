@@ -72,7 +72,8 @@ const ModalFooter: FC<ModalFooterProps> = ({
     <Flex
       flex="none"
       alignItems="center"
-      px="4"
+      px="3"
+      mx="3"
       py="3"
       borderTop="base"
       borderColor="gray300"

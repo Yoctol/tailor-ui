@@ -1,5 +1,5 @@
 import React, { FC, ReactNode, useMemo } from 'react';
-import { animated, config, to, useTransition } from 'react-spring';
+import { animated, to, useTransition } from 'react-spring';
 
 import CloseButton from '../Modal/CloseButton';
 import { Backdrop } from '../Backdrop';
@@ -97,10 +97,6 @@ const Drawer: FC<DrawerProps> = ({
     leave: {
       offset: transformBreadth,
     },
-    config: {
-      ...config.default,
-      precision: 0.1,
-    },
   });
 
   useKeydown({
@@ -118,9 +114,10 @@ const Drawer: FC<DrawerProps> = ({
             <Portal defaultOrder={StackingOrder.OVERLAY}>
               <animated.div
                 style={{
-                  transform:
-                    style.offset &&
-                    to(style.offset, (offset) => `${transformAxis}(${offset})`),
+                  transform: to(
+                    style.offset,
+                    (offset) => `${transformAxis}(${offset})`
+                  ),
                 }}
               >
                 <DrawerWrapper
