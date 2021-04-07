@@ -2,8 +2,14 @@ import React, {
   ComponentPropsWithoutRef,
   ReactNode,
   forwardRef,
+  useCallback,
+  useEffect,
+  useRef,
   useState,
 } from 'react';
+import { useForkedRef } from '@reach/utils';
+
+import { useMeasure } from '../hooks';
 
 import Column from './Column';
 import HeadColumn from './HeadColumn';
@@ -40,12 +46,31 @@ export type TableProps = ComponentPropsWithoutRef<'table'> &
 
 const Table = forwardRef<HTMLDivElement, TableProps>(function Table(
   { header, footer, width = '100%', textAlign = 'center', children, ...props },
-  ref
+  forwardedRef
 ) {
+  const ownRef = useRef<HTMLDivElement>(null);
+  const forkedRef = useForkedRef(forwardedRef, ownRef);
+  const [{ ref }, bounds] = useMeasure(forkedRef);
+
   const [scrollShadow, setScrollShadow] = useState({
     start: false,
-    end: true,
+    end: false,
   });
+
+  const handleUpdateScrollShadow = useCallback((target: HTMLDivElement) => {
+    const { scrollLeft, scrollWidth, offsetWidth } = target;
+
+    setScrollShadow({
+      start: scrollLeft > 0,
+      end: scrollLeft + offsetWidth < scrollWidth,
+    });
+  }, []);
+
+  useEffect(() => {
+    if (ownRef.current) {
+      handleUpdateScrollShadow(ownRef.current);
+    }
+  }, [bounds.offsetWidth, handleUpdateScrollShadow]);
 
   const optionsProps = {
     hasHeader: Boolean(header),
@@ -61,14 +86,7 @@ const Table = forwardRef<HTMLDivElement, TableProps>(function Table(
         ref={ref}
         width={width as string}
         textAlign={textAlign}
-        onScroll={(event) => {
-          const { scrollLeft, scrollWidth, offsetWidth } = event.currentTarget;
-
-          setScrollShadow({
-            start: scrollLeft > 0,
-            end: scrollLeft + offsetWidth < scrollWidth,
-          });
-        }}
+        onScroll={(event) => handleUpdateScrollShadow(event.currentTarget)}
         {...optionsProps}
         {...props}
       >

@@ -96,48 +96,48 @@ import { Table } from 'tailor-ui';
     <Table>
       <Table.Head>
         <Table.HeadColumn fixed="left">
-          <Box width="100px">
-            Column
+          <Box width="120px">
+            Fixed Column 1
           </Box>
         </Table.HeadColumn>
         <Table.HeadColumn fixed="left">
-          <Box width="100px">
-            Column
+          <Box width="120px">
+            Fixed Column 2
           </Box>
         </Table.HeadColumn>
         <Table.HeadColumn>
           <Box width="160px">
-            Scrollable Column
+            Scrollable Column 1
           </Box>
         </Table.HeadColumn>
         <Table.HeadColumn>
           <Box width="160px">
-            Scrollable Column
+            Scrollable Column 2
           </Box>
         </Table.HeadColumn>
         <Table.HeadColumn>
           <Box width="160px">
-            Scrollable Column
+            Scrollable Column 3
           </Box>
         </Table.HeadColumn>
         <Table.HeadColumn>
           <Box width="160px">
-            Scrollable Column
+            Scrollable Column 4
           </Box>
         </Table.HeadColumn>
         <Table.HeadColumn>
           <Box width="160px">
-            Scrollable Column
+            Scrollable Column 5
           </Box>
         </Table.HeadColumn>
         <Table.HeadColumn>
           <Box width="160px">
-            Scrollable Column
+            Scrollable Column 6
           </Box>
         </Table.HeadColumn>
         <Table.HeadColumn fixed="right">
-          <Box width="100px">
-            Column
+          <Box width="120px">
+            Fixed Column 3
           </Box>
         </Table.HeadColumn>
       </Table.Head>
