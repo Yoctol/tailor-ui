@@ -1,18 +1,31 @@
-import React, { ReactNode, forwardRef, useMemo, useRef } from 'react';
+import React, {
+  ComponentPropsWithoutRef,
+  ReactNode,
+  forwardRef,
+  useMemo,
+  useRef,
+} from 'react';
+import { WidthProps } from 'styled-system';
 import { useForkedRef } from '@reach/utils';
 
 import { StyledColumn } from './styles';
 import { useFixedColumnContext } from './FixedColumnContext';
 
-const Column = forwardRef<HTMLTableDataCellElement, { children: ReactNode }>(
-  function Column({ children, ...props }, forwardedRef) {
+export type ColumnProps = ComponentPropsWithoutRef<'td'> &
+  WidthProps & {
+    children?: ReactNode;
+  };
+
+const Column = forwardRef<HTMLTableDataCellElement, ColumnProps>(
+  function Column({ children, style = {}, ...props }, forwardedRef) {
     const ownRef = useRef<HTMLTableDataCellElement>(null);
     const ref = useForkedRef(forwardedRef, ownRef);
 
     const { getColumnFixedInfo } = useFixedColumnContext();
     const fixedInfo = useMemo(
-      () => getColumnFixedInfo(ownRef.current?.cellIndex ?? -1),
-      [getColumnFixedInfo]
+      () =>
+        getColumnFixedInfo({ index: ownRef.current?.cellIndex ?? -1, style }),
+      [getColumnFixedInfo, style]
     );
 
     return (

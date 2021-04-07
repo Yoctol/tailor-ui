@@ -13,6 +13,7 @@ import { CSSProperties } from 'styled-components';
 interface FixedColumn {
   width: number;
   fixed?: 'left' | 'right';
+  colSpan?: number;
 }
 
 interface Column extends FixedColumn {
@@ -21,9 +22,10 @@ interface Column extends FixedColumn {
 
 const FixedColumnContext = createContext<{
   setColumn: (column: Column) => void;
-  getColumnFixedInfo: (
-    index: number
-  ) => {
+  getColumnFixedInfo: (payload: {
+    index: number;
+    style?: CSSProperties;
+  }) => {
     style?: CSSProperties;
     fixed?: boolean;
     showScrollShadowStart?: boolean;
@@ -42,10 +44,14 @@ const useFixedHeadColumn = ({
   index,
   width,
   fixed,
+  style,
+  colSpan,
 }: {
   index: number;
   width: number;
   fixed?: 'left' | 'right';
+  style?: CSSProperties;
+  colSpan?: number;
 }) => {
   const { setColumn, getColumnFixedInfo } = useFixedColumnContext();
 
@@ -54,10 +60,15 @@ const useFixedHeadColumn = ({
       index,
       width,
       fixed,
+      colSpan,
     });
-  }, [index, width, fixed, setColumn]);
+  }, [index, width, fixed, colSpan, setColumn]);
 
-  return useMemo(() => getColumnFixedInfo(index), [getColumnFixedInfo, index]);
+  return useMemo(() => getColumnFixedInfo({ index, style }), [
+    getColumnFixedInfo,
+    index,
+    style,
+  ]);
 };
 
 interface FixedColumnContextProviderProps {
@@ -132,11 +143,13 @@ const FixedColumnContextProvider = memo<FixedColumnContextProviderProps>(
     }, [fixedColumns]);
 
     const getColumnFixedInfo = useCallback(
-      (index: number) => {
+      ({ index, style }: { index: number; style?: CSSProperties }) => {
         const targetColumn = fixedColumnsInfo[index];
 
         if (!targetColumn) {
-          return {};
+          return {
+            style,
+          };
         }
 
         if ('isLastFixedLeft' in targetColumn && targetColumn.isLastFixedLeft) {
@@ -144,7 +157,10 @@ const FixedColumnContextProvider = memo<FixedColumnContextProviderProps>(
             fixed: true,
             isLastFixedLeft: targetColumn.isLastFixedLeft,
             showScrollShadowStart: scrollShadowStart,
-            style: targetColumn.style,
+            style: {
+              ...style,
+              ...targetColumn.style,
+            },
           };
         }
 
@@ -156,13 +172,19 @@ const FixedColumnContextProvider = memo<FixedColumnContextProviderProps>(
             fixed: true,
             isFirstFixedRight: targetColumn.isFirstFixedRight,
             showScrollShadowEnd: scrollShadowEnd,
-            style: targetColumn.style,
+            style: {
+              ...style,
+              ...targetColumn.style,
+            },
           };
         }
 
         return {
           fixed: typeof targetColumn.fixed === 'string',
-          style: targetColumn.style,
+          style: {
+            ...style,
+            ...targetColumn.style,
+          },
         };
       },
       [fixedColumnsInfo, scrollShadowStart, scrollShadowEnd]
