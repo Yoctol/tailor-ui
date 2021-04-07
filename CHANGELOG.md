@@ -1,3 +1,10 @@
+## [1.7.2](https://github.com/yoctol/tailor-ui/compare/v1.7.1...v1.7.2) (2021-04-07)
+
+
+### Bug Fixes
+
+* **table:** add width 100% to table ([f9b8dde](https://github.com/yoctol/tailor-ui/commit/f9b8ddee8467f26e1cb184c064e38a5986046d3c))
+
 ## [1.7.1](https://github.com/yoctol/tailor-ui/compare/v1.7.0...v1.7.1) (2021-04-07)
 
 
