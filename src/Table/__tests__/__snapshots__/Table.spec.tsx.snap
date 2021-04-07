@@ -55,6 +55,7 @@ exports[`Table should render table correctly 1`] = `
 
 .c1 {
   display: table;
+  width: 100%;
   margin-bottom: 1px;
   overflow: auto;
   border-spacing: 0;
@@ -272,6 +273,7 @@ exports[`Table should render table correctly with header and footer 1`] = `
 
 .c3 {
   display: table;
+  width: 100%;
   margin-bottom: 1px;
   overflow: auto;
   border-spacing: 0;

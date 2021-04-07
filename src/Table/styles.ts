@@ -86,6 +86,7 @@ export const Row = styled.tr`
 
 export const StyledTable = styled.table`
   display: table;
+  width: 100%;
   margin-bottom: 1px;
   overflow: auto;
   border-spacing: 0;
