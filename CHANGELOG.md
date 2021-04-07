@@ -1,3 +1,10 @@
+## [1.7.3](https://github.com/yoctol/tailor-ui/compare/v1.7.2...v1.7.3) (2021-04-07)
+
+
+### Bug Fixes
+
+* **table:** watch table width resize to update scroll shadow ([d506286](https://github.com/yoctol/tailor-ui/commit/d50628698c5f5c30be181e9124278e7e265ae606))
+
 ## [1.7.2](https://github.com/yoctol/tailor-ui/compare/v1.7.1...v1.7.2) (2021-04-07)
 
 
