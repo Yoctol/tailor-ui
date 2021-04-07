@@ -1,3 +1,10 @@
+## [1.7.1](https://github.com/yoctol/tailor-ui/compare/v1.7.0...v1.7.1) (2021-04-07)
+
+
+### Bug Fixes
+
+* **table:** column types ([c8c0a8c](https://github.com/yoctol/tailor-ui/commit/c8c0a8c1e9f47612c9fd425ba55bde0d182a209c))
+
 # [1.7.0](https://github.com/yoctol/tailor-ui/compare/v1.6.3...v1.7.0) (2021-04-06)
 
 
