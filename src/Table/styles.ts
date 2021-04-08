@@ -107,6 +107,7 @@ export type StyledTableWrapperProps = TextAlignProps &
   };
 
 export const StyledTableWrapper = styled.div<StyledTableWrapperProps>`
+  position: relative;
   flex: none;
   overflow: auto;
   border-radius: ${(p) => p.theme.radii.xl};
