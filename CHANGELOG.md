@@ -1,3 +1,11 @@
+## [1.7.4](https://github.com/yoctol/tailor-ui/compare/v1.7.3...v1.7.4) (2021-04-08)
+
+
+### Bug Fixes
+
+* **message:** prevent dom not match between SSR and CSR ([850895b](https://github.com/yoctol/tailor-ui/commit/850895bc6dd50a82e635f4a8d9ee1872bdf016dc))
+* **table:** add position relative to wrapper prevent parent scrollable ([9709f5e](https://github.com/yoctol/tailor-ui/commit/9709f5e1f9e8a28ba28d13e70ed532697c707506))
+
 ## [1.7.3](https://github.com/yoctol/tailor-ui/compare/v1.7.2...v1.7.3) (2021-04-07)
 
 
