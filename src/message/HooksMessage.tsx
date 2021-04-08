@@ -76,10 +76,15 @@ interface HooksMessageProps {
 }
 
 const HooksMessage: FC<HooksMessageProps> = ({ setTrigger }) => {
+  const [mounted, setMounted] = useState(false);
   const refMap = useRef(new WeakMap());
   const cancelMap = useRef(new WeakMap());
   const [messages, setMessages] = useState<Message[]>([]);
   const getUid = useUID();
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const trigger = useCallback(
     ({ content, duration }: MessageOptions, type: StatusType) => {
@@ -136,6 +141,10 @@ const HooksMessage: FC<HooksMessageProps> = ({ setTrigger }) => {
     },
     config,
   });
+
+  if (!mounted) {
+    return null;
+  }
 
   return (
     <Portal defaultOrder={StackingOrder.MESSAGE}>
