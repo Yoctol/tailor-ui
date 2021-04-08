@@ -70,6 +70,7 @@ exports[`Table should render table correctly 1`] = `
 }
 
 .c0 {
+  position: relative;
   -webkit-flex: none;
   -ms-flex: none;
   flex: none;
@@ -288,6 +289,7 @@ exports[`Table should render table correctly with header and footer 1`] = `
 }
 
 .c2 {
+  position: relative;
   -webkit-flex: none;
   -ms-flex: none;
   flex: none;
