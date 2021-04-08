@@ -103,7 +103,7 @@ describe('FormField', () => {
 
       userEvent.click(screen.getByText('Show Error'));
 
-      const message = screen.getByText('Error Message');
+      const message = await screen.findByText('Error Message');
       expect(message).toBeInTheDocument();
     });
   });

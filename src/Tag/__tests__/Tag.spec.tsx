@@ -1,7 +1,7 @@
 import React from 'react';
 import userEvent from '@testing-library/user-event';
 
-import { render, screen } from 'test/test-utils';
+import { render, screen, waitFor } from 'test/test-utils';
 
 import { Tag } from '../Tag';
 
@@ -66,7 +66,7 @@ describe('Tag', () => {
 
     userEvent.click(closeIcon as HTMLElement);
 
-    expect(onClosed).toBeCalled();
+    await waitFor(() => expect(onClosed).toBeCalled());
   });
 
   it('should call canClose when close icon is clicked and still visible', () => {

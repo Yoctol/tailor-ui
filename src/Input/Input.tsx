@@ -10,7 +10,7 @@ import React, {
   useLayoutEffect,
   useRef,
 } from 'react';
-import { useForkedRef } from '@reach/utils';
+import { useComposedRefs } from '@reach/utils/compose-refs';
 
 import { mergeEventProps } from '../utils';
 import { useFormField } from '../FormField';
@@ -42,7 +42,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
   forwardedRef
 ) {
   const ownRef = useRef<HTMLInputElement>(null);
-  const ref = useForkedRef(forwardedRef, ownRef);
+  const ref = useComposedRefs(forwardedRef, ownRef);
   const [invalid, labelId, setValue] = useFormField({
     id,
     value: props.value,

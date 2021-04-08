@@ -1,7 +1,7 @@
 import React from 'react';
 import userEvent from '@testing-library/user-event';
 
-import { render, screen } from 'test/test-utils';
+import { render, screen, waitFor } from 'test/test-utils';
 
 import { Alert } from '../Alert';
 
@@ -53,6 +53,6 @@ describe('Alert', () => {
     const [, closeIcon] = Array.from(container.querySelectorAll('i'));
     userEvent.click(closeIcon);
 
-    expect(onClosed).toBeCalled();
+    await waitFor(() => expect(onClosed).toBeCalled());
   });
 });

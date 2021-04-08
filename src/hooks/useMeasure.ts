@@ -1,12 +1,12 @@
 import ResizeObserver from 'resize-observer-polyfill';
 import { Ref, useEffect, useRef, useState } from 'react';
-import { useForkedRef } from '@reach/utils';
+import { useComposedRefs } from '@reach/utils/compose-refs';
 
 import { tuplify } from '../utils';
 
 const useMeasure = (targetRef: Ref<any> = null) => {
   const measureRef = useRef<any>(null);
-  const ref = useForkedRef(measureRef, targetRef);
+  const ref = useComposedRefs(measureRef, targetRef);
 
   const [bounds, set] = useState({
     left: 0,
@@ -21,9 +21,12 @@ const useMeasure = (targetRef: Ref<any> = null) => {
     () =>
       new ResizeObserver(([entry]: ResizeObserverEntry[]) => {
         set({
-          ...entry.contentRect,
+          left: entry.contentRect.left,
+          top: entry.contentRect.top,
+          width: entry.contentRect.width,
+          height: entry.contentRect.height,
           offsetWidth: entry.target.clientWidth,
-          offsetHeight: entry.target.clientWidth,
+          offsetHeight: entry.target.clientHeight,
         });
       })
   );

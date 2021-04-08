@@ -5,7 +5,7 @@ import React, {
   useRef,
 } from 'react';
 import { WidthProps } from 'styled-system';
-import { useForkedRef } from '@reach/utils';
+import { useComposedRefs } from '@reach/utils/compose-refs';
 
 import { useMeasure } from '../hooks';
 
@@ -24,7 +24,7 @@ const HeadColumn = forwardRef<HTMLTableHeaderCellElement, HeadColumnProps>(
     forwardedRef
   ) {
     const ownRef = useRef<HTMLTableHeaderCellElement>(null);
-    const forkedRef = useForkedRef(forwardedRef, ownRef);
+    const forkedRef = useComposedRefs(forwardedRef, ownRef);
     const [{ ref }, { offsetWidth }] = useMeasure(forkedRef);
 
     const fixedInfo = useFixedHeadColumn({
