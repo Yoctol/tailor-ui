@@ -4,12 +4,7 @@ const path = require('path');
 module.exports = {
   root: true,
   parser: '@typescript-eslint/parser',
-  extends: [
-    'yoctol',
-    'plugin:@typescript-eslint/recommended',
-    'prettier',
-    'prettier/@typescript-eslint',
-  ],
+  extends: ['yoctol', 'plugin:@typescript-eslint/recommended', 'prettier'],
   plugins: ['@typescript-eslint'],
   parserOptions: {
     ecmaFeatures: {

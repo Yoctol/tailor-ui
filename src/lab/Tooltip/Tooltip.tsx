@@ -1,11 +1,11 @@
-import React, { Children, ReactNode, cloneElement } from 'react';
+import React, { Children, ReactNode, cloneElement, forwardRef } from 'react';
 import {
   TooltipProps as DefaultTooltipProps,
   TooltipPopup,
   useTooltip,
 } from '@reach/tooltip';
 import { animated, useTransition } from 'react-spring';
-import { forwardRefWithAs } from '@reach/utils';
+import type * as Polymorphic from '@reach/utils/polymorphic';
 
 import { Stack } from '../../Stack';
 
@@ -18,7 +18,7 @@ interface TooltipProps
   content: ReactNode;
 }
 
-const Tooltip = forwardRefWithAs<TooltipProps, 'div'>(
+const Tooltip = forwardRef(
   ({ children, id, DEBUG_STYLE, content, ...props }, forwardedRef) => {
     const child = Children.only(children) as any;
 
@@ -83,6 +83,6 @@ const Tooltip = forwardRefWithAs<TooltipProps, 'div'>(
       </Stack>
     );
   }
-);
+) as Polymorphic.ForwardRefComponent<'div', TooltipProps>;
 
 export { Tooltip };

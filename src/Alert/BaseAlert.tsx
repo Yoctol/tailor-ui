@@ -40,7 +40,7 @@ const BaseAlert = forwardRef<HTMLDivElement, BaseAlertProps>(function BaseAlert(
   ref
 ) {
   return (
-    <StyledAlert type={type} ref={ref} {...omit(['onClosed'], props)}>
+    <StyledAlert ref={ref} type={type} {...omit(['onClosed'], props)}>
       <Flex flex="none">
         <Icon size="20" type={type} mr="2" fill={type} />
       </Flex>

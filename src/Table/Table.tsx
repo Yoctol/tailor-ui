@@ -7,7 +7,7 @@ import React, {
   useRef,
   useState,
 } from 'react';
-import { useForkedRef } from '@reach/utils';
+import { useComposedRefs } from '@reach/utils/compose-refs';
 
 import { useMeasure } from '../hooks';
 
@@ -49,7 +49,7 @@ const Table = forwardRef<HTMLDivElement, TableProps>(function Table(
   forwardedRef
 ) {
   const ownRef = useRef<HTMLDivElement>(null);
-  const forkedRef = useForkedRef(forwardedRef, ownRef);
+  const forkedRef = useComposedRefs(forwardedRef, ownRef);
   const [{ ref }, bounds] = useMeasure(forkedRef);
 
   const [scrollShadow, setScrollShadow] = useState({

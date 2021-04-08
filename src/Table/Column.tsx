@@ -6,7 +6,7 @@ import React, {
   useRef,
 } from 'react';
 import { WidthProps } from 'styled-system';
-import { useForkedRef } from '@reach/utils';
+import { useComposedRefs } from '@reach/utils/compose-refs';
 
 import { StyledColumn } from './styles';
 import { useFixedColumnContext } from './FixedColumnContext';
@@ -19,7 +19,7 @@ export type ColumnProps = ComponentPropsWithoutRef<'td'> &
 const Column = forwardRef<HTMLTableDataCellElement, ColumnProps>(
   function Column({ children, style = {}, ...props }, forwardedRef) {
     const ownRef = useRef<HTMLTableDataCellElement>(null);
-    const ref = useForkedRef(forwardedRef, ownRef);
+    const ref = useComposedRefs(forwardedRef, ownRef);
 
     const { getColumnFixedInfo } = useFixedColumnContext();
     const fixedInfo = useMemo(
