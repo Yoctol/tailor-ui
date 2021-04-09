@@ -86,6 +86,7 @@ export const Row = styled.tr`
 
 export const StyledTable = styled.table`
   display: table;
+  position: relative;
   width: 100%;
   margin-bottom: 1px;
   overflow: auto;
@@ -107,7 +108,6 @@ export type StyledTableWrapperProps = TextAlignProps &
   };
 
 export const StyledTableWrapper = styled.div<StyledTableWrapperProps>`
-  position: relative;
   flex: none;
   overflow: auto;
   border-radius: ${(p) => p.theme.radii.xl};
