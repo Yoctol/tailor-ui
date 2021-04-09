@@ -25,6 +25,7 @@ export * from './Mention';
 export * from './Menu';
 export * from './message';
 export * from './Modal';
+export * from './notification';
 export * from './PageHeader';
 export * from './Popconfirm';
 export * from './Popover';

@@ -201,7 +201,7 @@ exports[`Drawer should render correctly 1`] = `
   box-shadow: -2px 0 8px rgba(0,0,0,0.15);
 }
 
-.c10 {
+.c11 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -209,6 +209,19 @@ exports[`Drawer should render correctly 1`] = `
   position: fixed;
   right: 10px;
   bottom: 10px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: fixed;
+  top: 72px;
+  right: 10px;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -288,10 +301,17 @@ exports[`Drawer should render correctly 1`] = `
       </div>
     </div>
     <div
-      style="position: fixed; top: 0px; left: 0px; z-index: 30;"
+      style="position: fixed; top: 0px; left: 0px; z-index: 35;"
     >
       <div
         class="c10"
+      />
+    </div>
+    <div
+      style="position: fixed; top: 0px; left: 0px; z-index: 30;"
+    >
+      <div
+        class="c11"
       />
     </div>
   </div>
@@ -418,6 +438,26 @@ exports[`Drawer should render correctly with props closable 1`] = `
           </div>
         </div>
       </div>
+    </div>
+    .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: fixed;
+  top: 72px;
+  right: 10px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+<div
+      style="position: fixed; top: 0px; left: 0px; z-index: 35;"
+    >
+      <div
+        class="c0"
+      />
     </div>
     .c0 {
   display: -webkit-box;
@@ -673,6 +713,26 @@ exports[`Drawer should render custom footer correctly 1`] = `
           </div>
         </div>
       </div>
+    </div>
+    .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: fixed;
+  top: 72px;
+  right: 10px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+<div
+      style="position: fixed; top: 0px; left: 0px; z-index: 35;"
+    >
+      <div
+        class="c0"
+      />
     </div>
     .c0 {
   display: -webkit-box;

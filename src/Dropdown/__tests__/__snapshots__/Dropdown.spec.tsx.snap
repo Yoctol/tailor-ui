@@ -65,7 +65,7 @@ exports[`Dropdown should render correctly 1`] = `
   fill: #97a4ba !important;
 }
 
-.c4 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -73,6 +73,19 @@ exports[`Dropdown should render correctly 1`] = `
   position: fixed;
   right: 10px;
   bottom: 10px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: fixed;
+  top: 72px;
+  right: 10px;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -116,10 +129,17 @@ exports[`Dropdown should render correctly 1`] = `
       </div>
     </div>
     <div
-      style="position: fixed; top: 0px; left: 0px; z-index: 30;"
+      style="position: fixed; top: 0px; left: 0px; z-index: 35;"
     >
       <div
         class="c4"
+      />
+    </div>
+    <div
+      style="position: fixed; top: 0px; left: 0px; z-index: 30;"
+    >
+      <div
+        class="c5"
       />
     </div>
   </div>

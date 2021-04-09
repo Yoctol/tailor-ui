@@ -1,4 +1,12 @@
-import React, { FC, useCallback, useEffect, useRef, useState } from 'react';
+import React, {
+  FC,
+  MutableRefObject,
+  ReactNode,
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+} from 'react';
 import styled from 'styled-components';
 import { MdClose } from 'react-icons/md';
 import { animated, useTransition } from 'react-spring';
@@ -55,14 +63,14 @@ const config = { tension: 125, friction: 20, precision: 0.1 };
 
 interface Message {
   key: string;
-  icon: JSX.Element;
-  content: string;
+  icon: ReactNode;
+  content: ReactNode;
   duration: number;
   resolve: (value: boolean) => void;
 }
 
 export interface MessageOptions {
-  content: string;
+  content: ReactNode;
   duration: number;
 }
 
@@ -72,10 +80,10 @@ export type Trigger = (
 ) => Promise<boolean>;
 
 interface HooksMessageProps {
-  setTrigger: (trigger: Trigger) => void;
+  triggerRef: MutableRefObject<Trigger>;
 }
 
-const HooksMessage: FC<HooksMessageProps> = ({ setTrigger }) => {
+const HooksMessage: FC<HooksMessageProps> = ({ triggerRef }) => {
   const [mounted, setMounted] = useState(false);
   const refMap = useRef(new WeakMap());
   const cancelMap = useRef(new WeakMap());
@@ -107,8 +115,9 @@ const HooksMessage: FC<HooksMessageProps> = ({ setTrigger }) => {
   );
 
   useEffect(() => {
-    setTrigger(trigger);
-  }, [trigger, setTrigger]);
+    // eslint-disable-next-line no-param-reassign
+    triggerRef.current = trigger;
+  }, [trigger, triggerRef]);
 
   const transition = useTransition(messages, {
     keys: (message) => message.key,

@@ -201,7 +201,7 @@ exports[`Modal should render correctly 1`] = `
   background-color: #fff;
 }
 
-.c10 {
+.c11 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -209,6 +209,19 @@ exports[`Modal should render correctly 1`] = `
   position: fixed;
   right: 10px;
   bottom: 10px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: fixed;
+  top: 72px;
+  right: 10px;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -277,10 +290,17 @@ exports[`Modal should render correctly 1`] = `
       </div>
     </div>
     <div
-      style="position: fixed; top: 0px; left: 0px; z-index: 30;"
+      style="position: fixed; top: 0px; left: 0px; z-index: 35;"
     >
       <div
         class="c10"
+      />
+    </div>
+    <div
+      style="position: fixed; top: 0px; left: 0px; z-index: 30;"
+    >
+      <div
+        class="c11"
       />
     </div>
   </div>
@@ -552,6 +572,30 @@ exports[`Modal should render correctly with lg size 1`] = `
           </div>
         </div>
       </div>
+    </div>
+    .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: fixed;
+  top: 72px;
+  right: 10px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+@media screen and (max-width:36rem) {
+
+}
+
+<div
+      style="position: fixed; top: 0px; left: 0px; z-index: 35;"
+    >
+      <div
+        class="c0"
+      />
     </div>
     .c0 {
   display: -webkit-box;
@@ -894,6 +938,30 @@ exports[`Modal should render with customized footer 1`] = `
           </div>
         </div>
       </div>
+    </div>
+    .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: fixed;
+  top: 72px;
+  right: 10px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+@media screen and (max-width:36rem) {
+
+}
+
+<div
+      style="position: fixed; top: 0px; left: 0px; z-index: 35;"
+    >
+      <div
+        class="c0"
+      />
     </div>
     .c0 {
   display: -webkit-box;
@@ -1421,6 +1489,30 @@ exports[`Modal should render with customized header 1`] = `
           </div>
         </div>
       </div>
+    </div>
+    .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: fixed;
+  top: 72px;
+  right: 10px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+@media screen and (max-width:36rem) {
+
+}
+
+<div
+      style="position: fixed; top: 0px; left: 0px; z-index: 35;"
+    >
+      <div
+        class="c0"
+      />
     </div>
     .c0 {
   display: -webkit-box;
@@ -2023,6 +2115,30 @@ exports[`Modal should render with error status 1`] = `
   display: -ms-flexbox;
   display: flex;
   position: fixed;
+  top: 72px;
+  right: 10px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+@media screen and (max-width:36rem) {
+
+}
+
+<div
+      style="position: fixed; top: 0px; left: 0px; z-index: 35;"
+    >
+      <div
+        class="c0"
+      />
+    </div>
+    .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: fixed;
   right: 10px;
   bottom: 10px;
   -webkit-flex-direction: column;
@@ -2618,6 +2734,30 @@ exports[`Modal should render with info status 1`] = `
   display: -ms-flexbox;
   display: flex;
   position: fixed;
+  top: 72px;
+  right: 10px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+@media screen and (max-width:36rem) {
+
+}
+
+<div
+      style="position: fixed; top: 0px; left: 0px; z-index: 35;"
+    >
+      <div
+        class="c0"
+      />
+    </div>
+    .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: fixed;
   right: 10px;
   bottom: 10px;
   -webkit-flex-direction: column;
@@ -3150,6 +3290,30 @@ exports[`Modal should render with props closable 1`] = `
           </div>
         </div>
       </div>
+    </div>
+    .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: fixed;
+  top: 72px;
+  right: 10px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+@media screen and (max-width:36rem) {
+
+}
+
+<div
+      style="position: fixed; top: 0px; left: 0px; z-index: 35;"
+    >
+      <div
+        class="c0"
+      />
     </div>
     .c0 {
   display: -webkit-box;
@@ -3752,6 +3916,30 @@ exports[`Modal should render with success status 1`] = `
   display: -ms-flexbox;
   display: flex;
   position: fixed;
+  top: 72px;
+  right: 10px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+@media screen and (max-width:36rem) {
+
+}
+
+<div
+      style="position: fixed; top: 0px; left: 0px; z-index: 35;"
+    >
+      <div
+        class="c0"
+      />
+    </div>
+    .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: fixed;
   right: 10px;
   bottom: 10px;
   -webkit-flex-direction: column;
@@ -4340,6 +4528,30 @@ exports[`Modal should render with warning status 1`] = `
           </div>
         </div>
       </div>
+    </div>
+    .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: fixed;
+  top: 72px;
+  right: 10px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+@media screen and (max-width:36rem) {
+
+}
+
+<div
+      style="position: fixed; top: 0px; left: 0px; z-index: 35;"
+    >
+      <div
+        class="c0"
+      />
     </div>
     .c0 {
   display: -webkit-box;

@@ -6,6 +6,7 @@ import { ThemeProvider } from 'styled-components';
 import { GlobalStyle } from '../GlobalStyle';
 import { HooksMessageProvider } from '../message/HooksMessageProvider';
 import { HooksModalProvider } from '../Modal/HooksModalProvider';
+import { HooksNotificationProvider } from '../notification/HooksNotificationProvider';
 import { LocaleProvider } from '../locale/LocaleProvider';
 import { LocaleType, locales } from '../locale';
 import { ThemeType, theme as defaultTheme, fontStyle } from '../theme';
@@ -31,11 +32,13 @@ const UIProvider: FC<UIProviderProps> = ({
         <UIDProvider>
           <HooksModalProvider>
             <HooksMessageProvider>
-              <Helmet>
-                <style type="text/css">{fontStyle}</style>
-              </Helmet>
-              <GlobalStyle />
-              {children}
+              <HooksNotificationProvider>
+                <Helmet>
+                  <style type="text/css">{fontStyle}</style>
+                </Helmet>
+                <GlobalStyle />
+                {children}
+              </HooksNotificationProvider>
             </HooksMessageProvider>
           </HooksModalProvider>
         </UIDProvider>

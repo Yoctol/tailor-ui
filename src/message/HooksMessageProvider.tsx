@@ -1,10 +1,4 @@
-import React, {
-  FC,
-  MutableRefObject,
-  createContext,
-  useCallback,
-  useRef,
-} from 'react';
+import React, { FC, MutableRefObject, createContext, useRef } from 'react';
 
 import HooksMessage, { Trigger } from './HooksMessage';
 
@@ -17,14 +11,10 @@ HooksMessageContext.displayName = 'HooksMessageContext';
 const HooksMessageProvider: FC = ({ children }) => {
   const messageTriggerRef = useRef<Trigger>(() => Promise.resolve(false));
 
-  const setTrigger = useCallback((trigger) => {
-    messageTriggerRef.current = trigger;
-  }, []);
-
   return (
     <HooksMessageContext.Provider value={messageTriggerRef}>
       {children}
-      <HooksMessage setTrigger={setTrigger} />
+      <HooksMessage triggerRef={messageTriggerRef} />
     </HooksMessageContext.Provider>
   );
 };

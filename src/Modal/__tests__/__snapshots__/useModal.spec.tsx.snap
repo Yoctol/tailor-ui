@@ -1,12 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`useModal should render confirm modal correctly 1`] = `
-.c13 {
+.c14 {
   box-sizing: border-box;
   margin-left: auto;
 }
 
-.c4 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -22,7 +22,7 @@ exports[`useModal should render confirm modal correctly 1`] = `
   position: relative;
 }
 
-.c10 {
+.c11 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -42,7 +42,7 @@ exports[`useModal should render confirm modal correctly 1`] = `
   padding-right: 1rem;
 }
 
-.c11 {
+.c12 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -65,7 +65,7 @@ exports[`useModal should render confirm modal correctly 1`] = `
   border-color: #c4cfdd;
 }
 
-.c12 {
+.c13 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -74,7 +74,7 @@ exports[`useModal should render confirm modal correctly 1`] = `
   width: 100%;
 }
 
-.c9 {
+.c10 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -84,7 +84,7 @@ exports[`useModal should render confirm modal correctly 1`] = `
   margin-right: 0rem;
 }
 
-.c9 svg {
+.c10 svg {
   fill: #67758d;
   vertical-align: middle;
   pointer-events: none;
@@ -92,12 +92,12 @@ exports[`useModal should render confirm modal correctly 1`] = `
   transition: all 200ms ease 0s;
 }
 
-.c9.c9.c9 svg {
+.c10.c10.c10 svg {
   width: 24px;
   height: 24px;
 }
 
-.c5 {
+.c6 {
   font-size: 1.25rem;
   margin: 0;
   color: #283040;
@@ -106,7 +106,7 @@ exports[`useModal should render confirm modal correctly 1`] = `
   line-height: 32px;
 }
 
-.c7 {
+.c8 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -144,12 +144,12 @@ exports[`useModal should render confirm modal correctly 1`] = `
   font-weight: bold;
 }
 
-.c7:focus {
+.c8:focus {
   outline: 0;
 }
 
-.c7:disabled,
-.c7[disabled] {
+.c8:disabled,
+.c8[disabled] {
   opacity: 0.85;
   background-color: #c4cfdd;
   color: #67758d;
@@ -157,12 +157,12 @@ exports[`useModal should render confirm modal correctly 1`] = `
   pointer-events: none;
 }
 
-.c7:disabled .c8 svg,
-.c7[disabled] .c8 svg {
+.c8:disabled .c9 svg,
+.c8[disabled] .c9 svg {
   fill: #67758d;
 }
 
-.c7::before {
+.c8::before {
   content: '';
   display: inline-block;
   position: relative;
@@ -177,19 +177,19 @@ exports[`useModal should render confirm modal correctly 1`] = `
   transition: all 200ms ease 0s;
 }
 
-.c7 .c8 svg {
+.c8 .c9 svg {
   fill: #3990cd;
 }
 
-.c7:hover {
+.c8:hover {
   background-color: #f9fafc;
 }
 
-.c7:active {
+.c8:active {
   background-color: #e3e8f4;
 }
 
-.c14 {
+.c15 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -227,12 +227,12 @@ exports[`useModal should render confirm modal correctly 1`] = `
   font-weight: bold;
 }
 
-.c14:focus {
+.c15:focus {
   outline: 0;
 }
 
-.c14:disabled,
-.c14[disabled] {
+.c15:disabled,
+.c15[disabled] {
   opacity: 0.85;
   background-color: #c4cfdd;
   color: #67758d;
@@ -240,12 +240,12 @@ exports[`useModal should render confirm modal correctly 1`] = `
   pointer-events: none;
 }
 
-.c14:disabled .c8 svg,
-.c14[disabled] .c8 svg {
+.c15:disabled .c9 svg,
+.c15[disabled] .c9 svg {
   fill: #67758d;
 }
 
-.c14::before {
+.c15::before {
   content: '';
   display: inline-block;
   position: relative;
@@ -260,19 +260,19 @@ exports[`useModal should render confirm modal correctly 1`] = `
   transition: all 200ms ease 0s;
 }
 
-.c14 .c8 svg {
+.c15 .c9 svg {
   fill: #3990cd;
 }
 
-.c14:hover {
+.c15:hover {
   background-color: #f9fafc;
 }
 
-.c14:active {
+.c15:active {
   background-color: #e3e8f4;
 }
 
-.c15 {
+.c16 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -311,12 +311,12 @@ exports[`useModal should render confirm modal correctly 1`] = `
   margin-left: 1rem;
 }
 
-.c15:focus {
+.c16:focus {
   outline: 0;
 }
 
-.c15:disabled,
-.c15[disabled] {
+.c16:disabled,
+.c16[disabled] {
   opacity: 0.85;
   background-color: #c4cfdd;
   color: #67758d;
@@ -324,12 +324,12 @@ exports[`useModal should render confirm modal correctly 1`] = `
   pointer-events: none;
 }
 
-.c15:disabled .c8 svg,
-.c15[disabled] .c8 svg {
+.c16:disabled .c9 svg,
+.c16[disabled] .c9 svg {
   fill: #67758d;
 }
 
-.c15::before {
+.c16::before {
   content: '';
   display: inline-block;
   position: relative;
@@ -344,19 +344,19 @@ exports[`useModal should render confirm modal correctly 1`] = `
   transition: all 200ms ease 0s;
 }
 
-.c15 .c8 svg {
+.c16 .c9 svg {
   fill: #ffffff;
 }
 
-.c15:hover {
+.c16:hover {
   background-color: #4196f6;
 }
 
-.c15:active {
+.c16:active {
   background-color: #2386f4;
 }
 
-.c1 {
+.c2 {
   position: fixed;
   z-index: -1;
   top: 0;
@@ -366,14 +366,14 @@ exports[`useModal should render confirm modal correctly 1`] = `
   background-color: rgba(0,0,0,0.65);
 }
 
-.c2 {
+.c3 {
   position: fixed;
   z-index: 10001;
   top: 50%;
   left: 50%;
 }
 
-.c3 {
+.c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -390,7 +390,7 @@ exports[`useModal should render confirm modal correctly 1`] = `
   background-color: #fff;
 }
 
-.c6 {
+.c7 {
   position: absolute;
   top: 24px;
   right: 32px;
@@ -402,13 +402,13 @@ exports[`useModal should render confirm modal correctly 1`] = `
   transition: all 0.2s ease-in;
 }
 
-.c6:hover {
+.c7:hover {
   -webkit-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
   transform: rotate(90deg);
 }
 
-.c0 {
+.c1 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -421,8 +421,21 @@ exports[`useModal should render confirm modal correctly 1`] = `
   flex-direction: column;
 }
 
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: fixed;
+  top: 72px;
+  right: 10px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
 @media screen and (max-width:36rem) {
-  .c3 {
+  .c4 {
     width: calc(100vw - 32px);
     max-width: calc(100vw - 32px);
     max-height: calc(100vh - 132px);
@@ -435,18 +448,17 @@ exports[`useModal should render confirm modal correctly 1`] = `
     portal-container=""
   >
     <div
-      style="position: fixed; top: 0px; left: 0px; z-index: 30;"
+      style="position: fixed; top: 0px; left: 0px; z-index: 35;"
     >
       <div
         class="c0"
       />
     </div>
     <div
-      style="position: fixed; top: 0px; left: 0px; z-index: 20;"
+      style="position: fixed; top: 0px; left: 0px; z-index: 30;"
     >
       <div
         class="c1"
-        style="opacity: 1;"
       />
     </div>
     <div
@@ -454,27 +466,35 @@ exports[`useModal should render confirm modal correctly 1`] = `
     >
       <div
         class="c2"
+        style="opacity: 1;"
+      />
+    </div>
+    <div
+      style="position: fixed; top: 0px; left: 0px; z-index: 20;"
+    >
+      <div
+        class="c3"
         style="opacity: 1; transform: translate(-50%, -50%) scale(1); pointer-events: auto;"
       >
         <div
-          class="c3"
+          class="c4"
         >
           <div
-            class="c4"
+            class="c5"
           >
             <h3
-              class="c5"
+              class="c6"
             >
               Title
             </h3>
             <div
-              class="c6"
+              class="c7"
             >
               <button
-                class="c7"
+                class="c8"
               >
                 <i
-                  class="c8 c9"
+                  class="c9 c10"
                   cursor="default"
                   size="24"
                   style="pointer-events: none;"
@@ -497,27 +517,27 @@ exports[`useModal should render confirm modal correctly 1`] = `
             </div>
           </div>
           <div
-            class="c10"
+            class="c11"
           >
             Content
           </div>
           <div
-            class="c11"
+            class="c12"
           >
             <div
-              class="c12"
+              class="c13"
               width="100%"
             >
               <div
-                class="c13"
+                class="c14"
               >
                 <button
-                  class="c14"
+                  class="c15"
                 >
                   Cancel
                 </button>
                 <button
-                  class="c15"
+                  class="c16"
                 >
                   Confirm
                 </button>
@@ -536,6 +556,30 @@ exports[`useModal should render error modal correctly 1`] = `
   <div
     portal-container=""
   >
+    .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: fixed;
+  top: 72px;
+  right: 10px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+@media screen and (max-width:36rem) {
+
+}
+
+<div
+      style="position: fixed; top: 0px; left: 0px; z-index: 35;"
+    >
+      <div
+        class="c0"
+      />
+    </div>
     .c0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -901,6 +945,30 @@ exports[`useModal should render info modal correctly 1`] = `
   display: -ms-flexbox;
   display: flex;
   position: fixed;
+  top: 72px;
+  right: 10px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+@media screen and (max-width:36rem) {
+
+}
+
+<div
+      style="position: fixed; top: 0px; left: 0px; z-index: 35;"
+    >
+      <div
+        class="c0"
+      />
+    </div>
+    .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: fixed;
   right: 10px;
   bottom: 10px;
   -webkit-flex-direction: column;
@@ -1260,6 +1328,30 @@ exports[`useModal should render success modal correctly 1`] = `
   display: -ms-flexbox;
   display: flex;
   position: fixed;
+  top: 72px;
+  right: 10px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+@media screen and (max-width:36rem) {
+
+}
+
+<div
+      style="position: fixed; top: 0px; left: 0px; z-index: 35;"
+    >
+      <div
+        class="c0"
+      />
+    </div>
+    .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: fixed;
   right: 10px;
   bottom: 10px;
   -webkit-flex-direction: column;
@@ -1613,6 +1705,30 @@ exports[`useModal should render warning modal correctly 1`] = `
   <div
     portal-container=""
   >
+    .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: fixed;
+  top: 72px;
+  right: 10px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+@media screen and (max-width:36rem) {
+
+}
+
+<div
+      style="position: fixed; top: 0px; left: 0px; z-index: 35;"
+    >
+      <div
+        class="c0"
+      />
+    </div>
     .c0 {
   display: -webkit-box;
   display: -webkit-flex;
