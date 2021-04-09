@@ -1,6 +1,60 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`useMessage should render message correctly 1`] = `
+.c4 {
+  box-sizing: border-box;
+  -webkit-flex: auto;
+  -ms-flex: auto;
+  flex: auto;
+}
+
+.c3 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  line-height: 1;
+  cursor: default;
+  margin-right: 0.5rem;
+}
+
+.c3 svg {
+  fill: #67758d;
+  vertical-align: middle;
+  pointer-events: none;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+}
+
+.c3.c3.c3 svg {
+  fill: #51c81c;
+  width: 20px;
+  height: 20px;
+}
+
+.c5 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.c5 svg {
+  fill: #67758d;
+  vertical-align: middle;
+  pointer-events: none;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+}
+
+.c5.c5.c5 svg {
+  fill: #ffffff;
+  width: 16px;
+  height: 16px;
+}
+
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -12,6 +66,42 @@ exports[`useMessage should render message correctly 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+}
+
+.c1 {
+  position: relative;
+  box-sizing: border-box;
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
+  width: 280px;
+  overflow: hidden;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  height: auto;
+  margin-top: 0.5rem;
+  padding: 1rem;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  background-color: #191d28;
+  color: #ffffff;
+  font-size: 0.875rem;
+}
+
+.c6 {
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  left: 0;
+  width: auto;
+  height: 3px;
+  background-color: #3990cd;
 }
 
 <body>
@@ -30,7 +120,65 @@ exports[`useMessage should render message correctly 1`] = `
     >
       <div
         class="c0"
-      />
+      >
+        <div
+          class="c1"
+          style="opacity: 0; height: 0px;"
+        >
+          <div
+            class="c2"
+          >
+            <i
+              class="c3"
+              cursor="default"
+              fill="success"
+              size="20"
+            >
+              <svg
+                height="32"
+                viewBox="0 0 32 32"
+                width="32"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M16 31C7.716 31 1 24.284 1 16 1 7.716 7.716 1 16 1c8.284 0 15 6.716 15 15 0 8.284-6.716 15-15 15zm6.113-20.19l-9.066 8.73-3.017-3.586a2 2 0 0 0-3.06 2.576l3.705 4.403a3 3 0 0 0 4.227.364c.076-.066.076-.066.15-.135l9.835-9.471a2 2 0 1 0-2.774-2.882z"
+                  fill-rule="nonzero"
+                />
+              </svg>
+            </i>
+            <div
+              class="c4"
+            >
+              Success
+            </div>
+            <i
+              class="c5"
+              cursor="pointer"
+              fill="light"
+              role="button"
+              size="16"
+            >
+              <svg
+                fill="currentColor"
+                height="1em"
+                stroke="currentColor"
+                stroke-width="0"
+                viewBox="0 0 24 24"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+                />
+              </svg>
+            </i>
+            <div
+              class="c6"
+              style="right: 100%;"
+            />
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </body>

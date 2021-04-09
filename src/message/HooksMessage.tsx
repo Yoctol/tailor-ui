@@ -111,7 +111,7 @@ const HooksMessage: FC<HooksMessageProps> = ({ setTrigger }) => {
   }, [trigger, setTrigger]);
 
   const transition = useTransition(messages, {
-    key: (message) => message.key,
+    keys: (message) => message.key,
     from: {
       opacity: 0,
       height: 0,
