@@ -55,6 +55,7 @@ exports[`Table should render table correctly 1`] = `
 
 .c1 {
   display: table;
+  position: relative;
   width: 100%;
   margin-bottom: 1px;
   overflow: auto;
@@ -70,7 +71,6 @@ exports[`Table should render table correctly 1`] = `
 }
 
 .c0 {
-  position: relative;
   -webkit-flex: none;
   -ms-flex: none;
   flex: none;
@@ -274,6 +274,7 @@ exports[`Table should render table correctly with header and footer 1`] = `
 
 .c3 {
   display: table;
+  position: relative;
   width: 100%;
   margin-bottom: 1px;
   overflow: auto;
@@ -289,7 +290,6 @@ exports[`Table should render table correctly with header and footer 1`] = `
 }
 
 .c2 {
-  position: relative;
   -webkit-flex: none;
   -ms-flex: none;
   flex: none;
