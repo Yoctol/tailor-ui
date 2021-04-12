@@ -13,6 +13,7 @@ exports[`Container should render correctly 1`] = `
   padding-left: 32px;
   padding-right: 32px;
   padding-bottom: 32px;
+  padding-top: 0rem;
 }
 
 .c1 {
