@@ -30,7 +30,8 @@ import { useNotification } from 'tailor-ui';
       <Button
         onClick={() =>
           notification.open({
-            content: 'This is the content of the notification. This is the content of the notification. This is the content of the notification.',
+            content:
+              'This is the content of the notification. This is the content of the notification. This is the content of the notification.',
           })
         }
       >
@@ -38,7 +39,7 @@ import { useNotification } from 'tailor-ui';
       </Button>
     </>
   );
-}
+};
 ```
 
 ### Manual close by hooks return value
@@ -52,9 +53,10 @@ import { useNotification } from 'tailor-ui';
       <Button
         onClick={() => {
           const [done, close] = notification.open({
-            content: 'This is the content of the notification. This is the content of the notification. This is the content of the notification.',
+            content:
+              'This is the content of the notification. This is the content of the notification. This is the content of the notification.',
             duration: Infinity,
-          })
+          });
 
           done.then(() => console.log('notification done'));
 
@@ -65,7 +67,7 @@ import { useNotification } from 'tailor-ui';
       </Button>
     </>
   );
-}
+};
 ```
 
 ### Manual close by key
@@ -88,9 +90,10 @@ import { useNotification } from 'tailor-ui';
 
           const [done] = notification.open({
             key: CUSTOMIZED_KEY,
-            content: 'This is the content of the notification. This is the content of the notification. This is the content of the notification.',
+            content:
+              'This is the content of the notification. This is the content of the notification. This is the content of the notification.',
             duration: Infinity,
-          })
+          });
 
           done.then(() => {
             console.log('notification done');
@@ -103,14 +106,14 @@ import { useNotification } from 'tailor-ui';
       <Button
         ml="8px"
         onClick={() => {
-          notification.close(CUSTOMIZED_KEY)
+          notification.close(CUSTOMIZED_KEY);
         }}
       >
         Close Notification
       </Button>
     </>
   );
-}
+};
 ```
 
 ### Destroy all notification
@@ -124,9 +127,10 @@ import { useNotification } from 'tailor-ui';
       <Button
         onClick={() => {
           const [done] = notification.open({
-            content: 'This is the content of the notification. This is the content of the notification. This is the content of the notification.',
+            content:
+              'This is the content of the notification. This is the content of the notification. This is the content of the notification.',
             duration: Infinity,
-          })
+          });
 
           done.then(() => console.log('notification done'));
         }}
@@ -143,7 +147,7 @@ import { useNotification } from 'tailor-ui';
       </Button>
     </>
   );
-}
+};
 ```
 
 ### With icon
@@ -158,7 +162,8 @@ import { useNotification } from 'tailor-ui';
         onClick={() =>
           notification.open({
             icon: <Icon type={MdStar} size="48" fill="warning" />,
-            content: 'This is the content of the notification. This is the content of the notification. This is the content of the notification.',
+            content:
+              'This is the content of the notification. This is the content of the notification. This is the content of the notification.',
           })
         }
       >
@@ -166,9 +171,8 @@ import { useNotification } from 'tailor-ui';
       </Button>
     </>
   );
-}
+};
 ```
-
 
 ### Customized duration
 
@@ -181,7 +185,8 @@ import { useNotification } from 'tailor-ui';
       <Button
         onClick={() =>
           notification.open({
-            content: 'This is the content of the notification. This is the content of the notification. This is the content of the notification.',
+            content:
+              'This is the content of the notification. This is the content of the notification. This is the content of the notification.',
             duration: 10000,
           })
         }
@@ -190,7 +195,7 @@ import { useNotification } from 'tailor-ui';
       </Button>
     </>
   );
-}
+};
 ```
 
 ### Handle Promise
@@ -203,14 +208,14 @@ import { useNotification } from 'tailor-ui';
     <>
       <Button
         onClick={async () => {
-          const [confirmation] =notification.open({
+          const [confirmation] = notification.open({
             content: 'This is a notification!',
-          })
+          });
 
           await confirmation;
 
           notification.open({
-            content: 'Previous message has been resolve!'
+            content: 'Previous message has been resolve!',
           });
         }}
       >
@@ -218,7 +223,7 @@ import { useNotification } from 'tailor-ui';
       </Button>
     </>
   );
-}
+};
 ```
 
 ## API
@@ -232,7 +237,7 @@ import { useNotification } from 'tailor-ui';
 ### Config
 
 | Argument | Type      | Default  | Description                   |
-|----------|-----------|----------|-------------------------------|
+| -------- | --------- | -------- | ----------------------------- |
 | key      | string    | -        | key of the notification       |
 | icon     | ReactNode | -        | icon of the notification      |
 | content  | ReactNode | -        | content of the notification   |

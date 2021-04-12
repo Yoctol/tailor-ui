@@ -49,7 +49,7 @@ import { Menu } from 'tailor-ui';
       </Menu.SubMenu>
     </Menu>
   );
-}
+};
 ```
 
 ### Controlled usage
@@ -96,7 +96,7 @@ import { Menu } from 'tailor-ui';
       </Menu>
     </>
   );
-}
+};
 ```
 
 ### With current sub only
@@ -133,7 +133,7 @@ import { Menu } from 'tailor-ui';
       </Menu.SubMenu>
     </Menu>
   );
-}
+};
 ```
 
 ## API

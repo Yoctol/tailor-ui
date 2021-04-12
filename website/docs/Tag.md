@@ -89,7 +89,7 @@ import { Tag } from 'tailor-ui';
       DELETE ME
     </Tag>
   );
-}
+};
 ```
 
 ### Add & Remove Dynamically
@@ -122,10 +122,10 @@ import { Tag } from 'tailor-ui';
 
                 return confirmation;
               }}
-              onClosed={() => setValues(values.filter(v => v !== value))}
+              onClosed={() => setValues(values.filter((v) => v !== value))}
               onChange={(prevValue, value) => {
                 if (value.trim() !== '') {
-                  setValues(prevValues =>
+                  setValues((prevValues) =>
                     prevValues.map((originalValue, id) =>
                       originalValue === prevValue && id === index
                         ? value
@@ -154,7 +154,7 @@ import { Tag } from 'tailor-ui';
             onBlur={() => setEditing(false)}
             onChange={(_, value) => {
               if (value.trim() !== '') {
-                setValues(prevValues => [...prevValues, value]);
+                setValues((prevValues) => [...prevValues, value]);
               }
               setEditing(false);
             }}
@@ -166,13 +166,13 @@ import { Tag } from 'tailor-ui';
         ))}
     </Flex>
   );
-}
+};
 ```
 
 ## API
 
 | Property         | Description                                                          | Type                                             | Default |
-|------------------|----------------------------------------------------------------------|--------------------------------------------------|---------|
+| ---------------- | -------------------------------------------------------------------- | ------------------------------------------------ | ------- |
 | `closable`       | Whether the Tag can be closed                                        | `boolean`                                        |         |
 | `editable`       | Can update value when click tag                                      | `boolean`                                        |         |
 | `onClosed`       | Callback executed when close animation is completed                  | `() => void`                                     |         |

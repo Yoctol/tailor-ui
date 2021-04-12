@@ -47,7 +47,7 @@ import { useMessage } from 'tailor-ui';
       </Button>
     </>
   );
-}
+};
 ```
 
 ### Customized duration
@@ -68,7 +68,7 @@ import { useMessage } from 'tailor-ui';
       Customized display duration
     </Button>
   );
-}
+};
 ```
 
 ### Handle Promise
@@ -82,13 +82,13 @@ import { useMessage } from 'tailor-ui';
       onClick={() => {
         message.info('This is a info message!').then(() => {
           message.success('Previous message has been resolve!');
-        })
+        });
       }}
     >
       Show a message
     </Button>
   );
-}
+};
 ```
 
 ## API

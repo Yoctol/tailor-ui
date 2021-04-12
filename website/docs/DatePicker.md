@@ -39,7 +39,7 @@ import { DatePicker, RangeDatePicker } from 'tailor-ui';
       </Button>
     </>
   );
-}
+};
 ```
 
 #### allowClear
@@ -56,7 +56,7 @@ import { DatePicker, RangeDatePicker } from 'tailor-ui';
       <DatePicker defaultValue={new Date()} onChange={console.log} allowClear />
     </>
   );
-}
+};
 ```
 
 #### Choose Time
@@ -66,7 +66,7 @@ import { DatePicker, RangeDatePicker } from 'tailor-ui';
   onChange={console.log}
   placeholder="Please Select Date & Time"
   showTime={{
-    showSecond: true
+    showSecond: true,
   }}
 />
 ```
@@ -88,7 +88,7 @@ import { DatePicker, RangeDatePicker } from 'tailor-ui';
 
 ```jsx live
 <DatePicker
-  disabledDate={current => {
+  disabledDate={(current) => {
     const date = new Date();
     return DateFns.isBefore(current, date);
   }}
@@ -111,8 +111,8 @@ import { DatePicker, RangeDatePicker } from 'tailor-ui';
       <br />
       <DateRangePicker value={value} onChange={setValue} />
     </>
-  )
-}
+  );
+};
 ```
 
 #### With time picker
@@ -135,7 +135,7 @@ import { DatePicker, RangeDatePicker } from 'tailor-ui';
       <DateRangePicker defaultValue={[]} onChange={console.log} allowClear />
     </>
   );
-}
+};
 ```
 
 ### Calendar usage
@@ -164,7 +164,7 @@ import { DatePicker, RangeDatePicker } from 'tailor-ui';
 ### Common API
 
 | Property       | Description                                 | Type                                                 | Default |
-|----------------|---------------------------------------------|------------------------------------------------------|---------|
+| -------------- | ------------------------------------------- | ---------------------------------------------------- | ------- |
 | `allowClear`   | Whether to show clear button                | `boolean`                                            | `false` |
 | `showTime`     | to provide an additional time selection     | `boolean \| ShowTime Options`                        | `false` |
 | `disabledDate` | specify the date that cannot be selected    | `(current: Date) => boolean`                         |         |
@@ -174,7 +174,7 @@ import { DatePicker, RangeDatePicker } from 'tailor-ui';
 #### ShowTime Options
 
 | Property              | Description                        | Type      | Default |
-|-----------------------|------------------------------------|-----------|---------|
+| --------------------- | ---------------------------------- | --------- | ------- |
 | `showHour`            | whether show hour                  | `Boolean` | `true`  |
 | `showMinute`          | whether show minute                | `Boolean` | `true`  |
 | `showSecond`          | whether show second                | `Boolean` | `true`  |
@@ -184,20 +184,19 @@ import { DatePicker, RangeDatePicker } from 'tailor-ui';
 | `secondStep`          | interval between seconds in picker | `Number`  | 1       |
 | `hideDisabledOptions` | whether hide disabled options      | `Boolean` | false   |
 
-
 ### DatePicker
 
-| Property       | Description                                 | Type                                                 | Default |
-|----------------|---------------------------------------------|------------------------------------------------------|---------|
-| `value`        | to set date                                                                                                  | `Date`
-| `defaultValue` | to set default date, if start time or end time is null or undefined, the date range will be an open interval | `Date`                                     |                                                 |
-| `onChange`     | a callback function, can be executed when the selected time is changing                                      | `(date: Date \| null, dateStrings: [string, string]) => void`           |                                                 |
+| Property       | Description                                                                                                  | Type                                                          | Default |
+| -------------- | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------- | ------- |
+| `value`        | to set date                                                                                                  | `Date`                                                        |
+| `defaultValue` | to set default date, if start time or end time is null or undefined, the date range will be an open interval | `Date`                                                        |         |
+| `onChange`     | a callback function, can be executed when the selected time is changing                                      | `(date: Date \| null, dateStrings: [string, string]) => void` |         |
 
 ### RangeDatePicker
 
-| Property       | Description                                 | Type                                                 | Default |
-|----------------|---------------------------------------------|------------------------------------------------------|---------|
-| `value`        | to set date                                                                                                  | `[Date, Date]`
-| `defaultValue` | to set default date, if start time or end time is null or undefined, the date range will be an open interval | `[Date, Date]`                                     |                                                 |
-| `onChange`     | a callback function, can be executed when the selected time is changing                                      | `(date: [Date, Date] \| null) => void`           |                                                 |
-|  `ranges` | preseted ranges for quick selection | `{ String \| [range: string]: [Date, Date] } \| { [range: string]: () => [Date, Date] }` | |
+| Property       | Description                                                                                                  | Type                                                                                     | Default |
+| -------------- | ------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------- | ------- |
+| `value`        | to set date                                                                                                  | `[Date, Date]`                                                                           |
+| `defaultValue` | to set default date, if start time or end time is null or undefined, the date range will be an open interval | `[Date, Date]`                                                                           |         |
+| `onChange`     | a callback function, can be executed when the selected time is changing                                      | `(date: [Date, Date] \| null) => void`                                                   |         |
+| `ranges`       | preseted ranges for quick selection                                                                          | `{ String \| [range: string]: [Date, Date] } \| { [range: string]: () => [Date, Date] }` |         |

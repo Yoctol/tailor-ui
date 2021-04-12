@@ -37,7 +37,7 @@ import { Modal, useModal } from 'tailor-ui';
       <Button onClick={() => setVisible(true)}>Open Modal</Button>
     </>
   );
-}
+};
 ```
 
 ### Status bar and icon
@@ -80,7 +80,7 @@ import { Modal, useModal } from 'tailor-ui';
       </Flex>
     </>
   );
-}
+};
 ```
 
 ### Large size
@@ -106,9 +106,8 @@ import { Modal, useModal } from 'tailor-ui';
       <Button onClick={() => setVisible(true)}>Open Modal</Button>
     </>
   );
-}
+};
 ```
-
 
 ### Customized header
 
@@ -127,9 +126,7 @@ import { Modal, useModal } from 'tailor-ui';
             height="480px"
             bg="surface2"
           >
-            <Heading.H1>
-              Welcome
-            </Heading.H1>
+            <Heading.H1>Welcome</Heading.H1>
           </Flex>
         }
         visible={visible}
@@ -144,7 +141,7 @@ import { Modal, useModal } from 'tailor-ui';
       <Button onClick={() => setVisible(true)}>Open Modal</Button>
     </>
   );
-}
+};
 ```
 
 ### Customized footer
@@ -171,7 +168,7 @@ import { Modal, useModal } from 'tailor-ui';
       <Button onClick={() => setVisible(true)}>Open Modal</Button>
     </>
   );
-}
+};
 ```
 
 ### Without footer
@@ -198,7 +195,7 @@ import { Modal, useModal } from 'tailor-ui';
       <Button onClick={() => setVisible(true)}>Open Modal</Button>
     </>
   );
-}
+};
 ```
 
 ### With button props
@@ -234,7 +231,7 @@ import { Modal, useModal } from 'tailor-ui';
       <Button onClick={() => setVisible(true)}>Open Modal</Button>
     </>
   );
-}
+};
 ```
 
 ### onOpenComplete & onCloseComplete
@@ -263,7 +260,7 @@ import { Modal, useModal } from 'tailor-ui';
       <Button onClick={() => setVisible(true)}>Open Modal</Button>
     </>
   );
-}
+};
 ```
 
 ### useModal Hooks
@@ -292,7 +289,7 @@ You can use the `useModal` hooks to display Modal without render `Modal` compone
       Confirm
     </Button>
   );
-}
+};
 ```
 
 ##### Using promise
@@ -322,7 +319,7 @@ You can use the `useModal` hooks to display Modal without render `Modal` compone
       Confirm
     </Button>
   );
-}
+};
 ```
 
 #### With other status
@@ -389,7 +386,7 @@ You can use the `useModal` hooks to display Modal without render `Modal` compone
       </Button>
     </>
   );
-}
+};
 ```
 
 ##### Set closable to true
@@ -421,7 +418,7 @@ You can use the `useModal` hooks to display Modal without render `Modal` compone
       Click Me
     </Button>
   );
-}
+};
 ```
 
 ##### Manual to update and close
@@ -466,7 +463,7 @@ You can use the `useModal` hooks to display Modal without render `Modal` compone
       Confirm
     </Button>
   );
-}
+};
 ```
 
 ## API
@@ -474,7 +471,7 @@ You can use the `useModal` hooks to display Modal without render `Modal` compone
 ### Modal
 
 | Property             | Description                                                                                                | Type                                                                     | Default                    |
-|----------------------|------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------|----------------------------|
+| -------------------- | ---------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------ | -------------------------- |
 | `title`              | The modal dialog's title                                                                                   | `ReactNode`                                                              |                            |
 | `visible`            | Whether the modal dialog is visible or not                                                                 | `boolean`                                                                |                            |
 | `closable`           | Call onCancel when click the close (x) button or modal mask                                                | `boolean`                                                                | `true`                     |
@@ -518,7 +515,7 @@ Below is the type of `ReturnValue`:
 ### `options`
 
 | Property      | Description                                                                                                                                                                    | Type         | Default                                                   |
-|---------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------|-----------------------------------------------------------|
+| ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------ | --------------------------------------------------------- |
 | `closable`    | Show cancel button or not                                                                                                                                                      | `boolean`    | `true` if call `model.confirm`, otherwise will be `false` |
 | `cancelText`  | Text of the Cancel button                                                                                                                                                      | `string`     | `Cancel`                                                  |
 | `confirmText` | Text of the Confirm button                                                                                                                                                     | `string`     | `Confirm`                                                 |

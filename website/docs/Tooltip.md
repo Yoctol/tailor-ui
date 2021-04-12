@@ -74,7 +74,7 @@ import { Position, Tooltip } from 'tailor-ui';
       <Button>Hover me</Button>
     </Tooltip>
   );
-}
+};
 ```
 
 ### With defaultVisible
@@ -87,9 +87,8 @@ import { Position, Tooltip } from 'tailor-ui';
 
 ## API
 
-
 | Property          | Description                                                                                                                                          | Type                                                    | Default        |
-|-------------------|------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------|----------------|
+| ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------- | -------------- |
 | `defaultVisible`  | Whether the floating tooltip card is visible by default                                                                                              | `boolean`                                               |                |
 | `visible`         | Whether the floating tooltip card is visible                                                                                                         | `boolean`                                               |                |
 | `onVisibleChange` | Callback executed when visibility of the tooltip card is changed                                                                                     | `(visible: boolean) => void`                            |                |

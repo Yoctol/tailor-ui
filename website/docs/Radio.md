@@ -34,9 +34,7 @@ import { Radio, RadioGroup } from 'tailor-ui';
 <FormField
   required
   label="Checked Required"
-  validator={boolean()
-    .oneOf([true])
-    .required()}
+  validator={boolean().oneOf([true]).required()}
 >
   <Radio>Click Me</Radio>
 </FormField>
@@ -87,7 +85,7 @@ import { Radio, RadioGroup } from 'tailor-ui';
       />
     </>
   );
-}
+};
 ```
 
 #### Controlled
@@ -112,7 +110,7 @@ import { Radio, RadioGroup } from 'tailor-ui';
       <Button onClick={() => setValue('radio-d')}>Check last one</Button>
     </>
   );
-}
+};
 ```
 
 #### Composition render
@@ -154,7 +152,7 @@ import { Radio, RadioGroup } from 'tailor-ui';
       </RadioGroup>
     </>
   );
-}
+};
 ```
 
 #### Direction
@@ -176,7 +174,7 @@ import { Radio, RadioGroup } from 'tailor-ui';
       onChange={setValue}
     />
   );
-}
+};
 ```
 
 #### Use with FormField
@@ -185,7 +183,7 @@ import { Radio, RadioGroup } from 'tailor-ui';
 <FormField
   required
   label="Yes or No?"
-  validator={value => (value !== 'yes' ? 'Should press yes' : null)}
+  validator={(value) => (value !== 'yes' ? 'Should press yes' : null)}
 >
   <RadioGroup
     defaultValue="no"
@@ -201,9 +199,8 @@ import { Radio, RadioGroup } from 'tailor-ui';
 
 ### Radio
 
-
 | Property         | Description                                                       | Type                           | Default |
-|------------------|-------------------------------------------------------------------|--------------------------------|---------|
+| ---------------- | ----------------------------------------------------------------- | ------------------------------ | ------- |
 | `checked`        | Specifies whether the Radio is selected                           | `boolean`                      |         |
 | `defaultChecked` | Specifies the initial state: whether or not the Radio is selected | `boolean`                      |         |
 | `disabled`       | Disable Radio                                                     | `boolean`                      | false   |
@@ -216,7 +213,7 @@ import { Radio, RadioGroup } from 'tailor-ui';
 ### RadioGroup
 
 | Property       | Description                                                    | Type                                                         | Default |
-|----------------|----------------------------------------------------------------|--------------------------------------------------------------|---------|
+| -------------- | -------------------------------------------------------------- | ------------------------------------------------------------ | ------- |
 | `direction`    | to specify the direction of the step bar                       | `'horizontal'` `'vertical'`                                  |         |
 | `defaultValue` | To set the initial value                                       | `string[]`                                                   |         |
 | `options`      | Specifies options                                              | `{ label: ReactNode; value: string; disabled?: boolean; }[]` |         |

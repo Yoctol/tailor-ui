@@ -209,7 +209,7 @@ import { MdCheck } from 'react-icons/md';
       Click me!
     </Button>
   );
-}
+};
 ```
 
 ### Sizes
@@ -229,7 +229,7 @@ import { MdCheck } from 'react-icons/md';
 ## API
 
 | Property   | Description                                             | Type                                                                               | Default |
-|------------|---------------------------------------------------------|------------------------------------------------------------------------------------|---------|
+| ---------- | ------------------------------------------------------- | ---------------------------------------------------------------------------------- | ------- |
 | `variant`  | set different variant to display other colors of button | `'primary'` `'primary-invert'` `'danger'` `'danger-invert'` `'regular'` `'normal'` |         |
 | `size`     | the size of button                                      | `'sm'` \| `'md'` \| `'lg'`                                                         | `'md'`  |
 | `loading`  | set the loading status of button                        | `boolean`                                                                          | `false` |

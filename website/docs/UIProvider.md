@@ -14,9 +14,7 @@ import { UIProvider, locales } from 'tailor-ui';
 const { zh_Hant } = locales;
 
 ReactDOM.render(
-  <UIProvider locale={zh_Hant}>
-    {children}
-  </UIProvider>,
+  <UIProvider locale={zh_Hant}>{children}</UIProvider>,
   document.querySelector('#root')
 );
 ```
@@ -86,7 +84,9 @@ ReactDOM.render(
           >
             <div>{contents.modal.content}</div>
           </Modal>
-          <Button onClick={() => setVisible(true)}>{contents.modal.openButton}</Button>
+          <Button onClick={() => setVisible(true)}>
+            {contents.modal.openButton}
+          </Button>
 
           <Button
             ml="2"
@@ -121,7 +121,7 @@ ReactDOM.render(
             <Box mr="2">{contents.upload.withSuccess}</Box>
             <Upload
               onSelect={() =>
-                new Promise(resolve => setTimeout(resolve, 2000))
+                new Promise((resolve) => setTimeout(resolve, 2000))
               }
             />
           </Flex>
@@ -139,7 +139,7 @@ ReactDOM.render(
       </Box>
     </>
   );
-}
+};
 ```
 
 ## Theme Examples
@@ -175,13 +175,12 @@ ReactDOM.render(
       </Box>
     </>
   );
-}
+};
 ```
-
 
 ## API
 
 | Property | Description | Type         | Default |
-|----------|-------------|--------------|---------|
+| -------- | ----------- | ------------ | ------- |
 | `locale` |             | `LocaleType` |         |
 | `theme`  |             | `ThemeType`  |         |

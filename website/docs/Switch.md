@@ -29,7 +29,7 @@ import { Switch } from 'tailor-ui';
       <Switch checked={checked} onChange={() => setChecked(!checked)} />
     </>
   );
-}
+};
 ```
 
 ### With uncontrolled
@@ -51,7 +51,7 @@ import { Switch } from 'tailor-ui';
 ## API
 
 | Property         | Description                                                             | Type                         | Default |
-|------------------|-------------------------------------------------------------------------|------------------------------|---------|
+| ---------------- | ----------------------------------------------------------------------- | ---------------------------- | ------- |
 | `checked`        | determine whether the Switch is checked                                 | `boolean`                    |         |
 | `defaultChecked` | to set the initial state                                                | `boolean`                    |         |
 | `disabled`       | Disable switch                                                          | `boolean`                    | false   |

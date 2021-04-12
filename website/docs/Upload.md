@@ -20,7 +20,7 @@ import { Upload } from 'tailor-ui';
 ### Basic
 
 ```jsx live
-<Upload onSelect={() => new Promise(resolve => setTimeout(resolve, 2000))} />
+<Upload onSelect={() => new Promise((resolve) => setTimeout(resolve, 2000))} />
 ```
 
 ### before select
@@ -37,10 +37,10 @@ import { Upload } from 'tailor-ui';
           content: 'It can not fallback',
         })
       }
-      onSelect={() => new Promise(resolve => setTimeout(resolve, 2000))}
+      onSelect={() => new Promise((resolve) => setTimeout(resolve, 2000))}
     />
   );
-}
+};
 ```
 
 ### Multiple
@@ -48,7 +48,7 @@ import { Upload } from 'tailor-ui';
 ```jsx live
 <Upload
   multiple
-  onSelect={() => new Promise(resolve => setTimeout(resolve, 2000))}
+  onSelect={() => new Promise((resolve) => setTimeout(resolve, 2000))}
 />
 ```
 
@@ -73,13 +73,13 @@ import { Upload } from 'tailor-ui';
       }
     />
   );
-}
+};
 ```
 
 ## API
 
 | Property         | Description | Type                                                                                           | Default |
-|------------------|-------------|------------------------------------------------------------------------------------------------|---------|
+| ---------------- | ----------- | ---------------------------------------------------------------------------------------------- | ------- |
 | `disabled`       |             | `boolean`                                                                                      |         |
 | `onSelect`       |             | `(files: File[]) => Promise<any>`                                                              |         |
 | `onClear`        |             | `(file: File) => void`                                                                         |         |

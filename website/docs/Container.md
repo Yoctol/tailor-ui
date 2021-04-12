@@ -21,28 +21,27 @@ import { Container, Box } from 'tailor-ui';
 <Box p="24px" bg="surface2">
   <Container title="Title">
     <Container.Section title="Section Title #1">
-      Section titles are text derived from either a transcript or screenplay of the
-      dialog or commentary in films.
+      Section titles are text derived from either a transcript or screenplay of
+      the dialog or commentary in films.
     </Container.Section>
     <Container.Section title="Section Title #2">
-      Section titles are text derived from either a transcript or screenplay of the
-      dialog or commentary in films.
+      Section titles are text derived from either a transcript or screenplay of
+      the dialog or commentary in films.
     </Container.Section>
   </Container>
 
   <Container title="Title" subTitle="SubTitle">
     <Container.Section title="Section Title #1">
-      Section titles are text derived from either a transcript or screenplay of the
-      dialog or commentary in films.
+      Section titles are text derived from either a transcript or screenplay of
+      the dialog or commentary in films.
     </Container.Section>
     <Container.Section title="Section Title #2">
-      Section titles are text derived from either a transcript or screenplay of the
-      dialog or commentary in films.
+      Section titles are text derived from either a transcript or screenplay of
+      the dialog or commentary in films.
     </Container.Section>
   </Container>
 </Box>
 ```
-
 
 ### With Table
 
@@ -60,7 +59,7 @@ import { Container, Box } from 'tailor-ui';
         <Table.HeadColumn>Action</Table.HeadColumn>
       </Table.Head>
       <Table.Body>
-        {range(1, 4).map(value => (
+        {range(1, 4).map((value) => (
           <Table.Row key={value}>
             <Table.Column>Name {value}</Table.Column>
             <Table.Column>Platform {value}</Table.Column>

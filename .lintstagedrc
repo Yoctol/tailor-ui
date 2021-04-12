@@ -1,6 +1,6 @@
 {
   "*.{js,ts,tsx}": ["eslint --ext=ts,tsx --fix", "stylelint"],
-  "*.json": ["prettier --write"],
+  "*.{md,json}": ["prettier --write"],
   "package.json": ["prettier-package-json --write", "prettier --write"],
   ".*rc": ["prettier --parser json --write"]
 }
