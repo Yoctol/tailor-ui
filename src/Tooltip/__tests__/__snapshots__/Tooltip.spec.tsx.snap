@@ -17,7 +17,7 @@ exports[`Tooltip should render tooltip correctly 1`] = `
   padding: 0.5rem;
 }
 
-.c2 {
+.c3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -25,6 +25,19 @@ exports[`Tooltip should render tooltip correctly 1`] = `
   position: fixed;
   right: 10px;
   bottom: 10px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: fixed;
+  top: 72px;
+  right: 10px;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -58,10 +71,17 @@ exports[`Tooltip should render tooltip correctly 1`] = `
       </div>
     </div>
     <div
-      style="position: fixed; top: 0px; left: 0px; z-index: 30;"
+      style="position: fixed; top: 0px; left: 0px; z-index: 35;"
     >
       <div
         class="c2"
+      />
+    </div>
+    <div
+      style="position: fixed; top: 0px; left: 0px; z-index: 30;"
+    >
+      <div
+        class="c3"
       />
     </div>
   </div>

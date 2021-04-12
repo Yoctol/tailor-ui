@@ -11,6 +11,26 @@ exports[`Backdrop should not render backdrop 1`] = `
   display: -ms-flexbox;
   display: flex;
   position: fixed;
+  top: 72px;
+  right: 10px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+<div
+      style="position: fixed; top: 0px; left: 0px; z-index: 35;"
+    >
+      <div
+        class="c0"
+      />
+    </div>
+    .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: fixed;
   right: 10px;
   bottom: 10px;
   -webkit-flex-direction: column;
@@ -41,7 +61,7 @@ exports[`Backdrop should render backdrop correctly 1`] = `
   background-color: rgba(0,0,0,0.65);
 }
 
-.c1 {
+.c2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -49,6 +69,19 @@ exports[`Backdrop should render backdrop correctly 1`] = `
   position: fixed;
   right: 10px;
   bottom: 10px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: fixed;
+  top: 72px;
+  right: 10px;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -68,10 +101,17 @@ exports[`Backdrop should render backdrop correctly 1`] = `
       />
     </div>
     <div
-      style="position: fixed; top: 0px; left: 0px; z-index: 30;"
+      style="position: fixed; top: 0px; left: 0px; z-index: 35;"
     >
       <div
         class="c1"
+      />
+    </div>
+    <div
+      style="position: fixed; top: 0px; left: 0px; z-index: 30;"
+    >
+      <div
+        class="c2"
       />
     </div>
   </div>

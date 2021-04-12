@@ -1,14 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`useMessage should render message correctly 1`] = `
-.c4 {
+.c5 {
   box-sizing: border-box;
   -webkit-flex: auto;
   -ms-flex: auto;
   flex: auto;
 }
 
-.c3 {
+.c4 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -18,7 +18,7 @@ exports[`useMessage should render message correctly 1`] = `
   margin-right: 0.5rem;
 }
 
-.c3 svg {
+.c4 svg {
   fill: #67758d;
   vertical-align: middle;
   pointer-events: none;
@@ -26,13 +26,13 @@ exports[`useMessage should render message correctly 1`] = `
   transition: all 200ms ease 0s;
 }
 
-.c3.c3.c3 svg {
+.c4.c4.c4 svg {
   fill: #51c81c;
   width: 20px;
   height: 20px;
 }
 
-.c5 {
+.c6 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -41,7 +41,7 @@ exports[`useMessage should render message correctly 1`] = `
   cursor: pointer;
 }
 
-.c5 svg {
+.c6 svg {
   fill: #67758d;
   vertical-align: middle;
   pointer-events: none;
@@ -49,13 +49,13 @@ exports[`useMessage should render message correctly 1`] = `
   transition: all 200ms ease 0s;
 }
 
-.c5.c5.c5 svg {
+.c6.c6.c6 svg {
   fill: #ffffff;
   width: 16px;
   height: 16px;
 }
 
-.c0 {
+.c1 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -68,7 +68,7 @@ exports[`useMessage should render message correctly 1`] = `
   flex-direction: column;
 }
 
-.c1 {
+.c2 {
   position: relative;
   box-sizing: border-box;
   -webkit-flex: none;
@@ -78,7 +78,7 @@ exports[`useMessage should render message correctly 1`] = `
   overflow: hidden;
 }
 
-.c2 {
+.c3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -94,7 +94,7 @@ exports[`useMessage should render message correctly 1`] = `
   font-size: 0.875rem;
 }
 
-.c6 {
+.c7 {
   position: absolute;
   z-index: 1;
   bottom: 0;
@@ -102,6 +102,19 @@ exports[`useMessage should render message correctly 1`] = `
   width: auto;
   height: 3px;
   background-color: #3990cd;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: fixed;
+  top: 72px;
+  right: 10px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
 <body>
@@ -116,20 +129,27 @@ exports[`useMessage should render message correctly 1`] = `
     portal-container=""
   >
     <div
-      style="position: fixed; top: 0px; left: 0px; z-index: 30;"
+      style="position: fixed; top: 0px; left: 0px; z-index: 35;"
     >
       <div
         class="c0"
+      />
+    </div>
+    <div
+      style="position: fixed; top: 0px; left: 0px; z-index: 30;"
+    >
+      <div
+        class="c1"
       >
         <div
-          class="c1"
+          class="c2"
           style="opacity: 0; height: 0px;"
         >
           <div
-            class="c2"
+            class="c3"
           >
             <i
-              class="c3"
+              class="c4"
               cursor="default"
               fill="success"
               size="20"
@@ -147,12 +167,12 @@ exports[`useMessage should render message correctly 1`] = `
               </svg>
             </i>
             <div
-              class="c4"
+              class="c5"
             >
               Success
             </div>
             <i
-              class="c5"
+              class="c6"
               cursor="pointer"
               fill="light"
               role="button"
@@ -173,7 +193,7 @@ exports[`useMessage should render message correctly 1`] = `
               </svg>
             </i>
             <div
-              class="c6"
+              class="c7"
               style="right: 100%;"
             />
           </div>

@@ -1,0 +1,169 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`useNotification should render notification correctly 1`] = `
+.c3 {
+  box-sizing: border-box;
+  -webkit-flex: auto;
+  -ms-flex: auto;
+  flex: auto;
+  padding-left: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.c5 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.c5 svg {
+  fill: #67758d;
+  vertical-align: middle;
+  pointer-events: none;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+}
+
+.c5.c5.c5 svg {
+  fill: #ffffff;
+  width: 16px;
+  height: 16px;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: fixed;
+  top: 72px;
+  right: 10px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c1 {
+  position: relative;
+  box-sizing: border-box;
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
+  width: 360px;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  height: auto;
+  margin-top: 0.5rem;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  background-color: #3990cd;
+  box-shadow: 0 5px 10px 0 #C4CFDD;
+  color: #ffffff;
+  font-size: 0.875rem;
+}
+
+<body>
+  <div>
+    <button
+      type="button"
+    >
+      button
+    </button>
+  </div>
+  <div
+    portal-container=""
+  >
+    <div
+      style="position: fixed; top: 0px; left: 0px; z-index: 35;"
+    >
+      <div
+        class="c0"
+      >
+        <div
+          class="c1"
+          style="opacity: 0; height: 0px; transform: translateX(300px);"
+        >
+          <div
+            class="c2"
+          >
+            <div
+              class="c3"
+            >
+              Success
+            </div>
+            <div
+              class="c4"
+              style="cursor: pointer;"
+            >
+              <i
+                class="c5"
+                cursor="pointer"
+                fill="light"
+                role="button"
+                size="16"
+              >
+                <svg
+                  fill="currentColor"
+                  height="1em"
+                  stroke="currentColor"
+                  stroke-width="0"
+                  viewBox="0 0 24 24"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+                  />
+                </svg>
+              </i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      style="position: fixed; top: 0px; left: 0px; z-index: 30;"
+    >
+      <div
+        class="c6"
+      />
+    </div>
+  </div>
+</body>
+`;

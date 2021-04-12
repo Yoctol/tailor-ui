@@ -40,6 +40,7 @@ import {
   Upload,
   useMessage,
   useModal,
+  useNotification,
 } from '..';
 
 describe('index', () => {
@@ -85,5 +86,6 @@ describe('index', () => {
     expect(Upload).toBeDefined();
     expect(useMessage).toBeDefined();
     expect(useModal).toBeDefined();
+    expect(useNotification).toBeDefined();
   });
 });

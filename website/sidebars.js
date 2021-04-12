@@ -36,7 +36,15 @@ module.exports = {
       'tag',
       'tooltip',
     ],
-    Feedback: ['alert', 'drawer', 'modal', 'message', 'popconfirm', 'spin'],
+    Feedback: [
+      'alert',
+      'drawer',
+      'modal',
+      'message',
+      'notification',
+      'popconfirm',
+      'spin',
+    ],
     Formik: [
       'formik/input-field',
       'formik/textarea-field',
