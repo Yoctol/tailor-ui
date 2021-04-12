@@ -1,3 +1,15 @@
+# [1.8.0](https://github.com/yoctol/tailor-ui/compare/v1.7.4...v1.8.0) (2021-04-12)
+
+
+### Bug Fixes
+
+* **container:** add padding top to container children when not title ([4fe050a](https://github.com/yoctol/tailor-ui/commit/4fe050aaf225619cdda1232c518e7a4543f0cdd5))
+
+
+### Features
+
+* **notification:** implement useNotification ([6057d74](https://github.com/yoctol/tailor-ui/commit/6057d740ee2745550d664ddc6808bf9dfeed6b3b))
+
 ## [1.7.4](https://github.com/yoctol/tailor-ui/compare/v1.7.3...v1.7.4) (2021-04-08)
 
 
