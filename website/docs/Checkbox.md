@@ -33,7 +33,7 @@ import { Checkbox, CheckboxGroup } from 'tailor-ui';
       </Checkbox>
     </>
   );
-}
+};
 ```
 
 #### Use with FormField
@@ -42,9 +42,7 @@ import { Checkbox, CheckboxGroup } from 'tailor-ui';
 <FormField
   required
   label="Checked Required"
-  validator={boolean()
-    .oneOf([true])
-    .required()}
+  validator={boolean().oneOf([true]).required()}
 >
   <Checkbox>Click Me</Checkbox>
 </FormField>
@@ -94,7 +92,7 @@ import { Checkbox, CheckboxGroup } from 'tailor-ui';
       />
     </>
   );
-}
+};
 ```
 
 #### Controlled
@@ -124,7 +122,7 @@ import { Checkbox, CheckboxGroup } from 'tailor-ui';
       </Button>
     </>
   );
-}
+};
 ```
 
 #### Composition render
@@ -166,7 +164,7 @@ import { Checkbox, CheckboxGroup } from 'tailor-ui';
       </CheckboxGroup>
     </>
   );
-}
+};
 ```
 
 #### Direction
@@ -188,7 +186,7 @@ import { Checkbox, CheckboxGroup } from 'tailor-ui';
       onChange={set}
     />
   );
-}
+};
 ```
 
 #### Use with FormField
@@ -197,7 +195,7 @@ import { Checkbox, CheckboxGroup } from 'tailor-ui';
 <FormField
   required
   label="All Checked Required"
-  validator={value =>
+  validator={(value) =>
     value && value.length !== 4 ? 'Should checked all check box' : null
   }
 >

@@ -156,7 +156,7 @@ When the task is complicated or has a certain sequence in the series of subtasks
       )}
     </div>
   );
-}
+};
 ```
 
 ## API
@@ -164,15 +164,15 @@ When the task is complicated or has a certain sequence in the series of subtasks
 ### Steps
 
 | Property          | Description                                                                                        | Type                           | Default |
-|-------------------|----------------------------------------------------------------------------------------------------|--------------------------------|---------|
+| ----------------- | -------------------------------------------------------------------------------------------------- | ------------------------------ | ------- |
 | `current`         | To set the current step, counting from 0. You can overwrite this state by using `status` of `Step` | `number`                       |         |
 | `direction`       | To specify the direction of the step bar                                                           | `'horizontal'` \| `'vertical'` |         |
 | `onCurrentChange` | Trigger when Step is changed                                                                       | `(count: number) => void`      |         |
 
 ### Steps.Step
 
-| Property    | Description                                                                                | Type                                                | Default |
-|-------------|--------------------------------------------------------------------------------------------|-----------------------------------------------------|---------|
+| Property      | Description                                                                                | Type                                                | Default |
+| ------------- | ------------------------------------------------------------------------------------------ | --------------------------------------------------- | ------- |
 | `title`       | Title of the step                                                                          | `string`                                            |         |
 | `description` | Description of the step, optional property                                                 | `string`                                            |         |
 | `status`      | To specify the status. It will be automatically set by current of Steps if not configured. | `'finish'` \| `'progress'` \| `'wait'` \| `'error'` |         |

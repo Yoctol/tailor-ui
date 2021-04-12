@@ -73,15 +73,14 @@ import { Badge } from 'tailor-ui';
   return (
     <div>
       <Badge count={count}>
-        <Button variant={count === 0 ? undefined: 'normal'} icon={MdNotifications} />
+        <Button
+          variant={count === 0 ? undefined : 'normal'}
+          icon={MdNotifications}
+        />
       </Badge>
       <br />
       <br />
-      <Button
-        width="36px"
-        size="sm"
-        onClick={() => setCount(count + 1)}
-      >
+      <Button width="36px" size="sm" onClick={() => setCount(count + 1)}>
         +
       </Button>
       <Button
@@ -98,14 +97,13 @@ import { Badge } from 'tailor-ui';
       </Button>
     </div>
   );
-}
+};
 ```
-
 
 ## API
 
 | Property        | Description                              | Type      | Default |
-|-----------------|------------------------------------------|-----------|---------|
+| --------------- | ---------------------------------------- | --------- | ------- |
 | `count`         | Number to show in badge                  | `number`  |         |
 | `overflowCount` | Max count to show                        | `number`  | 99      |
 | `showZero`      | Whether to show badge when count is zero | `boolean` | `false` |

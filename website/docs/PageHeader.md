@@ -154,7 +154,7 @@ import { PageHeader } from 'tailor-ui';
 ## API
 
 | Property     | Description                                              | Type         | Default |
-|--------------|----------------------------------------------------------|--------------|---------|
+| ------------ | -------------------------------------------------------- | ------------ | ------- |
 | `breadcrumb` | Breadcrumb configuration                                 | Breadcrumb   | `[]`    |
 | `title`      | Header title                                             | `ReactNode`  |         |
 | `extra`      | Operating area, at the end of the line of the title line | `ReactNode`  |         |

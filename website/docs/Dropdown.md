@@ -71,7 +71,7 @@ import { Dropdown } from 'tailor-ui';
       <Button variant={visible ? 'primary' : 'regular'}>Toggle</Button>
     </Dropdown>
   );
-}
+};
 ```
 
 ### Cascading menu
@@ -82,7 +82,7 @@ import { Dropdown } from 'tailor-ui';
     <Dropdown.List>
       <Dropdown.Item>Rename</Dropdown.Item>
       <Dropdown.SubList title="Move">
-        {range(1, 20).map(key => (
+        {range(1, 20).map((key) => (
           <Dropdown.Item
             key={key}
             onClick={() => console.log(`move to Group ${key}`)}

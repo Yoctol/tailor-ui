@@ -30,7 +30,7 @@ import { Select, Input, FormField } from 'tailor-ui';
 
   return (
     <>
-      <Button onClick={() => setHasError(prev => !prev)}>
+      <Button onClick={() => setHasError((prev) => !prev)}>
         {hasError ? 'Hide' : 'Show'} error on below input
       </Button>
       <br />
@@ -42,7 +42,7 @@ import { Select, Input, FormField } from 'tailor-ui';
       </FormField>
     </>
   );
-}
+};
 ```
 
 ### Use validationMessage with Select
@@ -65,7 +65,7 @@ import { Select, Input, FormField } from 'tailor-ui';
     validator={string().test(
       'is-error',
       'Error Message',
-      value => value !== 'error'
+      (value) => value !== 'error'
     )}
   >
     <Input defaultValue="valid input" placeholder="Placeholder" />
@@ -83,14 +83,14 @@ import { Select, Input, FormField } from 'tailor-ui';
   <FormField
     required
     label="Please Type `error`"
-    validator={value => (value === 'error' ? 'Error Message' : null)}
+    validator={(value) => (value === 'error' ? 'Error Message' : null)}
   >
     <Input placeholder="Placeholder" defaultValue="" />
   </FormField>
   <FormField
     required
     label="Please Type `error`"
-    validator={value => (value === 'error' ? 'Error Message' : null)}
+    validator={(value) => (value === 'error' ? 'Error Message' : null)}
   >
     <Input placeholder="Placeholder" defaultValue="" />
   </FormField>
@@ -106,11 +106,11 @@ import { Select, Input, FormField } from 'tailor-ui';
     label="Please Type `error1` or `error2`"
     validator={[
       {
-        rule: value => value === 'error1',
+        rule: (value) => value === 'error1',
         message: 'error message',
       },
       {
-        rule: value => value === 'error2',
+        rule: (value) => value === 'error2',
         message: 'another error message',
       },
     ]}
@@ -122,11 +122,11 @@ import { Select, Input, FormField } from 'tailor-ui';
     label="Please Type `error1` or `error2`"
     validator={[
       {
-        rule: value => value === 'error1',
+        rule: (value) => value === 'error1',
         message: 'error message',
       },
       {
-        rule: value => value === 'error2',
+        rule: (value) => value === 'error2',
         message: 'another error message',
       },
     ]}

@@ -21,7 +21,7 @@ import { Mention } from 'tailor-ui';
 <Mention
   defaultValue="我想吃一份{{食物}}"
   suggestions={['食物', '國家', '城市', '語言', '品牌']}
-  onChange={value => console.log(value)}
+  onChange={(value) => console.log(value)}
 />
 ```
 
@@ -43,16 +43,16 @@ import { Mention } from 'tailor-ui';
       creatable
       value={value}
       suggestions={suggestions}
-      onChange={value => {
+      onChange={(value) => {
         setValue(value);
         console.log(value);
       }}
-      onMentionCreate={newMention => {
-        setSuggestions(prevSuggestions => [...prevSuggestions, newMention]);
+      onMentionCreate={(newMention) => {
+        setSuggestions((prevSuggestions) => [...prevSuggestions, newMention]);
       }}
     />
   );
-}
+};
 ```
 
 ### Creatable & Highlight Invalid
@@ -61,7 +61,11 @@ import { Mention } from 'tailor-ui';
 () => {
   const [value, setValue] = useState('我想吃一份{{食物}}');
   const [suggestions, setSuggestions] = useState([
-    '食物', '國家', '城市', '語言', '品牌'
+    '食物',
+    '國家',
+    '城市',
+    '語言',
+    '品牌',
   ]);
 
   return (
@@ -70,16 +74,16 @@ import { Mention } from 'tailor-ui';
       highlightInvalid
       value={value}
       suggestions={suggestions}
-      onChange={value => {
+      onChange={(value) => {
         setValue(value);
         console.log(value);
       }}
-      onMentionCreate={newMention => {
-        setSuggestions(prevSuggestions => [...prevSuggestions, newMention])
+      onMentionCreate={(newMention) => {
+        setSuggestions((prevSuggestions) => [...prevSuggestions, newMention]);
       }}
     />
   );
-}
+};
 ```
 
 ### Disabled
@@ -88,7 +92,7 @@ import { Mention } from 'tailor-ui';
 <Mention
   defaultValue="我想吃一份{{食物}}"
   suggestions={['食物', '國家', '城市', '語言', '品牌']}
-  onChange={value => console.log(value)}
+  onChange={(value) => console.log(value)}
   disabled
 />
 ```
@@ -106,13 +110,13 @@ import { Mention } from 'tailor-ui';
       />
     </FormField>
   );
-}
+};
 ```
 
 ## API
 
 | Property         | Description                                                                  | Type                           | Default                                         |
-|------------------|------------------------------------------------------------------------------|--------------------------------|-------------------------------------------------|
+| ---------------- | ---------------------------------------------------------------------------- | ------------------------------ | ----------------------------------------------- |
 | suggestions      | Suggestion content                                                           | string[]                       | `[]`                                            |
 | disabled         | Tell if the mention is disabled.                                             | `boolean`                      | `false`                                         |
 | creatable        | Create suggestion when mention text which is not exists in suggestions props | `boolean`                      | `false`                                         |

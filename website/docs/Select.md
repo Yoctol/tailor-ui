@@ -25,7 +25,7 @@ import { Select } from 'tailor-ui';
   return (
     <Select
       value={value}
-      onChange={newValue => setValue(newValue)}
+      onChange={(newValue) => setValue(newValue)}
       options={[
         { label: 'Banana', value: 'banana' },
         { label: 'Orange', value: 'orange' },
@@ -34,7 +34,7 @@ import { Select } from 'tailor-ui';
       ]}
     />
   );
-}
+};
 ```
 
 ### other sizes
@@ -48,7 +48,7 @@ import { Select } from 'tailor-ui';
       <Select
         size="sm"
         value={value}
-        onChange={newValue => setValue(newValue)}
+        onChange={(newValue) => setValue(newValue)}
         options={[
           { label: 'Banana', value: 'banana' },
           { label: 'Orange', value: 'orange' },
@@ -60,7 +60,7 @@ import { Select } from 'tailor-ui';
       <br />
       <Select
         value={value}
-        onChange={newValue => setValue(newValue)}
+        onChange={(newValue) => setValue(newValue)}
         options={[
           { label: 'Banana', value: 'banana' },
           { label: 'Orange', value: 'orange' },
@@ -73,7 +73,7 @@ import { Select } from 'tailor-ui';
       <Select
         size="lg"
         value={value}
-        onChange={newValue => setValue(newValue)}
+        onChange={(newValue) => setValue(newValue)}
         options={[
           { label: 'Banana', value: 'banana' },
           { label: 'Orange', value: 'orange' },
@@ -83,7 +83,7 @@ import { Select } from 'tailor-ui';
       />
     </div>
   );
-}
+};
 ```
 
 ### Searchable
@@ -96,7 +96,7 @@ import { Select } from 'tailor-ui';
     <Select
       searchable
       value={value}
-      onChange={newValue => setValue(newValue)}
+      onChange={(newValue) => setValue(newValue)}
       options={[
         { label: 'Banana', value: 'banana' },
         { label: 'Orange', value: 'orange' },
@@ -105,7 +105,7 @@ import { Select } from 'tailor-ui';
       ]}
     />
   );
-}
+};
 ```
 
 ### Creatable
@@ -126,13 +126,13 @@ import { Select } from 'tailor-ui';
       creatable
       loading={loading}
       value={value}
-      onChange={newValue => setValue(newValue)}
+      onChange={(newValue) => setValue(newValue)}
       options={options}
-      isValidNewOption={name =>
-        !options.map(option => option.label).includes(name) &&
+      isValidNewOption={(name) =>
+        !options.map((option) => option.label).includes(name) &&
         name.trim() !== ''
       }
-      onCreateOption={name => {
+      onCreateOption={(name) => {
         const newOption = { label: name, value: name };
         setLoading(true);
         setTimeout(() => {
@@ -143,7 +143,7 @@ import { Select } from 'tailor-ui';
       }}
     />
   );
-}
+};
 ```
 
 ### disabled
@@ -156,7 +156,7 @@ import { Select } from 'tailor-ui';
     <Select
       disabled
       value={value}
-      onChange={newValue => setValue(newValue)}
+      onChange={(newValue) => setValue(newValue)}
       options={[
         { label: 'Banana', value: 'banana' },
         { label: 'Orange', value: 'orange' },
@@ -165,7 +165,7 @@ import { Select } from 'tailor-ui';
       ]}
     />
   );
-}
+};
 ```
 
 ### With placeholder & clearable
@@ -179,7 +179,7 @@ import { Select } from 'tailor-ui';
       clearable
       placeholder="どれ"
       value={value}
-      onChange={newValue => setValue(newValue)}
+      onChange={(newValue) => setValue(newValue)}
       options={[
         { label: 'Banana', value: 'banana' },
         { label: 'Orange', value: 'orange' },
@@ -188,7 +188,7 @@ import { Select } from 'tailor-ui';
       ]}
     />
   );
-}
+};
 ```
 
 ### Large items & custom menu
@@ -212,14 +212,14 @@ import { Select } from 'tailor-ui';
           I am cutsom menu!
         </div>
       }
-      onChange={newValue => {
+      onChange={(newValue) => {
         console.log(newValue);
         setValue(newValue);
       }}
       options={defaultItems}
     />
   );
-}
+};
 ```
 
 ### Multiple
@@ -242,30 +242,30 @@ import { Select } from 'tailor-ui';
       width="360px"
       multiple
       value={value}
-      onChange={newValue => setValue(newValue)}
+      onChange={(newValue) => setValue(newValue)}
       options={options}
-      isValidNewOption={name =>
-        !options.map(option => option.label).includes(name) &&
+      isValidNewOption={(name) =>
+        !options.map((option) => option.label).includes(name) &&
         name.trim() !== ''
       }
-      onCreateOption={name => {
+      onCreateOption={(name) => {
         const newOption = { label: name, value: name };
         setLoading(true);
         setTimeout(() => {
           setOptions([...options, newOption]);
-          setValue(prevValue => [...prevValue, newOption]);
+          setValue((prevValue) => [...prevValue, newOption]);
           setLoading(false);
         }, 1000);
       }}
     />
   );
-}
+};
 ```
 
 ## API
 
 | Property            | Description                                                                                                                                                                                             | Type                                                                             | Default                                |
-|---------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------|----------------------------------------|
+| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------- |
 | `id`                | Id of select                                                                                                                                                                                            | `string`                                                                         |                                        |
 | `name`              | Name of select                                                                                                                                                                                          | `string`                                                                         |                                        |
 | `className`         | ClassName of select                                                                                                                                                                                     | `string`                                                                         |                                        |

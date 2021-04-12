@@ -27,7 +27,7 @@ import { Slider } from 'tailor-ui';
       <Slider defaultValue={40} />
     </>
   );
-}
+};
 ```
 
 ### Range usage
@@ -42,7 +42,7 @@ import { Slider } from 'tailor-ui';
       <Slider range defaultValue={[40, 60]} />
     </>
   );
-}
+};
 ```
 
 ### Customized min & max usage
@@ -57,7 +57,7 @@ import { Slider } from 'tailor-ui';
       <Slider min={120} max={400} range defaultValue={[240, 300]} />
     </>
   );
-}
+};
 ```
 
 ### Customized step usage
@@ -72,7 +72,7 @@ import { Slider } from 'tailor-ui';
       <Slider step={10} range defaultValue={[30, 60]} />
     </>
   );
-}
+};
 ```
 
 ### Disabled
@@ -87,7 +87,7 @@ import { Slider } from 'tailor-ui';
 ## API
 
 | Property       | Description                                                                                            | Type                                          | Default |
-|----------------|--------------------------------------------------------------------------------------------------------|-----------------------------------------------|---------|
+| -------------- | ------------------------------------------------------------------------------------------------------ | --------------------------------------------- | ------- |
 | `value`        | The value of slider. When `range` is `false`, use `number`, otherwise, use `[number, number]`          | `number` \| `[number, number]`                |         |
 | `defaultValue` | The default value of slider. When `range` is `false`, use `number`, otherwise, use `[number, number]`  | `number` \| `[number, number]`                |         |
 | `min`          | The minimum value the slider can slide to                                                              | `number`                                      | 0       |

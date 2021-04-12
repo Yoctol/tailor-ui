@@ -179,7 +179,7 @@ import { Position, Popover } from 'tailor-ui';
 <Popover
   position={Position.RIGHT}
   title="Title"
-  content={hide => (
+  content={(hide) => (
     <div>
       Popover Content
       <br />
@@ -242,7 +242,7 @@ import { Position, Popover } from 'tailor-ui';
       </Popover>
     </>
   );
-}
+};
 ```
 
 ### Nested Usage
@@ -314,7 +314,7 @@ import { Position, Popover } from 'tailor-ui';
 ## API
 
 | Property          | Description                                                                                                                                          | Type                                                    | Default        |
-|-------------------|------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------|----------------|
+| ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------- | -------------- |
 | `defaultVisible`  | Whether the floating popover card is visible by default                                                                                              | `boolean`                                               |                |
 | `visible`         | Whether the floating popover card is visible                                                                                                         | `boolean`                                               |                |
 | `onVisibleChange` | Callback executed when visibility of the popover card is changed                                                                                     | `(visible: boolean) => void`                            |                |

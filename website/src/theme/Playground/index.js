@@ -7,6 +7,7 @@
  */
 
 import React, { useState } from 'react';
+import usePrismTheme from '@theme/hooks/usePrismTheme';
 import { LiveEditor, LiveError, LivePreview, LiveProvider } from 'react-live';
 import { MdCode, MdRefresh } from 'react-icons/md';
 
@@ -24,7 +25,10 @@ function LiveCode({ defaultShowCode, refreshPreview, onChangeCode }) {
       </div>
       {showCode && (
         <div className={styles.playgroundCode}>
-          <LiveEditor onChange={onChangeCode} />
+          <LiveEditor
+            onChange={onChangeCode}
+            className={styles.playgroundEditor}
+          />
           <LiveError />
         </div>
       )}
@@ -52,26 +56,26 @@ function LiveCode({ defaultShowCode, refreshPreview, onChangeCode }) {
 }
 
 function Playground({
-  theme,
   transformCode,
   children,
   showCode: defaultShowCode = false,
   ...props
 }) {
   const [, setCount] = useState(0);
-  const [code, setCode] = useState(children.replace(/\n$/, ''));
+  const [code, setCode] = useState(children.replace(/(\n|;)$/, ''));
+  const prismTheme = usePrismTheme();
 
   return (
     <LiveProvider
-      transformCode={transformCode || ((codeString) => `${codeString};`)}
-      theme={theme}
+      transformCode={transformCode || ((codeString) => codeString)}
+      theme={prismTheme}
       code={code}
       {...props}
     >
       <LiveCode
         defaultShowCode={defaultShowCode}
         refreshPreview={() => setCount((prev) => prev + 1)}
-        onChangeCode={(newCode) => setCode(newCode.replace(/\n$/, ''))}
+        onChangeCode={(newCode) => setCode(newCode.replace(/(\n|;)$/, ''))}
       />
     </LiveProvider>
   );

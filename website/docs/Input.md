@@ -125,7 +125,7 @@ import { Input, Textarea, FormField } from 'tailor-ui';
       </Button>
     </>
   );
-}
+};
 ```
 
 ### Textarea
@@ -151,7 +151,7 @@ import { Input, Textarea, FormField } from 'tailor-ui';
 ### Input
 
 | Property       | Description                                                             | Type                             | Default |
-|----------------|-------------------------------------------------------------------------|----------------------------------|---------|
+| -------------- | ----------------------------------------------------------------------- | -------------------------------- | ------- |
 | `autoSelect`   | Auto select value of the input if true                                  | `boolean`                        |         |
 | `size`         | The size of the input box                                               | `'sm'` `'md'` `'lg'`             | `'md'`  |
 | `prefix`       | The label text displayed before (on the right side of) the input field. | `ReactNode`                      |         |
@@ -166,7 +166,7 @@ import { Input, Textarea, FormField } from 'tailor-ui';
 ### Textarea
 
 | Property       | Description                          | Type                           | Default |
-|----------------|--------------------------------------|--------------------------------|---------|
+| -------------- | ------------------------------------ | ------------------------------ | ------- |
 | `onResize`     | Called whenever the textarea resizes | `(event: Event) => void`       |         |
 | `rows`         | Minimum number of visible rows       | `number`                       |         |
 | `maxRows`      | Maximum number of visible rows       | `number`                       |         |

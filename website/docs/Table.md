@@ -29,7 +29,7 @@ import { Table } from 'tailor-ui';
       <Table.HeadColumn>Action</Table.HeadColumn>
     </Table.Head>
     <Table.Body>
-      {range(1, 4).map(value => (
+      {range(1, 4).map((value) => (
         <Table.Row key={value}>
           <Table.Column>Name {value}</Table.Column>
           <Table.Column>Platform {value}</Table.Column>
@@ -71,7 +71,7 @@ import { Table } from 'tailor-ui';
       <Table.HeadColumn>Action</Table.HeadColumn>
     </Table.Head>
     <Table.Body>
-      {range(1, 4).map(value => (
+      {range(1, 4).map((value) => (
         <Table.Row key={value}>
           <Table.Column>Name {value}</Table.Column>
           <Table.Column>Platform {value}</Table.Column>
@@ -96,69 +96,45 @@ import { Table } from 'tailor-ui';
     <Table>
       <Table.Head>
         <Table.HeadColumn fixed="left">
-          <Box width="120px">
-            Fixed Column 1
-          </Box>
+          <Box width="120px">Fixed Column 1</Box>
         </Table.HeadColumn>
         <Table.HeadColumn fixed="left">
-          <Box width="120px">
-            Fixed Column 2
-          </Box>
+          <Box width="120px">Fixed Column 2</Box>
         </Table.HeadColumn>
         <Table.HeadColumn>
-          <Box width="160px">
-            Scrollable Column 1
-          </Box>
+          <Box width="160px">Scrollable Column 1</Box>
         </Table.HeadColumn>
         <Table.HeadColumn>
-          <Box width="160px">
-            Scrollable Column 2
-          </Box>
+          <Box width="160px">Scrollable Column 2</Box>
         </Table.HeadColumn>
         <Table.HeadColumn>
-          <Box width="160px">
-            Scrollable Column 3
-          </Box>
+          <Box width="160px">Scrollable Column 3</Box>
         </Table.HeadColumn>
         <Table.HeadColumn>
-          <Box width="160px">
-            Scrollable Column 4
-          </Box>
+          <Box width="160px">Scrollable Column 4</Box>
         </Table.HeadColumn>
         <Table.HeadColumn>
-          <Box width="160px">
-            Scrollable Column 5
-          </Box>
+          <Box width="160px">Scrollable Column 5</Box>
         </Table.HeadColumn>
         <Table.HeadColumn>
-          <Box width="160px">
-            Scrollable Column 6
-          </Box>
+          <Box width="160px">Scrollable Column 6</Box>
         </Table.HeadColumn>
         <Table.HeadColumn fixed="right">
-          <Box width="120px">
-            Fixed Column 3
-          </Box>
+          <Box width="120px">Fixed Column 3</Box>
         </Table.HeadColumn>
       </Table.Head>
       <Table.Body>
-        {range(1, 10).map(value => (
+        {range(1, 10).map((value) => (
           <Table.Row key={value}>
-            <Table.Column>
-              Column {value}
-            </Table.Column>
-            <Table.Column>
-              Column {value}
-            </Table.Column>
+            <Table.Column>Column {value}</Table.Column>
+            <Table.Column>Column {value}</Table.Column>
             <Table.Column>Scrollable Column {value}</Table.Column>
             <Table.Column>Scrollable Column {value}</Table.Column>
             <Table.Column>Scrollable Column {value}</Table.Column>
             <Table.Column>Scrollable Column {value}</Table.Column>
             <Table.Column>Scrollable Column {value}</Table.Column>
             <Table.Column>Scrollable Column {value}</Table.Column>
-            <Table.Column>
-              Column {value}
-            </Table.Column>
+            <Table.Column>Column {value}</Table.Column>
           </Table.Row>
         ))}
       </Table.Body>
@@ -208,7 +184,7 @@ import { Table } from 'tailor-ui';
       <Table.HeadColumn>Action</Table.HeadColumn>
     </Table.Head>
     <Table.Body>
-      {range(1, 4).map(value => (
+      {range(1, 4).map((value) => (
         <Table.Row key={value}>
           <Table.Column>Name {value}</Table.Column>
           <Table.Column>Platform {value}</Table.Column>

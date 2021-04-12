@@ -21,11 +21,11 @@ import { TextField } from 'tailor-ui';
 <>
   <TextField
     label="Text Field"
-    onChange={event => console.log(event.target.value)}
+    onChange={(event) => console.log(event.target.value)}
   />
   <TextField
     label="Text Field"
-    onChange={event => console.log(event.target.value)}
+    onChange={(event) => console.log(event.target.value)}
   />
 </>
 ```
@@ -36,7 +36,7 @@ import { TextField } from 'tailor-ui';
 <TextField
   label="Text Field"
   maxLength={12}
-  onChange={event => console.log(event.target.value)}
+  onChange={(event) => console.log(event.target.value)}
 />
 ```
 
@@ -48,7 +48,7 @@ import { TextField } from 'tailor-ui';
   rows={2}
   maxRows={6}
   label="Text Field(textarea)"
-  onChange={event => console.log(event.target.value)}
+  onChange={(event) => console.log(event.target.value)}
 />
 ```
 
@@ -61,7 +61,7 @@ import { TextField } from 'tailor-ui';
   maxRows={6}
   maxLength={100}
   label="Text Field(textarea)"
-  onChange={event => console.log(event.target.value)}
+  onChange={(event) => console.log(event.target.value)}
 />
 ```
 
@@ -79,11 +79,11 @@ import { TextField } from 'tailor-ui';
         maxRows={6}
         label="Please type 'error'"
         value={value}
-        onChange={event => setValue(event.target.value)}
+        onChange={(event) => setValue(event.target.value)}
       />
     </FormField>
   );
-}
+};
 ```
 
 ### With maxLength & error
@@ -96,11 +96,11 @@ import { TextField } from 'tailor-ui';
     <FormField
       validator={[
         {
-          rule: value => value === 'error1',
+          rule: (value) => value === 'error1',
           message: 'error message',
         },
         {
-          rule: value => value === 'error2',
+          rule: (value) => value === 'error2',
           message: 'another error message',
         },
       ]}
@@ -109,17 +109,20 @@ import { TextField } from 'tailor-ui';
         label="Please type 'error1' or 'error2'"
         maxLength={12}
         value={value}
-        onChange={event => setValue(event.target.value)}
+        onChange={(event) => setValue(event.target.value)}
       />
     </FormField>
   );
-}
+};
 ```
 
 ### With empty label
 
 ```jsx live
-<TextField maxLength={30} onChange={event => console.log(event.target.value)} />
+<TextField
+  maxLength={30}
+  onChange={(event) => console.log(event.target.value)}
+/>
 ```
 
 ### With controlled value switch
@@ -134,17 +137,17 @@ import { TextField } from 'tailor-ui';
       <TextField
         value={on ? 'toggle' : 'after toggle'}
         maxLength={30}
-        onChange={event => console.log(event.target.value)}
+        onChange={(event) => console.log(event.target.value)}
       />
     </>
   );
-}
+};
 ```
 
 ## API
 
 | Property       | Description                         | Type      | Default |
-|----------------|-------------------------------------|-----------|---------|
+| -------------- | ----------------------------------- | --------- | ------- |
 | `label`        | The label text                      | `string`  |         |
 | `value`        | value of the TextField              | `string`  |         |
 | `defaultValue` | defaultValue of the TextField       | `string`  |         |

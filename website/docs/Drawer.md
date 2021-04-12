@@ -38,7 +38,7 @@ import { Drawer } from 'tailor-ui';
       </Drawer>
     </>
   );
-}
+};
 ```
 
 ### Custom Placement
@@ -75,7 +75,7 @@ import { Drawer } from 'tailor-ui';
       </Drawer>
     </>
   );
-}
+};
 ```
 
 ### Add Custom Footer
@@ -105,7 +105,7 @@ import { Drawer } from 'tailor-ui';
       </Drawer>
     </>
   );
-}
+};
 ```
 
 ### hidden close button and prevent mask clicked close
@@ -137,7 +137,7 @@ import { Drawer } from 'tailor-ui';
       </Drawer>
     </>
   );
-}
+};
 ```
 
 ## API
