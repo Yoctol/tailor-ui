@@ -43,6 +43,14 @@ import { Container, Box } from 'tailor-ui';
 </Box>
 ```
 
+### Without title
+
+```jsx live
+<Box p="24px" bg="surface2">
+  <Container>The content of container</Container>
+</Box>
+```
+
 ### With Table
 
 ```jsx live
@@ -82,9 +90,10 @@ import { Container, Box } from 'tailor-ui';
 
 ### Container
 
-| Property | Description | Type        | Default |
-| -------- | ----------- | ----------- | ------- |
-| `title`  |             | `ReactNode` |         |
+| Property   | Description | Type        | Default |
+| ---------- | ----------- | ----------- | ------- |
+| `title`    |             | `ReactNode` |         |
+| `subTitle` |             | `ReactNode` |         |
 
 ### Container.Section
 

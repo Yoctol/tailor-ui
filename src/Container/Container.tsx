@@ -30,10 +30,6 @@ interface ContainerTitleProps {
 }
 
 const ContainerTitle: FC<ContainerTitleProps> = ({ title, subTitle }) => {
-  if (!title && !subTitle) {
-    return null;
-  }
-
   return (
     <Box pt="24px" px="32px">
       {title && <Heading.H4 mb="8px">{title}</Heading.H4>}
@@ -50,14 +46,21 @@ const ContainerTitle: FC<ContainerTitleProps> = ({ title, subTitle }) => {
   );
 };
 
-const ContainerChildren: FC = ({ children }) => {
+interface ContainerChildrenProps {
+  hasTitle: boolean;
+}
+
+const ContainerChildren: FC<ContainerChildrenProps> = ({
+  hasTitle,
+  children,
+}) => {
   const hasChildrenTable = Array.isArray(children)
     ? children.some(isElementTable)
     : isElementTable(children);
 
   if (!hasChildrenTable) {
     return (
-      <Box px="32px" pb="32px">
+      <Box px="32px" pb="32px" pt={hasTitle ? '0' : '24px'}>
         {children}
       </Box>
     );
@@ -96,10 +99,12 @@ export type ContainerProps = Omit<BoxProps, 'color'> & ContainerTitleProps;
 const Container: FC<ContainerProps> & {
   Section: typeof Section;
 } = ({ title, subTitle, children, ...props }) => {
+  const hasTitle = Boolean(title || subTitle);
+
   return (
     <StyledContainer {...props}>
-      <ContainerTitle title={title} subTitle={subTitle} />
-      <ContainerChildren>{children}</ContainerChildren>
+      {hasTitle && <ContainerTitle title={title} subTitle={subTitle} />}
+      <ContainerChildren hasTitle={hasTitle}>{children}</ContainerChildren>
     </StyledContainer>
   );
 };
