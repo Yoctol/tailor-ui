@@ -3,13 +3,13 @@ import React, {
   MutableRefObject,
   ReactNode,
   useCallback,
-  useEffect,
   useRef,
   useState,
 } from 'react';
 import styled from 'styled-components';
 import { MdClose } from 'react-icons/md';
 import { animated, useTransition } from 'react-spring';
+import { useIsomorphicLayoutEffect } from '@reach/utils';
 
 import { Box } from '../Layout';
 import { Icon } from '../Icon';
@@ -90,7 +90,7 @@ const HooksMessage: FC<HooksMessageProps> = ({ triggerRef }) => {
   const [messages, setMessages] = useState<Message[]>([]);
   const getUid = useUID();
 
-  useEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     setMounted(true);
   }, []);
 
@@ -114,7 +114,7 @@ const HooksMessage: FC<HooksMessageProps> = ({ triggerRef }) => {
     [getUid]
   );
 
-  useEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     // eslint-disable-next-line no-param-reassign
     triggerRef.current = trigger;
   }, [trigger, triggerRef]);
