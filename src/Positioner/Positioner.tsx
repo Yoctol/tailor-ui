@@ -60,6 +60,7 @@ const Positioner: FC<PositionerProps> = ({
   }, []);
 
   const transition = useTransition(visible, {
+    keys: (value) => (value ? 'on' : 'off'),
     from: {
       opacity: 0,
       transform: 'scale(0.9)',
@@ -84,19 +85,19 @@ const Positioner: FC<PositionerProps> = ({
         }
       }
     },
-    config: (item) => ({
+    config: {
       mass: 1,
-      tension: item ? 500 : 1500,
-      friction: item ? 40 : 1200,
-    }),
+      tension: 500,
+      friction: 40,
+    },
   });
 
   return (
     <>
       {children instanceof Function ? children({ ref: targetRef }) : children}
 
-      {transition(
-        (style, item) =>
+      {transition((style, item) => {
+        return (
           item && (
             <Portal defaultOrder={StackingOrder.POSITIONER}>
               <PositionerImpl
@@ -108,7 +109,8 @@ const Positioner: FC<PositionerProps> = ({
               />
             </Portal>
           )
-      )}
+        );
+      })}
     </>
   );
 };
