@@ -301,7 +301,7 @@ exports[`Drawer should render correctly 1`] = `
       </div>
     </div>
     <div
-      style="position: fixed; top: 0px; left: 0px; z-index: 35;"
+      style="position: fixed; top: 0px; left: 0px; z-index: 15;"
     >
       <div
         class="c10"
@@ -453,7 +453,7 @@ exports[`Drawer should render correctly with props closable 1`] = `
 }
 
 <div
-      style="position: fixed; top: 0px; left: 0px; z-index: 35;"
+      style="position: fixed; top: 0px; left: 0px; z-index: 15;"
     >
       <div
         class="c0"
@@ -728,7 +728,7 @@ exports[`Drawer should render custom footer correctly 1`] = `
 }
 
 <div
-      style="position: fixed; top: 0px; left: 0px; z-index: 35;"
+      style="position: fixed; top: 0px; left: 0px; z-index: 15;"
     >
       <div
         class="c0"

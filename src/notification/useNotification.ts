@@ -1,4 +1,4 @@
-import { useCallback, useContext } from 'react';
+import { ReactNode, useCallback, useContext } from 'react';
 
 import { HooksNotificationContext } from './HooksNotificationProvider';
 
@@ -13,8 +13,8 @@ const useNotification = () => {
       duration = Infinity,
     }: {
       key?: string;
-      icon?: JSX.Element;
-      content: string;
+      icon?: ReactNode;
+      content: ReactNode;
       duration?: number;
     }) => triggerRef.current.open({ key, icon, content, duration }),
     [triggerRef]

@@ -129,7 +129,7 @@ exports[`useMessage should render message correctly 1`] = `
     portal-container=""
   >
     <div
-      style="position: fixed; top: 0px; left: 0px; z-index: 35;"
+      style="position: fixed; top: 0px; left: 0px; z-index: 15;"
     >
       <div
         class="c0"

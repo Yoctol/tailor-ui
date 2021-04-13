@@ -290,7 +290,7 @@ exports[`Modal should render correctly 1`] = `
       </div>
     </div>
     <div
-      style="position: fixed; top: 0px; left: 0px; z-index: 35;"
+      style="position: fixed; top: 0px; left: 0px; z-index: 15;"
     >
       <div
         class="c10"
@@ -591,7 +591,7 @@ exports[`Modal should render correctly with lg size 1`] = `
 }
 
 <div
-      style="position: fixed; top: 0px; left: 0px; z-index: 35;"
+      style="position: fixed; top: 0px; left: 0px; z-index: 15;"
     >
       <div
         class="c0"
@@ -957,7 +957,7 @@ exports[`Modal should render with customized footer 1`] = `
 }
 
 <div
-      style="position: fixed; top: 0px; left: 0px; z-index: 35;"
+      style="position: fixed; top: 0px; left: 0px; z-index: 15;"
     >
       <div
         class="c0"
@@ -1508,7 +1508,7 @@ exports[`Modal should render with customized header 1`] = `
 }
 
 <div
-      style="position: fixed; top: 0px; left: 0px; z-index: 35;"
+      style="position: fixed; top: 0px; left: 0px; z-index: 15;"
     >
       <div
         class="c0"
@@ -2127,7 +2127,7 @@ exports[`Modal should render with error status 1`] = `
 }
 
 <div
-      style="position: fixed; top: 0px; left: 0px; z-index: 35;"
+      style="position: fixed; top: 0px; left: 0px; z-index: 15;"
     >
       <div
         class="c0"
@@ -2746,7 +2746,7 @@ exports[`Modal should render with info status 1`] = `
 }
 
 <div
-      style="position: fixed; top: 0px; left: 0px; z-index: 35;"
+      style="position: fixed; top: 0px; left: 0px; z-index: 15;"
     >
       <div
         class="c0"
@@ -3309,7 +3309,7 @@ exports[`Modal should render with props closable 1`] = `
 }
 
 <div
-      style="position: fixed; top: 0px; left: 0px; z-index: 35;"
+      style="position: fixed; top: 0px; left: 0px; z-index: 15;"
     >
       <div
         class="c0"
@@ -3928,7 +3928,7 @@ exports[`Modal should render with success status 1`] = `
 }
 
 <div
-      style="position: fixed; top: 0px; left: 0px; z-index: 35;"
+      style="position: fixed; top: 0px; left: 0px; z-index: 15;"
     >
       <div
         class="c0"
@@ -4547,7 +4547,7 @@ exports[`Modal should render with warning status 1`] = `
 }
 
 <div
-      style="position: fixed; top: 0px; left: 0px; z-index: 35;"
+      style="position: fixed; top: 0px; left: 0px; z-index: 15;"
     >
       <div
         class="c0"

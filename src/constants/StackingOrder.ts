@@ -14,6 +14,11 @@ const StackingOrder = {
   POSITIONER: 10,
 
   /**
+   * Used for the notification.
+   */
+  NOTIFICATION: 15,
+
+  /**
    * Used for the Overlay and everything that's inside such as Dialog + SideSheet.
    */
   OVERLAY: 20,
@@ -22,11 +27,6 @@ const StackingOrder = {
    * Used for the toasts in the toaster. Appears on top of everything else.
    */
   MESSAGE: 30,
-
-  /**
-   * Used for the toasts in the toaster. Appears on top of everything else.
-   */
-  NOTIFICATION: 35,
 };
 
 export { StackingOrder };
