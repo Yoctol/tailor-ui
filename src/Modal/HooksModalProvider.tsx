@@ -1,77 +1,31 @@
-import React, {
-  FC,
-  MutableRefObject,
-  createContext,
-  useCallback,
-  useRef,
-} from 'react';
+import React, { FC, MutableRefObject, createContext, useRef } from 'react';
 
 import { tuplify } from '../utils';
 
-import HooksModal, {
-  ModalOptions,
-  ModalTypes,
-  Trigger,
-  TriggerResponse,
-} from './HooksModal';
+import HooksModal, { Trigger } from './HooksModal';
+
+const defaultTriggerResponse = tuplify(
+  Promise.resolve(false),
+  () => {},
+  () => {}
+);
+(defaultTriggerResponse as any).confirmation = Promise.resolve(false);
+(defaultTriggerResponse as any).close = () => {};
+(defaultTriggerResponse as any).update = () => {};
 
 const HooksModalContext = createContext<MutableRefObject<Trigger>>({
-  current: (() => {}) as any,
+  current: () => defaultTriggerResponse as any,
 });
 
 HooksModalContext.displayName = 'HooksModalContext';
 
 const HooksModalProvider: FC = ({ children }) => {
-  const lazyInvokePromise = useRef<(confirmation: boolean) => void>();
-  const lazyInvokeClose = useRef<boolean>();
-  const lazyInvokeUpdateOptions = useRef<
-    Omit<ModalOptions, 'onConfirm' | 'onCancel'>
-  >();
-  const lazyInvoke = useRef<{ options: ModalOptions; type: ModalTypes }>();
-  const modalTriggerRef = useRef<Trigger>((options, type) => {
-    lazyInvoke.current = { options, type };
-    const promise = new Promise<boolean>((resolve) => {
-      lazyInvokePromise.current = resolve;
-    });
-    const close = () => {
-      lazyInvokeClose.current = true;
-    };
-    const update = (
-      updateOptions: Omit<ModalOptions, 'onConfirm' | 'onCancel'>
-    ) => {
-      lazyInvokeUpdateOptions.current = updateOptions;
-    };
-    const lazyTrigger = tuplify(promise, close, update);
-    (lazyTrigger as any).confirmation = promise;
-    (lazyTrigger as any).close = close;
-    (lazyTrigger as any).update = update;
-
-    return (lazyTrigger as unknown) as TriggerResponse;
-  });
-
-  const setTrigger = useCallback(async (trigger: Trigger) => {
-    modalTriggerRef.current = trigger;
-
-    if (lazyInvoke.current && lazyInvokePromise.current) {
-      const [confirmation, close, update] = trigger(
-        lazyInvoke.current.options,
-        lazyInvoke.current.type
-      );
-      confirmation.then((confirm) => lazyInvokePromise.current?.(confirm));
-
-      if (lazyInvokeClose.current) {
-        close();
-      }
-      if (lazyInvokeUpdateOptions.current) {
-        update(lazyInvokeUpdateOptions.current);
-      }
-    }
-  }, []);
+  const modalTriggerRef = useRef<Trigger>(() => defaultTriggerResponse as any);
 
   return (
     <HooksModalContext.Provider value={modalTriggerRef}>
       {children}
-      <HooksModal setTrigger={setTrigger} />
+      <HooksModal modalTriggerRef={modalTriggerRef} />
     </HooksModalContext.Provider>
   );
 };

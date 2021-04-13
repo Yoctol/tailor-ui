@@ -3,13 +3,13 @@ import React, {
   MutableRefObject,
   ReactNode,
   useCallback,
-  useEffect,
   useRef,
   useState,
 } from 'react';
 import styled from 'styled-components';
 import { MdClose } from 'react-icons/md';
 import { animated, to, useTransition } from 'react-spring';
+import { useIsomorphicLayoutEffect } from '@reach/utils';
 
 import { Box, Flex } from '../Layout';
 import { Icon } from '../Icon';
@@ -82,7 +82,7 @@ const HooksNotification: FC<HooksNotificationProps> = ({ triggerRef }) => {
   const [notifications, setNotifications] = useState<Notification[]>([]);
   const getUid = useUID();
 
-  useEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     setMounted(true);
   }, []);
 
@@ -126,7 +126,7 @@ const HooksNotification: FC<HooksNotificationProps> = ({ triggerRef }) => {
     cancelMap.current.forEach((cancelCallback) => cancelCallback());
   };
 
-  useEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     // eslint-disable-next-line no-param-reassign
     triggerRef.current = {
       open: trigger,

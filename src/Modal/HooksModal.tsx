@@ -2,11 +2,12 @@ import React, {
   FC,
   KeyboardEventHandler,
   MouseEventHandler,
+  MutableRefObject,
   ReactNode,
   useCallback,
-  useEffect,
   useState,
 } from 'react';
+import { useIsomorphicLayoutEffect } from '@reach/utils';
 
 import { StatusType } from '../types';
 import { useLocale } from '../locale';
@@ -44,7 +45,7 @@ export type Trigger = (
 ) => TriggerResponse;
 
 interface HooksModalProps {
-  setTrigger: (trigger: Trigger) => void;
+  modalTriggerRef: MutableRefObject<Trigger>;
 }
 
 interface ModalOptionsState {
@@ -61,7 +62,7 @@ interface ModalOptionsState {
   zIndex?: number;
 }
 
-const HooksModal: FC<HooksModalProps> = ({ setTrigger }) => {
+const HooksModal: FC<HooksModalProps> = ({ modalTriggerRef }) => {
   const { locale } = useLocale();
   const [visible, setVisible] = useState(false);
   const [modalOptions, setModalOptions] = useState<ModalOptionsState>({
@@ -165,9 +166,10 @@ const HooksModal: FC<HooksModalProps> = ({ setTrigger }) => {
 
   const status = type !== 'confirm' ? type : null;
 
-  useEffect(() => {
-    setTrigger(trigger);
-  }, [setTrigger, trigger]);
+  useIsomorphicLayoutEffect(() => {
+    // eslint-disable-next-line no-param-reassign
+    modalTriggerRef.current = trigger;
+  }, [modalTriggerRef, trigger]);
 
   return (
     <Modal
