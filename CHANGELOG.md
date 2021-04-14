@@ -1,3 +1,12 @@
+## [1.8.1](https://github.com/yoctol/tailor-ui/compare/v1.8.0...v1.8.1) (2021-04-14)
+
+
+### Bug Fixes
+
+* **positioner:** remove dynamic config to fix component delay unmount ([6748c88](https://github.com/yoctol/tailor-ui/commit/6748c88995fc7814e1fcedf536fc0d419cc52552))
+* use isomorphic effect to prevent hooks method not work in effect ([c4e5bc1](https://github.com/yoctol/tailor-ui/commit/c4e5bc18e885a70cbffd14169da94538dedf53b4))
+* **notification:** update type and stacking order ([b63f2f2](https://github.com/yoctol/tailor-ui/commit/b63f2f2d57ff860cba15cafef02abb82d93284ab))
+
 # [1.8.0](https://github.com/yoctol/tailor-ui/compare/v1.7.4...v1.8.0) (2021-04-12)
 
 
