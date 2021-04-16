@@ -109,7 +109,7 @@ const ContainerChildren: FC<ContainerChildrenProps> = ({
 
 export type ContainerProps = Omit<BoxProps, 'color'> &
   ContainerTitleProps &
-  ComponentPropsWithoutRef<'div'>;
+  Omit<ComponentPropsWithoutRef<'div'>, 'title'>;
 
 const Container = forwardRef<HTMLDivElement, ContainerProps>(function Container(
   { title, subTitle, children, ...props },

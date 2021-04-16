@@ -16,12 +16,22 @@ exports[`Container should render correctly 1`] = `
   padding-top: 0rem;
 }
 
+.c10 {
+  box-sizing: border-box;
+  margin-bottom: 8px;
+}
+
 .c1 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
+}
+
+.c11 {
+  color: #67758d;
+  font-size: 0.875rem;
 }
 
 .c4 {
@@ -151,6 +161,17 @@ exports[`Container should render correctly 1`] = `
           Title B
         </h4>
         <div
+          class="c10"
+        >
+          <span
+            class="c11"
+            color="gray500"
+            font-size="sm"
+          >
+            Sub Title B
+          </span>
+        </div>
+        <div
           class="c5"
           color="gray400"
           font-size="sm"
@@ -182,6 +203,470 @@ exports[`Container should render correctly 1`] = `
           Subtitles are text derived from either a transcript or screenplay of the dialog or commentary in films.
         </div>
       </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Container should render with table correctly 1`] = `
+.c3 {
+  box-sizing: border-box;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  padding-left: 32px;
+  padding-right: 32px;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+}
+
+.c4 {
+  font-size: 1.125rem;
+  margin: 0;
+  color: #283040;
+  font-weight: bold;
+  line-height: 1.5;
+}
+
+.c12 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  position: relative;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  overflow: hidden;
+  border: 1px solid;
+  border-radius: 0.5rem;
+  border-color: transparent;
+  line-height: 1.5;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+  height: 2.25rem;
+  padding: 0 0.75rem;
+  font-size: 1rem;
+  background-color: #ffffff;
+  color: #328ef5;
+  font-weight: bold;
+}
+
+.c12:focus {
+  outline: 0;
+}
+
+.c12:disabled,
+.c12[disabled] {
+  opacity: 0.85;
+  background-color: #c4cfdd;
+  color: #67758d;
+  cursor: default;
+  pointer-events: none;
+}
+
+.c12:disabled .sc-10g5g0q-0 svg,
+.c12[disabled] .sc-10g5g0q-0 svg {
+  fill: #67758d;
+}
+
+.c12::before {
+  content: '';
+  display: inline-block;
+  position: relative;
+  left: 0;
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
+  width: 0;
+  height: 0;
+  margin-right: 0;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+}
+
+.c12::before {
+  border-color: #328ef5;
+}
+
+.c12 .sc-10g5g0q-0 svg {
+  fill: #328ef5;
+}
+
+.c12:hover {
+  color: #4196f6;
+}
+
+.c12:hover .sc-10g5g0q-0 svg {
+  fill: #4196f6;
+}
+
+.c12:active {
+  background-color: #dee5ef;
+  color: #2386f4;
+}
+
+.c12:active .sc-10g5g0q-0 svg {
+  fill: #2386f4;
+}
+
+.c13 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  position: relative;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  overflow: hidden;
+  border: 1px solid;
+  border-radius: 0.5rem;
+  border-color: transparent;
+  line-height: 1.5;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+  height: 2.25rem;
+  padding: 0 0.75rem;
+  font-size: 1rem;
+  background-color: #3990cd;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.c13:focus {
+  outline: 0;
+}
+
+.c13:disabled,
+.c13[disabled] {
+  opacity: 0.85;
+  background-color: #c4cfdd;
+  color: #67758d;
+  cursor: default;
+  pointer-events: none;
+}
+
+.c13:disabled .sc-10g5g0q-0 svg,
+.c13[disabled] .sc-10g5g0q-0 svg {
+  fill: #67758d;
+}
+
+.c13::before {
+  content: '';
+  display: inline-block;
+  position: relative;
+  left: 0;
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
+  width: 0;
+  height: 0;
+  margin-right: 0;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+}
+
+.c13 .sc-10g5g0q-0 svg {
+  fill: #ffffff;
+}
+
+.c13:hover {
+  background-color: #4597d0;
+}
+
+.c13:active {
+  background-color: #3288c5;
+}
+
+.c9 {
+  background-color: #fbfbfd;
+  color: #283040;
+  font-weight: bold;
+  height: 56px;
+  padding: 0.5rem 0.75rem;
+  border: none;
+  border-bottom: 1px solid #c4cfdd;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+}
+
+.c9::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: -1px;
+  width: 30px;
+  pointer-events: none;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+}
+
+.c11 {
+  background-color: #ffffff;
+  height: 56px;
+  padding: 0.5rem 0.75rem;
+  border: none;
+  border-bottom: 1px solid #c4cfdd;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+}
+
+.c11::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: -1px;
+  width: 30px;
+  pointer-events: none;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+}
+
+.c8 {
+  border-top: none;
+}
+
+.c8:last-child > .c10 {
+  border-bottom: none;
+}
+
+.c7 {
+  display: table;
+  position: relative;
+  width: 100%;
+  margin-bottom: 1px;
+  overflow: auto;
+  border-spacing: 0;
+  border-collapse: separate;
+  border-style: hidden;
+  background-color: #ffffff;
+  font-size: 1rem;
+}
+
+.c7 > tbody > tr:hover > td {
+  background-color: #f6f8fb;
+}
+
+.c6 {
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
+  overflow: auto;
+  border-radius: 1rem;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px 0 #C4CFDD;
+  width: 100%;
+  text-align: center;
+}
+
+.c2 {
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  border-radius: 1rem;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px 0 #C4CFDD;
+  color: #283040;
+  font-size: 1rem;
+}
+
+.c2 .c5 {
+  width: 100%;
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+  border-radius: 0;
+  border-color: #c4cfdd;
+  box-shadow: none;
+}
+
+.c0 + .c0 {
+  margin-top: 16px;
+}
+
+<div>
+  <div
+    class="c0 c1 c2"
+  >
+    <div
+      class="c3"
+    >
+      <h4
+        class="c4"
+      >
+        Text Here
+      </h4>
+    </div>
+    <div
+      class="c5 c6"
+      width="100%"
+    >
+      <table
+        class="c7"
+      >
+        <thead>
+          <tr
+            class="c8"
+          >
+            <th
+              class="c9"
+            >
+              Name
+            </th>
+            <th
+              class="c9"
+            >
+              Platform
+            </th>
+            <th
+              class="c9"
+            >
+              People
+            </th>
+            <th
+              class="c9"
+            >
+              Ammount
+            </th>
+            <th
+              class="c9"
+            >
+              Action
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            class="c8"
+          >
+            <td
+              class="c10 c11"
+            >
+              Name
+            </td>
+            <td
+              class="c10 c11"
+            >
+              Platform
+            </td>
+            <td
+              class="c10 c11"
+            >
+              10,000
+            </td>
+            <td
+              class="c10 c11"
+            >
+              NTD 1,000
+            </td>
+            <td
+              class="c10 c11"
+            >
+              <button
+                class="c12"
+              >
+                Action
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div
+      class="c3"
+    >
+      <button
+        class="c13"
+      >
+        + Button
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Container should render without title correctly 1`] = `
+.c3 {
+  box-sizing: border-box;
+  padding-left: 32px;
+  padding-right: 32px;
+  padding-bottom: 32px;
+  padding-top: 24px;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+}
+
+.c2 {
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  border-radius: 1rem;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px 0 #C4CFDD;
+  color: #283040;
+  font-size: 1rem;
+}
+
+.c2 .sc-12ad6r6-4 {
+  width: 100%;
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+  border-radius: 0;
+  border-color: #c4cfdd;
+  box-shadow: none;
+}
+
+.c0 + .c0 {
+  margin-top: 16px;
+}
+
+<div>
+  <div
+    class="c0 c1 c2"
+  >
+    <div
+      class="c3"
+    >
+      The content of container
     </div>
   </div>
 </div>
