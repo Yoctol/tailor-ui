@@ -5,7 +5,6 @@ import { StyledTableWrapper } from '../Table/styles';
 
 export const StyledContainer = styled(Flex)`
   flex-direction: column;
-  overflow: hidden;
   border-radius: ${(p) => p.theme.radii.xl};
   background-color: ${(p) => p.theme.colors.light};
   box-shadow: ${(p) => p.theme.shadows.base};

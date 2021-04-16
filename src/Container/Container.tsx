@@ -1,4 +1,13 @@
-import React, { FC, ReactNode, isValidElement } from 'react';
+import React, {
+  ComponentPropsWithoutRef,
+  FC,
+  ForwardRefExoticComponent,
+  PropsWithoutRef,
+  ReactNode,
+  RefAttributes,
+  forwardRef,
+  isValidElement,
+} from 'react';
 
 import { Box, BoxProps } from '../Layout/Box';
 import { Divider } from '../Divider';
@@ -8,16 +17,20 @@ import { StyledContainer, StyledSection } from './styles';
 
 export interface SectionProps extends Omit<BoxProps, 'color'> {
   title?: ReactNode;
+  children: ReactNode;
 }
 
-const Section: FC<SectionProps> = ({ title, children, ...props }) => {
+const Section = forwardRef<HTMLDivElement, SectionProps>(function Section(
+  { title, children, ...props },
+  ref
+) {
   return (
-    <StyledSection {...props}>
+    <StyledSection ref={ref} {...props}>
       {title && <Heading.H5 mb="8px">{title}</Heading.H5>}
       {children}
     </StyledSection>
   );
-};
+});
 
 const isElementTable = (element: ReactNode) =>
   isValidElement(element) &&
@@ -94,19 +107,26 @@ const ContainerChildren: FC<ContainerChildrenProps> = ({
   );
 };
 
-export type ContainerProps = Omit<BoxProps, 'color'> & ContainerTitleProps;
+export type ContainerProps = Omit<BoxProps, 'color'> &
+  ContainerTitleProps &
+  ComponentPropsWithoutRef<'div'>;
 
-const Container: FC<ContainerProps> & {
-  Section: typeof Section;
-} = ({ title, subTitle, children, ...props }) => {
+const Container = forwardRef<HTMLDivElement, ContainerProps>(function Container(
+  { title, subTitle, children, ...props },
+  ref
+) {
   const hasTitle = Boolean(title || subTitle);
 
   return (
-    <StyledContainer {...props}>
+    <StyledContainer ref={ref} {...props}>
       {hasTitle && <ContainerTitle title={title} subTitle={subTitle} />}
       <ContainerChildren hasTitle={hasTitle}>{children}</ContainerChildren>
     </StyledContainer>
   );
+}) as ForwardRefExoticComponent<
+  PropsWithoutRef<ContainerProps> & RefAttributes<HTMLDivElement>
+> & {
+  Section: typeof Section;
 };
 
 Container.Section = Section;
