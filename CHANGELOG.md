@@ -1,3 +1,10 @@
+## [1.8.3](https://github.com/yoctol/tailor-ui/compare/v1.8.2...v1.8.3) (2021-04-16)
+
+
+### Bug Fixes
+
+* **container:** update type & add some tests ([a0b0e9b](https://github.com/yoctol/tailor-ui/commit/a0b0e9b1c0fbd48baf5e69ab664c13b19dbef43b))
+
 ## [1.8.2](https://github.com/yoctol/tailor-ui/compare/v1.8.1...v1.8.2) (2021-04-16)
 
 
