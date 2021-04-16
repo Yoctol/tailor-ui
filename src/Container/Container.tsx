@@ -73,7 +73,7 @@ const ContainerChildren: FC<ContainerChildrenProps> = ({
 
   if (!hasChildrenTable) {
     return (
-      <Box px="32px" pb="32px" pt={hasTitle ? '0' : '24px'}>
+      <Box px="32px" pb="32px" pt={hasTitle ? '0' : '24px'} overflow="auto">
         {children}
       </Box>
     );
@@ -91,7 +91,7 @@ const ContainerChildren: FC<ContainerChildrenProps> = ({
   return (
     <>
       {children.slice(0, childrenIndex).length > 0 && (
-        <Box py="24px" px="32px">
+        <Box py="24px" px="32px" overflow="auto">
           {children.slice(0, childrenIndex)}
         </Box>
       )}
@@ -99,7 +99,7 @@ const ContainerChildren: FC<ContainerChildrenProps> = ({
       {children[childrenIndex]}
 
       {children.slice(childrenIndex + 1).length > 0 && (
-        <Box py="24px" px="32px">
+        <Box py="24px" px="32px" overflow="auto">
           {children.slice(childrenIndex + 1)}
         </Box>
       )}
