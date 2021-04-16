@@ -1,3 +1,10 @@
+## [1.8.2](https://github.com/yoctol/tailor-ui/compare/v1.8.1...v1.8.2) (2021-04-16)
+
+
+### Bug Fixes
+
+* **container:** remove overflow: hidden ([2c87c87](https://github.com/yoctol/tailor-ui/commit/2c87c87718d233bfcb6179628a141e5da69794a7))
+
 ## [1.8.1](https://github.com/yoctol/tailor-ui/compare/v1.8.0...v1.8.1) (2021-04-14)
 
 
