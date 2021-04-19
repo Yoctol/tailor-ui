@@ -2,6 +2,10 @@
 
 exports[`Table should render table correctly 1`] = `
 .c3 {
+  position: -webkit-sticky;
+  position: sticky;
+  z-index: 2;
+  top: 0;
   background-color: #fbfbfd;
   color: #283040;
   font-weight: bold;
@@ -9,17 +13,6 @@ exports[`Table should render table correctly 1`] = `
   padding: 0.5rem 0.75rem;
   border: none;
   border-bottom: 1px solid #c4cfdd;
-  -webkit-transition: all 200ms ease 0s;
-  transition: all 200ms ease 0s;
-}
-
-.c3::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: -1px;
-  width: 30px;
-  pointer-events: none;
   -webkit-transition: all 200ms ease 0s;
   transition: all 200ms ease 0s;
 }
@@ -34,17 +27,6 @@ exports[`Table should render table correctly 1`] = `
   transition: all 200ms ease 0s;
 }
 
-.c5::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: -1px;
-  width: 30px;
-  pointer-events: none;
-  -webkit-transition: all 200ms ease 0s;
-  transition: all 200ms ease 0s;
-}
-
 .c2 {
   border-top: none;
 }
@@ -55,10 +37,9 @@ exports[`Table should render table correctly 1`] = `
 
 .c1 {
   display: table;
-  position: relative;
   width: 100%;
-  margin-bottom: 1px;
-  overflow: auto;
+  margin: 0;
+  padding: 0;
   border-spacing: 0;
   border-collapse: separate;
   border-style: hidden;
@@ -71,10 +52,12 @@ exports[`Table should render table correctly 1`] = `
 }
 
 .c0 {
+  position: relative;
   -webkit-flex: none;
   -ms-flex: none;
   flex: none;
-  overflow: auto;
+  overflow-x: auto;
+  overflow-y: hidden;
   border-radius: 1rem;
   background-color: #ffffff;
   box-shadow: 0 2px 4px 0 #C4CFDD;
@@ -221,6 +204,10 @@ exports[`Table should render table correctly 1`] = `
 
 exports[`Table should render table correctly with header and footer 1`] = `
 .c5 {
+  position: -webkit-sticky;
+  position: sticky;
+  z-index: 2;
+  top: 0;
   background-color: #fbfbfd;
   color: #283040;
   font-weight: bold;
@@ -228,17 +215,6 @@ exports[`Table should render table correctly with header and footer 1`] = `
   padding: 0.5rem 0.75rem;
   border: none;
   border-bottom: 1px solid #c4cfdd;
-  -webkit-transition: all 200ms ease 0s;
-  transition: all 200ms ease 0s;
-}
-
-.c5::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: -1px;
-  width: 30px;
-  pointer-events: none;
   -webkit-transition: all 200ms ease 0s;
   transition: all 200ms ease 0s;
 }
@@ -253,17 +229,6 @@ exports[`Table should render table correctly with header and footer 1`] = `
   transition: all 200ms ease 0s;
 }
 
-.c7::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: -1px;
-  width: 30px;
-  pointer-events: none;
-  -webkit-transition: all 200ms ease 0s;
-  transition: all 200ms ease 0s;
-}
-
 .c4 {
   border-top: none;
 }
@@ -274,10 +239,9 @@ exports[`Table should render table correctly with header and footer 1`] = `
 
 .c3 {
   display: table;
-  position: relative;
   width: 100%;
-  margin-bottom: 1px;
-  overflow: auto;
+  margin: 0;
+  padding: 0;
   border-spacing: 0;
   border-collapse: separate;
   border-style: hidden;
@@ -290,10 +254,12 @@ exports[`Table should render table correctly with header and footer 1`] = `
 }
 
 .c2 {
+  position: relative;
   -webkit-flex: none;
   -ms-flex: none;
   flex: none;
-  overflow: auto;
+  overflow-x: auto;
+  overflow-y: hidden;
   border-radius: 1rem;
   background-color: #ffffff;
   width: 100%;

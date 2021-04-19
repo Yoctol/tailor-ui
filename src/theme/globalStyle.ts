@@ -25,6 +25,8 @@ export const globalStyle = css`
     font-family: Roboto, 'PingFang TC', 'Microsoft JhengHei', 'Helvetica Neue',
       sans-serif;
     font-size: ${rem('16px')};
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
   }
 
