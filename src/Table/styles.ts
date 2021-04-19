@@ -1,5 +1,12 @@
 import styled, { css } from 'styled-components';
-import { TextAlignProps, WidthProps, textAlign, width } from 'styled-system';
+import {
+  MaxHeightProps,
+  TextAlignProps,
+  WidthProps,
+  maxHeight,
+  textAlign,
+  width,
+} from 'styled-system';
 
 interface ShadowType {
   showScrollShadowStart?: boolean;
@@ -16,50 +23,46 @@ const columnSharedStyle = css<ShadowType>`
   border-bottom: ${(p) => p.theme.borders.base} ${(p) => p.theme.colors.gray300};
 
   ${(p) =>
-    p.fixed &&
+    (p.showScrollShadowStart || p.showScrollShadowEnd) &&
     css`
-      position: sticky;
-      z-index: 5;
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: -1px;
+        width: 30px;
+        pointer-events: none;
+        ${p.theme.transition};
+
+        ${p.isLastFixedLeft &&
+        css`
+          right: 0;
+          transform: translateX(100%);
+        `}
+
+        ${p.isFirstFixedRight &&
+        css`
+          left: 0;
+          transform: translateX(-100%);
+        `}
+
+    ${p.showScrollShadowStart &&
+        css`
+          box-shadow: inset 10px 0 8px -8px rgb(0 0 0 / 15%);
+        `}
+
+    ${p.showScrollShadowEnd &&
+        css`
+          box-shadow: inset -10px 0 8px -8px rgb(0 0 0 / 15%);
+        `}
+      }
     `}
-
-  &::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: -1px;
-    width: 30px;
-    pointer-events: none;
-    ${(p) => p.theme.transition};
-
-    ${(p) =>
-      p.isLastFixedLeft &&
-      css`
-        right: 0;
-        transform: translateX(100%);
-      `}
-
-    ${(p) =>
-      p.isFirstFixedRight &&
-      css`
-        left: 0;
-        transform: translateX(-100%);
-      `}
-
-    ${(p) =>
-      p.showScrollShadowStart &&
-      css`
-        box-shadow: inset 10px 0 8px -8px rgb(0 0 0 / 15%);
-      `}
-
-    ${(p) =>
-      p.showScrollShadowEnd &&
-      css`
-        box-shadow: inset -10px 0 8px -8px rgb(0 0 0 / 15%);
-      `}
-  }
 `;
 
 export const StyledHeadColumn = styled.th<WidthProps & ShadowType>`
+  position: sticky;
+  z-index: ${(p) => (p.fixed ? 3 : 2)};
+  top: 0;
   background-color: ${(p) => p.theme.colors.surface2};
   color: ${(p) => p.theme.colors.gray700};
   font-weight: bold;
@@ -71,6 +74,13 @@ export const StyledHeadColumn = styled.th<WidthProps & ShadowType>`
 
 export const StyledColumn = styled.td<ShadowType>`
   background-color: ${(p) => p.theme.colors.light};
+
+  ${(p) =>
+    p.fixed &&
+    css`
+      position: sticky;
+      z-index: 1;
+    `}
 
   ${columnSharedStyle};
   ${(p) => p.theme.transition};
@@ -86,10 +96,9 @@ export const Row = styled.tr`
 
 export const StyledTable = styled.table`
   display: table;
-  position: relative;
   width: 100%;
-  margin-bottom: 1px;
-  overflow: auto;
+  margin: 0;
+  padding: 0;
   border-spacing: 0;
   border-collapse: separate;
   border-style: hidden;
@@ -102,14 +111,17 @@ export const StyledTable = styled.table`
 `;
 
 export type StyledTableWrapperProps = TextAlignProps &
-  WidthProps & {
+  WidthProps &
+  MaxHeightProps & {
     hasHeader: boolean;
     hasFooter: boolean;
   };
 
 export const StyledTableWrapper = styled.div<StyledTableWrapperProps>`
+  position: relative;
   flex: none;
-  overflow: auto;
+  overflow-x: auto;
+  overflow-y: ${(p) => (p.maxHeight ? 'auto' : 'hidden')};
   border-radius: ${(p) => p.theme.radii.xl};
   background-color: ${(p) => p.theme.colors.light};
 
@@ -121,6 +133,7 @@ export const StyledTableWrapper = styled.div<StyledTableWrapperProps>`
     `}
 
   ${width};
+  ${maxHeight};
   ${textAlign};
 `;
 

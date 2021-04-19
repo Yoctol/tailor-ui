@@ -38,14 +38,22 @@ const Body = forwardRef<HTMLTableSectionElement, { children: ReactNode }>(
   }
 );
 
-export type TableProps = ComponentPropsWithoutRef<'table'> &
-  Omit<StyledTableWrapperProps, 'hasHeader' | 'hasFooter'> & {
+export type TableProps = Omit<ComponentPropsWithoutRef<'table'>, 'width'> &
+  Omit<StyledTableWrapperProps, 'hasHeader' | 'hasFooter' | 'hasFixed'> & {
     header?: ReactNode;
     footer?: ReactNode;
   };
 
 const Table = forwardRef<HTMLDivElement, TableProps>(function Table(
-  { header, footer, width = '100%', textAlign = 'center', children, ...props },
+  {
+    header,
+    footer,
+    width = '100%',
+    maxHeight,
+    textAlign = 'center',
+    children,
+    ...props
+  },
   forwardedRef
 ) {
   const ownRef = useRef<HTMLDivElement>(null);
@@ -60,10 +68,12 @@ const Table = forwardRef<HTMLDivElement, TableProps>(function Table(
   const handleUpdateScrollShadow = useCallback((target: HTMLDivElement) => {
     const { scrollLeft, scrollWidth, offsetWidth } = target;
 
-    setScrollShadow({
-      start: scrollLeft > 0,
-      end: scrollLeft + offsetWidth < scrollWidth,
-    });
+    if (scrollWidth > offsetWidth) {
+      setScrollShadow({
+        start: scrollLeft > 0,
+        end: scrollLeft + offsetWidth < scrollWidth,
+      });
+    }
   }, []);
 
   useEffect(() => {
@@ -84,7 +94,8 @@ const Table = forwardRef<HTMLDivElement, TableProps>(function Table(
     >
       <StyledTableWrapper
         ref={ref}
-        width={width as string}
+        width={width}
+        maxHeight={maxHeight}
         textAlign={textAlign}
         onScroll={(event) => handleUpdateScrollShadow(event.currentTarget)}
         {...optionsProps}
