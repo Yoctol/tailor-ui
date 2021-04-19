@@ -45,24 +45,11 @@ import { Table } from 'tailor-ui';
 </Box>
 ```
 
-### Header & Footer (Deprecated)
-
-> This API will be deprecated in the future, please use Container wrap Table instead.
+### With maxHeight
 
 ```jsx live
-<Box width="100%" height="100%" borderRadius="xl" bg="surface" p="4">
-  <Table
-    header={
-      <Box py="24px" px="4">
-        <Heading.H4>Text Here</Heading.H4>
-      </Box>
-    }
-    footer={
-      <Box py="24px" px="4">
-        <Button variant="regular">+ Button</Button>
-      </Box>
-    }
-  >
+<Box width="100%" height="100%" borderRadius="xl" bg="#eef0f5" p="4">
+  <Table maxHeight="300px">
     <Table.Head>
       <Table.HeadColumn>Name</Table.HeadColumn>
       <Table.HeadColumn>Platform</Table.HeadColumn>
@@ -71,7 +58,7 @@ import { Table } from 'tailor-ui';
       <Table.HeadColumn>Action</Table.HeadColumn>
     </Table.Head>
     <Table.Body>
-      {range(1, 4).map((value) => (
+      {range(1, 20).map((value) => (
         <Table.Row key={value}>
           <Table.Column>Name {value}</Table.Column>
           <Table.Column>Platform {value}</Table.Column>
@@ -144,36 +131,22 @@ import { Table } from 'tailor-ui';
 </Box>
 ```
 
-### Complex Footer
+### Header & Footer (Deprecated)
+
+> This API will be deprecated in the future, please use Container wrap Table instead.
 
 ```jsx live
-<Box width="100%" height="100%" borderRadius="xl" bg="#eef0f5" p="4">
+<Box width="100%" height="100%" borderRadius="xl" bg="surface" p="4">
   <Table
+    header={
+      <Box py="24px" px="4">
+        <Heading.H4>Text Here</Heading.H4>
+      </Box>
+    }
     footer={
-      <div>
-        <Flex
-          justifyContent="flex-end"
-          alignItems="center"
-          height="80px"
-          px="4"
-        >
-          <div>
-            <Heading.H3>Text Here</Heading.H3>
-            <Heading.H3>Text Here</Heading.H3>
-          </div>
-        </Flex>
-        <Flex
-          bg="primary"
-          justifyContent="flex-end"
-          alignItems="center"
-          height="80px"
-          px="4"
-        >
-          <Button variant="primary-invert" rounded>
-            Action
-          </Button>
-        </Flex>
-      </div>
+      <Box py="24px" px="4">
+        <Button variant="regular">+ Button</Button>
+      </Box>
     }
   >
     <Table.Head>
@@ -199,3 +172,26 @@ import { Table } from 'tailor-ui';
   </Table>
 </Box>
 ```
+
+## API
+
+### Table
+
+| Property    | Description                                                                                      | Type                 | Default  |
+| ----------- | ------------------------------------------------------------------------------------------------ | -------------------- | -------- | --- |
+| `width`     | The width of table                                                                               | `number` \| `string` | `100%`   |
+| `maxHeight` | The maxHeight of table. Used to specify the height of the scroll area, could be string or number | `number              | string`  |     |
+| `textAlign` | The textAlign of table                                                                           | `string`             | `center` |
+
+### Table.HeadColumn
+
+| Property | Description            | Type                  | Default |
+| -------- | ---------------------- | --------------------- | ------- |
+| `fixed`  | Set column to be fixed | `'left'` \| `'right'` |         |
+| `width`  | The width of table     | `number` \| `string`  | `100%`  |
+
+### Table.Column
+
+| Property | Description        | Type                 | Default |
+| -------- | ------------------ | -------------------- | ------- |
+| `width`  | The width of table | `number` \| `string` | `100%`  |
