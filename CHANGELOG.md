@@ -1,3 +1,10 @@
+## [1.8.4](https://github.com/yoctol/tailor-ui/compare/v1.8.3...v1.8.4) (2021-04-19)
+
+
+### Bug Fixes
+
+* **container:** add overflow to children element ([1760ec7](https://github.com/yoctol/tailor-ui/commit/1760ec715cb7d399866d09d152ff84cefa22c8f8))
+
 ## [1.8.3](https://github.com/yoctol/tailor-ui/compare/v1.8.2...v1.8.3) (2021-04-16)
 
 
