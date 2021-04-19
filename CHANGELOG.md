@@ -1,3 +1,11 @@
+## [1.8.5](https://github.com/yoctol/tailor-ui/compare/v1.8.4...v1.8.5) (2021-04-19)
+
+
+### Bug Fixes
+
+* **table:** [#545](https://github.com/yoctol/tailor-ui/issues/545) overflow bugs ([8212a8c](https://github.com/yoctol/tailor-ui/commit/8212a8c0887ec25b903cd75ae1c7f258587eb9ef))
+* blurry bugs ([38ce6c9](https://github.com/yoctol/tailor-ui/commit/38ce6c959e9ab87f84979fb7b4b32496b0b6f731))
+
 ## [1.8.4](https://github.com/yoctol/tailor-ui/compare/v1.8.3...v1.8.4) (2021-04-19)
 
 

@@ -11,7 +11,7 @@
   "bugs": {
     "url": "https://github.com/yoctol/tailor-ui/issues"
   },
-  "version": "1.8.4",
+  "version": "1.8.5",
   "main": "lib/index.cjs.js",
   "module": "lib/index.js",
   "files": [
