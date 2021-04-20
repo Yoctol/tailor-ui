@@ -68,12 +68,10 @@ const Table = forwardRef<HTMLDivElement, TableProps>(function Table(
   const handleUpdateScrollShadow = useCallback((target: HTMLDivElement) => {
     const { scrollLeft, scrollWidth, offsetWidth } = target;
 
-    if (scrollWidth > offsetWidth) {
-      setScrollShadow({
-        start: scrollLeft > 0,
-        end: scrollLeft + offsetWidth < scrollWidth,
-      });
-    }
+    setScrollShadow({
+      start: scrollLeft > 0,
+      end: scrollLeft + offsetWidth < scrollWidth,
+    });
   }, []);
 
   useEffect(() => {
