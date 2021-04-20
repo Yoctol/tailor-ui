@@ -8,7 +8,7 @@ import React, {
 } from 'react';
 import styled from 'styled-components';
 import { MdClose } from 'react-icons/md';
-import { animated, useTransition } from 'react-spring';
+import { animated, useTransition } from '@react-spring/web';
 import { useIsomorphicLayoutEffect } from '@reach/utils';
 
 import { Box } from '../Layout';

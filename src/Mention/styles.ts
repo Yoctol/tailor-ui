@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { animated } from 'react-spring';
+import { animated } from '@react-spring/web';
 
 import { Textarea as BaseTextarea } from '../Input/Textarea';
 import { inputStyles } from '../Input/styles';

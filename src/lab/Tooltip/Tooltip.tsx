@@ -4,7 +4,7 @@ import {
   TooltipPopup,
   useTooltip,
 } from '@reach/tooltip';
-import { animated, useTransition } from 'react-spring';
+import { animated, useTransition } from '@react-spring/web';
 import type * as Polymorphic from '@reach/utils/polymorphic';
 
 import { Stack } from '../../Stack';

@@ -1,5 +1,5 @@
 import React, { FC, KeyboardEventHandler, MouseEventHandler } from 'react';
-import { animated, config, useSpring, useTransition } from 'react-spring';
+import { animated, config, useSpring, useTransition } from '@react-spring/web';
 
 import { Backdrop } from '../Backdrop';
 import { ESC_KEY_CODE, useKeydown } from '../hooks';

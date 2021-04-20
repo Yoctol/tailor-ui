@@ -1,5 +1,5 @@
 import React, { FC, useEffect, useState } from 'react';
-import { animated, config, to, useSpring } from 'react-spring';
+import { animated, config, to, useSpring } from '@react-spring/web';
 
 import { useMeasure } from '../hooks';
 

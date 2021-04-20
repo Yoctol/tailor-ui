@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { MdKeyboardArrowUp } from 'react-icons/md';
-import { animated, config, to, useSpring } from 'react-spring';
+import { animated, config, to, useSpring } from '@react-spring/web';
 
 import { Icon } from '../Icon';
 

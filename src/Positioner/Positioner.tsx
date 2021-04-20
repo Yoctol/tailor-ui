@@ -1,5 +1,5 @@
 import React, { FC, ReactNode, RefObject, useEffect, useRef } from 'react';
-import { useTransition } from 'react-spring';
+import { useTransition } from '@react-spring/web';
 
 import { Portal } from '../Portal';
 import { Position, Positions, StackingOrder } from '../constants';

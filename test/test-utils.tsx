@@ -1,4 +1,4 @@
-import { Globals } from 'react-spring';
+import { Globals } from '@react-spring/web';
 import { ReactElement } from 'react';
 import { RenderOptions, render } from '@testing-library/react';
 
