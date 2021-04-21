@@ -12,7 +12,7 @@ import React, {
 } from 'react';
 import styled from 'styled-components';
 import { MdClose } from 'react-icons/md';
-import { animated, to, useSpring } from 'react-spring';
+import { animated, to, useSpring } from '@react-spring/web';
 
 import { Icon } from '../Icon';
 import { useMeasure, usePrevious } from '../hooks';

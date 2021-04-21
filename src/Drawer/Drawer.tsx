@@ -1,5 +1,5 @@
 import React, { FC, ReactNode, useMemo } from 'react';
-import { animated, to, useTransition } from 'react-spring';
+import { animated, to, useTransition } from '@react-spring/web';
 
 import CloseButton from '../Modal/CloseButton';
 import { Backdrop } from '../Backdrop';

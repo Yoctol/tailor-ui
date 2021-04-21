@@ -1,5 +1,5 @@
 import React, { FC, ReactNode, useCallback, useEffect, useState } from 'react';
-import { animated, useTransition } from 'react-spring';
+import { animated, useTransition } from '@react-spring/web';
 
 import { Box } from '../Layout';
 import { useUID } from '../UIProvider/UIDContext';

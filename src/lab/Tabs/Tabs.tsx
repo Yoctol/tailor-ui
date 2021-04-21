@@ -1,5 +1,5 @@
 import React, { FC, useContext, useEffect, useRef, useState } from 'react';
-import { useSpring } from 'react-spring';
+import { useSpring } from '@react-spring/web';
 
 import TabContext from './TabContext';
 import {

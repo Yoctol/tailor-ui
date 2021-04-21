@@ -1,6 +1,6 @@
 import React, { ComponentPropsWithoutRef, FC } from 'react';
 import styled from 'styled-components';
-import { animated, config, useTransition } from 'react-spring';
+import { animated, config, useTransition } from '@react-spring/web';
 
 import { Portal } from '../Portal';
 import { StackingOrder } from '../constants';

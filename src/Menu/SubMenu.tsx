@@ -1,7 +1,7 @@
 import React, { FC, ReactNode, useContext } from 'react';
 import styled from 'styled-components';
 import { MdKeyboardArrowDown } from 'react-icons/md';
-import { animated, to, useSpring } from 'react-spring';
+import { animated, to, useSpring } from '@react-spring/web';
 
 import { Icon, IconType } from '../Icon';
 import { useMeasure } from '../hooks';

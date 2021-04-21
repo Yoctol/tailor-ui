@@ -1,5 +1,5 @@
 import React, { ComponentPropsWithRef, FC } from 'react';
-import { to, useTransition } from 'react-spring';
+import { to, useTransition } from '@react-spring/web';
 
 import { AnimatedStyledBadge, StyledBadgeWrapper } from './styles';
 

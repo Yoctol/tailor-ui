@@ -1,5 +1,5 @@
 import React, { RefObject, forwardRef, useEffect } from 'react';
-import { config, useTransition } from 'react-spring';
+import { config, useTransition } from '@react-spring/web';
 
 import { Portal } from '../Portal';
 

@@ -1,6 +1,6 @@
 import React, { FC, RefObject, useMemo, useRef } from 'react';
 import styled from 'styled-components';
-import { SpringValue, animated } from 'react-spring';
+import { SpringValue, animated } from '@react-spring/web';
 import { useRect } from '@reach/rect';
 
 import { Positions } from '../constants';
