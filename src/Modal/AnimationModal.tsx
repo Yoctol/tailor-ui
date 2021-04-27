@@ -1,5 +1,12 @@
 import React, { FC, KeyboardEventHandler, MouseEventHandler } from 'react';
-import { animated, config, useSpring, useTransition } from '@react-spring/web';
+import {
+  animated,
+  config,
+  useChain,
+  useSpring,
+  useSpringRef,
+  useTransition,
+} from '@react-spring/web';
 
 import { Backdrop } from '../Backdrop';
 import { ESC_KEY_CODE, useKeydown } from '../hooks';
@@ -42,7 +49,9 @@ const AnimationModal: FC<AnimationModalProps> = ({
     onKeydown: onCancel as any,
   });
 
+  const transRef = useSpringRef();
   const transitions = useTransition(visible, {
+    ref: transRef,
     from: {
       opacity: 0,
       transform: 'translate(-50%, -50%) scale(0.9)',
@@ -68,10 +77,17 @@ const AnimationModal: FC<AnimationModalProps> = ({
     config: config.stiff,
   });
 
+  const springRef = useSpringRef();
   const statusProps = useSpring({
+    ref: springRef,
     opacity: visible ? 1 : 0,
     top: visible ? -10 : 0,
   });
+
+  useChain(visible ? [transRef, springRef] : [springRef, transRef], [
+    0,
+    visible ? 0.15 : 0,
+  ]);
 
   return (
     <>
