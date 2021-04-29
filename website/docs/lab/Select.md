@@ -34,7 +34,7 @@ import { Select } from 'tailor-ui/lab';
       <Heading.H5>Controlled</Heading.H5>
       <Lab.Select
         value={value}
-        onChange={newValue => setValue(newValue)}
+        onChange={(newValue) => setValue(newValue)}
         options={options}
       />
 
@@ -42,13 +42,13 @@ import { Select } from 'tailor-ui/lab';
 
       <Heading.H5>Uncontrolled</Heading.H5>
       <Lab.Select
-        onChange={newValue => console.log(newValue)}
+        onChange={(newValue) => console.log(newValue)}
         defaultValue={{ label: 'Banana', value: 'banana' }}
         options={options}
       />
     </>
   );
-}
+};
 ```
 
 ### Searchable
@@ -61,7 +61,7 @@ import { Select } from 'tailor-ui/lab';
     <Lab.Select
       searchable
       value={value}
-      onChange={newValue => setValue(newValue)}
+      onChange={(newValue) => setValue(newValue)}
       options={[
         { label: 'Banana', value: 'banana' },
         { label: 'Orange', value: 'orange' },
@@ -70,9 +70,49 @@ import { Select } from 'tailor-ui/lab';
       ]}
     />
   );
-}
+};
 ```
 
+### Async Search
+
+try to search `react`:
+
+```jsx live
+() => {
+  const [options, setOptions] = useState([]);
+  const [value, setValue] = useState(null);
+
+  const handleSearchGitHubRepository = useMemo(() =>
+    debounce(async (searchValue = '') => {
+      const response = await fetch(
+        `https://api.github.com/search/repositories?q=${searchValue}`,
+        {
+          method: 'GET',
+        }
+      ).then((res) => res.json());
+
+      setOptions(
+        response.items
+          ? response.items.map((item) => ({
+              value: item.id,
+              label: item.full_name,
+            }))
+          : []
+      );
+    }, 500)
+  );
+
+  return (
+    <Lab.Select
+      searchable
+      value={value}
+      onChange={(newValue) => setValue(newValue)}
+      onSearch={handleSearchGitHubRepository}
+      options={options}
+    />
+  );
+};
+```
 
 ### disabled
 
@@ -84,7 +124,7 @@ import { Select } from 'tailor-ui/lab';
     <Lab.Select
       disabled
       value={value}
-      onChange={newValue => setValue(newValue)}
+      onChange={(newValue) => setValue(newValue)}
       options={[
         { label: 'Banana', value: 'banana' },
         { label: 'Orange', value: 'orange' },
@@ -93,7 +133,7 @@ import { Select } from 'tailor-ui/lab';
       ]}
     />
   );
-}
+};
 ```
 
 ### With placeholder & clearable
@@ -107,7 +147,7 @@ import { Select } from 'tailor-ui/lab';
       clearable
       placeholder="どれ"
       value={value}
-      onChange={newValue => setValue(newValue)}
+      onChange={(newValue) => setValue(newValue)}
       options={[
         { label: 'Banana', value: 'banana' },
         { label: 'Orange', value: 'orange' },
@@ -117,7 +157,7 @@ import { Select } from 'tailor-ui/lab';
       ]}
     />
   );
-}
+};
 ```
 
 ### Virtual scroll
@@ -138,13 +178,13 @@ import { Select } from 'tailor-ui/lab';
       searchable
       options={options}
       value={value}
-      onChange={newValue => {
+      onChange={(newValue) => {
         console.log(newValue);
         setValue(newValue);
       }}
     />
   );
-}
+};
 ```
 
 ### Creatable
@@ -165,13 +205,13 @@ import { Select } from 'tailor-ui/lab';
       creatable
       loading={loading}
       value={value}
-      onChange={newValue => setValue(newValue)}
+      onChange={(newValue) => setValue(newValue)}
       options={options}
-      isValidNewOption={name =>
-        !options.map(option => option.label).includes(name) &&
+      isValidNewOption={(name) =>
+        !options.map((option) => option.label).includes(name) &&
         name.trim() !== ''
       }
-      onCreateOption={name => {
+      onCreateOption={(name) => {
         const newOption = { label: name, value: name };
         setLoading(true);
         setTimeout(() => {
@@ -182,9 +222,8 @@ import { Select } from 'tailor-ui/lab';
       }}
     />
   );
-}
+};
 ```
-
 
 ### Stack
 
@@ -210,18 +249,17 @@ import { Select } from 'tailor-ui/lab';
       >
         <Lab.Select
           value={value}
-          onChange={newValue => setValue(newValue)}
+          onChange={(newValue) => setValue(newValue)}
           options={options}
         />
       </Modal>
       <Button onClick={() => setVisible(true)}>Open Modal</Button>
     </>
   );
-}
+};
 ```
 
 ## Multiple Select
-
 
 ```jsx live
 () => {
@@ -241,30 +279,30 @@ import { Select } from 'tailor-ui/lab';
       width="360px"
       multiple
       value={value}
-      onChange={newValue => setValue(newValue)}
+      onChange={(newValue) => setValue(newValue)}
       options={options}
-      isValidNewOption={name =>
-        !options.map(option => option.label).includes(name) &&
+      isValidNewOption={(name) =>
+        !options.map((option) => option.label).includes(name) &&
         name.trim() !== ''
       }
-      onCreateOption={name => {
+      onCreateOption={(name) => {
         const newOption = { label: name, value: name };
         setLoading(true);
         setTimeout(() => {
           setOptions([...options, newOption]);
-          setValue(prevValue => [...prevValue, newOption]);
+          setValue((prevValue) => [...prevValue, newOption]);
           setLoading(false);
         }, 1000);
       }}
     />
   );
-}
+};
 ```
 
 ## API
 
 | Property            | Description                                                                                                                                                                                             | Type                                                                             | Default                                |
-|---------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------|----------------------------------------|
+| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------- |
 | `id`                | Id of select                                                                                                                                                                                            | `string`                                                                         |                                        |
 | `name`              | Name of select                                                                                                                                                                                          | `string`                                                                         |                                        |
 | `width`             | Width of select                                                                                                                                                                                         | `string` \| `number`                                                             | 240                                    |
