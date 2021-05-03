@@ -1,3 +1,16 @@
+# [1.9.0](https://github.com/yoctol/tailor-ui/compare/v1.8.5...v1.9.0) (2021-05-03)
+
+
+### Bug Fixes
+
+* **modal:** add useChain back for status bar delay render ([b770dab](https://github.com/yoctol/tailor-ui/commit/b770daba0e25e31cfffc317aa7fdcc6ff394ae61))
+* **table:** always reset shadow ([4d0a357](https://github.com/yoctol/tailor-ui/commit/4d0a3570bcdcbb7dbab188b3e60ed79c5ba0c79e))
+
+
+### Features
+
+* **select:** support async search ([5d02b80](https://github.com/yoctol/tailor-ui/commit/5d02b80d08082e3d596c7aed16bdb246ba79631e))
+
 ## [1.8.5](https://github.com/yoctol/tailor-ui/compare/v1.8.4...v1.8.5) (2021-04-19)
 
 
