@@ -36,6 +36,7 @@ interface SelectProps<T extends SelectOption, V = T | null> {
   value?: V;
   defaultValue?: V;
   onChange: (item: V) => void;
+  onSearch?: (value: string) => void;
   placeholder?: string;
   noOptionsMessage?: () => ReactNode;
   onCreateOption?: (value: string) => void;
@@ -60,6 +61,7 @@ const Select = forwardRef(function Select<T extends SelectOption>(
     value,
     defaultValue,
     onChange,
+    onSearch,
     placeholder,
     noOptionsMessage,
     onCreateOption,
@@ -77,6 +79,7 @@ const Select = forwardRef(function Select<T extends SelectOption>(
   const { setHasChild } = useContext(ClickOutsideContext);
   const selectRef = useRef<HTMLButtonElement>(null);
   const { searchValue, setSearchValue, selectOptions } = useSelectOptions({
+    onSearch,
     options,
     creatable,
     isValidNewOption,

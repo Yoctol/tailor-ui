@@ -2,6 +2,7 @@ import fuzzaldrin from 'fuzzaldrin-plus';
 import { PRect } from '@reach/rect';
 import { Position } from '@reach/popover';
 import { useEffect, useState } from 'react';
+import { useIsomorphicLayoutEffect } from '@reach/utils';
 
 import {
   SelectCreateOptionObject,
@@ -45,29 +46,47 @@ export const filter = <T extends SelectOption>(items: T[], input: string) => {
 };
 
 export const useSelectOptions = <T extends SelectOption>({
+  onSearch,
   options,
   creatable,
   isValidNewOption,
 }: {
+  onSearch?: (value: string) => void;
   options: T[];
   creatable: boolean;
   isValidNewOption: (value: string) => boolean;
 }) => {
   const [searchValue, setSearchValue] = useState('');
+  const [selectOptions, setSelectOptions] = useState<
+    (T | SelectCreateOptionObject)[]
+  >(options);
 
-  const searchOptions =
-    searchValue !== '' ? filter(options, searchValue) : options;
-  const additionOptions: [SelectCreateOptionObject] | [] =
-    creatable && isValidNewOption(searchValue)
-      ? [
-          {
-            label: CREATE_OPTION,
-            value: searchValue,
-          },
-        ]
-      : [];
+  useIsomorphicLayoutEffect(() => {
+    if (onSearch && searchValue.trim() !== '') {
+      onSearch(searchValue);
+    }
+  }, [searchValue]);
 
-  const selectOptions = [...searchOptions, ...additionOptions];
+  useIsomorphicLayoutEffect(() => {
+    let searchOptions = options;
+
+    if (!onSearch) {
+      searchOptions =
+        searchValue !== '' ? filter(options, searchValue) : options;
+    }
+
+    const additionOptions: [SelectCreateOptionObject] | [] =
+      creatable && isValidNewOption(searchValue)
+        ? [
+            {
+              label: CREATE_OPTION,
+              value: searchValue,
+            },
+          ]
+        : [];
+
+    setSelectOptions([...searchOptions, ...additionOptions]);
+  }, [searchValue, options]);
 
   return {
     searchValue,

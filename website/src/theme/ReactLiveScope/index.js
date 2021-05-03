@@ -7,6 +7,7 @@
  */
 
 import React from 'react';
+import debounce from 'lodash.debounce';
 import * as DateFns from 'date-fns';
 import * as Formik from 'formik';
 import * as ReactIconsMd from 'react-icons/md';
@@ -35,6 +36,7 @@ const ReactLiveScope = {
   LocaleContext,
   ThemeContext,
   DateFns,
+  debounce,
 };
 
 export default ReactLiveScope;
