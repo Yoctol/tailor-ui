@@ -1,6 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Tag should render invalid style tag 1`] = `
+.c2 {
+  width: 100%;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .c1 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -42,13 +49,24 @@ exports[`Tag should render invalid style tag 1`] = `
     <div
       class="c1"
     >
-      Tailor UI
+      <div
+        class="c2"
+      >
+        Tailor UI
+      </div>
     </div>
   </div>
 </div>
 `;
 
 exports[`Tag should render tag 1`] = `
+.c2 {
+  width: 100%;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .c1 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -90,13 +108,24 @@ exports[`Tag should render tag 1`] = `
     <div
       class="c1"
     >
-      Tailor UI
+      <div
+        class="c2"
+      >
+        Tailor UI
+      </div>
     </div>
   </div>
 </div>
 `;
 
 exports[`Tag should render tag with prefix 1`] = `
+.c3 {
+  width: 100%;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .c1 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -161,7 +190,11 @@ exports[`Tag should render tag with prefix 1`] = `
       >
         1
       </span>
-      Tailor UI
+      <div
+        class="c3"
+      >
+        Tailor UI
+      </div>
     </div>
   </div>
 </div>

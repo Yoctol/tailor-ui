@@ -14,6 +14,7 @@ import styled from 'styled-components';
 import { MdClose } from 'react-icons/md';
 import { animated, to, useSpring } from '@react-spring/web';
 
+import { Ellipsis } from '../Ellipsis';
 import { Icon } from '../Icon';
 import { useMeasure, usePrevious } from '../hooks';
 
@@ -194,7 +195,7 @@ const Tag = forwardRef<HTMLDivElement, TagProps>(function Tag(
             }}
           />
         ) : (
-          children
+          <Ellipsis>{children}</Ellipsis>
         )}
         {closable && (
           <CloseIcon

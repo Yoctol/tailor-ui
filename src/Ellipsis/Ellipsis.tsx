@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useRef, useState } from 'react';
+import React, { FC, useRef } from 'react';
 import styled from 'styled-components';
 
 import { Box } from '../Layout';
@@ -21,16 +21,11 @@ const Ellipsis: FC<EllipsisProps> = ({
   tooltipProps = {},
   ...props
 }) => {
-  const [isOverflowed, setIsOverflowed] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    const isTextOverflow = ref.current
-      ? ref.current.scrollWidth > ref.current.offsetWidth
-      : false;
-
-    setIsOverflowed(isTextOverflow);
-  }, [children]);
+  const isTextOverflow = ref.current
+    ? ref.current.scrollWidth > ref.current.offsetWidth
+    : false;
 
   const Content = (
     <EllipsisText ref={ref} {...props}>
@@ -38,7 +33,7 @@ const Ellipsis: FC<EllipsisProps> = ({
     </EllipsisText>
   );
 
-  return isOverflowed ? (
+  return isTextOverflow ? (
     <Tooltip
       content={
         <Box
