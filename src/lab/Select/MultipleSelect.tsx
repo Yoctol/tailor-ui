@@ -188,13 +188,13 @@ const MultipleSelect = forwardRef(function MultipleSelect<
         invalid={invalid}
         focused={isOpen}
       >
-        <Flex flex="auto" flexWrap="wrap">
+        <Flex flex="auto" flexWrap="wrap" width="calc(100% - 26px)">
           {selectedItems.map((selectedItem, index) => (
             <Tag
               key={itemToString(selectedItem)}
               closable
               disabled={loading || disabled}
-              style={{ marginBottom: 2 }}
+              style={{ marginBottom: 2, maxWidth: '100%' }}
               onClose={() => {
                 setSelectedItems(
                   selectedItems.filter(
