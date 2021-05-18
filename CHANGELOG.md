@@ -1,3 +1,10 @@
+## [1.9.1](https://github.com/yoctol/tailor-ui/compare/v1.9.0...v1.9.1) (2021-05-18)
+
+
+### Bug Fixes
+
+* **select:** use ellipsis in multiple select tag to prevent overflow ([b0ae7ac](https://github.com/yoctol/tailor-ui/commit/b0ae7ac2df817f8ff4efe8e64b885a4b8997c4f0))
+
 # [1.9.0](https://github.com/yoctol/tailor-ui/compare/v1.8.5...v1.9.0) (2021-05-03)
 
 
