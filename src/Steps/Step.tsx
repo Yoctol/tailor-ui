@@ -52,14 +52,8 @@ export interface StepProps {
 }
 
 const Step: FC<StepProps> = ({ title, description = null }) => {
-  const {
-    count,
-    status,
-    isLast,
-    tailColor,
-    direction,
-    onCurrentChange,
-  } = useContext(StepContext);
+  const { count, status, isLast, tailColor, direction, onCurrentChange } =
+    useContext(StepContext);
   return (
     <Flex
       flex={isLast ? 'none' : 'auto'}

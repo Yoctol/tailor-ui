@@ -5,11 +5,12 @@ import {
   useTooltip,
 } from '@reach/tooltip';
 import { animated, useTransition } from '@react-spring/web';
-import type * as Polymorphic from '@reach/utils/polymorphic';
 
 import { Stack } from '../../Stack';
 
 import { TooltipStyle } from './styles';
+
+import type * as Polymorphic from '@reach/utils/polymorphic';
 
 const AnimatedTooltipContent = animated(TooltipPopup);
 

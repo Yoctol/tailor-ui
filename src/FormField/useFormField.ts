@@ -13,9 +13,8 @@ const useFormField = ({
   value?: any;
   defaultValue?: any;
 }) => {
-  const { invalid, setValue, setLabelId, labelId } = useContext(
-    FormFieldContext
-  );
+  const { invalid, setValue, setLabelId, labelId } =
+    useContext(FormFieldContext);
 
   useEffect(() => {
     if (id) {

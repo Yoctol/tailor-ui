@@ -57,9 +57,8 @@ export const useSelectOptions = <T extends SelectOption>({
   isValidNewOption: (value: string) => boolean;
 }) => {
   const [searchValue, setSearchValue] = useState('');
-  const [selectOptions, setSelectOptions] = useState<
-    (T | SelectCreateOptionObject)[]
-  >(options);
+  const [selectOptions, setSelectOptions] =
+    useState<(T | SelectCreateOptionObject)[]>(options);
 
   useIsomorphicLayoutEffect(() => {
     if (onSearch && searchValue.trim() !== '') {

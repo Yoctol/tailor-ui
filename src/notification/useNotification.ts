@@ -20,9 +20,10 @@ const useNotification = () => {
     [triggerRef]
   );
 
-  const close = useCallback((key: string) => triggerRef.current.close(key), [
-    triggerRef,
-  ]);
+  const close = useCallback(
+    (key: string) => triggerRef.current.close(key),
+    [triggerRef]
+  );
 
   const destroy = useCallback(() => triggerRef.current.destroy(), [triggerRef]);
 

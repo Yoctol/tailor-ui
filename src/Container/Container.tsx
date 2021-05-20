@@ -34,8 +34,7 @@ const Section = forwardRef<HTMLDivElement, SectionProps>(function Section(
 
 const isElementTable = (element: ReactNode) =>
   isValidElement(element) &&
-  ((element.type as unknown) as { displayName: string }).displayName ===
-    'Table';
+  (element.type as unknown as { displayName: string }).displayName === 'Table';
 
 interface ContainerTitleProps {
   title?: ReactNode;

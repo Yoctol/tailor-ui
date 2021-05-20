@@ -125,9 +125,8 @@ function User({ imageUrl, url, title, description }) {
 }
 
 function Home() {
-  const {
-    siteConfig: { customFields = {}, tagline } = {},
-  } = useDocusaurusContext();
+  const { siteConfig: { customFields = {}, tagline } = {} } =
+    useDocusaurusContext();
   const logoUrl = useBaseUrl('/img/tailor-ui-dark.svg');
 
   return (
