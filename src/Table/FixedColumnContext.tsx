@@ -22,10 +22,7 @@ interface Column extends FixedColumn {
 
 const FixedColumnContext = createContext<{
   setColumn: (column: Column) => void;
-  getColumnFixedInfo: (payload: {
-    index: number;
-    style?: CSSProperties;
-  }) => {
+  getColumnFixedInfo: (payload: { index: number; style?: CSSProperties }) => {
     style?: CSSProperties;
     fixed?: boolean;
     showScrollShadowStart?: boolean;
@@ -64,11 +61,10 @@ const useFixedHeadColumn = ({
     });
   }, [index, width, fixed, colSpan, setColumn]);
 
-  return useMemo(() => getColumnFixedInfo({ index, style }), [
-    getColumnFixedInfo,
-    index,
-    style,
-  ]);
+  return useMemo(
+    () => getColumnFixedInfo({ index, style }),
+    [getColumnFixedInfo, index, style]
+  );
 };
 
 interface FixedColumnContextProviderProps {

@@ -97,9 +97,8 @@ const SelectOptions: FC<SelectOptionsProps> = ({
 }) => {
   const listRef = useRef<FixedSizeList>(null);
   const [prevSearchValue, setPrevSearchValue] = useState(inputValue);
-  const [createOptionWidth, setCreateOptionWidth] = useState<
-    number | undefined
-  >(undefined);
+  const [createOptionWidth, setCreateOptionWidth] =
+    useState<number | undefined>(undefined);
   const createOptionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -147,10 +146,10 @@ const SelectOptions: FC<SelectOptionsProps> = ({
     return [];
   }, [creatable, inputValue, isValidNewOption, prevSearchValue, visible]);
 
-  const items = useMemo(() => [...filteredItems, ...additionItems], [
-    additionItems,
-    filteredItems,
-  ]);
+  const items = useMemo(
+    () => [...filteredItems, ...additionItems],
+    [additionItems, filteredItems]
+  );
 
   if (items.length === 0) {
     return <>{noOptionsMessage()}</>;

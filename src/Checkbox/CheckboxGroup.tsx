@@ -67,9 +67,10 @@ const CheckboxGroup = forwardRef<HTMLDivElement, CheckboxGroupProps>(
       [ownValue, setOwnValue, setValue]
     );
 
-    const isChecked = useCallback((_value) => ownValue.includes(_value), [
-      ownValue,
-    ]);
+    const isChecked = useCallback(
+      (_value) => ownValue.includes(_value),
+      [ownValue]
+    );
 
     const child = useMemo(
       () =>

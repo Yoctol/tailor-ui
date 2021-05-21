@@ -59,9 +59,8 @@ const Popover: FC<PopoverProps> = ({
     children,
   });
 
-  const { setHasChild: setHasChildFromContext } = useContext(
-    ClickOutsideContext
-  );
+  const { setHasChild: setHasChildFromContext } =
+    useContext(ClickOutsideContext);
   const [hasChild, setHasChild] = useState(false);
 
   const { visible, handleClose, toggle } = useToggleTrigger({

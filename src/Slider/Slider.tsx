@@ -45,11 +45,12 @@ const Slider: FC<SliderProps> = ({
     initialDefaultValue || (range ? [0, 0] : 0)
   );
   const [stepOffset, setStepOffset] = useState<number>(0);
-  const [dragStart, setDragStart] = useState<{
-    x: number;
-    value: number;
-    touch: boolean;
-  } | null>(null);
+  const [dragStart, setDragStart] =
+    useState<{
+      x: number;
+      value: number;
+      touch: boolean;
+    } | null>(null);
 
   const value = (valueFromProps || defaultValue) as Value;
   const denominator = max - min;
