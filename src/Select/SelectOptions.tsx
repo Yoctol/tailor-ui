@@ -97,8 +97,9 @@ const SelectOptions: FC<SelectOptionsProps> = ({
 }) => {
   const listRef = useRef<FixedSizeList>(null);
   const [prevSearchValue, setPrevSearchValue] = useState(inputValue);
-  const [createOptionWidth, setCreateOptionWidth] =
-    useState<number | undefined>(undefined);
+  const [createOptionWidth, setCreateOptionWidth] = useState<
+    number | undefined
+  >(undefined);
   const createOptionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {

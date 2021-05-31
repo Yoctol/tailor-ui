@@ -11,10 +11,11 @@
     "swizzle": "docusaurus swizzle"
   },
   "dependencies": {
-    "@babel/plugin-proposal-class-properties": "^7.13.0",
-    "@docusaurus/core": "2.0.0-alpha.72",
-    "@docusaurus/preset-classic": "2.0.0-alpha.72",
-    "@docusaurus/theme-live-codeblock": "2.0.0-alpha.72"
+    "@babel/plugin-proposal-class-properties": "^7.14.5",
+    "@docusaurus/core": "2.0.0-beta.0",
+    "@docusaurus/preset-classic": "2.0.0-beta.0",
+    "@docusaurus/theme-live-codeblock": "2.0.0-beta.0",
+    "react-icons": "^4.2.0"
   },
   "browserslist": {
     "production": [

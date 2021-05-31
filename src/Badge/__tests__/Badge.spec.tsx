@@ -102,6 +102,6 @@ describe('Backdrop', () => {
     expect(container).toHaveTextContent('1');
 
     userEvent.click(decrementBtn);
-    waitFor(() => expect(container).not.toHaveTextContent('0'));
+    await waitFor(() => expect(container).not.toHaveTextContent('0'));
   });
 });
