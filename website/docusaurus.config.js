@@ -1,7 +1,7 @@
 module.exports = {
   title: 'Tailor UI',
   tagline: 'A bespoke UI collection for building web application',
-  url: 'https://tailor-ui.netlify.com',
+  url: 'https://tailor-ui.netlify.app',
   baseUrl: '/',
   favicon: 'img/favicon.png',
   organizationName: 'Yoctol.AI', // Usually your GitHub org/user name.

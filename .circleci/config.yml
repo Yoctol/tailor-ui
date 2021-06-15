@@ -46,7 +46,6 @@ jobs:
           command: yarn testonly:cov -- --no-cache --colors
       - store_artifacts:
           path: coverage
-          prefix: coverage
 
   lint-node-12:
     <<: *docker_12
