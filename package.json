@@ -4,7 +4,7 @@
   "description": "A bespoke UI collection for building web application.",
   "license": "MIT",
   "author": "dev@yoctol.com",
-  "homepage": "https://tailor-ui.netlify.com",
+  "homepage": "https://tailor-ui.netlify.app",
   "repository": {
     "type": "git",
     "url": "https://github.com/yoctol/tailor-ui.git"
