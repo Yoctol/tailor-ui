@@ -57,4 +57,8 @@ cd tailor-ui
 yarn start
 ```
 
-For more detail and new version release process, refer to [this document](https://hackmd.io/ytSufQuVRp-Az-9arHTiug#Tailor-UI).
+### Release
+
+- Send PR to `develop` branch during development.
+- When you want to release the version, merge `develop` branch into `master` branch, and then `sematic release` will automatically release new version on CI.
+- After new version released, merge `master` back to `develop`.
