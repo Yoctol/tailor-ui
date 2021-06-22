@@ -15,7 +15,7 @@ module.exports = {
       // By default, it assumes @babel/runtime@7.0.0. Since we use >7.0.0, better to
       // explicitly specify the version so that it can reuse the helper better
       // See https://github.com/babel/babel/issues/10261
-      // eslint-disable-next-line import/no-extraneous-dependencies, @typescript-eslint/no-var-requires
+      // eslint-disable-next-line @typescript-eslint/no-var-requires
       { version: require('@babel/runtime/package.json').version },
     ],
     '@babel/plugin-proposal-class-properties',

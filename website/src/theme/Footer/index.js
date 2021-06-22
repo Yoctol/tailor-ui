@@ -1,5 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies */
-/* eslint-disable import/no-unresolved */
 /**
  * Copyright (c) 2017-present, Facebook, Inc.
  *

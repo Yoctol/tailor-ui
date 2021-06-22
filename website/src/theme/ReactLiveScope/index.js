@@ -1,4 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies */
 /**
  * Copyright (c) Facebook, Inc. and its affiliates.
  *

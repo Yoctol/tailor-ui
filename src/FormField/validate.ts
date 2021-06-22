@@ -1,6 +1,5 @@
-import { ReactNode } from 'react';
-// eslint-disable-next-line import/no-extraneous-dependencies
 import { AnySchema } from 'yup';
+import { ReactNode } from 'react';
 
 export type FunctionValidator = (value?: any) => string | null;
 

@@ -1,4 +1,3 @@
-/* eslint-disable import/no-unresolved */
 /**
  * Copyright (c) 2017-present, Facebook, Inc.
  *
@@ -8,9 +7,7 @@
 
 import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
-// eslint-disable-next-line import/no-extraneous-dependencies
 import React from 'react';
-// eslint-disable-next-line import/no-extraneous-dependencies
 import classnames from 'classnames';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';

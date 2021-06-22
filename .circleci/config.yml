@@ -22,6 +22,7 @@ jobs:
           command: |
             yarn config set cache-folder .yarn-cache
             yarn
+            cd website && yarn
       - run:
           name: build
           command: yarn build
@@ -33,6 +34,7 @@ jobs:
           root: .
           paths:
             - node_modules
+            - website/node_modules
             - lib
 
   test-node-12:
@@ -54,8 +56,11 @@ jobs:
       - attach_workspace:
           at: .
       - run:
-          name: run lint
-          command: yarn lint
+          name: run lint:ts
+          command: yarn lint:ts --report-unused-disable-directives
+      - run:
+          name: run lint:css
+          command: yarn lint:css
 
   release:
     <<: *docker_12

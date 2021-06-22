@@ -1,4 +1,4 @@
-import commonjs from 'rollup-plugin-commonjs';
+import commonjs from '@rollup/plugin-commonjs';
 
 const entryPoints = [
   { input: './lib/index.js', output: './lib/index.cjs.js' },

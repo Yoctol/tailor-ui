@@ -1,9 +1,9 @@
-/* eslint-disable */
-import React, { useState, useCallback } from 'react';
+import React, { useCallback, useState } from 'react';
+import styled from 'styled-components';
+import { darken, lighten, readableColor } from 'polished';
+
 import { Flex, Heading, Tooltip } from '../../src';
 import { theme } from '../../src/theme';
-import { readableColor, darken, lighten } from 'polished';
-import styled from 'styled-components';
 
 const { colors: themeColors } = theme;
 

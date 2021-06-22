@@ -1,4 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies, import/no-unresolved */
 /**
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
@@ -55,7 +54,7 @@ function LiveCode({ defaultShowCode, refreshPreview, onChangeCode }) {
   );
 }
 
-function Playground({
+export default function Playground({
   transformCode,
   children,
   showCode: defaultShowCode = false,
@@ -80,5 +79,3 @@ function Playground({
     </LiveProvider>
   );
 }
-
-export default Playground;

@@ -17,7 +17,6 @@ module.exports = {
     sidebarCollapsible: false,
     image: 'img/og-image.png',
     prism: {
-      // eslint-disable-next-line import/no-extraneous-dependencies, import/no-unresolved
       theme: require('prism-react-renderer/themes/oceanicNext'),
     },
     navbar: {

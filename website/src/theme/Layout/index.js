@@ -1,6 +1,4 @@
-// eslint-disable-next-line import/no-unresolved
 import OriginalLayout from '@theme-original/Layout';
-// eslint-disable-next-line import/no-extraneous-dependencies
 import React, { useState } from 'react';
 
 import LocaleContext from '../../context/LocaleContext';
