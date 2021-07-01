@@ -1,22 +1,22 @@
 version: 2
 # Reference variables.
 references:
-  docker_default: &docker_12
+  docker_default: &docker_14
     working_directory: /tmp/app
     docker:
-      - image: node:12
+      - image: cimg/node:14
     environment:
       TZ: "/usr/share/zoneinfo/Asia/Taipei"
 
 jobs:
-  build-node-12:
-    <<: *docker_12
+  build-node-14:
+    <<: *docker_14
     steps:
       - checkout
       - restore_cache:
           keys:
-            - node-12-cache-{{checksum "yarn.lock"}}
-            - node-12-cache
+            - node-14-cache-{{checksum "yarn.lock"}}
+            - node-14-cache
       - run:
           name: install dependencies
           command: |
@@ -26,7 +26,7 @@ jobs:
           name: build
           command: yarn build
       - save_cache:
-          key: node-12-cache-{{checksum "yarn.lock"}}
+          key: node-14-cache-{{checksum "yarn.lock"}}
           paths:
             - .yarn-cache
       - persist_to_workspace:
@@ -35,8 +35,8 @@ jobs:
             - node_modules
             - lib
 
-  test-node-12:
-    <<: *docker_12
+  test-node-14:
+    <<: *docker_14
     steps:
       - checkout
       - attach_workspace:
@@ -47,8 +47,8 @@ jobs:
       - store_artifacts:
           path: coverage
 
-  lint-node-12:
-    <<: *docker_12
+  lint-node-14:
+    <<: *docker_14
     steps:
       - checkout
       - attach_workspace:
@@ -58,7 +58,7 @@ jobs:
           command: yarn lint
 
   release:
-    <<: *docker_12
+    <<: *docker_14
     steps:
       - checkout
       - attach_workspace:
@@ -69,16 +69,16 @@ jobs:
 
 workflows:
   version: 2
-  test-on-node-12:
+  test-on-node-14:
     jobs:
-      - build-node-12
-      - test-node-12:
+      - build-node-14
+      - test-node-14:
           requires:
-            - build-node-12
-      - lint-node-12:
+            - build-node-14
+      - lint-node-14:
           requires:
-            - build-node-12
+            - build-node-14
       - release:
           requires:
-            - test-node-12
-            - lint-node-12
+            - test-node-14
+            - lint-node-14
