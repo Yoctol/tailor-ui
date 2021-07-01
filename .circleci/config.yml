@@ -4,7 +4,7 @@ references:
   docker_default: &docker_12
     working_directory: /tmp/app
     docker:
-      - image: node:12
+      - image: cimg/node:14
     environment:
       TZ: "/usr/share/zoneinfo/Asia/Taipei"
 
