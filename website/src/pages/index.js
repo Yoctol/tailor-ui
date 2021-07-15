@@ -52,7 +52,7 @@ import styles from './styles.module.css';
 
 const users = [
   {
-    title: <>Creator</>,
+    title: 'Creator',
     imageUrl: 'img/creator.svg',
     url: 'https://yoctol.ai/creator/',
     description: (
@@ -63,13 +63,13 @@ const users = [
     ),
   },
   {
-    title: <>Seeker</>,
+    title: 'Seeker',
     imageUrl: 'img/seeker.svg',
     url: 'https://yoctol.ai/seeker/',
     description: <>Grow your ads performances on Facebook by 200%.</>,
   },
   {
-    title: <>YOCTOL.AI</>,
+    title: 'YOCTOL.AI',
     imageUrl: 'img/yoctol-ai.svg',
     url: 'https://yoctol.ai/',
     description: (
@@ -103,7 +103,12 @@ function User({ imageUrl, url, title, description }) {
     <div className={classnames('col col--4', styles.feature)}>
       {imgUrl && (
         <div className="text--center">
-          <img className={styles.featureImage} src={imgUrl} alt={title} />
+          <img
+            className={styles.featureImage}
+            title={title}
+            alt={title}
+            src={imgUrl}
+          />
         </div>
       )}
       <h3 className={classnames('text--center', styles.featureTitle)}>
