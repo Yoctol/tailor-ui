@@ -1,3 +1,10 @@
+## [1.9.2](https://github.com/yoctol/tailor-ui/compare/v1.9.1...v1.9.2) (2021-07-15)
+
+
+### Bug Fixes
+
+* User title and alt ([bf2c90e](https://github.com/yoctol/tailor-ui/commit/bf2c90e07ece97a5efa7b6146814d3e11f0883b8))
+
 ## [1.9.1](https://github.com/yoctol/tailor-ui/compare/v1.9.0...v1.9.1) (2021-05-18)
 
 
