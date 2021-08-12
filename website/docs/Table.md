@@ -40,6 +40,15 @@ import { Table } from 'tailor-ui';
           </Table.Column>
         </Table.Row>
       ))}
+      <Table.Row disabled>
+        <Table.Column>Disabled</Table.Column>
+        <Table.Column>Disabled</Table.Column>
+        <Table.Column>10,000</Table.Column>
+        <Table.Column>NTD 1,000</Table.Column>
+        <Table.Column>
+          <Button variant="primary-invert">Action</Button>
+        </Table.Column>
+      </Table.Row>
     </Table.Body>
   </Table>
 </Box>
