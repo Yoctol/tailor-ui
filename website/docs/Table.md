@@ -190,6 +190,12 @@ import { Table } from 'tailor-ui';
 | `fixed`  | Set column to be fixed | `'left'` \| `'right'` |         |
 | `width`  | The width of table     | `number` \| `string`  | `100%`  |
 
+### Table.Row
+
+| Property   | Description           | Type      | Default |
+| ---------- | --------------------- | --------- | ------- |
+| `disabled` | disabled state of Row | `boolean` | `false` |
+
 ### Table.Column
 
 | Property | Description        | Type                 | Default |
