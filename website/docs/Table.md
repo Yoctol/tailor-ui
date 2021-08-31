@@ -40,6 +40,15 @@ import { Table } from 'tailor-ui';
           </Table.Column>
         </Table.Row>
       ))}
+      <Table.Row disabled>
+        <Table.Column>Disabled</Table.Column>
+        <Table.Column>Disabled</Table.Column>
+        <Table.Column>10,000</Table.Column>
+        <Table.Column>NTD 1,000</Table.Column>
+        <Table.Column>
+          <Button variant="primary-invert">Action</Button>
+        </Table.Column>
+      </Table.Row>
     </Table.Body>
   </Table>
 </Box>
@@ -189,6 +198,12 @@ import { Table } from 'tailor-ui';
 | -------- | ---------------------- | --------------------- | ------- |
 | `fixed`  | Set column to be fixed | `'left'` \| `'right'` |         |
 | `width`  | The width of table     | `number` \| `string`  | `100%`  |
+
+### Table.Row
+
+| Property   | Description           | Type      | Default |
+| ---------- | --------------------- | --------- | ------- |
+| `disabled` | disabled state of Row | `boolean` | `false` |
 
 ### Table.Column
 

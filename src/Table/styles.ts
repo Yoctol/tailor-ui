@@ -86,14 +86,6 @@ export const StyledColumn = styled.td<ShadowType>`
   ${(p) => p.theme.transition};
 `;
 
-export const Row = styled.tr`
-  border-top: none;
-
-  &:last-child > ${StyledColumn} {
-    border-bottom: none;
-  }
-`;
-
 export const StyledTable = styled.table`
   display: table;
   width: 100%;
@@ -135,6 +127,42 @@ export const StyledTableWrapper = styled.div<StyledTableWrapperProps>`
   ${width};
   ${maxHeight};
   ${textAlign};
+`;
+
+type RowType = {
+  disabled?: boolean;
+};
+
+export const Row = styled.tr<RowType>`
+  border-top: none;
+
+  ${(p) =>
+    p.disabled &&
+    css`
+      & > td {
+        background-color: ${p.theme.colors.surface};
+        cursor: not-allowed;
+      }
+
+      &&&:hover > td {
+        background-color: ${p.theme.colors.surface};
+      }
+
+      &&& > td > * {
+        background-color: ${p.theme.colors.gray300};
+        color: ${p.theme.colors.gray400};
+        cursor: not-allowed;
+      }
+
+      &&& > td > *:hover {
+        background-color: ${p.theme.colors.gray300};
+        color: ${p.theme.colors.gray400};
+      }
+    `}
+
+  &:last-child > ${StyledColumn} {
+    border-bottom: none;
+  }
 `;
 
 export type TableWrapperProps = WidthProps & {
