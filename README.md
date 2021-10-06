@@ -61,4 +61,5 @@ yarn start
 
 - Send PR to `develop` branch during development.
 - When you want to release the version, merge `develop` branch into `master` branch, and then `sematic release` will automatically release new version on CI.
+  - Make sure [Environment Variables](https://app.circleci.com/settings/project/github/Yoctol/tailor-ui/environment-variables) on CircleCI are setup correctly. `GH_TOKEN` need to have `repo` scope and `NPM_TOKEN` need to have access to [`tailor-ui`](https://www.npmjs.com/package/tailor-ui/) package.
 - After new version released, merge `master` back to `develop`.
