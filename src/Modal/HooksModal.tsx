@@ -13,6 +13,7 @@ import { StatusType } from '../types';
 import { useLocale } from '../locale';
 
 import { Modal } from './Modal';
+import { ModalSize } from './types';
 
 export type ModalTypes = StatusType | 'confirm';
 
@@ -27,6 +28,7 @@ export interface ModalOptions {
   onCloseComplete?: () => void;
   closable?: boolean;
   zIndex?: number;
+  size?: ModalSize;
 }
 
 export type UpdateFunction = (
@@ -60,6 +62,7 @@ interface ModalOptionsState {
   closable: boolean;
   type: ModalTypes;
   zIndex?: number;
+  size?: ModalSize;
 }
 
 const HooksModal: FC<HooksModalProps> = ({ modalTriggerRef }) => {
@@ -76,6 +79,7 @@ const HooksModal: FC<HooksModalProps> = ({ modalTriggerRef }) => {
     onCancel: () => {},
     onOpenComplete: () => {},
     onCloseComplete: () => {},
+    size: 'md',
   });
 
   const trigger = useCallback(
@@ -91,6 +95,7 @@ const HooksModal: FC<HooksModalProps> = ({ modalTriggerRef }) => {
         onOpenComplete,
         onCloseComplete,
         zIndex,
+        size,
       } = options;
 
       let resolveFn: (value: boolean) => void = () => {};
@@ -137,6 +142,7 @@ const HooksModal: FC<HooksModalProps> = ({ modalTriggerRef }) => {
         onOpenComplete,
         onCloseComplete,
         zIndex,
+        size,
       });
 
       setVisible(true);
@@ -162,6 +168,7 @@ const HooksModal: FC<HooksModalProps> = ({ modalTriggerRef }) => {
     onConfirm,
     type,
     zIndex,
+    size,
   } = modalOptions;
 
   const status = type !== 'confirm' ? type : null;
@@ -173,6 +180,7 @@ const HooksModal: FC<HooksModalProps> = ({ modalTriggerRef }) => {
 
   return (
     <Modal
+      size={size}
       visible={visible}
       closable={closable}
       title={title}
