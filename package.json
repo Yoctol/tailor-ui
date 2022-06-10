@@ -134,7 +134,7 @@
     "rimraf": "^3.0.2",
     "rollup": "^2.52.1",
     "rollup-plugin-commonjs": "^10.1.0",
-    "semantic-release": "^17.4.4",
+    "semantic-release": "^19.0.3",
     "stylelint": "13.13.1",
     "stylelint-config-prettier": "^8.0.2",
     "stylelint-config-styled-components": "^0.1.1",
